@@ -63,13 +63,13 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./website/build/
-        server-dir: /documentation.j2commerce.com/  # Adjust to your actual path
+        server-dir: /docs.j2commerce.com/  # Adjust to your actual path
         dangerous-clean-slate: true
         
     - name: Notify on success
       if: success()
-      run: echo "✅ Successfully deployed to https://documentation.j2commerce.com"
+      run: echo "✅ Successfully deployed to https://docs.j2commerce.com"
         
     - name: Notify on failure  
       if: failure()
-      run: echo "❌ Deployment failed for https://documentation.j2commerce.com - check the logs"
+      run: echo "❌ Deployment failed for https://docs.j2commerce.com - check the logs"
