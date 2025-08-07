@@ -4,7 +4,7 @@ description: J2Commerce (formerly known as J2Store)
 
 # Introduction to J2Commerce
 
-![introduction](https://raw.githubusercontent.com/j2store/doc-images/master/getting-started/Introduction/Introduction.png)
+![J2Commerce](https://docs.j2commerce.com/img/j2commerce-social-card.jpg)
 
 ## J2Commerce Documentation <a href="#j2store-documentation" id="j2store-documentation"></a>
 
