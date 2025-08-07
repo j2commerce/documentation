@@ -1,0 +1,70 @@
+name: Deploy to documentation.j2commerce.com
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+        cache: npm
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build website
+      run: npm run build
+      
+    - name: Create .htaccess for client-side routing
+      run: |
+        cat > build/.htaccess << 'EOF'
+        RewriteEngine On
+        RewriteRule ^index\.html$ - [L]
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule . /index.html [L]
+        
+        # Force HTTPS
+        RewriteCond %{HTTPS} off
+        RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+        
+        # Cache static assets
+        <IfModule mod_expires.c>
+            ExpiresActive On
+            ExpiresByType text/css "access plus 1 month"
+            ExpiresByType application/javascript "access plus 1 month"
+            ExpiresByType image/png "access plus 1 month"
+            ExpiresByType image/jpg "access plus 1 month"
+            ExpiresByType image/jpeg "access plus 1 month"
+            ExpiresByType image/gif "access plus 1 month"
+            ExpiresByType image/svg+xml "access plus 1 month"
+        </IfModule>
+        EOF
+        
+    - name: Deploy via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./build/
+        server-dir: /documentation.j2commerce.com/  # Adjust to your actual path
+        dangerous-clean-slate: true
+        
+    - name: Notify on success
+      if: success()
+      run: echo "✅ Successfully deployed to https://documentation.j2commerce.com"
+        
+    - name: Notify on failure  
+      if: failure()
+      run: echo "❌ Deployment failed for https://documentation.j2commerce.com - check the logs"
