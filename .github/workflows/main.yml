@@ -30,6 +30,8 @@ jobs:
       
     - name: Create .htaccess for client-side routing
       run: |
+        cd website
+        mkdir -p build  # Ensure directory exists
         cat > build/.htaccess << 'EOF'
         RewriteEngine On
         RewriteRule ^index\.html$ - [L]
