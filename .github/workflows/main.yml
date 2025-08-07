@@ -64,7 +64,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./website/build/
         server-dir: /docs.j2commerce.com/  # Adjust to your actual path
-        dangerous-clean-slate: true
+        # REMOVED to avoid old files to be cleared first - put back if structure changed: dangerous-clean-slate: true
         
     - name: Notify on success
       if: success()
