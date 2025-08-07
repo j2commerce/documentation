@@ -12,7 +12,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'J2Commerce Documentation',
   tagline: 'The best up-to-date documentation for J2Commerce',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/shortcut.webp',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -20,15 +20,15 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://docs.j2commerce.com',
+  url: 'https://documentation.j2commerce.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'J2Commerce', // Usually your GitHub org/user name.
-  projectName: 'guide', // Usually your repo name.
+  organizationName: 'j2commerce', // Usually your GitHub org/user name.
+  projectName: 'documentation', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
