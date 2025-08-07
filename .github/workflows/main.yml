@@ -1,4 +1,4 @@
-name: Deploy to documentation.j2commerce.com
+name: Deploy to docs.j2commerce.com
 
 on:
   push:
