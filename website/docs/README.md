@@ -14,4 +14,6 @@ With J2Commerce, your Joomla articles _are_ your products—no complex setup req
 
 It is light-weight and more importantly, it lets you use native content as product. This gives you a lot of benefits like flexibility.
 
-Here are some of the popular guides to get you started quickly
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTkxNjc2NDUzMV19
+-->
