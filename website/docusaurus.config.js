@@ -82,6 +82,12 @@ const config = {
           },
         ],
       },
+      algolia: {
+        appId: 'WDTT4PYPY5',
+        apiKey: '19df50541882d5ffa3380ff7eb7227b7',
+        indexName: 'DocSearch',
+        contextualSearch: true,
+      },
       footer: {
         style: 'dark',
         copyright: `Copyright © ${new Date().getFullYear()} J2Commerce, LLC. Built with Docusaurus.`,
