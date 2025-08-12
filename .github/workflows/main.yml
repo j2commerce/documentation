@@ -34,6 +34,7 @@ jobs:
         mkdir -p build  # Ensure directory exists
         cat > build/.htaccess << 'EOF'
         RewriteEngine On
+        RewriteRule ^easy-checkout/easy-checkout/?$ /easy-checkout/easy-checkout-guide [R=301,L]
         RewriteRule ^index\.html$ - [L]
         RewriteCond %{REQUEST_FILENAME} !-f
         RewriteCond %{REQUEST_FILENAME} !-d
