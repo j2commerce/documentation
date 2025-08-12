@@ -25,6 +25,7 @@ const sidebars = {
       label: 'Getting Started',
       link: {
         type: 'generated-index',
+        slug: '/getting-started', // Custom slug removes /category prefix
       },
       items: [
         'getting-started/introduction',
@@ -41,6 +42,7 @@ const sidebars = {
       label: 'Set Up',
       link: {
         type: 'generated-index',
+        slug: '/set-up', // Custom slug removes /category prefix
       },
       items: [
         'set-up/content-plugin-settings',
@@ -56,6 +58,7 @@ const sidebars = {
       label: 'Product Types',
       link: {
         type: 'generated-index',
+        slug: '/product-types', // Custom slug removes /category prefix
       },
       items: [
         'product-types/simple-product',
@@ -70,6 +73,7 @@ const sidebars = {
       label: 'Layouts',
       link: {
         type: 'generated-index',
+        slug: '/layout', // Custom slug removes /category prefix
       },
       items: [
         'layout/product-layout',
@@ -84,6 +88,7 @@ const sidebars = {
       label: 'Catalog',
       link: {
         type: 'generated-index',
+        slug: '/catalog', // Custom slug removes /category prefix
       },
       items: [
         'catalog/assigning-a-product-to-multiple-categories',
@@ -126,6 +131,7 @@ const sidebars = {
       label: 'Subscriptions and Memberships',
       link: {
         type: 'generated-index',
+        slug: '/subscriptions-and-memberships', // Custom slug removes /category prefix
       },
       items: [
         'subscriptions-and-memberships/introduction-to-subscriptions-and-memberships-in-j2store',
@@ -145,6 +151,7 @@ const sidebars = {
       label: 'Partial Payments',
       link: {
         type: 'generated-index',
+        slug: '/partial-payments', // Custom slug removes /category prefix
       },
       items: [
         'partial-payments/introduction-to-partial-payments',
@@ -159,6 +166,7 @@ const sidebars = {
       label: 'Booking and Reservations',
       link: {
         type: 'generated-index',
+        slug: '/booking-and-reservations', // Custom slug removes /category prefix
       },
       items: [
         'booking-and-reservations/limitation-of-the-booking-products-type',
@@ -176,6 +184,7 @@ const sidebars = {
       label: 'Translation',
       link: {
         type: 'generated-index',
+        slug: '/translation', // Custom slug removes /category prefix
       },
       items: [
         'translation/translate-j2store-into-your-language',
@@ -190,6 +199,7 @@ const sidebars = {
       label: 'Design',
       link: {
         type: 'generated-index',
+        slug: '/design', // Custom slug removes /category prefix
       },
       items: [
         'design/email-templates',
@@ -201,6 +211,7 @@ const sidebars = {
       label: 'Tax Configuration',
       link: {
         type: 'generated-index',
+        slug: '/tax-configuration', // Custom slug removes /category prefix
       },
       items: [
         'tax-configuration/recommended-tax-configuration-for-us-states',
@@ -216,6 +227,7 @@ const sidebars = {
       label: 'Easy Checkout',
       link: {
         type: 'generated-index',
+        slug: '/easy-checkout', // Custom slug removes /category prefix
       },
       items: [
         'easy-checkout/easy-checkout',
@@ -227,6 +239,7 @@ const sidebars = {
       label: 'Sales',
       link: {
         type: 'generated-index',
+        slug: '/sales', // Custom slug removes /category prefix
       },
       items: [
         'sales/coupons',
@@ -241,6 +254,7 @@ const sidebars = {
       label: 'Shipping Methods',
       link: {
         type: 'generated-index',
+        slug: '/shipping-methods', // Custom slug removes /category prefix
       },
       items: [
         {
@@ -254,6 +268,7 @@ const sidebars = {
       label: 'Payment Methods',
       link: {
         type: 'generated-index',
+        slug: '/payment-methods', // Custom slug removes /category prefix
       },
       items: [
         {
@@ -267,6 +282,7 @@ const sidebars = {
       label: 'Apps',
       link: {
         type: 'generated-index',
+        slug: '/apps', // Custom slug removes /category prefix
       },
       items: [
         {
@@ -280,6 +296,7 @@ const sidebars = {
       label: 'Modules',
       link: {
         type: 'generated-index',
+        slug: '/modules', // Custom slug removes /category prefix
       },
       items: [
         {
@@ -293,6 +310,7 @@ const sidebars = {
       label: 'Plugins',
       link: {
         type: 'generated-index',
+        slug: '/plugins', // Custom slug removes /category prefix
       },
       items: [
         {
@@ -306,6 +324,7 @@ const sidebars = {
       label: 'Frequently Asked Questions',
       link: {
         type: 'generated-index',
+        slug: '/frequently-asked-questions', // Custom slug removes /category prefix
       },
       items: [
         {
@@ -319,6 +338,7 @@ const sidebars = {
       label: 'Troubleshooting Guide',
       link: {
         type: 'generated-index',
+        slug: '/troubleshooting-guide', // Custom slug removes /category prefix
       },
       items: [
         {
@@ -332,6 +352,7 @@ const sidebars = {
       label: 'Common Overrides',
       link: {
         type: 'generated-index',
+        slug: '/common-overrides', // Custom slug removes /category prefix
       },
       items: [
         {
@@ -345,6 +366,7 @@ const sidebars = {
       label: 'General',
       link: {
         type: 'generated-index',
+        slug: '/general', // Custom slug removes /category prefix
       },
       items: [
         {
@@ -358,6 +380,7 @@ const sidebars = {
       label: 'Developer Guide',
       link: {
         type: 'generated-index',
+        slug: '/developer-guide', // Custom slug removes /category prefix
       },
       items: [
         'developer-guide/introduction',
