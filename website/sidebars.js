@@ -140,7 +140,7 @@ const sidebars = {
         'subscriptions-and-memberships/basic-settings',
         'subscriptions-and-memberships/creating-subscription-based-products',
         'subscriptions-and-memberships/simple-subscription-product',
-        'subscriptions-and-memberships/paypal-refrence-transactions-for-subscriptions',
+        'subscriptions-and-memberships/paypal-reference-transactions-for-subscriptions',
         'subscriptions-and-memberships/usecases',
         'subscriptions-and-memberships/customizing-the-subscription-mail-templates',
         'subscriptions-and-memberships/frequently-asked-questions',
