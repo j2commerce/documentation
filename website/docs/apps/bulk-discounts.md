@@ -38,7 +38,7 @@ You can also restrict the application of the discount depending on the customer 
 
 ![Enabling bulk discounts](/img/bulk-enable1.webp)
 
-**Step 6:** Open the app.  Go to Components > J2Commerce > Apps > Bulk Discount > Open App
+**Step 7:** Open the app.  Go to Components > J2Commerce > Apps > Bulk Discount > Open App
 
 ![](/img/bulk-enable_b1.webp)
 
