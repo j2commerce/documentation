@@ -2,9 +2,9 @@
 description: J2Commerce (formerly known as J2Store)
 ---
 
-# USPS Shipping Advanced
+# USPS Advanced Shipping
 
-The USPS Advanced shipping plugin comes with the feature of Standard Rate API setting and Flat rate setting.
+The USPS Advanced Shipping plugin comes with the feature of Standard Rate API setting and Flat rate setting.
 
 **Requirements**
 
