@@ -108,7 +108,7 @@ Refer the below image
 
 ![common](/img/setup4-1.webp)
 
-**Enable standard API service:** Set this to YES will enable the standard API service of USPS (i.e) once standard API enabled, it will pass to the USPS server and get the standard rates from USPS server.
+**Enable standard API service:** Set this to YES will enable the standard API service of USPS (i.e) once standard API is enabled, it will pass to the USPS server and get the standard rates from USPS server.
 
 **Shipping rate based on?** There are 2 options available
 
@@ -118,21 +118,21 @@ Refer the below image
 
 **Packing type** USPS offers 3 types of packing.
 
-1. **Individual Packing:** Each products consider as a separate unit and packing it into the individual boxes. Each product will be packed separately.
+1. **Individual Packing:** Each products consider as a separate unit and packing it into individual boxes. Each product will be packed separately.
 
 ![std](/img/setup5.webp)
 
-Output will be displayed as like image below
+Output will be displayed as like the image below
 
 ![output](https://raw.githubusercontent.com/j2store/doc-images/master/shipping-methods/usps-advanced/out.png)
 
 1. **Box packing :**
 
-The box packing included with this shipping method lets you pack all the items into single box for which you have to define height, width, length, weight and max-weight. Packing is mainly volume based but also considers item size.
+The box packing included with this shipping method lets you pack all the items into a single box for which you have to define height, width, length, weight and max-weight. Packing is mainly volume based but also considers item size.
 
 ![box](/img/box.png)
 
-If you choose box packing, then you will have to create/set box size.The box will have the following fields.
+If you choose box packing, then you will have to create/set the box size. The box will have the following fields.
 
 - Name: This allows you to name your custom packages.
 - L (in), W (in), H (in): The first set of dimensions are the outer dimensions of the package. These are the dimensions passed to the API. If you are working with a flat rate box via the API (i.e., Regional Boxes), use the API’s ‘inner dimensions’ for your box’s outer dimensions. Your box must ‘fit’ inside.
@@ -155,7 +155,7 @@ In this, each product has a different weight. Products having less than 70 lbs w
 
 ![weight](https://raw.githubusercontent.com/j2store/doc-images/master/shipping-methods/usps-advanced/weight.png)
 
-After configuring the USPS, configure the following thing in J2Commerce (formally J2store) also.
+After configuring the USPS, configure the following things in J2Commerce (formally J2store) also.
 
 !\[dim1]\([https://raw.githubusercontent.com/j2store/doc-images/master/shipping-methods/usps-advanced/dimension](https://raw.githubusercontent.com/j2store/doc-images/master/shipping-methods/usps-advanced/dimension) (1).png)
 
