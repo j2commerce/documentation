@@ -12,7 +12,7 @@ This plugin integrates J2Commerce with FedEx Shipping rate API.
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
-**Download the App:** `<a href="#download-the-app" id="download-the-app" />`
+#### **Download the App:**
 
 **Step 1:**&#x20;
 
@@ -28,7 +28,7 @@ c) Click on the Fedex Basic or Advanced App
 
 ![](<../../assets/fedex-download2 (1).webp>)
 
-**Installation:** `<a href="#installation" id="installation" />`
+#### **Installation:**&#x20;
 
 You can install this shipping plugin using Joomla! installer.
 
@@ -55,7 +55,7 @@ You can install this shipping plugin using Joomla! installer.
 
 ![config2](../../assets/fedex-config3.webp)
 
-**Parameters:** `<a href="#parameters" id="parapmeters" />`
+#### **Parameters:**&#x20;
 
 Consider the images for setting up the parameters.
 
