@@ -42,8 +42,6 @@ Step 5: Click View tab > click the Copy button to copy your Key and Secret code 
 
 ![](/img/download2.webp)
 
-
-
 **Installation:** You can install this USPS shipping plugin, using Joomla installer.The following steps help you for successful installation.
 
 **Step 1:** In the Joomla admin, go to System > Install > Extensions
@@ -63,6 +61,8 @@ Step 3: In the Joomla admin, go to System > Manage > Extensions
 ![](/img/installer-3.webp)
 
 **Step 7:** Select J2Commerce >setup > shipping methods
+
+Step 8: Locate the USPS Advanced Shipping App and click View to begin customizing it.
 
 ![install](/img/setup1.webp)
 
