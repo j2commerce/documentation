@@ -8,7 +8,7 @@ Product Layout is a powerful feature that enables the user to customize the disp
 
 Note: Product layout works only with Joomla articles. If you use SEBLOD / FLEXIcontent / or any other catalog systems, then you may need to configure the product layouts using their menu items.
 
-## Create a Product Layout <a href="#create-a-product-layout" id="create-a-product-layout"></a>
+## Create a Product Layout <a href="#create-a-product-layout" id="create-a-product-layout" />
 
 To create a product layout, go to Joomla! control panel and click on the menu item **Menus > Main Menu** as shown in the image below.
 
@@ -24,7 +24,7 @@ To create a new item, click on the **New** button, and you will get this page.
 
 First, you need to enter the title of the item you create. For example, it is entered with **Shop**. The alias will be automatically generated based on the title. Then, you have several tabs on this page. Let us see one by one. First is the **Details** tab.
 
-## Details Tab <a href="#details-tab" id="details-tab"></a>
+## Details Tab <a href="#details-tab" id="details-tab" />
 
 Here, you choose the **Menu Item Type** by clicking on the ‘Select’ button. You will get a pop-up window like this:
 
@@ -38,7 +38,7 @@ Your menu item is selected, and the link is also created automatically. Click on
 
 Now, go to the next tab, **Common Options**.
 
-## Common Options Tab <a href="#common-options-tab" id="common-options-tab"></a>
+## Common Options Tab <a href="#common-options-tab" id="common-options-tab" />
 
 ![.Layout-common-options-tab](<../../assets/layout-common-options (1).webp>)
 
@@ -48,7 +48,7 @@ Note: In the Sub-Template option, you have to choose **bootstrap5** if your Boot
 
 If you do not want to show the product option price on the frontend, you can set the option to **Hide** as shown in the image below:&#x20;
 
-## Category View Options Tab <a href="#item-view-options-in-category-listings" id="item-view-options-in-category-listings"></a>
+## Category View Options Tab <a href="#item-view-options-in-category-listings" id="item-view-options-in-category-listings" />
 
 Check the image below:
 
@@ -74,17 +74,17 @@ The next image shows the filters.
 
 Filters help narrow the search for a particular product. There are many filters available for the search.
 
-* Sort Filter
-* Search Box
-* Category Filter
-* Price Filter
-* Product Filter
-* Manufacturer / Brand Filter
-* Vendor Filter
+- Sort Filter
+- Search Box
+- Category Filter
+- Price Filter
+- Product Filter
+- Manufacturer / Brand Filter
+- Vendor Filter
 
 One or more filters can be applied as per the needs of the customer.
 
-## Product View Options Tab <a href="#item-view-options-tab" id="item-view-options-tab"></a>
+## Product View Options Tab <a href="#item-view-options-tab" id="item-view-options-tab" />
 
 In this tab, you will set the configuration for what to display with the product, like price, description, image etc.
 
@@ -94,27 +94,26 @@ See the image below:
 
 This image shows the options you have to set the configuration for a product on what has to be displayed along with the product. The available options are:
 
-* Title
-* Short Description
-* Long Description
-* Regular Price
-* Special Price
-* Discount Percentage
-* SKU
-* Stock
-* Main Image
-* Additional Images
-* Main Image Width
-* Additional Image Width
-* Enable Zoom Effect
-* Brand
-* Upsells
-* Cross Sells
-* No of columns for related products
-* Show Specification
-* Show description and specifications
-* Show link to product list
-*
+- Title
+- Short Description
+- Long Description
+- Regular Price
+- Special Price
+- Discount Percentage
+- SKU
+- Stock
+- Main Image
+- Additional Images
+- Main Image Width
+- Additional Image Width
+- Enable Zoom Effect
+- Brand
+- Upsells
+- Cross Sells
+- No of columns for related products
+- Show Specification
+- Show description and specifications
+- Show link to product list
 
 ![Layout-item-view-image-description-](../../assets/layout-item-view-tab1.webp)
 
@@ -148,7 +147,7 @@ When you click on the product, it will be displayed with a large image and addit
 
 Like this, you can set different product layouts according to your wishes and needs.
 
-## Special Module Positions <a href="#special-module-positions" id="special-module-positions"></a>
+## Special Module Positions <a href="#special-module-positions" id="special-module-positions" />
 
 J2Commerce offers special module positions to place Joomla’s custom HTML module. The following are the custom module positions :
 
@@ -165,7 +164,7 @@ J2Commerce offers special module positions to place Joomla’s custom HTML modul
 11. j2store-checkout-top - Top of checkout page
 12. j2store-checkout-bottom - Bottom of checkout page
 
-## Avoid the Zoom effect and open the main image in pop-up <a href="#avoid-zoom-effect-and-open-the-main-image-in-popup" id="avoid-zoom-effect-and-open-the-main-image-in-popup"></a>
+## Avoid the Zoom effect and open the main image in pop-up <a href="#avoid-zoom-effect-and-open-the-main-image-in-popup" id="avoid-zoom-effect-and-open-the-main-image-in-popup" />
 
 To avoid the zoom effect and to bring the image in a pop-up, first thing you have to disable the zoom effect in the admin backend.\\
 
@@ -209,7 +208,7 @@ Change this with
 &nbsp;<span class="<?php echo $class; ?>" id="j2store-item-main-image-<?php echo $this->product->j2store_product_id; ?>"><br>		 &nbsp; <?php JHTML::_('behavior.modal', 'a.modal'); ?><br>		 &nbsp;	 <a href="<?php echo $this->product->main_image;?>" class="modal"><img itemprop="image"<br>		 &nbsp;	 alt="<?php echo $this->product->product_name ;?>"<br>		 &nbsp;	 class="j2store-product-main-image j2store-img-responsive"<br>		 &nbsp;	 src="<?php echo $image_path.$main_image;?>"<br>		 &nbsp;	 width="<?php echo intval($main_image_width); ?>"<br>		 &nbsp;	 /></a><br>		 &nbsp;	 </span>
 ```
 
-## Common Problems <a href="#common-problems" id="common-problems"></a>
+## Common Problems <a href="#common-problems" id="common-problems" />
 
 **Grid layout not working/columns. Why?**
 
@@ -233,8 +232,8 @@ edit the file and remove the highlighted line fully.
 
 **How to add a Category description in the list view**
 
-* Create a custom module and assign it to the menu that links to the J2Commerce product layout.
-* Set the module position to j2Commerce-product-list-top.
-* Save.
+- Create a custom module and assign it to the menu that links to the J2Commerce product layout.
+- Set the module position to j2Commerce-product-list-top.
+- Save.
 
 Now the custom module will display the description only in list view.

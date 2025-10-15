@@ -26,14 +26,13 @@ Using the PayPal Sandbox is not even half as intuitive as you might think. Since
 
 **A.2. Create a buyer account**
 
-1.
-2. Click on Create a pre-configured account. Warning: MAJOR SUPER DUPER IMPORTANT PITFALL WARNING!!! Choose a country with the same currency as your site. For example United States for transactions in USD.
-3. Set the account type to Buyer (not “Buyer In-Store”)
-4. Optional: set the login email to “buyer”. It will make it easier for you to remember what you’re doing
-5. Note down your password. This will not be visible anywhere else.
-6. Set Add Bank Account to Yes and set the Account Balance to something like 1000.00 USD
-7. Click on Create accountImportantMake sure that Payment Review is set to Disabled (that’s the default)
-8. PITFALL: PayPal will modify your email address. Please verify it at the Test Accounts section of your SandboxAccount. Note down your email and password, you will need them!
+1. Click on Create a pre-configured account. Warning: MAJOR SUPER DUPER IMPORTANT PITFALL WARNING!!! Choose a country with the same currency as your site. For example United States for transactions in USD.
+2. Set the account type to Buyer (not “Buyer In-Store”)
+3. Optional: set the login email to “buyer”. It will make it easier for you to remember what you’re doing
+4. Note down your password. This will not be visible anywhere else.
+5. Set Add Bank Account to Yes and set the Account Balance to something like 1000.00 USD
+6. Click on Create accountImportantMake sure that Payment Review is set to Disabled (that’s the default)
+7. PITFALL: PayPal will modify your email address. Please verify it at the Test Accounts section of your SandboxAccount. Note down your email and password, you will need them!
 
 **B. Set up PayPal plugin for use with PayPal Sandbox**
 

@@ -8,41 +8,41 @@ This plugin integrates the UPS Shipping Rate API with J2Commerce.
 
 **Requirements**
 
-* with PHP 8.1.0 +
-* Joomla! 4.x/ Joomla! 5.x +
-* J2Commerce / J2Store 4.x +**‌**
+- with PHP 8.1.0 +
+- Joomla! 4.x/ Joomla! 5.x +
+- J2Commerce / J2Store 4.x +**‌**
 
-**Configuration** Prior to configuring the plugin, you should have an active account with UPS and have received API keys. Contact UPS to register and get API keys.
+**Configuration:** Prior to configuring the plugin, you should have an active account with UPS and have received API keys. Contact UPS to register and get API keys.
 
 **‌**Installation: You can install this USP shipping plugin using joomla installer. The following steps help you with a successful installation.
 
 ‌
 
-**Step 1** In the Joomla admin, go to System > Install > Extensions
+**Step 1:** In the Joomla admin, go to System > Install > Extensions
 
 ![Install extensions](<../../assets/app install1 (1) (1).webp>)
 
-**Step 2** Click on the Browse button and select the UPS Shipping zip file you saved when downloading it. You will receive a message of success once installed.
+**Step 2**: Click on the Browse button and select the UPS Shipping zip file you saved during the download process. You will receive a message of success once installed.
 
 ![app install](../../assets/ups-download.webp)
 
-**Step 3** Select J2Commerce ->setup -> shipping methods
+**Step 3:** Select J2Commerce ->setup -> shipping methods
 
 ![shipping method](<../../assets/ups-setup-shipping (2).webp>)
 
-**Step 4**
+**Step 4:**
 
-* Now, the UPS shipping for J2Commerce page will appear on the screen.
-* Enable the plugin.
-* Configure the shipping plugin by entering the plugin parameters.
+- Now, the UPS shipping for J2Commerce page will appear on the screen.
+- Enable the plugin.
+- Configure the shipping plugin by entering the plugin parameters.
 
-![Parameters](<../../assets/ups-perameters2.webp>)
+![Parameters](../../assets/ups-perameters2.webp)
 
-## Plugin Settings:
+## Plugin Settings: \#
 
-**Client Key:** Client Key provided by the UPS Developer Portal (https://developer.ups.com/).
+**Client Key:** Client Key provided by the UPS Developer Portal ([https://developer.ups.com/](https://developer.ups.com/)).
 
-**Client Secret:** Client Secret provided by the UPS Developer Portal  (https://developer.ups.com/).
+**Client Secret:** Client Secret provided by the UPS Developer Portal  ([https://developer.ups.com/](https://developer.ups.com/)).
 
 ‌**Shipper Number:** Enter the UPS account Shipper number
 
@@ -76,7 +76,7 @@ This Custom Box is to be chosen only when “Box packing” is selected.
 
 **Show Delivery Date:** Set this to yes to show the delivery date next to the shipping service name. The delivery times are provided by the UPS API for shipping services that specify specific delivery days, such as Next Day Air, Second Day Air, etc.
 
-![Show delivery date](<../../assets/ups-perameters4.webp>)
+![Show delivery date](../../assets/ups-perameters4.webp)
 
 ![Delivery date examples](<../../assets/ups-perameters5 (2).webp>)
 
@@ -112,13 +112,13 @@ The following instructions will help walk you through the process of obtaining y
 
 **Step 3:** Click Add Apps in the bottom left corner
 
-![Add apps](<../../assets/ups-add-apps.webp>)
+![Add apps](../../assets/ups-add-apps.webp)
 
 **Step 4:** Then, I need API credentials because I want to integrate UPS technology into my business.
 
 **Step 5:** On the same page as #4: Select the client's UPS account you need to link it to
 
-![](<../../assets/ups-add-account.webp>)
+![](../../assets/ups-add-account.webp)
 
 **Step 6:** Complete the contact info
 
@@ -126,8 +126,8 @@ The following instructions will help walk you through the process of obtaining y
 
 (Right now, we aren't using the Tracking API, but we do plan on incorporating that in later versions, so better to add it now so you don't need to worry about adding it later...)
 
-![API's](<../../assets/ups-api.webp>)
+![API's](../../assets/ups-api.webp)
 
 **Step 8:** After saving, you should be able to see the Client ID and client Secret under the App Info/Credentials page
 
-![](<../../assets/ups-approval.webp>)
+![](../../assets/ups-approval.webp)

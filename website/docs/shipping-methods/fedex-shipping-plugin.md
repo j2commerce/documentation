@@ -12,34 +12,42 @@ This plugin integrates J2Commerce with FedEx Shipping rate API.
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
-**Download:**&#x20;
+**Download the App:** `<a href="#download-the-app" id="download-the-app" />`
 
-**Step 1:** a) Download the app from our store by going to My Downloads (found under your profile drop-down in the top right corner) b) type in Fedex Shipping in the search bar. c) Click on the Fedex Basic or Advanced App
+**Step 1:**&#x20;
 
-![](<../../assets/fedex-download.webp>)
+a) Download the app from our store by going to My Downloads (found under your profile drop-down in the top right corner)&#x20;
+
+b) type in Fedex Shipping in the search bar.&#x20;
+
+c) Click on the Fedex Basic or Advanced App
+
+![](../../assets/fedex-download.webp)
 
 **Step 2:** Click on the app and then click Download Now
 
 ![](<../../assets/fedex-download2 (1).webp>)
 
-**Installation:** You can install this shipping plugin using Joomla! installer.
+**Installation:** `<a href="#installation" id="installation" />`
 
-* In the J2Commerce admin, go to System > Install > Extensions&#x20;
-* Click on the Browse button and select FedEx Shipping Zip file you just saved and install it
+You can install this shipping plugin using Joomla! installer.
+
+- In the J2Commerce admin, go to System > Install > Extensions&#x20;
+- Click on the Browse button and select FedEx Shipping Zip file you just saved and install it
 
 ![](<../../assets/app install1.webp>)
 
-* Go back to System > Manage > Extensions
-* Type Fedex in the search bar and click the X to enable the plugin
+- Go back to System > Manage > Extensions
+- Type Fedex in the search bar and click the X to enable the plugin
 
-![](<../../assets/fedex-enable.webp>)
+![](../../assets/fedex-enable.webp)
 
-* Go to Componants > J2Commerce > Setup > Shipping Methods
+- Go to Componants > J2Commerce > Setup > Shipping Methods
 
-![Shipping methods](<../../assets/fedex-setup.webp>)
+![Shipping methods](../../assets/fedex-setup.webp)
 
-* Click View to open the app
-* Configure the shipping plugin by entering the plugin parameters
+- Click View to open the app
+- Configure the shipping plugin by entering the plugin parameters
 
 ![shipping](../../assets/fedex-config1.webp)
 
@@ -47,7 +55,9 @@ This plugin integrates J2Commerce with FedEx Shipping rate API.
 
 ![config2](../../assets/fedex-config3.webp)
 
-**Parameters:** Consider the images for setting up the parameters.
+**Parameters:** `<a href="#parameters" id="parapmeters" />`
+
+Consider the images for setting up the parameters.
 
 Here is the instructions for identifying Fedex credentials (Authentication key and meter number). \<link-text url =¨[https://support.shippingeasy.com/hc/en-us/articles/203087899-How-do-I-find-my-FedEx-Meter-Number-”target](https://support.shippingeasy.com/hc/en-us/articles/203087899-How-do-I-find-my-FedEx-Meter-Number-%22target) = ¨\_blank”rel = ¨noopener¨> click here
 
@@ -87,6 +97,6 @@ Here is the instructions for identifying Fedex credentials (Authentication key a
 
 **Debug** If you set this to Yes, then an error log file will be maintained in the cache folder. It suitable for test account. Always set Debug option to **No** in live accounts
 
-**Support** Still have questions? You can reach us in support@j2commerce.com
+**Support** Still have questions? You can reach us in [support@j2commerce.com](mailto\:support@j2commerce.com)
 
 Thank you for using our extension.
