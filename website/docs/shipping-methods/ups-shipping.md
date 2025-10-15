@@ -12,11 +12,11 @@ This plugin integrates the UPS Shipping Rate API with J2Commerce.
 - Joomla! 4.x/ Joomla! 5.x +
 - J2Commerce / J2Store 4.x +**‌**
 
-#### **Configuration:** `<a href="#configuration" id="configuration" />`
+#### **Configuration:**
 
 Prior to configuring the plugin, you should have an active account with UPS and have received API keys. Contact UPS to register and get API keys.
 
-#### **‌**Installation: `<a href="#installation" id="installation" />`
+#### **‌**Installation:
 
 You can install this USP shipping plugin using joomla installer. The following steps help you with a successful installation.
 
@@ -30,7 +30,7 @@ You can install this USP shipping plugin using joomla installer. The following s
 
 ![app install](../../assets/ups-download.webp)
 
-**Step 3:** Select J2Commerce ->setup -> shipping methods
+**Step 3:** Select J2Commerce >setup > shipping methods
 
 ![shipping method](<../../assets/ups-setup-shipping (2).webp>)
 
@@ -42,7 +42,7 @@ You can install this USP shipping plugin using joomla installer. The following s
 
 ![Parameters](../../assets/ups-perameters2.webp)
 
-#### Plugin Settings: `<a href="#plugin-settings" id="plugin-settings" />`
+#### Plugin Settings:
 
 **Client Key:** Client Key provided by the UPS Developer Portal ([https://developer.ups.com/](https://developer.ups.com/)).
 
@@ -106,7 +106,7 @@ This Custom Box is to be chosen only when “Box packing” is selected.
 
 **Note:** In the production environment, it must be set to NO.
 
-## How to obtain UPS OAuth Credentials: `<a href="#how-to-obtain-ups-oauth-credentials" id="how-to-obtain-ups-oauth-credentials" />`
+## How to obtain UPS OAuth Credentials:
 
 The following instructions will help walk you through the process of obtaining your new UPS OAuth Client ID and Client Secret.&#x20;
 
