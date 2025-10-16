@@ -8,25 +8,59 @@ This plugin integrates Purolator shipping API with J2Store Joomla eCommerce solu
 
 **Requirements**
 
-* with PHP 8.1.0 +
-* Joomla! 4.x/ Joomla! 5.x +
-* J2Commerce / J2Store 4.x +
+- with PHP 8.1.0 +
+- Joomla! 4.x/ Joomla! 5.x +
+- J2Commerce / J2Store 4.x +
 
 **Installation**
 
-* Download the Purolator shipping plugin from our site and install it using Joomla installer.
-* In Joomla backend, go to J2Store > Setup > Shipping methods
-* Enable and open the Purolator shipping plugin to configure the basic settings.
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-![purlt](https://raw.githubusercontent.com/j2store/doc-images/master/shipping-methods/purolator/purolator_04.png)
+![](/img/purolator-purchase-1.webp)
 
-**Basic Settings**
+**Step 2:** Locate the Purolator Shipping App > click View Details > Add to cart > Checkout.&#x20;
+
+**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+
+![](/img/purolator-download.webp)
+
+If there is more than one version available, make sure you click View Files for the most current version.&#x20;
+
+![](/img/purolator-download1.webp)
+
+#### **Installation:**&#x20;
+
+You can install this USPS shipping plugin, using Joomla installer.The following steps help you for successful installation.
+
+**Step 1:** In the Joomla admin, go to System > Install > Extensions
+
+![](/img/purolator-ext-install.webp)
+
+**Step 2:** Click on the Browse button and select Purolator Shipping zip file
+
+![](/img/purolator-man-install1.webp)
+
+Step 3: In the Joomla admin, go to System > Manage > Extensions
+
+![](/img/purolator-man-install.webp)
+
+**Step 6:** Search for the app and enable it
+
+![](/img/purolator-enable.webp)
+
+**Step 7:** Select J2Commerce >setup > shipping methods
+
+Step 8: Locate the Purolator Shipping App and click View to begin customizing it
+
+![](/img/purolator-setup.webp)
+
+#### **Basic Settings:**
 
 **API key:** Enter the valid API key provided by Purolator shipping.
 
 **API password:** Enter your Purolator shipping account’s password.
 
-**API account:** Enter the account number associated with your purolator account.
+**API account:** Enter the account number associated with your Purolator account.
 
 **Origin zip code:** Enter the postal code from where the shipping is actually made.
 
