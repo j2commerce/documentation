@@ -52,14 +52,15 @@ Step 8: Locate the Bring Shipping App and click View to begin customizing it.
 
 #### **Parameters:**
 
-1. PID Key - You can get the PID (Identification key ) from herehttp\://fraktguide.bring.no/fraktguide/welcome.do”target = ¨\_blank”rel = ¨noopener¨> click here and enter the Key here. Without this key, the param will not work.
-2. From Postal Code - Enter the From (Origin) postal code. That the postal code of the place from which the goods will be shipped.
-3. Handling Cost - If you want add handling cost for your shipping, enter your handling cost.
-4. Display Delivery Time - This option used to display Delivery Date/time in Checkout page.
-5. Services - Choose product Services for display in Checkout page.
-6. Tax Class - If You want to add tax rate for your shipping, select tax profile.
-7. Geozone - By selecting a geozone here, you can restrict this Shipping method from showing to customers from only that geo-region. Choose All geozones to show this method to all customers.
-8. Debug: - Enable/ Disable Log file for Debug.
+1. License Key: Without this key, the param will not work
+2. PID Key - You can get the PID (Identification key ) from here http\://fraktguide.bring.no/fraktguide/welcome.do”target = ¨\_blank”rel = ¨noopener¨> click here and enter the Key here. Without this key, the param will not work.
+3. From Postal Code - Enter the From (Origin) postal code. The postal code is the place from which the goods will be shipped.
+4. Handling Cost - If you want to add handling cost for your shipping, enter your handling cost.
+5. Display Delivery Time - This option used to display Delivery Date/time in Checkout page.
+6. Services - Choose product Services for display in the Checkout page.
+7. Tax Class - If you want to add a tax rate for your shipping, select a tax profile.
+8. Geozone - By selecting a geozone here, you can restrict this Shipping method from showing to customers from only that geo-region. Choose All geozones to show this method to all customers.
+9. Debug: - Enable/ Disable Log file for Debug.
 
 ![](/img/bring-parameters.webp)
 
