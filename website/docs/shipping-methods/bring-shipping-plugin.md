@@ -52,8 +52,8 @@ Step 8: Locate the Bring Shipping App and click View to begin customizing it.
 
 #### **Parameters:**
 
-1. License Key: Without this key, the param will not work
-2. PID Key - You can get the PID (Identification key ) from here http\://fraktguide.bring.no/fraktguide/welcome.do”target = ¨\_blank”rel = ¨noopener¨> click here and enter the Key here. Without this key, the param will not work.
+1. License Key: Without this key, the parameters will not work
+2. PID Key - You can get the PID (Identification key ) from here http\://fraktguide.bring.no/fraktguide/welcome.do”target = ¨\_blank”rel = ¨noopener¨> click here and enter the Key here. Without this key, the parameters will not work.
 3. From Postal Code - Enter the From (Origin) postal code. The postal code is the place from which the goods will be shipped.
 4. Handling Cost - If you want to add handling cost for your shipping, enter your handling cost.
 5. Display Delivery Time - This option used to display Delivery Date/time in Checkout page.
