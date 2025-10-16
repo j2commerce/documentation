@@ -56,17 +56,15 @@ Step 8: Locate the Purolator Shipping App and click View to begin customizing it
 
 #### **Basic Settings:**
 
-**API key:** Enter the valid API key provided by Purolator shipping.
+**API key:** Enter the valid API key provided by Purolator shipping
 
-**API password:** Enter your Purolator shipping account’s password.
+**API password:** Enter your Purolator shipping account’s password
 
-**API account:** Enter the account number associated with your Purolator account.
+**API account:** Enter the account number associated with your Purolator account
+
+![purolator](/img/purolator-perameters.webp)
 
 **Origin zip code:** Enter the postal code from where the shipping is actually made.
-
-![purolator](https://raw.githubusercontent.com/j2store/doc-images/master/shipping-methods/purolator/purolator_01.jpg)
-
-**Sandbox:** Purolator shipping offers sandbox feature to use the shipping in test mode. Choose YES will enable the sandbox feature.
 
 **Box List:** Purolator Shipping comes with box packing feature. The box packing included with this shipping method lets you pack all the items into single box for which you have to define height, width, length, weight and max-weight.
 
@@ -88,6 +86,6 @@ Step 8: Locate the Purolator Shipping App and click View to begin customizing it
 
 **Debug:** If you set this to yes, then debug messages will be logged and saved in the cache folder in your Joomla root directory.
 
-![purolator2](https://raw.githubusercontent.com/j2store/doc-images/master/shipping-methods/purolator/purolator_02.jpg)
+![purolator2](/img/purolator-perameters1.webp)
 
 ![purolator3](https://raw.githubusercontent.com/j2store/doc-images/master/shipping-methods/purolator/purolator_03.jpg)
