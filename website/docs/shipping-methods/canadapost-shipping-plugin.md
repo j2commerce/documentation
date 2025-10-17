@@ -48,7 +48,7 @@ Step 8: Locate the Canada Post Shipping App and click View to begin customizing 
 
 Before you begin setting up the parameters in the app, you will need your API Keys. Follow the steps below to access your API Keys, and Customer Number
 
-#### How to Register with Canada Post:&#x20;
+#### How to Register with Canada Post and Obtain Your API Key:&#x20;
 
 Sign in or Sign up by going to their main website [here](https://www.canadapost-postescanada.ca/cpc/en/): If you are already registered with Canada Post, then Sign in to the Canada Post website using your registered Username and Password.
 
