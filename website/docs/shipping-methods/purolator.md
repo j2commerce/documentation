@@ -16,7 +16,7 @@ This plugin integrates Purolator shipping API with the J2Commerce Joomla eCommer
 
 You will need this once you have installed the Purolator App on your website
 
-Go to and [https://www.purolator.com/en/services/technology-solutions/e-commerce-online-stores]() register or login.&#x20;
+Go to and [www.purolator.com](https://www.purolator.com/en/services/technology-solutions/e-commerce-online-stores) register or login.&#x20;
 
 ![](/img/purolator-login.webp)
 
