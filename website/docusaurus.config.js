@@ -86,6 +86,8 @@ const config = {
         appId: 'WDTT4PYPY5',
         apiKey: '19df50541882d5ffa3380ff7eb7227b7',
         indexName: 'j2commerce_documentation_pages',
+        contextualSearch: true,
+        searchParameters: {},
       },
       footer: {
         style: 'dark',
