@@ -47,7 +47,7 @@ You can install this USP shipping plugin using Joomla installer. The following s
 **Step 4:**
 
 - Now, the UPS shipping for J2Commerce page will appear on the screen.
-- Enable the plugin.
+- Enable the plugin by clicking on the 'X'.
 - Configure the shipping plugin by entering the plugin parameters.
 
 ![Parameters](../../assets/ups-perameters2.webp)
