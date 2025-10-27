@@ -20,17 +20,17 @@ Prior to configuring the plugin, you should have an active account with UPS and 
 
 You can install this USP shipping plugin using Joomla installer. The following steps help you with a successful installation.
 
-‌**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
+‌**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps > Shipping
 
 ![](/img/ups-purchase.webp)
 
-**Step 2:** Locate the Add to User Group App > click View Details > Add to cart > Checkout.&#x20;
+**Step 2:** Locate the UPS App > click View Details > Add to cart > Checkout.&#x20;
 
 **Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
 ![](/img/ups-download.webp)
 
-**Installation:** You can install this USPS shipping plugin, using Joomla installer. The following steps help you for successful installation.
+**Installation:** You can install this UPS shipping plugin using Joomla installer. The following steps help you for successful installation.
 
 **Step 1:** In the Joomla admin, go to System > Install > Extensions
 
@@ -40,7 +40,7 @@ You can install this USP shipping plugin using Joomla installer. The following s
 
 ![app install](../../assets/ups-download.webp)
 
-**Step 3:** Select J2Commerce >setup > shipping methods
+**Step 3:** Select J2Commerce > setup > shipping methods
 
 ![shipping method](<../../assets/ups-setup-shipping (2).webp>)
 
