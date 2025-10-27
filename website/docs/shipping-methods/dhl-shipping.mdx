@@ -12,7 +12,7 @@ This plugin integrates the DHL Shipping Rate API with J2Commerce.
 
 #### **Configuration:**{#configuration}
 
-Prior to configuring the plugin, you should have an active account with DHL and have received API keys. Contact DHL to register and get API keys.
+Prior to configuring the plugin, you should have an active account with DHL and have received API keys. At the end of this document, you can follow the steps to register with DHL and get API Credentials.
 
 #### **‌Installation:**{#installation}
 
@@ -20,126 +20,130 @@ Prior to configuring the plugin, you should have an active account with DHL and 
 
 ![](/img/dhl-purchase.webp)
 
-**Step 2:** Locate the Add to User Group App > click View Details > Add to cart > Checkout.&#x20;
+**Step 2:** Locate the DHL Shipping App > click View Details > Add to cart > Checkout.&#x20;
 
 **Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![](/img/download2.webp)
+![](/img/dhl-download2.webp)
 
-**Installation:** You can install this USPS shipping plugin, using Joomla installer.The following steps help you for successful installation.
+**Installation:** You can install this DHL shipping plugin, using Joomla installer. The following steps help you for successful installation.
 
 **Step 1:** In the Joomla admin, go to System > Install > Extensions
 
+![](/img/dhl-installer-1.webp)
 
+**Step 2**: Click on the Browse button and select the DHL Shipping zip file you saved during the download process. You will receive a message of success once installed.
 
-**Step 2**: Click on the Browse button and select the UPS Shipping zip file you saved during the download process. You will receive a message of success once installed.
+![](/img/dhl-download1.webp)
 
+**Step 3:** Select J2Commerce > setup > shipping methods > DHL
 
+**Step 4:** Enable the plugin by clicking on the 'X'
 
-**Step 3:** Select J2Commerce >setup > shipping methods
+![](/img/dhl-setup.webp)
 
+**Step 5: Once it's enabled, click 'View'**
 
+![](/img/dhl-setup-1.webp)
 
-**Step 4:**
+**Step 6:** Configure the shipping plugin by entering the plugin parameters.
 
-- Now, the UPS shipping for J2Commerce page will appear on the screen.
-
-- Enable the plugin.
-
-- Configure the shipping plugin by entering the plugin parameters.
-
-
+![](/img/dhl-parameters.webp)
 
 #### **Plugin Settings:**{#plugin-settings}
 
-**Client Key:** Client Key provided by the UPS Developer Portal ([https://developer.ups.com/](https://developer.ups.com/)).
+**DHL API Key:** Client Key provided by the DHL Developer Portal ([https://developer.dhl.com/](https://developer.dhl.com/))
 
-**Client Secret:** Client Secret provided by the UPS Developer Portal ([https://developer.ups.com/](https://developer.ups.com/)).
+**DHL API Secret:** Client Secret provided by the DHL Developer Portal ([https://developer.dhl.com/](https://developer.dhl.com/))
 
-‌**Shipper Number:** Enter the UPS account Shipper number
+‌**DHL Account Number:** Enter the DHL account Shipper number
 
+**DHL Service:** Select the DHL services to be offered
 
+**Network Type Code:** Is a parameter used to ensure that the specified shipping product code is valid for the account number
 
-‌**Parcel Packing Method:** You may select the parcel method for packing the products.
+**Test Mode:** Toggle between sandbox (testing) and production (live) environments.
 
-‌**UPS Packaging Box:** You may consider selecting the available UPS box.
+**‌Display Shipping Error:** The information sent to the DHL API was invalid and the system could not generate a valid shipping rate, label, or complete another shipping-related action
 
-Note: If you choose Pack into boxes with weights and dimensions (Recommended) but have not chosen any UPS Packaging, nor defined any custom boxes (as explained below), the plugin displays the error message: “UPS is enabled, and Parcel Packing Method is set to ‘Pack into boxes’, but no UPS Packaging is selected and there are no custom boxes defined. Items will be packed individually.”
+**Show Transit Time:** Enabling this field displays the delivery time for each DHL service
 
-‌**Custom Box:** You may enter the dimensions here the items will be packed into these boxes based on item dimension and volume. Outer dimension will be passed to UPS, whereas the inner dimension will be used for packing. Items not fitting into boxes will be packed individually.
+**Tax Profile:** Here, you can specify the Tax class to charge the Tax on shipping. Leave empty if you do not want to charge tax
 
-This Custom Box is to be chosen only when “Box packing” is selected.
+**Unit of Measurement:**&#x20;
 
-‌**Handling Cost:** Apply an additional fee to the shipping cost calculated.
+- **Metric:** Uses standard units like kilograms (kg) for weight and centimeters (cm) for dimensions (length, width, and height).
 
-‌**Send Product Amount to UPS:** Select Yes to send the product price to UPS.
+- **Imperial:** Uses standard units like pounds (lbs) for weight and inches (in) for dimensions
 
-‌‌**Enable Negotiated Rate:** Set this to Yes for negotiated rate.
+**Geozone:**  If you choose a Geozone, then this shipping plugin will apply only to customers coming from the countries/zones added under the chosen Geozone. Leave empty to show the method to all Geozones.
 
-‌**Delivery Confirmation Option:** You can confirm the delivery using a signature with UPS.
+**Origin Country:** Enter the Country from which you ship
 
-‌**Services:** Select the UPS services to be offered.
+**Origin City:** Enter the city from which you ship
 
-‌**Pickup Type:** Choose the required pickup type here.‌
+**Handling Cost:** Apply an additional fee to the shipping cost calculated
 
-‌**Weight Unit:** Select if you want the weight set as grams, pounds, kilograms, or ounces.
+**Debug Mode:** Enables logging for troubleshooting API issues. If you set this to Yes, the system will log the requests and responses, which will help you debug. The logs will be saved in the Cache folder.&#x20;
 
-‌**Show Weight Total:** Set this to Yes to show the weight total next to the shipping service name.
+### ‌**How to obtain DHL Credentials:**
 
-**Show Delivery Date:** Set this to yes to show the delivery date next to the shipping service name. The delivery times are provided by the UPS API for shipping services that specify specific delivery days, such as Next Day Air, Second Day Air, etc.
+The following instructions will help walk you through the process of obtaining your new DHL Client Key and Client Secret.
 
+**Step 1:** Go to [https://developer.dhl.com/](https://developer.dhl.com/) and log in or create a new account by clicking Register.
 
+![](/img/dhl-signup-1.webp)
 
+Fill in the required information, then submit the registration.
 
+![](/img/dhl-signup2.webp)
 
-‌**Length Unit:** If you have not set the length unit in the product, the value selected here will be used. Inch vs cm
+After creating your account, you will receive a confirmation email. Click the link in the email to set your password and activate your account.
 
-**Tax Class:** Here, you can specify the Tax class to charge the Tax on shipping. Leave empty if you do not want to charge tax.
+**Step 2:** Create a new app and select an API
 
-‌**Geozone:** If you choose a Geozone, then this shipping plugin will apply only to customers coming from the countries/zones added under the chosen Geozone. Leave empty to show the method to all Geozones.
+- Log in to the DHL Developer Portal
 
-**Shipping Origin Address Type:** If your origin shipping address is a home, then change to residential.
+- Go to the My Apps section or click Create App from the menu
 
-‌‌**Shipping Origin Address:** Enter the address from which you ship.
+- Provide a name for your app
 
-‌**Shipping Origin City:** Enter the city from which you ship.
+- Select the specific DHL API you wish to use from the API catalog, such as:
 
-‌**Shipping Origin Zin/Postalcode:** Enter the Postcode from where you ship.
+  DHL Express—MyDHL API: For express parcel shipping services.
 
-‌**Country:** Select the Country from which you ship.
+  DHL Freight APIs: For road freight shipments.
 
-**‌Zone:** Select the Zone/State from which you ship.
+  DHL Global Forwarding APIs: For global ocean and air freight shipments.
 
-**Debug:** If you set this to Yes, the system will log the requests and responses, which will help you debug. The logs will be saved in the Cache folder.
+  Shipment Tracking—Unified: For cross-divisional tracking.
 
-**Note:** In the production environment, it must be set to NO.
+- Read and accept the terms and conditions, then click Create App.&#x20;
 
-## **How to obtain UPS OAuth Credentials:**{#how-to-obtain-ups-oauth-credentials}
+**Step 3:** Get your API key for testing
 
-The following instructions will help walk you through the process of obtaining your new UPS OAuth Client ID and Client Secret.
+- Once your app is created, it is automatically approved for use in the sandbox (test) environment
 
-**Step 1:** Go to [UPS.com](http://UPS.com) and log in.
+- In the My Apps section, click on the name of your newly created app
 
-**Step 2:** Click My Apps in the top right corner
+- Find the Credentials section and click the "Show" link next to the Consumer Key and Consumer Secret to view them
 
-**Step 3:** Click Add Apps in the bottom left corner
+- The Consumer Key acts as your API key for testing. Use these credentials to begin testing your application
 
+**Step 4:** Request production access
 
+- To get a production API key, you will need to formally request production access for your app
 
-**Step 4:** Then, I need API credentials because I want to integrate UPS technology into my business.
+- From your app's details page, click the button to Request Production Access
 
-**Step 5:** On the same page as #4: Select the client's UPS account you need to link it to
+- Fill out the request form with details about your intended use and expected transaction volume. For DHL Express, you will also need to provide your existing 9-digit DHL account number
 
+- Submit the request. DHL will review your application, which may require verification by a DHL representative or account manager
 
+- You will be notified by email once your request is approved. Log back into the portal to retrieve your production API key and secret
 
-**Step 6:** Complete the contact info
+#### Additional considerations
 
-**Step 7:** Then select the Rating, Tracking, and Time In Transit API's (I believe the Authorization(OAuth) is automatically added when you save)
+**Existing DHL account:** You will need an active customer account with the relevant DHL business division (e.g., DHL Express) before obtaining a production API key
 
-(Right now, we aren't using the Tracking API, but we do plan on incorporating that in later versions, so better to add it now so you don't need to worry about adding it later...)
-
-
-
-**Step 8:** After saving, you should be able to see the Client ID and client Secret under the App Info/Credentials page
-
-\
+**Third-party integration:** If you are using a third-party application like an e-commerce platform, the process may involve selecting your platform when requesting credentials.
