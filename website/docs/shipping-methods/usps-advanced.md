@@ -32,7 +32,7 @@ Step 5: Click View tab > click the Copy button to copy your Key and Secret code 
 
 ![](/img/usps4.webp)
 
-**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps > Shipping
 
 ![](/img/usps-app1.webp)
 
@@ -42,7 +42,7 @@ Step 5: Click View tab > click the Copy button to copy your Key and Secret code 
 
 ![](/img/download2.webp)
 
-**Installation:** You can install this USPS shipping plugin, using Joomla installer.The following steps help you for successful installation.
+**Installation:** You can install this USPS shipping plugin, using Joomla installer. The following steps help you for successful installation.
 
 **Step 1:** In the Joomla admin, go to System > Install > Extensions
 
