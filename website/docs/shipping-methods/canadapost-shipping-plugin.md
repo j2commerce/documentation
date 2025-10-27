@@ -1,7 +1,3 @@
----
-description: J2Commerce (formerly known as J2Store)
----
-
 # Canadapost shipping plugin
 
 **Requirements**
@@ -16,35 +12,21 @@ description: J2Commerce (formerly known as J2Store)
 
 **Step 2:** Locate the Canada Post Shipping App > click View Details > Add to cart > Checkout.&#x20;
 
-![](/img/purchase-1.webp)
-
 **Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
-
-![](/img/download.webp)
 
 **Installation:** You can install this Canada Post shipping plugin, using Joomla installer. The following steps help you for successful installation.
 
 **Step 1:** In the Joomla admin, go to System > Install > Extensions
 
-![](/img/canada-post-installer-1.webp)
-
 **Step 2:** Click on the Browse button and select Canada Post shipping zip file where you saved it.
-
-![](/img/canada-post-download.jpg)
 
 Step 3: In the Joomla admin, go to System > Manage > Extensions
 
-![](/img/canada-post-installer-2.webp)
-
 **Step 6:** Search for the app and enable it.
-
-![](/img/canada-post-enable-1.png)
 
 **Step 7:** Select J2Commerce >setup > shipping methods
 
 Step 8: Locate the Canada Post Shipping App and click View to begin customizing it.
-
-![](/img/canada-post-setup.webp)
 
 Before you begin setting up the parameters in the app, you will need your API Keys. Follow the steps below to access your API Keys, and Customer Number
 
@@ -62,8 +44,6 @@ Once you’ve signed in to their website, select Join Now on the main Developer 
 
 Once you are logged in to your account, go to this [link](https://www.canadapost-postescanada.ca/information/app/drc/registered?execution=e2s1) to get your API Keys. You should see the API keys that are displayed on the main Developer Program page. These API keys are unique codes, used to access Canada Post web service and Postmen API. Note down the API keys (one for development and one for production).
 
-![](/img/api.jpg)
-
 #### **Configuration:**&#x20;
 
 **API Username:** Your CanadaPost username
@@ -71,8 +51,6 @@ Once you are logged in to your account, go to this [link](https://www.canadapost
 **API Password:** Your CanadaPost password
 
 **Customer Number:** The customer number provided by Canada Post
-
-![](/img/canada-post-parameters1.webp)
 
 \* Make sure you are using the same parameters you used when setting up your store in the backend.  If you need help remembering how to do that, visit the Set-up > Configuration document.
 
@@ -83,11 +61,7 @@ Once you are logged in to your account, go to this [link](https://www.canadapost
 
 Example below:
 
-![](/img/canada-post-article-setup.webp)
-
 #### Parameters:
-
-![](/img/canada-post-parameters2.webp)
 
 **Canada Post Service:** Choose the services provided by Canada Post to display in checkout.
 

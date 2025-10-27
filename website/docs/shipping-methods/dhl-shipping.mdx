@@ -1,66 +1,56 @@
----
-description: J2Commerce (formerly known as J2Store)
----
+# DHL Shipping
 
-# UPS Shipping
-
-This plugin integrates the UPS Shipping Rate API with J2Commerce.
+This plugin integrates the DHL Shipping Rate API with J2Commerce.
 
 **Requirements**
 
 - with PHP 8.1.0 +
+
 - Joomla! 4.x/ Joomla! 5.x +
+
 - J2Commerce / J2Store 4.x +**‌**
 
-#### **Configuration:**
+#### **Configuration:**{#configuration}
 
-Prior to configuring the plugin, you should have an active account with UPS and have received API keys. Contact UPS to register and get API keys.
+Prior to configuring the plugin, you should have an active account with DHL and have received API keys. Contact DHL to register and get API keys.
 
-#### **‌**Installation:
+#### **‌Installation:**{#installation}
 
 You can install this USP shipping plugin using Joomla installer. The following steps help you with a successful installation.
 
-‌**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
-
-![](/img/ups-purchase.webp)
-
-**Step 2:** Locate the Add to User Group App > click View Details > Add to cart > Checkout.&#x20;
-
-**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
-
-![](/img/ups-download.webp)
-
-**Installation:** You can install this USPS shipping plugin, using Joomla installer. The following steps help you for successful installation.
+‌
 
 **Step 1:** In the Joomla admin, go to System > Install > Extensions
 
-![Install extensions](<../../assets/app install1 (1) (1).webp>)
+
 
 **Step 2**: Click on the Browse button and select the UPS Shipping zip file you saved during the download process. You will receive a message of success once installed.
 
-![app install](../../assets/ups-download.webp)
+
 
 **Step 3:** Select J2Commerce >setup > shipping methods
 
-![shipping method](<../../assets/ups-setup-shipping (2).webp>)
+
 
 **Step 4:**
 
 - Now, the UPS shipping for J2Commerce page will appear on the screen.
+
 - Enable the plugin.
+
 - Configure the shipping plugin by entering the plugin parameters.
 
-![Parameters](../../assets/ups-perameters2.webp)
 
-#### Plugin Settings:
+
+#### **Plugin Settings:**{#plugin-settings}
 
 **Client Key:** Client Key provided by the UPS Developer Portal ([https://developer.ups.com/](https://developer.ups.com/)).
 
-**Client Secret:** Client Secret provided by the UPS Developer Portal  ([https://developer.ups.com/](https://developer.ups.com/)).
+**Client Secret:** Client Secret provided by the UPS Developer Portal ([https://developer.ups.com/](https://developer.ups.com/)).
 
 ‌**Shipper Number:** Enter the UPS account Shipper number
 
-![](<../../assets/ups-perameters1 (1).webp>)
+
 
 ‌**Parcel Packing Method:** You may select the parcel method for packing the products.
 
@@ -90,9 +80,9 @@ This Custom Box is to be chosen only when “Box packing” is selected.
 
 **Show Delivery Date:** Set this to yes to show the delivery date next to the shipping service name. The delivery times are provided by the UPS API for shipping services that specify specific delivery days, such as Next Day Air, Second Day Air, etc.
 
-![Show delivery date](../../assets/ups-perameters4.webp)
 
-![Delivery date examples](<../../assets/ups-perameters5 (2).webp>)
+
+
 
 ‌**Length Unit:** If you have not set the length unit in the product, the value selected here will be used. Inch vs cm
 
@@ -116,23 +106,23 @@ This Custom Box is to be chosen only when “Box packing” is selected.
 
 **Note:** In the production environment, it must be set to NO.
 
-## How to obtain UPS OAuth Credentials:
+## **How to obtain UPS OAuth Credentials:**{#how-to-obtain-ups-oauth-credentials}
 
-The following instructions will help walk you through the process of obtaining your new UPS OAuth Client ID and Client Secret.&#x20;
+The following instructions will help walk you through the process of obtaining your new UPS OAuth Client ID and Client Secret.
 
-**Step 1:** Go to UPS.com and log in.
+**Step 1:** Go to [UPS.com](http://UPS.com) and log in.
 
 **Step 2:** Click My Apps in the top right corner
 
 **Step 3:** Click Add Apps in the bottom left corner
 
-![Add apps](../../assets/ups-add-apps.webp)
+
 
 **Step 4:** Then, I need API credentials because I want to integrate UPS technology into my business.
 
 **Step 5:** On the same page as #4: Select the client's UPS account you need to link it to
 
-![](../../assets/ups-add-account.webp)
+
 
 **Step 6:** Complete the contact info
 
@@ -140,8 +130,8 @@ The following instructions will help walk you through the process of obtaining y
 
 (Right now, we aren't using the Tracking API, but we do plan on incorporating that in later versions, so better to add it now so you don't need to worry about adding it later...)
 
-![API's](../../assets/ups-api.webp)
+
 
 **Step 8:** After saving, you should be able to see the Client ID and client Secret under the App Info/Credentials page
 
-![](../../assets/ups-approval.webp)
+\
