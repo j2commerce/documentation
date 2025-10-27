@@ -36,7 +36,7 @@ Step 5: Click View tab > click the Copy button to copy your Key and Secret code 
 
 ![](/img/usps-app1.webp)
 
-**Step 2:** Locate the Add to User Group App > click View Details > Add to cart > Checkout.&#x20;
+**Step 2:** Locate the USPS App > click View Details > Add to cart > Checkout.&#x20;
 
 **Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
