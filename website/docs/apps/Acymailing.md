@@ -6,9 +6,7 @@
 - Joomla! 4.x/ Joomla! 5.x +
 - J2Commerce / J2Store 4.x +
 
-
-
-You should already have Acymailing installed on your site before you purchase the J2Commerce Connector. If you follow the steps below without having Acymailing already installed on your website then you will receive an error message because it has nothing to connect to.&#x20;
+You should already have Acymailing installed on your site before you purchase the J2Commerce Connector. If you follow the steps below without having Acymailing already installed on your website, then you will receive an error message because it has nothing to connect to.&#x20;
 
 #### Installation of Acymailing Connector:
 
@@ -34,18 +32,30 @@ You can install the Acymailing extension using the Joomla installer. The followi
 
 ![](/img/canada-post-download.jpg)
 
-Step 3: In the Joomla admin, go to J2Commerce > Apps
+**Step 3:** In the Joomla admin, go to J2Commerce > Apps
 
-**Step 4:** Search for the app and enable it.
+**Step 4:** Search for the app and enable it by clicking on the 'x'. It will become a checkmark.
 
 ![](/img/acymailing-enable-1.webp)
 
+**Step 5:** Create a new email list by clicking on Acymailing > List > Create
+
 ![](/img/acymailing-list.webp)
+
+**Step 6:** Name your list > Save & Exit
 
 ![](/img/acymailing-name-list.webp)
 
+**Step 7:** Open the plugin to set the parameters for Acymailing. Click on J2Commerce > Apps > open the Acymailing app
+
 ![](/img/acymailing-adding-lists1.webp)
 
+**Step 8:** Select the newsletters you want to make available to choose from when assigning them to the specific products you want them sent from.&#x20;
+
 ![](/img/acymailing-setup2.webp)
+
+The next step shows how to assign a newsletter to a product. Now, when someone purchases this specific product, they will receive newsletters regarding that product. In the example below, we are assigning the Simple Product Newsletters to the Simple Product.
+
+**Step 9:** Open the product in articles > J2Commerce (J2Store Cart) > Apps > Click on all of the newsletters you want to be available for the simple product.  You can also enable the "Auto Subscription", which will show up on the front end during checkout, allowing the customer to opt in/out of the newsletters.
 
 ![](/img/acymailing-adding-lists.webp)
