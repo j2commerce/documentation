@@ -71,17 +71,13 @@ For both items, a brand name may be the same, but the attributes like color, pri
 
 Let's discuss it with some image illustrations:
 
-**Step 1:** Select the Color option from the dropdown list and then click on the Add option. The size will be added as a variant option.
-
-**Step 2:** Then choose the Size option and add it to the variant options list in the same way.&#x20;
-
-![Adding options](/img/flex-v-choosing-variants.webp)
-
-After adding color and size, your screen will look like below:&#x20;
+**Step 1:** Select the Color option from the dropdown list and then click on the Add Option. The Color will be added as a variant option. Continue this step with all of the options that are available for this product. Once you are finished click Save to activate the options.
 
 ![Options list](/img/flex-v-setting-up-varients.webp)
 
-**Step 3:** Now you will get options to add variants to the product. Choose a size from the drop-down “All sizes” and then choose the color and click on the **Add variant** button.&#x20;
+**Step 2:** Now choose the Color and sizing options that go together > Add Variant > continue until all options are chosen > Save.
+
+![Adding options](/img/flex-v-choosing-variants.webp)
 
 Don't forget that with Flex Variants, you must have the same options for each item. Think of it like an equal grid.&#x20;
 
@@ -91,9 +87,9 @@ Now the screen will look like below:
 
 ![Variant list](/img/flex-v-choosing-variants1.webp)
 
-**Step 5: This step is extremely important.** You must choose one of the variants to be the featured one on the frontend.  If you don't do this step, the front end may not work properly.
+**Step 3: This step is extremely important.** You must choose one of the variants to be the featured one on the frontend.  If you don't do this step, the front end may not work properly.
 
-**Step 6:** You should edit the parameters of the variants independently. Open each variant by clicking on the small down arrow given next to the variant name. You will get the screen like below:
+**Step 4:** You should edit the parameters of the variants independently. Open each variant by clicking on the small down arrow given next to the variant name. You will get the screen like below:
 
 ![Editing variants](/img/variant-details-2.webp)
 
