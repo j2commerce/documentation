@@ -8,13 +8,13 @@ Here is the quickstart guide for setting up an online store with Joomla and J2Co
 
 The guide with screenshots walks you step-by-step to set up your Joomla shop within minutes.
 
-## Download, Installation, Configuration of J2Commerce <a href="#download-installation-configuration-of-j2store" id="download-installation-configuration-of-j2store"></a>
+## Download, Installation, Configuration of J2Commerce <a href="#download-installation-configuration-of-j2store" id="download-installation-configuration-of-j2store" />
 
-### Download <a href="#download" id="download"></a>
+### Download <a href="#download" id="download" />
 
 Download your J2Commerce Component Package from our J2Commerce official website. Login into the J2Commerce and go to My downloads tab where you can download the J2Commerce package.
 
-### Installation <a href="#installation" id="installation"></a>
+### Installation <a href="#installation" id="installation" />
 
 Use the Joomla installer to install the J2Commerce package.
 
@@ -24,7 +24,7 @@ Use the Joomla installer to install the J2Commerce package.
 
 ![Quickstart-J2Store-install](<../assets/install (1).webp>)
 
-### Configuration <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration" />
 
 Once installed, you will get J2Commerce in the Joomla component list and also a separate J2Commerce tab in the Joomla backend. Now, Go to J2Commerce > Dashboard.
 
@@ -36,9 +36,9 @@ Now, Go to J2Commerce > Dashboard.
 
 Fill all the fields in the basic settings and click Save & Proceed.
 
-![Quickstart](<../assets/Quickstart-basic-setttings.webp>)
+![Quickstart](../assets/Quickstart-basic-setttings.webp)
 
-![Quickstart](<../assets/store2.webp>)
+![Quickstart](../assets/store2.webp)
 
 &#x20;**Creating a Product:**
 
@@ -58,7 +58,7 @@ After saving, again go to J2Store cart tab. Now you can see the options to add a
 
 ![Quickstart-product-settings](<../assets/simple j2-general2 (3).webp>)
 
-### Display Product <a href="#display-product" id="display-product"></a>
+### Display Product <a href="#display-product" id="display-product" />
 
 It is very easy and flexible to display the product in frontend via menu. Please follow the procedure given below.
 
@@ -72,22 +72,20 @@ Choose the Category that you have chosen when creating a product. The category a
 
 In the menu, you can see these three tabs: common options, Item view options in category listings, and Item view options.
 
-* **Common Options:** Here you can choose the layout (bootstrap 2, bootstrap 3).
-* **Item view options in category listings:** Here you can choose which are things should be displayed in product pages. For example, you hide / show price, images, filters, etc..
-* **Item view options:** Here you can choose which are the things should be displayed in the product view page.
+- **Common Options:** Here you can choose the layout (bootstrap 2, bootstrap 3).
+- **Item view options in category listings:** Here you can choose which are things should be displayed in product pages. For example, you hide / show price, images, filters, etc..
+- **Item view options:** Here you can choose which are the things should be displayed in the product view page.
 
-### Frontend <a href="#frontend" id="frontend"></a>
+### Frontend <a href="#frontend" id="frontend" />
 
 Now Go to frontend of your site and check.&#x20;
 
-![Quickstart Guide](<../assets/Quickstart-guide.png>)
+![Quickstart Guide](../assets/Quickstart-guide.png)
 
-### Video tutorials <a href="#video-tutorials" id="video-tutorials"></a>
+### Video tutorials <a href="#video-tutorials" id="video-tutorials" />
 
 [![J2Store 3.x Quickstart](https://img.youtube.com/vi/51J1UkeRu3Y/hqdefault.jpg)](https://www.youtube.com/watch?v=51J1UkeRu3Y)
 
 [![Quickstart for J2Store core version](https://img.youtube.com/vi/SOEhlo7woJc/hqdefault.jpg)](https://www.youtube.com/watch?v=SOEhlo7woJc)
 
 [![Create Product Layout](https://img.youtube.com/vi/HramUPmnTZ4/hqdefault.jpg)](https://www.youtube.com/watch?v=HramUPmnTZ4)
-
-[content-plugin-settings.md](set-up/content-plugin-settings.md)
