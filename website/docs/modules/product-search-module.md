@@ -4,11 +4,7 @@ description: J2Commerce (formerly known as J2Store)
 
 # Product search module
 
-Having hundreds of products?
-
-Wishing that your users get what they want easily?
-
-You could always help them with this search module.
+Having hundreds of products? Wishing that your users get what they want easily? You could always help them with this search module.
 
 This module facilitates the search of products in J2Commerce. When the name of the product is typed in this search box, the products that have a part or whole of the keywords typed will get displayed.
 
@@ -24,20 +20,42 @@ Whereas, J2Commerce search box is capable of picking products that are displayed
 
 J2Commerce search box will search the product’s title, SKU, and description.
 
-**Installation**
+**Purchase Module**
 
-The product search module can be downloaded from our site and installed using the default Joomla! installer.
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Modules
 
-To configure the settings:
+![](/img/product-search-purchase.webp)
 
-Go to System > Manage > Extensions. Type J2 in the search bar and enable Search - J2Store
+**Step 2:** Locate the Product Search module > click View Details > Add to cart > Checkout.
 
-**Plugin settings**
+**Step 3:** Go to your My Downloads *or* My Account under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-* **Module class suffix:** Enter the class suffix if you wish to style the module.
-* **Select a menu:** Select the menu items whose contents have to be searched when a keyword is specified at the search box.
-* **Categories to search:** Specify the categories where the search has to be done for the keywords typed in the search box.
-* _\*\*Show Search label \*\*_ Set this to Yes if you wish to display the label Search on top of the search box.
+![](/img/product-search-download1.webp)
+
+**Installation:** You can install this Product Search module using the Joomla installer. The following steps help you with a successful installation.
+
+**Step 1:** In the Joomla admin, go to System > Install > Extensions
+
+![](/img/product-category-installer-1.webp)
+
+**Step 2**: Click on the Browse button and select the Product Display zip file you saved during the download process. You will receive a message of success once installed.
+
+![](/img/product-category-download1.webp)
+
+**Step 3:** Select Content > Site Modules > Products Display module
+
+**Step 4:** Enable the plugin by clicking on the 'X'. It will turn into a checkmark.&#x20;
+
+**Step 5:** Once it's enabled, click on the module to open it
+
+
+
+**Module Parameters**
+
+- **Module class suffix:** Enter the class suffix if you wish to style the module.
+- **Select a menu:** Select the menu items whose contents have to be searched when a keyword is specified in the search box.
+- **Categories to search:** Specify the categories where the search has to be done for the keywords typed in the search box.
+- *\*\*Show Search label \*\** Set this to Yes if you wish to display the label Search on top of the search box.
 
 **Limitations**
 
