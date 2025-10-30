@@ -4,7 +4,7 @@ description: J2Commerce (formerly known as J2Store)
 
 # Standard shipping methods
 
-This is shipping plugin which is available in J2Store by default. It has seven shipping types. They are:
+This is shipping plugin which is available in J2Commerce (J2Store) by default. It has seven shipping types. They are:
 
 - Flat rate per order
 - Quantity based per order
