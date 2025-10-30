@@ -4,11 +4,41 @@ description: J2Commerce (formerly known as J2Store)
 
 # Product display module
 
-The module which helps you to display the products wherever you want in your site. Sometimes you would like to showcase best selling products or featured products in your site on some specific place. In this case, the product display module will do that.
+The module that helps you to display the products wherever you want on your site. Sometimes you would like to showcase best-selling products or featured products on your site in a specific place. In this case, the product display module will do that.
 
-**Installation**
+**Purchase Module**
 
-Download the product display module package from our site and install it via Joomla installer. After installing, go to Extensions > Modules and create a new module with type J2Store products display and configure it.
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Modules
+
+![](/img/product-display-purchase.webp)
+
+**Step 2:** Locate the Product Display module > click View Details > Add to cart > Checkout.
+
+**Step 3:** Go to your My Downloads or My Account under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+
+![](/img/product-display-download.webp)
+
+**Installation:** You can install this Product Display module using the Joomla installer. The following steps help you with a successful installation.
+
+**Step 1:** In the Joomla admin, go to System > Install > Extensions
+
+![](/img/product-category-installer-1.webp)
+
+**Step 2**: Click on the Browse button and select the Product Display zip file you saved during the download process. You will receive a message of success once installed.
+
+![](/img/product-category-download1.webp)
+
+**Step 3:** Select Content > Site Modules > Products Display module
+
+**Step 4:** Enable the plugin by clicking on the 'X'. It will turn into a checkmark.&#x20;
+
+![](/img/product-display-enable.webp)
+
+**Step 5:** Once it's enabled, click on the module to open it
+
+**Parameter Setup:**&#x20;
+
+
 
 **Basic settings**
 
@@ -16,9 +46,9 @@ Download the product display module package from our site and install it via Joo
 
 The module comes with three following sub-templates:
 
-* **Default**: Choose this as your sub-template if your site’s template has bootstrap 2 support.
-* **Bootstrap 3**: If your site’s template has full bootstrap3 support, then choose Bootstrap 3 as your sub-template.
-* **Carousel**: If you would like to showcase your products in a slider mode, then choose carousel as your sub-template. This will enable auto slide on the products.
+- **Default**: Choose this as your sub-template if your site’s template has bootstrap 2 support.
+- **Bootstrap 3**: If your site’s template has full bootstrap3 support, then choose Bootstrap 3 as your sub-template.
+- **Carousel**: If you would like to showcase your products in a slider mode, then choose carousel as your sub-template. This will enable auto slide on the products.
 
 **J2Store menu id**
 
