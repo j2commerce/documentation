@@ -40,7 +40,7 @@ To get your "PID" (Identification Key) on [https://developer.bring.com/api/shipp
 
 ![](/img/bring-purchase.webp)
 
-**Step 2:** Locate the "Add to Bring Shipping" App > click "View Details"> Add to cart > Proceed to Checkout.&#x20;
+**Step 2:** Locate the "Bring" App > click "View Details"> Add to cart > Proceed to Checkout.&#x20;
 
 **Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
@@ -58,7 +58,7 @@ To get your "PID" (Identification Key) on [https://developer.bring.com/api/shipp
 
 ![](/img/bring-man-install1.webp)
 
-Step 3: In the Joomla admin, go to System > Manage > Extensions
+**Step 3:** In the Joomla admin, go to System > Manage > Extensions
 
 ![](/img/bring-man-install.webp)
 
