@@ -8,10 +8,10 @@ The table rate shipping plugin extends J2Commerce’s default standard shipping 
 
 Define multiple shipping rates based on location, price, weight, or item count.
 
-* Add multiple shipping rules per shipping zone
-* Several types of calculation methods: Per order, per item, per class
-* Add rules based on Weight, Number of items, and price.
-* Add costs per row, per item cost, a percentage, and per weight unit
+- Add multiple shipping rules per shipping zone
+- Several types of calculation methods: Per order, per item, per class
+- Add rules based on Weight, Number of items, and price.
+- Add costs per row, per item cost, a percentage, and per weight unit
 
 By using Table Rate Shipping, it is possible for you to create complex rules for applying shipping costs.
 
@@ -19,21 +19,21 @@ You can define multiple rates based on the customer’s address, have multiple r
 
 **Requirements**
 
-* with PHP 8.1.0 +
-* Joomla! 4.x/ Joomla! 5.x +
-* J2Commerce / J2Store 4.x +
+- with PHP 8.1.0 +
+- Joomla! 4.x/ Joomla! 5.x +
+- J2Commerce / J2Store 4.x +
 
 **Step 1:** Purchase:
 
 Go to > J2commerce.com > Extensions > Shipping Plugins > Table Rate Shipping> Add to Cart.
 
-![Table rate](<../../assets/table-rate-purchase.webp>)
+![Table rate](../../assets/table-rate-purchase.webp)
 
 **Step 2:** Download:
 
 After you purchase the App, it will be in your “My Downloads” section. Go to your profile icon in the upper right corner > My downloads > Search “Table Rate” > Available Versions
 
-![Table rate](<../../assets/table-rate-download.webp>)
+![Table rate](../../assets/table-rate-download.webp)
 
 Next, View Files > Download Now > save it in a location you will remember
 
@@ -41,19 +41,17 @@ Next, View Files > Download Now > save it in a location you will remember
 
 ![Table rate](<../../assets/table-rate-download2 (1).webp>)
 
-**Step 3:** Installation:
+## Installation
 
-Step 1: Go to System > Install > Extensions > Upload Table Rate zip file.
+**Step 3:** Go to System > Install > Extensions > Upload Table Rate zip file.
 
 ![Table rate](<../../assets/braintree-install (2).webp>)
 
-**Step 4:** Publish:
+**Step 4:** Make sure you enable the App. Go to J2Commerce > Setup > Shipping Methods > Find Table Rate and click the 'x' to enable it
 
-Make sure you enable the App. Go to J2Commerce > Setup > Shipping Methods > Find Table Rate and click Enable
+![Table rate](../../assets/table-rate-enable.webp)
 
-![Table rate](<../../assets/table-rate-enable.webp>)
-
-Once activated, open the plugin and start configuring the shipping method.
+Once activated, open the plugin by clicking View and start configuring the shipping method.
 
 How the table rate shipping works: When a customer checks out items in their cart, the plugin looks at the customer’s destination (geozone) and then uses the table of rates you created to calculate total shipping. Each geozone can have its own rules, or multiple sets of rules, based on your shipping requirements.
 
@@ -61,7 +59,7 @@ You have to create shipping zones and their rules for calculating the shipping c
 
 **Configuration:**
 
-Plugin settings: Before starting to create a shipping method, you will have to select the weight unit globally. Handling cost is optional.
+**Plugin settings:** Before starting to create a shipping method, you will have to select the weight unit globally. Handling cost is optional.
 
 ![Table rate](<../../assets/table rate plugin1.webp>)
 
@@ -81,9 +79,9 @@ Plugin settings: Before starting to create a shipping method, you will have to s
 
 **Calculation type:** Here you can decide how the plugin should calculate the shipping cost. The plugin provides three types of calculation methods:
 
-* Per order: This type of calculation method calculates the shipping cost for the entire cart. If there are multiple shipping costs in the cart, the group with the highest priority will be used. These can be set in the plugin that appears underneath the rate table when per order is selected.
-* Per item: This type calculates the shipping cost by checking each item in the cart with the rates defined in the plugin.
-* Ship group: Each shipping group in your cart is totaled and offered at a final rate.
+- **Per order:** This type of calculation method calculates the shipping cost for the entire cart. If there are multiple shipping costs in the cart, the group with the highest priority will be used. These can be set in the plugin that appears underneath the rate table when per order is selected.
+- **Per item:** This type calculates the shipping cost by checking each item in the cart with the rates defined in the plugin.
+- **Ship group:** Each shipping group in your cart is totaled and offered at a final rate.
 
 **Handling cost per item:** Apply an additional fee to the shipping cost calculated per item, per order, or per shipping group.
 
@@ -99,13 +97,13 @@ Click on the Add Rule button to create a shipping rule.
 
 ![Table rate](<../../assets/add rule.webp>)
 
-**Shipping** Grou&#x70;**:** If you would like to calculate the shipping based on shipping group, then you will have to select the shipping group here. If you don’t want to use a shipping group, select No group.
+**Shipping** Group**:** If you would like to calculate the shipping based on shipping group, then you will have to select the shipping group here. If you don’t want to use a shipping group, select No group.
 
 **Condition:** This parameter allows the customer to decide what product information the plugin should use to calculate shipping rates. Your options are:
 
-* Price – the price of the items
-* Weight – the weight of the items
-* Item Count – the number of an individual item
+- Price – the price of the items
+- Weight – the weight of the items
+- Item Count – the number of an individual item
 
 **Min-Max:** The minimum and maximum range should be given here for the chosen condition. For example, if you have chosen Item count as a condition, then you have to give the quantity range using these parameters.
 
@@ -119,7 +117,7 @@ Click on the Add Rule button to create a shipping rule.
 
 **Percentage (%) cost:** The percentage of the product's total should be used to calculate shipping.
 
-**Shipping** grou&#x70;**:** Shipping groups are used to restrict shipping by products. For example, you may have a product that weighs a very large amount and needs a special shipping price. In this case, you can use a shipping group and create a shipping rule for that specific product. Multiple shipping groups can be created here. For example, special, normal, store pickup.
+**Shipping** group**:** Shipping groups are used to restrict shipping by products. For example, you may have a product that weighs a very large amount and needs a special shipping price. In this case, you can use a shipping group and create a shipping rule for that specific product. Multiple shipping groups can be created here. For example, special, normal, store pickup.
 
 ![Table rate](<../../assets/add rule1 (1).webp>)
 
@@ -139,20 +137,21 @@ Go to the specific product > J2Commerce tab > Apps tab > Table Rate Shipping
 
 Consider a store owner who is selling a Teddy bear. His customers often buy multiple quantities of teddy bears. He wants to charge the shipping cost of $4 and also would like to charge $2 for each teddy bear. Let's see how to create shipping rules for this scenario:
 
-* **Create a geozone:** If you want to apply a shipping charge to the customers only from the United States, then you will have to create a geozone for the country United States. Go to J2Commerce Dashboard > Localization > Geo Zone > New
+- **Create a geozone:** If you want to apply a shipping charge to the customers only from the United States, then you will have to create a geozone for the country United States. Go to J2Commerce Dashboard > Localization > Geo Zone > New
 
-![Table rate](<../../assets/geozone.jpg>)
+![Table rate](../../assets/geozone.jpg)
 
-* Then, go inside the Table Rate plugin (Settings > Manage > Plugin > Table Rate Shipping) and create a new shipping method.
-* Give a name for your shipping method and choose the Geo Zone and user group.
-* Choose Ship group as your calculation type and save. (Note: You should have already created a shipping group under the Shipping Group tab at the top).
-* Save
-* Now, create a new shipping rule like in the image below. For example:
-  * Choose your Shipping Group: Sample
-  * Condition - Item count
-  * Min-Max - 1 to 100
-  * Item cost - $2
-  * Row cost - $4
+- Then, go inside the Table Rate plugin (Settings > Manage > Plugin > Table Rate Shipping) and create a new shipping method.
+- Give a name for your shipping method and choose the Geo Zone and user group.
+- Choose Ship group as your calculation type and save. (Note: You should have already created a shipping group under the Shipping Group tab at the top).
+- Save
+- Now, create a new shipping rule like in the image below. For example:
+
+  - Choose your Shipping Group: Sample
+  - Condition - Item count
+  - Min-Max - 1 to 100
+  - Item cost - $2
+  - Row cost - $4
 
 See the table below :
 
@@ -166,11 +165,11 @@ When customers reach the purchase cap, they will be charged as below
 
 For example:
 
-* Shipping Group: Special
-* Condition: Item count
-* Min : 3 and Max: 1000
-* Item cost: $2
-* Row cost: $16
+- Shipping Group: Special
+- Condition: Item count
+- Min : 3 and Max: 1000
+- Item cost: $2
+- Row cost: $16
 
 The table setup should be as below:
 
@@ -178,8 +177,8 @@ The table setup should be as below:
 
 When customers purchase Teddy bears, they will be charged as below:
 
-* (2) Teddy bears cost $8 for shipping (2\*2) + 4
-* (3) Teddy bears cost $22 for shipping (3\*2) + 16
+- (2) Teddy bears cost $8 for shipping (2\*2) + 4
+- (3) Teddy bears cost $22 for shipping (3\*2) + 16
 
 Calculating shipping cost by weight: The shop owner decided to charge for shipping based on weight. It’s more cost-efficient for him to ship by weight, so he plans to restructure his shipping rates as below:
 
@@ -197,9 +196,9 @@ Shipping products based on Geo zone: Consider that the store owner would like to
 
 Here is the scenario: **The new example below will be for T-shirts**
 
-* Product ‘A’ will be shipped from Mumbai
-* Product ‘B’ should be shipped from the Delhi warehouse
-* If the customer adds both products ‘A’ and ‘B’ to the cart, so shipping charges of both should be summed and shown because Product ‘A’ ships from Mumbai and Product ‘B’ from Delhi, so the user has to pay two shipping costs.
+- Product ‘A’ will be shipped from Mumbai
+- Product ‘B’ should be shipped from the Delhi warehouse
+- If the customer adds both products ‘A’ and ‘B’ to the cart, so shipping charges of both should be summed and shown because Product ‘A’ ships from Mumbai and Product ‘B’ from Delhi, so the user has to pay two shipping costs.
 
 Let me explain how to configure the table rate shipping based on the above scenario.
 
@@ -207,14 +206,14 @@ Let me explain how to configure the table rate shipping based on the above scena
 
 The below screenshot shows that we have created two geozones, “Mumbai” and “Delhi”.
 
-![Table rate](<../../assets/geozone2.jpg>)
+![Table rate](../../assets/geozone2.jpg)
 
 **Step 2:** Creating a Shipping Group
 
 Since the shipping cost has to be calculated based on the shipping group, there are two shipping groups that need to be created.
 
-* Mumbai
-* Delhi
+- Mumbai
+- Delhi
 
 ![Table rate](<../../assets/shipping group mumbai.jpg>)
 
@@ -232,8 +231,8 @@ Then, assign the shipping group to the products accordingly.
 
 We have created two shipping methods using the Table Rate Shipping plugin.
 
-* **Shipping cost 1:** This is to apply the shipping charge for the products to be shipped from Mumbai.
-* **Shipping cost 2:** This is to apply the shipping charge for the products to be shipped from Delhi.
+- **Shipping cost 1:** This is to apply the shipping charge for the products to be shipped from Mumbai.
+- **Shipping cost 2:** This is to apply the shipping charge for the products to be shipped from Delhi.
 
 Now, open the table rate shipping plugin ( go to system > Manage > Plugin > Table Rate) and create the shipping method for Mumbai called “Shipping cost 1”. Assign the geo zone “Mumbai”.
 
@@ -267,8 +266,8 @@ When adding both products, the shipping cost is calculated by adding both charge
 
 Scenario:
 
-* For customers from Germany, TOTAL of all Items from 1 to 12 = Flat shipping rate 7.20€ total of all Items from 13 to xxx = shipping rate per Item 0.60€ That means, total of all Items =1 then the Shippng rate is 7.20€ total of all Items =12 then the Shippng rate is 7.20€ total of all Items =13 then the Shippng rate is 7.80€ total of all Items =30 then the Shippng rate is 18.00€
-* For customers from France, TOTAL of all Items from 1 to 12 = Flat shipping rate 12.00€ total of all Items from 13 to xxx = shipping rate per Item 1.00€ That means, total of all Items =1 then the Shippng rate is 12.00€ total of all Items =12 then the Shippng rate is 12.00€ total of all Items =13 then the Shippng rate is 13.00€ total of all Items =30 then the Shippng rate is 30.00€
+- For customers from Germany, TOTAL of all Items from 1 to 12 = Flat shipping rate 7.20€ total of all Items from 13 to xxx = shipping rate per Item 0.60€ That means, total of all Items =1 then the Shippng rate is 7.20€ total of all Items =12 then the Shippng rate is 7.20€ total of all Items =13 then the Shippng rate is 7.80€ total of all Items =30 then the Shippng rate is 18.00€
+- For customers from France, TOTAL of all Items from 1 to 12 = Flat shipping rate 12.00€ total of all Items from 13 to xxx = shipping rate per Item 1.00€ That means, total of all Items =1 then the Shippng rate is 12.00€ total of all Items =12 then the Shippng rate is 12.00€ total of all Items =13 then the Shippng rate is 13.00€ total of all Items =30 then the Shippng rate is 30.00€
 
 Here are the steps to configure the table rate shipping according to the above scenario:
 
@@ -276,7 +275,7 @@ Here are the steps to configure the table rate shipping according to the above s
 
 Since the shipping costs are going to be calculated based on Germany and France, you will have to create two different geozones.
 
-![Table rate](<../../assets/geozone3.jpg>)
+![Table rate](../../assets/geozone3.jpg)
 
 **Step 2:** Creating a shipping method for **scenario ‘1’**
 
@@ -353,7 +352,7 @@ d: Item Cost - 1
 
 e: Save
 
-![Table rate](<../../assets/france.webp>)
+![Table rate](../../assets/france.webp)
 
 ![usecasef](https://raw.githubusercontent.com/j2store/doc-images/master/shipping-methods/table-rate-shipping/table-rate-usecase-2f.png)
 
