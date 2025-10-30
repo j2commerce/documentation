@@ -4,6 +4,8 @@ description: J2Commerce (formerly known as J2Store)
 
 # Request Quote / Email Cart Issues
 
+***Previously known as Email Basket***
+
 The following might be some of the commonly faced issues in the Request Quote / Email Cart plugin.
 
 ## The modal pop-up is not opening up <a href="#the-modal-pop-up-is-not-opening-up" id="the-modal-pop-up-is-not-opening-up" />
