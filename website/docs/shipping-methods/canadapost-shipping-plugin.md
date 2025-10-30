@@ -14,11 +14,11 @@
 
 ![](/img/purchase-2.webp)
 
-**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
 ![](/img/1download2.webp)
 
-**Installation:** You can install this Canada Post shipping plugin, using Joomla installer. The following steps help you for successful installation.
+**Installation:** You can install this Canada Post shipping plugin using Joomla installer. The following steps help you with a successful installation.
 
 **Step 1:** In the Joomla admin, go to System > Install > Extensions
 
