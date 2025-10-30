@@ -55,13 +55,13 @@ In the latest versions of J2Commerce, we introduced a new product type: [Flexibl
 
 As the name suggests, it is very flexible and is based on the Cartesian set algorithm. So you can add, remove a variant anytime without re-generating the entire combinations.
 
-## Creating a variable product `<a href="#creating-a-variable-product" id="creating-a-variable-product" />`
+## Creating a variable product <a href="#creating-a-variable-product" id="creating-a-variable-product" />
 
 **Step 1:** Content > Articles > New. Make sure you are in the appropriate category first, or assign the 'Parent' category in the 'Content' page of the new article.
 
 ![](/img/variant-start0.webp)
 
-**Step 2:**&#x20;
+**Step 2:**
 
 - Enter the name of your product. Leave the alias blank
 - Click on J2Commerce (J2Store Cart) tab
