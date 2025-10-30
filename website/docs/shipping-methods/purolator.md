@@ -76,7 +76,7 @@ If there is more than one version available, make sure you click View Files for 
 
 #### **Installation:**&#x20;
 
-You can install this USPS shipping plugin using the Joomla installer. The following steps help you for a successful installation.
+You can install this Purolater shipping plugin using the Joomla installer. The following steps help you for a successful installation.
 
 **Step 1:** In the Joomla admin, go to System > Install > Extensions
 
@@ -86,17 +86,17 @@ You can install this USPS shipping plugin using the Joomla installer. The follow
 
 ![](/img/purolator-man-install1.webp)
 
-Step 3: In the Joomla admin, go to System > Manage > Extensions
+**Step 3:** In the Joomla admin, go to System > Manage > Extensions
 
 ![](/img/purolator-man-install.webp)
 
-**Step 6:** Search for the app and enable it
+**Step 4:** Search for the app and enable it
 
 ![](/img/purolator-enable.webp)
 
-**Step 7:** Select J2Commerce >setup > shipping methods
+**Step 5:** Select J2Commerce >setup > shipping methods
 
-Step 8: Locate the Purolator Shipping App and click View to begin customizing it
+**Step 6:** Locate the Purolator Shipping App and click View to begin customizing it
 
 ![](/img/purolator-setup.webp)
 
