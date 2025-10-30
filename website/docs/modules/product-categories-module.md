@@ -44,7 +44,7 @@ With the product categories module, you could display an overview of the categor
 
 **Select Menu item:** Choose a menu item whose associated categories should be displayed on the module. Please note that you should have a menu item with the J2Commerce layout.
 
-**Parent category:** Select a parent category whose sub-categories should be displayed (if any). Please note that this option should be chosen, or else no categories would appear on the frontend on the module.
+**Parent category:** Select a parent category whose sub-categories should be displayed (if any). Please note that this option should be chosen, or else no categories would appear on the frontend of the module.
 
 **Category Descriptions:** If you wish to show the description entered on the category’s article, then you could do so by setting this option to Yes.
 
