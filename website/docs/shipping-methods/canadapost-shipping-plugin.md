@@ -12,21 +12,35 @@
 
 **Step 2:** Locate the Canada Post Shipping App > click View Details > Add to cart > Checkout.&#x20;
 
+![](/img/purchase-2.webp)
+
 **Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+
+![](/img/1download2.webp)
 
 **Installation:** You can install this Canada Post shipping plugin, using Joomla installer. The following steps help you for successful installation.
 
 **Step 1:** In the Joomla admin, go to System > Install > Extensions
 
+![](/img/1canada-post-installer-1.webp)
+
 **Step 2:** Click on the Browse button and select Canada Post shipping zip file where you saved it.
+
+![](/img/1canada-post-download.webp)
 
 **Step 3:** In the Joomla admin, go to System > Manage > Extensions
 
+![](/img/1canada-post-installer-2.webp)
+
 **Step 4:** Search for the app and enable it.
 
-**Step 5:** Select J2Commerce >setup > shipping methods
+![](/img/1canada-post-enable-1.webp)
+
+**Step 5:** Select J2Commerce > setup > shipping methods
 
 **Step 6:** Locate the Canada Post Shipping App and click View to begin customizing it.
+
+![](/img/1canada-post-setup.webp)
 
 Before you begin setting up the parameters in the app, you will need your API Keys. Follow the steps below to access your API Keys, and Customer Number
 
@@ -42,9 +56,13 @@ Once you’ve signed in to their website, select Join Now on the main Developer 
 
 **Get your API keys:**&#x20;
 
+![](/img/1api.webp)
+
 Once you are logged in to your account, go to this [link](https://www.canadapost-postescanada.ca/information/app/drc/registered?execution=e2s1) to get your API Keys. You should see the API keys that are displayed on the main Developer Program page. These API keys are unique codes, used to access Canada Post web service and Postmen API. Note down the API keys (one for development and one for production).
 
 #### **Configuration:**&#x20;
+
+![](/img/1canada-post-parameters1.webp)
 
 **API Username:** Your CanadaPost username
 
@@ -62,6 +80,8 @@ Once you are logged in to your account, go to this [link](https://www.canadapost
 Example below:
 
 #### Parameters:
+
+![](/img/1canada-post-parameters2.webp)
 
 **Canada Post Service:** Choose the services provided by Canada Post to display in checkout.
 
