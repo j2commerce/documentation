@@ -8,7 +8,7 @@
 
 
 
-**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Shipping Plugins
 
 **Step 2:** Locate the Canada Post Shipping App > click View Details > Add to cart > Checkout.&#x20;
 
@@ -20,13 +20,13 @@
 
 **Step 2:** Click on the Browse button and select Canada Post shipping zip file where you saved it.
 
-Step 3: In the Joomla admin, go to System > Manage > Extensions
+**Step 3:** In the Joomla admin, go to System > Manage > Extensions
 
-**Step 6:** Search for the app and enable it.
+**Step 4:** Search for the app and enable it.
 
-**Step 7:** Select J2Commerce >setup > shipping methods
+**Step 5:** Select J2Commerce >setup > shipping methods
 
-Step 8: Locate the Canada Post Shipping App and click View to begin customizing it.
+**Step 6:** Locate the Canada Post Shipping App and click View to begin customizing it.
 
 Before you begin setting up the parameters in the app, you will need your API Keys. Follow the steps below to access your API Keys, and Customer Number
 
