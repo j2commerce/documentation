@@ -32,13 +32,13 @@ Step 5: Click View tab > click the Copy button to copy your Key and Secret code 
 
 ![](/img/usps4.webp)
 
-**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps > Shipping
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Shipping Plugins
 
 ![](/img/usps-app1.webp)
 
 **Step 2:** Locate the USPS App > click View Details > Add to cart > Checkout.&#x20;
 
-**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
 ![](/img/download2.webp)
 
@@ -52,27 +52,27 @@ Step 5: Click View tab > click the Copy button to copy your Key and Secret code 
 
 ![](/img/download1.webp)
 
-Step 3: In the Joomla admin, go to System > Manage > Extensions
+**Step 3:** In the Joomla admin, go to System > Manage > Extensions
 
 ![](/img/installer-2.webp)
 
-**Step 6:** Search for the app and enable it.
+**Step 4:** Search for the app and enable it.
 
 ![](/img/installer-3.webp)
 
-**Step 7:** Select J2Commerce >setup > shipping methods
+**Step 5:** Select J2Commerce >setup > shipping methods
 
-Step 8: Locate the USPS Advanced Shipping App and click View to begin customizing it.
+**Step 6:** Locate the USPS Advanced Shipping App and click View to begin customizing it.
 
 ![install](/img/setup1.webp)
 
 ## Plugin Settings:
 
-**Step 8:** Login to your USPS account and copy the Key & Secret code [https://developers.usps.com/](https://developers.usps.com/)
+**Step 1:** Login to your USPS account and copy the Key & Secret code [https://developers.usps.com/](https://developers.usps.com/)
 
 ![](/img/usps5.webp)
 
-Step 9: Configure the shipping plugin by entering the plugin parameters.
+**Step 2:** Configure the shipping plugin by entering the plugin parameters.
 
 **Enter Key/Secret code:**
 
@@ -143,9 +143,9 @@ If you choose box packing, then you will have to create/set the box size. The bo
 
 After configuring the USPS settings, then the important thing you have to do is to enter the dimensions for your product.&#x20;
 
-Step 1: Go to Content > Article > click on your product.
+**Step 1:** Go to Content > Article > click on your product.
 
-Step 2: Go to the J2Commerce (J2Store Cart) tab > Shipping tab
+**Step 2:** Go to the J2Commerce (J2Store Cart) tab > Shipping tab
 
 ![dimensions](/img/setup7.webp)
 
@@ -205,15 +205,15 @@ By this Advance Package: handling method, you can use the following options to c
 
 **Unpacked item handling**
 
-1. Get a quote for the unpacked item by itself: Choosing this option will get a quote or charge for the unpacked item (i.e.) it will display the charge for multiple boxes (Box 1, Box 2, Box 3). This is the default option.
-2. Ignore item - do not quote: Choosing this option will display the charge for Box 1 and Box 2 and will ignore Box 3.
-3. Abort - do not return any quotes for the standard service: Choosing this option will cancel sending quotes for all the boxes.
+1. **Get a quote for the unpacked item by itself:** Choosing this option will get a quote or charge for the unpacked item (i.e.) it will display the charge for multiple boxes (Box 1, Box 2, Box 3). This is the default option.
+2. **Ignore item - do not quote:** Choosing this option will display the charge for Box 1 and Box 2 and will ignore Box 3.
+3. **Abort - do not return any quotes for the standard service:** Choosing this option will cancel sending quotes for all the boxes.
 
 ![advanced pack](/img/flat-rate-7.webp)
 
 **If multiple boxes are required for shipping?**
 
-1. Quote by adding the cost for all boxes required for packing: This is the default option. Choosing this option will add the cost for all the boxes (Box 1, Box 2, Box 3).
-2. Abort - do not return any quotes. Choosing this option will cancel quotes for all the boxes and will not return any cost.
+1. **Quote by adding the cost for all boxes required for packing:** This is the default option. Choosing this option will add the cost for all the boxes (Box 1, Box 2, Box 3).
+2. **Abort - do not return any quotes:** Choosing this option will cancel quotes for all the boxes and will not return any cost.
 
 ![advpack2](/img/flat-rate-8.webp)
