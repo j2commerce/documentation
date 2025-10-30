@@ -12,6 +12,18 @@ This plugin integrates J2Commerce with FedEx Shipping rate API.
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
+#### **‌Installation:**{#installation}
+
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Shipping Plugin > Shipping
+
+![](/img/fedex-purchase.webp)
+
+**Step 2:** Locate the Fedex Shipping Plugin > click View Details > Add to cart > Checkout.&#x20;
+
+**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+
+![](/img/fedex-download.webp)
+
 #### **Download the App:**
 
 **Step 1:**&#x20;
@@ -22,32 +34,35 @@ b) type in Fedex Shipping in the search bar.&#x20;
 
 c) Click on the Fedex Basic or Advanced App
 
-![](../../assets/fedex-download.webp)
-
 **Step 2:** Click on the app and then click Download Now
-
-![](<../../assets/fedex-download2 (1).webp>)
 
 #### **Installation:**&#x20;
 
 You can install this shipping plugin using Joomla! installer.
 
-- In the J2Commerce admin, go to System > Install > Extensions&#x20;
-- Click on the Browse button and select FedEx Shipping Zip file you just saved and install it
+**Step 1:** In the J2Commerce admin, go to System > Install > Extensions&#x20;
 
 ![](<../../assets/app install1.webp>)
 
-- Go back to System > Manage > Extensions
-- Type Fedex in the search bar and click the X to enable the plugin
+**Step 2:** Click on the Browse button and select FedEx Shipping Zip file you just saved and install it
+
+**Step 3:** Go back to System > Manage > Extensions
+
+![](/img/fedex-installer-2.jpg)
+
+**Step 4:** Type Fedex in the search bar and click the X to enable the plugin
 
 ![](../../assets/fedex-enable.webp)
 
-- Go to Componants > J2Commerce > Setup > Shipping Methods
+**Step 5:** Go to Componants > J2Commerce > Setup > Shipping Methods
 
 ![Shipping methods](../../assets/fedex-setup.webp)
 
-- Click View to open the app
-- Configure the shipping plugin by entering the plugin parameters
+**Step 6:** Click View to open the app
+
+## Parameter Setup
+
+Configure the shipping plugin by entering the plugin parameters
 
 ![shipping](../../assets/fedex-config1.webp)
 
