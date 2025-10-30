@@ -66,17 +66,17 @@ You can install this Australia Post shipping plugin using the Joomla installer. 
 
 ![](/img/australia-post-download1.webp)
 
-Step 3: In the Joomla admin, go to System > Manage > Extensions
+**Step 3:** In the Joomla admin, go to System > Manage > Extensions
 
 ![](/img/australia-post-installer-2.webp)
 
-**Step 6:** Search for the app and enable it.
+**Step 4:** Search for the app and enable it.
 
 ![](/img/australia-post-enable.webp)
 
-**Step 7:** Select J2Commerce > setup > shipping methods
+**Step 5:** Select J2Commerce > setup > shipping methods
 
-Step 8: Locate the Australia Post Shipping App and click View to begin customizing it.
+**Step 6:** Locate the Australia Post Shipping App and click View to begin customizing it.
 
 ![](/img/australia-post-setup.webp)
 
