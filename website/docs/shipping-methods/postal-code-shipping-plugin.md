@@ -8,18 +8,39 @@ The plugin integrates a postal code based shipping method for J2Store. It will c
 
 **Requirements**
 
-* with PHP 8.1.0 +
-* Joomla! 4.x/ Joomla! 5.x +
-* J2Commerce / J2Store 4.x +
+- with PHP 8.1.0 +
+- Joomla! 4.x/ Joomla! 5.x +
+- J2Commerce / J2Store 4.x +
+
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Shipping Plugin
+
+![](/img/postcode-purchase.webp)
+
+**Step 2:** Locate the Postal Code Shipping Plugin > click View Details > Add to cart > Checkout.&#x20;
+
+**Step 3:** Go to your My Downloads *or* My Account under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+
+![](/img/postcode-download.webp)
 
 **Installation**
 
-* Download Postal code shipping plugin from our site and install it using standard Joomla installer.
-* Once installed, go to J2Store > Setup > Shipping method and enable Postal code based shipping plugin.
+You can install this Postal Code shipping plugin, using Joomla installer. The following steps help you for successful installation.
+
+**Step 1:** In the Joomla admin, go to System > Install > Extensions
+
+![](/img/postcode-installer-1.webp)
+
+**Step 2**: Click on the Browse button and select the Postal Code Shipping zip file you saved during the download process. You will receive a message of success once installed.
+
+![](/img/postcode-download1.webp)
+
+**Step 3:** Select J2Commerce > setup > shipping methods > Postal Code
+
+**Step 4:** Enable the plugin by clicking on the 'X'
 
 ![enable](https://raw.githubusercontent.com/j2store/doc-images/master/shipping-methods/postal-code-shipping-plugin/postal-plugin-enable.png)
 
-* After enabling this plugin, open the plugin and configure the basic settings and create a shipping method.
+- After enabling this plugin, open the plugin and configure the basic settings and create a shipping method.
 
 ![open](https://raw.githubusercontent.com/j2store/doc-images/master/shipping-methods/postal-code-shipping-plugin/postal-plugin-open.png)
 
@@ -89,25 +110,25 @@ The cost entered per item can be 1. If the cost is for 2 items (2 nos ) , you ca
 
 **Rate #1 Geo Zones: United States Cost Brackets:**
 
-* Postcode From: 902, To: 90299, Charge: 3.00
-* Postcode From: 9, To: 99999, Charge: 5.00
-* Weight Start: 1.000 To : 10 .000,
-* Qty From: 1 To:100
+- Postcode From: 902, To: 90299, Charge: 3.00
+- Postcode From: 9, To: 99999, Charge: 5.00
+- Weight Start: 1.000 To : 10 .000,
+- Qty From: 1 To:100
 
 **Example 2:** Suppose you are based in London, and only ship to London postal districts. You charge $2.00 per item for shipping for a weight range of 1 to 10 and qty range of 1 to 100, then you would enter:
 
 **Rate #1 Geo Zones: United Kingdom Cost Brackets:**
 
-* From: E1, To: E21, Charge: 2.00, Per: 1
-* From: EC1, To: EC5, Charge: 2.00, Per: 1
-* From: N1, To: N23, Charge: 2.00, Per: 1
-* From: NW1, To: NW12, Charge: 2.00, Per: 1
-* From: SE1, To: SE29, Charge: 2.00, Per: 1
-* From: SW1, To: SW21, Charge: 2.00, Per: 1
-* From: W1, To: W15, Charge: 2.00, Per: 1
-* From: WC1, To: WC3, Charge: 2.00, Per: 1
-* Weight Start: 1.000 To : 10 .000,
-* Qty From: 1 To:100
+- From: E1, To: E21, Charge: 2.00, Per: 1
+- From: EC1, To: EC5, Charge: 2.00, Per: 1
+- From: N1, To: N23, Charge: 2.00, Per: 1
+- From: NW1, To: NW12, Charge: 2.00, Per: 1
+- From: SE1, To: SE29, Charge: 2.00, Per: 1
+- From: SW1, To: SW21, Charge: 2.00, Per: 1
+- From: W1, To: W15, Charge: 2.00, Per: 1
+- From: WC1, To: WC3, Charge: 2.00, Per: 1
+- Weight Start: 1.000 To : 10 .000,
+- Qty From: 1 To:100
 
 **Example 3:** Suppose your postcodes are made up of 6 alphanumeric characters, and you want to charge $1.00 for shipping to postcodes beginning with AB, $2.00 for postcodes beginning with CX, and $4.00 for all other postcodes. No weight or qty ranges are used.
 
@@ -115,11 +136,11 @@ Then you would enter:
 
 **Rate #1** **Cost Brackets:**
 
-* From: AB, To: ABZZZZ, Charge: 1
-* From: CX, To: CXZZZZ, Charge: 2
-* From: (blank), To: (blank), Charge: 4
-* Weight Start: 0.000 To : 0 .000,
-* Qty From: 0 To:0
+- From: AB, To: ABZZZZ, Charge: 1
+- From: CX, To: CXZZZZ, Charge: 2
+- From: (blank), To: (blank), Charge: 4
+- Weight Start: 0.000 To : 0 .000,
+- Qty From: 0 To:0
 
 > Note: You could also enter AB0000 and CX0000 for the “From” postcodes.
 
@@ -131,13 +152,13 @@ Click Export to download the sample csv file and see how the csv file must be.
 
 The below three columns are the mandatory for the csv file.
 
-**j2store**_**shipping**_**postcode**_**rate**_**id** - Leave this column empty. Rate ID will be updated automatically.
+**j2store*shipping*postcode*rate*id** - Leave this column empty. Rate ID will be updated automatically.
 
-**shipping**_**postcode**_**method\_id** - It is nothing but Shipping method ID. You must enter shipping method ID otherwise the rates will not be imported correctly into the corresponding shipping method and errors will be triggered.
+**shipping*postcode*method\_id** - It is nothing but Shipping method ID. You must enter shipping method ID otherwise the rates will not be imported correctly into the corresponding shipping method and errors will be triggered.
 
 ![methodid](https://raw.githubusercontent.com/j2store/doc-images/master/shipping-methods/postal-code-shipping-plugin/postal-plugin-methodid.png)
 
-**shipping**_**postcode**_**from and shipping**_**postcode**_**to** - Enter the postcode range between which the shipping charge should apply.
+**shipping*postcode*from and shipping*postcode*to** - Enter the postcode range between which the shipping charge should apply.
 
 Then, enter the weigh trange, quantity range, price range and shipping cost as your wish and import the csv file.
 
@@ -159,4 +180,4 @@ Now the resulting rates are
 
 Set this to NO in Live websites.
 
-**Support** You can contact support@j2store.org if you have any questions.
+**Support** You can contact [support@j2store.org](mailto\:support@j2store.org) if you have any questions.
