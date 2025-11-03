@@ -2,19 +2,19 @@
 description: J2Commerce (formerly known as J2Store)
 ---
 
-# Additional fee
+# Additional Fee
 
-## Requirements <a href="#requirements" id="requirements"></a>
+## Requirements <a href="#requirements" id="requirements" />
 
 1. PHP 8.1.0 +
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
-## Installation <a href="#installation" id="installation"></a>
+## Installation <a href="#installation" id="installation" />
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-![Additional Fee](<../../assets/additional-fees-1.webp>)
+![Additional Fee](../../assets/additional-fees-1.webp)
 
 **Step 2:** Locate the Additional Fee App > click View Details > Add to cart > Checkout.&#x20;
 
@@ -32,15 +32,15 @@ description: J2Commerce (formerly known as J2Store)
 
 **Step 6:** Search for the app and enable it.
 
-![Additional Fee](<../../assets/additional-fees-3.webp>)
+![Additional Fee](../../assets/additional-fees-3.webp)
 
-## Settings <a href="#settings" id="settings"></a>
+## Settings <a href="#settings" id="settings" />
 
 Now it's time to open the app and configure the settings.&#x20;
 
 **Step 1:** Go to Components > J2Commerce > Apps&#x20;
 
-![Additional Fee](<../../assets/additional-fees-4.webp>)
+![Additional Fee](../../assets/additional-fees-4.webp)
 
 **Step 2:** Open the app and click the settings button on top right.
 
@@ -50,8 +50,8 @@ Now it's time to open the app and configure the settings.&#x20;
 
 You can choose whether the additional fee should be applied based on cart or per product level.
 
-* **Order:** This will apply the additional fee globally i.e. based on the cart.
-* **Line item:** This will apply the additional charge based on the product. You can set additional fee to the product individually in the apps tab on j2store cart. Once you enabled Line item, the amount / charge will be applied to the individual products.
+- **Order:** This will apply the additional fee globally i.e. based on the cart.
+- **Line item:** This will apply the additional charge based on the product. You can set additional fee to the product individually in the apps tab on j2store cart. Once you enabled Line item, the amount / charge will be applied to the individual products.
 
 **Order price range based on**
 
@@ -71,7 +71,7 @@ Select your tax profile to display the additional fee as taxable.
 
 ![Settings](../../assets/additional-fees-6.webp)
 
-## Additional Fee Setup <a href="#additional-fee-setup" id="additional-fee-setup"></a>
+## Additional Fee Setup <a href="#additional-fee-setup" id="additional-fee-setup" />
 
 Open the app and click **Add New** button to create new one.
 
@@ -103,15 +103,15 @@ Open the app and click **Add New** button to create new one.
 
 ![Add new ](../../assets/additional-fees-8.webp)
 
-## Additional Fee Setup at product level <a href="#additional-fee-setup-at-product-level" id="additional-fee-setup-at-product-level"></a>
+## Additional Fee Setup at product level <a href="#additional-fee-setup-at-product-level" id="additional-fee-setup-at-product-level" />
 
-* Go to Content > Article
-* Open the article / product > J2Store cart tab.
-* Navigate to the Apps tab and click add new button to setup the additional fee for that product. Refer the below screenshot.
+- Go to Content > Article
+- Open the article / product > J2Store cart tab.
+- Navigate to the Apps tab and click add new button to setup the additional fee for that product. Refer the below screenshot.
 
 ![Add new item](https://raw.githubusercontent.com/j2store/doc-images/master/apps/additional-fee/addfee_lineitem.png)
 
-### Frontend <a href="#frontend" id="frontend"></a>
+### Frontend <a href="#frontend" id="frontend" />
 
 If Auto apply additional fee in checkout is set to **NO**,
 
