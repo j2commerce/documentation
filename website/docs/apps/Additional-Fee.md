@@ -77,6 +77,8 @@ Open the app and click **Add New** button to create new one.
 
 ![Adding new rule](../../assets/additional-fees-7.webp)
 
+![Add new item](/img/additional-fees-pod.png)
+
 **Name of the fee:** Enter the name for additional fee. The value given here will be displayed during checkout.
 
 **Geo Zone:** Restrict applying additional charge based region. If you wants to apply extra charge only for customers from United States, then create the geo zone for US and assign it here.
@@ -109,14 +111,24 @@ Open the app and click **Add New** button to create new one.
 - Open the article / product > J2Store cart tab.
 - Navigate to the Apps tab and click add new button to setup the additional fee for that product. Refer the below screenshot.
 
-![Add new item](https://raw.githubusercontent.com/j2store/doc-images/master/apps/additional-fee/addfee_lineitem.png)
+  <figure>
+    <img src={require("/img/additional-fees-pod-product.webp").default} />
+
+    <figcaption>
+      The&#x20;
+    </figcaption>
+  </figure>
+
+The screenshots in the next section will show you what the frontend will look like based on how you told the backend settings to display the Additional Fees at checkout. ie: Automatically or optionally
+
+![](/img/additional-fees-pod-settings2.webp)
 
 ### Frontend <a href="#frontend" id="frontend" />
 
-If Auto apply additional fee in checkout is set to **NO**,
+If Auto Apply Additional Fee in the App settings is set to **No**, it will appear on the checkout page as an optional choice for the customer.
 
-![Frontend view](https://raw.githubusercontent.com/j2store/doc-images/master/apps/additional-fee/addfee_frontview.png)
+![Frontend view](/img/additional-fees-pod-above.webp)
 
-If Auto apply additional fee in checkout is set to **YES**,
+If Auto Apply Additional Fee in checkout is set to **Yes**, it will charge the customer for all of the Additional Fees you set up. Which, depending on the type of product, may not be what you want
 
-![Cart page with additional fee enabled](https://raw.githubusercontent.com/j2store/doc-images/master/apps/additional-fee/addfee_front_cart.png)
+![Cart page with additional fee enabled](/img/additional-fees-pod-settings3.webp)
