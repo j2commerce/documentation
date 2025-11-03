@@ -59,3 +59,9 @@ The next step shows how to assign a newsletter to a product. Now, when someone p
 **Step 9:** Open the product in articles > J2Commerce (J2Store Cart) > Apps > Click on all of the newsletters you want to be available for the simple product.  You can also enable the "Auto Subscription", which will show up on the front end during checkout, allowing the customer to opt in/out of the newsletters.
 
 ![](/img/acymailing-adding-lists.webp)
+
+## Frontend
+
+The screenshot below will show how the customer will have a choice to opt in or out of the newsletter for this product.
+
+![](/img/acymailing-checkout.webp)
