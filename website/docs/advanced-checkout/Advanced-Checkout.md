@@ -151,13 +151,13 @@ Go to Content > Site Module > New
 
 **Module Style:** Select None
 
-## Setting up the Parameters
+## Setting up the Checkout Page
 
 **Step 1:** Go back into the Advanced Checkout App and open it.&#x20;
 
 ![](/img/advanced-checkout-setup1.webp)
 
-**Basic Tab:**
+### Basic Tab
 
 ![](/img/advanced-checkout-basic1.webp)
 
@@ -185,7 +185,7 @@ Go to Content > Site Module > New
 
 ![](/img/advanced-checkout-basic-settings2.webp)
 
-**Styling the Checkout Page:**
+### Style Tab
 
 ![](/img/advanced-checkout-style2.webp)
 
@@ -221,7 +221,7 @@ The screenshot below shows an example of the Header and Favicon
 
 ![](/img/advanced-checkout-style3.webp)
 
-**Confirmation Page Tab:**
+### Confirmation Page Tab
 
 ![](/img/advanced-checkout-confirmation3.webp)
 
@@ -229,7 +229,7 @@ The screenshot below shows an example of the Header and Favicon
 
 ![](/img/advanced-checkout-confirmation4.webp)
 
-**Google API Key:** Enter your Google API key here. To obtain an API Key: **1:** Visit [https://console.cloud.google.com/apis/dashboard](https://console.cloud.google.com/apis/dashboard) **2:** Create a new project **3:** Select 'Enable APIS and Services' **4:** Select Geocoding API and Maps Javascript API. **5:** Make sure to enable Key Restrictions > Websites for your API Key to prevent unauthorized use.
+**Google API Key:** Enter your Google API key here. To obtain an API Key follow the instructions at the end of this document.
 
 **Contact Page Link:** Select the Contact Page menu link to ensure customers have an easy way to contact you if they encounter issues with their order.
 
@@ -268,3 +268,29 @@ The image below shows how your cart will appear before installing the Advanced C
 The image below shows how your cart will appear after installing the Advanced Cart Module.&#x20;
 
 ![](/img/advanced-checkout-frontend2.webp)
+
+## How to Obtain Your Google API Key
+
+**Step 1:** Visit [https://console.cloud.google.com/apis/dashboard](https://console.cloud.google.com/apis/dashboard)&#x20;
+
+**Step 2:** Select Create project&#x20;
+
+![](/img/google-api-2.webp)
+
+**Step 3:** Name your project and select the location > Create
+
+![](/img/google-api-3.webp)
+
+**Step 4:** Select 'Enable APIS and Services'&#x20;
+
+![](/img/google-api-1.webp)
+
+**Step 5:** Type Geocoding in the search bar and select Geocoding API and Maps Javascript API. You have to select them and follow step 5 one at a time.
+
+![](/img/google-api-4.webp)
+
+![](/img/google-api-5.webp)
+
+**Step 6:**  Make sure to enable Key Restrictions > Websites for your API Key to prevent unauthorized use.
+
+**Step 7:** Select Save and Continue > Enter your Credit Card for billing purposes
