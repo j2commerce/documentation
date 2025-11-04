@@ -1,3 +1,8 @@
+---
+slug: /advanced-cart/advanced-cart-guide
+description: J2Commerce (formerly known as J2Store)
+---
+
 # Advanced Cart
 
 The Advanced Cart Module and Plugin are purchased together and are a great complement to the Advanced Checkout App.&#x20;
