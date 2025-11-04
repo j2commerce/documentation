@@ -36,21 +36,27 @@ Before you set up the parameters, you need to set up the menu for it.
 
 ![](/img/advanced-checkout-checkout-menu1.webp)
 
-## Create a module for Login&#x20;
+## Setting up the modules
+
+### Login Module
 
 Go to Content > Site Module > New
 
 ![](/img/advanced-checkout-login-new.webp)
 
-### Module Tab
+**Module Tab:**
 
-![](/img/advanced-checkout-login-module.webp)
+![](/img/advanced-checkout-login-module1.webp)
 
-Name the module Login.
+**Title:** Name the module, Login.
 
-**Position:** Select J2c-login. If it doesn't show up in the dropdown menu, just start typing it in and it will show up
+**Position:** Type **j2c-login** in the dropdown.&#x20;
 
-### Menu Assignment Tab
+**Login Redirection Page:** Select the location you wish to redirect the customers after loggin in. In many cases, it's the Checkout Page.
+
+**Logout Redirection Page:** Select the location you wish to redirect the customers after they complete their order.
+
+**Menu Assignment Tab:**
 
 ![](/img/advanced-checkout-login-menu.webp)
 
@@ -58,7 +64,7 @@ Name the module Login.
 
 **Menu Selection:** Select Checkout
 
-### Advanced Tab
+**Advanced Tab:**
 
 ![](/img/advanced-checkout-login-advanced.webp)
 
@@ -70,13 +76,83 @@ The Login Module is complete. Make sure it's enabled by clicking on the 'x' and 
 
 ![](/img/advanced-checkout-login-enable.webp)
 
+### Advanced Cart Module
+
+Follow the same steps from creating the Login Module.&#x20;
+
+Go to Content > Site Module > New
+
+**Module Tab:**
+
+![](/img/advanced-cart-module-tab1.webp)
+
+**Title:** Name the module, J2Commerce Advanced Cart
+
+**Position:** Type **j2c-checkout-sidebar** in the dropdown
+
+**Loading Indicator:** The Bootstrap 5 spinner class is used when reloading the advanced cart contents.
+
+**Store Menu Link:** Advanced Cart J2Commerce ajax-based cart module.
+
+**Shopping Cart Menu Link:** Select the menu item for the shopping cart page.
+
+**Checkout Menu Link:** Select the menu item for the checkout page.
+
+**Show Payment Icons:** Select yes to enable payment icons (helps add additional trust endicia to the checkout process).
+
+**Select Payment Icons:** Select all of the payment options you want to offer
+
+
+
+**Menu Assignment Tab:**
+
+![](/img/advanced-cart-menu-tab1.webp)
+
+**Module Assignment:** Only on the pages selected
+
+**Menu Selection:** Select 'Checkout'
+
+**Settings Tab:**
+
+![](/img/advanced-cart-settings-tab1.webp)
+
+**Show Shipping Progress:** Select yes to show the shipping progress indicator in the modal cart.
+
+**Free Shipping Amount:** Enter the minimum amount needed to qualify for free shipping. No currency sign - only number value. (No free shipping message will appear if left empty)
+
+**Show Upsell Options:** Future option coming in a later version.
+
+**Show Product SKU:** Select 'Yes' to display the product SKU.
+
+**Show Quantity Field:** Select yes to display the quantity field. Select NO if you are selling digital products or other items that don't require quantities over 1 per item.
+
+**Show Product Image:** Select yes to display the product's thumbnail image.
+
+**Show Base Price:** Select yes to display the product's base price when a lower (sale) price is offered.
+
+**Show Coupon Form:** Show coupon form in modal cart?
+
+**Show Gift Card Form:** Show gift card form in modal cart?
+
+**Show Subtotals:** Select yes to show cart subtotals.
+
+
+
+**Advanced Tab:**
+
+![](/img/advanced-cart-advanced-tab1.webp)
+
+**Layout:** Select Checkout
+
+**Module Style:** Select None
+
 ## Setting up the Parameters
 
 **Step 1:** Go back into the Advanced Checkout App and open it.&#x20;
 
 ![](/img/advanced-checkout-setup1.webp)
 
-### Basic Tab
+**Basic Tab:**
 
 ![](/img/advanced-checkout-basic1.webp)
 
@@ -98,13 +174,13 @@ The Login Module is complete. Make sure it's enabled by clicking on the 'x' and 
 
 **Top Text:** Add any needed text to the top of the checkout. Use this sparingly as anything that is not critical to the conversion of the sale will most likely hurt it.
 
-![](/img/advanced-checkout-basic-settings1.webp)
+![](/img/advanced-checkout-basic-settings3.webp)
 
 **Bottom Text:** Add any needed text to the bottom of the checkout. Usually needed if the site needs to display a site-wide disclaimer.
 
 ![](/img/advanced-checkout-basic-settings2.webp)
 
-### Styling the Checkout Page
+**Styling the Checkout Page:**
 
 ![](/img/advanced-checkout-style2.webp)
 
@@ -134,15 +210,19 @@ The Login Module is complete. Make sure it's enabled by clicking on the 'x' and 
 
 The screenshot below shows an example of the Header and Favicon
 
-![](/img/favicon-header.webp)
+![](/img/favicon-header2.webp)
 
-**Custom CSS:** Add any custom CSS for the checkout page. DO NOT INCLUDE THE \< STYLE > TAGS
+**Custom CSS:** Add any custom CSS for the checkout page. DO NOT INCLUDE THE \< STYLE > TAGS. The default for the header is 25px high. You can customize the height by changing the pixles and add additional CSS code to customize the cart
 
-### Confirmation Page Tab
+![](/img/advanced-checkout-style3.webp)
+
+**Confirmation Page Tab:**
 
 ![](/img/advanced-checkout-confirmation3.webp)
 
-**Enable Address Map:** Select yes to display a map of the customer's shipping address on the confirmation page. You will need to create and enter your Google Developer Console API in the field below).
+**Enable Address Map:** Select Yes to display a map of the customer's shipping address on the confirmation page. You will need to create and enter your Google Developer Console API in the field below).
+
+![](/img/advanced-checkout-confirmation4.webp)
 
 **Google API Key:** Enter your Google API key here. To obtain an API Key: **1:** Visit [https://console.cloud.google.com/apis/dashboard](https://console.cloud.google.com/apis/dashboard) **2:** Create a new project **3:** Select 'Enable APIS and Services' **4:** Select Geocoding API and Maps Javascript API. **5:** Make sure to enable Key Restrictions > Websites for your API Key to prevent unauthorized use.
 
@@ -154,11 +234,13 @@ The screenshot below shows an example of the Header and Favicon
 
 **Failed Order Message:** Enter the text to display for the message displayed on failed order confirmations. (Can be language strings as well.)
 
-The screenshot below shows the Confirmation page on the frontend
+*The screenshot below shows a successful Confirmation page on the frontend*
 
-![](/img/advanced-checkout-confirmation2.webp)
+*If the order is unsuccessful, then the map will disappear, and the customer will see the Failed Order Message you entered*
 
-**Step 2: *This next step is important. Please do not skip it.***
+![](/img/advanced-checkout-confirmation5.webp)
+
+## **Template Settings**
 
 Go to System > Site Template Styles
 
@@ -176,7 +258,7 @@ Open the Advanced tab. Make sure Brand is turned off and Layout is on Fluid. Sav
 
 The image below will show you how your cart will look before installing the Module and Plugin. Once we install the Module and plugin, your cart will be complete.
 
-![](/img/advanced-checkout-basic-settings.webp)
+![](/img/advanced-checkout-basic-settings4.webp)
 
 Now that you have completed the setup process of the Advanced Checkout, it's time to install the Module and Plugin.&#x20;
 
