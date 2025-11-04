@@ -293,4 +293,6 @@ The image below shows how your cart will appear after installing the Advanced Ca
 
 **Step 6:**  Make sure to enable Key Restrictions > Websites for your API Key to prevent unauthorized use.
 
+![](/img/google-api-6.webp)
+
 **Step 7:** Select Save and Continue > Enter your Credit Card for billing purposes
