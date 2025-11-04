@@ -221,6 +221,82 @@ The screenshot below shows an example of the Header and Favicon
 
 ![](/img/advanced-checkout-style3.webp)
 
+## How to Change the Safe & Secure Language
+
+The screenshot below shows how to change the Safe and Secure message to personalize it to the client's website.
+
+The screenshot below shows the Safe and Secure link, which is located at the bottom of the Checkout page
+
+![](/img/safe-and-secure.webp)
+
+**Step 1:** Go to Settings > Manage > Language Overrides
+
+![](/img/safe-and-secure-languare1.webp)
+
+**Step 2:** Select Language and Client drop-down> Click on English (United Kingdom) - Administrator > New
+
+![](/img/safe-and-secure-languare2.webp)
+
+&#x20;**Safe and Secure Link:**&#x20;
+
+Once you click New, it's time to customize it.
+
+![](/img/safe-and-secure-languare3.webp)
+
+**Step 1: Language Constant:** Enter the following language string PLG\_J2STORE\_APP\_ADVANCEDCHECKOUT\_SECURE\_TEXT
+
+**Step 2: Search For:** Select Constant
+
+**Step 3:** Search Text: Enter the same Language string from step 1 > click Search PLG\_J2STORE\_APP\_ADVANCEDCHECKOUT\_SECURE\_TEXT
+
+**Step 4: Search Results:** Once you click in the gray box, it will automatically transfer the editable language into the Text box
+
+**Step 5: Text:** Change any of the information you wish&#x20;
+
+The Screenshot below shows the final look
+
+![](/img/safe-and-secure2.webp)
+
+**Modal Title:**&#x20;
+
+Follow the same steps from step 2 above: (Select Language and Client drop-down> Click on English (United Kingdom) - Administrator > New)
+
+![](/img/safe-and-secure-languare4.webp)
+
+**Step 1: Language Constant:** Enter the following language string PLG\_J2STORE\_APP\_ADVANCEDCHECKOUT\_SECURE\_MODAL\_TITLE
+
+**Step 2: Search For:** Select Constant
+
+**Step 3:** Search Text: Enter the same Language string from step 1 > click Search PLG\_J2STORE\_APP\_ADVANCEDCHECKOUT\_SECURE\_MODAL\_TITLE
+
+**Step 4: Search Results:** Once you click in the gray box, it will automatically transfer the editable language into the Text box
+
+**Step 5: Text:** Change any of the information you wish&#x20;
+
+The Screenshot below shows the final look
+
+**Modal Content:**
+
+Follow the same steps from step 2 above: (Select Language and Client drop-down> Click on English (United Kingdom) - Administrator > New)
+
+![](/img/safe-and-secure-languare5.webp)
+
+**Step 1: Language Constant:** Enter the following language string PLG\_J2STORE\_APP\_ADVANCEDCHECKOUT\_SECURE\_MODAL\_TEXT
+
+**Step 2: Search For:** Select Constant
+
+**Step 3:** Search Text: Enter the same Language string from step 1 > click Search PLG\_J2STORE\_APP\_ADVANCEDCHECKOUT\_SECURE\_MODAL\_TEXT
+
+**Step 4: Search Results:** Once you click in the gray box, it will automatically transfer the editable language into the Text box
+
+**Step 5: Text:** Change any of the information you wish&#x20;
+
+The Screenshot below shows the final look of the Modal Title and Content
+
+![](/img/safe-and-secure1.webp)
+
+## Setting up the Confirmation Page
+
 ### Confirmation Page Tab
 
 ![](/img/advanced-checkout-confirmation3.webp)
@@ -261,11 +337,11 @@ Open the Advanced tab. Make sure Brand is turned off and Layout is on Fluid. Sav
 
 ## Frontend&#x20;
 
-The image below shows how your cart will appear before installing the Advanced Cart Module.&#x20;
+The screenshot below shows how your cart will appear without purchasing and installing the Advanced Cart Module.&#x20;
 
 ![](/img/advanced-checkout-frontend1.webp)
 
-The image below shows how your cart will appear after installing the Advanced Cart Module.&#x20;
+The screenshot below shows how your cart will appear after purchasing and installing the Advanced Cart Module. To learn more about the Advanced Cart Module, visit: [https://docs.j2commerce.com/advanced-cart/advanced-cart-guide](https://docs.j2commerce.com/advanced-cart/advanced-cart-guide)
 
 ![](/img/advanced-checkout-frontend2.webp)
 
