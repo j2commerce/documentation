@@ -236,6 +236,28 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Advanced Checkout',
+      link: {
+          type: 'generated-index',
+          slug: '/advanced-checkout', // Custom slug removes /category prefix
+      },
+      items: [
+          'advanced-checkout/advanced-checkout',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Advanced Cart',
+      link: {
+          type: 'generated-index',
+          slug: '/advanced-cart', // Custom slug removes /category prefix
+      },
+      items: [
+          'advanced-cart/advanced-cart',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Sales',
       link: {
         type: 'generated-index',
