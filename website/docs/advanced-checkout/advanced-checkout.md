@@ -11,7 +11,11 @@ description: J2Commerce (formerly known as J2Store)
 
 **Step 2:** Locate the Advanced Checkout App > click View Details > Add to cart > Checkout.
 
+![](/img/advanced-checkout-purchase.webp)
+
 **Step 3:** Go to your My Downloads or My Account under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+
+![](/img/advanced-checkout-download.webp)
 
 **Installation:** You can install this Advanced Checkout App using the Joomla installer. The following steps help you with a successful installation.
 
