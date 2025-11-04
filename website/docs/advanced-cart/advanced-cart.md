@@ -109,7 +109,7 @@ The value of the Advanced Cart:&#x20;
 
 **Module Style:** Select None
 
-## **Setting up the Advanced Cart Plugin**
+## Setting up the Advanced Cart Plugin
 
 **Step 1:** Go to Settings > Manage > Plugins&#x20;
 
