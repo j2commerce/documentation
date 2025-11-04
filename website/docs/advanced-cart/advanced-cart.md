@@ -153,7 +153,7 @@ Open the plugin and set up the parameters below
 
 ### Cart Items Tab
 
-![](/img/advanced-cart-plugin-cart-items1.webp)
+![](/img/advanced-cart-items1.webp)
 
 **Show SKU:** Select Yes to show the SKU number with the product in the cart.
 
@@ -161,13 +161,11 @@ Open the plugin and set up the parameters below
 
 **Show Discount Tag:** Select Yes to show the discount icon in the cart.
 
-**Show Free Shipping Tag:** Select No to hide the Free Shipping icon next to every item in the cart.
-
 **Show Qty Buttons:** Select yes to show the +/- quantity buttons instead of the item quantity.
 
 ### Cart Options Tab
 
-![](/img/advanced-cart-plugin-cart-options.webp)
+![](/img/advanced-cart-plugin-cart-options1.webp)
 
 **Show shipping progress:** Select Yes to show the shipping progress indicator in the modal cart.
 
@@ -176,10 +174,6 @@ Open the plugin and set up the parameters below
 **Show Gift Card Form:** Select Yes to show the gift card form in the modal cart.
 
 **Show Checkout Button:** Select Yes to display the Checkout button on the sidebar cart.
-
-**Show Continue Button:** Select Yes to display the Continue Shopping button on the sidebar cart.
-
-**Show Clear All Button:** Select Yes to display the Clear All button to allow users to remove all items from their cart at once.
 
 **Enable Payment Icons:** Select Yes to display payment icons at the bottom of the sidebar cart.
 
