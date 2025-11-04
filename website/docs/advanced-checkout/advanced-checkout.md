@@ -225,7 +225,7 @@ The screenshot below shows an example of the Header and Favicon
 
 ![](/img/advanced-checkout-style3.webp)
 
-## How to Change the Safe & Secure Language
+### How to Change the Safe & Secure Language
 
 The screenshot below shows how to change the Safe and Secure message to personalize it to the client's website.
 
