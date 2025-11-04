@@ -27,7 +27,7 @@ The value of the Advanced Cart:&#x20;
 
 ![](/img/product-category-download1.webp)
 
-## Setting up the Module Parameters
+## Setting up the Module&#x20;
 
 **Step 1:** Go to Content > Site Module > Find the J2Commerce Advanced Cart module
 
@@ -55,7 +55,7 @@ The value of the Advanced Cart:&#x20;
 
 **Select Payment Icons:** Select all of the payment options you want to offer
 
-## Menu Tab
+### Menu Tab
 
 ![](/img/advanced-cart-menu-tab.webp)
 
@@ -109,7 +109,7 @@ The value of the Advanced Cart:&#x20;
 
 **Module Style:** Select None
 
-## Setting up the Advanced Cart Plugin
+## Setting up the Plugin
 
 **Step 1:** Go to Settings > Manage > Plugins&#x20;
 
