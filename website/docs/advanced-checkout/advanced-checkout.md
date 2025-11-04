@@ -325,7 +325,7 @@ The Screenshot below shows the final look of the Modal Title and Content
 
 ![](/img/advanced-checkout-confirmation5.webp)
 
-## How to Obtain Your Google API Key
+### How to Obtain Your Google API Key
 
 **Step 1:** Visit [https://console.cloud.google.com/apis/dashboard](https://console.cloud.google.com/apis/dashboard)&#x20;
 
