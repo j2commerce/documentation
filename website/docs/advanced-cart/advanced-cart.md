@@ -55,7 +55,7 @@ The value of the Advanced Cart:&#x20;
 
 **Select Payment Icons:** Select all of the payment options you want to offer
 
-## Menu Assignment Tab
+## Menu Tab
 
 ![](/img/advanced-cart-menu-tab.webp)
 
@@ -109,7 +109,7 @@ The value of the Advanced Cart:&#x20;
 
 **Module Style:** Select None
 
-## Advanced Cart Plugin
+## **Setting up the Advanced Cart Plugin**
 
 **Step 1:** Go to Settings > Manage > Plugins&#x20;
 
@@ -121,7 +121,7 @@ The value of the Advanced Cart:&#x20;
 
 ![](/img/advanced-cart-plugin-setup.webp)
 
-## Setting up the Plugin Parameters
+Open the plugin and set up the parameters below
 
 ### Plugin Tab
 
