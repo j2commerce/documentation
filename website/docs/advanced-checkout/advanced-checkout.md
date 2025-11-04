@@ -325,6 +325,36 @@ The Screenshot below shows the final look of the Modal Title and Content
 
 ![](/img/advanced-checkout-confirmation5.webp)
 
+## How to Obtain Your Google API Key
+
+**Step 1:** Visit [https://console.cloud.google.com/apis/dashboard](https://console.cloud.google.com/apis/dashboard)&#x20;
+
+**Step 2:** Select Create project&#x20;
+
+![](/img/google-api-2.webp)
+
+**Step 3:** Name your project and select the location > Create
+
+![](/img/google-api-3.webp)
+
+**Step 4:** Select 'Enable APIS and Services'&#x20;
+
+![](/img/google-api-1.webp)
+
+**Step 5:** Type Geocoding in the search bar
+
+![](/img/google-api-4.webp)
+
+&#x20;**Step 6:** Select Geocoding API and Maps Javascript API. You have to select them and follow steps 7-8 one at a time.
+
+![](/img/google-api-5.webp)
+
+**Step 7:**  Make sure to enable Key Restrictions > Websites for your API Key to prevent unauthorized use.
+
+![](/img/google-api-6.webp)
+
+**Step 8:** Select Save and Continue > Enter your Credit Card for billing purposes
+
 ## Template Settings
 
 Go to System > Site Template Styles
@@ -349,30 +379,4 @@ The screenshot below shows how your cart will appear after purchasing and instal
 
 ![](/img/advanced-checkout-frontend2.webp)
 
-## How to Obtain Your Google API Key
-
-**Step 1:** Visit [https://console.cloud.google.com/apis/dashboard](https://console.cloud.google.com/apis/dashboard)&#x20;
-
-**Step 2:** Select Create project&#x20;
-
-![](/img/google-api-2.webp)
-
-**Step 3:** Name your project and select the location > Create
-
-![](/img/google-api-3.webp)
-
-**Step 4:** Select 'Enable APIS and Services'&#x20;
-
-![](/img/google-api-1.webp)
-
-**Step 5:** Type Geocoding in the search bar and select Geocoding API and Maps Javascript API. You have to select them and follow step 5 one at a time.
-
-![](/img/google-api-4.webp)
-
-![](/img/google-api-5.webp)
-
-**Step 6:**  Make sure to enable Key Restrictions > Websites for your API Key to prevent unauthorized use.
-
-![](/img/google-api-6.webp)
-
-**Step 7:** Select Save and Continue > Enter your Credit Card for billing purposes
+&#x20;
