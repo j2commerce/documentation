@@ -6,21 +6,19 @@ description: J2Commerce (formerly known as J2Store)
 
 With J2Commerce you can let the customer choose a Free shipping option in the shipping method selection area of your site. Here is how you can configure the Free shipping for the store.
 
-## Free Shipping Method: <a href="#methods" id="methods"></a>
+## Free Shipping Method: <a href="#methods" id="methods" />
 
 The Free shipping method is available by default with J2Commerce shipping methods.
 
 To set the Free shipping method for the store please Follow the below steps:
 
-**Step:1**
+Navigate to Components > J2Commerce > Setup > Shipping method > Free shipping and click on the X to enable it.&#x20;
 
-Navigate to Components > J2Commerce > Setup-> Shipping method-> Free shipping and click on the X to enable it.&#x20;
+![Enable free shipping](../../../assets/free-shipping-enable.webp)
 
-![Enable free shipping](<../../../assets/free-shipping-enable.webp>)
+## **Setting up the Parameters**
 
-**Step:2**
-
-Click View and start to configure the following parameters:
+![Free Shipping Parameters](../../../assets/free-shipping1.webp)
 
 **Status:** Set the status to Enabled to keep the Free shipping method active
 
@@ -43,5 +41,3 @@ For Example: If you wish to apply the Free shipping charge to order of total bel
 **Limit the Free shipping method only for products that were enabled for shipping:** When set to Yes the method will only show up if the cart has at least one product that was enabled for shipping.
 
 **Do not offer free shipping to members of these user groups:** The members of the selected user groups here will not be able to choose free shipping.
-
-![Free Shipping Parameters](../../../assets/free-shipping1.webp)
