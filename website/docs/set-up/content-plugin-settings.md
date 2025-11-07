@@ -6,24 +6,29 @@ description: J2Commerce (formerly known as J2Store)
 
 To control the display in the cart section, to show or hide the images, enabling zoom effects etc., some settings have to made in advance to achieve the desired results. The content plugin settings would also take effect when you have displayed your products using short code on the Joomla layout. This section explains about how the settings can be made.
 
-**Procedures**
+## **Setup**
 
-- From the Joomla main menu, go to System > Manage > Plugins
-- From the resulting window, select Filter Option. In the dropdown window select Content.  Select Content - J2Store (or J2Commerce) from the list, as illustrated in the image below
+**Step 1:** From the Joomla main menu, go to System > Manage > Plugins
+
+**Step 2:** From the resulting window, select Filter Option. In the dropdown window select Content.  Select Content - J2Store (or J2Commerce) from the list, as illustrated in the image below
 
 ![Contentplugin-contentfilter](../../assets/content2.webp)
 
-- You would see the following window where you could allow frontend article editing. When the option is set to Yes, the users with appropriate permissions would be able to view the J2Commerce (J2Store cart) tab on the product articles on the frontend.
+### Plugin tab
+
+You would see the following window where you could allow frontend article editing. When the option is set to Yes, the users with appropriate permissions would be able to view the J2Commerce (J2Store cart) tab on the product articles on the frontend.
 
 ![Contentplugin-frontendediting](<../../assets/content plugin2.webp>)
 
-Next is the category view tab, where you can find settings for controlling the behavior on the category view of products.
+### Category View tab
 
-- From the resulting window, select the Category View tab to set the values, as shown in the image below:
+where you can find settings for controlling the behavior on the category view of products.
+
+From the resulting window, select the Category View tab to set the values, as shown in the image below:
 
 ![Contentplugin-categoryview](<../../assets/content category2.webp>)
 
-- Follow the steps for the settings to be made:
+Follow the steps for the settings to be made: Save the settings after you completed this tab.
 
 **Add to cart and options display**
 
@@ -53,13 +58,13 @@ Choose Yes if the image is to be linked with the product
 
 **Image width & Additional image width:** Set the width of the image in pixels
 
-Item View
+### Item View tab
 
-Save the settings and go to the Item View tab to set the values, as shown in the image below:
+Set the values, as shown in the image below:
 
 ![Setup-contentplugin-itemview](<../../assets/content item view2.webp>)
 
-**Product block position**
+**Product block position:**
 
 **Top**: This would display the add to cart, price, options above the description, or other content of the product article.
 
