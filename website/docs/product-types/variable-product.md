@@ -55,9 +55,43 @@ In the latest versions of J2Commerce, we introduced a new product type: [Flexibl
 
 As the name suggests, it is very flexible and is based on the Cartesian set algorithm. So you can add, remove a variant anytime without re-generating the entire combinations.
 
-## Creating a variable product <a href="#creating-a-variable-product" id="creating-a-variable-product" />
+## Install and Download
 
-**Step 1:** Content > Articles > New. Make sure you are in the appropriate category first, or assign the 'Parent' category in the 'Content' page of the new article.
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
+
+**Step 2:** Locate the Advanced Variable Product App > click View Details > Add to cart > Checkout.
+
+![](/img/advanced-var-purchase.webp)
+
+**Step 3:** Go to your My Downloads or My Account under your profile button at the top right corner and search for the app. Click Available Versions&#x20;
+
+![](/img/advanced-var-download.webp)
+
+Step 4: Locate the most recent version > View Files > Download Now
+
+![](/img/advanced-var-download1.webp)
+
+**Installation:** You can install this Advanced Variable Product App using the Joomla installer. The following steps help you with a successful installation.
+
+**Step 1:** In the Joomla admin, go to System > Install > Extensions
+
+![](/img/product-category-installer-1.webp)
+
+**Step 2**: Click on the Browse button and select the Advanced Checkout zip file you saved during the download process. You will receive a message of success once installed.
+
+![](/img/product-category-download1.webp)
+
+**Step 3:** Select J2Commerce > Apps > Advanced Variable Product
+
+**Step 4:** Enable the app by clicking on the 'X'. It will turn into a checkmark
+
+![](/img/advanced-var-enable.webp)
+
+## Creating an Advanced variable Product
+
+**Step 1:** Content > Articles > New
+
+Make sure you are in the appropriate category first, or assign the 'Parent' category in the 'Content' page of the new article.
 
 ![](/img/variant-start0.webp)
 
