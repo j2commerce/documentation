@@ -2,13 +2,13 @@
 description: J2Commerce (formerly known as J2Store)
 ---
 
-# Re-Order
+# Easy Re-Order
 
 Allow your customers to re-order with a single click.
 
 Instead of going through the process of adding the same products in their next purchase, let them re-order. All they have to do is click a button / link from their order history (my profile) page.
 
-## Requirements <a href="#requirements" id="requirements"></a>
+## Requirements <a href="#requirements" id="requirements" />
 
 1. PHP 8.1.0 +
 2. Joomla! 4.x/ Joomla! 5.x +

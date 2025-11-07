@@ -2,19 +2,19 @@
 description: J2Commerce (formerly known as J2Store)
 ---
 
-# Upload file in checkout
+# Upload File in Checkout
 
 Allow customers to upload one or more files during the order. The app will come in handy for store owners selling products like printed materials. The customer can upload an image or a PDF to their order.
 
 The store owner can download it from the app’s backend and manage all the uploaded files for an order.
 
-## Requirements <a href="#requirements" id="requirements"></a>
+## Requirements <a href="#requirements" id="requirements" />
 
 1. PHP 8.1.0 +
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
-## Installation <a href="#installation" id="installation"></a>
+## Installation <a href="#installation" id="installation" />
 
 1. Use the Joomla installer to install the app.
 2. In the backend, go to J2Commerce Dashboard > Apps as shown in the image below.
@@ -23,7 +23,7 @@ The store owner can download it from the app’s backend and manage all the uplo
 
 ![fu01](https://raw.githubusercontent.com/j2store/doc-images/master/apps/upload%20file%20in%20checkout/file_upload_01.png)
 
-## Configuration <a href="#configuration" id="configuration"></a>
+## Configuration <a href="#configuration" id="configuration" />
 
 **No of file field display:** Enter the number of fields to be displayed in the checkout.
 
