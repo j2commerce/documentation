@@ -4,7 +4,7 @@ description: J2Commerce (formerly known as J2Store)
 
 # Postal Code shipping plugin
 
-The plugin integrates a postal code based shipping method for J2Store. It will calculate the shipping cost based on the postal code range, weight range and quantity range. You can use all three or just one of them.
+The plugin integrates a postal code based shipping method for J2Commerce. It will calculate the shipping cost based on the postal code range, weight range and quantity range. You can use all three or just one of them.
 
 **Requirements**
 
