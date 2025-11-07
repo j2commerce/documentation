@@ -214,7 +214,7 @@ Change this with
 
 The issue seems to be the wrong sub-template.
 
-Open your product list layout menu. In the Common options tab -> set the sub-template as Bootstrap3.
+Open your product list layout menu. In the Common options tab > set the sub-template as Bootstrap3.
 
 Save
 

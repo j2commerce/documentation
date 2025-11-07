@@ -8,22 +8,22 @@ To control the display in the cart section, to show or hide the images, enabling
 
 **Procedures**
 
-* From the Joomla main menu, go to System > Manage > Plugins
-* From the resulting window, select Filter Option. In the dropdown window select Content.  Select Content - J2Store (or J2Commerce) from the list, as illustrated in the image below
+- From the Joomla main menu, go to System > Manage > Plugins
+- From the resulting window, select Filter Option. In the dropdown window select Content.  Select Content - J2Store (or J2Commerce) from the list, as illustrated in the image below
 
 ![Contentplugin-contentfilter](../../assets/content2.webp)
 
-* You would see the following window where you could allow frontend article editing. When the option is set to Yes, the users with appropriate permissions would be able to view the J2Commerce (J2Store cart) tab on the product articles on the frontend.
+- You would see the following window where you could allow frontend article editing. When the option is set to Yes, the users with appropriate permissions would be able to view the J2Commerce (J2Store cart) tab on the product articles on the frontend.
 
 ![Contentplugin-frontendediting](<../../assets/content plugin2.webp>)
 
 Next is the category view tab, where you can find settings for controlling the behavior on the category view of products.
 
-* From the resulting window, select the Category View tab to set the values, as shown in the image below:
+- From the resulting window, select the Category View tab to set the values, as shown in the image below:
 
 ![Contentplugin-categoryview](<../../assets/content category2.webp>)
 
-* Follow the steps for the settings to be made:
+- Follow the steps for the settings to be made:
 
 **Add to cart and options display**
 
@@ -53,7 +53,9 @@ Choose Yes if the image is to be linked with the product
 
 **Image width & Additional image width:** Set the width of the image in pixels
 
-* Save the settings and go to the Item View tab to set the values, as shown in the image below:
+Item View
+
+Save the settings and go to the Item View tab to set the values, as shown in the image below:
 
 ![Setup-contentplugin-itemview](<../../assets/content item view2.webp>)
 

@@ -8,20 +8,9 @@ There are several options available for your online store. Any misconfiguration 
 
 The configuration page has several tabs. Each one is explained in detail. They are:
 
-* Basic Settings
-* Store
-* Product
-* Inventory
-* Tax
-* Discount
-* Cart
-* Checkout
-* Order
-* Update
-* Mail Template
-* Others
+## Basic Settings <a href="#basic-settings" id="basic-settings" />
 
-## Basic Settings <a href="#basic-settings" id="basic-settings"></a>
+![basic settings](<../../assets/basic settings-configuration (1).webp>)
 
 **Some basic settings need to be done before you proceed. This will be handled by the following options.**
 
@@ -30,7 +19,9 @@ The configuration page has several tabs. Each one is explained in detail. They a
 If this option is enabled, J2Commerce loads the J2Commerce.css file for customizing the template style. First, this will look into the template CSS file. If it is not included, then J2Commerce loads its own J2Commerce.css file.
 
 :::note
-   NOTE: Copy the original CSS file from /media/j2store/css/j2store.css to your template's css folder. Otherwise, you will have to style every element from scratch. The original j2commerce.css will get you started quickly. You can then append / change existing styles.
+
+NOTE: Copy the original CSS file from /media/j2store/css/j2store.css to your template's css folder. Otherwise, you will have to style every element from scratch. The original j2commerce.css will get you started quickly. You can then append / change existing styles.
+
 :::
 
 **Load Font-Awesome UI in frontend:** If your template or other extensions load Font-awesome and want to disable loading Font Awesome from J2Commerce, you can choose NO. Otherwise, you can load either the local copy of font-awesome or remote.
@@ -60,9 +51,9 @@ This option is the same as the previous one. Here, there are four options availa
 
 NOTE: The file path shouldn't start with a frontslash.
 
-![basic settings](<../../assets/basic settings-configuration (1).webp>)
+## Store <a href="#store" id="store" />
 
-## Store <a href="#store" id="store"></a>
+![Configuration-storesettings](<../../assets/store (1).webp>)
 
 Configure the address, administrator email, and some defaults for your storefront
 
@@ -73,7 +64,9 @@ Configure the address, administrator email, and some defaults for your storefron
 **Store Administrator Email(s):** This is the administrator’s email and can have multiple emails, separated by a comma. The order notification and payment validation errors will be sent to the email IDs provided here. You could also test by sending a test email by using the TEST email button below this option.
 
 :::note
+
 **NOTE**: The email(s) entered here should be different from the ones entered on the Joomla mail configuration under System->Global configuration->Server->Mail settings. The test email function would work only if mail configuration has been completed successfully at the Joomla configuration.
+
 :::
 
 **Store Name:** Name of the store. One must enter a valid store name.
@@ -81,8 +74,6 @@ Configure the address, administrator email, and some defaults for your storefron
 **Address, City:** The address and city of the store is not mandatory. You can enter an address or simply leave the fields empty.
 
 **ZIP/Postal code:** Enter a valid postal code for the store. This field can not be empty. Check the image below to understand how to enter emails, store name, and address, etc.
-
-![Configuration-storesettings](<../../assets/store (1).webp>)
 
 **Country Name:** Name of the country in which the store exists. To be selected from the given list.
 
@@ -96,54 +87,59 @@ Configure the address, administrator email, and some defaults for your storefron
 
 **Default Length Measurement:** Select the default length measurement in use for any country from the available options. (Centimetre, Inch, Millimetre)
 
-## Product <a href="#product" id="product"></a>
-
-These are global parameters for product display. You can override some of these parameters if you are using the J2Commerce's product layout.
+## Product <a href="#product" id="product" />
 
 ![Configuration-productsettings](../../assets/product2.webp)
+
+These are global parameters for product display. You can override some of these parameters if you are using the J2Commerce's product layout.
 
 **Catalog Mode:** Setting this option to ‘Yes’ will disable all the features of the cart except the ‘price’ of the product.
 
 \*\*Show SKU? \*\* SKU stands for Stock Keeping Unit. If this option is set to ‘No’, the SKU will become hidden in both product and cart views.
 
 :::warning
-    **CAUTION: **SKU Show/Hide setting can be done in two places, i.e., in configuration setup and in product layout. Product layout setting will be given higher priority, i.e., if SKU is set to **Show** in configuration and again it is set to **Hide** in product layout, the configuration setting will be overridden and the SKU will be set to **Hide** as it is in product layout. As a result, SKU will not be shown in frontend.That is the menu settings would have higher priority over global settings.
+\*\*CAUTION: \*\*SKU Show/Hide setting can be done in two places, i.e., in configuration setup and in product layout. Product layout setting will be given higher priority, i.e., if SKU is set to **Show** in configuration and again it is set to **Hide** in product layout, the configuration setting will be overridden and the SKU will be set to **Hide** as it is in product layout. As a result, SKU will not be shown in frontend.That is the menu settings would have higher priority over global settings.
 :::
 
 **Manufacturer/Brand:** If it is set to ‘YES’, the manufacturer name will be visible.
 
-* **Show Quantity Field:** If it is set to ‘Yes’, the manual input for quantity will be visible; quantity can not be given manually.
-* **Show Price:** To hide the price of a product, set this option to ‘No’.
-* **Show Base/Regular Price:** If the advanced pricing option is used, i.e., a discount is offered on base price, it can be displayed using this option by setting it to ‘Yes’. It will show the base price in a strikethrough format.
+- **Show Quantity Field:** If it is set to ‘Yes’, the manual input for quantity will be visible; quantity can not be given manually.
+- **Show Price:** To hide the price of a product, set this option to ‘No’.
+- **Show Base/Regular Price:** If the advanced pricing option is used, i.e., a discount is offered on base price, it can be displayed using this option by setting it to ‘Yes’. It will show the base price in a strikethrough format.
 
 **Example:** In J2Commerce we can set the base price for the product, and we can also offer a discount on the base price. This discount on the base price is called an advanced price. If this option is **enabled** (set to ‘Yes’), it will show the base price in stroked-out format and display the advanced price. Let’s assume that the base price of a product is $ 300.00 and it is offered a discount of $ 50.00, then the new price will be $ 250.00. It will be displayed as below: $ 300.00 (This is the base price) $ 250.00 (This is the advanced price)
 
-* **Product Option Price:** If this option is set to ‘Show’, the product option price will be displayed along with the option name.
-* **Product Option Price Prefix:** This option will work only when the previous option is enabled. Setting this option to **‘Show’** will show the prefix for the price modifier. i.e., a modifier ’+/-’ will be shown in the view to modify the product price.
+- **Product Option Price:** If this option is set to ‘Show’, the product option price will be displayed along with the option name.
+- **Product Option Price Prefix:** This option will work only when the previous option is enabled. Setting this option to **‘Show’** will show the prefix for the price modifier. i.e., a modifier ’+/-’ will be shown in the view to modify the product price.
 
 :::note
-    Note: The options, _Product Option Price_ and _Product Option Price Prefix_, are applicable to **Simple** and **Configurable** product types only and not for **Variable** and **Downloadable** product types.
-:::
-* \*\*Show Image for Product Options \*\* This will be applicable for the radio button option only. Setting this will show an image near the options on the products page.
-* \*\*No of columns for related products (upsells & cross sells) \*\* This will be used for up-sells and cross-sells display layout when you use the shortcode for displaying up-sells and cross-sells in your article layouts.
 
-## Inventory <a href="#inventory" id="inventory"></a>
+Note: The options, *Product Option Price* and *Product Option Price Prefix*, are applicable to **Simple** and **Configurable** product types only and not for **Variable** and **Downloadable** product types.
+
+:::
+
+- \*\*Show Image for Product Options \*\* This will be applicable for the radio button option only. Setting this will show an image near the options on the products page.
+- \*\*No of columns for related products (upsells & cross sells) \*\* This will be used for up-sells and cross-sells display layout when you use the shortcode for displaying up-sells and cross-sells in your article layouts.
+
+## Inventory <a href="#inventory" id="inventory" />
 
 ```
     _This is a J2Commerce PRO feature._
 ```
 
-* **Enable Inventory:** Set this option to ‘Yes’ to enable inventory management. Provide the available quantity when a product is added, and it will be kept in track of whenever an order is processed. Upon successful completion of an order, the ordered product quantity will be deducted from the available quantity and the result will be the new available quantity. When the available quantity for a particular product becomes zero, the add to cart button will be disabled. Also, the user cannot enter a quantity greater than the available quantity.
-* **Cancel New/Pending orders to release stock.** Enabling this option by setting it to ‘Yes’ will cancel the orders with status ‘Pending’ / ‘New’, if they were not confirmed within the stipulated time, and the stock will be released and added to the available quantity.
-* **Hold stock for (in minutes) before canceling.** If the previous option is set to yes, this option will be enabled for entering the allowed time for order confirmation, otherwise, it will stay disabled.
-* **Stock Display Format:** This option is used to display the available stock. There are three formats available for viewing. Always Show Stock e.g., 12 in stock. Show only when stock reaches a low stock threshold. e.g., only 2 left in stock. Never show stock.
-* **Min Sale Quantity.** This global setting default value is 1, and it can be overwritten for the user’s desired quantity in product view.
-* **Max Sale Quantity** Global setting. By default, it is left empty. It can also be overwritten.
-* **Notify if the stock goes below.** The global setting for this field is empty, and it can be overwritten for the user’s desired quantity. And when the stock goes beyond the preset level, it will notify. Check the image below for a clear understanding.
-
 ![Configuration-inventorysettings](../../assets/inventory2.webp)
 
-## Tax <a href="#tax" id="tax"></a>
+- **Enable Inventory:** Set this option to ‘Yes’ to enable inventory management. Provide the available quantity when a product is added, and it will be kept in track of whenever an order is processed. Upon successful completion of an order, the ordered product quantity will be deducted from the available quantity and the result will be the new available quantity. When the available quantity for a particular product becomes zero, the add to cart button will be disabled. Also, the user cannot enter a quantity greater than the available quantity.
+- **Cancel New/Pending orders to release stock.** Enabling this option by setting it to ‘Yes’ will cancel the orders with status ‘Pending’ / ‘New’, if they were not confirmed within the stipulated time, and the stock will be released and added to the available quantity.
+- **Hold stock for (in minutes) before canceling.** If the previous option is set to yes, this option will be enabled for entering the allowed time for order confirmation, otherwise, it will stay disabled.
+- **Stock Display Format:** This option is used to display the available stock. There are three formats available for viewing. Always Show Stock e.g., 12 in stock. Show only when stock reaches a low stock threshold. e.g., only 2 left in stock. Never show stock.
+- **Min Sale Quantity.** This global setting default value is 1, and it can be overwritten for the user’s desired quantity in product view.
+- **Max Sale Quantity** Global setting. By default, it is left empty. It can also be overwritten.
+- **Notify if the stock goes below.** The global setting for this field is empty, and it can be overwritten for the user’s desired quantity. And when the stock goes beyond the preset level, it will notify. Check the image below for a clear understanding.
+
+## Tax <a href="#tax" id="tax" />
+
+![Configuration-taxsettings](../../assets/tax2.webp)
 
 An important area. Please think twice before you configure. Read the description carefully while configuring the following options.
 
@@ -161,9 +157,9 @@ An important area. Please think twice before you configure. Read the description
 
 **Display prices during cart / checkout Excluding tax:** Choose how you want to display the prices(including tax or excluding tax) during the checkout. One of these options can be selected here. Check the image below for a visual aid:
 
-![Configuration-taxsettings](../../assets/tax2.webp)
+## Discount <a href="#discount" id="discount" />
 
-## Discount <a href="#discount" id="discount"></a>
+![Configuration-discount-settings](../../assets/discount2.webp)
 
 **This is a J2Commerce PRO exclusive feature:** This is for discounts that are offered to customers.
 
@@ -171,9 +167,9 @@ An important area. Please think twice before you configure. Read the description
 
 **Enable Gift Vouchers:** By enabling this option with a ‘Yes’, the customers can be offered gift vouchers with a fixed value, say $ 25.00, which in turn, can be applied during the checkout.
 
-![Configuration-discount-settings](../../assets/discount2.webp)
+## Cart <a href="#cart" id="cart" />
 
-## Cart <a href="#cart" id="cart"></a>
+![Configuration-cartsettings](../../assets/cart2.webp)
 
 Cart and checkout settings for your store.
 
@@ -227,16 +223,18 @@ Cart and checkout settings for your store.
 **Prevent the customer from checking out if the shipping method was not chosen**
 
 :::danger
-    **CAUTION:** This option, when enabled, might create issues at the checkout if you don’t have shipping enabled. So enable this option only when you have set up shipping and really want to prevent user from checking out in the absence of shipping methods.
+
+**CAUTION:** This option, when enabled, might create issues at the checkout if you don’t have shipping enabled. So enable this option only when you have set up shipping and really want to prevent user from checking out in the absence of shipping methods.
+
 :::
 
-* **Auto apply if only one shipping method is available:** Setting this option to yes would apply the shipping method if only one shipping method is available for the address and product chosen by the user.
-* **Hide shipping costs until an address is entered:** Setting this option to Yes would hide the shipping costs until the user chooses the address at checkout.
-* **Clear Cart data Older than:** The duration mentioned here would determine the number of days the cart is left uncleared. Options available or 1 week, 2 weeks, 1 month, 2 months, 3 months.
+- **Auto apply if only one shipping method is available:** Setting this option to yes would apply the shipping method if only one shipping method is available for the address and product chosen by the user.
+- **Hide shipping costs until an address is entered:** Setting this option to Yes would hide the shipping costs until the user chooses the address at checkout.
+- **Clear Cart data Older than:** The duration mentioned here would determine the number of days the cart is left uncleared. Options available or 1 week, 2 weeks, 1 month, 2 months, 3 months.
 
-![Configuration-cartsettings](../../assets/cart2.webp)
+## Checkout Layout <a href="#checkout-layout" id="checkout-layout" />
 
-## Checkout Layout <a href="#checkout-layout" id="checkout-layout"></a>
+![Configuration-](../../assets/checkout2.webp)
 
 The layout of the checkout address fields.\*\* NOTE:\*\* Removing a field here will NOT remove it. Go to Setup  > Custom Fields to enable or disable the fields. This tab just decides the display and ordering of the fields in the checkout steps.
 
@@ -248,9 +246,7 @@ The layout of the checkout address fields.\*\* NOTE:\*\* Removing a field here w
 
 **Pre-populate / Restore:** This is a button that restores the default setting of all three options given above when clicked.
 
-![Configuration-](../../assets/checkout2.webp)
-
-**Example to add a custom field:** Assume that it would be better to add a **Title** field before the **First Name**. To achieve that, create a custom field with the _title_ as its name, as shown in the image:
+**Example to add a custom field:** Assume that it would be better to add a **Title** field before the **First Name**. To achieve that, create a custom field with the *title* as its name, as shown in the image:
 
 ![Configuration-checkout-customfield](https://raw.githubusercontent.com/j2store/doc-images/master/set-up/Configuration/configuration-checkout-customfield.png)
 
@@ -260,15 +256,15 @@ Now, in the checkout process, the added custom field **Title** will be displayed
 
 In this way, new custom fields can be added according to the needs of the user.
 
-## Order <a href="#order" id="order"></a>
+## Order <a href="#order" id="order" />
 
 **Invoice Prefix:** This is the prefix of the Invoice generated when payment is made.
 
 For e.g., the system generates only numbers, and if one wants to add some prefix to the invoice number to add information about the invoice, it can be done by setting this field with the prefix. Let’s assume a company with a name RB Corporation, sells some product,s and the invoice prefix can be anything customized by the owner of the company. Some of the possibilities are: RBC/S/000RBC-2015-S-000
 
-In the above example, **RBC/S/000**, _RBC_ is the initials of the company, _S_ can be added for sales classification, and _000_ for number prefix.
+In the above example, **RBC/S/000**, *RBC* is the initials of the company, *S* can be added for sales classification, and *000* for number prefix.
 
-Likewise, in _RBC-2015-S-000_, all are the same, and the extra 2015 may be added for the sales for the year _2015_.
+Likewise, in *RBC-2015-S-000*, all are the same, and the extra 2015 may be added for the sales for the year *2015*.
 
 Now the system-generated invoice number, say 1, will be appended with this prefix, and will be displayed as **RBC/S/0001** in the invoice.
 
@@ -282,25 +278,25 @@ Now the system-generated invoice number, say 1, will be appended with this prefi
 
 **Show Logout button in Myprofile** This option is used to show / hide the logout button in myprofile.
 
-![Configuration-ordersettings](../../assets/others2.webp)
-
-## Update <a href="#update" id="update"></a>
-
-_Applies only for J2Commerce PRO users_
-
-This tab has a text input to enter the **Download ID** provided by [**J2Commerce**](https://www.j2commerce.com/), which is a requirement for updating the J2commerce component’s PRO version. Without this ID, [J2commerce PRO](https://www.j2commerce.com/my-account) cannot be downloaded. This ID will be available in the Invoice as well as in **My Downloads** of [J2Commerce.com](https://www.j2commerce.com/)
+## Update <a href="#update" id="update" />
 
 ![Configuration-updatesettings](../../assets/update2.webp)
 
-## Mail Template <a href="#mail-template" id="mail-template"></a>
+*Applies only for J2Commerce PRO users*
+
+This tab has a text input to enter the **Download ID** provided by [**J2Commerce**](https://www.j2commerce.com/), which is a requirement for updating the J2commerce component’s PRO version. Without this ID, [J2commerce PRO](https://www.j2commerce.com/my-account) cannot be downloaded. This ID will be available in the Invoice as well as in **My Downloads** of [J2Commerce.com](https://www.j2commerce.com/)
+
+## Mail Template <a href="#mail-template" id="mail-template" />
+
+![Configuration-mailtemplatesettings](../../assets/mail_template2.webp)
 
 This tab has an option to avoid sending the default email template to customers and admins. In some cases, you will be likely to send an email template only to customers or vice versa. In this case, if there is no email template assigned to the admin or to the customer, the system will send a default email template.
 
 To avoid this, please choose **NO. Do not use the default template to send a mail when no template matches my email template conditions (Not recommended)**
 
-![Configuration-mailtemplatesettings](../../assets/mail_template2.webp)
+## Others <a href="#others" id="others" />
 
-## Others <a href="#others" id="others"></a>
+![Configuration-othersettings](<../../assets/others2 (1).webp>)
 
 Misc. options for the store
 
@@ -313,5 +309,3 @@ Misc. options for the store
 **Prepare content for Terms and Conditions and the Thank you article?** Setting this YES will parse the article content
 
 **Enable falang support:** This option provides support for SEF URLs used in Falang translation component. Enable if you have installed Falang. Check the image below for a better idea.
-
-![Configuration-othersettings](<../../assets/others2 (1).webp>)
