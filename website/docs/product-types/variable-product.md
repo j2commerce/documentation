@@ -2,15 +2,15 @@
 description: J2Commerce (formerly known as J2Store)
 ---
 
-# Variable product
+# Advanced Variable Product
 
 ## Introduction <a href="#introduction" id="introduction" />
 
-Variable is a complex product type. It lets you define variations of a product where each variant may have different attributes, e.g. SKU, price and stock level.
+An Advanced Variable is a complex product type. It lets you define variations of a product where each variant may have different attributes, e.g. SKU, price and stock level.
 
 ***Note: Since this is a complex product type, it might take some time (quite some time) to create it. You will need a lot of patience and also require quite some work. So be prepared.***
 
-A perfect example for a variable product is: T-shirts. T-shirts always come with a size and color combination. Example: Small-Blue, Small-Red, Small-Green.
+A perfect example for an Advanced Variable product is: T-shirts. T-shirts always come with a size and color combination. Example: Small-Blue, Small-Red, Small-Green.
 
 You will be adding a price, SKU and stock PER combination.
 
@@ -45,9 +45,9 @@ If we add just one more size (Large) and one more color (Green), this will make 
 - Only when you want to manage inventory at the variant level. Example: You want to maintain a stock for Small - Blue, Small - Red. (As you can see, when you sell a T-Shirt, you naturally maintain the stock based on the Size and the Color… you cannot maintain an inventory just by Size or Color)
 - Only when you want to set different prices for different variants (Example: Small - Blue costs $10, Medium - Red costs $15)
 
-### Disadvantage of Variable Product Type: <a href="#disadvantage-of-variable-product-type" id="disadvantage-of-variable-product-type" />
+### Disadvantages of Variable Product Type: <a href="#disadvantage-of-variable-product-type" id="disadvantage-of-variable-product-type" />
 
-When you change any option values or want to introduce a new variant, then entire combination (matrix) changes. So you will have to re-generate the entire variants, and set the prices.
+When you change any option values or want to introduce a new variant, then the entire combination (matrix) changes. So you will have to re-generate the entire variants, and set the prices.
 
 ### How can I overcome this disadvantage? <a href="#how-can-i-overcome-this-disadvantage" id="how-can-i-overcome-this-disadvantage" />
 
