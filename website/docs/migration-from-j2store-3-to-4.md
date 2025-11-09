@@ -74,7 +74,9 @@ We’ll not be able to support any custom-developed extensions/plugins/add-ons/m
 If you have not done so already, and you have Akeeba extensions installed, please download and run the [Magic Eraser](https://github.com/akeeba/magiceraser/releases/latest) to automatically remove obsolete Akeeba extensions before upgrading your site to Joomla 4.
 This is very important when you run a J2Store site, as a modified version of Akeeba's library **F0F** is used by J2Store and you will run into conflicts once under Joomla 4.
 Do it at this stage while all J2Store plugins are disabled. You will avoid potential conflicts.
+
 However, J2Store and the Migration tool may stop working. You will need to manually install J2Store 4. Follow the instruction in the next step.
+:::
 
 ### Step 4: Install J2Store 4
 
