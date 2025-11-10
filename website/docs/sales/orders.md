@@ -8,11 +8,13 @@ the yourA customer views the product and completes the checkout process, it is t
 
 To locate your orders, go to Components > J2Commerce > Sales > Orders
 
-![](<../../assets/orders1.webp>)
+![](../../assets/orders1.webp)
 
-## Order statuses <a href="#order-statuses" id="order-statuses"></a>
+## Understanding Order Statuses <a href="#order-statuses" id="order-statuses" />
 
 Orders are listed here according to their statuses. They are as follows:
+
+![](../../assets/orders3.webp)
 
 **New**
 
@@ -40,32 +42,38 @@ This is primarily for the administrator. (In a few gateways, if the customer can
 
 An internal order status for the store administrator. You can use it for any purpose you like, depending on your business nature.
 
+## Understanding the Order Details
+
 Every order will possess some important information that explains it. They are:
 
-* **Invoice No:** The number of the document that completes the process of that order.
-* **Order ID:** ID for reference that tracks all the processing steps
-* **Date:** The date on which the order is completed
-* **Amount:** The total value of the order after billing
-* **Payment Method:** The method by which the customer has paid for the order, viz., bank transfer, PayPal, money order, etc
-* **Status:** Completed or still in process - like information
+- **Invoice No:** The number of the document that completes the process of that order.
+- **Order ID:** ID for reference that tracks all the processing steps
+- **Date:** The date on which the order is completed
+- **Amount:** The total value of the order after billing
+- **Payment Method:** The method by which the customer has paid for the order, viz., bank transfer, PayPal, money order, etc
+- **Status:** Completed or still in process - like information
 
-Check the image below to understand clearly.
+## Creating Custom Order Statuses
 
-![](../../assets/orders3.webp)
+&#x20;Go to Components > J2Commerce > Localisation > Order Statuses
 
-You could also create custom order statuses by clicking on the New button under Components > J2Commerce > Localisation > order statuses > New as indicated in the screenshot below:
+![](/img/order-status.webp)
 
-![Order statuses](<../../assets/orders4 (1).webp>)
+Select New and name it anything you want
+
+![Order statuses](/img/order-status1.webp)
+
+In this example, we created one called Shipped
 
 ![New order status](../../assets/orders5.webp)
 
-## Creating order from the backend <a href="#creating-order-from-backend" id="creating-order-from-backend"></a>
+## Creating Orders from the Backend <a href="#creating-order-from-backend" id="creating-order-from-backend" />
 
 J2Commerce allows you to send an invoice first and then collect the payment from the customer. This is possible by creating an order from the backend. Follow the steps below to create an order from the backend:
 
-Go to Component > J2Commerce > Sales > Orders and click New on top left of the page.
+Go to Component > J2Commerce > Sales > Orders and click New
 
-![](../../assets/orders6.webp)
+![](/img/order-status2.webp)
 
 From the resulting page, select date, user, and language, and then click on Save & Next at the bottom of the page.
 
@@ -93,13 +101,13 @@ At last, the order summary will be displayed. At the bottom of the page, you wil
 
 If you would like to apply an extra charge to customers, use the Add fee feature at the order summary tab. Enter the fee name, fee amount, and choose the tax profile (if you want to charge an extra fee taxable), and then finally click on save order.
 
-## Editing order from the backend <a href="#editing-order-from-backend" id="editing-order-from-backend"></a>
+## Editing orders from the backend <a href="#editing-order-from-backend" id="editing-order-from-backend" />
 
 You could edit the order by going to Component > J2Commerce > Sales > Orders.
 
 You can see the orders listed in the table format. In the tabular column, select the checkbox of the corresponding order that has to be edited and then click the button at the top of the page.
 
-![](<../../assets/orders14.webp>)
+![](../../assets/orders14.webp)
 
 **Another way:**
 
@@ -107,10 +115,18 @@ Open the order by clicking on the invoice number or the order ID.
 
 Click on Edit at the top of the page and make the changes to the order.
 
-![](<../../assets/orders15.webp>)
+![](../../assets/orders15.webp)
 
-**Adding shipping tracking ID**
+## **Add Shipping Tracking ID**
 
 If you have enabled shipping on your site, on the admin order history page, you can see the text box to enter the shipping tracking ID. Enter your shipping tracking ID and click save.
 
-Now go to Component > J2Commerce > Design > Email Templates and add the short tag \[SHIPPING\_TRACKING\_ID] in your email template.
+Now go to Component > J2Commerce > Design > Email Templates
+
+![](/img/order-status3.webp)
+
+&#x20;**Advanced Settings Tab:**&#x20;
+
+Add the short tag \[SHIPPING\_TRACKING\_ID] in your email template.
+
+![](/img/order-status4.webp)
