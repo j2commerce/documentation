@@ -4,7 +4,7 @@ description: J2Commerce (formerly known as J2Store)
 
 # Orders
 
-the yourA customer views the product and completes the checkout process, it is transformed into an order.
+A customer views the product and completes the checkout process; it is transformed into an order.
 
 To locate your orders, go to Components > J2Commerce > Sales > Orders
 
