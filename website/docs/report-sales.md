@@ -10,9 +10,11 @@ Report Sales plugin allows store owner to prepare or present a document containi
 
 Once you have installed the plugin using Joomla! installer, go to J2Commerce Dashboard > Reporting > Reports.
 
-![](<../assets/orders16.webp>)
+![](../assets/orders16.webp)
 
-Enable and open the Report-Sales plugin.
+Enable by clicking the 'X' and it will turn into a checkmark. Once enabled, open the Report-Sales plugin.
+
+
 
 Before going to start filter and take sales report, it is very important to set up the configuration. Click **Configuration** button on top left.
 
@@ -26,9 +28,9 @@ Save and close.
 
 ## Sales Report
 
-With this plugin, you can use filter to sort the orders. For example, choosing any one of the payment methods will display the orders which have been placed using the payment method you have chosen in the filter.
+With this plugin, you can use a filter to sort the orders. For example, choosing any one of the payment methods will display the orders that have been placed using the payment method you have chosen in the filter.
 
-Following pictures will explain you
+The following pictures will explain to you
 
 ![Chhosing the filters](https://raw.githubusercontent.com/j2store/doc-images/master/reporting/Report-sales/report_sales_filters.png)
 
