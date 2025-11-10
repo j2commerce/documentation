@@ -26,21 +26,63 @@ Sometimes you might want to display the filters in a tree structure. Or achieve 
 
 The following screenshots will be of help:
 
-Create a menu of the name filters:
+## Create a Filter Menu
 
-![categorytree](https://raw.githubusercontent.com/j2store/doc-images/master/layout/category-tree-for-displaying-filters/categorytree1.png)
+Go to Menus > Manage > New
 
-Add menu items with category names to the menu filters:
+![categorytree](/img/category-tree-filter.webp)
 
-![categorytree2](https://raw.githubusercontent.com/j2store/doc-images/master/layout/category-tree-for-displaying-filters/categorytree2.png)
+**Title:** Filters
 
-Create a menu module in extensions with the name Filters:&#x20;
+**Unique Name:** filters
 
-Position: j2store-filter-right-top
+![](/img/category-tree-filter3.webp)
 
-![category3](https://raw.githubusercontent.com/j2store/doc-images/master/layout/category-tree-for-displaying-filters/categorytree3.png)
+Add menu items with category names to the Filter menu:
 
-**Frontend view:**
+![](/img/category-tree-filter1.webp)
+
+### Create a new Filter Sub-Menu
+
+You can either click where the sub-menu section is highlighted in the image above, or go to Menus > Filters > New
+
+![categorytree2](/img/category-tree-filter00.webp)
+
+### Setting up the Filter Categories Parameters
+
+**Step 4:** **Details Tab:**
+
+![](/img/category-tree-filter2.webp)
+
+**Title:** Name the Filter Category
+
+**Menu Item Type:** Select > System Links > Menu Item Alias
+
+![](/img/product-layout-menu-link.webp)
+
+**Menu Item:** Assign the menu item
+
+Save and Close
+
+## Create a Filter Menu Module&#x20;
+
+Go to Content > Site Modules > New
+
+![](/img/category-tree-filter-module.webp)
+
+### Setting up the Filter Module Parameters
+
+**Module Tab:**
+
+![](/img/category-tree-filter-module1.webp)
+
+**Title:** Show
+
+**Select Menu:** Filters
+
+**Position:** type, **j2store-filter-right-top**
+
+## **Frontend View**
 
 The frontend view will be as follows:
 
