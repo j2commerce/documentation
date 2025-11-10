@@ -168,27 +168,37 @@ J2Commerce offers special module positions to place Joomla’s custom HTML modul
 
 To avoid the zoom effect and to bring the image in a pop-up, first thing you have to disable the zoom effect in the admin backend.\\
 
-**Disable zoom in J2store / J2Commerce product layout**
+**Step 1: Disable zoom in J2store / J2Commerce product layout**
 
-Go to the menu manager and open the menu that links to the J2Store product layout.
+Go to Menu > Main Menu. Open the menu that links to the J2Store product layout.
 
-Move to the Item view options tab
+![](/img/product-layout-menu.webp)
 
-Set **NO** to enable Zoom effect.
+Move to the Product View Options tab
 
-**Disable zoom in the Category blog layout**
+Set **NO** to Enable zoom effect.
 
-Go to Extensions > Plugins.
+![](/img/product-layout-product-view.webp)
 
-Select the type of **content**.
+**Step 2: Disable zoom in the Category blog layout**
+
+Go to Systems > Manage > Plugins.
+
+![](/img/product-layout-plugin.webp)
+
+Select the type of content.
 
 Open the Content - J2Store plugin.
 
-Set '**NO'** to enable Zoom effect in the Item view tab.
+![](/img/product-layout-content-j2store.webp)
 
-**Override view\_images.php**
+**Item View tab:** Set 'No' to Enable zoom effect.
 
-Once disabled the zoom effect, follow the override procedure given below :
+![](/img/product-layout-item-view.webp)
+
+**Step 3: Override view\_images.php**
+
+Once you have disabled the Zoom Effect, follow the override procedure given below :
 
 Copy\*\* /components/com\_j2store/templates/default/view\_images.php\*\*
 
@@ -214,11 +224,17 @@ Change this with
 
 The issue seems to be the wrong sub-template.
 
-Open your product list layout menu. In the Common options tab > set the sub-template as Bootstrap3.
+Go to Menu > Main Menu. Open your product list layout menu.&#x20;
+
+![](/img/product-layout-menu1.webp)
+
+In the Common Options tab > set the Sub Template as tag\_bootstrap5.
+
+![](/img/product-layout-common-options.webp)
 
 Save
 
-This should solve the issue. If it is already set to Bootstrap 3, then try to set it as Default.
+This should solve the issue. If it is already set to Bootstrap 5, then try to set it as Default.
 
 **Preview additional image after clicking**
 
@@ -232,8 +248,34 @@ edit the file and remove the highlighted line fully.
 
 **How to add a Category description in the list view**
 
-- Create a custom module and assign it to the menu that links to the J2Commerce product layout.
-- Set the module position to j2Commerce-product-list-top.
-- Save.
+Create a custom module and assign it to the menu that links to the J2Commerce product layout.
+
+**Step 1:** Go to Content > Site Module > New
+
+![](/img/product-layout-module.webp)
+
+Select Custom
+
+![](/img/product-layout-module-custom.webp)
+
+**Step 2:** Module tab:&#x20;
+
+![](/img/product-layout-module-tab.webp)
+
+**Type:** Hide
+
+**Position:** Type **j2commerce-product-list-top**
+
+Write out your short description in the content box
+
+**Step 3:** Menu Assignment Tab:
+
+![](/img/product-layout-menu-layout.webp)
+
+**Module Assignment:** Select, Only On The Pages Selected
+
+**Menu Selection:** Select 'None' to deselect all options. Then select the sub-menu you wish to assign it to.
+
+**Save and Close**
 
 Now the custom module will display the description only in list view.
