@@ -6,9 +6,11 @@ description: J2Commerce (formerly known as J2Store)
 
 There are several options available for your online store. Any misconfiguration here will affect your storefront’s behavior. So take your time and configure the store correctly.
 
-The configuration page has several tabs. Each one is explained in detail. They are:
+Go to Components > J2Commerce > Setup > Configuration
 
-## Basic Settings <a href="#basic-settings" id="basic-settings" />
+## How to setup the Configuration
+
+### Basic Settings <a href="#basic-settings" id="basic-settings" />
 
 ![basic settings](<../../assets/basic settings-configuration (1).webp>)
 
@@ -26,24 +28,30 @@ NOTE: Copy the original CSS file from /media/j2store/css/j2store.css to your tem
 
 **Load Font-Awesome UI in frontend:** If your template or other extensions load Font-awesome and want to disable loading Font Awesome from J2Commerce, you can choose NO. Otherwise, you can load either the local copy of font-awesome or remote.
 
-**Load jQuery UI:**
+**Load Fancybox In Front End:** If your template or other extensions load Fancybox , then you can ignore load from J2Commerce
 
-This option is the same as the previous one. Here, there are four options available for selection.
+**Load jQuery UI:** This option is the same as the previous one. Here, there are four options available for selection. If your template or other extensions load jQuery UI, you can choose Do Not Load option. Otherwise, you can load either the local copy of jQuery UI or remote (Google).
 
-1. **No > Do not load jQuery UI**
-2. **Only Frontend > Load jQuery UI for frontend only**
-3. **Only Backend > Load jQuery UI for backend only**
-4. **Both frontend and backend > Load jQuery UI for frontend and backend**
+1. **No:** Do not load jQuery U**I**
+2. **Only Frontend:** Load jQuery UI for frontend only
+3. **Only Backend:** Load jQuery UI for backend only
+4. **Both frontend and backend:** Load jQuery UI for frontend and backend
 
-**Load jQuery UI Localisation for date picker:** The date picker will be translated in your language when you set this to YES.
+**Load Timepicker:** If your template or other extensions load jQuery UI, you can choose Do Not Load option. Otherwise, you can load either the local copy of jQuery UI or remote (Google).
+
+**Load jQuery UI Localisation for date picker:** The date picker will be translated in your language when you set this to YES.&#x20;
 
 **Load full Bootstrap CSS:** If the template is loaded with Bootstrap, and if the user does not want it to be loaded, the user may choose NO; otherwise, choose YES to load the default Bootstrap CSS packed with J2Commerce.
 
 **Load minimal Bootstrap CSS:** If your template does not support Bootstrap, you can consider setting this to YES to load a minimal Bootstrap support. So that your cart, checkout, and order history pages look good.
 
+**Cart and checkout pages should use CSS classes:** Most templates support Bootstrap CSS. While a majority might be using Bootstrap 5, a few might still be using Bootstrap 3 or 4. Setting this parameter will ensure proper rendering of j2store cart and checkout pages. You can check with your template provider to know the Bootstrap version used.
+
 **Who can see ‘add to cart:** This is an option for the user to add his/her product of choice to the cart to proceed with billing. This can be set to be viewed by ‘everyone’ or for ‘registered users only’.
 
-**Cart and checkout pages should use CSS classes:** This option is used to render the cart and checkout pages in a proper layout. Choose the option based on your template’s Bootstrap version. If your template’s bootstrap version is 3, select Bootstrap 3.x, and if your template’s bootstrap version is 2, then select Bootstrap 2.x.
+**Who can see the price in product page?** Set this to either Everyone or Only Registered Users
+
+**Who can see the sku in product page?** Set this to either Everyone or Only Registered Users
 
 **Date Format:** Here, one can choose the display format of date from several [available options](http://php.net/manual/en/datetime.formats.date.php)
 
@@ -51,13 +59,13 @@ This option is the same as the previous one. Here, there are four options availa
 
 NOTE: The file path shouldn't start with a frontslash.
 
-## Store <a href="#store" id="store" />
+### Store <a href="#store" id="store" />
 
-![Configuration-storesettings](<../../assets/store (1).webp>)
+![](/img/configuration5.webp)
 
 Configure the address, administrator email, and some defaults for your storefront
 
-**Security keys for queues and crons:** This security key can be used for the execution of queue and cron jobs required by apps and plugins. This will ensure only legitimate requests are allowed and executed. The cron / queue requests without this key will be denied access. You could regenerate this key by clicking on the Regenerate button.
+**Queues/Crons Security Key:** This security key can be used for the execution of queue and cron jobs required by apps and plugins. This will ensure only legitimate requests are allowed and executed. The cron / queue requests without this key will be denied access. You could regenerate this key by clicking on the Regenerate button.
 
 **Maximum Queue repeat:** Set maximum queue repeat for the Queue system.
 
