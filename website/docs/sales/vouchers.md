@@ -8,21 +8,21 @@ Vouchers are also like coupons, intended to promote sales. Vouchers are sent to 
 
 Step 1: Go to Components > J2Commerce > Sales > Vouchers > New
 
-![](<../../assets/vouchers.webp>)
+![](../../assets/vouchers.webp)
 
 Vouchers contain Basic and Advanced information entries.
 
-![](<../../assets/vouchers1.webp>)
+![](../../assets/vouchers1.webp)
 
-**Basic**
+**Basic Info Tab:**
 
-* **Voucher Code:** Enter a unique voucher code.
-* **To email:** The email address of the customer to whom the voucher is been sent
-* **Value:** The maximum value of the voucher that can be utilized for purchase
-* **Type:** Type of voucher, like gift card, etc.
-* **Enabled:** Option to activate the voucher
-* **Message Subject:** Message briefing the voucher benefits
+- **Voucher Code:** Enter a unique voucher code.
+- **To email:** The email address of the customer to whom the voucher is been sent
+- **Value:** The maximum value of the voucher that can be utilized for purchase
+- **Type:** Type of voucher, like gift card, etc.
+- **Enabled:** Option to activate the voucher
+- **Message Subject:** Message briefing the voucher benefits
 
-**Advanced**
+**Advanced Info Tab:**
 
-* Voucher email body - the text body of the email sent along with the voucher to the customer. A rich text editor is available to add the text with the necessary formatting.
+- **Voucher Email Body:** The text body of the email sent along with the voucher to the customer. A rich text editor is available to add the text with the necessary formatting.
