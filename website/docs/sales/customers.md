@@ -2,6 +2,85 @@
 description: J2Commerce (formerly known as J2Store)
 ---
 
-# Customers
+# Customers and Users
 
 Customers are those who buy products from your store. Whoever checks out successfully is added as a customer in the database.
+
+In Joomla, every visitor, customer or Administrator belongs to a **user group**, and each group has its own level of access and permissions that determine what they can see or do on the site — both on the frontend and in the administrator backend
+
+## How to Create/Edit a User or Customer
+
+Under the User section of the Home Dashboard, you can access all Customer and User information in Detail. Go to User > Manage
+
+![](/img/customers-new.webp)
+
+To create a new Customer, select New. Or edit an existing customer by clicking on their name.
+
+**Account Details:**
+
+Fill out the Customer/User details. Account details include their Name, Login Name, Password, and Email.
+
+![](/img/customers1.webp)
+
+**Assigned User Groups:**
+
+![](/img/customers2.webp)
+
+Assign the Customer/User to specific groups, giving them access and permission to different parts of the website. It is very important not to give them the wrong access permission.
+
+## The Different Groups and Sub-Groups
+
+**Public:** Represents everyone who visits your website, even if they are not logged in. People in this group can only view content that is set to be visible to the public. They have no special permissions or backend access and serve as the most basic level of visibility.
+
+**Guest:** Is very similar to Public, but it specifically includes only users who are not logged in. You can use this group to display certain modules or pages that disappear once a user signs in, such as a login form or welcome message. Guests cannot access the backend or see any restricted content.
+
+**Registered:** Includes users who have created an account and logged in to your site. They can access frontend areas that are restricted to registered members but cannot create, edit, or publish any content. This level is ideal for members-only sections or download areas where users simply need to log in to view protected material.
+
+**Author:** Allows users to log in to the frontend and create new articles. They can also edit their own content after it’s created, but they cannot edit articles created by others or publish their work. This role is best for contributors who regularly submit content that needs review before publication.
+
+**Editor:** Can log in to the frontend and has broader content privileges. Editors can open, edit, and save any article on the site, regardless of who created it. However, they still cannot publish or unpublish articles. Editors are typically used for people who review and refine content written by others.
+
+**Publisher**: Has all the capabilities of an Editor but also gains the authority to publish or unpublish articles. This means Publishers can make content visible to the public once it’s approved. Although they generally don’t have full backend control, they can handle most content-related tasks directly. This role is commonly assigned to someone who manages the website’s news or blog section.
+
+**Manager:** Is the first level that includes backend access. Managers can log in to the Joomla Administrator panel and manage content, menus, categories, and users. However, they do not have the ability to install extensions or change the site’s global configuration. They are ideal for day-to-day site administrators who handle content and user management but should not have full control over the system settings.
+
+**Administrator:** Has full backend access, including the ability to manage extensions, menus, users, and content. Administrators can perform nearly every task within Joomla except modifying Super User accounts or changing the global configuration settings. This group is typically assigned to trusted staff or developers responsible for maintaining the site’s structure and functionality.
+
+**Super Users:** Is the highest level of access in Joomla. Members of this group have unrestricted control over the entire website, including global configuration, template editing, user management, and the ability to create or modify other Super Users. This level should be reserved for the site owner or main developer since it holds complete authority over every aspect of the site.
+
+**VIP Shopper:** Is a custom user group created for your site. This type of group often appears when using eCommerce extensions such as J2Store, HikaShop, or J2Commerce. Its permissions depend on how you configure it, but it is typically used to grant special privileges such as exclusive pricing, discount access, or special product visibility for premium customers. By default, VIP Shoppers don’t have backend access, but they can be given specific frontend privileges if needed.
+
+### The Groups Access and Benefits
+
+| Group         | Frontend Login | Backend Access | Can Edit Others’ Content | Can Publish | Can Manage Users | Can Configure Site        | Notes                          |
+| ------------- | -------------- | -------------- | ------------------------ | ----------- | ---------------- | ------------------------- | ------------------------------ |
+| Public        | ❌              | ❌              | ❌                        | ❌           | ❌                | ❌                         | Everyone                       |
+| Guest         | ❌              | ❌              | ❌                        | ❌           | ❌                | ❌                         | For non-logged users           |
+| Registered    | ✅              | ❌              | ❌                        | ❌           | ❌                | ❌                         | Members-only access            |
+| Author        | ✅              | ❌              | ❌                        | ❌           | ❌                | ❌                         | Can create & edit own          |
+| Editor        | ✅              | ❌              | ✅                        | ❌           | ❌                | ❌                         | Can edit all articles          |
+| Publisher     | ✅              | ⚠️ Limited     | ✅                        | ✅           | ❌                | ❌                         | Can publish content            |
+| Manager       | ✅              | ✅              | ✅                        | ✅           | ✅                | ❌                         | Backend manager                |
+| Administrator | ✅              | ✅              | ✅                        | ✅           | ✅                | ❌ (no Super User control) | Trusted admin                  |
+| Super Users   | ✅              | ✅              | ✅                        | ✅           | ✅                | ✅                         | Full site control              |
+| VIP Shopper   | ✅              | ❌              | ❌                        | ❌           | ❌                | ❌                         | Custom group (shop privileges) |
+
+## How to add a new Group or Sub-group
+
+Depending on your company, you may want to create a new Group or sub-group. For example, a Photographer's Website may want to have a sub-group called Clients.
+
+Go to User > Groups. &#x20;
+
+Below shows the Group Tree and how many users are in each group.
+
+![](/img/customer-user-groups1.webp)
+
+Select New to create a new user group.
+
+**User Group Details:**
+
+![](/img/customer-user-groups-new.webp)
+
+**Group Title:** Name your new group or sub-group title
+
+**Group Parent:** Assign your new group to the appropriate parent group. In the case above, Client is the title of the new group, and it will be placed under the Registered parent group, giving it the same access and permission as the parent group.
