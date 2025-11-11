@@ -123,7 +123,13 @@ You will now see the products you chose listed here.
 
 ![](/img/product-display-layout-tab1.webp)
 
-**Layout:** Default: Card or Carousel.
+**Layout:** You have three options to choose from.&#x20;
+
+- **Default:** A clean and minimal presentation that lists products in a straightforward format—ideal for simplicity
+
+- **Card:** Each product is displayed as a distinct card, including visuals and key details. This layout offers a more engaging and organized look
+
+- **Carousel:** Products appear in a horizontal slider with optional animation. Great for showcasing featured items or creating a dynamic browsing experience
 
 **Sub Template:** Select the option, Bootstrap 5. Create alternate layouts for this module within your Joomla! template's `/html/mod_j2commerce_products` folder. The module will then pickup the new sub-template auto-magically.
 
