@@ -278,9 +278,15 @@ The layout of the checkout address fields.\*\* NOTE:\*\* Removing a field here w
 
 **Pre-populate / Restore:** This is a button that restores the default setting of all three options given above when clicked.
 
-**Example to add a custom field:** Assume that it would be better to add a **Title** field before the **First Name**. To achieve that, create a custom field with the *title* as its name, as shown in the image:
+**Example to add a custom field:** Assume that it would be better to add a **Title** field before the **First Name**. To achieve that, create a custom field with the *title* as its name, as shown in the image:&#x20;
 
-![Configuration-checkout-customfield](https://raw.githubusercontent.com/j2store/doc-images/master/set-up/Configuration/configuration-checkout-customfield.png)
+Go to J2Commerce > Setup > Custom Fields
+
+![](/img/custom-fields.webp)
+
+Select New to set up a new Custom Field with the Title, Mr.
+
+![Configuration-checkout-customfield](/img/custom-fields1.webp)
 
 Now, in the checkout process, the added custom field **Title** will be displayed before the **First Name** field, as illustrated in the following image:
 
