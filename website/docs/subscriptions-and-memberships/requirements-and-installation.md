@@ -12,15 +12,16 @@ description: J2Commerce (formerly known as J2Store)
 
 ## Download App <a href="#installation" id="installation" />
 
-1. Go to the J2Commerce website and make sure you are logged in.&#x20;
-2. Click on your profile dropdown in the top right corner and click on My Downloads. In the search bar, type in Subscriptions or Membership.&#x20;
+1. Go to the J2Commerce.com website and make sure you are logged in.&#x20;
+2.
+3. Click on your profile dropdown in the top right corner and click on My Downloads. In the search bar, type in Subscriptions or Membership.&#x20;
 
    ![App Search](<../../assets/app search1 (1).webp>)
-3. When the app is shown, double-click on it to open it.
-4. Click View Files
+4. When the app is shown, double-click on it to open it.
+5. Click View Files
 
    ![View App Files](<../../assets/app download.webp>)
-5. Click Download Now
+6. Click Download Now
 
 ![Download App](<../../assets/app download1.webp>)
 
