@@ -9,7 +9,7 @@ description: J2Commerce (formerly known as J2Store)
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-**Step 2:** Locate the Advanced Checkout App > click View Details > Add to cart > Checkout.
+**Step 2:** Go to Extensions > Apps > Locate the Advanced Checkout App > click View Details > Add to cart > Checkout.
 
 ![](/img/advanced-checkout-purchase.webp)
 
