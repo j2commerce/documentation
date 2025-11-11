@@ -12,16 +12,23 @@ description: J2Commerce (formerly known as J2Store)
 
 ## Download App <a href="#installation" id="installation" />
 
-1. Go to the J2Commerce.com website and make sure you are logged in.&#x20;
-2.
-3. Click on your profile dropdown in the top right corner and click on My Downloads. In the search bar, type in Subscriptions or Membership.&#x20;
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-   ![App Search](<../../assets/app search1 (1).webp>)
-4. When the app is shown, double-click on it to open it.
-5. Click View Files
+**Step 2:** Go to Extensions > Apps > Locate the Subscription & Membership App > click View Details > Add to cart > Checkout.
 
-   ![View App Files](<../../assets/app download.webp>)
-6. Click Download Now
+![](/img/membership-purchase.webp)
+
+**Step 3:** Click on your profile dropdown in the top right corner and click on My Downloads. In the search bar, type in Subscriptions and Membership.&#x20;
+
+![App Search](<../../assets/app search1 (1).webp>)
+
+When the app is shown, double-click on it to open it.
+
+**Step 4:** Click View Files
+
+![View App Files](<../../assets/app download.webp>)
+
+**Step 5:** Click Download Now
 
 ![Download App](<../../assets/app download1.webp>)
 
