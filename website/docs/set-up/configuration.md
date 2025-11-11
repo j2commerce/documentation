@@ -145,10 +145,10 @@ Note: The options, *Product Option Price* and *Product Option Price Prefix*, are
 
 ![Configuration-inventorysettings](/img/inventory.webp)
 
-- **Enable Inventory:** Set this option to ‘Yes’ to enable inventory management. Provide the available quantity when a product is added, and it will be kept in track of whenever an order is processed. Upon successful completion of an order, the ordered product quantity will be deducted from the available quantity and the result will be the new available quantity. When the available quantity for a particular product becomes zero, the add to cart button will be disabled. Also, the user cannot enter a quantity greater than the available quantity.
+- **Enable Inventory:** Set this option to ‘Yes’ to enable inventory management. Provide the available quantity when a product is added, and it will be kept in tracked whenever an order is processed. Upon successful completion of an order, the ordered product quantity will be deducted from the available quantity and the result will be the new available quantity. When the available quantity for a particular product becomes zero, the add to cart button will be disabled. Also, the user cannot enter a quantity greater than the available quantity.
 - **Cancel New/Pending orders to release stock:** Enabling this option by setting it to ‘Yes’ will cancel the orders with status ‘Pending’ / ‘New’, if they were not confirmed within the stipulated time, and the stock will be released and added to the available quantity.
-- **Hold stock for (in minutes) before canceling:** If the previous option is set to yes, this option will be enabled for entering the allowed time for order confirmation, otherwise, it will stay disabled.
-- **Stock Display Format:** This option is used to display the available stock. There are three formats available for viewing. Always Show Stock e.g., 12 in stock. Show only when stock reaches a low stock threshold. e.g., only 2 left in stock. Never show stock.
+- **Hold stock for (in minutes) before canceling:** If the previous option is set to yes, this option will be enabled for entering the allowed time for order confirmation; otherwise, it will stay disabled.
+- **Stock Display Format:** This option is used to display the available stock. There are three formats available for viewing. Always Show Stock e.g., 12 in stock. Show only when the stock reaches a low stock threshold. e.g., only 2 left in stock. Never show stock.
 - **Min Sale Quantity:** This global setting's default value is 1, and it can be overwritten for the user’s desired quantity in product view.
 - **Max Sale Quantity:** Global setting. By default, it is left empty. It can also be overwritten.
 - **Notify if the stock goes below:** The global setting for this field is empty, and it can be overwritten for the user’s desired quantity. And when the stock goes beyond the preset level, it will notify. Check the image below for a clear understanding.
@@ -171,15 +171,15 @@ The price entered initially will be the one till the end. Later alterations will
 
 **Default Customer Address:** Customer’s address should be selected automatically from the available options in the list, before the customer inputs his/her own.&#x20;
 
-**Display price in product pages:** Setting applies only to product pages. Set to show prices including or excluding tax. Price of a product can be displayed in two formats.
+**Display price in product pages:** Setting applies only to product pages. Set to show prices including or excluding tax. The price of a product can be displayed in two formats.
 
 - Excluding Tax: Only the price of the product.
 
 - Including Tax: Price inclusive of relevant tax, as a single figure.
 
-**Display tax information below the prices (in product pages):** Set this to YES will display (Incl. 19% tax) or (excl. 19% tax) to product pages.
+**Display tax information below the prices (in product pages):** Set this to YES will display (Incl. 19% tax) or (excl. 19% tax) on product pages.
 
-**Display prices during cart / checkout Excluding tax:** Choose how you want to display the prices(including tax or excluding tax) during the checkout. One of these options can be selected here. Check the image below for a visual aid:
+**Display prices during cart / checkout Excluding tax:** Choose how you want to display the prices(including tax or excluding tax) during checkout. One of these options can be selected here. Check the image below for a visual aid:
 
 ### Discount <a href="#discount" id="discount" />
 
@@ -189,7 +189,7 @@ The price entered initially will be the one till the end. Later alterations will
 
 **Enable Coupons:** By default, this option is set to No. If the product has some discounts based on the coupons, then set this option to Yes.
 
-**Enable Gift Vouchers:** By enabling this option with a ‘Yes’, the customers can be offered gift vouchers with a fixed value, say $ 25.00, which in turn, can be applied during the checkout.
+**Enable Gift Vouchers:** By enabling this option with a ‘Yes’, the customers can be offered gift vouchers with a fixed value, say $ 25.00, which in turn, can be applied during checkout.
 
 ### Cart <a href="#cart" id="cart" />
 
@@ -209,17 +209,17 @@ Cart and checkout settings for your store.
 
 **Continue Shopping URL:** After a product is added to the cart, the customer is offered three options to choose from if the customer wishes to continue shopping. Redirect to the previous page where he added the product. Redirect to a menu. Redirect to a custom URL
 
-**Enter a URL:** Enter a full url
+**Enter a URL:** Enter a full URL
 
-**Menu:** Choose a menu to which customer should be redirected
+**Menu:** Choose a menu to which the customer should be redirected
 
 **Add to cart button class:** This option is used to set the CSS class for the add to cart button.
 
 **Empty cart redirect URL:** Choose the URL where a customer should be taken when the cart is empty. Cart view >To a menu > To a custom URL
 
-**Empty cart redirect menu:** Choose a menu to which customer should be redirected
+**Empty cart redirect menu:** Choose a menu to which the customer should be redirected
 
-**Empty cart custom redirect url:** Enter a full url
+**Empty cart custom redirect URL:** Enter a full URL
 
 **Product Thumbnail:** Enabling this option by choosing Show will display the thumbnail image of the product in the cart view.
 
@@ -229,7 +229,7 @@ Cart and checkout settings for your store.
 
 **Show login form during checkout:** Enabling this option to Yes will show the login form during the checkout process, if a customer is not previously logged in during shopping. Without logging in, the customer cannot checkout, if this option is set to Yes.
 
-**Allow quick new user registration:** Enabling this option would display a registration option at the checkout like this:
+**Allow quick new user registration:** Enabling this option would display a registration option at checkout, like this:
 
 ![Configuration-cartsettings-guest-register-form](https://raw.githubusercontent.com/j2store/doc-images/master/set-up/Configuration/configuration-cartsettings-registration-guest-login.png)
 
@@ -266,11 +266,13 @@ Cart and checkout settings for your store.
 
 ### Checkout Layout <a href="#checkout-layout" id="checkout-layout" />
 
-![Configuration-](/img/checkout.webp)
+![Configuration-](/img/checkout1.webp)
 
-The layout of the checkout address fields.\*\* NOTE:\*\* Removing a field here will NOT remove it. Go to Setup  > Custom Fields to enable or disable the fields. This tab just decides the display and ordering of the fields in the checkout steps.
+The layout of the checkout address fields.
 
-**Checkout Billing Address Layout:** This option helps to include/exclude the required fields in the layout of Billing Address. For e.g., \[first\_name]\[last\_name]\[phone\_1]\[phone\_2]\[company] \[tax\_number]\[address\_1] \[address\_2] \[city] \[zip] \[country\_id]\[zone\_id]. Like this, any HTML code can be added here for one’s desired layout.
+***\*\* NOTE:\*\* Removing a field here will NOT remove it. Go to Setup  > Custom Fields to enable or disable the fields. This tab just decides the display and ordering of the fields in the checkout steps.***
+
+**Checkout Billing Address Layout:** This option helps to include/exclude the required fields in the layout of Billing Address. For e.g., \[title]\[first\_name]\[last\_name]\[phone\_1]\[phone\_2]\[company] \[tax\_number]\[address\_1] \[address\_2] \[city] \[zip] \[country\_id]\[zone\_id]. Like this, any HTML code can be added here for one’s desired layout.
 
 **Checkout Shipping Address Layout:** This option helps to include/exclude the required fields in the layout of the Shipping Address.
 
@@ -284,13 +286,17 @@ Go to J2Commerce > Setup > Custom Fields
 
 ![](/img/custom-fields.webp)
 
-Select New to set up a new Custom Field with the Title, Mr.
+Select New to set up a new Custom Field with the Title, Mr. / Mrs.
 
-![Configuration-checkout-customfield](/img/custom-fields1.webp)
+![Configuration-checkout-customfield](/img/custom-fields2.webp)
 
-Now, in the checkout process, the added custom field **Title** will be displayed before the **First Name** field, as illustrated in the following image:
+Now, in the checkout process, the added custom field **Title** will be displayed. In order to have it display before the **First Name** field, as illustrated in the following image, you must add it to the beginning of the Checkout Layout tab in Configuration. See below
 
-![Configuration-checkout-customfieldfrontend](https://raw.githubusercontent.com/j2store/doc-images/master/set-up/Configuration/configuration-checkout-customfield-frontend.png)
+![](/img/checkout3.webp)
+
+After you arrange the order in which you want the custom fields to be placed, this is how it will look on the frontend.
+
+![Configuration-checkout-customfieldfrontend](/img/checkout-address.webp)
 
 In this way, new custom fields can be added according to the needs of the user.
 

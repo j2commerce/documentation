@@ -60,9 +60,9 @@ It allows you to add one option with multiple variants. For example, Subscriptio
 
 ## Pricing <a href="#pricing" id="pricing" />
 
-**Subscription Price:** Enter the membership price (for example, $ 29) based on either a daily or weekly or monthly, or yearly basis. For example, if you would like to give a subscription price of $29 for only 3 months, then enter $29 in the first text box and then choose every 3rd from the dropdown list, and then choose the month from the third dropdown list.
+**Subscription Price:** Enter the membership price (for example, $ 5) based on either a daily or weekly or monthly, or yearly basis. For example, if you would like to give a subscription price of $5 for only 3 months, then enter $5 in the first text box and then choose every 3rd from the dropdown list, and then choose the month from the third dropdown list.
 
-**Subscription Length:** The subscription length duration will be listed based on the recurring period you selected above. For example, if your subscription product’s duration period is only for 3 months, choose 3 months. So the subscription will end at the end of the 3rd month. If you would like to give a lifetime price for your subscription product (i.e.) wants to collect $29 at the end of every 3 months for lifetime, choose Never Expire for the Subscription length. So $29 for every 3rd month for lifetime.
+**Subscription Length:** The subscription length duration will be listed based on the recurring period you selected above. For example, if your subscription product’s duration period is only for 3 months, choose 3 months. So the subscription will end at the end of the 3rd month. If you would like to give a lifetime price for your subscription product (i.e.) wants to collect $5 at the end of every 3 months for lifetime, choose Never Expire for the Subscription length. So $5 for every 3rd month for lifetime.
 
 **Add / Remove User Groups:** Users will be added and removed from the Joomla user groups when their subscription to the level is enabled or disabled.&#x20;
 
@@ -74,19 +74,23 @@ It allows you to add one option with multiple variants. For example, Subscriptio
 
 The screenshot below is an example of a Simple Product Subscription
 
-![subscription pricing](/img/simple-sub.webp)
+![subscription pricing](/img/simple-sub1.webp)
+
+The screenshot below shows how the Simple Subscription looks on the frontend
+
+![](/img/frontend-checkout.webp)
 
 The screenshot below is an example of a Variable Subscription
 
-![sub variants](/img/variants.webp)
+![sub variants](/img/variants1.webp)
 
-## Frontend Demo: <a href="#frontend-demo" id="frontend-demo" />
+The screenshot below shows how the Variable Subscription looks on the frontend
 
-![subs frontend](https://raw.githubusercontent.com/j2store/doc-images/master/subscriptions-and-memberships/creating-subscription-based-products/subscription-frontend.png)
+![subs frontend](/img/frontend-checkout-shirt.webp)
 
-![subs payment checkout](https://raw.githubusercontent.com/j2store/doc-images/master/subscriptions-and-memberships/creating-subscription-based-products/subscription-payment-checkout.png)
+The screenshot below shows how the Simple Subscription looks at checkout
 
-![subs cart](https://raw.githubusercontent.com/j2store/doc-images/master/subscriptions-and-memberships/creating-subscription-based-products/subscription-cart.png)
+![subs payment checkout](/img/frontend-checkout1.webp)
 
 ## Check the subscription details and status from the backend <a href="#check-the-subscription-details-and-status-from-backend" id="check-the-subscription-details-and-status-from-backend" />
 
