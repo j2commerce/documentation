@@ -45,4 +45,6 @@ When the app is shown, double-click on it to open it.
 
 ![Enabling the app](<../../assets/app install.webp>)
 
-1. Once enabled, open the app and configure the basic settings of the app.
+Once enabled, open the app and configure the basic settings of the app.
+
+To read the documentation on the basic settings, go to [https://docs.j2commerce.com/subscriptions-and-memberships/basic-settings](https://docs.j2commerce.com/subscriptions-and-memberships/basic-settings)
