@@ -84,3 +84,49 @@ Select New to create a new user group.
 **Group Title:** Name your new group or sub-group title
 
 **Group Parent:** Assign your new group to the appropriate parent group. In the case above, Client is the title of the new group, and it will be placed under the Registered parent group, giving it the same access and permission as the parent group.
+
+## How to Add Notes to Customers
+
+![](/img/customers-notes1.webp)
+
+Select Add Notes
+
+![](/img/customers-notes3.webp)
+
+**Subject:** Name the Subject
+
+**User:** Assign the Customer/User the Notes will be attached to
+
+**Category:** You need to assign the note to a specific category to keep them organized. If the category you want doesn't exist in the list, you can add a new category. Go to User Note Category > New
+
+![](/img/customers-notes2.webp)
+
+**Note:** See details below about adding notes.
+
+### When to Add Notes To Customers
+
+In **Joomla 5**, the **User Notes** feature allows administrators to attach private notes or records directly to a user’s profile in the backend. These notes are **not visible to the user** and are meant purely for administrative or team use.
+
+Here’s what that means in practical terms:
+
+The main **purpose** of adding a user note is to keep track of important information or history related to a specific user. For example, you might use it to record when someone registered, received special access, caused issues, made requests, or required follow-up from your team. It’s a built-in way to maintain context or background information without needing a separate spreadsheet or CRM system.
+
+The **benefits** include improved communication and organization among administrators. If multiple people manage the site, each admin can quickly see the user’s background—such as “Contacted support about password reset,” “VIP customer — do not delete,” or “Contributor approved for blog access.” Notes can also be categorized for easy filtering (for example: Billing, Support, Content, or Security), making it simple to find relevant records later.
+
+Another benefit is accountability and documentation. If you ever need to review decisions about user management (like why someone was blocked or given special permissions), the note serves as a quick internal record of what happened and when.
+
+In short, **User Notes in Joomla 5** function as an internal log or CRM-style annotation system that helps you and your team stay organized, track user history, and communicate internally—without cluttering the user’s visible profile or risking privacy issues.
+
+**Example User Notes for an Ecommerce Website:**
+
+- *Order History / Issues:* “Order #5567 delayed due to supplier stock issue. Resolved and reshipped 11/3.”
+
+- *Support Tickets:* “Contacted support twice in October regarding login errors — reset done manually.”
+
+- *Discount / Rewards:* “Approved for VIP Shopper status. 15% permanent discount applied.”
+
+- *Shipping Notes:* “Prefers delivery to business address only. Verified shipping details.”
+
+- *Account Flags:* “Refund processed 9/20 due to duplicate charge. No further issues since.”
+
+- *Custom Access / Permissions:* “Added to VIP Shopper group manually — do not remove.”
