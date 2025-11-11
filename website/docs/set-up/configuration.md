@@ -290,6 +290,8 @@ In this way, new custom fields can be added according to the needs of the user.
 
 ### Order <a href="#order" id="order" />
 
+![](/img/order.webp)
+
 **Invoice Prefix:** This is the prefix of the Invoice generated when payment is made.
 
 For e.g., the system generates only numbers, and if one wants to add some prefix to the invoice number to add information about the invoice, it can be done by setting this field with the prefix. Let’s assume a company with a name RB Corporation, sells some product,s and the invoice prefix can be anything customized by the owner of the company. Some of the possibilities are: RBC/S/000RBC-2015-S-000
@@ -312,15 +314,15 @@ Now the system-generated invoice number, say 1, will be appended with this prefi
 
 ### Update <a href="#update" id="update" />
 
-![Configuration-updatesettings](../../assets/update2.webp)
+![Configuration-updatesettings](/img/update.webp)
 
-*Applies only for J2Commerce PRO users*
+*Applies only for J2Commerce PRO users.*&#x20;
 
 This tab has a text input to enter the **Download ID** provided by [**J2Commerce**](https://www.j2commerce.com/), which is a requirement for updating the J2commerce component’s PRO version. Without this ID, [J2commerce PRO](https://www.j2commerce.com/my-account) cannot be downloaded. This ID will be available in the Invoice as well as in **My Downloads** of [J2Commerce.com](https://www.j2commerce.com/)
 
 ### Mail Template <a href="#mail-template" id="mail-template" />
 
-![Configuration-mailtemplatesettings](../../assets/mail_template2.webp)
+![Configuration-mailtemplatesettings](/img/mail.webp)
 
 This tab has an option to avoid sending the default email template to customers and admins. In some cases, you will be likely to send an email template only to customers or vice versa. In this case, if there is no email template assigned to the admin or to the customer, the system will send a default email template.
 
@@ -328,7 +330,7 @@ To avoid this, please choose **NO. Do not use the default template to send a mai
 
 ### Others <a href="#others" id="others" />
 
-![Configuration-othersettings](<../../assets/others2 (1).webp>)
+![Configuration-othersettings](/img/other.webp)
 
 Misc. options for the store
 
@@ -338,6 +340,6 @@ Misc. options for the store
 
 **Article ID of the Terms and Conditions:** The ID of the article that holds the Terms and Conditions is to be given here.
 
-**Prepare content for Terms and Conditions and the Thank you article?** Setting this YES will parse the article content
+**Prepare content for Terms and Conditions and the Thank you article?** Setting this Yes will parse the article content
 
-**Enable falang support:** This option provides support for SEF URLs used in Falang translation component. Enable if you have installed Falang. Check the image below for a better idea.
+**Enable Falang Support:** This option provides support for SEF URLs used in Falang translation component. Enable if you have installed Falang. Check the image below for a better idea.
