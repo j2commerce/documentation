@@ -4,7 +4,7 @@ description: J2Commerce (formerly known as J2Store)
 
 # ShipStation
 
-The new J2Commerce integration with Shipstation helps you to integrate your J2Commerce site with one of the best shipping solutions, Shipstation. Now import your orders and manage shipping on the go with the help of this integration. With Shipstation, you need not worry about shipping your orders using different carriers, cause you can manage everything at a one-stop place using this integration.
+The new J2Commerce integration with ShipStation helps you to integrate your J2Commerce site with one of the best shipping solutions, ShipStation. Now import your orders and manage shipping on the go with the help of this integration. With Shipstation, you need not worry about shipping your orders using different carriers, cause you can manage everything at a one-stop place using this integration.
 
 ShipStation is a multi-channel, multi-carrier shipping solution that simplifies the shipping process for online merchants. ShipStation can be integrated seamlessly with any shipping carrier and channel, and your orders can be easily tracked and managed with just a few clicks, regardless of the location.
 
@@ -24,7 +24,7 @@ NOTE: ShipStation will not send any Webhook notifications when you manually mark
 
 A ShipStation account is required to use the integration. You could create one at [www.shipstation.com](http://www.shipstation.com)
 
-To get the API keys for the integration, it is necessary to create an account with Shipstation. The following are the steps to be done:
+To get the API keys for the integration, it is necessary to create an account with ShipStation. The following are the steps to be done:
 
 - Go to [www.shipstation.com](http://www.shipstation.com).
 - Click on the Start your 30-day free trial button.
@@ -38,11 +38,11 @@ To get the API keys for the integration, it is necessary to create an account wi
 
 The screenshots below are for reference:
 
-**Creating an account with ShipStation**
+## **Creating an account with ShipStation**
 
 ![ss01](https://raw.githubusercontent.com/j2store/doc-images/master/apps/shipstation/shipstation01.png)
 
-**Generating API keys**
+## **Generating API keys**
 
 ![ss02](https://raw.githubusercontent.com/j2store/doc-images/master/apps/shipstation/shipstation02.png)
 
@@ -52,39 +52,29 @@ The screenshots below are for reference:
 
 ![ss05](https://raw.githubusercontent.com/j2store/doc-images/master/apps/shipstation/shipstation05.png)
 
-**Webhook URL**
+## **Webhook URL**
 
 After entering the API keys in the app, the next step would be to set up the webhook URL in the ShipStation account.
 
 This has to be done in order to receive notifications of the changes that occur in ShipStation. The notifications will come up in your J2Commerce site’s backend. So this is more of a synchronization.
 
-**Setting up webhook notifications**
+### **Setting up webhook notifications**
 
 Webhook notifications can be set up by following the steps given below:
 
-- The URL for the webhook can be fetched from the app’s settings.
+- The URL for the webhook can be fetched from the app’s settings once it's installed in the backend of your website.
 
-![ss06](https://raw.githubusercontent.com/j2store/doc-images/master/apps/shipstation/shipstation06.png)
+![ss06](/img/shipstation-webapi.webp)
 
 - Now log in to your ShipStation account.
 - Go to Settings > Integrations > Integration partner > Webhook.
 - Specify the URL in the field Webhook URL and save.
 
-**App settings**
+### **App settings**
 
 ![ss07](https://raw.githubusercontent.com/j2store/doc-images/master/apps/shipstation/shipstation07.png)
 
-The following are the parameters that have to be filled out for the integration to work:
-
-- **API key:** The ShipStation API key has to be specified here. The procedure to generate the API keys has been mentioned here
-- **API Secret:** The ShipStation secret key has to be mentioned [here](http://docs.j2store.org/articles/2093085-shipstation#apikeys).
-- **Webhook URL: The webhook URL** to be specified in the ShipStation account’s integrations part is provided here.
-- **Allowed Order status:** The orders with the chosen status will be synchronized with Shipstation. For example, if the status is chosen as Confirmed here, then all the orders whose status is confirmed will be synchronized with Shipstation.
-- **Debug:** This option has to be set to Yes if the activity of ShipStation has to be logged.
-
-![ss08](https://raw.githubusercontent.com/j2store/doc-images/master/apps/shipstation/shipstation08.png)
-
-## **Installation**
+## **Installing on your Website**
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
@@ -102,7 +92,7 @@ The following are the parameters that have to be filled out for the integration 
 
 ### Enable the App
 
-**Step 4:** Go to J2Commerce dashboard > Apps > search for Shipstation > Click on the 'X' to enable the app
+**Step 4:** Go to J2Commerce dashboard > Apps > search for ShipStation > Click on the 'X' to enable the app
 
 ![](/img/shipstation-enable.webp)
 
@@ -112,13 +102,17 @@ The following are the parameters that have to be filled out for the integration 
 
 ![](/img/shipstation-open.webp)
 
-There are multiple steps that need to be taken when setting up the parameters correctly so we have broken them down into sections to make it easier to understand how to set each section up.&#x20;
+There are multiple steps that need to be taken when setting up the parameters correctly, so we have broken them down into sections to make it easier to understand how to set up each section.&#x20;
 
-### Setting up the API Key
+### Setting up the Credentials
 
 Enter your API Key and API Secret Key, which you should have already received from ShipStation. If not, follow the steps at the very beginning of this document.
 
 ![](/img/shipstation-parameters1.webp)
+
+- **API key:** The ShipStation API key has to be entered here. The procedure to generate the API keys has been mentioned at the top of this document.
+- **API Secret:** The ShipStation secret key has to be entered here. The procedure to generate the API keys has been mentioned at the top of this document.
+- **Webhook URL:** The webhook URL to be specified in the ShipStation account’s integrations part is provided here.
 
 ### Setting up the Order Status&#x20;
 
@@ -128,19 +122,19 @@ The Image below shows an example of the assembly line being created in ShipStati
 
 ![](/img/shipstation-order-status3.webp)
 
-*If You choose to use Confirmed as the new order status, then all orders will get pushed into ShipStation. If you are selling some items that do not need to be shipped - then you need to create a new order status (such as Processing), and then you will need to make sure any order confirmation emails that were triggered for the Confirmed order status are changed to the Processing order status (if that is the name of the New Order Status used)*
+*If you choose to use Confirmed as the new order status, then all orders will get pushed into ShipStation. If you are selling some items that do not need to be shipped - then you need to create a new order status (such as Processing), and then you will need to make sure any order confirmation emails that were triggered for the Confirmed order status are changed to the Processing order status (if that is the name of the New Order Status used)*
 
 Assign what each order status should read by following the steps below.
 
 ![](/img/shipstation-parameters2.webp)
 
-**Allowed Order Status:** Selected orders will synchronize with ShipStation. In this example, we have selected Confirmed. This means ShipStation will be activated with all orders that have been completed after their payment has been confirmed.
+- **Allowed Order Status:** Selected orders will synchronize with ShipStation. In this example, we have selected Confirmed. This means ShipStation will be activated with all orders that have been completed after their payment has been confirmed.
 
-**New Order Status:** Set the state where new orders will be scanned, grouped and sent to Shipstation together. Most websites like having the first step say "Processing", but you can name it anything you wish that best supports your website.
+- **New Order Status:** Set the state where new orders will be scanned, grouped and sent to Shipstation together. Most websites like having the first step say "Processing", but you can name it anything you wish that best supports your website.
 
-**Order Status After Submission:** Select the State the order should be moved to after a successful ShipStation submission. Most websites like having the first step say "Preparing For Shipment", but you can name it anything you wish that best supports your website.
+- **Order Status After Submission:** Select the State the order should be moved to after a successful ShipStation submission. Most websites like having the first step say "Preparing For Shipment", but you can name it anything you wish that best supports your website.
 
-**Shipped Order Status:** This is the final step in the assembly line. After being shipped from ShipStation, the order needs to be changed to which order? Most websites like having the first step say "Preparing For Shipment", but you can name it anything you wish that best supports your website.
+- **Shipped Order Status:** This is the final step in the assembly line. After being shipped from ShipStation, the order needs to be changed to which order? Most websites like having the first step say "Preparing For Shipment", but you can name it anything you wish that best supports your website.
 
 If the status you want doesn't show up in each drop-down down that means you haven't created it in the Order Status section of J2Commerce. Below will show you how to create a new order status.
 
@@ -164,9 +158,9 @@ Select New to create a new order status
 
 As mentioned above
 
-**Status Name:** This needs to start with J2Store\_ and then the name you want shown up on the backend of the customer's order.
+- **Status Name:** This needs to start with J2Store\_ and then the name you want shown up on the backend of the customer's order.
 
-**Label Class:** This is the color code that determines the color status shown on the backend of the customer's order, making it easy to know what their current status is.
+- **Label Class:** This is the color code that determines the color status shown on the backend of the customer's order, making it easy to know what their current status is.
 
 Once you have created the Order Status, you need to set it up in the Language Override section so it can be translated to any language your website reads. ie, If you named it Shipped, then you need to do the language override so the word Shipped doesn't show up as English on a Dutch-speaking website. You want it to show up in Dutch instead of English.&#x20;
 
