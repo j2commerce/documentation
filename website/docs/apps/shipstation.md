@@ -144,7 +144,7 @@ If the status you want doesn't show up in each drop-down down that means you hav
 
 ![](/img/shipstation-order-status2.webp)
 
-Note: The **Status Name** must have J2STORE\_ at the beginning of the status and there cannot be any spaces in the name.&#x20;
+**Note:** The **Status Name** must have J2STORE\_ at the beginning of the status and there cannot be any spaces in the name.&#x20;
 
 ![](/img/shipstation-order-status.webp)
 
@@ -160,9 +160,11 @@ As mentioned above
 
 - **Status Name:** This needs to start with J2Store\_ and then the name you want shown up on the backend of the customer's order.
 
-- **Label Class:** This is the color code that determines the color status shown on the backend of the customer's order, making it easy to know what their current status is.
+- **Label Class:** This is used to set the .css class with the color of the label that is displayed in the backend of the order statuses.&#x20;
 
 Once you have created the Order Status, you need to set it up in the Language Override section so it can be translated to any language your website reads. ie, If you named it Shipped, then you need to do the language override so the word Shipped doesn't show up as English on a Dutch-speaking website. You want it to show up in Dutch instead of English.&#x20;
+
+You can learn more about how to set up Order Statuses here.
 
 Go to System > Manage > Language Overrides
 
@@ -195,3 +197,47 @@ Choose English Administrator > New
 Go to J2Commerce > Setup > Custom Fields > New
 
 ![](/img/shipstation-custom-fields.webp)
+
+To add a custom field, we need to enter the following details. They are given below one by one: You can learn more about how to set up the Custom Fields [here](https://docs.j2commerce.com/set-up/custom-fields).
+
+![](/img/custom_fields2-04f0ea122c85917b7f92d802b4684050.webp)
+
+- **The Label:** Name of the custom field that is displayed in the layout
+
+- **Table:** The table where the custom field is created - this is the default, and you can not change it
+
+- **Field Column Name:** name of the column that is created in the table
+
+- **Field Type:** This is the type of the field you are about to create and there are 12 types available to choose from - they are: Text, Email, Text Area, wysiwyg editor (what you see is what you get) Radio, Checkbox, Single Dropdown, Zone/Country List, Date, Time, Date Time, and Custom Text
+
+The remaining fields after the **Field Type** is selected will be different based on the **Field Type,** and the details have to be fed as required by the changed fields
+
+- **Required:** Whether the field is required or not - select ‘Yes’ or ‘No’
+
+- **Custom Error Message:** If it is a required field and left empty on data entry, this message will be displayed to alert the user
+
+- **Default Value:** What is given here will be the content displayed, if the user does not give any input to the field
+
+- **Input Filtering:** If you want to filter out the input to this field, you can select ‘YES’ and set the conditions
+
+- **Maximum Length:** The number of characters that are allowed to be entered in the field
+
+- **Rows:** No of rows that are allowed in the field
+
+- **Columns:** No of columns that are allowed in the field
+
+- **Read-only:** If it is set to ‘Yes’, it is only readable and the content cannot be changed
+
+**Status**
+
+- **Published:** To display the field, it has to be published by setting this option to ‘Yes’.
+
+**Display Settings**
+
+You can choose the layouts to display the field. You can select all three layouts or any combination of layouts or only one layout. The layouts are:
+
+- Checkout Billing Address Layout
+
+- Checkout Shipping Address Layout
+
+- Checkout Payment Method Layout
