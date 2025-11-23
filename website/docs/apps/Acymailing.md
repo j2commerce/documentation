@@ -8,7 +8,7 @@
 
 You should already have Acymailing installed on your site before you purchase the J2Commerce Connector. If you follow the steps below without having Acymailing already installed on your website, then you will receive an error message because it has nothing to connect to.&#x20;
 
-#### Installation of Acymailing Connector:
+## Purchase Acymailing Connector
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
@@ -16,11 +16,11 @@ You should already have Acymailing installed on your site before you purchase th
 
 ![](/img/acymailing-purchase-1.webp)
 
-**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
 ![](/img/acymailing-download1.webp)
 
-#### **Installation:**&#x20;
+## Installation of Acymailing Connector
 
 You can install the Acymailing extension using the Joomla installer. The following steps help you with a successful installation.
 
@@ -28,35 +28,43 @@ You can install the Acymailing extension using the Joomla installer. The followi
 
 ![](/img/canada-post-installer-1.webp)
 
-**Step 2:** Click on the Browse button and select Acymailing zip file where you saved it.
+**Step 2:** Click on the Browse button and select the Acymailing zip file where you saved it.
 
 ![](/img/canada-post-download.jpg)
 
 **Step 3:** In the Joomla admin, go to J2Commerce > Apps
 
-**Step 4:** Search for the app and enable it by clicking on the 'x'. It will become a checkmark.
+### Enable Acymailing&#x20;
+
+Search for the app and enable it by clicking on the 'x'. It will become a checkmark.
 
 ![](/img/acymailing-enable-1.webp)
 
-**Step 5:** Create a new email list by clicking on Acymailing > List > Create
+## Setting up Acymailing Lists
+
+**Step 1:** Create a new email list by clicking on Acymailing > List > Create
 
 ![](/img/acymailing-list.webp)
 
-**Step 6:** Name your list > Save & Exit
+**Step 2:** Name your list > Save & Exit
 
 ![](/img/acymailing-name-list.webp)
 
-**Step 7:** Open the plugin to set the parameters for Acymailing. Click on J2Commerce > Apps > open the Acymailing app
+## Setting up the Parameters
+
+**Step 1:** Open the plugin to set the parameters for Acymailing. Click on J2Commerce > Apps > open the Acymailing app
 
 ![](/img/acymailing-adding-lists1.webp)
 
-**Step 8:** Select the newsletters you want to make available to choose from when assigning them to the specific products you want them sent from.&#x20;
+**Step 2:** Select the newsletters you want to make available to choose from when assigning them to the specific products you want them sent to.&#x20;
 
 ![](/img/acymailing-setup2.webp)
 
 The next step shows how to assign a newsletter to a product. Now, when someone purchases this specific product, they will receive newsletters regarding that product. In the example below, we are assigning the Simple Product Newsletters to the Simple Product.
 
-**Step 9:** Open the product in articles > J2Commerce (J2Store Cart) > Apps > Click on all of the newsletters you want to be available for the simple product.  You can also enable the "Auto Subscription", which will show up on the front end during checkout, allowing the customer to opt in/out of the newsletters.
+**Step 3:** Open the product in articles > J2Commerce (J2Store Cart) > Apps > Click on all of the newsletters you want to be available for the simple product. &#x20;
+
+You can also enable the "Auto Subscription", which will show up on the front end during checkout, allowing the customer to opt in/out of the newsletters.
 
 ![](/img/acymailing-adding-lists.webp)
 
