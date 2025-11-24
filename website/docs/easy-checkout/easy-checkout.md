@@ -5,13 +5,13 @@ description: J2Commerce (formerly known as J2Store)
 
 # Easy checkout
 
-With online shopping moving quickly, convenience is becoming a must for customers. Overcomplicating your check out process can result in lost sales and unsatisfied customers. One would think that fewer steps would make it easier for the customer to check out, but that is not always the case.
+With online shopping moving quickly, convenience is becoming a must for customers. Overcomplicating your checkout process can result in lost sales and unsatisfied customers. One would think that fewer steps would make it easier for the customer to check out, but that is not always the case.
 
-Here we are coming up with **Easy checkout** for J2Commerce that makes the checkout process easier.
+Here we are coming up with an **Easy checkout** for J2Commerce that makes the checkout process easier.
 
-Easy checkout is nothing but an one-page checkout that displays all elements of a standard checkout including basket contents, billing and shipping address, shipping options, and payment information on one page. Originally, one-page checkouts were put into practice in an effort to simplify the check out process with fewer clicks and fewer pages.
+Easy checkout is nothing but a one-page checkout that displays all elements of a standard checkout, including basket contents, billing and shipping address, shipping options, and payment information on one page. Originally, one-page checkouts were put into practice in an effort to simplify the checkout process with fewer clicks and fewer pages.
 
-It will be easier to complete as less steps can appeal to time-conscious customers.
+It will be easier to complete as fewer steps can appeal to time-conscious customers.
 
 **Requirements**
 
@@ -19,7 +19,7 @@ It will be easier to complete as less steps can appeal to time-conscious custome
 2. PHP 8.1.0 +
 3. J2Commerce / J2Store 4.x +
 
-## Download
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
@@ -31,9 +31,9 @@ It will be easier to complete as less steps can appeal to time-conscious custome
 
 ![](/img/easy-download1.webp)
 
-## **Installation**
+## Installation
 
-Go to System > Install > Extensions and download the Easy Checkout Zip File
+Go to System > Install > Extensions and install the Easy Checkout Zip File
 
 ![](/img/easy-installer1.webp)
 
@@ -49,13 +49,13 @@ Once you enable the system plugin, J2Commerce’s normal checkout will be replac
 
 ![](../../assets/easy-checkout1a.webp)
 
-## **Setting up the Parameters**
+## Setting up the Parameters
 
 Go to J2Commerce > Setup > Configuration
 
 ![](/img/easy-guests.webp)
 
-Go to the **Cart** tab
+### **Cart** tab
 
 ![](/img/easy-parameters1.webp)
 
@@ -117,13 +117,13 @@ Go to the **Cart** tab
 
 **Clear Cart data Older than:** Clears the cart data that is older than the days selected in the options
 
-## **Frontend View**
+**\*\*The screenshot below is the Frontend View**
 
 ![Easy checkout-allowing new user registration](https://raw.githubusercontent.com/j2store/doc-images/master/easy-checkout/easy-checkout/easycheckout-allow-user-registration-frontend.png)
 
 ![Easy checkout create a new account checkbox](https://raw.githubusercontent.com/j2store/doc-images/master/easy-checkout/easy-checkout/easycheckout-unselectbox-creating-new-acc.png)
 
-## **Existing Customers Login**
+## Existing Customers Login
 
 The existing customers can place the order by using the login form. You would see the login form by clicking on **Login**.
 
@@ -151,7 +151,7 @@ The image below is a screenshot of the option to select.
 
 ![](../../assets/easy-checkout2c.webp)
 
-## **Frontend View**
+**\*\*The screenshot below is the Frontend View**
 
 ![Easy checkout login form filled](https://raw.githubusercontent.com/j2store/doc-images/master/easy-checkout/easy-checkout/easycheckout-loginform-filled.png)
 
@@ -177,6 +177,6 @@ After installing, enabling, and creating a menu for easy checkout, go to Easy Ch
 
 **Confirm payment step display in:** You can select either Same page or Next page.&#x20;
 
-### **Frontend View with the Coupons and Voucher set as Yes**
+\*\*The screenshot below is the Frontend View with the Coupons and Voucher set as Yes
 
 ![Frontend with coupons and vouchers enabled](https://raw.githubusercontent.com/j2store/doc-images/master/easy-checkout/easy-checkout/easy-checkout-coupons-vouchers-frontend.png)
