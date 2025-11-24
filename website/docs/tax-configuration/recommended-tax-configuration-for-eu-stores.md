@@ -4,67 +4,73 @@ description: J2Commerce (formerly known as J2Store)
 
 # Recommended Tax Configuration for EU stores
 
-This guide will walk you through the configuration of tax in J2Commerce for EU stores. This is an example configuration for stores in Europe. For detailed information on tax, please consult an expert.
+This guide will walk you through the configuration of tax in J2Commerce for EU stores. This is an example configuration for stores in Europe. For detailed information on tax, please consult an expert. J2Commerce is not held responsible for VAT / Tax changes.
 
 > Important: No guarantee is offered with respect to any of the information given here. Please contact an expert before you take any decisions about tax matters.
 
-NOTE: The example assumes you have a store in Germany and you charge 19% tax on the goods. All customers coming originating from Germany are charged with 19 % of tax.
+NOTE: The example assumes you have a store in Germany and you charge 19% tax on the goods. All customers originating from Germany are charged 19 % of tax.
 
-## Step 1 : Create a geozone for base rates (home country tax) <a href="#step-1--create-a-geozone-for-base-rates-home-country-tax" id="step-1--create-a-geozone-for-base-rates-home-country-tax"></a>
+## Create a geozone for base rates (home country tax) <a href="#step-1--create-a-geozone-for-base-rates-home-country-tax" id="step-1--create-a-geozone-for-base-rates-home-country-tax" />
 
-Go to Components > J2Commerce > Localization -> Geozones -> New
+Go to Components > J2Commerce > Localization -> Geozones
 
-![Geo Zone Germany](<../../assets/geo-zone.webp>)
+![Geo Zone Germany](../../assets/geo-zone.webp)
 
-![Geo Zone Germany](<../../assets/geo-zone-germany.webp>)
+**Select New**
 
-Geozone Name: Base rates
+![Geo Zone Germany](../../assets/geo-zone-germany.webp)
 
-Country : Germany
+**Geozone Name:** Base rates
 
-Zones : All
+**Country:** Germany
 
-## Step 2: Create a tax rate <a href="#step-2-create-a-tax-rate" id="step-2-create-a-tax-rate"></a>
+**Zones:** All
 
-Go to Localization -> Tax Rates -> New
+## Create a tax rate <a href="#step-2-create-a-tax-rate" id="step-2-create-a-tax-rate" />
 
-![Tax Rate Germany](<../../assets/tax-rate.webp>)
+Go to J2Commerce > Localization > Tax Rates
 
-![Tax Rate Germany](<../../assets/tax-rate-germany.webp>)
+![Tax Rate Germany](../../assets/tax-rate.webp)
 
-Name : VAT
+**Select New**
 
-Tax Percent : 19
+![Tax Rate Germany](../../assets/tax-rate-germany.webp)
 
-Geozone : Base rates
+**Name:** VAT
 
-Status: Enabled
+**Tax Percent:** 19
 
-## Step 3: Create a tax profile and rules <a href="#step-3-create-a-tax-profile-and-rules" id="step-3-create-a-tax-profile-and-rules"></a>
+**Geo Zone:** Base rates
 
-Go to Localization -> Tax Profiles -> New
+**Status:** Enabled
 
-![Tax Profile Germany](<../../assets/tax-profile.webp>)
+## Create a tax profile and rules <a href="#step-3-create-a-tax-profile-and-rules" id="step-3-create-a-tax-profile-and-rules" />
 
-![](<../../assets/tax-profile-germany.webp>)
+Go to J2Commerce > Localization > Tax Profiles
 
-Name: Base Tax Profile
+![Tax Profile Germany](../../assets/tax-profile.webp)
 
-Enabled: Yes
+**Select New**
 
-Tax rules
+![](../../assets/tax-profile-germany.webp)
 
-Click Add
+**Name:** Base Tax Profile
 
-Rate: VAT
+**Enabled:** Yes
 
-Associated Address: Shipping
+**Tax Rules:** Click Add
 
-## Step 4: Configure tax settings <a href="#step-4-configure-tax-settings" id="step-4-configure-tax-settings"></a>
+**Tax Rate:** VAT
 
-Go to Setup -> Configuration -> Tax
+**Associated Address:** Shipping
 
-![](<../../assets/tax-config-germany.webp>)
+## Configure tax settings <a href="#step-4-configure-tax-settings" id="step-4-configure-tax-settings" />
+
+Go to J2Commerce > Setup > Configuration
+
+![](../../assets/tax-config-germany.webp)
+
+**Select New**
 
 **Prices Entered with Tax:** Yes, I will enter prices with tax
 
@@ -80,9 +86,9 @@ Go to Setup -> Configuration -> Tax
 
 **Save**.
 
-## Step 5: Adding the tax profile to a product <a href="#step-5-create-a-product-and-choose-the-tax-profile" id="step-5-create-a-product-and-choose-the-tax-profile"></a>
+## Adding the tax profile to a product <a href="#step-5-create-a-product-and-choose-the-tax-profile" id="step-5-create-a-product-and-choose-the-tax-profile" />
 
-J2Commerce uses Joomla! articles as products. So, go to Article Manager and create a New Article / Product (If you use any other catalog source like Zoo or Sebold, you should head there).
+J2Commerce uses Joomla! articles as products. So, go to Article Manager and create a New Article / Product (If you use any other catalogue source like Zoo or Sebold, you should head there).
 
 Product creation steps are explained under the topic Products.
 
@@ -90,18 +96,18 @@ Here, let us just see how to choose the tax profile:
 
 Go to J2Commerce (or J2Store Cart) tab  > General tab
 
-Tax Profile  Base tax profile
+**Tax Profile:**  Base tax profile
 
-![Base Tax Profile](<../../assets/j2store-tax-germany.webp>)
+![Base Tax Profile](../../assets/j2store-tax-germany.webp)
 
 IMPORTANT: If you do not choose the tax profile, then tax will not apply in the storefront.
 
-## Step 6: Selling in multiple countries with multiple tax rates <a href="#step-6-selling-in-multiple-countries-with-multiple-tax-rates" id="step-6-selling-in-multiple-countries-with-multiple-tax-rates"></a>
+## Selling in multiple countries with multiple tax rates <a href="#step-6-selling-in-multiple-countries-with-multiple-tax-rates" id="step-6-selling-in-multiple-countries-with-multiple-tax-rates" />
 
 If you are selling your products to other countries in Europe, then there are three scenarios
 
-* Charge the same VAT rate for customers from certain countries. In this case, you will just have to open the Base Geozone and add the countries / zones to which you want to charge 19%. Then all customers from all those countries will be charged with the 19% tax rate.
-* Charge a different VAT rate for customers from certain countries.  Let us say you want to charge 12% tax for customers from Switzerland and France. Create a new Geozone and include Switzerland and France. Create a new tax rate and set the tax percent to 12%. Go to Components > J2Commerce > Localization > Tax Profiles > Open Base tax profiles. Under Tax rules, click add, choose your New tax rate, and associate it with the Shipping address. Save. Now, customers from Switzerland and France will be charged 12 % of tax instead of your base rate of 19%.
+- Charge the same VAT rate for customers from certain countries. In this case, you will just have to open the Base Geozone and add the countries / zones to which you want to charge 19%. Then all customers from all those countries will be charged the 19% tax rate.
+- Charge a different VAT rate for customers from certain countries.  Let us say you want to charge 12% tax for customers from Switzerland and France. Create a new Geozone and include Switzerland and France. Create a new tax rate and set the tax percent to 12%. Go to Components > J2Commerce > Localization > Tax Profiles > Open Base tax profiles. Under Tax rules, click add, choose your New tax rate, and associate it with the Shipping address. Save. Now, customers from Switzerland and France will be charged 12 % of tax instead of your base rate of 19%.
 
 Video Tutorial:
 
