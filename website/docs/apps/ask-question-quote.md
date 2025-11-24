@@ -2,11 +2,11 @@
 description: J2Commerce (formerly known as J2Store)
 ---
 
-# Ask question / quote
+# Ask Question / Quote
 
-This app allows customer to enquire a product or to ask quote for a product through email.
+This app allows customers to enquire a product or to ask quote for a product through email.
 
-Using this app itself you can use your store as catalog mode since this app has an option to hide the add to cart button. Clicking on single button will enable the communication between store owner and customer.
+Using this app itself, you can use your store in catalog mode since this app has an option to hide the add to cart button. Clicking on a single button will enable communication between the store owner and the customer.
 
 **Requirements**
 
@@ -52,7 +52,7 @@ In the global settings of the app, you can configure
 
 ## Setting up the Parameters
 
-### **Basic Settings tab**
+### Basic Settings tab
 
 ![Ask quote settings](https://raw.githubusercontent.com/j2store/doc-images/master/apps/ask-quote/ask-quote-settings.png)
 
@@ -106,21 +106,21 @@ Use the language constant PLG\_J2STORE\_PRODUCTQUOTE\_LINK\_TEXT to translate th
 \[PRODUCT\_SKU]\
 \[PRODUCT\_PRICE]\\
 
-**To Display the custom field data:** To display the custom field information entered by the user when filling form in an email the customer and admin receive, it is possible by adding the shortcode of respective custom field in the Email body editor.
+**To display the custom field data:** To display the custom field information entered by the user when filling form in an email that the customer and admin receive, it is possible by adding the shortcode of the respective custom field in the Email body editor.
 
-*For example, if you are having text area as a custom field in your product quote form, then copy the field name(you can get it in custom field section J2Store > Setup > Custom fields) and paste it in Email body editor. The custom field shortcode should be enclosed with square braces. For example, \[message].*
+*For example, if you are having a text area as a custom field in your product quote form, then copy the field name(you can get it in the custom field section J2Store > Setup > Custom fields) and paste it in the Email body editor. The custom field shortcode should be enclosed with square braces. For example, \[message].*
 
-**Email subject**
+**Email Subject**
 
 Choose a subject line for the quote email notifications.
 
 With that, the Email configuration is complete.
 
-### **Layout tab**
+### Layout tab
 
 If you would like to add / remove the fields in the product quote form without affecting checkout form fields, it is possible in this section.
 
-In this section, you can create the custom form by adding the field shortcode given at the top of the layout tab page and display that field in the form.
+In this section, you can create a custom form by adding the field shortcode given at the top of the layout tab page and displaying that field in the form.
 
 To add any new fields, go to J2Commerce > Setup > Custom fields. Click NEW to create a new field.
 
@@ -138,7 +138,7 @@ To add the custom field shortcode, copy the field name in J2Commerce > Setup > C
 
 That's it! The data entered on this custom field at the ask quote form during quote submission would show up at the ask quote email.
 
-#### **Enable quote for per product**
+#### **Enable a quote for per product**
 
 1. This app allows you to enable the Ask Quote button for a specific product.
 2. Go to the Article Manager and open the article/product.

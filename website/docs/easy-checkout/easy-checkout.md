@@ -5,13 +5,13 @@ description: J2Commerce (formerly known as J2Store)
 
 # Easy checkout
 
-With online shopping moving quickly, convenience is becoming a must for customers. Overcomplicating your check out process can result in lost sales and unsatisfied customers. One would think that fewer steps would make it easier for the customer to check out, but that is not always the case.
+With online shopping moving quickly, convenience is becoming a must for customers. Overcomplicating your checkout process can result in lost sales and unsatisfied customers. One would think that fewer steps would make it easier for the customer to check out, but that is not always the case.
 
-Here we are coming up with **Easy checkout** for J2Commerce that makes the checkout process easier.
+Here we are coming up with an **Easy checkout** for J2Commerce that makes the checkout process easier.
 
-Easy checkout is nothing but an one-page checkout that displays all elements of a standard checkout including basket contents, billing and shipping address, shipping options, and payment information on one page. Originally, one-page checkouts were put into practice in an effort to simplify the check out process with fewer clicks and fewer pages.
+Easy checkout is nothing but a one-page checkout that displays all elements of a standard checkout, including basket contents, billing and shipping address, shipping options, and payment information on one page. Originally, one-page checkouts were put into practice in an effort to simplify the checkout process with fewer clicks and fewer pages.
 
-It will be easier to complete as less steps can appeal to time-conscious customers.
+It will be easier to complete as fewer steps can appeal to time-conscious customers.
 
 **Requirements**
 
@@ -19,7 +19,7 @@ It will be easier to complete as less steps can appeal to time-conscious custome
 2. PHP 8.1.0 +
 3. J2Commerce / J2Store 4.x +
 
-## Download
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
@@ -31,9 +31,9 @@ It will be easier to complete as less steps can appeal to time-conscious custome
 
 ![](/img/easy-download1.webp)
 
-## **Installation**
+## Installation
 
-Go to System > Install > Extensions and download the Easy Checkout Zip File
+Go to System > Install > Extensions and install the Easy Checkout Zip File
 
 ![](/img/easy-installer1.webp)
 
@@ -49,47 +49,81 @@ Once you enable the system plugin, J2Commerce’s normal checkout will be replac
 
 ![](../../assets/easy-checkout1a.webp)
 
-## **Setting up the Parameters**
+## Setting up the Parameters
 
-A few points that have to be remembered
+Go to J2Commerce > Setup > Configuration
 
-### **Guest checkout**
+![](/img/easy-guests.webp)
 
-The guest checkout form is a must for all online stores for customers who don’t want to have an account.
+### **Cart** tab
 
-To enable the Guest checkout, go to J2Commerce > Setup > Configuration > Cart tab
+![](/img/easy-parameters1.webp)
 
-Set **YES** to Allow guest checkout
+**Add to cart placement:** Add to cart placement
 
-Save.
+**Add to cart action:** Choose an action that happens when the customer clicks add to cart
 
-![](../../assets/vat-tax-9.webp)
+**Continue Shopping URL:** Where a customer should be taken when they click the continue shopping button
 
-![Easy-checkout-guest-checkout](https://raw.githubusercontent.com/j2store/doc-images/master/easy-checkout/easy-checkout/easycheckout-guest.png)
+**Enter a URL:** Enter a full URL
 
-### **New account registration**
+**Menu:** Choose a menu to which the customer should be redirected
 
-To enable the New account registration option in Easy checkout,
+![](/img/easy-parameters2.webp)
 
-Go to Component > J2Commerce > Setup > Configuration > Cart tab
+**Add to Cart button class:** CSS class for the add to cart button
 
-Set 'YES' to allow quick new user registration
+**Empty cart redirect URL:** Where a customer should be taken when the cart is empty
 
-Save.
+**Empty cart redirect menu:** Choose a menu to which the customer should be redirected
 
-![](<../../assets/vat-tax-10 (1).webp>)
+**Empty cart custom redirect URL:**  Enter a full URL
 
-If the new user registration option is enabled, you would see a small checkbox labelled **Create an account for later usage** in the checkbox.
+**Product Thumbnail:** The chosen thumbnail image will be shown in the cart view
 
-This checkbox will be checked automatically.
+**Show tax for each cart item:** Setting this to YES will display tax for each item in the cart
 
-If customers don’t want to register, they can uncheck the checkbox and proceed further as a guest (Non-registered).
+**Enable shipping address fields:** Set yes to enable shipping address collection
+
+![](/img/easy-parameters3.webp)
+
+**Show login form during checkout:** Show/hide login form during checkout
+
+**Allow quick new user registration:** If the new user registration option is set to Yes, they will see a small checkbox labelled **Create an account for later usage** in the checkbox. This checkbox will be checked automatically. If customers don’t want to register, they can uncheck the checkbox and proceed further as a guest (Non-registered).
+
+**Joomla Password Validation:** If set to Yes, the Password will be validated based on Joomla User Manager > Options settings for password rules
+
+**Allow Guest Checkout?** Set Yes to allow guest checkout. The guest checkout form is a must for all online stores for customers who don’t want to have an account
+
+**Show customer note:** Set this to no to hide the customer note field shown in the checkout steps
+
+**Show tax and shipping estimate tool:** Set this to YES to show the tool for estimating the tax and shipping
+
+**Show Empty Cart button:** Select Show to enable the empty Cart button. The empty cart button clears all the cart items in a single click
+
+**Make postal code required in the shipping/tax estimator:** This will make the entry of postal code mandatory while estimating shipping and tax in the cart page
+
+![](/img/easy-parameters4.webp)
+
+**Clear cart items:** Choose when to clear the cart. On order placement: The Cart will be emptied when the customer places the order. On confirmation: when the order is confirmed by the payment gateways
+
+**Default payment method:** Choose your default payment method. This will be selected by default when customers check out
+
+**Prevent customers from checking out if the  shipping method was not chosen:** You can prevent customers from checking out if the  shipping method was not selected. VERY IMPORTANT: Make sure you have configured your shipping methods correctly. Otherwise, shipping methods will not show up, and your customers won't be able to place an order
+
+**Auto apply if only one shipping method is available:** Useful when you have only one shipping method and it needs to be automatically selected when the customer checks out
+
+**Hide shipping costs until an address is entered:** Shipping methods will be shown only when an address (at least country and zone) is entered
+
+**Clear Cart data Older than:** Clears the cart data that is older than the days selected in the options
+
+**\*\*The screenshot below is the Frontend View**
 
 ![Easy checkout-allowing new user registration](https://raw.githubusercontent.com/j2store/doc-images/master/easy-checkout/easy-checkout/easycheckout-allow-user-registration-frontend.png)
 
 ![Easy checkout create a new account checkbox](https://raw.githubusercontent.com/j2store/doc-images/master/easy-checkout/easy-checkout/easycheckout-unselectbox-creating-new-acc.png)
 
-### **Existing customers**
+## Existing Customers Login
 
 The existing customers can place the order by using the login form. You would see the login form by clicking on **Login**.
 
@@ -97,7 +131,7 @@ The existing customers can place the order by using the login form. You would se
 
 ![Easy checkout login form](https://raw.githubusercontent.com/j2store/doc-images/master/easy-checkout/easy-checkout/easycheckout-loginform.png)
 
-## **Creating the Checkout Menu**
+## Creating the Checkout Menu
 
 The SEF is the most important one for all the online stores. Similar to the Normal checkout, the easy checkout also has the menu item type.
 
@@ -117,7 +151,7 @@ The image below is a screenshot of the option to select.
 
 ![](../../assets/easy-checkout2c.webp)
 
-## **Frontend Screenshots**
+**\*\*The screenshot below is the Frontend View**
 
 ![Easy checkout login form filled](https://raw.githubusercontent.com/j2store/doc-images/master/easy-checkout/easy-checkout/easycheckout-loginform-filled.png)
 
@@ -143,6 +177,6 @@ After installing, enabling, and creating a menu for easy checkout, go to Easy Ch
 
 **Confirm payment step display in:** You can select either Same page or Next page.&#x20;
 
-### **Frontend View with the Coupons and Voucher set as Yes**
+\*\*The screenshot below is the Frontend View with the Coupons and Voucher set as Yes
 
 ![Frontend with coupons and vouchers enabled](https://raw.githubusercontent.com/j2store/doc-images/master/easy-checkout/easy-checkout/easy-checkout-coupons-vouchers-frontend.png)
