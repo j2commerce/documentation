@@ -70,6 +70,8 @@ Go to J2Commerce > Localization  > Tax Profiles
 
 **Enabled:** Yes
 
+**Tax Rules:** Click Add
+
 **Tax Rate:** Canada - GST
 
 **Associated Address:** Shipping Address
