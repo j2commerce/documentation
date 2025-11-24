@@ -4,7 +4,7 @@ description: J2Commerce (formerly known as J2Store)
 
 # A simplified guide for the New EU VAT rules 2015 for digital goods and setting them up in J2Commerce
 
-If you are a seller of digital goods and services, you would probably be wondering about the new European VAT rules that came into effect from January 1, 2015.
+If you are a seller of digital goods and services, you would probably be wondering about the new European VAT rules that came into effect from January 1, 2015. For detailed information on taxes, please consult an expert. J2Commerce is not held responsible VAT / Tax changes.
 
 Since the rules are a bit of a pain, we have come up with a simplified guide that will help you implement the new rules easily in your J2Commerce Joomla! shopping cart.
 
