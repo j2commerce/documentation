@@ -52,7 +52,7 @@ In the global settings of the app, you can configure
 
 ## Setting up the Parameters
 
-### **Basic Settings tab**
+### Basic Settings tab
 
 ![Ask quote settings](https://raw.githubusercontent.com/j2store/doc-images/master/apps/ask-quote/ask-quote-settings.png)
 
@@ -116,7 +116,7 @@ Choose a subject line for the quote email notifications.
 
 With that, the Email configuration is complete.
 
-### **Layout tab**
+### Layout tab
 
 If you would like to add / remove the fields in the product quote form without affecting checkout form fields, it is possible in this section.
 
