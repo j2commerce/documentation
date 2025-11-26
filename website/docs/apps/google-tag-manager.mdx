@@ -76,7 +76,7 @@ Click Add to Workspace
 
 Click the blue Submit button in the upper right corner when you are ready to go live.
 
-![](/img/tag-submit.webp)
+![](/img/tag-submit1.webp)
 
 Click Publish
 
@@ -89,10 +89,6 @@ You can choose to add a Name and a short Description if you choose to, otherwise
 Once the file has been imported and you have submitted the changes, all of the attributes have been placed in the appropriate categories for you. ie: Tags, Triggers, and Variables.
 
 ![](/img/tag-workspace.webp)
-
-Adding
-
-It is recommended that you connect Google Tag Manager (GTM) to Google Analytics (GA4) for your site because it gives more control, cleaner tracking, and better marketing data without constantly editing site code. If you don't have a Google Analytics account you can create one&#x20;
 
 ## Adding the Google Tag Manager ID
 
@@ -107,3 +103,61 @@ Enter your Google Tag Manager ID that you received when you signed up on their w
 **Locating the Google Tag Manager ID:** It is found on the Workspace tab or Admin tab of the [Google Tag Manager](https://tagmanager.google.com/) website.&#x20;
 
 ![](/img/tag-google-id.webp)
+
+## Adding Tag Manager to Google Analytics
+
+It is recommended that you connect Google Tag Manager (GTM) to Google Analytics (GA4) for your site because it gives more control, cleaner tracking, and better marketing data without constantly editing site code.&#x20;
+
+### Creating a New Account
+
+If you don't have a Google Analytics account, you can create one [here](https://analytics.google.com/).
+
+### Existing Account
+
+Once logged in to your account, follow the steps below.
+
+- Go to the blue cog wheel at the bottom left corner
+
+- Click on Data Streams
+
+- Click on your website Stream account
+
+![](/img/tag-analytics.webp)
+
+### Google Analytics ID
+
+Once you have opened up your site account, you will find your Measurement ID number, which needs to be added to your Google Tag Manager site.&#x20;
+
+![](/img/tag-analytics-id.webp)
+
+### Creating a Google Analytics Tag
+
+The next step is adding that Measurement ID to your Google Tag Manager account
+
+Go back to your Tag Manager Account > Workspace tab > Tags
+
+![](/img/tag-new-tag.webp)
+
+Click New
+
+![](/img/tag-new-tag1.webp)
+
+**Tag Name:** Name the new tag GA4-Config, or you can name it anything you want.
+
+**Tag Configuration:** Click on Tag Config
+
+![](/img/tag-new-tag3.webp)
+
+Choose Google Analytics&#x20;
+
+![](/img/tag-config.webp)
+
+Choose Google Tag
+
+![](/img/tag-config1.webp)
+
+Copy the Measurement ID you received from your Google Analytics site and paste it in the Tag ID section.
+
+Click Save
+
+![](/img/tag-config2png.webp)
