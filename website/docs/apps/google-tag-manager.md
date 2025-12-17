@@ -162,4 +162,4 @@ Click Save
 
 ![](/img/tag-config2png.webp)
 
-You're finished setting up your account for success.  If you need support, contact us at [www.J2Commerce.com/support]()&#x20;
+You're finished setting up your account for success.  If you need support, contact us at [J2Commerce.com/support](https://www.j2commerce.com/support).
