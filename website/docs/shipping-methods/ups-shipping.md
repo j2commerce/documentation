@@ -120,7 +120,7 @@ This Custom Box is to be chosen only when “Box packing” is selected.
 
 The following instructions will help walk you through the process of obtaining your new UPS OAuth Client ID and Client Secret.&#x20;
 
-**Step 1:** Go to UPS.com and log in.
+**Step 1:** Go to ([https://developer.ups.com/](https://developer.ups.com/)) and log in.
 
 **Step 2:** Click My Apps in the top right corner
 
