@@ -2,7 +2,7 @@
 
 Digifactu/Digifact is an electronic invoicing platform that lets businesses issue, manage, and store legally compliant electronic invoices. In markets such as Mexico, Guatemala, Panama, El Salvador, or the Dominican Republic, these systems help companies generate digital invoices that meet each country’s tax authority requirements, integrate with ERPs, automate workflows, and securely store records. &#x20;
 
-Each Country has its own Digifactu name. ie: **Spain**'s Invoicing Landscape  is called **(Veri\*factu)**
+Each Country has its own type of tax verification rules. This documentation is for Spain. **Spain**'s Invoicing Landscape is called **(Veri\*factu)**
 
 ## Setting up your Digifactu Account
 
@@ -70,7 +70,7 @@ Click on the 'X' under Status to enable it.
 
 ### Basic tab
 
-![](/img/digifactu-basic.webp)
+![](/img/digifactu-basic1.webp)
 
 **Cron URL:** Use this URL to set up a cron job for processing the invoice queue.  Copy/paste this URL in a new tab and hit enter to push an invoice through manually.&#x20;
 
@@ -84,7 +84,7 @@ Click on the 'X' under Status to enable it.
 
 ### Advanced tab
 
-![](/img/digifactu-advanced.webp)
+![](/img/digifactu-advanced1.webp)
 
 **Sync Order Status:** Select which order statuses should trigger invoice synchronization to DigiFactu.
 
@@ -104,7 +104,7 @@ The image below shows what the manual sync button looks like in the order status
 
 ## Manage Billing Series tab
 
-![](/img/digifactu-billing.webp)
+![](/img/digifactu-billing1.webp)
 
 A billing series is a structured sequence of invoice numbers that share the same prefix/format and sequencing rules. For example, you might create separate billing series for different product lines or regions, like:
 
@@ -118,9 +118,21 @@ This helps with **organization, legal tracking, and consistent numbering** of in
 
 ## Manage Queue tab
 
-![](/img/digifactu-queue.webp)
+![](/img/digifactu-queue1.webp)
 
 Here you will find the list of invoices that are waiting to be processed by the system.  You can either wait for DigiFactu to push them through, or you can do it manually in the individual order by clicking the sync button
+
+## API Key Troubleshooting
+
+The following screenshots shows if your API Credentials were entered correctly or not.
+
+**Successful API Key**
+
+![](/img/digifactu-api-successful.webp)
+
+**Unsuccessful API Key**
+
+![](/img/digifactu-api-unsuccessful.webp)
 
 ## How to set a cron job on your server
 
