@@ -22,7 +22,7 @@ description: J2Commerce (formerly known as J2Store)
 
 ![Additional fee enable](../../assets/additional-fees-2.webp)
 
-**Step 4:** Use the Joomla! installer to install the app. Go to System > Install > Extensions > Download the app
+**Step 4:** Use the Joomla! installer to install the app. Go to System > Install > Extensions > Install the app
 
 ![Additional fee open](<../../assets/user-group-3 (11).webp>)
 
