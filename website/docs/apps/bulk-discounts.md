@@ -6,7 +6,7 @@ description: J2Commerce (formerly known as J2Store)
 
 Encourage customers to purchase more by providing bulk discounts depending on the ordered quantity and on the specific product.
 
-Bulk discounts can be defined at site-wide (globally), category wise or per product wise. Provide a fixed per product discount or percentage of the total purchase. The plugin implements a greater flexibility in providing discounts without requiring the customers to apply a coupon.
+Bulk discounts can be defined at site-wide (globally), category-wise, or per product. Provide a fixed per-product discount or percentage of the total purchase. The plugin implements greater flexibility in providing discounts without requiring the customers to apply a coupon.
 
 You can also restrict the application of the discount depending on the customer groups.
 
