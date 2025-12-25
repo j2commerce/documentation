@@ -47,7 +47,7 @@ Click on "Open App" or the Title to start setting up the app
 ![Bundle Producs](/img/bundle-settings.webp)
 
 **Note:**\
-**1. Bundled Product types must be simple,configurable,or downloadable.**\
+**1. Bundled Product types must be simple, configurable, or downloadable.**\
 **2. Product cannot have options**\
 **3. Variable product types cannot be added to bundle products.**
 
@@ -91,6 +91,11 @@ Then navigate through the different tabs (Pricing, Inventory, Images, etc) to ad
 
 The product may have options. The product searched may be a Variable product type. Since this app only allows products *without* options, the product *with* options cannot be added to the group.
 
+**Reminder:**\
+**1. Bundled Product types must be simple, configurable, or downloadable.**\
+**2. Product cannot have options**\
+**3. Variable product types cannot be added to bundle products.**
+
 **Display Avg Price Per Each:** Select Yes to display the total count and average price per each item in a single line below the product price.
 
 **Unit Title (Single):** Customize the Avg Price Per Each display by adding the title of the unit of measurement for the items in this bundled product. For instance, if each item was measured in pounds, then you would add Pound.
@@ -98,15 +103,3 @@ The product may have options. The product searched may be a Variable product typ
 **Unit Title (Plural):** Customize the Avg Price Per Each display by adding the title of the unit of measurement for more than one unit.For instance, if each item was measured in pounds and there were more than one item, then you would add Pounds. (If you leave empty, it will use the singular unit title above.
 
 **Note:** You can add a bulk discount to the bundled products if you have already installed the Bulk Discount app.  To find out more about the Bulk Discount App, visit the [Bulk Discount documentation](https://docs.j2commerce.com/apps/bulk-discounts)
-
-
-
-ADD BULK DISCOUNT
-
-If you wish to have a bulk discount for the products included then you can make use of this option.
-
-QTY: Enter minimum quantity to be added to avail this discount.
-
-Customer group: Enter the user group who can avail this discount.
-
-Discount value: Enter the amount to be deducted from the total price as discount.
