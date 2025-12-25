@@ -16,174 +16,128 @@ You can also restrict the application of the discount depending on the customer 
 - Joomla! 4.x/ Joomla! 5.x +
 - J2Commerce / J2Store 4.x +
 
-## Installation <a href="#installation" id="installation" />
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-![Bulk Discounts](../../assets/bulk-1.webp)
-
 **Step 2:** Locate the Bulk Discount App > click View Details > Add to cart > Checkout.&#x20;
 
-**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-**Step 4:** Use the Joomla! installer to install the app. Go to System > Install > Extensions > Download the app
+## Install the App
+
+Go to System > Install > Extensions > Install the app
 
 ![Bulk Discounts](<../../assets/user-group-3 (5).webp>)
 
-**Step 5:** Go back to System > Manage > Extensions.
+## Enable the App
 
-![Bulk Discounts](<../../assets/user-group-5 (5).webp>)
+&#x20;Go to J2Commerce > Apps > search for the Bulk Discount app&#x20;
 
-**Step 6:** Search for the app and enable it.
+Click on the 'X' under Status to enable it.
 
-![Enabling bulk discounts](/img/bulk-enable1.webp)
+![Enabling bulk discounts](/img/bulk-discount-enable.webp)
 
-**Step 7:** Open the app.  Go to Components > J2Commerce > Apps > Bulk Discount > Open App
+Click on "Open App" or the Title to start setting up the app
 
-![](/img/bulk-enable_b1.webp)
+![](/img/bulk-discount-open.webp)
 
+## Setting up the Parameters
 
-
-\*\*Priority of the discounts:
-
-\*\*Here is how the priority of the discount rules is decided. Following is the priority from high to low.
-
-- **Product-level settings**
-- **Category-level settings**
-- **Global settings**
-
-That is, when there is a product-level discount set and a category-level discount set, the product-level rule would be of higher priority than the category-level rule.
-
-The same goes for the global rule as well. At any cost, the product-level setting would be given the high priority.
-
-Also, when there is a category-level discount set, the product level setting for enable bulk discount parameter should be NO. If not, the product-level setting would be given priority, thus overriding the category level setting.
-
-## Parameters <a href="#parameters" id="parameters" />
-
-**Basic Settings**
-
-- **Display name:**
-
-Text entered here will be displayed as promotion display text.
-
-- **Remove discount if a coupon is used by the customer (prevents customers getting double discounts)**
-
-Set this to Yes to remove the discount when customer used the coupon.
-
-- **Display promotion Message In Cart:**
-
-Set this YES display the promotion message in the cart if any bulk discount not applied.
-
-- **Apply Bulk discount for:**&#x20;
-
-**Cart Qty :** This will apply the discount globally i.e. based on the cart quantity. This will work only when you enable the bulk discount globally in Global discount settings.
-
-**Line item Qty :** This will apply the discount based on the product. You can set a discount to the product individually on the product by going to the apps tab on j2Commerce (j2store cart) section. Once you enable Line item Quantity, the discount will be applied to the individual products. Refer to the image below for setting a discount for the product individually.
-
-- **Product discount price display format**
-
-\*\*Per quantity Discount: \*\*
-
-The discount is based on the product.
-
-\*\*Total Discount: \*\*
-
-Discount is based on the total purchase amount of a particular order, irrespective of the quantity.
-
-- **Display discounts in**
-
-Display the discount information in any one of the three options(Products view only, Category view only, Both product and category view).
+### Basic tab
 
 ![](/img/bulkdiscount_enable_d2.webp)
 
-**Global discount settings**
+**Display name:** The value entered will be used as promotion display text
 
-You can use these options when you are trying to offer a site-wide discount on your products.\\
+**Remove discount if a coupon is used by the customer (prevents customers getting double discounts):** Set this to Yes to remove the discount when the customer uses the coupon.
 
-Also, when you are trying to set up same type of discounts for a majority of the products while a very few products require change, then you can define the discount here and override this setting at the product level or the category-level.\\
+**Display promotion Message In Cart:** Set this to Yes display the promotion message in the cart if any bulk discount is not applied.
 
-- **Enable bulk discount globally**
+**Apply Bulk discount for: Line item Qty:** This will apply the discount based on the product. You can set a discount to the product individually on the product by going to the apps tab on the J2Commerce (J2Store cart) section. Once you enable Line item Quantity, the discount will be applied to the individual products. Refer to the image below for setting a discount for the product individually.
 
-Set this YES will enable the global discount function.
+**Product discount price display format:** Select format of bulk discount amount in product message
 
-- **Discount type**
+- **Per quantity Discount:** The discount is based on the product.
 
-\*\*Fixed amount per product : \*\*
+- **Total Discount Price:** Discount is based on the total purchase amount of a particular order, irrespective of the quantity.
 
-Enable this will calculate the discount on fixed price.
+**Display single quantity discount price in table:** Set to Yes. If you want to display a single quantity discount price in a table.
 
-\*\*Cart Percentage : \*\*
+**Display discounts in:** Display the discount information in any one of the three options(Products view only, Category view only, Both product and category view, Never).
 
-Enable this will calculate the discount based on percentage.
-
-\*\*NOTE: when you set up a cart percentage discount, the discount information would be displayed only on the cart page. A table showing the discount would not be available for the fixed price discounts.
-
-- **Promotional text to show under each item in the cart(only for cart page)**
-
-Custom text entered here will be displayed under each product in the cart.
-
-- **Single Quantity Class**
-
-Here you can set the custom class, if you set the quantity for one and above.
+### Global discount settings tab
 
 ![Global settings for bulk discount](/img/bulkdiscount_enable_c1.webp)
 
-**Setting up bulk discounts for particular categories:**
+You can use these options when you are trying to offer a site-wide discount on your products.\\
 
-This app will allow you to set discount by category wise. Go to Content > Categories > Open the category(to which you want to set bulk discount) > Bulk Discount tab.
+Also, when you are trying to set up the same type of discounts for a majority of the products while a very few products require change, then you can define the discount here and override this setting at the product level or the category-level.\\
 
-- **Enable Bulk Discount**
+**Enable bulk discount globally:** Set this to Yes to enable bulk discounts across the site.
 
-Set this YES to enable the bulk discount for the category.
+**Discount type:** The value set will be used to calculate the discount
 
-- **Apply Bulk discount for**
+**Fixed amount per product:**  This will calculate the discount on a fixed price.
 
-**Cart Qty :** This will apply the discount globally i.e. based on the cart quantity. This will work only when you enable the bulk discount globally in Global discount settings.
+**Cart Percentage:** This will calculate the discount based on a percentage.
 
-**Line item Qty :** This will apply the discount based on the product. You can set discount to the product individually in the apps tab on j2store cart. Once you enabled Line item Quantity, the discount will be applied to the individual products.
+**NOTE:** *When you set up a cart percentage discount, the discount information will be displayed only on the cart page. A table showing the discount would not be available for the fixed price discounts.*
 
-- **Discount type**
+**Promotional text to show under each item in the cart(only for cart page):** Custom text entered here will be displayed under each product in the cart.
 
-\*\*Fixed amount per product : \*\*
+**Single Quantity Class:** If you set one quantity and above you can set custom class here.
 
-Enable this will calculate the discount on fixed price.
+## Applying Bulk Discounts to Categories
 
-\*\*Cart Percentage : \*\*
+This app will allow you to set a discount by category.&#x20;
 
-Enable this will calculate the discount based on percentage.
+Go to Content > Categories > Open the category (to which you want to set a bulk discount) > Bulk Discount tab.
 
-- **Promotional text to show under each item in the cart(only for cart page)**
+![](/img/bulk-discount-category.webp)
 
-Custom text entered here will be displayed under each product in the cart.
+**Enable Bulk Discount:** Set this to Yes to enable the bulk discount for the category.
 
-![Category-discounts](/img/bulk_discount_category2.webp)
+**Apply Bulk discount for:**&#x20;
 
-\*\*Product level bulk discounts:
+- **Total Qnty of products in cart that fall under this category:** This will apply the discount globally i.e., based on the cart quantity. This will work only when you enable the bulk discount globally in Global discount settings.
 
-Bulk discount plugin offers a product-level setting. So, if you are trying to set up product-specific discounts, then that is also possible by following the below steps:
+- **Line item Qty :** This will apply the discount based on the product. You can set a discount to the product individually in the apps tab on j2store cart. Once you enable Line item Quantity, the discount will be applied to the individual products.
 
-- Navigate to J2Store->Catalog->Products->choose the product for which you are trying to offer discounts.
-- Click on the J2Store cart tab and select the apps tab on the left pane.
-- Set the enable bulk discounts option to YES.
-- **Discount type**
-- **Fixed-amount per product -** To set up a fixed price discount for the product choose this option. For example: 20$ discount, or a 50$ discount.
-- \*\*Cart percentage - \*\*To set up a percentage discount at the cart page for a particular product, choose this option. For example: a 20% discount, a 30% discount. As the name goes, this discount would be applied only at the cart level.
-- \*\*Promotional text to show under each item in the cart(only for cart page) \*\*
+**Discount type:**
 
-This setting lets you mention a promo message at the cart page alone. The text entered here would be displayed at the cart page.
+- **Fixed amount per product:** Enabling this will calculate the discount on a fixed price.
 
-- \*\*Combine product quantity in cart \*\*
+- **Cart Percentage:** Enabling this will calculate the discount based on percentage.
 
-When this option is checked, the quantities of the product would be calculated cumulatively and discount would be added accordingly. For example: If you are setting up a discount for a T-shirt product, and the t-shirt has options, say, size as Small, Medium and Large. If the user chooses to buy a shirt of the size small and one shirt of the size medium, then should these two quantities be added?
+**Promotional text to show under each item in the cart (only for cart page):** You can add multiple promotion discounts to the products, which will be displayed in the cart.
 
-- Next comes the part where you choose the quantity range, usergroup and the discount value.
+## Applying Bulk Discounts to Products
 
-\*\*Product-level fixed price discount: \*\*
+The bulk discount plugin offers a product-level setting. So, if you are trying to set up product-specific discounts, then that is also possible by following the steps:
 
-\*\* Frontend view:\*\*
+There are multiple ways to find your products. One way is go to J2Commerce > Catalog > Products > choose the product for which you are trying to offer discounts.&#x20;
 
-![Frontend view of discount](https://raw.githubusercontent.com/j2store/doc-images/master/apps/bulk-discounts/pro-level-fixed-frontend.png)
+![](/img/bulk-discount-product.webp)
 
-**Video tutorial**
+Once you find your product, click on the J2Commerce (J2Store cart) tab and select the apps tab.
 
-[![Bulk discounts](https://img.youtube.com/vi/51J1UkeRu3Y/0.jpg)](https://youtu.be/EGW0Ol5o3jA)
+![Category-discounts](/img/bulk-discount-product-app.webp)
+
+**Enable Bulk Discount:** Set this to Yes to enable the bulk discounts&#x20;
+
+**Discount type:**&#x20;
+
+- **Fixed-amount per product:** To set up a fixed price discount for the product, choose this option. For example: 20$ discount, or a 50$ discount.
+
+- **Cart percentage:** To set up a percentage discount at the cart page for a particular product, choose this option. For example: a 20% discount, a 30% discount. As the name suggests, this discount would be applied only at the cart level.
+
+**Promotional text to show under each item in the cart(only for cart page):** This setting lets you mention a promo message at the cart page alone. The text entered here would be displayed on the cart page.
+
+**Combine product quantity in cart:** When this option is checked, the quantities of the product would be calculated cumulatively, and a discount would be added accordingly.&#x20;
+
+*For example, if you are setting up a discount for a T-shirt product, and the T-shirt has options, say, size as Small, Medium, and Large. If the user chooses to buy a shirt of size small and one shirt of size medium, then should these two quantities be added?*
+
+Next comes the part where you choose the quantity range, user group, and the discount value.&#x20;
+
+![](/img/bulk-discount-product-app1.webp)
