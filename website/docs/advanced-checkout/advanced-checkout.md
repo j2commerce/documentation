@@ -5,39 +5,43 @@ description: J2Commerce (formerly known as J2Store)
 
 # Advanced Checkout
 
-## Download and Install
+## Requirements
+
+1. PHP 8.1.0 +
+2. Joomla! 4.x/ Joomla! 5.x +
+3. J2Commerce / J2Store 4.x +
+
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
 **Step 2:** Go to Extensions > Apps > Locate the Advanced Checkout App > click View Details > Add to cart > Checkout.
 
-![](/img/advanced-checkout-purchase.webp)
-
 **Step 3:** Go to your My Downloads or My Account under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![](/img/advanced-checkout-download.webp)
+## Install the App
 
-**Installation:** You can install this Advanced Checkout App using the Joomla installer. The following steps help you with a successful installation.
-
-**Step 1:** In the Joomla admin, go to System > Install > Extensions
+Use the Joomla! installer to install the app. Go to System > Install > Extensions > install the app
 
 ![](/img/product-category-installer-1.webp)
 
-**Step 2**: Click on the Browse button and select the Advanced Checkout zip file you saved during the download process. You will receive a message of success once installed.
+## Enable the App
 
-![](/img/product-category-download1.webp)
+&#x20;Select J2Commerce > Apps > Advanced Checkout
 
-**Step 3:** Select J2Commerce > Apps > Advanced Checkout
+Enable the app by clicking on the 'X'. It will turn into a checkmark.
 
-**Step 4:** Enable the app by clicking on the 'X'. It will turn into a checkmark.
+![](/img/advanced-checkout-enable1.webp)
 
-![](/img/advanced-checkout-enable.webp)
+Click on "Open App" or the Title to start setting up the app.&#x20;
+
+![](/img/advanced-checkout-open1.webp)
 
 ## Setting up the Menu
 
 Before you set up the parameters, you need to set up the menu for it.
 
-**Step 1:** Go to Menu > Main Menu > Checkout
+**Step 1:** Go to Menus > Main Menu > Checkout
 
 ![](/img/advanced-checkout-checkout-menu.webp)
 
@@ -47,13 +51,13 @@ Before you set up the parameters, you need to set up the menu for it.
 
 ## Setting up the Modules
 
-### Login Module
+### Creating a New Module
 
 Go to Content > Site Module > New
 
 ![](/img/advanced-checkout-login-new.webp)
 
-**Module Tab:**
+### Module Tab
 
 ![](/img/advanced-checkout-login-module1.webp)
 
@@ -61,11 +65,11 @@ Go to Content > Site Module > New
 
 **Position:** Type **j2c-login** in the dropdown.&#x20;
 
-**Login Redirection Page:** Select the location you wish to redirect the customers after loggin in. In many cases, it's the Checkout Page.
+**Login Redirection Page:** Select the location you wish to redirect the customers after logging in. In many cases, it's the Checkout Page.
 
 **Logout Redirection Page:** Select the location you wish to redirect the customers after they complete their order.
 
-**Menu Assignment Tab:**
+### Menu Assignment Tab
 
 ![](/img/advanced-checkout-login-menu.webp)
 
@@ -73,7 +77,7 @@ Go to Content > Site Module > New
 
 **Menu Selection:** Select Checkout
 
-**Advanced Tab:**
+### Advanced Tab
 
 ![](/img/advanced-checkout-login-advanced.webp)
 
@@ -85,13 +89,13 @@ The Login Module is complete. Make sure it's enabled by clicking on the 'x' and 
 
 ![](/img/advanced-checkout-login-enable.webp)
 
-### Advanced Cart Module
+## Advanced Cart Module
 
 Follow the same steps from creating the Login Module.&#x20;
 
 Go to Content > Site Module > New
 
-**Module Tab:**
+### Module Tab
 
 ![](/img/advanced-cart-module-tab1.webp)
 
@@ -111,9 +115,7 @@ Go to Content > Site Module > New
 
 **Select Payment Icons:** Select all of the payment options you want to offer
 
-
-
-**Menu Assignment Tab:**
+### Menu Assignment Tab
 
 ![](/img/advanced-cart-menu-tab1.webp)
 
@@ -121,7 +123,7 @@ Go to Content > Site Module > New
 
 **Menu Selection:** Select 'Checkout'
 
-**Settings Tab:**
+### Settings Tab
 
 ![](/img/advanced-cart-settings-tab1.webp)
 
@@ -145,9 +147,7 @@ Go to Content > Site Module > New
 
 **Show Subtotals:** Select yes to show cart subtotals.
 
-
-
-**Advanced Tab:**
+### Advanced Tab
 
 ![](/img/advanced-cart-advanced-tab1.webp)
 
@@ -157,7 +157,7 @@ Go to Content > Site Module > New
 
 ## Setting up the Checkout Page
 
-**Step 1:** Go back into the Advanced Checkout App and open it.&#x20;
+Go back into the Advanced Checkout App and open it.&#x20;
 
 ![](/img/advanced-checkout-setup1.webp)
 
@@ -165,27 +165,27 @@ Go to Content > Site Module > New
 
 ![](/img/advanced-checkout-basic1.webp)
 
-**We have broken down each section below.**
-
 **Enable Store Icons:** Set this to no if you wish to use your own icon set. (You will need to replace the store icons with your own via layout overrides.)
 
 **Enable Checkout Header:** If set as Yes, then you can add a custom header at the top of your checkout page. The location to attach the header image can be found on the Style tab.
 
-**Enable Checkout Breadcrumbs:** The breadcrumbs allow the customer to know which step during checkout they are on and how many more steps they need to complete.
+**Enable Checkout Footer:** If set as Yes, then you can add a custom footer at the bottom of your checkout page. The location to attach the header image can be found on the Style tab.
+
+**Enable Checkout Breadcrumbs:** The breadcrumbs allow the customer to know which step during checkout they are on and how many more steps they need to complete. See image below.&#x20;
 
 ![](/img/advanced-checkout-breadcrumbs.webp)
 
-**Enable Checkout Steps:** Selecting Yes, will enable the previous steps to show up at the top of each page, allowing the customer to verify the information is correct or edit the previous page.
+**Enable Checkout Steps:** If set as Yes, it will enable the previous steps to show up at the top of each page, allowing the customer to verify the information is correct or edit the previous page. See image below
 
 ![](/img/advanced-checkout-steps.webp)
 
 **Phone 1:** Customer service or general company phone number used in disclaimer text and checkout footer.
 
-**Top Text:** Add any needed text to the top of the checkout. Use this sparingly as anything that is not critical to the conversion of the sale will most likely hurt it.
+**Top Text:** Add any needed text to the top of the checkout. Use this sparingly, as anything that is not critical to the conversion of the sale will most likely hurt it. See image below.&#x20;
 
 ![](/img/advanced-checkout-basic-settings3.webp)
 
-**Bottom Text:** Add any needed text to the bottom of the checkout. Usually needed if the site needs to display a site-wide disclaimer.
+**Bottom Text:** Add any needed text to the bottom of the checkout. Usually needed if the site needs to display a site-wide disclaimer. See image below.
 
 ![](/img/advanced-checkout-basic-settings2.webp)
 
@@ -193,7 +193,7 @@ Go to Content > Site Module > New
 
 ![](/img/advanced-checkout-style2.webp)
 
-**Enable Container Class:** Select Yes to enable the Bootstrap 5 container element on the checkout and confirmation pages. Use this if your Cassiopeia template is set to Fluid layout and you wish to center the checkout with the Bootstrap defined max-width.
+**Enable Container Class:** Select Yes to enable the Bootstrap 5 container element on the checkout and confirmation pages. Use this if your Cassiopeia template is set to Fluid layout and you wish to center the checkout with the Bootstrap-defined max-width.
 
 **Primary Color:** Select the primary (main) color to match your site template style.
 
@@ -217,15 +217,15 @@ Go to Content > Site Module > New
 
 **Favicon Image:** 64px x 64px png, jpg, webp images to use for the browser tab icon (in place of the default Joomla! icon.
 
-The screenshot below shows an example of the Header and Favicon
+***The screenshot below shows an example of the Header and Favicon***
 
 ![](/img/favicon-header2.webp)
 
-**Custom CSS:** Add any custom CSS for the checkout page. DO NOT INCLUDE THE \< STYLE > TAGS. The default for the header is 25px high. You can customize the height by changing the pixles and add additional CSS code to customize the cart
+**Custom CSS:** Add any custom CSS for the checkout page. DO NOT INCLUDE THE \< STYLE > TAGS. The default for the header is 25px high. You can customize the height by changing the pixels and add additional CSS code to customize the cart. See image below.
 
 ![](/img/advanced-checkout-style3.webp)
 
-### How to Change the Safe & Secure Language
+## How to Change the Safe & Secure Language
 
 The screenshot below shows how to change the Safe and Secure message to personalize it to the client's website.
 
@@ -237,11 +237,11 @@ The screenshot below shows the Safe and Secure link, which is located at the bot
 
 ![](/img/safe-and-secure-languare1.webp)
 
-**Step 2:** Select Language and Client drop-down> Click on English (United Kingdom) - Administrator > New
+**Step 2:** Select Language and Client drop-down > Click on English (United Kingdom) - Administrator > New
 
 ![](/img/safe-and-secure-languare2.webp)
 
-&#x20;**Safe and Secure Link:**&#x20;
+### &#x20;Safe and Secure Link
 
 Once you click New, it's time to customize it.
 
@@ -251,7 +251,7 @@ Once you click New, it's time to customize it.
 
 **Step 2: Search For:** Select Constant
 
-**Step 3:** Search Text: Enter the same Language string from step 1 > click Search PLG\_J2STORE\_APP\_ADVANCEDCHECKOUT\_SECURE\_TEXT
+**Step 3:** **Search Text:** Enter the same Language string from step 1 > click Search PLG\_J2STORE\_APP\_ADVANCEDCHECKOUT\_SECURE\_TEXT
 
 **Step 4: Search Results:** Once you click in the gray box, it will automatically transfer the editable language into the Text box
 
@@ -261,9 +261,9 @@ The Screenshot below shows the final look
 
 ![](/img/safe-and-secure2.webp)
 
-**Modal Title:**&#x20;
+### Safe and Secure Modal Title
 
-Follow the same steps from step 2 above: (Select Language and Client drop-down> Click on English (United Kingdom) - Administrator > New)
+Follow the same steps from step 2 above: (Select Language and Client drop-down > Click on English (United Kingdom) - Administrator > New)
 
 ![](/img/safe-and-secure-languare4.webp)
 
@@ -277,9 +277,7 @@ Follow the same steps from step 2 above: (Select Language and Client drop-down> 
 
 **Step 5: Text:** Change any of the information you wish&#x20;
 
-The Screenshot below shows the final look
-
-**Modal Content:**
+### Safe and Secure Modal Content
 
 Follow the same steps from step 2 above: (Select Language and Client drop-down> Click on English (United Kingdom) - Administrator > New)
 
@@ -305,11 +303,11 @@ The Screenshot below shows the final look of the Modal Title and Content
 
 ![](/img/advanced-checkout-confirmation3.webp)
 
-**Enable Address Map:** Select Yes to display a map of the customer's shipping address on the confirmation page. You will need to create and enter your Google Developer Console API in the field below).
+**Enable Address Map:** Select Yes to display a map of the customer's shipping address on the confirmation page. You will need to create and enter your Google Developer Console API in the field below.&#x20;
 
 ![](/img/advanced-checkout-confirmation4.webp)
 
-**Google API Key:** Enter your Google API key here. To obtain an API Key follow the instructions at the end of this document.
+**Google API Key:** Enter your Google API key here. ***To obtain an API Key follow the instructions at the end of this document.***
 
 **Contact Page Link:** Select the Contact Page menu link to ensure customers have an easy way to contact you if they encounter issues with their order.
 
@@ -325,7 +323,7 @@ The Screenshot below shows the final look of the Modal Title and Content
 
 ![](/img/advanced-checkout-confirmation5.webp)
 
-### How to Obtain Your Google API Key
+## How to Obtain Your Google API Key
 
 **Step 1:** Visit [https://console.cloud.google.com/apis/dashboard](https://console.cloud.google.com/apis/dashboard)&#x20;
 
