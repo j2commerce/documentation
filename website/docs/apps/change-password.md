@@ -4,9 +4,9 @@ description: J2Commerce (formerly known as J2Store)
 
 # Change Password
 
-This app enables change password feature in J2Commerce's My Profile page. It allows customer to change their account's password in their profile page.
+This app enables the change password feature in J2Commerce's My Profile page. It allows customers to change their account passwords in their profile page.
 
-## Requirements <a href="#requirements" id="requirements"></a>
+## Requirements <a href="#requirements" id="requirements" />
 
 1. PHP 8.1.0 +
 2. Joomla! 4.x/ Joomla! 5.x +
@@ -16,32 +16,26 @@ This app enables change password feature in J2Commerce's My Profile page. It all
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-![Change Password](<../../assets/change-1.webp>)
-
 **Step 2:** Locate the Change Password App > click View Details > Add to cart > Checkout.&#x20;
 
-**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![Change Password](<../../assets/change-2.webp>)
+## Install the App
 
-**Step 4:** Use the Joomla! installer to install the app. Go to System > Install > Extensions > Download the app
+Go to System > Install > Extensions > Install the app
 
 ![Change Password](<../../assets/user-group-3 (6).webp>)
 
-**Step 5:** Go back to System > Manage > Extensions.
+## Enable the App
 
-![Change Password](<../../assets/user-group-5 (6).webp>)
+&#x20;Go to J2Commerce > Apps > search for the Change Password app&#x20;
 
-**Step 6:** Search for the app and enable it.
+Click on the 'X' under Status to enable it.
 
-![Enable App](<../../assets/change-3.webp>)
+![Enable App](/img/change-enable1.webp)
 
-**Step 7:** Once the app is enabled, go to Components > J2Commerce > Apps and click on Open to set the configuration for the app.
+## Frontend View
 
-![Change Password](<../../assets/change-4.webp>)
+Once enabled, go to the My Profile or My Account page at the store's frontend, log in, and you can see an additional tab named Change Password.
 
-**Step 8:** Once enabled, go to My Profile page at store frontend, login and you can see one more additional tab appears named Change Password.
-
-**Step 9:** Click on this tab and try changing your password.\\
-
-![Change Password - Frontend.](../../assets/changepassword-app-frontend.png)
+![](/img/change-frontend.webp)
