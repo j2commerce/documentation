@@ -10,7 +10,7 @@ The customer will be able to enter the amount of the donation in a text box. You
 
 The app seamlessly integrates with J2Commerce. You will be able to create a donation option type and associate it with the product. No complex configuration is required to use this app. Just install the plugin on your site, start creating options, and add it to as many products as you like.
 
-## **Limitations:**
+## Limitations:
 
 When using the donation option type, avoid using another option with a price modifier (***like a select or radio type option that adds/modifies the price***)
 
@@ -20,7 +20,7 @@ When using the donation option type, avoid using another option with a price mod
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
-## Installation <a href="#installation" id="installation" />
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
