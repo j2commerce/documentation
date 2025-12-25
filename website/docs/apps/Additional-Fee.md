@@ -16,17 +16,13 @@ description: J2Commerce (formerly known as J2Store)
 
 **Step 2:** Locate the Additional Fee App > click View Details > Add to cart > Checkout.&#x20;
 
-**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
 ## Install the App
 
 Go to System > Install > Extensions > Install the app
 
 ![Additional fee open](<../../assets/user-group-3 (11).webp>)
-
-**Step 5:** Go back to System > Manage > Extensions.
-
-![Additional Fee](<../../assets/user-group-5 (11).webp>)
 
 ## Enable the App
 
