@@ -4,7 +4,7 @@ description: J2Commerce (formerly known as J2Store)
 
 # Bundled Products
 
-This app allows store owner to combine the products and sell it as one single product. When bundling products, the app will allow only simple, configurable and downloadable product types without options. Product which are having options can’t be added.
+This app allows store owners to combine the products and sell them as a single product. When bundling products, the app will allow only simple, configurable, and downloadable product types without options. Product which are having options can’t be added.
 
 ## Requirements <a href="#requirements" id="requirements" />
 
