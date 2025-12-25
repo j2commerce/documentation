@@ -141,3 +141,13 @@ Once you find your product, click on the J2Commerce (J2Store cart) tab and selec
 Next comes the part where you choose the quantity range, user group, and the discount value.&#x20;
 
 ![](/img/bulk-discount-product-app1.webp)
+
+Select the Add Bulk Discount button.
+
+If you wish to have a bulk discount for the products included, then you can make use of this option.  This will be really beneficial if you have the Bundled Product App installed.  To learn more about the Bundled Product App, visit the [Bundled Product Documentation](https://docs.j2commerce.com/apps/bundled-products).&#x20;
+
+**QTY:** Enter the minimum quantity to be added to avail this discount.
+
+**Customer Group:** Enter the user group that can avail this discount.
+
+**Discount value:** Enter the amount to be deducted from the total price as a discount.
