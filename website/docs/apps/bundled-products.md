@@ -4,101 +4,102 @@ description: J2Commerce (formerly known as J2Store)
 
 # Bundled Products
 
-This app allows store owner to combine the products and sell it as one single product. When bundling products, the app will allow only simple, configurable and downloadable product types without options. Product which are having options can’t be added.
+This app allows store owners to combine the products and sell them as a single product. When bundling products, the app will allow only simple, configurable, and downloadable product types without options. Product which are having options can’t be added.
 
-## Requirements <a href="#requirements" id="requirements"></a>
+## Requirements <a href="#requirements" id="requirements" />
 
 1. PHP 8.1.0 +
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
-## Installation <a href="#installation" id="installation"></a>
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-![Bundle Producs](<../../assets/bundled-1.webp>)
-
 **Step 2:** Locate the Bundle Product App > click View Details > Add to cart > Checkout.&#x20;
 
-**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![Bundle Producs](<../../assets/bundled-2.webp>)
+## Install the App
 
-**Step 4:** Go to System > Install > Extensions > Download the app
+Go to System > Install > Extensions > Install the app
 
 ![Bundle Producs](<../../assets/user-group-3 (13).webp>)
 
-**Step 5:** Go back to System > Manage > Extensions.
+## Enable the App
 
-![Bundle Producs](<../../assets/user-group-5 (13).webp>)
+&#x20;Go to J2Commerce > Apps > search for the Additional Fee&#x20;
 
-**Step 6:** Search for the app and enable it.
+Click on the 'X' under Status to enable it.
 
-![Bundle Producs](<../../assets/bundled-3.webp>)
+![](/img/bundle-enable.webp)
 
-## Settings <a href="#settings" id="settings"></a>
+Now it's time to open the app and configure the settings.&#x20;
 
-Now it's time to open the app and configure the settings. &#x20;
+Click on "Open App" or the Title to start setting up the app
 
-**Step 1:** Go to Components > J2Commerce > Apps. Search for Bundle Products.
+![](/img/bundle-open.webp)
 
-![Bundle Producs](<../../assets/bundled-4.webp>)
+## Setting up the Parameters
 
-**Step 2:** Click on the Open option and choose the Inventory handling type required.
+### Basic Settings App
 
-Handle at the items in the bundle Inventory will apply for the products in bundle
+![Bundle Producs](/img/bundle-settings.webp)
 
-Handle at the bundle level Inventory should be maintained for the bundled product
+**Note:**\
+**1. Bundled Product types must be simple, configurable, or downloadable.**\
+**2. Product cannot have options**\
+**3. Variable product types cannot be added to bundle products.**
 
-![Bundle Producs](<../../assets/bundled-5.webp>)
+**Inventory Handling:**&#x20;
 
-&#x20;**Bundle Products**
+- **Handle at the Bundle Level:** Inventory should be maintained for the bundled product.
 
-1. Once you enabled the app, you can see Bundle Product as one of the product types listed in the product type dropdown. Refer the picture below&#x20;
+- **Handle at the Items Level:** Inventory will apply for the products in the bundle.
 
-![Bundle Producs](<../../assets/bundled-6.webp>)
+**Tax Based On:**&#x20;
 
-1. Select the product type Bundle Product and click save.
+- **Bundled Products**
 
-![Bundle Product](https://raw.githubusercontent.com/j2store/doc-images/master/apps/Bundled_products/bundld-product-03.png)
+- **Individual Products**
 
-1. Go to J2Store cart and scroll down where you can see the navigation menus (General, Pricing, Inventory, Images, Shipping, Filters, Relations, Apps)
-2. In general tab, choose YES to visible in storefront and navigate to apps.
-3. Then navigate to several tabs (Pricing, Inventory, Images, etc) to add price, image, maintain stock.
-4. Go to apps tab where you can see the search box to search for the products.
-5. Type two or three characters of your product
+## Creating a Bundled Product
 
-![bp03](../../assets/bundled-7.webp)
+Once you enable and set up the app, you can see Bundle Product as one of the product types listed in the product type dropdown. Refer the picture below&#x20;
 
-**\*\* If the product you are searching for is not listed, the reason is that the product might be having the following:**
+Select the product type, Bundle Product, and click Save and Continue
 
-Product may have options. The product searched may be a Variable product type since this app allows only the product without options and variables, the product with options cannot be added into the group.
+![Bundle Producs](../../assets/bundled-6.webp)
 
-1. **Enable Bulk Discount:** If you wish to have a bulk discount for all the products added then set this to yes.
-2. **Discount type:** Choose the discount type which you wish to apply
+Go to the J2Commerce (J2Store cart) tab and scroll down where you can see the navigation menus (General, Pricing, Inventory, Images, Shipping, Filters, Relations, Apps)
 
-FIXED AMOUNT PER PRODUCT  Set a fixed discount rate according to the product. CART PERCENTAGE: A given percentage of amount will be deducted from the total cart amount.
+### General tab
 
-* Promotional text to show under each item in the cart (only for cart page):
+In the general tab, choose Yes to make it visible in the storefront
 
-Enter the text you wish to display under each item. This text entered here will be displayed only in the cart page.
+![](/img/bundle-product.webp)
 
-* ADD BULK DISCOUNT :
+Then navigate through the different tabs (Pricing, Inventory, Images, etc) to add price, image, and maintain stock, and fill in the necessary information
 
-If you wish to have a bulk discount for the products included then you can make use of this option.
+### Apps tab
 
-QTY: Enter minimum quantity to be added to avail this discount.
+![bp03](/img/bundle-product-app1.webp)
 
-Customer group: Enter the user group who can avail this discount.
+**Search Product by SKU:** Type a few characters in the product SKU you want to add. Once the products are added, save the article and check in the frontend.
 
-Discount value: Enter the amount to be deducted from the total price as discount.
+**Note:** If the product you are searching for is not listed, the reason is that the product might be because of the following:
 
-* Once the products are added, save article and check in the front end.
+The product may have options. The product searched may be a Variable product type. Since this app only allows products *without* options, the product *with* options cannot be added to the group.
 
-![bp05](../../assets/bundled-8.webp)
+**Reminder:**\
+**1. Bundled Product types must be simple, configurable, or downloadable.**\
+**2. Product cannot have options**\
+**3. Variable product types cannot be added to bundle products.**
 
-Video Tutorial
+**Display Avg Price Per Each:** Select Yes to display the total count and average price per each item in a single line below the product price.
 
-You can watch the video tutorial for Creating bundled product
+**Unit Title (Single):** Customize the Avg Price Per Each display by adding the title of the unit of measurement for the items in this bundled product. For instance, if each item was measured in pounds, then you would add Pound.
 
-[![Watch the video](https://img.youtube.com/vi/az6iUckZnuc/0.jpg)](https://www.youtube.com/watch?v=az6iUckZnuc)
+**Unit Title (Plural):** Customize the Avg Price Per Each display by adding the title of the unit of measurement for more than one unit.For instance, if each item was measured in pounds and there were more than one item, then you would add Pounds. (If you leave empty, it will use the singular unit title above.
+
+**Note:** You can add a bulk discount to the bundled products if you have already installed the Bulk Discount app.  To find out more about the Bulk Discount App, visit the [Bulk Discount documentation](https://docs.j2commerce.com/apps/bulk-discounts)

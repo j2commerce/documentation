@@ -4,6 +4,12 @@ description: J2Commerce (formerly known as J2Store)
 
 # Basic Settings and Booking Management
 
+## Requirements `<a href="#requirements" id="requirements" />`
+
+1. PHP 8.1.0 +
+2. Joomla! 4.x/ Joomla! 5.x +
+3. J2Commerce / J2Store 4.x +
+
 ## Basic Settings <a href="#basic-settings" id="basic-settings" />
 
 There are not many settings that have to be done to use this app. Here are a few parameters that are essential to start off with:

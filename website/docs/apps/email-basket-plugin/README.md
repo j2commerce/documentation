@@ -22,67 +22,61 @@ The plugin nicely integrates into the default cart page of J2Commerce. You can a
 
 **Step 2:** Locate the Request Quote / Email Cart App > click View Details > Add to cart > Checkout.&#x20;
 
-![](/img/email-purchase.webp)
-
-**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
-
-![](/img/email-download.webp)
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
 ## **Installation:**&#x20;
 
 You can install the Request Quote / Email Cart using the Joomla installer. The following steps help you with a successful installation.
 
-**Step 1:** In the Joomla admin, go to System > Install > Extensions
+**Step 1:** Use the Joomla! installer to install the app. Go to System > Install > Extensions > Install the app
 
 ![](/img/canada-post-installer-1.webp)
 
-**Step 2:** Click on the Browse button and select Request Quote / Email Cart zip file where you saved it.
+## Enable the App
 
-![](/img/canada-post-download.jpg)
+Go to J2Commerce > Apps > search for Request Quote to narrow down your search.&#x20;
 
-**Step 3:** In the Joomla admin, go to System > Manage > Extensions
+Click on the 'X' under Status to enable it.
 
-![](/img/email-installer-2.webp)
+![](/img/request-quote-enable.webp)
 
-## Setup Instructions <a href="#setup-instructions" id="setup-instructions" />
+Click the Title or Open App to start setting up the configurations.&#x20;
 
-1. Use the Joomla installer to install the plugin.
-2. In the backend, go to Components > J2Commerce > Apps
-3. Enable the app by clicking on the 'x' under Status. It will become a checkmark
-4. Open the app.
+![](/img/request-quote-open.webp)
 
-![](/img/email-setup.webp)
+## Setting up the App
 
-1. Enter the parameters (read the explanation about each parameter given below)
-2. Save and close it.
-
-Now you can see the Request Quote / Email Cart button on the cart page.
-
-## Parameters <a href="#parameters" id="parameters" />
-
-### Basic settings <a href="#basic-settings" id="basic-settings" />
+### Basic tab
 
 ![](/img/email-parameters.webp)
 
-**Disable proceed checkout:** If you set this to 'YES', the plugin will hide the checkout button in the cart.
+**Disable Proceed checkout:** If set to yes, it will hide the checkout button in your cart.
 
-**Article ID for thank you message:** The Article given will be displayed after the payment is processed, and it can include a thank-you message or any kind of text.
+**Thank You Message Article:** Select the article to display after the cart has been successfully sent. It can include anything (even plugins) and should, at the very least, tell your customer what to do next.
 
-**Enable the show save cart button:** Setting 'YES' will display the Save cart button (which is used for unregistered users) on the cart page. Clicking on this button will redirect the customer to register. After registering and logging in, the cart items remain in the basket.
+**reCAPTCHA:** Select Yes to enable Google reCAPTCHA to prevent spam submissions.
 
-**Empty cart after sending email:** If you set this to YES, the plugin will empty the cart after emailing the cart items to the store owner.
+**reCAPTCHA Site Key:** Your Google reCAPTCHA site key.  Go to [Cloud.Google.com ](https://cloud.google.com/security/products/recaptcha?utm_source=google\&utm_medium=cpc\&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1710134\&utm_content=text-ad-none-any-DEV_c-CRE_774450158796-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt-Security-Platform+Security-reCAPTCHA-KWID_333543722374-kwd-333543722374\&utm_term=KW_google%20recaptcha-ST_google+recaptcha\&gclsrc=aw.ds\&gad_source=1\&gad_campaignid=22970352189\&gclid=CjwKCAiAu67KBhAkEiwAY0jAlUmkNf4Tmc7k7PitfSjOM02U1eKVLmYe2_38ZsJs3waScV3FDzw3lhoCEtAQAvD_BwE)to sign up for one.
 
-**Time delay in milliseconds to empty the cart:** You can set a delay for emptying the cart. The default is 2 seconds.
+**reCAPTCHA Secret Key:** Your Google reCAPTCHA secret key.
 
-### Layout <a href="#layout" id="layout" />
+**Show Save Cart Button:** This option is used to enable/disable the save cart button.
 
-If you would like to add / remove the fields in the Email form without affecting the checkout form fields, it is possible in this section.
+**Empty Cart After Email:** Empty the cart after sending the email.
 
-In this section, you can create the custom form by adding the field shortcode given at the top of the layout tab page and displaying that field in the form.
+**Display Terms and Conditions:** Select Yes if you want the customer to agree to the terms and conditions.
+
+**Time delay in milliseconds to empty the cart:** Time delay in milliseconds to empty the cart.
+
+### Layout tab
 
 ![](/img/email-layout.webp)
 
-To add any new fields, go to J2Commerce > Setup > Custom fields. Click 'New' to create a new field.
+If you would like to add/remove the fields in the Email form without affecting the checkout form fields, it is possible in this section.
+
+In the Form Layout, you can create a custom form by adding the field shortcode given at the top of the layout tab page and displaying that field in the form.
+
+***To add any new fields, go to J2Commerce > Setup > Custom fields. Click 'New' to create a new field. See the images and instructions below.***
 
 ![](/img/email-custom-fields.webp)
 
@@ -98,15 +92,19 @@ Now, in the form layout, add the shortcodes of the fields you want to display in
 
 **Form Layout:** Add the code for the message into the message form in the Layout tab of the Request Quote / Email Cart App
 
-**Choose Basket modal type:** Select whether you want a Bootstrap model or a custom model.
-
 ![Layout of email basket](/img/email-message.webp)
 
-**Advanced**
+**Choose Basket modal type:** Select whether you want a Bootstrap model or a custom model.
 
-![Advanced settings](/img/email-advanced.webp)
+**Envelope Icon:** If you wish to display an icon in the Email Cart button, enter it in here (ie: fa-solid fa-envelope).
 
-**Modal Inline Style:** You can add the additional inline style to the box container in the given text box.
+**Cart Icon:** If you wish to display an icon in the Save Cart button, enter it in here (ie: fa-solid fa-basket).
+
+### Advanced tab
+
+![Advanced settings](/img/request-quote-advanced.webp)
+
+**Modal Inline Style:** Inline style for the container modal popup. You can add the additional inline style to the box container in the given text box.&#x20;
 
 **Modal class:** You can add additional class names to the modal box container in the given text box.
 
@@ -114,30 +112,28 @@ Now, in the form layout, add the shortcodes of the fields you want to display in
 
 **Enable Redirect after send email:** Set this option to Yes if you wish to redirect the users to a page after the order has been placed.
 
-**Redirect the customer to this URL:** Enter the URL to which the customer should be redirected on the form submission.
+**Redirect the customer to this URL:** On Successful submission of the email order form. User is redirected to the above URL. Please enter a full URL. For eg: [http://abc.com/thankyou-for-order.html](http://abc.com/thankyou-for-order.html)
 
 ### Email Configuration <a href="#email-configuration" id="email-configuration" />
 
-**Send email to:** Choose the user to whom you wish to send the email.
-
 ![Email-configuration](/img/email-configuration.webp)
 
-### English(En-GB) <a href="#englishen-gb" id="englishen-gb" />
+**Short Codes:** Use the following short codes in the subject and body: Use these shortcodes in the English (en-GB) section to fetch the details from the quote form filled out by the users and display on the email.&#x20;
+
+**Send email to:** Choose the user to whom you wish to send the email to.
+
+### Language Email tab
 
 In this section, the email template could be set up. The shortcodes found in the previous tab could be used here. The order in which they are specified here would determine their order in the email notifications.
 
 **If the site is multi-lingual, the languages available would be displayed here and the email templates could be set up for each one of them accordingly.**
 
-![Email configuration in the English tab](/img/email-language.webp)
+![Email configuration in the English tab](/img/request-quote-english.webp)
 
-**On a multi-lingual site:** the available languages are listed in separate tabs next to the Email Configuration tab (instead of the English tab shown above)
+**On a multi-lingual site:** The available languages are listed in separate tabs next to the Email Configuration tab (instead of the English tab shown above)
 
-**Email Subject:** Enter the subject of the email here.
+**Email Subject:** Enter the shortcodes and the subject of the email here.  ie: \[first\_name] \[last\_name] has just submitted a new emailed cart!
 
-**Email Body:** In the Email body section, you can use the shortcodes to display the dynamic information such as customer’s name, email, country, cart items, etc..\[first\_name]\[last\\\_name]\[email]\[phone\\\_1]\[phone\_2]\[company]\[tax\_number]\[address\\\_1]\[address\_2]\[city]\[zip]\[country\\\_id]\[zone\_id]\[cart\\\_item]\[user\_name]\[site\\\_name]
+**Email Body:** In the Email body section, you can use the shortcodes (which are controlled by the email config tab) to display the dynamic information such as customer’s name, email, country, cart items, etc..\[first\_name]\[last\\\_name]\[email]\[phone\\\_1]\[phone\_2]\[company]\[tax\_number]\[address\\\_1]\[address\_2]\[city]\[zip]\[country\\\_id]\[zone\_id]\[cart\\\_item]\[user\_name]\[site\\\_name]
 
-To display the custom field information (entered by the user when filling the form) in an email that the customer and admin receive, it is possible by adding the shortcode of the respective custom field in the Email body editor. For example, if you are having a text area as a custom field in your email form, then copy the field name (you can get it in the custom field section J2Commerce > Setup > Custom fields) and paste it in the Email body editor. The custom field shortcode should be enclosed in square braces. For example, \[message]. Refer to the image below:\\
-
-### Video Tutorial <a href="#video-tutorial" id="video-tutorial" />
-
-[![Email basket](https://img.youtube.com/vi/51J1UkeRu3Y/0.jpg)](https://youtu.be/IHpKrQI04Us)
+To display the custom field information (entered by the user when filling the form) in an email that the customer and admin receive, it is possible by adding the shortcode of the respective custom field in the Email body editor. For example, if you are having a text area as a custom field in your email form, then copy the field name (you can get it in the custom field section J2Commerce > Setup > Custom fields) and paste it in the Email body editor.  The instructions for adding new Custom Fields are mentioned previously in this doc.

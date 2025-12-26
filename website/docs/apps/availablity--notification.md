@@ -4,71 +4,55 @@ description: J2Commerce (formerly known as J2Store)
 
 # Availability-notification
 
-This app allows store owner to notify customer regarding stock availability. If product’s stock goes to “OUT OF STOCK” then Notify Me button will be generated where customer can type his / her Email id and click Notify Me. So when product’s stock becomes available, customer get an email notification.
+This app allows store owners to notify customers regarding stock availability. Ifthe  product’s stock goes to “OUT OF STOCK”, then the Notify Me button will be generated where the customer can type his / her Email id and click Notify Me. So when the product’s stock becomes available, customers get an email notification.
 
-**Requirements**
+## Requirements
 
-* PHP 8.1.0 +
-* Joomla! 4.x/ Joomla! 5.x +
-* J2Commerce / J2Store 4.x +
+- PHP 8.1.0 +
+- Joomla! 4.x/ Joomla! 5.x +
+- J2Commerce / J2Store 4.x +
 
-**Installation**
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-![an01](../../assets/availability-1.webp)
-
 **Step 2:** Locate the Availability Notification App > click View Details > Add to cart > Checkout.&#x20;
 
-**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![Availability Notification](<../../assets/availability-2.webp>)
+## Install the App
 
-**Step 4:** Go to System > Install > Extensions > Download the app
+Go to System > Install > Extensions > Install the app
 
 ![Availability Notification](<../../assets/user-group-3 (12).webp>)
 
-**Step 5:** Go back to System > Manage > Extensions.
+## Enable the App
 
-![Availability Notification](<../../assets/user-group-5 (12).webp>)
+&#x20;Go to J2Commerce > Apps > search for the Availability Notifications app&#x20;
 
-**Step 6:** Search for the app and enable it.
+Click on the 'X' under Status to enable it.
 
-![Availability Notification](<../../assets/availability-3.webp>)
+![Availability Notification](../../assets/availability-4.webp)
 
-Once enabled, you can open it to setup the Basic Settings of the app. To open the app go to Components > J2Commerce > Apps
+Now it's time to open the app and configure the settings.&#x20;
 
-![Availability Notification](<../../assets/availability-4.webp>)
+Click on "Open App" or the Title to start setting up the app
 
-## Basic Settings <a href="#settings" id="settings"></a>
+![](/img/availability-open.webp)
 
-![Availability Notification](<../../assets/availability-5.webp>)
+## Setting up the Parameters
 
-**Delete Email after send email to customer ?**
+### Basic Settings tab
 
-Choose YES will delete the email id from Email text box once the email has been sent.
+![Availability Notification](../../assets/availability-5.webp)
 
-**Button Text**
+**Delete notification entry after email is sent to customer?** Select Yes to delete the email id from the Email text box once the email has been sent.
 
-The Default button text is "J2STORE\_APP\_OUTOFSTOCK\_NOTIFY\_ME". You can enter the custom text for the button. If you are using multilingual site, create language override for the language constant.
+**Notify Button Text:** The Default button text is "J2STORE\_APP\_OUTOFSTOCK\_NOTIFY\_ME". You can enter the custom text for the button. If you are using a multilingual site, create a language override for the language constant.
 
-**Email Body**
+**Email Subject:** It is the Email subject section. Text entered here will be displayed as the subject of the email.
 
-It is the Email body section. Text entered here will be displayed in the Body of the email.
-
-**Email Subject**
-
-It is the Email subject section. Text entered here will be displayed as Subject of the email.
-
-How to track the users?
-
-With this plugin, you are able to manage the users who are requesting Stock notification via Email.
-
-On top of the app, you can see Manage User button. Click on that button to view the users.
-
-Refer the screens below
-
-![an03](https://raw.githubusercontent.com/j2store/doc-images/master/apps/availability-notification/availability_notification_03.png)
+**Email Body:** It is the Email body section. Text entered here will be displayed in the Body of the email. You can use the shortcodes that are provided at the top.&#x20;
 
 **Frontend**
 

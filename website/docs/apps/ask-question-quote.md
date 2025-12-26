@@ -20,27 +20,31 @@ Using this app itself, you can use your store in catalog mode since this app has
 
 Alternatively, you could turn off the catalog mode and hide the add to cart buttons in the site using the **Hide add to cart button for all products?** in the basic settings of the Ask Quote plugin.
 
-## Installation Instructions <a href="#installation-instructions" id="installation-instructions" />
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
 **Step 2:** Locate the Ask Question / Quote App > click View Details > Add to cart > Checkout.&#x20;
 
-![Ask quote](/img/ask-purchase.webp)
-
 **Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![](/img/ask-download1.webp)
+## Install the App
 
-**Step 4:** Use the Joomla! installer to install the app. Go to System > Install > Extensions > Download the Ask Question zip file
+Use the Joomla! installer to install the app. Go to System > Install > Extensions > install the app
 
 ![](/img/ask-installer-1.webp)
 
-**Step 5:** Go back to System > Manage > Extensions. &#x20;
+## Enable the App
 
-![](/img/ask-installer-2.webp)
+Go to J2Commerce > Apps > search for the Ask Questions app.&#x20;
 
-**Step 6:** Search for the app and enable it by clicking on the 'X'.
+Click on the 'X' under Status to enable it. &#x20;
+
+
+
+Click on "Open App" or the Title to start setting up the app.&#x20;
+
+
 
 **Global level**
 
@@ -138,12 +142,19 @@ To add the custom field shortcode, copy the field name in J2Commerce > Setup > C
 
 That's it! The data entered on this custom field at the ask quote form during quote submission would show up at the ask quote email.
 
-#### **Enable a quote for per product**
+## Adding to the product
 
-1. This app allows you to enable the Ask Quote button for a specific product.
-2. Go to the Article Manager and open the article/product.
-3. Under the J2Commerce (J2Store cart) tab, navigate to the Apps menu.
-4. Enable the Ask quote button by setting YES to Enable ask question / quote. Refer to the image below.
+This app allows you to enable the Ask Quote button for a specific product.
+
+Go to the Article Manager and open the article/product.
+
+Under the J2Commerce (J2Store cart) tab, navigate to the Apps menu.
+
+
+
+Enable the Ask quote button by setting YES to Enable ask question / quote. Refer to the image below.
+
+
 
 **Frontend**
 

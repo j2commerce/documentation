@@ -14,29 +14,19 @@ You should already have Acymailing installed on your site before you purchase th
 
 **Step 2:** Locate the Acymailing App > click View Details > Add to cart > Checkout.&#x20;
 
-![](/img/acymailing-purchase-1.webp)
-
 **Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![](/img/acymailing-download1.webp)
+## Install the App
 
-## Installation of Acymailing Connector
-
-You can install the Acymailing extension using the Joomla installer. The following steps help you with a successful installation.
-
-**Step 1:** In the Joomla admin, go to System > Install > Extensions
+Go to System > Install > Extensions > install the app
 
 ![](/img/canada-post-installer-1.webp)
 
-**Step 2:** Click on the Browse button and select the Acymailing zip file where you saved it.
+## Enable the App&#x20;
 
-![](/img/canada-post-download.jpg)
+Go to J2Commerce > Apps > search for the Acymailing app.&#x20;
 
-**Step 3:** In the Joomla admin, go to J2Commerce > Apps
-
-### Enable Acymailing&#x20;
-
-Search for the app and enable it by clicking on the 'x'. It will become a checkmark.
+Click on the 'X' under Status to enable it
 
 ![](/img/acymailing-enable-1.webp)
 
@@ -50,21 +40,35 @@ Search for the app and enable it by clicking on the 'x'. It will become a checkm
 
 ![](/img/acymailing-name-list.webp)
 
-## Setting up the Parameters
+## Setting up the App Parameters
 
-**Step 1:** Open the plugin to set the parameters for Acymailing. Click on J2Commerce > Apps > open the Acymailing app
+Go to J2Commerce > Apps > open the Acymailing app by clicking on the Title or Open App
 
 ![](/img/acymailing-adding-lists1.webp)
 
-**Step 2:** Select the newsletters you want to make available to choose from when assigning them to the specific products you want them sent to.&#x20;
+### Basic Settings tab
 
 ![](/img/acymailing-setup2.webp)
 
-The next step shows how to assign a newsletter to a product. Now, when someone purchases this specific product, they will receive newsletters regarding that product. In the example below, we are assigning the Simple Product Newsletters to the Simple Product.
+**Acymailing Newsletter List:** Select the newsletters you want to make available to choose from when assigning them to the specific products you want them sent to.&#x20;
 
-**Step 3:** Open the product in articles > J2Commerce (J2Store Cart) > Apps > Click on all of the newsletters you want to be available for the simple product. &#x20;
+**Acymailing List Title:** Name the Title you want to show for customers to click on.
 
-You can also enable the "Auto Subscription", which will show up on the front end during checkout, allowing the customer to opt in/out of the newsletters.
+**Auto Subscription:** Select Yes to send the Acymailing notification message when a user is created.
+
+**Display Auto Subscription in products:** Set to 'Yes' to display Auto Subscription in products.
+
+**Guest User Subscription:** Set to 'Yes' to enable guest user subscription.
+
+**Send Confirmation Email:** Set to 'Yes' to add to the list AFTER confirmation, otherwise if set to 'No' - automatically add to selected list.
+
+## Assigning Newsletters to Products
+
+When someone purchases this specific product, they will receive newsletters regarding that product. In the example below, we are assigning the Simple Product Newsletters to the Simple Product.
+
+Open the product in articles > J2Commerce (J2Store Cart) > Apps > Click on all of the newsletters you want to be available for the simple product. &#x20;
+
+You can also enable the Auto Subscription, which will show up on the front end during checkout, allowing the customer to opt in/out of the newsletters.
 
 ![](/img/acymailing-adding-lists.webp)
 
