@@ -29,7 +29,7 @@ It will be easier to complete as fewer steps can appeal to time-conscious custom
 
 ## Install the Plugin
 
-Go to System > Install > Extensions > Install the app
+Go to System > Install > Extensions > Install the plugin
 
 ![](/img/easy-installer1.webp)
 

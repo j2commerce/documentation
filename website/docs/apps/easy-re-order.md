@@ -6,7 +6,7 @@ description: J2Commerce (formerly known as J2Store)
 
 Allow your customers to re-order with a single click.
 
-Instead of going through the process of adding the same products in their next purchase, let them re-order. All they have to do is click a button / link from their order history (my profile) page.
+Instead of going through the process of adding the same products in their next purchase, let them re-order. All they have to do is click a button/link from their order history (my profile) page.
 
 ## Requirements <a href="#requirements" id="requirements" />
 
@@ -14,12 +14,25 @@ Instead of going through the process of adding the same products in their next p
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
-## **Installation:**
+## Purchase the App
 
-1. Download the Re-Order App and install it using Joomla! installer.
-2. After installing Re-Order, in the backend, go to J2Commerce Dashboard  > Apps
-3. Click Enable in the Re-Order App.
-4. Once the app is enabled, click on Open to set the configuration for the app.
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
+
+**Step 2:** Locate the Easy Reorder App > click View Details > Add to cart > Checkout.&#x20;
+
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+
+## Install the App
+
+Go to System > Install > Extensions > Install the app
+
+Download the Re-Order App and install it using Joomla! installer.
+
+After installing Re-Order, in the backend, go to J2Commerce Dashboard  > Apps
+
+Click Enable in the Re-Order App.
+
+Once the app is enabled, click on Open to set the configuration for the app.
 
 ![Re-Order App-Enable.](../../assets/re-order-enableapp.png)
 
