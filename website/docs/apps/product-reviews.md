@@ -56,7 +56,7 @@ Click on "Open App" or the Title to start setting up the app.&#x20;
 
 **Product Display Stars:** Select where to display the (summary) product star reviews. In the drop-down menu, you have many options to choose from. The screenshot below shows what it looks like on the frontend if you choose After / Below Product Title
 
-![](/img/reviews-product-title2.webp)
+![](/img/reviews-product-title2_blur.webp)
 
 **Category Display Stars:** Select where to display the (summary) product star reviews in the category display. In the drop-down menu, you have many options to choose from. The screenshot below shows what it looks like on the frontend if you choose Before / Above Product Title
 
@@ -64,11 +64,11 @@ Click on "Open App" or the Title to start setting up the app.&#x20;
 
 **Show Average Rating:** Select 'Yes' to display the average rating score in the star summary.
 
-![](/img/reviews-product-title3.webp)
+![](/img/reviews-product-title3_blur.webp)
 
 **Clickable Star Rating:** Select 'Yes' to make the reviews count a clickable link that scrolls down to the product reviews list.
 
-![](/img/reviews-product-title.webp)
+![](/img/reviews-product-title_blur.webp)
 
 **Reviews Per Page:** Number of reviews to display per page on the frontend. How many reviews do you want to display on each product page?
 
