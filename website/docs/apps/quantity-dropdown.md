@@ -12,14 +12,31 @@ This app allows your store to update the price of a product based on quantity on
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
-**Installation**
+## Purchase the App
 
-1. Download the Quantity dropdown from our site and install it using Joomla! installer.
-2. After installing the app, go to J2Commerce > Apps and find the Quantity Dropdown app.
-3. Click on Enable to activate the app.
-4. Click on Open to configure the basic settings of the app.
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-**Configuration**
+**Step 2:** Locate the Quantity Dropdown App > click View Details > Add to cart > Checkout.&#x20;
+
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+
+## Install the App
+
+Go to System > Install > Extensions > Install the app
+
+![Bulk Discounts](<../../assets/user-group-3 (5).webp>)
+
+## Enable the App
+
+&#x20;Go to J2Commerce > Apps > search for the Quantity Dropdown app&#x20;
+
+Click on the 'X' under Status to enable it.
+
+Click on "Open App" or the Title to start setting up the app
+
+## Setting up the Parameters
+
+![qd01](https://raw.githubusercontent.com/j2store/doc-images/master/apps/Quantity%20dropdown/qd_01.png)
 
 **Enable price update on quantity change to all products?** Setting this option to 'YES' will enable the dropdown quantity box for all products.
 
@@ -42,8 +59,6 @@ This app allows your store to update the price of a product based on quantity on
 **\*\*Enable cart quantity \*\*** If you would like to replace the quantity box in the items table on the cart page with a quantity dropdown, set this option to 'YES'.
 
 **\*\*Quantity pre-text and post-text \*\*** Text entered here will be added as a prefix and suffix to the quantity number. For example, if you entered Gram in the Post text box, then the quantity will appear like 5 grams, 10 grams, 15 grams, etc..
-
-![qd01](https://raw.githubusercontent.com/j2store/doc-images/master/apps/Quantity%20dropdown/qd_01.png)
 
 **Configuring the Quantity dropdown at the product level:** To configure the quantity dropdown at the product level, go to Article manager > Open the product > J2Commerce (or J2Store cart) tab > Apps, where you should enable the Product quantity drop-down.
 
