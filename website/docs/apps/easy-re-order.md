@@ -26,27 +26,27 @@ Instead of going through the process of adding the same products in their next p
 
 Go to System > Install > Extensions > Install the app
 
-Download the Re-Order App and install it using Joomla! installer.
+![](/img/easy-install.webp)
 
-After installing Re-Order, in the backend, go to J2Commerce Dashboard  > Apps
+## Enable the App
 
-Click Enable in the Re-Order App.
+&#x20;Go to J2Commerce > Apps > search for the Bulk Discount app&#x20;
 
-Once the app is enabled, click on Open to set the configuration for the app.
+Click on the 'X' under Status to enable it.
+
+Click on "Open App" or the Title to start setting up the app
 
 ![Re-Order App-Enable.](../../assets/re-order-enableapp.png)
 
-## Configuration:
+## Setting up the Parameters
 
-Once you have enabled the Re-Order App under J2Commerce > Apps, the app places a button on the My Profile page, allowing users to re-order the items of an existing order in a few clicks.
+The app places a button on the My Profile page, allowing users to re-order the items of a previous or existing order in a few clicks.
 
-Now, click on "Open" under J2Commerce > Apps > Re-Order, and configure the App.
-
-Select the page that the customer should be redirected to post clicking on the Re-Order button displayed next to the order placed by the customer at the My Profile page.
+Select the page that the customer should be redirected to after clicking on the Re-Order button displayed next to the order placed by the customer at the My Profile page.
 
 ![Re-Order App- Redirect Page.](../../assets/re-order-app-redirectpage.png)
 
-Now when the customer has placed order for a product and want to re-order the same product they visit the My profile page and click on the "Re-order" button to be directed to either the Cart page or Checkout page (Based on redirect option you set at store backend) and then complete placing the order further from there.
+Now, when the customer has placed an order for a product and wants to re-order the same product, they visit the My profile page and click on the "Re-order" button to be directed to either the Cart page or Checkout page (Based on the redirect option you set at the store backend) and then complete placing the order further from there.
 
 ![Re-Order Frontend.](../../assets/re-order-frontend.png)
 
