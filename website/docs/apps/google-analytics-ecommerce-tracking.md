@@ -2,7 +2,7 @@
 description: J2Commerce (formerly known as J2Store)
 ---
 
-# Google-analytics-ecommerce-tracking
+# Google Analytics E-commerce Tracking
 
 The app allows you to track the sales, your customers, and their behavior. This helps you understand your customers and implement better marketing efforts.
 
@@ -28,15 +28,13 @@ Go to System > Install > Extensions > Install the app
 
 ## Enable the App
 
-&#x20;Go to Systems > Manage > Extensions
-
-Search for the Google Analytics E-commerce Tracking app&#x20;
+&#x20;Go to J2Commerce > Apps > search for the Google Analytics E-commerce Tracking app
 
 Click on the 'X' under Status to enable it.
 
-![GA](<../../assets/user-group-5 (2).webp>)
+Click on "Open App" or the Title to start setting up the app
 
-## Set up E-commerce Tracking in Google Analytics Account
+## Setting up Tracking in your Google Analytics Account
 
 You need to enable e-commerce reporting in the view in which you want to see the data.
 
@@ -59,4 +57,4 @@ Enable the Google Analytics E**-**commerce App. Open it to configure it
 
 **Tracking Type:** If you know which type of analytics is enabled in your account, then you choose the type of JavaScript library here. Otherwise, leave it as Classic Google Analytics.
 
-**Category / variations:** You can choose to send the product category or the variation data to Google Analytics. It may sometimes cause issues. If you think you are not receiving the Analytics data in your account, then set this to NONE.
+**Category/variations:** You can choose to send the product category or the variation data to Google Analytics. It may sometimes cause issues. If you think you are not receiving the Analytics data in your account, then set this to NONE.
