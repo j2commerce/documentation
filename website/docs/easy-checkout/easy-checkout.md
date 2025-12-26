@@ -13,39 +13,39 @@ Easy checkout is nothing but a one-page checkout that displays all elements of a
 
 It will be easier to complete as fewer steps can appeal to time-conscious customers.
 
-**Requirements**
+## Requirements
 
 1. Joomla! 4.x/ Joomla! 5.x +
 2. PHP 8.1.0 +
 3. J2Commerce / J2Store 4.x +
 
-## Purchase the App
+## Purchase the Plugin
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
 **Step 2:** Locate the Easy Checkout App > click View Details > Add to cart > Checkout.&#x20;
 
-![](/img/acymailing-purchase-1.webp)
-
 **Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![](/img/easy-download1.webp)
+## Install the Plugin
 
-## Installation
-
-Go to System > Install > Extensions and install the Easy Checkout Zip File
+Go to System > Install > Extensions > Install the app
 
 ![](/img/easy-installer1.webp)
+
+## Enable the Plugin
 
 After installing, go to System > Manage > Plugins.&#x20;
 
 ![](/img/easy-plugin.webp)
 
-Search for Easy Checkout, and make sure that the plugin System - Easy Checkout has been enabled by clicking on the 'X'
+&#x20;Search for the Easy Checkout Plugin
+
+Click on the 'X' under Status to enable it.
 
 ![](<../../assets/vat-tax-8 (1).webp>)
 
-Once you enable the system plugin, J2Commerce’s normal checkout will be replaced and the single-step checkout will be activated. Once enabled, Easy Checkout will appear in the side menu bar under Components.
+Once you enable the system plugin, J2Commerce’s normal checkout will be replaced, and the single-step checkout will be activated. Once enabled, Easy Checkout will appear in the side menu bar under Components.
 
 ![](../../assets/easy-checkout1a.webp)
 
@@ -55,7 +55,7 @@ Go to J2Commerce > Setup > Configuration
 
 ![](/img/easy-guests.webp)
 
-### **Cart** tab
+### Cart tab
 
 ![](/img/easy-parameters1.webp)
 
@@ -159,7 +159,7 @@ The image below is a screenshot of the option to select.
 
 ## Final Parameter Setup
 
-After installing, enabling, and creating a menu for easy checkout, go to Easy Checkout > Options
+After installing, enabling, and creating a menu for easy checkout, go to Easy Checkout > Click on the Options tab on the top right corner.
 
 ![Associating menu with easy checkout](<../../assets/easy-checkout2 (1).webp>)
 
