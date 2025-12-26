@@ -2,43 +2,37 @@
 
 Google Tag Manager gives developers a flexible way to add, update, and control tracking and marketing scripts without editing the website’s code each time. It reduces development workload, prevents script clutter, and enables advanced tracking of user behavior for analytics and advertising. By centralizing version control, improving site stability, and allowing faster deployment of new tracking tools, GTM helps keep websites efficient, secure, and ready for future growth.
 
-## Download
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
-
-![GA](/img/tag-purchase.webp)
 
 **Step 2:** Locate the Google Tag Manager App > click View Details > Add to cart > Checkout.&#x20;
 
 **Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![](/img/tag-download.webp)
+## Install the App
 
-## Install
-
-Use the Joomla! installer to install the app. Go to System > Install > Extensions > install the app
+Go to System > Install > Extensions > Install the app
 
 ![GA](<../../assets/user-group-3 (2).webp>)
 
-### Enable
+### Enable the App
 
-Go to J2Commerce > Apps
+&#x20;Go to J2Commerce > Apps > search for the Google Tag Manager app&#x20;
 
-![GA](/img/tag-apps.webp)
-
-Search for the Google Tag Manager app and enable it by clicking on the 'X'
+Click on the 'X' under Status to enable it.
 
 ![](/img/tag-enable.webp)
 
 ## Creating an Account with Google Tag Manager
 
-**Step 1:** Go to: [**tagmanager.google.com**](http://tagmanager.google.com)
+Go to: [**tagmanager.google.com**](http://tagmanager.google.com)
 
 Click **Create Account**
 
 ![](/img/tag-create.webp)
 
-**Step 2:** Assign your website to Google Tag Manager
+Assign your website to Google Tag Manager
 
 ![](/img/tag-create1.webp)
 
@@ -72,7 +66,7 @@ Click on Choose Container File
 
 Locate the import file ( tag\_manager\_container\_export.json) that was included with your Google Tag Manager App.  Most of the files will be included; however, you may have to add a few manually.
 
-Click Add to Workspace
+Click on the Workspace tab
 
 Click the blue Submit button in the upper right corner when you are ready to go live.
 
@@ -82,7 +76,7 @@ Click Publish
 
 ![](/img/tag-submit-publish.webp)
 
-You can choose to add a Name and a short Description if you choose to, otherwise you can just click Continue
+You can choose to add a Name and a short Description if you choose to; otherwise, you can just click Continue
 
 ![](/img/tag-submit-continue.webp)
 
@@ -92,9 +86,11 @@ Once the file has been imported and you have submitted the changes, all of the a
 
 ## Adding the Google Tag Manager ID
 
-Go to J2Commerce > Apps > search for the Google Tag Manager App > click on the app's main title.
+Go to J2Commerce > Apps > search for Google Tag Manager
 
-![](/img/tag-id.webp)
+Click on "Open App" or the Title to start setting up the app
+
+![](/img/google-tag-open.webp)
 
 Enter your Google Tag Manager ID that you received when you signed up on their website. Once you do this part, you have now connected Google Tag Manager with your website
 
