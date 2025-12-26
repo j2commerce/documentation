@@ -16,7 +16,7 @@ Go to System > Install > Extensions > Install the app
 
 ![GA](<../../assets/user-group-3 (2).webp>)
 
-### Enable the App
+## Enable the App
 
 &#x20;Go to J2Commerce > Apps > search for the Google Tag Manager app&#x20;
 
