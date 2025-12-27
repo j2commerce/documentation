@@ -38,7 +38,9 @@ You can use the app’s settings to choose whether to send a temporary URL or a 
 
 \*\*Before proceeding with setup for the app, make sure you defined a local folder path in Components > J2Commerce > Setup > Configuration
 
-**Basic Settings tab:**
+![](/img/config1.webp)
+
+### Basic Settings tab:
 
 For example, **Folder Path for Digital Goods:** media/myfiles
 
