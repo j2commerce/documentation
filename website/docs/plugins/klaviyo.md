@@ -4,11 +4,11 @@ description: J2Commerce (formerly known as J2Store)
 
 # Klaviyo
 
-Requirements
+## Requirements
 
-* with PHP 8.1.0 +
-* Joomla! 4.x/ Joomla! 5.x +
-* J2Commerce / J2Store 4.x +
+- with PHP 8.1.0 +
+- Joomla! 4.x/ Joomla! 5.x +
+- J2Commerce / J2Store 4.x +
 
 Klaviyo is a marketing automation platform primarily used by e-commerce businesses to personalize customer experiences through email and SMS marketing.
 
@@ -30,33 +30,37 @@ Once you're logged in, you'll need to obtain your API key to set up Klaviyo on y
 
 Once you have your API Key, it's time to install it on your Joomla! website.
 
-**Step 1:**  Purchase:
+## Purchase the Plugin
 
-Go to > J2commerce.com > Extensions > Apps > Klaviyo > Add to Cart.&#x20;
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Integrations
 
-![Klaviyo](<../../assets/klaviyo purchase.webp>)
+**Step 2:** Locate the Klaviyo Plugin > click View Details > Add to cart > Checkout.&#x20;
 
-**Step 2:** Download:&#x20;
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-After you purchase the app, it will appear in your My Downloads section. Click on your profile icon in the upper right corner, then go to My Downloads > search for “Klaviyo” > Available Versions > View Files > Download Now. Save the file in a location you’ll remember.
+## Install the Plugin
 
-![Klaviyo](<../../assets/klaviyo download.webp>)
+Go to System > Install > Extensions > Install the plugin
 
-![Klaviyo](<../../assets/klaviyo download1.webp>)
+![Bulk Discounts](<../../assets/user-group-3 (5).webp>)
 
-![Klaviyo](<../../assets/klaviyo download2.webp>)
+## Enable the Plugin
 
-**Step 3:** Installation:
+&#x20;Go to System > Manage > Plugin
 
-Go to System > Install > Extensions > Upload Klaviyo zip file. &#x20;
+![](/img/klavyio-plugin.webp)
 
-![Klaviyo](<../../assets/klaviyo install.webp>)
+Search for the Klaviyo&#x20;
 
-**Step 4:** Enable Plugin
+Click on the 'X' under Status to enable it.
 
-Go to Manage > Plugins > Filter Options > Select Type (dropdown) > Select ‘System’ > Enable Klaviyo API.  Once enabled, click on the plugin.
+![](/img/klavyio-enable.webp)
 
-![Klaviyo](<../../assets/klaviyo enable1.webp>)
+Click on the Title to start setting up the plugin
+
+![](/img/klavyio-open.webp)
+
+## Setting up the Parameters
 
 Enter the API key you received from the Klaviyo website. In the Category section, you can click on each category you want to attach to. This way, it won’t be applied to every single article on the website.
 

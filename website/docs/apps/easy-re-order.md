@@ -36,8 +36,6 @@ Click on the 'X' under Status to enable it.
 
 Click on "Open App" or the Title to start setting up the app
 
-![Re-Order App-Enable.](../../assets/re-order-enableapp.png)
-
 ## Setting up the Parameters
 
 The app places a button on the My Profile page, allowing users to re-order the items of a previous or existing order in a few clicks.

@@ -6,18 +6,18 @@ description: J2Commerce (formerly known as J2Store)
 
 This app allows customers to view the product images (main image and additional image) in a pop-up. The following features are possible with this app
 
-* Download the product image
-* Share and tweet on social media
-* Zoom in / Zoom out
-* Slideshow image
+- Download the product image
+- Share and tweet on social media
+- Zoom in / Zoom out
+- Slideshow image
 
-## Requirements <a href="#requirements" id="requirements"></a>
+## Requirements <a href="#requirements" id="requirements" />
 
 1. PHP 8.1.0 +
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
-## Installation <a href="#installation" id="installation"></a>
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
@@ -25,25 +25,29 @@ This app allows customers to view the product images (main image and additional 
 
 **Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-**Step 4:** Use the Joomla! installer to install the app. Go to System > Install > Extensions > Download the app
+## Install the App
 
-**Step 5:** Go back to System > Manage > Extensions.
+Go to System > Install > Extensions > Install the app
 
-**Step 6:** Search for the app and enable it.
+![Bulk Discounts](<../../assets/user-group-3 (5).webp>)
 
-## Settings <a href="#settings" id="settings"></a>
+## Enable the App
 
-Now it's time to open the app and configure the settings.&#x20;
+Go to J2Commerce > Apps > search for the Image Pop-up app&#x20;
 
-**Step 1:** Go to Components > J2Commerce > Apps&#x20;
+Click on the 'X' under Status to enable it.
 
-**Basic Settings**
+Click on "Open App" or the Title to start setting up the app
 
-**Popup method:** The image will be displayed in the popup method selected here. There are three methods available such as Photo Swipe, Light Gallery, Fancy Box.
+## Setting up the Parameters
 
-* Photo Swipe: This method allows you to swipe the image in a pop-up, and you will have the share feature to share or tweet the image on social media.
-* Light Gallery: This type of popup method displays the image in a gallery type and it has the feature of slideshow, zoom in, and zoom out.
-* Fancy Box: This type of popup method displays the image in a small fancy box.
+### Basic Settings tab
+
+**Popup method:** The image will be displayed in the popup method selected here. There are three methods available: Photo Swipe, Light Gallery, and Fancy Box.
+
+- **Photo Swipe:** This method allows you to swipe the image in a pop-up, and you will have the share feature to share or tweet the image on social media.
+- **Light Gallery:** This type of pop-up method displays the image in a gallery type and it has the features ofa  slideshow, zoom in, and zoom out.
+- **Fancy Box:** This type of pop-up method displays the image in a small fancy box.
 
 ![ip01](https://raw.githubusercontent.com/j2store/doc-images/master/apps/image-pop-up/image_popup_01.png)
 

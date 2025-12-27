@@ -74,33 +74,33 @@ Webhook notifications can be set up by following the steps given below:
 
 ![ss07](https://raw.githubusercontent.com/j2store/doc-images/master/apps/shipstation/shipstation07.png)
 
-## **Installing on your Website**
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
-
-![Bulk Discounts](/img/shipstation-purchase.webp)
 
 **Step 2:** Locate the ShipStation App > click View Details > Add to cart > Checkout.&#x20;
 
 **Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![](/img/shipstation-download.webp)
+## Install the App
 
-**Step 4:** Use the Joomla! installer to install the app. Go to System > Install > Extensions > Download the ShipStation zip file
+Go to System > Install > Extensions > Install the app
 
 ![](/img/shipstation-installer-1.webp)
 
-### Enable the App
+## Enable the App
 
-**Step 4:** Go to J2Commerce dashboard > Apps > search for ShipStation > Click on the 'X' to enable the app
+&#x20;Go to J2Commerce > Apps > search for the ShipStation app&#x20;
+
+Click on the 'X' under Status to enable it.
 
 ![](/img/shipstation-enable.webp)
 
-## Setting up the Parameters
-
-**Step 1:** Once enabled, open ShipStation by clicking on the app
+Click on "Open App" or the Title to start setting up the app
 
 ![](/img/shipstation-open.webp)
+
+## Setting up the Parameters
 
 There are multiple steps that need to be taken when setting up the parameters correctly, so we have broken them down into sections to make it easier to understand how to set up each section.&#x20;
 
@@ -110,13 +110,15 @@ Enter your API Key and API Secret Key, which you should have already received fr
 
 ![](/img/shipstation-parameters1.webp)
 
-- **API key:** The ShipStation API key has to be entered here. The procedure to generate the API keys has been mentioned at the top of this document.
-- **API Secret:** The ShipStation secret key has to be entered here. The procedure to generate the API keys has been mentioned at the top of this document.
-- **Webhook URL:** The webhook URL to be specified in the ShipStation account’s integrations part is provided here.
+**API key:** The ShipStation API key has to be entered here. The procedure to generate the API keys has been mentioned at the top of this document.
+
+**API Secret:** The ShipStation secret key has to be entered here. The procedure to generate the API keys has been mentioned at the top of this document.
+
+**Webhook URL:** The webhook URL to be specified in the ShipStation account’s integrations part is provided here.
 
 ### Setting up the Order Status&#x20;
 
-**Step 2:** Think of the Order Statuses as an assembly line. When one step is completed, it triggers the next step in ShipStation to be activated, and so on. You can notify the customer when each step begins or is completed.
+Think of the Order Statuses as an assembly line. When one step is completed, it triggers the next step in ShipStation to be activated, and so on. You can notify the customer when each step begins or is completed.
 
 The Image below shows an example of the assembly line being created in ShipStation.
 
@@ -128,13 +130,13 @@ Assign what each order status should read by following the steps below.
 
 ![](/img/shipstation-parameters2.webp)
 
-- **Allowed Order Status:** Selected orders will synchronize with ShipStation. In this example, we have selected Confirmed. This means ShipStation will be activated with all orders that have been completed after their payment has been confirmed.
+**Allowed Order Status:** Selected orders will synchronize with ShipStation. In this example, we have selected Confirmed. This means ShipStation will be activated with all orders that have been completed after their payment has been confirmed.
 
-- **New Order Status:** Set the state where new orders will be scanned, grouped and sent to Shipstation together. Most websites like having the first step say "Processing", but you can name it anything you wish that best supports your website.
+**New Order Status:** Set the state where new orders will be scanned, grouped and sent to Shipstation together. Most websites like having the first step say "Processing", but you can name it anything you wish that best supports your website.
 
-- **Order Status After Submission:** Select the State the order should be moved to after a successful ShipStation submission. Most websites like having the first step say "Preparing For Shipment", but you can name it anything you wish that best supports your website.
+**Order Status After Submission:** Select the State the order should be moved to after a successful ShipStation submission. Most websites like having the first step say "Preparing For Shipment", but you can name it anything you wish that best supports your website.
 
-- **Shipped Order Status:** This is the final step in the assembly line. After being shipped from ShipStation, the order needs to be changed to which order? Most websites like having the first step say "Preparing For Shipment", but you can name it anything you wish that best supports your website.
+**Shipped Order Status:** This is the final step in the assembly line. After being shipped from ShipStation, the order needs to be changed to which order? Most websites like having the first step say "Preparing For Shipment", but you can name it anything you wish that best supports your website.
 
 If the status you want doesn't show up in each drop-down down that means you haven't created it in the Order Status section of J2Commerce. Below will show you how to create a new order status.
 
@@ -158,13 +160,13 @@ Select New to create a new order status
 
 As mentioned above
 
-- **Status Name:** This needs to start with J2Store\_ and then the name you want shown up on the backend of the customer's order.
+**Status Name:** This needs to start with J2Store\_ and then the name you want shown up on the backend of the customer's order.
 
-- **Label Class:** This is used to set the .css class with the color of the label that is displayed in the backend of the order statuses.&#x20;
+**Label Class:** This is used to set the .css class with the color of the label that is displayed in the backend of the order statuses.&#x20;
 
 Once you have created the Order Status, you need to set it up in the Language Override section so it can be translated to any language your website reads. ie, If you named it Shipped, then you need to do the language override so the word Shipped doesn't show up as English on a Dutch-speaking website. You want it to show up in Dutch instead of English.&#x20;
 
-You can learn more about how to set up Order Statuses here.
+### How to create a new Language Overrides
 
 Go to System > Manage > Language Overrides
 
@@ -192,7 +194,7 @@ Choose English Administrator > New
 
 **Debug:** Debugging should never be left on live sites. It is only used when there is an issue and additional information is needed. The debug files are found in the/cache directory
 
-**How to set up a new Custom Field for your customer.**
+### How to create a new Custom Field
 
 Go to J2Commerce > Setup > Custom Fields > New
 
@@ -202,35 +204,37 @@ To add a custom field, we need to enter the following details. They are given be
 
 ![](/img/custom_fields2-04f0ea122c85917b7f92d802b4684050.webp)
 
-- **The Label:** Name of the custom field that is displayed in the layout
+**The Label:** Name of the custom field that is displayed in the layout
 
-- **Table:** The table where the custom field is created - this is the default, and you can not change it
+**Table:** The table where the custom field is created - this is the default, and you can not change it
 
-- **Field Column Name:** name of the column that is created in the table
+**Field Column Name:** name of the column that is created in the table
 
-- **Field Type:** This is the type of the field you are about to create and there are 12 types available to choose from - they are: Text, Email, Text Area, wysiwyg editor (what you see is what you get) Radio, Checkbox, Single Dropdown, Zone/Country List, Date, Time, Date Time, and Custom Text
+**Field Type:** This is the type of field you are about to create, and there are 12 types available to choose from
+
+Text, Email, Text Area, wysiwyg editor (what you see is what you get), Radio, Checkbox, Single Dropdown, Zone/Country List, Date, Time, DateTime, and Custom Text
 
 The remaining fields after the **Field Type** is selected will be different based on the **Field Type,** and the details have to be fed as required by the changed fields
 
-- **Required:** Whether the field is required or not - select ‘Yes’ or ‘No’
+**Required:** Whether the field is required or not - select Yes or No.
 
-- **Custom Error Message:** If it is a required field and left empty on data entry, this message will be displayed to alert the user
+**Custom Error Message:** If it is a required field and left empty on data entry, this message will be displayed to alert the user
 
-- **Default Value:** What is given here will be the content displayed, if the user does not give any input to the field
+**Default Value:** What is given here will be the content displayed, if the user does not give any input to the field
 
-- **Input Filtering:** If you want to filter out the input to this field, you can select ‘YES’ and set the conditions
+**Input Filtering:** If you want to filter out the input to this field, you can select ‘YES’ and set the conditions
 
-- **Maximum Length:** The number of characters that are allowed to be entered in the field
+**Maximum Length:** The number of characters that are allowed to be entered in the field
 
-- **Rows:** No of rows that are allowed in the field
+**Rows:** No of rows that are allowed in the field
 
-- **Columns:** No of columns that are allowed in the field
+**Columns:** No of columns that are allowed in the field
 
-- **Read-only:** If it is set to ‘Yes’, it is only readable and the content cannot be changed
+**Read-only:** If it is set to ‘Yes’, it is only readable and the content cannot be changed
 
 **Status**
 
-- **Published:** To display the field, it has to be published by setting this option to ‘Yes’.
+**Published:** To display the field, it has to be published by setting this option to ‘Yes’.
 
 **Display Settings**
 

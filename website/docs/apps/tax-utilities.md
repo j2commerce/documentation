@@ -6,31 +6,52 @@ description: J2Commerce (formerly known as J2Store)
 
 The app provides a one-stop configuration for the tax setup. The tax utilities app is a replacement for the following apps.
 
-* Tax display
-* Combine taxes
-* Tax exemption
+- Tax display
+- Combine taxes
+- Tax exemption
+- Store-wide tax exemption
+- Certificate-based tax exemption
+- User group-specific tax rates
 
-1\. Store-wide tax exemption
+## Requirements
 
-2\. Certificate-based tax exemption
+- PHP 8.1.0 +
+- Joomla! 4.x/ Joomla! 5.x +
+- J2Commerce / J2Store 4.x +
 
-* User group-specific tax rates
+## Purchase the App
 
-## Installation <a href="#installation" id="installation"></a>
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-You could download the app from the My downloads section under the My account menu of the J2Commerce site and install it on your site using the Joomla default installer. Once installed, the app can be enabled and configured under J2Commerce > Apps.
+**Step 2:** Locate the Tax Utilities App > click View Details > Add to cart > Checkout.&#x20;
 
-## Configuration <a href="#configuration" id="configuration"></a>
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+
+## Install the App
+
+Go to System > Install > Extensions > Install the app
+
+![Bulk Discounts](<../../assets/user-group-3 (5).webp>)
+
+## Enable the App
+
+&#x20;Go to J2Commerce > Apps > search for the Tax Utilities app&#x20;
+
+Click on the 'X' under Status to enable it.
+
+Click on "Open App" or the Title to start setting up the app
+
+## Setting up the Parameters
 
 Since the app is a combined form of the above-mentioned apps, it has 5 tabs for each functionality it offers. This is how you could set this app up.
 
-## Tax display <a href="#tax-display" id="tax-display"></a>
+### Tax Display
 
 This tab allows you to choose whether you would display the product price inclusive or exclusive of the tax based on the user groups, where you wish to display the tax, and restrict (hide or show) the tax display based on the user groups.
 
 The following are the parameters that have to be set up to customize your tax display. \*\*NOTE: The settings set here would override the default tax configuration under J2Commerce > Setup > Configuration > Tax. \*\*
 
-* **Would you like to control how taxes show in the product/cart pages?**
+**Would you like to control how taxes show in the product/cart pages?**
 
 Set this option to Yes if you wish to control how tax is shown on the product or cart pages. The value chosen in this field determines whether or not the following parameters take effect. For example, if you select Disable for this option, the options that follow wouldn’t have any effect.
 
@@ -44,7 +65,7 @@ When you choose the cart view, the following options that control tax display wo
 
 You could also choose both options if you wish to display tax based on the options that follow on both the product view and the cart page.
 
-* **Chosen user groups will see prices excluding tax in product pages**
+**Chosen user groups will see prices excluding tax in product pages**
 
 Select the user groups for which you wish the product price should exclude the tax on the product page. For instance, if you select the Wholesale user group here, then when users of the wholesale user group log in to the site, they would see the wholesale price without tax on the product page.
 
@@ -86,11 +107,11 @@ The user groups chosen in this option would not have tax calculated on the cart 
 
 ![](https://raw.githubusercontent.com/j2store/doc-images/master/apps/tax-utilities/Guestusers.png)
 
-## Combine taxes: <a href="#combine-taxes" id="combine-taxes"></a>
+### Combine taxes
 
 This tab would provide settings for you to combine all forms of taxes on your site.
 
-**Would you like to combine the taxes in the totals column?** Set this to enable if you wish that all the taxes(Tax for product, tax for shipping) should be combined together and shown at the totals section.
+**Would you like to combine the taxes in the totals column?** Set this to enable if you wish that all the taxes(Tax for product, tax for shipping) should be combined together and shown in the totals section.
 
 **Label for the combined taxes:** What should be the label when taxes are combined and shown in the totals section? Mention that label here.
 
@@ -102,15 +123,15 @@ When you set this option to Yes, the tax of the product would be shown separatel
 
 **Working:**
 
-With the above set up, the tax rates at the cart page would be shown like this:
+With the above setup, the tax rates at the cart page would be shown like this:
 
 ![](https://raw.githubusercontent.com/j2store/doc-images/master/apps/tax-utilities/working.png)
 
-## Store-wide tax and exemption: <a href="#store-wide-tax-and-exemption" id="store-wide-tax-and-exemption"></a>
+### Store-wide tax and exemption
 
 This would allow you to force tax calculation based on the address of the store mentioned under J2Commerce > Setup > Configuration > Store. Irrespective of the address entered by the user, tax would be displayed based on the store address.
 
-\*\*Force tax to be calculated on store address for ALL Customers (ignore customer address)? \*\*
+***Force tax to be calculated on store address for ALL Customers (ignore customer address)?***
 
 Set this option to Yes if you wish that tax is to be calculated based on the store address and not the user’s address.
 
@@ -120,7 +141,7 @@ NOTE: This setting has to be turned on only when you wish that users have to be 
 
 **Working:** Store address: UK. Tax is set for: UK. Customer address: None or any other address other than UK. Tax: UK tax would be levied on all users irrespective of their address.
 
-**Tax setup:**
+### Tax setup
 
 ![](https://raw.githubusercontent.com/j2store/doc-images/master/apps/tax-utilities/taxsetup.png)
 
@@ -132,7 +153,7 @@ NOTE: This setting has to be turned on only when you wish that users have to be 
 
 ![](https://raw.githubusercontent.com/j2store/doc-images/master/apps/tax-utilities/useraddressandtaxcalculation.png)
 
-## Certificate-based tax exemption <a href="#certificate-based-tax-exemption" id="certificate-based-tax-exemption"></a>
+### Certificate-based tax exemption
 
 Enabling this option would enable users to be exempted from tax once they upload a file (tax exemption certificate) at the checkout page during registration.
 
@@ -146,11 +167,11 @@ Enabling this option would display a checkbox asking users to upload a tax exemp
 
 ![](https://raw.githubusercontent.com/j2store/doc-images/master/apps/tax-utilities/invoice.png)
 
-## Tax rate per user group <a href="#tax-rate-per-user-group" id="tax-rate-per-user-group"></a>
+### Tax rate per user group
 
 This tab has provisions to help you set up user group-based tax rates.
 
-**User group-based tax rates**
+### User group-based tax rates
 
 Enable this option to set up tax rates based on user groups. The available tax rates and user groups would be listed, and you could map them accordingly.
 

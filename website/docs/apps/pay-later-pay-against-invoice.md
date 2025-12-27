@@ -2,57 +2,55 @@
 description: J2Commerce (formerly known as J2Store)
 ---
 
-# Pay later/Pay against invoice
+# Pay later/Pay Against Invoice
 
 Invoice your customers and allow them to pay for the order online at a later date. There can be a number of situations when you want to send the invoice to the customer, complete the terms, and then collect payments.
 
 Invoice first, and collect payment online. Allow customers to re-try payment for unpaid orders
 
-## Requirements <a href="#requirements" id="requirements"></a>
+## Requirements <a href="#requirements" id="requirements" />
 
 1. PHP 8.1.0 +
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
-## Installation <a href="#installation" id="installation"></a>
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-**Step 2:** Locate the Add to User Group App > click View Details > Add to cart > Checkout.&#x20;
+**Step 2:** Locate the Pay Later Invoice App > click View Details > Add to cart > Checkout.&#x20;
 
 **Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-**Step 4:** Use the Joomla! installer to install the app. Go to System > Install > Extensions > Download the app
+## Install the App
 
-**Step 5:** Go back to System > Manage > Extensions.
+Go to System > Install > Extensions > Install the app
 
-**Step 6:** Search for the app and enable it.
+![Bulk Discounts](<../../assets/user-group-3 (5).webp>)
 
-## Settings <a href="#settings" id="settings"></a>
+## Enable the App
 
-Now it's time to open the app and configure the settings.&#x20;
+&#x20;Go to J2Commerce > Apps > search for the Pay Later Invoice app&#x20;
 
-**Step 1:** Go to Components > J2Commerce > Apps&#x20;
+Click on the 'X' under Status to enable it.
 
-![plpa01](https://raw.githubusercontent.com/j2store/doc-images/master/apps/pay-later-pay-against-invoice/plpa01.png)
+Click on "Open App" or the Title to start setting up the app
 
-4\. Click Open to get started with the app.
+## Setting up the Parameters
 
-![plpa02](https://raw.githubusercontent.com/j2store/doc-images/master/apps/pay-later-pay-against-invoice/plpa02.png)
+### Basic Settings tab
 
-**Basic settings**
+It is very simple and easy to get started with this app. There are no complex settings that need to be configured. You just enter the time interval during which the re-order link should appear/disappear.
 
-It is very simple and easier to get started with this app. There are no complex settings that need to be configured. You just enter the time interval during which the re-order link should appear/disappear.
+**Profile Reorder enabled after this time interval(in seconds)**: Enter the time (in seconds) at which the re-order link should appear on the customer’s order history page. For example, 60 seconds. The reorder link will appear after 60 seconds from the time the customer abandoned the order.
 
-**Profile Reorder enabled after this time interval(in seconds)**: Enter the time (in seconds) at which the re-order link should appear on the customer’s order history page. For example, 60 seconds. Re-order link will appear after 60 seconds from the time when the customer abandoned the order.
+**Profile Reorder link expired (in days):** Define when the re-order link should disappear from the customer’s order history page. For example, 5. The re-order link will expire after 5 days.
 
-**Profile Reorder link expired (in days):** Define when the re-order link should disappear from the customer’s order history page. For example, 5. Re-order link will get expired after 5 days.
-
-**Pay button text:** Text entered here will be displayed in the order history page. If you are using ma ultilingual site, enter the value as a language string.
+**Pay button text:** Text entered here will be displayed in the order history page. If you are using my multilingual site, enter the value as a language string.
 
 ![plpa03](https://raw.githubusercontent.com/j2store/doc-images/master/apps/pay-later-pay-against-invoice/plpa03.png)
 
-**Order status for showing the pay now button:** Choose othe rder status for which the Pay button should be displayed.
+**Order status for showing the pay now button:** Choose the order status for which the Pay button should be displayed.
 
 **Use cases**
 

@@ -2,7 +2,7 @@
 description: J2Commerce (formerly known as J2Store)
 ---
 
-# Open hours (time based restriction)
+# Open Hours (time-based restriction)
 
 The Open Hours app allows you to restrict orders from customers based on your store’s operational timings. You can configure your store’s opening and closing times for all days of the week. This means any orders coming in after closing hours will not be accepted.
 
@@ -14,37 +14,35 @@ Make sure that you set the 24-hour format for time configuration.
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
-## Purchase the App:
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
-
-![Custom Tabs](/img/open-hours-purchase.webp)
 
 **Step 2:** Locate the Open Hours App > click View Details > Add to cart > Checkout.&#x20;
 
 **Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![Custom Tabs](/img/open-hours-purchase-download.webp)
-
 ## Install the App:
 
-Use the Joomla! installer to install the app. Go to System > Install > Extensions > install the app
+Go to System > Install > Extensions > Install the app&#x20;
 
 ![Custom Tabs](<../../assets/user-group-3 (7).webp>)
 
-**Step 5:** Go to J2Commerce > Apps > search for Open Hours to narrow down your search.&#x20;
+## Enable the App
 
-**Step 6:** Click on the 'X' under Status to enable it.
+&#x20;Go to J2Commerce > Apps > search for the Open Hours app&#x20;
+
+Click on the 'X' under Status to enable it.
 
 ![Enable custom tab app](/img/open-hours-enable.webp)
 
-**Step 7:** Open the app to start setting up the configurations.&#x20;
+Click on "Open App" or the Title to start setting up the app
 
 ![](/img/open-hours-open.webp)
 
 ## Setting up Store Hours:
 
-**Error message:**
+### Error Message
 
 This is the place to show an error message when the customer places an order outside the store’s operational hours.
 
@@ -54,7 +52,7 @@ For eg: Sorry! Orders are accepted only after %s and before %s. The first %s wil
 
 ![](/img/open-hours-error.webp)
 
-**Shop available time**
+### Available Store Hours
 
 For instance, if your store’s operational timing is from 10.00 am to 11.00 pm on weekdays and closed on weekends (Saturday and Sunday), you will have to configure your store timing like below.
 

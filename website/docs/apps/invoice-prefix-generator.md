@@ -14,42 +14,38 @@ Quite a number of gateways, including PayPal, require an invoice number to be se
 
 **Features**
 
-* Generate a sequence invoice number for orders with status “CONFIRMED”.
-* The default invoice number (used by J2Store / J2Commerce) would be used for all orders with the NEW status. You can treat these numbers as temporary numbers.
-* The app also allows you to edit the invoice number and change it manually when required.
-* Allows for the definition of a number of zeros to be displayed after the invoice number.
+- Generate a sequence invoice number for orders with status “CONFIRMED”.
+- The default invoice number (used by J2Store / J2Commerce) would be used for all orders with the NEW status. You can treat these numbers as temporary numbers.
+- The app also allows you to edit the invoice number and change it manually when required.
+- Allows for the definition of a number of zeros to be displayed after the invoice number.
 
-## Installation <a href="#installation" id="installation"></a>
+## Purchase the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-![Invoice Prefix](<../../assets/invoice-gen-1.webp>)
-
-**Step 2:** Locate the Invoice Prefix Generator App > click View Details > Add to cart > Checkout.&#x20;
+**Step 2:** Locate the Invoice Prefix Generator App > View Details > Add to cart > Checkout.&#x20;
 
 **Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![Invoice Prefix](<../../assets/invoice-gen-2.webp>)
+## Install the App
 
-**Step 4:** Use the Joomla! installer to install the app. Go to System > Install > Extensions > Download the app
+Go to System > Install > Extensions > Install the app
 
-![Invoice Prefix](<../../assets/user-group-3 (4).webp>)
+![Bulk Discounts](<../../assets/user-group-3 (5).webp>)
 
-**Step 5:** Go back to System > Manage > Extensions.
+## Enable the App
 
-![Invoice Prefix](<../../assets/user-group-5 (4).webp>)
+&#x20;Go to J2Commerce > Apps > search for the Invoice *Number* Generator&#x20;
 
-**Step 6:** Search for the app Invoice _Number_ Generator and enable it.
+Click on the 'X' under Status to enable it.
 
-![Enable invoice app](<../../assets/invoice-gen-3 (1).webp>)
+![Enable invoice app](/img/invoice-enable.webp)
 
-## Settings <a href="#settings" id="settings"></a>
+Click on "Open App" or the Title to start setting up the app
 
-Now it's time to open the app and configure the settings.&#x20;
+![](/img/invoice-open.webp)
 
-**Step 1:** Go to Components > J2Commerce > Apps&#x20;
-
-**Configuration**
+## Setting up the Parameters
 
 **Invoice prefix**
 
@@ -57,7 +53,7 @@ The prefix entered here will be used for the sequence invoice number generated.
 
 **Number of leading zeros**
 
-This option allows you to add zeros to be displayed after the invoice prefix and before the invoice number. If you have an invoice prefix (for example **INV-**) and leading zeros as 4, then the invoice number would be **INV-0001, INV-2,…, INV-0010**. See the image below shows the leading zeros are set to 3, so the invoice numbers are **INVG-001, INVG-002**,..
+This option allows you to add zeros to be displayed after the invoice prefix and before the invoice number. If you have an invoice prefix (for example, **INV-**) and leading zeros as 4, then the invoice number would be **INV-0001, INV-2,…, INV-0010**. See the image below, which shows the leading zeros are set to 3, so the invoice numbers are **INVG-001, INVG-002**,..
 
 ![invoice settings](<../../assets/invoice-gen-5 (2).webp>)
 
@@ -67,9 +63,9 @@ To view your sales orders, go to Components > J2Commerce > Sales > Orders
 
 ![ipg02](../../assets/invoice-gen-6a.webp)
 
-**Automatically generate an invoice number**
+### Automatically generate an invoice number
 
-Choosing YES will generate the invoice number only when the order status matches the status selected below. See the image below.
+Choosing Yes will generate the invoice number only when the order status matches the status selected below. See the image below.
 
 **Generate an invoice number if the order has one of the selected statuses**
 
@@ -77,10 +73,14 @@ The invoice number will be generated only for the orders with the statuses selec
 
 ![ipg03](../../assets/invoice-gen-9.webp)
 
-![Invoice Prefix](<../../assets/invoice-gen-9a.webp>)
+![Invoice Prefix](../../assets/invoice-gen-9a.webp)
 
-**Allow editing invoice numbers manually**
+### Manually generate an invoice number
 
-Choosing this option, 'YES' will allow the store owner to edit the invoice number by going to Component > J2Commerce > Sales > Orders > Edit order. For example, sometimes you may need to change the invoice number fora  particular order status. In this case, you can use this option to edit the invoice number manually. See the image below
+Choosing this option, 'Yes' will allow the store owner to edit the invoice number by going to J2Commerce > Sales > Orders > open the order.&#x20;
+
+![](/img/invoice-orders.webp)
+
+For example, sometimes you may need to change the invoice number fora  particular order status. In this case, you can use this option to edit the invoice number manually. See the image below
 
 ![ipg04](../../assets/invoice-gen-8.webp)

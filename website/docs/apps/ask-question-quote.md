@@ -4,21 +4,21 @@ description: J2Commerce (formerly known as J2Store)
 
 # Ask Question / Quote
 
-This app allows customers to enquire a product or to ask quote for a product through email.
+This app allows customers to enquire about a product or to request a quote for a product through email.
 
-Using this app itself, you can use your store in catalog mode since this app has an option to hide the add to cart button. Clicking on a single button will enable communication between the store owner and the customer.
+Using this app itself, you can use your store in catalogue mode since this app has an option to hide the add to cart button. Clicking on a single button will enable communication between the store owner and the customer.
 
-**Requirements**
+## Requirements
 
 - PHP 8.1.0 +
 - Joomla! 4.x/ Joomla! 5.x +
 - J2Commerce / J2Store 4.x +
 
-**Switch off catalog mode:**
+**Switch off catalogue mode:**
 
-**NOTE:** **If you are having the shop in catalog mode, the ask quote button wouldn’t come up on the storefront.**
+**NOTE:** **If you are having the shop in catalogue mode, the ask quote button wouldn’t come up on the storefront.**
 
-Alternatively, you could turn off the catalog mode and hide the add to cart buttons in the site using the **Hide add to cart button for all products?** in the basic settings of the Ask Quote plugin.
+Alternatively, you could turn off the catalogue mode and hide the add to cart buttons in the site using the **Hide add to cart button for all products?** in the basic settings of the Ask Quote plugin.
 
 ## Purchase the App
 
@@ -40,11 +40,7 @@ Go to J2Commerce > Apps > search for the Ask Questions app.&#x20;
 
 Click on the 'X' under Status to enable it. &#x20;
 
-
-
 Click on "Open App" or the Title to start setting up the app.&#x20;
-
-
 
 **Global level**
 
@@ -58,7 +54,7 @@ In the global settings of the app, you can configure
 
 ### Basic Settings tab
 
-![Ask quote settings](https://raw.githubusercontent.com/j2store/doc-images/master/apps/ask-quote/ask-quote-settings.png)
+![Ask quote settings](/img/ask-quote-settings2.webp)
 
 **Enable the Ask quote button for all products:** Select YES or NO to enable and disable the Ask quote button for all products.
 
@@ -84,7 +80,7 @@ Use the language constant PLG\_J2STORE\_PRODUCTQUOTE\_LINK\_TEXT to translate th
 
 ### Email Configuration tab
 
-![](../../assets/screenshot-localhost-2020.08.14-17_37_38.png)
+![](/img/custom-fields6.webp)
 
 **Include label for custom fields:** If you wish that the label of the custom fields you use should be available on the email, then set this to Yes.
 
@@ -128,17 +124,21 @@ In this section, you can create a custom form by adding the field shortcode give
 
 To add any new fields, go to J2Commerce > Setup > Custom fields. Click NEW to create a new field.
 
-Here is how you could create a new custom field.
+![](/img/custom-fields3.webp)
+
+### Creating a new custom field.
+
+![Ask quote custom field](/img/custom-fields4.webp)
+
+The field name should be enclosed in square brackets. For example, \[message].
+
+![Ask quote custom field list](/img/custom-fields5.webp)
 
 Now, in the form layout, add the shortcodes of the fields you want to display in the product quote form.
 
-To add the custom field shortcode, copy the field name in J2Commerce > Setup > Custom Fields section and paste it in the form. The field name should be enclosed in square braces. For example, \[message].
+To add the custom field shortcode, copy the field name in J2Commerce > Setup > Custom Fields section and paste it in the form.&#x20;
 
-![Ask quote custom field](https://raw.githubusercontent.com/j2store/doc-images/master/apps/ask-quote/ask-quote-custom-field.png)
-
-![Ask quote custom field list](https://raw.githubusercontent.com/j2store/doc-images/master/apps/ask-quote/ask-quote-cust-fiel-list.png)
-
-![Layout of the fields](https://raw.githubusercontent.com/j2store/doc-images/master/apps/ask-quote/ask-quote-layout.png)
+![Layout of the fields](/img/ask-quote-layout2.webp)
 
 That's it! The data entered on this custom field at the ask quote form during quote submission would show up at the ask quote email.
 
@@ -150,19 +150,17 @@ Go to the Article Manager and open the article/product.
 
 Under the J2Commerce (J2Store cart) tab, navigate to the Apps menu.
 
-
-
-Enable the Ask quote button by setting YES to Enable ask question / quote. Refer to the image below.
+Enable the Ask quote button by setting Yes to Enable ask question / quote. Refer to the image below.
 
 
 
-**Frontend**
+## Frontend View
 
 **Ask quote enabled on a single product- At the product article**
 
 ![Ask quote frontend](https://raw.githubusercontent.com/j2store/doc-images/master/apps/ask-quote/ask-quote-frontend.png)
 
-#### Ask quote enabled on all products - in the global settings
+#### Ask quote is enabled on all products in the global settings
 
 ![Ask quote enabled on all products](https://raw.githubusercontent.com/j2store/doc-images/master/apps/ask-quote/ask-quote-all-pro-front.png)
 
