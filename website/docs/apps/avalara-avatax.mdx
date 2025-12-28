@@ -182,6 +182,8 @@ Save the product
 
 - You should see the calculated tax amount on the final page
 
+![](/img/avalara-avatax-checkout.webp)
+
 ## Setting Product Tax Codes
 
 Different products may be taxed differently (e.g., clothing may be tax-exempt in some states). Avalara uses Tax Codes to identify product types.
@@ -223,6 +225,8 @@ Select the appropriate tax code from the dropdown
 Save the product
 
 ![](/img/avalara-avatax-product-app1.webp)
+
+***Note:** For help understanding the tax codes and which choice you should make, contact **Avalara Support:** ([https://support.avalara.com](https://support.avalara.com))*
 
 **Tips for Tax Codes**
 
@@ -293,6 +297,10 @@ The queue system ensures orders are reliably sent to Avalara, even if there are 
 ### Example cron command
 
 \*/5 \* \* \* \* curl -s "[https://yoursite.com/index.php?option=com\_j2store\&view;=queues\&task;=processQueue\&que](https://yoursite.com/index.php?option=com_j2store\&view;=queues\&task;=processQueue\&que)ue;\_key=YOUR\_KEY\&queue;\_type=app\_avalaratax" > /dev/null
+
+**How to set a cron job on your server**
+
+Visit the [Cron Documentation](<How to set cron job on your server>) to learn how to set up a cron job on your server.
 
 ## Managing the Queue
 
