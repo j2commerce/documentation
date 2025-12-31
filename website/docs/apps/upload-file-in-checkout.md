@@ -14,30 +14,45 @@ The store owner can download it from the app’s backend and manage all the uplo
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
-## Installation <a href="#installation" id="installation" />
+## Purchase the App
 
-1. Use the Joomla installer to install the app.
-2. In the backend, go to J2Commerce Dashboard > Apps as shown in the image below.
-3. Click Enable in the Upload file in the checkout app.
-4. Once the app is enabled, open the app to configure the settings.
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-![fu01](https://raw.githubusercontent.com/j2store/doc-images/master/apps/upload%20file%20in%20checkout/file_upload_01.png)
+**Step 2:** Locate the Upload File in Checkout App > click View Details > Add to cart > Checkout.&#x20;
 
-## Configuration <a href="#configuration" id="configuration" />
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+
+## Install the App
+
+Go to System > Install > Extensions > Install the app
+
+![Bulk Discounts](<../../assets/user-group-3 (5).webp>)
+
+## Enable the App
+
+&#x20;Go to J2Commerce > Apps > search for the Upload File in Checkout app&#x20;
+
+Click on the 'X' under Status to enable it.
+
+Click on "Open App" or the Title to start setting up the app
+
+## Setting up the Parameters
+
+### Basic Setting tab
+
+![fu02](https://raw.githubusercontent.com/j2store/doc-images/master/apps/upload%20file%20in%20checkout/file_upload_02.png)
 
 **No of file field display:** Enter the number of fields to be displayed in the checkout.
 
 **Display Place:** Choose the place where the upload field should be displayed. You can choose either Billing or Shipping.
 
-![fu02](https://raw.githubusercontent.com/j2store/doc-images/master/apps/upload%20file%20in%20checkout/file_upload_02.png)
-
 **Display the upload file field after?** The upload file field will be displayed after the checkout fields are selected here. For example, if you choose Last name, the field will appear after the field Last name.
 
 **Upload file types:** Add your file format types here. If you don’t have any file formats added here, the app will not allow you to upload the file in that format. For example, if you would like to upload the file in .pdf, make sure that you have added this format in this field.
 
-**Manage uploaded files:** By clicking the Order File List button at the top of the app’s settings page, you can find all the files uploaded by the customer. It displays the file name with the path where the file is located.
-
 ![fu03](https://raw.githubusercontent.com/j2store/doc-images/master/apps/upload%20file%20in%20checkout/file_upload_03.png)
+
+**Manage uploaded files:** By clicking the Order File List button at the top of the app’s settings page, you can find all the files uploaded by the customer. It displays the file name with the path where the file is located.
 
 **Shortcodes:** The below shortcodes help you to notify the customer that he / she has attached a file to this order.
 
