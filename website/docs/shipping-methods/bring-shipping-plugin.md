@@ -6,19 +6,19 @@ description: J2Commerce (formerly known as J2Store)
 
 **Introduction:** Integrates J2Commerce with Bring, a popular shipping service in the Nordic area.
 
-**Requirements**
+## Requirements
 
 - with PHP 8.1.0 +
 - Joomla! 4.x/ Joomla! 5.x +
 - J2Commerce / J2Store 4.x +
 
-#### How to obtain your PID Key number:
+## How to obtain your PID Key number
 
 You will need this information to activate the app once installed on the backend of your site. You can get the PID (Identification key ) from here: [www.mybring.com/](http://www.mybring.com/)  &#x20;
 
 To get your "PID" (Identification Key) on [https://developer.bring.com/api/shipping-guide\_2/](https://developer.bring.com/api/shipping-guide_2/), you must have an active invoice agreement with Bring and be registered. Once you have an account, the API User ID is your username, and you can find the API Key by navigating to the API page within the MyBring settings. 
 
-#### **Step-by-step guide:**
+### Step-by-step guide
 
 1. **Register**: If you don't already have an account, register on their website.
 
@@ -34,55 +34,61 @@ To get your "PID" (Identification Key) on [https://developer.bring.com/api/shipp
 
 ![](/img/bring-api.webp)
 
-#### **Download App:**
+## Download the App
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
-
-![](/img/bring-purchase.webp)
 
 **Step 2:** Locate the "Bring" App > click "View Details"> Add to cart > Proceed to Checkout.&#x20;
 
 **Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![](/img/bring-download.webp)
-
 ![](/img/bring-download-1.webp)
 
-**Installation:** You can install this Bring shipping plugin using the Joomla installer. The following steps help you with a successful installation.
+## **Install the App**
 
-**Step 1:** In the Joomla admin, go to System > Install > Extensions
+Go to System > Install > Extensions
+
+Click on the Browse button and select the Bring Shipping zip file
 
 ![](/img/bring-ext-install.webp)
 
-**Step 2:** Click on the Browse button and select the Bring Shipping zip file
+## Enable the App
 
-![](/img/bring-man-install1.webp)
+Go to J2Commerce > Setup > Shipping Methods
 
-**Step 3:** In the Joomla admin, go to System > Manage > Extensions
+![](/img/bring-enable1.webp)
 
-![](/img/bring-man-install.webp)
+Locate the Bring Shipping Plugin
 
-**Step 6:** Search for the app and enable it.
+Click the 'X' to enable it. It will turn into a checkmark
 
-![](/img/bring-enable.webp)
+![](/img/bring-enable2.webp)
 
-**Step 7:** Select J2Commerce >setup > shipping methods
+## Setting up the Plugin
 
-Step 8: Locate the Bring Shipping App and click View to begin customizing it.
+Once the plugin has been enabled, click on View to open it
 
-![](/img/bring-setup.webp)
+![](/img/bring-open.webp)
 
-#### **Parameters:**
+### Plugin tab
 
-1. License Key: Without this key, the parameters will not work
-2. PID Key: Without this key, the parameters will not work.
-3. From Postal Code - Enter the From (Origin) postal code. The postal code is the place from which the goods will be shipped.
-4. Handling Cost - If you want to add handling cost for your shipping, enter your handling cost.
-5. Display Delivery Time - This option used to display Delivery Date/time in Checkout page.
-6. Services - Choose product Services for display in the Checkout page.
-7. Tax Class - If you want to add a tax rate for your shipping, select a tax profile.
-8. Geozone - By selecting a geozone here, you can restrict this Shipping method from showing to customers from only that geo-region. Choose All geozones to show this method to all customers.
-9. Debug: - Enable/ Disable Log file for Debug.
+**License Key:** Without this key, the parameters will not work
+
+**PID Key:** Without this key, the parameters will not work.
+
+**Store Postal Code:** Enter the From (Origin) postal code. The postal code is the place from which the goods will be shipped.
+
+**Handling Cost:** If you want to add handling cost for your shipping, enter your handling cost.
+
+**Display Delivery Time:** This option is used to display the delivery date/time in Checkout page.
+
+**Services:** Choose product Services for display in the Checkout page.
+
+**Tax Class:** If you want to add a tax rate for your shipping, select a tax profile.
+
+**Geozone**: By selecting a geozone here, you can restrict this Shipping method from showing to customers from only that geo-region. Choose All Geozones to show this method to all customers.
+
+**Debug:** Enable/ Disable Log file for Debug.
 
 ![](/img/bring-parameters.webp)
 
