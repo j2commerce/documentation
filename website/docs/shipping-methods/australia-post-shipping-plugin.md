@@ -6,13 +6,13 @@ description: J2Commerce (formerly known as J2Store)
 
 This plugin integrates J2Commerce with the Australia Post Shipping rate API.
 
-**Requirements**
+## Requirements
 
 - with PHP 8.1.0 +
 - Joomla! 4.x/ Joomla! 5.x +
 - J2Commerce / J2Store 4.x +
 
-#### How to Register with Australia Post and Obtain Your API Key:
+## How to Register with Australia Post and Obtain Your API Key
 
 ![](/img/austrailia-post.webp)
 
@@ -42,95 +42,69 @@ To obtain an API key for Australia Post, particularly for services like Shipping
 
   Use the generated API key and secret in your application or integration. It is recommended to first test in a sandbox environment provided by Australia Post before switching to the production environment.
 
-#### Download App:
+## Download Plugin
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
 **Step 2:** Locate the Australia Post Shipping App > click View Details > Add to cart > Checkout.
 
-![Australia post installation](/img/australia-post-purchase-1.webp)
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
-
-![Australia post navigation](/img/australia-post-download.webp)
-
-#### **Installation:**&#x20;
+## Install the Plugin
 
 You can install this Australia Post shipping plugin using the Joomla installer. The following steps help you for successful installation.
 
-**Step 1:** In the Joomla admin, go to System > Install > Extensions
+Go to System > Install > Extensions
+
+Click on the Browse button and select the Australia Post shipping zip file where you saved it.
 
 ![Australia post methods list](/img/australia-post-installer-1.webp)
 
-**Step 2:** Click on the Browse button and select the Australia Post shipping zip file where you saved it.
-
-![](/img/australia-post-download1.webp)
+## Enable the Plugin
 
 **Step 3:** In the Joomla admin, go to System > Manage > Extensions
 
 ![](/img/australia-post-installer-2.webp)
 
-**Step 4:** Search for the app and enable it.
+**Step 4:** Search for Australia Post and enable it by clicking on the 'X'
 
 ![](/img/australia-post-enable.webp)
 
-**Step 5:** Select J2Commerce > setup > shipping methods
+## Setting up the Parameters
 
-**Step 6:** Locate the Australia Post Shipping App and click View to begin customizing it.
+Go to J2Commerce > Setup > shipping methods
+
+Locate the Australia Post Shipping App and click View to begin customizing it. (You can also enable it in this location, too)
 
 ![](/img/australia-post-setup.webp)
 
 Before you begin setting up the parameters in the app, you will need your API Keys. Follow the steps at the beginning of this document to access your API Keys, and Customer Number
 
-#### Parameters:
+![](/img/australia-post-parameters.webp)
 
 **Shipping Type:** For this option, select **Domestic Shipping Service** or **International Shipping Service**
 
-Check the image below and set up the shipping parameters as illustrated in the image.
+**API Key:** This is your Australia Post API key. It will be given to you once you create an Australia Post account.
 
-**API Key**
+**Handling Cost:** If a handling cost is applicable for the shipping, you can enter the cost directly in this field.
 
-This is your Australia Post API key. It will be given to you once you create an Australia Post account.
+**Show Delivery Time:** If you want to show the Date/Time of delivery on the checkout page, you can set this option to **Yes**
 
-**Handling Cost**
+**Minimum Subtotal required:** If a minimum quantity is required to avail this shipping method, you can set it here.
 
-If a handling cost is applicable for the shipping, you can enter the cost directly in this field.
+**Maximum Subtotal required:** If there is a limit on the quantity to use this method, set it here.
 
-**Show Delivery Time**
+**Tax Profile:** If the shipping cost is also taxable, you can select a tax profile here.
 
-If you want to show the Date/Time of delivery on the checkout page, you can set this option to **Yes**
+**Geozone:** If you have limitations in applying this shipping method, you can select the areas that are eligible by selecting the corresponding geozone here.
 
-**Minimum Subtotal required**
+**Weight Unit:** For using this shipping method, the weight unit must always be set to *Kilograms* only. No other unit is allowed.
 
-If a minimum quantity is required to avail this shipping method, you can set it here.
+**Length Unit:** The length unit for this shipping method must be set to *Centimetre*. No other unit for length measurement is entertained.
 
-**Maximum Subtotal required**
+**Debug:** If you enable this option, a log file will be maintained for error debugging. This debug file will be stored in cache folder.
 
-If there is a limit on the quantity to use this method, set it here.
-
-**Tax Profile**
-
-If the shipping cost is also taxable, you can select a tax profile here.
-
-**Geozone**
-
-If you have limitations in applying this shipping method, you can select the areas that are eligible by selecting the corresponding geozone here.
-
-**Weight Unit**
-
-For using this shipping method, the weight unit must always be set to *Kilograms* only. No other unit is allowed.
-
-**Length Unit**
-
-The length unit for this shipping method must be set to *Centimetre*. No other unit for length measurement is entertained.
-
-**Debug**
-
-If you enable this option, a log file will be maintained for error debugging. This debug file will be stored in cache folder.
-
-**IMPORTANT**: Apart from the parameters set here, to use **Australia Post Shipping Plugin**, it is mandatory to set the default currency as **Australian Dollar - AUD** and the country of the store as **Australia**, in the store configuration setup. If it is not met, this plugin can not be used.
-
-![](/img/australia-post-parameters.webp)
+**\*\*IMPORTANT**: Apart from the parameters set here, to use **Australia Post Shipping Plugin**, it is mandatory to set the default currency as **Australian Dollar - AUD** and the country of the store as **Australia**, in the store configuration setup. If it is not met, this plugin can not be used.
 
 If you still have questions, you can reach us via our support channel here: [https://www.j2commerce.com/support](https://www.j2commerce.com/support)
 
