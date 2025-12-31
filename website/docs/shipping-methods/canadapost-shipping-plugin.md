@@ -6,8 +6,6 @@
 - Joomla! 4.x/ Joomla! 5.x +
 - J2Commerce / J2Store 4.x +
 
-
-
 ## Purchase the Plugin
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Shipping Plugins
@@ -20,25 +18,21 @@
 
 &#x20;Go to System > Install > Extensions
 
+Click on the Browse button and select the DHL Express Shipping zip file you saved during the download process. You will receive a message of success once installed.&#x20;
+
 ![](/img/1canada-post-installer-1.webp)
 
-**Step 2:** Click on the Browse button and select Canada Post shipping zip file where you saved it.
+## Enable the Plugin
 
-![](/img/1canada-post-download.webp)
+Go to J2Commerce > Setup > Shipping Methods
 
-**Step 3:** In the Joomla admin, go to System > Manage > Extensions
+![](/img/canada-enable-1.webp)
 
-![](/img/1canada-post-installer-2.webp)
+Locate the Canada Post Shipping Plugin
 
-**Step 4:** Search for the app and enable it.
+Click the 'X' to enable it. It will turn into a checkmark
 
-![](/img/1canada-post-enable-1.webp)
-
-**Step 5:** Select J2Commerce > setup > shipping methods
-
-**Step 6:** Locate the Canada Post Shipping App and click View to begin customizing it.
-
-![](/img/1canada-post-setup.webp)
+![](/img/canada-enable1.png)
 
 Before you begin setting up the parameters in the app, you will need your API Keys. Follow the steps below to access your API Keys, and Customer Number
 
@@ -58,7 +52,15 @@ Once you’ve signed in to their website, select Join Now on the main Developer 
 
 Once you are logged in to your account, go to this [link](https://www.canadapost-postescanada.ca/information/app/drc/registered?execution=e2s1) to get your API Keys. You should see the API keys that are displayed on the main Developer Program page. These API keys are unique codes, used to access Canada Post web service and Postmen API. Note down the API keys (one for development and one for production).
 
-#### **Configuration:**&#x20;
+## Setting up the Plugin
+
+Go to J2Commerce > Setup > Shipping Methods
+
+Locate the Canada Post Plugin and click View to open it
+
+![](/img/1canada-post-setup.webp)
+
+### Plugin tab
 
 ![](/img/1canada-post-parameters1.webp)
 
@@ -68,26 +70,31 @@ Once you are logged in to your account, go to this [link](https://www.canadapost
 
 **Customer Number:** The customer number provided by Canada Post
 
-\* Make sure you are using the same parameters you used when setting up your store in the backend.  If you need help remembering how to do that, visit the Set-up > Configuration document.
+\*\*\*Make sure you are using the same parameters you used when setting up your store in the backend.  If you need help remembering how to check on it, go to J2Commerce > Setup > Configuration. See the screenshot below
 
-1. Make sure that you have set the Default Weight Class to Kilogram (KG) or Pound (LB) in your Store Profile
-2. Make sure that you entered your Postal Code/Zip correctly in your Store Profile
-3. Make sure that you have set the Dimensions and Weight fields in your products correctly
-4. Make sure that you have set the 'Enable Shipping' to Yes in your products (under articles)
+![](/img/canada-config.webp)
 
-Example below:
+**Important steps to remember**
 
-#### Parameters:
+- Make sure that you have set the Default Weight Class to Kilogram (KG) or Pound (LB) in your Store Profile (from the image shown above)
+
+- Make sure that you entered your Postal Code/Zip correctly in your Store Profile under the Configuration section (from the image shown above)
+
+- Make sure that you have set the Dimensions and Weight fields in your products correctly
+
+- Make sure that you have set the 'Enable Shipping' to Yes in your products&#x20;
+
+### Setting up the Parameters
 
 ![](/img/1canada-post-parameters2.webp)
 
 **Canada Post Service:** Choose the services provided by Canada Post to display in checkout.
 
-> NOTE: This is a mandatory option for version 3.2.24.Not selecting the service will make the shipping method unavailable.
+> NOTE: This is a mandatory option for version 3.2.24. Not selecting the service will make the shipping method unavailable.
 
 **Handling cost:** You can enter an amount here (without any symbols or letters). It will be added as a handling cost in addition to the shipping cost.
 
-**Show delivery time:** Set this to Yes, if you want to show the expected delivery time to the customers.
+**Show delivery time:** Set this to Yes if you want to show the expected delivery time to the customers.
 
 **Test mode:** If you would like to test the API, set this to Yes. Otherwise, you can set this to No.
 
@@ -95,10 +102,10 @@ Example below:
 
 > IMPORTANT: Make sure to set your default weight class to either KG or LB in your store profile. All your products should be using the same weight class
 
-**Dimension Unit:** Choose the dimension type. ie: inch, centimeters, millimeters. All your products should be using the same dimension class
+**Dimension Unit:** Choose the dimension type. ie: inch, centimeters, millimeters. All your products should use the same dimension class
 
-**Tax Class:** If you want to charge tax for shipping cost, choose a tax class here. Otherwise, leave this field empty/do not select any option.
+**Tax Class:** If you want to charge tax for shipping costs, choose a tax class here. Otherwise, leave this field empty/do not select any option.
 
-**Geozone:** You can select a geozone and restrict the availability of this shipping method to the countries/zones in that geozone. Leave empty/unselected for making this shipping method available to customers from all regions.
+**Geozone:** You can select a geozone and restrict the availability of this shipping method to the countries/zones in that geozone. Leave empty/unselected to make this shipping method available to customers from all regions.
 
 **Debug:** If you set this to Yes, then debug messages will be logged and saved in the cache folder in your Joomla root directory. Set this to No in Live websites.
