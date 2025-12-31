@@ -8,19 +8,17 @@
 
 
 
+## Purchase the Plugin
+
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Shipping Plugins
 
 **Step 2:** Locate the Canada Post Shipping App > click View Details > Add to cart > Checkout.&#x20;
 
-![](/img/purchase-2.webp)
-
 **Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![](/img/1download2.webp)
+## Install the Plugin
 
-**Installation:** You can install this Canada Post shipping plugin using Joomla installer. The following steps help you with a successful installation.
-
-**Step 1:** In the Joomla admin, go to System > Install > Extensions
+&#x20;Go to System > Install > Extensions
 
 ![](/img/1canada-post-installer-1.webp)
 
