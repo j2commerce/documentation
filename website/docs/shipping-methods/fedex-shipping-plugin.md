@@ -4,47 +4,35 @@ description: J2Commerce (formerly known as J2Store)
 
 # FedEx shipping plugin
 
-This plugin integrates J2Commerce with FedEx Shipping rate API.
+This plugin integrates J2Commerce with the FedEx Shipping rate API.
 
-**Requirements**
+## Requirements
 
 1. PHP 8.1.0 +
 2. Joomla! 4.x/ Joomla! 5.x +
 3. J2Commerce / J2Store 4.x +
 
-#### **‌Installation:**{#installation}
+## **‌**Purchase the App{#installation}
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Shipping Plugin > Shipping
 
-![](/img/fedex-purchase.webp)
+**Step 2:** Locate the FedEx Shipping Plugin > click View Details > Add to cart > Checkout.&#x20;
 
-**Step 2:** Locate the Fedex Shipping Plugin > click View Details > Add to cart > Checkout.&#x20;
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app.&#x20;
 
-**Step 3:** Go to your My Download under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+**Step 4:** Type in FedEx Shipping in the search bar&#x20;
 
-![](/img/fedex-download.webp)
+**Step 5:** Click on the Fedex Basic or Advanced App
 
-#### **Download the App:**
+**Step 6:** Click Available Versions > View Files > Download Now
 
-**Step 1:**&#x20;
-
-a) Download the app from our store by going to My Downloads (found under your profile drop-down in the top right corner)&#x20;
-
-b) type in Fedex Shipping in the search bar.&#x20;
-
-c) Click on the Fedex Basic or Advanced App
-
-**Step 2:** Click on the app and then click Download Now
-
-#### **Installation:**&#x20;
-
-You can install this shipping plugin using Joomla! installer.
+## Install the App
 
 **Step 1:** In the J2Commerce admin, go to System > Install > Extensions&#x20;
 
 ![](<../../assets/app install1.webp>)
 
-**Step 2:** Click on the Browse button and select FedEx Shipping Zip file you just saved and install it
+**Step 2:** Click on the Browse button and select the FedEx Shipping Zip file you just saved and install it
 
 **Step 3:** Go back to System > Manage > Extensions
 
