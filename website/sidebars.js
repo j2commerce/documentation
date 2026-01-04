@@ -50,7 +50,6 @@ const sidebars = {
         'set-up/currency',
         'set-up/custom-fields',
         'set-up/setup-multi-currency',
-        'set-up/category-shipping',
       ],
     },
     'quick-start-guide',
@@ -419,4 +418,5 @@ const sidebars = {
 };
 
 export default sidebars;
+
 
