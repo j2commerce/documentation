@@ -66,6 +66,7 @@ const sidebars = {
         'product-types/configurable-product',
         'product-types/flexible-variable-product',
         'product-types/downloadable-product',
+        'product-types/box-builder',
       ],
     },
     {
@@ -418,5 +419,6 @@ const sidebars = {
 };
 
 export default sidebars;
+
 
 
