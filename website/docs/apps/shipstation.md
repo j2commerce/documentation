@@ -12,7 +12,7 @@ Now conduct your business with more fluidity and transparency with the easy inte
 
 NOTE: ShipStation will not send any Webhook notifications when you manually mark an order as Shipped in your ShipStation console. It is treated as externally fulfilled orders. Tracking numbers for those orders should be entered manually in your ShipStation and also in J2Commerce.
 
-## Requirements `<a href="#requirements" id="requirements" />`
+## Requirements
 
 - PHP 8.1.0 +
 - Joomla! 4.x/ Joomla! 5.x +
