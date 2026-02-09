@@ -4,126 +4,138 @@ description: J2Commerce (formerly known as J2Store)
 
 # Stripe
 
-This plugin integrates the Stripe Payment gateway with J2Store. It works and compatible with the latest Stripe API : 2014-01-31 (latest)
+This plugin integrates the Stripe Payment gateway with J2Commerce. It works and is compatible with the latest Stripe API: 2014-01-31 (latest)
 
 > NOTE: If you are using Stripe’s in built form, Please make sure that you have enabled SSL. If not, this might cause issues in the Stripe’s Javascript from loading on the site, thus blocking the checkout process.
 
-With the purchase of Stripe integration, you would get access to two packages namely, **Stripe direct(The default checkout) and Stirpe checkout(Hosted).**
+With the purchase of Stripe integration, you would get access to two packages, namely, **Stripe direct (The default checkout) and Stripe checkout (Hosted).**
 
-You could download both the packages from the My downloads section of the [J2Store site.](https://www.j2store.org/)
+You could download both packages from the My downloads section of the [J2Commerce]() site.
 
-## Stripe direct Vs Stripe Hosted checkout <a href="#stripe-direct-vs-stripe-hosted-checkout" id="stripe-direct-vs-stripe-hosted-checkout"></a>
+## Stripe Direct vs Stripe Hosted checkout <a href="#stripe-direct-vs-stripe-hosted-checkout" id="stripe-direct-vs-stripe-hosted-checkout" />
 
-**Stripe direct** This is the standard version of Stripe plugin that most of you might have used until now. This integration offers three modes: 1. Normal form 2. Pop-up form 3. In-built form(Recommended)\
-Among the above three modes, only the In-built form supports SCA regulations that are in effect since September, 2019. Following is a guide on how to install and configure the Stripe Direct payment plugin.
+**Stripe direct.** This is the standard version of the Stripe plugin that most of you might have used until now. This integration offers three modes: 1. Normal form, 2. Pop-up form 3. In-built form(Recommended)\
+Among the above three modes, only the In-built form supports SCA regulations that have been in effect since September, 2019. The following is a guide on how to install and configure the Stripe Direct payment plugin.
 
 **Stripe Hosted checkout**
 
-The Hosted checkout transactions would take place in the Stripe payment window. So, you need not worry about SCA compliance since the transactions are handled by Stripe itself. Hence this integration is ideal for Merchants who wish to support both Normal and 3-D secure card payments.
+The Hosted checkout transactions would take place in the Stripe payment window. So, you need not worry about SCA compliance since the transactions are handled by Stripe itself. Hence, this integration is ideal for Merchants who wish to support both Normal and 3-D secure card payments.
 
-## Connecting Stripe direct with your store <a href="#connecting-stripe-direct-with-your-store" id="connecting-stripe-direct-with-your-store"></a>
+## Connecting Stripe directly with your store <a href="#connecting-stripe-direct-with-your-store" id="connecting-stripe-direct-with-your-store" />
 
-You could configure the Stripe direct payments on your site by following the below steps:
+You could configure the Stripe direct payments on your site by following the steps:
 
 1. Retrieving the API keys
 2. Installation
 3. Connecting your store with Stripe
 
-### How to retrieve your Stripe API keys <a href="#how-to-retrieve-your-stripe-api-keys" id="how-to-retrieve-your-stripe-api-keys"></a>
+### How to retrieve your Stripe API keys <a href="#how-to-retrieve-your-stripe-api-keys" id="how-to-retrieve-your-stripe-api-keys" />
 
-To configure the Stripe Hosted checkout, you might want to retrieve the API keys(Both Test and Live keys).
+To configure the Stripe Hosted checkout, you might want to retrieve the API keys (Both Test and Live keys).
 
 Click [here](https://stripe.com/docs/keys) to know how to retrieve the API keys.
 
-## Installation of Stripe Direct <a href="#installation-of-stripe-direct" id="installation-of-stripe-direct"></a>
+## Purchase the Plugin
 
-Use the Joomla extensions installer to install the plugin.
+**Step 1:** Go to our [J2Commerce]() website > Extensions > Payment Plugin
 
-**Payments supported by J2Store Stripe direct integration**
+**Step 2:** Locate the Stripe Plugin > click View Details > Add to cart > Checkout.&#x20;
 
-J2Store’s Stripe integration supports the following types of payments:
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the Plugin. Click Available Versions > View Files > Download Now
 
-* Credit card payment
-* Cryptocurrency
+## Install the Plugin
 
-**Payments not supported by Stripe direct:**
+Go to System > Install > Extensions > Upload the Stripe zip file.
 
-J2Store’s Stripe integration doesn’t support the following payments:
+![](<../../assets/braintree-install (1).webp>)
 
-* Paypal
-* SEPA
-* SOFORT
+## Enable the Plugin
 
-### Connecting your store with Stripe <a href="#connecting-your-store-with-stripe" id="connecting-your-store-with-stripe"></a>
+Go to J2Commerce > Setup > Payment Methods
 
-Go to Joomla admin → Plugin Manager and open the Stripe plugin. Or you could access the plugin through J2Store->Setup->Payment methods->Stripe.
+![](/img/stripe-payemt-enable.webp)
 
-The plugin has following options:
+Search for Stripe to narrow down your search.&#x20;
 
-![](https://raw.githubusercontent.com/j2store/doc-images/master/payment-methods/stripe/stripe-direct-params.png)
+Click on the 'X' to enable both plugins. &#x20;
 
-**License key**\
+![](/img/stripe-enable1.webp)
+
+## Payments Supported
+
+**Payments supported by J2Commerce Stripe direct integration**
+
+J2Commerce’s Stripe integration supports the following types of payments:
+
+- Credit card payment
+- Cryptocurrency
+
+## Payments not supported
+
+J2Commerce’s Stripe integration doesn’t support the following payments:
+
+- Paypal
+- SEPA
+- SOFORT
+
+## Configuring Stripe
+
+**Connecting your store with Stripe**
+
+Open the plugin: Go to J2Commerce > Setup > Payment Methods > Stripe.
+
+The plugin has the following options:
+
+![](/img/stripe-config_api2.webp)
+
 \
-Enter your license key here to receive upcoming updates for the plugin.\
-\
-**Payment option title** The value entered here will be used as the title for this payment method. Customer will see this value when he checks out. If you have a multi-lingual site and wish to translate the title in other languages of your site, you could mention a custom language constant like **J2STORE\_**_**PAYMENT\_**_**METHOD\_**_**STRIPE\_**_**TITLE** and create a [language override](https://docs.j2commerce.com/translation/language-overrides-in-joomla-with-examples-using-j2store/) to translate it into the other languages.
+**Payment Option Title:** The value entered here will be used as the title for this payment method. The customer will see this value when he checks out. If you have a multi-lingual site and wish to translate the title in other languages of your site, you could mention a custom language constant like **J2STORE\_*PAYMENT\_*METHOD\_*STRIPE\_*TITLE** and create a [language override](https://docs.j2commerce.com/translation/language-overrides-in-joomla-with-examples-using-j2store/) to translate it into the other languages.
 
-**Plugin Display Image** Image chosen here will be displayed when the payment options are listed in the checkout page
+**Plugin Display Image:** The image chosen here will be displayed when the payment options are listed on the checkout page
 
-**Surcharge percentage** Enter the percentage here. Surcharge will be calculated based on the percentage of total order and the cost will be added to the order.
+**Surcharge Percentage:** Enter the percentage here. Surcharge will be calculated based on the percentage of the total order, and the cost will be added to the order.
 
-**Surcharge fixed value** Enter the fixed value here. The value entered will be added to the total order.
+**Surcharge Fixed Value:** Enter the fixed value here. The value entered will be added to the total order.
 
-**Live Secret API Key:** Enter your live stripe account’s secret API key.
+**Use Test Mode:** If you wish to test the Stripe payment plugin, then you can set this option, which will change the Stripe to test mode instead of live mode.
 
-**Live Publishable Key:** Enter your live stripe publishable key.
+**Live Secret API Key:** Enter your live Stripe account’s secret API key.
 
-**Use Stripe in Test mode:** If you wish to test the stripe payment plugin then you can set this option which will change the stripe to test mode instead of live mode.
+**Live Publishable Key:** Enter your live Stripe publishable key.
 
-**Test Secret API Key:** Enter you test stripe account’s secret API key.
+**Transaction Mode:** Choose the charge mode.
 
-**Test Publishable Key:** Enter your test stripe account’s publishable API key.
+- **Sale** - Captures the amount immediately.&#x20;
 
-**Charge mode:** Choose the required charge mood.
+- **Authorize** - the charge issues an authorization (or pre-authorization), and will need to be captured later. Charges not captured expire in 7 days, Default is sale
 
-1. SAFE - captures the amount immediately.
-2. AUTHORIZE: Charge issues an authorization and will need to be captured later.This has to be done manually.
+**Credit Card Form Type:** Select which type of payment form for Stripe. Popup form displays inthe  confirm page. Normal form display in the payment select page.
 
-**Credit card form display type :**
+**Note:**\
+**1. Strong Customer Authentication (SCA) is a new regulatory requirement, will impact many European online payments.**\
+**2. In Stripe inbuilt form, we can enable payment intent. It will handle SCA automatically.**\
+**3. For more information about Stripe payment plugin read our [documentation](https://docs.j2commerce.com/j2commerce/payment-methods/stripe).**
 
-By choosing any of the listed option you select the payment form for stripe.
+![](/img/stripe-config_api3.webp)
 
-1. Normal Form -Displays the form in the payment select page
-2. Popup Form - Displays the form in the confirm page
-3. Stripe Inbuilt form - This is the default stripe payment form and this is the most recommended(make sure SSL is enabled on your site).
+**Force cURL to Use Latest SSL/TLS:** This will force the cURL to connect using the latest TLS version if multiple TLS versions are available on your server
 
-**Disable Zip code in Stripe inbuilt form** If you set this to YES, a field would be displayed asking for the Zip code of the users while they fill in their card details at the checkout. This option is applicable only if you enable in-built form as the Credit card form display type.
+**Enable 'Remember Me':** If you want to enable the 'remember me' feature, set to Yes.
 
-**Enable payment intent(SCA Complaints) in Inbuilt form ?** If you set this option to YES and the Credit card form display type to In-built form, then the in-built form would support SCA regulations and you could collect payments from 3-D secure cards.
+**Send Customer Address:** This is optional. If yes, customer billing address will be sent using the Stripe API
 
-**Force URL to use latest SSL/TLS version available in the server** Enabling this option will force the URL to use the latest SSl or TLS version when multiple versions are available in your server.
+**Send Shipping Address:** Do not enable this if you are not shipping any products or shipping address is optional in your store
 
-**Enable card holder name for stripe inbuilt form:** Setting this to yes will help to display a text box to enter the card holder name.
+**Article ID for thank you message:** You can create an article with a thank you message and enter its ID here. The article will be shown to the customer after he completes checkout
 
-**Company or website name (Default store name will be taken) for Popup :** Enter company or website name. It will be displayed in the stripe pop up form page.
+**Geo Zone:** By selecting a Geozone here, you can restrict this payment method from showing to customers from only that geo-region. Choose all Geo zones to show this method to all customers
 
-**Payment Description for Popup form:** Description text enter will be displayed in the popup form.
+**Subscription Renewal Description Text:** Subscription renewal description for renewal order will be displayed in payment details on stripe dashboard
 
-**Enable zip code in popup form ?** To display zip code in the pop-up form enable this option.
+**You can use the following shortcodes in Subscription renewal description \[PRODUCT\_NAME], \[INVOICE\_NUMBER]**\
+**Eg: Renewal for \[PRODUCT\_NAME] and invoice #\[INVOICE\_NUMBER]**
 
-**Enable remember me feature:** If you wish to establish a remember me option then set this to yes. This will ease the payment process for customer by saving their card details preventing them from entering again and again.
-
-**Send customer address to Stripe** If you enable this the customer address will be sent to the stripe.
-
-**Enable Bitcoin:** If you wish to allow the customer to send payment via bitcoin then set this to yes.
-
-**Article ID for Thanks Msg:** You can create an article with a thank you or instructions or information to the customer and enter its ID here. This will be displayed to the customer when he returns to the site after making payment.
-
-**Geozone:** You can restrict showing this payment method only to the customers who belong to the selected geozone. Choose All in order to display this payment option to all customers.
-
-**Display Text on Selection** The text entered here will be displayed when customer selects this payment method.
-
-You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the tips below.
+**Display text on selection:** The text entered here will be displayed when the customer selects this payment method. You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the User guide for more information
 
 **Tip - ONLY FOR MULTI-LINGUAL SITES**
 
@@ -131,114 +143,94 @@ For example, enter a language constant:
 
 J2STORE\_\_TEXT\_\_TO\_\_DISPLAY\_\_ON\_SELECTION
 
-Now you can go to Joomla admin-> Language Manager->Overrides and create overrides for the language constant in all your languages.
+Now you can go to System (in your Joomla Dashboard Side Panel) > Language Manager > Overrides and create overrides for the language constant in all your languages.
 
-**Display Text before Payment**
+**Display text before payment:** The text entered here will be displayed to the customer at the order summary screen before he makes the payment. You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the User guide for more information
 
-The text entered here will be displayed to the customer at the order summary screen before he makes the payment.
+**Display text on after payment:** The text entered here will be displayed after the customer completes the payment. You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the User guide for more information
 
-You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the Display text on selection parameter.
+**Display text on error in payment:** The text entered here will be displayed when there is an error in payment. You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the User guide for more information
 
-**Display Text after Payment/Order**
+**Display Text if customers cancel payment:** The text entered here will be displayed when the customer cancels the payment at the gateway. You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the User guide for more information
 
-The text entered here will be displayed to the customer after he makes the payment.
+**Payment Button Text:** Name of the payment button. Default is: Place order. You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the User guide for more information
 
-You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the Display text on selection parameter.
+**Card update payment button text:** Name of the Card update payment button. Default is: Place order. You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the User guide for more information
 
-**Display Text on Error in Payment**
-
-The text entered here will be displayed to the customer when there is an error in the payment process.
-
-You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the Display text on selection parameter.
-
-**Display Text on Cancel Payment**
-
-The text entered here will be displayed to the customer when he cancels the payment at the gateway (NOT in your site).
-
-You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the Display text on selection parameter.
-
-**Payment Button Text**
-
-The text of the payment button. The button will be displayed at the final checkout step.
-
-**DEBUG :**
-
-This option is chosen in order to enable or disable the display of log file. This should be in disable for live sites.
+**Debug:** Show Debug Messages For Purolator. This option is chosen in order to enable or disable the display of log file. This should be in disable for live sites.
 
 Thus, once you have mentioned the necessary details for the above parameters, you are ready to receive payments via Stripe on your store.
 
-## Stripe checkout(Hosted) <a href="#stripe-checkouthosted" id="stripe-checkouthosted"></a>
+## Configuring Stripe Checkout
+
+\*\*Make sure you have installed the Stripe Checkout Plugin and enabled it by following the same steps at the beginning of this document.
+
+**Stripe checkout (Hosted)**
 
 As mentioned in the introduction, Stripe Checkout(Hosted) is compliant to SCA by default since the transactions are handled by Stripe itself. Also, you need not worry about the payment method layout being responsive since users would be redirected to Stripe for the transactions.
 
-## Configuring the Stripe Hosted checkout in your site <a href="#configuring-the-stripe-hosted-checkout-in-your-site" id="configuring-the-stripe-hosted-checkout-in-your-site"></a>
+### Configuring the Stripe (Hosted) checkout on your site
 
-You could configure the Stripe Hosted payments on your site by following the below steps:
+You could configure the Stripe Hosted payments on your site by following the steps:
 
 1. Retrieving the API keys
 2. Installation
 3. Connecting your store with Stripe
 
-### Retrieving the API keys <a href="#retrieving-the-api-keys" id="retrieving-the-api-keys"></a>
+**Retrieving the API keys:**
 
-The same keys used for Stripe direct can also be used to connect your store to Stripe hosted checkout as well.
+The same keys used for Stripe direct can also be used to connect your store to the Stripe hosted checkout as well.
 
-### Installation <a href="#installation" id="installation"></a>
+![](/img/stripe-checkout-config_api-3.webp)
 
-Use the Joomla extensions installer to install the plugin. Post installation, navigate to J2Store->Setup->Payment methods-> Enable the Stripe checkout plugin and edit the plugin to connect it with Stripe.
+### Connecting your store with Stripe Checkout <a href="#connecting-your-store-with-stripe-checkout" id="connecting-your-store-with-stripe-checkout" />
 
-![Enable stripe checkout](<../../assets/Screenshot from 2023-09-07 15-24-21.png>)
-
-### Connecting your store with Stripe Checkout <a href="#connecting-your-store-with-stripe-checkout" id="connecting-your-store-with-stripe-checkout"></a>
-
-Once the API keys are retrieved, and the plugin is installed, the next step is to connect the store with your Stripe account.
+Once the API keys are retrieved and the plugin is installed, the next step is to connect the store with your Stripe account.
 
 Stripe Hosted checkout uses almost the same parameters as the Stripe direct payment method described above, except for the **Create/Update Webhook** parameter
 
-![Parameters stripe hosted](../../assets/Plugins-Stripe-Checkout-j4-Administration.png)
-
 **Purpose of Webhooks on Stripe**
 
-As mentioned above, with Stripe Hosted checkout, all the transactions occur in the Stripe window, so the merchant site has to be informed of the changes that occur with the transaction. Only then the corresponding orders can be updated on the merchant site. Webhooks are for this purpose. They are similar to IPN callbacks that are used as a communication between the Payment gateway and your ecommerce store.
+As mentioned above, with Stripe Hosted checkout, all the transactions occur in the Stripe window, so the merchant site has to be informed of the changes that occur with the transaction. Only then the corresponding orders be updated on the merchant site. Webhooks are for this purpose. They are similar to IPN callbacks that are used as a communication between the Payment gateway and your e-commerce store.
 
-**Update/ Create webhook** This option in the Stripe checkout wouldn’t have any values initially when you have just installed the plugin. However, after you enter the API keys in the plugin and save, a value would appear.
+**Update/ Create webhook:** This option in the Stripe checkout wouldn’t have any values initially when you have just installed the plugin. However, after you enter the API keys in the plugin and save, a value will appear.
 
-![No options in webhook](https://raw.githubusercontent.com/j2store/doc-images/master/payment-methods/stripe/no-options-stripe-hosted.png)
+**Note:** Once you entered the credentials and saved the plugin, an **Update webhook** button will show up as follows:
 
-Once you entered the credentials and saved the plugin, an **Update webhook** button would show up as follows:
+![Update webhook](/img/stripe-checkout-config_api-4.webp)
 
-![Update webhook](<../../assets/Screenshot from 2023-09-07 15-16-51.png>)
+**Where to find your site’s webhook in Stripe dashboard:** Once you connect your store with Stripe by entering the API keys, there will be a webhook created in the Stripe dashboard. For the transactions to be updated in your J2Store orders, you will have to ensure that a webhook is created on your Stripe dashboard.
 
-**Where to find your site’s webhook in Stripe dashboard** Once you connect your store with Stripe by entering the API keys, there would be a webhook created in the Stripe dashboard. For the transactions to be updated in your J2Store orders, you will have to ensure that a webhook is created on your stripe dashboard.
-
-To check this, navigate to Stripe dashboard->Developers->Webhooks.
+To check this, navigate to Stripe dashboard > Developers > Webhooks.
 
 ![Webhooks in stripe](https://raw.githubusercontent.com/j2store/doc-images/master/payment-methods/stripe/webhooks-stripe.png)
 
 In the above screenshot, a webhook is created once for the corresponding store as indicated. This means that the transactions would be successfully communicated to the store that is connected to this account.
 
-**When should you update your webhook?** If you have re-generated your Stripe API keys, then it means that your webhook should be updated. So, everytime you regenerate your Stripe API keys, make sure that you have updated the Webhook in your Stripe Checkout plugin.
+**When should you update your webhook?** If you have regenerated your Stripe API keys, then it means that your webhook should be updated. So, every time you regenerate your Stripe API keys, make sure that you have updated the Webhook in your Stripe Checkout plugin.
 
 **NOTE:** Without the webhook being generated, the status of the transactions would not be communicated with the J2Store orders. Hence, your order statuses would not be updated accordingly.
 
-## SCA compliance <a href="#sca-compliance" id="sca-compliance"></a>
+![](/img/stripe-config_1.webp)
 
-### Enabling SCA Compliance for Stripe direct <a href="#enabling-sca-compliance-for-stripe-direct" id="enabling-sca-compliance-for-stripe-direct"></a>
+## SCA compliance <a href="#sca-compliance" id="sca-compliance" />
 
-For the Stripe direct payment method, only the in-built mode supports SCA compliance. To enable SCA on Stripe direct, follow the below steps:
+### Enabling SCA Compliance for Stripe direct <a href="#enabling-sca-compliance-for-stripe-direct" id="enabling-sca-compliance-for-stripe-direct" />
 
-1. Navigate to J2Store->Setup->Payment methods->Stripe.
+For the Stripe direct payment method, only the in-built mode supports SCA compliance. To enable SCA on Stripe directly, follow the steps:
+
+1. Navigate to J2Commerce > Setup > Payment methods > Stripe.
 2. Set the option **Credit card form display type** to **Stripe in-built form**
 
-![SCA in built mode](https://raw.githubusercontent.com/j2store/doc-images/master/payment-methods/stripe/stripe-in-built-mode.png)
+![SCA in built mode](/img/stripe-payemt--card.webp)
 
-1. After choosing the Display mode as In-built form, enable the option **Enable payment intent(SCA Complaints) in Inbuilt form ?** to **YES**.
+1. After choosing the Display mode as In-built form, enable the option **Enable payment intent (SCA Complaints) in In-built form ?** to **YES**.
 
-![Enabling payment intent](https://raw.githubusercontent.com/j2store/doc-images/master/payment-methods/stripe/payment-intent.png)
+![Enabling payment intent](/img/stripe-payemt-sca.webp)
 
-Now, Stripe direct is compliant with SCA regulations.
+Now, Stripe Direct is compliant with SCA regulations.
 
-## Testing SCA compliance <a href="#testing-sca-compliance" id="testing-sca-compliance"></a>
+## Testing SCA compliance <a href="#testing-sca-compliance" id="testing-sca-compliance" />
 
 After enabling Payment intent on your Stripe direct plugin settings, you could test if the payment method is compatible with 3-D secure cards. Follow the below steps to test SCA compliance
 
@@ -275,8 +267,8 @@ Here is how you could test subscription support for Stripe checkout plugin.
 
 **Pre-requisites:**
 
-* Stripe checkout plugin should be installed.
-* API keys should be entered.
+- Stripe checkout plugin should be installed.
+- API keys should be entered.
 
 **Steps to be done:**
 
@@ -288,36 +280,36 @@ Following are the steps to be done to test if the Stripe hosted plugin works fin
 
 #### **Placing a test order**
 
-* Add a subscription product to the cart.
-* Proceed to checkout and choose Stripe Hosted as the payment method.
-* Once you click on the Place order button, you would be redirected to the Stripe page asking for the card details.
-* Here is the document where you would find the test cards to be used. Click [here](https://stripe.com/docs/testing#regulatory-cards).
-* Use one of the cards found in the above document and click on the Save card button at the popup. **First the card details entered would be saved and payment would not be processed.**
+- Add a subscription product to the cart.
+- Proceed to checkout and choose Stripe Hosted as the payment method.
+- Once you click on the Place order button, you would be redirected to the Stripe page asking for the card details.
+- Here is the document where you would find the test cards to be used. Click [here](https://stripe.com/docs/testing#regulatory-cards).
+- Use one of the cards found in the above document and click on the Save card button at the popup. **First the card details entered would be saved and payment would not be processed.**
 
 ![](../../assets/selection_086.png)
 
 #### Authenticating the transaction
 
-* Once you click on Save card, you would see a popup asking for Authentication like this:
+- Once you click on Save card, you would see a popup asking for Authentication like this:
 
 ![](../../assets/selection_087.png)
 
 #### Completing the payment
 
-* Once the authentication is complete, you would be redirected to the Merchant site. Click on Go to order history button.
-* Or, you can login to the My profile page, where you would see a **Complete Payment** button.
+- Once the authentication is complete, you would be redirected to the Merchant site. Click on Go to order history button.
+- Or, you can login to the My profile page, where you would see a **Complete Payment** button.
 
 ![](../../assets/selection_088.png)
 
-* You would again be asked to authenticate. Click on the **Authenticate payment** button.
+- You would again be asked to authenticate. Click on the **Authenticate payment** button.
 
 ![](../../assets/selection_089.png)
 
-* An authentication popup would come up. Click on Authenticate payment.
+- An authentication popup would come up. Click on Authenticate payment.
 
 ![](../../assets/selection_090.png)
 
-* Now the payment would be completed and the order status should be confirmed.
+- Now the payment would be completed and the order status should be confirmed.
 
 ![](../../assets/selection_091.png)
 
