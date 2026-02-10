@@ -179,7 +179,7 @@ You could configure the Stripe Hosted payments on your site by following the ste
 
 **Retrieving the API keys:**
 
-The same keys used for Stripe direct can also be used to connect your store to the Stripe hosted checkout as well.
+The same keys used for Stripe direct can also be used to connect your store to the Stripe (hosted) checkout as well.
 
 ![](/img/stripe-checkout-config_api-3.webp)
 
