@@ -191,7 +191,7 @@ Stripe Hosted checkout uses almost the same parameters as the Stripe direct paym
 
 **Purpose of Webhooks on Stripe**
 
-As mentioned above, with Stripe Hosted checkout, all the transactions occur in the Stripe window, so the merchant site has to be informed of the changes that occur with the transaction. Only then the corresponding orders be updated on the merchant site. Webhooks are for this purpose. They are similar to IPN callbacks that are used as a communication between the Payment gateway and your e-commerce store.
+As mentioned above, with Stripe Hosted checkout, all the transactions occur in the Stripe window, so the merchant site has to be informed of the changes that occur with the transaction. Only then will the corresponding orders be updated on the merchant site. Webhooks are for this purpose. They are similar to IPN callbacks that are used as a communication between the Payment gateway and your e-commerce store.
 
 **Update/ Create webhook:** This option in the Stripe checkout wouldn’t have any values initially when you have just installed the plugin. However, after you enter the API keys in the plugin and save, a value will appear.
 
@@ -199,7 +199,7 @@ As mentioned above, with Stripe Hosted checkout, all the transactions occur in t
 
 ![Update webhook](/img/stripe-checkout-config_api-4.webp)
 
-**Where to find your site’s webhook in Stripe dashboard:** Once you connect your store with Stripe by entering the API keys, there will be a webhook created in the Stripe dashboard. For the transactions to be updated in your J2Store orders, you will have to ensure that a webhook is created on your Stripe dashboard.
+**Where to find your site’s webhook in Stripe dashboard:** Once you connect your store with Stripe by entering the API keys, there will be a webhook created in the Stripe dashboard. For the transactions to be updated in your J2Commerce orders, you will have to ensure that a webhook is created on your Stripe dashboard.
 
 To check this, navigate to Stripe dashboard > Developers > Webhooks.
 
@@ -209,13 +209,13 @@ In the above screenshot, a webhook is created once for the corresponding store a
 
 **When should you update your webhook?** If you have regenerated your Stripe API keys, then it means that your webhook should be updated. So, every time you regenerate your Stripe API keys, make sure that you have updated the Webhook in your Stripe Checkout plugin.
 
-**NOTE:** Without the webhook being generated, the status of the transactions would not be communicated with the J2Store orders. Hence, your order statuses would not be updated accordingly.
+**NOTE:** Without the webhook being generated, the status of the transactions would not be communicated to the J2Commerce orders. Hence, your order statuses would not be updated accordingly.
 
 ![](/img/stripe-config_1.webp)
 
-## SCA compliance <a href="#sca-compliance" id="sca-compliance" />
+## SCA compliance
 
-### Enabling SCA Compliance for Stripe direct <a href="#enabling-sca-compliance-for-stripe-direct" id="enabling-sca-compliance-for-stripe-direct" />
+### Enabling SCA Compliance for Stripe direct
 
 For the Stripe direct payment method, only the in-built mode supports SCA compliance. To enable SCA on Stripe directly, follow the steps:
 
@@ -224,29 +224,31 @@ For the Stripe direct payment method, only the in-built mode supports SCA compli
 
 ![SCA in built mode](/img/stripe-payemt--card.webp)
 
-1. After choosing the Display mode as In-built form, enable the option **Enable payment intent (SCA Complaints) in In-built form ?** to **YES**.
+1. After choosing the Display mode as Inbuilt form, enable the option **Enable payment intent (SCA Complaints) in Inbuilt form ?** to **YES**.
 
 ![Enabling payment intent](/img/stripe-payemt-sca.webp)
 
 Now, Stripe Direct is compliant with SCA regulations.
 
-## Testing SCA compliance <a href="#testing-sca-compliance" id="testing-sca-compliance" />
+## Testing SCA compliance
 
-After enabling Payment intent on your Stripe direct plugin settings, you could test if the payment method is compatible with 3-D secure cards. Follow the below steps to test SCA compliance
+After enabling Payment intent on your Stripe direct plugin settings, you can test if the payment method is compatible with 3-D Secure cards. Follow the steps to test SCA compliance
 
-1. Enable Sandbox mode in Stripe plugin.
-2. Navigate to the storefront. Add a product to cart and initiate checkout process.
+1. Enable Sandbox mode in the Stripe plugin.
+2. Navigate to the storefront. Add a product to the cart and initiate the checkout process.
 3. At the checkout, choose Stripe as your payment method.
 
-![Testing Stripe SCA](https://raw.githubusercontent.com/j2store/doc-images/master/payment-methods/stripe/test-SCA-stripe.png)
+![Testing Stripe SCA](/img/stripe-checkout.webp)
 
 1. Use the following cards:
 
-4000 0025 0000 3155 4000 0027 6000 3184 4000 0082 6000 3178 4000 0000 0000 3055
+- 4000 0025 0000 3155 4000 0027 6000 3184&#x20;
+
+- 4000 0082 6000 3178 4000 0000 0000 3055
 
 ![3-d secure card](https://raw.githubusercontent.com/j2store/doc-images/master/payment-methods/stripe/3-d-secure-card.png) NOTE: You will not be able to test SCA Compliance if you use normal test cards. SCA compliance can be tested only with 3-D secure test cards.
 
-1. Click on the Place order button to see the 3-D secure popup as follows:
+1. Click on the Place order button to see the 3-D secure pop-up as follows:
 
 ![3-d secure popup](https://raw.githubusercontent.com/j2store/doc-images/master/payment-methods/stripe/3-d-secure-popup.png)
 
@@ -272,7 +274,7 @@ Here is how you could test subscription support for Stripe checkout plugin.
 
 **Steps to be done:**
 
-Following are the steps to be done to test if the Stripe hosted plugin works fine with the subscription product.
+The following are the steps to be done to test if the Stripe (hosted) plugin works fine with the subscription product.
 
 1. Placing a test order
 2. Authenticating the transaction.
@@ -282,22 +284,22 @@ Following are the steps to be done to test if the Stripe hosted plugin works fin
 
 - Add a subscription product to the cart.
 - Proceed to checkout and choose Stripe Hosted as the payment method.
-- Once you click on the Place order button, you would be redirected to the Stripe page asking for the card details.
+- Once you click on the Place order button, you will be redirected to the Stripe page asking for the card details.
 - Here is the document where you would find the test cards to be used. Click [here](https://stripe.com/docs/testing#regulatory-cards).
-- Use one of the cards found in the above document and click on the Save card button at the popup. **First the card details entered would be saved and payment would not be processed.**
+- Use one of the cards found in the above document and click on the Save card button at the pop-up. **First, the card details entered would be saved and payment would not be processed.**
 
 ![](../../assets/selection_086.png)
 
 #### Authenticating the transaction
 
-- Once you click on Save card, you would see a popup asking for Authentication like this:
+- Once you click on Save card, you will see a pop-up asking for Authentication like this:
 
 ![](../../assets/selection_087.png)
 
 #### Completing the payment
 
-- Once the authentication is complete, you would be redirected to the Merchant site. Click on Go to order history button.
-- Or, you can login to the My profile page, where you would see a **Complete Payment** button.
+- Once the authentication is complete, you will be redirected to the Merchant site. Click on the " Go to order history" button.
+- Or, you can log in to the My profile page, where you would see a **Complete Payment** button.
 
 ![](../../assets/selection_088.png)
 
@@ -305,7 +307,7 @@ Following are the steps to be done to test if the Stripe hosted plugin works fin
 
 ![](../../assets/selection_089.png)
 
-- An authentication popup would come up. Click on Authenticate payment.
+- An authentication pop-up would come up. Click on Authenticate payment.
 
 ![](../../assets/selection_090.png)
 
@@ -317,12 +319,14 @@ This indicates that the Stripe checkout plugin works fine with the Subscription 
 
 #### How it works for Recurring Payments
 
-Once the initial order for the Subscription is confirmed, a renewal order would be generated under J2Store->Sales->Orders.
+Once the initial order for the Subscription is confirmed, a renewal order will be generated under J2Commerce > Sales > Orders.
 
-When the renewal due date approaches, if you have used a test card that requires authentication on all transactions(some cards mentioned[ here ](https://stripe.com/docs/testing#regulatory-cards)require authentication for all the payments as mentioned in the description), then you would receive a mail asking you to authenticate the payment.
+![](/img/stripe-orders.webp)
 
-If you have used a card that requires a one-time authentication, the initial authentication is good enough. No further authentication would be requested. Once the renewal due date approaches, the payment would go through automatically.
+When the renewal due date approaches, if you have used a test card that requires authentication on all transactions (some cards mentioned[ here ](https://stripe.com/docs/testing#regulatory-cards)require authentication for all the payments, as mentioned in the description), then you would receive an email asking you to authenticate the payment.
+
+If you have used a card that requires one-time authentication, the initial authentication is good enough. No further authentication would be requested. Once the renewal due date approaches, the payment will go through automatically.
 
 **Still got questions?**
 
-In case of any further queries, please feel free to reach us via the [Priority ticket system](https://www.j2store.org/my-account/priority-ticket-system.html)
+In case of any further queries, please feel free to reach us via the [Priority ticket system](https://www.j2commerce.com/support)
