@@ -8,56 +8,51 @@ This plugin integrates the Braintree payment gateway with J2Commerce.
 
 You need an account with Braintree to choose this method. If you have/create one, you will be provided with the Merchant ID, private, and public keys for facilitating payments. You need to enter them in the respective fields. In these payment types, unlike Bank Transfer or Money order methods, the customer has the option to cancel the payment. Also, if any error occurs during the payment process, it will be logged. These will be notified through the additional text boxes provided
 
-**Step 1:** Purchase:
+## Purchase
 
-Go to > J2commerce > App > Braintree > Add to Cart.
+**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Apps
 
-![](<../../assets/braintree-purchase.webp>)
+**Step 2:** Locate the Braintree App > click View Details > Add to cart > Checkout.&#x20;
 
-**Step 2:** Download:
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-After you purchase the App, it will be in your “My Downloads” section. Go to your profile icon in the upper right corner > My downloads > Search “Braintree” > Available Versions
-
-![](<../../assets/braintree-download-1.webp>)
-
-Next, go to View Files > Download the latest version > save it in a location you will remember
-
-![](<../../assets/braintree-download.webp>)
-
-**Step 3:** Installation:
+## Installation
 
 Go to System > Install > Extensions > Upload Braintree zip file.
 
 ![](<../../assets/braintree-install (1).webp>)
 
-**Step 4:** Publish:
+## Enable
 
 Make sure you enable the App. Go to J2Commerce > Setup > Payment Methods > Find Braintree and click Enable
 
-![](<../../assets/braintree-enable.webp>)
+![](../../assets/braintree-enable.webp)
 
-**Step 5:** Log in to your Braintree account to locate your Braintree Credentials.
+## Braintree Credentials
+
+Log in to your Braintree account to locate your Braintree Credentials.
 
 If you already have a Braintree account but are not sure where to find the relevant credentials (Merchant ID, Public Key, Private Key, and Merchant Account ID), follow the steps below.
 
 **To locate your Braintree credentials:**
 
-* [Sign in](https://www.braintreegateway.com/login) to your Braintree account.
-* Click My User under Account.
-* Click View API Keys.
-* Click View under Private Key.
-* Copy the following values:
-  * Public Key
-  * Private Key
-  * Merchant ID
-* Click Processing under Settings.
-* Find your default merchant account in the Merchant Accounts section.\
+- [Sign in](https://www.braintreegateway.com/login) to your Braintree account.
+- Click My User under Account.
+- Click View API Keys.
+- Click View under Private Key.
+- Copy the following values:
+
+  - Public Key
+  - Private Key
+  - Merchant ID
+- Click Processing under Settings.
+- Find your default merchant account in the Merchant Accounts section.\
   Note: In most cases, there is only one merchant account.
-* Copy the Merchant Account ID (copy the ID only, without "default").
+- Copy the Merchant Account ID (copy the ID only, without "default").
 
 Once you have located your credentials, you can enter them in the backend of your site.
 
-**Configuration:**
+## Configuration
 
 Payment Option title:
 
@@ -91,13 +86,13 @@ To log in to your Sandbox account, go to the Sandbox link at the bottom under th
 
 **Payment Type:** Choose the desired payment type according to the requirement.
 
-![](<../../assets/braintree2.webp>)
+![](../../assets/braintree2.webp)
 
 **Sandbox:** The following images show you where to find your merchant ID and API Key once you're logged into your Sandbox Account
 
-![](<../../assets/sandbox-braintreegateway-merchants1.webp>)
+![](../../assets/sandbox-braintreegateway-merchants1.webp)
 
-![](<../../assets/sandbox-braintreegateway-merchants2.webp>)
+![](../../assets/sandbox-braintreegateway-merchants2.webp)
 
 **Display text on selection:**
 
