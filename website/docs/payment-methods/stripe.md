@@ -37,7 +37,7 @@ Click [here](https://stripe.com/docs/keys) to know how to retrieve the API keys.
 
 ## Purchase the Plugin
 
-**Step 1:** Go to our [J2Commerce]() website > Extensions > Payment Plugin
+**Step 1:** Go to our J2Commerce website > Extensions > [Payment Plugins](https://www.j2commerce.com/extensions/payment-plugins)
 
 **Step 2:** Locate the Stripe Plugin > click View Details > Add to cart > Checkout.&#x20;
 
