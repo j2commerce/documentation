@@ -10,7 +10,7 @@ This plugin integrates the Stripe Payment gateway with J2Commerce. It works and 
 
 With the purchase of Stripe integration, you would get access to two packages, namely, **Stripe direct (The default checkout) and Stripe checkout (Hosted).**
 
-You could download both packages from the My downloads section of the [J2Commerce]() site.
+You could download both packages from the [My downloads](https://www.j2commerce.com/my-account/my-downloads) section of the J2Commerce site.
 
 ## Stripe Direct vs Stripe Hosted checkout <a href="#stripe-direct-vs-stripe-hosted-checkout" id="stripe-direct-vs-stripe-hosted-checkout" />
 
