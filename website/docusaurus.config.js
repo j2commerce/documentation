@@ -63,17 +63,17 @@ const config = {
     ],
   ],
 
-plugins: [
-[
-'@docusaurus/plugin-content-docs',
-{
-id: 'v6', // Unique ID for the first instance
-path: 'docs-v6', // Source directory for v6 docs
-routeBasePath: 'v6', // URL base path for v6
-sidebarPath: './sidebars.js',
-},
-],
-],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'v6', // Unique ID
+        path: 'docs-v6', // Source directory for v6 docs
+        routeBasePath: 'v6', // URL base path for v6
+        sidebarPath: './sidebars.js',
+      },
+    ],
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
