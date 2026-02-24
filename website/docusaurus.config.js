@@ -47,6 +47,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          // id: 'v4', // omitted => default instance
           routeBasePath: '/',
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
@@ -61,6 +62,18 @@ const config = {
       }),
     ],
   ],
+
+plugins: [
+[
+'@docusaurus/plugin-content-docs',
+{
+id: 'v6', // Unique ID for the first instance
+path: 'docs-v6', // Source directory for v6 docs
+routeBasePath: 'v6', // URL base path for v6
+sidebarPath: './sidebars.js',
+},
+],
+],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -78,7 +91,14 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'docSidebar',
             position: 'left',
-            label: 'Documentation',
+            label: 'Documentation v4',
+          },
+          {
+            type: 'docSidebar',
+            docsPluginId: 'v6',
+            sidebarId: 'docSidebarV6',
+            position: 'left',
+            label: 'Documentation v6',
           },
         ],
       },
