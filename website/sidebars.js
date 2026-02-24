@@ -416,9 +416,6 @@ const sidebars = {
       ],
     },
   ],
-  docSidebarV6: [
-    'README',
-  ],
 };
 
 export default sidebars;

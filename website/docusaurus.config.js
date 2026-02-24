@@ -70,7 +70,7 @@ const config = {
         id: 'v6', // Unique ID
         path: 'docs-v6', // Source directory for v6 docs
         routeBasePath: 'v6', // URL base path for v6
-        sidebarPath: './sidebars.js',
+        sidebarPath: './sidebars-v6.js',
       },
     ],
   ],
