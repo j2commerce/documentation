@@ -80,6 +80,14 @@ const config = {
           name: 'my-docs',
           version: '1.0.0',
         },
+        // minContentLength: 200, // Skip very short pages
+        // excludeRoutes: [
+        //   '/404*',
+        //   '/search*',
+        //   '*/tags/*', // Exclude tag pages
+        //   '*/tags', // Exclude tag index pages
+        // ],
+        indexers: false, // Disable FlexSearch indexer to prevent out of memory errors
       },
     ],
   ],
