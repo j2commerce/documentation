@@ -73,6 +73,15 @@ const config = {
         sidebarPath: './sidebars-v6.js',
       },
     ],
+    [
+      'docusaurus-plugin-mcp-server',
+      {
+        server: {
+          name: 'my-docs',
+          version: '1.0.0',
+        },
+      },
+    ],
   ],
 
   themeConfig:
