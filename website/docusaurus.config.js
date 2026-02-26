@@ -63,10 +63,11 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
-        themes: ['@docusaurus/theme-mermaid'],
       }),
     ],
   ],
+
+  themes: ['@docusaurus/theme-mermaid'],
 
   plugins: [
     [
