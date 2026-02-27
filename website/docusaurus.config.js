@@ -116,13 +116,14 @@ const config = {
             position: 'left',
             label: 'Documentation v4',
           },
-          {
-            type: 'docSidebar',
-            docsPluginId: 'v6',
-            sidebarId: 'docSidebarV6',
-            position: 'left',
-            label: 'Documentation v6',
-          },
+          // v6 documentation is hidden from navbar but still accessible via /v6/ URL
+          // {
+          //   type: 'docSidebar',
+          //   docsPluginId: 'v6',
+          //   sidebarId: 'docSidebarV6',
+          //   position: 'left',
+          //   label: 'Documentation v6',
+          // },
         ],
       },
       algolia: {
