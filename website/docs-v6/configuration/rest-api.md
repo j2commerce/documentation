@@ -144,7 +144,7 @@ https://yoursite.com/api/index.php/v1/j2commerce/
 
 ### Standard Endpoints
 
-These endpoints support the full set of CRUD operations: **GET** (list all), **GET/id** (single record), **POST** (create), **PATCH/id** (update), and **DELETE/id** (delete).
+These endpoints support the full set of CRUD operations: **GET** (list all), **GET/{id}** (single record), **POST** (create), **PATCH/{id}** (update), and **DELETE/{id}** (delete).
 
 | Endpoint | Description |
 |---|---|
@@ -168,15 +168,14 @@ These endpoints support the full set of CRUD operations: **GET** (list all), **G
 
 These endpoints return data related to a specific parent record. Replace `{id}` with the parent record's numeric ID.
 
-**GET endpoints for nested resources:**
-
-- `GET /v1/j2commerce/orders/{id}/items` - Line items (products) within a specific order.
-- `GET /v1/j2commerce/orders/{id}/history` - Status change history for an order.
-- `POST /v1/j2commerce/orders/{id}/history` - Add a new status change history entry.
-- `GET /v1/j2commerce/products/{id}/variants` - Product variants (sizes, colors, etc.) for a specific product.
-- `GET /v1/j2commerce/customers/{id}/addresses` - Saved addresses for a specific customer.
-- `GET /v1/j2commerce/customers/{id}/orders` - All orders placed by a specific customer.
-- `GET /v1/j2commerce/countries/{id}/zones` - Zones (states/provinces) within a specific country.
+| Endpoint | Method | Description |
+|---|---|---|
+| `/v1/j2commerce/orders/{id}/items` | GET | Line items (products) within a specific order. |
+| `/v1/j2commerce/orders/{id}/history` | GET, POST | Status change history for an order. POST adds a new history entry. |
+| `/v1/j2commerce/products/{id}/variants` | GET | Product variants (sizes, colors, etc.) for a specific product. |
+| `/v1/j2commerce/customers/{id}/addresses` | GET | Saved addresses for a specific customer. |
+| `/v1/j2commerce/customers/{id}/orders` | GET | All orders placed by a specific customer. |
+| `/v1/j2commerce/countries/{id}/zones` | GET | Zones (states/provinces) within a specific country. |
 
 ### Report Endpoints
 
