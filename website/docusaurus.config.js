@@ -19,6 +19,11 @@ const config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
   // Set the production url of your site here
   url: 'https://docs.j2commerce.com',
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -80,6 +85,15 @@ const config = {
       },
     ],
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'developer-v6', // Unique ID
+        path: 'developer-v6', // Source directory for developer docs
+        routeBasePath: 'developer', // URL base path: /developer/
+        sidebarPath: './sidebars-developer-v6.js',
+      },
+    ],
+    [
       'docusaurus-plugin-mcp-server',
       {
         server: {
@@ -122,6 +136,13 @@ const config = {
             sidebarId: 'docSidebarV6',
             position: 'left',
             label: 'Documentation v6',
+          },
+          {
+            type: 'docSidebar',
+            docsPluginId: 'developer-v6',
+            sidebarId: 'developerSidebarV6',
+            position: 'left',
+            label: 'Developer v6',
           },
         ],
       },
