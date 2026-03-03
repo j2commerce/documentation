@@ -130,20 +130,21 @@ const config = {
             position: 'left',
             label: 'Documentation v4',
           },
-          {
-            type: 'docSidebar',
-            docsPluginId: 'v6',
-            sidebarId: 'docSidebarV6',
-            position: 'left',
-            label: 'Documentation v6',
-          },
-          {
-            type: 'docSidebar',
-            docsPluginId: 'developer-v6',
-            sidebarId: 'developerSidebarV6',
-            position: 'left',
-            label: 'Developer v6',
-          },
+          // v6 documentation is hidden from navbar but still accessible via /v6/ URL
+          // {
+          //   type: 'docSidebar',
+          //   docsPluginId: 'v6',
+          //   sidebarId: 'docSidebarV6',
+          //   position: 'left',
+          //   label: 'Documentation v6',
+          // },
+          // {
+          //   type: 'docSidebar',
+          //   docsPluginId: 'developer-v6',
+          //   sidebarId: 'developerSidebarV6',
+          //   position: 'left',
+          //   label: 'Developer v6',
+          // },
         ],
       },
       algolia: {
