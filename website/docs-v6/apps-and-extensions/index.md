@@ -46,6 +46,22 @@ Most apps have their own configuration page accessible from the J2Commerce Apps 
 3. Adjust settings as needed.
 4. Click **Save** to apply changes.
 
+## Modules
+
+J2Commerce includes several frontend modules that display store information in template positions.
+
+### Products Module
+
+Display products in a grid or slider layout with flexible filtering options. Show latest products, featured items, best sellers, or products from specific categories and tags.
+
+[Learn more about the Products Module](./mod_j2commerce_products.md)
+
+### Categories Module
+
+Display product categories in various layouts including sliders, grids, and lists.
+
+[Learn more about the Categories Module](./mod_j2commerce_categories.md)
+
 ## Developing Custom Apps
 
 Developers can create custom app plugins by implementing J2Commerce event subscribers. See the [Developer Documentation](../../developer6/extensions/plugins/index.md) for details on creating custom plugins.
