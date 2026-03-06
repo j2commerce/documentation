@@ -23,7 +23,7 @@ const sidebars = {
             label: 'Field Types',
             link: {
                 type: 'doc',
-                id: 'field-types/index',
+                id: 'fields/index',
             },
             items: [
                 {
