@@ -23,6 +23,9 @@ const config = {
     mermaid: true,
   },
   themes: ['@docusaurus/theme-mermaid'],
+  clientModules: [
+    require.resolve('./src/theme/ZoomMermaid.js'),
+  ],
 
   // Set the production url of your site here
   url: 'https://docs.j2commerce.com',
