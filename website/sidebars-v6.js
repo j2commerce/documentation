@@ -9,7 +9,7 @@ const sidebars = {
             label: 'Getting Started',
             link: {
                 type: 'generated-index',
-                slug: '/getting-started', // Custom slug removes /category prefix
+                slug: '/getting-started',
             },
             items: [
                 {
@@ -23,7 +23,7 @@ const sidebars = {
             label: 'Configuration',
             link: {
                 type: 'generated-index',
-                slug: '/configuration', // Custom slug removes /category prefix
+                slug: '/configuration',
             },
             items: [
                 {
@@ -34,10 +34,10 @@ const sidebars = {
         },
         {
             type: 'category',
-            label: 'Apps end Extensions',
+            label: 'Apps and Extensions',
             link: {
-                type: 'generated-index',
-                slug: '/apps-and-extensions', // Custom slug removes /category prefix
+                type: 'doc',
+                id: 'apps-and-extensions/index',
             },
             items: [
                 {

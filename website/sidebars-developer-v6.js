@@ -9,7 +9,7 @@ const sidebars = {
             label: 'Features',
             link: {
                 type: 'generated-index',
-                slug: '/features', // Custom slug removes /category prefix
+                slug: '/features',
             },
             items: [
                 {
@@ -22,8 +22,8 @@ const sidebars = {
             type: 'category',
             label: 'Field Types',
             link: {
-                type: 'generated-index',
-                slug: '/field-types', // Custom slug removes /category prefix
+                type: 'doc',
+                id: 'field-types/index',
             },
             items: [
                 {
@@ -37,7 +37,7 @@ const sidebars = {
             label: 'API Reference',
             link: {
                 type: 'generated-index',
-                slug: '/api-reference', // Custom slug removes /category prefix
+                slug: '/api-reference',
             },
             items: [
                 {
@@ -51,7 +51,7 @@ const sidebars = {
             label: 'Tools',
             link: {
                 type: 'generated-index',
-                slug: '/tools', // Custom slug removes /category prefix
+                slug: '/tools',
             },
             items: [
                 {
