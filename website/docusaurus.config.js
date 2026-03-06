@@ -76,38 +76,6 @@ const config = {
         path: 'docs-v6', // Source directory for v6 docs
         routeBasePath: 'v6', // URL base path for v6
         sidebarPath: './sidebars-v6.js',
-        async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
-          const items = await defaultSidebarItemsGenerator(args);
-
-          // Recursively process items to filter and sort
-          function processSidebarItems(sidebarItems) {
-            return sidebarItems.map(item => {
-              // If this is the Apps and Extensions category
-              if (item.type === 'category' && item.label === 'Apps and Extensions') {
-                return {
-                  ...item,
-                  items: item.items
-                    .filter(subItem => !subItem.id?.endsWith('/index'))
-                    .sort((a, b) => {
-                      const labelA = a.label || '';
-                      const labelB = b.label || '';
-                      return labelA.localeCompare(labelB);
-                    }),
-                };
-              }
-              // Process nested categories
-              if (item.type === 'category' && item.items) {
-                return {
-                  ...item,
-                  items: processSidebarItems(item.items),
-                };
-              }
-              return item;
-            });
-          }
-
-          return processSidebarItems(items);
-        },
       },
     ],
     [
