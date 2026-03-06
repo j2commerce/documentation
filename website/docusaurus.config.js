@@ -24,7 +24,7 @@ const config = {
   },
   themes: ['@docusaurus/theme-mermaid'],
   clientModules: [
-    require.resolve('./src/theme/ZoomMermaid.js'),
+    path.resolve(__dirname, './src/theme/ZoomMermaid.js'),
   ],
 
   // Set the production url of your site here
