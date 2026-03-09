@@ -369,7 +369,7 @@ The **J2Commerce Latest Orders** module shows a table of the most recent orders.
 
 To configure this module, go to **System -> Manage -> Administrator Modules,** search for **J2Commerce Latest Orders**, and adjust the parameters.&#x20;
 
-1. **Note:** Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
+**Note:** Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
 
 ![](/img/latest-orders1.webp)
 
@@ -525,9 +525,13 @@ If the time zone is set incorrectly, daily totals may shift -- orders could appe
 
 **Cause:** All checks were dismissed (not necessarily completed), which also hides the toolbar button. Dismissed checks count as "complete" for progress purposes.
 
-**Solution:** This is by design. If you need to revisit setup, navigate directly to the relevant configuration area via the J2Commerce navigation bar (for example, if you want to set up the payment methods, go to **Components -> J2Commerce -> Setup -> Payment Methods** to enable a payment method).
+**Solution:** This is by design. If you need to revisit setup, navigate directly to the relevant configuration area via the J2Commerce navigation bar (for example, if you want to set up the payment methods, go to **Components -> J2Commerce -> Setup -> Payment Methods**&#x20;
 
 ![](/img/payment-method.webp)
+
+Make sure the payment methods you want to appear are enabled.
+
+![](/img/payment-method1.webp)
 
 ### Monthly or Yearly Sales chart shows no data
 
@@ -543,7 +547,9 @@ If the time zone is set incorrectly, daily totals may shift -- orders could appe
 
 **Solution:**
 
-1. Go to **System -> Manage -> Administrator Modules**. (or **Content** **-> Administrator Modules)**
+1. Go to **System -> Manage -> Administrator Modules**.&#x20;
+
+   **Note:** Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
 2. Find and open the module.
 3. Confirm the **Status** is **Published**.
 4. Confirm the **Position** exactly matches one of the five dashboard position names listed in the [Module Positions](#module-positions) section (the names are case-sensitive).
