@@ -37,7 +37,7 @@ index.php?option=com_j2commerce&view=dashboard
 Before the dashboard displays meaningful data, make sure that:
 
 - J2Commerce is installed and the required system and content plugins are enabled.
-- At least one order exists in your store. Without orders, all KPI values and charts will show zero.
+- At least one order exists in your store. Without orders, all KPI values (Store Stats) and charts will show zero.
 - Your website timezone is correctly set in **System -> Global Configuration -> Server** tab -> **Website Time Zone**. All dashboard reporting depends on this setting (see [Timezone and Reporting](#timezone-and-reporting) below).
 
   ![](/img/timezone.webp)
@@ -57,7 +57,7 @@ The dashboard sections appear in this order from top to bottom: Each one will be
 7. **Module tab rows** -- additional module content below the charts
 8. **Plugin quick icons** -- shortcut tiles from app plugins
 9. **Bottom module position** -- full-width area for extra modules
-10. **Store Setup Guide** -- offcanvas panel (only when setup is incomplete)
+10. **Store Setup Wizard** -- offcanvas panel (only when setup is incomplete)
 
 ***
 
@@ -74,7 +74,7 @@ The toolbar at the top of the dashboard contains:
 | **Options**     | Gear          | Super Admins only                 | Opens the J2Commerce component configuration |
 | **Help**        | Question mark | Everyone                          | Links to the J2Commerce documentation site   |
 
-The purple **Setup Guide** button disappears once all setup checks pass or are dismissed.
+The purple **Setup Wizard** button disappears once all setup checks pass or are dismissed.
 
 ***
 
@@ -244,7 +244,9 @@ The chart-area positions (`main-tab` and `side-tab`) always maintain their 2/3 a
 
 ### Assigning a Module to a Dashboard Position
 
-1. In the Joomla administrator, go to **System -> Manage -> Administrator Modules** (or **Content -> Administrator Modules**, depending on your Joomla version).
+1. In the Joomla administrator, go to **System -> Manage -> Administrator Modules**&#x20;
+
+   **Note:** Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
 
    ![](/img/dashboard-setting-admin-modules1.webp)
 2. Click **New** **-> Custom** module type to create a new module, or open an existing module you want to place on the dashboard.
@@ -303,7 +305,7 @@ Each icon can be individually shown or hidden in the module's parameters. To con
 
 1. Go to **System -> Manage -> Administrator Modules**.&#x20;
 
-   **Note:** Another way to get there is in the side bar, go to **Content** **-> Administrator Modules**
+   **Note:** Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
 
    ![](/img/dashboard-setting-admin-modules.webp)
 2. Find and open **J2Commerce Quick Icons**.
@@ -367,7 +369,7 @@ The **J2Commerce Latest Orders** module shows a table of the most recent orders.
 
 To configure this module, go to **System -> Manage -> Administrator Modules,** search for **J2Commerce Latest Orders**, and adjust the parameters.&#x20;
 
-1. **Note:** Another way to get there is in the side bar, go to **Content** **-> Administrator Modules**
+1. **Note:** Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
 
 ![](/img/latest-orders1.webp)
 
