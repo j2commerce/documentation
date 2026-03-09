@@ -422,7 +422,7 @@ The 17 built-in checks are organized into 7 groups:
 | Green checkmark | Passed -- this item is correctly configured          |
 | Red X           | Failed -- action required before your store is ready |
 | Grey line       | Dismissed -- you have chosen to skip this check      |
-| Orange          | Incomplete -- missing information                    |
+| Orange circle   | Incomplete -- missing information                    |
 
 ### Dismissing Checks
 
@@ -452,7 +452,7 @@ The dashboard uses the time zone configured in **System -> Global Configuration 
 
 All order timestamps are stored in UTC in the database. When you select a date range, the dashboard converts your local-time day boundaries to UTC before querying the database.&#x20;
 
-**Note:** UTC is set as the default; however, it is recommended that you change it to your timezone in the dropdown. It is also recommended to set up your time zone here before you start receiving orders so all of your reports are on the same time zone from the beginning.
+**Note:** UTC is set as the default; however, it is recommended that you change it to your timezone in the dropdown. It is also recommended to set up your time zone here before you start receiving orders, so all of your reports are on the same time zone from the beginning.
 
 This means:
 
