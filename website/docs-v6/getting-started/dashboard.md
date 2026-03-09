@@ -301,7 +301,9 @@ The **J2Commerce Quick Icons** module (`mod_j2commerce_quickicons`) provides sho
 
 Each icon can be individually shown or hidden in the module's parameters. To configure which icons will appear:
 
-1. Go to **System -> Manage -> Administrator Modules**.
+1. Go to **System -> Manage -> Administrator Modules**.&#x20;
+
+   **Note:** Another way to get there is in the side bar, go to **Content** **-> Administrator Modules**
 
    ![](/img/dashboard-setting-admin-modules.webp)
 2. Find and open **J2Commerce Quick Icons**.
@@ -363,9 +365,9 @@ The **J2Commerce Latest Orders** module shows a table of the most recent orders.
 | **Limit**            | 5         | Number of recent orders to display (1--50)                                                                  |
 | **Filter by Status** | Confirmed | Show only orders matching selected statuses. Choose "All Statuses" to show every order regardless of state. |
 
-To configure this module, go to **System -> Manage -> Administrator Modules**, search for **J2Commerce Latest Orders**, and adjust the parameters.&#x20;
+To configure this module, go to **System -> Manage -> Administrator Modules,** search for **J2Commerce Latest Orders**, and adjust the parameters.&#x20;
 
-**Note:** Another way to get there is to go to **Content** **-> Administrator Modules**
+1. **Note:** Another way to get there is in the side bar, go to **Content** **-> Administrator Modules**
 
 ![](/img/latest-orders1.webp)
 
