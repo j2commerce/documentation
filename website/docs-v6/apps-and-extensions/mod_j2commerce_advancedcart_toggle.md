@@ -7,14 +7,14 @@ description: "Add a cart icon or image button to any module position that opens 
 
 # Advanced Cart Toggle Module
 
-The Advanced Cart Toggle module places a compact cart button anywhere on your site — a navbar, a header strip, a sidebar — that opens the J2Commerce advanced cart drawer when clicked. A small badge on the button shows the current cart item count in real time, updating automatically whenever the cart changes without a page reload.
+The Advanced Cart Toggle module places a compact cart button anywhere on your site — a navbar, a header strip, a sidebar — that opens the J2Commerce Advanced Cart Drawer when clicked. A small badge on the button shows the current item count in real time, updating automatically whenever the cart changes without a page reload.
 
-This is the recommended way to give shoppers fast access to the advanced cart drawer from any page on your site.
+This is the recommended way to give shoppers fast access to the cart drawer from any page on your site.
 
 ## Prerequisites
 
 - J2Commerce 6 installed and active
-- The J2Commerce Advanced Cart add-on installed and enabled (the drawer functionality comes from that plugin)
+- The J2Commerce Advanced Cart add-on installed and enabled (the drawer comes from that plugin — see [Advanced Cart Drawer](j2commerce_advancedcart.md))
 
 ## Installation
 
@@ -41,34 +41,31 @@ This module is a separate add-on available from the [J2Commerce Extensions Store
 
 The module has one configuration fieldset — **Basic** — plus the standard **Advanced** fieldset.
 
----
-
 ### Basic Settings
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Display Mode** | Choose **Icon** to show a font icon (Font Awesome or any icon library your template loads), or **Image** to show a custom image file. | Icon |
-| **Icon Class** | The CSS class(es) for the icon element. Any class from your icon library works here. Shown only when Display Mode is Icon. | `fa-solid fa-cart-shopping` |
-| **Cart Image** | The image to show as the button. Use Joomla's media picker to choose a file from your media library. Shown only when Display Mode is Image. | *(empty)* |
-| **Count Type** | **Sum Quantities** counts every individual unit in the cart (3 × the same product = 3). **Line Items** counts the number of distinct product rows (3 × the same product = 1). | Sum Quantities |
-| **Hide Badge When Empty** | When enabled, the badge is hidden if the cart is empty so visitors do not see a zero count. When disabled, the badge always shows (displaying 0 when the cart is empty). | No |
-| **Badge Background Color** | The background color of the count badge. Click the color field to open a color picker. | `#dc3545` (red) |
+<!-- SCREENSHOT: Module edit screen showing the Basic tab with Display Mode, Icon Class, Count Type, Hide Badge When Empty, and Badge Background Color fields -->
+
+| Setting | Description | Default | Options |
+|---------|-------------|---------|---------|
+| **Display Mode** | Show a font icon (Font Awesome or any icon library your template loads) or a custom image file. | Icon | Icon / Image |
+| **Icon Class** | The CSS class(es) for the icon element. Any class from your icon library works here. Shown only when **Display Mode** is set to **Icon**. | `fa-solid fa-cart-shopping` | Any valid CSS class string |
+| **Cart Image** | The image to show as the button. Click to open Joomla's media picker and select a file from your media library. Shown only when **Display Mode** is set to **Image**. | *(empty)* | Any image from the media library |
+| **Count Type** | Controls what number appears in the badge. **Sum Quantities** adds up every individual unit in the cart (two products with quantities of 3 and 2 = 5). **Line Items** counts the distinct product rows in the cart (two products regardless of quantity = 2). | Sum Quantities | Sum Quantities / Line Items |
+| **Hide Badge When Empty** | When enabled, the badge is hidden if the cart is empty. When disabled, the badge always shows, displaying 0 on an empty cart. | No | Yes / No |
+| **Badge Background Color** | Background color of the count badge. Click the field to open a color picker. | `#dc3545` (red) | Any hex color |
 
 ### Advanced Settings
 
 | Setting | Description | Default |
 |---------|-------------|---------|
 | **Module Class Suffix** | An optional CSS class appended to the button element. Use this to apply custom styles to a specific module instance. | *(empty)* |
-
----
+| **Caching** | Controls whether module output is cached. Set to **No Caching** by default because the item count must always reflect the live cart. | No Caching |
 
 ## How It Works
 
-When the page loads, the module counts the items currently in the visitor's cart on the server side and renders the badge with that count. After the page loads, the advanced cart plugin takes over: every time the cart changes (add, remove, update), the plugin dispatches a browser event and calls `AdvancedCart.updateBadge()`, which updates all elements with the class `j2commerce-cart-badge` — including the badge rendered by this module — instantly, without a page reload.
+When the page loads, the module queries the current visitor's cart on the server and renders the badge with the live item count. After the page loads, the Advanced Cart plugin takes over: any time the cart changes (add, remove, quantity update), the plugin dispatches a browser event that updates all elements with the class `j2commerce-cart-badge` — including the badge from this module — instantly, with no page reload.
 
-Clicking the button calls `AdvancedCart.open()`, which slides the advanced cart drawer into view.
-
----
+Clicking the button calls `AdvancedCart.open()`, which slides the cart drawer into view.
 
 ## Choosing an Icon
 
@@ -97,15 +94,13 @@ Set **Display Mode** to **Image**, then click the **Cart Image** field to open J
 }
 ```
 
-And set **Module Class Suffix** to `my-cart-toggle`.
-
----
+Set **Module Class Suffix** to `my-cart-toggle` to apply the rule.
 
 ## Styling the Badge
 
-The badge is a `<span>` element with the classes `j2c-cart-toggle-badge` and `j2commerce-cart-badge`. The module outputs inline CSS to position the badge as a small circle in the top-right corner of the button, using the **Badge Background Color** you choose in the settings.
+The badge is a `<span>` element with the classes `j2c-cart-toggle-badge` and `j2commerce-cart-badge`. The module outputs inline CSS to position the badge as a small circle in the top-right corner of the button, using the **Badge Background Color** you set in the module parameters.
 
-To customise the badge further — size, font, border, shadow — add CSS to your template's stylesheet targeting `.j2c-cart-toggle-badge`:
+To customize the badge further — size, font, border, shadow — add rules to your template's stylesheet targeting `.j2c-cart-toggle-badge`:
 
 ```css
 .j2c-cart-toggle-badge {
@@ -117,8 +112,6 @@ To customise the badge further — size, font, border, shadow — add CSS to you
     box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 ```
-
----
 
 ## Placing the Button in a Navbar
 
@@ -132,18 +125,18 @@ If your template does not have a suitable built-in position, you can use a custo
 
 ### Clicking the Button Does Nothing
 
-**Cause:** The advanced cart drawer plugin is not loaded or `AdvancedCart` is not defined in the browser.
+**Cause:** The Advanced Cart Drawer plugin is not loaded, or `AdvancedCart` is not defined in the browser.
 
 **Solution:**
 
 1. Open browser Developer Tools (F12) and check the **Console** tab for a `ReferenceError: AdvancedCart is not defined` error.
-2. Verify the J2Commerce Advanced Cart add-on is installed and enabled: go to **System** -> **Manage** -> **Plugins** and search for "AdvancedCart" or "Advanced Cart".
-3. Check the **Network** tab and confirm the advanced cart plugin's JavaScript file is loading (status 200).
-4. Clear your template and system cache, then reload the page.
+2. Verify the J2Commerce Advanced Cart add-on is installed and enabled: go to **J2Commerce** -> **Apps** and confirm the plugin shows **Enabled**.
+3. Check the **Network** tab and confirm the plugin's JavaScript file is loading (status 200).
+4. Clear your template and system cache via **System** -> **Clear Cache**, then reload the page.
 
 ### Badge Count Does Not Update After Adding to Cart
 
-**Cause:** The advanced cart JavaScript event is not reaching the badge, or the badge class is missing from the rendered HTML.
+**Cause:** The cart JavaScript event is not reaching the badge element, or the badge CSS classes are missing from the rendered HTML.
 
 **Solution:**
 
