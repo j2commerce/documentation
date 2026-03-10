@@ -27,6 +27,12 @@ The Address Autocomplete app adds Google Places-powered address suggestions to y
 [Learn more about Address Autocomplete](./app-addressautocomplete.md)
 
 
+### AtoShip Multi-Carrier Shipping
+
+The AtoShip shipping plugin connects your store to the AtoShip multi-carrier shipping platform for real-time rates from USPS, UPS, FedEx, and DHL. Create and print shipping labels, track packages, and automate order status updates -- all from within J2Commerce.
+
+[Learn more about AtoShip Shipping](./shipping_atoship.md)
+
 ## Installing Apps
 
 Apps are installed like any other Joomla plugin:
