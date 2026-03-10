@@ -22,7 +22,7 @@ description: "Developer reference for the Modal\\ProductMultiselect custom form 
 ```mermaid
 graph TD
     A[ProductMultiSelectField::setup] --> B[Builds URL: products view, layout=modal_multiselect]
-    A --> C[Passes function=jSelectItemMultiCallback_&#123;id&#125;]
+    A --> C[Passes function=jSelectItemMultiCallback_{id}]
     B --> D[Modal opens products list in iframe]
     D --> E[User selects products and clicks Confirm]
     E --> F[JS callback updates hidden inputs + product table]
