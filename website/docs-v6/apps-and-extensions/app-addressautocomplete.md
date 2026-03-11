@@ -48,7 +48,7 @@ For production use, restrict your API key to prevent unauthorized use:
 
 ‌**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Apps > **Address Autocomplete**
 
-**Step 2:** Locate the UPS App > click View Details > Add to cart > Checkout.&#x20;
+**Step 2:** Locate the **Address Autocomplete** App > click View Details > Add to cart > Checkout.&#x20;
 
 **Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download
 

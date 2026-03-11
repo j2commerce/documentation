@@ -16,7 +16,7 @@ The Gift Wrapping app is a premium add-on available from the J2Commerce extensio
 
 ‌**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Apps > Gift Wrapping app
 
-**Step 2:** Locate the UPS App > click View Details > Add to cart > Checkout.&#x20;
+**Step 2:** Locate the Gift Wrapping App > click View Details > Add to cart > Checkout.&#x20;
 
 **Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download&#x20;
 
