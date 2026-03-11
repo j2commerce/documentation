@@ -24,11 +24,9 @@ The Gift Wrapping app is a premium add-on available from the J2Commerce extensio
 
 In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
-![](/img/install.webp)
-
 Upload the ZIP file or use the Install from URL option.
 
-![](/img/install1.webp)
+![](/img/install.webp)
 
 ## Enable
 

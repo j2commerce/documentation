@@ -39,11 +39,11 @@ For production use, restrict your API key to prevent unauthorized use:
 
 ## Install the Plugin
 
-The Address Autocomplete plugin is installed like any other Joomla plugin.
-
 Go to **System** -> **Install** -> **Extensions**.
 
 Upload the plugin ZIP file or use the Install from URL option.
+
+![](/img/address-install.webp)
 
 ## Enable
 
