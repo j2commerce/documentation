@@ -1,21 +1,14 @@
----
-title: "Address Autocomplete"
-sidebar_label: "Address Autocomplete"
-sidebar_position: 10
-description: "Enable Google Places address autocomplete on your checkout forms to speed up customer checkout and reduce typing errors."
----
-
 # Address Autocomplete
 
 The Address Autocomplete app adds Google Places-powered address suggestions to your J2Commerce checkout. As customers type their address, they see matching suggestions from Google's address database. Selecting an address automatically fills in all the address fields, including city, state/province, and postal code.
 
 This improves the checkout experience by reducing typing effort and minimizing address entry errors that can lead to shipping problems.
 
-## Prerequisites
+## Requirements
 
-- J2Commerce 6 installed and enabled
-- A Google Cloud Platform account with the Places API (New) enabled
-- A Google Maps Platform API key with the Places API enabled
+- with PHP 8.3.0 +
+- Joomla! 6.x
+- J2Commerce 6.x
 
 ## Step 1: Get a Google Maps API Key
 
@@ -36,6 +29,7 @@ For production use, restrict your API key to prevent unauthorized use:
 1. In the Credentials page, click the pencil icon next to your API key.
 2. Under **Application restrictions**, select **HTTP referrers**.
 3. Add your domain(s) in the format:
+
    - `https://yoursite.com/*`
    - `https://*.yoursite.com/*`
 4. Under **API restrictions**, select **Restrict key** and choose **Places API (New)**.
@@ -43,15 +37,29 @@ For production use, restrict your API key to prevent unauthorized use:
 
 <!-- SCREENSHOT: Google Cloud Console Credentials page showing API key restrictions configuration -->
 
-## Step 2: Install the Plugin
+## Install the Plugin
 
 The Address Autocomplete plugin is installed like any other Joomla plugin.
 
-1. Go to **System** -> **Install** -> **Extensions**.
-2. Upload the plugin ZIP file or use the Install from URL option.
-3. After installation, go to **System** -> **Manage** -> **Plugins**.
-4. Search for **Address Autocomplete**.
-5. Enable the plugin by clicking the status icon.
+Go to **System** -> **Install** -> **Extensions**.
+
+Upload the plugin ZIP file or use the Install from URL option.
+
+## Enable
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**a:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+
+
+After installation, go to **System** -> **Manage** -> **Plugins**.
+
+Search for **Address Autocomplete**.
+
+Enable the plugin by clicking the status icon.
 
 ## Step 3: Configure the Plugin
 
@@ -59,30 +67,30 @@ The Address Autocomplete plugin is installed like any other Joomla plugin.
 
 <!-- SCREENSHOT: J2Commerce Apps list showing Address Autocomplete plugin -->
 
-2. Click on **Address Autocomplete** to open the configuration.
-3. Enter your Google API key in the **Google API Key** field.
+1. Click on **Address Autocomplete** to open the configuration.
+2. Enter your Google API key in the **Google API Key** field.
 
 ### Basic Settings
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Google API Key** | Your Google Maps Platform API key. This is required for the autocomplete to function. Leave empty to disable the feature. | (empty) |
-| **Enable on Billing Address** | Show autocomplete suggestions on the billing address form during checkout. | Yes |
-| **Enable on Shipping Address** | Show autocomplete suggestions on the shipping address form. | Yes |
-| **Enable on Guest Checkout** | Show autocomplete suggestions for guest checkout customers. | Yes |
+| Setting                        | Description                                                                                                               | Default |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Google API Key**             | Your Google Maps Platform API key. This is required for the autocomplete to function. Leave empty to disable the feature. | (empty) |
+| **Enable on Billing Address**  | Show autocomplete suggestions on the billing address form during checkout.                                                | Yes     |
+| **Enable on Shipping Address** | Show autocomplete suggestions on the shipping address form.                                                               | Yes     |
+| **Enable on Guest Checkout**   | Show autocomplete suggestions for guest checkout customers.                                                               | Yes     |
 
 ### Advanced Settings
 
-| Setting | Description | Default | Options |
-|---------|-------------|---------|---------|
-| **Restrict to Countries** | Limit address suggestions to specific countries. Enter comma-separated ISO 3166-1 alpha-2 country codes (e.g., `US,CA,GB`). Leave empty for all countries. | (empty) | N/A |
-| **Address Types** | Types of addresses to include in suggestions. Select multiple types using Ctrl/Cmd+Click. | `street_address`, `premise` | `street_address`, `premise`, `subpremise`, `route` |
-| **Minimum Characters** | Number of characters the customer must type before suggestions appear. Lower values show more results but may increase API costs. | 3 | 1-10 |
-| **Autocomplete Style** | Visual style for the suggestions dropdown. | Default | Default, Compact, Full Width |
-| **Suppress Browser Autofill** | Attempt to prevent the browser's built-in address autofill from interfering with the Google autocomplete. Recommended: Yes. | Yes | Yes, No |
-| **Debug Mode** | Log debug information to the browser console. Useful for troubleshooting. Disable in production. | No | Yes, No |
+| Setting                       | Description                                                                                                                                                | Default                     | Options                                            |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | -------------------------------------------------- |
+| **Restrict to Countries**     | Limit address suggestions to specific countries. Enter comma-separated ISO 3166-1 alpha-2 country codes (e.g., `US,CA,GB`). Leave empty for all countries. | (empty)                     | N/A                                                |
+| **Address Types**             | Types of addresses to include in suggestions. Select multiple types using Ctrl/Cmd+Click.                                                                  | `street_address`, `premise` | `street_address`, `premise`, `subpremise`, `route` |
+| **Minimum Characters**        | Number of characters the customer must type before suggestions appear. Lower values show more results but may increase API costs.                          | 3                           | 1-10                                               |
+| **Autocomplete Style**        | Visual style for the suggestions dropdown.                                                                                                                 | Default                     | Default, Compact, Full Width                       |
+| **Suppress Browser Autofill** | Attempt to prevent the browser's built-in address autofill from interfering with the Google autocomplete. Recommended: Yes.                                | Yes                         | Yes, No                                            |
+| **Debug Mode**                | Log debug information to the browser console. Useful for troubleshooting. Disable in production.                                                           | No                          | Yes, No                                            |
 
-4. Click **Save** or **Save & Close**.
+1. Click **Save** or **Save & Close**.
 
 <!-- SCREENSHOT: Address Autocomplete plugin configuration screen showing both Basic and Advanced settings tabs -->
 
@@ -94,6 +102,7 @@ When a customer types in the **Address Line 1** field during checkout:
 2. The customer sees a dropdown with address suggestions, each showing the main address text and secondary information (city, region).
 3. The customer can use keyboard navigation (arrow keys + Enter) or mouse to select an address.
 4. Upon selection, the plugin:
+
    - Populates **Address Line 1** with the street number and route.
    - Populates **Address Line 2** with premise or subpremise information (apartment, unit, etc.).
    - Fills in **City**, **Postal Code**.
@@ -118,12 +127,12 @@ Use ISO 3166-1 alpha-2 country codes (two-letter codes).
 
 The Address Types setting controls what kinds of places appear in suggestions:
 
-| Type | Description |
-|------|-------------|
-| **street_address** | Street addresses (e.g., "123 Main Street") |
-| **premise** | Named locations, buildings (e.g., "Empire State Building") |
-| **subpremise** | Sub-units within a building (e.g., "Apt 4B", "Suite 100") |
-| **route** | Street names without numbers (e.g., "Main Street") |
+| Type                | Description                                                |
+| ------------------- | ---------------------------------------------------------- |
+| **street\_address** | Street addresses (e.g., "123 Main Street")                 |
+| **premise**         | Named locations, buildings (e.g., "Empire State Building") |
+| **subpremise**      | Sub-units within a building (e.g., "Apt 4B", "Suite 100")  |
+| **route**           | Street names without numbers (e.g., "Main Street")         |
 
 For most stores, the default (`street_address` and `premise`) provides the best results.
 
@@ -164,6 +173,7 @@ When troubleshooting, enable **Debug Mode** to see detailed logging in the brows
 4. Look for messages starting with `[AddressAutocomplete]`.
 
 Debug mode shows:
+
 - API requests and responses
 - Place details returned by Google
 - Field population events
@@ -246,12 +256,12 @@ If all three fail, the country is set but the state field remains empty. Ensure 
 
 Common API error messages and their meanings:
 
-| Error | Cause | Solution |
-|-------|-------|----------|
-| `REQUEST_DENIED` | API key invalid or missing permissions | Verify API key and Places API (New) is enabled |
-| `OVER_QUERY_LIMIT` | Quota exceeded | Check Google Cloud billing and quotas |
-| `INVALID_REQUEST` | Malformed request | Check country codes format (should be two letters) |
-| `ZERO_RESULTS` | No matches found | Normal; no action needed |
+| Error              | Cause                                  | Solution                                           |
+| ------------------ | -------------------------------------- | -------------------------------------------------- |
+| `REQUEST_DENIED`   | API key invalid or missing permissions | Verify API key and Places API (New) is enabled     |
+| `OVER_QUERY_LIMIT` | Quota exceeded                         | Check Google Cloud billing and quotas              |
+| `INVALID_REQUEST`  | Malformed request                      | Check country codes format (should be two letters) |
+| `ZERO_RESULTS`     | No matches found                       | Normal; no action needed                           |
 
 ## Related Topics
 
