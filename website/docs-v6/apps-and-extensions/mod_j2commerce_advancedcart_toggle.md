@@ -30,7 +30,7 @@ This module is a separate add-on available from the [J2Commerce Extensions Store
 1. Go to **Content** -> **Site Modules**.
 2. Click **New** in the toolbar.
 3. Select **Advanced Cart Toggle** from the module type list.
-4. Give the module a **Title** (you will usually want to hide the title — set **Show Title** to **Hide**).
+4. Give the module a **Title**. In most cases you will want to hide the title — set **Show Title** to **Hide**.
 5. Set the **Position** to wherever you want the button to appear, such as your template's navbar or header position.
 6. Configure the settings described below.
 7. Click **Save & Close**.
@@ -77,15 +77,12 @@ The **Icon Class** field accepts any CSS class string your site's template alrea
 | Font Awesome 6 Free | `fa-solid fa-bag-shopping` |
 | Font Awesome 6 Free | `fa-solid fa-basket-shopping` |
 | Bootstrap Icons | `bi bi-cart3` |
-| UIkit Icons | `uk-icon-cart` (used via UIkit data attributes instead) |
 
 If your template does not load an icon library automatically, you may need to add one or use **Image** mode instead.
 
----
-
 ## Using an Image Instead of an Icon
 
-Set **Display Mode** to **Image**, then click the **Cart Image** field to open Joomla's media picker and select your image. The module renders it at 24 × 24 pixels by default. To display it at a different size, use the **Module Class Suffix** field to attach a CSS class, then add a rule to your template's custom CSS:
+Set **Display Mode** to **Image**, then click the **Cart Image** field to open Joomla's media picker and choose your file. The module renders the image at 24 × 24 pixels by default. To display it at a different size, add a CSS class using the **Module Class Suffix** field and target it in your template's custom stylesheet:
 
 ```css
 .my-cart-toggle img {
@@ -117,9 +114,7 @@ To customize the badge further — size, font, border, shadow — add rules to y
 
 Most templates expose a module position inside the navbar — commonly named `nav-right`, `header-right`, `navbar-search`, or similar. Assign the module to that position with **Show Title** set to **Hide** for a clean icon-only button.
 
-If your template does not have a suitable built-in position, you can use a custom HTML module to load the Advanced Cart Toggle module inside it using Joomla's `{loadmodule}` content plugin syntax, or ask your template developer to expose an appropriate position.
-
----
+If your template does not have a suitable built-in position, you can load the module inline using the `{loadmodule}` content plugin syntax in a Custom HTML module, or ask your template developer to expose an appropriate position.
 
 ## Troubleshooting
 
@@ -141,33 +136,31 @@ If your template does not have a suitable built-in position, you can use a custo
 **Solution:**
 
 1. Open browser Developer Tools and confirm the badge element has both `j2c-cart-toggle-badge` and `j2commerce-cart-badge` in its class list.
-2. Ensure no template override has removed or renamed the badge classes from the module's `tmpl/default.php`.
-3. If you created a Joomla template override for this module, restore the original class names on the badge `<span>`.
+2. If you created a Joomla template override for this module, check that your override preserves both class names on the badge `<span>`.
+3. Ensure no other extension is intercepting the `j2commerce:cart:updated` event before it reaches the badge handler.
 
 ### Badge Always Shows 0 Even When Cart Has Items
 
-**Cause:** The server-side cart lookup could not retrieve the cart, or the cart session is not active.
+**Cause:** The server-side cart lookup could not retrieve the session cart.
 
 **Solution:**
 
-1. Add a product to your cart and reload the page. If the count still shows 0, the issue is with the session or cart model.
-2. Enable Joomla debug mode (**System** -> **Global Configuration** -> **Debug System**) and check for log entries from `mod_j2commerce_advancedcart_toggle`.
-3. Verify J2Commerce is installed and the `com_j2commerce` component is enabled.
+1. Add a product to your cart and reload the page. If the count still shows 0, the session or cart model is not working correctly.
+2. Enable Joomla debug mode under **System** -> **Global Configuration** -> **Debug System** and look for log entries from `mod_j2commerce_advancedcart_toggle`.
+3. Verify J2Commerce is installed and the `com_j2commerce` component is enabled under **System** -> **Manage** -> **Extensions**.
 
 ### Icon Is Not Displaying
 
-**Cause:** The icon library is not loaded on the page, or the icon class is incorrect.
+**Cause:** The icon library is not loaded on the page, or the icon class string is incorrect.
 
 **Solution:**
 
 1. Check the **Icon Class** field in module settings and confirm the class matches a valid icon in your icon library.
-2. Inspect the rendered `<i>` element in browser Developer Tools to see if the icon class is applied. If the element is there but the icon is invisible, your template is not loading the icon library.
-3. Switch **Display Mode** to **Image** and use a custom SVG or PNG instead of a font icon.
-
----
+2. Inspect the rendered element in browser Developer Tools. If the element is present but the icon is invisible, your template is not loading the icon library.
+3. Switch **Display Mode** to **Image** and use a custom SVG or PNG file instead of a font icon.
 
 ## Related Topics
 
-- [Cart Module](./index.md) — The core J2Commerce cart module for displaying a mini cart
-- [Apps and Extensions](./index.md) — Overview of J2Commerce add-on extensions
-- [Design](../design/index.md) — Template overrides and layout customisation
+- [Advanced Cart Drawer](j2commerce_advancedcart.md) — The slide-out cart drawer that this module opens
+- [Apps and Extensions](index.md) — Overview of J2Commerce add-on extensions
+- [Design](../design/index.md) — Template overrides and layout customization
