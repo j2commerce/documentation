@@ -44,7 +44,7 @@ After your account is active:
 6. Click **Create App** to confirm.
 7. On the next page you will see your **Client ID** and **Client Secret**. Copy both and keep them somewhere safe.
 
-<!-- SCREENSHOT: PayPal Developer Dashboard — Apps and Credentials page -->
+<!-- SCREENSHOT: PayPal Developer Dashboard — Apps and Credentials page showing Client ID and Secret -->
 
 **Sandbox credentials** (for testing): Click the **Sandbox** tab on the same Apps & Credentials page. Create a separate sandbox app or use the default one. Copy the Sandbox Client ID and Sandbox Client Secret separately.
 
