@@ -10,32 +10,47 @@ This improves the checkout experience by reducing typing effort and minimizing a
 - Joomla! 6.x
 - J2Commerce 6.x
 
-## Step 1: Get a Google Maps API Key
+## Get a Google Maps API Key
 
 Before configuring the plugin, you need a Google Maps Platform API key with access to the Places API (New).
 
 1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
 2. Create a new project or select an existing one.
-3. Navigate to **APIs & Services** -> **Library**.
-4. Search for **Places API (New)** and enable it.
-5. Go to **APIs & Services** -> **Credentials**.
-6. Click **Create Credentials** -> **API Key**.
-7. Copy the generated API key.
+3. Navigate to **APIs & Services** -> **Library** in the left sidebar menu.
+4. Search for **Places API** and enable it.
+5. Follow the sign-up steps&#x20;
+6. Go to **APIs & Services** -> **Credentials** in the left sidebar menu
+7. Click **Create Credentials** at the top -> **API Key**.
+8. Copy the generated API key.
 
 ### Secure Your API Key
 
 For production use, restrict your API key to prevent unauthorized use:
 
 1. In the Credentials page, click the pencil icon next to your API key.
-2. Under **Application restrictions**, select **HTTP referrers**.
-3. Add your domain(s) in the format:
+2. Under **Application restrictions**, select **Website**.
+3. **Add** your domain(s) in the format:
 
    - `https://yoursite.com/*`
    - `https://*.yoursite.com/*`
-4. Under **API restrictions**, select **Restrict key** and choose **Places API (New)**.
+4. Under **API restrictions**, select **Restrict key** and choose **Places API**.
 5. Click **Save**.
 
-<!-- SCREENSHOT: Google Cloud Console Credentials page showing API key restrictions configuration -->
+   ![](/img/api.webp)
+
+### How to find your API Key again
+
+**Tip:** if you need to find your API Key in the future, go back to this same page and click **Show Key** in the **Additional Information** section
+
+![](/img/api1.webp)
+
+## Purchase and Download
+
+‌**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Apps > **Address Autocomplete**
+
+**Step 2:** Locate the UPS App > click View Details > Add to cart > Checkout.&#x20;
+
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download
 
 ## Install the Plugin
 
@@ -53,22 +68,17 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 **b:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
+![](/img/address-apps.webp)
 
+To help you narrow down the list, you can do a search for the **Address Autocomplete** app, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-After installation, go to **System** -> **Manage** -> **Plugins**.
+![](/img/address-enable.webp)
 
-Search for **Address Autocomplete**.
+## Configure the Plugin
 
-Enable the plugin by clicking the status icon.
+Click on the **Address Autocomplete** title to open the configuration.
 
-## Step 3: Configure the Plugin
-
-1. In the Joomla Administrator, go to **J2Commerce** -> **Apps**.
-
-<!-- SCREENSHOT: J2Commerce Apps list showing Address Autocomplete plugin -->
-
-1. Click on **Address Autocomplete** to open the configuration.
-2. Enter your Google API key in the **Google API Key** field.
+Enter your Google API key in the **Google API Key** field.
 
 ### Basic Settings
 
