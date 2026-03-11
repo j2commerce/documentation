@@ -144,7 +144,7 @@ https://yoursite.com/api/index.php/v1/j2commerce/
 
 ### Standard Endpoints
 
-These endpoints support the full set of CRUD operations: **GET** (list all), **GET/id** (single record), **POST** (create), **PATCH/id** (update), and **DELETE/id** (delete).
+These endpoints support the full set of CRUD operations: **GET** (list all), **GET/[id]** (single record), **POST** (create), **PATCH/[id]** (update), and **DELETE/[id]** (delete).
 
 | Endpoint | Description |
 |---|---|

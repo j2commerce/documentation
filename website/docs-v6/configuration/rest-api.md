@@ -144,7 +144,7 @@ https://yoursite.com/api/index.php/v1/j2commerce/
 
 ### Standard Endpoints
 
-These endpoints support the full set of CRUD operations: **GET** (list all), **GET/{id}** (single record), **POST** (create), **PATCH/{id}** (update), and **DELETE/{id}** (delete).
+These endpoints support the full set of CRUD operations: **GET** (list all), **GET/[id]** (single record), **POST** (create), **PATCH/[id]** (update), and **DELETE/[id]** (delete).
 
 | Endpoint | Description |
 |---|---|
@@ -166,16 +166,16 @@ These endpoints support the full set of CRUD operations: **GET** (list all), **G
 
 ### Nested Endpoints
 
-These endpoints return data related to a specific parent record. Replace `{id}` with the parent record's numeric ID.
+These endpoints return data related to a specific parent record. Replace `[id]` with the parent record's numeric ID.
 
 | Endpoint | Method | Description |
 |---|---|---|
-| `/v1/j2commerce/orders/{id}/items` | GET | Line items (products) within a specific order. |
-| `/v1/j2commerce/orders/{id}/history` | GET, POST | Status change history for an order. POST adds a new history entry. |
-| `/v1/j2commerce/products/{id}/variants` | GET | Product variants (sizes, colors, etc.) for a specific product. |
-| `/v1/j2commerce/customers/{id}/addresses` | GET | Saved addresses for a specific customer. |
-| `/v1/j2commerce/customers/{id}/orders` | GET | All orders placed by a specific customer. |
-| `/v1/j2commerce/countries/{id}/zones` | GET | Zones (states/provinces) within a specific country. |
+| `/v1/j2commerce/orders/[id]/items` | GET | Line items (products) within a specific order. |
+| `/v1/j2commerce/orders/[id]/history` | GET, POST | Status change history for an order. POST adds a new history entry. |
+| `/v1/j2commerce/products/[id]/variants` | GET | Product variants (sizes, colors, etc.) for a specific product. |
+| `/v1/j2commerce/customers/[id]/addresses` | GET | Saved addresses for a specific customer. |
+| `/v1/j2commerce/customers/[id]/orders` | GET | All orders placed by a specific customer. |
+| `/v1/j2commerce/countries/[id]/zones` | GET | Zones (states/provinces) within a specific country. |
 
 ### Report Endpoints
 
