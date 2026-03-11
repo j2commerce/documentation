@@ -78,9 +78,17 @@ To help you narrow down the list, you can do a search for the **Address Autocomp
 
 Click on the **Address Autocomplete** title to open the configuration.
 
-Enter your Google API key in the **Google API Key** field.
+Helpful Hint: If you click on the Toggle Inline Help button, it will explain each section.
 
-### Basic Settings
+![](/img/address-toggle.webp)
+
+### Plugin Tab
+
+![](/img/address-api.webp)
+
+**Google API Key**: Enter your Google API key in the field.
+
+###
 
 | Setting                        | Description                                                                                                               | Default |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------- | ------- |
