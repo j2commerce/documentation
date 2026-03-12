@@ -54,7 +54,7 @@ For production use, restrict your API key to prevent unauthorized use:
 
 ## Install the Plugin
 
-Go to **System** **->** **Install** **->** **Extensions**.
+Go to **System** **->** **Install** **->** **Extensions**
 
 Upload the plugin ZIP file or use the Install from URL option.
 
