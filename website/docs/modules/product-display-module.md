@@ -10,35 +10,31 @@ The module that helps you to display the products wherever you want on your site
 
 **Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extensions > Modules
 
-![](/img/product-display-purchase.webp)
-
 **Step 2:** Locate the Product Display module > click View Details > Add to cart > Checkout.
 
 **Step 3:** Go to your My Downloads or My Account under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
 
-![](/img/product-display-download.webp)
-
 **Installation:** You can install this Product Display module using the Joomla installer. The following steps help you with a successful installation.
 
-**Step 1:** In the Joomla admin, go to System > Install > Extensions
+## Install the Module
+
+In the Joomla admin, go to System > Install > Extensions
+
+Click on the Browse button and select the Product Display zip file you saved during the download process. You will receive a message of success once installed.
 
 ![](/img/product-category-installer-1.webp)
 
-**Step 2**: Click on the Browse button and select the Product Display zip file you saved during the download process. You will receive a message of success once installed.
+## Enable the Module
 
-![](/img/product-category-download1.webp)
+In the Joomla Installer on the left sidebar, select Content > Site Modules > Products Display module
 
-**Step 3:** Select Content > Site Modules > Products Display module
-
-**Step 4:** Enable the plugin by clicking on the 'X'. It will turn into a checkmark.&#x20;
+Enable the plugin by clicking on the 'X'. It will turn into a checkmark. Once it's enabled, click on the module title to open it
 
 ![](/img/product-display-enable.webp)
 
-**Step 5:** Once it's enabled, click on the module to open it
+## Setting Up The Module Parameter&#x20;
 
-## **Setting Up The Module Parameter**&#x20;
-
-### **Module Tab**
+### Module Tab
 
 ![](/img/product-display-module-tab1.webp)
 
@@ -66,7 +62,7 @@ The module that helps you to display the products wherever you want on your site
 
 - **None:** If you choose None, then you can select only the pages you want
 
-### **Selection Options Tab:**
+### Selection Options Tab
 
 ![](/img/selection-options-tab1.webp)
 
@@ -117,7 +113,7 @@ You will now see the products you chose listed here.
 
 ![](/img/selection-options-products2.webp)
 
-### **Layout Options Tab**
+### Layout Options Tab
 
 **Layout Options:**
 
