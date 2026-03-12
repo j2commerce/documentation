@@ -14,15 +14,15 @@ This feature is perfect for stores selling gifts, seasonal merchandise, or any p
 
 The Gift Wrapping app is a premium add-on available from the J2Commerce extension directory.
 
-‌**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Apps
+‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) > Apps
 
-**Step 2:** Locate the Gift Wrapping App > click View Details > Add to cart > Checkout.&#x20;
+**Step 2:** Locate the **Gift Wrapping** App **->** click **View Details -> Add to cart -> Checkout**.&#x20;
 
-**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download&#x20;
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**&#x20;
 
 ## Install the Plugin
 
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
 Upload the ZIP file or use the Install from URL option.
 
