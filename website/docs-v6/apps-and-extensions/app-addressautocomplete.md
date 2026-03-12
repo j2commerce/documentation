@@ -52,7 +52,7 @@ For production use, restrict your API key to prevent unauthorized use:
 
 **Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**
 
-## Install the Plugin
+## Install the App
 
 Go to **System** **->** **Install** **->** **Extensions**
 
@@ -60,7 +60,7 @@ Upload the plugin ZIP file or use the Install from URL option.
 
 ![](/img/address-install.webp)
 
-## Enable
+## Enable the App
 
 Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
@@ -74,7 +74,7 @@ To help you narrow down the list, you can do a search for the **Address Autocomp
 
 ![](/img/address-enable.webp)
 
-## Configure the Plugin
+## Configure the App
 
 Click on the **Address Autocomplete** title to open the configuration.
 
