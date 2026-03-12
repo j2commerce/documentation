@@ -5,6 +5,7 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import * as path from "node:path";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -23,6 +24,9 @@ const config = {
     mermaid: true,
   },
   themes: ['@docusaurus/theme-mermaid'],
+  clientModules: [
+    path.resolve(__dirname, './src/theme/ZoomMermaid.js'),
+  ],
 
   // Set the production url of your site here
   url: 'https://docs.j2commerce.com',
@@ -46,10 +50,6 @@ const config = {
     locales: ['en'],
   },
 
-  markdown: {
-    mermaid: true,
-  },
-
   presets: [
     [
       'classic',
@@ -71,8 +71,6 @@ const config = {
       }),
     ],
   ],
-
-  themes: ['@docusaurus/theme-mermaid'],
 
   plugins: [
     [
@@ -130,20 +128,21 @@ const config = {
             position: 'left',
             label: 'Documentation v4',
           },
-          {
-            type: 'docSidebar',
-            docsPluginId: 'v6',
-            sidebarId: 'docSidebarV6',
-            position: 'left',
-            label: 'Documentation v6',
-          },
-          {
-            type: 'docSidebar',
-            docsPluginId: 'developer-v6',
-            sidebarId: 'developerSidebarV6',
-            position: 'left',
-            label: 'Developer v6',
-          },
+          // v6 documentation is hidden from navbar but still accessible via /v6/ URL
+          // {
+          //   type: 'docSidebar',
+          //   docsPluginId: 'v6',
+          //   sidebarId: 'docSidebarV6',
+          //   position: 'left',
+          //   label: 'Documentation v6',
+          // },
+          // {
+          //   type: 'docSidebar',
+          //   docsPluginId: 'developer-v6',
+          //   sidebarId: 'developerSidebarV6',
+          //   position: 'left',
+          //   label: 'Developer v6',
+          // },
         ],
       },
       algolia: {
