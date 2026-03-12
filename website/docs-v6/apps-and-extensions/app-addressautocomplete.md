@@ -46,7 +46,7 @@ For production use, restrict your API key to prevent unauthorized use:
 
 ## Purchase and Download
 
-‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) > Apps
+‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
 **Step 2:** Locate the **Address Autocomplete** App **->** click **View Details** **->** **Add to cart** **->** **Checkout**.&#x20;
 
