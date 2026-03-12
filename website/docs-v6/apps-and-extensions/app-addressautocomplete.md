@@ -88,29 +88,27 @@ Helpful Hint: If you click on the Toggle Inline Help button, it will explain eac
 
 **Google API Key**: Enter your Google API key in the field.
 
-###
+**Enable on Billing Address:** Show address autocomplete on the billing address form.
 
-| Setting                        | Description                                                                                                               | Default |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Google API Key**             | Your Google Maps Platform API key. This is required for the autocomplete to function. Leave empty to disable the feature. | (empty) |
-| **Enable on Billing Address**  | Show autocomplete suggestions on the billing address form during checkout.                                                | Yes     |
-| **Enable on Shipping Address** | Show autocomplete suggestions on the shipping address form.                                                               | Yes     |
-| **Enable on Guest Checkout**   | Show autocomplete suggestions for guest checkout customers.                                                               | Yes     |
+**Enable on Shipping Address:** Show address autocomplete on the shipping address form.
 
-### Advanced Settings
+**Enable on Guest Checkout:** Show address autocomplete on guest billing and guest shipping forms.
 
-| Setting                       | Description                                                                                                                                                | Default                     | Options                                            |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | -------------------------------------------------- |
-| **Restrict to Countries**     | Limit address suggestions to specific countries. Enter comma-separated ISO 3166-1 alpha-2 country codes (e.g., `US,CA,GB`). Leave empty for all countries. | (empty)                     | N/A                                                |
-| **Address Types**             | Types of addresses to include in suggestions. Select multiple types using Ctrl/Cmd+Click.                                                                  | `street_address`, `premise` | `street_address`, `premise`, `subpremise`, `route` |
-| **Minimum Characters**        | Number of characters the customer must type before suggestions appear. Lower values show more results but may increase API costs.                          | 3                           | 1-10                                               |
-| **Autocomplete Style**        | Visual style for the suggestions dropdown.                                                                                                                 | Default                     | Default, Compact, Full Width                       |
-| **Suppress Browser Autofill** | Attempt to prevent the browser's built-in address autofill from interfering with the Google autocomplete. Recommended: Yes.                                | Yes                         | Yes, No                                            |
-| **Debug Mode**                | Log debug information to the browser console. Useful for troubleshooting. Disable in production.                                                           | No                          | Yes, No                                            |
+### Advanced Settings Tab
 
-1. Click **Save** or **Save & Close**.
+![](/img/address-advanced.webp)
 
-<!-- SCREENSHOT: Address Autocomplete plugin configuration screen showing both Basic and Advanced settings tabs -->
+**Restrict to Countries:** Comma-separated ISO 3166-1 alpha-2 country codes (e.g., US,CA,GB). Leave empty for all countries.
+
+**Address Types:** Select which address types to include in autocomplete suggestions.
+
+**Minimum Characters:** Minimum number of characters the user must type before autocomplete activates (1-10).
+
+**Autocomplete Style:** Visual style for the autocomplete dropdown.
+
+**Suppress Browser Autofill:** Attempt to suppress the browser's built-in address autofill to prevent conflicts with Google autocomplete.
+
+**Debug Mode:** Enable debug logging to the browser console. Disable in production.
 
 ## How It Works
 
@@ -126,6 +124,8 @@ When a customer types in the **Address Line 1** field during checkout:
    - Fills in **City**, **Postal Code**.
    - Sets the **Country** dropdown and triggers the zone/state dropdown to load.
    - Automatically selects the correct **State/Province/Region** from the dropdown.
+
+### Frontend Checkout View
 
 <!-- SCREENSHOT: Checkout page showing address autocomplete dropdown with suggestions -->
 
@@ -170,7 +170,7 @@ If you experience conflicts, try different combinations:
 
 ## API Costs and Billing
 
-Google Places API (New) uses a pay-per-request model. Each keystroke that triggers a suggestion request counts as an autocomplete request. Each address selection that fetches full details counts as a Place Details request.
+Google Places API (New Option) uses a pay-per-request model. Each keystroke that triggers a suggestion request counts as an autocomplete request. Each address selection that fetches full details counts as a Place Details request.
 
 ### Cost Management Tips
 
@@ -190,7 +190,7 @@ When troubleshooting, enable **Debug Mode** to see detailed logging in the brows
 3. Type in an address field during checkout.
 4. Look for messages starting with `[AddressAutocomplete]`.
 
-Debug mode shows:
+**Debug mode shows:**
 
 - API requests and responses
 - Place details returned by Google
@@ -219,7 +219,7 @@ Disable Debug Mode in production to avoid exposing API details to customers.
 4. Enable Debug Mode and check the browser console for error messages.
 5. Confirm you have not exceeded your Google Cloud API quota.
 
-### Suggestions Appear But Do Not Fill the Form
+### Suggestions appear, but do not fill the form.
 
 **Cause:** JavaScript error or DOM structure mismatch.
 
@@ -243,8 +243,10 @@ The plugin uses a three-tier matching system:
 
 If all three fail, the country is set but the state field remains empty. Ensure your J2Commerce zones are properly configured:
 
-1. Go to **J2Commerce** -> **Configuration** -> **Zones**.
+1. Go to **J2Commerce** -> **Dashboard** -> **Localization** -> **Zones**.
 2. Verify zone names and codes match the expected values for your shipping countries.
+
+   ![](/img/address-zones.webp)
 
 ### Browser Autofill Covers the Suggestions
 
@@ -280,9 +282,3 @@ Common API error messages and their meanings:
 | `OVER_QUERY_LIMIT` | Quota exceeded                         | Check Google Cloud billing and quotas              |
 | `INVALID_REQUEST`  | Malformed request                      | Check country codes format (should be two letters) |
 | `ZERO_RESULTS`     | No matches found                       | Normal; no action needed                           |
-
-## Related Topics
-
-- [Checkout Configuration](../checkout/index.md) - Configure checkout flow and address fields
-- [Countries and Zones](../configuration/countries-zones.md) - Manage country and state/province data
-- [REST API](./rest-api.md) - API access for external integrations
