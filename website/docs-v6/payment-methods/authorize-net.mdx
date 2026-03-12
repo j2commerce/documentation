@@ -2,7 +2,7 @@
 
 `description: J2Commerce (formerly known as J2Store)`
 
-This Plugin enables you to receive payments via Authorize.Net Payment Gateway. Visit [click here](http://authorize.net/) to know more about the payment gateway.
+This Plugin enables you to receive payments via Authorize.Net Payment Gateway. Visit [click here](http://authorize.net/) to know more about the payment gateway. With this plugin, you can now cancel or refund a transaction charge directly from the customer order on the backend instead of having to log into [Authorize.net](http://Authorize.net) each time.&#x20;
 
 ## Requirements
 
@@ -14,135 +14,101 @@ This Plugin enables you to receive payments via Authorize.Net Payment Gateway. V
 
 You can install this USP shipping plugin using Joomla installer. The following steps help you with a successful installation.
 
-‌**Step 1:** Go to our [**J2Commerce website**](https://www.j2commerce.com/) > **Plugin**
+‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Payment Plugin**
 
-**Step 2:** Locate the **Authorize.Net** Plugin > click **View Details** > **Add to cart** > **Checkout**.&#x20;
+**Step 2:** Locate the **Authorize.Net** Plugin **->** click **View Details** **->** **Add to cart** **->** **Checkout**.&#x20;
 
-**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download Now
+**Step 3:** Go to your **My Download**s under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
 
-## Installation
+## Installing the Plugin
 
-You can install this UPS shipping plugin using the Joomla installer. The following steps help you with a successful installation.
+You can install this **Authorize.net** shipping plugin using the Joomla installer. The following steps help you with a successful installation.
 
-**Step 1:** In the Joomla admin, go to System > Install > Extensions
+In the Joomla admin, go to **System -> Install -> Extensions**
 
 ![](/img/autho-install5.webp)
 
-![](../../assets/authorize.net-installation2.png)
+## Enable the Plugin&#x20;
 
-2\. In the backend, go to J2Store->Setup-.Payment Methods->Authorize.net payment
+Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
 
-![](../../assets/authorize.net-installation3.png)
+**a:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-3\. Enable the plugin.
+**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
 
-![](<../../assets/Screenshot from 2023-09-07 16-49-37.png>)
+![](/img/autho-methods.webp)
 
-4\. Enter the parameters (read the explanation about each parameter given below).
+Look for **Authorize.net**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-5\. Save and close it.
+![](/img/autho-enable.webp)
 
-Now you can see the Authorize.net Payments as an option during the Checkout process.
+## Configure the Plugin
 
-## Parameters `<a href="#parameters" id="parameters" />`
+Once you click on the **UPS Shipping** Title next to the green checkmark, you are ready to start setting up the UPS parameters.
 
-**License Key**\
+**Helpful Tip:** Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+
+![](/img/autho-toggle.webp)
+
+### Plugin Tab
+
+**Display Name:** Name to display to customers during checkout
+
+**Display Image:** Image to display alongside the payment method (png format is recommended)
+
+**Transaction Type:** AUTH\_CAPTURE charges immediately. AUTH\_ONLY authorizes only (must capture later)
+
+**Use Sandbox:** Enable sandbox/test mode. Authorize.net offers a testing suite called Sandbox. Before going live, it is advised to test your store using the sandbox feature. Read more about Sandbox at Authorize.net.  **\*\*IN LIVE SITE, THIS SHOULD BE SET TO NO. \*\***
+
+**API Login ID:** This is your Merchant Login ID given by the [**Authorize.net**](http://Authorize.net)&#x20;
+
+**Transaction Key:** Your [**Authorize.Net**](http://Authorize.Net) Transaction Key
+
+**Public Client Key:** Required for Accept.js. Found on **Authorize.net** in **Account ->** **Settings ->** **Security Settings** **->** **General Security Settings** **->** **Manage Public Client Key**
+
+**Signature Key:** Required for webhook verification. Found on **[Authorize.net](http://Authorize.net) in Account ->** **Settings ->** **Security Settings** **->** **General Security Settings** **->** API Credentials & Keys
+
+**Accepted Card Types:** Select which card types to accept
+
+**Allow Saved Cards:** Select '**Yes**' to allow customers to save cards for future purchases using [**Authorize.Net**](http://Authorize.Net) CIM
+
+**Template Style:** Select the CSS framework for this plugin's customer-facing templates
+
+**Order Status:** Set the order status after payment
+
+**Order Status on Void:** Automatically change order status when a transaction is voided
+
+**Order Status on Refund:** Automatically change order status when a refund is processed
+
+**Surcharge Name:** Name of the surcharge to display on the order
+
+**Surcharge Percent:** Percentage surcharge to add to the order total
+
+**Surcharge Fixed:** Fixed surcharge amount to add to the order total
+
+**Surcharge Tax Class:** Tax class to apply to the surcharge
+
+**Geozone Restriction:** Only show this payment method for customers in the selected geozone
+
+**Minimum Subtotal:** Leave empty or set to 0 to allow all order amounts. Set a minimum subtotal required for this payment method to be available
+
+**Maximum Subtotal:** Leave empty or set to -1 to allow all order amounts. Set a maximum subtotal limit for this payment method to be available
+
+**Thank You Article:** Select an article to display after successful payment
+
+**On Selection Text:** Text shown when this payment method is selected
+
+**Before Payment Text:** Text shown before the payment form
+
+**After Payment Text:** Text shown after successful payment
+
+**On Error Text:** Text shown when payment fails
+
+**Order Cancelled Message:** Text shown when the customer cancels the payment
+
+**Show Dashboard Icon:** When enabled, this plugin adds an icon tile to the J2Commerce dashboard and the J2Commerce quick icons module
+
+**Debug Mode:** Enable detailed logging to administrator/logs/payment\_authorizenet.php\
+
+
 \
-Enter your license key here to receive upcoming updates for the plugin.
-
-\
-**Payment option Title:**
-
-Enter the payment title that you wish to display at the Frontend of your site.
-
-**Image or Logo**
-
-You can insert the image or the Logo that you wish to display at the Frontend of your site.
-
-**Transaction Type**
-
-You can find two types of transaction type in Authorize.net payment.
-
-**Authorize Payment:**
-
-The Authorize payment as the transaction type, would let you to approve the purchase manually and then process the payment.
-
-**Capture Payment:**
-
-You can capture the payment directly once the order is placed using the Capture payment in transaction method.
-
-**API Login ID**
-
-This is your Merchant Login Id given by the Authorize.net
-
-**Authorize.net Transaction Key**
-
-Transaction key provided by the authorize.net
-
-**Use Authorize.net Sandbox**
-
-Authorize.net offers a testing suite called Sandbox. Before going live, it is advised to test your store using the sandbox feature. Read more about Sandbox at Authorize.net.
-
-NOTE: To receive payments (except during testing), you DONOT have to enable this.
-
-\*\*IN LIVE SITE, THIS SHOULD BE SET TO NO. \*\*
-
-Choose Accepted Credit Card Types:
-
-You can select the desired credit card type that you wish to display at the Frontend of the site.
-
-**Thanks Msg Joomla Article ID**
-
-You can create a Joomla Article to say thanks to the users, who purchased in your online store. Enter the article ID here.
-
-![](../../assets/Authorize1.png)
-
-**Display text on selection**
-
-The text entered here will be displayed to the customer at the order summary screen once he selects the payment. You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override.
-
-**Display text before payment**
-
-The text entered here will be displayed to the customer at the order summary screen before he makes the payment. You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override.
-
-**Display text on after payment**
-
-The text entered here will be displayed to the customer after he makes the payment. You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the Display text on selection parameter.
-
-**Display text on error in payment**
-
-The text entered here will be displayed to the customer when there is an error in the payment process.
-
-You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the Display text on selection parameter.
-
-**Display text on cancel payment**
-
-The text entered here will be displayed to the customer when he cancels the payment at the gateway (NOT in your site).
-
-You can enter a language constant as a value here if you are using a multi-lingual site and then write a language override. Refer the Display text on selection parameter.
-
-**Payment Button Text**
-
-The text of the payment button. The button will be displayed at the final checkout step.
-
-**Debug:**
-
-Enable this to log the responses and request of the payment plugin. Do not set this in live site.
-
-![](../../assets/an1.png)
-
-Still have questions? You can contact support: [Click here](https://www.j2commerce.com/support)
-
-Thank you for using our extension.
-
-\[HOW TO]Solve “Error processing payment Invalid Order This transaction cannot be accepted.” It seems to be using of expired transaction key.
-
-**To regenerate the transaction key :**
-
-1. Log into your Merchant Interface at [click here](https://account.authorize.net/)
-2. Click Account from the main toolbar.
-3. Click Settings in the main left-side menu.
-4. Click API Credentials & Keys.
-5. Enter your Secret Answer (the answer to your Secret Question configured at account setup).
-6. Select New Transaction Key.
-7. To disable the old Transaction Key, click the check box labeled Disable Old Transaction Key Immediately.
