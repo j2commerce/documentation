@@ -178,10 +178,10 @@ Full CRUD for J2Commerce product records.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/products` | List products |
-| `GET` | `/products/{id}` | Get a single product |
+| `GET` | `/products/[id]` | Get a single product |
 | `POST` | `/products` | Create a product |
-| `PATCH` | `/products/{id}` | Update a product |
-| `DELETE` | `/products/{id}` | Delete a product |
+| `PATCH` | `/products/[id]` | Update a product |
+| `DELETE` | `/products/[id]` | Delete a product |
 
 **Source:** `api/components/com_j2commerce/src/Controller/ProductsController.php`
 
@@ -223,11 +223,11 @@ Read-only access to variants belonging to a specific product.
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| `GET` | `/products/{id}/variants` | List variants for a product |
+| `GET` | `/products/[id]/variants` | List variants for a product |
 
 **Source:** `api/components/com_j2commerce/src/Controller/VariantsController.php`
 
-The `{id}` in the URL is the `j2commerce_product_id`. The controller sets `filter.product_id` automatically from the URL parameter.
+The `[id]` in the URL is the `j2commerce_product_id`. The controller sets `filter.product_id` automatically from the URL parameter.
 
 #### List Fields
 
@@ -246,10 +246,10 @@ Full CRUD for order records.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/orders` | List orders |
-| `GET` | `/orders/{id}` | Get a single order |
+| `GET` | `/orders/[id]` | Get a single order |
 | `POST` | `/orders` | Create an order |
-| `PATCH` | `/orders/{id}` | Update an order |
-| `DELETE` | `/orders/{id}` | Delete an order |
+| `PATCH` | `/orders/[id]` | Update an order |
+| `DELETE` | `/orders/[id]` | Delete an order |
 
 **Source:** `api/components/com_j2commerce/src/Controller/OrdersController.php`
 
@@ -288,11 +288,11 @@ Read-only access to line items within a specific order.
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| `GET` | `/orders/{id}/items` | List items in an order |
+| `GET` | `/orders/[id]/items` | List items in an order |
 
 **Source:** `api/components/com_j2commerce/src/Controller/OrderitemsController.php`
 
-The `{id}` in the URL is the `j2commerce_order_id`. The controller sets `filter.order_id` automatically.
+The `[id]` in the URL is the `j2commerce_order_id`. The controller sets `filter.order_id` automatically.
 
 #### List Fields
 
@@ -310,12 +310,12 @@ View and add status change entries for a specific order.
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| `GET` | `/orders/{id}/history` | List status changes for an order |
-| `POST` | `/orders/{id}/history` | Add a new status change |
+| `GET` | `/orders/[id]/history` | List status changes for an order |
+| `POST` | `/orders/[id]/history` | Add a new status change |
 
 **Source:** `api/components/com_j2commerce/src/Controller/OrderhistoriesController.php`
 
-The `{id}` in the URL is the `j2commerce_order_id`.
+The `[id]` in the URL is the `j2commerce_order_id`.
 
 #### List Fields
 
@@ -348,10 +348,10 @@ Full CRUD for customer address records. Customers are identified by their primar
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/customers` | List customers |
-| `GET` | `/customers/{id}` | Get a single customer |
+| `GET` | `/customers/[id]` | Get a single customer |
 | `POST` | `/customers` | Create a customer |
-| `PATCH` | `/customers/{id}` | Update a customer |
-| `DELETE` | `/customers/{id}` | Delete a customer |
+| `PATCH` | `/customers/[id]` | Update a customer |
+| `DELETE` | `/customers/[id]` | Delete a customer |
 
 **Source:** `api/components/com_j2commerce/src/Controller/CustomersController.php`
 
@@ -378,11 +378,11 @@ Read-only access to all addresses belonging to a specific customer.
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| `GET` | `/customers/{id}/addresses` | List addresses for a customer |
+| `GET` | `/customers/[id]/addresses` | List addresses for a customer |
 
 **Source:** `api/components/com_j2commerce/src/Controller/AddressesController.php`
 
-The `{id}` in the URL is the Joomla `user_id`. The controller sets `filter.user_id` automatically.
+The `[id]` in the URL is the Joomla `user_id`. The controller sets `filter.user_id` automatically.
 
 #### List Fields
 
@@ -400,11 +400,11 @@ Read-only access to orders belonging to a specific customer.
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| `GET` | `/customers/{id}/orders` | List orders for a customer |
+| `GET` | `/customers/[id]/orders` | List orders for a customer |
 
 **Source:** `api/components/com_j2commerce/src/Controller/CustomerordersController.php`
 
-The `{id}` in the URL is the Joomla `user_id`. The controller sets `filter.user_id` on the Orders model. Returns the same fields as the Orders list endpoint.
+The `[id]` in the URL is the Joomla `user_id`. The controller sets `filter.user_id` on the Orders model. Returns the same fields as the Orders list endpoint.
 
 ---
 
@@ -415,10 +415,10 @@ Full CRUD for product inventory records.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/inventory` | List inventory records |
-| `GET` | `/inventory/{id}` | Get inventory for a single product |
+| `GET` | `/inventory/[id]` | Get inventory for a single product |
 | `POST` | `/inventory` | Create an inventory record |
-| `PATCH` | `/inventory/{id}` | Update inventory |
-| `DELETE` | `/inventory/{id}` | Delete an inventory record |
+| `PATCH` | `/inventory/[id]` | Update inventory |
+| `DELETE` | `/inventory/[id]` | Delete an inventory record |
 
 **Source:** `api/components/com_j2commerce/src/Controller/InventoryController.php`
 
@@ -441,10 +441,10 @@ Full CRUD for discount coupons.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/coupons` | List coupons |
-| `GET` | `/coupons/{id}` | Get a single coupon |
+| `GET` | `/coupons/[id]` | Get a single coupon |
 | `POST` | `/coupons` | Create a coupon |
-| `PATCH` | `/coupons/{id}` | Update a coupon |
-| `DELETE` | `/coupons/{id}` | Delete a coupon |
+| `PATCH` | `/coupons/[id]` | Update a coupon |
+| `DELETE` | `/coupons/[id]` | Delete a coupon |
 
 **Source:** `api/components/com_j2commerce/src/Controller/CouponsController.php`
 
@@ -490,10 +490,10 @@ Full CRUD for gift vouchers.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/vouchers` | List vouchers |
-| `GET` | `/vouchers/{id}` | Get a single voucher |
+| `GET` | `/vouchers/[id]` | Get a single voucher |
 | `POST` | `/vouchers` | Create a voucher |
-| `PATCH` | `/vouchers/{id}` | Update a voucher |
-| `DELETE` | `/vouchers/{id}` | Delete a voucher |
+| `PATCH` | `/vouchers/[id]` | Update a voucher |
+| `DELETE` | `/vouchers/[id]` | Delete a voucher |
 
 **Source:** `api/components/com_j2commerce/src/Controller/VouchersController.php`
 
@@ -516,10 +516,10 @@ Full CRUD for product manufacturers / brands.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/manufacturers` | List manufacturers |
-| `GET` | `/manufacturers/{id}` | Get a single manufacturer |
+| `GET` | `/manufacturers/[id]` | Get a single manufacturer |
 | `POST` | `/manufacturers` | Create a manufacturer |
-| `PATCH` | `/manufacturers/{id}` | Update a manufacturer |
-| `DELETE` | `/manufacturers/{id}` | Delete a manufacturer |
+| `PATCH` | `/manufacturers/[id]` | Update a manufacturer |
+| `DELETE` | `/manufacturers/[id]` | Delete a manufacturer |
 
 **Source:** `api/components/com_j2commerce/src/Controller/ManufacturersController.php`
 
@@ -547,10 +547,10 @@ Full CRUD for currency configuration.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/currencies` | List currencies |
-| `GET` | `/currencies/{id}` | Get a single currency |
+| `GET` | `/currencies/[id]` | Get a single currency |
 | `POST` | `/currencies` | Create a currency |
-| `PATCH` | `/currencies/{id}` | Update a currency |
-| `DELETE` | `/currencies/{id}` | Delete a currency |
+| `PATCH` | `/currencies/[id]` | Update a currency |
+| `DELETE` | `/currencies/[id]` | Delete a currency |
 
 **Source:** `api/components/com_j2commerce/src/Controller/CurrenciesController.php`
 
@@ -573,10 +573,10 @@ Full CRUD for country records.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/countries` | List countries |
-| `GET` | `/countries/{id}` | Get a single country |
+| `GET` | `/countries/[id]` | Get a single country |
 | `POST` | `/countries` | Create a country |
-| `PATCH` | `/countries/{id}` | Update a country |
-| `DELETE` | `/countries/{id}` | Delete a country |
+| `PATCH` | `/countries/[id]` | Update a country |
+| `DELETE` | `/countries/[id]` | Delete a country |
 
 **Source:** `api/components/com_j2commerce/src/Controller/CountriesController.php`
 
@@ -602,11 +602,11 @@ Full CRUD for zones (states, provinces, regions). Also available as a nested res
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/zones` | List all zones |
-| `GET` | `/zones/{id}` | Get a single zone |
+| `GET` | `/zones/[id]` | Get a single zone |
 | `POST` | `/zones` | Create a zone |
-| `PATCH` | `/zones/{id}` | Update a zone |
-| `DELETE` | `/zones/{id}` | Delete a zone |
-| `GET` | `/countries/{id}/zones` | List zones within a country |
+| `PATCH` | `/zones/[id]` | Update a zone |
+| `DELETE` | `/zones/[id]` | Delete a zone |
+| `GET` | `/countries/[id]/zones` | List zones within a country |
 
 **Source:** `api/components/com_j2commerce/src/Controller/ZonesController.php`
 
@@ -616,7 +616,7 @@ Full CRUD for zones (states, provinces, regions). Also available as a nested res
 |-----------|------|---------|-------------|
 | `filter[search]` | string | `filter.search` | Search by zone name or code |
 
-When accessed via `/countries/{id}/zones`, the `country_id` filter is set automatically from the URL.
+When accessed via `/countries/[id]/zones`, the `country_id` filter is set automatically from the URL.
 
 #### All Fields
 
@@ -631,10 +631,10 @@ Full CRUD for shipping method plugin records.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/shippingmethods` | List shipping methods |
-| `GET` | `/shippingmethods/{id}` | Get a single shipping method |
+| `GET` | `/shippingmethods/[id]` | Get a single shipping method |
 | `POST` | `/shippingmethods` | Create a shipping method |
-| `PATCH` | `/shippingmethods/{id}` | Update a shipping method |
-| `DELETE` | `/shippingmethods/{id}` | Delete a shipping method |
+| `PATCH` | `/shippingmethods/[id]` | Update a shipping method |
+| `DELETE` | `/shippingmethods/[id]` | Delete a shipping method |
 
 **Source:** `api/components/com_j2commerce/src/Controller/ShippingmethodsController.php`
 
@@ -657,10 +657,10 @@ Full CRUD for payment method plugin records.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/paymentmethods` | List payment methods |
-| `GET` | `/paymentmethods/{id}` | Get a single payment method |
+| `GET` | `/paymentmethods/[id]` | Get a single payment method |
 | `POST` | `/paymentmethods` | Create a payment method |
-| `PATCH` | `/paymentmethods/{id}` | Update a payment method |
-| `DELETE` | `/paymentmethods/{id}` | Delete a payment method |
+| `PATCH` | `/paymentmethods/[id]` | Update a payment method |
+| `DELETE` | `/paymentmethods/[id]` | Delete a payment method |
 
 **Source:** `api/components/com_j2commerce/src/Controller/PaymentmethodsController.php`
 
@@ -683,10 +683,10 @@ Full CRUD for tax profiles.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/taxprofiles` | List tax profiles |
-| `GET` | `/taxprofiles/{id}` | Get a single tax profile |
+| `GET` | `/taxprofiles/[id]` | Get a single tax profile |
 | `POST` | `/taxprofiles` | Create a tax profile |
-| `PATCH` | `/taxprofiles/{id}` | Update a tax profile |
-| `DELETE` | `/taxprofiles/{id}` | Delete a tax profile |
+| `PATCH` | `/taxprofiles/[id]` | Update a tax profile |
+| `DELETE` | `/taxprofiles/[id]` | Delete a tax profile |
 
 **Source:** `api/components/com_j2commerce/src/Controller/TaxprofilesController.php`
 
@@ -705,10 +705,10 @@ Full CRUD for tax rates.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/taxrates` | List tax rates |
-| `GET` | `/taxrates/{id}` | Get a single tax rate |
+| `GET` | `/taxrates/[id]` | Get a single tax rate |
 | `POST` | `/taxrates` | Create a tax rate |
-| `PATCH` | `/taxrates/{id}` | Update a tax rate |
-| `DELETE` | `/taxrates/{id}` | Delete a tax rate |
+| `PATCH` | `/taxrates/[id]` | Update a tax rate |
+| `DELETE` | `/taxrates/[id]` | Delete a tax rate |
 
 **Source:** `api/components/com_j2commerce/src/Controller/TaxratesController.php`
 
@@ -727,10 +727,10 @@ Full CRUD for order status definitions.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/orderstatuses` | List order statuses |
-| `GET` | `/orderstatuses/{id}` | Get a single order status |
+| `GET` | `/orderstatuses/[id]` | Get a single order status |
 | `POST` | `/orderstatuses` | Create an order status |
-| `PATCH` | `/orderstatuses/{id}` | Update an order status |
-| `DELETE` | `/orderstatuses/{id}` | Delete an order status |
+| `PATCH` | `/orderstatuses/[id]` | Update an order status |
+| `DELETE` | `/orderstatuses/[id]` | Delete an order status |
 
 **Source:** `api/components/com_j2commerce/src/Controller/OrderstatusesController.php`
 
@@ -749,10 +749,10 @@ Full CRUD for Joomla content categories used by J2Commerce products.
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/categories` | List categories |
-| `GET` | `/categories/{id}` | Get a single category |
+| `GET` | `/categories/[id]` | Get a single category |
 | `POST` | `/categories` | Create a category |
-| `PATCH` | `/categories/{id}` | Update a category |
-| `DELETE` | `/categories/{id}` | Delete a category |
+| `PATCH` | `/categories/[id]` | Update a category |
+| `DELETE` | `/categories/[id]` | Delete a category |
 
 **Source:** `api/components/com_j2commerce/src/Controller/CategoriesController.php`
 
@@ -1064,13 +1064,13 @@ curl -s ".../orders/42/items" -H "Authorization: Bearer $TOKEN" -H "Accept: appl
 | Resource | Endpoint | Methods | Filters | PK Field |
 |----------|----------|---------|---------|----------|
 | Products | `/products` | GET, POST, PATCH, DELETE | `search`, `category`, `manufacturer`, `product_type`, `enabled`, `sku`, `visibility` | `j2commerce_product_id` |
-| Product Variants | `/products/{id}/variants` | GET | (parent ID) | `j2commerce_variant_id` |
+| Product Variants | `/products/[id]/variants` | GET | (parent ID) | `j2commerce_variant_id` |
 | Orders | `/orders` | GET, POST, PATCH, DELETE | `search`, `status`, `customer_id`, `date_from`, `date_to`, `payment_type` | `j2commerce_order_id` |
-| Order Items | `/orders/{id}/items` | GET | (parent ID) | `j2commerce_orderitem_id` |
-| Order History | `/orders/{id}/history` | GET, POST | (parent ID) | `j2commerce_orderhistory_id` |
+| Order Items | `/orders/[id]/items` | GET | (parent ID) | `j2commerce_orderitem_id` |
+| Order History | `/orders/[id]/history` | GET, POST | (parent ID) | `j2commerce_orderhistory_id` |
 | Customers | `/customers` | GET, POST, PATCH, DELETE | `search`, `country` | `j2commerce_address_id` |
-| Customer Addresses | `/customers/{id}/addresses` | GET | (parent ID) | `j2commerce_address_id` |
-| Customer Orders | `/customers/{id}/orders` | GET | (parent ID) | `j2commerce_order_id` |
+| Customer Addresses | `/customers/[id]/addresses` | GET | (parent ID) | `j2commerce_address_id` |
+| Customer Orders | `/customers/[id]/orders` | GET | (parent ID) | `j2commerce_order_id` |
 | Inventory | `/inventory` | GET, POST, PATCH, DELETE | -- | `j2commerce_product_id` |
 | Coupons | `/coupons` | GET, POST, PATCH, DELETE | `search`, `enabled` | `j2commerce_coupon_id` |
 | Vouchers | `/vouchers` | GET, POST, PATCH, DELETE | -- | `j2commerce_voucher_id` |
@@ -1078,7 +1078,7 @@ curl -s ".../orders/42/items" -H "Authorization: Bearer $TOKEN" -H "Accept: appl
 | Currencies | `/currencies` | GET, POST, PATCH, DELETE | -- | `j2commerce_currency_id` |
 | Countries | `/countries` | GET, POST, PATCH, DELETE | `search`, `enabled` | `j2commerce_country_id` |
 | Zones | `/zones` | GET, POST, PATCH, DELETE | `search` | `j2commerce_zone_id` |
-| Country Zones | `/countries/{id}/zones` | GET | (parent ID) | `j2commerce_zone_id` |
+| Country Zones | `/countries/[id]/zones` | GET | (parent ID) | `j2commerce_zone_id` |
 | Shipping Methods | `/shippingmethods` | GET, POST, PATCH, DELETE | -- | `extension_id` |
 | Payment Methods | `/paymentmethods` | GET, POST, PATCH, DELETE | -- | `extension_id` |
 | Tax Profiles | `/taxprofiles` | GET, POST, PATCH, DELETE | -- | `j2commerce_taxprofile_id` |

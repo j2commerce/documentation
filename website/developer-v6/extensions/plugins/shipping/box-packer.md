@@ -75,27 +75,71 @@ The complete integration for a shipping plugin takes five steps.
 <config>
     <fields name="params">
         <fieldset name="basic">
-            <field name="dimension_unit"
+
+            <!-- Packing mode toggle — lets store owner choose per-item or box packing -->
+            <field name="packing_mode"
                    type="list"
-                   label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_DIMENSION_UNIT"
-                   default="1">
-                <!-- your dimension unit options -->
+                   label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_PACKING_MODE"
+                   description="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_PACKING_MODE_DESC"
+                   default="per_item">
+                <option value="per_item">PLG_J2COMMERCE_SHIPPING_EXAMPLE_PACKING_PER_ITEM</option>
+                <option value="box_packing">PLG_J2COMMERCE_SHIPPING_EXAMPLE_PACKING_BOX</option>
             </field>
+
+            <!-- Use J2Commerce Weight/Length custom fields (store DB IDs, not raw strings) -->
             <field name="weight_unit"
-                   type="list"
+                   type="Weight"
                    label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_WEIGHT_UNIT"
-                   default="1">
-                <!-- your weight unit options -->
+                   filter_units="lb,kg"
+                   required="true"
+                   addfieldprefix="J2Commerce\Component\J2commerce\Administrator\Field"
+            />
+            <field name="dimension_unit"
+                   type="Length"
+                   label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_DIMENSION_UNIT"
+                   filter_units="in,cm"
+                   required="true"
+                   addfieldprefix="J2Commerce\Component\J2commerce\Administrator\Field"
+            />
+
+            <!-- Carrier preset boxes toggle -->
+            <field name="use_preset_boxes"
+                   type="radio"
+                   layout="joomla.form.field.radio.switcher"
+                   label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_USE_PRESET_BOXES"
+                   description="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_USE_PRESET_BOXES_DESC"
+                   filter="integer"
+                   default="1"
+                   showon="packing_mode:box_packing">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
             </field>
+
+            <!-- Item rotation behaviour -->
+            <field name="rotation"
+                   type="list"
+                   label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_ROTATION"
+                   description="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_ROTATION_DESC"
+                   default="best_fit"
+                   showon="packing_mode:box_packing">
+                <option value="best_fit">PLG_J2COMMERCE_SHIPPING_EXAMPLE_ROTATION_BEST_FIT</option>
+                <option value="keep_flat">PLG_J2COMMERCE_SHIPPING_EXAMPLE_ROTATION_KEEP_FLAT</option>
+                <option value="never">PLG_J2COMMERCE_SHIPPING_EXAMPLE_ROTATION_NEVER</option>
+            </field>
+
+            <!-- BoxPacker custom box definitions table -->
             <field name="box_list"
                    type="BoxPacker"
                    label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_BOX_LIST"
                    description="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_BOX_LIST_DESC"
-                   addfieldprefix="J2Commerce\Component\J2commerce\Administrator\Field" />
+                   addfieldprefix="J2Commerce\Component\J2commerce\Administrator\Field"
+                   showon="packing_mode:box_packing" />
         </fieldset>
     </fields>
 </config>
 ```
+
+> **Note:** The `packing_mode` field is optional. If you omit it, pass an empty `$boxes` array to `packItems()` for per-item mode, or always pass boxes for box packing mode. Including it gives the store owner explicit control over which strategy is used.
 
 ### Step 2: Read custom boxes in your rate handler
 
@@ -113,13 +157,18 @@ public function onGetShippingRates(Event $event): void
         return;
     }
 
-    // Load custom boxes defined by the store owner
-    $customBoxes = ShipperHelper::getCustomBoxesFromParams($this->params, 'box_list');
-
-    // Pack items — empty boxes array falls back to per-item automatically
     $items = method_exists($order, 'getItems') ? $order->getItems() : [];
 
-    $result = ShipperHelper::packItems($customBoxes, $items, [
+    // Check packing mode — per-item passes empty boxes, box packing loads definitions
+    $packingMode = $this->params->get('packing_mode', 'per_item');
+    $boxes = [];
+
+    if ($packingMode === 'box_packing') {
+        $boxes = ShipperHelper::getCustomBoxesFromParams($this->params, 'box_list');
+    }
+
+    // Pack items — empty boxes array falls back to per-item automatically
+    $result = ShipperHelper::packItems($boxes, $items, [
         'weight_unit_id' => (int) $this->params->get('weight_unit', 1),
         'length_unit_id' => (int) $this->params->get('dimension_unit', 1),
     ]);
@@ -806,6 +855,122 @@ final class ShippingUps extends CMSPlugin implements SubscriberInterface
     }
 }
 ```
+
+---
+
+## Store-Unit-Aware Preset Conversion
+
+Carrier preset boxes are typically defined in fixed units (e.g., UPS boxes in inches/pounds). If the store is configured for centimetres/kilograms, the hardcoded inch values passed to `createBox()` would be misinterpreted — ShipperHelper converts them assuming they are already in store units.
+
+To handle this correctly, use `getPresetLengthFactor()` and `getPresetWeightFactor()` helper methods to convert preset dimensions from their native units to the store's configured units before passing them to `createBox()`.
+
+### Pattern
+
+```php
+// File: plugins/j2commerce/shipping_ups/src/Extension/ShippingUps.php
+
+use J2Commerce\Component\J2commerce\Administrator\Helper\LengthHelper;
+use J2Commerce\Component\J2commerce\Administrator\Helper\WeightHelper;
+
+/**
+ * Get the conversion factor from inches to the store's configured length unit.
+ * Preset boxes are defined in inches. If the store uses cm, this returns ~2.54.
+ */
+private function getPresetLengthFactor(): float
+{
+    $lengthUnitId = (int) $this->params->get('dimension_unit', 0);
+
+    if ($lengthUnitId <= 0) {
+        return 1.0; // No conversion — assume presets match store units
+    }
+
+    $unit = LengthHelper::getLengthUnit($lengthUnitId);
+
+    return match ($unit) {
+        'cm' => 2.54,     // 1 inch = 2.54 cm
+        'mm' => 25.4,     // 1 inch = 25.4 mm
+        'm'  => 0.0254,   // 1 inch = 0.0254 m
+        'in' => 1.0,      // already inches
+        default => 1.0,
+    };
+}
+
+/**
+ * Get the conversion factor from pounds to the store's configured weight unit.
+ * Preset boxes are defined in pounds. If the store uses kg, this returns ~0.4536.
+ */
+private function getPresetWeightFactor(): float
+{
+    $weightUnitId = (int) $this->params->get('weight_unit', 0);
+
+    if ($weightUnitId <= 0) {
+        return 1.0;
+    }
+
+    $unit = WeightHelper::getWeightUnit($weightUnitId);
+
+    return match ($unit) {
+        'kg' => 0.453592,   // 1 lb = 0.453592 kg
+        'g'  => 453.592,    // 1 lb = 453.592 g
+        'oz' => 16.0,       // 1 lb = 16 oz
+        'lb' => 1.0,        // already pounds
+        default => 1.0,
+    };
+}
+```
+
+### Usage with Preset Boxes
+
+```php
+private function getUPSPresetBoxes(): array
+{
+    $lf = $this->getPresetLengthFactor();
+    $wf = $this->getPresetWeightFactor();
+
+    return [
+        ShipperHelper::createBox(
+            name:        'UPS Small Express Box',
+            outerLength: 13.0 * $lf,
+            outerWidth:  11.0 * $lf,
+            outerHeight: 2.0  * $lf,
+            innerLength: 12.5 * $lf,
+            innerWidth:  10.5 * $lf,
+            innerHeight: 1.8  * $lf,
+            boxWeight:   0.1  * $wf,
+            maxWeight:   0.0,
+        ),
+        // ... more presets
+    ];
+}
+```
+
+This ensures preset box dimensions are always expressed in the store's active length/weight units, regardless of what the store is configured for. Custom boxes defined by the store owner via `BoxPackerField` are already in store units — no conversion needed for those.
+
+---
+
+## UPS PackagingType Note
+
+When using box packing with UPS, the `PackagingType` code sent in the UPS Rating API request should **always** be `02` (Customer Supplied Package), regardless of the box name.
+
+Even if a preset box is named "UPS Small Express Box", the packing algorithm fits items into boxes you defined — UPS does not verify that you are actually using their branded packaging. Using code `02` ensures UPS rates the shipment based on the actual dimensions and weight you provide, not a fixed packaging type.
+
+```php
+// In buildPackageList() — always use 02 when box packing is active
+$packageType = ($packingMode === 'box_packing') ? '02' : $this->params->get('package_type', '02');
+
+foreach ($packedBoxes as $box) {
+    $pkgData = [
+        'PackagingType' => ['Code' => $packageType],
+        'PackageWeight' => [
+            'UnitOfMeasurement' => ['Code' => $weightUnitCode],
+            'Weight' => number_format(max(0.1, $box->totalWeight), 1, '.', ''),
+        ],
+    ];
+    // ...
+}
+```
+
+> **Why not use the specific UPS packaging codes (21, 24, 25, etc.)?** UPS packaging codes like `21` (UPS Express Box) tell UPS "I am using your branded box — charge me accordingly." This bypasses dimensional rating because UPS already knows the box size. However, since BoxPacker optimises item placement into boxes *you* define (even if named after UPS boxes), the actual packing may differ from UPS's expectations. Using `02` (Customer Supplied) with explicit dimensions is always the most accurate approach.
 
 ---
 
