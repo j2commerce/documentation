@@ -2,7 +2,7 @@
 
 `description: J2Commerce (formerly known as J2Store)`
 
-Who doesn’t prefer choices when they wish to buy their favorite t-shirt ? Obviously, your users would love when the products have additional options. J2Commerce allows you to create [options of various types](https://docs.j2commerce.com/catalog/options)
+Who doesn’t prefer choices when they wish to buy their favorite chocolates? Obviously, your users would love it when the products have additional options. J2Commerce allows you to create [options of various types](https://docs.j2commerce.com/catalog/options).
 
 ## Requirements
 
@@ -12,7 +12,7 @@ Who doesn’t prefer choices when they wish to buy their favorite t-shirt ? Obvi
 
 ## For Instance
 
-Let's suppose you are trying to sell a customizable t-shirt. So this t-shirt has options called colour, size, and requests users to fill in the custom text that they will have to print on the t-shirt.
+Let's suppose you are trying to sell a customizable box of chocolates. In the examples below, we will show what it looks like to add **Options** to different types of products.  The end of this document will show what it looks like on the frontend for both a simple product with Options and a Flex Variant with Options.&#x20;
 
 Now that we know the requirements, let us get into the process of setting the options up.
 
@@ -44,9 +44,13 @@ Select **New** to create a new option
 
 Another example, if you chose **Radio** as the type, you would be able to add an image to each option. Or the **checkbox** type is popular for sizing options like Small, Medium, Large.&#x20;
 
-In the examples below, we are creating 3 different Options. Colour, Size, and Text
+Create a text area type option for collecting the text to be displayed on the shirt.
 
-- Create a text area type option for collecting the text to be displayed on the shirt.
+**Frontend View**
+
+The example below shows what it will look like on the frontend when adding the color as an option to a product.
+
+![](/img/options-frontend1.webp)
 
 ## Add Options to your Product
 
@@ -60,22 +64,30 @@ Click on your product **-> J2Commerce** tab **-> Options** tab
 
 ![](/img/options-tab.webp)
 
-Add as many options as you wish and save the article once.
+Add as many options as you wish and **save** the article once. If your product requires that the customer choose an option before placing the order, then make it required. &#x20;
 
 ![](/img/options-tab1.webp)
 
-- Click on the Set option values next to the size and color options, one at a time. See image below.
+Click on the **Set Option Values**
 
-![](../../../assets/creating-options5a.webp)
+![](/img/options-tab2.webp)
 
-The pop-up window will allow you to select each attribute that is offered for each option. Every time you add a new attribute, it auto-saves. Click the X in the top right corner when finished.
+The pop-up window will allow you to select each attribute that is offered for each option. You can rearrange the order of the options and choose which option will be the default option for the customer to see by clicking on the star to the right.
 
-![Adding option values to products](<../../../assets/creating-options6 (1).webp>)
+![Adding option values to products](/img/options-tab3.webp)
 
-You can also set special pricing for each attribute if different than the main product. In the example below, we have set the size Small to be offered for $3 more and the Mediumium to be $5 more than the rest. The Prefix section determines if it's going to be more or less (+/-) than the main product price.
+You can also set special pricing for each attribute if they differ from the main product. The Prefix section determines if it's going to be more or less (+/-) than the main product price.
 
-![](../../../assets/creating-options7a.webp)
+In the example below, we made the white chocolates .50 less and the Dark Chocolates .75 more than the main default option
 
-The example below shows what it looks like on the frontend
+![](/img/options-tab5.webp)
 
-![Options frontend](../../../assets/creating-options8.webp)
+### Frontend View
+
+The example below shows adding **flavor** options with different pricing on a **simple** product
+
+![Options frontend](/img/options-frontend.webp)
+
+The example below shows adding individual photos to the **color** option. This is for a **Flex Variant** Product and the customer chose the pink box. The image changes based on the customer's choice, so they can see what it would look like before purchasing.
+
+![](/img/options-frontend2.webp)
