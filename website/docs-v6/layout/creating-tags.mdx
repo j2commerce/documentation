@@ -26,66 +26,82 @@ Tags in Joomla! Provide a flexible way of organizing content. Once an item is ta
 
 Since there are no categories involved here, there is no option to filter the products based on categories. Hence, that parameter has been removed.
 
-## Locating Filters
+## Locating Tags
 
-You have to create the filter before you can add it to your products. So let's create the filter first and then we will add it to a product.&#x20;
+You have to create the tags before you can add them to your products. So let's create the tags first, and then we will add them to a product.&#x20;
 
-There are **two** ways you can access the plugin.&#x20;
+Go to **Components** on the left sidebar **-> Tags -> New**
 
-**a:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Filters**
-
-**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Catalog -> Filters**
+![](/img/tags.webp)
 
 ## Creating a tag
 
 To create a tag, the steps given below have to be followed:
 
-- Navigate to Components > Tags.
-- Click New to create a new tag.
-- Enter the title of the tag, give a description to the tag, and choose the parent tag (if any) as per the requirements.
-- You can also add a note to the tag, refer to the user groups, and choose the language for which the tag has to be applied.
+Enter the title of the tag.
+
+You can also give a description to the tag, and choose the parent tag (if any) as per the requirements.&#x20;
+
+You can also add a note to the tag, refer to the user groups, and choose the language for which the tag has to be applied.
 
 The following screenshot is an example of a tag:
 
-![Creating your first tag](<../../assets/creating a tag2 (1) (1).webp>)
-
-![Creating a tag](<../../assets/new tag2.webp>)
+![Creating a tag](/img/tags2.webp)
 
 ## Adding a tag to the product
 
 Once a tag has been created, the next step will be to add it to the product. That can be done as simply as this:
 
-- Navigate to Content-> Product article.
-- In the Content tab, the tag can be added in the Tags column.
+Navigate to **Content ->** **Categories -> Article -> locate the product**.
 
-![Adding a tag to a product](<../../assets/adding a tag2.webp>)
+In the **Content** tab **-> Tags**.&#x20;
 
-Post creating the tag and adding it to the product’s article, the next step will be to create a menu item of the type Product Tags. The following are the steps that have to be done:
+Start typing in the name of the tags and click on the ones that you wish to add. You can add as many as needed.&#x20;
 
-- Click on Menus > Menu Items > New.
-- The menu title has to be given, and the menu item type should be “J2Commerce > products tag view”.
-- The next option will require you to select the tag for the menu item. Choose the tag that has to be associated with the menu item.
-- Additional Step: Click on the Common options tab and choose the Sub-template to tag\_bootstrap5. This is the sub-template that should be chosen to display the tags on the layout, unlike the default one.
-- You can also choose the level of subtag until which the products have to be displayed under the “Item view in Category listings” tab in the option “Sub-Tag level”.
+![Adding a tag to a product](/img/tags-menu8.webp)
 
-The following images show how a menu item of the type “Product tag” is created.
+## Tag Menu
 
-![Menu of tag view type](<../../assets/adding a tag3.webp>)
+After creating the tag and adding it to the product’s article, the next step will be to create a menu item of the type Product Tags. The following are the steps that have to be done:
 
-These are the other options that can be chosen when it comes to Product Tag layout.
+Click on **Menus -> Menu Items -> New**
 
-![Subtemplate](<../../assets/sub templates2.webp>)
+![](/img/tags-menu1.webp)
 
-You can choose the sub-tag level in case you have tags that contain parents in the following way:
+## Creating a Menu for Tags
 
-![Subtag level](<../../assets/sub tag category2 (1).webp>)
+### Details Tab
 
-The frontend display of the tag layout will be as below:
+![](/img/tags-menu2.webp)
 
-![Tag view frontend](https://raw.githubusercontent.com/j2store/doc-images/master/layout/product-tag-layout/producttagfrontend.png)
+**Title:** Name the menu the same name as the tags you created
 
-## Video Tutorial: `<a href="#video-tutorial" id="video-tutorial" />`
+**Menu Item Type:**  Click **Select  -> J2Commerce  -> Product Tag List View**
 
-Still have doubts? Here is a direct link to the video that depicts creating and adding the product tag layout:
+![](/img/tags-menu5.webp)
 
-[![Watch the video](https://img.youtube.com/vi/W9rXbCrKeEg/hqdefault.jpg)](https://www.youtube.com/watch?v=W9rXbCrKeEg)
+**Select Tags:** Select one or more tags to filter products by. Choose the tag that has to be associated with the menu item.
+
+### Common Tab
+
+![](/img/tags-menu3.webp)
+
+Sub-template: Switch it to bootstrap5. This is the sub-template that should be chosen to display the tags on the layout, unlike the default one.
+
+### Tag View Tab
+
+![](/img/tags-menu4.webp)
+
+There are 3 categories we recommend that you change from the default items.
+
+**Image Width:** We have switched it to 340px so the thumbnail fills the box evenly but you can choose any width of your choosing
+
+**Filter Position:** You can choose to have it show up on the left or the right. We have chosen the Left view for our examples.
+
+**Product Filter Logic:** Use AND (all filters must match) or OR (any filter can match) logic for product filters.  We chose OR for this example
+
+## Frontend View
+
+The following Image shows all of the images that were tagged with the tag Gift for Her.
+
+![](/img/tags-menu6.webp)
