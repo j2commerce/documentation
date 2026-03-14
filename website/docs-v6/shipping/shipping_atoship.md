@@ -1,33 +1,46 @@
----
-title: "AtoShip Multi-Carrier Shipping"
-sidebar_label: "AtoShip"
-sidebar_position: 30
-description: "Set up real-time shipping rates, label creation, and shipment tracking for USPS, UPS, FedEx, and DHL using the AtoShip integration for J2Commerce."
----
-
 # AtoShip Multi-Carrier Shipping
 
 The AtoShip plugin connects J2Commerce to the [AtoShip](https://atoship.com) shipping platform, giving your store real-time carrier rates at checkout, one-click label creation from the order screen, and automatic tracking updates. A single AtoShip account gives you access to USPS, UPS, FedEx, and DHL under one API key.
 
+## Requirements
+
+- with PHP 8.3.0 +
+- Joomla! 6.x
+- J2Commerce 6.x
+
 ## Prerequisites
 
-- J2Commerce 6 installed and activated
 - An AtoShip account (free — no credit card required)
 - Products with weights configured in J2Commerce
-- Shipping zones and a geo-zone configured if you want to restrict availability by region
+- Shipping zones and a geo-zone are configured if you want to restrict availability by region
 
-## Installation
+## Purchase and Download
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+‌**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extension
 
-1. Purchase and download the `shipping_atoship.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `shipping_atoship.zip` package file.
-4. The plugin installs and enables automatically.
+**Step 2:** Locate the AtoShip Extension > click View Details > Add to cart > Checkout.&#x20;
 
-To configure it, go to **J2Commerce** -> **Shipping** -> **Shipping Methods** and click **AtoShip Multi-Carrier Shipping**.
+**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download
 
-<!-- SCREENSHOT: J2Commerce Shipping Methods list showing AtoShip in the list -->
+## Install the Plugin
+
+Go to **System** -> **Install** -> **Extensions**.
+
+Upload the `shipping_atoship.zip` package file
+
+![](/img/ato-install.webp)
+
+## Configure the Plugin
+
+The plugin installs and enables automatically. All you have to do now is set it up.
+
+There are **two** ways you can access the Plugin.&#x20;
+
+**a:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Shipping Methods**
+
+**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
+
+![](/img/atoship-app.webp)
 
 ## Create an AtoShip Account
 
@@ -48,11 +61,11 @@ Open the plugin settings from **J2Commerce** -> **Shipping** -> **Shipping Metho
 
 ### API Credentials
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Sandbox Mode** | When enabled, the plugin uses your test API key and returns demo rates. Disable this before going live. | Yes |
-| **Live API Key** | Your AtoShip live key (`ak_live_...`). Only visible when Sandbox Mode is off. | — |
-| **Sandbox API Key** | Your AtoShip test key (`ak_test_...`). Only visible when Sandbox Mode is on. | — |
+| Field               | Description                                                                                             | Default |
+| ------------------- | ------------------------------------------------------------------------------------------------------- | ------- |
+| **Sandbox Mode**    | When enabled, the plugin uses your test API key and returns demo rates. Disable this before going live. | Yes     |
+| **Live API Key**    | Your AtoShip live key (`ak_live_...`). Only visible when Sandbox Mode is off.                           | —       |
+| **Sandbox API Key** | Your AtoShip test key (`ak_test_...`). Only visible when Sandbox Mode is on.                            | —       |
 
 Start with **Sandbox Mode** enabled. Enter your sandbox key, save, and test the checkout flow. Switch to the live key when you are ready to accept real orders.
 
@@ -60,13 +73,13 @@ Start with **Sandbox Mode** enabled. Enter your sandbox key, save, and test the 
 
 These fields define where your packages originate. The AtoShip API uses this address to calculate rates and print labels.
 
-| Field | Description |
-|-------|-------------|
-| **Ship-From Address** | Street address of your warehouse or fulfilment location |
-| **Ship-From City** | City of the origin address |
-| **Ship-From Country** | Country of the origin address |
+| Field                        | Description                                                           |
+| ---------------------------- | --------------------------------------------------------------------- |
+| **Ship-From Address**        | Street address of your warehouse or fulfilment location               |
+| **Ship-From City**           | City of the origin address                                            |
+| **Ship-From Country**        | Country of the origin address                                         |
 | **Ship-From State/Province** | State or province (updates automatically when you change the country) |
-| **Ship-From Postal Code** | ZIP or postal code of the origin address |
+| **Ship-From Postal Code**    | ZIP or postal code of the origin address                              |
 
 All five fields are required. Save the plugin after filling them in — the service discovery tool relies on this address.
 
@@ -82,10 +95,10 @@ Available carriers: **USPS**, **UPS**, **FedEx**, **DHL**.
 
 After saving your Ship-From address, use the **Discover Available Services** button to fetch a live rate quote and see which services your AtoShip account can offer.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Test Destination ZIP** | Postal code used for the discovery rate quote | `10001` |
-| **Test Destination Country** | Country used for the discovery rate quote | — |
+| Field                        | Description                                   | Default |
+| ---------------------------- | --------------------------------------------- | ------- |
+| **Test Destination ZIP**     | Postal code used for the discovery rate quote | `10001` |
+| **Test Destination Country** | Country used for the discovery rate quote     | —       |
 
 Click **Discover Available Services**. The tool retrieves all available services and displays checkboxes. Select the services you want to offer at checkout, then save the plugin.
 
@@ -97,44 +110,44 @@ If no services appear in live mode, verify your AtoShip account has at least one
 
 These values are used when a product does not have its own weight or dimensions set.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Weight Unit** | `lb` or `kg` — must match the units on your products | — |
-| **Dimension Unit** | `in` or `cm` — must match the units on your products | — |
-| **Default Weight** | Fallback weight for products without a weight | `1` |
-| **Default Length** | Fallback package length | `10` |
-| **Default Width** | Fallback package width | `10` |
-| **Default Height** | Fallback package height | `10` |
+| Field              | Description                                          | Default |
+| ------------------ | ---------------------------------------------------- | ------- |
+| **Weight Unit**    | `lb` or `kg` — must match the units on your products | —       |
+| **Dimension Unit** | `in` or `cm` — must match the units on your products | —       |
+| **Default Weight** | Fallback weight for products without a weight        | `1`     |
+| **Default Length** | Fallback package length                              | `10`    |
+| **Default Width**  | Fallback package width                               | `10`    |
+| **Default Height** | Fallback package height                              | `10`    |
 
 For the most accurate rates, set real weights and dimensions on each product in **J2Commerce** -> **Catalog** -> **Products**.
 
 ### Rate Options
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Handling Fee** | Extra amount added to every shipping rate returned | `0` |
-| **Handling Fee Type** | **Flat Amount** adds a fixed dollar amount; **Percentage** adds a percentage of the carrier rate | Flat Amount |
-| **Show Delivery Time** | Displays estimated business days next to each rate at checkout | Yes |
-| **Tax Profile** | Applies a J2Commerce tax profile to the shipping charge | None |
-| **Geozone** | Restricts this plugin to orders shipping within the selected geozone | All Geozones |
-| **Minimum Order Subtotal** | Only show AtoShip rates when the cart subtotal meets this minimum (set to `0` to disable) | `0` |
-| **Maximum Order Subtotal** | Only show AtoShip rates when the cart subtotal is below this maximum (set to `0` to disable) | `0` |
+| Field                      | Description                                                                                      | Default      |
+| -------------------------- | ------------------------------------------------------------------------------------------------ | ------------ |
+| **Handling Fee**           | Extra amount added to every shipping rate returned                                               | `0`          |
+| **Handling Fee Type**      | **Flat Amount** adds a fixed dollar amount; **Percentage** adds a percentage of the carrier rate | Flat Amount  |
+| **Show Delivery Time**     | Displays estimated business days next to each rate at checkout                                   | Yes          |
+| **Tax Profile**            | Applies a J2Commerce tax profile to the shipping charge                                          | None         |
+| **Geozone**                | Restricts this plugin to orders shipping within the selected geozone                             | All Geozones |
+| **Minimum Order Subtotal** | Only show AtoShip rates when the cart subtotal meets this minimum (set to `0` to disable)        | `0`          |
+| **Maximum Order Subtotal** | Only show AtoShip rates when the cart subtotal is below this maximum (set to `0` to disable)     | `0`          |
 
 ### Label and Tracking Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Shipped Order Status** | Automatically sets the order to this status when a tracking number is added | Status ID 7 |
-| **Delivered Order Status** | Automatically sets the order to this status when AtoShip reports delivery | Status ID 8 |
-| **Notify Customer on Delivery** | Sends the customer an email when the package is marked delivered | No |
-| **Webhook Secret** | Secret key from your AtoShip webhook configuration. Required for automatic delivery status updates. | — |
-| **Tracking Poll Limit** | Maximum number of shipments to check per cron run | `50` |
+| Field                           | Description                                                                                         | Default     |
+| ------------------------------- | --------------------------------------------------------------------------------------------------- | ----------- |
+| **Shipped Order Status**        | Automatically sets the order to this status when a tracking number is added                         | Status ID 7 |
+| **Delivered Order Status**      | Automatically sets the order to this status when AtoShip reports delivery                           | Status ID 8 |
+| **Notify Customer on Delivery** | Sends the customer an email when the package is marked delivered                                    | No          |
+| **Webhook Secret**              | Secret key from your AtoShip webhook configuration. Required for automatic delivery status updates. | —           |
+| **Tracking Poll Limit**         | Maximum number of shipments to check per cron run                                                   | `50`        |
 
 ### Debug Mode
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Mode** | Writes detailed API request and response logs to `administrator/logs/shipping_atoship.php` | No |
+| Field          | Description                                                                                | Default |
+| -------------- | ------------------------------------------------------------------------------------------ | ------- |
+| **Debug Mode** | Writes detailed API request and response logs to `administrator/logs/shipping_atoship.php` | No      |
 
 Enable debug mode temporarily if rates are not appearing or labels fail to create. Disable it in production.
 
@@ -149,9 +162,9 @@ Webhooks allow AtoShip to push delivery events to your store automatically, so o
 https://your-site.com/index.php?option=com_j2commerce&task=shipping.pluginAjax&plugin=shipping_atoship&action=processWebhook
 ```
 
-3. Enable these events: `shipment.tracking_updated`, `label.created`, `label.failed`, `order.cancelled`.
-4. Copy the webhook **Secret** from AtoShip and paste it into the **Webhook Secret** field in the plugin settings.
-5. Save the plugin.
+1. Enable these events: `shipment.tracking_updated`, `label.created`, `label.failed`, `order.cancelled`.
+2. Copy the webhook **Secret** from AtoShip and paste it into the **Webhook Secret** field in the plugin settings.
+3. Save the plugin.
 
 <!-- SCREENSHOT: AtoShip dashboard Webhooks settings showing the endpoint URL and event checkboxes -->
 
@@ -229,9 +242,4 @@ Before creating a label, the plugin checks your AtoShip account balance. If the 
 
 **Solution:** Either configure the webhook URL in the AtoShip dashboard (see [Webhook Setup](#webhook-setup-optional) above), or ensure Joomla's Task Scheduler is running so the tracking poll cron executes regularly.
 
-## Related Topics
-
-- [Shipping Methods Overview](../shipping/index.md)
-- [Geozones](../shipping/geozones.md)
-- [Tax Profiles](../taxes/tax-profiles.md)
-- [Order Management](../orders/index.md)
+##

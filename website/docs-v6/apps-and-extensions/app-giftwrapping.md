@@ -12,23 +12,23 @@ This feature is perfect for stores selling gifts, seasonal merchandise, or any p
 
 ## Purchase and Download
 
-The Gift Wrapping app is a premium add-on available from the J2Commerce extension directory.
+The **Gift Wrapping** app is a premium add-on available from the J2Commerce extension directory.
 
-‌**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Apps
+‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
-**Step 2:** Locate the Gift Wrapping App > click View Details > Add to cart > Checkout.&#x20;
+**Step 2:** Locate the **Gift Wrapping** App **->** click **View Details -> Add to cart -> Checkout**.&#x20;
 
-**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download&#x20;
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**&#x20;
 
-## Install the Plugin
+## Install the App
 
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-Upload the ZIP file or use the Install from URL option.
+Upload the plugin ZIP file or use the Install from URL option.
 
 ![](/img/install.webp)
 
-## Enable
+## Enable the App
 
 Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
@@ -42,9 +42,9 @@ To help you narrow down the list, you can do a search for **Gift Wrapping**, cli
 
 ![](/img/gift-wrap-enable1.webp)
 
-## Configure the Plugin
+## Configure the App
 
-Click on the Gift Wrapping Title to open it.
+Click on the **Gift Wrapping** Title to open it.
 
 ![](/img/setutup.png)
 
