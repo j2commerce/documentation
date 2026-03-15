@@ -1,0 +1,91 @@
+# Creating Options
+
+`description: J2Commerce (formerly known as J2Store)`
+
+Who doesn’t prefer choices when they wish to buy their favorite chocolates? Obviously, your users would love it when the products have additional options. J2Commerce allows you to create [options of various types](https://docs.j2commerce.com/catalog/options).
+
+## Requirements
+
+- with PHP 8.3.0 +
+- Joomla! 6.x
+- J2Commerce 6.x
+
+## For Instance
+
+Let's suppose you are trying to sell a customizable box of chocolates. In the examples below, we will show what it looks like to add **Options** to different types of products.  The end of this document will show what it looks like on the frontend for both a simple product with Options and a Flex Variant with Options.&#x20;
+
+## Locating Options
+
+There are **two** ways you can access Options.&#x20;
+
+**a:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Options**
+
+**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Catalog -> Options**
+
+Select **New** to create a new option
+
+![Adding new options](/img/options.webp)
+
+## Setting up the Options
+
+![](/img/options-setup1.webp)
+
+**Option Name:** Enter the unique name. This is the name that will be seen on the frontend. In our case, let us create the **color** option for the example.&#x20;
+
+**Unique Name:** A unique identifier for this option (no spaces)
+
+**Option Type:** Choose the Option type. Each variation type will create the corresponding Value at the bottom. In this example, we are choosing the **color** as they type. The value section at the bottom will now allow us to customize the colors for the customers to see.
+
+**Status:** Set this to **Published** in order for you to add it to a product.
+
+**Color Values:** Because we chose Color as the type,  we can now customize the colors.&#x20;
+
+Another example, if you chose **Radio** as the type, you would be able to add an image to each option. Or the **checkbox** type is popular for sizing options like Small, Medium, Large.&#x20;
+
+Create a text area type option for collecting the text to be displayed on the shirt.
+
+**Frontend View**
+
+The example below shows what it will look like on the frontend when adding the color as an option to a product.
+
+![](/img/options-frontend1.webp)
+
+## Add Options to your Product
+
+Now, it's time to add them to your product.
+
+Navigate to **Content -> Categories -> Articles ->**&#x20;
+
+![](/img/options-product.webp)
+
+Click on your product **-> J2Commerce** tab **-> Options** tab
+
+![](/img/options-tab.webp)
+
+Add as many options as you wish and **save** the article once. If your product requires that the customer choose an option before placing the order, then make it required. &#x20;
+
+![](/img/options-tab1.webp)
+
+Click on the **Set Option Values**
+
+![](/img/options-tab2.webp)
+
+The pop-up window will allow you to select each attribute that is offered for each option. You can rearrange the order of the options and choose which option will be the default option for the customer to see by clicking on the star to the right.
+
+![Adding option values to products](/img/options-tab3.webp)
+
+You can also set special pricing for each attribute if they differ from the main product. The Prefix section determines if it's going to be more or less (+/-) than the main product price.
+
+In the example below, we made the white chocolates .50 less and the Dark Chocolates .75 more than the main default option
+
+![](/img/options-tab5.webp)
+
+### Frontend View
+
+The example below shows adding **flavor** options with different pricing on a **simple** product
+
+![Options frontend](/img/options-frontend.webp)
+
+The example below shows adding individual photos to the **color** option. This is for a **Flex Variant** Product and the customer chose the pink box. The image changes based on the customer's choice, so they can see what it would look like before purchasing.
+
+![](/img/options-frontend2.webp)

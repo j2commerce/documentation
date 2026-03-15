@@ -6,13 +6,13 @@ description: J2Commerce (formerly known as J2Store)
 
 This Plugin enables you to receive payments via Authorize.Net Payment Gateway. Visit [click here](http://authorize.net/) to know more about the payment gateway.
 
-## Requirements <a href="#requirements" id="requirements"></a>
+## Requirements <a href="#requirements" id="requirements" />
 
-* PHP 8.1.0 +
-* Joomla! 4.x/ Joomla! 5.x +
-* J2Commerce / J2Store 4.x +
+- PHP 8.1.0 +
+- Joomla! 4.x/ Joomla! 5.x +
+- J2Commerce / J2Store 4.x +
 
-## Installation Instructions <a href="#installation-instructions" id="installation-instructions"></a>
+## Installation Instructions <a href="#installation-instructions" id="installation-instructions" />
 
 1. Use the Joomla installer to install the plugin.
 
@@ -34,7 +34,7 @@ This Plugin enables you to receive payments via Authorize.Net Payment Gateway. V
 
 Now you can see the Authorize.net Payments as an option during the Checkout process.
 
-## Parameters <a href="#parameters" id="parameters"></a>
+## Parameters <a href="#parameters" id="parameters" />
 
 **License Key**\
 \
@@ -73,7 +73,7 @@ Transaction key provided by the authorize.net
 
 Authorize.net offers a testing suite called Sandbox. Before going live, it is advised to test your store using the sandbox feature. Read more about Sandbox at Authorize.net.
 
-NOTE: To receive payments (except during testing), you DONOT have to enable this.
+NOTE: To receive payments (except during testing), you DO NOT have to enable this.
 
 \*\*IN LIVE SITE, THIS SHOULD BE SET TO NO. \*\*
 

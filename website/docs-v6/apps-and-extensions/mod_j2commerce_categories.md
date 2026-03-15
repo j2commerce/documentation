@@ -5,7 +5,7 @@ sidebar_position: 30
 description: "Display your J2Commerce product categories as a responsive grid or Swiper carousel anywhere on your site using the Categories module."
 ---
 
-# J2Commerce Categories Module
+# Categories Module
 
 The Categories module gives your store a visual category browser that fits anywhere you have a Joomla module position — a sidebar, a homepage banner row, a full-width strip above the product list. Drop it in, pick a parent category, and it pulls in the direct children automatically as a card grid or a Swiper carousel.
 
@@ -39,7 +39,7 @@ What makes it practical for most stores is the **Category Builder** — a drag-a
 
 The module has five configuration fieldsets: **Basic**, **Layout**, **Display**, **Category Builder**, and **Advanced**.
 
----
+***
 
 ### Basic Settings
 
@@ -47,11 +47,11 @@ These settings control which categories are shown and how the module determines 
 
 <!-- SCREENSHOT: Module edit form — Basic fieldset showing Mode, Parent Category, and Show on Product Page fields -->
 
-| Setting | Description | Default | Options |
-|---------|-------------|---------|---------|
-| **Mode** | How the module selects which categories to show. See [Mode Explained](#mode-explained) below. | Normal | Normal, Dynamic |
-| **Parent Category** | (Normal mode only) The parent category whose direct children are displayed. Click the field to open the category picker. | — | Any published category |
-| **Show on Product Page** | (Dynamic mode only) When enabled, the module also shows sibling categories when a visitor is viewing a product detail page. | No | Yes, No |
+| Setting                  | Description                                                                                                                 | Default | Options                |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------- |
+| **Mode**                 | How the module selects which categories to show. See [Mode Explained](#mode-explained) below.                               | Normal  | Normal, Dynamic        |
+| **Parent Category**      | (Normal mode only) The parent category whose direct children are displayed. Click the field to open the category picker.    | —       | Any published category |
+| **Show on Product Page** | (Dynamic mode only) When enabled, the module also shows sibling categories when a visitor is viewing a product detail page. | No      | Yes, No                |
 
 #### Mode Explained
 
@@ -59,7 +59,7 @@ These settings control which categories are shown and how the module determines 
 
 **Dynamic** — The module reads the current URL and figures out the context on its own. On a category page it shows that category's children. On a product page it can optionally show sibling categories — other children of the same parent. The moment a visitor leaves J2Commerce pages the module goes quiet, so you can assign it globally and it will not show up on ordinary articles or blog posts.
 
----
+***
 
 ### Layout Settings
 
@@ -67,42 +67,42 @@ These settings control the visual presentation of the category list.
 
 <!-- SCREENSHOT: Module edit form — Layout fieldset showing Layout Type, Columns, and slider settings -->
 
-| Setting | Description | Default | Options |
-|---------|-------------|---------|---------|
-| **Layout Type** | Grid displays categories as a responsive card layout. Slider displays them in a horizontal Swiper carousel. | Grid | Grid, Slider |
-| **Columns** | (Grid only) Number of columns on large screens. On small and medium screens the layout adjusts automatically. | 4 | 2, 3, 4, 6 |
-| **Show Child Categories** | (Grid only) Display subcategories nested within each parent category card. | No | Yes, No |
-| **Subcategory Depth** | (Grid, Show Child Categories = Yes) How many levels of subcategories to load and display. | 1 Level | 1 Level, 2 Levels, 3 Levels |
-| **Slides Per View** | (Slider only) Number of category slides visible at once on large screens. The slider responds automatically on smaller screens. | 5 | 1–8 |
-| **Space Between Slides** | (Slider only) Gap in pixels between slides. | 20 | 0–60 |
-| **Autoplay** | (Slider only) Automatically advance slides without user interaction. | No | Yes, No |
-| **Autoplay Delay** | (Slider, Autoplay = Yes) Seconds to wait before advancing to the next slide. | 4 | 1–30 |
-| **Loop** | (Slider only) When the slider reaches the last slide, wrap around to the first. Loop only activates when there are more categories than slides visible. | No | Yes, No |
-| **Navigation Arrows** | (Slider only) Show previous/next arrow buttons on the slider. | Yes | Yes, No |
-| **Pagination Dots** | (Slider only) Show clickable dot indicators below the slider. | No | Yes, No |
+| Setting                   | Description                                                                                                                                             | Default | Options                     |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------- |
+| **Layout Type**           | Grid displays categories as a responsive card layout. Slider displays them in a horizontal Swiper carousel.                                             | Grid    | Grid, Slider                |
+| **Columns**               | (Grid only) Number of columns on large screens. On small and medium screens the layout adjusts automatically.                                           | 4       | 2, 3, 4, 6                  |
+| **Show Child Categories** | (Grid only) Display subcategories nested within each parent category card.                                                                              | No      | Yes, No                     |
+| **Subcategory Depth**     | (Grid, Show Child Categories = Yes) How many levels of subcategories to load and display.                                                               | 1 Level | 1 Level, 2 Levels, 3 Levels |
+| **Slides Per View**       | (Slider only) Number of category slides visible at once on large screens. The slider responds automatically on smaller screens.                         | 5       | 1–8                         |
+| **Space Between Slides**  | (Slider only) Gap in pixels between slides.                                                                                                             | 20      | 0–60                        |
+| **Autoplay**              | (Slider only) Automatically advance slides without user interaction.                                                                                    | No      | Yes, No                     |
+| **Autoplay Delay**        | (Slider, Autoplay = Yes) Seconds to wait before advancing to the next slide.                                                                            | 4       | 1–30                        |
+| **Loop**                  | (Slider only) When the slider reaches the last slide, wrap around to the first. Loop only activates when there are more categories than slides visible. | No      | Yes, No                     |
+| **Navigation Arrows**     | (Slider only) Show previous/next arrow buttons on the slider.                                                                                           | Yes     | Yes, No                     |
+| **Pagination Dots**       | (Slider only) Show clickable dot indicators below the slider.                                                                                           | No      | Yes, No                     |
 
 #### Grid Column Responsiveness
 
 The grid layout automatically adjusts for smaller screens:
 
-| Setting | Mobile (xs) | Tablet (sm/md) | Desktop (lg) |
-|---------|-------------|----------------|--------------|
-| 2 columns | 1 column | 2 columns | 2 columns |
-| 3 columns | 1 column | 2 columns | 3 columns |
-| 4 columns | 1 column | 3 columns | 4 columns |
-| 6 columns | 1 column | 3 columns | 6 columns |
+| Setting   | Mobile (xs) | Tablet (sm/md) | Desktop (lg) |
+| --------- | ----------- | -------------- | ------------ |
+| 2 columns | 1 column    | 2 columns      | 2 columns    |
+| 3 columns | 1 column    | 2 columns      | 3 columns    |
+| 4 columns | 1 column    | 3 columns      | 4 columns    |
+| 6 columns | 1 column    | 3 columns      | 6 columns    |
 
 #### Slider Breakpoints
 
 The slider also responds to screen size:
 
-| Screen | Slides Visible |
-|--------|---------------|
-| Mobile | 1 slide |
-| Tablet (768px) | Approximately half of Slides Per View |
-| Desktop (992px+) | Configured Slides Per View |
+| Screen           | Slides Visible                        |
+| ---------------- | ------------------------------------- |
+| Mobile           | 1 slide                               |
+| Tablet (768px)   | Approximately half of Slides Per View |
+| Desktop (992px+) | Configured Slides Per View            |
 
----
+***
 
 ### Display Settings
 
@@ -110,22 +110,22 @@ These settings control what information appears on each category card.
 
 <!-- SCREENSHOT: Module edit form — Display fieldset showing Show Image, Show Title, Show Description, and other display toggles -->
 
-| Setting | Description | Default | Options |
-|---------|-------------|---------|---------|
-| **Subtemplate** | The visual theme used for category cards. **Auto** inherits the subtemplate from the active menu item (recommended). You can override to force a specific theme. | Auto | Auto, Bootstrap 5, UIkit |
-| **Category Header Tag** | HTML heading element used for the category name. Subcategory names automatically use the next level down (e.g., H3 → H4 → H5). Setting this to **DIV** makes all levels use a `<div>` instead. | H3 | H1, H2, H3, H4, H5, H6, DIV |
-| **Image Width** | Width in pixels used in the image `width` attribute. This controls intrinsic size for layout purposes, not CSS scaling. | 258 | 50–800 |
-| **Show Image** | Display the category image on each card. | Yes | Yes, No |
-| **Show Title** | Display the category name on each card. | Yes | Yes, No |
-| **Link Title** | Make the category title a clickable link to the category page. | Yes | Yes, No |
-| **Link Image** | Make the category image a clickable link to the category page. | Yes | Yes, No |
-| **Show Description** | Display the category description text on each card. | No | Yes, No |
-| **Description Length** | (Show Description = Yes) Maximum number of characters to display. Text longer than this is truncated with an ellipsis. Set to `0` to show the full description. | 150 | 0–500 |
-| **Show Product Count** | Display a badge showing how many active J2Commerce products are in each category. | No | Yes, No |
-| **Show Child Category Links** | (Grid, Show Child Categories = Yes) Show child category names as clickable links below each parent card. | Yes | Yes, No |
-| **Max Child Links** | (Grid, Show Child Categories = Yes, Show Child Category Links = Yes) Maximum number of child links to show per parent. | 5 | 1–20 |
+| Setting                       | Description                                                                                                                                                                                    | Default | Options                     |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------- |
+| **Subtemplate**               | The visual theme used for category cards. **Auto** inherits the subtemplate from the active menu item (recommended). You can override to force a specific theme.                               | Auto    | Auto, Bootstrap 5, UIkit    |
+| **Category Header Tag**       | HTML heading element used for the category name. Subcategory names automatically use the next level down (e.g., H3 → H4 → H5). Setting this to **DIV** makes all levels use a `<div>` instead. | H3      | H1, H2, H3, H4, H5, H6, DIV |
+| **Image Width**               | Width in pixels used in the image `width` attribute. This controls intrinsic size for layout purposes, not CSS scaling.                                                                        | 258     | 50–800                      |
+| **Show Image**                | Display the category image on each card.                                                                                                                                                       | Yes     | Yes, No                     |
+| **Show Title**                | Display the category name on each card.                                                                                                                                                        | Yes     | Yes, No                     |
+| **Link Title**                | Make the category title a clickable link to the category page.                                                                                                                                 | Yes     | Yes, No                     |
+| **Link Image**                | Make the category image a clickable link to the category page.                                                                                                                                 | Yes     | Yes, No                     |
+| **Show Description**          | Display the category description text on each card.                                                                                                                                            | No      | Yes, No                     |
+| **Description Length**        | (Show Description = Yes) Maximum number of characters to display. Text longer than this is truncated with an ellipsis. Set to `0` to show the full description.                                | 150     | 0–500                       |
+| **Show Product Count**        | Display a badge showing how many active J2Commerce products are in each category.                                                                                                              | No      | Yes, No                     |
+| **Show Child Category Links** | (Grid, Show Child Categories = Yes) Show child category names as clickable links below each parent card.                                                                                       | Yes     | Yes, No                     |
+| **Max Child Links**           | (Grid, Show Child Categories = Yes, Show Child Category Links = Yes) Maximum number of child links to show per parent.                                                                         | 5       | 1–20                        |
 
----
+***
 
 ### Category Builder
 
@@ -140,8 +140,10 @@ The Category Builder is a powerful tool available in **Normal** mode that lets y
 3. Switch to the **Category Builder** tab.
 4. Click the **Build Category Display** button. The module fetches the child categories of your selected parent and displays them in a table.
 5. For each category row you can:
+
    - **Drag and drop rows** using the grip handle on the left to reorder how categories appear on the frontend.
    - **Choose an Image Type** for each category:
+
      - **No Image** — No image is displayed for this category.
      - **Category Image** — Uses the image set on the category in Joomla's category manager. This option is disabled if the category has no image.
      - **Custom Image** — Opens Joomla's media picker so you can choose any image from your site's media library.
@@ -152,52 +154,52 @@ The builder saves its data as JSON in the module parameters. When you return to 
 
 > **Tip:** If you add new child categories in the Joomla category manager after setting up the builder, click **Build Category Display** again to load the new categories into the table. Your existing settings for other categories are preserved.
 
----
+***
 
 ### Advanced Settings
 
-| Setting | Description | Default |
-|---------|-------------|---------|
+| Setting                 | Description                                                                                                                          | Default   |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------- |
 | **Module Class Suffix** | An optional CSS class name appended to the module's wrapping element. Use this to apply custom styles to a specific module instance. | *(empty)* |
 
----
+***
 
 ## Subtemplates
 
 The module supports two visual themes, controlled by the **Subtemplate** setting in the Display fieldset.
 
-| Subtemplate | Layout Classes Used | Slider Library |
-|-------------|---------------------|----------------|
-| **Bootstrap 5** | Bootstrap 5 grid, card, badge classes | Swiper.js |
-| **UIkit** | UIkit grid, card, badge, slider classes | UIkit slider |
+| Subtemplate     | Layout Classes Used                     | Slider Library |
+| --------------- | --------------------------------------- | -------------- |
+| **Bootstrap 5** | Bootstrap 5 grid, card, badge classes   | Swiper.js      |
+| **UIkit**       | UIkit grid, card, badge, slider classes | UIkit slider   |
 
 When **Subtemplate** is set to **Auto**, the module reads the active menu item's subtemplate parameter and matches it. This means a Bootstrap 5 template site automatically uses the Bootstrap 5 category cards, and a UIkit site uses UIkit cards.
 
 If you assign the module to a page that has no J2Commerce menu item (for example, a standard article page), **Auto** falls back to Bootstrap 5.
 
----
+***
 
 ## Template Overrides
 
 You can customise the module's HTML output using Joomla's standard template override system.
 
-1. Go to **System** -> **Site Templates** -> **[Your Template]** -> **Create Overrides**.
-2. Find **mod_j2commerce_categories** in the modules list and click it to create the override files.
+1. Go to **System** -> **Site Templates** -> **\[Your Template]** -> **Create Overrides**.
+2. Find **mod\_j2commerce\_categories** in the modules list and click it to create the override files.
 3. Joomla copies the template files to your template's `html/mod_j2commerce_categories/` directory.
 
 The layout files are:
 
-| File | Purpose |
-|------|---------|
-| `default.php` | Entry point — detects subtemplate and routes to the correct layout file |
-| `bootstrap5/grid.php` | Bootstrap 5 grid card layout |
-| `bootstrap5/slider.php` | Bootstrap 5 Swiper slider layout |
-| `uikit/grid.php` | UIkit grid card layout |
-| `uikit/slider.php` | UIkit slider layout |
+| File                    | Purpose                                                                 |
+| ----------------------- | ----------------------------------------------------------------------- |
+| `default.php`           | Entry point — detects subtemplate and routes to the correct layout file |
+| `bootstrap5/grid.php`   | Bootstrap 5 grid card layout                                            |
+| `bootstrap5/slider.php` | Bootstrap 5 Swiper slider layout                                        |
+| `uikit/grid.php`        | UIkit grid card layout                                                  |
+| `uikit/slider.php`      | UIkit slider layout                                                     |
 
 Edit only the file matching your site's theme and layout choice.
 
----
+***
 
 ## Use Cases
 
@@ -247,7 +249,7 @@ Switch to the Slider layout and you get a smooth, touch-friendly Swiper carousel
 - Show Image: Yes
 - Show Title: Yes
 
----
+***
 
 ## Troubleshooting
 
@@ -323,7 +325,7 @@ Switch to the Slider layout and you get a smooth, touch-friendly Swiper carousel
 2. If your site uses Bootstrap 5, explicitly set **Subtemplate** to **Bootstrap 5**.
 3. If your site uses UIkit, set **Subtemplate** to **UIkit**.
 
----
+***
 
 ## Related Topics
 

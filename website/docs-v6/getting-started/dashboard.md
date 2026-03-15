@@ -6,7 +6,7 @@ The dashboard is also the home for the **Store Setup Wizard**, an onboarding che
 
 ***
 
-**Requirements**
+## Requirements
 
 - with PHP 8.3.0 +
 - Joomla! 6.x
