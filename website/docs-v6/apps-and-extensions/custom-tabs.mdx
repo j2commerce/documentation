@@ -54,27 +54,11 @@ Once you click on the **Custom Tabs** Title next to the green checkmark, you are
 
 ![](/img/tabs-config-1.webp)
 
-**Prepare Content:** Select '**Yes**' to prepare the content with the Joomla Content Plugins
+### Prepare Content
 
-**Custom Field Short Code:** Select '**Yes**' to choose whether to prepare the data for the Custom tab or not.
+Select '**Yes**' to prepare the content with the Joomla Content Plugins
 
-**Display Brand Details:** Select '**Yes**' to display the product's Manufacturer / Brand details in a separate tab. Depending on your country, this may be a mandatory requirement.
-
-**Note:** The **Display Brand Details** field is the latest Add-on. It adds a way to add the manufacturer/brand to the tabs, before or after the other ones. Some countries require the display of brand information, including the address. The manufacturer information tab can be modified by creating a template override. The override needs to be `/templates/[the default template]/html/plugins/j2store/app_customtabs/brand.php` The tab text can be modified by creating a language override for PLG\_J2STORE\_APP\_CUSTOMTABS\_MANUFACTURER\_DETAILS
-
-#### **When to Enable Content Field Short Code**{#when-to-enable-content-field-short-code}
-
-Enable **Custom Field Short Code** when:
-
-- You have created J2Commerce custom fields for products (e.g., material, weight, dimensions)
-
-- You want to display these custom field values inside tab content
-
-- You use custom field shortcodes in your tab descriptions
-
-Leave disabled for standard HTML content without custom field references.
-
-#### **When to Enable Prepare Content**{#when-to-enable-prepare-content}
+***When to Enable Prepare Content***
 
 Enable **Prepare Content** when your tab content contains:
 
@@ -86,37 +70,58 @@ Enable **Prepare Content** when your tab content contains:
 
 **Note:** This option applies processing overhead. Leave disabled for simple HTML content.
 
-#### **Display Brand Details**{#display-brand-details}
+### Custom Field Short Code
+
+Select '**Yes**' to choose whether to prepare the data for the Custom tab or not.
+
+***When to Enable Content Field Short Code***
+
+Enable **Custom Field Short Code** when:
+
+- You have created J2Commerce custom fields for products (e.g., material, weight, dimensions)
+
+- You want to display these custom field values inside tab content
+
+- You use custom field shortcodes in your tab descriptions
+
+Leave disabled for standard HTML content without custom field references.
+
+### Display Brand Details
+
+Select '**Yes**' to display the product's Manufacturer / Brand details in a separate tab. Depending on your country, this may be a mandatory requirement.
+
+**Note:** In order to add the Brand or Manufacturer to a product, you have to add them to the database. Go to **J2Commerce -> Dashboard -> Catalog -> Manufacturer**. Fill out the company information and hit save
+
+**When to Enable Display Brand Details**
 
 When enabled, J2Commerce retrieves manufacturer details from the product's assigned manufacturer:
 
-1. The manufacturer name appears as the tab title
+1. The manufacturer's name appears as the accordion title
 
 2. Manufacturer description content loads from the linked Joomla article
 
-**Position Options:**
+### Position Options
 
-|   |
-| - |
+*This only shows up when the **Display Brand Details** is **enabled**.*
 
-| **Position** | **Behavior**                                           |
-| ------------ | ------------------------------------------------------ |
-| **Before**   | Brand tab appears as the first tab on the product page |
-| **After**    | Brand tab appears as the last tab on the product page  |
+| **Position** | **Behavior**                                                       |
+| ------------ | ------------------------------------------------------------------ |
+| **Before**   | Brand accordion appears as the first accordion on the product page |
+| **After**    | Brand accordion appears as the last accordion on the product page  |
 
-## **Configure Products**{#configure-products}
+## Adding Custom Tabs to Products{#configure-products}
 
-After enabling the plugin, each product can have custom tabs.
+After enabling and configuring the plugin, each product can have custom tabs.
 
-### **Step 1: Edit a Product**{#step-1-edit-a-product}
+### Edit a Product{#step-1-edit-a-product}
 
-1. Go to **J2Commerce** -> **Catalog** -> **Products**.
+1. Go to **J2Commerce** **-> Catalog -> Products**.
 
 2. Click on a product to edit it.
 
 3. Scroll to the **Apps** section.
 
-### **Step 2: Add Tab from Article**{#step-2-add-tab-from-article}
+### Add Tab from Article{#step-2-add-tab-from-article}
 
 The **Custom Tab from Article Id** field lets you import content from a Joomla article.
 
@@ -137,7 +142,7 @@ The **Custom Tab from Article Id** field lets you import content from a Joomla a
 
 The tab appears on the product page using the article's title and content.
 
-### **Step 3: Add Custom Tabs**{#step-3-add-custom-tabs}
+### Add Custom Tabs{#step-3-add-custom-tabs}
 
 Click the **Add Custom Tab** button to create unlimited custom tabs.
 
@@ -153,7 +158,7 @@ Each tab row has these fields:
 | **Enabled**        | Toggle to show or hide this tab.                                                                  | Yes          |
 | **Tab Content**    | The content displayed when the tab is active. Supports HTML and opens with the configured editor. | Yes          |
 
-### **Step 4: Organize Tabs**{#step-4-organize-tabs}
+### Organize Tabs{#step-4-organize-tabs}
 
 The order in which tabs appear in the admin interface determines their display order on the frontend. The first tab appears first in the tab navigation.
 
@@ -165,11 +170,11 @@ The order in which tabs appear in the admin interface determines their display o
 
 - **Delete** - Click the trash icon on any row to remove it
 
-### **Step 5: Save the Product**{#step-5-save-the-product}
+### Save the Product{#step-5-save-the-product}
 
 Click **Save** or **Save & Close** to apply your changes.
 
-## **How It Works**{#how-it-works}
+## How It Works{#how-it-works}
 
 When a customer views a product page:
 
@@ -183,7 +188,7 @@ When a customer views a product page:
 
 5. All tabs appear in a Bootstrap 5 tabbed interface.
 
-## **Display Conditions**{#display-conditions}
+## Display Conditions{#display-conditions}
 
 Custom tabs appear when:
 
@@ -201,7 +206,7 @@ Custom tabs appear when:
 
 - The manufacturer has a description article configured.
 
-## **Tips**{#tips}
+## Tips{#tips}
 
 - **Use articles for reusable content** - If the same specifications apply to multiple products, create a Joomla article and reuse it across products.
 
@@ -213,7 +218,7 @@ Custom tabs appear when:
 
 - **Organize by importance** - Place critical information (shipping, warranty) in the first tabs for visibility.
 
-## **Troubleshooting**{#troubleshooting}
+## Troubleshooting{#troubleshooting}
 
 ### **Tabs Do Not Appear on Product Page**{#tabs-do-not-appear-on-product-page}
 
