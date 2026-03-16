@@ -15,13 +15,14 @@ This improves the checkout experience by reducing typing effort and minimizing a
 Before configuring the plugin, you need a Google Maps Platform API key with access to the Places API (New).
 
 1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
-2. Create a new project or select an existing one.
-3. Navigate to **APIs & Services** -> **Library** in the left sidebar menu.
-4. Search for **Places API** and enable it.
-5. Follow the sign-up steps&#x20;
-6. Go to **APIs & Services** -> **Credentials** in the left sidebar menu
-7. Click **Create Credentials** at the top -> **API Key**.
-8. Copy the generated API key.
+2. Select **My First Project**
+3. Create a **New Project** or select an **existing one**.
+4. Navigate to **APIs & Services** **-> Library** in the left sidebar menu.
+5. Search for **Places API** and enable it.
+6. Follow the sign-up steps&#x20;
+7. Go to **APIs & Services** -> **Credentials** in the left sidebar menu
+8. Click **Create Credentials** at the top **->** **API Key**.
+9. Copy the generated API key.
 
 ### Secure Your API Key
 
