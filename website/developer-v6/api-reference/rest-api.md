@@ -7,7 +7,8 @@ description: "Complete reference for the J2Commerce REST API -- 40+ endpoints ac
 
 # REST API Reference
 
-J2Commerce exposes a comprehensive REST API through Joomla's Web Services framework. The API follows the [JSON:API specification](https://jsonapi.org/) (media type `application/vnd.api+json`), uses Bearer Token authentication, and provides 40+ endpoints across 21 resource types. All routes are registered by the `plg_webservices_j2commerce` plugin.
+J2Commerce exposes a comprehensive REST API through Joomla's Web Services framework. The API follows the [JSON\:API
+&#x20;specification](https://jsonapi.org/) (media type `application/vnd.api+json`), uses Bearer Token authentication, and provides 40+ endpoints across 21 resource types. All routes are registered by the `plg_webservices_j2commerce` plugin.
 
 ## Architecture
 
@@ -24,20 +25,20 @@ graph TD
 
 ### Key Source Files
 
-| Layer | Path | Purpose |
-|-------|------|---------|
-| Plugin | `plugins/webservices/j2commerce/src/Extension/J2Commerce.php` | Registers all routes via `onBeforeApiRoute` |
-| Base Controller | `api/components/com_j2commerce/src/Controller/J2CommerceApiController.php` | Forces `Administrator` prefix for model resolution |
-| Base View | `api/components/com_j2commerce/src/View/J2CommerceJsonapiView.php` | Maps custom PKs (e.g. `j2commerce_product_id`) to `id` |
-| Controllers | `api/components/com_j2commerce/src/Controller/` | 20 controllers -- one per resource type |
-| Views | `api/components/com_j2commerce/src/View/` | JSON:API serializers with field whitelists |
+| Layer           | Path                                                                       | Purpose                                                |
+| --------------- | -------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Plugin          | `plugins/webservices/j2commerce/src/Extension/J2Commerce.php`              | Registers all routes via `onBeforeApiRoute`            |
+| Base Controller | `api/components/com_j2commerce/src/Controller/J2CommerceApiController.php` | Forces `Administrator` prefix for model resolution     |
+| Base View       | `api/components/com_j2commerce/src/View/J2CommerceJsonapiView.php`         | Maps custom PKs (e.g. `j2commerce_product_id`) to `id` |
+| Controllers     | `api/components/com_j2commerce/src/Controller/`                            | 20 controllers -- one per resource type                |
+| Views           | `api/components/com_j2commerce/src/View/`                                  | JSON\:API&#xA; serializers with field whitelists       |
 
 ### Key Classes
 
-| Class | Namespace | Purpose |
-|-------|-----------|---------|
+| Class                     | Namespace                                        | Purpose                                                                                                                                        |
+| ------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | `J2CommerceApiController` | `J2Commerce\Component\J2commerce\Api\Controller` | Extends `Joomla\CMS\MVC\Controller\ApiController` -- overrides `getModel()` to force admin model resolution since no API-specific models exist |
-| `J2CommerceJsonapiView` | `J2Commerce\Component\J2commerce\Api\View` | Extends `Joomla\CMS\MVC\View\JsonApiView` -- maps custom primary keys to the standard `id` field expected by the tobscure/json-api serializer |
+| `J2CommerceJsonapiView`   | `J2Commerce\Component\J2commerce\Api\View`       | Extends `Joomla\CMS\MVC\View\JsonApiView` -- maps custom primary keys to the standard `id` field expected by the tobscure/json-api serializer  |
 
 ### Route Registration
 
@@ -56,7 +57,7 @@ $router->createCRUDRoutes('v1/j2commerce/products', 'products', $component);
 new Route(['GET'], 'v1/j2commerce/orders/:id/items', 'orderitems.displayList', ['id' => '(\d+)'], $private);
 ```
 
----
+***
 
 ## Authentication
 
@@ -85,7 +86,7 @@ curl -X GET "https://yoursite.com/api/index.php/v1/j2commerce/products" \
 
 All write operations (POST, PATCH, DELETE) require authentication. Nested and report endpoints are also marked as `public: false` in the route registration, requiring authentication for all HTTP methods.
 
----
+***
 
 ## Base URL
 
@@ -95,21 +96,22 @@ https://yoursite.com/api/index.php/v1/j2commerce/
 
 All endpoint paths in this document are relative to this base.
 
----
+***
 
 ## Request / Response Format
 
 ### Request Headers
 
-| Header | Value | Required |
-|--------|-------|----------|
-| `Authorization` | `Bearer {token}` | All endpoints |
-| `Accept` | `application/vnd.api+json` | All endpoints |
-| `Content-Type` | `application/json` | POST and PATCH only |
+| Header          | Value                      | Required            |
+| --------------- | -------------------------- | ------------------- |
+| `Authorization` | `Bearer {token}`           | All endpoints       |
+| `Accept`        | `application/vnd.api+json` | All endpoints       |
+| `Content-Type`  | `application/json`         | POST and PATCH only |
 
 ### Response Structure
 
-All responses follow the JSON:API specification:
+All responses follow the JSON\:API
+&#x20;specification:
 
 ```json
 {
@@ -138,10 +140,10 @@ Single-item responses return `data` as an object instead of an array.
 ?page[offset]=0&page[limit]=20
 ```
 
-| Parameter | Description | Default | Maximum |
-|-----------|-------------|---------|---------|
-| `page[offset]` | Number of records to skip | `0` | -- |
-| `page[limit]` | Number of records to return | `20` | `100` |
+| Parameter      | Description                 | Default | Maximum |
+| -------------- | --------------------------- | ------- | ------- |
+| `page[offset]` | Number of records to skip   | `0`     | --      |
+| `page[limit]`  | Number of records to return | `20`    | `100`   |
 
 ### Filtering
 
@@ -160,14 +162,14 @@ Available filters vary by endpoint and are documented in each resource section b
 ?list[ordering]=created_on&list[direction]=desc
 ```
 
-| Parameter | Description | Example Values |
-|-----------|-------------|----------------|
-| `list[ordering]` | Column to sort by | `created_on`, `product_name`, `order_total` |
-| `list[direction]` | Sort direction | `asc`, `desc` |
+| Parameter         | Description       | Example Values                              |
+| ----------------- | ----------------- | ------------------------------------------- |
+| `list[ordering]`  | Column to sort by | `created_on`, `product_name`, `order_total` |
+| `list[direction]` | Sort direction    | `asc`, `desc`                               |
 
 Sorting is available on endpoints that implement `displayList()` with explicit list parameter handling (Products, Orders, Customers).
 
----
+***
 
 ## Endpoint Reference
 
@@ -175,27 +177,27 @@ Sorting is available on endpoints that implement `displayList()` with explicit l
 
 Full CRUD for J2Commerce product records.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/products` | List products |
-| `GET` | `/products/[id]` | Get a single product |
-| `POST` | `/products` | Create a product |
-| `PATCH` | `/products/[id]` | Update a product |
-| `DELETE` | `/products/[id]` | Delete a product |
+| Method   | Endpoint         | Description          |
+| -------- | ---------------- | -------------------- |
+| `GET`    | `/products`      | List products        |
+| `GET`    | `/products/{id}` | Get a single product |
+| `POST`   | `/products`      | Create a product     |
+| `PATCH`  | `/products/{id}` | Update a product     |
+| `DELETE` | `/products/{id}` | Delete a product     |
 
 **Source:** `api/components/com_j2commerce/src/Controller/ProductsController.php`
 
 #### Filters
 
-| Parameter | Type | Maps To | Description |
-|-----------|------|---------|-------------|
-| `filter[search]` | string | `filter.search` | Search by product name |
-| `filter[category]` | int | `filter.category_id` | Filter by Joomla category ID |
-| `filter[manufacturer]` | int | `filter.manufacturer_id` | Filter by manufacturer ID |
-| `filter[product_type]` | string | `filter.product_type` | Filter by product type (e.g. `simple`, `variable`, `downloadable`) |
-| `filter[enabled]` | int | `filter.state` | `1` = published, `0` = unpublished |
-| `filter[sku]` | string | `filter.search` | Search by SKU (internally prefixed with `sku:`) |
-| `filter[visibility]` | int | `filter.visibility` | Filter by visibility flag |
+| Parameter              | Type   | Maps To                  | Description                                                        |
+| ---------------------- | ------ | ------------------------ | ------------------------------------------------------------------ |
+| `filter[search]`       | string | `filter.search`          | Search by product name                                             |
+| `filter[category]`     | int    | `filter.category_id`     | Filter by Joomla category ID                                       |
+| `filter[manufacturer]` | int    | `filter.manufacturer_id` | Filter by manufacturer ID                                          |
+| `filter[product_type]` | string | `filter.product_type`    | Filter by product type (e.g. `simple`, `variable`, `downloadable`) |
+| `filter[enabled]`      | int    | `filter.state`           | `1` = published, `0` = unpublished                                 |
+| `filter[sku]`          | string | `filter.search`          | Search by SKU (internally prefixed with `sku:`)                    |
+| `filter[visibility]`   | int    | `filter.visibility`      | Filter by visibility flag                                          |
 
 **Note:** `filter[sku]` overrides `filter[search]` if both are provided, since both map to the same model state key.
 
@@ -215,19 +217,19 @@ curl -s "https://yoursite.com/api/index.php/v1/j2commerce/products?filter[enable
   -H "Accept: application/vnd.api+json"
 ```
 
----
+***
 
 ### Product Variants (nested)
 
 Read-only access to variants belonging to a specific product.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/products/[id]/variants` | List variants for a product |
+| Method | Endpoint                  | Description                 |
+| ------ | ------------------------- | --------------------------- |
+| `GET`  | `/products/{id}/variants` | List variants for a product |
 
 **Source:** `api/components/com_j2commerce/src/Controller/VariantsController.php`
 
-The `[id]` in the URL is the `j2commerce_product_id`. The controller sets `filter.product_id` automatically from the URL parameter.
+The `{id}` in the URL is the `j2commerce_product_id`. The controller sets `filter.product_id` automatically from the URL parameter.
 
 #### List Fields
 
@@ -237,32 +239,32 @@ The `[id]` in the URL is the `j2commerce_product_id`. The controller sets `filte
 
 `upc`, `quantity_restriction`, `min_sale_qty`, `max_sale_qty`, `allow_backorder`, `weight`, `length`, `width`, `height`, `shipping`
 
----
+***
 
 ### Orders
 
 Full CRUD for order records.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/orders` | List orders |
-| `GET` | `/orders/[id]` | Get a single order |
-| `POST` | `/orders` | Create an order |
-| `PATCH` | `/orders/[id]` | Update an order |
-| `DELETE` | `/orders/[id]` | Delete an order |
+| Method   | Endpoint       | Description        |
+| -------- | -------------- | ------------------ |
+| `GET`    | `/orders`      | List orders        |
+| `GET`    | `/orders/{id}` | Get a single order |
+| `POST`   | `/orders`      | Create an order    |
+| `PATCH`  | `/orders/{id}` | Update an order    |
+| `DELETE` | `/orders/{id}` | Delete an order    |
 
 **Source:** `api/components/com_j2commerce/src/Controller/OrdersController.php`
 
 #### Filters
 
-| Parameter | Type | Maps To | Description |
-|-----------|------|---------|-------------|
-| `filter[search]` | string | `filter.search` | Search by order ID, name, or email |
-| `filter[status]` | int | `filter.order_state_id` | Filter by order status ID |
-| `filter[customer_id]` | int | `filter.user_id` | Filter by Joomla user ID |
-| `filter[date_from]` | string | `filter.since` | Orders created on or after this date (`YYYY-MM-DD`) |
-| `filter[date_to]` | string | `filter.until` | Orders created on or before this date (`YYYY-MM-DD`) |
-| `filter[payment_type]` | string | `filter.payment_type` | Filter by payment method element name |
+| Parameter              | Type   | Maps To                 | Description                                          |
+| ---------------------- | ------ | ----------------------- | ---------------------------------------------------- |
+| `filter[search]`       | string | `filter.search`         | Search by order ID, name, or email                   |
+| `filter[status]`       | int    | `filter.order_state_id` | Filter by order status ID                            |
+| `filter[customer_id]`  | int    | `filter.user_id`        | Filter by Joomla user ID                             |
+| `filter[date_from]`    | string | `filter.since`          | Orders created on or after this date (`YYYY-MM-DD`)  |
+| `filter[date_to]`      | string | `filter.until`          | Orders created on or before this date (`YYYY-MM-DD`) |
+| `filter[payment_type]` | string | `filter.payment_type`   | Filter by payment method element name                |
 
 #### List Fields
 
@@ -280,19 +282,19 @@ curl -s "https://yoursite.com/api/index.php/v1/j2commerce/orders?filter[date_fro
   -H "Accept: application/vnd.api+json"
 ```
 
----
+***
 
 ### Order Items (nested)
 
 Read-only access to line items within a specific order.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/orders/[id]/items` | List items in an order |
+| Method | Endpoint             | Description            |
+| ------ | -------------------- | ---------------------- |
+| `GET`  | `/orders/{id}/items` | List items in an order |
 
 **Source:** `api/components/com_j2commerce/src/Controller/OrderitemsController.php`
 
-The `[id]` in the URL is the `j2commerce_order_id`. The controller sets `filter.order_id` automatically.
+The `{id}` in the URL is the `j2commerce_order_id`. The controller sets `filter.order_id` automatically.
 
 #### List Fields
 
@@ -302,20 +304,20 @@ The `[id]` in the URL is the `j2commerce_order_id`. The controller sets `filter.
 
 `product_id`, `variant_id`, `orderitem_attributes`, `orderitem_price`, `orderitem_option_price`, `orderitem_finalprice_with_tax`, `orderitem_discount`, `orderitem_weight`, `created_on`
 
----
+***
 
 ### Order History (nested)
 
 View and add status change entries for a specific order.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/orders/[id]/history` | List status changes for an order |
-| `POST` | `/orders/[id]/history` | Add a new status change |
+| Method | Endpoint               | Description                      |
+| ------ | ---------------------- | -------------------------------- |
+| `GET`  | `/orders/{id}/history` | List status changes for an order |
+| `POST` | `/orders/{id}/history` | Add a new status change          |
 
 **Source:** `api/components/com_j2commerce/src/Controller/OrderhistoriesController.php`
 
-The `[id]` in the URL is the `j2commerce_order_id`.
+The `{id}` in the URL is the `j2commerce_order_id`.
 
 #### List Fields
 
@@ -339,28 +341,28 @@ curl -X POST "https://yoursite.com/api/index.php/v1/j2commerce/orders/42/history
   }'
 ```
 
----
+***
 
 ### Customers
 
 Full CRUD for customer address records. Customers are identified by their primary address record in J2Commerce.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/customers` | List customers |
-| `GET` | `/customers/[id]` | Get a single customer |
-| `POST` | `/customers` | Create a customer |
-| `PATCH` | `/customers/[id]` | Update a customer |
-| `DELETE` | `/customers/[id]` | Delete a customer |
+| Method   | Endpoint          | Description           |
+| -------- | ----------------- | --------------------- |
+| `GET`    | `/customers`      | List customers        |
+| `GET`    | `/customers/{id}` | Get a single customer |
+| `POST`   | `/customers`      | Create a customer     |
+| `PATCH`  | `/customers/{id}` | Update a customer     |
+| `DELETE` | `/customers/{id}` | Delete a customer     |
 
 **Source:** `api/components/com_j2commerce/src/Controller/CustomersController.php`
 
 #### Filters
 
-| Parameter | Type | Maps To | Description |
-|-----------|------|---------|-------------|
-| `filter[search]` | string | `filter.search` | Search by name, email, or company |
-| `filter[country]` | int | `filter.country_id` | Filter by country ID |
+| Parameter         | Type   | Maps To             | Description                       |
+| ----------------- | ------ | ------------------- | --------------------------------- |
+| `filter[search]`  | string | `filter.search`     | Search by name, email, or company |
+| `filter[country]` | int    | `filter.country_id` | Filter by country ID              |
 
 #### List Fields
 
@@ -370,19 +372,19 @@ Full CRUD for customer address records. Customers are identified by their primar
 
 `address_1`, `address_2`, `zip`, `zone_id`, `country_id`
 
----
+***
 
 ### Customer Addresses (nested)
 
 Read-only access to all addresses belonging to a specific customer.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/customers/[id]/addresses` | List addresses for a customer |
+| Method | Endpoint                    | Description                   |
+| ------ | --------------------------- | ----------------------------- |
+| `GET`  | `/customers/{id}/addresses` | List addresses for a customer |
 
 **Source:** `api/components/com_j2commerce/src/Controller/AddressesController.php`
 
-The `[id]` in the URL is the Joomla `user_id`. The controller sets `filter.user_id` automatically.
+The `{id}` in the URL is the Joomla `user_id`. The controller sets `filter.user_id` automatically.
 
 #### List Fields
 
@@ -392,33 +394,33 @@ The `[id]` in the URL is the Joomla `user_id`. The controller sets `filter.user_
 
 `address_1`, `address_2`, `zip`, `zone_id`, `country_id`, `phone_2`, `company`, `tax_number`
 
----
+***
 
 ### Customer Orders (nested)
 
 Read-only access to orders belonging to a specific customer.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/customers/[id]/orders` | List orders for a customer |
+| Method | Endpoint                 | Description                |
+| ------ | ------------------------ | -------------------------- |
+| `GET`  | `/customers/{id}/orders` | List orders for a customer |
 
 **Source:** `api/components/com_j2commerce/src/Controller/CustomerordersController.php`
 
-The `[id]` in the URL is the Joomla `user_id`. The controller sets `filter.user_id` on the Orders model. Returns the same fields as the Orders list endpoint.
+The `{id}` in the URL is the Joomla `user_id`. The controller sets `filter.user_id` on the Orders model. Returns the same fields as the Orders list endpoint.
 
----
+***
 
 ### Inventory
 
 Full CRUD for product inventory records.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/inventory` | List inventory records |
-| `GET` | `/inventory/[id]` | Get inventory for a single product |
-| `POST` | `/inventory` | Create an inventory record |
-| `PATCH` | `/inventory/[id]` | Update inventory |
-| `DELETE` | `/inventory/[id]` | Delete an inventory record |
+| Method   | Endpoint          | Description                        |
+| -------- | ----------------- | ---------------------------------- |
+| `GET`    | `/inventory`      | List inventory records             |
+| `GET`    | `/inventory/{id}` | Get inventory for a single product |
+| `POST`   | `/inventory`      | Create an inventory record         |
+| `PATCH`  | `/inventory/{id}` | Update inventory                   |
+| `DELETE` | `/inventory/{id}` | Delete an inventory record         |
 
 **Source:** `api/components/com_j2commerce/src/Controller/InventoryController.php`
 
@@ -432,28 +434,28 @@ No custom filters are implemented. The controller uses the base `displayList()` 
 
 `product_source_id`, `min_out_qty`, `min_sale_qty`, `max_sale_qty`, `notify_qty`
 
----
+***
 
 ### Coupons
 
 Full CRUD for discount coupons.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/coupons` | List coupons |
-| `GET` | `/coupons/[id]` | Get a single coupon |
-| `POST` | `/coupons` | Create a coupon |
-| `PATCH` | `/coupons/[id]` | Update a coupon |
-| `DELETE` | `/coupons/[id]` | Delete a coupon |
+| Method   | Endpoint        | Description         |
+| -------- | --------------- | ------------------- |
+| `GET`    | `/coupons`      | List coupons        |
+| `GET`    | `/coupons/{id}` | Get a single coupon |
+| `POST`   | `/coupons`      | Create a coupon     |
+| `PATCH`  | `/coupons/{id}` | Update a coupon     |
+| `DELETE` | `/coupons/{id}` | Delete a coupon     |
 
 **Source:** `api/components/com_j2commerce/src/Controller/CouponsController.php`
 
 #### Filters
 
-| Parameter | Type | Maps To | Description |
-|-----------|------|---------|-------------|
-| `filter[search]` | string | `filter.search` | Search by coupon name or code |
-| `filter[enabled]` | int | `filter.enabled` | `1` = active, `0` = inactive |
+| Parameter         | Type   | Maps To          | Description                   |
+| ----------------- | ------ | ---------------- | ----------------------------- |
+| `filter[search]`  | string | `filter.search`  | Search by coupon name or code |
+| `filter[enabled]` | int    | `filter.enabled` | `1` = active, `0` = inactive  |
 
 #### List Fields
 
@@ -481,19 +483,19 @@ curl -X POST "https://yoursite.com/api/index.php/v1/j2commerce/coupons" \
   }'
 ```
 
----
+***
 
 ### Vouchers
 
 Full CRUD for gift vouchers.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/vouchers` | List vouchers |
-| `GET` | `/vouchers/[id]` | Get a single voucher |
-| `POST` | `/vouchers` | Create a voucher |
-| `PATCH` | `/vouchers/[id]` | Update a voucher |
-| `DELETE` | `/vouchers/[id]` | Delete a voucher |
+| Method   | Endpoint         | Description          |
+| -------- | ---------------- | -------------------- |
+| `GET`    | `/vouchers`      | List vouchers        |
+| `GET`    | `/vouchers/{id}` | Get a single voucher |
+| `POST`   | `/vouchers`      | Create a voucher     |
+| `PATCH`  | `/vouchers/{id}` | Update a voucher     |
+| `DELETE` | `/vouchers/{id}` | Delete a voucher     |
 
 **Source:** `api/components/com_j2commerce/src/Controller/VouchersController.php`
 
@@ -507,28 +509,28 @@ No custom filters are implemented.
 
 `order_id`, `subject`, `valid_from`, `valid_to`
 
----
+***
 
 ### Manufacturers
 
 Full CRUD for product manufacturers / brands.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/manufacturers` | List manufacturers |
-| `GET` | `/manufacturers/[id]` | Get a single manufacturer |
-| `POST` | `/manufacturers` | Create a manufacturer |
-| `PATCH` | `/manufacturers/[id]` | Update a manufacturer |
-| `DELETE` | `/manufacturers/[id]` | Delete a manufacturer |
+| Method   | Endpoint              | Description               |
+| -------- | --------------------- | ------------------------- |
+| `GET`    | `/manufacturers`      | List manufacturers        |
+| `GET`    | `/manufacturers/{id}` | Get a single manufacturer |
+| `POST`   | `/manufacturers`      | Create a manufacturer     |
+| `PATCH`  | `/manufacturers/{id}` | Update a manufacturer     |
+| `DELETE` | `/manufacturers/{id}` | Delete a manufacturer     |
 
 **Source:** `api/components/com_j2commerce/src/Controller/ManufacturersController.php`
 
 #### Filters
 
-| Parameter | Type | Maps To | Description |
-|-----------|------|---------|-------------|
-| `filter[search]` | string | `filter.search` | Search by manufacturer name |
-| `filter[enabled]` | int | `filter.enabled` | `1` = published, `0` = unpublished |
+| Parameter         | Type   | Maps To          | Description                        |
+| ----------------- | ------ | ---------------- | ---------------------------------- |
+| `filter[search]`  | string | `filter.search`  | Search by manufacturer name        |
+| `filter[enabled]` | int    | `filter.enabled` | `1` = published, `0` = unpublished |
 
 #### List Fields
 
@@ -538,19 +540,19 @@ Full CRUD for product manufacturers / brands.
 
 `manufacturer_desc`
 
----
+***
 
 ### Currencies
 
 Full CRUD for currency configuration.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/currencies` | List currencies |
-| `GET` | `/currencies/[id]` | Get a single currency |
-| `POST` | `/currencies` | Create a currency |
-| `PATCH` | `/currencies/[id]` | Update a currency |
-| `DELETE` | `/currencies/[id]` | Delete a currency |
+| Method   | Endpoint           | Description           |
+| -------- | ------------------ | --------------------- |
+| `GET`    | `/currencies`      | List currencies       |
+| `GET`    | `/currencies/{id}` | Get a single currency |
+| `POST`   | `/currencies`      | Create a currency     |
+| `PATCH`  | `/currencies/{id}` | Update a currency     |
+| `DELETE` | `/currencies/{id}` | Delete a currency     |
 
 **Source:** `api/components/com_j2commerce/src/Controller/CurrenciesController.php`
 
@@ -564,28 +566,28 @@ No custom filters are implemented.
 
 `currency_position`, `currency_num_decimals`, `currency_decimal`, `currency_thousands`
 
----
+***
 
 ### Countries
 
 Full CRUD for country records.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/countries` | List countries |
-| `GET` | `/countries/[id]` | Get a single country |
-| `POST` | `/countries` | Create a country |
-| `PATCH` | `/countries/[id]` | Update a country |
-| `DELETE` | `/countries/[id]` | Delete a country |
+| Method   | Endpoint          | Description          |
+| -------- | ----------------- | -------------------- |
+| `GET`    | `/countries`      | List countries       |
+| `GET`    | `/countries/{id}` | Get a single country |
+| `POST`   | `/countries`      | Create a country     |
+| `PATCH`  | `/countries/{id}` | Update a country     |
+| `DELETE` | `/countries/{id}` | Delete a country     |
 
 **Source:** `api/components/com_j2commerce/src/Controller/CountriesController.php`
 
 #### Filters
 
-| Parameter | Type | Maps To | Description |
-|-----------|------|---------|-------------|
-| `filter[search]` | string | `filter.search` | Search by country name or ISO code |
-| `filter[enabled]` | int | `filter.enabled` | `1` = published, `0` = unpublished |
+| Parameter         | Type   | Maps To          | Description                        |
+| ----------------- | ------ | ---------------- | ---------------------------------- |
+| `filter[search]`  | string | `filter.search`  | Search by country name or ISO code |
+| `filter[enabled]` | int    | `filter.enabled` | `1` = published, `0` = unpublished |
 
 #### All Fields
 
@@ -593,48 +595,48 @@ Full CRUD for country records.
 
 List and detail views return the same fields.
 
----
+***
 
 ### Zones
 
 Full CRUD for zones (states, provinces, regions). Also available as a nested resource under countries.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/zones` | List all zones |
-| `GET` | `/zones/[id]` | Get a single zone |
-| `POST` | `/zones` | Create a zone |
-| `PATCH` | `/zones/[id]` | Update a zone |
-| `DELETE` | `/zones/[id]` | Delete a zone |
-| `GET` | `/countries/[id]/zones` | List zones within a country |
+| Method   | Endpoint                | Description                 |
+| -------- | ----------------------- | --------------------------- |
+| `GET`    | `/zones`                | List all zones              |
+| `GET`    | `/zones/{id}`           | Get a single zone           |
+| `POST`   | `/zones`                | Create a zone               |
+| `PATCH`  | `/zones/{id}`           | Update a zone               |
+| `DELETE` | `/zones/{id}`           | Delete a zone               |
+| `GET`    | `/countries/{id}/zones` | List zones within a country |
 
 **Source:** `api/components/com_j2commerce/src/Controller/ZonesController.php`
 
 #### Filters
 
-| Parameter | Type | Maps To | Description |
-|-----------|------|---------|-------------|
+| Parameter        | Type   | Maps To         | Description                 |
+| ---------------- | ------ | --------------- | --------------------------- |
 | `filter[search]` | string | `filter.search` | Search by zone name or code |
 
-When accessed via `/countries/[id]/zones`, the `country_id` filter is set automatically from the URL.
+When accessed via `/countries/{id}/zones`, the `country_id` filter is set automatically from the URL.
 
 #### All Fields
 
 `j2commerce_zone_id`, `zone_name`, `zone_code`, `country_id`, `enabled`
 
----
+***
 
 ### Shipping Methods
 
 Full CRUD for shipping method plugin records.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/shippingmethods` | List shipping methods |
-| `GET` | `/shippingmethods/[id]` | Get a single shipping method |
-| `POST` | `/shippingmethods` | Create a shipping method |
-| `PATCH` | `/shippingmethods/[id]` | Update a shipping method |
-| `DELETE` | `/shippingmethods/[id]` | Delete a shipping method |
+| Method   | Endpoint                | Description                  |
+| -------- | ----------------------- | ---------------------------- |
+| `GET`    | `/shippingmethods`      | List shipping methods        |
+| `GET`    | `/shippingmethods/{id}` | Get a single shipping method |
+| `POST`   | `/shippingmethods`      | Create a shipping method     |
+| `PATCH`  | `/shippingmethods/{id}` | Update a shipping method     |
+| `DELETE` | `/shippingmethods/{id}` | Delete a shipping method     |
 
 **Source:** `api/components/com_j2commerce/src/Controller/ShippingmethodsController.php`
 
@@ -648,19 +650,19 @@ No custom filters are implemented.
 
 `params`
 
----
+***
 
 ### Payment Methods
 
 Full CRUD for payment method plugin records.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/paymentmethods` | List payment methods |
-| `GET` | `/paymentmethods/[id]` | Get a single payment method |
-| `POST` | `/paymentmethods` | Create a payment method |
-| `PATCH` | `/paymentmethods/[id]` | Update a payment method |
-| `DELETE` | `/paymentmethods/[id]` | Delete a payment method |
+| Method   | Endpoint               | Description                 |
+| -------- | ---------------------- | --------------------------- |
+| `GET`    | `/paymentmethods`      | List payment methods        |
+| `GET`    | `/paymentmethods/{id}` | Get a single payment method |
+| `POST`   | `/paymentmethods`      | Create a payment method     |
+| `PATCH`  | `/paymentmethods/{id}` | Update a payment method     |
+| `DELETE` | `/paymentmethods/{id}` | Delete a payment method     |
 
 **Source:** `api/components/com_j2commerce/src/Controller/PaymentmethodsController.php`
 
@@ -674,19 +676,19 @@ No custom filters are implemented.
 
 `params`
 
----
+***
 
 ### Tax Profiles
 
 Full CRUD for tax profiles.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/taxprofiles` | List tax profiles |
-| `GET` | `/taxprofiles/[id]` | Get a single tax profile |
-| `POST` | `/taxprofiles` | Create a tax profile |
-| `PATCH` | `/taxprofiles/[id]` | Update a tax profile |
-| `DELETE` | `/taxprofiles/[id]` | Delete a tax profile |
+| Method   | Endpoint            | Description              |
+| -------- | ------------------- | ------------------------ |
+| `GET`    | `/taxprofiles`      | List tax profiles        |
+| `GET`    | `/taxprofiles/{id}` | Get a single tax profile |
+| `POST`   | `/taxprofiles`      | Create a tax profile     |
+| `PATCH`  | `/taxprofiles/{id}` | Update a tax profile     |
+| `DELETE` | `/taxprofiles/{id}` | Delete a tax profile     |
 
 **Source:** `api/components/com_j2commerce/src/Controller/TaxprofilesController.php`
 
@@ -696,19 +698,19 @@ No custom filters are implemented.
 
 `j2commerce_taxprofile_id`, `taxprofile_name`, `enabled`
 
----
+***
 
 ### Tax Rates
 
 Full CRUD for tax rates.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/taxrates` | List tax rates |
-| `GET` | `/taxrates/[id]` | Get a single tax rate |
-| `POST` | `/taxrates` | Create a tax rate |
-| `PATCH` | `/taxrates/[id]` | Update a tax rate |
-| `DELETE` | `/taxrates/[id]` | Delete a tax rate |
+| Method   | Endpoint         | Description           |
+| -------- | ---------------- | --------------------- |
+| `GET`    | `/taxrates`      | List tax rates        |
+| `GET`    | `/taxrates/{id}` | Get a single tax rate |
+| `POST`   | `/taxrates`      | Create a tax rate     |
+| `PATCH`  | `/taxrates/{id}` | Update a tax rate     |
+| `DELETE` | `/taxrates/{id}` | Delete a tax rate     |
 
 **Source:** `api/components/com_j2commerce/src/Controller/TaxratesController.php`
 
@@ -718,19 +720,19 @@ No custom filters are implemented.
 
 `j2commerce_taxrate_id`, `taxrate_name`, `tax_percent`, `geozone_id`, `enabled`
 
----
+***
 
 ### Order Statuses
 
 Full CRUD for order status definitions.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/orderstatuses` | List order statuses |
-| `GET` | `/orderstatuses/[id]` | Get a single order status |
-| `POST` | `/orderstatuses` | Create an order status |
-| `PATCH` | `/orderstatuses/[id]` | Update an order status |
-| `DELETE` | `/orderstatuses/[id]` | Delete an order status |
+| Method   | Endpoint              | Description               |
+| -------- | --------------------- | ------------------------- |
+| `GET`    | `/orderstatuses`      | List order statuses       |
+| `GET`    | `/orderstatuses/{id}` | Get a single order status |
+| `POST`   | `/orderstatuses`      | Create an order status    |
+| `PATCH`  | `/orderstatuses/{id}` | Update an order status    |
+| `DELETE` | `/orderstatuses/{id}` | Delete an order status    |
 
 **Source:** `api/components/com_j2commerce/src/Controller/OrderstatusesController.php`
 
@@ -740,19 +742,19 @@ No custom filters are implemented.
 
 `j2commerce_orderstatus_id`, `orderstatus_name`, `orderstatus_core`, `enabled`
 
----
+***
 
 ### Categories
 
 Full CRUD for Joomla content categories used by J2Commerce products.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/categories` | List categories |
-| `GET` | `/categories/[id]` | Get a single category |
-| `POST` | `/categories` | Create a category |
-| `PATCH` | `/categories/[id]` | Update a category |
-| `DELETE` | `/categories/[id]` | Delete a category |
+| Method   | Endpoint           | Description           |
+| -------- | ------------------ | --------------------- |
+| `GET`    | `/categories`      | List categories       |
+| `GET`    | `/categories/{id}` | Get a single category |
+| `POST`   | `/categories`      | Create a category     |
+| `PATCH`  | `/categories/{id}` | Update a category     |
+| `DELETE` | `/categories/{id}` | Delete a category     |
 
 **Source:** `api/components/com_j2commerce/src/Controller/CategoriesController.php`
 
@@ -766,18 +768,18 @@ No custom filters are implemented. Categories use the standard Joomla `id` prima
 
 `description`, `path`, `language`
 
----
+***
 
 ### Reports
 
 Read-only report endpoints. The report type is determined by the URL path, not a query parameter.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/reports/sales` | Sales report |
-| `GET` | `/reports/products` | Product performance report |
-| `GET` | `/reports/customers` | Customer report |
-| `GET` | `/reports/inventory` | Inventory status report |
+| Method | Endpoint             | Description                |
+| ------ | -------------------- | -------------------------- |
+| `GET`  | `/reports/sales`     | Sales report               |
+| `GET`  | `/reports/products`  | Product performance report |
+| `GET`  | `/reports/customers` | Customer report            |
+| `GET`  | `/reports/inventory` | Inventory status report    |
 
 **Source:** `api/components/com_j2commerce/src/Controller/ReportsController.php`
 
@@ -785,11 +787,11 @@ The `report_type` is injected into the route defaults by the plugin and read fro
 
 #### Filters
 
-| Parameter | Type | Maps To | Description |
-|-----------|------|---------|-------------|
-| `filter[date_from]` | string | `filter.since` | Start date (`YYYY-MM-DD`) |
-| `filter[date_to]` | string | `filter.until` | End date (`YYYY-MM-DD`) |
-| `filter[period]` | string | `filter.period` | Aggregation period: `day`, `week`, `month`, or `year` |
+| Parameter           | Type   | Maps To         | Description                                           |
+| ------------------- | ------ | --------------- | ----------------------------------------------------- |
+| `filter[date_from]` | string | `filter.since`  | Start date (`YYYY-MM-DD`)                             |
+| `filter[date_to]`   | string | `filter.until`  | End date (`YYYY-MM-DD`)                               |
+| `filter[period]`    | string | `filter.period` | Aggregation period: `day`, `week`, `month`, or `year` |
 
 #### Example: Monthly Sales Report
 
@@ -799,15 +801,15 @@ curl -s "https://yoursite.com/api/index.php/v1/j2commerce/reports/sales?filter[d
   -H "Accept: application/vnd.api+json"
 ```
 
----
+***
 
 ### Configuration
 
 Read-only access to the J2Commerce component configuration (all parameters from `com_j2commerce`).
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/config` | Read store configuration |
+| Method | Endpoint  | Description              |
+| ------ | --------- | ------------------------ |
+| `GET`  | `/config` | Read store configuration |
 
 **Source:** `api/components/com_j2commerce/src/Controller/ConfigController.php`
 
@@ -831,7 +833,7 @@ This endpoint does not use the standard model layer. Instead, it reads component
 
 The exact attributes depend on the store's configuration. All component parameters are exposed.
 
----
+***
 
 ## Code Examples
 
@@ -928,7 +930,7 @@ const result = await response.json();
 console.log('History entry created:', result.data.id);
 ```
 
----
+***
 
 ## Connecting via MCP
 
@@ -968,20 +970,20 @@ claude mcp add mcp4joomla --transport stdio \
 
 This restricts the MCP server to GET operations only, preventing accidental writes.
 
----
+***
 
 ## Error Handling
 
-| HTTP Status | Meaning | Common Cause |
-|-------------|---------|--------------|
-| `200 OK` | Success | -- |
-| `201 Created` | Resource created | Successful POST |
-| `204 No Content` | Resource deleted | Successful DELETE |
-| `400 Bad Request` | Invalid request body | Malformed JSON or missing required fields |
-| `401 Unauthorized` | Authentication failed | Missing or invalid token, or `plg_api-authentication_token` plugin is disabled |
-| `403 Forbidden` | Insufficient permissions | User lacks ACL permissions for the requested resource |
-| `404 Not Found` | Resource not found | Invalid ID, or `plg_webservices_j2commerce` plugin is disabled |
-| `422 Unprocessable Entity` | Validation error | Business rule violation (e.g., duplicate SKU, invalid date range) |
+| HTTP Status                | Meaning                  | Common Cause                                                                   |
+| -------------------------- | ------------------------ | ------------------------------------------------------------------------------ |
+| `200 OK`                   | Success                  | --                                                                             |
+| `201 Created`              | Resource created         | Successful POST                                                                |
+| `204 No Content`           | Resource deleted         | Successful DELETE                                                              |
+| `400 Bad Request`          | Invalid request body     | Malformed JSON or missing required fields                                      |
+| `401 Unauthorized`         | Authentication failed    | Missing or invalid token, or `plg_api-authentication_token` plugin is disabled |
+| `403 Forbidden`            | Insufficient permissions | User lacks ACL permissions for the requested resource                          |
+| `404 Not Found`            | Resource not found       | Invalid ID, or `plg_webservices_j2commerce` plugin is disabled                 |
+| `422 Unprocessable Entity` | Validation error         | Business rule violation (e.g., duplicate SKU, invalid date range)              |
 
 ### Error Response Format
 
@@ -997,7 +999,7 @@ This restricts the MCP server to GET operations only, preventing accidental writ
 }
 ```
 
----
+***
 
 ## Troubleshooting
 
@@ -1046,7 +1048,7 @@ curl -s ".../orders/42" -H "Authorization: Bearer $TOKEN" -H "Accept: applicatio
 curl -s ".../orders/42/items" -H "Authorization: Bearer $TOKEN" -H "Accept: application/vnd.api+json"
 ```
 
----
+***
 
 ## Security Best Practices
 
@@ -1057,41 +1059,41 @@ curl -s ".../orders/42/items" -H "Authorization: Bearer $TOKEN" -H "Accept: appl
 - Log and monitor all API access. Joomla's built-in logging captures API requests when configured.
 - The Config endpoint (`/config`) exposes all component parameters. Restrict access to trusted users only.
 
----
+***
 
 ## Endpoint Summary Table
 
-| Resource | Endpoint | Methods | Filters | PK Field |
-|----------|----------|---------|---------|----------|
-| Products | `/products` | GET, POST, PATCH, DELETE | `search`, `category`, `manufacturer`, `product_type`, `enabled`, `sku`, `visibility` | `j2commerce_product_id` |
-| Product Variants | `/products/[id]/variants` | GET | (parent ID) | `j2commerce_variant_id` |
-| Orders | `/orders` | GET, POST, PATCH, DELETE | `search`, `status`, `customer_id`, `date_from`, `date_to`, `payment_type` | `j2commerce_order_id` |
-| Order Items | `/orders/[id]/items` | GET | (parent ID) | `j2commerce_orderitem_id` |
-| Order History | `/orders/[id]/history` | GET, POST | (parent ID) | `j2commerce_orderhistory_id` |
-| Customers | `/customers` | GET, POST, PATCH, DELETE | `search`, `country` | `j2commerce_address_id` |
-| Customer Addresses | `/customers/[id]/addresses` | GET | (parent ID) | `j2commerce_address_id` |
-| Customer Orders | `/customers/[id]/orders` | GET | (parent ID) | `j2commerce_order_id` |
-| Inventory | `/inventory` | GET, POST, PATCH, DELETE | -- | `j2commerce_product_id` |
-| Coupons | `/coupons` | GET, POST, PATCH, DELETE | `search`, `enabled` | `j2commerce_coupon_id` |
-| Vouchers | `/vouchers` | GET, POST, PATCH, DELETE | -- | `j2commerce_voucher_id` |
-| Manufacturers | `/manufacturers` | GET, POST, PATCH, DELETE | `search`, `enabled` | `j2commerce_manufacturer_id` |
-| Currencies | `/currencies` | GET, POST, PATCH, DELETE | -- | `j2commerce_currency_id` |
-| Countries | `/countries` | GET, POST, PATCH, DELETE | `search`, `enabled` | `j2commerce_country_id` |
-| Zones | `/zones` | GET, POST, PATCH, DELETE | `search` | `j2commerce_zone_id` |
-| Country Zones | `/countries/[id]/zones` | GET | (parent ID) | `j2commerce_zone_id` |
-| Shipping Methods | `/shippingmethods` | GET, POST, PATCH, DELETE | -- | `extension_id` |
-| Payment Methods | `/paymentmethods` | GET, POST, PATCH, DELETE | -- | `extension_id` |
-| Tax Profiles | `/taxprofiles` | GET, POST, PATCH, DELETE | -- | `j2commerce_taxprofile_id` |
-| Tax Rates | `/taxrates` | GET, POST, PATCH, DELETE | -- | `j2commerce_taxrate_id` |
-| Order Statuses | `/orderstatuses` | GET, POST, PATCH, DELETE | -- | `j2commerce_orderstatus_id` |
-| Categories | `/categories` | GET, POST, PATCH, DELETE | -- | `id` |
-| Reports (Sales) | `/reports/sales` | GET | `date_from`, `date_to`, `period` | -- |
-| Reports (Products) | `/reports/products` | GET | `date_from`, `date_to`, `period` | -- |
-| Reports (Customers) | `/reports/customers` | GET | `date_from`, `date_to`, `period` | -- |
-| Reports (Inventory) | `/reports/inventory` | GET | `date_from`, `date_to`, `period` | -- |
-| Configuration | `/config` | GET | -- | `1` (static) |
+| Resource            | Endpoint                    | Methods                  | Filters                                                                              | PK Field                     |
+| ------------------- | --------------------------- | ------------------------ | ------------------------------------------------------------------------------------ | ---------------------------- |
+| Products            | `/products`                 | GET, POST, PATCH, DELETE | `search`, `category`, `manufacturer`, `product_type`, `enabled`, `sku`, `visibility` | `j2commerce_product_id`      |
+| Product Variants    | `/products/{id}/variants`   | GET                      | (parent ID)                                                                          | `j2commerce_variant_id`      |
+| Orders              | `/orders`                   | GET, POST, PATCH, DELETE | `search`, `status`, `customer_id`, `date_from`, `date_to`, `payment_type`            | `j2commerce_order_id`        |
+| Order Items         | `/orders/{id}/items`        | GET                      | (parent ID)                                                                          | `j2commerce_orderitem_id`    |
+| Order History       | `/orders/{id}/history`      | GET, POST                | (parent ID)                                                                          | `j2commerce_orderhistory_id` |
+| Customers           | `/customers`                | GET, POST, PATCH, DELETE | `search`, `country`                                                                  | `j2commerce_address_id`      |
+| Customer Addresses  | `/customers/{id}/addresses` | GET                      | (parent ID)                                                                          | `j2commerce_address_id`      |
+| Customer Orders     | `/customers/{id}/orders`    | GET                      | (parent ID)                                                                          | `j2commerce_order_id`        |
+| Inventory           | `/inventory`                | GET, POST, PATCH, DELETE | --                                                                                   | `j2commerce_product_id`      |
+| Coupons             | `/coupons`                  | GET, POST, PATCH, DELETE | `search`, `enabled`                                                                  | `j2commerce_coupon_id`       |
+| Vouchers            | `/vouchers`                 | GET, POST, PATCH, DELETE | --                                                                                   | `j2commerce_voucher_id`      |
+| Manufacturers       | `/manufacturers`            | GET, POST, PATCH, DELETE | `search`, `enabled`                                                                  | `j2commerce_manufacturer_id` |
+| Currencies          | `/currencies`               | GET, POST, PATCH, DELETE | --                                                                                   | `j2commerce_currency_id`     |
+| Countries           | `/countries`                | GET, POST, PATCH, DELETE | `search`, `enabled`                                                                  | `j2commerce_country_id`      |
+| Zones               | `/zones`                    | GET, POST, PATCH, DELETE | `search`                                                                             | `j2commerce_zone_id`         |
+| Country Zones       | `/countries/{id}/zones`     | GET                      | (parent ID)                                                                          | `j2commerce_zone_id`         |
+| Shipping Methods    | `/shippingmethods`          | GET, POST, PATCH, DELETE | --                                                                                   | `extension_id`               |
+| Payment Methods     | `/paymentmethods`           | GET, POST, PATCH, DELETE | --                                                                                   | `extension_id`               |
+| Tax Profiles        | `/taxprofiles`              | GET, POST, PATCH, DELETE | --                                                                                   | `j2commerce_taxprofile_id`   |
+| Tax Rates           | `/taxrates`                 | GET, POST, PATCH, DELETE | --                                                                                   | `j2commerce_taxrate_id`      |
+| Order Statuses      | `/orderstatuses`            | GET, POST, PATCH, DELETE | --                                                                                   | `j2commerce_orderstatus_id`  |
+| Categories          | `/categories`               | GET, POST, PATCH, DELETE | --                                                                                   | `id`                         |
+| Reports (Sales)     | `/reports/sales`            | GET                      | `date_from`, `date_to`, `period`                                                     | --                           |
+| Reports (Products)  | `/reports/products`         | GET                      | `date_from`, `date_to`, `period`                                                     | --                           |
+| Reports (Customers) | `/reports/customers`        | GET                      | `date_from`, `date_to`, `period`                                                     | --                           |
+| Reports (Inventory) | `/reports/inventory`        | GET                      | `date_from`, `date_to`, `period`                                                     | --                           |
+| Configuration       | `/config`                   | GET                      | --                                                                                   | `1` (static)                 |
 
----
+***
 
 ## Related
 
