@@ -14,7 +14,7 @@ The system has two parts:
 - **`ShipperHelper`** — A static helper that wraps `dvdoug/boxpacker` v4. Call one method; get optimally packed boxes back in store units, ready for any carrier API.
 - **`BoxPackerField`** — A Joomla form field that renders a dynamic table in plugin admin settings so store owners can define custom box sizes without writing code.
 
----
+***
 
 ## Overview
 
@@ -62,7 +62,7 @@ Location: libraries/j2commerce/vendor/dvdoug/boxpacker/
 
 BoxPacker v4 requires all dimensions in **integer millimetres** and all weights in **integer grams**. ShipperHelper handles this conversion transparently. Plugin developers work entirely in store units (inches, centimetres, pounds, kilograms, or whatever the store is configured for).
 
----
+***
 
 ## Quick Start
 
@@ -75,71 +75,27 @@ The complete integration for a shipping plugin takes five steps.
 <config>
     <fields name="params">
         <fieldset name="basic">
-
-            <!-- Packing mode toggle — lets store owner choose per-item or box packing -->
-            <field name="packing_mode"
-                   type="list"
-                   label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_PACKING_MODE"
-                   description="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_PACKING_MODE_DESC"
-                   default="per_item">
-                <option value="per_item">PLG_J2COMMERCE_SHIPPING_EXAMPLE_PACKING_PER_ITEM</option>
-                <option value="box_packing">PLG_J2COMMERCE_SHIPPING_EXAMPLE_PACKING_BOX</option>
-            </field>
-
-            <!-- Use J2Commerce Weight/Length custom fields (store DB IDs, not raw strings) -->
-            <field name="weight_unit"
-                   type="Weight"
-                   label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_WEIGHT_UNIT"
-                   filter_units="lb,kg"
-                   required="true"
-                   addfieldprefix="J2Commerce\Component\J2commerce\Administrator\Field"
-            />
             <field name="dimension_unit"
-                   type="Length"
-                   label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_DIMENSION_UNIT"
-                   filter_units="in,cm"
-                   required="true"
-                   addfieldprefix="J2Commerce\Component\J2commerce\Administrator\Field"
-            />
-
-            <!-- Carrier preset boxes toggle -->
-            <field name="use_preset_boxes"
-                   type="radio"
-                   layout="joomla.form.field.radio.switcher"
-                   label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_USE_PRESET_BOXES"
-                   description="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_USE_PRESET_BOXES_DESC"
-                   filter="integer"
-                   default="1"
-                   showon="packing_mode:box_packing">
-                <option value="0">JNO</option>
-                <option value="1">JYES</option>
-            </field>
-
-            <!-- Item rotation behaviour -->
-            <field name="rotation"
                    type="list"
-                   label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_ROTATION"
-                   description="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_ROTATION_DESC"
-                   default="best_fit"
-                   showon="packing_mode:box_packing">
-                <option value="best_fit">PLG_J2COMMERCE_SHIPPING_EXAMPLE_ROTATION_BEST_FIT</option>
-                <option value="keep_flat">PLG_J2COMMERCE_SHIPPING_EXAMPLE_ROTATION_KEEP_FLAT</option>
-                <option value="never">PLG_J2COMMERCE_SHIPPING_EXAMPLE_ROTATION_NEVER</option>
+                   label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_DIMENSION_UNIT"
+                   default="1">
+                <!-- your dimension unit options -->
             </field>
-
-            <!-- BoxPacker custom box definitions table -->
+            <field name="weight_unit"
+                   type="list"
+                   label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_WEIGHT_UNIT"
+                   default="1">
+                <!-- your weight unit options -->
+            </field>
             <field name="box_list"
                    type="BoxPacker"
                    label="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_BOX_LIST"
                    description="PLG_J2COMMERCE_SHIPPING_EXAMPLE_FIELD_BOX_LIST_DESC"
-                   addfieldprefix="J2Commerce\Component\J2commerce\Administrator\Field"
-                   showon="packing_mode:box_packing" />
+                   addfieldprefix="J2Commerce\Component\J2commerce\Administrator\Field" />
         </fieldset>
     </fields>
 </config>
 ```
-
-> **Note:** The `packing_mode` field is optional. If you omit it, pass an empty `$boxes` array to `packItems()` for per-item mode, or always pass boxes for box packing mode. Including it gives the store owner explicit control over which strategy is used.
 
 ### Step 2: Read custom boxes in your rate handler
 
@@ -157,18 +113,13 @@ public function onGetShippingRates(Event $event): void
         return;
     }
 
-    $items = method_exists($order, 'getItems') ? $order->getItems() : [];
-
-    // Check packing mode — per-item passes empty boxes, box packing loads definitions
-    $packingMode = $this->params->get('packing_mode', 'per_item');
-    $boxes = [];
-
-    if ($packingMode === 'box_packing') {
-        $boxes = ShipperHelper::getCustomBoxesFromParams($this->params, 'box_list');
-    }
+    // Load custom boxes defined by the store owner
+    $customBoxes = ShipperHelper::getCustomBoxesFromParams($this->params, 'box_list');
 
     // Pack items — empty boxes array falls back to per-item automatically
-    $result = ShipperHelper::packItems($boxes, $items, [
+    $items = method_exists($order, 'getItems') ? $order->getItems() : [];
+
+    $result = ShipperHelper::packItems($customBoxes, $items, [
         'weight_unit_id' => (int) $this->params->get('weight_unit', 1),
         'length_unit_id' => (int) $this->params->get('dimension_unit', 1),
     ]);
@@ -211,7 +162,7 @@ if ($result->hasUnpackedItems()) {
 }
 ```
 
----
+***
 
 ## BoxPackerField XML Reference
 
@@ -229,13 +180,13 @@ The field type is `BoxPacker`. It renders a dynamic table in plugin admin settin
 
 ### Attributes
 
-| Attribute | Required | Value | Notes |
-|-----------|----------|-------|-------|
-| `name` | Yes | Any string | Used as the key in plugin params. Pass this name to `getCustomBoxesFromParams()` as the second argument if it is not the default `box_list`. |
-| `type` | Yes | `BoxPacker` | Selects the `BoxPackerField` class. |
-| `label` | Yes | Language key | Shown as the field label above the table. |
-| `description` | No | Language key | Shown as help text below the label. |
-| `addfieldprefix` | Yes | `J2Commerce\Component\J2commerce\Administrator\Field` | Required so Joomla can resolve the `BoxPacker` type to `BoxPackerField`. |
+| Attribute        | Required | Value                                                 | Notes                                                                                                                                        |
+| ---------------- | -------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`           | Yes      | Any string                                            | Used as the key in plugin params. Pass this name to `getCustomBoxesFromParams()` as the second argument if it is not the default `box_list`. |
+| `type`           | Yes      | `BoxPacker`                                           | Selects the `BoxPackerField` class.                                                                                                          |
+| `label`          | Yes      | Language key                                          | Shown as the field label above the table.                                                                                                    |
+| `description`    | No       | Language key                                          | Shown as help text below the label.                                                                                                          |
+| `addfieldprefix` | Yes      | `J2Commerce\Component\J2commerce\Administrator\Field` | Required so Joomla can resolve the `BoxPacker` type to `BoxPackerField`.                                                                     |
 
 ### Stored JSON Format
 
@@ -272,24 +223,23 @@ All dimension and weight values are stored in the store's configured units (what
 
 ### Column Descriptions
 
-| Column | Description |
-|--------|-------------|
-| **Box Name** | Identifier passed through to `PackedBoxResult::$reference`. Use the carrier box name (e.g., "UPS Small Express Box") for clarity. |
-| **Outer Length / Width / Height** | External dimensions of the box including packaging material. Used for volumetric weight calculations. |
+| Column                            | Description                                                                                                                        |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **Box Name**                      | Identifier passed through to `PackedBoxResult::$reference`. Use the carrier box name (e.g., "UPS Small Express Box") for clarity.  |
+| **Outer Length / Width / Height** | External dimensions of the box including packaging material. Used for volumetric weight calculations.                              |
 | **Inner Length / Width / Height** | Usable interior dimensions. Items are packed against these constraints. If left empty, the field defaults to the outer dimensions. |
-| **Box Weight** | The empty box's own weight (packaging material). Added to item weights for total package weight. |
-| **Max Weight** | Maximum total package weight the box can carry. BoxPacker uses this to determine when to open a new box. Set to `0` for unlimited. |
+| **Box Weight**                    | The empty box's own weight (packaging material). Added to item weights for total package weight.                                   |
+| **Max Weight**                    | Maximum total package weight the box can carry. BoxPacker uses this to determine when to open a new box. Set to `0` for unlimited. |
 
----
+***
 
 ## ShipperHelper API Reference
 
-**Namespace:** `J2Commerce\Component\J2commerce\Administrator\Helper`
-**File:** `administrator/components/com_j2commerce/src/Helper/ShipperHelper.php`
+**Namespace:** `J2Commerce\Component\J2commerce\Administrator\Helper` **File:** `administrator/components/com_j2commerce/src/Helper/ShipperHelper.php`
 
 All methods are static.
 
----
+***
 
 ### `packItems()`
 
@@ -305,24 +255,24 @@ public static function packItems(
 
 **Parameters**
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$boxes` | `array` | Box definitions. Each element is an array with the keys described in the `createBox()` reference below. Typically from `getCustomBoxesFromParams()` plus any carrier preset arrays you define. Pass an empty array to activate per-item fallback. |
-| `$items` | `array` | Cart items or order items. Each element can be an array or object. ShipperHelper normalizes several property naming conventions — see Item Normalization below. |
-| `$options` | `array` | Packing options (all optional). See Options table below. |
+| Parameter  | Type    | Description                                                                                                                                                                                                                                       |
+| ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `$boxes`   | `array` | Box definitions. Each element is an array with the keys described in the `createBox()` reference below. Typically from `getCustomBoxesFromParams()` plus any carrier preset arrays you define. Pass an empty array to activate per-item fallback. |
+| `$items`   | `array` | Cart items or order items. Each element can be an array or object. ShipperHelper normalizes several property naming conventions — see Item Normalization below.                                                                                   |
+| `$options` | `array` | Packing options (all optional). See Options table below.                                                                                                                                                                                          |
 
 **Options**
 
-| Key | Type | Default | Description |
-|-----|------|---------|-------------|
-| `weight_unit_id` | `int` | `1` | The store's weight unit ID from `#__j2commerce_weights`. ShipperHelper uses `WeightHelper` to convert from this unit to grams. |
-| `length_unit_id` | `int` | `1` | The store's length unit ID from `#__j2commerce_lengths`. ShipperHelper uses `LengthHelper` to convert from this unit to millimetres. |
-| `default_weight` | `float` | `0.1` | Fallback weight in store units for items that have no weight set. |
-| `default_length` | `float` | `1.0` | Fallback length in store units for items with no length set. |
-| `default_width` | `float` | `1.0` | Fallback width in store units for items with no width set. |
-| `default_height` | `float` | `1.0` | Fallback height in store units for items with no height set. |
-| `rotation` | `string` | `'best_fit'` | Rotation mode. One of `'best_fit'`, `'keep_flat'`, or `'never'`. See Rotation Options below. |
-| `max_boxes_to_balance_weight` | `int` | 12 (library default) | Passed to `Packer::setMaxBoxesToBalanceWeight()`. Controls weight distribution across boxes. |
+| Key                           | Type     | Default              | Description                                                                                                                          |
+| ----------------------------- | -------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `weight_unit_id`              | `int`    | `1`                  | The store's weight unit ID from `#__j2commerce_weights`. ShipperHelper uses `WeightHelper` to convert from this unit to grams.       |
+| `length_unit_id`              | `int`    | `1`                  | The store's length unit ID from `#__j2commerce_lengths`. ShipperHelper uses `LengthHelper` to convert from this unit to millimetres. |
+| `default_weight`              | `float`  | `0.1`                | Fallback weight in store units for items that have no weight set.                                                                    |
+| `default_length`              | `float`  | `1.0`                | Fallback length in store units for items with no length set.                                                                         |
+| `default_width`               | `float`  | `1.0`                | Fallback width in store units for items with no width set.                                                                           |
+| `default_height`              | `float`  | `1.0`                | Fallback height in store units for items with no height set.                                                                         |
+| `rotation`                    | `string` | `'best_fit'`         | Rotation mode. One of `'best_fit'`, `'keep_flat'`, or `'never'`. See Rotation Options below.                                         |
+| `max_boxes_to_balance_weight` | `int`    | 12 (library default) | Passed to `Packer::setMaxBoxesToBalanceWeight()`. Controls weight distribution across boxes.                                         |
 
 **Return value**
 
@@ -364,7 +314,7 @@ foreach ($result->boxes as $box) {
 }
 ```
 
----
+***
 
 ### `getCustomBoxesFromParams()`
 
@@ -379,10 +329,10 @@ public static function getCustomBoxesFromParams(
 
 **Parameters**
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$params` | `Registry` | The plugin's `$this->params` object. |
-| `$fieldName` | `string` | The field name used in your XML. Defaults to `'box_list'`. |
+| Parameter    | Type       | Description                                                |
+| ------------ | ---------- | ---------------------------------------------------------- |
+| `$params`    | `Registry` | The plugin's `$this->params` object.                       |
+| `$fieldName` | `string`   | The field name used in your XML. Defaults to `'box_list'`. |
 
 **Return value**
 
@@ -395,7 +345,7 @@ Array of box definition arrays, each with these string keys: `name`, `outer_leng
 $boxes = ShipperHelper::getCustomBoxesFromParams($this->params, 'carrier_boxes');
 ```
 
----
+***
 
 ### `createBox()`
 
@@ -463,7 +413,7 @@ private function getUPSPresetBoxes(): array
 }
 ```
 
----
+***
 
 ### `getPerItemPackages()`
 
@@ -478,7 +428,7 @@ public static function getPerItemPackages(
 
 The returned `PackingResult` has `method = 'per_item'`. Each `PackedBoxResult` in `$result->boxes` represents a single item unit with `volumeUtilisation = 100.0` and an empty `$boxWeight`.
 
----
+***
 
 ### `previewPacking()`
 
@@ -527,12 +477,11 @@ The returned array has this shape:
 
 This method is called by the core ShippingController's `previewPacking` task — you do not call it from your plugin. It is documented here because the AJAX endpoint is wired to core, not to your plugin.
 
----
+***
 
 ## PackingResult Reference
 
-**Class:** `J2Commerce\Component\J2commerce\Administrator\Helper\Shipping\PackingResult`
-**File:** `administrator/components/com_j2commerce/src/Helper/Shipping/PackingResult.php`
+**Class:** `J2Commerce\Component\J2commerce\Administrator\Helper\Shipping\PackingResult` **File:** `administrator/components/com_j2commerce/src/Helper/Shipping/PackingResult.php`
 
 ```php
 class PackingResult
@@ -545,26 +494,25 @@ class PackingResult
 
 ### Properties
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `$boxes` | `PackedBoxResult[]` | One entry per physical box needed. May be empty if all items are non-shippable. |
-| `$unpacked` | `array` | Items that could not fit in any defined box. Each element is an associative array with `description`, `length`, `width`, `height`, `weight` in store units. |
-| `$method` | `string` | `'box_packing'` when BoxPacker ran successfully; `'per_item'` when no boxes were defined or the library was unavailable. |
+| Property    | Type                | Description                                                                                                                                                 |
+| ----------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `$boxes`    | `PackedBoxResult[]` | One entry per physical box needed. May be empty if all items are non-shippable.                                                                             |
+| `$unpacked` | `array`             | Items that could not fit in any defined box. Each element is an associative array with `description`, `length`, `width`, `height`, `weight` in store units. |
+| `$method`   | `string`            | `'box_packing'` when BoxPacker ran successfully; `'per_item'` when no boxes were defined or the library was unavailable.                                    |
 
 ### Methods
 
-| Method | Return | Description |
-|--------|--------|-------------|
-| `getTotalWeight()` | `float` | Sum of `totalWeight` across all packed boxes. |
-| `getBoxCount()` | `int` | Number of packed boxes. |
-| `hasUnpackedItems()` | `bool` | True if any items could not be packed. |
+| Method               | Return  | Description                                   |
+| -------------------- | ------- | --------------------------------------------- |
+| `getTotalWeight()`   | `float` | Sum of `totalWeight` across all packed boxes. |
+| `getBoxCount()`      | `int`   | Number of packed boxes.                       |
+| `hasUnpackedItems()` | `bool`  | True if any items could not be packed.        |
 
----
+***
 
 ## PackedBoxResult Reference
 
-**Class:** `J2Commerce\Component\J2commerce\Administrator\Helper\Shipping\PackedBoxResult`
-**File:** `administrator/components/com_j2commerce/src/Helper/Shipping/PackedBoxResult.php`
+**Class:** `J2Commerce\Component\J2commerce\Administrator\Helper\Shipping\PackedBoxResult` **File:** `administrator/components/com_j2commerce/src/Helper/Shipping/PackedBoxResult.php`
 
 ```php
 class PackedBoxResult
@@ -585,52 +533,52 @@ class PackedBoxResult
 
 ### Properties
 
-| Property | Type | Units | Description |
-|----------|------|-------|-------------|
-| `$reference` | `string` | — | Box name as defined by the store owner or carrier preset. Pass this to carrier APIs as the packaging type identifier. |
-| `$outerLength` | `float` | Store length units | External length. Use for dimensional weight calculations. |
-| `$outerWidth` | `float` | Store length units | External width. |
-| `$outerHeight` | `float` | Store length units | External height (BoxPacker calls this "depth"). |
-| `$totalWeight` | `float` | Store weight units | Item weight plus empty box weight combined. This is what you declare to the carrier. |
-| `$itemWeight` | `float` | Store weight units | Weight of items only, excluding box packaging material. |
-| `$boxWeight` | `float` | Store weight units | Empty box weight only. |
-| `$totalValue` | `float` | Store currency | Declared value of items in this box. Useful for insurance calculations. |
-| `$volumeUtilisation` | `float` | Percentage (0–100) | How full the box is by volume. High values (above 90) shown in red in the admin preview. |
-| `$items` | `array` | — | List of items packed into this box. Each element: `['description' => 'Widget A', 'qty' => 2]`. |
-| `$visualisationUrl` | `string` | — | Link to an interactive 3D packing visualisation on boxpacker.io. Empty string in per-item mode. |
+| Property             | Type     | Units              | Description                                                                                                           |
+| -------------------- | -------- | ------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| `$reference`         | `string` | —                  | Box name as defined by the store owner or carrier preset. Pass this to carrier APIs as the packaging type identifier. |
+| `$outerLength`       | `float`  | Store length units | External length. Use for dimensional weight calculations.                                                             |
+| `$outerWidth`        | `float`  | Store length units | External width.                                                                                                       |
+| `$outerHeight`       | `float`  | Store length units | External height (BoxPacker calls this "depth").                                                                       |
+| `$totalWeight`       | `float`  | Store weight units | Item weight plus empty box weight combined. This is what you declare to the carrier.                                  |
+| `$itemWeight`        | `float`  | Store weight units | Weight of items only, excluding box packaging material.                                                               |
+| `$boxWeight`         | `float`  | Store weight units | Empty box weight only.                                                                                                |
+| `$totalValue`        | `float`  | Store currency     | Declared value of items in this box. Useful for insurance calculations.                                               |
+| `$volumeUtilisation` | `float`  | Percentage (0–100) | How full the box is by volume. High values (above 90) shown in red in the admin preview.                              |
+| `$items`             | `array`  | —                  | List of items packed into this box. Each element: `['description' => 'Widget A', 'qty' => 2]`.                        |
+| `$visualisationUrl`  | `string` | —                  | Link to an interactive 3D packing visualisation on boxpacker.io. Empty string in per-item mode.                       |
 
----
+***
 
 ## Item Normalization
 
 Cart items and order items in J2Commerce use different property names depending on context. ShipperHelper reads from multiple property names so your plugin does not need to normalize items before passing them in.
 
-| Data point | Cart item property | Order item property | Fallback |
-|------------|-------------------|--------------------|----|
-| Product name | `product_name` | `orderitem_name` | `description`, then `'Item'` |
-| Weight | `weight` | `orderitem_weight` | `$options['default_weight']` |
-| Length | `length` | `length` | `$options['default_length']` |
-| Width | `width` | `width` | `$options['default_width']` |
-| Height | `height` | `height` | `$options['default_height']` |
-| Quantity | `product_qty` | `orderitem_quantity` | `qty`, then `1` |
-| Price | `price` | `orderitem_price` | `0.0` |
-| Shippable flag | `shipping` | `shipping` | Included by default |
+| Data point     | Cart item property | Order item property  | Fallback                     |
+| -------------- | ------------------ | -------------------- | ---------------------------- |
+| Product name   | `product_name`     | `orderitem_name`     | `description`, then `'Item'` |
+| Weight         | `weight`           | `orderitem_weight`   | `$options['default_weight']` |
+| Length         | `length`           | `length`             | `$options['default_length']` |
+| Width          | `width`            | `width`              | `$options['default_width']`  |
+| Height         | `height`           | `height`             | `$options['default_height']` |
+| Quantity       | `product_qty`      | `orderitem_quantity` | `qty`, then `1`              |
+| Price          | `price`            | `orderitem_price`    | `0.0`                        |
+| Shippable flag | `shipping`         | `shipping`           | Included by default          |
 
 Items with `shipping = 0` at the top level, or `cartitem->shipping = 0` when the item carries a nested `cartitem` object, are automatically excluded from packing. You do not need to filter them yourself.
 
----
+***
 
 ## Rotation Options
 
-| Value | `DVDoug\BoxPacker\Rotation` | Behaviour |
-|-------|---------------------------|-----------|
-| `'best_fit'` | `Rotation::BestFit` | Default. BoxPacker tries all orientations and chooses the arrangement that fits the most items. Suitable for most goods. |
-| `'keep_flat'` | `Rotation::KeepFlat` | Items can rotate on the horizontal plane but cannot be tipped upright. Use for liquids, fragile items, or items with a defined "this way up" orientation. |
-| `'never'` | `Rotation::Never` | Items are packed in the exact orientation provided. Only use when items have strict orientation requirements. |
+| Value         | `DVDoug\BoxPacker\Rotation` | Behaviour                                                                                                                                                 |
+| ------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `'best_fit'`  | `Rotation::BestFit`         | Default. BoxPacker tries all orientations and chooses the arrangement that fits the most items. Suitable for most goods.                                  |
+| `'keep_flat'` | `Rotation::KeepFlat`        | Items can rotate on the horizontal plane but cannot be tipped upright. Use for liquids, fragile items, or items with a defined "this way up" orientation. |
+| `'never'`     | `Rotation::Never`           | Items are packed in the exact orientation provided. Only use when items have strict orientation requirements.                                             |
 
 Pass the rotation mode as a string in `$options['rotation']`. The same rotation applies to all items in that `packItems()` call. If you need per-item rotation control, implement a custom `DVDoug\BoxPacker\Item` and pass it directly to BoxPacker — this is an advanced use case outside ShipperHelper's scope.
 
----
+***
 
 ## Integration Example: Custom Boxes Only
 
@@ -717,7 +665,7 @@ final class ShippingExample extends CMSPlugin implements SubscriberInterface
 }
 ```
 
----
+***
 
 ## Integration Example: Carrier Presets + Custom Boxes
 
@@ -856,123 +804,7 @@ final class ShippingUps extends CMSPlugin implements SubscriberInterface
 }
 ```
 
----
-
-## Store-Unit-Aware Preset Conversion
-
-Carrier preset boxes are typically defined in fixed units (e.g., UPS boxes in inches/pounds). If the store is configured for centimetres/kilograms, the hardcoded inch values passed to `createBox()` would be misinterpreted — ShipperHelper converts them assuming they are already in store units.
-
-To handle this correctly, use `getPresetLengthFactor()` and `getPresetWeightFactor()` helper methods to convert preset dimensions from their native units to the store's configured units before passing them to `createBox()`.
-
-### Pattern
-
-```php
-// File: plugins/j2commerce/shipping_ups/src/Extension/ShippingUps.php
-
-use J2Commerce\Component\J2commerce\Administrator\Helper\LengthHelper;
-use J2Commerce\Component\J2commerce\Administrator\Helper\WeightHelper;
-
-/**
- * Get the conversion factor from inches to the store's configured length unit.
- * Preset boxes are defined in inches. If the store uses cm, this returns ~2.54.
- */
-private function getPresetLengthFactor(): float
-{
-    $lengthUnitId = (int) $this->params->get('dimension_unit', 0);
-
-    if ($lengthUnitId <= 0) {
-        return 1.0; // No conversion — assume presets match store units
-    }
-
-    $unit = LengthHelper::getLengthUnit($lengthUnitId);
-
-    return match ($unit) {
-        'cm' => 2.54,     // 1 inch = 2.54 cm
-        'mm' => 25.4,     // 1 inch = 25.4 mm
-        'm'  => 0.0254,   // 1 inch = 0.0254 m
-        'in' => 1.0,      // already inches
-        default => 1.0,
-    };
-}
-
-/**
- * Get the conversion factor from pounds to the store's configured weight unit.
- * Preset boxes are defined in pounds. If the store uses kg, this returns ~0.4536.
- */
-private function getPresetWeightFactor(): float
-{
-    $weightUnitId = (int) $this->params->get('weight_unit', 0);
-
-    if ($weightUnitId <= 0) {
-        return 1.0;
-    }
-
-    $unit = WeightHelper::getWeightUnit($weightUnitId);
-
-    return match ($unit) {
-        'kg' => 0.453592,   // 1 lb = 0.453592 kg
-        'g'  => 453.592,    // 1 lb = 453.592 g
-        'oz' => 16.0,       // 1 lb = 16 oz
-        'lb' => 1.0,        // already pounds
-        default => 1.0,
-    };
-}
-```
-
-### Usage with Preset Boxes
-
-```php
-private function getUPSPresetBoxes(): array
-{
-    $lf = $this->getPresetLengthFactor();
-    $wf = $this->getPresetWeightFactor();
-
-    return [
-        ShipperHelper::createBox(
-            name:        'UPS Small Express Box',
-            outerLength: 13.0 * $lf,
-            outerWidth:  11.0 * $lf,
-            outerHeight: 2.0  * $lf,
-            innerLength: 12.5 * $lf,
-            innerWidth:  10.5 * $lf,
-            innerHeight: 1.8  * $lf,
-            boxWeight:   0.1  * $wf,
-            maxWeight:   0.0,
-        ),
-        // ... more presets
-    ];
-}
-```
-
-This ensures preset box dimensions are always expressed in the store's active length/weight units, regardless of what the store is configured for. Custom boxes defined by the store owner via `BoxPackerField` are already in store units — no conversion needed for those.
-
----
-
-## UPS PackagingType Note
-
-When using box packing with UPS, the `PackagingType` code sent in the UPS Rating API request should **always** be `02` (Customer Supplied Package), regardless of the box name.
-
-Even if a preset box is named "UPS Small Express Box", the packing algorithm fits items into boxes you defined — UPS does not verify that you are actually using their branded packaging. Using code `02` ensures UPS rates the shipment based on the actual dimensions and weight you provide, not a fixed packaging type.
-
-```php
-// In buildPackageList() — always use 02 when box packing is active
-$packageType = ($packingMode === 'box_packing') ? '02' : $this->params->get('package_type', '02');
-
-foreach ($packedBoxes as $box) {
-    $pkgData = [
-        'PackagingType' => ['Code' => $packageType],
-        'PackageWeight' => [
-            'UnitOfMeasurement' => ['Code' => $weightUnitCode],
-            'Weight' => number_format(max(0.1, $box->totalWeight), 1, '.', ''),
-        ],
-    ];
-    // ...
-}
-```
-
-> **Why not use the specific UPS packaging codes (21, 24, 25, etc.)?** UPS packaging codes like `21` (UPS Express Box) tell UPS "I am using your branded box — charge me accordingly." This bypasses dimensional rating because UPS already knows the box size. However, since BoxPacker optimises item placement into boxes *you* define (even if named after UPS boxes), the actual packing may differ from UPS's expectations. Using `02` (Customer Supplied) with explicit dimensions is always the most accurate approach.
-
----
+***
 
 ## Per-Item Fallback
 
@@ -999,7 +831,7 @@ In per-item mode, each unit of each item becomes its own `PackedBoxResult` with:
 - APIs with package count limits or surcharges per package
 - Any scenario where the true packing matters for accurate rate calculation
 
----
+***
 
 ## Oversized Item Handling
 
@@ -1066,7 +898,7 @@ if ($result->hasUnpackedItems()) {
 }
 ```
 
----
+***
 
 ## Visual Packing Preview
 
@@ -1081,6 +913,7 @@ The preview panel is rendered by `BoxPackerField::getInput()`. It contains:
 3. A results area that shows packed boxes, volume utilisation bars, weight bars, and unpacked item warnings.
 
 When the button is clicked, `boxpacker-preview.js` collects:
+
 - The box definitions from the live box table above (reads from the DOM, not the saved params)
 - The test items from the sample items table
 - The current `weight_unit` and `dimension_unit` field values from the surrounding form
@@ -1114,7 +947,7 @@ The preview AJAX call goes to the **core component** — your plugin does not ne
 
 If your plugin uses a different form field name for boxes (not `box_list`), the preview still works because the JS reads the live DOM table values directly, not the saved params. The preview always shows the unsaved box state.
 
----
+***
 
 ## Unit Conversion
 
@@ -1137,20 +970,20 @@ Where `unit_value` is the `weight_value` or `length_value` column from the respe
 When the database lookup fails (unit ID not found, or WeightHelper/LengthHelper returns empty), ShipperHelper falls back to hardcoded conversion factors:
 
 | Length unit | Factor to mm |
-|-------------|-------------|
-| `mm` | 1.0 |
-| `cm` | 10.0 |
-| `in` | 25.4 |
-| `m` | 1000.0 |
-| `ft` | 304.8 |
-| `yd` | 914.4 |
+| ----------- | ------------ |
+| `mm`        | 1.0          |
+| `cm`        | 10.0         |
+| `in`        | 25.4         |
+| `m`         | 1000.0       |
+| `ft`        | 304.8        |
+| `yd`        | 914.4        |
 
 | Weight unit | Factor to g |
-|-------------|------------|
-| `g` | 1.0 |
-| `kg` | 1000.0 |
-| `oz` | 28.3495 |
-| `lb` | 453.592 |
+| ----------- | ----------- |
+| `g`         | 1.0         |
+| `kg`        | 1000.0      |
+| `oz`        | 28.3495     |
+| `lb`        | 453.592     |
 
 When the unit string is unrecognised, ShipperHelper falls back to inches (25.4 mm/unit) for length and pounds (453.592 g/unit) for weight.
 
@@ -1158,7 +991,7 @@ When the unit string is unrecognised, ShipperHelper falls back to inches (25.4 m
 
 BoxPacker requires non-zero integer values. ShipperHelper enforces a minimum of 1 mm for all dimensions and 1 g for all weights. An item with zero dimensions is treated as a 1 mm × 1 mm × 1 mm cube.
 
----
+***
 
 ## Troubleshooting
 
@@ -1172,7 +1005,7 @@ BoxPacker requires non-zero integer values. ShipperHelper enforces a minimum of 
 
 **Solution:** Verify the J2Commerce library is installed at `libraries/j2commerce/`. If it is absent, reinstall the J2Commerce core package. Check `libraries/j2commerce/vendor/dvdoug/boxpacker/autoload.php` exists. This file is the entry point ShipperHelper looks for.
 
----
+***
 
 ### No boxes defined — all items packed per-item
 
@@ -1186,7 +1019,7 @@ BoxPacker requires non-zero integer values. ShipperHelper enforces a minimum of 
 2. Confirm the `$fieldName` argument to `getCustomBoxesFromParams()` matches the `name` attribute in your XML.
 3. If you rely on carrier preset boxes, verify `getCarrierPresetBoxes()` returns a non-empty array.
 
----
+***
 
 ### Items appear in `$result->unpacked`
 
@@ -1201,7 +1034,7 @@ BoxPacker requires non-zero integer values. ShipperHelper enforces a minimum of 
 3. If the item genuinely cannot fit any standard box, implement one of the oversized item strategies above.
 4. Verify unit conversion is correct — an item weight in pounds being interpreted as grams would make every item appear too heavy.
 
----
+***
 
 ### Admin preview AJAX returns error
 
@@ -1209,15 +1042,15 @@ BoxPacker requires non-zero integer values. ShipperHelper enforces a minimum of 
 
 **Possible causes and solutions:**
 
-| Symptom detail | Likely cause | Solution |
-|----------------|-------------|---------|
-| Browser console shows 403 | CSRF token missing or session expired | Reload the page and try again |
-| Response is HTML, not JSON | PHP fatal error in preview handler | Check Joomla system logs for the error message |
-| "Unknown error" in results | `success: false` in JSON response | Enable Joomla debug mode and recheck; error detail appears in `result.error` |
+| Symptom detail             | Likely cause                          | Solution                                                                     |
+| -------------------------- | ------------------------------------- | ---------------------------------------------------------------------------- |
+| Browser console shows 403  | CSRF token missing or session expired | Reload the page and try again                                                |
+| Response is HTML, not JSON | PHP fatal error in preview handler    | Check Joomla system logs for the error message                               |
+| "Unknown error" in results | `success: false` in JSON response     | Enable Joomla debug mode and recheck; error detail appears in `result.error` |
 
 The preview JS reads the CSRF token from the `data-token` attribute on `.j2commerce-boxpacker-field`. If your plugin's Joomla session expires while you are editing the box table, the token becomes invalid. Reloading the page refreshes the token.
 
----
+***
 
 ### Inner dimensions validation error in admin
 
@@ -1227,7 +1060,7 @@ The preview JS reads the CSRF token from the `data-token` attribute on `.j2comme
 
 **Solution:** Reduce the inner dimension or increase the outer dimension. Inner dimensions represent usable interior space and must always be less than or equal to outer dimensions.
 
----
+***
 
 ## Migration from J2Store
 
@@ -1297,17 +1130,17 @@ $result = ShipperHelper::packItems(
 
 ### Key differences
 
-| J2Store 4 | J2Commerce 6 |
-|-----------|-------------|
-| `require_once` library path | No `require_once` needed |
-| Manual `* 25.4` / `* 453.592` conversions | Automatic via WeightHelper / LengthHelper |
-| Hardcoded box array in plugin code | Carrier presets in code + store-owner UI |
-| No admin preview | Live packing preview with 3D visualisation |
+| J2Store 4                                            | J2Commerce 6                                  |
+| ---------------------------------------------------- | --------------------------------------------- |
+| `require_once` library path                          | No `require_once` needed                      |
+| Manual `* 25.4` / `* 453.592` conversions            | Automatic via WeightHelper / LengthHelper     |
+| Hardcoded box array in plugin code                   | Carrier presets in code + store-owner UI      |
+| No admin preview                                     | Live packing preview with 3D visualisation    |
 | `Packer`, `Box`, `Item` classes from J2Store library | `ShipperHelper::packItems()` wraps everything |
-| No fallback — missing box causes exception | Empty boxes = automatic per-item fallback |
-| Results are `PackedBox` objects from old library | Results are `PackedBoxResult` value objects |
+| No fallback — missing box causes exception           | Empty boxes = automatic per-item fallback     |
+| Results are `PackedBox` objects from old library     | Results are `PackedBoxResult` value objects   |
 
----
+***
 
 ## Related
 

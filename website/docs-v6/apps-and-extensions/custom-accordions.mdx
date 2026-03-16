@@ -42,12 +42,254 @@ Once you click on the **Custom Accordions** Title next to the green checkmark, y
 
 ![](/img/accordions-toggle.webp)
 
-### Plugin Tab
+**Plugin Tab**
 
 ![](/img/accordions-config.webp)
 
-**Prepare Content:** Prepare the content with the Joomla Content Plugins
+### Prepare Content
 
-**Custom Field Short Code:** Render the custom fields in the accordion content
+Prepare the content with the Joomla Content Plugins
 
-**Display Brand Details:** Select '**Yes**' to display the product's Manufacturer / Brand details in a separate accordion tab. Depending on your country, this may be a mandatory requirement
+**When to Enable Prepare Content**
+
+Enable **Prepare Content** when your accordion content contains:
+
+- Joomla content plugins (e.g., `{loadmodule}`, `{loadposition}`)
+
+- Third-party plugin syntax (e.g., gallery sliders, video embeds)
+
+- Shortcodes that require content plugin processing
+
+**Note:** This option applies processing overhead. Leave disabled for simple HTML content.
+
+### Custom Field Short Code
+
+Render the custom fields in the accordion content
+
+**When to Enable Content Field Short Code**
+
+Enable **Custom Field Short Code** when:
+
+- You have created J2Commerce custom fields for products (e.g., material, weight, dimensions)
+
+- You want to display these custom field values inside the accordion content
+
+- You use custom field shortcodes in your accordion descriptions
+
+Leave disabled for standard HTML content without custom field references.
+
+### Display Brand Details
+
+Select '**Yes**' to display the product's Manufacturer / Brand details in a separate accordion tab. Depending on your country, this may be a mandatory requirement.
+
+**Note:** In order to add the Brand or Manufacturer to a product, you have to add them to the database. Go to **J2Commerce -> Dashboard -> Catalog -> Manufacturer**. Fill out the company information and hit save
+
+**When to Enable Display Brand Details**
+
+When enabled, J2Commerce retrieves manufacturer details from the product's assigned manufacturer:
+
+1. The manufacturer's name appears as the accordion title
+
+2. Manufacturer description content loads from the linked Joomla article
+
+### Position Options
+
+*This only shows up when the **Display Brand Details** is **enabled**.*
+
+| **Position** | **Behavior**                                                       |
+| ------------ | ------------------------------------------------------------------ |
+| **Before**   | Brand accordion appears as the first accordion on the product page |
+| **After**    | Brand accordion appears as the last accordion on the product page  |
+
+## Configure Products{#configure-products}
+
+After enabling the plugin, each product can have custom accordions.
+
+### Edit a Product{#step-1-edit-a-product}
+
+There are **two** ways you can access the products.&#x20;
+
+**a:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Products**
+
+**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Products**
+
+![](/img/accordions-products.webp)
+
+Click on a **product** to edit it **-> J2Commerce** tab **->** **Apps** tab&#x20;
+
+Click the Custom Accordion dropdown menu **->** Click **Select** to Add Accordion from Article
+
+![](/img/accordions-apps-tab.webp)
+
+### Add Accordion from Article{#step-2-add-accordion-from-article}
+
+The **Add Accordion from Article** field lets you import content from a Joomla article.&#x20;
+
+**Note:** This is a great tool if you want to display a specific article on the individual product pages. ie, **Return Policy, Allergy Disclosure, etc.**
+
+![](/img/accordions-apps-tab1.webp)
+
+| **Field**                      | **Description**                                                                                                                       |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **Add Accordion from Article** | Select an existing Joomla article. The article title becomes the accordion title, and the article content becomes the accordion body. |
+
+### Adding Additional Custom Accordions{#step-3-add-custom-accordions}
+
+Click the **Add Custom Accordion** button to create unlimited custom accordions.
+
+![](/img/accordions-apps-tab3.webp)
+
+**Each accordion row has these fields**
+
+| **Field**                | **Description**                                                              | **Required** |
+| ------------------------ | ---------------------------------------------------------------------------- | ------------ |
+| **Accordion Title**      | The title displayed on the accordion header.                                 | Yes          |
+| **Accordion Title Icon** | Font Awesome icon class (e.g., `fa-solid fa-star`). Leave empty for no icon. | No           |
+| **Enabled**              | Toggle to show or hide this accordion.                                       | Yes          |
+| **Accordion Content**    | The content displayed when the accordion is expanded. Supports HTML.         | Yes          |
+
+### **Organize Accordions**{#step-4-organize-accordions}
+
+The order in which accordions appear in the admin interface determines their display order on the frontend. The first accordion appears first, followed by subsequent accordions.
+
+**Bulk Actions:**
+
+- **Collapse All** - Minimize all accordion rows for easier navigation
+
+- **Expand All** - Open all accordion rows for editing
+
+- **Delete** - Click the trash icon on any row to remove it
+
+## Frontend View
+
+![](/img/accordions-apps-tab2.webp)
+
+## How It Works{#how-it-works}
+
+When a customer views a product page:
+
+1. J2Commerce checks if the Custom Accordions plugin is enabled.
+
+2. If **Display Brand Details** is enabled and the product has a manufacturer, a Brand accordion is added.
+
+3. Custom accordions defined on the product are rendered in order.
+
+4. If **Prepare Content** is enabled, content plugins process the accordion content.
+
+5. All accordions appear in a Bootstrap 5 accordion group (only one open at a time).
+
+## Display Conditions{#display-conditions}
+
+Custom accordions appear when:
+
+- The plugin is enabled in **J2Commerce** -> **Apps**.
+
+- At least one accordion is configured (article-based or custom, ie, Return Policy, Allergy Disclosure).
+
+- The product is published and visible.
+
+Brand accordion appears when
+
+- **Display Brand Details** is set to **Yes** in the App
+
+![](/img/accordions-apps-tab4.webp)
+
+**Note:** In order to add the Brand or Manufacturer to a product, you have to add them to the database. Go to **J2Commerce -> Dashboard -> Catalog -> Manufacturer**. Fill out the company information and hit save
+
+- **The product has a manufacturer assigned:** Open the **product**. Go to the **General** tab and add the Brand or Manufacturer. If it doesn't appear in the dropdown menu then it needs to be created by following the **note** from above.
+
+- **The manufacturer has a description article configured.**
+
+## Tips{#tips}
+
+- **Use articles for reusable content** - If the same specifications apply to multiple products, create a Joomla article and reuse it across products.
+
+- **Keep titles concise** - Long accordion titles may be cut off on mobile devices.
+
+- **Use icons sparingly** - Icons should complement, not replace, meaningful titles.
+
+- **Test with content plugins** - If using `{loadmodule}` or similar syntax, enable **Prepare Content** and verify the output.
+
+- **Organize by importance** - Place critical information (shipping, warranty) in the first accordions for visibility.
+
+## Troubleshooting{#troubleshooting}
+
+### Accordions Do Not Appear on Product Page{#accordions-do-not-appear-on-product-page}
+
+**Cause:** The plugin is disabled, or no accordions are configured.
+
+**Solution:**
+
+1. Go to **J2Commerce** **->** **Apps** **-> Custom Accordions**
+
+2. Verify **Custom Accordions** shows a green checkmark (enabled).
+
+3. Edit the product and verify that at least one accordion is configured and enabled.
+
+4. Check that the accordion row has **Enabled** set to **Yes**.
+
+### Article Content Not Loading{#article-content-not-loading}
+
+**Cause:** Invalid article ID or article unpublished.
+
+**Solution:**
+
+1. Go to **Content** **->** **Articles** **->** Open the **Product/Article**
+
+2. Verify the article exists and is published.
+
+3. Return to the product edit screen and reselect the article.
+
+### Content Plugins Not Processing{#content-plugins-not-processing}
+
+**Cause:** **Prepare Content** is disabled.
+
+**Solution:**
+
+1. Go to **J2Commerce** **->** **Apps** **->** **Custom Accordions**.
+
+2. Set **Prepare Content** to **Yes**.
+
+3. Click **Save**
+
+4. Clear cache: Go to **Home Dashboard -> Cache -> Delete All**
+
+![](/img/delete-cache.webp)
+
+### Brand Accordion Missing{#brand-accordion-missing}
+
+**Cause:** Product has no manufacturer assigned or the manufacturer lacks a description.
+
+**Solution:**
+
+1. Go to **J2Commerce** **-> Catalog -> Products**.
+
+2. Edit the product and check the **Manufacturer** field.
+
+3. Verify the manufacturer is set.
+
+4. Go to **J2Commerce** **-> Catalog -> Manufacturers**.
+
+5. Edit the manufacturer and verify that the description article is configured.
+
+### Accordion Content Shows Raw HTML{#accordion-content-shows-raw-html}
+
+**Cause:** Content contains HTML but is not being processed.
+
+**Solution:**
+
+1. If you want HTML rendered, ensure **Prepare Content** is enabled.
+
+2. If HTML should appear as code (e.g., tutorials), leave **Prepare Content** disabled and escape your HTML.
+
+### Icon Not Displaying{#icon-not-displaying}
+
+**Cause:** Invalid icon class or missing Font Awesome library.
+
+**Solution:**
+
+1. Verify the icon class format: `fa-solid fa-star` or `fa-regular fa-circle`.
+
+2. Ensure your template or a plugin loads Font Awesome.
+
+3. Test with a known icon like `fa-solid fa-check` to verify the library loads.
