@@ -111,45 +111,41 @@ When enabled, J2Commerce retrieves manufacturer details from the product's assig
 
 ## Adding Custom Tabs to Products{#configure-products}
 
+This is a great tool if you want to display a specific article on the individual product pages. ie, **Return Policy, Allergy Disclosure, etc.**
+
 After enabling and configuring the plugin, each product can have custom tabs.
 
 ### Edit a Product{#step-1-edit-a-product}
 
-1. Go to **J2Commerce** **-> Catalog -> Products**.
+There are **two** ways you can access the products.&#x20;
 
-2. Click on a product to edit it.
+**a:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Products**
 
-3. Scroll to the **Apps** section.
+**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Products**
 
-### Add Tab from Article{#step-2-add-tab-from-article}
+![](/img/accordions-products.webp)
 
-The **Custom Tab from Article Id** field lets you import content from a Joomla article.
-
-|   |
-| - |
+Click on a **product** to edit it **-> J2Commerce** tab **->** **Apps** tab&#x20;
 
 | **Field**                      | **Description**                                                                                                           |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
 | **Custom Tab from Article Id** | Select an existing Joomla article. The article title becomes the tab title, and the article content becomes the tab body. |
 
-**To use:**
+Click **Select** to Add Custom Tab from Article Id
 
-1. Click the **Select** button to open the article picker.
+![](/img/accordions-apps-tab1.webp)
 
-2. Choose an article from the article manager.
+Select the article you want to be displayed on the product.
 
-3. Save the product.
+![](/img/tabs-products.webp)
 
-The tab appears on the product page using the article's title and content.
-
-### Add Custom Tabs{#step-3-add-custom-tabs}
+### Adding Additional Custom Tabs{#step-3-add-custom-tabs}
 
 Click the **Add Custom Tab** button to create unlimited custom tabs.
 
-Each tab row has these fields:
+![](/img/tabs-products1.webp)
 
-|   |
-| - |
+Each tab row has these fields:
 
 | **Field**          | **Description**                                                                                   | **Required** |
 | ------------------ | ------------------------------------------------------------------------------------------------- | ------------ |
@@ -170,9 +166,9 @@ The order in which tabs appear in the admin interface determines their display o
 
 - **Delete** - Click the trash icon on any row to remove it
 
-### Save the Product{#step-5-save-the-product}
+## Frontend View{#step-5-save-the-product}
 
-Click **Save** or **Save & Close** to apply your changes.
+![](/img/tabs-products3.webp)
 
 ## How It Works{#how-it-works}
 
@@ -198,13 +194,17 @@ Custom tabs appear when:
 
 - The product is published and visible.
 
-**Brand tab appears when:**
+***Brand tab appears when:***
 
 - **Display Brand Details** is set to **Yes**.
 
-- The product has a manufacturer assigned.
+![](/img/tabs-config2.webp)
 
-- The manufacturer has a description article configured.
+**Note:** In order to add the Brand or Manufacturer to a product, you have to add them to the database. Go to **J2Commerce -> Dashboard -> Catalog -> Manufacturer**. Fill out the company information and hit save
+
+The product has a manufacturer assigned.
+
+The manufacturer has a description article configured.
 
 ## Tips{#tips}
 
