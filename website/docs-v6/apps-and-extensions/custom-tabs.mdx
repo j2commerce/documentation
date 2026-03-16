@@ -12,9 +12,9 @@ You can create any number of tabs to display in the product page. You can enter 
 
 ## Requirements
 
-1. PHP 8.1.0 +
-2. Joomla! 4.x/ Joomla! 5.x +
-3. J2Commerce / J2Store 4.x +
+- with PHP 8.3.0 +
+- Joomla! 6.x
+- J2Commerce 6.x
 
 ## Purchase and Download
 
@@ -62,6 +62,233 @@ Once you click on the **Custom Tabs** Title next to the green checkmark, you are
 
 **Note:** The **Display Brand Details** field is the latest Add-on. It adds a way to add the manufacturer/brand to the tabs, before or after the other ones. Some countries require the display of brand information, including the address. The manufacturer information tab can be modified by creating a template override. The override needs to be `/templates/[the default template]/html/plugins/j2store/app_customtabs/brand.php` The tab text can be modified by creating a language override for PLG\_J2STORE\_APP\_CUSTOMTABS\_MANUFACTURER\_DETAILS
 
-**To learn how to set up Language Overrides, go to**
+#### **When to Enable Content Field Short Code**{#when-to-enable-content-field-short-code}
 
-[https://docs.j2commerce.com/translation/language-overrides-in-joomla-with-examples](https://docs.j2commerce.com/translation/language-overrides-in-joomla-with-examples)
+Enable **Custom Field Short Code** when:
+
+- You have created J2Commerce custom fields for products (e.g., material, weight, dimensions)
+
+- You want to display these custom field values inside tab content
+
+- You use custom field shortcodes in your tab descriptions
+
+Leave disabled for standard HTML content without custom field references.
+
+#### **When to Enable Prepare Content**{#when-to-enable-prepare-content}
+
+Enable **Prepare Content** when your tab content contains:
+
+- Joomla content plugins (e.g., `{loadmodule}`, `{loadposition}`)
+
+- Third-party plugin syntax (e.g., gallery sliders, video embeds)
+
+- Shortcodes that require content plugin processing
+
+**Note:** This option applies processing overhead. Leave disabled for simple HTML content.
+
+#### **Display Brand Details**{#display-brand-details}
+
+When enabled, J2Commerce retrieves manufacturer details from the product's assigned manufacturer:
+
+1. The manufacturer name appears as the tab title
+
+2. Manufacturer description content loads from the linked Joomla article
+
+**Position Options:**
+
+|   |
+| - |
+
+| **Position** | **Behavior**                                           |
+| ------------ | ------------------------------------------------------ |
+| **Before**   | Brand tab appears as the first tab on the product page |
+| **After**    | Brand tab appears as the last tab on the product page  |
+
+## **Configure Products**{#configure-products}
+
+After enabling the plugin, each product can have custom tabs.
+
+### **Step 1: Edit a Product**{#step-1-edit-a-product}
+
+1. Go to **J2Commerce** -> **Catalog** -> **Products**.
+
+2. Click on a product to edit it.
+
+3. Scroll to the **Apps** section.
+
+### **Step 2: Add Tab from Article**{#step-2-add-tab-from-article}
+
+The **Custom Tab from Article Id** field lets you import content from a Joomla article.
+
+|   |
+| - |
+
+| **Field**                      | **Description**                                                                                                           |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| **Custom Tab from Article Id** | Select an existing Joomla article. The article title becomes the tab title, and the article content becomes the tab body. |
+
+**To use:**
+
+1. Click the **Select** button to open the article picker.
+
+2. Choose an article from the article manager.
+
+3. Save the product.
+
+The tab appears on the product page using the article's title and content.
+
+### **Step 3: Add Custom Tabs**{#step-3-add-custom-tabs}
+
+Click the **Add Custom Tab** button to create unlimited custom tabs.
+
+Each tab row has these fields:
+
+|   |
+| - |
+
+| **Field**          | **Description**                                                                                   | **Required** |
+| ------------------ | ------------------------------------------------------------------------------------------------- | ------------ |
+| **Tab Title**      | The title displayed on the tab header.                                                            | Yes          |
+| **Tab Title Icon** | Font Awesome icon class (e.g., `fa-solid fa-star`). Leave empty for no icon.                      | No           |
+| **Enabled**        | Toggle to show or hide this tab.                                                                  | Yes          |
+| **Tab Content**    | The content displayed when the tab is active. Supports HTML and opens with the configured editor. | Yes          |
+
+### **Step 4: Organize Tabs**{#step-4-organize-tabs}
+
+The order in which tabs appear in the admin interface determines their display order on the frontend. The first tab appears first in the tab navigation.
+
+**Bulk Actions:**
+
+- **Collapse All** - Minimize all tab rows for easier navigation
+
+- **Expand All** - Open all tab rows for editing
+
+- **Delete** - Click the trash icon on any row to remove it
+
+### **Step 5: Save the Product**{#step-5-save-the-product}
+
+Click **Save** or **Save & Close** to apply your changes.
+
+## **How It Works**{#how-it-works}
+
+When a customer views a product page:
+
+1. J2Commerce checks if the Custom Tabs plugin is enabled.
+
+2. If **Display Brand Details** is enabled and the product has a manufacturer, a Brand tab is added.
+
+3. Custom tabs defined on the product are rendered in order.
+
+4. If **Prepare Content** is enabled, content plugins process the tab content.
+
+5. All tabs appear in a Bootstrap 5 tabbed interface.
+
+## **Display Conditions**{#display-conditions}
+
+Custom tabs appear when:
+
+- The plugin is enabled in **J2Commerce** -> **Apps**.
+
+- At least one tab is configured (article-based or custom).
+
+- The product is published and visible.
+
+**Brand tab appears when:**
+
+- **Display Brand Details** is set to **Yes**.
+
+- The product has a manufacturer assigned.
+
+- The manufacturer has a description article configured.
+
+## **Tips**{#tips}
+
+- **Use articles for reusable content** - If the same specifications apply to multiple products, create a Joomla article and reuse it across products.
+
+- **Keep titles concise** - Long tab titles may truncate on mobile devices.
+
+- **Use icons sparingly** - Icons should complement, not replace, meaningful titles.
+
+- **Test with content plugins** - If using `{loadmodule}` or similar syntax, enable **Prepare Content** and verify the output.
+
+- **Organize by importance** - Place critical information (shipping, warranty) in the first tabs for visibility.
+
+## **Troubleshooting**{#troubleshooting}
+
+### **Tabs Do Not Appear on Product Page**{#tabs-do-not-appear-on-product-page}
+
+**Cause:** Plugin is disabled or no tabs configured.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Apps**.
+
+2. Verify **Custom Tabs** shows a green checkmark (enabled).
+
+3. Edit the product and verify at least one tab is configured and enabled.
+
+4. Check that the tab row has **Enabled** set to **Yes**.
+
+### **Article Content Not Loading**{#article-content-not-loading}
+
+**Cause:** Invalid article ID or article unpublished.
+
+**Solution:**
+
+1. Go to **Content** -> **Articles**.
+
+2. Verify the article exists and is published.
+
+3. Return to the product edit screen and reselect the article.
+
+### **Content Plugins Not Processing**{#content-plugins-not-processing}
+
+**Cause:** **Prepare Content** is disabled.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Apps** -> **Custom Tabs**.
+
+2. Set **Prepare Content** to **Yes**.
+
+3. Click **Save**.
+
+4. Clear cache: **System** -> **Clear Cache**.
+
+### **Brand Tab Missing**{#brand-tab-missing}
+
+**Cause:** Product has no manufacturer assigned or manufacturer lacks description.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Catalog** -> **Products**.
+
+2. Edit the product and check the **Manufacturer** field.
+
+3. Verify the manufacturer is set.
+
+4. Go to **J2Commerce** -> **Catalog** -> **Manufacturers**.
+
+5. Edit the manufacturer and verify the description article is configured.
+
+### **Tab Content Shows Raw HTML**{#tab-content-shows-raw-html}
+
+**Cause:** Content contains HTML but is not being processed.
+
+**Solution:**
+
+1. If you want HTML rendered, ensure **Prepare Content** is enabled.
+
+2. If HTML should appear as code (e.g., tutorials), leave **Prepare Content** disabled and escape your HTML.
+
+### **Icon Not Displaying**{#icon-not-displaying}
+
+**Cause:** Invalid icon class or missing Font Awesome library.
+
+**Solution:**
+
+1. Verify the icon class format: `fa-solid fa-star` or `fa-regular fa-circle`.
+
+2. Ensure your template or a plugin loads Font Awesome.
+
+3. Test with a known icon like `fa-solid fa-check` to verify the library loads.
