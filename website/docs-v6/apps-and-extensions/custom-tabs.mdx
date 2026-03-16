@@ -186,15 +186,15 @@ When a customer views a product page:
 
 ## Display Conditions{#display-conditions}
 
-Custom tabs appear when:
+**Custom tabs appear when:**
 
-- The plugin is enabled in **J2Commerce** -> **Apps**.
+- The plugin is **enabled** in **J2Commerce** **-> Apps**.
 
 - At least one tab is configured (article-based or custom).
 
 - The product is published and visible.
 
-***Brand tab appears when:***
+**The brand tab appears when:**
 
 - **Display Brand Details** is set to **Yes**.
 
@@ -202,9 +202,9 @@ Custom tabs appear when:
 
 **Note:** In order to add the Brand or Manufacturer to a product, you have to add them to the database. Go to **J2Commerce -> Dashboard -> Catalog -> Manufacturer**. Fill out the company information and hit save
 
-The product has a manufacturer assigned.
+- **The product has a manufacturer assigned:** Open the **product**. Go to the **General** tab and add the Brand or Manufacturer. If it doesn't appear in the dropdown menu, then it needs to be created by following the **note** from above.
 
-The manufacturer has a description article configured.
+- **The manufacturer has a description article configured:**
 
 ## Tips{#tips}
 
@@ -220,9 +220,9 @@ The manufacturer has a description article configured.
 
 ## Troubleshooting{#troubleshooting}
 
-### **Tabs Do Not Appear on Product Page**{#tabs-do-not-appear-on-product-page}
+### Tabs Do Not Appear on Product Page{#tabs-do-not-appear-on-product-page}
 
-**Cause:** Plugin is disabled or no tabs configured.
+**Cause:** The plugin is disabled, or no tabs are configured.
 
 **Solution:**
 
@@ -230,23 +230,23 @@ The manufacturer has a description article configured.
 
 2. Verify **Custom Tabs** shows a green checkmark (enabled).
 
-3. Edit the product and verify at least one tab is configured and enabled.
+3. Edit the product and verify that at least one tab is configured and enabled.
 
 4. Check that the tab row has **Enabled** set to **Yes**.
 
-### **Article Content Not Loading**{#article-content-not-loading}
+### Article Content Not Loading{#article-content-not-loading}
 
 **Cause:** Invalid article ID or article unpublished.
 
 **Solution:**
 
-1. Go to **Content** -> **Articles**.
+1. Go to **Content** **-> Articles** **->** Open the **Product/Article**
 
 2. Verify the article exists and is published.
 
 3. Return to the product edit screen and reselect the article.
 
-### **Content Plugins Not Processing**{#content-plugins-not-processing}
+### Content Plugins Not Processing{#content-plugins-not-processing}
 
 **Cause:** **Prepare Content** is disabled.
 
@@ -258,11 +258,13 @@ The manufacturer has a description article configured.
 
 3. Click **Save**.
 
-4. Clear cache: **System** -> **Clear Cache**.
+4. Clear cache: Go to **Home Dashboard -> Cache -> Delete All**
 
-### **Brand Tab Missing**{#brand-tab-missing}
+   ![](/img/delete-cache.webp)
 
-**Cause:** Product has no manufacturer assigned or manufacturer lacks description.
+### Brand Tab Missing{#brand-tab-missing}
+
+**Cause:** Product has no manufacturer assigned, or the manufacturer lacks a description.
 
 **Solution:**
 
@@ -274,9 +276,9 @@ The manufacturer has a description article configured.
 
 4. Go to **J2Commerce** -> **Catalog** -> **Manufacturers**.
 
-5. Edit the manufacturer and verify the description article is configured.
+5. Edit the manufacturer and verify that the description article is configured.
 
-### **Tab Content Shows Raw HTML**{#tab-content-shows-raw-html}
+### Tab Content Shows Raw HTML{#tab-content-shows-raw-html}
 
 **Cause:** Content contains HTML but is not being processed.
 
@@ -286,7 +288,7 @@ The manufacturer has a description article configured.
 
 2. If HTML should appear as code (e.g., tutorials), leave **Prepare Content** disabled and escape your HTML.
 
-### **Icon Not Displaying**{#icon-not-displaying}
+### Icon Not Displaying{#icon-not-displaying}
 
 **Cause:** Invalid icon class or missing Font Awesome library.
 
@@ -294,6 +296,6 @@ The manufacturer has a description article configured.
 
 1. Verify the icon class format: `fa-solid fa-star` or `fa-regular fa-circle`.
 
-2. Ensure your template or a plugin loads Font Awesome.
+2. Ensure your template or plugin loads Font Awesome.
 
-3. Test with a known icon like `fa-solid fa-check` to verify the library loads.
+3. Test with a known icon  `fa-solid fa-check` to verify the library loads.
