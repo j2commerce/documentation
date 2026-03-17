@@ -17,9 +17,10 @@ const sidebars = {
                     label: 'Orders',
                     link: {
                         type: 'generated-index',
+                        slug: '/core-concepts/orders',
                     },
                     items: [
-                        'orders/order_item_attributes',
+                        'core-concepts/orders/order_item_attributes',
                     ],
                 },
             ],
@@ -37,6 +38,7 @@ const sidebars = {
                     label: 'Plugins',
                     link: {
                         type: 'generated-index',
+                        slug: '/extensions/plugins',
                     },
                     items: [
                         {
