@@ -31,9 +31,9 @@ Before configuring the plugin you need an AtoShip API key. Account creation is f
 
 ‌**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extension
 
-**Step 2:** Locate the **AtoShip** Extension > click View Details > Add to cart > Checkout.&#x20;
+**Step 2:** Locate the **AtoShip** Extension -> click **View Details** **-> Add to cart -> Checkout**.&#x20;
 
-**Step 3:** Go to your My Downloads under your profile button at the top right corner and search for the app. Click Available Versions > View Files > Download
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**
 
 ## Install the Plugin
 
@@ -137,7 +137,7 @@ These values are used when a product does not have its own weight or dimensions 
 
 **Default Height:** Fallback package height
 
-For the most accurate rates, set real weights and dimensions on **each product** in **J2Commerce** **->** **Catalog** -> **Products**.
+For the most accurate rates, set real weights and dimensions on **each product** in **J2Commerce** **->** **Catalog** **->** **Products**.
 
 ### Rate Options
 
@@ -200,9 +200,9 @@ https://your-site.com/index.php?option=com_j2commerce&task=shipping.pluginAjax&p
 
 ## Creating Shipping Labels
 
-When an order uses an AtoShip option as the shipping method (not Free Shipping), a **Create Shipping Label** button appears on the order edit screen.
+When an order uses an AtoShip option as the shipping method (not Free Shipping), a **Create Shipping Label** button appears on the order **edit** screen.
 
-![](/img/ato-checkout2.webp)
+![](/img/atoship-order.webp)
 
 1. Open the order from **J2Commerce** **->** **Sales -> Orders**.
 2. Click **Create Shipping Label**.
@@ -248,7 +248,7 @@ Before creating a label, the plugin checks your AtoShip account balance. If the 
 3. Confirm at least one carrier is selected in **Allowed Carriers**.
 4. Enable **Debug Mode** and attempt checkout. Check `administrator/logs/shipping_atoship.php` for the API response.
 
-### **The Green Create a Shipping Label doesn't appear**&#x20;
+### The Green Create a Shipping Label doesn't appear&#x20;
 
 **Cause:** The **order status** in the payment method is not set as **Confirmed**
 
