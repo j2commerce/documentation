@@ -62,7 +62,13 @@ In order for you to configure the plugin, you need four values from your Authori
 
 We recommend that you open two tabs in your browser (open the app from J2Commerce and your account with [Authorize.net](http://Authorize.net) so you can easily just copy/paste when you receive your credentials by following the steps below.&#x20;
 
-### API Login ID and Transaction Key
+**Note:** If you want to try it out on a non-live site then you need to create an account on the developer site first to retreive the Keys for **Sandbox Mode**.  To create an account go to [**https://developer.authorize.net/hello\_world/sandbox.html**](https://developer.authorize.net/hello_world/sandbox.html) &#x20;
+
+![](/img/autho-sandbox-key1s.webp)
+
+Once you have created an account, you can follow the steps below
+
+## Getting Your API Credentials
 
 ![](/img/autho-api.webp)
 
@@ -90,7 +96,7 @@ The Signature Key is used to verify that incoming webhook notifications actually
 1. Go to the same location listed above (**Account** -> **Account and API Settings** -> **API Credentials & Keys)**
 2. Under **Signature Key**, click **Generate New Signature Key** and copy the value shown.
 
-> **Sandbox accounts:** If you are using the Authorize.Net sandbox, log in at [https://sandbox.authorize.net](https://sandbox.authorize.net) to obtain your sandbox credentials. Sandbox credentials are separate from live credentials and only work in sandbox mode.
+> **Sandbox Mode:** If you are using the Authorize.Net sandbox, log in at [https://sandbox.authorize.net](https://developer.authorize.net/hello_world/sandbox.html) to obtain your sandbox credentials. **Sandbox credentials are separate from live credentials and only work in sandbox mode.**
 
 ## Configure the Plugin
 
@@ -100,9 +106,9 @@ Open the plugin settings by going to **J2Commerce** **-> Setup ->** **Payment Me
 
 ![](/img/autho-toggle.webp)
 
-### Display Settings
+## Display Settings
 
-![](/img/autho-config1.webp)
+![](/img/autho-config1a.webp)
 
 **Display Name:** The name customers see at checkout, e.g. "Credit Card" or "Pay by Card".
 
@@ -116,7 +122,9 @@ Open the plugin settings by going to **J2Commerce** **-> Setup ->** **Payment Me
 
 Most stores should use **Authorize and Capture**. Use **Authorize Only** if you need to review orders before charging or if you ship physical goods and want to capture at the time of shipment.
 
-**Use Sandbox:** Toggle between sandbox (test) mode and live mode. When enabled, sandbox credentials are used and no real payments are processed.
+**Use Sandbox:** Toggle between sandbox (test) mode and live mode. When enabled, sandbox credentials are used and no real payments are processed. You first have to create an account of the **Developer** site of [Authorize.net](http://Authorize.net) in order to receive the **Sandbox** Credentials
+
+> [https://sandbox.authorize.net](https://sandbox.authorize.net)
 
 ### Live Credentials
 
@@ -134,7 +142,7 @@ These fields are active when **Use Sandbox** is set to **No**.
 
 These fields appear and become active only when **Use Sandbox** is set to **Yes**.
 
-**Sandbox API Login ID:** Your sandbox API Login ID from `sandbox.authorize.net`.
+**Sandbox API Login ID:** Your sandbox API Login ID from [https://sandbox.authorize.net](https://developer.authorize.net/hello_world/sandbox.html).
 
 **Sandbox Transaction Key:** Your sandbox Transaction Key.
 
@@ -144,7 +152,22 @@ These fields appear and become active only when **Use Sandbox** is set to **Yes*
 
 > **Tip:** Keep your sandbox credentials filled in even after going live. That way you can quickly switch back to test mode without re-entering them.
 
-### Transaction Type
+### Sandbox Test Card Numbers
+
+Use these card numbers on the checkout form while in sandbox mode. Any future expiry date and any 3-digit CVV work.
+
+| Card Type        | Test Card Number   |
+| ---------------- | ------------------ |
+| Visa             | `4111111111111111` |
+| Mastercard       | `5424000000000015` |
+| Discover         | `6011000000000012` |
+| American Express | `370000000000002`  |
+
+To test a declined card, use `4000300011112220`.
+
+> **Important:** Switch **Use Sandbox** back to **No** and enter your live credentials before going live. The sandbox warning banner appears on the J2Commerce dashboard whenever sandbox mode is active, so it is easy to spot.
+
+## Transaction Type
 
 ![](/img/autho-config2.webp)
 
@@ -154,15 +177,23 @@ Available options: Visa, Mastercard, Discover, American Express.
 
 Note that Authorize.Net processes any card your merchant account is configured to accept — this setting controls display only.
 
+![](/img/autho-payment.webp)
+
+
+
 **Allow Saved Cards:** When enabled, logged-in customers can save their card for future purchases using Authorize.Net's Customer Information Manager (CIM). A "Payment Methods" tab also appears on the My Profile page.
 
 See the [Saved Cards / Customer Profiles](#saved-cards--customer-profiles) section for more detail.
+
+![](/img/autho-payment1.webp)
 
 **Template Style:** Choose the frontend template layout for checkout forms and saved card displays. Options depend on your site's template framework.
 
 Available subtemplates: **Bootstrap 5** and **UIkit**. Leave blank to use the default layout. If your Joomla template is UIkit-based (e.g., YOOtheme Pro), select the UIkit subtemplate for consistent styling.
 
-### Order Statuses
+## Order Statuses
+
+![](/img/autho-order3.webp)
 
 **Order Status:** The J2Commerce order status to assign when payment is successfully processed. &#x20;
 
@@ -186,7 +217,9 @@ Set this to whichever status makes sense for your workflow. A common choice is *
 
 > **Tip:** If you want refunded or voided orders to move to a specific status (e.g., "Cancelled" or "Refunded"), enable the relevant toggle and select the desired status. If left disabled, only the transaction record is updated — the order status stays unchanged.
 
-### Surcharge
+## Surcharge
+
+![](/img/autho-surcharge.webp)
 
 You can add a payment surcharge to cover processing fees. Leave these blank if you do not want to charge customers extra for using this payment method.
 
@@ -198,7 +231,7 @@ You can add a payment surcharge to cover processing fees. Leave these blank if y
 
 **Surcharge Tax Class:** If the surcharge itself should be taxed, select the applicable tax profile here.
 
-### Restrictions
+## Restrictions
 
 ![](/img/autho-config6.webp)
 
@@ -208,7 +241,7 @@ You can add a payment surcharge to cover processing fees. Leave these blank if y
 
 **Maximum Subtotal:** Hide this payment method if the order subtotal exceeds this amount.
 
-### Messages and Thank You Page
+## Messages and Thank You Page
 
 ![](/img/autho-config5.webp)
 
@@ -224,7 +257,7 @@ You can add a payment surcharge to cover processing fees. Leave these blank if y
 
 **On Cancel:** Text shown if the customer cancels or abandons checkout.
 
-### Dashboard Icon
+## Dashboard Icon
 
 ![](/img/autho-config4.webp)
 
@@ -246,17 +279,21 @@ When **Allow Saved Cards** is enabled, logged-in customers can save payment meth
 2. A checkbox appears: **Save this card for future purchases**.
 3. If checked, the card is tokenized via Accept.js and stored as a payment profile in CIM after the transaction completes.
 
+![](/img/autho-payment2.webp)
+
 **Using a saved card:**
 
 1. On their next order, the customer sees their saved cards listed above the new card form, each with the card brand icon (Visa, Mastercard, etc.), last 4 digits, and expiry date.
 2. They select a saved card (shown as, for example, "Visa ending in 4242, Expires 12/27") or choose **Use a new card**.
 3. If a saved card is selected, no card entry is needed — the payment is processed using the stored CIM profile.
 
-<!-- SCREENSHOT: Checkout payment step showing saved card selection with radio buttons -->
+![](/img/autho-payment3.webp)
 
 ### Managing Cards in My Profile
 
 When **Allow Saved Cards** is enabled, a **Payment Methods** tab appears on the customer's My Profile page (**My Account** -> **My Profile**).
+
+![](/img/autho-payment4.webp)
 
 From this tab, customers can:
 
@@ -264,8 +301,6 @@ From this tab, customers can:
 - Add a new card using the **Add New Card** button
 - Remove a card using the trash icon — cards in use by active subscriptions cannot be removed
 - Switch all active subscriptions to a different saved card using the rotate icon
-
-<!-- SCREENSHOT: My Profile > Payment Methods tab showing saved cards list with action buttons -->
 
 > **Note:** Saved cards are environment-specific. Cards saved in sandbox mode are not visible in live mode, and vice versa.
 
@@ -289,8 +324,6 @@ Here is what a customer experiences at checkout when Authorize.Net is the select
 
 A spinner with "Processing your payment..." is shown during steps 6-8 to prevent double submission.
 
-<!-- SCREENSHOT: Checkout payment form showing card number, expiry, CVV fields and processing spinner -->
-
 ## Subscription Support
 
 If your store sells subscription products, the Authorize.Net plugin handles recurring billing automatically.
@@ -301,7 +334,7 @@ When a customer completes their first subscription order and saves their card, t
 
 Customers can switch the card used for their subscriptions from their My Profile page:
 
-1. Go to **My Account** -> **My Profile** -> **Payment Methods**.
+1. Go to **My Account -> My Profile -> Payment Methods**.
 2. Click the rotate icon next to the card to use for subscriptions.
 3. Confirm the prompt — all active subscriptions are immediately updated to use that card.
 
@@ -311,23 +344,37 @@ Cards being used by active subscriptions display a badge showing how many subscr
 
 You can trigger refunds or voids directly from the J2Commerce order detail page in the admin — no need to log in to the Authorize.Net dashboard for routine reversals.
 
+You need to make sure you have set the **Void and/or Refund** toggles to '**Yes**' on the **Authorize.net app** configuration page for them to appear.&#x20;
+
+![](/img/autho-payment7.webp)
+
+If the **Order Status** name that you want isn't showing up, then you need to add a new order status. Go to **J2Commerce**  **-> Setup -> Order Status -> New**
+
+***Note:** Any changes made to the app won't affect the previous orders. Only new orders will show the new options.*
+
 ### Void a Transaction
 
-If a transaction has not yet settled (typically same-day), a **Void** button appears on the order detail page. Clicking it cancels the authorization immediately, releasing the hold on the customer's card without any fees.
+If a transaction has not yet settled (typically same-day, before the charge hits the Credit Card), a **Void** button appears on the order detail page. Clicking it cancels the authorization immediately, releasing the hold on the customer's card without any fees.
 
-1. Go to **J2Commerce** -> **Orders** and open the order.
+1. Go to **J2Commerce** **->** **Orders** and open the order.
 2. Click the **Void** button (shown with a ban icon).
 3. The plugin sends a void request to Authorize.Net and updates the order history.
 
-<!-- SCREENSHOT: Order detail page showing the Void button -->
+**Note**: the screenshow below shows what it looks like if **Void** is set to '**Yes**' and **Refund** is set to '**No**'
+
+![](/img/autho-order1.webp)
+
+After you void the order, the status is automatically updated. Since we set the order status as '**Cancelled**', the order will now show as '**Cancelled**' on the backend.
+
+![](/img/autho-payment8.webp)
 
 ### Refund a Transaction
 
-Once a transaction has settled, a **Refund** button appears instead of Void. Clicking it opens a refund modal where you can choose between a full or partial refund.
+Once a transaction has settled, a **Refund** button appears instead of Void. Clicking it opens a refund modal where you can choose between a full or partial refund. The refund usually takes 3–5 business days to appear on the customer's credit card.
 
-1. Go to **J2Commerce** -> **Orders** and open the order.
+1. Go to **J2Commerce** **-> Orders** and open the order.
 2. Click the **Refund** button (shown with a rotate icon).
-3. A modal dialog appears with two options:
+3. A modal dialogue appears with two options:
 
    - **Full refund** — refunds the entire transaction amount (shown in the label, e.g., "Full refund — 149.99").
    - **Partial refund** — enter a custom amount. The maximum refundable amount is displayed below the input field.
@@ -338,29 +385,18 @@ Once a transaction has settled, a **Refund** button appears instead of Void. Cli
 
 > **Tip:** The partial refund amount field validates against the maximum refundable total. You cannot refund more than the original charge minus any previous refunds.
 
-### Refund vs. Void
-
-| Scenario                    | Action Taken                             | Button Shown | Timing                                    |
-| --------------------------- | ---------------------------------------- | ------------ | ----------------------------------------- |
-| Transaction not yet settled | **Void** — cancels the transaction       | **Void**     | Typically same day as the original charge |
-| Transaction already settled | **Refund** — credits the customer's card | **Refund**   | Usually 3–5 business days to appear       |
-
-### Automatic Order Status Changes
-
-If you configured **Order Status on Void** or **Order Status on Refund** in the plugin settings, the order status is automatically updated after a successful void or refund. See the [Configuration](#order-status-on-void) section above.
-
 ## Admin Charge Stored Card
 
 When a customer has saved cards via CIM, administrators can charge a stored card directly from the order detail page. This is useful for processing additional charges, collecting outstanding balances, or retrying failed payments.
 
 1. Go to **J2Commerce** -> **Orders** and open the order.
 2. Below the order details, a **Charge Stored Card** panel appears if the customer has saved payment methods.
+
+   ![](/img/autho-order2.webp)
 3. Select a card from the dropdown (shown as card type, last 4 digits, and expiry).
 4. The charge amount is shown automatically (the order total).
 5. Click **Charge Now** to process the payment.
 6. A success or error message appears inline within the panel.
-
-<!-- SCREENSHOT: Admin order detail showing the Charge Stored Card panel with card dropdown and Charge Now button -->
 
 ## Webhooks
 
@@ -376,12 +412,12 @@ https://your-site.com/index.php?option=com_j2commerce&view=checkout&task=checkou
 
 Replace `https://your-site.com` with your actual site URL.
 
-<!-- SCREENSHOT: Authorize.Net Webhooks configuration page showing URL field -->
-
 ### Setting Up Webhooks in Authorize.Net
 
 1. Log in to your Authorize.Net Merchant Interface.
-2. Go to **Account** -> **Settings** -> **Transaction Format Settings** -> **Transaction Response Settings** -> **Webhooks**.
+
+   ![](/img/autho-merch.webp)
+2. Go to **Account -> Settings -> Transaction Format Settings -> Transaction Response Settings -> Webhooks**.
 3. Click **Add Endpoint**.
 4. Enter your webhook URL and select the events you want to receive.
 5. Click **Save**.
@@ -414,21 +450,6 @@ The sandbox environment lets you test your entire checkout flow without processi
 2. Log in to [https://sandbox.authorize.net](https://sandbox.authorize.net) and generate your sandbox API credentials (see the [Getting Your API Credentials](#getting-your-api-credentials) section above).
 3. In the plugin settings, set **Use Sandbox** to **Yes** and enter your sandbox credentials.
 4. Save the plugin settings.
-
-### Test Card Numbers
-
-Use these card numbers on the checkout form while in sandbox mode. Any future expiry date and any 3-digit CVV work.
-
-| Card Type        | Test Card Number   |
-| ---------------- | ------------------ |
-| Visa             | `4111111111111111` |
-| Mastercard       | `5424000000000015` |
-| Discover         | `6011000000000012` |
-| American Express | `370000000000002`  |
-
-To test a declined card, use `4000300011112220`.
-
-> **Important:** Switch **Use Sandbox** back to **No** and enter your live credentials before going live. The sandbox warning banner appears on the J2Commerce dashboard whenever sandbox mode is active, so it is easy to spot.
 
 ## Security and PCI Compliance
 
@@ -486,7 +507,7 @@ Always disable debug mode in production. If you need to investigate an issue, en
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Authorize.Net**.
+1. Go to **J2Commerce** **-> Payments -> Payment Methods -> Authorize.Net**.
 2. Verify that the **API Login ID**, **Transaction Key**, and **Public Client Key** fields are all filled in.
 3. If **Use Sandbox** is enabled, check the sandbox credential fields — they are separate from the live fields.
 4. Save the settings.
