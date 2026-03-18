@@ -37,6 +37,7 @@ const sidebars = {
       ],
     },
     'migration-from-j2store-3-to-4',
+    'update-j2commerce-4-to-joomla-6',
     {
       type: 'category',
       label: 'Set Up',
