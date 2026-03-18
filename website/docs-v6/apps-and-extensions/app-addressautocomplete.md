@@ -101,7 +101,26 @@ Helpful Hint: If you click on the Toggle Inline Help button, it will explain eac
 
 **Restrict to Countries:** Comma-separated ISO 3166-1 alpha-2 country codes (e.g., US,CA,GB). Leave empty for all countries.
 
+*Limiting suggestions to specific countries reduces API costs and improves relevance for stores that only ship to certain regions.*
+
+Enter country codes separated by commas:
+
+- `US` - United States only
+- `US,CA` - United States and Canada
+- `GB,IE,FR,DE` - United Kingdom, Ireland, France, Germany
+
+Use ISO 3166-1 alpha-2 country codes (two-letter codes).
+
 **Address Types:** Select which address types to include in autocomplete suggestions.
+
+| Type                | Description                                                |
+| ------------------- | ---------------------------------------------------------- |
+| **street\_address** | Street addresses (e.g., "123 Main Street")                 |
+| **premise**         | Named locations, buildings (e.g., "Empire State Building") |
+| **subpremise**      | Sub-units within a building (e.g., "Apt 4B", "Suite 100")  |
+| **route**           | Street names without numbers (e.g., "Main Street")         |
+
+For most stores, the default (`street_address` and `premise`) provides the best results.
 
 **Minimum Characters:** Minimum number of characters the user must type before autocomplete activates (1-10).
 
@@ -126,36 +145,13 @@ When a customer types in the **Address Line 1** field during checkout:
    - Sets the **Country** dropdown and triggers the zone/state dropdown to load.
    - Automatically selects the correct **State/Province/Region** from the dropdown.
 
-### Frontend Checkout View
+## Frontend Checkout View
 
-<!-- SCREENSHOT: Checkout page showing address autocomplete dropdown with suggestions -->
-
-## Country Restrictions
-
-Limiting suggestions to specific countries reduces API costs and improves relevance for stores that only ship to certain regions.
-
-Enter country codes separated by commas:
-
-- `US` - United States only
-- `US,CA` - United States and Canada
-- `GB,IE,FR,DE` - United Kingdom, Ireland, France, Germany
-
-Use ISO 3166-1 alpha-2 country codes (two-letter codes).
-
-## Address Type Filtering
-
-The Address Types setting controls what kinds of places appear in suggestions:
-
-| Type                | Description                                                |
-| ------------------- | ---------------------------------------------------------- |
-| **street\_address** | Street addresses (e.g., "123 Main Street")                 |
-| **premise**         | Named locations, buildings (e.g., "Empire State Building") |
-| **subpremise**      | Sub-units within a building (e.g., "Apt 4B", "Suite 100")  |
-| **route**           | Street names without numbers (e.g., "Main Street")         |
-
-For most stores, the default (`street_address` and `premise`) provides the best results.
+![](/img/address-advanced2.webp)
 
 ## Browser Autofill Conflicts
+
+![](/img/address-surpress.webp)
 
 Modern browsers have built-in address autofill that can conflict with Google's autocomplete. When both features are active, the browser's autofill dropdown may cover the Google suggestions.
 
@@ -178,7 +174,7 @@ Google Places API (New Option) uses a pay-per-request model. Each keystroke that
 1. **Set a higher minimum character count** (e.g., 4 or 5) to reduce API calls during typing.
 2. **Restrict countries** to only those you ship to, reducing the number of returned suggestions.
 3. **Set API quotas** in Google Cloud Console to prevent unexpected charges.
-4. **Monitor usage** in Google Cloud Console under **Billing** -> **Reports**.
+4. **Monitor usage** in Google Cloud Console under **Billing** **->** **Reports**.
 
 Google offers a monthly free tier. Check the [Google Maps Platform pricing page](https://mapsplatform.google.com/pricing/) for current rates and free tier limits.
 
@@ -186,10 +182,12 @@ Google offers a monthly free tier. Check the [Google Maps Platform pricing page]
 
 When troubleshooting, enable **Debug Mode** to see detailed logging in the browser's developer console:
 
-1. Open your browser's Developer Tools (F12 or right-click -> Inspect).
+1. Open your browser's Developer/Inspect Tools (F12 or right-click **->** Inspect).
 2. Go to the **Console** tab.
 3. Type in an address field during checkout.
 4. Look for messages starting with `[AddressAutocomplete]`.
+
+![](/img/address-debug.webp)
 
 **Debug mode shows:**
 
@@ -215,7 +213,7 @@ Disable Debug Mode in production to avoid exposing API details to customers.
 **Solution:**
 
 1. Verify the API key is entered correctly in the plugin configuration.
-2. Check that **Places API (New)** is enabled in Google Cloud Console (not the legacy Places API).
+2. Check that **Places API (New)** is enabled in Google Cloud Console (**not** the legacy Places API).
 3. Ensure your API key has no HTTP referrer restrictions blocking your domain.
 4. Enable Debug Mode and check the browser console for error messages.
 5. Confirm you have not exceeded your Google Cloud API quota.
@@ -244,7 +242,7 @@ The plugin uses a three-tier matching system:
 
 If all three fail, the country is set but the state field remains empty. Ensure your J2Commerce zones are properly configured:
 
-1. Go to **J2Commerce** -> **Dashboard** -> **Localization** -> **Zones**.
+1. Go to **J2Commerce** **-> Dashboard -> Localization -> Zones**.
 2. Verify zone names and codes match the expected values for your shipping countries.
 
    ![](/img/address-zones.webp)
@@ -258,6 +256,8 @@ If all three fail, the country is set but the state field remains empty. Ensure 
 1. Ensure **Suppress Browser Autofill** is set to **Yes**.
 2. Test in a different browser to confirm the issue is browser-specific.
 3. Some browsers (especially Chrome) aggressively autofill addresses. Try adding `autocomplete="off"` directly to your template's address fields if the plugin's suppression is insufficient.
+
+![](/img/address-surpress2.webp)
 
 ### API Quota Exceeded
 
