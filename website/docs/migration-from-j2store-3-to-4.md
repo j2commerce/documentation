@@ -49,7 +49,7 @@ Take a FULL BACKUP so that in case of issues, you can always restore your site f
 
 We have created a simple migration helper that checks for potential conflicts with the plugins and lets you disable them before the migration.
 
-1. Download the utility from here: [github.com/j2commerce/j2store\_migration\_checker/releases](https://github.com/j2commerce/j2store_migration_checker/releases)
+1. Download the latest v1.0.x version of the utility here: [github.com/j2commerce/j2store\_migration\_checker/releases](https://github.com/j2commerce/j2store_migration_checker/releases)
 2. Install it by logging into your Joomla 3 administrator > Extensions > Manage > Install
 3. Once installed, go to Components > J2Store Migration checker
 

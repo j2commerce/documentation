@@ -1,0 +1,374 @@
+---
+title: "Simple Products"
+sidebar_label: "Simple Products"
+sidebar_position: 1
+description: "Create and configure a Simple product in J2Commerce — the foundational product type for single-item, fixed-price goods with optional customer-configurable add-ons."
+---
+
+# Simple Products
+
+The Simple product type is the starting point for most J2Commerce stores. Use it when you are selling a single item that has one price and no variants — a book, a candle, a hand-crafted item, or a fixed-price service. If you want customers to add a personalized engraving, select a gift wrap style, or choose an optional add-on, Simple products support that too through the Options tab.
+
+The Simple product type is built into J2Commerce and is available immediately after installation. No additional plugin purchase or setup is required.
+
+All other J2Commerce product types — Variable, Configurable, Downloadable, Bundle — share the same tab structure documented here. Mastering the Simple product gives you the foundation for every other product type.
+
+## Requirements
+
+- J2Commerce installed and enabled
+- At least one Joomla article created (the article becomes the product page)
+- Image upload settings configured in **J2Commerce** -> **Configuration** before uploading images
+
+## How Simple Products Work
+
+Every J2Commerce product is attached to a Joomla article. The article provides the product title, description, category, and URL. J2Commerce adds the price, inventory, shipping, and cart behavior on top of it.
+
+Internally, J2Commerce creates a single "variant" record for a Simple product to store the price, stock quantity, and shipping dimensions. This record is invisible to shoppers — it is just how the system stores the data. You manage all of it through the normal product edit form.
+
+## Creating a Simple Product
+
+### Step 1: Create a Joomla Article
+
+Every product needs a Joomla article. The article title becomes the product name and the article content is the description shoppers read on the product page.
+
+1. Go to **Content** -> **Articles** -> **New**.
+2. Enter a product title and description.
+3. Assign the article to a category (the category determines which J2Commerce category listing it appears in).
+4. Click **Save & Close**.
+
+<!-- SCREENSHOT: Joomla article editor showing a product title, description, and category assignment -->
+
+If you prefer, you can open an existing article and attach a product to it instead of creating a new one.
+
+### Step 2: Open the Product Form
+
+1. Go to **J2Commerce** -> **Catalog** -> **Products**.
+2. Click **New** in the toolbar.
+
+<!-- SCREENSHOT: J2Commerce Products list with the New button highlighted in the toolbar -->
+
+The product form opens. You will see an outer set of tabs (**Details**, **Associations**, **Publishing**) and an inner set of J2Commerce-specific tabs (**General**, **Pricing**, **Inventory**, **Images**, **Shipping**, **Options**, **Filters**, **Relations**, **Apps**). Start on the **Details** tab.
+
+### Step 3: Details Tab (Outer Form)
+
+<!-- SCREENSHOT: Product form Details tab showing the Article selector, Product Type dropdown, Visibility toggle, and Has Options toggle -->
+
+| Field | Description | Default |
+|-------|-------------|---------|
+| **Article** | Select the Joomla article this product is linked to. The article title becomes the product name. | _(required)_ |
+| **Product Type** | Set to **Simple** for a single-item product with one price and no variants. | `Simple` |
+| **Visibility** | Show or hide the product in storefront listings. Set to **Show** to make it visible to shoppers. | `Show` |
+| **Has Options** | Set to **Yes** if you plan to add customer-configurable choices on the Options tab (for example, engraving text, gift wrap style). | `No` |
+| **Add to Cart Text** | Overrides the default "Add to Cart" button label for this product only. Leave blank to use your store's global button label. | _(blank)_ |
+| **Status** | Set to **Published** to make the product active. Unpublished products are not visible to shoppers. | `Published` |
+
+### Step 4: Associations Tab (Outer Form)
+
+<!-- SCREENSHOT: Product form Associations tab showing Tax Profile, Manufacturer, and Vendor dropdowns -->
+
+| Field | Description |
+|-------|-------------|
+| **Tax Profile** | Assigns a tax profile to this product. The tax profile determines which tax rates apply based on the customer's location. Create tax profiles under **J2Commerce** -> **Taxes**. |
+| **Manufacturer** | Links this product to a manufacturer record. Useful for filtering and for the Custom Accordions app's Brand Details feature. |
+| **Vendor** | Assigns the product to a vendor. Relevant for multi-vendor setups. Leave blank if you do not use vendors. |
+
+### Step 5: General Tab (J2Commerce)
+
+<!-- SCREENSHOT: Product form General tab showing SKU, UPC, Manufacturer, Vendor, Tax Profile, Add to Cart Text, and Custom CSS Class fields -->
+
+The **General** tab inside the J2Commerce section handles product codes, assignment, and display tweaks.
+
+| Field | Description |
+|-------|-------------|
+| **Visibility** | Same as the outer form — toggles storefront visibility. |
+| **SKU** | Your internal stock-keeping unit code. Optional but recommended for inventory tracking and order management. |
+| **UPC** | Universal product code or barcode identifier (UPC, EAN, JAN, ISBN, MPN). Optional. |
+| **Manufacturer** | Associates the product with a manufacturer record. |
+| **Vendor** | Assigns the product to a vendor. |
+| **Tax Profile** | Assigns a tax profile to this product. |
+| **Add to Cart Text** | Overrides the button label for this product. |
+| **Custom CSS Class** | Adds one or more CSS class names to the product's container element. Useful for per-product styling without modifying template files. |
+
+### Step 6: Pricing Tab
+
+<!-- SCREENSHOT: Product form Pricing tab showing the Regular Price field, the Advanced Pricing button, and the Pricing Calculator dropdown -->
+
+| Field | Description |
+|-------|-------------|
+| **Regular Price** | The standard selling price. Enter the number only — do not include a currency symbol. J2Commerce reads the currency from your store settings. |
+| **Advanced Pricing** | Opens a panel to set date-based sale prices, quantity-tier prices, and customer-group prices. See the section below for details. |
+| **Pricing Calculator** | Controls how the final price is calculated. The default **Standard** calculator applies the regular price and advanced pricing rules. Other calculators (installed via plugins) can apply custom formulas. |
+
+#### Advanced Pricing
+
+Click the **Advanced Pricing** button to configure rules that override the regular price under specific conditions. A modal opens where you can add one or more pricing rules.
+
+Each pricing rule has these fields:
+
+| Field | Description |
+|-------|-------------|
+| **Price** | The price that applies when this rule matches. |
+| **Date From / Date To** | The date range during which this rule is active. Leave both blank to make the rule always active. |
+| **Quantity From / Quantity To** | The quantity range this rule applies to. For example, a rule with Quantity From = 5 applies when the customer buys 5 or more units. |
+| **Customer Group** | Restrict this rule to a specific Joomla user group. Leave blank to apply to all shoppers. |
+
+J2Commerce automatically selects the best matching rule at checkout — the customer always gets the lowest qualifying price.
+
+**Common use cases:**
+
+- **Black Friday sale** — set a Date From and Date To with a reduced price, leave quantity and group blank.
+- **Bulk discount** — set Quantity From to 10 with a lower price and no date restriction.
+- **Trade pricing** — set a Customer Group to your "Wholesale" group with a special price.
+
+### Step 7: Inventory Tab
+
+<!-- SCREENSHOT: Product form Inventory tab showing the Manage Stock toggle, Quantity field, and Allow Backorders dropdown -->
+
+| Field | Description | Default |
+|-------|-------------|---------|
+| **Manage Stock** | Set to **Yes** to track inventory. J2Commerce decreases the quantity automatically when orders are placed. Set to **No** to sell without a stock limit. | `No` |
+| **Quantity** | The number of units currently in stock. Only relevant when **Manage Stock** is **Yes**. | `0` |
+| **Allow Backorders** | What happens when stock reaches zero. **Do not allow** blocks purchases. **Allow** lets shoppers order anyway. **Allow but notify customer** permits the purchase and adds a backorder notice at checkout. | `Do not allow` |
+| **Stock Status** | Manually sets the in-stock or out-of-stock label shown to shoppers, regardless of the quantity counter. | `In Stock` |
+| **Notify Quantity** | J2Commerce sends a low-stock alert when inventory drops to this number. Check **Use Store Configuration** to apply the global default instead of a per-product value. | _(store default)_ |
+| **Quantity Restriction** | Set to **Yes** to enforce a minimum and maximum per-order quantity. | `No` |
+| **Min Sale Quantity** | The fewest units a shopper can add to their cart at once. Check **Use Store Configuration** to use the global default. | _(store default)_ |
+| **Max Sale Quantity** | The most units a shopper can add to their cart at once. Check **Use Store Configuration** to use the global default. | _(store default)_ |
+
+### Step 8: Images Tab
+
+<!-- SCREENSHOT: Product form Images tab showing the multi-image uploader with uploaded image cards and alt text fields -->
+
+J2Commerce 6 includes a built-in multi-image uploader. You can upload multiple images at once and arrange them in any order.
+
+#### Uploading Images
+
+1. On the **Images** tab, click **Upload Image** or drag image files directly into the upload area.
+2. Supported formats: JPG, JPEG, PNG, GIF, WebP, AVIF.
+3. Each upload completes as a card in the gallery.
+
+<!-- SCREENSHOT: Multi-image uploader gallery showing three image cards with reorder arrows visible on hover -->
+
+#### Image Order and the Main Image
+
+The first image in the uploader is the **main product image** — the large image shown on the product detail page and used as the thumbnail in listings. To reorder:
+
+1. Hover over an image card to reveal the left and right arrows.
+2. Click the arrows to move the image to a new position.
+3. Save the product to apply the new order.
+
+#### Automatic Thumbnails
+
+J2Commerce automatically generates resized thumbnail and tiny versions of each uploaded image. These are used in product listings, the cart, and other compact views. No extra configuration is needed — the sizes are set in your store's image configuration.
+
+#### Alt Text
+
+Each image card has an **Alt Text** field. Write a short description such as "Blue ceramic mug, 350ml". Alt text is read by screen readers and used by search engines to understand your images.
+
+#### Removing Images
+
+Clicking **Remove** on a card removes the image from this product but does not delete the file from the server. To delete the file permanently, use the file browser icon in the uploader.
+
+### Step 9: Shipping Tab
+
+<!-- SCREENSHOT: Product form Shipping tab showing the Enable Shipping toggle, Dimensions fields, and Weight fields -->
+
+| Field | Description | Default |
+|-------|-------------|---------|
+| **Enable Shipping** | Set to **Yes** for physical products that need to be delivered. Set to **No** for digital products and services. | `No` |
+| **Dimensions** | The product's length, width, and height. Used by shipping methods that calculate rates based on package size. | `0` |
+| **Length Class** | The unit of measurement for the dimensions — for example, centimetres or inches. Defaults to your store's configured length unit. | _(store default)_ |
+| **Weight** | The product's net weight. Used by weight-based shipping methods. | `0` |
+| **Weight Class** | The unit of measurement for the weight — for example, kilograms or pounds. Defaults to your store's configured weight unit. | _(store default)_ |
+
+### Step 10: Options Tab
+
+<!-- SCREENSHOT: Product form Options tab showing the options table with one option assigned and the option type label visible -->
+
+Options let shoppers configure the product before adding it to their cart. They are additions to the product — not separate variants. A shopper still buys one product, but they can choose from the options you define.
+
+**Example uses:**
+
+- A text field for a personalized engraving message
+- A dropdown to select a gift box style
+- A checkbox for an extended warranty
+
+Options must be created first under **J2Commerce** -> **Catalog** -> **Options** before you can assign them to a product. If you have not created any options yet, the tab shows a link to the Options management screen.
+
+#### Assigning Options to a Product
+
+1. On the **Options** tab, find the option you want in the dropdown at the bottom of the table.
+2. Click **Add**.
+3. The option appears in the table above. Set whether the option is **Required** (the shopper must make a selection before adding to cart).
+4. Set the **Ordering** to control the display sequence.
+5. For list-type options (dropdown, radio, checkbox, color), click **Set Values** to open the values panel. Here you can assign which option values apply to this product and set per-value price and weight modifiers.
+
+<!-- SCREENSHOT: Option values panel showing a dropdown option with three values, each with a price modifier and ordering field -->
+
+#### Available Option Types
+
+| Type | What shoppers see |
+|------|------------------|
+| **Text** | A single-line text input (for example, engraving message) |
+| **Textarea** | A multi-line text input (for example, delivery instructions) |
+| **Select** | A dropdown list of choices |
+| **Radio** | Radio buttons for a single choice |
+| **Checkbox** | One or more checkboxes for multiple choices |
+| **Color** | A color swatch picker |
+| **Date** | A date picker |
+| **Datetime** | A combined date and time picker |
+| **Time** | A time picker |
+| **File** | A file upload field |
+| **Image** | An image selection field |
+| **Number** | A numeric input |
+| **Email** | An email address input |
+| **URL** | A web address input |
+
+#### Price Modifiers on Option Values
+
+When a shopper selects an option value that has a price modifier, J2Commerce adds (or subtracts) that amount from the product's base price. For example, if the base price is $20 and the "Gift box" option has a +$5 modifier, the cart total for that item becomes $25.
+
+### Step 11: Filters Tab
+
+<!-- SCREENSHOT: Product form Filters tab showing the filter search input and a list of assigned filter values -->
+
+Filters allow shoppers to narrow product listings by attribute — for example, filtering by material, color range, or size range. Assigning filters here makes this product appear in the correct filtered results on category and tag pages.
+
+To assign a filter value:
+
+1. Type part of the filter name in the search box. Results appear in a dropdown.
+2. Click the matching result to add it to the product.
+3. Repeat for each filter value you want to assign.
+4. To remove a filter, click the trash icon next to it.
+
+Filters are created and organized under **J2Commerce** -> **Catalog** -> **Filters**.
+
+### Step 12: Relations Tab
+
+<!-- SCREENSHOT: Product form Relations tab showing the Up-sells and Cross-sells search fields with one product listed under each -->
+
+| Section | Description |
+|---------|-------------|
+| **Up-sells** | Products to recommend as upgrades on this product's detail page. Typically shown as "You might also like" with higher-value alternatives. |
+| **Cross-sells** | Products to suggest as complementary purchases. Typically shown in the cart sidebar or at checkout. |
+
+To add a related product, start typing its name in the search box. Matching products appear in a dropdown — click one to add it. Remove a related product by clicking the trash icon next to it.
+
+### Step 13: Apps Tab
+
+<!-- SCREENSHOT: Product form Apps tab showing accordion panels for each installed app plugin -->
+
+The **Apps** tab shows product-level configuration panels provided by installed app plugins. For example:
+
+- If you have the **Custom Accordions** app enabled, you can add accordion sections directly on this tab.
+- If you have the **Gift Wrapping** app enabled, its per-product settings appear here.
+
+Each app is responsible for its own content on this tab. If no apps are installed, the tab shows an information message.
+
+### Step 14: Save the Product
+
+Click **Save** or **Save & Close** in the toolbar. J2Commerce saves all tabs in a single operation — pricing, inventory, images, options, and everything else.
+
+<!-- SCREENSHOT: Toolbar showing Save, Save & Close, and Save & New buttons -->
+
+After saving, visit the linked Joomla article on the frontend to confirm the product displays correctly with its **Add to Cart** button.
+
+## How the Product Appears on the Frontend
+
+### In Category and Tag Listings
+
+When a shopper browses a product category or tag page, each Simple product appears as a card. The card shows:
+
+- The product's main image (thumbnail version)
+- The product title (linked to the detail page)
+- A short description (from the article intro text)
+- The price
+- The SKU (if configured to display)
+- The **Add to Cart** button — or a **View Details** link, depending on your category view settings
+
+If the product has options with the **Has Options** setting enabled, the option selectors appear directly on the listing card so shoppers can configure and add the product without leaving the category page.
+
+<!-- SCREENSHOT: Product category listing showing two Simple product cards with images, titles, prices, and Add to Cart buttons -->
+
+### On the Product Detail Page
+
+Clicking a product card opens the product detail page (the linked Joomla article with J2Commerce functionality added). The detail page shows:
+
+- The full product title and description from the article
+- The product image gallery (main image with thumbnail navigation if multiple images are uploaded)
+- The current price
+- Option selectors (if options are assigned and enabled)
+- A quantity input
+- The **Add to Cart** button
+
+Adding to the cart validates all required options, checks stock availability, and enforces any minimum or maximum quantity restrictions. If a required option is not selected, an error message appears next to that option.
+
+## Tips
+
+- **Use "Has Options" correctly** — setting **Has Options** to **Yes** shows option selectors on the category listing. If your options are configured but this is set to **No**, shoppers must go to the detail page to configure the product. Set it to **Yes** for a smoother shopping experience on category pages.
+- **Leave SKU blank only if you do not need inventory tracking** — orders and reports reference the SKU for easy identification. Even a simple code like `CANDLE-001` is better than nothing.
+- **Test advanced pricing after saving** — add the product to your cart as a logged-in user and as a guest to confirm the correct price applies for each scenario.
+- **Enable Shipping only for physical products** — leaving it enabled for a service or digital product can cause shipping method prompts to appear at checkout unnecessarily.
+- **The article's published state matters** — even if the product is set to Published in J2Commerce, shoppers cannot reach the product page if the linked article is unpublished. Both must be active.
+
+## Troubleshooting
+
+### No Add to Cart button appears on the product page
+
+**Cause:** The product's **Visibility** is set to **Hide**, the product is not published, or the linked article is unpublished.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Catalog** -> **Products**.
+2. Open the product and confirm **Status** is **Published** and **Visibility** is set to **Show** on the **General** tab.
+3. Go to **Content** -> **Articles** and confirm the linked article is published.
+4. Clear the Joomla cache under **System** -> **Clear Cache**.
+
+### Product options are not showing on the category listing
+
+**Cause:** **Has Options** is set to **No**, or the category view is configured to show a "View Details" link instead of cart controls.
+
+**Solution:**
+
+1. Open the product and set **Has Options** to **Yes** on the **Details** tab.
+2. Check your J2Commerce category menu item settings — the **Show Cart** option must be set to **Show Add to Cart Button with Options**.
+
+### Uploaded images are not generating thumbnails
+
+**Cause:** Thumbnail auto-generation is disabled in store settings, or the PHP GD library is unavailable on your server.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Configuration** -> **Image Upload**.
+2. Confirm **Auto-generate Thumbnails** is set to **Yes**.
+3. Contact your hosting provider to confirm the PHP GD image library is enabled.
+
+### Advanced pricing rule is not applying at checkout
+
+**Cause:** The rule's date range, quantity range, or customer group condition does not match the current order.
+
+**Solution:**
+
+1. Open the product and click **Advanced Pricing**.
+2. Check that the **Date From** and **Date To** fields cover today's date, or leave them blank to apply at all times.
+3. Confirm the **Quantity From** value is equal to or below the quantity the customer is ordering.
+4. For customer group rules, verify the customer is logged in and belongs to the correct user group.
+
+### A required option error appears even though the shopper made a selection
+
+**Cause:** The option type is a text or textarea field with a minimum length configured, and the entered text is too short.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Catalog** -> **Options**.
+2. Open the option and check the **Params** field for minimum length settings.
+3. Adjust the minimum length or remove it if it is not needed.
+
+## Related Topics
+
+- [Product Options](../catalog/options/index.md) — Create and manage reusable option definitions
+- [Filters](../catalog/filters/index.md) — Set up product attributes for storefront filtering
+- [Advanced Pricing](../products/advanced-pricing.md) — Date-based, quantity-tier, and group pricing
+- [Tax Profiles](../taxes/index.md) — Assign tax rates based on customer location
+- [Shipping Settings](../shipping/index.md) — Configure shipping methods and rates
+- [Store Configuration](../configuration/configuration.md) — Global store settings including image upload and inventory defaults
