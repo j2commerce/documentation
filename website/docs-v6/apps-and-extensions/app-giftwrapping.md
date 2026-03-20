@@ -109,7 +109,9 @@ When a customer reaches the gift wrapping step during checkout:
 3. Selecting a paid option adds the gift wrapping fee to the order total.
 4. If the **Show Message Field** is enabled, a text area appears for a personal message (max 500 characters).
 
-<!-- SCREENSHOT: Checkout page showing gift wrapping step with options and message field -->
+## Frontend View
+
+![](/img/gift-checkout.webp)
 
 ### Fee Integration
 
@@ -123,11 +125,13 @@ When a customer selects a paid wrapping option:
 
 The gift wrapping step only appears when:
 
-- **Enable Gift Wrapping** is set to **Yes**.
+- **Enable Gift Wrapping** is set to '**Yes**' in the app.
 - At least one gift wrapping option is configured.
 - The cart contains at least one shippable item.
 
 If the cart contains only digital products (no shipping required), the gift wrapping step is automatically hidden.
+
+![](/img/setutup3.webp)
 
 ## Tips
 
@@ -147,7 +151,9 @@ If the cart contains only digital products (no shipping required), the gift wrap
 1. Verify **Enable Gift Wrapping** is set to **Yes**.
 2. Check that at least one gift wrapping option is configured in the **Gift Wrapping Options** section.
 3. Ensure the cart contains at least one physical product that requires shipping.
-4. Verify the plugin is enabled in **J2Commerce** -> **Apps**.
+4. Verify the plugin is enabled in **J2Commerce** **->** **Apps** **-> Gift Wrapping**
+
+![](/img/gift-wrap-enable2.webp)
 
 ### Fee Not Added to Order
 
@@ -155,7 +161,7 @@ If the cart contains only digital products (no shipping required), the gift wrap
 
 **Solution:**
 
-1. Open the browser Developer Tools (F12) and check the Console for errors.
+1. Open the browser Developer/Inspect Tools (F12) and check the Console for errors.
 2. Clear browser cache and cookies, then try again.
 3. Verify the wrapping option has a price greater than `0`.
 
@@ -169,6 +175,8 @@ If the cart contains only digital products (no shipping required), the gift wrap
 2. Set **Show Message Field** to **Yes**.
 3. Click **Save**.
 
+![](/img/setutup4.webp)
+
 ### Gift Wrapping Step Appears in Wrong Position
 
 **Cause:** Step position is configured incorrectly.
@@ -179,6 +187,8 @@ If the cart contains only digital products (no shipping required), the gift wrap
 2. Change **Step Position** to the desired location in the checkout flow.
 3. Click **Save**.
 4. Test the checkout to verify the position.
+
+![](/img/setutup5.webp)
 
 ### Options Display, but Images Don't Load
 
@@ -191,4 +201,6 @@ If the cart contains only digital products (no shipping required), the gift wrap
 
    ![](/img/gift-wrap-media.webp)
 3. Open the folder to verify the images exist in this location.
-4. Re-select the images in the plugin configuration.
+4. Open the Gift Wrapping Options tab in the app and re-select the images in the plugin configuration.
+
+![](/img/setutup6.webp)

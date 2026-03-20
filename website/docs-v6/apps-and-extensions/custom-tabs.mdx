@@ -58,8 +58,6 @@ Once you click on the **Custom Tabs** Title next to the green checkmark, you are
 
 Select '**Yes**' to prepare the content with the Joomla Content Plugins
 
-***When to Enable Prepare Content***
-
 Enable **Prepare Content** when your tab content contains:
 
 - Joomla content plugins (e.g., `{loadmodule}`, `{loadposition}`)
@@ -73,8 +71,6 @@ Enable **Prepare Content** when your tab content contains:
 ### Custom Field Short Code
 
 Select '**Yes**' to choose whether to prepare the data for the Custom tab or not.
-
-***When to Enable Content Field Short Code***
 
 Enable **Custom Field Short Code** when:
 
@@ -92,8 +88,6 @@ Select '**Yes**' to display the product's Manufacturer / Brand details in a sepa
 
 **Note:** In order to add the Brand or Manufacturer to a product, you have to add them to the database. Go to **J2Commerce -> Dashboard -> Catalog -> Manufacturer**. Fill out the company information and hit save
 
-**When to Enable Display Brand Details**
-
 When enabled, J2Commerce retrieves manufacturer details from the product's assigned manufacturer:
 
 1. The manufacturer's name appears as the accordion title
@@ -109,6 +103,26 @@ When enabled, J2Commerce retrieves manufacturer details from the product's assig
 | **Before**   | Brand accordion appears as the first accordion on the product page |
 | **After**    | Brand accordion appears as the last accordion on the product page  |
 
+## Adding a Manufacturer to the Products{#configure-products}
+
+There are **Three** ways you can access the products.&#x20;
+
+**a:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Products**
+
+**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Products**
+
+**c:** Go to **Content -> Categories ->** Find the **category** and then click inside the **published**/article section
+
+![](/img/accordions-products.webp)
+
+Open the product **-> J2Commerce tab -> General tab -> Brand or Manufacturer**  **->** Select the **Manufacturer** Article
+
+![](/img/accordions-products1.webp)
+
+### Frontend View
+
+![](/img/tabs-products5.webp)
+
 ## Adding Custom Tabs to Products{#configure-products}
 
 This is a great tool if you want to display a specific article on the individual product pages. ie, **Return Policy, Allergy Disclosure, etc.**
@@ -117,11 +131,13 @@ After enabling and configuring the plugin, each product can have custom tabs.
 
 ### Edit a Product{#step-1-edit-a-product}
 
-There are **two** ways you can access the products.&#x20;
+There are **Three** ways you can access the products.&#x20;
 
 **a:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Products**
 
 **b:** Go to **Components** on the left sidebar **-> J2Commerce -> Products**
+
+**c:** Go to **Content -> Categories ->** Find the **category** and then click inside the **published**/article section
 
 ![](/img/accordions-products.webp)
 
@@ -230,7 +246,11 @@ When a customer views a product page:
 
 2. Verify **Custom Tabs** shows a green checkmark (enabled).
 
-3. Edit the product and verify that at least one tab is configured and enabled.
+   ![](/img/tabs-enable1.webp)
+
+3. Edit the **product** and verify that at least one tab is configured and enabled in th Apps tab.
+
+   ![](/img/tabs-products4.webp)
 
 4. Check that the tab row has **Enabled** set to **Yes**.
 
@@ -240,11 +260,13 @@ When a customer views a product page:
 
 **Solution:**
 
-1. Go to **Content** **-> Articles** **->** Open the **Product/Article**
+1. Go to **Content** **-> Articles** **->** Open the **Article**
 
 2. Verify the article exists and is published.
 
-3. Return to the product edit screen and reselect the article.
+   ![](/img/accordions-products4.webp)
+
+3. Return to the **product** edit screen and reselect the article in the **Custom Tabs** section of the **Apps** tab.
 
 ### Content Plugins Not Processing{#content-plugins-not-processing}
 
@@ -256,27 +278,35 @@ When a customer views a product page:
 
 2. Set **Prepare Content** to **Yes**.
 
-3. Click **Save**.
+   ![](/img/accordions-config2.webp)
 
-4. Clear cache: Go to **Home Dashboard -> Cache -> Delete All**
+3. Clear cache: Go to **Home Dashboard -> Cache -> Delete All**
 
    ![](/img/delete-cache.webp)
 
-### Brand Tab Missing{#brand-tab-missing}
+### Brand or Manufacturer Tab Missing{#brand-tab-missing}
 
 **Cause:** Product has no manufacturer assigned, or the manufacturer lacks a description.
 
-**Solution:**
+1. Go to **J2Commerce** **-> Catalog -> Products**.
 
-1. Go to **J2Commerce** -> **Catalog** -> **Products**.
+2. Edit the **product. Go to the J2Commerce** tab **-> General** tab **->** and check the **Manufacturer** field has a manufacturer assigned.
 
-2. Edit the product and check the **Manufacturer** field.
+   ![](/img/accordions-products1.webp)
 
-3. Verify the manufacturer is set.
+3. Verify that the **Display Brand Details** is set to '**Yes**' in the App.
 
-4. Go to **J2Commerce** -> **Catalog** -> **Manufacturers**.
+   ![](/img/accordions-manufacturer2.webp)
+
+4. Go to **J2Commerce** **-> Catalog -> Manufacturers**.
 
 5. Edit the manufacturer and verify that the description article is configured.
+
+   ![](/img/accordions-products5.webp)
+
+6. Go to **J2Commerce** **-> Setup -> Configuration -> Product Display tab ->** make sure the **Manufacturer / Brand** is set to '**Show**'
+
+   ![](/img/tabs-setup1.webp)
 
 ### Tab Content Shows Raw HTML{#tab-content-shows-raw-html}
 
