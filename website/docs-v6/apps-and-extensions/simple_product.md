@@ -31,7 +31,7 @@ Internally, J2Commerce creates a single "variant" record for a Simple product to
 
 Every product needs a Joomla article. The article title becomes the product name and the article content is the description shoppers read on the product page.
 
-1. Go to **Content** -> **Articles** -> **New**.
+1. Go to **Content** **-> Articles -> New**.
 2. Enter a product title and description.
 3. Assign the article to a category (the category determines which J2Commerce category listing it appears in).
 4. Click **Save & Close**.
@@ -53,24 +53,24 @@ The product form opens. You will see an outer set of tabs (**Details**, **Associ
 
 <!-- SCREENSHOT: Product form Details tab showing the Article selector, Product Type dropdown, Visibility toggle, and Has Options toggle -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Article** | Select the Joomla article this product is linked to. The article title becomes the product name. | _(required)_ |
-| **Product Type** | Set to **Simple** for a single-item product with one price and no variants. | `Simple` |
-| **Visibility** | Show or hide the product in storefront listings. Set to **Show** to make it visible to shoppers. | `Show` |
-| **Has Options** | Set to **Yes** if you plan to add customer-configurable choices on the Options tab (for example, engraving text, gift wrap style). | `No` |
-| **Add to Cart Text** | Overrides the default "Add to Cart" button label for this product only. Leave blank to use your store's global button label. | _(blank)_ |
-| **Status** | Set to **Published** to make the product active. Unpublished products are not visible to shoppers. | `Published` |
+| Field                | Description                                                                                                                        | Default      |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| **Article**          | Select the Joomla article this product is linked to. The article title becomes the product name.                                   | *(required)* |
+| **Product Type**     | Set to **Simple** for a single-item product with one price and no variants.                                                        | `Simple`     |
+| **Visibility**       | Show or hide the product in storefront listings. Set to **Show** to make it visible to shoppers.                                   | `Show`       |
+| **Has Options**      | Set to **Yes** if you plan to add customer-configurable choices on the Options tab (for example, engraving text, gift wrap style). | `No`         |
+| **Add to Cart Text** | Overrides the default "Add to Cart" button label for this product only. Leave blank to use your store's global button label.       | *(blank)*    |
+| **Status**           | Set to **Published** to make the product active. Unpublished products are not visible to shoppers.                                 | `Published`  |
 
 ### Step 4: Associations Tab (Outer Form)
 
 <!-- SCREENSHOT: Product form Associations tab showing Tax Profile, Manufacturer, and Vendor dropdowns -->
 
-| Field | Description |
-|-------|-------------|
-| **Tax Profile** | Assigns a tax profile to this product. The tax profile determines which tax rates apply based on the customer's location. Create tax profiles under **J2Commerce** -> **Taxes**. |
-| **Manufacturer** | Links this product to a manufacturer record. Useful for filtering and for the Custom Accordions app's Brand Details feature. |
-| **Vendor** | Assigns the product to a vendor. Relevant for multi-vendor setups. Leave blank if you do not use vendors. |
+| Field            | Description                                                                                                                                                                      |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Tax Profile**  | Assigns a tax profile to this product. The tax profile determines which tax rates apply based on the customer's location. Create tax profiles under **J2Commerce** -> **Taxes**. |
+| **Manufacturer** | Links this product to a manufacturer record. Useful for filtering and for the Custom Accordions app's Brand Details feature.                                                     |
+| **Vendor**       | Assigns the product to a vendor. Relevant for multi-vendor setups. Leave blank if you do not use vendors.                                                                        |
 
 ### Step 5: General Tab (J2Commerce)
 
@@ -78,25 +78,25 @@ The product form opens. You will see an outer set of tabs (**Details**, **Associ
 
 The **General** tab inside the J2Commerce section handles product codes, assignment, and display tweaks.
 
-| Field | Description |
-|-------|-------------|
-| **Visibility** | Same as the outer form — toggles storefront visibility. |
-| **SKU** | Your internal stock-keeping unit code. Optional but recommended for inventory tracking and order management. |
-| **UPC** | Universal product code or barcode identifier (UPC, EAN, JAN, ISBN, MPN). Optional. |
-| **Manufacturer** | Associates the product with a manufacturer record. |
-| **Vendor** | Assigns the product to a vendor. |
-| **Tax Profile** | Assigns a tax profile to this product. |
-| **Add to Cart Text** | Overrides the button label for this product. |
+| Field                | Description                                                                                                                           |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **Visibility**       | Same as the outer form — toggles storefront visibility.                                                                               |
+| **SKU**              | Your internal stock-keeping unit code. Optional but recommended for inventory tracking and order management.                          |
+| **UPC**              | Universal product code or barcode identifier (UPC, EAN, JAN, ISBN, MPN). Optional.                                                    |
+| **Manufacturer**     | Associates the product with a manufacturer record.                                                                                    |
+| **Vendor**           | Assigns the product to a vendor.                                                                                                      |
+| **Tax Profile**      | Assigns a tax profile to this product.                                                                                                |
+| **Add to Cart Text** | Overrides the button label for this product.                                                                                          |
 | **Custom CSS Class** | Adds one or more CSS class names to the product's container element. Useful for per-product styling without modifying template files. |
 
 ### Step 6: Pricing Tab
 
 <!-- SCREENSHOT: Product form Pricing tab showing the Regular Price field, the Advanced Pricing button, and the Pricing Calculator dropdown -->
 
-| Field | Description |
-|-------|-------------|
-| **Regular Price** | The standard selling price. Enter the number only — do not include a currency symbol. J2Commerce reads the currency from your store settings. |
-| **Advanced Pricing** | Opens a panel to set date-based sale prices, quantity-tier prices, and customer-group prices. See the section below for details. |
+| Field                  | Description                                                                                                                                                                                                |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Regular Price**      | The standard selling price. Enter the number only — do not include a currency symbol. J2Commerce reads the currency from your store settings.                                                              |
+| **Advanced Pricing**   | Opens a panel to set date-based sale prices, quantity-tier prices, and customer-group prices. See the section below for details.                                                                           |
 | **Pricing Calculator** | Controls how the final price is calculated. The default **Standard** calculator applies the regular price and advanced pricing rules. Other calculators (installed via plugins) can apply custom formulas. |
 
 #### Advanced Pricing
@@ -105,12 +105,12 @@ Click the **Advanced Pricing** button to configure rules that override the regul
 
 Each pricing rule has these fields:
 
-| Field | Description |
-|-------|-------------|
-| **Price** | The price that applies when this rule matches. |
-| **Date From / Date To** | The date range during which this rule is active. Leave both blank to make the rule always active. |
+| Field                           | Description                                                                                                                         |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **Price**                       | The price that applies when this rule matches.                                                                                      |
+| **Date From / Date To**         | The date range during which this rule is active. Leave both blank to make the rule always active.                                   |
 | **Quantity From / Quantity To** | The quantity range this rule applies to. For example, a rule with Quantity From = 5 applies when the customer buys 5 or more units. |
-| **Customer Group** | Restrict this rule to a specific Joomla user group. Leave blank to apply to all shoppers. |
+| **Customer Group**              | Restrict this rule to a specific Joomla user group. Leave blank to apply to all shoppers.                                           |
 
 J2Commerce automatically selects the best matching rule at checkout — the customer always gets the lowest qualifying price.
 
@@ -124,16 +124,16 @@ J2Commerce automatically selects the best matching rule at checkout — the cust
 
 <!-- SCREENSHOT: Product form Inventory tab showing the Manage Stock toggle, Quantity field, and Allow Backorders dropdown -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Manage Stock** | Set to **Yes** to track inventory. J2Commerce decreases the quantity automatically when orders are placed. Set to **No** to sell without a stock limit. | `No` |
-| **Quantity** | The number of units currently in stock. Only relevant when **Manage Stock** is **Yes**. | `0` |
-| **Allow Backorders** | What happens when stock reaches zero. **Do not allow** blocks purchases. **Allow** lets shoppers order anyway. **Allow but notify customer** permits the purchase and adds a backorder notice at checkout. | `Do not allow` |
-| **Stock Status** | Manually sets the in-stock or out-of-stock label shown to shoppers, regardless of the quantity counter. | `In Stock` |
-| **Notify Quantity** | J2Commerce sends a low-stock alert when inventory drops to this number. Check **Use Store Configuration** to apply the global default instead of a per-product value. | _(store default)_ |
-| **Quantity Restriction** | Set to **Yes** to enforce a minimum and maximum per-order quantity. | `No` |
-| **Min Sale Quantity** | The fewest units a shopper can add to their cart at once. Check **Use Store Configuration** to use the global default. | _(store default)_ |
-| **Max Sale Quantity** | The most units a shopper can add to their cart at once. Check **Use Store Configuration** to use the global default. | _(store default)_ |
+| Field                    | Description                                                                                                                                                                                                | Default           |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| **Manage Stock**         | Set to **Yes** to track inventory. J2Commerce decreases the quantity automatically when orders are placed. Set to **No** to sell without a stock limit.                                                    | `No`              |
+| **Quantity**             | The number of units currently in stock. Only relevant when **Manage Stock** is **Yes**.                                                                                                                    | `0`               |
+| **Allow Backorders**     | What happens when stock reaches zero. **Do not allow** blocks purchases. **Allow** lets shoppers order anyway. **Allow but notify customer** permits the purchase and adds a backorder notice at checkout. | `Do not allow`    |
+| **Stock Status**         | Manually sets the in-stock or out-of-stock label shown to shoppers, regardless of the quantity counter.                                                                                                    | `In Stock`        |
+| **Notify Quantity**      | J2Commerce sends a low-stock alert when inventory drops to this number. Check **Use Store Configuration** to apply the global default instead of a per-product value.                                      | *(store default)* |
+| **Quantity Restriction** | Set to **Yes** to enforce a minimum and maximum per-order quantity.                                                                                                                                        | `No`              |
+| **Min Sale Quantity**    | The fewest units a shopper can add to their cart at once. Check **Use Store Configuration** to use the global default.                                                                                     | *(store default)* |
+| **Max Sale Quantity**    | The most units a shopper can add to their cart at once. Check **Use Store Configuration** to use the global default.                                                                                       | *(store default)* |
 
 ### Step 8: Images Tab
 
@@ -173,13 +173,13 @@ Clicking **Remove** on a card removes the image from this product but does not d
 
 <!-- SCREENSHOT: Product form Shipping tab showing the Enable Shipping toggle, Dimensions fields, and Weight fields -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Enable Shipping** | Set to **Yes** for physical products that need to be delivered. Set to **No** for digital products and services. | `No` |
-| **Dimensions** | The product's length, width, and height. Used by shipping methods that calculate rates based on package size. | `0` |
-| **Length Class** | The unit of measurement for the dimensions — for example, centimetres or inches. Defaults to your store's configured length unit. | _(store default)_ |
-| **Weight** | The product's net weight. Used by weight-based shipping methods. | `0` |
-| **Weight Class** | The unit of measurement for the weight — for example, kilograms or pounds. Defaults to your store's configured weight unit. | _(store default)_ |
+| Field               | Description                                                                                                                       | Default           |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| **Enable Shipping** | Set to **Yes** for physical products that need to be delivered. Set to **No** for digital products and services.                  | `No`              |
+| **Dimensions**      | The product's length, width, and height. Used by shipping methods that calculate rates based on package size.                     | `0`               |
+| **Length Class**    | The unit of measurement for the dimensions — for example, centimetres or inches. Defaults to your store's configured length unit. | *(store default)* |
+| **Weight**          | The product's net weight. Used by weight-based shipping methods.                                                                  | `0`               |
+| **Weight Class**    | The unit of measurement for the weight — for example, kilograms or pounds. Defaults to your store's configured weight unit.       | *(store default)* |
 
 ### Step 10: Options Tab
 
@@ -207,22 +207,22 @@ Options must be created first under **J2Commerce** -> **Catalog** -> **Options**
 
 #### Available Option Types
 
-| Type | What shoppers see |
-|------|------------------|
-| **Text** | A single-line text input (for example, engraving message) |
+| Type         | What shoppers see                                            |
+| ------------ | ------------------------------------------------------------ |
+| **Text**     | A single-line text input (for example, engraving message)    |
 | **Textarea** | A multi-line text input (for example, delivery instructions) |
-| **Select** | A dropdown list of choices |
-| **Radio** | Radio buttons for a single choice |
-| **Checkbox** | One or more checkboxes for multiple choices |
-| **Color** | A color swatch picker |
-| **Date** | A date picker |
-| **Datetime** | A combined date and time picker |
-| **Time** | A time picker |
-| **File** | A file upload field |
-| **Image** | An image selection field |
-| **Number** | A numeric input |
-| **Email** | An email address input |
-| **URL** | A web address input |
+| **Select**   | A dropdown list of choices                                   |
+| **Radio**    | Radio buttons for a single choice                            |
+| **Checkbox** | One or more checkboxes for multiple choices                  |
+| **Color**    | A color swatch picker                                        |
+| **Date**     | A date picker                                                |
+| **Datetime** | A combined date and time picker                              |
+| **Time**     | A time picker                                                |
+| **File**     | A file upload field                                          |
+| **Image**    | An image selection field                                     |
+| **Number**   | A numeric input                                              |
+| **Email**    | An email address input                                       |
+| **URL**      | A web address input                                          |
 
 #### Price Modifiers on Option Values
 
@@ -247,10 +247,10 @@ Filters are created and organized under **J2Commerce** -> **Catalog** -> **Filte
 
 <!-- SCREENSHOT: Product form Relations tab showing the Up-sells and Cross-sells search fields with one product listed under each -->
 
-| Section | Description |
-|---------|-------------|
-| **Up-sells** | Products to recommend as upgrades on this product's detail page. Typically shown as "You might also like" with higher-value alternatives. |
-| **Cross-sells** | Products to suggest as complementary purchases. Typically shown in the cart sidebar or at checkout. |
+| Section         | Description                                                                                                                               |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **Up-sells**    | Products to recommend as upgrades on this product's detail page. Typically shown as "You might also like" with higher-value alternatives. |
+| **Cross-sells** | Products to suggest as complementary purchases. Typically shown in the cart sidebar or at checkout.                                       |
 
 To add a related product, start typing its name in the search box. Matching products appear in a dropdown — click one to add it. Remove a related product by clicking the trash icon next to it.
 
