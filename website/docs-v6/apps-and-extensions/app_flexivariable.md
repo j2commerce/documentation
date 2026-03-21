@@ -10,7 +10,11 @@ This is ideal for products where not every option combination makes sense. For e
 - Joomla! 6.x
 - J2Commerce 6.x
 
+:::tip
+
 **IMPORTANT**: Once you have configured the settings for any product, check to see if those specific items are showing up on the frontend. If they are not, (ie: filters, cross-sells, price, title, etc), then go to your **store** menu and **show or hide** the items you want to control on the frontend. Go to **Menu -> Main Menu -> Store -> Product** tab
+
+:::
 
 ![](/img/simple-store-menu.webp)
 
@@ -165,7 +169,7 @@ The first image in the uploader is the **main product image** — the large imag
 
 #### **Automatic Thumbnails**
 
-J2Commerce automatically generates resized thumbnail and tiny versions of each uploaded image. These are used in product listings, the cart, and other compact views. No extra configuration is needed — the sizes are set in your store's image configuration.
+J2Commerce automatically generates resized thumbnails and tiny versions of each uploaded image. These are used in product listings, the cart, and other compact views. No extra configuration is needed — the sizes are set in your store's image configuration.
 
 #### **Alt Text**
 
@@ -205,7 +209,7 @@ Once you are finished selecting the different option combinations, make sure you
 
 Select the dropdown arrow for each variant to start setting up the different settings each Variant will need.
 
-#### General Section
+#### **General Section**
 
 ![](/img/flex-variants-gen.webp)
 
@@ -219,7 +223,7 @@ Select the dropdown arrow for each variant to start setting up the different set
 
 **Pricing Calculator:** Controls how the price is calculated at checkout. Leave set to **Standard** unless you have a custom pricing calculator plugin.
 
-#### Shipping Settings
+#### **Shipping Section**
 
 ![](/img/flex-variants-ship.webp)
 
@@ -233,7 +237,7 @@ Select the dropdown arrow for each variant to start setting up the different set
 
 **Weight Class:** The unit of measurement for weight (e.g., kilogram, pound).
 
-#### Inventory Settings
+#### **Inventory Section**
 
 ![](/img/flex-variants-invent.webp)
 
@@ -253,11 +257,15 @@ Select the dropdown arrow for each variant to start setting up the different set
 
 **Min Sale Quantity:** Minimum units per order.
 
-#### Image Settings
+#### **Image Section**
 
 ![](/img/flex-variants-image.webp)
 
-Each variant can have its own individual images. This is very helpful to the customer to see the differences in the options. ie: color, flavor, size, etc. When the customer selects a specific option on the product page, the corresponding image will appear.
+:::tip
+
+**Tip:** Each variant can have its own individual images. This is very helpful to the customer to see the differences in the options. ie: color, flavor, size, etc. When the customer selects a specific option on the product page, the corresponding image will appear.
+
+:::
 
 **Use Main Image as Thumbnail:** When enabled, the product's main image is used as the thumbnail for this variant instead of a variant-specific image.
 
