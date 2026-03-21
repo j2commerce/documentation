@@ -100,7 +100,7 @@ The Signature Key is used to verify that incoming webhook notifications actually
 
 ## Configure the Plugin
 
-Open the plugin settings by going to **J2Commerce** **-> Setup ->** **Payment Methods**, then click the **[Authorize.Net](http://Authorize.Net)** title to start setting up the parameters.
+Open the plugin settings by going to **J2Commerce** **-> Setup ->** **Payment Methods**, then click the [**Authorize.Net**](http://Authorize.Net) title to start setting up the parameters.
 
 **Helpful Tip:** Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
 
@@ -372,6 +372,8 @@ After you void the order, the status is automatically updated. Since we set the 
 
 Once a transaction has settled, a **Refund** button appears instead of Void. Clicking it opens a refund modal where you can choose between a full or partial refund. The refund usually takes 3–5 business days to appear on the customer's credit card.
 
+![](/img/autho-refund3.webp)
+
 1. Go to **J2Commerce** **-> Orders** and open the order.
 2. Click the **Refund** button (shown with a rotate icon).
 3. A modal dialogue appears with two options:
@@ -381,9 +383,13 @@ Once a transaction has settled, a **Refund** button appears instead of Void. Cli
 4. Click **Process Refund** to submit the refund to Authorize.Net.
 5. The order history is updated with the refund details, including the amount refunded.
 
-<!-- SCREENSHOT: Refund modal showing full/partial radio buttons and amount input -->
+![](/img/autho-refund1.webp)
 
 > **Tip:** The partial refund amount field validates against the maximum refundable total. You cannot refund more than the original charge minus any previous refunds.
+
+After you refund the order, the status is automatically updated. Since we set the order status as '**Refunded**', the order will now show as '**Refunded**' on the backend.
+
+![](/img/autho-refund2.webp)
 
 ## Admin Charge Stored Card
 
@@ -552,4 +558,4 @@ Always disable debug mode in production. If you need to investigate an issue, en
 
 **Cause:** Saved cards are tied to the environment (sandbox vs. production). If the environment was changed after the customer saved their card, the cards stored under the previous environment will not appear.
 
-**Solution:** Cards cannot be migrated between environments. If you are switching from sandbox to live, customers will need to save their cards again during their first live purchase.\
+**Solution:** Cards cannot be migrated between environments. If you are switching from sandbox to live, customers will need to save their cards again during their first live purchase.\\
