@@ -44,7 +44,11 @@ Before configuring the plugin, you need an AtoShip account with API credentials.
 
    ![](/img/ato-api1.webp)
 
-\*\*Keep both keys handy — you will enter them in the plugin settings below.&#x20;
+:::note
+
+NOTE: Keep both keys handy — you will enter them in the plugin settings below.&#x20;
+
+:::
 
 ## Purchase and Download the Plugin
 
@@ -68,9 +72,9 @@ The plugin installs and enables automatically. All you have to do now is set it 
 
 There are **two** ways you can access the Plugin.&#x20;
 
-**a:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Shipping Methods**
+**Option a:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Shipping Methods**
 
-**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
+**Option b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
 
 ![](/img/atoship-app.webp)
 
@@ -102,7 +106,7 @@ Start with **Sandbox Mode** enabled. Enter your sandbox key, save, and test the 
 
 :::tip
 
-Always start with Sandbox Mode enabled. This lets you test the entire workflow -- rates at checkout, label creation, and tracking -- without incurring any real shipping charges. In sandbox mode, if the AtoShip API returns no rates, the plugin automatically generates four demo rates so you can test the checkout flow.
+**Tip**: Always start with Sandbox Mode enabled. This lets you test the entire workflow -- rates at checkout, label creation, and tracking -- without incurring any real shipping charges. In sandbox mode, if the AtoShip API returns no rates, the plugin automatically generates four demo rates so you can test the checkout flow.
 
 :::
 
@@ -307,9 +311,9 @@ Once you are satisfied with testing:
 
 Your store is now using real AtoShip rates and can create real shipping labels.
 
-:::caution
+:::note
 
-Make sure you have funds in your AtoShip account before creating live shipping labels. The plugin checks your balance before each label purchase and will alert you if the balance is insufficient.
+Note: Make sure you have funds in your AtoShip account before creating live shipping labels. The plugin checks your balance before each label purchase and will alert you if the balance is insufficient.
 
 :::
 
@@ -435,9 +439,9 @@ If you need to cancel a shipping label (e.g., the order was cancelled or you nee
 
 The label status changes to **Voided** (dark badge) and the void button is removed. You can then create a new label if needed.
 
-:::caution
+:::note
 
-Voiding a label may not be possible after the carrier has scanned the package. Check your AtoShip account for carrier-specific void policies.
+Note: Voiding a label may not be possible after the carrier has scanned the package. Check your AtoShip account for carrier-specific void policies.
 
 :::
 
@@ -450,17 +454,19 @@ Before creating a label, the plugin checks your AtoShip account balance. If the 
 If you have many orders to fulfill at once, you can create shipping labels in bulk from the orders list.
 
 1. Go to **J2Commerce** -> **Sales** -> **Orders**.
+
 2. Check the boxes next to the orders you want to create labels for.
+
 3. Click the **Create AtoShip Labels** button in the toolbar.
 
-
-
-1. The plugin processes each order:
+4. The plugin processes each order:
 
    - For **10 or fewer orders**, labels are created one by one with a progress bar showing the current status (e.g., "3/7").
    - For **more than 10 orders**, the batch is queued for background processing.
-2. When complete, a summary shows how many labels were created and how many failed (if any).
-3. The page reloads to show updated order statuses.
+
+5. When complete, a summary shows how many labels were created and how many failed (if any).
+
+6. The page reloads to show updated order statuses.
 
 :::tip
 

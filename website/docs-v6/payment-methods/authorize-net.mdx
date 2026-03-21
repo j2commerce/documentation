@@ -46,9 +46,9 @@ In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
 Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
 
-**a:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+**Option a:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
+**Option b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
 
 ![](/img/autho-methods.webp)
 
@@ -62,7 +62,11 @@ In order for you to configure the plugin, you need four values from your Authori
 
 We recommend that you open two tabs in your browser (open the app from J2Commerce and your account with [Authorize.net](http://Authorize.net) so you can easily just copy/paste when you receive your credentials by following the steps below.&#x20;
 
-**Note:** If you want to try it out on a non-live site then you need to create an account on the developer site first to retreive the Keys for **Sandbox Mode**.  To create an account go to [**https://developer.authorize.net/hello\_world/sandbox.html**](https://developer.authorize.net/hello_world/sandbox.html) &#x20;
+:::note
+
+NOTE: If you want to try it out on a non-live site then you need to create an account on the developer site first to retreive the Keys for **Sandbox Mode**.  To create an account go to **[https://developer.authorize.net/hello\_world/sandbox.html](https://developer.authorize.net/hello_world/sandbox.html)** &#x20;
+
+:::
 
 ![](/img/autho-sandbox-key1s.webp)
 
@@ -102,7 +106,11 @@ The Signature Key is used to verify that incoming webhook notifications actually
 
 Open the plugin settings by going to **J2Commerce** **-> Setup ->** **Payment Methods**, then click the [**Authorize.Net**](http://Authorize.Net) title to start setting up the parameters.
 
-**Helpful Tip:** Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+:::tip
+
+**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+
+:::
 
 ![](/img/autho-toggle.webp)
 
@@ -150,7 +158,11 @@ These fields appear and become active only when **Use Sandbox** is set to **Yes*
 
 **Sandbox Signature Key:** Your sandbox Signature Key.
 
-> **Tip:** Keep your sandbox credentials filled in even after going live. That way you can quickly switch back to test mode without re-entering them.
+:::tip
+
+**Tip**: Keep your sandbox credentials filled in even after going live. That way, you can quickly switch back to test mode without re-entering them.
+
+:::
 
 ### Sandbox Test Card Numbers
 
@@ -205,7 +217,11 @@ Set this to whichever status makes sense for your workflow. A common choice is *
 
 - When set to '**Yes**', the order status is set when a void is processed. A common choice is Voided or Cancelled.
 
-**Note:** If the order status you want isn't listed, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+:::note
+
+NOTE: If the order status you want isn't listed, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
 
 **Order Status on Refund:**&#x20;
 
@@ -213,9 +229,17 @@ Set this to whichever status makes sense for your workflow. A common choice is *
 
 - When set to '**Yes**', the order status to set when a refund is processed. A common choice is Refunded or Cancelled.
 
-- **Note:** If the order status you want isn't listed, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+:::note
 
-> **Tip:** If you want refunded or voided orders to move to a specific status (e.g., "Cancelled" or "Refunded"), enable the relevant toggle and select the desired status. If left disabled, only the transaction record is updated — the order status stays unchanged.
+NOTE: If the order status you want isn't listed, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+:::tip
+
+**Tip**: If you want refunded or voided orders to move to a specific status (e.g., "Cancelled" or "Refunded"), enable the relevant toggle and select the desired status. If left disabled, only the transaction record is updated — the order status stays unchanged.
+
+:::
 
 ## Surcharge
 
@@ -302,7 +326,11 @@ From this tab, customers can:
 - Remove a card using the trash icon — cards in use by active subscriptions cannot be removed
 - Switch all active subscriptions to a different saved card using the rotate icon
 
-> **Note:** Saved cards are environment-specific. Cards saved in sandbox mode are not visible in live mode, and vice versa.
+:::note
+
+NOTE: Saved cards are environment-specific. Cards saved in sandbox mode are not visible in live mode, and vice versa.
+
+:::
 
 ## Checkout Flow
 
@@ -350,7 +378,11 @@ You need to make sure you have set the **Void and/or Refund** toggles to '**Yes*
 
 If the **Order Status** name that you want isn't showing up, then you need to add a new order status. Go to **J2Commerce**  **-> Setup -> Order Status -> New**
 
-***Note:** Any changes made to the app won't affect the previous orders. Only new orders will show the new options.*
+:::note
+
+NOTE: *Any changes made to the app won't affect the previous orders. Only new orders will show the new options.*
+
+:::
 
 ### Void a Transaction
 
@@ -360,7 +392,11 @@ If a transaction has not yet settled (typically same-day, before the charge hits
 2. Click the **Void** button (shown with a ban icon).
 3. The plugin sends a void request to Authorize.Net and updates the order history.
 
-**Note**: the screenshow below shows what it looks like if **Void** is set to '**Yes**' and **Refund** is set to '**No**'
+:::note
+
+NOTE: The screenshow below shows what it looks like if **Void** is set to '**Yes**' and **Refund** is set to '**No**'
+
+:::
 
 ![](/img/autho-order1.webp)
 
@@ -385,7 +421,11 @@ Once a transaction has settled, a **Refund** button appears instead of Void. Cli
 
 ![](/img/autho-refund1.webp)
 
-> **Tip:** The partial refund amount field validates against the maximum refundable total. You cannot refund more than the original charge minus any previous refunds.
+:::tip
+
+**Tip**: The partial refund amount field validates against the maximum refundable total. You cannot refund more than the original charge minus any previous refunds.
+
+:::
 
 After you refund the order, the status is automatically updated. Since we set the order status as '**Refunded**', the order will now show as '**Refunded**' on the backend.
 

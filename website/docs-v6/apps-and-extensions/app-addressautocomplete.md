@@ -41,7 +41,11 @@ For production use, restrict your API key to prevent unauthorized use:
 
 ### How to find your API Key again
 
-**Tip:** if you need to find your API Key in the future, go back to this same page and click **Show Key** in the **Additional Information** section
+:::tip
+
+**Tip**: If you need to find your API Key in the future, go back to this same page and click **Show Key** in the **Additional Information** section
+
+:::
 
 ![](/img/api1.webp)
 
@@ -65,9 +69,9 @@ Upload the plugin ZIP file or use the Install from URL option.
 
 Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-**a:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+**Option a:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+**Option b:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
 ![](/img/address-apps.webp)
 
