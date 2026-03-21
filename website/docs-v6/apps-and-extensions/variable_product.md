@@ -13,11 +13,11 @@ Variable products are ideal when your product has clearly defined option combina
 
 ## How Variable Products Differ from Other Types
 
-| Type | What you set up | Best for |
-|------|----------------|----------|
-| **Variable** | Options + values, variants auto-generated | Products where every size/color combo is tracked separately |
-| **Configurable** | Parent product linked to child products | Complex product families needing full independent catalog entries |
-| **Flexivariable** | Variants created manually one by one | Products where combinations are not systematic |
+**Variable:** Best for products where every size/color combo is tracked separately
+
+**Configurable:** Best for complex product families needing full independent catalog entries
+
+**Flexivariable:** Best for products where combinations are not systematic
 
 With Variable products, the variant generation is automatic — you do not create each combination by hand.
 
@@ -66,14 +66,14 @@ The **General** tab sets product-wide settings that apply to the whole product, 
 
 <!-- SCREENSHOT: Variable product General tab -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Visible in Storefront** | Show or hide this product in the store catalog. | Yes |
-| **Manufacturer** | Link the product to a manufacturer. | — |
-| **Vendor** | Assign to a vendor (if using multi-vendor). | — |
-| **Tax Profile** | Apply a tax profile for calculating taxes on this product. | — |
-| **Add to Cart Text** | Customize the text on the add-to-cart button. | — |
-| **Custom CSS Class** | Add a CSS class to the product wrapper for custom styling. | — |
+| Field                     | Description                                                | Default |
+| ------------------------- | ---------------------------------------------------------- | ------- |
+| **Visible in Storefront** | Show or hide this product in the store catalog.            | Yes     |
+| **Manufacturer**          | Link the product to a manufacturer.                        | —       |
+| **Vendor**                | Assign to a vendor (if using multi-vendor).                | —       |
+| **Tax Profile**           | Apply a tax profile for calculating taxes on this product. | —       |
+| **Add to Cart Text**      | Customize the text on the add-to-cart button.              | —       |
+| **Custom CSS Class**      | Add a CSS class to the product wrapper for custom styling. | —       |
 
 Click **Save** after filling in the General tab. You must save the product before you can add options in the next step.
 
@@ -117,6 +117,7 @@ After adding an option that uses a dropdown (select), radio, or color type, a **
 2. A panel opens showing all available values for that option.
 3. Click **Add All** to include every value, or add values individually.
 4. For each value you can set:
+
    - **Price adjustment** — add or subtract from the variant price (+ or -)
    - **Weight adjustment** — add or subtract from the variant weight (+ or -)
    - **Ordering** — control the display order of values
@@ -149,40 +150,40 @@ Each variant has four configuration sections:
 
 ### General (Price and SKU)
 
-| Field | Description |
-|-------|-------------|
-| **SKU** | Unique stock-keeping unit code for this variant. Leave blank to inherit from the product. |
-| **UPC** | Universal product code (barcode number). Optional. |
-| **Regular Price** | The selling price for this specific variant. |
-| **Advanced Pricing** | Open the advanced pricing panel to set quantity-based pricing, customer-group pricing, or date-range discounts for this variant. |
-| **Pricing Calculator** | Choose the pricing method. Standard is the default. |
+| Field                  | Description                                                                                                                      |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **SKU**                | Unique stock-keeping unit code for this variant. Leave blank to inherit from the product.                                        |
+| **UPC**                | Universal product code (barcode number). Optional.                                                                               |
+| **Regular Price**      | The selling price for this specific variant.                                                                                     |
+| **Advanced Pricing**   | Open the advanced pricing panel to set quantity-based pricing, customer-group pricing, or date-range discounts for this variant. |
+| **Pricing Calculator** | Choose the pricing method. Standard is the default.                                                                              |
 
 <!-- SCREENSHOT: Variant General section showing SKU, price, and advanced pricing button -->
 
 ### Inventory
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Manage Stock** | Enable stock tracking for this variant. | No |
-| **Quantity** | Number of units in stock. | 0 |
-| **Allow Backorders** | Whether customers can buy this variant when out of stock. Options: Do Not Allow, Allow, Allow but Notify Customer. | Do Not Allow |
-| **Stock Status** | Manually mark this variant as In Stock or Out of Stock (used when stock tracking is off). | In Stock |
-| **Notify Quantity** | Send a low-stock notification when stock reaches this number. | Store default |
-| **Quantity Restriction** | Limit how many units a customer can buy per order. | No |
-| **Maximum Sale Quantity** | Maximum units per order when quantity restriction is on. | Store default |
-| **Minimum Sale Quantity** | Minimum units per order when quantity restriction is on. | Store default |
+| Field                     | Description                                                                                                        | Default       |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------- |
+| **Manage Stock**          | Enable stock tracking for this variant.                                                                            | No            |
+| **Quantity**              | Number of units in stock.                                                                                          | 0             |
+| **Allow Backorders**      | Whether customers can buy this variant when out of stock. Options: Do Not Allow, Allow, Allow but Notify Customer. | Do Not Allow  |
+| **Stock Status**          | Manually mark this variant as In Stock or Out of Stock (used when stock tracking is off).                          | In Stock      |
+| **Notify Quantity**       | Send a low-stock notification when stock reaches this number.                                                      | Store default |
+| **Quantity Restriction**  | Limit how many units a customer can buy per order.                                                                 | No            |
+| **Maximum Sale Quantity** | Maximum units per order when quantity restriction is on.                                                           | Store default |
+| **Minimum Sale Quantity** | Minimum units per order when quantity restriction is on.                                                           | Store default |
 
 <!-- SCREENSHOT: Variant Inventory section showing manage stock toggle and quantity fields -->
 
 ### Shipping
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Enable Shipping** | Whether this variant requires shipping. | No |
-| **Weight** | Variant weight for shipping calculations. | — |
-| **Weight Class** | Unit of measurement (kg, lb, etc.). | — |
-| **Dimensions** | Length, width, height of this variant. | — |
-| **Length Class** | Unit of measurement for dimensions (cm, in, etc.). | — |
+| Field               | Description                                        | Default |
+| ------------------- | -------------------------------------------------- | ------- |
+| **Enable Shipping** | Whether this variant requires shipping.            | No      |
+| **Weight**          | Variant weight for shipping calculations.          | —       |
+| **Weight Class**    | Unit of measurement (kg, lb, etc.).                | —       |
+| **Dimensions**      | Length, width, height of this variant.             | —       |
+| **Length Class**    | Unit of measurement for dimensions (cm, in, etc.). | —       |
 
 <!-- SCREENSHOT: Variant Shipping section -->
 
@@ -190,11 +191,11 @@ Each variant has four configuration sections:
 
 Each variant can have its own main image and gallery images. This is useful when Red and Blue variants look completely different.
 
-| Field | Description |
-|-------|-------------|
-| **Main Image** | The primary image shown when a customer selects this variant combination. |
-| **Use as Thumbnail** | Whether the variant main image also replaces the product thumbnail. |
-| **Gallery Images** | Additional images shown when this variant is selected. |
+| Field                | Description                                                               |
+| -------------------- | ------------------------------------------------------------------------- |
+| **Main Image**       | The primary image shown when a customer selects this variant combination. |
+| **Use as Thumbnail** | Whether the variant main image also replaces the product thumbnail.       |
+| **Gallery Images**   | Additional images shown when this variant is selected.                    |
 
 <!-- SCREENSHOT: Variant Image section showing an uploaded variant-specific image -->
 

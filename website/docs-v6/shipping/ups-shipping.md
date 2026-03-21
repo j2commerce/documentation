@@ -1,10 +1,3 @@
----
-title: "UPS Shipping"
-sidebar_label: "UPS Shipping"
-sidebar_position: 30
-description: "Connect your J2Commerce store to UPS and display live shipping rates at checkout using the UPS OAuth 2.0 Rating API."
----
-
 # UPS Shipping
 
 The UPS Shipping plugin fetches live carrier rates from UPS and shows them to customers at checkout. Rates are calculated in real time based on the customer's destination, your origin address, and the weight and size of the items in the cart.
@@ -13,21 +6,52 @@ UPS requires OAuth 2.0 credentials. The plugin handles token caching automatical
 
 ## Prerequisites
 
-- J2Commerce installed and configured
+- J2Commerce is installed and configured
 - At least one shipping zone set up in **J2Commerce** -> **Shipping** -> **Shipping Methods**
 - Products must have weight values set (dimensions are optional but recommended)
 - An active UPS account with API access
 
-## Installation
+## Requirements
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
+- with PHP 8.3.0 +
+- Joomla! 6.x
+- J2Commerce 6.x
 
-1. Purchase and download `shipping_ups.zip` from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `shipping_ups.zip` package file.
-4. The plugin installs and enables automatically.
+## Purchase and Download
 
-After installation, go to **J2Commerce** -> **Shipping** -> **Shipping Methods** to configure it.
+You can install this **USP** shipping plugin using the Joomla installer. The following steps help you with a successful installation.
+
+‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Extensions -> Shipping Plugin**
+
+**Step 2:** Locate the **UPS** Plugin **->** click **View Details** **->** **Add to cart -> Checkout**.&#x20;
+
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
+
+## Install the Plugin
+
+You can install this **UPS** shipping plugin using Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the plugin ZIP file or use the Install from URL option.
+
+![Install extensions](<../../assets/app install1 (1) (1).webp>)
+
+## Enable the Plugin
+
+Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
+
+**a:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Shipping Methods**
+
+**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
+
+![shipping method](/img/shipping-methods.webp)
+
+Look for **UPS** Shipping, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/shipping-methods-enable.webp)
+
+**Note**: Before you can start configuring the plugin, you will need your API Credentials from UPS.&#x20;
 
 ## Getting Your UPS API Credentials
 
@@ -39,16 +63,31 @@ UPS uses OAuth 2.0 for all API access. You need a **Client ID** and **Client Sec
 2. Complete registration using your business email address.
 3. Once logged in, you land on the **My Apps** dashboard.
 
-<!-- SCREENSHOT: UPS Developer portal My Apps dashboard showing the main navigation and Add App button -->
+![Add apps](../../assets/ups-add-apps.webp)
 
 ### Step 2: Create a New App
 
-1. Click **Add Apps** (or **Create App**) on the **My Apps** page.
-2. Enter an **App Name** — for example, `J2Commerce Shipping`.
-3. Under **I want to**, select **Get Rates and Service Commitments** (or similar — the wording may vary, but you need access to the Rating API).
-4. Accept the UPS Developer Kit Agreement and click **Save**.
+Click **Add Apps** (or **Create App**) on the **My Apps** page.
 
-<!-- SCREENSHOT: UPS Add Apps form with App Name field and API product selection -->
+Enter an **App Name** — for example, `J2Commerce Shipping`.
+
+Under **I want to integrate UPS technology into my business**, select **Get Rates and Service Commitments** (or similar — the wording may vary, but you need access to the Rating API).
+
+Accept the UPS Developer Kit Agreement and click **Save**.
+
+![](../../assets/ups-add-account.webp)
+
+Complete the contact info
+
+Then select the Rating, Tracking, and Time In Transit API's (I believe the Authorization(OAuth) is automatically added when you save)
+
+![](../../assets/ups-approval.webp)
+
+(Right now, we aren't using the Tracking API, but we do plan on incorporating that in later versions, so better to add it now so you don't need to worry about adding it later...)
+
+![API's](../../assets/ups-api.webp)
+
+After saving, you should be able to see the Client ID and client Secret under the App Info/Credentials page
 
 ### Step 3: Copy Your Credentials
 
@@ -61,137 +100,140 @@ Copy both values. You will paste them into the plugin settings in the next secti
 
 > **Keep your Client Secret safe.** Treat it like a password — do not share it or commit it to version control.
 
-### Step 4: Add the Sandbox App (Optional)
-
-If you want to test without real UPS charges:
-
-1. Repeat Steps 2–3 above, but this time select the **Testing (CIE)** environment when prompted.
-2. UPS provides separate sandbox credentials that connect to their Customer Integration Environment (CIE).
-3. Copy the sandbox **Client ID** and **Client Secret** separately.
-
-The J2Commerce plugin has dedicated fields for sandbox credentials so you can switch between testing and production without replacing your live keys.
-
 ### Step 5: Link Your UPS Account Number (Optional)
 
 Your UPS shipper number (account number) appears on your UPS invoices and in your UPS.com profile. It is only required if you want negotiated (discounted) rates. You can find it by:
 
 1. Logging in to [ups.com](https://www.ups.com).
-2. Going to your **Account Summary** or **Payment** page.
+2. Go to your **Account Summary** or **Payment** page.
 3. Your account number appears in the **My Accounts** section — it is a six-character alphanumeric code.
 
 ## Creating a UPS Shipping Method
 
-1. Go to **J2Commerce** -> **Shipping** -> **Shipping Methods**.
-2. Click **New** in the toolbar.
-3. Select **UPS Shipping** from the shipping method list.
+Go to the **J2Commerce** icon at the top right corner **-> Setup -> Shipping Methods**
 
-<!-- SCREENSHOT: Shipping Methods list page with the New button highlighted -->
+Select **UPS Shipping** from the shipping method list
 
-4. The plugin configuration form opens. Work through each section as described in the reference below.
-5. Click **Save** when done.
+Click on the UPS Shipping title to start the configuration
 
-<!-- SCREENSHOT: UPS Shipping plugin configuration form showing all parameter sections -->
+![](/img/ups.webp)
 
 ## Configuration Reference
+
+**Helpful Tip:** Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+
+![](/img/ups-toggle.webp)
 
 The settings are grouped into logical sections below.
 
 ### API Credentials
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Sandbox Mode** | Set to **Yes** to connect to the UPS CIE test environment. Set to **No** to process real rate requests. | Yes |
-| **Production Client ID** | Your OAuth 2.0 Client ID for the production environment. Only shown when Sandbox Mode is off. | — |
-| **Production Client Secret** | Your OAuth 2.0 Client Secret for the production environment. Only shown when Sandbox Mode is off. | — |
-| **Sandbox Client ID** | Your OAuth 2.0 Client ID for the UPS CIE sandbox. Only shown when Sandbox Mode is on. | — |
-| **Sandbox Client Secret** | Your OAuth 2.0 Client Secret for the UPS CIE sandbox. Only shown when Sandbox Mode is on. | — |
-| **Shipper Number** | Your UPS account number (6 characters). Required only for negotiated rates. | — |
+![](/img/ups1.webp)
 
-> When you are ready to go live, set **Sandbox Mode** to **No** and paste your production credentials.
+**Production Client ID:** Enter the Client Key provided by the UPS Developer Portal ([https://developer.ups.com/](https://developer.ups.com/)).
 
-### Origin Address
+**Production Client Secret:** Enter the Client Secret provided by the UPS Developer Portal  ([https://developer.ups.com/](https://developer.ups.com/)).
 
-These fields tell UPS where your shipments originate. The postal code is required — city and state improve accuracy.
-
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Shipping Postal Code** | ZIP or postal code of your warehouse or dispatch location. | `90210` |
-| **Shipping Country** | Country where your shipments originate. | United States |
-| **Shipping State** | State or province of your shipping location. Populated automatically when you select a country. | California |
-| **Shipping City** | City name of your shipping location. | Beverly Hills |
+‌**Shipper Number:** Your UPS shipper number (account number). Required for negotiated rates.
 
 ### Services
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Rating Request Type** | **Shop** asks UPS for rates on all available services at once. **Rate** requests a rate for one specific service only. Use Shop for most stores. | Shop |
-| **Enabled Services** | Select which UPS services to show at checkout. Only services that UPS returns as available for the shipment will appear. | (none selected) |
+![](/img/ups2.webp)
+
+**Rating Request Type:**&#x20;
+
+- **Shop** asks UPS for rates on all available services at once.&#x20;
+
+- **Rate** requests a rate for one specific service only. Use Shop for most stores.
+
+**Enabled Services:** Select which UPS services to show at checkout. Only services that UPS returns as available for the shipment will appear.
 
 Select multiple services using the dropdown — customers will see all available services at checkout, each with its own rate.
 
 ### Package Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **UPS Packaging Box** | The UPS packaging type code sent in rate requests. Use **Customer Supplied Package** for your own boxes or mailers. | Customer Supplied Package |
-| **Weight Unit** | Weight unit your products use (`lb` or `kg`). Must match the unit set on your products. | — |
-| **Dimension Unit** | Dimension unit your products use (`in` or `cm`). Must match the unit set on your products. | — |
-| **Send Package Dimensions** | Include length, width, and height in rate requests. Disable only if none of your products have dimensions set. | Yes |
-| **Default Weight** | Fallback weight when a product has no weight configured. | 1 |
-| **Default Length** | Fallback length when a product has no length configured. | 10 |
-| **Default Width** | Fallback width when a product has no width configured. | 10 |
-| **Default Height** | Fallback height when a product has no height configured. | 10 |
+![](/img/ups3.webp)
 
-### Packing Mode
+**UPS Packaging Box:** The UPS packaging type code sent in rate requests. Use **Customer Supplied Package** for your own boxes or mailers.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Packing Mode** | **Per Item** sends one package to UPS for each item in the cart. **Box Packing** uses a 3D bin-packing algorithm to fit items into configured boxes before requesting rates. Box Packing gives more accurate rates for multi-item orders. | Per Item |
-| **Include UPS Express Boxes** | When using Box Packing, also try packing items into the standard UPS Small, Medium, and Large Express Box sizes. These free boxes are provided by UPS for Express shipments. | Yes |
-| **Item Rotation** | Controls how items are oriented during Box Packing. **Best Fit** tries all orientations. **Keep Flat** prevents tipping items upright — useful for liquids or fragile goods. **Never** keeps items in their fixed orientation. | Best Fit |
-| **Custom Box Sizes** | Define your own box dimensions and maximum weights for Box Packing. Dimensions must use the same units as the Weight Unit and Dimension Unit fields above. | — |
+**Packing Mode:**&#x20;
+
+- **Per Item** sends one package to UPS for each item in the cart.&#x20;
+
+- **Box Packing** uses a 3D bin-packing algorithm to fit items into configured boxes before requesting rates. Box Packing gives more accurate rates for multi-item orders.
+
+**Weight Unit:** Weight unit your products use (`lb` or `kg`). Must match the unit set on your products
+
+**Dimension Unit:** Dimension unit your products use (`in` or `cm`). Must match the unit set on your products.
+
+**Send Package Dimensions:** Include length, width, and height in rate requests. Disable only if none of your products have dimensions set
+
+**Default Weight:** Fallback weight when a product has no weight configured
+
+**Default Length:** Fallback length when a product has no length configured
+
+**Default Width:** Fallback width when a product has no width configured
+
+**Default Height:** Fallback height when a product has no height configured
+
+### Origin Address
+
+![](/img/ups4.webp)
+
+These fields tell UPS where your shipments originate. The postal code is required — city and state improve accuracy.
+
+**Shipping Postal Code:** ZIP or postal code of your warehouse or dispatch location
+
+**Shipping Country:** Country where your shipments originate
+
+**Shipping State:** State or province of your shipping location. Populated automatically when you select a country
+
+**Shipping City:** City name of your shipping location
+
+**Shipping Origin Address Type:** Set to **Yes** if UPS delivers to a residential address. UPS applies a residential surcharge. Set to **No** for commercial addresses
 
 ### Rate Options
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Shipping Origin Address Type** | Set to **Yes** if UPS delivers to a residential address. UPS applies a residential surcharge. Set to **No** for commercial addresses. | Yes |
-| **Enable Negotiated Rate** | Request your account's negotiated (discounted) rates. Requires a valid Shipper Number and negotiated rates enabled on your UPS account. | No |
-| **Pickup Type** | How UPS collects packages from you. Most stores use **Daily Pickup**. | Daily Pickup |
-| **Delivery Confirmation Option** | Require proof of delivery. Signature options add a surcharge per package. | None |
-| **Handling Cost** | A fixed amount or percentage added to every UPS rate. Set to `0` for no handling cost. | 0 |
-| **Handling Cost Type** | Whether the Handling Cost is a **Flat Amount** or a **Percentage** of the shipping rate. | Flat Amount |
-| **Tax Profile** | Apply a tax profile to shipping costs. Select **None** for no shipping tax. | None |
-| **Geozone Restriction** | Restrict this shipping method to customers in a specific geozone. Leave as **None** to make it available to all customers. | None |
-| **Show Delivery Date** | Display estimated business days in transit next to each UPS option at checkout. | Yes |
-| **Checkout Image** | An optional image displayed beside each UPS rate option. A UPS logo is included by default. | UPS logo |
+![](/img/ups5.webp)
 
-### Debug / Advanced
+**Enable Negotiated Rate:** Request your account's negotiated (discounted) rates. Requires a valid Shipper Number and negotiated rates enabled on your UPS account.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Mode** | Write API requests and responses to `administrator/logs/shipping_ups.php`. Disable in production. | No |
+**Pickup Type:** How UPS collects packages from you. Most stores use **Daily Pickup**
+
+**Delivery Confirmation Option:** Require proof of delivery. Signature options add a surcharge per package.
+
+**Handling Cost:** A fixed amount or percentage added to every UPS rate. Set to `0` for no handling cost.
+
+**Handling Cost Type:** Whether the Handling Cost is a **Flat Amount** or a **Percentage** of the shipping rate.
+
+**Tax Profile:** Apply a tax profile to shipping costs. Select **None** for no shipping tax.
+
+**Geozone Restriction:** Restrict this shipping method to customers in a specific geozone. Leave as **None** to make it available to all customers.
+
+**Show Delivery Date:** Display estimated business days in transit next to each UPS option at checkout.
+
+**Debug Mode:** Write API requests and responses to `administrator/logs/shipping_ups.php`. Disable in production.
 
 ## UPS Services Reference
 
 The following UPS service codes are supported. Select any combination in the **Enabled Services** field.
 
-| Service Code | Service Name | Typical Use |
-|---|---|---|
-| 01 | UPS Next Day Air | Overnight domestic delivery |
-| 02 | UPS 2nd Day Air | Two-day domestic delivery |
-| 03 | UPS Ground | Standard domestic ground |
-| 07 | UPS Worldwide Express | International express |
-| 08 | UPS Worldwide Expedited | International economy express |
-| 11 | UPS Standard | Standard cross-border (US/CA/MX) |
-| 12 | UPS 3 Day Select | Three-day domestic delivery |
-| 13 | UPS Next Day Air Saver | Overnight, end-of-day delivery |
-| 14 | UPS Next Day Air Early | Overnight, early morning delivery |
-| 54 | UPS Worldwide Express Plus | International, very early morning |
-| 59 | UPS 2nd Day Air A.M. | Two-day, morning delivery |
-| 65 | UPS Worldwide Saver | International, end-of-day express |
-| 72 | UPS Worldwide Economy DDP | International economy, duties paid |
-| 96 | UPS Worldwide Express Freight | International freight, palletized |
+| Service Code | Service Name                  | Typical Use                        |
+| ------------ | ----------------------------- | ---------------------------------- |
+| 01           | UPS Next Day Air              | Overnight domestic delivery        |
+| 02           | UPS 2nd Day Air               | Two-day domestic delivery          |
+| 03           | UPS Ground                    | Standard domestic ground           |
+| 07           | UPS Worldwide Express         | International express              |
+| 08           | UPS Worldwide Expedited       | International economy express      |
+| 11           | UPS Standard                  | Standard cross-border (US/CA/MX)   |
+| 12           | UPS 3 Day Select              | Three-day domestic delivery        |
+| 13           | UPS Next Day Air Saver        | Overnight, end-of-day delivery     |
+| 14           | UPS Next Day Air Early        | Overnight, early morning delivery  |
+| 54           | UPS Worldwide Express Plus    | International, very early morning  |
+| 59           | UPS 2nd Day Air A.M.          | Two-day, morning delivery          |
+| 65           | UPS Worldwide Saver           | International, end-of-day express  |
+| 72           | UPS Worldwide Economy DDP     | International economy, duties paid |
+| 96           | UPS Worldwide Express Freight | International freight, palletized  |
 
 Not all services are available for every origin-destination pair. UPS returns only the eligible services for each shipment, so customers will only ever see rates for services that UPS can actually provide.
 
@@ -218,16 +260,6 @@ Not all services are available for every origin-destination pair. UPS returns on
 4. Make sure at least one **Enabled Service** is selected. If the field is empty, no rates will be shown even if UPS returns them.
 5. Check that your **Origin Postal Code** and **Origin Country** are filled in — both are required.
 6. Confirm the products in the test cart have a weight set. UPS will not return rates for zero-weight packages.
-
-### Rates appear in sandbox but not in production
-
-**Cause:** You may still be in Sandbox Mode, or the production credentials are missing.
-
-**Solution:**
-
-1. Set **Sandbox Mode** to **No**.
-2. Paste your **Production Client ID** and **Production Client Secret** into the production fields (these are separate from the sandbox fields).
-3. Save the method and test again.
 
 ### UPS returns an authentication error (401)
 
@@ -259,10 +291,3 @@ Not all services are available for every origin-destination pair. UPS returns on
 1. Enable **Debug Mode** — the log file reports when items cannot be packed and which method was used.
 2. Add larger custom box sizes in the **Custom Box Sizes** field to accommodate oversized items.
 3. If certain items should never be combined with others, consider setting them as individual products with their own shipping class.
-
-## Related Topics
-
-- [Shipping Methods Overview](../shipping/index.md)
-- [Shipping Zones and Geo Zones](../shipping/geo-zones.md)
-- [Setting Product Weight and Dimensions](../products/index.md)
-- [Tax Profiles](../taxes/index.md)
