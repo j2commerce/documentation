@@ -235,7 +235,7 @@ When a shopper selects an option value that has a price modifier, J2Commerce add
 
 ### Step 11: Filters Tab
 
-<!-- SCREENSHOT: Product form Filters tab showing the filter search input and a list of assigned filter values -->
+![](/img/simple-filters.webp)
 
 Filters allow shoppers to narrow product listings by attribute — for example, filtering by material, color range, or size range. Assigning filters here makes this product appear in the correct filtered results on category and tag pages.
 
@@ -248,20 +248,19 @@ To assign a filter value:
 
 Filters are created and organized under **J2Commerce** -> **Catalog** -> **Filters**.
 
-### Step 12: Relations Tab
+### Relations Tab
 
-<!-- SCREENSHOT: Product form Relations tab showing the Up-sells and Cross-sells search fields with one product listed under each -->
+![](/img/simple-relations.webp)
 
-| Section         | Description                                                                                                                               |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **Up-sells**    | Products to recommend as upgrades on this product's detail page. Typically shown as "You might also like" with higher-value alternatives. |
-| **Cross-sells** | Products to suggest as complementary purchases. Typically shown in the cart sidebar or at checkout.                                       |
+**Up-sells:** Products to recommend as upgrades on this product's detail page. Typically shown as "You might also like" with higher-value alternatives.
+
+**Cross-sells:** Products to suggest as complementary purchases. Typically shown in the cart sidebar or at checkout.
 
 To add a related product, start typing its name in the search box. Matching products appear in a dropdown — click one to add it. Remove a related product by clicking the trash icon next to it.
 
-### Step 13: Apps Tab
+### Apps Tab
 
-<!-- SCREENSHOT: Product form Apps tab showing accordion panels for each installed app plugin -->
+![](/img/simple-apps.webp)
 
 The **Apps** tab shows product-level configuration panels provided by installed app plugins. For example:
 
@@ -270,11 +269,9 @@ The **Apps** tab shows product-level configuration panels provided by installed 
 
 Each app is responsible for its own content on this tab. If no apps are installed, the tab shows an information message.
 
-### Step 14: Save the Product
+### Save the Product
 
 Click **Save** or **Save & Close** in the toolbar. J2Commerce saves all tabs in a single operation — pricing, inventory, images, options, and everything else.
-
-<!-- SCREENSHOT: Toolbar showing Save, Save & Close, and Save & New buttons -->
 
 After saving, visit the linked Joomla article on the frontend to confirm the product displays correctly with its **Add to Cart** button.
 

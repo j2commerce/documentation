@@ -98,10 +98,9 @@ When enabled, J2Commerce retrieves manufacturer details from the product's assig
 
 *This only shows up when the **Display Brand Details** is **enabled**.*
 
-| **Position** | **Behavior**                                                       |
-| ------------ | ------------------------------------------------------------------ |
-| **Before**   | Brand accordion appears as the first accordion on the product page |
-| **After**    | Brand accordion appears as the last accordion on the product page  |
+**Before:** Brand accordion appears as the first accordion on the product page
+
+**After:** Brand accordion appears as the last accordion on the product page
 
 ## Adding a Manufacturer to the Products{#configure-products}
 
@@ -141,13 +140,11 @@ There are **Three** ways you can access the products.&#x20;
 
 ![](/img/accordions-products.webp)
 
-Click on a **product** to edit it **-> J2Commerce** tab **->** **Apps** tab&#x20;
+Click on a **Product** to edit it **-> J2Commerce** tab **->** **Apps** tab&#x20;
 
-| **Field**                      | **Description**                                                                                                           |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| **Custom Tab from Article Id** | Select an existing Joomla article. The article title becomes the tab title, and the article content becomes the tab body. |
+**Custom Tab from Article ID:** Select an existing Joomla article. The article title becomes the tab title, and the article content becomes the tab body.
 
-Click **Select** to Add Custom Tab from Article Id
+Click **Select** to Add Custom Tab from Article ID
 
 ![](/img/accordions-apps-tab1.webp)
 
@@ -163,12 +160,13 @@ Click the **Add Custom Tab** button to create unlimited custom tabs.
 
 Each tab row has these fields:
 
-| **Field**          | **Description**                                                                                   | **Required** |
-| ------------------ | ------------------------------------------------------------------------------------------------- | ------------ |
-| **Tab Title**      | The title displayed on the tab header.                                                            | Yes          |
-| **Tab Title Icon** | Font Awesome icon class (e.g., `fa-solid fa-star`). Leave empty for no icon.                      | No           |
-| **Enabled**        | Toggle to show or hide this tab.                                                                  | Yes          |
-| **Tab Content**    | The content displayed when the tab is active. Supports HTML and opens with the configured editor. | Yes          |
+**Tab Title:** The title displayed on the tab header
+
+**Tab Title Icon:** Font Awesome icon class (e.g., `fa-solid fa-star`). Leave empty for no icon.
+
+**Enabled:** Toggle to show or hide this tab.
+
+**Tab Content:** The content displayed when the tab is active. Supports HTML and opens with the configured editor.
 
 ### Organize Tabs{#step-4-organize-tabs}
 
@@ -212,27 +210,27 @@ When a customer views a product page:
 
 **The brand tab appears when:**
 
-- **Display Brand Details** is set to **Yes**.
+- **Display Brand Details** is set to '**Yes'**.
 
 ![](/img/tabs-config2.webp)
 
 **Note:** In order to add the Brand or Manufacturer to a product, you have to add them to the database. Go to **J2Commerce -> Dashboard -> Catalog -> Manufacturer**. Fill out the company information and hit save
 
-- **The product has a manufacturer assigned:** Open the **product**. Go to the **General** tab and add the Brand or Manufacturer. If it doesn't appear in the dropdown menu, then it needs to be created by following the **note** from above.
+- **The product has a manufacturer assigned:** Open the **Product**. Go to the **General** tab and add the Brand or Manufacturer. If it doesn't appear in the dropdown menu, then it needs to be created by following the **note** from above.
 
-- **The manufacturer has a description article configured:**
+- **The manufacturer has a description article configured:** Create an article with a Description/Bio of the manufacturer for it to show up on the frontend
 
 ## Tips{#tips}
 
-- **Use articles for reusable content** - If the same specifications apply to multiple products, create a Joomla article and reuse it across products.
+- **Use articles for reusable content**: If the same specifications apply to multiple products, create a Joomla article and reuse it across products.
 
-- **Keep titles concise** - Long tab titles may truncate on mobile devices.
+- **Keep titles concise**: Long tab titles may truncate on mobile devices.
 
-- **Use icons sparingly** - Icons should complement, not replace, meaningful titles.
+- **Use icons sparingly**: Icons should complement, not replace, meaningful titles.
 
-- **Test with content plugins** - If using `{loadmodule}` or similar syntax, enable **Prepare Content** and verify the output.
+- **Test with content plugins**: If using `{loadmodule}` or similar syntax, enable **Prepare Content** and verify the output.
 
-- **Organize by importance** - Place critical information (shipping, warranty) in the first tabs for visibility.
+- **Organize by importance**: Place critical information (shipping, warranty) in the first tabs for visibility.
 
 ## Troubleshooting{#troubleshooting}
 
@@ -242,17 +240,17 @@ When a customer views a product page:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Apps**.
+1. Go to **J2Commerce** **-> Apps**.
 
 2. Verify **Custom Tabs** shows a green checkmark (enabled).
 
    ![](/img/tabs-enable1.webp)
 
-3. Edit the **product** and verify that at least one tab is configured and enabled in th Apps tab.
+3. Edit the **product** and verify that at least one tab is configured and enabled in the Apps tab.
 
    ![](/img/tabs-products4.webp)
 
-4. Check that the tab row has **Enabled** set to **Yes**.
+4. Check that the tab row has **Enabled** set to '**Yes'**.
 
 ### Article Content Not Loading{#article-content-not-loading}
 
@@ -274,9 +272,9 @@ When a customer views a product page:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Apps** -> **Custom Tabs**.
+1. Go to **J2Commerce** **-> Apps ->** **Custom Tabs**.
 
-2. Set **Prepare Content** to **Yes**.
+2. Set **Prepare Content** to '**Yes'**.
 
    ![](/img/accordions-config2.webp)
 
