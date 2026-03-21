@@ -1,10 +1,3 @@
----
-title: "Flexible Variable Products"
-sidebar_label: "Flexible Variable Products"
-sidebar_position: 20
-description: "Create products with manually selected option combinations as individual purchasable variants, each with its own price, stock, and shipping settings."
----
-
 # Flexible Variable Products
 
 The Flexible Variable product type lets you build variants one at a time by picking exact combinations of your product options. Instead of J2Commerce automatically generating every possible combination, you hand-pick the specific option combinations you actually sell — each becoming a fully independent variant with its own SKU, price, stock level, weight, and dimensions.
@@ -17,15 +10,9 @@ This is ideal for products where not every option combination makes sense. For e
 - Joomla! 6.x
 - J2Commerce 6.x
 
-## Installation
+**IMPORTANT**: Once you have configured the settings for any product, check to see if those specific items are showing up on the frontend. If they are not, (ie: filters, cross-sells, price, title, etc), then go to your **store** menu and **show or hide** the items you want to control on the frontend. Go to **Menu -> Main Menu -> Store -> Product** tab
 
-This plugin ships with J2Commerce 6 and is available immediately after installation. To enable it:
-
-1. Go to **System** -> **Manage** -> **Extensions**.
-2. Search for **Flexible Variable**.
-3. Click the checkbox next to the plugin and click **Enable** in the toolbar.
-
-Alternatively, enable it from the J2Commerce Apps screen (see below).
+![](/img/simple-store-menu.webp)
 
 ## Enable the Plugin
 
@@ -33,55 +20,60 @@ Alternatively, enable it from the J2Commerce Apps screen (see below).
 
 **Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Flexible Variable plugin -->
+![](/img/gift-wrap-apps.webp)
 
 Search for **Flexible Variable**, click the **X** to enable it. The X turns into a green checkmark when enabled.
 
+![](/img/flex-enable.webp)
+
 ## Configure the Plugin
 
-Click on **Flexible Variable** to open the configuration screen.
+Click on the **Flexible Variable** Plugin title to open the configuration screen.
 
 ### Basic Settings Tab
 
-| Setting | Description | Default |
-| ------- | ----------- | ------- |
-| **Option Required** | When enabled, customers must select all options before they can add the product to the cart. Prevent "Add to Cart" clicks without a variant being selected. | No |
-| **Show Price Range** | When enabled, product listing pages display a price range (e.g., "$10.00 – $25.00") spanning the lowest and highest variant prices, rather than a single price. | No |
+- **Option Required:** When enabled, customers must select all options before they can add the product to the cart. Prevent "Add to Cart" clicks without a variant being selected.
 
-<!-- SCREENSHOT: Flexible Variable plugin configuration screen -->
-
-#### When to Enable Option Required
-
-Enable **Option Required** when your product page relies on customers choosing a specific variant before purchasing. This prevents orders coming in without a valid option selection.
+Enable **Option Required** when your product page relies on customers choosing a specific variant before purchasing. This prevents orders from coming in without a valid option selection.
 
 Leave it disabled if you set a default variant on every product, since a default variant is pre-selected for the customer on page load.
 
-#### When to Enable Show Price Range
+- **Show Price Range:** When enabled, product listing pages display a price range (e.g., "$10.00 – $25.00") spanning the lowest and highest variant prices, rather than a single price.
 
 Enable **Show Price Range** when your variants have significantly different prices and you want shoppers browsing the category list to see the full spread. If all your variants are priced the same, leave this disabled to show a clean single price instead.
+
+<!-- SCREENSHOT: Flexible Variable plugin configuration screen -->
 
 ## How Flexible Variable Differs from Variable Products
 
 Understanding the difference helps you choose the right product type.
 
-| Feature | Variable Product | Flexible Variable Product |
-| ------- | ---------------- | ------------------------- |
-| Variant creation | Auto-generates all combinations | You manually add each combination |
-| Control | Less control | Full control |
-| Best for | Products where all combinations exist | Products where only some combinations exist |
-| Price per variant | Yes | Yes |
-| Stock per variant | Yes | Yes |
-| Shipping per variant | Yes | Yes |
+| Feature              | Variable Product                      | Flexible Variable Product                   |
+| -------------------- | ------------------------------------- | ------------------------------------------- |
+| Variant creation     | Auto-generates all combinations       | You manually add each combination           |
+| Control              | Less control                          | Full control                                |
+| Best for             | Products where all combinations exist | Products where only some combinations exist |
+| Price per variant    | Yes                                   | Yes                                         |
+| Stock per variant    | Yes                                   | Yes                                         |
+| Shipping per variant | Yes                                   | Yes                                         |
 
-Use **Flexible Variable** when you sell a curated set of option combinations rather than a full grid.
+Use a **Flexible Variable** when you sell a curated set of option combinations rather than a full grid.
 
 ## Create a Flexible Variable Product
 
-### Step 1: Create a New Product
+Every product needs a Joomla article. The article title becomes the product name and the article content is the description shoppers read on the product page.
 
-1. Go to **J2Commerce** -> **Catalog** -> **Products**.
-2. Click the **New** button in the toolbar.
-3. Enter a product title, description, and other standard product details.
+There are multiple ways to navigate to the location for creating a new product.
+
+**Option a:** Go to **Content** **-> Articles -> New**.
+
+![](/img/simple.webp)
+
+**Option b:** Or go to **J2Commerce -> Catalog  -> Product -> New**
+
+![](/img/simple-product1.webp)
+
+### Creating a New Product
 
 <!-- SCREENSHOT: Product edit form with product type dropdown highlighted -->
 
@@ -124,41 +116,41 @@ Each variant appears as a collapsible accordion row. Click a variant row to expa
 
 #### General Settings
 
-| Field | Description |
-| ----- | ----------- |
-| **SKU** | The unique stock-keeping unit code for this variant. Filled automatically with a default value; update it to match your inventory system. |
-| **UPC** | Optional barcode or Universal Product Code for this variant. |
-| **Regular Price** | The selling price for this specific variant. Each variant can have a different price. |
-| **Advanced Pricing** | Opens a modal to configure sale prices, customer-group pricing, or date-range discounts for this variant. |
-| **Pricing Calculator** | Controls how the price is calculated at checkout. Leave set to **Standard** unless you have a custom pricing calculator plugin. |
+| Field                  | Description                                                                                                                               |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **SKU**                | The unique stock-keeping unit code for this variant. Filled automatically with a default value; update it to match your inventory system. |
+| **UPC**                | Optional barcode or Universal Product Code for this variant.                                                                              |
+| **Regular Price**      | The selling price for this specific variant. Each variant can have a different price.                                                     |
+| **Advanced Pricing**   | Opens a modal to configure sale prices, customer-group pricing, or date-range discounts for this variant.                                 |
+| **Pricing Calculator** | Controls how the price is calculated at checkout. Leave set to **Standard** unless you have a custom pricing calculator plugin.           |
 
 #### Shipping Settings
 
-| Field | Description |
-| ----- | ----------- |
+| Field               | Description                                                                                                              |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | **Enable Shipping** | Set to **Yes** if this variant is a physical item that requires shipping. Set to **No** for digital or service variants. |
-| **Length Class** | The unit of measurement for dimensions (e.g., centimetre, inch). |
-| **Dimensions** | The physical dimensions of the variant: length, width, and height. Used by shipping rate calculators. |
-| **Weight** | The physical weight of this variant. |
-| **Weight Class** | The unit of measurement for weight (e.g., kilogram, pound). |
+| **Length Class**    | The unit of measurement for dimensions (e.g., centimetre, inch).                                                         |
+| **Dimensions**      | The physical dimensions of the variant: length, width, and height. Used by shipping rate calculators.                    |
+| **Weight**          | The physical weight of this variant.                                                                                     |
+| **Weight Class**    | The unit of measurement for weight (e.g., kilogram, pound).                                                              |
 
 #### Inventory Settings
 
-| Field | Description | Options |
-| ----- | ----------- | ------- |
-| **Manage Stock** | Track stock levels for this variant. | Yes / No |
-| **Quantity** | Current stock quantity for this variant. | Any whole number |
-| **Allow Backorders** | Whether customers can order this variant when it is out of stock. | Do Not Allow / Allow / Allow but Notify Customer |
-| **Stock Status** | Manual override for whether the variant shows as in-stock or out-of-stock. | In Stock / Out of Stock |
-| **Notify Quantity** | Send a low-stock notification when quantity drops to this number. | Any number, or enable "Use Store Configuration" |
-| **Quantity Restriction** | Limit how many units a customer can purchase in one order. | Yes / No |
-| **Max Sale Quantity** | Maximum units per order, when Quantity Restriction is enabled. | Any number, or enable "Use Store Configuration" |
-| **Min Sale Quantity** | Minimum units per order. | Any number, or enable "Use Store Configuration" |
+| Field                    | Description                                                                | Options                                          |
+| ------------------------ | -------------------------------------------------------------------------- | ------------------------------------------------ |
+| **Manage Stock**         | Track stock levels for this variant.                                       | Yes / No                                         |
+| **Quantity**             | Current stock quantity for this variant.                                   | Any whole number                                 |
+| **Allow Backorders**     | Whether customers can order this variant when it is out of stock.          | Do Not Allow / Allow / Allow but Notify Customer |
+| **Stock Status**         | Manual override for whether the variant shows as in-stock or out-of-stock. | In Stock / Out of Stock                          |
+| **Notify Quantity**      | Send a low-stock notification when quantity drops to this number.          | Any number, or enable "Use Store Configuration"  |
+| **Quantity Restriction** | Limit how many units a customer can purchase in one order.                 | Yes / No                                         |
+| **Max Sale Quantity**    | Maximum units per order, when Quantity Restriction is enabled.             | Any number, or enable "Use Store Configuration"  |
+| **Min Sale Quantity**    | Minimum units per order.                                                   | Any number, or enable "Use Store Configuration"  |
 
 #### Image Settings
 
-| Field | Description |
-| ----- | ----------- |
+| Field                           | Description                                                                                                           |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | **Use Main Image as Thumbnail** | When enabled, the product's main image is used as the thumbnail for this variant instead of a variant-specific image. |
 
 ### Step 6: Set a Default Variant
