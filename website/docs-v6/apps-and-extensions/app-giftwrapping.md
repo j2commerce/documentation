@@ -32,9 +32,9 @@ Upload the plugin ZIP file or use the Install from URL option.
 
 Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-**a:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+**Option a:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+**Option b:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
 ![](/img/gift-wrap-apps.webp)
 
@@ -56,14 +56,19 @@ Click on the **Gift Wrapping** Title to open it.
 
 **Step Position:** Where in the checkout flow the gift wrapping step appears.&#x20;
 
-\*\*The gift wrapping step can appear at different points in the checkout flow:
+:::note
 
-| Position                   | Description                                    |
-| -------------------------- | ---------------------------------------------- |
-| **After Billing Address**  | Shows after the billing address step (default) |
-| **After Shipping Address** | Shows after the shipping address step          |
-| **Before Payment Method**  | Shows before the payment selection step        |
-| **Before Confirm Order**   | Shows just before the order confirmation step  |
+NOTE: The gift wrapping step can appear at different points in the checkout flow
+
+:::
+
+**After Billing Address:** Shows after the billing address step (default)
+
+**After Shipping Address:** Shows after the shipping address step
+
+**Before Payment Method:** Shows before the payment selection step
+
+**Before Confirm Order:** Shows just before the order confirmation step
 
 Choose the position that best fits your checkout flow. For most stores, After Billing Address or After Shipping Address works well.
 
@@ -78,12 +83,13 @@ In the **Gift Wrapping Options** tab, define each wrapping option available to c
 1. Click the **green plus icon to** create a new wrapping option.
 2. Fill in the following fields:
 
-| Field           | Description                                                                                   | Required |
-| --------------- | --------------------------------------------------------------------------------------------- | -------- |
-| **Name**        | The name displayed to customers (e.g., "Standard Gift Wrap", "Premium Gift Box").             | Yes      |
-| **Price**       | The cost for this wrapping option. Enter `0` for free gift wrapping.                          | Yes      |
-| **Image**       | An optional image showing the wrapping style. Upload to `media/com_j2commerce/giftwrapping/`. | No       |
-| **Description** | A short description of the wrapping (e.g., "Red ribbon with white gift tag").                 | No       |
+**Name:** The name displayed to customers (e.g., "Standard Gift Wrap", "Premium Gift Box").
+
+**Price:** The cost for this wrapping option. Enter `0` for free gift wrapping.
+
+**Image:** An optional image showing the wrapping style. Upload to `media/com_j2commerce/giftwrapping/`.
+
+**Description:** A short description of the wrapping (e.g., "Red ribbon with white gift tag").
 
 1. Click **Add** again to add more options.
 2. Use the drag blue icon on the right up/down, to rearrange the options.
