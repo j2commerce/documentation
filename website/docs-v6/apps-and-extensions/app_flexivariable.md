@@ -141,7 +141,7 @@ Click **Save and Continue**
 2. Supported formats: JPG, JPEG, PNG, GIF, WebP, AVIF.
 3. Each upload completes as a card in the gallery.
 
-#### Image Order and the Main Image
+#### **Image Order and the Main Image**
 
 ![](/img/flex-images1.webp)
 
@@ -151,77 +151,103 @@ The first image in the uploader is the **main product image** — the large imag
 2. Click the arrows to move the image to a new position.
 3. Save the product to apply the new order.
 
-#### Automatic Thumbnails
+#### **Automatic Thumbnails**
 
 J2Commerce automatically generates resized thumbnail and tiny versions of each uploaded image. These are used in product listings, the cart, and other compact views. No extra configuration is needed — the sizes are set in your store's image configuration.
 
-#### Alt Text
+#### **Alt Text**
 
 Each image card has an **Alt Text** field. Write a short description such as "Blue ceramic mug, 350ml". Alt text is read by screen readers and used by search engines to understand your images.
 
-#### Removing Images
+#### **Removing Images**
 
 Clicking **Remove** on a card removes the image from this product but does not delete the file from the server. To delete the file permanently, use the file browser icon in the uploader.
 
 ### Variants tab
 
-With options configured and the product saved, scroll to the **Flexible Variable Variants** section.
+**Note**: You cannot move on to this section unless you have already created the '**Options**' under **J2Commerce -> Catalog -> Options.**
+
+![](/img/flex-variants.webp)
 
 1. For each option, select the specific value you want for this variant (e.g., Colour: Red, Size: Large).
-2. Click the **Add Variant** button.
-3. J2Commerce creates a new variant row in the accordion below.
-4. Repeat to add as many variants as your product needs.
+2. Click the **Add Option** button.
+3. Repeat to add as many variants as your product needs.
+4. Once you have selected all of the Options, click **Save**
+5. The Options will now appear in drop-down menus for you
 
-<!-- SCREENSHOT: Add Variant area showing option dropdowns and the Add Variant button -->
+![](/img/flex-variants1.webp)
 
-### Step 5: Configure Each Variant
+In these examples, the customer will be able to choose the color of the box as well as the shape of the box
 
 Each variant appears as a collapsible accordion row. Click a variant row to expand it and fill in its details.
 
-<!-- SCREENSHOT: Expanded variant accordion row showing General, Shipping, and Inventory columns -->
+![](/img/flex-variants2.webp)
 
-#### General Settings
+Once you are finished selecting the different option combinations, make sure you assign which one will be the default option by enabling the 'Star' next to the delete button.
 
-| Field                  | Description                                                                                                                               |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **SKU**                | The unique stock-keeping unit code for this variant. Filled automatically with a default value; update it to match your inventory system. |
-| **UPC**                | Optional barcode or Universal Product Code for this variant.                                                                              |
-| **Regular Price**      | The selling price for this specific variant. Each variant can have a different price.                                                     |
-| **Advanced Pricing**   | Opens a modal to configure sale prices, customer-group pricing, or date-range discounts for this variant.                                 |
-| **Pricing Calculator** | Controls how the price is calculated at checkout. Leave set to **Standard** unless you have a custom pricing calculator plugin.           |
+### Setting up each Variant Separately&#x20;
+
+Select the dropdown arrow for each variant to start setting up the different settings each Variant will need.
+
+#### General Section
+
+![](/img/flex-variants-gen.webp)
+
+**SKU:** The unique stock-keeping unit code for this variant. Filled automatically with a default value; update it to match your inventory system.
+
+**UPC:** Optional barcode or Universal Product Code for this variant.
+
+**Regular Price:** The selling price for this specific variant. Each variant can have a different price.
+
+**Advanced Pricing:** Opens a modal to configure sale prices, customer-group pricing, or date-range discounts for this variant.
+
+**Pricing Calculator:** Controls how the price is calculated at checkout. Leave set to **Standard** unless you have a custom pricing calculator plugin.
 
 #### Shipping Settings
 
-| Field               | Description                                                                                                              |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| **Enable Shipping** | Set to **Yes** if this variant is a physical item that requires shipping. Set to **No** for digital or service variants. |
-| **Length Class**    | The unit of measurement for dimensions (e.g., centimetre, inch).                                                         |
-| **Dimensions**      | The physical dimensions of the variant: length, width, and height. Used by shipping rate calculators.                    |
-| **Weight**          | The physical weight of this variant.                                                                                     |
-| **Weight Class**    | The unit of measurement for weight (e.g., kilogram, pound).                                                              |
+![](/img/flex-variants-ship.webp)
+
+**Enable Shipping:** Set to **Yes** if this variant is a physical item that requires shipping. Set to **No** for digital or service variants.
+
+**Length Class:** The unit of measurement for dimensions (e.g., centimetre, inch).
+
+**Dimensions:** The physical dimensions of the variant: length, width, and height. Used by shipping rate calculators.
+
+**Weight:** The physical weight of this variant.
+
+**Weight Class:** The unit of measurement for weight (e.g., kilogram, pound).
 
 #### Inventory Settings
 
-| Field                    | Description                                                                | Options                                          |
-| ------------------------ | -------------------------------------------------------------------------- | ------------------------------------------------ |
-| **Manage Stock**         | Track stock levels for this variant.                                       | Yes / No                                         |
-| **Quantity**             | Current stock quantity for this variant.                                   | Any whole number                                 |
-| **Allow Backorders**     | Whether customers can order this variant when it is out of stock.          | Do Not Allow / Allow / Allow but Notify Customer |
-| **Stock Status**         | Manual override for whether the variant shows as in-stock or out-of-stock. | In Stock / Out of Stock                          |
-| **Notify Quantity**      | Send a low-stock notification when quantity drops to this number.          | Any number, or enable "Use Store Configuration"  |
-| **Quantity Restriction** | Limit how many units a customer can purchase in one order.                 | Yes / No                                         |
-| **Max Sale Quantity**    | Maximum units per order, when Quantity Restriction is enabled.             | Any number, or enable "Use Store Configuration"  |
-| **Min Sale Quantity**    | Minimum units per order.                                                   | Any number, or enable "Use Store Configuration"  |
+![](/img/flex-variants-invent.webp)
+
+**Manage Stock:** Select '**Yes**' to track stock levels for this variant. If you have an unlimited inventory supply, then you don't need to manage stock quantity
+
+**Quantity:** Current stock quantity for this variant.
+
+**Allow Backorders:** Whether customers can order this variant when it is out of stock.
+
+**Stock Status:** Manual override for whether the variant shows as in-stock or out-of-stock.
+
+**Notify Quantity:** Send a low-stock notification when the quantity drops to this number.
+
+**Quantity Restriction:** Limit how many units a customer can purchase in one order.
+
+**Max Sale Quantity:** Maximum units per order, when Quantity Restriction is enabled.
+
+**Min Sale Quantity:** Minimum units per order.
 
 #### Image Settings
 
-| Field                           | Description                                                                                                           |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Use Main Image as Thumbnail** | When enabled, the product's main image is used as the thumbnail for this variant instead of a variant-specific image. |
+![](/img/flex-variants-image.webp)
 
-### Step 6: Set a Default Variant
+Each variant can have its own individual images. This is very helpful to the customer to see the differences in the options. ie: color, flavor, size, etc. When the customer selects a specific option on the product page, the corresponding image will appear.
 
-One variant should be marked as the default. The default variant's price and stock status are displayed when the product page first loads before a customer makes a selection.
+**Use Main Image as Thumbnail:** When enabled, the product's main image is used as the thumbnail for this variant instead of a variant-specific image.
+
+### Set a Default Variant
+
+One variant should be marked as the default. The default variant's price and stock status are displayed when the product page first loads, before a customer makes a selection.
 
 To set the default:
 
@@ -231,21 +257,65 @@ To set the default:
 
 To change the default, click **Unset Default** on the current default variant, then **Set Default** on another.
 
-<!-- SCREENSHOT: Variant accordion row showing the Default badge and Set Default / Unset Default buttons -->
+![](/img/flex-variants-default.webp)
 
-### Step 7: Delete Variants
+### Delete Variants
 
 To remove a single variant, expand its row and click the **Delete** button. You will be asked to confirm before the variant is removed.
 
-To remove all variants at once, use the **Delete All Variants** button at the top of the Variants section. This action cannot be undone.
+To remove all variants at once, use the **Delete All Variants** button at the top of the Variants section. This action cannot be undone. If the Delete all variants button isn't sowing, just click the empty box at the top of the variant options and it will appear.
 
-### Step 8: Save the Product
+![](/img/flex-delete.webp)
 
-Click **Save** or **Save & Close** to save all variant settings.
+### Filters Tab
 
-<!-- SCREENSHOT: Save button in the toolbar -->
+Filters allow shoppers to narrow product listings by attribute — for example, filtering by material, color range, or size range. Assigning filters here makes this product appear in the correct filtered results on category and tag pages.
 
+To assign a filter value:
 
+1. Type part of the filter name in the search box. Results appear in a dropdown.
+2. Click the matching result to add it to the product.
+3. Repeat for each filter value you want to assign.
+4. To remove a filter, click the trash icon next to it.
+
+Filters are created and organized under **J2Commerce** -> **Catalog** -> **Filters**.
+
+**Frontend View of Filters on Products**
+
+They will appear under the **Specification** tab
+
+![](/img/flex-filters1.webp)
+
+The filters section will always appear on the Categories page but will only show up on the individual product pages if you choose to configure the product that way.
+
+**Frontend View of Filters on Categories**
+
+![](/img/flex-filters2.webp)
+
+### Relations Tab
+
+![](/img/flex-relations.webp)
+
+**Up-sells:** Products to recommend as upgrades on this product's detail page. Typically shown as "**Add these to your order**" with products that will complement the order. ie: parts for a specific tool, extenders, etc...
+
+**Cross-sells:** Products to suggest as complementary purchases or are similar. Typically shown as "**You might also like**" with higher-value alternatives. They can be placed at the bottom of the product page, in the cart sidebar, or at checkout.
+
+To add a related product, start typing its name in the search box. Matching products appear in a dropdown — click one to add it. Remove a related product by clicking the trash icon next to it.
+
+**Frontend View**
+
+![](/img/simple-relations3.webp)
+
+### Apps Tab
+
+![](/img/flex-apps.webp)
+
+The **Apps** tab shows product-level configuration panels provided by installed app plugins. For example:
+
+- If you have the **Custom Accordions** app enabled, you can add accordion sections directly on this tab.
+- If you have the **Gift Wrapping** app enabled, its per-product settings appear here.
+
+Each app is responsible for its own content on this tab. If no apps are installed, the tab shows an information message.
 
 ## How It Works on the Storefront
 
@@ -257,7 +327,11 @@ When a customer views a Flexible Variable product page:
 4. If **Option Required** is enabled and no matching variant exists for the chosen combination, the customer cannot add the item to the cart.
 5. If a default variant is set, the page pre-loads that variant's details on first visit.
 
-<!-- SCREENSHOT: Product detail page showing option dropdowns and variant price updating -->
+Frontend View
+
+In the example below, the customer chose the Options **'Black ->** **Heart-shaped box'** and the **Image** changed to reflect the options that were chosen
+
+![](/img/flex-store.webp)
 
 ## Tips
 
@@ -275,7 +349,7 @@ When a customer views a Flexible Variable product page:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Apps**.
+1. Go to **J2Commerce** **->** **Apps**.
 2. Verify **Flexible Variable** shows a green checkmark.
 3. Edit the product and confirm the **Product Type** field is set to **Flexible Variable**.
 4. Save the product and reload the edit form.
@@ -321,9 +395,3 @@ When a customer views a Flexible Variable product page:
 2. Upload a variant-specific image using the image uploader.
 3. If you want the product's main image to stay as-is regardless of variant selection, enable **Use Main Image as Thumbnail**.
 4. Save the product.
-
-## Related Topics
-
-- [Product Types](../products/product-types.md) — Overview of all product types in J2Commerce
-- [Apps Overview](./index.md) — Other available J2Commerce apps
-- [Inventory Management](../products/inventory.md) — Managing stock levels and backorders
