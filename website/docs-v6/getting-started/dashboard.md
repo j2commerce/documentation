@@ -114,7 +114,11 @@ The date filter controls which orders are included in the **KPI cards** and the 
 
 Clicking a preset button immediately sets the From and To fields and triggers a refresh.
 
-**Note:** When you click on 1/7/30/90 days, the date range and number of days will automatically change. See the image below.
+:::note
+
+NOTE: When you click on 1/7/30/90 days, the date range and number of days will automatically change. See the image below.
+
+:::
 
 ![](/img/sales-stat-reset2.webp)
 
@@ -252,7 +256,10 @@ The chart-area positions (`main-tab` and `side-tab`) always maintain their 2/3 a
 
 1. In the Joomla administrator, go to **System -> Manage -> Administrator Modules**&#x20;
 
-   **Note:** Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
+   :::note
+
+   NOTE: Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
+   :::
 
    ![](/img/dashboard-setting-admin-modules1.webp)
 2. Click **New** **-> Custom** module type to create a new module, or open an existing module you want to place on the dashboard.
@@ -311,7 +318,9 @@ Each icon can be individually shown or hidden in the module's parameters. To con
 
 1. Go to **System -> Manage -> Administrator Modules**.&#x20;
 
-   **Note:** Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
+   :::note
+   NOTE: Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
+   :::
 
    ![](/img/dashboard-setting-admin-modules.webp)
 2. Find and open **J2Commerce Quick Icons**.
@@ -334,7 +343,10 @@ Each icon tile can include:
 - A color style (e.g., success, warning, danger)
 - An optional badge count that updates automatically via AJAX polling
 
-**Note:** If no plugins provide icons for this section, it does not appear.
+
+:::note
+NOTE: If no plugins provide icons for this section, it does not appear.&#x20;
+:::
 
 ***
 
@@ -375,7 +387,11 @@ The **J2Commerce Latest Orders** module shows a table of the most recent orders.
 
 To configure this module, go to **System -> Manage -> Administrator Modules,** search for **J2Commerce Latest Orders**, and adjust the parameters.&#x20;
 
-**Note:** Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
+:::note
+
+NOTE: Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
+
+:::
 
 ![](/img/latest-orders1.webp)
 
@@ -462,9 +478,13 @@ The dashboard uses the time zone configured in **System -> Global Configuration 
 
 All order timestamps are stored in UTC in the database. When you select a date range, the dashboard converts your local-time day boundaries to UTC before querying the database.&#x20;
 
-**Note:** UTC is set as the default; however, it is recommended that you change it to your timezone in the dropdown. It is also recommended to set up your time zone here before you start receiving orders, so all of your reports are on the same time zone from the beginning.
+:::note
 
-This means:
+NOTE: UTC is set as the default; however, it is recommended that you change it to your timezone in the dropdown. It is also recommended to set up your time zone here before you start receiving orders, so all of your reports are on the same time zone from the beginning.
+
+:::
+
+**This means:**
 
 - Selecting "February 1" as the start date queries from **00:00:00 February 1 in your local time zone**, not 00:00:00 UTC.
 - Revenue totals and daily chart groupings reflect your store's local time zone throughout.
