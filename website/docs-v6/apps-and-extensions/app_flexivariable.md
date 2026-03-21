@@ -14,7 +14,11 @@ This is ideal for products where not every option combination makes sense. For e
 
 ![](/img/simple-store-menu.webp)
 
-**Note**: Before you can begin setting up a Flex Variant, you need to create all of the **Options** that the product will offer. &#x20;
+:::note
+
+NOTE: Before you can begin setting up a Flex Variant, you need to create all of the **Options** that the product will offer. &#x20;
+
+:::
 
 ## Setting Up Options
 
@@ -121,11 +125,19 @@ Click **Save and Continue**
 
 **Brand or Manufacturer:** Links this product to a manufacturer record. Useful for filtering and for the Custom Accordions app's Brand Details feature.
 
-***Note:** You have to set up the Manufacturer details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Manufacturer**, in order for them to appear in the dropdown* menu
+:::note
+
+NOTE: Y*ou have to set up the Manufacturer details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Manufacturer**, in order for them to appear in the dropdown* menu&#x20;
+
+:::
 
 **Vendor:** Assigns the product to a vendor. Relevant for multi-vendor setups. Leave blank if you do not use vendors.
 
-***Note:** You have to set up the Vendor's details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Vendors**, in order for them to appear in the dropdown menu*
+:::note
+
+NOTE: *You have to set up the Vendor's details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Vendors**, in order for them to appear in the dropdown menu*&#x20;
+
+:::
 
 **Tax Profile:** Assigns a tax profile to this product. The tax profile determines which tax rates apply based on the customer's location. Create tax profiles under **J2Commerce** **->** **Taxes**.
 
@@ -165,7 +177,11 @@ Clicking **Remove** on a card removes the image from this product but does not d
 
 ### Variants tab
 
-**Note**: You cannot move on to this section unless you have already created the '**Options**' under **J2Commerce -> Catalog -> Options.**
+:::note
+
+NOTE: You cannot move on to this section unless you have already created the '**Options**' under **J2Commerce -> Catalog -> Options.**
+
+:::
 
 ![](/img/flex-variants.webp)
 
@@ -327,7 +343,7 @@ When a customer views a Flexible Variable product page:
 4. If **Option Required** is enabled and no matching variant exists for the chosen combination, the customer cannot add the item to the cart.
 5. If a default variant is set, the page pre-loads that variant's details on first visit.
 
-Frontend View
+## Frontend View
 
 In the example below, the customer chose the Options **'Black ->** **Heart-shaped box'** and the **Image** changed to reflect the options that were chosen
 
