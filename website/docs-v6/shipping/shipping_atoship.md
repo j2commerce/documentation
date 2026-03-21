@@ -44,7 +44,11 @@ Before configuring the plugin, you need an AtoShip account with API credentials.
 
    ![](/img/ato-api1.webp)
 
-\*\*Keep both keys handy — you will enter them in the plugin settings below.&#x20;
+:::note
+
+NOTE: Keep both keys handy — you will enter them in the plugin settings below.&#x20;
+
+:::
 
 ## Purchase and Download the Plugin
 
@@ -68,9 +72,9 @@ The plugin installs and enables automatically. All you have to do now is set it 
 
 There are **two** ways you can access the Plugin.&#x20;
 
-**a:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Shipping Methods**
+**Option a:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Shipping Methods**
 
-**b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
+**Option b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
 
 ![](/img/atoship-app.webp)
 
@@ -307,9 +311,9 @@ Once you are satisfied with testing:
 
 Your store is now using real AtoShip rates and can create real shipping labels.
 
-:::caution
+:::note
 
-Make sure you have funds in your AtoShip account before creating live shipping labels. The plugin checks your balance before each label purchase and will alert you if the balance is insufficient.
+Note: Make sure you have funds in your AtoShip account before creating live shipping labels. The plugin checks your balance before each label purchase and will alert you if the balance is insufficient.
 
 :::
 
@@ -435,9 +439,9 @@ If you need to cancel a shipping label (e.g., the order was cancelled or you nee
 
 The label status changes to **Voided** (dark badge) and the void button is removed. You can then create a new label if needed.
 
-:::caution
+:::note
 
-Voiding a label may not be possible after the carrier has scanned the package. Check your AtoShip account for carrier-specific void policies.
+Note: Voiding a label may not be possible after the carrier has scanned the package. Check your AtoShip account for carrier-specific void policies.
 
 :::
 
