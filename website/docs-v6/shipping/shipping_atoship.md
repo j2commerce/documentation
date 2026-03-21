@@ -106,7 +106,7 @@ Start with **Sandbox Mode** enabled. Enter your sandbox key, save, and test the 
 
 :::tip
 
-Always start with Sandbox Mode enabled. This lets you test the entire workflow -- rates at checkout, label creation, and tracking -- without incurring any real shipping charges. In sandbox mode, if the AtoShip API returns no rates, the plugin automatically generates four demo rates so you can test the checkout flow.
+**Tip**: Always start with Sandbox Mode enabled. This lets you test the entire workflow -- rates at checkout, label creation, and tracking -- without incurring any real shipping charges. In sandbox mode, if the AtoShip API returns no rates, the plugin automatically generates four demo rates so you can test the checkout flow.
 
 :::
 
