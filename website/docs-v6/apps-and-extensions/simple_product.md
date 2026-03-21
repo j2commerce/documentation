@@ -20,6 +20,10 @@ Every J2Commerce product is attached to a Joomla article. The article provides t
 
 Internally, J2Commerce creates a single "variant" record for a Simple product to store the price, stock quantity, and shipping dimensions. This record is invisible to shoppers — it is just how the system stores the data. You manage all of it through the normal product edit form.
 
+**IMPORTANT**: Once you have configured the settings for any product, check to see if those specific items are showing up on the frontend. If they are not, (ie: filters, cross-sells, price, title, etc), then go to your **store** menu and **show or hide** the items you want to control on the frontend. Go to **Menu -> Main Menu -> Store -> Product** tab
+
+![](/img/simple-store-menu.webp)
+
 ## Creating a Simple Product
 
 Every product needs a Joomla article. The article title becomes the product name and the article content is the description shoppers read on the product page.
