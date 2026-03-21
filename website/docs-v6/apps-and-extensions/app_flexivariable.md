@@ -14,6 +14,24 @@ This is ideal for products where not every option combination makes sense. For e
 
 ![](/img/simple-store-menu.webp)
 
+**Note**: Before you can begin setting up a Flex Variant, you need to create all of the **Options** that the product will offer. &#x20;
+
+## Setting Up Options
+
+There are **two** ways you can access Options.&#x20;
+
+**Option a:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Options**
+
+**Option b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Catalog -> Options**
+
+Select **New** to create a new option
+
+Follow the steps in the Options Doc if you need help setting up new options. [https://docs.j2commerce.com/v6/catalog/creating-options](https://docs.j2commerce.com/v6/catalog/creating-options)
+
+![Adding new options](/img/options.webp)
+
+## Configure the Plugin
+
 ## Enable the Plugin
 
 **Option A:** Go to the **J2Commerce** icon at the top right corner -> **Apps**
@@ -73,31 +91,79 @@ There are multiple ways to navigate to the location for creating a new product.
 
 ![](/img/simple-product1.webp)
 
-### Creating a New Product
+### Content tab
 
-<!-- SCREENSHOT: Product edit form with product type dropdown highlighted -->
+![](/img/flex-content.webp)
 
-### Step 2: Set the Product Type
+- Enter a product **title** and **description**.
 
-In the **J2Commerce** tab of the product edit form, locate the **Product Type** field and select **Flexible Variable**.
+- Assign the article to a **category** (the category determines which J2Commerce category listing it appears in).&#x20;
 
-<!-- SCREENSHOT: Product Type dropdown showing "Flexible Variable" selected -->
+- Make sure the **Status** is '**Published'**. Published means it's viewable on the frontend
 
-After selecting Flexible Variable, a new **Variants** section appears below the standard product fields.
+### Configuring the Product
 
-### Step 3: Add Product Options
+![](/img/flex-setup.webp)
 
-Before creating variants, you need to define the options customers will choose from (such as Colour or Size).
+Click on the **J2Commerce** tab to start configuring the product details
 
-1. Scroll to the **Options** section on the product edit form.
-2. Click **Add Option**.
-3. Select an existing option (such as "Colour") from the dropdown, or create a new one.
-4. Repeat for each option dimension your product has.
-5. Click **Save** to save the product before adding variants.
+**Use As Product:** Set this to '**Yes**' to set the product type
 
-<!-- SCREENSHOT: Product Options section showing two options configured -->
+**Product Type:** Set to **Simple** for a single-item product with one price and no variants.
 
-### Step 4: Add Variants
+Click **Save and Continue**
+
+### General tab
+
+![](/img/flex-general.webp)
+
+**Visible in Storefront:** Show or hide the product in storefront listings. Set to **'Yes'** to make it visible to shoppers.
+
+**Brand or Manufacturer:** Links this product to a manufacturer record. Useful for filtering and for the Custom Accordions app's Brand Details feature.
+
+***Note:** You have to set up the Manufacturer details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Manufacturer**, in order for them to appear in the dropdown* menu
+
+**Vendor:** Assigns the product to a vendor. Relevant for multi-vendor setups. Leave blank if you do not use vendors.
+
+***Note:** You have to set up the Vendor's details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Vendors**, in order for them to appear in the dropdown menu*
+
+**Tax Profile:** Assigns a tax profile to this product. The tax profile determines which tax rates apply based on the customer's location. Create tax profiles under **J2Commerce** **->** **Taxes**.
+
+**Cart Button Text:** Customize your cart button name. This will override the default "Add to Cart" button label for this product only. Leave blank to use your store's global button label.
+
+**Product CSS Class:** Adds one or more CSS class names to the product's container element. Useful for per-product styling without modifying template files.
+
+### Images Tab
+
+![](/img/flex-images.webp)
+
+1. On the **Images** tab, click **Upload Image** or drag image files directly into the upload area.
+2. Supported formats: JPG, JPEG, PNG, GIF, WebP, AVIF.
+3. Each upload completes as a card in the gallery.
+
+#### Image Order and the Main Image
+
+![](/img/flex-images1.webp)
+
+The first image in the uploader is the **main product image** — the large image shown on the product detail page and used as the thumbnail in listings. To reorder:
+
+1. Hover over an image card to reveal the left and right arrows.
+2. Click the arrows to move the image to a new position.
+3. Save the product to apply the new order.
+
+#### Automatic Thumbnails
+
+J2Commerce automatically generates resized thumbnail and tiny versions of each uploaded image. These are used in product listings, the cart, and other compact views. No extra configuration is needed — the sizes are set in your store's image configuration.
+
+#### Alt Text
+
+Each image card has an **Alt Text** field. Write a short description such as "Blue ceramic mug, 350ml". Alt text is read by screen readers and used by search engines to understand your images.
+
+#### Removing Images
+
+Clicking **Remove** on a card removes the image from this product but does not delete the file from the server. To delete the file permanently, use the file browser icon in the uploader.
+
+### Variants tab
 
 With options configured and the product saved, scroll to the **Flexible Variable Variants** section.
 
@@ -178,6 +244,8 @@ To remove all variants at once, use the **Delete All Variants** button at the to
 Click **Save** or **Save & Close** to save all variant settings.
 
 <!-- SCREENSHOT: Save button in the toolbar -->
+
+
 
 ## How It Works on the Storefront
 

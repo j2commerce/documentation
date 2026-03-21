@@ -212,8 +212,6 @@ Options must be created first under **J2Commerce** -> **Catalog** -> **Options**
 
 For list-type options (dropdown, radio, checkbox, color), click **Set Values** to open the values panel. Here, you can assign which option values apply to this product and set per-value price and weight modifiers.
 
-
-
 #### Available Option Types
 
 | Type         | What shoppers see                                            |
@@ -247,7 +245,7 @@ Don't forget to choose which option is the default by selecting the **star**
 
 ![](/img/simple-filters1.webp)
 
-### Step 11: Filters Tab
+### Filters Tab
 
 ![](/img/simple-filters2.webp)
 
