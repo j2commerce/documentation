@@ -41,7 +41,11 @@ For production use, restrict your API key to prevent unauthorized use:
 
 ### How to find your API Key again
 
-**Tip:** if you need to find your API Key in the future, go back to this same page and click **Show Key** in the **Additional Information** section
+:::tip
+
+**Tip**: If you need to find your API Key in the future, go back to this same page and click **Show Key** in the **Additional Information** section
+
+:::
 
 ![](/img/api1.webp)
 
