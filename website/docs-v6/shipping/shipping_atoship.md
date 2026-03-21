@@ -450,17 +450,19 @@ Before creating a label, the plugin checks your AtoShip account balance. If the 
 If you have many orders to fulfill at once, you can create shipping labels in bulk from the orders list.
 
 1. Go to **J2Commerce** -> **Sales** -> **Orders**.
+
 2. Check the boxes next to the orders you want to create labels for.
+
 3. Click the **Create AtoShip Labels** button in the toolbar.
 
-
-
-1. The plugin processes each order:
+4. The plugin processes each order:
 
    - For **10 or fewer orders**, labels are created one by one with a progress bar showing the current status (e.g., "3/7").
    - For **more than 10 orders**, the batch is queued for background processing.
-2. When complete, a summary shows how many labels were created and how many failed (if any).
-3. The page reloads to show updated order statuses.
+
+5. When complete, a summary shows how many labels were created and how many failed (if any).
+
+6. The page reloads to show updated order statuses.
 
 :::tip
 

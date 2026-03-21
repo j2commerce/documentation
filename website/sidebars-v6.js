@@ -100,7 +100,7 @@ const sidebars = {
             label: 'Payment Methods',
             link: {
                 type: 'generated-index',
-                slug: '/payment-methods',
+                slug: '/payment-methods', // Custom slug removes /category prefix
             },
             items: [
                 {

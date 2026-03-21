@@ -20,6 +20,10 @@ Every J2Commerce product is attached to a Joomla article. The article provides t
 
 Internally, J2Commerce creates a single "variant" record for a Simple product to store the price, stock quantity, and shipping dimensions. This record is invisible to shoppers — it is just how the system stores the data. You manage all of it through the normal product edit form.
 
+**IMPORTANT**: Once you have configured the settings for any product, check to see if those specific items are showing up on the frontend. If they are not, (ie: filters, cross-sells, price, title, etc), then go to your **store** menu and **show or hide** the items you want to control on the frontend. Go to **Menu -> Main Menu -> Store -> Product** tab
+
+![](/img/simple-store-menu.webp)
+
 ## Creating a Simple Product
 
 Every product needs a Joomla article. The article title becomes the product name and the article content is the description shoppers read on the product page.
@@ -208,6 +212,8 @@ Options must be created first under **J2Commerce** -> **Catalog** -> **Options**
 
 For list-type options (dropdown, radio, checkbox, color), click **Set Values** to open the values panel. Here, you can assign which option values apply to this product and set per-value price and weight modifiers.
 
+
+
 #### Available Option Types
 
 | Type         | What shoppers see                                            |
@@ -229,13 +235,21 @@ For list-type options (dropdown, radio, checkbox, color), click **Set Values** t
 
 #### Price Modifiers on Option Values
 
-![](/img/simple-options3.webp)
+![](/img/simple-options4.webp)
 
 When a shopper selects an option value that has a price modifier, J2Commerce adds (or subtracts) that amount from the product's base price. For example, if the base price is $20 and the "Gift box" option has a +$5 modifier, the cart total for that item becomes $25.
 
+Don't forget to choose which option is the default by selecting the **star**
+
+**Frontend View of Options**
+
+![](/img/simple-options5.webp)
+
+![](/img/simple-filters1.webp)
+
 ### Step 11: Filters Tab
 
-![](/img/simple-filters.webp)
+![](/img/simple-filters2.webp)
 
 Filters allow shoppers to narrow product listings by attribute — for example, filtering by material, color range, or size range. Assigning filters here makes this product appear in the correct filtered results on category and tag pages.
 
@@ -248,15 +262,31 @@ To assign a filter value:
 
 Filters are created and organized under **J2Commerce** -> **Catalog** -> **Filters**.
 
+**Frontend View of Filters on Products**
+
+They will appear under the Specification tab
+
+![](/img/simple-filters3.webp)
+
+The filters section will always appear on the Categories page but will only show up on the individual product pages if you choose to configure the product that way.
+
+**Frontend View of Filters on Categories**
+
+![](/img/simple-filters4.webp)
+
 ### Relations Tab
 
 ![](/img/simple-relations.webp)
 
-**Up-sells:** Products to recommend as upgrades on this product's detail page. Typically shown as "You might also like" with higher-value alternatives.
+**Up-sells:** Products to recommend as upgrades on this product's detail page. Typically shown as "**Add these to your order**" with products that will complement the order. ie: parts for a specific tool, extenders, etc...
 
-**Cross-sells:** Products to suggest as complementary purchases. Typically shown in the cart sidebar or at checkout.
+**Cross-sells:** Products to suggest as complementary purchases or are similar. Typically shown as "**You might also like**" with higher-value alternatives. They can be placed at the bottom of the product page, in the cart sidebar, or at checkout.
 
 To add a related product, start typing its name in the search box. Matching products appear in a dropdown — click one to add it. Remove a related product by clicking the trash icon next to it.
+
+**Frontend View**
+
+![](/img/simple-relations3.webp)
 
 ### Apps Tab
 
@@ -268,12 +298,6 @@ The **Apps** tab shows product-level configuration panels provided by installed 
 - If you have the **Gift Wrapping** app enabled, its per-product settings appear here.
 
 Each app is responsible for its own content on this tab. If no apps are installed, the tab shows an information message.
-
-### Save the Product
-
-Click **Save** or **Save & Close** in the toolbar. J2Commerce saves all tabs in a single operation — pricing, inventory, images, options, and everything else.
-
-After saving, visit the linked Joomla article on the frontend to confirm the product displays correctly with its **Add to Cart** button.
 
 ## How the Product Appears on the Frontend
 
@@ -290,7 +314,7 @@ When a shopper browses a product category or tag page, each Simple product appea
 
 If the product has options with the **Has Options** setting enabled, the option selectors appear directly on the listing card so shoppers can configure and add the product without leaving the category page.
 
-<!-- SCREENSHOT: Product category listing showing two Simple product cards with images, titles, prices, and Add to Cart buttons -->
+![](/img/simple-categories.webp)
 
 ### On the Product Detail Page
 
@@ -304,6 +328,8 @@ Clicking a product card opens the product detail page (the linked Joomla article
 - The **Add to Cart** button
 
 Adding to the cart validates all required options, checks stock availability, and enforces any minimum or maximum quantity restrictions. If a required option is not selected, an error message appears next to that option.
+
+![](/img/simple-product3.webp)
 
 ## Tips
 
@@ -320,14 +346,16 @@ Adding to the cart validates all required options, checks stock availability, an
 
 ### No Add to Cart button appears on the product page
 
-**Cause:** The product's **Visibility** is set to **Hide**, the product is not published, or the linked article is unpublished.
+**Cause:** The product's **Visibility** is set to **'No'** under the **General** tab in the product page, the product is **not published**, or the linked article is **unpublished**.
 
 **Solution:**
 
 1. Go to **J2Commerce** -> **Catalog** -> **Products**.
-2. Open the product and confirm **Status** is **Published** and **Visibility** is set to **Show** on the **General** tab.
+2. Open the product and confirm **Status** is **Published** and **Visibility** is set to **'Yes'** on the **General** tab.
 3. Go to **Content** -> **Articles** and confirm the linked article is published.
-4. Clear the Joomla cache under **System** -> **Clear Cache**.
+4. Clear the Joomla cache under **Home Dashboard ->** **Cache** **-> Delete Cache**
+
+   ![](/img/delete-cache1.webp)
 
 ### Product options are not showing on the category listing
 
@@ -344,9 +372,11 @@ Adding to the cart validates all required options, checks stock availability, an
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Configuration** -> **Image Upload**.
-2. Confirm **Auto-generate Thumbnails** is set to **Yes**.
+1. Go to **J2Commerce** **-> Setup -> Configuration** -> **Image Upload**.
+2. Confirm **Auto-generate Thumbnails** is set to '**Yes'**.
 3. Contact your hosting provider to confirm the PHP GD image library is enabled.
+
+![](/img/simple-images2.webp)
 
 ### Advanced pricing rule is not applying at checkout
 
@@ -354,7 +384,7 @@ Adding to the cart validates all required options, checks stock availability, an
 
 **Solution:**
 
-1. Open the product and click **Advanced Pricing**.
+1. Open the **product** **-> Pricing** tab **->** **Advanced Pricing**.
 2. Check that the **Date From** and **Date To** fields cover today's date, or leave them blank to apply at all times.
 3. Confirm the **Quantity From** value is equal to or below the quantity the customer is ordering.
 4. For customer group rules, verify the customer is logged in and belongs to the correct user group.
@@ -368,12 +398,3 @@ Adding to the cart validates all required options, checks stock availability, an
 1. Go to **J2Commerce** -> **Catalog** -> **Options**.
 2. Open the option and check the **Params** field for minimum length settings.
 3. Adjust the minimum length or remove it if it is not needed.
-
-## Related Topics
-
-- [Product Options](../catalog/options/index.md) — Create and manage reusable option definitions
-- [Filters](../catalog/filters/index.md) — Set up product attributes for storefront filtering
-- [Advanced Pricing](../products/advanced-pricing.md) — Date-based, quantity-tier, and group pricing
-- [Tax Profiles](../taxes/index.md) — Assign tax rates based on customer location
-- [Shipping Settings](../shipping/index.md) — Configure shipping methods and rates
-- [Store Configuration](../configuration/configuration.md) — Global store settings including image upload and inventory defaults
