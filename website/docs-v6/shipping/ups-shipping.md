@@ -128,7 +128,11 @@ Click on the UPS Shipping title to start the configuration
 
 ## Configuration Reference
 
-**Helpful Tip:** Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+:::tip
+
+**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+
+:::
 
 ![](/img/ups-toggle.webp)
 
@@ -243,7 +247,11 @@ The following UPS service codes are supported. Select any combination in the **E
 | 72           | UPS Worldwide Economy DDP     | International economy, duties paid |
 | 96           | UPS Worldwide Express Freight | International freight, palletized  |
 
-Not all services are available for every origin-destination pair. UPS returns only the eligible services for each shipment, so customers will only ever see rates for services that UPS can actually provide.
+:::tip
+
+**Tip**: Not all services are available for every origin-destination pair. UPS returns only the eligible services for each shipment, so customers will only ever see rates for services that UPS can actually provide.
+
+:::
 
 ## Tips
 
