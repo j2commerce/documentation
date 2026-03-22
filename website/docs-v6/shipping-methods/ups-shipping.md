@@ -41,9 +41,9 @@ Upload the plugin ZIP file or use the Install from URL option.
 
 Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
 
-**Option a:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Shipping Methods**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Shipping Methods**
 
-**Option b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
 
 ![shipping method](/img/shipping-methods.webp)
 
@@ -51,9 +51,9 @@ Look for **UPS** Shipping, click the **X,** and it will turn into a green chec
 
 ![](/img/shipping-methods-enable.webp)
 
-:::note
+:::info
 
-NOTE: Before you can start configuring the plugin, you will need your API Credentials from UPS. &#x20;
+**NOTE**: Before you can start configuring the plugin, you will need your API Credentials from UPS. &#x20;
 
 :::
 
