@@ -24,7 +24,7 @@ This is ideal for products where not every option combination makes sense. For e
 
 ![](/img/simple-store-menu.webp)
 
-:::note
+:::info
 
 NOTE: Before you can begin setting up a Flex Variant, you need to create all of the **Options** that the product will offer. &#x20;
 
@@ -133,7 +133,7 @@ Click **Save and Continue**
 
 **Brand or Manufacturer:** Links this product to a manufacturer record. Useful for filtering and for the Custom Accordions app's Brand Details feature.
 
-:::note
+:::info
 
 NOTE: Y*ou have to set up the Manufacturer details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Manufacturer**, in order for them to appear in the dropdown* menu&#x20;
 
@@ -141,7 +141,7 @@ NOTE: Y*ou have to set up the Manufacturer details in **both*** *an **Article***
 
 **Vendor:** Assigns the product to a vendor. Relevant for multi-vendor setups. Leave blank if you do not use vendors.
 
-:::note
+:::info
 
 NOTE: *You have to set up the Vendor's details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Vendors**, in order for them to appear in the dropdown menu*&#x20;
 
@@ -280,10 +280,9 @@ One variant should be marked as the default. The default variant's price and sto
 To set the default:
 
 1. Expand the variant you want to be the default.
-2. Click the **Set Default** button in the variant's action area.
-3. The variant row shows a green **Default** badge.
+2. Click the star to **set the default** button in the variant's action area.
 
-To change the default, click **Unset Default** on the current default variant, then **Set Default** on another.
+You can change the default item by clicking the star on another variant.
 
 ![](/img/flex-variants-default.webp)
 
@@ -353,7 +352,7 @@ When a customer views a Flexible Variable product page:
 2. As the customer changes their selection, the page updates via AJAX — no page reload.
 3. The price, SKU, stock status, weight, and product image update instantly to reflect the selected variant.
 4. If **Option Required** is enabled and no matching variant exists for the chosen combination, the customer cannot add the item to the cart.
-5. If a default variant is set, the page pre-loads that variant's details on first visit.
+5. If a default variant is set, the page pre-loads that variant's details on the first visit.
 
 ## Frontend View
 
