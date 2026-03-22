@@ -44,7 +44,7 @@ Before configuring the plugin, you need an AtoShip account with API credentials.
 
    ![](/img/ato-api1.webp)
 
-:::note
+:::info
 
 NOTE: Keep both keys handy — you will enter them in the plugin settings below.&#x20;
 
@@ -72,9 +72,9 @@ The plugin installs and enables automatically. All you have to do now is set it 
 
 There are **two** ways you can access the Plugin.&#x20;
 
-**Option a:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Shipping Methods**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Shipping Methods**
 
-**Option b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
 
 ![](/img/atoship-app.webp)
 
@@ -88,7 +88,11 @@ There are **two** ways you can access the Plugin.&#x20;
 
 Once you click on the **AtoShip** Title next to the green checkmark, you are ready to start setting up the parameters.
 
+:::tip
+
 **Helpful Tip:** Click on the **Toggle Inline Help** button on any app/plugin you install and it will show a description below each section. See image below
+
+:::
 
 ![](/img/atoship-toggle.webp)
 
@@ -126,9 +130,9 @@ The ship-from address is your warehouse or business location. AtoShip uses this 
 
 All five fields are required. Save the plugin after filling it in — the service discovery tool relies on this address.
 
-:::caution
+:::info
 
-Make sure your state code is the standard 2-letter abbreviation (e.g., `CA` for California, `NY` for New York, `TX` for Texas). Using the full state name will cause rate calculation errors.
+IMPORTANT: Make sure your state code is the standard 2-letter abbreviation (e.g., `CA` for California, `NY` for New York, `TX` for Texas). Using the full state name will cause rate calculation errors.
 
 :::
 
@@ -140,7 +144,7 @@ The **Allowed Carriers** section shows four carrier cards with logos: **USPS**, 
 
 :::tip
 
-Start with one or two carriers to keep the checkout simple. You can always add more later.
+**TIP**: Start with one or two carriers to keep the checkout simple. You can always add more later.
 
 :::
 
@@ -178,9 +182,7 @@ You **must** click both **Apply Selection** and then **Save** the plugin. If you
 
 ### Show Delivery Time
 
-| Setting                | Description                                                                                                           | Default |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Show Delivery Time** | When set to **Yes**, estimated delivery days appear below each shipping option at checkout (e.g., "3 Business Days"). |         |
+**Show Delivery Time:** When set to **Yes**, estimated delivery days appear below each shipping option at checkout (e.g., "3 Business Days").
 
 ### Set Package Defaults
 
@@ -311,9 +313,9 @@ Once you are satisfied with testing:
 
 Your store is now using real AtoShip rates and can create real shipping labels.
 
-:::note
+:::info
 
-Note: Make sure you have funds in your AtoShip account before creating live shipping labels. The plugin checks your balance before each label purchase and will alert you if the balance is insufficient.
+**Note**: Make sure you have funds in your AtoShip account before creating live shipping labels. The plugin checks your balance before each label purchase and will alert you if the balance is insufficient.
 
 :::
 
@@ -439,9 +441,9 @@ If you need to cancel a shipping label (e.g., the order was cancelled or you nee
 
 The label status changes to **Voided** (dark badge) and the void button is removed. You can then create a new label if needed.
 
-:::note
+:::info
 
-Note: Voiding a label may not be possible after the carrier has scanned the package. Check your AtoShip account for carrier-specific void policies.
+**Note**: Voiding a label may not be possible after the carrier has scanned the package. Check your AtoShip account for carrier-specific void policies.
 
 :::
 
@@ -470,7 +472,7 @@ If you have many orders to fulfill at once, you can create shipping labels in bu
 
 :::tip
 
-Batch label creation uses the carrier and service that each customer selected at checkout, along with the default package dimensions from your plugin configuration. If you need to customize dimensions for specific orders, create those labels individually.
+**TIP**: Batch label creation uses the carrier and service that each customer selected at checkout, along with the default package dimensions from your plugin configuration. If you need to customize dimensions for specific orders, create those labels individually.
 
 :::
 
@@ -538,7 +540,7 @@ Each time the cron runs, it checks tracking for up to **Tracking Poll Limit** (d
 
 :::tip
 
-You can use both webhooks and cron together. Webhooks provide instant updates for most events, while the cron job acts as a safety net for any missed webhook deliveries.
+**Tip**: You can use both webhooks and cron together. Webhooks provide instant updates for most events, while the cron job acts as a safety net for any missed webhook deliveries.
 
 :::
 
