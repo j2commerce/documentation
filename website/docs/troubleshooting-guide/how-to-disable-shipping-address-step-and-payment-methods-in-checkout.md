@@ -1,5 +1,5 @@
 ---
-description: J2Commerce (formerly known as J2Store)
+
 ---
 
 # How to disable shipping address and payment in checkout

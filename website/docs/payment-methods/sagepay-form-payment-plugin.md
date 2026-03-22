@@ -1,5 +1,5 @@
 ---
-description: J2Commerce (formerly known as J2Store)
+
 ---
 
 # Sagepay Form Payment Plugin

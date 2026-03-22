@@ -1,6 +1,6 @@
 ---
 slug: /advanced-cart/advanced-cart-guide
-description: J2Commerce (formerly known as J2Store)
+
 ---
 
 # Advanced Cart

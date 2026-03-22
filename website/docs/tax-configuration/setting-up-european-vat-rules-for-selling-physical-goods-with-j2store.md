@@ -1,5 +1,5 @@
 ---
-description: J2Commerce (formerly known as J2Store)
+
 ---
 
 # Setting up European VAT Rules for Selling Physical Goods with J2Commerce

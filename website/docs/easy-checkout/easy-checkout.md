@@ -1,6 +1,6 @@
 ---
 slug: /easy-checkout/easy-checkout-guide
-description: J2Commerce (formerly known as J2Store)
+
 ---
 
 # Easy checkout

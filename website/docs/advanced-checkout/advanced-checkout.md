@@ -1,6 +1,6 @@
 ---
 slug: /advanced-checkout/advanced-checkout-guide
-description: J2Commerce (formerly known as J2Store)
+
 ---
 
 # Advanced Checkout

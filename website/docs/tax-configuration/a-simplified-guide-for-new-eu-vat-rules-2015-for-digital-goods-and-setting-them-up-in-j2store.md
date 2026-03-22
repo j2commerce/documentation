@@ -1,5 +1,5 @@
 ---
-description: J2Commerce (formerly known as J2Store)
+
 ---
 
 # A simplified guide for the New EU VAT rules 2015 for digital goods and setting them up in J2Commerce
