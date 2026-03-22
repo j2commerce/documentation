@@ -114,7 +114,7 @@ The date filter controls which orders are included in the **KPI cards** and the 
 
 Clicking a preset button immediately sets the From and To fields and triggers a refresh.
 
-:::note
+:::info
 
 NOTE: When you click on 1/7/30/90 days, the date range and number of days will automatically change. See the image below.
 
@@ -256,7 +256,7 @@ The chart-area positions (`main-tab` and `side-tab`) always maintain their 2/3 a
 
 1. In the Joomla administrator, go to **System -> Manage -> Administrator Modules**&#x20;
 
-   :::note
+   :::info
 
    NOTE: Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
    :::
@@ -318,7 +318,7 @@ Each icon can be individually shown or hidden in the module's parameters. To con
 
 1. Go to **System -> Manage -> Administrator Modules**.&#x20;
 
-   :::note
+   :::info
    NOTE: Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
    :::
 
@@ -344,7 +344,7 @@ Each icon tile can include:
 - An optional badge count that updates automatically via AJAX polling
 
 
-:::note
+:::info
 NOTE: If no plugins provide icons for this section, it does not appear.&#x20;
 :::
 
@@ -387,7 +387,7 @@ The **J2Commerce Latest Orders** module shows a table of the most recent orders.
 
 To configure this module, go to **System -> Manage -> Administrator Modules,** search for **J2Commerce Latest Orders**, and adjust the parameters.&#x20;
 
-:::note
+:::info
 
 NOTE: Another way to get there is in the sidebar, go to **Content** **-> Administrator Modules**, (depending on your Joomla version)
 
@@ -478,7 +478,7 @@ The dashboard uses the time zone configured in **System -> Global Configuration 
 
 All order timestamps are stored in UTC in the database. When you select a date range, the dashboard converts your local-time day boundaries to UTC before querying the database.&#x20;
 
-:::note
+:::info
 
 NOTE: UTC is set as the default; however, it is recommended that you change it to your timezone in the dropdown. It is also recommended to set up your time zone here before you start receiving orders, so all of your reports are on the same time zone from the beginning.
 
