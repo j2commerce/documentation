@@ -51,9 +51,9 @@ Look for **UPS** Shipping, click the **X,** and it will turn into a green chec
 
 ![](/img/shipping-methods-enable.webp)
 
-:::info
+:::note
 
-**NOTE**: Before you can start configuring the plugin, you will need your API Credentials from UPS. &#x20;
+NOTE: Before you can start configuring the plugin, you will need your API Credentials from UPS. &#x20;
 
 :::
 
