@@ -10,6 +10,12 @@ This is ideal for products where not every option combination makes sense. For e
 - Joomla! 6.x
 - J2Commerce 6.x
 
+## How Flex Variable Products Differ from Other Types
+
+**Variable:** Best for products where every size/color combo is tracked separately
+
+**Configurable:** Best for complex product families needing full independent catalog entries
+
 :::tip
 
 **IMPORTANT**: Once you have configured the settings for any product, check to see if those specific items are showing up on the frontend. If they are not, (ie: filters, cross-sells, price, title, etc), then go to your **store** menu and **show or hide** the items you want to control on the frontend. Go to **Menu -> Main Menu -> Store -> Product** tab
@@ -37,8 +43,6 @@ Select **New** to create a new option
 Follow the steps in the Options Doc if you need help setting up new options. [https://docs.j2commerce.com/v6/catalog/creating-options](https://docs.j2commerce.com/v6/catalog/creating-options)
 
 ![Adding new options](/img/options.webp)
-
-## Configure the Plugin
 
 ## Enable the Plugin
 
