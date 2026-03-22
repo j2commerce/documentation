@@ -34,11 +34,11 @@ Every product needs a Joomla article. The article title becomes the product name
 
 There are multiple ways to navigate to the location for creating a new product.
 
-**Option a:** Go to **Content** **-> Articles -> New**.
+**Option A:** Go to **Content** **-> Articles -> New**.
 
 ![](/img/simple.webp)
 
-**Option b:** Or go to **J2Commerce -> Catalog  -> Product -> New**
+**Option B:** Or go to **J2Commerce -> Catalog  -> Product -> New**
 
 ![](/img/simple-product1.webp)
 
@@ -76,7 +76,7 @@ Click **Save and Continue**
 
 **Brand or Manufacturer:** Links this product to a manufacturer record. Useful for filtering and for the Custom Accordions app's Brand Details feature.
 
-:::note
+:::info
 
 NOTE: *You have to set up the Manufacturer details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Manufacturer**, in order for them to appear in the dropdown* menu
 
@@ -84,7 +84,7 @@ NOTE: *You have to set up the Manufacturer details in **both*** *an **Article***
 
 **Vendor:** Assigns the product to a vendor. Relevant for multi-vendor setups. Leave blank if you do not use vendors.
 
-:::note
+:::info
 
 NOTE: Y*ou have to set up the Vendor's details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Vendors**, in order for them to appear in the dropdown menu*
 
@@ -222,13 +222,13 @@ Options must be created first under **J2Commerce** -> **Catalog** -> **Options**
 
 ![](/img/simple-options2.webp)
 
-For list-type options (dropdown, radio, checkbox, color), click **Set Values** to open the values panel. Here, you can assign which option values apply to this product and set per-value price and weight modifiers.
+For list-type options (dropdown, radio, checkbox, color), click **Set Option Values** to open the values panel. Here, you can assign which option values apply to this product and set per-value price and weight modifiers.
 
 #### Available Option Types
 
 | Type         | What shoppers see                                            |
 | ------------ | ------------------------------------------------------------ |
-| **Text**     | A single-line text input (for example, engraving message)    |
+| **Text**     | A single-line text input (for example, engraving a message)  |
 | **Textarea** | A multi-line text input (for example, delivery instructions) |
 | **Select**   | A dropdown list of choices                                   |
 | **Radio**    | Radio buttons for a single choice                            |
@@ -361,7 +361,7 @@ Adding to the cart validates all required options, checks stock availability, an
 **Solution:**
 
 1. Go to **J2Commerce** -> **Catalog** -> **Products**.
-2. Open the product and confirm **Status** is **Published** and **Visibility** is set to **'Yes'** on the **General** tab.
+2. Open the product and confirm that the **Status** is **Published** and **Visibility** is set to **'Yes'** on the **General** tab.
 3. Go to **Content** -> **Articles** and confirm the linked article is published.
 4. Clear the Joomla cache under **Home Dashboard ->** **Cache** **-> Delete Cache**
 
