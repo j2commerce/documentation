@@ -1,10 +1,3 @@
----
-title: "Variable Products"
-sidebar_label: "Variable Products"
-sidebar_position: 30
-description: "Create products with multiple options like Size and Color where each combination automatically becomes its own variant with its own price, SKU, stock, and image."
----
-
 # Variable Products
 
 A Variable product lets you sell one product in multiple variations — for example, a T-shirt in different sizes and colors. You define the options (Size, Color), assign which values each option can take, and J2Commerce automatically generates every possible combination as a separate **variant**. Each variant can have its own price, SKU, stock level, weight, and image.
@@ -23,36 +16,75 @@ With Variable products, the variant generation is automatic — you do not creat
 
 ## Requirements
 
-- J2Commerce 6.x installed and configured
-- At least one Option defined under **J2Commerce** -> **Catalog** -> **Options**
+- PHP 8.3+
+- Joomla! 6.x
+- J2Commerce 6.x
 
-## Step 1: Create Your Options First
+:::tip
 
-Before creating a Variable product, you need at least one Option (like "Size" or "Color") defined in the Options catalog. Options are shared across products.
+**IMPORTANT**: Once you have configured the settings for any product, check to see if those specific items are showing up on the frontend. If they are not, (ie: filters, cross-sells, price, title, etc), then go to your **store** menu and **show or hide** the items you want to control on the frontend. Go to **Menu -> Main Menu -> Store -> Product** tab
 
-1. Go to **J2Commerce** -> **Catalog** -> **Options**.
-2. If no options exist yet, click **New** and create your option (for example, Name: `Size`, Type: `select`).
-3. Add the option values (Small, Medium, Large) to the option.
-4. Repeat for each option you plan to use (e.g., create a separate "Color" option with values Red, Blue, Green).
+:::
 
-<!-- SCREENSHOT: J2Commerce Options list showing Size and Color options -->
+![](/img/simple-store-menu.webp)
+
+:::note
+
+NOTE: Before you can begin setting up a Variant, you need to create all of the **Options** that the product will offer. &#x20;
+
+:::
+
+## Setting Up Options
+
+There are **two** ways you can access Options.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Options**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Catalog -> Options**
+
+![Adding new options](/img/options.webp)
+
+Select **New** to create a new option. (for example, Name: `Size`, Type: `select`).
+
+Add the option values (Small, Medium, Large) to the option
+
+Repeat for each option you plan to use (e.g., create a separate "Color" option with values Red, Blue, Green).
 
 You only need to do this once. The same options can be reused across many products.
 
-## Step 2: Create the Product Article
+Follow the steps in the Options Doc if you need help setting up new options. [https://docs.j2commerce.com/v6/catalog/creating-options](https://docs.j2commerce.com/v6/catalog/creating-options)
+
+## Create a New Product Article
 
 Variable products in J2Commerce are attached to Joomla articles.
 
-1. Go to **Content** -> **Articles** -> **New**.
-2. Give the article a title (e.g., "Classic T-Shirt").
-3. Add your product description in the article body.
-4. Set the article **State** to **Published**.
-5. Assign the article to the appropriate category.
-6. Click **Save & Close**.
+There are **many** ways you can access products or articles.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Products ->** **New**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Products ->** **New**
+
+**Option C:** Go to **Content -> Articles ->** **New**
+
+![](/img/variant-product.webp)
+
+## Setting up the Product
+
+### Content tab
+
+Give the article a title (e.g., "Classic T-Shirt").
+
+Add your product description in the article body.
+
+Set the article's **state** to **Published**.
+
+Assign the article to the appropriate category.
+
+Click **Save & Close**.
 
 ## Step 3: Add J2Commerce Details to the Article
 
-1. Go to **Content** -> **Articles** and open the article you just created.
+1. Go to **Content** **-> Articles** and open the article you just created.
 2. Scroll down to find the **J2Commerce** section below the article editor.
 3. In the **Product Type** dropdown, select **Variable**.
 
