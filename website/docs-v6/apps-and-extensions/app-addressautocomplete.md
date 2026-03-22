@@ -69,9 +69,9 @@ Upload the plugin ZIP file or use the Install from URL option.
 
 Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-**Option a:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-**Option b:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
 ![](/img/address-apps.webp)
 

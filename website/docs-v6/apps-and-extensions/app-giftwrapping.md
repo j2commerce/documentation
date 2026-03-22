@@ -32,9 +32,9 @@ Upload the plugin ZIP file or use the Install from URL option.
 
 Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-**Option a:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-**Option b:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
 ![](/img/gift-wrap-apps.webp)
 
@@ -56,7 +56,7 @@ Click on the **Gift Wrapping** Title to open it.
 
 **Step Position:** Where in the checkout flow the gift wrapping step appears.&#x20;
 
-:::note
+:::info
 
 NOTE: The gift wrapping step can appear at different points in the checkout flow
 

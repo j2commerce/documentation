@@ -70,178 +70,267 @@ There are **many** ways you can access products or articles.&#x20;
 
 ## Setting up the Product
 
-### Content tab
+![](/img/variant-content.webp)
 
 Give the article a title (e.g., "Classic T-Shirt").
 
-Add your product description in the article body.
+Add your product **description** in the article body.&#x20;
+
+:::info
+
+**Note**: The intro description above the red 'Read More' line will appear under the main title of the product. The main description will appear under the description tab below the product&#x20;
+
+:::
+
+The intro description above the red 'Read More' line will appear under the main title of the product. The main description will appear under the description tab below the product&#x20;
 
 Set the article's **state** to **Published**.
 
-Assign the article to the appropriate category.
+Assign the article to the appropriate **category**.
 
-Click **Save & Close**.
+**Frontend View**
 
-## Step 3: Add J2Commerce Details to the Article
+![](/img/variant-frontend-content.webp)
 
-1. Go to **Content** **-> Articles** and open the article you just created.
-2. Scroll down to find the **J2Commerce** section below the article editor.
-3. In the **Product Type** dropdown, select **Variable**.
+## Add J2Commerce Details to the Article
 
-<!-- SCREENSHOT: Article edit screen showing Product Type dropdown set to Variable -->
+![](/img/variant-type.webp)
 
-The variable product form appears with several tabs.
+Open the **Product** Article **-> J2Commerce** tab
 
-## Step 4: Fill In the General Tab
+**Use as Product:** Select '**Yes**'
+
+In the **Product Type** dropdown, select **Variable**.
+
+Click **Save and Continue**
+
+### General Tab
 
 The **General** tab sets product-wide settings that apply to the whole product, not individual variants.
 
-<!-- SCREENSHOT: Variable product General tab -->
+![](/img/variant-general.webp)
 
-| Field                     | Description                                                | Default |
-| ------------------------- | ---------------------------------------------------------- | ------- |
-| **Visible in Storefront** | Show or hide this product in the store catalog.            | Yes     |
-| **Manufacturer**          | Link the product to a manufacturer.                        | —       |
-| **Vendor**                | Assign to a vendor (if using multi-vendor).                | —       |
-| **Tax Profile**           | Apply a tax profile for calculating taxes on this product. | —       |
-| **Add to Cart Text**      | Customize the text on the add-to-cart button.              | —       |
-| **Custom CSS Class**      | Add a CSS class to the product wrapper for custom styling. | —       |
+**Visible in Storefront:** Show or hide the product in storefront listings. Set to **'Yes'** to make it visible to shoppers.
 
-Click **Save** after filling in the General tab. You must save the product before you can add options in the next step.
+**Brand or Manufacturer:** Links this product to a manufacturer record. Useful for filtering and for the Custom Accordions app's Brand Details feature.
 
-## Step 5: Upload Product Images
+:::info
 
-Click the **Images** tab to upload the main product image and any additional gallery images.
+NOTE: Y*ou have to set up the Manufacturer details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Manufacturer**, in order for them to appear in the dropdown* menu&#x20;
+
+:::
+
+**Vendor:** Assigns the product to a vendor. Relevant for multi-vendor setups. Leave blank if you do not use vendors.
+
+:::info
+
+NOTE: *You have to set up the Vendor's details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Vendors**, in order for them to appear in the dropdown menu*&#x20;
+
+:::
+
+**Tax Profile:** Assigns a tax profile to this product. The tax profile determines which tax rates apply based on the customer's location. Create tax profiles under **J2Commerce** **->** **Taxes**.
+
+**Cart Button Text:** Customize your cart button name. This will override the default "Add to Cart" button label for this product only. Leave blank to use your store's global button label.
+
+**Product CSS Class:** Adds one or more CSS class names to the product's container element. Useful for per-product styling without modifying template files.
+
+### Image tab
+
+![](/img/variant-images.webp)
+
+On the **Images** tab, click **Upload Image** or drag image files directly into the upload area.
+
+- Supported formats: JPG, JPEG, PNG, GIF, WebP, AVIF.
 
 - The main image appears on the product detail page and in category listings.
+
 - Gallery images appear in the image gallery on the product page.
+
 - Individual variants can also have their own images — you set those later.
 
-<!-- SCREENSHOT: Images tab showing main image upload and gallery -->
+Frontend View
 
-Click **Save** before moving to the Variants tab.
+![](/img/variant-frontend-images1.webp)
 
-## Step 6: Add Options and Generate Variants
+#### **Image Order and the Main Image**
+
+![](/img/variant-images1.webp)
+
+The first image in the uploader is the **main product image** — the large image shown on the product detail page and used as the thumbnail in listings. To reorder:
+
+1. Hover over an image card to reveal the left and right arrows.
+2. Click the arrows to move the image to a new position.
+3. Save the product to apply the new order.
+
+#### **Automatic Thumbnails**
+
+J2Commerce automatically generates resized thumbnails and tiny versions of each uploaded image. These are used in product listings, the cart, and other compact views. No extra configuration is needed — the sizes are set in your store's image configuration.
+
+#### **Alt Text**
+
+Each image card has an **Alt Text** field. Write a short description such as "Blue ceramic mug, 350ml". Alt text is read by screen readers and used by search engines to understand your images.
+
+#### **Removing Images**
+
+Clicking **Remove** on a card removes the image from this product but does not delete the file from the server. To delete the file permanently, use the file browser icon in the uploader.
+
+### Creating Variants
 
 The **Variants** tab is where the core Variable product workflow happens. It has two sections: **Options** at the top and **Variants** below.
 
-### Add Options to the Product
+### Add Options to the Variant
 
 The Options section shows which options define the combinations for this product.
 
-<!-- SCREENSHOT: Variants tab — Options section showing empty state and the option selector dropdown -->
+![](/img/variant-options2.webp)
 
 1. In the **Search and Add Variant Option** dropdown, select the first option (e.g., "Size").
-2. Click **Add**.
+2. Click **Add Option**.
 3. The option appears in the table. Repeat to add more options (e.g., "Color").
 
 You can set an ordering number for each option to control which option the customer sees first.
 
+:::info
+
 **Note:** If no options exist yet, a warning appears with a link to create options. You must first create options under **J2Commerce** -> **Catalog** -> **Options**.
+
+:::
 
 ### Set Option Values for This Product
 
-After adding an option that uses a dropdown (select), radio, or color type, a **Set Values** button appears next to it.
+After adding an option that uses a dropdown (select), radio, or color type, a **Set Option Values** button appears next to it.
 
-<!-- SCREENSHOT: Options table row showing the Set Values button next to the Size option -->
+![](/img/variant-options.webp)
 
-1. Click **Set Values** next to an option.
+1. Click **Set Option Values** next to an option.
 2. A panel opens showing all available values for that option.
-3. Click **Add All** to include every value, or add values individually.
-4. For each value you can set:
+3. Click **Add All** to include every value, or add values **individually**.
 
-   - **Price adjustment** — add or subtract from the variant price (+ or -)
-   - **Weight adjustment** — add or subtract from the variant weight (+ or -)
-   - **Ordering** — control the display order of values
-   - **Default** — mark one value as the pre-selected default (star icon)
-5. Click **Save Changes** when done.
-6. Repeat for every option on the product.
-
-<!-- SCREENSHOT: Set Values panel showing option values with price and weight adjustments -->
+   ![](/img/variant-options1.webp)
+4. Click **Save Changes** when done.
+5. Repeat for **every option on the product.**
 
 ### Generate Variants
 
-Once options and their values are configured, J2Commerce can generate all possible combinations.
+Once options and their values are configured, J2Commerce can generate **all possible combinations.** You can delete the individual ones that won't apply to your product
 
-1. In the **Variants** section below the Options table, click **Generate Variants**.
-2. Confirm the prompt. J2Commerce creates one variant for every combination of option values.
+![](/img/variant-generate.webp)
 
-For example, if Size has 3 values (S, M, L) and Color has 2 values (Red, Blue), J2Commerce generates 6 variants: S/Red, S/Blue, M/Red, M/Blue, L/Red, L/Blue.
+In the **Variants** section below the Options table, click **Generate Variants**.
 
-<!-- SCREENSHOT: Variants section after generation showing accordion list of generated variants -->
+Confirm the prompt
+
+For example, if Size has 3 values (S, M, L) and Color has 2 values (White, Grey), J2Commerce generates 6 variants: S/White, S/Grey, M/White, M/Grey, L/White, L/Grey.
+
+![](/img/variant-generate4.webp)
 
 The variants appear as an accordion list. Each variant is collapsible.
 
-## Step 7: Configure Individual Variants
+**Frontend Product View of Options**
 
-Every generated variant can be expanded and configured independently. Click a variant row to expand it.
+![](/img/variant-frontend-options.webp)
 
-<!-- SCREENSHOT: A single variant accordion expanded showing all tabs -->
+**Frontend Category View of Options**
+
+:::info
+
+**Note:** Below the category title will appear the variant options with a dropdown arrow, allowing the customer to view all options without leaving the category page
+
+:::
+
+![](/img/variant-frontend-category1.webp)
+
+## Configure Individual Variants
+
+Every generated variant can be expanded and configured independently.&#x20;
+
+To **open/close** them individually, click on the **up/down** arrow on the **left** **of the titles.**
+
+To **open/close** them all at the same time, click on the **up/down** arrow in the **top right corner**.&#x20;
+
+![](/img/variant-generate6.webp)
 
 Each variant has four configuration sections:
 
-### General (Price and SKU)
+### General Section
 
-| Field                  | Description                                                                                                                      |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| **SKU**                | Unique stock-keeping unit code for this variant. Leave blank to inherit from the product.                                        |
-| **UPC**                | Universal product code (barcode number). Optional.                                                                               |
-| **Regular Price**      | The selling price for this specific variant.                                                                                     |
-| **Advanced Pricing**   | Open the advanced pricing panel to set quantity-based pricing, customer-group pricing, or date-range discounts for this variant. |
-| **Pricing Calculator** | Choose the pricing method. Standard is the default.                                                                              |
+![](/img/variant-generate-general.webp)
 
-<!-- SCREENSHOT: Variant General section showing SKU, price, and advanced pricing button -->
+**SKU:** The unique stock-keeping unit code for this variant. Filled automatically with a default value; update it to match your inventory system.
 
-### Inventory
+**UPC:** Optional barcode or Universal Product Code for this variant.
 
-| Field                     | Description                                                                                                        | Default       |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------- |
-| **Manage Stock**          | Enable stock tracking for this variant.                                                                            | No            |
-| **Quantity**              | Number of units in stock.                                                                                          | 0             |
-| **Allow Backorders**      | Whether customers can buy this variant when out of stock. Options: Do Not Allow, Allow, Allow but Notify Customer. | Do Not Allow  |
-| **Stock Status**          | Manually mark this variant as In Stock or Out of Stock (used when stock tracking is off).                          | In Stock      |
-| **Notify Quantity**       | Send a low-stock notification when stock reaches this number.                                                      | Store default |
-| **Quantity Restriction**  | Limit how many units a customer can buy per order.                                                                 | No            |
-| **Maximum Sale Quantity** | Maximum units per order when quantity restriction is on.                                                           | Store default |
-| **Minimum Sale Quantity** | Minimum units per order when quantity restriction is on.                                                           | Store default |
+**Regular Price:** The selling price for this specific variant. Each variant can have a different price.
 
-<!-- SCREENSHOT: Variant Inventory section showing manage stock toggle and quantity fields -->
+**Advanced Pricing:** Opens a modal to configure sale prices, customer-group pricing, or date-range discounts for this variant.
 
-### Shipping
+**Pricing Calculator:** Controls how the price is calculated at checkout. Leave set to **Standard** unless you have a custom pricing calculator plugin.
 
-| Field               | Description                                        | Default |
-| ------------------- | -------------------------------------------------- | ------- |
-| **Enable Shipping** | Whether this variant requires shipping.            | No      |
-| **Weight**          | Variant weight for shipping calculations.          | —       |
-| **Weight Class**    | Unit of measurement (kg, lb, etc.).                | —       |
-| **Dimensions**      | Length, width, height of this variant.             | —       |
-| **Length Class**    | Unit of measurement for dimensions (cm, in, etc.). | —       |
+**Frontend View - General Section**
 
-<!-- SCREENSHOT: Variant Shipping section -->
+![](/img/variant-frontend-general1.webp)
+
+### Shipping Section
+
+![](/img/variant-generate-shipping.webp)
+
+**Enable Shipping:** Set to **Yes** if this variant is a physical item that requires shipping. Set to **No** for digital or service variants.
+
+**Length Class:** The unit of measurement for dimensions (e.g., centimetre, inch).
+
+**Dimensions:** The physical dimensions of the variant: length, width, and height. Used by shipping rate calculators.
+
+**Weight:** The physical weight of this variant.
+
+**Weight Class:** The unit of measurement for weight (e.g., kilogram, pound).
+
+### Inventory Section
+
+![](/img/variant-generate-inventory.webp)
+
+**Manage Stock:** Select '**Yes**' to track stock levels for this variant. If you have an unlimited inventory supply, then you don't need to manage stock quantity
+
+**Quantity:** Current stock quantity for this variant.
+
+**Allow Backorders:** Whether customers can order this variant when it is out of stock.
+
+**Stock Status:** Manual override for whether the variant shows as in-stock or out-of-stock.
+
+**Notify Quantity:** Send a low-stock notification when the quantity drops to this number.
+
+**Quantity Restriction:** Limit how many units a customer can purchase in one order.
+
+**Max Sale Quantity:** Maximum units per order, when Quantity Restriction is enabled.
+
+**Min Sale Quantity:** Minimum units per order.
 
 ### Image
 
+![](/img/variant-generate-images.webp)
+
+:::tip
+
+**Tip:** Each variant can have its own individual images. This is very helpful to the customer to see the differences in the options. ie: color, flavor, size, etc. When the customer selects a specific option on the product page, the corresponding image will appear.
+
+:::
+
+**Main Image:** The primary image shown when a customer selects this variant combination.
+
+**Use Main Image as Thumbnail:** When enabled, the product's main image is used as the thumbnail for this variant instead of a variant-specific image.
+
 Each variant can have its own main image and gallery images. This is useful when Red and Blue variants look completely different.
 
-| Field                | Description                                                               |
-| -------------------- | ------------------------------------------------------------------------- |
-| **Main Image**       | The primary image shown when a customer selects this variant combination. |
-| **Use as Thumbnail** | Whether the variant main image also replaces the product thumbnail.       |
-| **Gallery Images**   | Additional images shown when this variant is selected.                    |
+**Frontend View of the image changing depending on which option is selected**
 
-<!-- SCREENSHOT: Variant Image section showing an uploaded variant-specific image -->
+![](/img/variant-frontend-images.webp)
 
-## Step 8: Set a Default Variant
+## Set a Default Variant
 
-One variant can be marked as the default — this is the combination shown and priced when the product page first loads.
+![](/img/variant-generate5.webp)
 
-In the variant list, click the star icon on the variant you want as the default. A filled star indicates the default variant.
+One variant needs to be marked as the default — this is the combination shown and priced when the product page first loads.
 
-<!-- SCREENSHOT: Variant list showing star icons, one filled to indicate the default -->
-
-## Step 9: Save the Product
-
-Click **Save** or **Save & Close** in the Joomla toolbar to save all variants and their settings.
+In the variant list, click the star icon on the variant you want as the default. A filled star indicates the default variant. You can change the default item by clicking the star on another variant.
 
 ## Managing Variants Over Time
 
@@ -249,9 +338,13 @@ As your product line evolves, you may need to update variants.
 
 ### Regenerating Variants
 
+![](/img/variant-regenerate.webp)
+
 If you add a new option value later (e.g., a new color), click **Regenerate Variants** in the Variants tab. J2Commerce adds new combinations for the new value while preserving existing variants and their prices, stock, and images.
 
 ### Deleting Variants
+
+![](/img/variant-delete1.webp)
 
 - To delete a single variant: expand it and click the delete button.
 - To delete multiple variants: check the checkboxes and click the delete button in the toolbar.
@@ -261,17 +354,65 @@ If you add a new option value later (e.g., a new color), click **Regenerate Vari
 
 If a product has many variants, they are paginated. Use the page numbers below the accordion list to navigate between pages.
 
+### Filters Tab
+
+Filters allow shoppers to narrow product listings by attribute — for example, filtering by material, color range, or size range. Assigning filters here makes this product appear in the correct filtered results on category and tag pages.
+
+To assign a filter value:
+
+1. Type part of the filter name in the search box. Results appear in a dropdown.
+2. Click the matching result to add it to the product.
+3. Repeat for each filter value you want to assign.
+4. To remove a filter, click the trash icon next to it.
+
+Filters are created and organized under **J2Commerce** -> **Catalog** -> **Filters**.
+
+**Frontend View of Filters on Products**
+
+They will appear under the **Specification** tab
+
+![](/img/variant-frontend-filters.webp)
+
+The filters section will always appear on the Categories page but will only show up on the individual product pages if you choose to configure the product that way.
+
+**Frontend View of Filters on Categories**
+
+![](/img/variant-frontend-filters1.webp)
+
+### Relations Tab
+
+![](/img/variant-relations.webp)
+
+**Up-sells:** Products to recommend as upgrades on this product's detail page. Typically shown as "**Add these to your order**" with products that will complement the order. ie: parts for a specific tool, extenders, etc...
+
+**Cross-sells:** Products to suggest as complementary purchases or are similar. Typically shown as "**You might also like**" with higher-value alternatives. They can be placed at the bottom of the product page, in the cart sidebar, or at checkout.
+
+To add a related product, start typing its name in the search box. Matching products appear in a dropdown — click one to add it. Remove a related product by clicking the trash icon next to it.
+
+**Frontend View of Related Products**
+
+![](/img/variant-frontend-relations.webp)
+
+### Apps Tab
+
+![](/img/flex-apps.webp)
+
+The **Apps** tab shows product-level configuration panels provided by installed app plugins. For example:
+
+- If you have the **Custom Accordions** app enabled, you can add accordion sections directly on this tab.
+- If you have the **Gift Wrapping** app enabled, its per-product settings appear here.
+
+Each app is responsible for its own content on this tab. If no apps are installed, the tab shows an information message.
+
 ## How It Works on the Storefront
 
 When a customer views a Variable product:
 
-1. The product page displays option selectors (dropdowns, radio buttons, or color swatches depending on the option type).
+1. The product page displays option selectors (dropdowns, radio buttons, or color swatches, depending on the option type).
 2. As the customer makes selections, J2Commerce updates the price, image, and stock status via AJAX — no page reload.
 3. Once all options are selected, the correct variant is identified and the **Add to Cart** button becomes active.
-4. Adding to cart validates that the selected combination exists and has stock available.
+4. Adding to the cart validates that the selected combination exists and has stock available.
 5. The cart shows the selected option values alongside the product name.
-
-<!-- SCREENSHOT: Product detail page showing size and color dropdowns with live price update -->
 
 In category listing views, if your store settings show the cart on the listing page, option selectors also appear there so customers can add directly from the list.
 
@@ -295,6 +436,8 @@ In category listing views, if your store settings show the cart on the listing p
 2. Confirm that at least one value is assigned and saved for each option.
 3. Click **Generate Variants** again.
 
+![](/img/variant-set-options1.webp)
+
 ### Option Values Not Appearing in the Set Values Panel
 
 **Cause:** The option's global value list is empty.
@@ -306,6 +449,8 @@ In category listing views, if your store settings show the cart on the listing p
 3. Add any missing values and save the option.
 4. Return to the product and click **Set Values** again.
 
+![](/img/variant-option3.webp)
+
 ### Add to Cart Button Stays Disabled
 
 **Cause:** Not all option selectors have been chosen by the customer, or the selected combination has no matching variant.
@@ -316,15 +461,19 @@ In category listing views, if your store settings show the cart on the listing p
 2. Verify that a variant exists for every possible combination of option values.
 3. If some combinations are missing, click **Regenerate Variants**.
 
+![](/img/variant-regenerate1.webp)
+
 ### Price Does Not Update When Selecting Options
 
 **Cause:** A default variant is not set, or JavaScript is blocked.
 
 **Solution:**
 
-1. Open the product, go to the **Variants** tab, and click the star icon on one variant to set it as the default.
+1. Open the product, go to the **Variants** tab, and click the **star** icon on one variant to set it as the default.
 2. Save the product.
 3. Verify that JavaScript is enabled and not blocked by browser extensions.
+
+![](/img/variant-star.webp)
 
 ### Variant Image Does Not Change on Selection
 
@@ -334,12 +483,7 @@ In category listing views, if your store settings show the cart on the listing p
 
 1. Expand the variant in the **Variants** tab.
 2. Go to the **Image** section and upload a main image for the variant.
-3. Set **Use as Thumbnail** to **Yes** if you want the listing thumbnail to change too.
+3. Set **Use as Thumbnail** to **Yes** if you want the listing thumbnail to change, too.
 4. Save the product.
 
-## Related Topics
-
-- [Options](../catalog/options.md) — Create and manage the options used by Variable products
-- [Product Types Overview](../products/product-types.md) — Compare all J2Commerce product types
-- [Advanced Pricing](../products/advanced-pricing.md) — Set quantity-based and group pricing per variant
-- [Inventory Management](../products/inventory.md) — Manage stock levels across variants
+![](/img/variant-generate-images1.webp)
