@@ -1,7 +1,5 @@
 # Authorize.Net Payment Plugin
 
-`description: J2Commerce (formerly known as J2Store)`
-
 The Authorize.Net plugin lets your store accept credit card payments — Visa, Mastercard, Discover, and American Express — processed through the Authorize.Net payment gateway. It uses Authorize.Net's Accept.js library so raw card numbers never reach your server, which reduces your PCI compliance burden significantly.
 
 The plugin also supports saving cards for returning customers and processing subscription renewal payments automatically through Authorize.Net's Customer Information Manager (CIM).
@@ -46,9 +44,9 @@ In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
 Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
 
-**Option a:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-**Option b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
 
 ![](/img/autho-methods.webp)
 
@@ -62,9 +60,9 @@ In order for you to configure the plugin, you need four values from your Authori
 
 We recommend that you open two tabs in your browser (open the app from J2Commerce and your account with [Authorize.net](http://Authorize.net) so you can easily just copy/paste when you receive your credentials by following the steps below.&#x20;
 
-:::note
+:::info
 
-NOTE: If you want to try it out on a non-live site then you need to create an account on the developer site first to retreive the Keys for **Sandbox Mode**.  To create an account go to **[https://developer.authorize.net/hello\_world/sandbox.html](https://developer.authorize.net/hello_world/sandbox.html)** &#x20;
+NOTE: If you want to try it out on a non-live site then you need to create an account on the developer site first to retreive the Keys for **Sandbox Mode**.  To create an account go to [**https://developer.authorize.net/hello\_world/sandbox.html**](https://developer.authorize.net/hello_world/sandbox.html) &#x20;
 
 :::
 
@@ -177,7 +175,11 @@ Use these card numbers on the checkout form while in sandbox mode. Any future ex
 
 To test a declined card, use `4000300011112220`.
 
-> **Important:** Switch **Use Sandbox** back to **No** and enter your live credentials before going live. The sandbox warning banner appears on the J2Commerce dashboard whenever sandbox mode is active, so it is easy to spot.
+:::tip
+
+**Important:** Switch **Use Sandbox** back to **No** and enter your live credentials before going live. The sandbox warning banner appears on the J2Commerce dashboard whenever sandbox mode is active, so it is easy to spot.
+
+:::
 
 ## Transaction Type
 
@@ -217,7 +219,7 @@ Set this to whichever status makes sense for your workflow. A common choice is *
 
 - When set to '**Yes**', the order status is set when a void is processed. A common choice is Voided or Cancelled.
 
-:::note
+:::info
 
 NOTE: If the order status you want isn't listed, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
 
@@ -229,7 +231,7 @@ NOTE: If the order status you want isn't listed, you can create a new one by goi
 
 - When set to '**Yes**', the order status to set when a refund is processed. A common choice is Refunded or Cancelled.
 
-:::note
+:::info
 
 NOTE: If the order status you want isn't listed, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
 
@@ -326,7 +328,7 @@ From this tab, customers can:
 - Remove a card using the trash icon — cards in use by active subscriptions cannot be removed
 - Switch all active subscriptions to a different saved card using the rotate icon
 
-:::note
+:::info
 
 NOTE: Saved cards are environment-specific. Cards saved in sandbox mode are not visible in live mode, and vice versa.
 
@@ -378,7 +380,7 @@ You need to make sure you have set the **Void and/or Refund** toggles to '**Yes*
 
 If the **Order Status** name that you want isn't showing up, then you need to add a new order status. Go to **J2Commerce**  **-> Setup -> Order Status -> New**
 
-:::note
+:::info
 
 NOTE: *Any changes made to the app won't affect the previous orders. Only new orders will show the new options.*
 
@@ -392,7 +394,7 @@ If a transaction has not yet settled (typically same-day, before the charge hits
 2. Click the **Void** button (shown with a ban icon).
 3. The plugin sends a void request to Authorize.Net and updates the order history.
 
-:::note
+:::info
 
 NOTE: The screenshow below shows what it looks like if **Void** is set to '**Yes**' and **Refund** is set to '**No**'
 
@@ -484,7 +486,11 @@ The plugin handles the following Authorize.Net webhook event types:
 
 All incoming webhooks are verified using HMAC-SHA512 with your **Signature Key** before any action is taken. Webhooks with an invalid or missing signature are rejected with a 401 response.
 
-> **Important:** The Signature Key must be configured in the plugin settings for webhook verification to work. Without it, all webhook requests are rejected.
+:::info
+
+**Important:** The Signature Key must be configured in the plugin settings for webhook verification to work. Without it, all webhook requests are rejected.
+
+:::
 
 ## Sandbox Testing
 
