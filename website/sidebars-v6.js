@@ -139,7 +139,7 @@ const sidebars = {
                         },
                     ],
                 },
-                'apps-and-extensions/advanced-cart',
+                'apps-and-extensions/advanced_cart',
             ],
         },
         {
