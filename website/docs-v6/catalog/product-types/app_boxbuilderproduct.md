@@ -122,36 +122,37 @@ Click on the **Box Builder Product** to open the configuration.
 
 ![](/img/box-setup.webp)
 
-| Setting                        | Description                                                                                                                                                                                                                                | Default                         |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------- |
-| **Inventory Handling**         | Controls where stock is tracked. **Handle at the items in the box builder** deducts stock from each individual sub-product when an order is placed. **Handle at the box builder level** deducts stock from the box builder product itself. | Handle at the box builder level |
-| **Tax Based On**               | Controls how tax is calculated. **Individual Products** calculates tax separately for each sub-product in the box. **Box Builder Product** applies the tax profile of the box builder product to the total price.                          | Box Builder Product             |
-| **Display Avg Price Per Each** | When enabled, a line appears below the product price showing the total item count and the average cost per item.                                                                                                                           | No                              |
-| **Unit Title (Single)**        | The label for a single item in the "price per each" display (e.g., `cookie`, `piece`). Only shown when **Display Avg Price Per Each** is enabled.                                                                                          | *(empty)*                       |
-| **Unit Title (Plural)**        | The label used when there is more than one item (e.g., `cookies`, `pieces`). Falls back to the singular label if left empty. Only shown when **Display Avg Price Per Each** is enabled.                                                    | *(empty)*                       |
-| **Template Type**              | The CSS framework used by your Joomla template. Choose **Bootstrap 5** or **UIkit** to match your template, or leave on **Auto Detect** to let the plugin choose automatically.                                                            | Auto Detect                     |
-| **Display Item Details**       | When enabled, a **Box Builder Items** tab appears on the product detail page showing each sub-product's image and description.                                                                                                             | No                              |
-| **Display Item Contains**      | When enabled, an aggregated summary of all box contents appears at the top of the product detail page.                                                                                                                                     | Yes                             |
-| **Display Mobile Sticky Bar**  | When enabled, a sticky Add-to-Cart bar appears at the bottom of the screen on mobile devices.                                                                                                                                              | Yes                             |
-| **Debug Mode**                 | Writes detailed log entries to the Joomla log file and browser console. Disable in production.                                                                                                                                             | No                              |
+**Inventory Handling:** Controls where stock is tracked. **Handle at the items in the box builder** deducts stock from each individual sub-product when an order is placed. **Handle at the box builder level** deducts stock from the box builder product itself.
 
-<!-- SCREENSHOT: Plugin configuration screen showing Basic Settings -->
+- **Handle at the box builder level** is the simpler approach. Set a stock quantity on the box builder product itself, and that number decrements each time someone orders the box. Use this when you replenish boxes as a unit.
 
-### Choosing an Inventory Handling Strategy
+- **Handle at the items in the box builder** tracks stock on each individual product inside the box. When an order is placed, the stock of every item the customer selected is reduced. Use this when your sub-products are sold both individually and inside boxes, and you need a single stock count across all sales channels.
 
-**Handle at the box builder level** is the simpler approach. Set a stock quantity on the box builder product itself, and that number decrements each time someone orders the box. Use this when you replenish boxes as a unit.
+**Tax Based On:** Controls how tax is calculated. **Individual Products** calculates tax separately for each sub-product in the box. **Box Builder Product** applies the tax profile of the box builder product to the total price.
 
-**Handle at the items in the box builder** tracks stock on each individual product inside the box. When an order is placed, the stock of every item the customer selected is reduced. Use this when your sub-products are sold both individually and inside boxes, and you need a single stock count across all sales channels.
+- **Box Builder Product** applies the tax profile you set on the box builder product to the full box price. This is straightforward and works well when all items in the box carry the same tax rate.
 
-### Tax Based On
+- **Individual Products** calculates tax separately for each sub-product based on its own tax profile. The plugin distributes the box price proportionally across the sub-products and applies the correct rate to each portion. Use this when your box contains a mix of taxable and non-taxable items, or items with different tax rates.
 
-**Box Builder Product** applies the tax profile you set on the box builder product to the full box price. This is straightforward and works well when all items in the box carry the same tax rate.
+**Display Avg Price Per Each:** When enabled, a line appears below the product price showing the total item count and the average cost per item.
 
-**Individual Products** calculates tax separately for each sub-product based on its own tax profile. The plugin distributes the box price proportionally across the sub-products and applies the correct rate to each portion. Use this when your box contains a mix of taxable and non-taxable items, or items with different tax rates.
+**Unit Title (Single):** The label for a single item in the "price per each" display (e.g., `cookie`, `piece`). Only shown when **Display Avg Price Per Each** is enabled.
+
+**Unit Title (Plural):** The label used when there is more than one item (e.g., `cookies`, `pieces`). Falls back to the singular label if left empty. Only shown when **Display Avg Price Per Each** is enabled.
+
+**Template Type:** The CSS framework used by your Joomla template. Choose **Bootstrap 5** or **UIkit** to match your template, or leave on **Auto Detect** to let the plugin choose automatically.
+
+**Display Item Details:** When enabled, a **Box Builder Items** tab appears on the product detail page showing each sub-product's image and description.
+
+**Display Item Contains:** When enabled, an aggregated summary of all box contents appears at the top of the product detail page.
+
+**Display Mobile Sticky Bar:** When enabled, a sticky Add-to-Cart bar appears at the bottom of the screen on mobile devices.
+
+**Debug Mode:** Writes detailed log entries to the Joomla log file and browser console. Disable in production.
 
 ## Create a Box Builder Product
 
-### Step 1: Create the Sub-Products First
+### Create the Sub-Products First
 
 Box builder products are made up of existing J2Commerce products. Before creating a box, make sure each item you want to offer inside the box already exists as its own product.
 
@@ -166,17 +167,21 @@ Box builder products are made up of existing J2Commerce products. Before creatin
 - Variable product types (flexivariable, variable)
 - Products that have options
 
-### Step 2: Create a New Product
+## Create a New Product Article
 
-1. Go to **J2Commerce** -> **Catalog** -> **Products**.
-2. Click **New** in the toolbar.
-3. Fill in the product **Title**, **SKU**, **Price**, and any other standard fields.
-4. In the **Product Type** field, select **Box Builder**.
-5. Click **Save** (do not close — you need to stay on the edit form to configure the box).
+Variable products in J2Commerce are attached to Joomla articles.
 
-<!-- SCREENSHOT: Product edit form with Product Type set to Box Builder -->
+There are **many** ways you can access products or articles.&#x20;
 
-### Step 3: Configure Box Builder Settings
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Products ->** **New**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Products ->** **New**
+
+**Option C:** Go to **Content -> Articles ->** **New**
+
+![](/img/variant-product.webp)
+
+### Configure Box Builder Settings
 
 After saving, scroll down to the **Box Builder Products** section. This section contains all the fields specific to the box builder product type.
 
@@ -186,25 +191,27 @@ After saving, scroll down to the **Box Builder Products** section. This section 
 
 Use the **Search Product by SKU or Name** field to find and add products to the box. Type part of a product name or SKU and select from the results. Each product you add becomes a selectable item inside the box.
 
-**Note:** Products you add here are the items customers can choose from when building their box — they are not fixed contents.
+:::info
+
+**Note**: Products you add here are the items customers can choose from when building their box — they are not fixed contents.
+
+:::
 
 #### Box Builder Settings Fields
 
-| Field                          | Description                                                                                                                                                                            | Default     |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| **Box Size**                   | The total number of items a customer must select to complete the box. For example, a value of `4` means the customer picks 4 items.                                                    | 4           |
-| **Product Order**              | The order in which available products appear on the product page. Options: **Added Order** (the order you added them), **Article Order (ASC/DESC)**, **Title (ASC/DESC)**, **Random**. | Added Order |
-| **Product Display**            | How the selectable products are shown. **Grid** displays 3 products per row. **List** shows products in a single-column list.                                                          | Grid        |
-| **Show Qty Field**             | When enabled, a quantity input appears next to each selectable product so customers can choose how many of that item to add at once.                                                   | No          |
-| **Display Avg Price Per Each** | Override the global plugin setting for this specific product. When enabled, shows a per-item price breakdown.                                                                          | No          |
-| **Unit Title (Single)**        | Override the singular unit label for this product's price-per-each display.                                                                                                            | *(empty)*   |
-| **Unit Title (Plural)**        | Override the plural unit label for this product's price-per-each display.                                                                                                              | *(empty)*   |
+**Box Size:** The total number of items a customer must select to complete the box. For example, a value of `4` means the customer picks 4 items.
 
-### Step 4: Save the Product
+**Product Order:** The order in which available products appear on the product page. Options: **Added Order** (the order you added them), **Article Order (ASC/DESC)**, **Title (ASC/DESC)**, **Random**.
 
-Click **Save** or **Save & Close** to apply your changes.
+**Product Display:** How the selectable products are shown. **Grid** displays 3 products per row. **Llist** shows products in a single-column list.
 
-<!-- SCREENSHOT: Saved box builder product showing the Box Builder Items section populated -->
+**Show Qty Field:** When enabled, a quantity input appears next to each selectable product so customers can choose how many of that item to add at once.
+
+**Display Avg Price Per Each:** Override the global plugin setting for this specific product. When enabled, it shows a per-item price breakdown.
+
+**Unit Title (Single):** Override the singular unit label for this product's price-per-each display.
+
+**Unit Title (Plural):** Override the plural unit label for this product's price-per-each display.
 
 ## How It Works on the Frontend
 
@@ -316,9 +323,3 @@ The **Contains** summary appears when:
 2. Review the **Tax Based On** setting.
 3. If your box contains products with different tax rates, switch to **Individual Products**.
 4. If all items in the box have the same tax rate, **Box Builder Product** is simpler and more predictable.
-
-## Related Topics
-
-- [Product Types](../products/product-types.md) — Overview of all product types in J2Commerce
-- [Apps Overview](./index.md) — Other available J2Commerce apps
-- [Tax Profiles](../taxes/index.md) — Setting up tax profiles for products
