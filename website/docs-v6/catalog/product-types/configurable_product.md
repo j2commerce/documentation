@@ -103,7 +103,9 @@ There are **many** ways you can access products or articles.&#x20;
 
 ## Setting up the Product
 
-![](/img/box-content.webp)
+### Content tab
+
+![](/img/config-content.webp)
 
 Give the article a title (e.g., "Classic T-Shirt").
 
@@ -123,15 +125,17 @@ Assign the article to the appropriate **category**.
 
 **Frontend View**
 
+![](/img/config-content1.webp)
+
 ### Select the Bundle Product Type
 
-![](/img/box-type.webp)
+![](/img/config-type.webp)
 
 Open the **Product** Article **-> J2Commerce** tab
 
 **Use as Product:** Select '**Yes**'
 
-In the **Product Type** dropdown, select **Variable**.
+In the **Product Type** dropdown, select **Configurable**.
 
 Click **Save and Continue**
 
@@ -139,7 +143,7 @@ Click **Save and Continue**
 
 The **General** tab sets product-wide settings that apply to the whole product, not individual variants.
 
-![](/img/bundle-general.webp)
+![](/img/config-general.webp)
 
 **Visible in Storefront:** Show or hide the product in storefront listings. Set to **'Yes'** to make it visible to shoppers.
 
@@ -165,74 +169,165 @@ NOTE: *You have to set up the Vendor's details in **both*** *an **Article*** *an
 
 **Product CSS Class:** Adds one or more CSS class names to the product's container element. Useful for per-product styling without modifying template files.
 
-## Step 3: Set the Base Price and Inventory
+### Pricing tab
 
-Click the **Pricing** tab inside the J2Commerce section.
+![](/img/config-price.webp)
 
-<!-- SCREENSHOT: Pricing tab showing Regular Price field -->
+**Regular Price:** The standard selling price. Enter the number only — do not include a currency symbol. J2Commerce reads the currency from your store settings.
 
-| Field                    | Description                                                                                               |
-| ------------------------ | --------------------------------------------------------------------------------------------------------- |
-| **Regular Price**        | The base price of the product before any option adjustments.                                              |
-| **Set Advanced Pricing** | Opens a pricing modal where you can set customer-group prices, sale prices, and quantity-based discounts. |
+**Advanced Pricing:** Opens a panel to set date-based sale prices, quantity-tier prices, and customer-group prices. See the section below for details. To see how to set up the Advanced pricing, see below.
 
-Click the **Inventory** tab to configure stock.
+**Pricing Calculator:** Controls how the final price is calculated. The default **Standard** calculator applies the regular price and advanced pricing rules. Other calculators (installed via plugins) can apply custom formulas.
 
-<!-- SCREENSHOT: Inventory tab showing Manage Stock, Quantity, and Backorders fields -->
+### Advanced Pricing
 
-| Field                | Description                                                        | Options                             |
-| -------------------- | ------------------------------------------------------------------ | ----------------------------------- |
-| **Manage Stock**     | Whether J2Commerce tracks quantity for this product.               | Yes / No                            |
-| **Quantity**         | The number of units in stock (only used when Manage Stock is Yes). | Any number                          |
-| **Allow Backorders** | Whether customers can order when stock runs out.                   | No Allow / Allow / Allow but Notify |
-| **Stock Status**     | Manual override for the in-stock indicator.                        | In Stock / Out of Stock             |
-| **Notify Quantity**  | Send a low-stock alert when quantity drops to this number.         | Any number                          |
+![](/img/simple-pricing1.webp)
 
-## Step 4: Attach Options to the Product
+Click the **Advanced Pricing** button to configure rules that override the regular price under specific conditions. A modal opens where you can add one or more pricing rules.
 
-Click the **Options** tab inside the J2Commerce section.
+Each pricing rule has these fields:
 
-<!-- SCREENSHOT: Options tab showing the option table with columns for Option Name, Parent Option, Required, and Ordering -->
+**Date Range:** The date range during which this rule is active. Leave both blank to make the rule always active
 
-If no options have been created yet, a message appears with a link to create one. Once options exist, you will see:
+**Quantity Range:** The quantity range this rule applies to. For example, a rule with Quantity From = 5 applies when the customer buys 5 or more units
 
-- A table listing the options already attached to this product.
-- A dropdown at the bottom of the table to search and add more options.
+**Customer Group:** Restrict this rule to a specific Joomla user group. Leave blank to apply to all shoppers.
 
-### Add an Option
+**Price:** The price that applies when this rule matches
 
-1. In the **Search and Add Variant Option** dropdown, select the option you want to add.
-2. Click the **Add** button. The option appears as a new row in the table.
-3. If you need to configure the option's values for this product, click the **Set Values** gear button on the option row. This opens a panel where you assign which values are available and set any price or weight adjustments.
+J2Commerce automatically selects the best matching rule at checkout — the customer always gets the lowest qualifying price.
 
-<!-- SCREENSHOT: Options table showing a row with the Set Values button highlighted -->
+**Common use cases:**
 
-### Configure Option Rows
+- **Black Friday sale** — set a Date From and Date To with a reduced price, leave quantity and group blank.
+- **Bulk discount** — set Quantity From to 10 with a lower price and no date restriction.
+- **Trade pricing** — set a Customer Group to your "Wholesale" group with a special price.
 
-Each option row in the table has these settings:
+### Configure Inventory (Optional)
 
-| Column            | Description                                                                                                                                      |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Option Name**   | The name of the option (read-only; edit it in **Options** management). Also shows the option type.                                               |
-| **Parent Option** | Links this option to a parent option so it only appears after a specific value is selected in the parent. Leave empty for an independent option. |
-| **Required**      | Whether the customer must make a selection before adding to cart.                                                                                |
-| **Ordering**      | A number that controls the display order. Lower numbers appear first.                                                                            |
-| **Remove**        | Click the trash icon to detach this option from the product.                                                                                     |
+![](/img/bundle-inventory.webp)
 
-### Set Option Values for the Product
+If **Inventory Handling** in the plugin settings is set to **Handle at the bundle level**, enter the available stock quantity on the bundle product itself.
 
-Click the **Set Values** button on an option row. A panel opens showing all values available for that option.
+If **Inventory Handling** is set to **Handle at the items in the bundle**, stock is read from each individual item — no separate stock entry is needed on the bundle.
 
-<!-- SCREENSHOT: Set Values panel showing the Add New Option section with Name, Price Prefix, Price, Weight Prefix, Weight, and Ordering columns -->
+**Manage Stock:** Set to '**Yes'** to track inventory. J2Commerce decreases the quantity automatically when orders are placed. Set to '**No'** to sell without a stock limit.
 
-**Adding a value to the product:**
+**Stock Quantity:** The number of units currently in stock. Only relevant when **Manage Stock** is **Yes**.
 
-1. In the **Add New Option** section, select the value name from the dropdown.
-2. If the parent option has values, select which parent values this value should appear under (multi-select). This controls dependent/conditional option behavior.
-3. Set the **Price Prefix** (+ to add, - to subtract) and **Price** to adjust the product price when this value is selected.
-4. Set the **Weight Prefix** and **Weight** to adjust the shipping weight when this value is selected.
-5. Set an **Ordering** number.
-6. Click **Create Option** to add the value.
+**Allow Backorders:** What happens when stock reaches zero. **Do not allow** blocks purchases. **Allow** lets shoppers order anyway. **Allow but notify customer** permits the purchase and adds a backorder notice at checkout.
+
+**Stock Status:** Manually sets the in-stock or out-of-stock label shown to shoppers, regardless of the quantity counter.
+
+**Notify If Below:** J2Commerce sends a low-stock alert when inventory drops to this number. Check **Use Store Configuration** to apply the global default instead of a per-product value.
+
+**Quantity Restriction:** Set to **Yes** to enforce a minimum and maximum per-order quantity.
+
+**Max Sale Quantity:** The most units a shopper can add to their cart at once. Check **Use Store Configuration** to use the global default.
+
+**Min Sale Quantity:** The fewest units a shopper can add to their cart at once. Check **Use Store Configuration** to use the global default.
+
+### Image tab
+
+![](/img/config-images.webp)
+
+J2Commerce 6 includes a built-in multi-image uploader. You can upload multiple images at once and arrange them in any order.
+
+#### Uploading Images
+
+1. On the **Images** tab, click **Upload Image** or drag image files directly into the upload area.
+2. Supported formats: JPG, JPEG, PNG, GIF, WebP, AVIF.
+3. Each upload completes as a card in the gallery.
+
+**Frontend View**
+
+![](/img/config-images2.webp)
+
+#### **Image Order and the Main Image**
+
+![](/img/config-images1.webp)
+
+The first image in the uploader is the **main product image** — the large image shown on the product detail page and used as the thumbnail in listings. To reorder:
+
+1. Hover over an image card to reveal the left and right arrows.
+2. Click the arrows to move the image to a new position.
+3. Save the product to apply the new order.
+
+#### Automatic Thumbnails
+
+J2Commerce automatically generates resized thumbnail and tiny versions of each uploaded image. These are used in product listings, the cart, and other compact views. No extra configuration is needed — the sizes are set in your store's image configuration.
+
+#### Alt Text
+
+Each image card has an **Alt Text** field. Write a short description such as "Blue ceramic mug, 350ml". Alt text is read by screen readers and used by search engines to understand your images.
+
+#### Removing Images
+
+Clicking **Remove** on a card removes the image from this product but does not delete the file from the server. To delete the file permanently, use the file browser icon in the uploader.
+
+### Shipping Tab
+
+![](/img/config-shipping.webp)
+
+**Enable Shipping:** Set to **Yes** for physical products that need to be delivered. Set to **No** for digital products and services.
+
+**Dimensions:** The product's length, width, and height. Used by shipping methods that calculate rates based on package size.
+
+**Length Class:** The unit of measurement for the dimensions — for example, centimetres or inches. Defaults to your store's configured length unit.
+
+**Weight:** The product's net weight. Used by weight-based shipping methods.
+
+**Weight Class:** The unit of measurement for the weight — for example, kilograms or pounds. Defaults to your store's configured weight unit.
+
+### &#x20;Options Tab
+
+Options let shoppers configure the product before adding it to their cart. They are additions to the product — not separate variants. A shopper still buys one product, but they can choose from the options you define.
+
+**Example uses:**
+
+- A text field for a personalized engraving message
+- A dropdown to select a gift box style
+- A checkbox for an extended warranty
+
+Options must be created first under **J2Commerce** -> **Catalog** -> **Options** before you can assign them to a product. If you have not created any options yet, the tab shows a link to the Options management screen.
+
+#### Assigning Options to a Product
+
+![](/img/simple-options1.webp)
+
+1. On the **Options** tab, find the option you want in the dropdown at the bottom of the table.
+2. Click **Add Options**.
+3. The option appears in the table above. Set whether the option is **required** (the shopper must make a selection before adding to the cart).
+4. Set the **Ordering** to control the display sequence.
+5. Click **Save** to set up the **Set Option Value** section
+
+**Set Option Value**
+
+![](/img/config-options4.webp)
+
+**Option Name:** The name of the option (read-only; edit it in **Options** management). Also shows the option type.
+
+**Parent Option:** Links this option to a parent option so it only appears after a specific value is selected in the parent. Leave empty for an independent option.
+
+**Required:** Whether the customer must make a selection before adding to cart.
+
+**Ordering:** A number that controls the display order. Lower numbers appear first.
+
+**Remove:** Click the trash icon to detach this option from the product.
+
+For list-type options (dropdown, radio, checkbox, color), click **Set Option Values** to open the values panel. Here, you can assign which option values apply to this product and set per-value price and weight modifiers.
+
+![](/img/config-options2.webp)
+
+If the parent option has values, select which parent values this value should appear under (multi-select). This controls dependent/conditional option behavior.
+
+Set the **Price Prefix** (+ to add, - to subtract) and **Price** to adjust the product price when this value is selected.
+
+Set the **Weight Prefix** and **Weight** to adjust the shipping weight when this value is selected.
+
+Set an **Ordering** number.
+
+Click **Create Option** to add the value.
 
 **Managing existing values:**
 
@@ -244,11 +339,9 @@ The **Current Options** table shows all values already assigned to this product.
 - Click **Add All Option Values** to quickly assign every value from the global option to this product.
 - Click **Save Changes** to save edits to the current values table.
 
-<!-- SCREENSHOT: Current Options table showing values with price adjustments and a star icon for default -->
+**Frontend View**
 
-## Step 5: Save the Product
-
-Click **Save** or **Save & Close** to apply all changes. The product is now live on your storefront for customers with the Configurable product options displayed.
+![](/img/config-options3.webp)
 
 ## How Options Appear to Customers
 
@@ -260,7 +353,57 @@ When a customer selects a value with a price adjustment, J2Commerce adds or subt
 
 If you set up a **Parent Option**, child options only appear after the customer selects a value in the parent. This is useful for multi-level selections such as choosing a material first, then seeing only the available colors for that material.
 
-<!-- SCREENSHOT: Product detail page showing a product with dropdown and radio button options -->
+### Filters Tab
+
+![](/img/config-filter.webp)
+
+Filters allow shoppers to narrow product listings by attribute — for example, filtering by material, color range, or size range. Assigning filters here makes this product appear in the correct filtered results on category and tag pages.
+
+To assign a filter value:
+
+1. Type part of the filter name in the search box. Results appear in a dropdown.
+2. Click the matching result to add it to the product.
+3. Repeat for each filter value you want to assign.
+4. To remove a filter, click the trash icon next to it.
+
+Filters are created and organized under **J2Commerce** -> **Catalog** -> **Filters**.
+
+**Frontend View of Filters on Products**
+
+They will appear under the Specification tab
+
+![](/img/config-filter1.webp)
+
+The filters section will always appear on the Categories page but will only show up on the individual product pages if you choose to configure the product that way.
+
+**Frontend View of Filters on Categories**
+
+![](/img/simple-filters4.webp)
+
+### Relations Tab
+
+![](/img/config-relations.webp)
+
+**Up-sells:** Products to recommend as upgrades on this product's detail page. Typically shown as "**Add these to your order**" with products that will complement the order. ie: parts for a specific tool, extenders, etc...
+
+**Cross-sells:** Products to suggest as complementary purchases or are similar. Typically shown as "**You might also like**" with higher-value alternatives. They can be placed at the bottom of the product page, in the cart sidebar, or at checkout.
+
+To add a related product, start typing its name in the search box. Matching products appear in a dropdown — click one to add it. Remove a related product by clicking the trash icon next to it.
+
+**Frontend View**
+
+![](/img/config-relations1.webp)
+
+### Apps Tab
+
+![](/img/simple-apps.webp)
+
+The **Apps** tab shows product-level configuration panels provided by installed app plugins. For example:
+
+- If you have the **Custom Accordions** app enabled, you can add accordion sections directly on this tab.
+- If you have the **Gift Wrapping** app enabled, its per-product settings appear here.
+
+Each app is responsible for its own content on this tab. If no apps are installed, the tab shows an information message.
 
 ## Tips
 
