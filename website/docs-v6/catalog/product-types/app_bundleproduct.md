@@ -164,7 +164,7 @@ There are **many** ways you can access products or articles.&#x20;
 
 ![](/img/bundle-content4.webp)
 
-Give the article a title (e.g., "Milky Balls").
+Give the article a title (e.g., "Chocolate Balls").
 
 Add your product **description** in the article body.&#x20;
 
