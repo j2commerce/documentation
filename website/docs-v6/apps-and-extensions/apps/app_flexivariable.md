@@ -72,7 +72,13 @@ Leave it disabled if you set a default variant on every product, since a default
 
 Enable **Show Price Range** when your variants have significantly different prices and you want shoppers browsing the category list to see the full spread. If all your variants are priced the same, leave this disabled to show a clean single price instead.
 
-<!-- SCREENSHOT: Flexible Variable plugin configuration screen -->
+:::tip
+
+**Helpful Tip:** Click on the **Toggle Inline Help** button on any app/plugin you install and it will show a description below each section. See image below
+
+:::
+
+![](/img/flex-plugin.webp)
 
 ## How Flexible Variable Differs from Variable Products
 
