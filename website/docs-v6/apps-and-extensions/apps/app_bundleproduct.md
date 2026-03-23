@@ -15,6 +15,22 @@ The Bundle Products app adds a new product type to J2Commerce that lets you sell
 - Joomla! 6.x
 - J2Commerce 6.x
 
+:::tip
+
+**IMPORTANT**: Once you have configured the settings for any product, check to see if those specific items are showing up on the frontend. If they are not, (ie: filters, cross-sells, price, title, etc), then go to your **store** menu and **show or hide** the items you want to control on the frontend. Go to **Menu -> Main Menu -> Store -> Product** tab
+
+:::
+
+![](/img/simple-store-menu.webp)
+
+:::info
+
+NOTE: Before you can begin setting up a Variant, you need to create all of the **Options** that the product will offer. &#x20;
+
+:::
+
+## Setting Up Options
+
 ## Purchase and Download
 
 The Bundle Products app is a premium add-on available from the J2Commerce extension directory.
@@ -51,31 +67,31 @@ Click on **Bundle Products** to open the configuration.
 
 ### Basic Settings Tab
 
-| Setting | Description | Default |
-| ------- | ----------- | ------- |
-| **Inventory Handling** | Controls where stock is tracked — at the bundle level or at each item inside the bundle. | Bundle level |
-| **Tax Based On** | Determines how tax is calculated — against the bundle as a whole, or against each individual product in the bundle. | Bundle Product |
-| **Display Price Per Item** | Show a "Contains X items (price / item)" breakdown below the bundle price on the product page. | No |
-| **Singular Item Label** | The word used when the bundle contains one item (for example: item, piece, unit). Only appears when **Display Price Per Item** is enabled. | *(empty — falls back to "item")* |
-| **Plural Items Label** | The word used when the bundle contains multiple items (for example: items, pieces, units). Only appears when **Display Price Per Item** is enabled. | *(empty — falls back to the singular label)* |
-| **Template Framework** | The CSS framework used for bundle product templates. Auto-detect reads from the active menu item subtemplate setting. | Auto-detect |
-| **Display Item Details** | Show each bundled item's image and description in a dedicated section on the product detail page. | No |
-| **Debug Mode** | Write debug messages to the Joomla log directory. Disable this on live sites. | No |
+| Setting                    | Description                                                                                                                                         | Default                                      |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| **Inventory Handling**     | Controls where stock is tracked — at the bundle level or at each item inside the bundle.                                                            | Bundle level                                 |
+| **Tax Based On**           | Determines how tax is calculated — against the bundle as a whole, or against each individual product in the bundle.                                 | Bundle Product                               |
+| **Display Price Per Item** | Show a "Contains X items (price / item)" breakdown below the bundle price on the product page.                                                      | No                                           |
+| **Singular Item Label**    | The word used when the bundle contains one item (for example: item, piece, unit). Only appears when **Display Price Per Item** is enabled.          | *(empty — falls back to "item")*             |
+| **Plural Items Label**     | The word used when the bundle contains multiple items (for example: items, pieces, units). Only appears when **Display Price Per Item** is enabled. | *(empty — falls back to the singular label)* |
+| **Template Framework**     | The CSS framework used for bundle product templates. Auto-detect reads from the active menu item subtemplate setting.                               | Auto-detect                                  |
+| **Display Item Details**   | Show each bundled item's image and description in a dedicated section on the product detail page.                                                   | No                                           |
+| **Debug Mode**             | Write debug messages to the Joomla log directory. Disable this on live sites.                                                                       | No                                           |
 
 <!-- SCREENSHOT: Plugin configuration screen showing Basic Settings -->
 
 #### Inventory Handling Options
 
-| Option | Behavior |
-| ------ | -------- |
-| **Handle at the bundle level** | Stock is tracked on the bundle product itself. When a bundle sells, only the bundle's own stock counter decreases. |
+| Option                                | Behavior                                                                                                                                                          |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Handle at the bundle level**        | Stock is tracked on the bundle product itself. When a bundle sells, only the bundle's own stock counter decreases.                                                |
 | **Handle at the items in the bundle** | Stock is tracked on each product inside the bundle. When a bundle sells, J2Commerce reduces the stock of every included item according to the quantities you set. |
 
 #### Tax Based On Options
 
-| Option | Behavior |
-| ------ | -------- |
-| **Bundle Product** | Tax is calculated once against the total bundle price using the bundle product's tax profile. |
+| Option                  | Behavior                                                                                                                                |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Bundle Product**      | Tax is calculated once against the total bundle price using the bundle product's tax profile.                                           |
 | **Individual Products** | Tax is calculated separately for each item in the bundle using each item's own tax profile, then the amounts are combined on the order. |
 
 ## Create a Bundle Product
@@ -112,18 +128,18 @@ This price is what customers pay for the entire bundle. It is independent of the
 
 <!-- SCREENSHOT: Apps tab showing the Bundle Products section -->
 
-3. In the **Search Product** field, type the name or SKU of a product you want to include.
-4. Select the product from the suggestions that appear.
-5. The product appears as a row in the bundle table.
-6. Repeat to add more products.
+1. In the **Search Product** field, type the name or SKU of a product you want to include.
+2. Select the product from the suggestions that appear.
+3. The product appears as a row in the bundle table.
+4. Repeat to add more products.
 
 Each row in the bundle table shows:
 
-| Column | Description |
-| ------ | ----------- |
-| **Product name** | The name of the included product with its regular price |
-| **Quantity** | How many units of this product are included in each bundle |
-| **Remove** | Click the trash icon to remove the product from the bundle |
+| Column           | Description                                                |
+| ---------------- | ---------------------------------------------------------- |
+| **Product name** | The name of the included product with its regular price    |
+| **Quantity**     | How many units of this product are included in each bundle |
+| **Remove**       | Click the trash icon to remove the product from the bundle |
 
 To include more than one unit of the same product, add it multiple times. J2Commerce automatically groups duplicate entries and sums the quantities.
 
@@ -131,11 +147,11 @@ To include more than one unit of the same product, add it multiple times. J2Comm
 
 Below the product list you can control how the price-per-item breakdown appears on the storefront:
 
-| Field | Description |
-| ----- | ----------- |
-| **Display Price Per Item** | Toggle this to **Yes** to show a "Contains X items (price / item)" line below the bundle price. |
-| **Singular Item Label** | The label for one item (for example: item, piece). Appears only when Display Price Per Item is enabled. |
-| **Plural Items Label** | The label for multiple items (for example: items, pieces). Appears only when Display Price Per Item is enabled. |
+| Field                      | Description                                                                                                     |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Display Price Per Item** | Toggle this to **Yes** to show a "Contains X items (price / item)" line below the bundle price.                 |
+| **Singular Item Label**    | The label for one item (for example: item, piece). Appears only when Display Price Per Item is enabled.         |
+| **Plural Items Label**     | The label for multiple items (for example: items, pieces). Appears only when Display Price Per Item is enabled. |
 
 <!-- SCREENSHOT: Per-item price display fields in the Apps tab -->
 
