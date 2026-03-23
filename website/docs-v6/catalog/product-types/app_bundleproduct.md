@@ -270,7 +270,7 @@ On the **Images** tab, click **Upload Image** or drag image files directly into 
 
 **Frontend View**
 
-![](/img/variant-frontend-images1.webp)
+![](/img/bundle-images2.webp)
 
 #### **Image Order and the Main Image**
 
@@ -293,10 +293,6 @@ Each image card has an **Alt Text** field. Write a short description such as "Bl
 #### **Removing Images**
 
 Clicking **Remove** on a card removes the image from this product but does not delete the file from the server. To delete the file permanently, use the file browser icon in the uploader.
-
-**Frontend View**
-
-![](/img/bundle-images2.webp)
 
 ### Shipping Tab
 
@@ -407,7 +403,9 @@ Each item that is listed in the bundle package will be displayed individually in
 
 ![](/img/bundle-apps5.webp)
 
-<!-- SCREENSHOT: Cart showing a bundle product line item with its contents listed -->
+**Frontend Checkout Cart**
+
+![](/img/bundle-checkout.webp)
 
 ## Display Conditions
 
