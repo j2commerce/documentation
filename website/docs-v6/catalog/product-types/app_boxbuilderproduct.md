@@ -1,10 +1,3 @@
----
-title: "Box Builder Product"
-sidebar_label: "Box Builder Product"
-sidebar_position: 20
-description: "Let customers build their own product boxes by selecting items from a curated list — with live pricing, inventory management, and order detail tracking."
----
-
 # Box Builder Product
 
 The Box Builder Product app adds a new product type to J2Commerce that lets customers assemble their own box from a list of selectable items. You define the box size and the products that go inside it, and customers mix and match until the box is full before adding it to their cart. This is ideal for subscription boxes, gift sets, sample packs, and any store where customers benefit from choosing their own combination of items.
@@ -99,25 +92,35 @@ In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
 Upload the ZIP file or use the Install from URL option.
 
-<!-- SCREENSHOT: Joomla extension install screen -->
+![](/img/ato-install.webp)
 
 ## Enable the Plugin
 
-Once installed, enable the plugin:
-
-**Option A:** Go to **J2Commerce** icon at the top right corner -> **Apps**
+**Option A:** Go to the **J2Commerce** icon at the top right corner -> **Apps**
 
 **Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Box Builder Product -->
+![](/img/gift-wrap-apps.webp)
 
-Search for **Box Builder Product**, click the **X** to enable it. The X turns into a green checkmark when enabled.
+Search for **Flexible Variable**, click the **X** to enable it. The X turns into a green checkmark when enabled.
+
+![](/img/box-enable1.webp)
 
 ## Configure the Plugin
 
-Click on **Box Builder Product** to open the configuration.
+Click on the **Box Builder Product** to open the configuration.
+
+:::tip
+
+**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+
+:::
+
+![](/img/box-toggle.webp)
 
 ### Basic Settings Tab
+
+![](/img/box-setup.webp)
 
 | Setting                        | Description                                                                                                                                                                                                                                | Default                         |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------- |

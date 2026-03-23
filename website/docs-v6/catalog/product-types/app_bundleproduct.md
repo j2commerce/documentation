@@ -1,10 +1,3 @@
----
-title: "Bundle Products"
-sidebar_label: "Bundle Products"
-sidebar_position: 20
-description: "Create bundle products that group multiple items into a single purchasable product with a combined price."
----
-
 # Bundle Products
 
 The Bundle Products app adds a new product type to J2Commerce that lets you sell multiple products together as a single unit. Customers add one item to the cart and receive everything inside the bundle. You set the bundle price directly on the product — independently of the individual item prices — which makes it easy to offer value deals, starter kits, or gift sets.
@@ -87,11 +80,11 @@ You only need to do this once. The same options can be reused across many produc
 
 The Bundle Products app is a premium add-on available from the J2Commerce extension directory.
 
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Apps**
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) **->** **Apps**
 
-**Step 2:** Locate the Bundle Products app -> click **View Details** -> **Add to cart** -> **Checkout**.
+**Step 2:** Locate the Bundle Products app **->** click **View Details** **-> Add to cart ->** **Checkout**.
 
-**Step 3:** Go to **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
+**Step 3:** Go to **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions** **->** **View Files** -> **Download**.
 
 ## Install the Plugin
 
@@ -99,25 +92,35 @@ In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
 Upload the ZIP file or use the Install from URL option.
 
-<!-- SCREENSHOT: Joomla extension install screen -->
+![](/img/ato-install.webp)
 
 ## Enable the Plugin
-
-Once installed, enable the plugin:
 
 **Option A:** Go to the **J2Commerce** icon at the top right corner -> **Apps**
 
 **Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Bundle Products -->
+![](/img/gift-wrap-apps.webp)
 
-Search for **Bundle Products**, click the toggle to enable it. The toggle turns green when enabled.
+Search for **Flexible Variable**, click the **X** to enable it. The X turns into a green checkmark when enabled.
+
+![](/img/bundle-enable1.webp)
 
 ## Configure the Plugin
 
 Click on **Bundle Products** to open the configuration.
 
+:::tip
+
+**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+
+:::
+
+![](/img/bundle-toggle.webp)
+
 ### Basic Settings Tab
+
+![](/img/bundle-setup.webp)
 
 | Setting                    | Description                                                                                                                                         | Default                                      |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
@@ -129,8 +132,6 @@ Click on **Bundle Products** to open the configuration.
 | **Template Framework**     | The CSS framework used for bundle product templates. Auto-detect reads from the active menu item subtemplate setting.                               | Auto-detect                                  |
 | **Display Item Details**   | Show each bundled item's image and description in a dedicated section on the product detail page.                                                   | No                                           |
 | **Debug Mode**             | Write debug messages to the Joomla log directory. Disable this on live sites.                                                                       | No                                           |
-
-<!-- SCREENSHOT: Plugin configuration screen showing Basic Settings -->
 
 #### Inventory Handling Options
 
@@ -146,78 +147,249 @@ Click on **Bundle Products** to open the configuration.
 | **Bundle Product**      | Tax is calculated once against the total bundle price using the bundle product's tax profile.                                           |
 | **Individual Products** | Tax is calculated separately for each item in the bundle using each item's own tax profile, then the amounts are combined on the order. |
 
-## Create a Bundle Product
+## Create a New Product Article
 
-With the plugin enabled and configured, you can create bundle products from the product catalog.
+Variable products in J2Commerce are attached to Joomla articles.
 
-### Step 1: Create a New Product
+There are **many** ways you can access products or articles.&#x20;
 
-1. Go to **J2Commerce** -> **Catalog** -> **Products**.
-2. Click **New** in the toolbar.
-3. Fill in the product **Title** and any other general fields.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Products ->** **New**
 
-<!-- SCREENSHOT: New product form showing the Product Type field -->
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Products ->** **New**
 
-### Step 2: Select the Bundle Product Type
+**Option C:** Go to **Content -> Articles ->** **New**
 
-In the product form, locate the **Product Type** field and select **Bundle** from the dropdown list.
+![](/img/variant-product.webp)
 
-The product form updates to show the bundle-specific configuration under the **Apps** tab.
+## Setting up the Product
 
-### Step 3: Set the Bundle Price
+![](/img/bundle-content4.webp)
 
-1. Click the **Pricing** tab.
-2. Enter the bundle price in the **Price** field.
+Give the article a title (e.g., "Milky Balls").
+
+Add your product **description** in the article body.&#x20;
+
+The intro description above the red 'Read More' line will appear under the main title of the product. The main description will appear under the description tab below the product&#x20;
+
+Set the article's **state** to **Published**.
+
+Assign the article to the appropriate **category**.
+
+:::info
+
+**Note**: The intro description above the red 'Read More' line will appear under the main title of the product. The main description will appear under the description tab below the product&#x20;
+
+:::
+
+**Frontend View**
+
+![](/img/bundle-content5.webp)
+
+### Select the Bundle Product Type
+
+![](/img/bundle-type.webp)
+
+Open the **Product** Article **-> J2Commerce** tab
+
+**Use as Product:** Select '**Yes**'
+
+In the **Product Type** dropdown, select **Variable**.
+
+Click **Save and Continue**
+
+### General Tab
+
+The **General** tab sets product-wide settings that apply to the whole product, not individual variants.
+
+![](/img/bundle-general.webp)
+
+**Visible in Storefront:** Show or hide the product in storefront listings. Set to **'Yes'** to make it visible to shoppers.
+
+**Brand or Manufacturer:** Links this product to a manufacturer record. Useful for filtering and for the Custom Accordions app's Brand Details feature.
+
+:::info
+
+NOTE: Y*ou have to set up the Manufacturer details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Manufacturer**, in order for them to appear in the dropdown* menu&#x20;
+
+:::
+
+**Vendor:** Assigns the product to a vendor. Relevant for multi-vendor setups. Leave blank if you do not use vendors.
+
+:::info
+
+NOTE: *You have to set up the Vendor's details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Vendors**, in order for them to appear in the dropdown menu*&#x20;
+
+:::
+
+**Tax Profile:** Assigns a tax profile to this product. The tax profile determines which tax rates apply based on the customer's location. Create tax profiles under **J2Commerce** **->** **Taxes**.
+
+**Cart Button Text:** Customize your cart button name. This will override the default "Add to Cart" button label for this product only. Leave blank to use your store's global button label.
+
+**Product CSS Class:** Adds one or more CSS class names to the product's container element. Useful for per-product styling without modifying template files.
+
+### Set the Bundle Price
+
+![](/img/bundle-price.webp)
 
 This price is what customers pay for the entire bundle. It is independent of the prices of the individual items inside the bundle.
 
-<!-- SCREENSHOT: Pricing tab with the price field highlighted -->
+### Configure Inventory (Optional)
 
-### Step 4: Add Products to the Bundle
+![](/img/bundle-inventory.webp)
 
-1. Click the **Apps** tab.
-2. You will see the **Bundle Products** section with a search field and a note that only simple, configurable, and downloadable products without options can be bundled.
+If **Inventory Handling** in the plugin settings is set to **Handle at the bundle level**, enter the available stock quantity on the bundle product itself.
 
-<!-- SCREENSHOT: Apps tab showing the Bundle Products section -->
+If **Inventory Handling** is set to **Handle at the items in the bundle**, stock is read from each individual item — no separate stock entry is needed on the bundle.
+
+**Manage Stock:** Set to '**Yes'** to track inventory. J2Commerce decreases the quantity automatically when orders are placed. Set to '**No'** to sell without a stock limit.
+
+**Stock Quantity:** The number of units currently in stock. Only relevant when **Manage Stock** is **Yes**.
+
+**Allow Backorders:** What happens when stock reaches zero. **Do not allow** blocks purchases. **Allow** lets shoppers order anyway. **Allow but notify customer** permits the purchase and adds a backorder notice at checkout.
+
+**Stock Status:** Manually sets the in-stock or out-of-stock label shown to shoppers, regardless of the quantity counter.
+
+**Notify If Below:** J2Commerce sends a low-stock alert when inventory drops to this number. Check **Use Store Configuration** to apply the global default instead of a per-product value.
+
+**Quantity Restriction:** Set to **Yes** to enforce a minimum and maximum per-order quantity.
+
+**Max Sale Quantity:** The most units a shopper can add to their cart at once. Check **Use Store Configuration** to use the global default.
+
+**Min Sale Quantity:** The fewest units a shopper can add to their cart at once. Check **Use Store Configuration** to use the global default.
+
+### Image tab
+
+![](/img/bundle-images.webp)
+
+On the **Images** tab, click **Upload Image** or drag image files directly into the upload area.
+
+- Supported formats: JPG, JPEG, PNG, GIF, WebP, AVIF.
+
+- The main image appears on the product detail page and in category listings.
+
+- Gallery images appear in the image gallery on the product page.
+
+**Frontend View**
+
+![](/img/variant-frontend-images1.webp)
+
+#### **Image Order and the Main Image**
+
+![](/img/bundle-images1.webp)
+
+The first image in the uploader is the **main product image** — the large image shown on the product detail page and used as the thumbnail in listings. To reorder:
+
+1. Hover over an image card to reveal the left and right arrows.
+2. Click the arrows to move the image to a new position.
+3. Save the product to apply the new order.
+
+#### **Automatic Thumbnails**
+
+J2Commerce automatically generates resized thumbnails and tiny versions of each uploaded image. These are used in product listings, the cart, and other compact views. No extra configuration is needed — the sizes are set in your store's image configuration.
+
+#### **Alt Text**
+
+Each image card has an **Alt Text** field. Write a short description such as "Blue ceramic mug, 350ml". Alt text is read by screen readers and used by search engines to understand your images.
+
+#### **Removing Images**
+
+Clicking **Remove** on a card removes the image from this product but does not delete the file from the server. To delete the file permanently, use the file browser icon in the uploader.
+
+**Frontend View**
+
+![](/img/bundle-images2.webp)
+
+### Shipping Tab
+
+![](/img/bundle-shipping.webp)
+
+**Enable Shipping:** Set to **Yes** for physical products that need to be delivered. Set to **No** for digital products and services.
+
+**Dimensions:** The product's length, width, and height. Used by shipping methods that calculate rates based on package size.
+
+**Length Class:** The unit of measurement for the dimensions — for example, centimetres or inches. Defaults to your store's configured length unit.
+
+**Weight:** The product's net weight. Used by weight-based shipping methods.
+
+**Weight Class:** The unit of measurement for the weight — for example, kilograms or pounds. Defaults to your store's configured weight unit.
+
+### Filters Tab
+
+![](/img/bundle-filters.webp)
+
+Filters allow shoppers to narrow product listings by attribute — for example, filtering by material, color range, or size range. Assigning filters here makes this product appear in the correct filtered results on category and tag pages.
+
+To assign a filter value:
+
+1. Type part of the filter name in the search box. Results appear in a dropdown.
+2. Click the matching result to add it to the product.
+3. Repeat for each filter value you want to assign.
+4. To remove a filter, click the trash icon next to it.
+
+Filters are created and organized under **J2Commerce** -> **Catalog** -> **Filters**.
+
+**Frontend View of Filters on Products**
+
+They will appear under the Specification tab
+
+![](/img/bundle-filters1.webp)
+
+The filters section will always appear on the Categories page but will only show up on the individual product pages if you choose to configure the product that way.
+
+**Frontend View of Filters on Categories**
+
+![](/img/simple-filters4.webp)
+
+### Relations Tab
+
+![](/img/bundle-relations.webp)
+
+**Up-sells:** Products to recommend as upgrades on this product's detail page. Typically shown as "**Add these to your order**" with products that will complement the order. ie: parts for a specific tool, extenders, etc...
+
+**Cross-sells:** Products to suggest as complementary purchases or are similar. Typically shown as "**You might also like**" with higher-value alternatives. They can be placed at the bottom of the product page, in the cart sidebar, or at checkout.
+
+To add a related product, start typing its name in the search box. Matching products appear in a dropdown — click one to add it. Remove a related product by clicking the trash icon next to it.
+
+**Frontend View**
+
+![](/img/bundle-relations1.webp)
+
+## Add Products to the Bundle
+
+### Apps Tab
+
+You will see the **Bundle Products** section with a search field and a note that only simple, configurable, and downloadable products without options can be bundled.
+
+![](/img/bundle-apps.webp)
 
 1. In the **Search Product** field, type the name or SKU of a product you want to include.
 2. Select the product from the suggestions that appear.
 3. The product appears as a row in the bundle table.
-4. Repeat to add more products.
-
-Each row in the bundle table shows:
-
-| Column           | Description                                                |
-| ---------------- | ---------------------------------------------------------- |
-| **Product name** | The name of the included product with its regular price    |
-| **Quantity**     | How many units of this product are included in each bundle |
-| **Remove**       | Click the trash icon to remove the product from the bundle |
+4. Repeat to list all products individually that will be included in the bundle.&#x20;
 
 To include more than one unit of the same product, add it multiple times. J2Commerce automatically groups duplicate entries and sums the quantities.
 
-### Step 5: Configure Per-Item Price Display (Optional)
+![](/img/bundle-apps6.webp)
 
-Below the product list you can control how the price-per-item breakdown appears on the storefront:
+**Frontend View**
 
-| Field                      | Description                                                                                                     |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **Display Price Per Item** | Toggle this to **Yes** to show a "Contains X items (price / item)" line below the bundle price.                 |
-| **Singular Item Label**    | The label for one item (for example: item, piece). Appears only when Display Price Per Item is enabled.         |
-| **Plural Items Label**     | The label for multiple items (for example: items, pieces). Appears only when Display Price Per Item is enabled. |
+![](/img/bundle-apps2-2.webp)
 
-<!-- SCREENSHOT: Per-item price display fields in the Apps tab -->
+### Configure Per-Item Price Display (Optional)
 
-### Step 6: Configure Inventory (Optional)
+Below the product list, you can control how the price-per-item breakdown appears on the storefront:
 
-1. Click the **Inventory** tab.
-2. If **Inventory Handling** in the plugin settings is set to **Handle at the bundle level**, enter the available stock quantity on the bundle product itself.
-3. If **Inventory Handling** is set to **Handle at the items in the bundle**, stock is read from each individual item — no separate stock entry is needed on the bundle.
+![](/img/bundle-apps1-1.webp)
 
-### Step 7: Save the Product
+**Display Price Per Item:** Toggle this to '**Yes'** to show a "Contains X items (price / item)" line below the bundle price.
 
-Click **Save** or **Save & Close** to apply your changes.
+**Singular Item Label:** The label for one item (for example: item, piece). Appears only when Display Price Per Item is enabled.
 
-The bundle product is now active in your catalog. Customers can add it to the cart as a single item.
+**Plural Items Label:** The label for multiple items (for example: items, pieces). Appears only when Display Price Per Item is enabled.
+
+**Frontend View**
+
+![](/img/bundle-apps1-2.webp)
 
 ## How It Works
 
@@ -230,7 +402,11 @@ When a customer views a bundle product page:
 5. In the cart, the bundle line item expands to list each included product and its quantity.
 6. On orders and invoices, the bundle appears as a single product line with the bundled items listed underneath it.
 
-<!-- SCREENSHOT: Product detail page showing bundle price and bundled items section -->
+Each item that is listed in the bundle package will be displayed individually in the Alt Text Layout below the product.&#x20;
+
+**Frontend View**
+
+![](/img/bundle-apps5.webp)
 
 <!-- SCREENSHOT: Cart showing a bundle product line item with its contents listed -->
 
@@ -238,7 +414,7 @@ When a customer views a bundle product page:
 
 Bundled item details appear on the product page when:
 
-- The plugin is enabled in **J2Commerce** -> **Apps**.
+- The plugin is enabled in **J2Commerce** **->** **Apps**.
 - **Display Item Details** is set to **Yes** in the plugin settings.
 - The bundle product has at least one item added to it.
 
@@ -287,7 +463,9 @@ The price-per-item breakdown appears when:
 1. Go to **J2Commerce** -> **Apps** -> **Bundle Products**.
 2. Set **Display Item Details** to **Yes**.
 3. Click **Save**.
-4. Clear the Joomla cache: **System** -> **Clear Cache**.
+4. Clear the Joomla cache: **Home Dashboard ->** **Cache** **-> Delete Cache**
+
+![](/img/delete-cache2.webp)
 
 ### Stock Not Reducing Correctly After a Sale
 
@@ -322,10 +500,3 @@ The price-per-item breakdown appears when:
 3. Click the **Apps** tab.
 4. Set **Display Price Per Item** to **Yes**.
 5. Click **Save**.
-
-## Related Topics
-
-- [Product Types](../products/product-types.md) — Overview of all product types in J2Commerce
-- [Inventory Management](../products/inventory.md) — Stock tracking and backorder settings
-- [Tax Profiles](../taxes/tax-profiles.md) — Assigning tax profiles to products
-- [Apps Overview](./index.md) — Other available J2Commerce apps
