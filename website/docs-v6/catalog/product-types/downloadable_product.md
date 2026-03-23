@@ -1,10 +1,3 @@
----
-title: "Downloadable Products"
-sidebar_label: "Downloadable Products"
-sidebar_position: 20
-description: "Sell digital products like eBooks, software, music, and templates. Customers download files immediately after purchase."
----
-
 # Downloadable Products
 
 The Downloadable product type lets you sell digital goods that customers receive as file downloads after completing their purchase. This product type is ideal for eBooks, software, music files, PDF templates, video courses, design assets, and any other digital content. Because the product is delivered electronically, shipping is not required.
@@ -17,7 +10,7 @@ When a customer purchases a downloadable product:
 
 1. The order is placed and payment is processed normally.
 2. Once payment is confirmed, J2Commerce grants the customer access to the download.
-3. The customer logs into their account and finds their files in **My Profile** -> **Downloads**.
+3. The customer logs into their account and finds their files in **My Profile** **->** **Downloads**.
 4. They click the download button to save the file to their device.
 
 You control how many times a customer can download a file and how long access is available. A file with no limits set remains available indefinitely with unlimited downloads.
@@ -36,7 +29,25 @@ NOTE: Before you can begin setting up a Variant, you need to create all of the *
 
 :::
 
-## Setting Up Options
+## Setting Up Options (if needed)
+
+There are **two** ways you can access Options.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Options**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Catalog -> Options**
+
+![Adding new options](/img/options.webp)
+
+Select **New** to create a new option. (for example, Name: `Size`, Type: `select`).
+
+Add the option values (Small, Medium, Large) to the option
+
+Repeat for each option you plan to use (e.g., create a separate "Color" option with values Red, Blue, Green).
+
+You only need to do this once. The same options can be reused across many products.
+
+Follow the steps in the Options Doc if you need help setting up new options. [https://docs.j2commerce.com/v6/catalog/creating-options](https://docs.j2commerce.com/v6/catalog/creating-options)
 
 ## Creating a Downloadable Product
 

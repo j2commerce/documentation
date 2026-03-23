@@ -28,6 +28,32 @@ Internally, J2Commerce creates a single "variant" record for a Simple product to
 
 ![](/img/simple-store-menu.webp)
 
+:::info
+
+NOTE: Before you can begin setting up a Variant, you need to create all of the **Options** that the product will offer. &#x20;
+
+:::
+
+## Setting Up Options (if needed)
+
+There are **two** ways you can access Options.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Options**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Catalog -> Options**
+
+![Adding new options](/img/options.webp)
+
+Select **New** to create a new option. (for example, Name: `Size`, Type: `select`).
+
+Add the option values (Small, Medium, Large) to the option
+
+Repeat for each option you plan to use (e.g., create a separate "Color" option with values Red, Blue, Green).
+
+You only need to do this once. The same options can be reused across many products.
+
+Follow the steps in the Options Doc if you need help setting up new options. [https://docs.j2commerce.com/v6/catalog/creating-options](https://docs.j2commerce.com/v6/catalog/creating-options)
+
 ## Creating a Simple Product
 
 Every product needs a Joomla article. The article title becomes the product name and the article content is the description shoppers read on the product page.

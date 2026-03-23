@@ -42,38 +42,51 @@ NOTE: Before you can begin setting up a Variant, you need to create all of the *
 
 :::
 
-## Setting Up Options
+## Setting Up Options (if needed)
 
-## Step 1: Create Your Options (If Needed)
+There are **two** ways you can access Options.&#x20;
 
-Before creating a Configurable product, you need at least one Option defined. You can skip this step if Options already exist.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Options**
 
-1. Go to **J2Commerce** -> **Catalog** -> **Options**.
-2. Click **New** in the toolbar.
-3. Fill in the option details:
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Catalog -> Options**
 
-<!-- SCREENSHOT: Options edit form showing Option Name, Type, and Option Values fields -->
+![Adding new options](/img/options.webp)
 
-| Field                  | Description                                                                                | Required |
-| ---------------------- | ------------------------------------------------------------------------------------------ | -------- |
-| **Option Name**        | The label customers see on the product page, for example "Size" or "Color".                | Yes      |
-| **Option Unique Name** | An internal identifier (no spaces) used to distinguish options with the same display name. | No       |
-| **Type**               | Controls the input style shown to customers. See the table below for all types.            | Yes      |
+Select **New** to create a new option. (for example, Name: `Size`, Type: `select`).
 
-**Option Types:**
+Add the option values (Small, Medium, Large) to the option
 
-| Type                       | Customer Experience        |
-| -------------------------- | -------------------------- |
-| **Select**                 | A dropdown menu            |
-| **Radio**                  | Clickable button group     |
-| **Checkbox**               | Multiple-choice checkboxes |
-| **Color**                  | Color swatch buttons       |
-| **Text**                   | A single-line text input   |
-| **Textarea**               | A multi-line text input    |
-| **Date / Datetime / Time** | A date or time picker      |
-| **Number**                 | A numeric input field      |
-| **File / Image**           | A file upload input        |
-| **Email / URL**            | A formatted text input     |
+Repeat for each option you plan to use (e.g., create a separate "Color" option with values Red, Blue, Green).
+
+You only need to do this once. The same options can be reused across many products.
+
+**Option Name:** The label customers see on the product page, for example, "Size" or "Color".
+
+**Option Unique Name:** An internal identifier (no spaces) used to distinguish options with the same display name.
+
+**Type:** Controls the input style shown to customers. See the table below for all types.
+
+### Option Types
+
+**Select:** A dropdown menu
+
+**Radio:** Clickable button group
+
+**Checkbox:** Multiple-choice checkboxes
+
+**Color:** Color swatch buttons
+
+**Text:** A single-line text input
+
+**Textarea:** A multi-line text input
+
+**Date / Datetime / Time:** A date or time picker
+
+**Number:** A numeric input field
+
+**File / Image:** A file upload input
+
+**Email / URL:** A formatted text input
 
 1. For Select, Radio, Checkbox, and Color option types, add your option values in the **Option Values** section that appears below the type field. Each value needs a name, and optionally an image.
 2. Click **Save & Close**.
