@@ -73,14 +73,14 @@ Go to **J2Commerce** -> **Payments** -> **Payment Methods** and click **PayPal**
 ### Display Settings
 
 | Field | Description | Default |
-|-------|-------------|---------|
+|-------|-------------|--------|
 | **Display Name** | The label shown to customers at checkout | `PayPal` |
 | **Display Image** | Optional logo or image shown next to the payment option at checkout | _(none)_ |
 
 ### Sandbox Mode
 
 | Field | Description | Default |
-|-------|-------------|---------|
+|-------|-------------|--------|
 | **Use PayPal Sandbox** | Switch this on to use PayPal's test environment. No real money is processed. | No |
 
 Turn sandbox mode **on** while you are setting up and testing. Turn it **off** before you go live.
@@ -127,7 +127,7 @@ Webhooks allow PayPal to notify your store automatically when payment events occ
 ### Order Status
 
 | Field | Description | Default |
-|-------|-------------|---------|
+|-------|-------------|--------|
 | **Order Status** | The order status applied after a successful payment capture | `Confirmed` |
 
 Choose the status that fits your workflow. Most stores use **Confirmed** or **Processing** for paid orders.
@@ -137,7 +137,7 @@ Choose the status that fits your workflow. Most stores use **Confirmed** or **Pr
 Add an optional surcharge to orders paid via PayPal. This is useful if you want to pass on PayPal's processing fee to customers (check your local laws and PayPal's terms before doing this).
 
 | Field | Description | Default |
-|-------|-------------|---------|
+|-------|-------------|--------|
 | **Surcharge Name** | Label shown to customers for the surcharge (e.g., "PayPal Fee") | _(none)_ |
 | **Surcharge Percent** | Percentage of the order subtotal added as a surcharge | _(none)_ |
 | **Surcharge Fixed** | Fixed amount added as a surcharge | _(none)_ |
@@ -148,7 +148,7 @@ You can combine a percentage and a fixed amount — both will be added together.
 ### Geo-Zone Restriction
 
 | Field | Description | Default |
-|-------|-------------|---------|
+|-------|-------------|--------|
 | **Geo-Zone Restriction** | Limit PayPal availability to customers in a specific geo-zone | _(none — available everywhere)_ |
 
 Leave this empty to show PayPal to all customers regardless of location.
@@ -156,7 +156,7 @@ Leave this empty to show PayPal to all customers regardless of location.
 ### Order Amount Limits
 
 | Field | Description | Default |
-|-------|-------------|---------|
+|-------|-------------|--------|
 | **Minimum Subtotal** | Hide PayPal if the cart subtotal is below this amount. Leave empty for no minimum. | _(none)_ |
 | **Maximum Subtotal** | Hide PayPal if the cart subtotal exceeds this amount. Leave empty or set to `-1` for no maximum. | _(none)_ |
 
@@ -171,7 +171,7 @@ Leave this empty to show PayPal to all customers regardless of location.
 These text fields let you customize messages shown to customers at different points in the payment process.
 
 | Field | When it displays |
-|-------|-----------------|
+|-------|------------------|
 | **On Selection** | When the customer selects PayPal as their payment method |
 | **On Before Payment** | On the payment page before the customer clicks Pay |
 | **On After Payment** | On the confirmation page after a successful payment |
@@ -181,20 +181,20 @@ These text fields let you customize messages shown to customers at different poi
 ### Dashboard Icon
 
 | Field | Description | Default |
-|-------|-------------|---------|
+|-------|-------------|--------|
 | **Show Dashboard Icon** | Show a shortcut icon for PayPal on the J2Commerce dashboard | No |
 | **Dashboard Icon Label** | Label for the dashboard icon (only visible when Show Dashboard Icon is Yes) | _(none)_ |
 
 ### Subtemplate
 
 | Field | Description | Default |
-|-------|-------------|---------|
+|-------|-------------|--------|
 | **Subtemplate** | Select an alternative layout template for the PayPal payment form, if any are installed | _(default)_ |
 
 ### Debug Mode
 
 | Field | Description | Default |
-|-------|-------------|---------|
+|-------|-------------|--------|
 | **Debug Mode** | Write detailed PayPal API activity to `administrator/logs/payment_paypal.php` and the browser console | No |
 
 Enable debug mode only while troubleshooting. Disable it in production — logs can grow large quickly.
