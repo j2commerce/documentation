@@ -25,7 +25,7 @@ You control how many times a customer can download a file and how long access is
 
 :::info
 
-NOTE: Before you can begin setting up a Variant, you need to create all of the **Options** that the product will offer. &#x20;
+**NOTE**: Before you can begin setting up a Variant, you need to create all of the **Options** that the product will offer. &#x20;
 
 :::
 
@@ -47,7 +47,41 @@ Repeat for each option you plan to use (e.g., create a separate "Color" option w
 
 You only need to do this once. The same options can be reused across many products.
 
-Follow the steps in the Options Doc if you need help setting up new options. [https://docs.j2commerce.com/v6/catalog/creating-options](https://docs.j2commerce.com/v6/catalog/creating-options)
+**Option Name:** The label customers see on the product page, for example, "Size" or "Color".
+
+**Option Unique Name:** An internal identifier (no spaces) used to distinguish options with the same display name.
+
+**Type:** Controls the input style shown to customers. See the table below for all types.
+
+### Option Types
+
+**Select:** A dropdown menu
+
+**Radio:** Clickable button group
+
+**Checkbox:** Multiple-choice checkboxes
+
+**Color:** Color swatch buttons
+
+**Text:** A single-line text input
+
+**Textarea:** A multi-line text input
+
+**Date / Datetime / Time:** A date or time picker
+
+**Number:** A numeric input field
+
+**File / Image:** A file upload input
+
+**Email / URL:** A formatted text input
+
+:::tip
+
+**IMPORTANT:** For Select, Radio, Checkbox, and Color option types, add your option values in the **Option Values** section that appears below the type field. Each value needs a name, and optionally an image.
+
+:::
+
+![](/img/option-value.webp)
 
 ## Creating a Downloadable Product
 
