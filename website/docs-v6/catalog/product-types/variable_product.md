@@ -28,7 +28,7 @@ With Variable products, the variant generation is automatic — you do not creat
 
 ![](/img/simple-store-menu.webp)
 
-:::note
+:::info
 
 NOTE: Before you can begin setting up a Variant, you need to create all of the **Options** that the product will offer. &#x20;
 
