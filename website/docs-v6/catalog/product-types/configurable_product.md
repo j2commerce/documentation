@@ -1,10 +1,3 @@
----
-title: "Configurable Products"
-sidebar_label: "Configurable Products"
-sidebar_position: 5
-description: "Learn how to create a Configurable product in J2Commerce — a product that presents customers with selectable options such as size, color, or material before adding to cart."
----
-
 # Configurable Products
 
 A Configurable product lets customers choose from a set of options — such as size, color, or material — before adding the product to their cart. You define which options appear on the product page, and J2Commerce calculates any price or weight adjustments for each choice automatically.
@@ -19,6 +12,14 @@ Configurable products are ideal when you sell a single product that comes in mul
 
 The Configurable product type is built into J2Commerce and requires no additional installation or purchase.
 
+:::tip
+
+**IMPORTANT**: Once you have configured the settings for any product, check to see if those specific items are showing up on the frontend. If they are not, (ie: filters, cross-sells, price, title, etc), then go to your **store** menu and **show or hide** the items you want to control on the frontend. Go to **Menu -> Main Menu -> Store -> Product** tab
+
+:::
+
+![](/img/simple-store-menu.webp)
+
 ## How It Works
 
 The Configurable product type uses a two-level system: **Options** and **Option Values**.
@@ -27,14 +28,6 @@ The Configurable product type uses a two-level system: **Options** and **Option 
 - An **Option Value** is one of the available choices within an option, such as "Small", "Medium", or "Large". Values are defined on the option itself, then assigned to each product individually with optional price or weight adjustments.
 
 When a customer visits the product page, they see a selector (dropdown, radio buttons, checkboxes, or color swatches) for each option you have attached to the product. Selecting a value can adjust the displayed price and the item's shipping weight.
-
-:::tip
-
-**IMPORTANT**: Once you have configured the settings for any product, check to see if those specific items are showing up on the frontend. If they are not, (ie: filters, cross-sells, price, title, etc), then go to your **store** menu and **show or hide** the items you want to control on the frontend. Go to **Menu -> Main Menu -> Store -> Product** tab
-
-:::
-
-![](/img/simple-store-menu.webp)
 
 :::info
 
@@ -96,29 +89,81 @@ You only need to do this once. The same options can be reused across many produc
 
 ![](/img/option-value.webp)
 
-## Step 2: Create the Configurable Product
+## Variable products in J2Commerce are attached to Joomla articles.
 
-1. Go to **J2Commerce** -> **Catalog** -> **Products**.
-2. Click **New** in the toolbar.
-3. In the **Product Type** field on the main edit form, select **Configurable**.
-4. Give the product a **Title** (for example, "Classic T-Shirt").
-5. Add a description, images, and categories as you would for any other product.
+There are **many** ways you can access products or articles.&#x20;
 
-<!-- SCREENSHOT: Product edit form with Product Type set to Configurable -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Products ->** **New**
 
-The J2Commerce tab at the bottom of the product form contains all commerce-specific settings. It has the following tabs:
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Products ->** **New**
 
-| Tab           | What You Set Here                                                                    |
-| ------------- | ------------------------------------------------------------------------------------ |
-| **General**   | Visibility, SKU, UPC, manufacturer, vendor, tax profile, cart button text, CSS class |
-| **Pricing**   | Base price and advanced pricing rules                                                |
-| **Inventory** | Stock management, quantity, backorders, stock status, notifications                  |
-| **Images**    | Product thumbnail and gallery images                                                 |
-| **Shipping**  | Dimensions and weight for shipping calculations                                      |
-| **Options**   | Which options are available on this product and their settings                       |
-| **Filters**   | Filter values for use in product list filtering                                      |
-| **Relations** | Related, up-sell, and cross-sell products                                            |
-| **Apps**      | Settings contributed by installed app plugins                                        |
+**Option C:** Go to **Content -> Articles ->** **New**
+
+![](/img/variant-product.webp)
+
+## Setting up the Product
+
+![](/img/box-content.webp)
+
+Give the article a title (e.g., "Classic T-Shirt").
+
+Add your product **description** in the article body.&#x20;
+
+The intro description above the red 'Read More' line will appear under the main title of the product. The main description will appear under the description tab below the product&#x20;
+
+Set the article's **state** to **Published**.
+
+Assign the article to the appropriate **category**.
+
+:::info
+
+**Note**: The intro description above the red 'Read More' line will appear under the main title of the product. The main description will appear under the description tab below the product&#x20;
+
+:::
+
+**Frontend View**
+
+### Select the Bundle Product Type
+
+![](/img/box-type.webp)
+
+Open the **Product** Article **-> J2Commerce** tab
+
+**Use as Product:** Select '**Yes**'
+
+In the **Product Type** dropdown, select **Variable**.
+
+Click **Save and Continue**
+
+### General Tab
+
+The **General** tab sets product-wide settings that apply to the whole product, not individual variants.
+
+![](/img/bundle-general.webp)
+
+**Visible in Storefront:** Show or hide the product in storefront listings. Set to **'Yes'** to make it visible to shoppers.
+
+**Brand or Manufacturer:** Links this product to a manufacturer record. Useful for filtering and for the Custom Accordions app's Brand Details feature.
+
+:::info
+
+NOTE: Y*ou have to set up the Manufacturer details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Manufacturer**, in order for them to appear in the dropdown* menu&#x20;
+
+:::
+
+**Vendor:** Assigns the product to a vendor. Relevant for multi-vendor setups. Leave blank if you do not use vendors.
+
+:::info
+
+NOTE: *You have to set up the Vendor's details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Vendors**, in order for them to appear in the dropdown menu*&#x20;
+
+:::
+
+**Tax Profile:** Assigns a tax profile to this product. The tax profile determines which tax rates apply based on the customer's location. Create tax profiles under **J2Commerce** **->** **Taxes**.
+
+**Cart Button Text:** Customize your cart button name. This will override the default "Add to Cart" button label for this product only. Leave blank to use your store's global button label.
+
+**Product CSS Class:** Adds one or more CSS class names to the product's container element. Useful for per-product styling without modifying template files.
 
 ## Step 3: Set the Base Price and Inventory
 
