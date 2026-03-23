@@ -38,7 +38,7 @@ When a customer visits the product page, they see a selector (dropdown, radio bu
 
 :::info
 
-NOTE: Before you can begin setting up a Variant, you need to create all of the **Options** that the product will offer. &#x20;
+**NOTE**: Before you can begin setting up a Variant, you need to create all of the **Options** that the product will offer. &#x20;
 
 :::
 
@@ -88,10 +88,13 @@ You only need to do this once. The same options can be reused across many produc
 
 **Email / URL:** A formatted text input
 
-1. For Select, Radio, Checkbox, and Color option types, add your option values in the **Option Values** section that appears below the type field. Each value needs a name, and optionally an image.
-2. Click **Save & Close**.
+:::tip
 
-<!-- SCREENSHOT: Option Values section showing rows of values like Small, Medium, Large -->
+**IMPORTANT:** For Select, Radio, Checkbox, and Color option types, add your option values in the **Option Values** section that appears below the type field. Each value needs a name, and optionally an image.
+
+:::
+
+![](/img/option-value.webp)
 
 ## Step 2: Create the Configurable Product
 
