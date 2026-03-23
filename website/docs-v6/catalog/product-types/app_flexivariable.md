@@ -26,23 +26,63 @@ This is ideal for products where not every option combination makes sense. For e
 
 :::info
 
-NOTE: Before you can begin setting up a Flex Variant, you need to create all of the **Options** that the product will offer. &#x20;
+**NOTE**: Before you can begin setting up a Flex Variant, you need to create all of the **Options** that the product will offer. &#x20;
 
 :::
 
-## Setting Up Options
+## Setting Up Options (if needed)
 
 There are **two** ways you can access Options.&#x20;
 
-**Option a:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Options**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Options**
 
-**Option b:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Catalog -> Options**
-
-Select **New** to create a new option
-
-Follow the steps in the Options Doc if you need help setting up new options. [https://docs.j2commerce.com/v6/catalog/creating-options](https://docs.j2commerce.com/v6/catalog/creating-options)
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Catalog -> Options**
 
 ![Adding new options](/img/options.webp)
+
+Select **New** to create a new option. (for example, Name: `Size`, Type: `select`).
+
+Add the option values (Small, Medium, Large) to the option
+
+Repeat for each option you plan to use (e.g., create a separate "Color" option with values Red, Blue, Green).
+
+You only need to do this once. The same options can be reused across many products.
+
+**Option Name:** The label customers see on the product page, for example, "Size" or "Color".
+
+**Option Unique Name:** An internal identifier (no spaces) used to distinguish options with the same display name.
+
+**Type:** Controls the input style shown to customers. See the table below for all types.
+
+### Option Types
+
+**Select:** A dropdown menu
+
+**Radio:** Clickable button group
+
+**Checkbox:** Multiple-choice checkboxes
+
+**Color:** Color swatch buttons
+
+**Text:** A single-line text input
+
+**Textarea:** A multi-line text input
+
+**Date / Datetime / Time:** A date or time picker
+
+**Number:** A numeric input field
+
+**File / Image:** A file upload input
+
+**Email / URL:** A formatted text input
+
+:::tip
+
+**IMPORTANT:** For Select, Radio, Checkbox, and Color option types, add your option values in the **Option Values** section that appears below the type field. Each value needs a name, and optionally an image.
+
+:::
+
+![](/img/option-value.webp)
 
 ## Enable the Plugin
 
@@ -72,7 +112,13 @@ Leave it disabled if you set a default variant on every product, since a default
 
 Enable **Show Price Range** when your variants have significantly different prices and you want shoppers browsing the category list to see the full spread. If all your variants are priced the same, leave this disabled to show a clean single price instead.
 
-<!-- SCREENSHOT: Flexible Variable plugin configuration screen -->
+:::tip
+
+**Helpful Tip:** Click on the **Toggle Inline Help** button on any app/plugin you install and it will show a description below each section. See image below
+
+:::
+
+![](/img/flex-plugin.webp)
 
 ## How Flexible Variable Differs from Variable Products
 
