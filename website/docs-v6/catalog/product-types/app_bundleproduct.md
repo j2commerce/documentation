@@ -122,30 +122,29 @@ Click on **Bundle Products** to open the configuration.
 
 ![](/img/bundle-setup.webp)
 
-| Setting                    | Description                                                                                                                                         | Default                                      |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| **Inventory Handling**     | Controls where stock is tracked — at the bundle level or at each item inside the bundle.                                                            | Bundle level                                 |
-| **Tax Based On**           | Determines how tax is calculated — against the bundle as a whole, or against each individual product in the bundle.                                 | Bundle Product                               |
-| **Display Price Per Item** | Show a "Contains X items (price / item)" breakdown below the bundle price on the product page.                                                      | No                                           |
-| **Singular Item Label**    | The word used when the bundle contains one item (for example: item, piece, unit). Only appears when **Display Price Per Item** is enabled.          | *(empty — falls back to "item")*             |
-| **Plural Items Label**     | The word used when the bundle contains multiple items (for example: items, pieces, units). Only appears when **Display Price Per Item** is enabled. | *(empty — falls back to the singular label)* |
-| **Template Framework**     | The CSS framework used for bundle product templates. Auto-detect reads from the active menu item subtemplate setting.                               | Auto-detect                                  |
-| **Display Item Details**   | Show each bundled item's image and description in a dedicated section on the product detail page.                                                   | No                                           |
-| **Debug Mode**             | Write debug messages to the Joomla log directory. Disable this on live sites.                                                                       | No                                           |
+**Inventory Handling:** Controls where stock is tracked — at the bundle level or at each item inside the bundle.
 
-#### Inventory Handling Options
+- **Handle at the bundle level:** Stock is tracked on the bundle product itself. When a bundle sells, only the bundle's own stock counter decreases.
 
-| Option                                | Behavior                                                                                                                                                          |
-| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Handle at the bundle level**        | Stock is tracked on the bundle product itself. When a bundle sells, only the bundle's own stock counter decreases.                                                |
-| **Handle at the items in the bundle** | Stock is tracked on each product inside the bundle. When a bundle sells, J2Commerce reduces the stock of every included item according to the quantities you set. |
+- **Handle at the items in the bundle:** Stock is tracked on each product inside the bundle. When a bundle sells, J2Commerce reduces the stock of every included item according to the quantities you set.
 
-#### Tax Based On Options
+**Tax Based On:** Determines how tax is calculated — against the bundle as a whole, or against each individual product in the bundle.
 
-| Option                  | Behavior                                                                                                                                |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **Bundle Product**      | Tax is calculated once against the total bundle price using the bundle product's tax profile.                                           |
-| **Individual Products** | Tax is calculated separately for each item in the bundle using each item's own tax profile, then the amounts are combined on the order. |
+- **Bundle Product:** Tax is calculated once against the total bundle price using the bundle product's tax profile.
+
+- **Individual Products:** Tax is calculated separately for each item in the bundle using each item's own tax profile, then the amounts are combined on the order.
+
+**Display Price Per Item:** Show a "Contains X items (price / item)" breakdown below the bundle price on the product page.
+
+**Singular Item Label:** The word used when the bundle contains one item (for example: item, piece, unit). Only appears when **Display Price Per Item** is enabled.
+
+**Plural Items Label:** The word used when the bundle contains multiple items (for example: items, pieces, units). Only appears when **Display Price Per Item** is enabled.
+
+**Template Framework:** The CSS framework used for bundle product templates. Auto-detect reads from the active menu item subtemplate setting.
+
+**Display Item Details:** Show each bundled item's image and description in a dedicated section on the product detail page.
+
+**Debug Mode:** Write debug messages to the Joomla log directory. Disable this on live sites.
 
 ## Create a New Product Article
 
