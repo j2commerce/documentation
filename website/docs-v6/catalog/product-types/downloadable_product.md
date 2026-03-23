@@ -22,6 +22,22 @@ When a customer purchases a downloadable product:
 
 You control how many times a customer can download a file and how long access is available. A file with no limits set remains available indefinitely with unlimited downloads.
 
+:::tip
+
+**IMPORTANT**: Once you have configured the settings for any product, check to see if those specific items are showing up on the frontend. If they are not, (ie: filters, cross-sells, price, title, etc), then go to your **store** menu and **show or hide** the items you want to control on the frontend. Go to **Menu -> Main Menu -> Store -> Product** tab
+
+:::
+
+![](/img/simple-store-menu.webp)
+
+:::info
+
+NOTE: Before you can begin setting up a Variant, you need to create all of the **Options** that the product will offer. &#x20;
+
+:::
+
+## Setting Up Options
+
 ## Creating a Downloadable Product
 
 Downloadable products are created from within a Joomla article, the same way as any other J2Commerce product type.
@@ -44,7 +60,7 @@ Click the **Product Type** field and select **Downloadable** from the dropdown.
 
 The form updates to show the tabs specific to downloadable products: **General**, **Pricing**, **Inventory**, **Images**, **Files**, **Filters**, **Relations**, and **Apps**.
 
----
+***
 
 ## Configuring the Product
 
@@ -54,16 +70,16 @@ The **General** tab covers basic product settings that apply to all product type
 
 <!-- SCREENSHOT: General tab of the downloadable product form -->
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Visible in Storefront** | Show or hide this product in your store. Set to **No** to work on the product before it goes live. | Yes |
-| **SKU** | A unique code to identify this product in your records. | `EBOOK-001` |
-| **UPC** | Universal Product Code or barcode number (optional). | — |
-| **Brand or Manufacturer** | Link this product to a manufacturer or brand you have set up in J2Commerce. | — |
-| **Vendor** | Assign the product to a vendor if you use a multi-vendor setup. | — |
-| **Tax Profile** | Select which tax rule applies to this product. | `Digital Goods` |
-| **Cart Button Text** | Customize the text on the Add to Cart button. Leave blank to use the store default. | `Buy Now` |
-| **Product CSS Class** | Advanced: add a custom CSS class to the product wrapper on the frontend. | — |
+| Field                     | Description                                                                                        | Example         |
+| ------------------------- | -------------------------------------------------------------------------------------------------- | --------------- |
+| **Visible in Storefront** | Show or hide this product in your store. Set to **No** to work on the product before it goes live. | Yes             |
+| **SKU**                   | A unique code to identify this product in your records.                                            | `EBOOK-001`     |
+| **UPC**                   | Universal Product Code or barcode number (optional).                                               | —               |
+| **Brand or Manufacturer** | Link this product to a manufacturer or brand you have set up in J2Commerce.                        | —               |
+| **Vendor**                | Assign the product to a vendor if you use a multi-vendor setup.                                    | —               |
+| **Tax Profile**           | Select which tax rule applies to this product.                                                     | `Digital Goods` |
+| **Cart Button Text**      | Customize the text on the Add to Cart button. Leave blank to use the store default.                | `Buy Now`       |
+| **Product CSS Class**     | Advanced: add a custom CSS class to the product wrapper on the frontend.                           | —               |
 
 ### Pricing Tab
 
@@ -71,11 +87,11 @@ Set the price customers pay for the digital download.
 
 <!-- SCREENSHOT: Pricing tab showing the Regular Price field and Advanced Pricing button -->
 
-| Field | Description |
-|-------|-------------|
-| **Regular Price** | The base selling price of the product. Enter the amount in your store currency. |
-| **Advanced Pricing** | Click this button to open the advanced pricing panel where you can configure sale prices, date-limited offers, and customer group pricing. |
-| **Pricing Calculator** | Select a pricing method if you have custom calculators installed. Leave at default for standard pricing. |
+| Field                  | Description                                                                                                                                |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Regular Price**      | The base selling price of the product. Enter the amount in your store currency.                                                            |
+| **Advanced Pricing**   | Click this button to open the advanced pricing panel where you can configure sale prices, date-limited offers, and customer group pricing. |
+| **Pricing Calculator** | Select a pricing method if you have custom calculators installed. Leave at default for standard pricing.                                   |
 
 ### Inventory Tab
 
@@ -83,16 +99,16 @@ The **Inventory** tab controls stock tracking. For many digital products, stock 
 
 <!-- SCREENSHOT: Inventory tab with Manage Stock toggled off -->
 
-| Field | Description | Options |
-|-------|-------------|---------|
-| **Manage Stock** | Turn stock tracking on or off. Most digital products leave this disabled. | Yes / No |
-| **Stock Quantity** | How many copies are available. Only relevant when **Manage Stock** is enabled. | Any number |
-| **Allow Back Orders** | Whether customers can order when stock reaches zero. | No / Allow / Allow but Notify |
-| **Stock Status** | Manually set availability regardless of quantity. | In Stock / Out of Stock |
-| **Notify Quantity** | Send an admin notification when stock falls to this level. | Any number |
-| **Quantity Restriction** | Limit how many units a customer can purchase in one order. | Yes / No |
-| **Max Sale Quantity** | Maximum units per order when quantity restriction is enabled. | Any number |
-| **Min Sale Quantity** | Minimum units per order when quantity restriction is enabled. | Any number |
+| Field                    | Description                                                                    | Options                       |
+| ------------------------ | ------------------------------------------------------------------------------ | ----------------------------- |
+| **Manage Stock**         | Turn stock tracking on or off. Most digital products leave this disabled.      | Yes / No                      |
+| **Stock Quantity**       | How many copies are available. Only relevant when **Manage Stock** is enabled. | Any number                    |
+| **Allow Back Orders**    | Whether customers can order when stock reaches zero.                           | No / Allow / Allow but Notify |
+| **Stock Status**         | Manually set availability regardless of quantity.                              | In Stock / Out of Stock       |
+| **Notify Quantity**      | Send an admin notification when stock falls to this level.                     | Any number                    |
+| **Quantity Restriction** | Limit how many units a customer can purchase in one order.                     | Yes / No                      |
+| **Max Sale Quantity**    | Maximum units per order when quantity restriction is enabled.                  | Any number                    |
+| **Min Sale Quantity**    | Minimum units per order when quantity restriction is enabled.                  | Any number                    |
 
 ### Images Tab
 
@@ -115,16 +131,17 @@ Click inside the file upload area or drag and drop your file to upload it. You c
 Files are saved to the `images/downloads/` directory on your server. The upload supports files up to 100 MB.
 
 After uploading, each file entry shows:
+
 - The file display name (editable — this is what the customer sees)
 - The file path on the server
 - A download count showing how many times the file has been downloaded
 
 #### Download Settings
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Download Limit** | Maximum number of times a customer can download this file. Leave blank for unlimited downloads. | `3` |
-| **Download Expiration** | Number of days the download remains available after purchase. Leave blank and access never expires. | `30` |
+| Field                   | Description                                                                                         | Example |
+| ----------------------- | --------------------------------------------------------------------------------------------------- | ------- |
+| **Download Limit**      | Maximum number of times a customer can download this file. Leave blank for unlimited downloads.     | `3`     |
+| **Download Expiration** | Number of days the download remains available after purchase. Leave blank and access never expires. | `30`    |
 
 **Download Limit** applies per customer per order. If a customer purchases the product twice, each order has its own separate download count.
 
@@ -142,7 +159,7 @@ Set up related products that appear on the product detail page. You can cross-se
 
 If you have app plugins installed and enabled — such as Custom Accordions or Custom Tabs — they appear here. Each app may add its own configuration fields at the product level.
 
----
+***
 
 ## Saving the Product
 
@@ -155,7 +172,7 @@ Once all tabs are configured:
 
 The product is now live in your store (assuming the article is published and **Visible in Storefront** is set to **Yes**).
 
----
+***
 
 ## Shipping
 
@@ -163,7 +180,7 @@ The Downloadable product type does not include a **Shipping** tab. No shipping c
 
 If a customer mixes a downloadable product with a physical product in the same order, shipping will apply to the physical product only.
 
----
+***
 
 ## How Customers Access Their Downloads
 
@@ -181,23 +198,23 @@ After a successful purchase, customers access their downloaded files through the
 
 The downloads page shows a table with the following columns:
 
-| Column | Description |
-|--------|-------------|
-| **Order** | The order ID linked to the purchase. Click to view order details. |
-| **Files** | The display name of the downloadable file. |
-| **Expires** | When download access ends. Shows the date, or "Never" if no expiry is set. |
+| Column        | Description                                                                                       |
+| ------------- | ------------------------------------------------------------------------------------------------- |
+| **Order**     | The order ID linked to the purchase. Click to view order details.                                 |
+| **Files**     | The display name of the downloadable file.                                                        |
+| **Expires**   | When download access ends. Shows the date, or "Never" if no expiry is set.                        |
 | **Remaining** | How many more times the file can be downloaded. Shows the infinity symbol when there is no limit. |
-| **Action** | The download button (green), or a status badge if download is not currently available. |
+| **Action**    | The download button (green), or a status badge if download is not currently available.            |
 
 ### Download Status Badges
 
-| Badge | Meaning |
-|-------|---------|
-| **Pending** | The order has not yet been confirmed. Downloads become available once payment is processed. |
-| **Expired** | The download expiry date has passed. The file is no longer accessible. |
-| **Limit Reached** | The customer has reached the maximum number of allowed downloads. |
+| Badge             | Meaning                                                                                     |
+| ----------------- | ------------------------------------------------------------------------------------------- |
+| **Pending**       | The order has not yet been confirmed. Downloads become available once payment is processed. |
+| **Expired**       | The download expiry date has passed. The file is no longer accessible.                      |
+| **Limit Reached** | The customer has reached the maximum number of allowed downloads.                           |
 
----
+***
 
 ## Tips
 
@@ -207,7 +224,7 @@ The downloads page shows a table with the following columns:
 - **Use a descriptive display name** — customers see the file display name in their Downloads list. A name like `My Product Guide v2 (PDF)` is clearer than `product_guide_v2_final.pdf`.
 - **Test the purchase flow** — place a test order with a test payment method to verify the download link appears correctly in My Profile.
 
----
+***
 
 ## Troubleshooting
 
@@ -265,7 +282,7 @@ Download access will be restored immediately for customers whose orders are stil
 2. Increase the **Download Limit** value, or leave it blank for unlimited downloads.
 3. Click **Save & Close**.
 
----
+***
 
 ## Related Topics
 
