@@ -192,7 +192,7 @@ Open the **Product** Article **-> J2Commerce** tab
 
 **Use as Product:** Select '**Yes**'
 
-In the **Product Type** dropdown, select **Variable**.
+In the **Product Type** dropdown, select **Bundle**.
 
 Click **Save and Continue**
 

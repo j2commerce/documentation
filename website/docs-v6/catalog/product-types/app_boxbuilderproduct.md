@@ -205,7 +205,7 @@ Assign the article to the appropriate **category**.
 
 ![](/img/box-content2.webp)
 
-### Select the Bundle Product Type
+### Select the Box Builder Product Type
 
 ![](/img/box-type1.webp)
 
@@ -213,13 +213,13 @@ Open the **Product** Article **-> J2Commerce** tab
 
 **Use as Product:** Select '**Yes**'
 
-In the **Product Type** dropdown, select **Variable**.
+In the **Product Type** dropdown, select **Box Builder**.
 
 Click **Save and Continue**
 
 ### General Tab
 
-The **General** tab sets product-wide settings that apply to the whole product, not individual variants.
+The **General** tab sets product-wide settings that apply to the whole product
 
 ![](/img/box-general.webp)
 
