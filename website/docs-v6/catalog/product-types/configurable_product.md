@@ -28,41 +28,73 @@ The Configurable product type uses a two-level system: **Options** and **Option 
 
 When a customer visits the product page, they see a selector (dropdown, radio buttons, checkboxes, or color swatches) for each option you have attached to the product. Selecting a value can adjust the displayed price and the item's shipping weight.
 
-## Step 1: Create Your Options (If Needed)
+:::tip
 
-Before creating a Configurable product, you need at least one Option defined. You can skip this step if Options already exist.
+**IMPORTANT**: Once you have configured the settings for any product, check to see if those specific items are showing up on the frontend. If they are not, (ie: filters, cross-sells, price, title, etc), then go to your **store** menu and **show or hide** the items you want to control on the frontend. Go to **Menu -> Main Menu -> Store -> Product** tab
 
-1. Go to **J2Commerce** -> **Catalog** -> **Options**.
-2. Click **New** in the toolbar.
-3. Fill in the option details:
+:::
 
-<!-- SCREENSHOT: Options edit form showing Option Name, Type, and Option Values fields -->
+![](/img/simple-store-menu.webp)
 
-| Field | Description | Required |
-|-------|-------------|----------|
-| **Option Name** | The label customers see on the product page, for example "Size" or "Color". | Yes |
-| **Option Unique Name** | An internal identifier (no spaces) used to distinguish options with the same display name. | No |
-| **Type** | Controls the input style shown to customers. See the table below for all types. | Yes |
+:::info
 
-**Option Types:**
+**NOTE**: Before you can begin setting up a Variant, you need to create all of the **Options** that the product will offer. &#x20;
 
-| Type | Customer Experience |
-|------|---------------------|
-| **Select** | A dropdown menu |
-| **Radio** | Clickable button group |
-| **Checkbox** | Multiple-choice checkboxes |
-| **Color** | Color swatch buttons |
-| **Text** | A single-line text input |
-| **Textarea** | A multi-line text input |
-| **Date / Datetime / Time** | A date or time picker |
-| **Number** | A numeric input field |
-| **File / Image** | A file upload input |
-| **Email / URL** | A formatted text input |
+:::
 
-4. For Select, Radio, Checkbox, and Color option types, add your option values in the **Option Values** section that appears below the type field. Each value needs a name, and optionally an image.
-5. Click **Save & Close**.
+## Setting Up Options (if needed)
 
-<!-- SCREENSHOT: Option Values section showing rows of values like Small, Medium, Large -->
+There are **two** ways you can access Options.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Options**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Catalog -> Options**
+
+![Adding new options](/img/options.webp)
+
+Select **New** to create a new option. (for example, Name: `Size`, Type: `select`).
+
+Add the option values (Small, Medium, Large) to the option
+
+Repeat for each option you plan to use (e.g., create a separate "Color" option with values Red, Blue, Green).
+
+You only need to do this once. The same options can be reused across many products.
+
+**Option Name:** The label customers see on the product page, for example, "Size" or "Color".
+
+**Option Unique Name:** An internal identifier (no spaces) used to distinguish options with the same display name.
+
+**Type:** Controls the input style shown to customers. See the table below for all types.
+
+### Option Types
+
+**Select:** A dropdown menu
+
+**Radio:** Clickable button group
+
+**Checkbox:** Multiple-choice checkboxes
+
+**Color:** Color swatch buttons
+
+**Text:** A single-line text input
+
+**Textarea:** A multi-line text input
+
+**Date / Datetime / Time:** A date or time picker
+
+**Number:** A numeric input field
+
+**File / Image:** A file upload input
+
+**Email / URL:** A formatted text input
+
+:::tip
+
+**IMPORTANT:** For Select, Radio, Checkbox, and Color option types, add your option values in the **Option Values** section that appears below the type field. Each value needs a name, and optionally an image.
+
+:::
+
+![](/img/option-value.webp)
 
 ## Step 2: Create the Configurable Product
 
@@ -76,17 +108,17 @@ Before creating a Configurable product, you need at least one Option defined. Yo
 
 The J2Commerce tab at the bottom of the product form contains all commerce-specific settings. It has the following tabs:
 
-| Tab | What You Set Here |
-|-----|-------------------|
-| **General** | Visibility, SKU, UPC, manufacturer, vendor, tax profile, cart button text, CSS class |
-| **Pricing** | Base price and advanced pricing rules |
-| **Inventory** | Stock management, quantity, backorders, stock status, notifications |
-| **Images** | Product thumbnail and gallery images |
-| **Shipping** | Dimensions and weight for shipping calculations |
-| **Options** | Which options are available on this product and their settings |
-| **Filters** | Filter values for use in product list filtering |
-| **Relations** | Related, up-sell, and cross-sell products |
-| **Apps** | Settings contributed by installed app plugins |
+| Tab           | What You Set Here                                                                    |
+| ------------- | ------------------------------------------------------------------------------------ |
+| **General**   | Visibility, SKU, UPC, manufacturer, vendor, tax profile, cart button text, CSS class |
+| **Pricing**   | Base price and advanced pricing rules                                                |
+| **Inventory** | Stock management, quantity, backorders, stock status, notifications                  |
+| **Images**    | Product thumbnail and gallery images                                                 |
+| **Shipping**  | Dimensions and weight for shipping calculations                                      |
+| **Options**   | Which options are available on this product and their settings                       |
+| **Filters**   | Filter values for use in product list filtering                                      |
+| **Relations** | Related, up-sell, and cross-sell products                                            |
+| **Apps**      | Settings contributed by installed app plugins                                        |
 
 ## Step 3: Set the Base Price and Inventory
 
@@ -94,22 +126,22 @@ Click the **Pricing** tab inside the J2Commerce section.
 
 <!-- SCREENSHOT: Pricing tab showing Regular Price field -->
 
-| Field | Description |
-|-------|-------------|
-| **Regular Price** | The base price of the product before any option adjustments. |
+| Field                    | Description                                                                                               |
+| ------------------------ | --------------------------------------------------------------------------------------------------------- |
+| **Regular Price**        | The base price of the product before any option adjustments.                                              |
 | **Set Advanced Pricing** | Opens a pricing modal where you can set customer-group prices, sale prices, and quantity-based discounts. |
 
 Click the **Inventory** tab to configure stock.
 
 <!-- SCREENSHOT: Inventory tab showing Manage Stock, Quantity, and Backorders fields -->
 
-| Field | Description | Options |
-|-------|-------------|---------|
-| **Manage Stock** | Whether J2Commerce tracks quantity for this product. | Yes / No |
-| **Quantity** | The number of units in stock (only used when Manage Stock is Yes). | Any number |
-| **Allow Backorders** | Whether customers can order when stock runs out. | No Allow / Allow / Allow but Notify |
-| **Stock Status** | Manual override for the in-stock indicator. | In Stock / Out of Stock |
-| **Notify Quantity** | Send a low-stock alert when quantity drops to this number. | Any number |
+| Field                | Description                                                        | Options                             |
+| -------------------- | ------------------------------------------------------------------ | ----------------------------------- |
+| **Manage Stock**     | Whether J2Commerce tracks quantity for this product.               | Yes / No                            |
+| **Quantity**         | The number of units in stock (only used when Manage Stock is Yes). | Any number                          |
+| **Allow Backorders** | Whether customers can order when stock runs out.                   | No Allow / Allow / Allow but Notify |
+| **Stock Status**     | Manual override for the in-stock indicator.                        | In Stock / Out of Stock             |
+| **Notify Quantity**  | Send a low-stock alert when quantity drops to this number.         | Any number                          |
 
 ## Step 4: Attach Options to the Product
 
@@ -134,13 +166,13 @@ If no options have been created yet, a message appears with a link to create one
 
 Each option row in the table has these settings:
 
-| Column | Description |
-|--------|-------------|
-| **Option Name** | The name of the option (read-only; edit it in **Options** management). Also shows the option type. |
+| Column            | Description                                                                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Option Name**   | The name of the option (read-only; edit it in **Options** management). Also shows the option type.                                               |
 | **Parent Option** | Links this option to a parent option so it only appears after a specific value is selected in the parent. Leave empty for an independent option. |
-| **Required** | Whether the customer must make a selection before adding to cart. |
-| **Ordering** | A number that controls the display order. Lower numbers appear first. |
-| **Remove** | Click the trash icon to detach this option from the product. |
+| **Required**      | Whether the customer must make a selection before adding to cart.                                                                                |
+| **Ordering**      | A number that controls the display order. Lower numbers appear first.                                                                            |
+| **Remove**        | Click the trash icon to detach this option from the product.                                                                                     |
 
 ### Set Option Values for the Product
 

@@ -15,6 +15,74 @@ The Box Builder Product app adds a new product type to J2Commerce that lets cust
 - Joomla! 6.x
 - J2Commerce 6.x
 
+:::tip
+
+**IMPORTANT**: Once you have configured the settings for any product, check to see if those specific items are showing up on the frontend. If they are not, (ie: filters, cross-sells, price, title, etc), then go to your **store** menu and **show or hide** the items you want to control on the frontend. Go to **Menu -> Main Menu -> Store -> Product** tab
+
+:::
+
+![](/img/simple-store-menu.webp)
+
+:::info
+
+NOTE: Before you can begin setting up a Variant, you need to create all of the **Options** that the product will offer. &#x20;
+
+:::
+
+## Setting Up Options (if needed)
+
+There are **two** ways you can access Options.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Options**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Catalog -> Options**
+
+![Adding new options](/img/options.webp)
+
+Select **New** to create a new option. (for example, Name: `Size`, Type: `select`).
+
+Add the option values (Small, Medium, Large) to the option
+
+Repeat for each option you plan to use (e.g., create a separate "Color" option with values Red, Blue, Green).
+
+You only need to do this once. The same options can be reused across many products.
+
+**Option Name:** The label customers see on the product page, for example, "Size" or "Color".
+
+**Option Unique Name:** An internal identifier (no spaces) used to distinguish options with the same display name.
+
+**Type:** Controls the input style shown to customers. See the table below for all types.
+
+### Option Types
+
+**Select:** A dropdown menu
+
+**Radio:** Clickable button group
+
+**Checkbox:** Multiple-choice checkboxes
+
+**Color:** Color swatch buttons
+
+**Text:** A single-line text input
+
+**Textarea:** A multi-line text input
+
+**Date / Datetime / Time:** A date or time picker
+
+**Number:** A numeric input field
+
+**File / Image:** A file upload input
+
+**Email / URL:** A formatted text input
+
+:::tip
+
+**IMPORTANT:** For Select, Radio, Checkbox, and Color option types, add your option values in the **Option Values** section that appears below the type field. Each value needs a name, and optionally an image.
+
+:::
+
+![](/img/option-value.webp)
+
 ## Purchase and Download
 
 The Box Builder Product app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
@@ -51,18 +119,18 @@ Click on **Box Builder Product** to open the configuration.
 
 ### Basic Settings Tab
 
-| Setting | Description | Default |
-| ------- | ----------- | ------- |
-| **Inventory Handling** | Controls where stock is tracked. **Handle at the items in the box builder** deducts stock from each individual sub-product when an order is placed. **Handle at the box builder level** deducts stock from the box builder product itself. | Handle at the box builder level |
-| **Tax Based On** | Controls how tax is calculated. **Individual Products** calculates tax separately for each sub-product in the box. **Box Builder Product** applies the tax profile of the box builder product to the total price. | Box Builder Product |
-| **Display Avg Price Per Each** | When enabled, a line appears below the product price showing the total item count and the average cost per item. | No |
-| **Unit Title (Single)** | The label for a single item in the "price per each" display (e.g., `cookie`, `piece`). Only shown when **Display Avg Price Per Each** is enabled. | *(empty)* |
-| **Unit Title (Plural)** | The label used when there is more than one item (e.g., `cookies`, `pieces`). Falls back to the singular label if left empty. Only shown when **Display Avg Price Per Each** is enabled. | *(empty)* |
-| **Template Type** | The CSS framework used by your Joomla template. Choose **Bootstrap 5** or **UIkit** to match your template, or leave on **Auto Detect** to let the plugin choose automatically. | Auto Detect |
-| **Display Item Details** | When enabled, a **Box Builder Items** tab appears on the product detail page showing each sub-product's image and description. | No |
-| **Display Item Contains** | When enabled, an aggregated summary of all box contents appears at the top of the product detail page. | Yes |
-| **Display Mobile Sticky Bar** | When enabled, a sticky Add-to-Cart bar appears at the bottom of the screen on mobile devices. | Yes |
-| **Debug Mode** | Writes detailed log entries to the Joomla log file and browser console. Disable in production. | No |
+| Setting                        | Description                                                                                                                                                                                                                                | Default                         |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------- |
+| **Inventory Handling**         | Controls where stock is tracked. **Handle at the items in the box builder** deducts stock from each individual sub-product when an order is placed. **Handle at the box builder level** deducts stock from the box builder product itself. | Handle at the box builder level |
+| **Tax Based On**               | Controls how tax is calculated. **Individual Products** calculates tax separately for each sub-product in the box. **Box Builder Product** applies the tax profile of the box builder product to the total price.                          | Box Builder Product             |
+| **Display Avg Price Per Each** | When enabled, a line appears below the product price showing the total item count and the average cost per item.                                                                                                                           | No                              |
+| **Unit Title (Single)**        | The label for a single item in the "price per each" display (e.g., `cookie`, `piece`). Only shown when **Display Avg Price Per Each** is enabled.                                                                                          | *(empty)*                       |
+| **Unit Title (Plural)**        | The label used when there is more than one item (e.g., `cookies`, `pieces`). Falls back to the singular label if left empty. Only shown when **Display Avg Price Per Each** is enabled.                                                    | *(empty)*                       |
+| **Template Type**              | The CSS framework used by your Joomla template. Choose **Bootstrap 5** or **UIkit** to match your template, or leave on **Auto Detect** to let the plugin choose automatically.                                                            | Auto Detect                     |
+| **Display Item Details**       | When enabled, a **Box Builder Items** tab appears on the product detail page showing each sub-product's image and description.                                                                                                             | No                              |
+| **Display Item Contains**      | When enabled, an aggregated summary of all box contents appears at the top of the product detail page.                                                                                                                                     | Yes                             |
+| **Display Mobile Sticky Bar**  | When enabled, a sticky Add-to-Cart bar appears at the bottom of the screen on mobile devices.                                                                                                                                              | Yes                             |
+| **Debug Mode**                 | Writes detailed log entries to the Joomla log file and browser console. Disable in production.                                                                                                                                             | No                              |
 
 <!-- SCREENSHOT: Plugin configuration screen showing Basic Settings -->
 
@@ -119,15 +187,15 @@ Use the **Search Product by SKU or Name** field to find and add products to the 
 
 #### Box Builder Settings Fields
 
-| Field | Description | Default |
-| ----- | ----------- | ------- |
-| **Box Size** | The total number of items a customer must select to complete the box. For example, a value of `4` means the customer picks 4 items. | 4 |
-| **Product Order** | The order in which available products appear on the product page. Options: **Added Order** (the order you added them), **Article Order (ASC/DESC)**, **Title (ASC/DESC)**, **Random**. | Added Order |
-| **Product Display** | How the selectable products are shown. **Grid** displays 3 products per row. **List** shows products in a single-column list. | Grid |
-| **Show Qty Field** | When enabled, a quantity input appears next to each selectable product so customers can choose how many of that item to add at once. | No |
-| **Display Avg Price Per Each** | Override the global plugin setting for this specific product. When enabled, shows a per-item price breakdown. | No |
-| **Unit Title (Single)** | Override the singular unit label for this product's price-per-each display. | *(empty)* |
-| **Unit Title (Plural)** | Override the plural unit label for this product's price-per-each display. | *(empty)* |
+| Field                          | Description                                                                                                                                                                            | Default     |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| **Box Size**                   | The total number of items a customer must select to complete the box. For example, a value of `4` means the customer picks 4 items.                                                    | 4           |
+| **Product Order**              | The order in which available products appear on the product page. Options: **Added Order** (the order you added them), **Article Order (ASC/DESC)**, **Title (ASC/DESC)**, **Random**. | Added Order |
+| **Product Display**            | How the selectable products are shown. **Grid** displays 3 products per row. **List** shows products in a single-column list.                                                          | Grid        |
+| **Show Qty Field**             | When enabled, a quantity input appears next to each selectable product so customers can choose how many of that item to add at once.                                                   | No          |
+| **Display Avg Price Per Each** | Override the global plugin setting for this specific product. When enabled, shows a per-item price breakdown.                                                                          | No          |
+| **Unit Title (Single)**        | Override the singular unit label for this product's price-per-each display.                                                                                                            | *(empty)*   |
+| **Unit Title (Plural)**        | Override the plural unit label for this product's price-per-each display.                                                                                                              | *(empty)*   |
 
 ### Step 4: Save the Product
 

@@ -28,6 +28,66 @@ Internally, J2Commerce creates a single "variant" record for a Simple product to
 
 ![](/img/simple-store-menu.webp)
 
+:::info
+
+NOTE: Before you can begin setting up a Variant, you need to create all of the **Options** that the product will offer. &#x20;
+
+:::
+
+## Setting Up Options (if needed)
+
+There are **two** ways you can access Options.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Options**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Catalog -> Options**
+
+![Adding new options](/img/options.webp)
+
+Select **New** to create a new option. (for example, Name: `Size`, Type: `select`).
+
+Add the option values (Small, Medium, Large) to the option
+
+Repeat for each option you plan to use (e.g., create a separate "Color" option with values Red, Blue, Green).
+
+You only need to do this once. The same options can be reused across many products.
+
+**Option Name:** The label customers see on the product page, for example, "Size" or "Color".
+
+**Option Unique Name:** An internal identifier (no spaces) used to distinguish options with the same display name.
+
+**Type:** Controls the input style shown to customers. See the table below for all types.
+
+### Option Types
+
+**Select:** A dropdown menu
+
+**Radio:** Clickable button group
+
+**Checkbox:** Multiple-choice checkboxes
+
+**Color:** Color swatch buttons
+
+**Text:** A single-line text input
+
+**Textarea:** A multi-line text input
+
+**Date / Datetime / Time:** A date or time picker
+
+**Number:** A numeric input field
+
+**File / Image:** A file upload input
+
+**Email / URL:** A formatted text input
+
+:::tip
+
+**IMPORTANT:** For Select, Radio, Checkbox, and Color option types, add your option values in the **Option Values** section that appears below the type field. Each value needs a name, and optionally an image.
+
+:::
+
+![](/img/option-value.webp)
+
 ## Creating a Simple Product
 
 Every product needs a Joomla article. The article title becomes the product name and the article content is the description shoppers read on the product page.
