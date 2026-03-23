@@ -140,6 +140,52 @@ $db->setQuery($query)->execute();
 
 Run this in the plugin's `onExtensionBeforeUninstall` handler only if your privacy policy requires it. The table itself must not be dropped.
 
+## Displaying Saved Payment Methods
+
+J2Commerce provides a unified "Payment Methods" tab in the customer's My Account profile. Instead of each payment plugin creating its own tab, all saved payment methods appear in a single consolidated view.
+
+### Unified Tab Integration
+
+To display your saved payment methods in the unified tab, implement the `onJ2CommerceGetSavedPaymentMethods` event in your payment plugin. Return structured data about each payment method:
+
+```php
+public function onGetSavedPaymentMethods(Event $event): void
+{
+    $userId = $event->getArgument('user_id', 0);
+
+    if ($userId < 1 || !(int) $this->params->get('allow_saved_cards', 1)) {
+        return;
+    }
+
+    $customerProfileId = $this->getCustomerProfileId($userId);
+    if (!$customerProfileId) {
+        return;
+    }
+
+    $methods = $this->fetchPaymentMethodsFromGateway($customerProfileId);
+    $result = $event->getArgument('result', []);
+
+    foreach ($methods as $method) {
+        $result[] = [
+            'id'           => $method->id,
+            'provider'     => 'yourplugin',
+            'type'         => 'card',
+            'display_name' => ucfirst($method->brand) . ' ending in ' . $method->last4,
+            'brand'        => strtolower($method->brand),
+            'last4'        => $method->last4,
+            'exp_month'    => $method->expMonth,
+            'exp_year'     => $method->expYear,
+            'is_default'   => $method->isDefault,
+            'actions'      => ['delete', 'set_default'],
+        ];
+    }
+
+    $event->setArgument('result', $result);
+}
+```
+
+See [Saved Payment Methods Event](./saved_methods_event.md) for complete implementation details.
+
 ## Migration from J2Store
 
 If the previous J2Store installation stored Authorize.Net profiles in `#__j2store_payment_profiles`, migrate them with:
@@ -160,5 +206,6 @@ Adjust the `WHERE` clause and `provider` mapping for any other gateways stored i
 
 ## Related
 
+- [Saved Payment Methods Event](./saved_methods_event.md) - Unified Payment Methods tab integration
 - [Payment Plugin Development](../index.md)
 - [Order Lifecycle](../../../features/payments/index.md)
