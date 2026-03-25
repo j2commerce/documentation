@@ -1,10 +1,3 @@
----
-title: "Stripe Payment"
-sidebar_label: "Stripe"
-sidebar_position: 5
-description: "Accept credit card payments and dozens of alternative payment methods in your J2Commerce store using Stripe's powerful payment platform."
----
-
 # Stripe Payment
 
 The Stripe plugin lets your customers pay using credit cards, digital wallets, bank transfers, and buy-now-pay-later options — all processed securely through Stripe's payment platform.
@@ -13,11 +6,9 @@ Choose between two checkout experiences: **Embedded** (payment form displayed di
 
 ## Prerequisites
 
-- J2Commerce installed and active on your Joomla site
+- J2Commerce is installed and active on your Joomla site
 - A Stripe account (see the setup steps below)
 - API keys from your Stripe Dashboard (Publishable Key and Secret Key)
-
-***
 
 ## Set Up a Stripe Account
 
@@ -280,7 +271,13 @@ Choose the status that fits your workflow. Most stores use **Confirmed** or **Pr
 
 ### Order Status View
 
-![](/img/kustom-config7.webp)
+:::info
+
+**Note**: The order status will only change to Refunded if it is a **Full refund**. If it is a Partial Refund, the status will stay the same
+
+:::
+
+![](/img/stripe-refund3.webp)
 
 ### Surcharge
 
@@ -373,9 +370,7 @@ Some payment methods in Stripe require activation before they appear at checkout
 
 :::
 
-
-
-<!-- SCREENSHOT: Stripe Dashboard payment methods settings page -->
+![](/img/stripe-checkout5.webp)
 
 ***
 
@@ -385,35 +380,85 @@ Some payment methods in Stripe require activation before they appear at checkout
 
 ### Embedded Mode (Payment Element)
 
+![](/img/8stripe-checkout-automatic-payment-embedded2.webp)
+
 When a customer selects Stripe at checkout:
 
 1. The Payment Element loads directly on your checkout page.
 2. The customer sees payment methods relevant to their location and currency.
-3. They enter payment details and click **Pay**.
+3. They enter payment details and click **Pay**. or **Use This Card**, if they have a card saved.
 4. The payment is processed without leaving your site.
 5. The customer sees the confirmation page.
 
-<!-- SCREENSHOT: Stripe Payment Element on checkout page -->
+**Checkout View**
+
+![](/img/8stripe-checkout-automatic-payment-embedded1.webp)
 
 ### Embedded Mode (Card Element)
 
 When Element Type is set to Card:
 
-1. A simple card form appears with optional payment method buttons.
-2. The customer enters card details or clicks an alternative payment method.
-3. Payment is processed without leaving your site.
+- A simple card form appears with optional payment method buttons.
+
+- The customer enters card details or clicks an alternative payment method.
+
+- Payment is processed without leaving your site.
+
+## Frontend View for each Checkout option (Embedded)
+
+### Embedded  -> Card Element -> Manual
+
+**Plugin Settings**
+
+![](/img/8stripe-checkout-manual-embedded1.webp)
+
+**Frontend View**
+
+![]()
+
+![](/img/8stripe-checkout-manual-embedded.webp)
+
+### Embedded  -> Card Element -> Automatic
+
+**Plugin Settings**
+
+**Frontend View**
+
+### Embedded  -> Payment Element -> Automatic
+
+**Plugin Settings**
+
+![](/img/8stripe-checkout-automatic-payment-embedded2.png)
+
+**Frontend View**
+
+![](/img/8stripe-checkout-automatic-payment-embedded1-1.webp)
+
+### Embedded  -> Payment Element -> Manual
+
+**Plugin Settings**
+
+![](/img/8stripe-checkout-manual-payment-embedded1.webp)
+
+**Frontend View**
+
+![](/img/8stripe-checkout-manual-payment-embedded2.webp)
 
 ### Hosted Mode
 
 When Checkout Mode is set to Hosted:
 
-1. The customer is redirected to a Stripe-hosted payment page.
-2. They complete payment on Stripe's secure servers.
-3. After payment, they are redirected back to your confirmation page.
+- The customer is redirected to a Stripe-hosted payment page.
 
-<!-- SCREENSHOT: Stripe Hosted Checkout page -->
+![](/img/stripe-checkout6.webp)
 
-***
+- They complete payment on Stripe's secure servers.
+
+![](/img/stripe-checkout-hosted7.webp)
+
+- After payment, they are redirected back to your confirmation page
+
+  ![](/img/8stripe-checkout-hosted8.webp)
 
 ## Order Management
 
@@ -423,6 +468,8 @@ Once a customer pays, J2Commerce records the transaction details:
 - **Transaction ID** — the Stripe Payment Intent ID — is stored with the order.
 - **Transaction status** — Completed, Authorized, or Partially Refunded — is tracked.
 - **Order history** is updated with a "Payment received via Stripe" note.
+
+![](/img/stripe-refund4.webp)
 
 ### Capture Authorized Payments (Manual Capture)
 
@@ -441,29 +488,39 @@ You can also **Void** an authorization to cancel it without charging the custome
 
 You can issue a refund directly from the order in the J2Commerce admin:
 
-1. Go to **J2Commerce** -> **Orders** and open the order.
-2. Look for the **Payment** section.
-3. Click **Refund**.
-4. Enter the amount to refund (leave blank to refund the full amount).
-5. Confirm the refund.
+- Go to **J2Commerce ->** **Orders** and open the order.
+
+- Look for the **Payment** section.
+
+- Click **Refund**.
+
+![](/img/stripe-refund5.webp)
+
+- Enter the amount to refund (leave blank to refund the full amount).
+
+- Confirm the refund.
 
 The refund is sent to Stripe via the API. If you enabled **Change Status on Refund**, the order status updates automatically.
 
-<!-- SCREENSHOT: Order admin view showing Refund button and amount input -->
+![](/img/stripe-refund.webp)
 
 ### Charge a Saved Card
 
 For orders placed by returning customers who have saved cards:
 
-1. Go to **J2Commerce** -> **Orders** and open the order.
-2. If the customer has saved cards, a **Charge Card** section appears below the order summary.
-3. Select a card from the dropdown.
-4. Enter the amount to charge (defaults to the order total).
-5. Click **Charge**.
+- Go to **J2Commerce** -> **Orders** and open the order.
+
+- If the customer has saved cards, a **Charge Card** section appears below the **order summary.**
+
+- Select a card from the dropdown.
+
+- Enter the amount to charge (defaults to the order total).
+
+- Click **Charge**.
 
 This is useful for manual reorders, phone orders, or collecting additional payment for shipping adjustments.
 
-<!-- SCREENSHOT: Order admin view showing Charge Card section -->
+![](/img/stripe-refund6.webp)
 
 ### Webhook-Triggered Updates
 
@@ -484,13 +541,11 @@ If webhooks are configured, Stripe can update order statuses automatically:
 When **Allow Saved Cards** is enabled, customers can manage their saved cards:
 
 1. Log in to the frontend.
-2. Go to **My Account** -> **Payment Methods** (or **Stripe Cards** tab).
+2. Go to **My Account** **->** **Payment Methods**
 3. View all saved cards with last 4 digits and expiry.
 4. Delete cards they no longer want stored.
 
-<!-- SCREENSHOT: Customer profile showing saved cards management -->
-
-***
+   ![](/img/stripe-payment.webp)
 
 ## Going Live Checklist
 
@@ -590,7 +645,7 @@ Before accepting real payments, confirm the following:
 For help with the Stripe plugin:
 
 - **J2Commerce documentation:** [docs.j2commerce.com](https://docs.j2commerce.com)
-- **J2Commerce support:** [www.j2commerce.com](https://www.j2commerce.com)
+- **J2Commerce support:** [www.j2commerce.com](https://www.j2commerce.com/support)
 - **Stripe Dashboard:** [dashboard.stripe.com](https://dashboard.stripe.com)
 - **Stripe documentation:** [stripe.com/docs](https://stripe.com/docs)
 - **Stripe support:** [support.stripe.com](https://support.stripe.com)
