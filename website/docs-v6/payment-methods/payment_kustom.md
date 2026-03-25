@@ -69,7 +69,7 @@ After your account is active:
 
 ***
 
-## Installation & Enabling
+## Purchase and Download
 
 This plugin is a separate add-on available from the **J2Commerce Extensions Store**. It does not come with the core J2Commerce 6 component.
 
