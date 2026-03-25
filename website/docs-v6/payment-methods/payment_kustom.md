@@ -73,7 +73,7 @@ After your account is active:
 
 This plugin is a separate add-on available from the **J2Commerce Extensions Store**. It does not come with the core J2Commerce 6 component.
 
-**Step 1:** Go to our **[J2Commerce](https://www.j2commerce.com/)** website **->** **Payment Plugin**
+**Step 1:** Go to our [**J2Commerce**](https://www.j2commerce.com/) website **->** **Payment Plugin**
 
 **Step 2:** Locate the **Payment\_Kustom** Plugin **->** click **View Details** **->** **Add to cart** **->** **Checkout**.&#x20;
 

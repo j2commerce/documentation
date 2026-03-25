@@ -46,70 +46,91 @@ After your account is active:
 
 :::
 
-***
+## Purchase and Download
 
-## Installation & Enabling
+This plugin is a separate add-on available from the **J2Commerce Extensions Store**. It does not come with the core J2Commerce 6 component.
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It does not ship with the core J2Commerce 6 component.
+**Step 1:** Go to our [**J2Commerce**](https://www.j2commerce.com/) website **->** **Payment Plugin**
 
-1. Purchase and download the `payment_stripe.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_stripe.zip` package file.
+**Step 2:** Locate the **Payment\_Stripe** Plugin **->** click **View Details** **->** **Add to cart** **->** **Checkout**.&#x20;
 
+**Step 3:** Go to your **My Download**s under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
 
+## Installing the Plugin
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Find **Stripe** in the list.
-3. Click the toggle in the **Enabled** column to enable the plugin, or click the plugin name to open its settings first.
+You can install the **Stripe** Payment plugin using the Joomla installer. The following steps help you with a successful installation.
 
-<!-- SCREENSHOT: Payment Methods list with Stripe plugin highlighted -->
+In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
-***
+1. Upload the plugin ZIP file or use the Install from URL option.
 
-## Configuration
+   ![](/img/autho-install5.webp)
 
-Go to **J2Commerce** -> **Payments** -> **Payment Methods** and click **Stripe** to open the settings.
+## Enable the Plugin&#x20;
 
-<!-- SCREENSHOT: Stripe plugin configuration form in J2Commerce admin -->
+Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
+
+![](/img/autho-methods.webp)
+
+Look for **Stripe**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/stripe-enable2.webp)
+
+## Configuring the Plugin
+
+After enabling the plugin, click the **Stripe Payment** title to open the settings.
+
+:::tip
+
+**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+
+:::
+
+![](/img/stripe-toggle.webp)
 
 ### Display Settings
 
-| Field             | Description                                                         | Default               |
-| ----------------- | ------------------------------------------------------------------- | --------------------- |
-| **Display Name**  | The label shown to customers at checkout                            | `Credit / Debit Card` |
-| **Display Image** | Optional logo or image shown next to the payment option at checkout | Stripe logo           |
+![](/img/stripe-config.webp)
+
+**Display Name:** The label shown to customers at checkout
+
+**Display Image:** Optional logo or image shown next to the payment option at checkout
 
 ### Checkout Mode
 
+![](/img/stripe-config1.webp)
+
 Choose how customers interact with the payment form:
 
-| Field             | Description                       | Default  |
-| ----------------- | --------------------------------- | -------- |
-| **Checkout Mode** | How the payment form is displayed | Embedded |
+**Checkout Mode:** How the payment form is displayed
 
-**Options:**
+- **Embedded:** Payment form loads directly on your checkout page. Customers never leave your site. Choose between Payment Element (recommended) or Card Element.
 
-| Mode         | Description                                                                                                                                       |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Embedded** | Payment form loads directly on your checkout page. Customers never leave your site. Choose between Payment Element (recommended) or Card Element. |
-| **Hosted**   | Customers are redirected to a Stripe-hosted payment page. After completing payment, they are redirected back to your site.                        |
+- **Hosted:** Customers are redirected to a Stripe-hosted payment page. After completing payment, they are redirected back to your site.
 
 ### Element Type (Embedded Mode Only)
 
 This setting appears when **Checkout Mode** is set to **Embedded**.
 
-| Field            | Description                    | Default |
-| ---------------- | ------------------------------ | ------- |
-| **Element Type** | Which Stripe UI element to use | Payment |
+**Element Type:** Which Stripe UI element to use
 
-| Option              | Description                                                                                                             |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| **Payment Element** | Full payment method selection. Stripe shows relevant payment methods based on the customer's location. **Recommended.** |
-| **Card Element**    | Simple card form. Use this if you want a minimalist credit card input without additional payment method options.        |
+- **Payment Element:** Full payment method selection. Stripe shows relevant payment methods based on the customer's location. **Recommended.**
+
+- **Card Element:** Simple card form. Use this if you want a minimalist credit card input without additional payment method options.
 
 ### Payment Methods (Card Element Only)
 
 When **Element Type** is set to **Card**, you can enable additional payment methods beyond credit cards:
+
+:::info
+
+**Note**: Some payment methods require activation in your Stripe Dashboard. See [Enable Payment Methods in Stripe](#enable-payment-methods-in-stripe-dashboard) below.
+
+:::
 
 | Payment Method        | Description                                           |
 | --------------------- | ----------------------------------------------------- |
@@ -140,50 +161,49 @@ When **Element Type** is set to **Card**, you can enable additional payment meth
 | **OXXO**              | Cash payment (Mexico)                                 |
 | **ACH Direct Debit**  | Bank transfer (US)                                    |
 
-**Note:** Some payment methods require activation in your Stripe Dashboard. See [Enable Payment Methods in Stripe](#enable-payment-methods-in-stripe-dashboard) below.
-
 ### Capture Method
 
 Choose when to capture payment:
 
-| Field              | Description                                          | Default   |
-| ------------------ | ---------------------------------------------------- | --------- |
-| **Capture Method** | When payment is captured from the customer's account | Automatic |
+**Capture Method:** When payment is captured from the customer's account
 
-| Option        | Description                                                                                                                                                                                     |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Automatic** | Payment is captured immediately when the customer completes checkout. The order status updates to Confirmed right away.                                                                         |
-| **Manual**    | Payment is authorized but not captured. You must manually capture the payment from the order admin page. Use this for pre-orders, backorders, or when you need to verify stock before charging. |
+**Automatic:** Payment is captured immediately when the customer completes checkout. The order status updates to Confirmed right away.
+
+**Manual:** Payment is authorized but not captured. You must manually capture the payment from the order admin page. Use this for pre-orders, backorders, or when you need to verify stock before charging.
 
 ### Sandbox Mode
 
-| Field       | Description                                                             | Default |
-| ----------- | ----------------------------------------------------------------------- | ------- |
-| **Sandbox** | Switch on to use Stripe's test environment. No real money is processed. | Yes     |
+![](/img/stripe-config2.webp)
+
+**Sandbox:** Switch on to use Stripe's test environment. No real money is processed.
 
 Turn sandbox mode **on** while you are setting up and testing. Turn it **off** before you go live.
 
-When sandbox mode is active, a warning banner appears on the J2Commerce dashboard so you cannot accidentally forget.
+:::info
+
+**Note**: When sandbox mode is active, a warning banner appears on the J2Commerce dashboard so you cannot accidentally forget.
+
+:::
 
 ### Live API Credentials
 
 These are used when **Sandbox** is set to **No**.
 
-| Field               | Description                                           |
-| ------------------- | ----------------------------------------------------- |
-| **Publishable Key** | Your live Publishable key from the Stripe Dashboard   |
-| **Secret Key**      | Your live Secret key from the Stripe Dashboard        |
-| **Webhook Secret**  | Your live Webhook signing secret (see Webhooks below) |
+**Publishable Key:** Your live Publishable key from the Stripe Dashboard
+
+**Secret Key:** Your live Secret key from the Stripe Dashboard
+
+**Webhook Secret:** Your live Webhook signing secret (see Webhooks below)
 
 ### Sandbox API Credentials
 
 These are used when **Sandbox** is set to **Yes**.
 
-| Field                       | Description                      |
-| --------------------------- | -------------------------------- |
-| **Sandbox Publishable Key** | Your test Publishable key        |
-| **Sandbox Secret Key**      | Your test Secret key             |
-| **Sandbox Webhook Secret**  | Your test Webhook signing secret |
+**Sandbox Publishable Key:** Your test Publishable key
+
+**Sandbox Secret Key:** Your test Secret key
+
+**Sandbox Webhook Secret:** Your test Webhook signing secret
 
 ### Webhooks
 
@@ -191,14 +211,13 @@ Webhooks allow Stripe to notify your store automatically when payment events occ
 
 A **Webhook URL** field is displayed in the plugin settings — copy this URL and register it in your Stripe Dashboard.
 
-| Field                     | Description                                       |
-| ------------------------- | ------------------------------------------------- |
-| **Webhook URL (Live)**    | The URL to register in your live Stripe Dashboard |
-| **Webhook URL (Sandbox)** | The URL to register in your test Stripe Dashboard |
+**Webhook URL (Live):** The URL to register in your live Stripe Dashboard
+
+**Webhook URL (Sandbox):** The URL to register in your test Stripe Dashboard
 
 **How to create a webhook in Stripe:**
 
-1. In the Stripe Dashboard, go to **Developers** -> **Webhooks**.
+1. In the Stripe Dashboard, go to **Developers** **->** **Webhooks**.
 2. Click **Add endpoint**.
 3. Paste the **Webhook URL** from the J2Commerce plugin settings.
 4. Select the events to listen for. Recommended events:
@@ -217,120 +236,121 @@ A **Webhook URL** field is displayed in the plugin settings — copy this URL an
 3. Copy the signing secret (starts with `whsec_...`).
 4. Paste it into the **Webhook Secret** field in the J2Commerce plugin settings.
 
-<!-- SCREENSHOT: Stripe webhook creation form -->
-
 ### Saved Cards
 
-| Field                 | Description                                                             | Default |
-| --------------------- | ----------------------------------------------------------------------- | ------- |
-| **Allow Saved Cards** | Let logged-in customers save cards for faster checkout on future orders | Yes     |
+![](/img/stripe-config3.webp)
+
+**Allow Saved Cards:** Let logged-in customers save cards for faster checkout on future orders
 
 When enabled, customers see a **Save card for future purchases** checkbox at checkout. Saved cards appear in the customer's profile under **My Account** -> **Payment Methods**.
 
-### Stripe Link
-
-| Field           | Description                                                   | Default |
-| --------------- | ------------------------------------------------------------- | ------- |
-| **Enable Link** | Enable Stripe Link one-click checkout for returning customers | Yes     |
+**Enable Link:** Enable Stripe Link (one-click checkout with saved addresses/payment methods). Only available with Payment Element.
 
 Stripe Link lets customers who have saved payment details with Stripe Link pay with a single click using their email address. This requires **Allow Saved Cards** to be enabled.
 
+**Template Style:** Choose the frontend template layout for checkout forms and saved card displays. Options depend on your site's template framework.
+
+Available subtemplates: **Bootstrap 5** and **UIkit**. Leave blank to use the default layout. If your Joomla template is UIkit-based (e.g., YOOtheme Pro), select the UIkit subtemplate for consistent styling.
+
 ### Order Status
 
-| Field            | Description                                         | Default   |
-| ---------------- | --------------------------------------------------- | --------- |
-| **Order Status** | The order status applied after a successful payment | Confirmed |
+![](/img/stripe-config4.webp)
+
+**Order Status:** The order status applied after a successful payment
 
 Choose the status that fits your workflow. Most stores use **Confirmed** or **Processing** for paid orders.
 
 ### Refund Settings
 
-| Field                       | Description                                                                              | Default  |
-| --------------------------- | ---------------------------------------------------------------------------------------- | -------- |
-| **Change Status on Refund** | Automatically change order status when a refund is processed                             | No       |
-| **Refund Order Status**     | The status to set when a refund is processed (shown when Change Status on Refund is Yes) | *(none)* |
+**Order Status on Refund:**&#x20;
+
+- When set to '**No**', the order status is automatically changed when a refund is processed.
+
+- When set to '**Yes**', the order status to set when a refund is processed. A common choice is Refunded or Cancelled.
+
+**Refund Order Status:** The status to set when a full refund is processed (shown when Change Status on Refund is )
+
+**Partial Refund Order Status:** The status to set when a partial refund is processed (shown when Change Status on Refund is '**Yes**')
 
 ### Void Settings
 
-| Field                     | Description                                                                          | Default  |
-| ------------------------- | ------------------------------------------------------------------------------------ | -------- |
-| **Change Status on Void** | Automatically change order status when a void is processed                           | No       |
-| **Void Order Status**     | The status to set when a void is processed (shown when Change Status on Void is Yes) | *(none)* |
+**Change Status on Void:** Automatically change the order status when an authorised payment is voided
+
+**Void Order Status:** The status to set when a void is processed (shown when Change Status on Void is '**Yes**')
+
+### Order Status View
+
+![](/img/kustom-config7.webp)
 
 ### Surcharge
 
+![](/img/stripe-config5.webp)
+
 Add an optional surcharge to orders paid via Stripe. This is useful if you want to pass on Stripe's processing fee to customers (check your local laws and Stripe's terms before doing this).
 
-| Field                   | Description                                                         | Default  |
-| ----------------------- | ------------------------------------------------------------------- | -------- |
-| **Surcharge Name**      | Label shown to customers for the surcharge (e.g., "Processing Fee") | *(none)* |
-| **Surcharge Percent**   | Percentage of the order subtotal added as a surcharge               | *(none)* |
-| **Surcharge Fixed**     | Fixed amount added as a surcharge                                   | *(none)* |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount                        | *(none)* |
+**Surcharge Name:** Label shown to customers for the surcharge (e.g., "Processing Fee")
+
+**Surcharge Percent:** Percentage of the order subtotal added as a surcharge
+
+**Surcharge Fixed:** Fixed amount added as a surcharge
+
+**Surcharge Tax Class:** Tax profile to apply to the surcharge amount
 
 You can combine a percentage and a fixed amount — both will be added together.
 
-### Geo-Zone Restriction
+### Geo-Zone Restriction & Subtotals
 
-| Field                    | Description                                                   | Default                         |
-| ------------------------ | ------------------------------------------------------------- | ------------------------------- |
-| **Geo-Zone Restriction** | Limit Stripe availability to customers in a specific geo-zone | *(none — available everywhere)* |
+![](/img/stripe-config6.webp)
 
-Leave this empty to show Stripe to all customers regardless of location.
+**Geo-Zone Restriction:** Limit Stripe availability to customers in a specific geo-zone
 
-### Order Amount Limits
+:::info
 
-| Field                | Description                                                                                | Default  |
-| -------------------- | ------------------------------------------------------------------------------------------ | -------- |
-| **Minimum Subtotal** | Hide Stripe if the cart subtotal is below this amount. Leave empty for no minimum.         | *(none)* |
-| **Maximum Subtotal** | Hide Stripe if the cart subtotal exceeds this amount. Leave empty for `-1` for no maximum. | *(none)* |
+**Note**: Leave this empty to show Stripe to all customers regardless of location.
 
-### Statement Descriptor
+:::
 
-| Field                    | Description                                                              | Default  |
-| ------------------------ | ------------------------------------------------------------------------ | -------- |
-| **Statement Descriptor** | Text that appears on your customers' bank statements (max 22 characters) | *(none)* |
+**Minimum Subtotal:** Hide Stripe if the cart subtotal is below this amount. Leave empty for no minimum.
+
+**Maximum Subtotal:** Hide Stripe if the cart subtotal exceeds this amount. Leave empty for `-1` for no maximum.
+
+**Statement Descriptor:** Text that appears on your customers' bank statements (max 22 characters)
 
 If empty, Stripe uses your account's default statement descriptor.
 
-### Thank You Page
+### Thank You Page & Custom Messages
 
-| Field                 | Description                                                                                                                                             |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Thank You Article** | Select a Joomla article to display after a successful payment. This is shown on the confirmation page in addition to the standard confirmation message. |
+![](/img/stripe-config7.webp)
+
+**Thank You Article:** Select a Joomla article to display after a successful payment. This is shown on the confirmation page in addition to the standard confirmation message.
 
 ### Custom Messages
 
 These text fields let you customize messages shown to customers at different points in the payment process.
 
-| Field                 | When it displays                                          |
-| --------------------- | --------------------------------------------------------- |
-| **On Selection**      | When the customer selects Stripe as their payment method  |
-| **On Before Payment** | On the payment page before the customer clicks Pay        |
-| **On After Payment**  | On the confirmation page after a successful payment       |
-| **On Error Payment**  | When a payment error occurs                               |
-| **On Cancel Payment** | When the customer cancels payment and returns to the cart |
+**On Selection:** It displays when the customer selects Stripe as their payment method
+
+**On Before Payment:** It displays on the payment page before the customer clicks Pay
+
+**On After Payment:** It displays on the confirmation page after a successful payment
+
+**On Error Payment:** It displays when a payment error occurs
+
+**On Cancel Payment:** It displays when the customer cancels payment and returns to the cart
 
 ### Dashboard Icon
 
-| Field                    | Description                                                                 | Default  |
-| ------------------------ | --------------------------------------------------------------------------- | -------- |
-| **Show Dashboard Icon**  | Show a shortcut icon for Stripe on the J2Commerce dashboard                 | No       |
-| **Dashboard Icon Label** | Label for the dashboard icon (only visible when Show Dashboard Icon is Yes) | *(none)* |
+**Show Dashboard Icon:** When enabled, this plugin adds an icon tile to the J2Commerce dashboard and the J2Commerce quick icons module.
 
-### Subtemplate
+**Icon Label:** Label for the dashboard icon (only visible when Show Dashboard Icon is '**Yes**')
 
-| Field           | Description                                                                             | Default     |
-| --------------- | --------------------------------------------------------------------------------------- | ----------- |
-| **Subtemplate** | Select an alternative layout template for the Stripe payment form, if any are installed | *(default)* |
+**Debug Mode:** Write detailed Stripe API activity to `administrator/logs/payment_stripe.php` and the browser console
 
-### Debug Mode
+:::tip
 
-| Field          | Description                                                                                           | Default |
-| -------------- | ----------------------------------------------------------------------------------------------------- | ------- |
-| **Debug Mode** | Write detailed Stripe API activity to `administrator/logs/payment_stripe.php` and the browser console | No      |
+**Tip**: Enable debug mode only while troubleshooting. Disable it in production — logs can grow large quickly.
 
-Enable debug mode only while troubleshooting. Disable it in production — logs can grow large quickly.
+:::
 
 ***
 
@@ -347,13 +367,21 @@ Some payment methods in Stripe require activation before they appear at checkout
    - Toggle **On** to enable it.
    - Some methods require additional verification or configuration — follow the prompts.
 
+:::tip
+
 **Important:** Payment methods are shown based on the customer's location and currency. A customer in the US won't see iDEAL (Netherlands-only) even if it's enabled.
+
+:::
+
+
 
 <!-- SCREENSHOT: Stripe Dashboard payment methods settings page -->
 
 ***
 
 ## Checkout Experience
+
+![](/img/stripe-checkout2.webp)
 
 ### Embedded Mode (Payment Element)
 
