@@ -364,12 +364,17 @@ If you set **Transaction Type** to **Auth Only**, payments are authorised but no
 
 It will initially show the status as '**Processed**' until it's captured. The status will change to Confirmed afterwards. To capture:
 
-![](/img/kustom-refund6.webp)
+![](/img/kustom-processed.webp)
 
 1. Go to **J2Commerce** **->** **Orders** and open the order.
 2. Look for the **Order Details** section.
 3. Click **Capture** to capture the authorized amount.
-4. The order status updates to the configured payment status.
+
+![](/img/kustom-processed1.webp)
+
+The order status updates to the configured payment status.
+
+![](/img/kustom-processed3.webp)
 
 You can also **cancel** an authorization to release the hold on the customer's funds without charging them.
 
