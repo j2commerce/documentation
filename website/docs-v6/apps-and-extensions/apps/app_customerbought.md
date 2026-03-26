@@ -1,10 +1,3 @@
----
-title: "Customers Also Bought"
-sidebar_label: "Customers Also Bought"
-sidebar_position: 30
-description: "Display a curated section of associated products on your product pages so shoppers can add multiple related items to their cart in one click."
----
-
 # Customers Also Bought
 
 The Customers Also Bought app adds a product recommendation section to your J2Commerce product detail pages. You choose which products appear for each item, customers check the ones they want, and a single button adds everything to the cart at once. The section only shows products that are currently in stock, so customers never encounter unavailable items.
@@ -19,72 +12,79 @@ This is a practical way to increase average order value by surfacing complementa
 
 ## Purchase and Download
 
-The Customers Also Bought app is a premium add-on available from the J2Commerce extension directory.
+‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Apps**
+**Step 2:** Locate the **Customers Also Bought** App **->** click **View Details** **->** **Add to cart** **->** **Checkout**.&#x20;
 
-**Step 2:** Locate the **Customers Also Bought** app -> click **View Details** -> **Add to cart** -> **Checkout**.
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**
 
-**Step 3:** Go to **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
+## Install the App
 
-## Install the Plugin
+Go to **System** **->** **Install** **->** **Extensions**
 
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+Upload the plugin ZIP file or use the Install from URL option.
 
-Upload the plugin ZIP file or use the **Install from URL** option.
-
-<!-- SCREENSHOT: Joomla Extensions installer showing the upload area -->
+![](/img/address-install.webp)
 
 ## Enable the App
 
-Once installed, you need to enable the plugin. There are two ways to reach the Apps list.
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-**Option A:** Click the **J2Commerce** icon at the top right corner -> **Apps**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-Search for **Customers Also Bought**, click the status toggle (the X turns into a green checkmark) to enable it.
+![](/img/address-apps.webp)
 
-<!-- SCREENSHOT: Apps list with Customers Also Bought found via search, toggle enabled -->
+To help you narrow down the list, you can do a search for the **J2Commerce - Customers Also Bought** app, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/customers-bought-enable.webp)
 
 ## Configure the App
 
 Click on the **Customers Also Bought** title to open the plugin settings.
 
-<!-- SCREENSHOT: Plugin settings screen open in the J2Commerce Apps area -->
-
 ### Plugin Tab
 
 The **Plugin** tab controls the global behaviour and appearance of the section across all product pages.
 
-<!-- SCREENSHOT: Plugin tab showing all settings fields -->
+![](/img/customers-bought-config.webp)
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Template Style** | Choose between `bootstrap5` or `uikit` to match your front-end theme | `bootstrap5` |
-| **Section Title** | Heading displayed above the product row. Leave blank to use the default "Customers Also Bought" label | *(blank)* |
-| **Display Position** | Where on the product page the section appears — Before Upsells, Before Cross-sells, or After Add to Cart | Before Upsells |
-| **Maximum Products** | The most associated products to show at once (1–20) | `6` |
-| **Show Price** | Display the price on each product card | Yes |
-| **Show Discount Badge** | Show a discount percentage badge when a product has a special price | Yes |
-| **Button Text** | Label for the bulk add-to-cart button. Leave blank for the default "Purchase Together" label | *(blank)* |
-| **Button CSS Class** | CSS classes applied to the purchase button. Change this to match your theme's button style | `btn btn-primary` |
-| **Debug Mode** | Write detailed diagnostic messages to `logs/app_customerbought.php`. Turn off in production | No |
+**Template Style:** Choose between `bootstrap5` or `uikit` to match your front-end theme
+
+**Section Title:** Heading displayed above the product row. Leave blank to use the default "Customers Also Bought" label
+
+**Display Position:** Where on the product page the section appears — Before Upsells, Before Cross-sells, or After Add to Cart
+
+**Maximum Products:** The most associated products to show at once (1–20)
+
+**Show Price:** Display the price on each product card
+
+**Show Discount Badge:** Show a discount percentage badge when a product has a special price
+
+**Button Text:** Label for the bulk add-to-cart button. Leave blank for the default "Purchase Together" label
+
+**Button CSS Class:** CSS classes applied to the purchase button. Change this to match your theme's button style
+
+**Debug Mode:** Write detailed diagnostic messages to `logs/app_customerbought.php`. Turn off in production
 
 ### Responsive Display Tab
 
 The **Responsive Display** tab controls how many product cards appear in each row depending on the visitor's screen width. The section uses a responsive grid that automatically switches to a Swiper.js slider when there are more products than can fit in a single row.
 
-<!-- SCREENSHOT: Responsive Display tab showing the six breakpoint fields -->
+![](/img/customers-bought-responsive-display.webp)
 
-| Setting | Screen Width | Default |
-|---------|-------------|---------|
-| **Cards per Row (XS)** | Below 576 px | `1` |
-| **Cards per Row (SM)** | 576 px and above | `2` |
-| **Cards per Row (MD)** | 768 px and above | `3` |
-| **Cards per Row (LG)** | 992 px and above | `4` |
-| **Cards per Row (XL)** | 1200 px and above | `4` |
-| **Cards per Row (XXL)** | 1400 px and above | `5` |
+**Cards per Row (XS):** Below 576 px
+
+**Cards per Row (SM):** 576 px and above
+
+**Cards per Row (MD):** 768 px and above
+
+**Cards per Row (LG):** 992 px and above
+
+**Cards per Row (XL):** 1200 px and above
+
+**Cards per Row (XXL):** 1400 px and above
 
 Click **Save** or **Save & Close** to apply your changes.
 
@@ -92,25 +92,33 @@ Click **Save** or **Save & Close** to apply your changes.
 
 The global settings above apply site-wide. You then assign specific associated products to each individual product. This is done inside the product editing form.
 
-1. Go to **J2Commerce** -> **Catalog** -> **Products**.
-2. Click on the product you want to configure.
-3. Scroll down to find the **Customers Also Bought** tab in the product form.
+Go to **J2Commerce** **-> Catalog ->** **Products**.
 
-<!-- SCREENSHOT: Product edit form with Customers Also Bought tab visible -->
+![](/img/customers-bought-product.webp)
 
-4. In the **Search Products** field, type a product name or SKU. A dropdown appears as you type (minimum 2 characters).
+Click on the product you want to configure.
 
-<!-- SCREENSHOT: Product search field with autocomplete suggestions showing -->
+Click on the **J2Commerce** tab **-> Apps.** Scroll down to find the **Customers Also Bought** tab in the product form.
 
-5. Select a product from the suggestions. It is added to the table immediately with a live stock status badge — **In Stock** (green) or **Out of Stock** (amber).
+![](/img/customers-bought-apps.webp)
 
-<!-- SCREENSHOT: Product table showing one in-stock and one out-of-stock entry with badges -->
+In the **Search Products** field, type a product name or SKU. A dropdown appears as you type (minimum 2 characters).
 
-6. Repeat for each additional product you want to associate.
-7. To remove a product, click the red **trash** icon in its row.
-8. Click **Save** on the product.
+Select a product from the suggestions. It is added to the table immediately with a live stock status badge — **In Stock** (green) or **Out of Stock** (amber).
+
+![](/img/customers-bought-apps1.webp)
+
+- Repeat for each additional product you want to associate.
+
+- To remove a product, click the red **trash** icon in its row.
+
+- Click **Save** on the product.
 
 Out-of-stock products show a warning in the table to let you know they will not appear on the front end until stock is restored.
+
+### Frontend View
+
+![](/img/customers-bought-frontend.webp)
 
 ## How It Works on the Front End
 
@@ -123,9 +131,11 @@ When a shopper visits a product page where you have configured associated produc
 5. A running total updates in real time as checkboxes are toggled.
 6. Clicking **Purchase Together** (or your custom button label) adds all checked products to the cart in a single action.
 
-<!-- SCREENSHOT: Front-end product page showing the Customers Also Bought section with checkboxes, product cards, total bar, and Purchase Together button -->
-
 Products that are out of stock are filtered out automatically and never shown to shoppers. If all associated products for a given product page happen to be out of stock, the entire section is hidden.
+
+### Frontend View
+
+![](/img/customers-bought-frontend1.webp)
 
 ## Display Conditions
 
