@@ -81,82 +81,127 @@ Give it a title and assign it to a **module position** in your template (such as
 
 Go to **J2Commerce** -> **Apps**, click the **Advanced Cart Drawer title** to open its settings. The settings are grouped into seven tabs.
 
-![](/img/advanced-cart-config.webp)
+:::info
+
+**Helpful Hint:** If you click on the Toggle Inline Help button, it will explain each section.: If you need to find your API Key in the future, go back to this same page and click **Show Key** in the **Additional Information** section
+
+:::
+
+![](/img/advanced-cart-config-toggle.webp)
 
 ### Display Settings
 
 These settings control the overall appearance and behavior of the drawer.
 
-| Setting                        | Description                                                                                                                                                | Default            | Options                                  |
-| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ---------------------------------------- |
-| **Layout Framework**           | CSS framework used for the drawer templates. Template overrides are detected automatically.                                                                | `bootstrap5`       | `bootstrap5`                             |
-| **Drawer Width (px)**          | Width of the cart panel in pixels.                                                                                                                         | `420`              | `300` – `600`                            |
-| **Auto-Open on Add to Cart**   | Slides the drawer open automatically when a customer adds a product to the cart.                                                                           | Yes                | Yes / No                                 |
-| **Auto-Close After (seconds)** | Automatically closes the drawer after the specified number of seconds. Set to `0` to leave it open until the customer closes it manually.                  | `0` (Never)        | `0` – `60`                               |
-| **Add-to-Cart Behaviour**      | Controls what happens when a product is added. **Open Cart Drawer** keeps the customer on the page; **Redirect to Cart Page** sends them to the full cart. | `Open Cart Drawer` | Open Cart Drawer / Redirect to Cart Page |
-| **Show Item Count in Header**  | Displays the number of items in parentheses next to the "Your Cart" heading inside the drawer.                                                             | Yes                | Yes / No                                 |
-| **Overlay Opacity**            | Controls how dark the page background dimming is when the drawer is open. `0.0` is fully transparent; `1.0` is fully opaque.                               | `0.5`              | `0.0` – `1.0`                            |
-| **Checkout Button Background** | Background and border color for the checkout button. Hover and focus states use a 15% darker shade automatically.                                          | `#010156`          | Any hex color                            |
-| **Checkout Button Text Color** | Text color for the checkout button.                                                                                                                        | `#ffffff`          | Any hex color                            |
+![](/img/advanced-cart-config.webp)
+
+**Layout Framework:** CSS framework used for the drawer templates. Template overrides are detected automatically. Choose the frontend template layout for checkout forms and saved card displays. Options depend on your site's template framework.
+
+**Available subtemplates:** **Bootstrap 5** and **UIkit**. Leave blank to use the default layout. If your Joomla template is UIkit-based (e.g., YOOtheme Pro), select the UIkit subtemplate for consistent styling.
+
+**Drawer Width (px):** Width of the cart drawer in pixels (300–600).
+
+**Auto-Open on Add to Cart:** Select 'Yes' to automatically slide open the drawer when a product is added to the cart.
+
+**Auto-Close After (seconds):** Automatically closes the drawer after the specified number of seconds. Set to `0` to leave it open until the customer closes it manually.
+
+**Add-to-Cart Behaviour:** Controls what happens when a product is added.&#x20;
+
+- **Open Cart Drawer** keeps the customer on the page
+
+- **Redirect to Cart Page** sends them to the full cart
+
+**Show Item Count in Header:** Displays the number of items in parentheses next to the "Your Cart" heading inside the drawer.
+
+**Overlay Opacity:** Controls how dark the page background dimming is when the drawer is open. `0.0` is fully transparent; `1.0` is fully opaque.
+
+**Checkout Button Background:** Background and border color for the checkout button. Hover and focus states use a 15% darker shade automatically.
+
+**Checkout Button Text Color:** Text color for the checkout button.
+
+### Frontend View
+
+![](/img/advanced-cart-modules4-1.webp)
 
 ### Cart Items
 
 These settings control which information is shown for each line item in the drawer.
 
-| Setting                     | Description                                                                                                                                       | Default | Options  |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | -------- |
-| **Show Product Thumbnails** | Displays a 64×64 product thumbnail image beside each cart item.                                                                                   | Yes     | Yes / No |
-| **Show SKU**                | Shows the product SKU below the item name.                                                                                                        | No      | Yes / No |
-| **Show Variant Attributes** | Shows the selected variant options (e.g., Size: Large, Color: Blue) below the item name.                                                          | Yes     | Yes / No |
-| **Show Quantity Controls**  | Displays +/- buttons and an editable quantity field. Customers can update quantities directly from the drawer without opening the full cart page. | Yes     | Yes / No |
-| **Show Base Price**         | When a discount applies, shows the original price with a strikethrough alongside the discounted price.                                            | Yes     | Yes / No |
-| **Show Discount Badge**     | Displays a discount badge on items that have a reduced price.                                                                                     | Yes     | Yes / No |
+![](/img/advanced-cart-config-cart-items.webp)
+
+**Show Product Thumbnails:** Displays a 64×64 product thumbnail image beside each cart item.
+
+**Show SKU:** Shows the product SKU below the item name.
+
+**Show Variant Attributes:** Shows the selected variant options (e.g., Size: Large, Color: Blue) below the item name.
+
+**Show Quantity Controls:** Displays +/- buttons and an editable quantity field. Customers can update quantities directly from the drawer without opening the full cart page.
+
+**Show Base Price:** When a discount applies, shows the original price with a strikethrough alongside the discounted price.
+
+**Show Discount Badge:** Displays a discount badge on items that have a reduced price.
 
 ### Cart Options
 
 These settings control the interactive elements inside the drawer body.
 
-| Setting                         | Description                                                                                                                                                                                                                           | Default          | Options                               |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------------------- |
-| **Show Free Shipping Progress** | Displays a progress bar showing how close the customer is to the free-shipping threshold.                                                                                                                                             | Yes              | Yes / No                              |
-| **Free Shipping Threshold**     | The cart subtotal (in your store's base currency) the customer must reach to qualify for free shipping. Only visible when **Show Free Shipping Progress** is enabled. Set to `0` to hide the bar even when the progress option is on. | `0`              | Any positive number                   |
-| **Progress Bar Color**          | Fill color of the free-shipping progress bar.                                                                                                                                                                                         | `#22c55e`        | Any hex color                         |
-| **Show Coupon Field**           | Allows customers to type and apply a coupon code directly from the drawer. The field is hidden behind a "Have a coupon?" toggle link and only expands when clicked.                                                                   | Yes              | Yes / No                              |
-| **Show Voucher Field**          | Allows customers to apply a gift voucher code directly from the drawer. Shown behind a "Have a voucher?" toggle link.                                                                                                                 | Yes              | Yes / No                              |
-| **Show Checkout Button**        | Displays the primary checkout button in the drawer footer.                                                                                                                                                                            | Yes              | Yes / No                              |
-| **Show Continue Shopping**      | Displays a "Continue Shopping" link in the drawer footer. If a **Continue Shopping Link** is configured in the Navigation tab, it links there; otherwise it simply closes the drawer.                                                 | Yes              | Yes / No                              |
-| **Show Clear Cart Button**      | Displays a "Clear All" button that empties the entire cart in one click. Hidden by default to prevent accidental deletions.                                                                                                           | No               | Yes / No                              |
-| **Show Subtotals**              | Displays order total information at the bottom of the item list.                                                                                                                                                                      | Yes              | Yes / No                              |
-| **Subtotal Type**               | Controls how totals are displayed when **Show Subtotals** is on. **Full Subtotals** shows a breakdown including shipping, taxes, discounts, and grand total. **Single Line Subtotal** shows only one line with the cart total.        | `Full Subtotals` | Full Subtotals / Single Line Subtotal |
+![](/img/advanced-cart-config-cart-options.webp)
+
+**Show Free Shipping Progress:** Displays a progress bar showing how close the customer is to the free-shipping threshold.
+
+**Free Shipping Threshold:** The cart subtotal (in your store's base currency) the customer must reach to qualify for free shipping. Only visible when **Show Free Shipping Progress** is enabled. Set to `0` to hide the bar even when the progress option is on.
+
+**Progress Bar Color:** Fill color of the free-shipping progress bar.
+
+**Show Coupon Field:** Allows customers to type and apply a coupon code directly from the drawer. The field is hidden behind a "Have a coupon?" toggle link and only expands when clicked.
+
+**Show Voucher Field:** Allows customers to apply a gift voucher code directly from the drawer. Shown behind a "Have a voucher?" toggle link.
+
+**Show Checkout Button:** Displays the primary checkout button in the drawer footer.
+
+**Show Continue Shopping:** Displays a "Continue Shopping" link in the drawer footer. If a **Continue Shopping Link** is configured in the Navigation tab, it links there; otherwise it simply closes the drawer.
+
+**Show Clear Cart Button:** Displays a "Clear All" button that empties the entire cart in one click. Hidden by default to prevent accidental deletions.
+
+**Show Subtotals:** Displays order total information at the bottom of the item list.
+
+**Subtotal Type:** Controls how totals are displayed when **Show Subtotals** is on.&#x20;
+
+- **Full Subtotals** shows a breakdown including shipping, taxes, discounts, and grand total.&#x20;
+
+- **Single Line Subtotal** shows only one line with the cart total.
 
 ### Payment Icons
 
 Show accepted payment method logos at the bottom of the drawer footer to build buyer confidence.
 
-| Setting                       | Description                                                                                     | Default       | Options                                                                              |
-| ----------------------------- | ----------------------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------------------ |
-| **Show Payment Method Icons** | Enables the payment icon row in the footer.                                                     | No            | Yes / No                                                                             |
-| **Payment Icons to Display**  | Multi-select list of icons to show. Only visible when **Show Payment Method Icons** is enabled. | None selected | Visa, MasterCard, American Express, Discover, Maestro, PayPal, Apple Pay, Google Pay |
+![](/img/advanced-cart-config-payment.webp)
 
-<!-- SCREENSHOT: Payment Icons settings showing several icons selected -->
+**Show Payment Method Icons:** Enables the payment icon row in the footer.
+
+**Payment Icons to Display:** Multi-select list of icons to show. Only visible when **Show Payment Method Icons** is enabled.
+
+- Visa, MasterCard, American Express, Discover, Maestro, PayPal, Apple Pay, Google Pay
 
 ### Navigation Links
 
 These settings control where the drawer's buttons link to. All three fields use the Joomla menu item picker.
 
-| Setting                    | Description                                                                                                             | Default |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Continue Shopping Link** | Menu item the Continue Shopping button links to. Leave blank to use the browser back action (the drawer simply closes). | None    |
-| **Cart Page**              | Menu item for the full cart page. Used as the fallback URL for the cart when no menu item is found automatically.       | None    |
-| **Checkout Page**          | Menu item for the checkout page. Used as the target URL for the Checkout button.                                        | None    |
+![](/img/advanced-cart-config-navigation.webp)
+
+**Continue Shopping Link:** Menu item the Continue Shopping button links to. Leave blank to use the browser back action (the drawer simply closes).
+
+**Cart Page:** Menu item for the full cart page. Used as the fallback URL for the cart when no menu item is found automatically.
+
+**Checkout Page:** Menu item for the checkout page. Used as the target URL for the Checkout button.
 
 Setting these explicitly is recommended to ensure the correct pages are used on sites with multiple menus or complex navigation structures.
 
 ### Exclusions
 
-| Setting          | Description                                                                                                                                                                                                            | Default |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Exclude URLs** | A list of URL fragments, one per line. The drawer will not be injected on any page whose URL contains one of these strings. For example, entering `/checkout` prevents the drawer from appearing on the checkout page. | Empty   |
+![](/img/advanced-cart-config-exclusion.webp)
+
+**Exclude URLs:** A list of URL fragments, one per line. The drawer will not be injected on any page whose URL contains one of these strings. For example, entering `/checkout` prevents the drawer from appearing on the checkout page.
 
 **Example exclusions:**
 
@@ -168,9 +213,9 @@ Setting these explicitly is recommended to ensure the correct pages are used on 
 
 ### Advanced
 
-| Setting        | Description                                                                                                                                                                                                     | Default |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Custom CSS** | Additional CSS rules applied after the plugin's own stylesheet. Use `.j2c-drawer` as the root selector to target drawer elements. See the Template Overrides section below for available CSS custom properties. | Empty   |
+![](/img/advanced-cart-config-advanced.webp)
+
+**Custom CSS:** Additional CSS rules applied after the plugin's own stylesheet. Use `.j2c-drawer` as the root selector to target drawer elements. See the Template Overrides section below for available CSS custom properties.
 
 ## Configuring the Toggle Module
 
@@ -178,30 +223,45 @@ The **Advanced Cart Toggle** module renders the cart icon button that customers 
 
 Go to **Content** -> **Site Modules**, find the **Advanced Cart Toggle** module and click its name.
 
-<!-- SCREENSHOT: Advanced Cart Toggle module settings in the Joomla module manager -->
+### Module tab
 
-| Setting                    | Description                                                                                                                                                                                                                      | Default                     | Options                          |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | -------------------------------- |
-| **Display Mode**           | Whether to show a font icon or a custom image.                                                                                                                                                                                   | `Icon`                      | Icon / Image                     |
-| **Icon Class**             | Font Awesome or custom CSS class for the cart icon. Only visible when Display Mode is set to **Icon**.                                                                                                                           | `fa-solid fa-cart-shopping` | Any valid CSS class string       |
-| **Cart Image**             | Image to display when Display Mode is set to **Image**. Selected using the Joomla media picker.                                                                                                                                  | Empty                       | Any image from the media library |
-| **Count Type**             | Controls what number appears in the badge. **Sum Quantities** adds up the total quantity of all items (e.g., 3 units of one product + 2 of another = 5). **Line Items** counts the number of distinct product lines in the cart. | `Sum Quantities`            | Sum Quantities / Line Items      |
-| **Hide Badge When Empty**  | Hides the count badge entirely when the cart is empty instead of showing a zero.                                                                                                                                                 | No                          | Yes / No                         |
-| **Badge Background Color** | Background color of the item count bubble on the icon.                                                                                                                                                                           | `#dc3545`                   | Any hex color                    |
+![](/img/advanced-cart-modules5.webp)
 
-The module also has the standard Joomla **Module Class Suffix** and **Caching** fields in the **Advanced** tab. Caching is set to **No Caching** by default because the item count must always reflect the live cart.
+**Display Mode:** Whether to show a font icon or a custom image.
+
+**Icon Class:** Font Awesome or custom CSS class for the cart icon. Only visible when Display Mode is set to **Icon**.
+
+**Cart Image:** Image to display when Display Mode is set to **Image**. Selected using the Joomla media picker.
+
+**Count Type:** Controls what number appears in the badge. **Sum Quantities** adds up the total quantity of all items (e.g., 3 units of one product + 2 of another = 5). **Line Items** counts the number of distinct product lines in the cart. Sum all item quantities, or count the number of distinct line items.
+
+**Hide Badge When Empty:** Hides the count badge entirely when the cart is empty instead of showing a zero.
+
+**Badge Background Color:** Background color of the item count bubble on the icon.
+
+:::tip
+
+**Tip:** The module also has the standard Joomla **Module Class Suffix** and **Caching** fields in the **Advanced** tab. Caching is set to **No Caching** by default because the item count must always reflect the live cart.
+
+:::
+
+## Frontend View of Pop-Out Cart
+
+![](/img/advanced-cart.webp)
 
 ## How It Works
 
 ### Drawer Lifecycle
 
-When a page loads:
+**When a page loads:**
 
-1. The plugin injects the drawer HTML at the end of the `<body>` tag on every page (except excluded URLs and admin pages).
-2. The cart icon button (from the Toggle module) has a `data-j2c-toggle="drawer"` attribute that the JavaScript listens for.
-3. Clicking the button calls `AdvancedCart.open()`, which slides the panel in and dims the page.
+- The plugin injects the drawer HTML at the end of the `<body>` tag on every page (except excluded URLs and admin pages).
 
-The drawer can be closed by:
+- The cart icon button (from the Toggle module) has a `data-j2c-toggle="drawer"` attribute that the JavaScript listens for.
+
+- Clicking the button calls `AdvancedCart.open()`, which slides the panel in and dims the page.
+
+**The drawer can be closed by:**
 
 - Clicking the × button in the drawer header
 - Clicking the dimmed page overlay
@@ -283,15 +343,25 @@ document.addEventListener('j2commerce:drawer:refreshed', (e) => {
 
 ## Troubleshooting
 
+The previous or another shopping cart still appears
+
+**Cause:** The module to the old shopping cart is enabled
+
+**Solution:** Find the module that belongs to the shopping cart you want to turn off and turn it off by clicking on the green checkmark so it turns to an **'x'**
+
+- Go to **Content** -> **Site Modules** and **Disable** the module
+
 ### The drawer does not appear on the page
 
 **Cause:** The plugin may not be enabled, or the current page URL matches an exclusion rule.
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Apps** and confirm the plugin shows **Enabled**.
-2. Open the plugin settings and check the **Exclusions** tab. If the current page URL contains any listed pattern, remove it.
-3. Clear the Joomla cache: **System** -> **Clear Cache** -> **Clear All**.
+- Go to **J2Commerce** -> **Apps** and confirm the plugin shows **Enabled**.
+
+- Open the plugin settings and check the **Exclusions** tab. If the current page URL contains any listed pattern, remove it.
+
+- Clear the Joomla cache: **Home Dashboard -> Cache -> Delete All**.
 
 ### The drawer opens but shows an empty cart even though items were added
 
@@ -299,9 +369,11 @@ document.addEventListener('j2commerce:drawer:refreshed', (e) => {
 
 **Solution:**
 
-1. Open the plugin settings and confirm **Add-to-Cart Behaviour** is set to **Open Cart Drawer**, not **Redirect to Cart Page**.
-2. Check your browser's developer console for network errors on the AJAX refresh request (the URL contains `j2commerce_advancedcart_ajax=1`).
-3. Confirm the J2Commerce system plugin (`plg_system_j2commerce`) is enabled under **System** -> **Manage** -> **Plugins**.
+- Open the plugin settings and confirm **Add-to-Cart Behaviour** is set to **Open Cart Drawer**, not **Redirect to Cart Page**.
+
+- Check your browser's developer console for network errors on the AJAX refresh request (the URL contains `j2commerce_advancedcart_ajax=1`).
+
+- Confirm the J2Commerce system plugin (`plg_system_j2commerce`) is enabled under **System** -> **Manage** -> **Plugins**.
 
 ### The Toggle module button shows but clicking it does nothing
 
@@ -309,9 +381,11 @@ document.addEventListener('j2commerce:drawer:refreshed', (e) => {
 
 **Solution:**
 
-1. Confirm the plugin is enabled — the JavaScript only loads when the plugin is active.
-2. Open your browser's developer console and look for errors. If `AdvancedCart is not defined` appears, the script has not loaded.
-3. Check whether another plugin or template is blocking deferred scripts. The plugin loads its JavaScript with `defer`, so it executes after the page HTML has been parsed.
+- Confirm the plugin is enabled — the JavaScript only loads when the plugin is active.
+
+- Open your browser's developer console and look for errors. If `AdvancedCart is not defined` appears, the script has not loaded.
+
+- Check whether another plugin or template is blocking deferred scripts. The plugin loads its JavaScript with `defer`, so it executes after the page HTML has been parsed.
 
 ### Coupon or voucher codes are not applying from the drawer
 
@@ -319,8 +393,13 @@ document.addEventListener('j2commerce:drawer:refreshed', (e) => {
 
 **Solution:**
 
-1. Open the plugin settings, go to the **Cart Options** tab, and confirm **Show Coupon Field** and/or **Show Voucher Field** are set to **Yes**.
-2. Verify that coupons are enabled and published under **J2Commerce** -> **Marketing** -> **Coupons**.
+- Go to **J2Commerce -> Apps** **->** click on the **Advanced Cart** app. Go to the **Cart Options** tab, and confirm **Show Coupon Field** and/or **Show Voucher Field** are set to **Yes**.
+
+![](/img/advanced-cart-coupons1.webp)
+
+- Verify that coupons are created, enabled and published under **J2Commerce** **-> Sales ->** **Coupons**.
+
+  ![](/img/advanced-cart-coupons.webp)
 
 ### The free-shipping progress bar does not appear
 
@@ -328,12 +407,8 @@ document.addEventListener('j2commerce:drawer:refreshed', (e) => {
 
 **Solution:**
 
-1. Open the plugin settings, go to **Cart Options**.
-2. Set **Show Free Shipping Progress** to **Yes**.
-3. Enter a number greater than zero in **Free Shipping Threshold** (for example, `50` for free shipping on orders over $50).
+- Open the plugin settings, go to **Cart Options**.
 
-## Related Topics
+- Set **Show Free Shipping Progress** to **Yes**.
 
-- [Advanced Cart Toggle Module](mod_j2commerce_advancedcart_toggle.md)
-- [Cart Module](../../../modules/mod_j2commerce_cart.md)
-- [Coupons](../marketing/coupons.md)
+- Enter a number greater than zero in **Free Shipping Threshold** (for example, `50` for free shipping on orders over $50).
