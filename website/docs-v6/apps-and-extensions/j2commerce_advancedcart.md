@@ -1,10 +1,3 @@
----
-title: "Advanced Cart Drawer"
-sidebar_label: "Advanced Cart Drawer"
-sidebar_position: 5
-description: "Add a slide-out shopping cart drawer to your J2Commerce store with real-time updates, quantity controls, coupon support, and a free-shipping progress bar."
----
-
 # Advanced Cart Drawer
 
 The Advanced Cart Drawer plugin replaces the traditional redirect-to-cart experience with a slide-out panel that appears on the right side of your storefront. When a customer adds a product, the drawer opens immediately so they can review their cart without leaving the page they're on.
