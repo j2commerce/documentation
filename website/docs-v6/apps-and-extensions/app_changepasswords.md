@@ -115,7 +115,7 @@ If there is a problem, inline error messages appear directly below the relevant 
 2. Confirm the customer is logged into a Joomla user account on the frontend.
 3. If the problem persists, go to **System** -> **Manage** -> **Extensions**, search for **Change Password**, and verify the plugin status is **Enabled**.
 
-<!-- SCREENSHOT: Extensions manager search result for Change Password plugin showing enabled status -->
+![](/img/password-manage.webp)
 
 ### Password Change Fails with a Generic Error
 
