@@ -1,10 +1,3 @@
----
-title: "Currency Exchange Rates Updater"
-sidebar_label: "Currency Updater"
-sidebar_position: 5
-description: "Automatically update currency exchange rates from multiple API sources for accurate multi-currency pricing in your J2Commerce store."
----
-
 # Currency Exchange Rates Updater
 
 The Currency Updater app keeps your store's exchange rates current by fetching live rates from trusted financial data providers. When you sell in multiple currencies, accurate exchange rates ensure customers see correct prices — whether you update rates manually or on a schedule.
