@@ -113,9 +113,13 @@ Click **Save** to add the rule.
 
 Repeat for each price level you need.
 
-![](/img/calculator-advanced2.webp)
+![](/img/calculator-advanced3.webp)
 
 Close the modal and click **Save** on the product.
+
+## Frontend View
+
+![](/img/calculator-product3.webp)
 
 ## Example: Multiple Price Levels in Action
 
