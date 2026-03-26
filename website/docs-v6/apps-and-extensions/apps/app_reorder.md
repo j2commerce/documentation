@@ -6,7 +6,7 @@ This is especially useful for stores with repeat buyers — such as office suppl
 
 ## Prerequisites
 
-- J2Commerce installed and enabled
+- J2Commerce is installed and enabled
 - At least one completed order in your store
 
 ## Purchase and Download
