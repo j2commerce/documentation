@@ -83,7 +83,11 @@ To help you narrow down the list, you can do a search for the **Address Autocomp
 
 Click on the **Address Autocomplete** title to open the configuration.
 
-Helpful Hint: If you click on the Toggle Inline Help button, it will explain each section.
+:::tip
+
+**Helpful Hint:** If you click on the Toggle Inline Help button, it will explain each section.: If you need to find your API Key in the future, go back to this same page and click **Show Key** in the **Additional Information** section
+
+:::
 
 ![](/img/address-toggle.webp)
 
