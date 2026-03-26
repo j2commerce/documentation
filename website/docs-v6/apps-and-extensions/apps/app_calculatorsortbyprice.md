@@ -1,10 +1,3 @@
----
-title: "Calculator - Sort by Price"
-sidebar_label: "Calculator - Sort by Price"
-sidebar_position: 7
-description: "Automatically apply the lowest available price to customers based on their user group, order quantity, and date — ideal for stores with multiple price levels."
----
-
 # Calculator - Sort by Price
 
 The Calculator - Sort by Price plugin adds an alternative pricing calculator to J2Commerce. When a product has multiple price levels set up in its **Additional Pricing** table, this calculator automatically finds and applies the **lowest matching price** for each customer based on three factors: their Joomla user group, the quantity they are ordering, and the current date.
