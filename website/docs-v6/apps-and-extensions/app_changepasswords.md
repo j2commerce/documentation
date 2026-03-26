@@ -29,44 +29,45 @@ The **Change Password** app is a separate add-on available from the [J2Commerce 
 
 ## Install the App
 
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+You can install this **Change Password** App using the Joomla installer. The following steps help you with a successful installation.
 
-Upload the plugin ZIP file or use the **Install from URL** option.
+In the Joomla admin, go to **System -> Install -> Extensions**
 
-<!-- SCREENSHOT: Joomla Extensions Install screen with Upload Package File tab active -->
+Upload the plugin ZIP file or use the Install from URL option.
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
 ## Enable the App
 
-Once installed, enable the plugin. There are two ways to access it.
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the extension.&#x20;
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner -> **Apps**.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**.
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list with Change Password plugin visible -->
+![shipping method](/img/accordions-app.webp)
 
-Search for **Change Password**, click the **X** next to the plugin name, and it turns into a green checkmark. The app is now enabled.
+Look for **Change Password**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-<!-- SCREENSHOT: Change Password plugin row in Apps list showing enabled green checkmark -->
+![](/img/password-enable.webp)
 
 ## Configure the App
 
 Click on the **Change Password** title to open the plugin configuration screen.
 
-<!-- SCREENSHOT: Change Password plugin configuration screen showing Plugin tab -->
+![](/img/password-settings.webp)
 
 ### Plugin Tab
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Display Quick Icon** | Show a quick icon for this app on the J2Commerce dashboard. Requires the J2Commerce Quick Icon plugin to be installed and enabled. | No |
-| **Quick Icon Title** | The label displayed on the quick icon. Only visible when **Display Quick Icon** is set to **Yes**. | `J2Commerce Change Password` |
+**Display Quick Icon:** Show a quick icon for this app on the J2Commerce dashboard. Requires the J2Commerce Quick Icon plugin to be installed and enabled.
+
+**Quick Icon Title:** The label displayed on the quick icon. Only visible when **Display Quick Icon** is set to '**Yes'**.
 
 After adjusting settings, click **Save** or **Save & Close**.
 
 ## How It Works
 
-When a logged-in customer visits their **My Profile** page on the frontend, a **Change Password** tab appears in the profile navigation alongside any other profile tabs.
+When a logged-in customer visits their **My Account** page on the frontend, a **Change Password** tab appears in the profile navigation alongside any other profile tabs.
 
 <!-- SCREENSHOT: Frontend My Profile page showing Change Password tab in the tab navigation -->
 
@@ -88,13 +89,13 @@ If there is a problem, inline error messages appear directly below the relevant 
 
 ## Validation and Error Messages
 
-| Situation | Message Shown |
-|-----------|---------------|
-| New Password field left empty | "New Password Required" |
-| Confirm Password field left empty | "Confirm Password Required" |
-| Passwords do not match | "Password Field Mismatch" |
-| Server-side save error | "New Password Save Problem" |
-| Success | "Password Updated Successfully" |
+| Situation                         | Message Shown                   |
+| --------------------------------- | ------------------------------- |
+| New Password field left empty     | "New Password Required"         |
+| Confirm Password field left empty | "Confirm Password Required"     |
+| Passwords do not match            | "Password Field Mismatch"       |
+| Server-side save error            | "New Password Save Problem"     |
+| Success                           | "Password Updated Successfully" |
 
 ## Tips
 
@@ -114,7 +115,7 @@ If there is a problem, inline error messages appear directly below the relevant 
 2. Confirm the customer is logged into a Joomla user account on the frontend.
 3. If the problem persists, go to **System** -> **Manage** -> **Extensions**, search for **Change Password**, and verify the plugin status is **Enabled**.
 
-<!-- SCREENSHOT: Extensions manager search result for Change Password plugin showing enabled status -->
+![](/img/password-manage.webp)
 
 ### Password Change Fails with a Generic Error
 
