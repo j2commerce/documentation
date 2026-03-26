@@ -111,9 +111,11 @@ If there is a problem, inline error messages appear directly below the relevant 
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Apps** and verify **Change Password** has a green checkmark.
-2. Confirm the customer is logged into a Joomla user account on the frontend.
-3. If the problem persists, go to **System** -> **Manage** -> **Extensions**, search for **Change Password**, and verify the plugin status is **Enabled**.
+- Go to **J2Commerce** -> **Apps** and verify **Change Password** has a green checkmark.
+
+- Confirm the customer is logged into a Joomla user account on the frontend.
+
+- If the problem persists, go to **System** -> **Manage** -> **Extensions**, search for **Change Password**, and verify the plugin status is **Enabled**.
 
 ![](/img/password-manage.webp)
 
@@ -123,9 +125,13 @@ If there is a problem, inline error messages appear directly below the relevant 
 
 **Solution:**
 
-1. Ask the customer to refresh the My Profile page to get a fresh session token.
-2. Try the password change again.
-3. If the error persists, check your Joomla error logs at **System** -> **System Information** -> **PHP Error Log** for details.
+- Ask the customer to refresh the My Profile page to get a fresh session token.
+
+- Try the password change again.
+
+- If the error persists, check your Joomla error logs at **System** -> **System Information** -> **PHP Error Log** for details.
+
+![](/img/password-php.webp)
 
 ### Quick Icon Does Not Appear on the Dashboard
 
@@ -133,14 +139,16 @@ If there is a problem, inline error messages appear directly below the relevant 
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Apps** and confirm the **Change Password** plugin is enabled.
-2. Click **Change Password** to open its configuration.
-3. Set **Display Quick Icon** to **Yes**.
-4. Verify a label is entered in the **Quick Icon Title** field.
-5. Go to **System** -> **Manage** -> **Extensions** and search for **J2Commerce Quick Icons** — confirm it is enabled.
-6. Click **Save** in the Change Password configuration and reload the J2Commerce dashboard.
+- Go to **J2Commerce** -> **Apps** and confirm the **Change Password** plugin is enabled.
 
-## Related Topics
+- Click **Change Password** to open its configuration.
 
-- [Apps and Extensions Overview](./index.md)
-- [Address Autocomplete](./apps/app-addressautocomplete.md)
+- Set **Display Quick Icon** to **Yes**.
+
+- Verify a label is entered in the **Quick Icon Title** field.
+
+- Go to **System** -> **Manage** -> **Extensions** and search for **J2Commerce Quick Icons** — confirm it is enabled.
+
+![](/img/password-extension.webp)
+
+- Click **Save** in the Change Password configuration and reload the J2Commerce dashboard.
