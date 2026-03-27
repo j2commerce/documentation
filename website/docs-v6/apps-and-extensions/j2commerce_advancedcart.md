@@ -28,15 +28,21 @@ The plugin works in tandem with the companion **Advanced Cart Toggle** module, w
 
 You can install this **Advanced Cart** App using the Joomla installer. The following steps help you with a successful installation.
 
+:::info
+
+**IMPORTANT**: You will also have to install the **Advanced Cart Toggle** module that came with the package. Once installed, the **Advanced Cart Toggle** will enable itself automatically
+
+:::
+
 In the Joomla admin, go to **System -> Install -> Extensions**
 
 Upload the plugin file or use the Install from URL option.
 
 ![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
-## Enable the App
+## Enable the Plugin
 
-Once you have installed the App, you will need to enable it. There are **two** ways you can access the extension.&#x20;
+Once you have installed the plugin, you will need to enable it. There are **two** ways you can access the extension.&#x20;
 
 **Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 

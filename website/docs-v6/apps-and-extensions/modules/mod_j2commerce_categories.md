@@ -17,12 +17,33 @@ What makes it practical for most stores is the **Category Builder** — a drag-a
 - At least one Joomla category containing J2Commerce products
 - A J2Commerce menu item published on your site (required for the **Dynamic** mode)
 
-## Installation
 
-1. Purchase and download the `mod_j2commerce_categories.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `mod_j2commerce_categories.zip` package file.
-4. The module installs and enables automatically.
+
+## Purchase and Download
+
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/)
+
+**Step 2:** Locate the **Categories** module **->** click **View Details** **->** **Add to cart** **->** **Checkout**.
+
+**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
+
+## Install the App
+
+You can install this **Categories** module using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the `mod_j2commerce_categories.zip`file or use the Install from URL option.
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
+
+:::info
+
+**IMPORTANT**: Once installed, the **Categories** module will enable itself automatically
+
+:::
+
+The module installs and enables automatically.
 
 ## Adding the Module to a Page
 
