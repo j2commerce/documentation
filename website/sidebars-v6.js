@@ -139,7 +139,7 @@ const sidebars = {
                         },
                     ],
                 },
-                'apps-and-extensions/j2commerce_advancedcart',
+                'apps-and-extensions/advanced_cart',
             ],
         },
         {

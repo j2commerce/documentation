@@ -32,7 +32,7 @@ In the Joomla admin, go to **System -> Install -> Extensions**
 
 Upload the plugin file or use the Install from URL option.
 
-![Install extensions](<../../assets/app install1 (1) (1).webp>)
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
 ## Enable the App
 
