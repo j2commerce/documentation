@@ -145,8 +145,6 @@ The slider also responds to screen size:
 
 **Frontend View**
 
-![]()
-
 ![](/img/categories-module-layout-slider1.webp)
 
 ### Display Settings tab
