@@ -1,13 +1,6 @@
----
-title: "Products Module"
-sidebar_label: "Products Module"
-sidebar_position: 10
-description: "Display J2Commerce products in a grid or slider layout with flexible filtering, ordering, and display options."
----
-
 # Products Module
 
-The J2Commerce Products Module displays products from your catalog in a flexible grid or slider carousel. You can showcase latest products, featured items, best sellers, products from specific categories or tags, or hand-picked selections.
+The J2Commerce Products Module displays products from your catalog in a flexible grid or slider carousel. You can showcase the latest products, featured items, best sellers, products from specific categories or tags, or hand-picked selections.
 
 <!-- SCREENSHOT: Frontend showing a 4-column product grid with images, titles, prices, and Add to Cart buttons -->
 
@@ -15,82 +8,117 @@ The J2Commerce Products Module displays products from your catalog in a flexible
 
 This module ships with J2Commerce 6 and is available immediately after installation.
 
-To create a new module instance:
+To create a **new** module instance:
 
-1. Go to **Content** -> **Site Modules**.
+1. Go to **Content** **->** **Site Modules**.
 2. Click **New** in the toolbar.
 3. Select **J2Commerce Products** from the list.
 4. Configure the module settings (see below).
 5. Assign to a template position and menu pages.
 6. Click **Save**.
 
-## Module Configuration
+## Adding the Module to a Page
 
-The module settings are organized into four sections: Products, Layout, Display, and Advanced.
+Go to **Content** **->** **Site Modules**&#x20;
 
-### Products Settings
+The J2Commerce Categories module should already exist and needs to be enabled.&#x20;
 
-Configure which products appear in the module.
+:::tip
 
-<!-- SCREENSHOT: Module edit screen showing the Products tab with all source and filter options -->
+**Tip:** If you use the existing one, you should **rename** it because the title will show up on the frontend
 
-| Setting | Description | Default | Options |
-|---------|-------------|---------|---------|
-| **Product Source** | Determines which products are displayed. | Latest | Latest, Featured, By Category, By Tag, Best Selling, Most Popular, Selected Products |
-| **Categories** | Filter by one or more Joomla categories. Only shown when Product Source is "By Category". | All | Multi-select list |
-| **Select Products** | Choose specific products to display. Only shown when Product Source is "Selected Products". | None | Product picker |
-| **Tags** | Filter by one or more Joomla tags. Only shown when Product Source is "By Tag". | All | Multi-select list |
-| **Product Types** | Restrict to specific product types (simple, variable, configurable, etc.). Leave empty for all types. | All | Multi-select list |
-| **Featured Only** | Show only featured products. Can be combined with any product source except "Featured". | No | Yes/No |
-| **Number of Products** | Maximum number of products to display. | 8 | 1-50 |
-| **Ordering** | How products are sorted. Source-driven options (Best Selling, Most Popular) override this setting. | Latest | Latest, Title A-Z, Title Z-A, Article Ordering, Random, Most Popular, Best Selling |
+:::
 
-#### Product Source Options
+![](/img/product-module.webp)
 
-| Source | Description |
-|--------|-------------|
-| **Latest** | Shows the most recently created products (newest first). |
-| **Featured** | Shows products marked as featured in their article settings. |
-| **By Category** | Shows products from selected Joomla categories. |
-| **By Tag** | Shows products linked to articles with selected tags. |
-| **Best Selling** | Shows products with the highest sales count (based on completed orders). |
-| **Most Popular** | Shows products with the most page views (based on hit count). |
-| **Selected Products** | Shows only the products you manually select in the picker. |
+If you don't see it, then select '**New**' and follow the steps below.
 
-### Layout Settings
+![](/img/advanced-cart-modules.webp)
+
+Select **J2Commerce - Categories** from the module type list.
+
+![](/img/product-module1.webp)
+
+## Configuration
+
+### Basic Settings
+
+These settings control which categories are shown and how the module determines its source.
+
+**Title:** Give it a catchy title. The title will show up above the category items
+
+**Position:** Set the position of where you want the module to be displayed. In this example we have set it as 'Main-bottom'
+
+**Mode:** How the module selects which categories to show.&#x20;
+
+![](/img/product-module2.webp)
+
+**Product Source:** Determines which products are displayed.
+
+- **Latest:** Shows the most recently created products (newest first).
+
+- **Featured:** Shows products marked as featured in their article settings.
+
+- **By Category:** Shows products from selected Joomla categories.
+
+- **By Tag:** Shows products linked to articles with selected tags.
+
+- **Best Selling:** Shows products with the highest sales count (based on completed orders).
+
+- **Most Popular:** Shows products with the most page views (based on hit count).
+
+- **Selected Products:** Shows only the products you manually select in the picker.
+
+**Categories:** Filter by one or more Joomla categories. Only shown when Product Source is "By Category".
+
+**Select Products:** Choose specific products to display. Only shown when Product Source is "Selected Products".
+
+**Tags:** Filter by one or more Joomla tags. Only shown when Product Source is "By Tag"
+
+**Product Types:** Restrict to specific product types (simple, variable, configurable, etc.). Leave empty for all types.
+
+**Featured Only:** Show only featured products. Can be combined with any product source except "Featured".
+
+**Number of Products:** Maximum number of products to display.
+
+**Ordering:** How products are sorted. Source-driven options (Best Selling, Most Popular) override this setting.
+
+- **Ordering Options:** Latest, Title A-Z, Title Z-A, Article Ordering, Random, Most Popular, Best Selling
+
+### Layout Settings tab
 
 Control how products are arranged on the page.
 
 <!-- SCREENSHOT: Module edit screen showing the Layout tab with grid and slider options -->
 
-| Setting | Description | Default | Options |
-|---------|-------------|---------|---------|
-| **Display Layout** | Visual presentation style. | Grid | Grid, Slider |
-| **Columns** | Number of columns in grid layout. Only shown for Grid layout. | 3 | 2, 3, 4, 6 |
-| **Slides Per View** | Number of product cards visible at once in slider. Only shown for Slider layout. | 4 | 1-6 |
-| **Space Between Slides** | Gap in pixels between slides. Only shown for Slider layout. | 20 | 0-60 |
-| **Autoplay** | Automatically advance slides. Only shown for Slider layout. | No | Yes/No |
-| **Autoplay Delay** | Seconds between automatic slide transitions. Only shown when Autoplay is enabled. | 4 | 1-30 |
-| **Loop** | Continuously loop through slides. Requires more slides than Slides Per View. Only shown for Slider layout. | No | Yes/No |
-| **Navigation Arrows** | Show previous/next navigation arrows. Only shown for Slider layout. | Yes | Yes/No |
-| **Pagination Dots** | Show clickable pagination dots. Only shown for Slider layout. | No | Yes/No |
+| Setting                  | Description                                                                                                | Default | Options      |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------- | ------- | ------------ |
+| **Display Layout**       | Visual presentation style.                                                                                 | Grid    | Grid, Slider |
+| **Columns**              | Number of columns in grid layout. Only shown for Grid layout.                                              | 3       | 2, 3, 4, 6   |
+| **Slides Per View**      | Number of product cards visible at once in slider. Only shown for Slider layout.                           | 4       | 1-6          |
+| **Space Between Slides** | Gap in pixels between slides. Only shown for Slider layout.                                                | 20      | 0-60         |
+| **Autoplay**             | Automatically advance slides. Only shown for Slider layout.                                                | No      | Yes/No       |
+| **Autoplay Delay**       | Seconds between automatic slide transitions. Only shown when Autoplay is enabled.                          | 4       | 1-30         |
+| **Loop**                 | Continuously loop through slides. Requires more slides than Slides Per View. Only shown for Slider layout. | No      | Yes/No       |
+| **Navigation Arrows**    | Show previous/next navigation arrows. Only shown for Slider layout.                                        | Yes     | Yes/No       |
+| **Pagination Dots**      | Show clickable pagination dots. Only shown for Slider layout.                                              | No      | Yes/No       |
 
 #### Grid Layout
 
 The grid layout displays products in a responsive row/column structure. On mobile devices, the grid automatically adjusts to 2 columns for optimal viewing.
 
-| Columns | Desktop Class | Mobile Class |
-|---------|--------------|--------------|
-| 2 | col-6 col-md-6 | col-6 |
-| 3 | col-6 col-md-4 | col-6 |
-| 4 | col-6 col-md-3 | col-6 |
-| 6 | col-6 col-md-2 | col-6 |
+| Columns | Desktop Class  | Mobile Class |
+| ------- | -------------- | ------------ |
+| 2       | col-6 col-md-6 | col-6        |
+| 3       | col-6 col-md-4 | col-6        |
+| 4       | col-6 col-md-3 | col-6        |
+| 6       | col-6 col-md-2 | col-6        |
 
 #### Slider Layout
 
 The slider layout uses Swiper.js to create a touch-friendly carousel with responsive breakpoints:
 
-- **Mobile (< 576px):** 1 slide visible
+- **Mobile (\< 576px):** 1 slide visible
 - **Tablet (576px - 768px):** Approximately 1/3 of configured slides
 - **Small desktop (768px - 992px):** Approximately 1/2 of configured slides
 - **Desktop (992px+):** Full configured slides per view
@@ -101,43 +129,43 @@ Control what product information appears and how it looks.
 
 <!-- SCREENSHOT: Module edit screen showing the Display tab with all visibility toggles and image settings -->
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Product Template** | Select which subtemplate plugin renders product cards (Bootstrap 5, UIkit, etc.). | Bootstrap 5 |
-| **Image Width (px)** | Width in pixels for product thumbnail images. | 200 |
-| **Show Image** | Display the product image. | Yes |
-| **Link Image to Product** | Make the image clickable, linking to the product detail page. | Yes |
-| **Image Source** | Which image to display: Thumbnail or Main image. | Thumbnail |
-| **Show Title** | Display the product title. | Yes |
-| **Link Title to Product** | Make the title clickable, linking to the product detail page. | Yes |
-| **Show Description** | Display the product short description. | No |
-| **Description Length** | Maximum characters to show in description. Set 0 for full description. | 150 |
-| **Show SKU** | Display the product SKU. | No |
-| **Show Price** | Display the product price. | Yes |
-| **Show Base Price** | Display the original price (for products with special pricing). | Yes |
-| **Show Special Price** | Display the discounted price. | Yes |
-| **Show Discount Badge** | Display a percentage discount badge when special pricing is active. | Yes |
-| **Show Stock Status** | Display availability information (In Stock, Out of Stock). | No |
-| **Add to Cart Display** | Control how the Add to Cart button appears. | Show with Options |
-| **Show Quantity Field** | Display a quantity input field next to Add to Cart. | Yes |
-| **Show Option Images** | Display images for product options (color swatches, etc.). | No |
-| **Show Option Price** | Display price adjustments for product options. | Yes |
-| **Add to Cart Button CSS Class** | CSS classes for the Add to Cart button. | btn btn-primary |
+| Setting                          | Description                                                                       | Default           |
+| -------------------------------- | --------------------------------------------------------------------------------- | ----------------- |
+| **Product Template**             | Select which subtemplate plugin renders product cards (Bootstrap 5, UIkit, etc.). | Bootstrap 5       |
+| **Image Width (px)**             | Width in pixels for product thumbnail images.                                     | 200               |
+| **Show Image**                   | Display the product image.                                                        | Yes               |
+| **Link Image to Product**        | Make the image clickable, linking to the product detail page.                     | Yes               |
+| **Image Source**                 | Which image to display: Thumbnail or Main image.                                  | Thumbnail         |
+| **Show Title**                   | Display the product title.                                                        | Yes               |
+| **Link Title to Product**        | Make the title clickable, linking to the product detail page.                     | Yes               |
+| **Show Description**             | Display the product short description.                                            | No                |
+| **Description Length**           | Maximum characters to show in description. Set 0 for full description.            | 150               |
+| **Show SKU**                     | Display the product SKU.                                                          | No                |
+| **Show Price**                   | Display the product price.                                                        | Yes               |
+| **Show Base Price**              | Display the original price (for products with special pricing).                   | Yes               |
+| **Show Special Price**           | Display the discounted price.                                                     | Yes               |
+| **Show Discount Badge**          | Display a percentage discount badge when special pricing is active.               | Yes               |
+| **Show Stock Status**            | Display availability information (In Stock, Out of Stock).                        | No                |
+| **Add to Cart Display**          | Control how the Add to Cart button appears.                                       | Show with Options |
+| **Show Quantity Field**          | Display a quantity input field next to Add to Cart.                               | Yes               |
+| **Show Option Images**           | Display images for product options (color swatches, etc.).                        | No                |
+| **Show Option Price**            | Display price adjustments for product options.                                    | Yes               |
+| **Add to Cart Button CSS Class** | CSS classes for the Add to Cart button.                                           | btn btn-primary   |
 
 #### Add to Cart Display Options
 
-| Option | Behavior |
-|--------|----------|
-| **Hide** | No Add to Cart button is shown. |
-| **Show with Product Options** | Displays Add to Cart with product variant/option selectors inline. |
-| **Show without Options** | Displays a simple Add to Cart button without variant selectors. |
-| **Link to Detail Page Only** | Shows a "View Product" button linking to the product page instead of Add to Cart. |
+| Option                        | Behavior                                                                          |
+| ----------------------------- | --------------------------------------------------------------------------------- |
+| **Hide**                      | No Add to Cart button is shown.                                                   |
+| **Show with Product Options** | Displays Add to Cart with product variant/option selectors inline.                |
+| **Show without Options**      | Displays a simple Add to Cart button without variant selectors.                   |
+| **Link to Detail Page Only**  | Shows a "View Product" button linking to the product page instead of Add to Cart. |
 
 ### Advanced Settings
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Module Class Suffix** | CSS class suffix to apply custom styling to this module instance. | None |
+| Setting                 | Description                                                       | Default |
+| ----------------------- | ----------------------------------------------------------------- | ------- |
+| **Module Class Suffix** | CSS class suffix to apply custom styling to this module instance. | None    |
 
 ## Usage Examples
 
@@ -228,18 +256,18 @@ The module also generates a unique class based on the module ID: `mod-j2commerce
 ### Grid Layout
 
 - **Desktop (768px+):** Uses configured column count (2, 3, 4, or 6 columns)
-- **Mobile (< 768px):** Automatically collapses to 2 columns for touch-friendly browsing
+- **Mobile (\< 768px):** Automatically collapses to 2 columns for touch-friendly browsing
 
 ### Slider Layout
 
 The Swiper carousel automatically adjusts based on viewport:
 
-| Viewport | Slides Visible |
-|----------|---------------|
-| < 576px (mobile) | 1 |
-| 576px - 768px (tablet) | ~1/3 of configured |
-| 768px - 992px (small desktop) | ~1/2 of configured |
-| 992px+ (desktop) | Full configured amount |
+| Viewport                      | Slides Visible         |
+| ----------------------------- | ---------------------- |
+| \< 576px (mobile)             | 1                      |
+| 576px - 768px (tablet)        | \~1/3 of configured    |
+| 768px - 992px (small desktop) | \~1/2 of configured    |
+| 992px+ (desktop)              | Full configured amount |
 
 ## Troubleshooting
 

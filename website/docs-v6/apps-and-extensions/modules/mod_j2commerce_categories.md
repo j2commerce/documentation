@@ -46,7 +46,7 @@ Select **J2Commerce - Categories** from the module type list.
 
 ## Configuration
 
-### Basic Settings
+### Basic Settings tab
 
 These settings control which categories are shown and how the module determines its source.
 
@@ -84,7 +84,7 @@ These settings control which categories are shown and how the module determines 
 
 **Menu Selection:** Select which pages go with the assignment you chose
 
-### Layout Settings
+### Layout Settings tab
 
 These settings control the visual presentation of the category list.
 
@@ -149,7 +149,7 @@ The slider also responds to screen size:
 
 ![](/img/categories-module-layout-slider1.webp)
 
-### Display Settings
+### Display Settings tab
 
 These settings control what information appears on each category card.
 
@@ -186,7 +186,7 @@ These settings control what information appears on each category card.
 
 **Max Child Links:** (Grid, Show Child Categories = Yes, Show Child Category Links = Yes) Maximum number of child links to show per parent.
 
-### Category Builder
+### Category Builder tab
 
 The Category Builder is a powerful tool available in **Normal** mode that lets you customise the image and display order for each category card without editing code. If Dynamic Mode is set, then Category Builder is disabled.
 
@@ -217,7 +217,7 @@ The builder saves its data as JSON in the module parameters. When you return to 
 
 :::
 
-### Advanced Settings
+### Advanced Settings tab
 
 ![](/img/categories-module-advanced.webp)
 
