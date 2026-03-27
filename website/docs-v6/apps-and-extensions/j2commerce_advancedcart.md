@@ -222,9 +222,23 @@ Go to **Content** -> **Site Modules**, find the **Advanced Cart Toggle** module 
 
 **Display Mode:** Whether to show a font icon or a custom image.
 
-**Icon Class:** Font Awesome or custom CSS class for the cart icon. Only visible when Display Mode is set to **Icon**.
+**Icon Class:** Font Awesome or custom CSS class for the cart icon. Only visible when Display Mode is set to **Icon**. The **Icon Class** field accepts any CSS class string your site's template already loads. Common choices: Below are the **Icon Library** and the **Example Class**
+
+![](/img/advanced-toggle-icon.webp)
+
+- **Font Awesome 6 Free:** `fa-solid fa-cart-shopping`
+
+- **Font Awesome 6 Free:** `fa-solid fa-bag-shopping`
+
+- **Font Awesome 6 Free:** `fa-solid fa-basket-shopping`
+
+- **Bootstrap Icons:** `bi bi-cart3`
+
+If your template does not load an icon library automatically, you may need to add one or use **Image** mode instead.
 
 **Cart Image:** Image to display when Display Mode is set to **Image**. Selected using the Joomla media picker.
+
+![](/img/advanced-toggle-image-1.webp)
 
 **Count Type:** Controls what number appears in the badge. **Sum Quantities** adds up the total quantity of all items (e.g., 3 units of one product + 2 of another = 5). **Line Items** counts the number of distinct product lines in the cart. Sum all item quantities, or count the number of distinct line items.
 
@@ -243,6 +257,10 @@ Go to **Content** -> **Site Modules**, find the **Advanced Cart Toggle** module 
 ![](/img/advanced-cart.webp)
 
 ## How It Works
+
+When the page loads, the module queries the current visitor's cart on the server and renders the badge with the live item count. After the page loads, the Advanced Cart Drawer plugin takes over: any time the cart changes (add, remove, quantity update), the plugin dispatches a browser event that updates all elements with the class `j2commerce-cart-badge` — including the badge from this module — instantly, with no page reload.
+
+Clicking the button calls `AdvancedCart.open()`, which slides the cart drawer into view.
 
 ### Drawer Lifecycle
 
@@ -277,6 +295,12 @@ All quantity changes made inside the drawer are debounced by 300ms and sent to t
 ### Coupon and Voucher Codes
 
 The coupon and voucher fields are collapsed behind toggle links by default. Once a customer clicks "Have a coupon?" or "Have a voucher?", the form expands inline. Applied discounts are shown immediately after the item list and reflected in the totals.
+
+## Placing the Button in a Navbar
+
+Most templates expose a module position inside the navbar — commonly named `nav-right`, `header-right`, `navbar-search`, or similar. Assign the module to that position with **Show Title** set to **Hide** for a clean icon-only button.
+
+If your template does not have a suitable built-in position, you can load the module inline using the `{loadmodule}` content plugin syntax in a Custom HTML module, or ask your template developer to expose an appropriate position.
 
 ## Template Overrides
 
