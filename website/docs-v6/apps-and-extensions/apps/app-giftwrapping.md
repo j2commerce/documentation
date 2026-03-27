@@ -189,12 +189,28 @@ If the cart contains only digital products (no shipping required), the gift wrap
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Apps** -> **Gift Wrapping**.
+1. Go to **J2Commerce** **-> Apps ->** **Gift Wrapping**.
 2. Change **Step Position** to the desired location in the checkout flow.
 3. Click **Save**.
 4. Test the checkout to verify the position.
 
 ![](/img/setutup5.webp)
+
+### The gift wrapping option doesn't appear in the checkout process
+
+**Cause:** The product being purchased doesn't have 'Shipping' enabled
+
+**Solution:**&#x20;
+
+At least **one** physical product in the shopping cart requires shipping
+
+1. Go to **J2Commerce -> Catalog -> Product ->** Open the product
+
+2. Go to **J2Commerce** tab **-> Shipping** tab
+
+3. Set **Enable Shipping** to **'Yes'**
+
+![](/img/gift-shipping.webp)
 
 ### Options Display, but Images Don't Load
 

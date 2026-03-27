@@ -414,6 +414,8 @@ When Element Type is set to Card:
 
 **Frontend View**
 
+![]()
+
 ![](/img/8stripe-checkout-manual-embedded.webp)
 
 ### Embedded  -> Card Element -> Automatic
