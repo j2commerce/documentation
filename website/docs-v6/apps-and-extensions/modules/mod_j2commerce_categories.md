@@ -98,7 +98,7 @@ These settings control the visual presentation of the category list.
 
 **Show Child Categories:** (Grid only) Display subcategories nested within each parent category card.
 
-**Subcategory Depth:** (Grid, Show Child Categories = Yes) How many levels of subcategories to load and display.
+**Subcategory Depth:** (Grid, Show Child Categories = '**Yes**') How many levels of subcategories to load and display.
 
 #### Grid Column Responsiveness
 
