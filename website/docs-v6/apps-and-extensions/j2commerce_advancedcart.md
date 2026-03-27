@@ -66,7 +66,7 @@ Select **Advanced Cart Toggle** from the module type list.
 
 ![](/img/advanced-cart-modules1.webp)
 
-Give it a title and assign it to a **module position** in your template (such as a header or navigation position). The most common position is in the upper right corner but every template is different
+Give it a **Title** and assign it to a **module position** in your template (such as a header or navigation position). The most common position is in the upper right corner but every template is different
 
 ![](/img/advanced-cart-modules2.webp)
 
