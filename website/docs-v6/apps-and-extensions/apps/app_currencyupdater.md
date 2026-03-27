@@ -1,10 +1,3 @@
----
-title: "Currency Exchange Rates Updater"
-sidebar_label: "Currency Updater"
-sidebar_position: 5
-description: "Automatically update currency exchange rates from multiple API sources for accurate multi-currency pricing in your J2Commerce store."
----
-
 # Currency Exchange Rates Updater
 
 The Currency Updater app keeps your store's exchange rates current by fetching live rates from trusted financial data providers. When you sell in multiple currencies, accurate exchange rates ensure customers see correct prices — whether you update rates manually or on a schedule.
@@ -16,41 +9,53 @@ The Currency Updater app keeps your store's exchange rates current by fetching l
 - J2Commerce 6.x
 - At least one currency enabled in addition to your store's base currency
 
-## Installation
+## Purchase and Download
 
-This plugin ships with J2Commerce 6 and is available immediately after installation. To enable it:
+‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
-1. Go to **System** -> **Manage** -> **Extensions**.
-2. Search for **Currency Updater**.
-3. Click the checkbox next to the plugin and click **Enable** in the toolbar.
+**Step 2:** Locate the **Currency Exchange Updater** App **->** click **View Details** **->** **Add to cart** **->** **Checkout**.&#x20;
 
-Alternatively, enable it from the J2Commerce Apps screen (see below).
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**
 
-## Enable the Plugin
+## Install the App
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner -> **Apps**
+Go to **System** **->** **Install** **->** **Extensions**
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**
+Upload the plugin ZIP file or use the Install from URL option.
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Currency Updater plugin -->
+![](/img/address-install.webp)
 
-Search for **Currency Exchange Rates Updater**, click the **X** to enable it. The X turns into a green checkmark when enabled.
+## Enable the App
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![](/img/address-apps.webp)
+
+To help you narrow down the list, you can do a search for the **Currency Exchange Updater** app, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/currency-enable.webp)
 
 ## Choose an API Provider
 
 Click on **Currency Exchange Rates Updater** to open the configuration screen. The most important setting is the **API Source**, which determines where exchange rates come from.
 
+![](/img/currency-config.webp)
+
 ### API Source Comparison
 
-| Provider | API Key Required | Free Tier | Best For |
-| -------- | ---------------- | --------- | -------- |
-| **Frankfurter** | No | Unlimited | Stores using major world currencies (EUR-based rates from ECB) |
-| **ExchangeRate.host** | No | Unlimited | Stores needing broader currency coverage without API registration |
-| **ExchangeRate-API** | Yes | 1,500 requests/month | Stores wanting rate limit alerts and usage tracking |
-| **CurrencyAPI** | Yes | 300 requests/month | Stores needing real-time rates for many currencies |
-| **Open Exchange Rates** | Yes | 1,000 requests/month | Stores needing 170+ currencies including cryptocurrency |
+| Provider                | API Key Required | Free Tier            | Best For                                                          |
+| ----------------------- | ---------------- | -------------------- | ----------------------------------------------------------------- |
+| **Frankfurter**         | No               | Unlimited            | Stores using major world currencies (EUR-based rates from ECB)    |
+| **ExchangeRate.host**   | No               | Unlimited            | Stores needing broader currency coverage without API registration |
+| **ExchangeRate-API**    | Yes              | 1,500 requests/month | Stores wanting rate limit alerts and usage tracking               |
+| **CurrencyAPI**         | Yes              | 300 requests/month   | Stores needing real-time rates for many currencies                |
+| **Open Exchange Rates** | Yes              | 1,000 requests/month | Stores needing 170+ currencies including cryptocurrency.          |
 
----
+***
 
 ## Get API Keys (4 Providers Require Keys)
 
@@ -65,14 +70,19 @@ Click on **Currency Exchange Rates Updater** to open the configuration screen. T
 5. After verification, you'll see your API key on the dashboard.
 6. Copy the API key.
 
-<!-- SCREENSHOT: ExchangeRate-API dashboard showing the API key field -->
+![](/img/currency-exchangerate.webp)
 
 **Configure in J2Commerce:**
-1. In the Currency Updater settings, select **ExchangeRate-API** as the API Source.
-2. Paste your key into the **ExchangeRate-API Key** field.
-3. Click **Save**.
 
----
+- In the Currency Updater settings, select **ExchangeRate-API** as the API Source.
+
+- Paste your key into the **ExchangeRate-API Key** field.
+
+- Click **Save**.
+
+![](/img/currency-exchangerate1.webp)
+
+***
 
 ### CurrencyAPI
 
@@ -86,14 +96,15 @@ Click on **Currency Exchange Rates Updater** to open the configuration screen. T
 6. Click **Create New API Key** if one isn't already generated.
 7. Copy the API key.
 
-<!-- SCREENSHOT: CurrencyAPI dashboard showing API keys section -->
-
 **Configure in J2Commerce:**
+
 1. In the Currency Updater settings, select **CurrencyAPI** as the API Source.
 2. Paste your key into the **CurrencyAPI Key** field.
 3. Click **Save**.
 
----
+![](/img/currency-currencyapi.webp)
+
+***
 
 ### Open Exchange Rates
 
@@ -104,16 +115,21 @@ Click on **Currency Exchange Rates Updater** to open the configuration screen. T
 3. After logging in, go to **App IDs** in your dashboard.
 4. Copy your **App ID** (this is your API key).
 
-<!-- SCREENSHOT: Open Exchange Rates dashboard showing App ID -->
+:::tip
 
 **Important:** The free tier only returns rates with USD as the base currency. If your store's base currency is not USD, J2Commerce will automatically recalculate rates based on your base currency.
 
+:::
+
 **Configure in J2Commerce:**
+
 1. In the Currency Updater settings, select **Open Exchange Rates** as the API Source.
 2. Paste your App ID into the **Open Exchange Rates App ID** field.
 3. Click **Save**.
 
----
+![](/img/currency-open.webp)
+
+***
 
 ### Frankfurter (No API Key Needed)
 
@@ -127,10 +143,11 @@ Frankfurter is an open-source API that pulls exchange rates directly from the Eu
 - No rate limits
 
 **Configure in J2Commerce:**
+
 1. Select **Frankfurter — ECB Rates** as the API Source.
 2. No key needed — just click **Save**.
 
----
+***
 
 ### ExchangeRate.host (No API Key Needed)
 
@@ -144,70 +161,85 @@ ExchangeRate.host is a free alternative with broader currency coverage than Fran
 - Good fallback if Frankfurter doesn't support your currencies
 
 **Configure in J2Commerce:**
+
 1. Select **ExchangeRate.host** as the API Source.
 2. No key needed — just click **Save**.
 
----
+***
 
 ## Manually Update Exchange Rates
 
 You can update rates on demand from the Currencies management screen.
 
-### Step 1: Navigate to Currencies
+### Navigate to Currencies
 
-Go to **Components** -> **J2Commerce** -> **Currencies**.
-
-<!-- SCREENSHOT: J2Commerce menu showing Currencies option -->
-
-### Step 2: Ensure Currencies Are Enabled
+Go to **Components** -> **J2Commerce** -> **Currencies**. Search for your Currency
 
 Make sure the currencies you want to update have a green checkmark in the **Enabled** column. Rates are only fetched for enabled currencies.
 
-### Step 3: Click Update Rates
+![](/img/currency-update.webp)
+
+### Click Update Rates
 
 Click the **Update Rates** button in the toolbar. J2Commerce contacts your configured API provider and updates the exchange rate values for all enabled currencies.
 
-<!-- SCREENSHOT: Currencies view showing Update Rates button in toolbar -->
+![](/img/currency-update1.webp)
 
-After a successful update, you'll see a success message: **"X currency rate(s) updated successfully."**
+After a successful update, you'll see a success message:&#x20;
+
+:::info
+
+**Note**: You will only see a success message if you have more than one currency enabled.
+
+:::
+
+![](/img/currency-update3.webp)
+
+:::info
+
+**Note**: You will receive an error message if you only have the default currency enabled because it automatically updates the default, so you don't need to click on Update Rates
+
+:::
+
+![](/img/currency-update2.webp)
 
 The **Modified** date column will show the current timestamp for each updated currency.
 
----
+***
 
 ## Set Up Automatic Rate Updates
 
 Instead of manually clicking Update Rates, you can schedule automatic updates using Joomla's Task Scheduler. This keeps your rates current without any intervention.
 
-### Step 1: Enable the Currency Updater Scheduled Task
+### Enable the Currency Updater Scheduled Task
 
-1. Go to **System** -> **Scheduled Tasks**.
-2. Click **New** to create a new scheduled task.
-3. In the task type dropdown, search for and select **J2Commerce: Update Currency Rates**.
+- Go to **System** -> **Scheduled Tasks**.
 
-<!-- SCREENSHOT: Joomla Scheduled Tasks list showing New button and task type dropdown -->
+![](/img/currency-tasks.webp)
 
-### Step 2: Configure the Task
+- Click **New** to create a new scheduled task.
 
-| Setting | Recommended Value |
-| ------- | ----------------- |
-| **Title** | `Update Currency Rates Daily` |
-| **Execution Interval** | `0 3 * * *` (daily at 3:00 AM) — adjust based on your needs |
-| **Execution Rules** | Leave default unless you need specific constraints |
+- Search for and select **J2Commerce: Update Currency Rates**.
+
+  ![](/img/currency-tasks1.webp)
+
+### Configure the New Task
+
+![](/img/currency-update4.webp)
+
+**Title:** `Update Currency Rates Daily`
+
+**Execution Rules:** Leave default unless you need specific constraints
+
+**Interval in Minutes:** `0 3 * * *` (daily at 3:00 AM) — adjust based on your needs
 
 For stores that need more frequent updates (e.g., volatile markets), use:
+
 - **Every hour:** `0 * * * *`
 - **Every 6 hours:** `0 */6 * * *`
 - **Twice daily:** `0 6,18 * * *`
 
-<!-- SCREENSHOT: Scheduled Task configuration form with execution interval set -->
-
-### Step 3: Enable and Save
-
-1. Set **Status** to **Enabled**.
-2. Click **Save & Close**.
-
-### Step 4: Verify the Scheduler Is Running
+### Verify the Scheduler Is Running
 
 Joomla's Task Scheduler requires a trigger to execute scheduled tasks. You have two options:
 
@@ -223,64 +255,56 @@ This checks for pending tasks every 5 minutes.
 
 **Option B: Lazy Scheduler (Easier Setup)**
 
-1. Go to **System** -> **Global Configuration**.
-2. Click **System** tab.
-3. Set **Scheduled Tasks** to **Lazy Scheduler**.
-4. Set **Lazy Scheduler Interval** to `300` (5 minutes).
+Go to **System** **->** **Scheduled Tasks**.
+
+![](/img/currency-update5.webp)
+
+Click the **Run Task** button
+
+![](/img/currency-update6.webp)
 
 The lazy scheduler triggers scheduled tasks when someone visits your site. It's simpler but less reliable than a real cron job.
 
----
-
-## Configuration Reference
-
-### Settings Tab
-
-| Setting | Description | Default |
-| ------- | ----------- | ------- |
-| **Layout Style** | CSS framework for the configuration template. Choose Bootstrap 5 or UIkit. | Bootstrap 5 |
-| **API Source** | The exchange rate provider. See API Source Comparison above. | Frankfurter |
-| **ExchangeRate-API Key** | API key for ExchangeRate-API (shown only when that provider is selected). | — |
-| **CurrencyAPI Key** | API key for CurrencyAPI (shown only when that provider is selected). | — |
-| **Open Exchange Rates App ID** | App ID for Open Exchange Rates (shown only when that provider is selected). | — |
-
----
+![](/img/currency-update7.webp)
 
 ## Troubleshooting
 
-### "An API key is required for [Provider]"
+### "An API key is required for \[Provider]"
 
 **Cause:** You selected an API provider that requires authentication but didn't enter the key.
 
 **Solution:**
+
 1. Open the Currency Updater settings.
 2. Enter the API key in the appropriate field.
 3. Click **Save**.
 
 If you don't have a key yet, see the "Get API Keys" section above, or switch to a provider that doesn't require a key (Frankfurter or ExchangeRate.host).
 
----
+***
 
 ### "No enabled currencies found to update"
 
 **Cause:** All currencies except your store's base currency are disabled.
 
 **Solution:**
+
 1. Go to **Components** -> **J2Commerce** -> **Currencies**.
 2. Enable at least one currency besides your base currency.
 3. Return to the Currencies view and click **Update Rates** again.
 
----
+***
 
-### "Your store base currency is not available from [Provider]"
+### "Your store base currency is not available from \[Provider]"
 
 **Cause:** The selected API provider doesn't support your store's base currency in its response.
 
 **Solution:**
-1. Switch to a different API provider that supports more currencies (Frankfurter and ExchangeRate.host support ~30 major currencies; Open Exchange Rates supports 170+).
+
+1. Switch to a different API provider that supports more currencies (Frankfurter and ExchangeRate.host support \~30 major currencies; Open Exchange Rates supports 170+).
 2. If using Open Exchange Rates free tier, be aware it only returns USD-based rates. J2Commerce automatically recalculates from USD to your base currency, but your base currency must be in the supported list.
 
----
+***
 
 ### Rates haven't updated even though cron ran
 
@@ -296,30 +320,32 @@ If you don't have a key yet, see the "Get API Keys" section above, or switch to 
 
 5. **Your base currency isn't set.** Go to **J2Commerce** -> **Setup** -> **Store** and verify **Store Currency** is configured.
 
----
+***
 
 ### ExchangeRate-API shows "HTTP 403" error
 
 **Cause:** Your API key is invalid, revoked, or has exceeded its request limit.
 
 **Solution:**
+
 1. Log into your ExchangeRate-API account.
 2. Check your usage and key status.
 3. If the key is invalid, generate a new key.
 4. Update the key in J2Commerce Currency Updater settings.
 
----
+***
 
 ### CurrencyAPI shows "HTTP 401" error
 
 **Cause:** Your API key is missing from the request or is invalid.
 
 **Solution:**
+
 1. Verify you copied the entire API key (no extra spaces).
 2. Log into your CurrencyAPI account and check your key status.
 3. If the key is revoked, generate a new key.
 
----
+***
 
 ## Best Practices
 
@@ -332,23 +358,17 @@ If you don't have a key yet, see the "Get API Keys" section above, or switch to 
 ### Monitor Your API Usage
 
 If you use ExchangeRate-API, CurrencyAPI, or Open Exchange Rates:
+
 - Log into your provider's dashboard monthly to check usage.
-- A daily update uses ~30 requests per month.
-- An hourly update uses ~720 requests per month.
+- A daily update uses \~30 requests per month.
+- An hourly update uses \~720 requests per month.
 - If you're approaching your limit, reduce update frequency or upgrade your plan.
 
 ### Test After Configuration
 
 After setting up automatic updates:
+
 1. Go to **System** -> **Scheduled Tasks**.
 2. Find your Currency Updater task.
 3. Click the task title to view its history.
 4. Verify the last execution shows "Success" status.
-
----
-
-## Related Topics
-
-- [Currencies Management](../configuration/currencies.md) — Managing store currencies and exchange rates
-- [Cron Tasks and Scheduled Maintenance](../configuration/cron-tasks.md) — Setting up automated maintenance tasks
-- [Multi-Currency Setup](../getting-started/multi-currency.md) — Selling in multiple currencies

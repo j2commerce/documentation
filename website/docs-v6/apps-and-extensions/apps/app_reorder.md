@@ -1,10 +1,3 @@
----
-title: "Easy Reorder"
-sidebar_label: "Easy Reorder"
-sidebar_position: 14
-description: "Let customers reorder products from past orders with a single click, or retry a failed checkout without re-adding items manually."
----
-
 # Easy Reorder
 
 The Easy Reorder plugin adds a **Reorder** button to customers' past orders so they can add all items from a previous order back into their cart with one click. It also provides an optional **Try Again** button that appears when a checkout or payment fails, letting the customer retry without starting over.
@@ -13,50 +6,86 @@ This is especially useful for stores with repeat buyers — such as office suppl
 
 ## Prerequisites
 
-- J2Commerce installed and enabled
+- J2Commerce is installed and enabled
 - At least one completed order in your store
 
-## Installation
+## Purchase and Download
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
+‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
-1. Purchase and download the `app_reorder.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_reorder.zip` package file.
-4. The plugin installs and enables automatically.
+**Step 2:** Locate the `app_reorder.zip` App **->** click **View Details** **->** **Add to cart** **->** **Checkout**.&#x20;
 
-After installation:
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**
 
-1. Go to **J2Commerce** -> **Apps**.
-2. Find **Easy Reorder** in the list and confirm it shows **Enabled**.
+## Install the App
 
-<!-- SCREENSHOT: J2Commerce Apps view showing Easy Reorder enabled -->
+Go to **System** **->** **Install** **->** **Extensions**
 
-## Configuring the Plugin
+Upload the plugin ZIP file or use the Install from URL option.
 
-Go to **J2Commerce** -> **Apps**, then click the plugin name to open its settings.
+![](/img/address-install.webp)
 
-<!-- SCREENSHOT: Easy Reorder plugin settings page -->
+## Enable the App
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![](/img/address-apps.webp)
+
+To help you narrow down the list, you can do a search for the **Easy Reorder** app, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/reorder-enable.webp)
+
+## Configure the App
+
+Click on the **Easy Reorder** title to open the plugin settings.
+
+![](/img/reorder-config.webp)
 
 ### Basic Settings
 
-| Setting | Description | Default | Options |
-|---------|-------------|---------|---------|
-| **Redirect After Reorder** | Controls where the customer is sent after clicking Reorder. **Shopping Cart** lets them review items before proceeding. **Checkout** takes them straight to the checkout page. | `Shopping Cart` | Shopping Cart / Checkout |
-| **Cart Menu Item** | The Joomla menu item for the shopping cart page. Only shown when **Redirect After Reorder** is set to **Shopping Cart**. Leave blank to use Joomla's default routing. | None | Any menu item |
-| **Checkout Menu Item** | The Joomla menu item for the checkout page. Only shown when **Redirect After Reorder** is set to **Checkout**. Leave blank to use Joomla's default routing. | None | Any menu item |
-| **Enable Try Again** | Shows a **Try Again** button on the checkout confirmation page when a payment fails. This lets the customer retry without manually re-adding products. | No | Yes / No |
+**Redirect After Reorder:** Controls where the customer is sent after clicking Reorder.&#x20;
+
+- **Shopping Cart** lets them review items before proceeding.&#x20;
+
+- **Checkout** takes them straight to the checkout page.
+
+**Cart Menu Item:** The Joomla menu item for the shopping cart page.&#x20;
+
+:::info
+
+**Note**: Only shown when **Redirect After Reorder** is set to **Shopping Cart**. Leave blank to use Joomla's default routing.
+
+:::
+
+**Checkout Menu Item:** The Joomla menu item for the checkout page.&#x20;
+
+:::info
+
+**Note**: Only shown when **Redirect After Reorder** is set to **Checkout**. Leave blank to use Joomla's default routing.
+
+:::
+
+**Enable Try Again:** Select '**Yes**' to enable the "**Try Again**" button on the post confirmation page if the order has failed, so they can easily add the cart items again.
 
 ## How It Works
 
 ### Reordering from Order History
 
-1. A logged-in customer goes to their account and views their past orders.
-2. On any order, they see a **Reorder** button (a circular arrow icon).
-3. Clicking the button adds all items from that order back into the customer's shopping cart.
-4. The customer is redirected to either the cart page or the checkout page, depending on your configuration.
+- A logged-in customer goes to their **My Account** and views their past orders.
 
-<!-- SCREENSHOT: Order details page showing the Reorder button -->
+- On any order, they see a **Reorder** button (a circular arrow icon).
+
+![](/img/reorder-order.webp)
+
+- Clicking the button adds all items from that order back into the customer's shopping cart.
+
+- The customer is redirected to either the cart page or the checkout page, depending on your configuration.
+
+![](/img/reorder-order1.webp)
 
 From the cart, the customer can adjust quantities, remove items they no longer need, or proceed directly to checkout.
 
@@ -86,9 +115,13 @@ This prevents the frustration of customers having to manually find and re-add al
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Apps** and confirm the plugin shows **Enabled**.
-2. Clear the Joomla cache: **System** -> **Clear Cache** -> **Clear All**.
-3. Log in as a customer and view an order to verify the button appears.
+Go to **J2Commerce** -> **Apps** and confirm the plugin shows **Enabled**.
+
+Clear the Joomla cache: **Home Dashboard -> Cache** **->** **Delete All**.
+
+Log in as a customer and view an order to verify that the button appears.
+
+![](/img/delete-cache3.webp)
 
 ### Clicking Reorder does nothing or shows an error
 
@@ -97,7 +130,7 @@ This prevents the frustration of customers having to manually find and re-add al
 **Solution:**
 
 1. Ask the customer to refresh the page and try again.
-2. If the issue persists, check that the J2Commerce system plugin is enabled under **System** -> **Manage** -> **Plugins**.
+2. If the issue persists, check that the J2Commerce system plugin is **enabled** under **System** -> **Manage** -> **Plugins**.
 
 ### The Try Again button does not appear after a failed payment
 
@@ -109,6 +142,8 @@ This prevents the frustration of customers having to manually find and re-add al
 2. Set **Enable Try Again** to **Yes**.
 3. Click **Save**.
 
+![](/img/reorder-order2.webp)
+
 ### The customer is redirected to the wrong page after reorder
 
 **Cause:** The menu item settings may not be configured, or the wrong menu item is selected.
@@ -119,6 +154,4 @@ This prevents the frustration of customers having to manually find and re-add al
 2. Check which **Redirect After Reorder** option is selected.
 3. Set the appropriate **Cart Menu Item** or **Checkout Menu Item** to the correct page in your site's menu.
 
-## Related Topics
-
-- [Order Management](../configuration/order-management.md)
+![](/img/reorder-order1-1.webp)

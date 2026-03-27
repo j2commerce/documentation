@@ -1,10 +1,3 @@
----
-title: "Calculator - Sort by Price"
-sidebar_label: "Calculator - Sort by Price"
-sidebar_position: 7
-description: "Automatically apply the lowest available price to customers based on their user group, order quantity, and date — ideal for stores with multiple price levels."
----
-
 # Calculator - Sort by Price
 
 The Calculator - Sort by Price plugin adds an alternative pricing calculator to J2Commerce. When a product has multiple price levels set up in its **Additional Pricing** table, this calculator automatically finds and applies the **lowest matching price** for each customer based on three factors: their Joomla user group, the quantity they are ordering, and the current date.
@@ -16,83 +9,128 @@ This is useful for stores that offer tiered pricing, wholesale discounts, time-l
 - J2Commerce installed and enabled
 - At least one product with multiple price levels defined in **Additional Pricing**
 
-## Installation
+## Purchase and Download
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
+The **Calculator Sort By Price** app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `app_calculatorsortbyprice.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_calculatorsortbyprice.zip` package file.
-4. The plugin installs and enables automatically.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Apps**.
 
-After installation:
+**Step 2:** Locate the **Calculator Sort By Price** app -> click **View Details** -> **Add to cart** -> **Checkout**.
 
-1. Go to **J2Commerce** -> **Apps**.
-2. Find **Calculator - Sort by Price** in the list and confirm it shows **Enabled**.
+**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
 
-<!-- SCREENSHOT: J2Commerce Apps view showing Calculator - Sort by Price enabled -->
+## Install the App
+
+You can install this **Calculator Sort By Price** App using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the plugin `app_calculatorsortbyprice.zip `file or use the Install from URL option.
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
+
+## Enable the App
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the extension.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Apps**
+
+![shipping method](/img/accordions-app.webp)
+
+Look for **Calculator Sort By Price**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/calculator-enable.webp)
 
 ## How Pricing Calculators Work
 
 Every product variant in J2Commerce has a **Pricing Calculator** setting that controls how the final price is determined. By default, all products use the **Standard** calculator. Once this plugin is installed, a second option — **Sort by Price** — becomes available.
 
-| Calculator | Behavior |
-|------------|----------|
-| **Standard** | Uses the base variant price only. Additional pricing rules are ignored. |
-| **Sort by Price** | Evaluates all additional pricing rules and selects the lowest price that matches the customer's group, quantity, and the current date. |
+**Standard:** Uses the base variant price only. Additional pricing rules are ignored.
 
-The calculator is set **per product**, so you can use Standard pricing on some products and Sort by Price on others.
+**Sort by Price:** Evaluates all additional pricing rules and selects the lowest price that matches the customer's group, quantity, and the current date.
+
+The calculator is set **per product**, so you can use **Standard** pricing on some products and **Sort by Price** on others.
 
 ## Setting Up a Product to Use Sort by Price
 
-### Step 1: Open the Product
+### Open the Product
 
-1. Go to **J2Commerce** -> **Catalog** -> **Products**.
-2. Click the product you want to configure.
-3. Select the **Price** tab.
+- Go to **J2Commerce** -> **Catalog** -> **Products**.
 
-<!-- SCREENSHOT: Product edit form showing the Price tab selected -->
+- Click the product you want to configure.
 
-### Step 2: Change the Pricing Calculator
+- Select the **Price** tab.
 
-1. Find the **Pricing Calculator** dropdown in the Price tab.
-2. Change it from **Standard** to **Sort by Price**.
+- Find the **Pricing Calculator** dropdown in the Price tab.
 
-<!-- SCREENSHOT: Pricing Calculator dropdown showing Sort by Price selected -->
+- Change it from **Standard** to **Sort by Price**.
 
-### Step 3: Add Price Levels
+![](/img/calculator-product.webp)
+
+### Add Price Levels
 
 The Sort by Price calculator only works when you have additional pricing rules defined. To add them:
 
-1. In the same **Price** tab, click the **Additional Pricing** button.
-2. A modal window opens showing your existing price rules (if any) and a form to add new ones.
-3. Fill in the fields for each price level:
+- In the same **Price** tab, click the **Additional Pricing** button.
 
-<!-- SCREENSHOT: Additional Pricing modal with sample pricing rules -->
+![](/img/calculator-advanced1.webp)
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Quantity From** | Minimum quantity for this price to apply. Set to `0` for no minimum. | `10` |
-| **Quantity To** | Maximum quantity for this price to apply. Set to `0` for no maximum. | `50` |
-| **Date From** | Start date for this price. Leave empty for no start restriction. | `2026-01-01` |
-| **Date To** | End date for this price. Leave empty for no end restriction. | `2026-12-31` |
-| **Customer Group** | The Joomla user group this price applies to. Select **All** to apply to every customer. | `Wholesale` |
-| **Price** | The price amount for this rule. | `15.00` |
+- A modal window opens showing your existing price rules (if any) and a form to add new ones.
 
-4. Click **Save** to add the rule.
-5. Repeat for each price level you need.
-6. Close the modal and click **Save** on the product.
+- Fill in the fields for each price level:
+
+![](/img/calculator-advanced.webp)
+
+**Quantity From:** Minimum quantity for this price to apply. Set to `0` for no minimum
+
+**Date From:** Start date for this price. Leave empty for no start restriction.
+
+**Date To:** End date for this price. Leave empty for no end restriction.
+
+**Customer Group:** The Joomla user group this price applies to. Select **All** to apply to every customer.&#x20;
+
+:::info
+
+**Note**: If you want to have a specific Customer Group be added to the list, ie; VIP, Wholesale, etc. You can create new customer groups by going to **Users -> Groups -> New**
+
+:::
+
+![](/img/calculator-group.webp)
+
+:::info
+
+**Note**: Don't forget to add the specific use to the group in order for them to see the Advanced Pricing that is just for that group. Go to **Users -> Manage ->** click on the **-> User -> Assigned User Groups** tab
+
+:::
+
+![](/img/calculator-group1.webp)
+
+**Price:** The price amount for this rule.
+
+Click **Save** to add the rule.
+
+Repeat for each price level you need.
+
+![](/img/calculator-advanced3.webp)
+
+Close the modal and click **Save** on the product.
+
+## Frontend View
+
+![](/img/calculator-product3.webp)
 
 ## Example: Multiple Price Levels in Action
 
 Suppose you sell a product with a base price of $25.00 and you set up these additional pricing rules:
 
-| Rule | Quantity | Group | Price |
-|------|----------|-------|-------|
-| 1 | 1 – 9 | All | $25.00 |
-| 2 | 10 – 49 | All | $20.00 |
-| 3 | 50+ | All | $15.00 |
-| 4 | 1+ | Wholesale | $18.00 |
+| Rule | Quantity | Group     | Price  |
+| ---- | -------- | --------- | ------ |
+| 1    | 1 – 9    | All       | $25.00 |
+| 2    | 10 – 49  | All       | $20.00 |
+| 3    | 50+      | All       | $15.00 |
+| 4    | 1+       | Wholesale | $18.00 |
 
 With the **Sort by Price** calculator, here is what each customer would pay:
 
@@ -110,6 +148,7 @@ When a customer views or adds a product to the cart, the Sort by Price calculato
 
 1. Retrieves all additional pricing rules for that product variant.
 2. Filters out rules that do not match:
+
    - **Quantity:** The customer's quantity must fall within the rule's quantity range.
    - **Date:** Today's date must fall within the rule's date range (if one is set).
    - **Customer Group:** The customer must belong to the rule's user group, or the rule must be set to **All**.
@@ -137,6 +176,8 @@ If no rules match, the product's base variant price is used as a fallback.
 2. Change the **Pricing Calculator** dropdown from **Standard** to **Sort by Price**.
 3. Click **Save**.
 
+![](/img/calculator-product1.webp)
+
 ### A customer is not getting the expected discounted price
 
 **Cause:** The customer's quantity, date, or user group may not match any of the pricing rules.
@@ -144,21 +185,9 @@ If no rules match, the product's base variant price is used as a fallback.
 **Solution:**
 
 1. Open the product and click **Additional Pricing** to review the rules.
-2. Verify that the customer's order quantity falls within the **Quantity From** and **Quantity To** range of the intended rule.
+2. Verify that the customer's order quantity falls within the **Quantity From** range of the intended rule.
 3. Check that today's date is within the **Date From** and **Date To** range (if set).
-4. Confirm the customer belongs to the correct Joomla user group. You can check this under **Users** -> **Manage** in the Joomla admin.
+4. Confirm the customer belongs to the correct Joomla user group. You can check this under **Users** -> **Manage** in the Joomla admin.&#x20;
+5. Click on the **User** and then the **Assigned User Group** tab and enable the appropriate group for that user
 
-### The plugin does not appear in the Apps list
-
-**Cause:** The plugin may not be installed or discovered.
-
-**Solution:**
-
-1. Go to **System** -> **Manage** -> **Extensions** and search for `calculatorsortbyprice`.
-2. If it does not appear, go to **System** -> **Install** -> **Extensions** and re-upload the package.
-3. If it appears but is disabled, click the status icon to enable it.
-
-## Related Topics
-
-- [Product Pricing](../catalog/product-pricing.md)
-- [Bulk Discount](app_bulkdiscount.md)
+![](/img/calculator-group2.webp)
