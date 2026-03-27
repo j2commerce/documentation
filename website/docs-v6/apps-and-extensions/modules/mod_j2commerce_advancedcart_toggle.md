@@ -1,11 +1,6 @@
----
-title: "Advanced Cart Toggle Module"
-sidebar_label: "Advanced Cart Toggle"
-sidebar_position: 45
-description: "Add a cart icon or image button to any module position that opens the advanced cart drawer and shows a live item count badge."
----
-
 # Advanced Cart Toggle Module
+
+**Description:** Adds a **cart icon** or **image button** to any module position that opens the advanced cart drawer and shows a live item count badge
 
 The Advanced Cart Toggle module places a compact cart button anywhere on your site — a navbar, a header strip, a sidebar — that opens the J2Commerce Advanced Cart Drawer when clicked. A small badge on the button shows the current item count in real time, updating automatically whenever the cart changes without a page reload.
 
@@ -16,14 +11,31 @@ This is the recommended way to give shoppers fast access to the cart drawer from
 - J2Commerce 6 installed and active
 - The J2Commerce Advanced Cart add-on installed and enabled (the drawer comes from that plugin — see [Advanced Cart Drawer](j2commerce_advancedcart.md))
 
-## Installation
+:::info
 
-This module is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+**Note**: Both the **Advanced Cart Drawer** plugin (`plg_system_j2commerce_advancedcart`) and the **Advanced Cart Toggle** module (`mod_j2commerce_advancedcart_toggle`) are separate add-ons available from the [J2Commerce Extensions Store](https://www.j2commerce.com). They are not included with the core J2Commerce component.
 
-1. Purchase and download the `mod_j2commerce_advancedcart_toggle.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `mod_j2commerce_advancedcart_toggle.zip` package file.
-4. The module installs and enables automatically.
+:::
+
+## Purchase and Download
+
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/)
+
+**Step 2:** Locate the **Advanced Cart** **Toggle** Module -> click **View Details** -> **Add to cart** -> **Checkout**.
+
+**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
+
+## Install the Module
+
+You can install this **Advanced Cart** **Toggle** Module using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the `mod_j2commerce_advancedcart_toggle.zip` package file
+
+The module installs and enables automatically
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
 ## Adding the Module to a Page
 
@@ -41,46 +53,55 @@ This module is a separate add-on available from the [J2Commerce Extensions Store
 
 The module has one configuration fieldset — **Basic** — plus the standard **Advanced** fieldset.
 
-### Basic Settings
+### Basic Settings tab
 
-<!-- SCREENSHOT: Module edit screen showing the Basic tab with Display Mode, Icon Class, Count Type, Hide Badge When Empty, and Badge Background Color fields -->
+:<!-- SCREENSHOT: Module edit screen showing the Basic tab with Display Mode, Icon Class, Count Type, Hide Badge When Empty, and Badge Background Color fields -->
 
-| Setting | Description | Default | Options |
-|---------|-------------|---------|---------|
-| **Display Mode** | Show a font icon (Font Awesome or any icon library your template loads) or a custom image file. | Icon | Icon / Image |
-| **Icon Class** | The CSS class(es) for the icon element. Any class from your icon library works here. Shown only when **Display Mode** is set to **Icon**. | `fa-solid fa-cart-shopping` | Any valid CSS class string |
-| **Cart Image** | The image to show as the button. Click to open Joomla's media picker and select a file from your media library. Shown only when **Display Mode** is set to **Image**. | *(empty)* | Any image from the media library |
-| **Count Type** | Controls what number appears in the badge. **Sum Quantities** adds up every individual unit in the cart (two products with quantities of 3 and 2 = 5). **Line Items** counts the distinct product rows in the cart (two products regardless of quantity = 2). | Sum Quantities | Sum Quantities / Line Items |
-| **Hide Badge When Empty** | When enabled, the badge is hidden if the cart is empty. When disabled, the badge always shows, displaying 0 on an empty cart. | No | Yes / No |
-| **Badge Background Color** | Background color of the count badge. Click the field to open a color picker. | `#dc3545` (red) | Any hex color |
+**Display Mode:** Show a font icon (Font Awesome or any icon library your template loads) or a custom image file. Choose whether to show a font icon or a custom image.
 
-### Advanced Settings
+**Icon Class:** The CSS class(es) for the icon element. Any class from your icon library works here. Shown only when **Display Mode** is set to **Icon**.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Module Class Suffix** | An optional CSS class appended to the button element. Use this to apply custom styles to a specific module instance. | *(empty)* |
-| **Caching** | Controls whether module output is cached. Set to **No Caching** by default because the item count must always reflect the live cart. | No Caching |
+**Cart Image:** The image to show as the button. Click to open Joomla's media picker and select a file from your media library. Shown only when **Display Mode** is set to **Image**.
+
+**Count Type:** Controls what number appears in the badge. **Sum Quantities** adds up every individual unit in the cart (two products with quantities of 3 and 2 = 5). **Line Items** counts the distinct product rows in the cart (two products regardless of quantity = 2).
+
+**Hide Badge When Empty:** When enabled, the badge is hidden if the cart is empty. When disabled, the badge always shows, displaying 0 on an empty cart.
+
+**Badge Background Color:** Background color of the count badge. Click the field to open a color picker.
+
+### Advanced Settings tab
+
+:<!-- SCREENSHOT: Module edit screen showing the Basic tab with Display Mode, Icon Class, Count Type, Hide Badge When Empty, and Badge Background Color fields -->
+
+**Module Class Suffix:** An optional CSS class appended to the button element. Use this to apply custom styles to a specific module instance.
+
+**Caching:** Controls whether module output is cached. Set to **No Caching** by default because the item count must always reflect the live cart.
 
 ## How It Works
 
-When the page loads, the module queries the current visitor's cart on the server and renders the badge with the live item count. After the page loads, the Advanced Cart plugin takes over: any time the cart changes (add, remove, quantity update), the plugin dispatches a browser event that updates all elements with the class `j2commerce-cart-badge` — including the badge from this module — instantly, with no page reload.
+When the page loads, the module queries the current visitor's cart on the server and renders the badge with the live item count. After the page loads, the Advanced Cart Drawer plugin takes over: any time the cart changes (add, remove, quantity update), the plugin dispatches a browser event that updates all elements with the class `j2commerce-cart-badge` — including the badge from this module — instantly, with no page reload.
 
 Clicking the button calls `AdvancedCart.open()`, which slides the cart drawer into view.
 
 ## Choosing an Icon
 
-The **Icon Class** field accepts any CSS class string your site's template already loads. Common choices:
+![](/img/advanced-toggle-icon.webp)
 
-| Icon Library | Example Class |
-|---|---|
-| Font Awesome 6 Free | `fa-solid fa-cart-shopping` |
-| Font Awesome 6 Free | `fa-solid fa-bag-shopping` |
-| Font Awesome 6 Free | `fa-solid fa-basket-shopping` |
-| Bootstrap Icons | `bi bi-cart3` |
+The **Icon Class** field accepts any CSS class string your site's template already loads. Common choices: Below are the **Icon Library** and the **Example Class**&#x20;
+
+- **Font Awesome 6 Free:** `fa-solid fa-cart-shopping`
+
+- **Font Awesome 6 Free:** `fa-solid fa-bag-shopping`
+
+- **Font Awesome 6 Free:** `fa-solid fa-basket-shopping`
+
+- **Bootstrap Icons:** `bi bi-cart3`
 
 If your template does not load an icon library automatically, you may need to add one or use **Image** mode instead.
 
 ## Using an Image Instead of an Icon
+
+![](/img/advanced-toggle-image.webp)
 
 Set **Display Mode** to **Image**, then click the **Cart Image** field to open Joomla's media picker and choose your file. The module renders the image at 24 × 24 pixels by default. To display it at a different size, add a CSS class using the **Module Class Suffix** field and target it in your template's custom stylesheet:
 
