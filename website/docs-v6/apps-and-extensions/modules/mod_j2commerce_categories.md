@@ -1,10 +1,3 @@
----
-title: "J2Commerce Categories Module"
-sidebar_label: "Categories Module"
-sidebar_position: 30
-description: "Display your J2Commerce product categories as a responsive grid or Swiper carousel anywhere on your site using the Categories module."
----
-
 # Categories Module
 
 The Categories module gives your store a visual category browser that fits anywhere you have a Joomla module position — a sidebar, a homepage banner row, a full-width strip above the product list. Drop it in, pick a parent category, and it pulls in the direct children automatically as a card grid or a Swiper carousel.
@@ -13,73 +6,99 @@ What makes it practical for most stores is the **Category Builder** — a drag-a
 
 ## Prerequisites
 
-- J2Commerce 6 installed and active
+- J2Commerce 6 is installed and active
 - At least one Joomla category containing J2Commerce products
 - A J2Commerce menu item published on your site (required for the **Dynamic** mode)
 
-## Installation
+## Purchase and Download
 
-1. Purchase and download the `mod_j2commerce_categories.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `mod_j2commerce_categories.zip` package file.
-4. The module installs and enables automatically.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/)
+
+**Step 2:** Locate the **Categories** module **->** click **View Details** **->** **Add to cart** **->** **Checkout**.
+
+**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
+
+## Install the App
+
+You can install this **Categories** module using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the `mod_j2commerce_categories.zip`file or use the Install from URL option.
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
 ## Adding the Module to a Page
 
-1. Go to **Content** -> **Site Modules**.
-2. Click **New** in the toolbar.
-3. Select **J2Commerce - Categories** from the module type list.
-4. Give the module a **Title** and choose the **Position** where it should appear.
-5. Configure the settings described in the sections below.
-6. Click **Save & Close**.
+Go to **Content** **->** **Site Modules**&#x20;
 
-<!-- SCREENSHOT: New module form with "J2Commerce - Categories" selected from the module type chooser -->
+The J2Commerce Categories module should already exist and needs to be enabled.
+
+![](/img/categories-module1.webp)
+
+If you don't see it, then select '**New**' and follow the following steps.
+
+![](/img/advanced-cart-modules.webp)
+
+Select **J2Commerce - Categories** from the module type list.
+
+![](/img/categories-module.webp)
 
 ## Configuration
 
-The module has five configuration fieldsets: **Basic**, **Layout**, **Display**, **Category Builder**, and **Advanced**.
-
-***
-
-### Basic Settings
+### Basic Settings tab
 
 These settings control which categories are shown and how the module determines its source.
 
-<!-- SCREENSHOT: Module edit form — Basic fieldset showing Mode, Parent Category, and Show on Product Page fields -->
+**Title:** Give it a catchy title. The title will show up above the category items
 
-| Setting                  | Description                                                                                                                 | Default | Options                |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------- |
-| **Mode**                 | How the module selects which categories to show. See [Mode Explained](#mode-explained) below.                               | Normal  | Normal, Dynamic        |
-| **Parent Category**      | (Normal mode only) The parent category whose direct children are displayed. Click the field to open the category picker.    | —       | Any published category |
-| **Show on Product Page** | (Dynamic mode only) When enabled, the module also shows sibling categories when a visitor is viewing a product detail page. | No      | Yes, No                |
+**Position:** Set the position of where you want the module to be displayed. In this example we have set it as 'Main-bottom'
 
-#### Mode Explained
+**Mode:** How the module selects which categories to show.&#x20;
 
-**Normal** — You pick a parent category once in the module settings. Every visitor sees the same child categories no matter what page they are on. Good for a homepage banner or a sidebar promoting a fixed set of categories.
+![](/img/categories-module-basic.webp)
 
-**Dynamic** — The module reads the current URL and figures out the context on its own. On a category page it shows that category's children. On a product page it can optionally show sibling categories — other children of the same parent. The moment a visitor leaves J2Commerce pages the module goes quiet, so you can assign it globally and it will not show up on ordinary articles or blog posts.
+- **Normal Mode:** You pick a parent category once in the module settings. Every visitor sees the same child categories no matter what page they are on. Good for a homepage banner or a sidebar promoting a fixed set of categories.
 
-***
+**Parent Category:** (Normal mode only) The parent category whose direct children are displayed. Click the field to open the category picker.&#x20;
 
-### Layout Settings
+- **Dynamic Mode:** The module reads the current URL and figures out the context on its own. On a category page, it shows that category's children/sub-categories. On a product page, it can optionally show sibling categories — other children of the same parent. The moment a visitor leaves J2Commerce pages the module goes quiet, so you can assign it globally and it will not show up on ordinary articles or blog posts. If there are no children/sub-categories to display then nothing will show
+
+![](/img/categories-module-basic-1.webp)
+
+**Show on Product Page:** (Dynamic mode only) When enabled, the module also shows sibling categories when a visitor is viewing a product detail page.
+
+### Menu Assignment tab
+
+![](/img/categories-module-menu2.webp)
+
+**Module Assignment:** Set where you want the category module to be displayed.&#x20;
+
+- **On all pages**
+
+- **No Pages**
+
+- **Only on the pages selected**
+
+- **On all pages except those selected**
+
+**Menu Selection:** Select which pages go with the assignment you chose
+
+### Layout Settings tab
 
 These settings control the visual presentation of the category list.
 
-<!-- SCREENSHOT: Module edit form — Layout fieldset showing Layout Type, Columns, and slider settings -->
+**Layout Type: Grid** displays categories as a responsive card layout. **Slider** displays them in a horizontal Swiper carousel.
 
-| Setting                   | Description                                                                                                                                             | Default | Options                     |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------- |
-| **Layout Type**           | Grid displays categories as a responsive card layout. Slider displays them in a horizontal Swiper carousel.                                             | Grid    | Grid, Slider                |
-| **Columns**               | (Grid only) Number of columns on large screens. On small and medium screens the layout adjusts automatically.                                           | 4       | 2, 3, 4, 6                  |
-| **Show Child Categories** | (Grid only) Display subcategories nested within each parent category card.                                                                              | No      | Yes, No                     |
-| **Subcategory Depth**     | (Grid, Show Child Categories = Yes) How many levels of subcategories to load and display.                                                               | 1 Level | 1 Level, 2 Levels, 3 Levels |
-| **Slides Per View**       | (Slider only) Number of category slides visible at once on large screens. The slider responds automatically on smaller screens.                         | 5       | 1–8                         |
-| **Space Between Slides**  | (Slider only) Gap in pixels between slides.                                                                                                             | 20      | 0–60                        |
-| **Autoplay**              | (Slider only) Automatically advance slides without user interaction.                                                                                    | No      | Yes, No                     |
-| **Autoplay Delay**        | (Slider, Autoplay = Yes) Seconds to wait before advancing to the next slide.                                                                            | 4       | 1–30                        |
-| **Loop**                  | (Slider only) When the slider reaches the last slide, wrap around to the first. Loop only activates when there are more categories than slides visible. | No      | Yes, No                     |
-| **Navigation Arrows**     | (Slider only) Show previous/next arrow buttons on the slider.                                                                                           | Yes     | Yes, No                     |
-| **Pagination Dots**       | (Slider only) Show clickable dot indicators below the slider.                                                                                           | No      | Yes, No                     |
+#### Grid Layout
+
+![](/img/categories-module-layout.webp)
+
+**Columns:** (Grid only) Number of columns on large screens. On small and medium screens the layout adjusts automatically.
+
+**Show Child Categories:** (Grid only) Display subcategories nested within each parent category card.
+
+**Subcategory Depth:** (Grid, Show Child Categories = '**Yes**') How many levels of subcategories to load and display.
 
 #### Grid Column Responsiveness
 
@@ -92,6 +111,28 @@ The grid layout automatically adjusts for smaller screens:
 | 4 columns | 1 column    | 3 columns      | 4 columns    |
 | 6 columns | 1 column    | 3 columns      | 6 columns    |
 
+**Frontend View (3 Columns)**
+
+![](/img/frontend1.webp)
+
+#### Slider Layout
+
+Slider displays them as a horizontal Swiper carousel.
+
+**Slides Per View:** (Slider only) Number of category slides visible at once on large screens. The slider responds automatically on smaller screens. Number of category slides visible at once on large screens.
+
+**Space Between Slides:** (Slider only) Gap in pixels between slides.
+
+**Autoplay:** (Slider only) Automatically advance slides without user interaction.
+
+**Autoplay Delay:** (Slider, Autoplay = '**Yes**') Seconds to wait before advancing to the next slide.
+
+**Loop:** (Slider only) When the slider reaches the last slide, wrap around to the first. Loop only activates when there are more categories than slides visible.
+
+**Navigation Arrows:** (Slider only) Show previous/next arrow buttons on the slider.
+
+**Pagination Dots:** (Slider only) Show clickable dot indicators below the slider.
+
 #### Slider Breakpoints
 
 The slider also responds to screen size:
@@ -102,36 +143,52 @@ The slider also responds to screen size:
 | Tablet (768px)   | Approximately half of Slides Per View |
 | Desktop (992px+) | Configured Slides Per View            |
 
-***
+**Frontend View**
 
-### Display Settings
+![](/img/categories-module-layout-slider1.webp)
+
+### Display Settings tab
 
 These settings control what information appears on each category card.
 
-<!-- SCREENSHOT: Module edit form — Display fieldset showing Show Image, Show Title, Show Description, and other display toggles -->
+![](/img/categories-module-display.webp)
 
-| Setting                       | Description                                                                                                                                                                                    | Default | Options                     |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------- |
-| **Subtemplate**               | The visual theme used for category cards. **Auto** inherits the subtemplate from the active menu item (recommended). You can override to force a specific theme.                               | Auto    | Auto, Bootstrap 5, UIkit    |
-| **Category Header Tag**       | HTML heading element used for the category name. Subcategory names automatically use the next level down (e.g., H3 → H4 → H5). Setting this to **DIV** makes all levels use a `<div>` instead. | H3      | H1, H2, H3, H4, H5, H6, DIV |
-| **Image Width**               | Width in pixels used in the image `width` attribute. This controls intrinsic size for layout purposes, not CSS scaling.                                                                        | 258     | 50–800                      |
-| **Show Image**                | Display the category image on each card.                                                                                                                                                       | Yes     | Yes, No                     |
-| **Show Title**                | Display the category name on each card.                                                                                                                                                        | Yes     | Yes, No                     |
-| **Link Title**                | Make the category title a clickable link to the category page.                                                                                                                                 | Yes     | Yes, No                     |
-| **Link Image**                | Make the category image a clickable link to the category page.                                                                                                                                 | Yes     | Yes, No                     |
-| **Show Description**          | Display the category description text on each card.                                                                                                                                            | No      | Yes, No                     |
-| **Description Length**        | (Show Description = Yes) Maximum number of characters to display. Text longer than this is truncated with an ellipsis. Set to `0` to show the full description.                                | 150     | 0–500                       |
-| **Show Product Count**        | Display a badge showing how many active J2Commerce products are in each category.                                                                                                              | No      | Yes, No                     |
-| **Show Child Category Links** | (Grid, Show Child Categories = Yes) Show child category names as clickable links below each parent card.                                                                                       | Yes     | Yes, No                     |
-| **Max Child Links**           | (Grid, Show Child Categories = Yes, Show Child Category Links = Yes) Maximum number of child links to show per parent.                                                                         | 5       | 1–20                        |
+**Subtemplate:** The visual theme used for category cards. **Auto** inherits the subtemplate from the active menu item (recommended). You can override to force a specific theme.&#x20;
 
-***
+- When **Subtemplate** is set to **Auto**, the module reads the active menu item's subtemplate parameter and matches it. This means a **Bootstrap 5** template site automatically uses the Bootstrap 5 category cards, and a **UIkit** site uses UIkit cards.
 
-### Category Builder
+| Subtemplate     | Layout Classes Used                     | Slider Library |
+| --------------- | --------------------------------------- | -------------- |
+| **Bootstrap 5** | Bootstrap 5 grid, card, badge classes   | Swiper.js      |
+| **UIkit**       | UIkit grid, card, badge, slider classes | UIkit slider   |
 
-The Category Builder is a powerful tool available in **Normal** mode that lets you customise the image and display order for each category card without editing code.
+**Category Header Tag:** HTML heading element used for the category name. Subcategory names automatically use the next level down (e.g., H3 → H4 → H5). Setting this to **DIV** makes all levels use a `<div>` instead.
 
-<!-- SCREENSHOT: Module edit form — Category Builder fieldset with the Build Category Display button and the resulting table of categories -->
+**Image Width:** Width in pixels used in the image `width` attribute. This controls intrinsic size for layout purposes, not CSS scaling.
+
+**Show Image:** Display the category image on each card.
+
+**Show Title:** Display the category name on each card.
+
+**Link Title:** Make the category title a clickable link to the category page.
+
+**Link Image:** Make the category image a clickable link to the category page.
+
+**Show Description:** Display the category description text on each card.
+
+**Description Length:** (Show Description = '**Yes**') Maximum number of characters to display. Text longer than this is truncated with an ellipsis. Set to `0` to show the full description.
+
+**Show Product Count:** Display a badge showing how many active J2Commerce products are in each category.
+
+**Show Child Category Links:** (Grid, Show Child Categories = Yes) Show child category names as clickable links below each parent card.
+
+**Max Child Links:** (Grid, Show Child Categories = Yes, Show Child Category Links = Yes) Maximum number of child links to show per parent.
+
+### Category Builder tab
+
+The Category Builder is a powerful tool available in **Normal** mode that lets you customise the image and display order for each category card without editing code. If Dynamic Mode is set, then Category Builder is disabled.
+
+![](/img/categories-module-builder.webp)
 
 **How to use the Category Builder:**
 
@@ -152,32 +209,17 @@ The Category Builder is a powerful tool available in **Normal** mode that lets y
 
 The builder saves its data as JSON in the module parameters. When you return to the module later, clicking **Build Category Display** again restores your saved settings so you can continue adjusting.
 
-> **Tip:** If you add new child categories in the Joomla category manager after setting up the builder, click **Build Category Display** again to load the new categories into the table. Your existing settings for other categories are preserved.
+:::tip
 
-***
+**Tip:** If you add new child categories in the Joomla category manager after setting up the builder, click **Build Category Display** again to load the new categories into the table. Your existing settings for other categories are preserved.
 
-### Advanced Settings
+:::
 
-| Setting                 | Description                                                                                                                          | Default   |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------- |
-| **Module Class Suffix** | An optional CSS class name appended to the module's wrapping element. Use this to apply custom styles to a specific module instance. | *(empty)* |
+### Advanced Settings tab
 
-***
+![](/img/categories-module-advanced.webp)
 
-## Subtemplates
-
-The module supports two visual themes, controlled by the **Subtemplate** setting in the Display fieldset.
-
-| Subtemplate     | Layout Classes Used                     | Slider Library |
-| --------------- | --------------------------------------- | -------------- |
-| **Bootstrap 5** | Bootstrap 5 grid, card, badge classes   | Swiper.js      |
-| **UIkit**       | UIkit grid, card, badge, slider classes | UIkit slider   |
-
-When **Subtemplate** is set to **Auto**, the module reads the active menu item's subtemplate parameter and matches it. This means a Bootstrap 5 template site automatically uses the Bootstrap 5 category cards, and a UIkit site uses UIkit cards.
-
-If you assign the module to a page that has no J2Commerce menu item (for example, a standard article page), **Auto** falls back to Bootstrap 5.
-
-***
+**Module Class Suffix:** An optional CSS class name appended to the module's wrapping element. Use this to apply custom styles to a specific module instance.
 
 ## Template Overrides
 
@@ -198,8 +240,6 @@ The layout files are:
 | `uikit/slider.php`      | UIkit slider layout                                                     |
 
 Edit only the file matching your site's theme and layout choice.
-
-***
 
 ## Use Cases
 
@@ -248,8 +288,6 @@ Switch to the Slider layout and you get a smooth, touch-friendly Swiper carousel
 - Navigation Arrows: Yes
 - Show Image: Yes
 - Show Title: Yes
-
-***
 
 ## Troubleshooting
 
@@ -324,12 +362,3 @@ Switch to the Slider layout and you get a smooth, touch-friendly Swiper carousel
 1. In the **Display** fieldset, set **Subtemplate** to **Auto**. This inherits the subtemplate from the active J2Commerce menu item.
 2. If your site uses Bootstrap 5, explicitly set **Subtemplate** to **Bootstrap 5**.
 3. If your site uses UIkit, set **Subtemplate** to **UIkit**.
-
-***
-
-## Related Topics
-
-- [Products](../products/index.md) — Create and manage the products that appear in your categories
-- [Catalog](../catalog/index.md) — Configure category display settings in J2Commerce
-- [Design](../design/index.md) — Template overrides and layout customisation
-- [Apps and Extensions](./index.md) — Overview of J2Commerce extensions

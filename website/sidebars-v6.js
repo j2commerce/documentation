@@ -139,7 +139,6 @@ const sidebars = {
                         },
                     ],
                 },
-                'apps-and-extensions/advanced_cart',
             ],
         },
         {
