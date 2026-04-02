@@ -23,151 +23,197 @@ You control how many times a customer can download a file and how long access is
 
 ![](/img/simple-store-menu.webp)
 
-:::info
-
-**NOTE**: Before you can begin setting up a Variant, you need to create all of the **Options** that the product will offer. &#x20;
-
-:::
-
-## Setting Up Options (if needed)
-
-There are **two** ways you can access Options.&#x20;
-
-**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Options**
-
-**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Catalog -> Options**
-
-![Adding new options](/img/options.webp)
-
-Select **New** to create a new option. (for example, Name: `Size`, Type: `select`).
-
-Add the option values (Small, Medium, Large) to the option
-
-Repeat for each option you plan to use (e.g., create a separate "Color" option with values Red, Blue, Green).
-
-You only need to do this once. The same options can be reused across many products.
-
-**Option Name:** The label customers see on the product page, for example, "Size" or "Color".
-
-**Option Unique Name:** An internal identifier (no spaces) used to distinguish options with the same display name.
-
-**Type:** Controls the input style shown to customers. See the table below for all types.
-
-### Option Types
-
-**Select:** A dropdown menu
-
-**Radio:** Clickable button group
-
-**Checkbox:** Multiple-choice checkboxes
-
-**Color:** Color swatch buttons
-
-**Text:** A single-line text input
-
-**Textarea:** A multi-line text input
-
-**Date / Datetime / Time:** A date or time picker
-
-**Number:** A numeric input field
-
-**File / Image:** A file upload input
-
-**Email / URL:** A formatted text input
-
-:::tip
-
-**IMPORTANT:** For Select, Radio, Checkbox, and Color option types, add your option values in the **Option Values** section that appears below the type field. Each value needs a name, and optionally an image.
-
-:::
-
-![](/img/option-value.webp)
-
 ## Creating a Downloadable Product
 
 Downloadable products are created from within a Joomla article, the same way as any other J2Commerce product type.
 
-### Step 1: Create or Open the Article
+### There are **many** ways you can access products or articles.&#x20;
 
-1. Go to **Content** -> **Articles** in the Joomla administrator.
-2. Click **New** to create a new article, or click an existing article to edit it.
-3. Give the article a title — this becomes the product name customers see.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Products ->** **New**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Products ->** **New**
+
+**Option C:** Go to **Content -> Articles ->** **New**
+
+![](/img/variant-product.webp)
+
+## Setting up the Product
+
+### Content tab
+
+![](/img/downloadable-content1.webp)
+
+Give the article a title (e.g., "Stickers, CD, DVD").
+
+Add your product **description** in the article body.&#x20;
+
+The intro description above the red 'Read More' line will appear under the main title of the product. The main description will appear under the description tab below the product&#x20;
+
+Set the article's **state** to **Published**.
+
+Assign the article to the appropriate **category**.
+
+:::info
+
+**Note**: The intro description above the red 'Read More' line will appear under the main title of the product. The main description will appear under the description tab below the product&#x20;
+
+:::
+
+**Frontend View**
 
 <!-- SCREENSHOT: Joomla article editor with J2Commerce product form visible below the article content area -->
 
-### Step 2: Open the J2Commerce Product Form
+### Select the Bundle Product Type
 
-Scroll down past the article content editor. You will see the J2Commerce product configuration form. If this is a new article, look for the **J2Commerce** section at the bottom of the edit screen.
+![](/img/downloadable-type.webp)
 
-Click the **Product Type** field and select **Downloadable** from the dropdown.
+Open the **Product** Article **-> J2Commerce** tab
 
-<!-- SCREENSHOT: J2Commerce product type selector showing "Downloadable" selected -->
+**Use as Product:** Select '**Yes**'
 
-The form updates to show the tabs specific to downloadable products: **General**, **Pricing**, **Inventory**, **Images**, **Files**, **Filters**, **Relations**, and **Apps**.
+In the **Product Type** dropdown, select **Downloadable**
 
-***
-
-## Configuring the Product
+Click **Save and Continue**
 
 ### General Tab
 
 The **General** tab covers basic product settings that apply to all product types.
 
-<!-- SCREENSHOT: General tab of the downloadable product form -->
+![](/img/downloadable-general.webp)
 
-| Field                     | Description                                                                                        | Example         |
-| ------------------------- | -------------------------------------------------------------------------------------------------- | --------------- |
-| **Visible in Storefront** | Show or hide this product in your store. Set to **No** to work on the product before it goes live. | Yes             |
-| **SKU**                   | A unique code to identify this product in your records.                                            | `EBOOK-001`     |
-| **UPC**                   | Universal Product Code or barcode number (optional).                                               | —               |
-| **Brand or Manufacturer** | Link this product to a manufacturer or brand you have set up in J2Commerce.                        | —               |
-| **Vendor**                | Assign the product to a vendor if you use a multi-vendor setup.                                    | —               |
-| **Tax Profile**           | Select which tax rule applies to this product.                                                     | `Digital Goods` |
-| **Cart Button Text**      | Customize the text on the Add to Cart button. Leave blank to use the store default.                | `Buy Now`       |
-| **Product CSS Class**     | Advanced: add a custom CSS class to the product wrapper on the frontend.                           | —               |
+**Visible in Storefront:** Show or hide the product in storefront listings. Set to **'Yes'** to make it visible to shoppers.
 
-### Pricing Tab
+**Brand or Manufacturer:** Links this product to a manufacturer record. Useful for filtering and for the Custom Accordions app's Brand Details feature.
 
-Set the price customers pay for the digital download.
+:::info
 
-<!-- SCREENSHOT: Pricing tab showing the Regular Price field and Advanced Pricing button -->
+NOTE: Y*ou have to set up the Manufacturer details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Manufacturer**, in order for them to appear in the dropdown* menu&#x20;
 
-| Field                  | Description                                                                                                                                |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Regular Price**      | The base selling price of the product. Enter the amount in your store currency.                                                            |
-| **Advanced Pricing**   | Click this button to open the advanced pricing panel where you can configure sale prices, date-limited offers, and customer group pricing. |
-| **Pricing Calculator** | Select a pricing method if you have custom calculators installed. Leave at default for standard pricing.                                   |
+:::
 
-### Inventory Tab
+**Vendor:** Assigns the product to a vendor. Relevant for multi-vendor setups. Leave blank if you do not use vendors.
 
-The **Inventory** tab controls stock tracking. For many digital products, stock tracking is unnecessary — a PDF or software download is never depleted. However, you can enable it if you want to limit how many copies are sold.
+:::info
 
-<!-- SCREENSHOT: Inventory tab with Manage Stock toggled off -->
+NOTE: *You have to set up the Vendor's details in **both*** *an **Article*** *and under **J2Commerce -> Catalog -> Vendors**, in order for them to appear in the dropdown menu*&#x20;
 
-| Field                    | Description                                                                    | Options                       |
-| ------------------------ | ------------------------------------------------------------------------------ | ----------------------------- |
-| **Manage Stock**         | Turn stock tracking on or off. Most digital products leave this disabled.      | Yes / No                      |
-| **Stock Quantity**       | How many copies are available. Only relevant when **Manage Stock** is enabled. | Any number                    |
-| **Allow Back Orders**    | Whether customers can order when stock reaches zero.                           | No / Allow / Allow but Notify |
-| **Stock Status**         | Manually set availability regardless of quantity.                              | In Stock / Out of Stock       |
-| **Notify Quantity**      | Send an admin notification when stock falls to this level.                     | Any number                    |
-| **Quantity Restriction** | Limit how many units a customer can purchase in one order.                     | Yes / No                      |
-| **Max Sale Quantity**    | Maximum units per order when quantity restriction is enabled.                  | Any number                    |
-| **Min Sale Quantity**    | Minimum units per order when quantity restriction is enabled.                  | Any number                    |
+:::
 
-### Images Tab
+**Tax Profile:** Assigns a tax profile to this product. The tax profile determines which tax rates apply based on the customer's location. Create tax profiles under **J2Commerce** **->** **Taxes**.
+
+**Cart Button Text:** Customize your cart button name. This will override the default "Add to Cart" button label for this product only. Leave blank to use your store's global button label.
+
+**Product CSS Class:** Adds one or more CSS class names to the product's container element. Useful for per-product styling without modifying template files.
+
+### Pricing tab
+
+![](/img/downloadable-pricing.webp)
+
+**Regular Price:** The standard selling price. Enter the number only — do not include a currency symbol. J2Commerce reads the currency from your store settings.
+
+**Advanced Pricing:** Opens a panel to set date-based sale prices, quantity-tier prices, and customer-group prices. See the section below for details. To see how to set up the Advanced pricing, see below.
+
+**Pricing Calculator:** Controls how the final price is calculated. The default **Standard** calculator applies the regular price and advanced pricing rules. Other calculators (installed via plugins) can apply custom formulas.
+
+### Advanced Pricing
+
+![](/img/simple-pricing1.webp)
+
+Click the **Advanced Pricing** button to configure rules that override the regular price under specific conditions. A modal opens where you can add one or more pricing rules.
+
+Each pricing rule has these fields:
+
+**Date Range:** The date range during which this rule is active. Leave both blank to make the rule always active
+
+**Quantity Range:** The quantity range this rule applies to. For example, a rule with Quantity From = 5 applies when the customer buys 5 or more units
+
+**Customer Group:** Restrict this rule to a specific Joomla user group. Leave blank to apply to all shoppers.
+
+**Price:** The price that applies when this rule matches
+
+J2Commerce automatically selects the best matching rule at checkout — the customer always gets the lowest qualifying price.
+
+**Common use cases:**
+
+- **Black Friday sale** — set a Date From and Date To with a reduced price, leave quantity and group blank.
+- **Bulk discount** — set Quantity From to 10 with a lower price and no date restriction.
+- **Trade pricing** — set a Customer Group to your "Wholesale" group with a special price.
+
+### Configure Inventory (Optional)
+
+![](/img/bundle-inventory.webp)
+
+If **Inventory Handling** in the plugin settings is set to **Handle at the bundle level**, enter the available stock quantity on the bundle product itself.
+
+If **Inventory Handling** is set to **Handle at the items in the bundle**, stock is read from each individual item — no separate stock entry is needed on the bundle.
+
+**Manage Stock:** Set to '**Yes'** to track inventory. J2Commerce decreases the quantity automatically when orders are placed. Set to '**No'** to sell without a stock limit.
+
+**Stock Quantity:** The number of units currently in stock. Only relevant when **Manage Stock** is **Yes**.
+
+**Allow Backorders:** What happens when stock reaches zero. **Do not allow** blocks purchases. **Allow** lets shoppers order anyway. **Allow but notify customer** permits the purchase and adds a backorder notice at checkout.
+
+**Stock Status:** Manually sets the in-stock or out-of-stock label shown to shoppers, regardless of the quantity counter.
+
+**Notify If Below:** J2Commerce sends a low-stock alert when inventory drops to this number. Check **Use Store Configuration** to apply the global default instead of a per-product value.
+
+**Quantity Restriction:** Set to **Yes** to enforce a minimum and maximum per-order quantity.
+
+**Max Sale Quantity:** The most units a shopper can add to their cart at once. Check **Use Store Configuration** to use the global default.
+
+**Min Sale Quantity:** The fewest units a shopper can add to their cart at once. Check **Use Store Configuration** to use the global default.
+
+### Image tab
+
+:::info
+
+**NOTE**: These are display images only. The actual downloadable files are managed on the **Files** tab.
+
+:::
+
+![](/img/downloadable-images.webp)
 
 Upload images to represent the product in your store catalog — a cover image for an eBook, a screenshot of software, or a preview of a design template.
 
-<!-- SCREENSHOT: Images tab showing the product image upload area -->
+J2Commerce 6 includes a built-in multi-image uploader. You can upload multiple images at once and arrange them in any order.
 
-These are display images only. The actual downloadable files are managed on the **Files** tab.
+#### Uploading Images
+
+1. On the **Images** tab, click **Upload Image** or drag image files directly into the upload area.
+2. Supported formats: JPG, JPEG, PNG, GIF, WebP, AVIF.
+3. Each upload completes as a card in the gallery.
+
+### Frontend View
+
+![](/img/downloadable-frontend.webp)
+
+#### Image Order and the Main Image
+
+![](/img/downloadable-images1.webp)
+
+The first image in the uploader is the **main product image** — the large image shown on the product detail page and used as the thumbnail in listings. To reorder:
+
+1. Hover over an image card to reveal the left and right arrows.
+2. Click the arrows to move the image to a new position.
+3. Save the product to apply the new order.
+
+#### Automatic Thumbnails
+
+J2Commerce automatically generates resized thumbnail and tiny versions of each uploaded image. These are used in product listings, the cart, and other compact views. No extra configuration is needed — the sizes are set in your store's image configuration.
+
+#### Alt Text
+
+Each image card has an **Alt Text** field. Write a short description such as "Blue ceramic mug, 350ml". Alt text is read by screen readers and used by search engines to understand your images.
+
+#### Removing Images
+
+Clicking **Remove** on a card removes the image from this product but does not delete the file from the server. To delete the file permanently, use the file browser icon in the uploader.
 
 ### Files Tab
 
 The **Files** tab is unique to the Downloadable product type. This is where you upload the actual files customers will download after purchase.
 
-<!-- SCREENSHOT: Files tab showing the file upload area and Download Limit and Download Expiration fields -->
+![](/img/downloadable-files1.webp)
 
 #### Uploading Files
 
@@ -183,49 +229,73 @@ After uploading, each file entry shows:
 
 #### Download Settings
 
-| Field                   | Description                                                                                         | Example |
-| ----------------------- | --------------------------------------------------------------------------------------------------- | ------- |
-| **Download Limit**      | Maximum number of times a customer can download this file. Leave blank for unlimited downloads.     | `3`     |
-| **Download Expiration** | Number of days the download remains available after purchase. Leave blank and access never expires. | `30`    |
+**Download Limit** applies per customer per order. If a customer purchases the product twice, each order has its own separate download count. The maximum number of times a customer can download this file. Leave blank for unlimited downloads.
 
-**Download Limit** applies per customer per order. If a customer purchases the product twice, each order has its own separate download count.
+**Download Expiration** is measured in days from the date of purchase. A setting of `30` means the download button disappears 30 days after the order was placed. Number of days the download remains available after purchase. Leave blank and access never expires.
 
-**Download Expiration** is measured in days from the date of purchase. A setting of `30` means the download button disappears 30 days after the order was placed.
+### Frontend View
+
+Once the customer purchases the download product, it will show up under the "My Account" section on the frontend.
+
+![](/img/downloadable-my-account.webp)
 
 ### Filters Tab
 
-Add product filters (for example, genre, format, or category tags) to help customers find the product when browsing your catalog. Filters must be configured in **J2Commerce** -> **Catalog** -> **Filters** before they appear here.
+Filters allow shoppers to narrow product listings by attribute — for example, filtering by material, color range, or size range. Assigning filters here makes this product appear in the correct filtered results on category and tag pages.
+
+![](/img/downloadable-filters2.webp)
+
+To assign a filter value:
+
+1. Type part of the filter name in the search box. Results appear in a dropdown.
+2. Click the matching result to add it to the product.
+3. Repeat for each filter value you want to assign.
+4. To remove a filter, click the trash icon next to it.
+
+Filters are created and organized under **J2Commerce** -> **Catalog** -> **Filters**.
+
+### Frontend View of Filters on Products
+
+They will appear under the Specification tab
+
+![](/img/downloadable-filters1.webp)
+
+The filters section will always appear on the Categories page but will only show up on the individual product pages if you choose to configure the product that way.
+
+### Frontend View of Filters on Categories
+
+![](/img/downloadable-filters3.webp)
 
 ### Relations Tab
 
-Set up related products that appear on the product detail page. You can cross-sell other downloads or physical products here.
+![](/img/downloadable-related.webp)
+
+**Up-sells:** Products to recommend as upgrades on this product's detail page. Typically shown as "**Add these to your order**" with products that will complement the order. ie: parts for a specific tool, extenders, etc...
+
+**Cross-sells:** Products to suggest as complementary purchases or are similar. Typically shown as "**You might also like**" with higher-value alternatives. They can be placed at the bottom of the product page, in the cart sidebar, or at checkout.
+
+To add a related product, start typing its name in the search box. Matching products appear in a dropdown — click one to add it. Remove a related product by clicking the trash icon next to it.
+
+### Frontend View
+
+![](/img/config-relations1.webp)
 
 ### Apps Tab
 
-If you have app plugins installed and enabled — such as Custom Accordions or Custom Tabs — they appear here. Each app may add its own configuration fields at the product level.
+![](/img/simple-apps.webp)
 
-***
+The **Apps** tab shows product-level configuration panels provided by installed app plugins. For example:
 
-## Saving the Product
+- If you have the **Custom Accordions** app enabled, you can add accordion sections directly on this tab.
+- If you have the **Gift Wrapping** app enabled, its per-product settings appear here.
 
-Once all tabs are configured:
-
-1. Click **Save** to save and continue editing.
-2. Click **Save & Close** to save and return to the article list.
-
-<!-- SCREENSHOT: Joomla toolbar showing Save and Save & Close buttons -->
-
-The product is now live in your store (assuming the article is published and **Visible in Storefront** is set to **Yes**).
-
-***
+Each app is responsible for its own content on this tab. If no apps are installed, the tab shows an information message.
 
 ## Shipping
 
 The Downloadable product type does not include a **Shipping** tab. No shipping configuration is available or required — downloadable products are never shipped. If your order contains only downloadable products, the checkout will skip the shipping step automatically.
 
 If a customer mixes a downloadable product with a physical product in the same order, shipping will apply to the physical product only.
-
-***
 
 ## How Customers Access Their Downloads
 
@@ -234,32 +304,36 @@ After a successful purchase, customers access their downloaded files through the
 ### Accessing the Downloads Page
 
 1. The customer logs into their Joomla account on the frontend.
-2. They navigate to **My Profile** (usually found in the account menu or via a J2Commerce my profile menu item).
+2. They navigate to **My Account** or **My Profile** (usually found in the account menu or via a J2Commerce My Account or My Profile menu item).
 3. They click the **Downloads** tab.
 
-<!-- SCREENSHOT: My Profile Downloads tab showing a list of purchased downloads with download buttons -->
+![](/img/downloadable-my-account3.webp)
 
 ### Downloads Table
 
 The downloads page shows a table with the following columns:
 
-| Column        | Description                                                                                       |
-| ------------- | ------------------------------------------------------------------------------------------------- |
-| **Order**     | The order ID linked to the purchase. Click to view order details.                                 |
-| **Files**     | The display name of the downloadable file.                                                        |
-| **Expires**   | When download access ends. Shows the date, or "Never" if no expiry is set.                        |
-| **Remaining** | How many more times the file can be downloaded. Shows the infinity symbol when there is no limit. |
-| **Action**    | The download button (green), or a status badge if download is not currently available.            |
+**Order:** The order ID linked to the purchase. Click to view order details.
+
+**Files:** The display name of the downloadable file. Make sure you name your file something that you want your customers to see and that sounds professional.
+
+**Expires:** When download access ends. Shows the date, or "Never" if no expiry is set.
+
+**Remaining:** How many more times the file can be downloaded. Shows the infinity symbol when there is no limit.
+
+**Action:** The download button (green), or a status badge if download is not currently available.
 
 ### Download Status Badges
 
-| Badge             | Meaning                                                                                     |
-| ----------------- | ------------------------------------------------------------------------------------------- |
-| **Pending**       | The order has not yet been confirmed. Downloads become available once payment is processed. |
-| **Expired**       | The download expiry date has passed. The file is no longer accessible.                      |
-| **Limit Reached** | The customer has reached the maximum number of allowed downloads.                           |
+**Pending:** The order has not yet been confirmed. Downloads become available once payment is processed.
 
-***
+**Expired:** The download expiry date has passed. The file is no longer accessible.
+
+**Limit Reached:** The customer has reached the maximum number of allowed downloads.
+
+### Frontend View
+
+![](/img/downloadable-my-account2.webp)
 
 ## Tips
 
@@ -317,7 +391,7 @@ The downloads page shows a table with the following columns:
 
 Download access will be restored immediately for customers whose orders are still within the new expiry window.
 
-### Customer Reports the Download Limit Is Reached Too Quickly
+### The Customer's Report shows the Download Limit is Reached Too Quickly
 
 **Cause:** The **Download Limit** was set too low, or the customer downloaded the file from multiple devices.
 
@@ -326,12 +400,3 @@ Download access will be restored immediately for customers whose orders are stil
 1. Open the product article and navigate to the **Files** tab.
 2. Increase the **Download Limit** value, or leave it blank for unlimited downloads.
 3. Click **Save & Close**.
-
-***
-
-## Related Topics
-
-- [Simple Products](../catalog/products/simple-product.md) — Standard physical product type
-- [Variable Products](../products/variable-product.md) — Products with size, color, or other options
-- [Orders](../orders/index.md) — Managing customer orders and statuses
-- [Tax Configuration](../taxes/index.md) — Setting up tax rules for digital goods
