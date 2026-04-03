@@ -1,0 +1,167 @@
+---
+title: Upgrading to J2Commerce PRO
+---
+
+# Upgrading to J2Commerce PRO
+
+J2Commerce is available in a free version (limited features) and a PRO version (full feature set). This guide explains how to upgrade from the free version to PRO.
+
+## Free vs PRO Comparison
+
+| Feature | Free | PRO |
+|---------|------|-----|
+| Product Types | Simple only | All 7 types |
+| Options | Text, Textarea, File, Date, Time, DateTime | All types |
+| Advanced Pricing | Limited | Full quantity & date-based pricing |
+| Multi-currency | Single currency | Unlimited currencies |
+| Customer Groups | Default only | Custom groups with pricing |
+| API Access | Basic | Full REST API |
+| Reports | Basic | Advanced analytics |
+| Support | Community forum | Priority support |
+
+## How to Check Your Version
+
+1. Go to **Components -> J2Commerce -> Dashboard**
+2. Your version and license status appear in the top-right corner
+3. Look for "FREE" or "PRO" badge
+
+## Upgrading Steps
+
+### Step 1: Purchase PRO License
+
+1. Visit the J2Commerce website
+2. Purchase a PRO license
+3. Download the PRO installation package
+4. Save your license key
+
+### Step 2: Install PRO Package
+
+The PRO package is a standard Joomla extension that upgrades your existing installation:
+
+1. Log in to your Joomla administrator
+2. Navigate to **System -> Install -> Extensions**
+3. Click **Upload Package File**
+4. Select the PRO `.zip` file
+5. Click **Upload & Install**
+
+The installer detects your existing free installation and upgrades it.
+
+### Step 3: Enter License Key
+
+After installation:
+
+1. Go to **Settings -> Global Configuration -> J2Commerce**
+2. Click on the **License** tab
+3. Enter your license key in the **License Key** field
+4. Click **Save & Close**
+
+### Step 4: Verify Upgrade
+
+1. Go to **Components -> J2Commerce -> Dashboard**
+2. Verify the PRO badge now appears
+3. Check that previously locked features are now available
+
+## Features Unlocked After Upgrade
+
+### Product Types
+
+After upgrading, these product types become available:
+
+- **Variable Products**: Multiple variants (size/color) with stock management
+- **Configurable Products**: Customers select options before adding to cart
+- **Downloadable Products**: Digital files with secure download links
+- **Flexivariable Products**: Flexible option combinations with intelligent pricing
+- **Bundle Products**: Pre-configured product bundles
+- **Box Builder Products**: Build custom boxes with items and quantities
+
+### Advanced Options
+
+PRO unlocks all option types:
+
+- **Text**: Customer enters custom text (engraving, personalization)
+- **Textarea**: Multi-line text input
+- **File**: Customer uploads files (custom printing, design uploads)
+- **Date**: Date picker for appointments, reservations
+- **Time**: Time picker for services
+- **DateTime**: Combined date and time picker
+
+### Multi-Currency
+
+Enable multiple currencies with automatic exchange rate updates:
+
+1. Go to **Settings -> Currencies**
+2. Add additional currencies
+3. Enable auto-update for real-time rates
+4. Set customer-facing currency display rules
+
+### Customer Groups
+
+Create pricing tiers for different customer types:
+
+1. Go to **Customers -> Groups**
+2. Create groups (Wholesale, VIP, Student, etc.)
+3. Set group-specific pricing on products
+4. Assign customers to groups manually or via apps
+
+## Migrating from J2Store
+
+If you're currently using J2Store (Joomla 4 version), you can migrate to J2Commerce:
+
+### Migration Prerequisites
+
+1. Current J2Store installation on Joomla 4
+2. J2Commerce installed on Joomla 6 (fresh or parallel)
+3. Backup of both installations
+
+### Migration Process
+
+1. **Export Data from J2Store**
+   - Go to **Components -> J2Store -> Tools**
+   - Use the Export function for products, customers, orders
+
+2. **Import Data to J2Commerce**
+   - Go to **Components -> J2Commerce -> Tools**
+   - Use the Import function
+   - Map fields as needed
+
+3. **Verify Products**
+   - Review imported products
+   - Update product types to match J2Commerce options
+   - Re-assign options and filters
+
+4. **Reconfigure Payment/Shipping**
+   - Payment plugins need fresh configuration
+   - Shipping methods need to be recreated
+   - Tax profiles need to be set up
+
+:::warning
+J2Store and J2Commerce use different database tables. A direct database migration is not possible. Use the import/export tools or manual product recreation.
+:::
+
+## Troubleshooting
+
+### "Invalid license key"
+
+1. Verify you're using the correct key from your purchase email
+2. Check for extra spaces or characters
+3. Contact support with your order number
+
+### "Upgrade package not installing"
+
+1. Ensure you have the correct PRO package (not the free version)
+2. Clear Joomla cache before installing
+3. Check that the free version is already installed
+
+### Features still locked after upgrade
+
+1. Clear Joomla cache: **System -> Clear Cache**
+2. Verify license key is saved: **Settings -> Global Configuration -> License**
+3. Log out and log back in
+4. Check for errors in **System -> Maintenance -> Database**
+
+## What's Next?
+
+- **[Getting Started Guide](/getting-started/getting-started-guide)** -- Set up your upgraded store
+- **[Product Types](/catalog/product-types)** -- Explore your new product options
+- **[Onboarding](/getting-started/onboarding)** -- Re-run setup wizard to configure new features
+- **[Dashboard](/getting-started/dashboard)** -- Monitor your store performance

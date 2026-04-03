@@ -1,0 +1,223 @@
+---
+title: Technical Requirements
+---
+
+# Technical Requirements
+
+J2Commerce requires a properly configured server environment. This page details the exact requirements for running J2Commerce optimally.
+
+## Server Requirements
+
+### PHP Version
+
+| Version | Status | Notes |
+|---------|--------|-------|
+| PHP 8.3+ | **Required** | Current minimum requirement |
+| PHP 8.2 | Not Supported | May work but not tested |
+| PHP 8.1 | Not Supported | Not compatible |
+| PHP 8.0 | Not Supported | Not compatible |
+
+### Database
+
+| Type | Version | Notes |
+|------|---------|-------|
+| MySQL | 8.0+ | Recommended |
+| MariaDB | 10.6+ | Compatible with MySQL 8.0 |
+| PostgreSQL | Not Supported | Requires extension |
+
+### Web Server
+
+| Type | Support | Notes |
+|------|---------|-------|
+| Apache 2.4+ | Full | with mod_rewrite |
+| Nginx | Full | Requires configuration |
+| IIS | Partial | URL rewriting setup required |
+| LiteSpeed | Full | Compatible with Apache config |
+
+## PHP Extensions
+
+### Required Extensions
+
+These extensions must be installed and enabled:
+
+| Extension | Purpose | Check |
+|-----------|---------|-------|
+| `mysqli` or `pdo_mysql` | Database connectivity | `php -m \| grep mysql` |
+| `json` | JSON encoding/decoding | Built into PHP 8+ |
+| `mbstring` | Multi-byte string support | `mb_substr()` works |
+| `curl` | HTTP requests for APIs | Payment gateways, currency updates |
+| `zlib` | Compression | Gzip output, package installation |
+
+### Recommended Extensions
+
+| Extension | Purpose | Benefit |
+|-----------|---------|---------|
+| `gd` or `imagick` | Image processing | Product image resizing, thumbnails |
+| `zip` | Archive handling | Extension installation, exports |
+| `openssl` | Encryption | Secure API connections, webhooks |
+| `bcmath` | Precision math | Accurate price calculations |
+| `intl` | Internationalization | Currency formatting, translations |
+
+### Check Extensions
+
+Run this PHP code to check installed extensions:
+
+```php
+<?php
+$required = ['mysqli', 'json', 'mbstring', 'curl', 'zlib'];
+$recommended = ['gd', 'imagick', 'zip', 'openssl', 'bcmath', 'intl'];
+
+echo "Required:\n";
+foreach ($required as $ext) {
+    echo "- $ext: " . (extension_loaded($ext) ? "OK" : "MISSING") . "\n";
+}
+
+echo "\nRecommended:\n";
+foreach ($recommended as $ext) {
+    echo "- $ext: " . (extension_loaded($ext) ? "OK" : "MISSING") . "\n";
+}
+```
+
+## Directory Permissions
+
+J2Commerce requires write access to the following directories:
+
+| Directory | Purpose | Permissions |
+|-----------|---------|-------------|
+| `/tmp` | Temporary files | 755 or 775 |
+| `/logs` | Log files | 755 or 775 |
+| `/administrator/cache` | Cache files | 755 or 775 |
+| `/images` | Product images | 755 or 775 |
+| `/media/com_j2commerce` | Media files | 755 or 775 |
+
+### Verify Permissions
+
+```bash
+# Check if directories are writable
+ls -la /var/www/html/tmp
+ls -la /var/www/html/logs
+
+# Test write access
+touch /var/www/html/tmp/test.txt && rm /var/www/html/tmp/test.txt
+```
+
+## PHP Configuration
+
+### Required Settings
+
+| Setting | Minimum | Recommended |
+|---------|---------|-------------|
+| `memory_limit` | 256M | 512M |
+| `upload_max_filesize` | 10M | 32M |
+| `post_max_size` | 20M | 64M |
+| `max_execution_time` | 300 | 600 |
+| `max_input_time` | 300 | 600 |
+
+### php.ini Example
+
+```ini
+memory_limit = 512M
+upload_max_filesize = 32M
+post_max_size = 64M
+max_execution_time = 600
+max_input_time = 600
+
+# Required extensions
+extension=mysqli
+extension=mbstring
+extension=curl
+extension=zip
+extension=gd
+```
+
+## SSL Requirements
+
+HTTPS is **required** for:
+
+- Payment processing (PCI compliance)
+- Payment webhook verification
+- Currency API connections
+- Some shipping carrier APIs
+
+### Recommended SSL Configuration
+
+- TLS 1.2 or higher
+- Modern cipher suites
+- HSTS enabled
+- Certificate from trusted CA
+
+## Hosting Recommendations
+
+### Shared Hosting
+
+J2Commerce can run on quality shared hosting with:
+- PHP 8.3+ support
+- MySQL 8.0+ database
+- SSH or CLI access for cron jobs
+
+### VPS / Dedicated
+
+For better performance:
+- **2 GB RAM minimum** (4 GB recommended)
+- **2 CPU cores minimum**
+- SSD storage for database
+- Opcode cache (APCu or OPcache)
+
+### Cloud Hosting
+
+Compatible with:
+- AWS (EC2, Lightsail)
+- Google Cloud Platform
+- DigitalOcean
+- Linode
+
+## Environment Check
+
+J2Commerce includes a system check in the Dashboard. To verify your environment:
+
+1. Go to **Components -> J2Commerce -> Dashboard**
+2. Look for the **Setup Guide** panel on the right
+3. It will alert you to any missing requirements
+
+## Troubleshooting
+
+### "PHP version not supported"
+
+Update PHP to version 8.3 or higher via your hosting control panel or contact your host.
+
+### "Database extension not found"
+
+Install or enable the `mysqli` extension in php.ini:
+```ini
+extension=mysqli
+```
+
+### "Curl extension not found"
+
+Install curl support:
+```bash
+# Ubuntu/Debian
+sudo apt-get install php-curl
+
+# CentOS/RHEL
+sudo yum install php-curl
+```
+
+### "Permission denied" errors
+
+Set correct ownership for the web server:
+```bash
+# Apache on Ubuntu/Debian
+chown -R www-data:www-data /var/www/html
+chmod -R 755 /var/www/html
+
+# Nginx on Ubuntu/Debian
+chown -R www-data:www-data /var/www/html
+chmod -R 755 /var/www/html
+```
+
+## What's Next?
+
+- **[Installation](/getting-started/installation)** -- Install J2Commerce
+- **[Getting Started Guide](/getting-started/getting-started-guide)** -- Set up your first store
+- **[Upgrading](/getting-started/upgrading)** -- Upgrade from J2Store or free version
