@@ -12,7 +12,7 @@ Common uses include granting access to a members-only content area after purchas
 
 ## Prerequisites
 
-- J2Commerce 6 installed and configured.
+- J2Commerce 6 is installed and configured.
 - At least one product created.
 - The Joomla user groups you want to assign must already exist. Create them under **Users ->** **Groups** before proceeding.
 
