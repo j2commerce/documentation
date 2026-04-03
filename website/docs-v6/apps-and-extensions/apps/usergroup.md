@@ -97,11 +97,15 @@ There are **three** ways you can access the products.&#x20;
 
 - Click on the product name to edit it.
 
-- Scroll down to find the **Add to User Group** tab or panel.
+Go to the **J2Commerce** tab **-> Apps** tab
+
+- Scroll down to find the **Add to User Group** app.
+
+![](/img/user-product.webp)
 
 - In the **User Group List** field, select one or more groups from the dropdown.
 
-<!-- SCREENSHOT: Product edit form showing the "Add to User Group" panel with the User Group List multi-select dropdown -->
+![](/img/user-product1.webp)
 
 :::info
 
@@ -113,12 +117,17 @@ There are **three** ways you can access the products.&#x20;
 
 If you have a whole category of products that should all grant the same group, you can set the groups once on the category instead of repeating the setting on each product. When category groups are present, they take over completely — the product-level setting is ignored for that item.
 
-1. Go to **Content -> Categories**.
-2. Click the category that contains your products.
-3. Find the **Add To User Groups** tab in the category editor.
-4. In the **User Group List** field, select one or more groups.
+Go to **Content -> Categories**
 
-<!-- SCREENSHOT: Joomla category editor showing the "Add To User Groups" tab with the group selector -->
+![](/img/user-categories.webp)
+
+Click the category that contains your products.
+
+Find the **Add To User Groups** tab in the category editor.
+
+In the **User Group List** field, select one or more groups.
+
+![](/img/user-categories1.webp)
 
 :::info
 
