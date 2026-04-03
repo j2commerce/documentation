@@ -43,7 +43,7 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 **Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Apps**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
 ![shipping method](/img/accordions-app.webp)
 
@@ -69,14 +69,12 @@ After adjusting settings, click **Save** or **Save & Close**.
 
 When a logged-in customer visits their **My Account** page on the frontend, a **Change Password** tab appears in the profile navigation alongside any other profile tabs.
 
-<!-- SCREENSHOT: Frontend My Profile page showing Change Password tab in the tab navigation -->
-
 Clicking the tab reveals a simple form with two fields:
 
 - **New Password** — the customer's desired new password
 - **Confirm Password** — must match the New Password field exactly
 
-<!-- SCREENSHOT: Change Password tab content showing New Password, Confirm Password fields and the Change Password button -->
+![](/img/password-reset.webp)
 
 When the customer clicks **Change Password**:
 
