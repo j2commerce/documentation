@@ -46,7 +46,7 @@ Once you have installed the plugin, you will need to enable it. There are **two*
 
 **Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Apps**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
 ![shipping method](/img/accordions-app.webp)
 

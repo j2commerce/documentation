@@ -141,11 +141,11 @@ Every product needs a Joomla article. The article title becomes the product name
 
 There are multiple ways to navigate to the location for creating a new product.
 
-**Option a:** Go to **Content** **-> Articles -> New**.
+**Option A:** Go to **Content** **-> Articles -> New**.
 
 ![](/img/simple.webp)
 
-**Option b:** Or go to **J2Commerce -> Catalog  -> Product -> New**
+**Option B:** Or go to **J2Commerce -> Catalog  -> Product -> New**
 
 ![](/img/simple-product1.webp)
 
