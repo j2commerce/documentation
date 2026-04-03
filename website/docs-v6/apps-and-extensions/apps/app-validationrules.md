@@ -1,151 +1,127 @@
 ---
 title: "Data Validation"
 sidebar_label: "Data Validation"
-sidebar_position: 30
-description: "Validate custom checkout fields with configurable rules like max length, numeric, email, phone, postal code, and field matching."
+sidebar_position: 20
+description: "Configure custom validation rules for checkout fields in J2Commerce — enforce formats like email, phone, postal code, length limits, and field matching."
 ---
 
 # Data Validation
 
-The Data Validation app lets you set validation rules on your custom checkout fields. For each custom field you have created, you can define one or more rules — such as requiring a minimum length, allowing only numeric input, validating an email address, or checking that two fields match. Rules are applied per checkout step (billing, shipping, payment, or register), so you have fine-grained control over where each rule is enforced.
+The Data Validation app lets you enforce custom rules on your checkout fields. You can require that customers enter a valid phone number, a correctly formatted email address, a postal code that matches their country, or that a confirmation field matches another field exactly. Rules can apply to any combination of checkout steps — Billing, Shipping, Payment, and Register.
 
-This is ideal for stores that use custom checkout fields to collect additional information and need to ensure that information is correct before the order is processed.
+This app works with J2Commerce's custom checkout fields. You must have at least one enabled custom field before you can configure any rules.
 
 ## Requirements
 
-- PHP 8.3.0 or newer
+- PHP 8.3.0 or higher
 - Joomla! 6.x
 - J2Commerce 6.x
-- At least one custom checkout field configured under **J2Commerce** -> **Custom Fields**
+- At least one enabled custom checkout field
 
-## Purchase and Download
+## Installation
 
-The **Data Validation** app is a premium add-on available from the J2Commerce extension directory.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-**Step 1:** Go to the [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
+1. Purchase and download the `plg_j2commerce_app_validationrules.zip` package from the J2Commerce website.
+2. Go to **System** -> **Install** -> **Extensions**.
+3. Upload the ZIP file. The plugin installs and enables automatically.
 
-**Step 2:** Locate the **Data Validation** app **->** click **View Details** **->** **Add to Cart** **->** **Checkout**.
+<!-- SCREENSHOT: System > Install > Extensions upload screen -->
 
-**Step 3:** Go to **My Downloads** under your profile button at the top right and find the app. Click **Available Versions** **->** **View Files** **->** **Download**.
+## Enable the Plugin
 
-## Install the App
+If the plugin did not enable automatically after installation:
 
-In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
+1. Go to **System** -> **Manage** -> **Extensions**.
+2. Search for **Data Validation**.
+3. Click the status toggle to enable it (it turns green).
 
-Upload the plugin ZIP file or use the **Install from URL** option.
+You can also reach the plugin from **J2Commerce** -> **Apps**. Search for **Data Validation** and enable it there.
 
-<!-- SCREENSHOT: System > Install > Extensions showing the upload area -->
+<!-- SCREENSHOT: J2Commerce > Apps list showing Data Validation plugin with enable toggle -->
 
-## Enable the App
+## Open the Plugin Settings
 
-Once installed, enable the app. There are two ways to reach it:
+1. Go to **J2Commerce** -> **Apps**.
+2. Find **Data Validation** in the list and click its title to open the settings.
+3. Select the **Rules** tab.
 
-**Option A:** Click the **J2Commerce** icon at the top right **->** **Apps**
-
-**Option B:** Go to **Components** on the left sidebar **->** **J2Commerce** **->** **Apps**
-
-<!-- SCREENSHOT: Apps list showing Data Validation with the enable toggle -->
-
-Search for **Data Validation**, then click the toggle to enable it. The toggle turns green when the app is active.
+<!-- SCREENSHOT: Data Validation plugin settings showing Rules tab -->
 
 ## Configure Validation Rules
 
-Click the **Data Validation** title to open the plugin configuration. The **Basic** tab shows a table listing every enabled custom checkout field.
+The **Rules** tab shows a table with one row for each of your enabled custom checkout fields. Each row has three columns:
 
-<!-- SCREENSHOT: Plugin params page showing the validation rules table with columns: Custom Fields, Rules Apply For, Rules -->
+| Column | Purpose |
+|--------|---------|
+| **Custom Fields** | Shows the field name and its internal key |
+| **Rules Apply For** | Which checkout steps these rules run on |
+| **Rules** | The individual validation rules for this field |
 
-For each custom field, you configure two things:
+### Step 1: Choose which checkout steps the rules apply to
 
-1. **Rules Apply For** — which checkout step(s) the rules are enforced on
-2. **Rules** — one or more validation rules for that field
+In the **Rules Apply For** column, select one or more steps where you want the rules enforced:
 
-### Step 1: Choose When Rules Apply
+- **Billing** — the billing address step
+- **Shipping** — the shipping address step
+- **Payment** — the payment step
+- **Register** — the registration step during checkout
 
-In the **Rules Apply For** column, select one or more checkout steps by holding **Ctrl** (Windows/Linux) or **Command** (Mac) and clicking:
+You must select at least one option before you can save rules for that field. If no step is selected, the rules are ignored even if they are configured.
 
-| Option | When it fires |
-|--------|--------------|
-| **Billing** | When the customer submits their billing address |
-| **Shipping** | When the customer submits a separate shipping address |
-| **Payment** | When the customer confirms the payment step |
-| **Register** | When a new customer registers during checkout |
+<!-- SCREENSHOT: Rules Apply For checkboxes showing Billing and Shipping selected -->
 
-### Step 2: Add Rules
+### Step 2: Add rules
 
-Click the **Add Rules** button for a custom field to add a new rule row. Each row has a rule type dropdown and, depending on the rule, a value input.
+In the **Rules** column for a field, click **Add Rules**. A new row appears with two dropdowns:
 
-<!-- SCREENSHOT: Rule row showing the rule type dropdown and value input -->
+- **Rule** — select the type of validation
+- **Rule Value** — provide any required value (for example, the maximum number of characters)
 
-| Rule Type | What it validates | Value needed |
-|-----------|------------------|--------------|
-| **Match Field** | Field must match another custom field's value | Select the comparison field |
-| **Max Length** | Field must not exceed a character count | Enter the maximum number of characters |
-| **Min Length** | Field must have at least this many characters | Enter the minimum number of characters |
-| **Numeric** | Field must contain only numbers | None |
-| **Alphabet** | Field must contain only letters | None |
-| **Alphanumeric** | Field must contain only letters and numbers | None |
-| **Phone** | Field must be a valid phone number format | None |
-| **Email** | Field must be a valid email address | None |
-| **Postal/Zip Code** | Field must match the postal code format for the customer's country | None |
-| **Match Table Field** | Field value must exist in a specific database table column | Select table and column |
+You can add multiple rules to a single field. Click **Add Rules** again to add another rule row.
 
-You can add multiple rules to the same field. All rules must pass for the field to be considered valid.
-
-To remove a rule, click the trash icon on the right side of the rule row.
+<!-- SCREENSHOT: Rules column showing the Add Rules button and a rule row with dropdowns -->
 
 ### Step 3: Save
 
-Click the **Apply** button below the table to save all validation rules. A confirmation message appears when the save is successful.
+Click the **Apply** button at the bottom of the form to save all rules. The rules are saved via AJAX — you do not need to leave or reload the page.
 
-<!-- SCREENSHOT: Save confirmation message -->
+<!-- SCREENSHOT: Apply button at the bottom of the validation rules form -->
 
-## Rule Details
+## Available Rule Types
+
+| Rule | What it does | Requires a value? |
+|------|-------------|-------------------|
+| **Match Field** | Requires this field to equal another custom field (e.g., confirm email) | Yes — select the field to match |
+| **Max Length** | Fails if the entered text exceeds the character limit | Yes — enter the maximum number of characters |
+| **Min Length** | Fails if the entered text is shorter than the minimum | Yes — enter the minimum number of characters |
+| **Numeric** | Field must contain only digits | No |
+| **Alphabet** | Field must contain only letters (a–z, A–Z) | No |
+| **Alphanumeric** | Field must contain only letters and digits | No |
+| **Phone** | Field must match a phone number pattern (digits, spaces, `+`, `(`, `)`, `-`) | No |
+| **Email** | Field must be a valid email address | No |
+| **Postal/Zip Code Validation** | Validates the postal code against the format for the customer's selected country (85+ countries supported) | No |
+| **Match Table Field** | Checks that the entered value exists in a column of a database table | Yes — select the table and column |
 
 ### Match Field
 
-Validates that the value entered in this field is identical to another custom field's value. Commonly used to confirm a password or email address.
+Use this rule when you want a customer to type a value twice — for example, an email address confirmation. Set the **Rule Value** to the other custom field that this field must match.
 
-Example: Create a **Confirm Email** field and set a Match Field rule pointing to your **Email** field. If the two values differ, the customer sees an error.
-
-### Max Length and Min Length
-
-Control the number of characters allowed. Both rules can be applied together to enforce a range.
-
-Example: Add **Min Length = 8** and **Max Length = 20** to a password field to require between 8 and 20 characters.
-
-### Postal/Zip Code
-
-Validates that the value in the field matches the correct postal code format for the country the customer has selected in their address. Supports over 85 countries, including the United States, United Kingdom, Canada, Germany, France, Australia, and many more.
-
-:::info
-Postal code validation uses the billing address country field. If the customer has not selected a country, the rule is skipped.
-:::
+If the values do not match, the customer sees: "Field A does not match with Field B."
 
 ### Match Table Field
 
-Validates that the value entered exists as a record in a specific database table column. This is useful for scenarios like validating a member number, coupon code, or other data stored in your database.
+This rule queries a database table and checks whether the entered value exists in the column you specify. After selecting the **Match Table Field** rule type, a **Table** dropdown appears. Select the table, and then select the **Column** from a second dropdown that loads automatically.
 
-**To configure Match Table Field:**
+Use this rule carefully — it allows access to any database table visible to J2Commerce. Restrict it to tables with trusted, non-sensitive data.
 
-1. Select the rule type **Match Table Field** from the dropdown.
-2. In the first select box, choose the **database table** to search.
-3. In the second select box, choose the **column** within that table to match against.
-
-If the customer's input is not found in the selected column, they see an error message.
-
-:::caution
-Match Table Field gives access to all database tables in your Joomla installation. Use this rule only with data in your own extension's tables. Do not expose sensitive system tables to validation logic.
-:::
-
-## How Errors Appear at Checkout
-
-When a field fails validation, the customer sees an error message directly below the affected field. The specific message depends on the rule:
+## Error Messages Shown to Customers
 
 | Rule | Error message shown |
-|------|--------------------|
+|------|-------------------|
 | Match Field | "[Field A] does not match with [Field B]" |
-| Max Length | "Maximum allowed length is [number]" |
-| Min Length | "Minimum length [number] required" |
+| Max Length | "Maximum allowed length is [N]" |
+| Min Length | "Minimum length [N] required" |
 | Numeric | "Field value must be numeric" |
 | Alphabet | "Field value must be alphabet" |
 | Alphanumeric | "Field value must be alphanumeric" |
@@ -154,39 +130,58 @@ When a field fails validation, the customer sees an error message directly below
 | Postal/Zip Code | "Invalid Postal/Zip Code Format" |
 | Match Table Field | "Enter data not available" |
 
-The customer cannot proceed to the next checkout step until all validation errors are resolved.
+## Advanced: Debug Mode
 
-## Debug Mode
+The plugin includes a **Debug Mode** option on the **Advanced** tab. When enabled, the plugin writes detailed log entries to the Joomla log directory.
 
-The **Advanced** tab contains a **Debug Mode** toggle. When enabled, the plugin writes detailed log entries to `administrator/logs/app_validationrules.php`. This is helpful for diagnosing validation issues during development or testing.
+Turn debug mode on only when you are troubleshooting. Disable it in production to avoid unnecessary disk usage.
 
-:::warning
-Disable Debug Mode in production environments. Log files can grow large under normal traffic.
-:::
+<!-- SCREENSHOT: Advanced tab showing Debug Mode switcher -->
+
+## Tips
+
+- A custom field must be **enabled** in J2Commerce for it to appear in the Rules tab. If you do not see a field in the list, check that it is enabled under **J2Commerce** -> **Custom Fields**.
+- The **Postal/Zip Code** rule reads the country the customer selected on the billing or shipping form. The validation pattern is chosen automatically based on the country.
+- You can combine multiple rules on a single field — for example, both **Min Length** and **Alphanumeric** on a coupon code field.
+- Rules only run on the checkout steps you select in **Rules Apply For**. A rule assigned only to Billing will not run on the Shipping step, even for the same field.
 
 ## Troubleshooting
 
-### Rules are not being applied at checkout
+### No fields appear in the Rules tab
 
-**Check 1:** Confirm that the custom field is enabled under **J2Commerce** -> **Custom Fields**. Only enabled fields appear in the validation rules table.
+**Cause:** No enabled custom checkout fields exist in your shop.
 
-**Check 2:** Confirm the custom field is set to display on the same checkout step(s) selected in **Rules Apply For**. A billing rule will not fire if the field is not shown on the billing step.
+**Solution:** Go to **J2Commerce** -> **Custom Fields** and create or enable at least one field. Return to **J2Commerce** -> **Apps** -> **Data Validation** -> **Rules** tab and the fields will appear.
 
-**Check 3:** Check that the **Data Validation** app itself is enabled in **J2Commerce** -> **Apps**.
+### Rules are not running at checkout
 
-### Postal code validation is not working
+**Cause:** No checkout step is selected in the **Rules Apply For** column for that field, or the field is not displayed on the step being validated.
 
-The postal code rule reads the `country_id` value from the checkout form. Confirm the customer's billing address includes a country selection. If no country is selected, the rule is skipped silently.
+**Solution:**
+1. Open the Data Validation plugin settings and go to the **Rules** tab.
+2. Check that at least one step (Billing, Shipping, Payment, or Register) is selected for the field.
+3. Confirm the custom field itself is configured to display on that step — check the field's display settings in **J2Commerce** -> **Custom Fields**.
+4. Click **Apply** to save.
 
-### Match Table Field shows no columns
+### Postal code validation always fails
 
-The column dropdown is populated by a live AJAX request after you select a table. If no columns appear, check that the administrator session is still active (the page has not timed out) and reload the plugin configuration page.
+**Cause:** The country selected by the customer does not match the postal code format, or the billing country field was not submitted with the form.
 
-### Validation fires on the wrong step
+**Solution:** Verify that the billing country dropdown is included in your checkout form. The plugin reads the submitted `country_id` value to select the correct postal pattern. If the country is not submitted, postal validation is skipped.
 
-Each rule only applies on the step(s) selected in **Rules Apply For**. If a rule appears to fire unexpectedly, check whether the same custom field is displayed on multiple steps and whether each of those steps is selected.
+### Debug logs are not appearing
+
+**Cause:** Debug mode may be disabled, or the Joomla log directory is not writable.
+
+**Solution:**
+1. Open the plugin settings and go to the **Advanced** tab.
+2. Switch **Debug Mode** to **Yes**.
+3. Click **Save**.
+4. Complete a checkout to trigger the validation events.
+5. Check the Joomla log directory (configured under **System** -> **Global Configuration** -> **Server** -> **Path to Log Folder**).
 
 ## Related Topics
 
 - [Custom Fields](../../configuration/custom-fields.md)
-- [Checkout Configuration](../../configuration/checkout.md)
+- [Checkout Configuration](../../checkout/index.md)
+- [Apps and Extensions](../index.md)

@@ -7,110 +7,110 @@ description: "Allow customers to complete payment for an unpaid order after chec
 
 # Pay Later / Pay Against Invoice
 
-The **Pay Later** app adds a **Pay Now** button to the customer's order history page. When a customer places an order but does not immediately complete payment — for example, when using a bank transfer or invoice gateway — this button lets them return and pay at any time within a window you define.
+The **Pay Later** app adds a **Pay Now** button to the customer's order history page. When a customer places an order but does not immediately complete payment — for example, when using a bank transfer or invoice gateway — this button lets them return and pay whenever they are ready, within a time window you define.
 
-This is especially useful for stores that offer invoice-based purchasing, bank transfer, or any payment method that is not processed in real time at checkout.
+This is especially useful for stores that offer invoice-based purchasing, bank transfers, or any payment method that is not confirmed in real time at checkout.
 
 ## Prerequisites
 
 - J2Commerce is installed and enabled
 - At least one payment method plugin is installed and enabled
 
-## Purchase and Download
+## Installation
 
-**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) -> **Apps**
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
 
-**Step 2:** Locate the `app_profileorder` app -> click **View Details** -> **Add to cart** -> **Checkout**.
+1. Purchase and download the `app_profileorder` package from the J2Commerce website. Log in, go to your account, and find the download under **My Downloads**.
+2. Go to **System** -> **Install** -> **Extensions**.
+3. Upload the plugin ZIP file.
 
-**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
+<!-- SCREENSHOT: Joomla extension installer screen with the plugin ZIP selected -->
 
-## Install the App
+The plugin installs automatically.
 
-Go to **System** -> **Install** -> **Extensions**
+## Enable the Plugin
 
-Upload the plugin ZIP file or use the Install from URL option.
+After installation, the plugin must be enabled before it will work.
 
-<!-- SCREENSHOT: Joomla extension installer screen -->
+1. Go to **J2Commerce** -> **Apps**.
+2. Find **Pay Later / Pay Against Invoice** in the list.
+3. Click the status toggle to enable it. The toggle turns green when the plugin is active.
 
-## Enable the App
+<!-- SCREENSHOT: Apps list showing Pay Later plugin with its enable/disable toggle -->
 
-Once installed, you need to enable it. There are two ways to access the App.
+## Configure the Plugin
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner -> **Apps**
+Click the **Pay Later / Pay Against Invoice** title to open the plugin settings.
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**
-
-Search for **Pay Later** in the list, click the **X** to enable it (it turns into a green checkmark).
-
-<!-- SCREENSHOT: Apps list showing Pay Later plugin with enable toggle -->
-
-## Configure the App
-
-Click on the **Pay Later / Pay Against Invoice** title to open the plugin settings.
-
-<!-- SCREENSHOT: Plugin settings screen -->
+<!-- SCREENSHOT: Plugin settings screen showing all configuration fields -->
 
 ### Basic Settings
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **Show Pay Button After (Seconds)** | How many seconds after the order is placed before the Pay Now button appears. This prevents double-payment when using gateways with delayed callbacks. | `20` |
-| **Pay Button Expires After (Days)** | The number of days after the order is placed when the Pay Now button disappears. Set to `0` for no expiry. | `10` |
-| **Pay Button Text** | The label shown on the Pay Now button. Leave blank to use the default "Pay" text. | *(blank)* |
-| **Order Statuses** | The button only appears for orders with these statuses. Leave empty to show the button for all statuses. | *(all)* |
-| **Debug Mode** | Enable detailed logging to `administrator/logs/app_profileorder.php`. Disable in production. | `No` |
+| **Show Pay Button After (Seconds)** | How long to wait after an order is placed before showing the Pay Now button. This prevents the button from appearing while a gateway is still processing a callback. | `20` |
+| **Pay Button Expires After (Days)** | The number of days after the order is placed when the Pay Now button stops appearing. Set to `0` for no expiry. | `10` |
+| **Pay Button Text** | Custom label for the Pay Now button. Leave blank to use the default "Pay" text. | *(blank)* |
+| **Order Statuses** | The Pay Now button only appears for orders with these statuses. Leave empty to show the button for orders in any status. | *(all)* |
+| **Debug Mode** | Writes detailed log entries to `administrator/logs/app_profileorder.php`. Turn this off on a live store once you have finished testing. | `No` |
 
-### Configuring Order Statuses
+### Choosing Order Statuses
 
-The **Order Statuses** field controls which orders show the Pay Now button. For example, you might only want to show the button when the order status is **Pending** or **Pending Payment**, and not when it is **Completed** or **Cancelled**.
+The **Order Statuses** setting is one of the most important things to configure. You almost always want to restrict the button to statuses that mean the order is genuinely unpaid — for example **Pending** or **Pending Payment** — and exclude statuses like **Completed**, **Processing**, or **Cancelled**.
 
 1. Click inside the **Order Statuses** field.
 2. Select one or more statuses from the dropdown.
-3. Leave the field empty to show the button for orders in any status.
+3. Save the plugin settings.
 
-<!-- SCREENSHOT: Order Statuses multi-select field with a few statuses selected -->
+Leaving the field empty shows the Pay Now button on orders in any status, which may not be what you want.
+
+<!-- SCREENSHOT: Order Statuses multi-select dropdown with example statuses selected -->
 
 ## How It Works
 
-### Customer Experience
+### The Customer Experience
 
-1. A customer places an order and leaves without paying (or uses a payment method that does not immediately confirm payment).
-2. The customer visits **My Account** -> **My Orders** to view their order history.
-3. For eligible orders, a **Pay** button appears in the order row.
+1. A customer places an order at checkout without completing payment — for example, they select "Bank Transfer" and close the browser, or their payment gateway session expires.
+2. Later, the customer logs in and goes to **My Account** -> **My Orders** to view their order history.
+3. For orders that meet the configured conditions, a **Pay** button appears next to the order.
 
-<!-- SCREENSHOT: Order history page showing a Pay button next to an unpaid order -->
+<!-- SCREENSHOT: Order history page with a Pay button visible next to an unpaid order -->
 
-4. The customer clicks the **Pay** button. A payment selection page opens (in a new window).
+4. The customer clicks the **Pay** button. A payment selection page opens in a new browser tab.
 
-<!-- SCREENSHOT: Payment selection page showing available payment methods -->
+<!-- SCREENSHOT: Payment selection page listing the available payment methods -->
 
 5. The customer selects a payment method and clicks **Continue**.
-6. An order summary is shown along with the payment plugin form (e.g., credit card form for Stripe).
+6. An order summary is shown, along with the payment form from the selected payment plugin (for example, a Stripe credit card form).
 
-<!-- SCREENSHOT: Order confirmation page with order summary table and payment form -->
+<!-- SCREENSHOT: Order confirmation page showing the order summary table and payment form -->
 
-7. The customer completes payment. The order is updated in J2Commerce exactly as if payment had been completed at checkout.
+7. The customer completes payment. The order is updated in J2Commerce exactly as if the payment had been made at checkout.
 
-### When the Button Appears
+### When the Pay Button Appears
 
 The Pay Now button is shown only when all three of the following conditions are met:
 
-1. The order's status matches one of the configured **Order Statuses** (or all statuses are allowed).
-2. The configured **interval time** has passed since the order was placed — this prevents the button from appearing immediately after checkout while a gateway callback may still be processing.
-3. The order was placed within the configured **expiry days** — the button will not appear for orders older than this limit.
+1. The order's status matches one of the configured **Order Statuses** (or the setting is empty, meaning all statuses are allowed).
+2. The configured **interval time** has passed since the order was placed — this prevents the button from appearing while a gateway callback may still be in flight.
+3. The order was placed within the configured **expiry** window — the button will not appear for orders older than this limit.
 
-:::info
+:::info Example
 
-**Example:** With the default settings (20 seconds delay, 10 days expiry), the button appears on orders that are at least 20 seconds old and no more than 10 days old.
+With the default settings (20-second delay, 10-day expiry), the Pay Now button appears on orders that are at least 20 seconds old and no more than 10 days old.
 
 :::
 
+### Zero-Total Orders
+
+If an order has a total of zero (for example, a fully discounted order), the payment selection step is skipped. The customer is taken directly to the order confirmation page and can click **Place Order** to complete it without entering payment details.
+
 ## Tips
 
-- Set a reasonable **interval time** if you use asynchronous payment gateways (PayPal, Stripe webhooks, bank transfer). A value of 60–300 seconds prevents a customer from double-paying before the gateway callback arrives.
-- Set **Pay Button Expires After** to match your invoice payment terms — for example, `30` days if invoices are payable within 30 days.
-- Use the **Order Statuses** filter to restrict the button to only statuses that represent genuinely unpaid orders (e.g., "Pending Payment") and exclude statuses like "Processing" or "Completed".
-- Combine this plugin with an **Invoice** payment method to create a full pay-by-invoice workflow: customers receive an invoice email, then return to pay when ready.
+- Set a higher **interval time** if you use asynchronous payment gateways such as PayPal or Stripe Webhooks. A value of 60–300 seconds gives the gateway enough time to deliver its callback before the Pay Now button appears, reducing the risk of double payments.
+- Set **Pay Button Expires After** to match your payment terms. For example, use `30` if invoices must be paid within 30 days.
+- Restrict **Order Statuses** to only the statuses that represent genuinely unpaid orders. This prevents the Pay Now button appearing on orders that are already paid or cancelled.
+- Pair this plugin with an offline or invoice payment method to create a full pay-by-invoice workflow: customers receive an invoice email at checkout and return to pay when they are ready.
 
 ## Troubleshooting
 
@@ -120,40 +120,40 @@ The Pay Now button is shown only when all three of the following conditions are 
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Apps** and confirm **Pay Later / Pay Against Invoice** is enabled.
-2. Check the **Order Statuses** setting — if specific statuses are selected, ensure the test order has one of those statuses.
-3. Check the **Show Pay Button After (Seconds)** setting — the button will not appear until that many seconds have elapsed since the order was placed.
-4. Check the **Pay Button Expires After (Days)** setting — the order may be older than the configured expiry window.
-5. Clear the Joomla cache: **Home Dashboard** -> **Cache** -> **Delete All**.
+1. Go to **J2Commerce** -> **Apps** and confirm **Pay Later / Pay Against Invoice** is enabled (green toggle).
+2. Check **Order Statuses** — if specific statuses are selected, the test order must have one of those statuses.
+3. Check **Show Pay Button After (Seconds)** — the button will not appear until that many seconds have elapsed since the order was placed.
+4. Check **Pay Button Expires After (Days)** — the order may be older than the configured expiry window.
+5. Clear the Joomla cache: **Home Dashboard** -> **Manage Cache** -> **Delete All**.
 
 ### The payment page opens blank or shows an error
 
-**Cause:** The CSRF token may have expired, or the order ID is invalid.
+**Cause:** The CSRF security token in the link has expired, or the order ID is invalid.
 
 **Solution:**
 
-1. Ask the customer to refresh the order history page to get a fresh token link, then click Pay again.
-2. Ensure the customer is logged in — guest users cannot use this feature.
-3. Enable **Debug Mode** in the plugin settings and check the log at `administrator/logs/app_profileorder.php` for detailed error messages.
+1. Ask the customer to refresh the order history page to generate a fresh link, then click Pay again.
+2. Confirm the customer is logged in — guest users cannot use this feature.
+3. Enable **Debug Mode** in the plugin settings and check the log at `administrator/logs/app_profileorder.php` for a detailed error message.
 
 ### Clicking Pay shows "Invalid order or access denied"
 
-**Cause:** The order does not belong to the currently logged-in user, or the order ID is missing.
+**Cause:** The order does not belong to the currently logged-in user, or no order ID was passed to the page.
 
 **Solution:**
 
-1. Confirm the customer is logged in with the correct account.
-2. Check that the order was originally placed by that user's account.
+1. Confirm the customer is logged in to the correct account.
+2. Check that the order was originally placed by that same user account.
 3. Review the debug log for more details.
 
-### No payment methods appear on the payment page
+### No payment methods appear on the payment selection page
 
-**Cause:** No payment plugins are enabled, or the available plugins have filtered out this order.
+**Cause:** No payment plugins are enabled, or all available plugins have filtered out this order.
 
 **Solution:**
 
 1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and confirm at least one payment plugin is enabled.
-2. Check each payment plugin's own settings — some plugins allow restricting payments by order total, geozone, or customer group.
+2. Check each payment plugin's own settings — some plugins restrict payments by order total, geozone, or customer group, which may exclude the order.
 
 ## Related Topics
 
