@@ -1,6 +1,6 @@
-# Installation
+# Installing J2Commerce
 
-This guide covers installing J2Commerce on a fresh Joomla 6 installation. If you're upgrading from J2Store, see the [Upgrading](/getting-started/upgrading) documentation.
+This guide covers installing **J2Commerce** on a fresh **Joomla 6** installation. If you're upgrading from J2Store, see the [Upgrading](/getting-started/upgrading) documentation.
 
 ## Requirements
 
@@ -32,17 +32,19 @@ The following directories must be writable by the web server:
 
 ## Installation Steps
 
-### Step 1: Download J2Commerce
+### Download J2Commerce
 
-Purchase and download the J2Commerce installation package from the J2Commerce website. The package is a `.zip` file containing the component and all required plugins.
+Purchase and download the **J2Commerce installation package** from the J2Commerce website. The package is a `.zip` file containing the component and all required plugins.
 
-### Step 2: Install via Joomla Installer
+### Install J2Commerce
 
-1. Log in to your Joomla administrator panel
-2. Navigate to **System -> Install -> Extensions**
-3. Click **Upload Package File**
-4. Select the J2Commerce `.zip` file
-5. Click **Upload & Install**
+You can install this **J2Commerce installation package** using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the plugin ZIP file or use the Install from URL option.
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
 :::tip
 
@@ -50,23 +52,35 @@ If you're upgrading from J2Store, use the **Install from Directory** option and 
 
 :::
 
-### Step 3: Enable Required Plugins
+### Enable Required Plugins
 
 After installation, J2Commerce requires several system plugins to be enabled:
 
-1. Navigate to **System -> Manage -> Plugins**
-2. Search for `j2commerce` or `j2store`
-3. Enable the following plugins:
+Navigate to **System -> Manage -> Plugins**
 
-   - **System - J2Commerce** -- Core system integration
-   - **System - J2Commerce Content** -- Article-to-product conversion
-   - **Content - J2Commerce** -- Product display in articles
+![](/img/user-plugin1.webp)
 
-### Step 4: Verify Installation
+Search for `j2commerce`
 
-1. Go to **Components -> J2Commerce**
-2. You should see the Dashboard
-3. The Setup Wizard should appear if this is a fresh installation
+Enable the following plugins:
+
+- **System - J2Commerce**: Core system integration
+
+- **System - J2Commerce Content**: Article-to-product conversion
+
+- **Content - J2Commerce**: Product display in articles
+
+### Verify Installation
+
+Go to **Components -> J2Commerce**
+
+You should see the **Dashboard**
+
+![](/img/getting-started-dashboard1.webp)
+
+The **Setup Wizard** should appear if this is a fresh installation
+
+![](/img/getting-started-wizard.webp)
 
 ## Manual Installation
 
@@ -108,8 +122,8 @@ After installation, verify the following:
 
 - [ ] Dashboard loads without errors
 - [ ] Setup Wizard appears (fresh install)
-- [ ] Products menu is accessible
-- [ ] Orders menu is accessible
+- [ ] The product menu is accessible
+- [ ] The orders menu is accessible
 - [ ] Settings save correctly
 - [ ] Payment methods can be configured
 - [ ] Shipping methods can be configured
@@ -140,7 +154,9 @@ If plugins don't appear in the plugin manager:
 
 1. Verify all plugin folders were uploaded
 2. Check for duplicate installations from J2Store
-3. Clear Joomla cache: **System -> Clear Cache**
+3. Clear Joomla cache: **Home Dashboard  -> System -> Cache  ->  Delete Cache**
+
+![](/img/getting-started-cache.webp)
 
 ## Uninstalling
 
@@ -150,12 +166,14 @@ To uninstall J2Commerce:
 2. Find **J2Commerce** in the component list
 3. Click **Uninstall**
 
+![](/img/getting-started-uninstall.webp)
+
 :::warning
-Uninstalling removes all J2Commerce data including products, orders, and customers. Create a backup before proceeding.
+Uninstalling removes all J2Commerce data, including products, orders, and customers. Create a backup before proceeding.
 :::
 
 ## What's Next?
 
-- [**Technical Requirements**](/getting-started/technical-requirements) -- Full server requirements
-- [**Upgrading**](/getting-started/upgrading) -- Migrate from J2Store or free version
-- [**Getting Started Guide**](/getting-started/getting-started-guide) -- Set up your first store
+- [**Technical Requirements**](/getting-started/technical-requirements): Full server requirements
+- [**Upgrading**](/getting-started/upgrading): Migrate from J2Store or free version
+- [**Getting Started Guide**](/getting-started/getting-started-guide): Set up your first store
