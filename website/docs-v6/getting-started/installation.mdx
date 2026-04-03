@@ -1,7 +1,3 @@
----
-title: Installation
----
-
 # Installation
 
 This guide covers installing J2Commerce on a fresh Joomla 6 installation. If you're upgrading from J2Store, see the [Upgrading](/getting-started/upgrading) documentation.
@@ -11,10 +7,10 @@ This guide covers installing J2Commerce on a fresh Joomla 6 installation. If you
 ### Server Requirements
 
 | Requirement | Minimum | Recommended |
-|-------------|---------|-------------|
-| PHP | 8.3.0 | 8.3+ |
-| MySQL | 8.0+ | 8.0+ |
-| Joomla | 6.0+ | 6.0+ |
+| ----------- | ------- | ----------- |
+| PHP         | 8.3.0   | 8.3+        |
+| MySQL       | 8.0+    | 8.0+        |
+| Joomla      | 6.0+    | 6.0+        |
 
 ### PHP Extensions
 
@@ -49,7 +45,9 @@ Purchase and download the J2Commerce installation package from the J2Commerce we
 5. Click **Upload & Install**
 
 :::tip
+
 If you're upgrading from J2Store, use the **Install from Directory** option and select the extracted folder. The installer detects the upgrade path automatically.
+
 :::
 
 ### Step 3: Enable Required Plugins
@@ -59,6 +57,7 @@ After installation, J2Commerce requires several system plugins to be enabled:
 1. Navigate to **System -> Manage -> Plugins**
 2. Search for `j2commerce` or `j2store`
 3. Enable the following plugins:
+
    - **System - J2Commerce** -- Core system integration
    - **System - J2Commerce Content** -- Article-to-product conversion
    - **Content - J2Commerce** -- Product display in articles
@@ -77,6 +76,7 @@ If the Joomla installer fails, you can install manually:
 
 1. Extract the J2Commerce `.zip` file
 2. Upload the extracted contents to your Joomla installation via FTP or file manager:
+
    - Component to: `/administrator/components/com_j2commerce/`
    - Media to: `/media/com_j2commerce/`
    - Plugins to: `/plugins/system/j2commerce/`, `/plugins/content/j2commerce/`, etc.
@@ -119,10 +119,12 @@ After installation, verify the following:
 ### Installation Fails
 
 **Error: "Unable to find install package"**
+
 - The zip file may be corrupted. Download again and retry.
 - Ensure you're uploading the `.zip` file directly, not an extracted folder.
 
 **Error: "Unable to copy files"**
+
 - Check directory permissions. The web server user needs write access.
 - Verify the `/tmp` and `/logs` directories exist and are writable.
 
@@ -135,6 +137,7 @@ After installation, verify the following:
 ### Plugin Not Found
 
 If plugins don't appear in the plugin manager:
+
 1. Verify all plugin folders were uploaded
 2. Check for duplicate installations from J2Store
 3. Clear Joomla cache: **System -> Clear Cache**
@@ -153,6 +156,6 @@ Uninstalling removes all J2Commerce data including products, orders, and custome
 
 ## What's Next?
 
-- **[Technical Requirements](/getting-started/technical-requirements)** -- Full server requirements
-- **[Upgrading](/getting-started/upgrading)** -- Migrate from J2Store or free version
-- **[Getting Started Guide](/getting-started/getting-started-guide)** -- Set up your first store
+- [**Technical Requirements**](/getting-started/technical-requirements) -- Full server requirements
+- [**Upgrading**](/getting-started/upgrading) -- Migrate from J2Store or free version
+- [**Getting Started Guide**](/getting-started/getting-started-guide) -- Set up your first store
