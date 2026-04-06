@@ -1,0 +1,247 @@
+---
+title: "Geozones"
+sidebar_label: "Geozones"
+sidebar_position: 5
+description: "Create geographic zones by grouping countries and zones for shipping rates, tax rules, and payment method restrictions."
+---
+
+# Geozones
+
+Geozones are geographic zones created by grouping countries and their zones together. They are essential for configuring shipping rates, tax rules, and payment method restrictions based on customer location. Instead of applying rules to individual countries, you create a geozone that includes all the regions you want to target.
+
+## Requirements
+
+- PHP 8.3.0+
+- Joomla 6.x
+- J2Commerce 6.x
+
+## Accessing Geozones
+
+Geozones are managed from the J2Commerce Dashboard.
+
+1. Go to **Components** -> **J2Commerce** -> **Dashboard**.
+2. Click **Localisation** in the left sidebar.
+3. Click **Geozones**.
+
+![Geozones list](/img/localisation-geozones.webp)
+
+## Geozone List
+
+The Geozones list displays all geozones configured in your store. Each geozone shows:
+
+| Column | Description |
+|--------|-------------|
+| **Checkbox** | Select geozones for batch actions. |
+| **Geozone Name** | The display name of the geozone. |
+| **Status** | Published (green check) or Unpublished (red X). |
+| **Ordering** | Drag-and-drop to reorder the display sequence. |
+
+## Adding a Geozone
+
+1. Click the **New** button in the toolbar.
+2. Enter a **Geozone Name** (e.g., "UK & Ireland", "EU Member States", "North America").
+3. Set the **Status** to Published.
+4. Click **Save** to create the geozone.
+5. Add countries and zones to the geozone (see Adding Rules below).
+
+![Geozone edit form](/img/localisation-geozone-edit.webp)
+
+## Geozone Rules
+
+After creating a geozone, you add **rules** to define which countries and zones are included. Each rule specifies:
+
+- **Country** — A country to include in the geozone.
+- **Zone** — A specific zone within that country, or "All Zones" to include the entire country.
+
+### Adding Geozone Rules
+
+1. Create or edit a geozone.
+2. In the **Rules** section, click **Add Country/Zone**.
+3. Select a **Country** from the dropdown.
+4. Select a **Zone** from the dropdown, or select "All Zones" to include the entire country.
+5. Click **Save** to add the rule.
+
+![Geozone rules](/img/localisation-geozone-rules.webp)
+
+### Rule Examples
+
+**United Kingdom (All Zones):**
+- Country: United Kingdom
+- Zone: All Zones
+
+This rule includes all zones within the UK in the geozone.
+
+**California Only:**
+- Country: United States
+- Zone: California
+
+This rule includes only California, not other US states.
+
+**European Union:**
+Create multiple rules, one for each EU member country, or create a single rule per country:
+
+| Rule | Country | Zone |
+|------|---------|------|
+| 1 | Germany | All Zones |
+| 2 | France | All Zones |
+| 3 | Italy | All Zones |
+| 4 | Spain | All Zones |
+| ... | ... | ... |
+
+## How Geozones Are Used
+
+Geozones are referenced throughout J2Commerce for location-based rules:
+
+### Shipping Rates
+
+Shipping methods can be configured to apply only to specific geozones:
+
+1. Create a geozone for each shipping region (e.g., "Domestic", "Europe", "Rest of World").
+2. Configure shipping rates for each geozone.
+3. During checkout, customers are quoted shipping rates based on their shipping address geozone.
+
+### Tax Rates
+
+Tax rates are linked to geozones for location-based tax calculation:
+
+1. Create a geozone for each tax jurisdiction (e.g., "UK", "EU", "California").
+2. Create tax profiles for different product types.
+3. Add tax rates to tax profiles for each geozone.
+4. During checkout, taxes are calculated based on the customer's billing/shipping address and the product's tax profile.
+
+### Payment Method Restrictions
+
+Payment methods can be restricted to specific geozones:
+
+1. Create a geozone for regions where a payment method is available.
+2. Configure the payment method to only appear for customers in that geozone.
+3. Customers outside the geozone will not see that payment option.
+
+## Common Geozone Configurations
+
+### Domestic Shipping Zone
+
+A geozone for your store's home country:
+
+| Country | Zone |
+|---------|------|
+| United Kingdom | All Zones |
+
+### European Union
+
+A geozone for all EU member states:
+
+| Country | Zone |
+|---------|------|
+| Austria | All Zones |
+| Belgium | All Zones |
+| Bulgaria | All Zones |
+| Croatia | All Zones |
+| Cyprus | All Zones |
+| Czech Republic | All Zones |
+| Denmark | All Zones |
+| Estonia | All Zones |
+| Finland | All Zones |
+| France | All Zones |
+| Germany | All Zones |
+| Greece | All Zones |
+| Hungary | All Zones |
+| Ireland | All Zones |
+| Italy | All Zones |
+| Latvia | All Zones |
+| Lithuania | All Zones |
+| Luxembourg | All Zones |
+| Malta | All Zones |
+| Netherlands | All Zones |
+| Poland | All Zones |
+| Portugal | All Zones |
+| Romania | All Zones |
+| Slovakia | All Zones |
+| Slovenia | All Zones |
+| Spain | All Zones |
+| Sweden | All Zones |
+
+### US Tax Nexus States
+
+A geozone for states where you have tax nexus:
+
+| Country | Zone |
+|---------|------|
+| United States | California |
+| United States | New York |
+| United States | Texas |
+
+## Configuration
+
+| Field | Description | Required | Example |
+|-------|-------------|----------|---------|
+| **Geozone Name** | A descriptive name for this geographic zone. | Yes | `United Kingdom` |
+| **Status** | Set to Published to make the geozone available for use. | Yes | Published |
+
+### Rule Fields
+
+| Field | Description | Required | Example |
+|-------|-------------|----------|---------|
+| **Country** | The country to include in this geozone. | Yes | `United States` |
+| **Zone** | The specific zone within the country, or "All Zones" for the entire country. | No | `California` or `All Zones` |
+
+## Tips
+
+- **Create geozones before tax rates** — Geozones must exist before you can create tax rates linked to them.
+- **Use descriptive names** — Name geozones clearly for easy identification (e.g., "UK", "EU Member States", "North America").
+- **Group logically** — Create geozones based on your business needs: shipping zones, tax jurisdictions, or payment method availability.
+- **Test coverage** — Ensure your geozones cover all countries you ship to. Customers outside all geozones may have no shipping options.
+- **Avoid overlap** — When using geozones for tax rates, be careful with overlapping rules. A customer in multiple tax geozones may trigger multiple tax calculations.
+
+## Troubleshooting
+
+### Geozone Not Applied During Checkout
+
+**Cause:** The customer's address does not match any geozone rules.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Localisation** -> **Geozones**.
+2. Edit the geozone and review the rules.
+3. Ensure the country and zone are correctly added.
+4. For countries, verify you selected "All Zones" or the specific zone.
+5. Check that the geozone is Published.
+
+### Customer Shows Wrong Tax Rate
+
+**Cause:** Multiple geozones with overlapping rules, or incorrect geozone assignment.
+
+**Solution:**
+
+1. Review your geozone configuration to check for overlapping rules.
+2. Verify the tax rates are linked to the correct geozones.
+3. Check that the customer's country and zone are correctly configured in the Countries and Zones lists.
+
+### Cannot Add Zone to Geozone Rule
+
+**Cause:** No zones are published for the selected country.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Localisation** -> **Zones**.
+2. Filter by the country you want to add.
+3. Verify zones exist and are published.
+4. If no zones exist, create zones for that country first.
+
+### Shipping Method Not Available
+
+**Cause:** The shipping method's geozone does not include the customer's location.
+
+**Solution:**
+
+1. Check the shipping method configuration.
+2. Verify the geozone assigned to the shipping method includes the customer's country/zone.
+3. Create a new geozone or modify the existing one to include the missing locations.
+
+## Related Topics
+
+- [Countries](countries.md) — Configure countries before creating geozone rules.
+- [Zones](zones.md) — Configure zones within countries.
+- [Tax Profiles](tax-profiles.md) — Create tax profiles to group tax rules.
+- [Tax Rates](tax-rates.md) — Link tax rates to geozones.
+- [Shipping Methods](../shipping-methods/index.md) — Configure shipping rates by geozone.
