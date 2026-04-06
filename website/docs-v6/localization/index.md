@@ -24,7 +24,7 @@ Localisation in J2Commerce covers several key areas:
 
 All localisation features are accessed from the J2Commerce Dashboard:
 
-**J2Commerce** -> **Dashboard** -> **Localisation**
+**J2Commerce -> Dashboard -> Localisation**
 
 The Localisation menu provides access to all regional configuration settings.
 
