@@ -19,7 +19,7 @@ The Currencies feature allows you to configure multiple currencies for your J2Co
 
 Currencies are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** -> **J2Commerce** -> **Dashboard**.
+1. Go to **Components** **-> J2Commerce ->** **Dashboard**.
 2. Click **Localisation** in the left sidebar.
 3. Click **Currencies**.
 
@@ -29,15 +29,19 @@ Currencies are managed from the J2Commerce Dashboard.
 
 The Currencies list displays all currencies configured in your store. Each currency shows:
 
-| Column | Description |
-|--------|-------------|
-| **Checkbox** | Select currencies for batch actions. |
-| **Currency Name** | The display name of the currency. |
-| **Code** | The 3-letter ISO 4217 currency code. |
-| **Symbol** | The currency symbol displayed with prices. |
-| **Value** | The exchange rate relative to your base currency. |
-| **Status** | Published (green check) or Unpublished (red X). |
-| **Ordering** | Drag-and-drop to reorder the display sequence. |
+**Checkbox:** Select currencies for batch actions.
+
+**Currency Name:** The display name of the currency.
+
+**Code:** The 3-letter ISO 4217 currency code.
+
+**Symbol:** The currency symbol displayed with prices.
+
+**Value:** The exchange rate relative to your base currency.
+
+**Status:** Published (green check) or Unpublished (red X).
+
+**Ordering:** Drag-and-drop to reorder the display sequence.
 
 ## Adding a Currency
 
@@ -49,17 +53,23 @@ The Currencies list displays all currencies configured in your store. Each curre
 
 ## Configuration
 
-| Field | Description | Required | Default | Example |
-|-------|-------------|----------|---------|---------|
-| **Currency Name** | The display name shown to customers and in admin lists. | Yes | — | `British Pound` |
-| **Currency Code** | The 3-letter ISO 4217 currency code. Must be exactly 3 characters, uppercase. | Yes | — | `GBP` |
-| **Currency Symbol** | The symbol displayed with prices. | Yes | — | `£` |
-| **Symbol Position** | Where to display the symbol relative to the amount. | Yes | Before | Before or After |
-| **Decimal Places** | Number of decimal places to display. | Yes | 2 | 2 (most currencies) |
-| **Decimal Separator** | Character separating whole and decimal amounts. | Yes | `.` | `.` or `,` |
-| **Thousands Separator** | Character separating thousands groups. | Yes | `,` | `,` or `.` or space |
-| **Exchange Rate** | Conversion value relative to your base currency. | Yes | 1.00000000 | 1.27000 |
-| **Status** | Set to Published to make the currency available. | Yes | Published | — |
+**Currency Name:** The display name shown to customers and in admin lists. **Example:** `British Pound`
+
+**Currency Code:** The 3-letter ISO 4217 currency code. Must be exactly 3 characters, uppercase. **Example:** `GBP`
+
+**Currency Symbol:** The symbol displayed with prices. **Example:** `£`
+
+**Symbol Position:** Where to display the symbol relative to the amount. **Example:** Before or After
+
+**Decimal Places:** Number of decimal places to display. Example: 2 (most currencies)
+
+**Decimal Separator:** Character separating whole and decimal amounts. **Example**: `.` or `,`
+
+**Thousands Separator:** Character separating thousands groups. **Example**: `,` or `.` or space
+
+**Exchange Rate:** Conversion value relative to your base currency. **Example:** 1.27000
+
+**Status:** Set to **Published** to make the currency available.
 
 ### Currency Code Standards
 
@@ -76,20 +86,20 @@ Currency codes must follow **ISO 4217** standards:
 
 ### Symbol Position Examples
 
-| Position | Symbol | Amount | Display |
-|----------|--------|--------|---------|
-| Before | `$` | 99.99 | `$99.99` |
-| After | `€` | 99.99 | `99.99€` |
+| Position | Symbol | Amount | Display  |
+| -------- | ------ | ------ | -------- |
+| Before   | `$`    | 99.99  | `$99.99` |
+| After    | `€`    | 99.99  | `99.99€` |
 
 ### Decimal and Thousands Separator Examples
 
 Different regions use different formatting:
 
-| Region | Decimal | Thousands | Example |
-|--------|---------|-----------|---------|
-| US/UK | `.` | `,` | 1,234.56 |
-| EU (most) | `,` | `.` | 1.234,56 |
-| Switzerland | `.` | `'` | 1'234.56 |
+| Region      | Decimal | Thousands | Example  |
+| ----------- | ------- | --------- | -------- |
+| US/UK       | `.`     | `,`       | 1,234.56 |
+| EU (most)   | `,`     | `.`       | 1.234,56 |
+| Switzerland | `.`     | `'`       | 1'234.56 |
 
 ### Exchange Rate
 
@@ -99,6 +109,7 @@ The exchange rate is relative to your **base currency** (the currency with a val
 - **Other Currencies**: Value = conversion rate from base currency
 
 For example, if your base currency is USD and you want to add GBP:
+
 - If 1 GBP = 1.27 USD, the GBP exchange rate is **1.27000**
 - If 1 EUR = 1.08 USD, the EUR exchange rate is **1.08000**
 
@@ -107,6 +118,7 @@ The system uses 8 decimal places for precise calculations.
 ## Base Currency
 
 Your base currency is identified by having an exchange rate of **1.00000000**. This is the currency in which:
+
 - Product prices are stored in the database
 - Reports and statistics are calculated
 - Payment gateways receive payment amounts (unless multi-currency payments are enabled)
@@ -215,9 +227,3 @@ Use the search and filter options to find currencies:
 1. Edit the currency and verify the exchange rate has sufficient decimal places.
 2. For most currencies, 5-8 decimal places in the exchange rate provide accurate conversions.
 3. Check that **Decimal Places** matches your currency's standard (2 for most, 0 for JPY, 3 for some).
-
-## Related Topics
-
-- [Configuration](../configuration/index.md) — Set your default store currency.
-- [Geozones](geozones.md) — Configure shipping and tax zones.
-- [Order Statuses](order-statuses.md) — Manage order workflow states.
