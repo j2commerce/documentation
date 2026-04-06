@@ -2,9 +2,9 @@
 
 ---
 
-# Welcome to J2Commerce
+# Welcome to J2Commerce v6
 
-![J2Commerce](https://docs.j2commerce.com/img/j2commerce-social-card.jpg)
+![J2Commerce](https://docs.j2commerce.com/img/j2commerce-v6-social-card.jpg)
 
 ## J2Commerce v6 Documentation
 
