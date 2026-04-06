@@ -18,21 +18,6 @@ Apps are Joomla plugins that hook into J2Commerce events and workflows. They can
 - Extend admin functionality (custom reports, bulk actions)
 - Connect external APIs and webhooks
 
-## Available Apps
-
-### Address Autocomplete
-
-The Address Autocomplete app adds Google Places-powered address suggestions to your checkout forms. As customers type their address, they see matching suggestions from Google's database. Selecting an address automatically fills in all fields.
-
-[Learn more about Address Autocomplete](./app-addressautocomplete.md)
-
-
-### AtoShip Multi-Carrier Shipping
-
-The AtoShip shipping plugin connects your store to the AtoShip multi-carrier shipping platform for real-time rates from USPS, UPS, FedEx, and DHL. Create and print shipping labels, track packages, and automate order status updates -- all from within J2Commerce.
-
-[Learn more about AtoShip Shipping](./shipping_atoship.md)
-
 ## Installing Apps
 
 Apps are installed like any other Joomla plugin:
@@ -55,18 +40,6 @@ Most apps have their own configuration page accessible from the J2Commerce Apps 
 ## Modules
 
 J2Commerce includes several frontend modules that display store information in template positions.
-
-### Products Module
-
-Display products in a grid or slider layout with flexible filtering options. Show latest products, featured items, best sellers, or products from specific categories and tags.
-
-[Learn more about the Products Module](./mod_j2commerce_products.md)
-
-### Categories Module
-
-Display product categories in various layouts including sliders, grids, and lists.
-
-[Learn more about the Categories Module](./mod_j2commerce_categories.md)
 
 ## Developing Custom Apps
 
