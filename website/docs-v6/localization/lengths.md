@@ -19,7 +19,7 @@ The Lengths feature allows you to configure measurement units for product dimens
 
 Length units are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** -> **J2Commerce** -> **Dashboard**.
+1. Go to **Components** **-> J2Commerce -> Dashboard**.
 2. Click **Localisation** in the left sidebar.
 3. Click **Lengths**.
 
@@ -29,14 +29,14 @@ Length units are managed from the J2Commerce Dashboard.
 
 The Lengths list displays all length units configured in your store. Each unit shows:
 
-| Column | Description |
-|--------|-------------|
-| **Checkbox** | Select units for batch actions. |
+| Column           | Description                                      |
+| ---------------- | ------------------------------------------------ |
+| **Checkbox**     | Select units for batch actions.                  |
 | **Length Title** | The display name of the unit (e.g., Centimetre). |
-| **Unit** | The short unit symbol (e.g., cm). |
-| **Value** | Conversion value relative to the base unit. |
-| **Status** | Published (green check) or Unpublished (red X). |
-| **Ordering** | Drag-and-drop to reorder the display sequence. |
+| **Unit**         | The short unit symbol (e.g., cm).                |
+| **Value**        | Conversion value relative to the base unit.      |
+| **Status**       | Published (green check) or Unpublished (red X).  |
+| **Ordering**     | Drag-and-drop to reorder the display sequence.   |
 
 ## Adding a Length Unit
 
@@ -48,13 +48,15 @@ The Lengths list displays all length units configured in your store. Each unit s
 
 ## Configuration
 
-| Field | Description | Required | Default | Example |
-|-------|-------------|----------|---------|---------|
-| **Length Title** | The display name of the unit. | Yes | — | `Centimetre` |
-| **Unit** | The short symbol for the unit (1-4 characters). | Yes | — | `cm` |
-| **Conversion Value** | The multiplier to convert to the base unit. Base unit has value 1.00000000. | Yes | 1.00000000 | `2.54` for inch |
-| **Decimal Places** | Number of decimal places to display for this unit. | No | 2 | `2` |
-| **Status** | Set to Published to make the unit available. | Yes | Published | — |
+**Length Title:** The display name of the unit. **Example:**  `Centimetre`
+
+**Unit:** The short symbol for the unit (1-4 characters). **Example:** `cm`
+
+**Conversion Value:** The multiplier to convert to the base unit. Base unit has value 1.00000000. **Example:** `2.54` for inch
+
+**Decimal Places:** Number of decimal places to display for this unit. **Example:** `2`
+
+**Status:** Set to **Published** to make the unit available.
 
 ### Conversion Value Explained
 
@@ -67,6 +69,7 @@ The conversion value defines how this unit relates to your base unit:
 - **Foot**: Value = 30.48 (1 ft = 30.48 cm)
 
 To calculate the conversion value:
+
 ```
 conversion_value = number_of_base_units_in_this_unit
 ```
@@ -75,12 +78,12 @@ conversion_value = number_of_base_units_in_this_unit
 
 The decimal places setting controls how values are displayed:
 
-| Unit | Decimal Places | Example Display |
-|------|----------------|-----------------|
-| Millimetre | 0 | `150 mm` |
-| Centimetre | 2 | `15.25 cm` |
-| Metre | 2 | `1.52 m` |
-| Inch | 2 | `6.00 in` |
+| Unit       | Decimal Places | Example Display |
+| ---------- | -------------- | --------------- |
+| Millimetre | 0              | `150 mm`        |
+| Centimetre | 2              | `15.25 cm`      |
+| Metre      | 2              | `1.52 m`        |
+| Inch       | 2              | `6.00 in`       |
 
 ## Base Unit
 
@@ -96,24 +99,24 @@ All other units are defined relative to this base unit.
 
 Select your base unit based on your primary market:
 
-| Primary Market | Recommended Base Unit |
-|-----------------|----------------------|
-| Europe, Australia, Canada | Centimetre (cm) |
-| United States | Inch (in) |
-| Scientific/International | Millimetre (mm) |
+**Europe, Australia, Canada:** Centimetre (cm)
+
+**United States:** Inch (in)
+
+**Scientific/International:** Millimetre (mm)
 
 ## Common Length Units
 
 | Length Title | Unit | Conversion Value (base: cm) | Decimal Places |
-|--------------|------|----------------------------|----------------|
-| Millimetre | mm | 0.1 | 0 |
-| Centimetre | cm | 1.00000000 | 2 |
-| Metre | m | 100 | 2 |
-| Kilometre | km | 100000 | 2 |
-| Inch | in | 2.54 | 2 |
-| Foot | ft | 30.48 | 2 |
-| Yard | yd | 91.44 | 2 |
-| Mile | mi | 160934.4 | 2 |
+| ------------ | ---- | --------------------------- | -------------- |
+| Millimetre   | mm   | 0.1                         | 0              |
+| Centimetre   | cm   | 1.00000000                  | 2              |
+| Metre        | m    | 100                         | 2              |
+| Kilometre    | km   | 100000                      | 2              |
+| Inch         | in   | 2.54                        | 2              |
+| Foot         | ft   | 30.48                       | 2              |
+| Yard         | yd   | 91.44                       | 2              |
+| Mile         | mi   | 160934.4                    | 2              |
 
 ## How Length Units Are Used
 
@@ -160,7 +163,7 @@ J2Commerce can automatically sync conversion values based on your base unit:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Localisation** -> **Lengths**.
+1. Go to **J2Commerce -> Localisation ->** **Lengths**.
 2. Find the problematic unit and edit it.
 3. Verify the **Conversion Value** is correct.
 4. Compare against known conversions (e.g., 1 inch = 2.54 cm).
@@ -195,9 +198,3 @@ J2Commerce can automatically sync conversion values based on your base unit:
 1. Go to **J2Commerce** -> **Localisation** -> **Lengths**.
 2. Find the unit and check that **Status** shows Published (green check).
 3. If unpublished, click the status icon to publish it.
-
-## Related Topics
-
-- [Weights](weights.md) — Configure weight units for products and shipping.
-- [Products](../products/index.md) — Set product dimensions.
-- [Shipping Methods](../shipping-methods/index.md) — Configure dimensional weight shipping.
