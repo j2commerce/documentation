@@ -30,15 +30,19 @@ The **GDPR** app is a separate add-on available from the [J2Commerce Extensions 
 
 **Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Apps**.
 
-**Step 2:** Locate the **GDPR** app -> click **View Details** -> **Add to cart** -> **Checkout**.
+**Step 2:** Locate the **GDPR** app **->** click **View Details** **-> Add to cart** **->** **Checkout**.
 
-**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
+**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**.
 
 ## Install the App
 
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+You can install this **GDPR** App using the Joomla installer. The following steps help you with a successful installation.
 
-Upload the plugin ZIP file or use the **Install from URL** option.
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the plugin ZIP file or use the Install from URL option.
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
 ## Enable the App
 
@@ -48,80 +52,75 @@ Once installed, you must enable the app. There are two ways to access it:
 
 **Option B:** Go to the left sidebar -> **Components** -> **J2Commerce** -> **Apps**.
 
-Find the **GDPR** app in the list and click **Enable**.
+![shipping method](/img/accordions-app.webp)
 
-<!-- SCREENSHOT: J2Commerce Apps list with GDPR app highlighted -->
+Look for **GDPR**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ## Configuration
 
 Open the GDPR app settings by clicking its name in the Apps list.
 
-<!-- SCREENSHOT: GDPR app settings page showing all configuration fields -->
-
 ### Email Notifications
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Notify store administrators about data changes** | Send an email to the admin addresses below whenever a customer edits or deletes address data | Yes |
-| **Store administrator emails** | Comma-separated list of admin email addresses to notify | *(empty)* |
-| **Notify the customer about data changes** | Send a confirmation email to the customer when they change their own data | No |
+**Notify store administrators about data changes:** Send an email to the admin addresses below whenever a customer edits or deletes address data
+
+**Store administrator emails:** Comma-separated list of admin email addresses to notify
+
+**Notify the customer about data changes:** Send a confirmation email to the customer when they change their own data
 
 ### Activity Logging
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Log customer edit and delete activities** | Record every address edit and deletion in the GDPR activity log | No |
+**Log customer edit and delete activities:** Record every address edit and deletion in the GDPR activity log
 
-When enabled, all changes are stored in the activity log viewable from the J2Commerce Apps page.
+When enabled, all changes are stored in the activity log, viewable from the J2Commerce Apps page.
 
 ### IP Address Removal
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Remove customer IP address from cart and order** | Strip the IP address field from new cart and order records at the time they are created | No |
+**Remove customer IP address from cart and order:** Strip the IP address field from new cart and order records at the time they are created
 
 :::note
+
 IP removal only applies to **new** carts and orders created after the setting is enabled. Existing records are not retroactively modified.
+
 :::
 
 ### General Requirements
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Enable GDPR tab in My Profile** | Show a GDPR data request form as a tab on the customer My Profile page | No |
-| **GDPR terms and conditions** | Show or hide terms and conditions at checkout | Yes |
-| **Show terms for registered customers** | Include terms display for logged-in customers | Yes |
-| **Show terms for guest customers** | Include terms display for guest checkout | Yes |
-| **Terms display position** | Choose whether terms appear at the **Billing** step or the **Payment** step | Payment |
-| **Terms display type** | Show terms as a **Link** (informational) or a **Checkbox** (required to proceed) | Link |
-| **Terms and conditions article** | Select the Joomla article that contains your privacy policy or GDPR terms | *(none)* |
+**Enable GDPR tab in My Profile:** Show a GDPR data request form as a tab on the customer My Profile page
+
+**GDPR terms and conditions:** Show or hide terms and conditions at checkout
+
+**Show terms for registered customers:** Include terms display for logged-in customers
+
+**Show terms for guest customers:** Include terms display for guest checkout
+
+**Terms display position:** Choose whether terms appear at the **Billing** step or the **Payment** step
+
+**Terms display type:** Show terms as a **Link** (informational) or a **Checkbox** (required to proceed)
+
+**Terms and conditions article:** Select the Joomla article that contains your privacy policy or GDPR terms
 
 ### Terms Label Customisation
 
 These three fields control the text displayed around the terms link at checkout. They support Joomla language key strings or plain text.
 
-| Setting | Description | Default value |
-|---------|-------------|---------------|
-| **Terms prefix text** | Text before the clickable link | `I agree to` |
-| **Terms link label** | The clickable link text | `the privacy policy` |
-| **Terms suffix text** | Text after the clickable link | *(terms and conditions)* |
-| **Validation error message** | Message shown when the customer does not tick the checkbox | `Please accept our GDPR terms and conditions.` |
+**Terms prefix text:** Text before the clickable link
+
+**Terms link label:** The clickable link text
+
+**Terms suffix text:** Text after the clickable link
+
+**Validation error message:** Message shown when the customer does not tick the checkbox
 
 ### Customer Buttons
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Show delete all addresses button** | Display a button on the My Profile page allowing customers to delete all their saved addresses | Yes |
+**Show delete all addresses button:** Display a button on the My Profile page allowing customers to delete all their saved addresses
 
 ## Debug Mode
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Debug Mode** | Write detailed log entries to `administrator/logs/app_gdpr.php` | No |
+**Debug Mode:** Write detailed log entries to `administrator/logs/app_gdpr.php`
 
 Enable Debug Mode temporarily when troubleshooting. Disable it in production to avoid filling your log directory.
-
----
 
 ## How It Works
 
@@ -166,8 +165,6 @@ You can view the activity log from the J2Commerce Apps page by clicking the GDPR
 
 <!-- SCREENSHOT: GDPR activity log showing address and order log tabs -->
 
----
-
 ## Setting Up Terms and Conditions
 
 ### Step 1: Create a Privacy Policy Article
@@ -187,8 +184,6 @@ You can view the activity log from the J2Commerce Apps page by clicking the GDPR
 ### Step 3: Verify at Checkout
 
 Visit your store's checkout as a test customer and confirm the terms text and link appear at the expected step.
-
----
 
 ## Troubleshooting
 
@@ -227,7 +222,7 @@ Visit your store's checkout as a test customer and confirm the terms text and li
 
 **Solution:** Ask the customer to refresh the My Profile page and submit the form again. If the problem persists, check that Joomla page caching is not enabled for the My Profile view.
 
----
+***
 
 ## Related Topics
 

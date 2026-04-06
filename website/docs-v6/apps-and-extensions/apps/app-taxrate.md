@@ -17,32 +17,43 @@ This is useful when your tax obligations vary by location — for example, apply
 - Joomla! 6.x
 - J2Commerce 6.x
 
-## Installation
+## Purchase and Download
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+The **Tax Rate** app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `plg_j2commerce_app_taxrate.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the ZIP file. The plugin installs and enables automatically.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Apps**.
 
-<!-- SCREENSHOT: System > Install > Extensions upload screen -->
+**Step 2:** Locate the **Tax Rate** app **->** click **View Details** **->** **Add to cart ->** **Checkout**.
 
-## Enable the Plugin
+**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
 
-If the plugin did not enable automatically after installation:
+## Install the App
 
-1. Go to **System** -> **Manage** -> **Extensions**.
-2. Search for **Advanced Tax Rates**.
-3. Click the status toggle to enable it (it turns green).
+You can install this **Tax Rate** App using the Joomla installer. The following steps help you with a successful installation.
 
-You can also reach the plugin from **J2Commerce** -> **Apps**. Search for **Advanced Tax Rates** and enable it there.
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the `plg_j2commerce_app_taxrate.zip` file or use the Install from URL option.
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
+
+## Enable the App
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the extension.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![shipping method](/img/accordions-app.webp)
+
+Look for **Tax Rate**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 <!-- SCREENSHOT: J2Commerce > Apps list showing Advanced Tax Rates plugin with enable toggle -->
 
 ## Open the Plugin Settings
 
-1. Go to **J2Commerce** -> **Apps**.
-2. Find **Advanced Tax Rates** in the list and click its title to open the settings.
+Click on the **Tax Rate** title to open the plugin configuration screen
 
 The plugin configuration page contains two sections:
 
@@ -89,7 +100,7 @@ Click the trash icon next to the class. You will be asked to confirm. Deleting a
 
 Tax classes created by this plugin appear in the **Tax Profile** dropdown when editing a product, alongside any built-in tax profiles.
 
-1. Go to **J2Commerce** -> **Catalog** -> **Products**.
+1. Go to **J2Commerce -> Catalog ->** **Products**.
 2. Open the product you want to configure.
 3. Find the **Tax Profile** field and select your tax class from the dropdown.
 4. Save the product.
@@ -104,15 +115,19 @@ Click the **View / Edit Rates** button next to a tax class to open the tax rates
 
 The top section of the rates panel contains the "Add New Tax Rate" form. Fill in the fields and click **New**:
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Country** | The country this rate applies to. Select `*` for all countries. | `USA` |
-| **Zone** | The state or zone within the country. Select `*` for all zones. | `CA` |
-| **Postcode** | The postal code. Supports wildcards (see below). | `90*` |
-| **Address Type** | Whether this rate matches the **Billing** or **Shipping** address. | `Billing` |
-| **Rate (%)** | The tax percentage to apply. | `8.5` |
-| **Rate Name** | A label shown on invoices and order summaries. | `CA Sales Tax` |
-| **Priority** | Determines the order rates are applied when multiple rates match. Lower numbers run first. | `0` |
+**Country:** The country this rate applies to. Select `*` for all countries.
+
+**Zone:** The state or zone within the country. Select `*` for all zones.
+
+**Postcode:** The postal code. Supports wildcards (see below).
+
+**Address Type:** Whether this rate matches the **Billing** or **Shipping** address.
+
+**Rate (%):** The tax percentage to apply.
+
+**Rate Name:** A label shown on invoices and order summaries.
+
+**Priority:** Determines the order rates are applied when multiple rates match. Lower numbers run first.
 
 <!-- SCREENSHOT: Add New Tax Rate form inside the tax rates modal -->
 
@@ -120,12 +135,12 @@ The top section of the rates panel contains the "Add New Tax Rate" form. Fill in
 
 Postcode matching supports partial wildcards. Use an asterisk (`*`) at the end of a partial postcode to match all postcodes that begin with those characters.
 
-| Postcode value | What it matches |
-|---------------|----------------|
-| `*` | Any postcode |
-| `90210` | Only postcode 90210 exactly |
-| `90*` | All postcodes starting with 90 |
-| `SW1A*` | All postcodes starting with SW1A |
+| Postcode value | What it matches                  |
+| -------------- | -------------------------------- |
+| `*`            | Any postcode                     |
+| `90210`        | Only postcode 90210 exactly      |
+| `90*`          | All postcodes starting with 90   |
+| `SW1A*`        | All postcodes starting with SW1A |
 
 This lets you define rates for broad regions without listing every individual postcode.
 
@@ -173,7 +188,9 @@ A confirmation message tells you how many rows were imported successfully. If an
 <!-- SCREENSHOT: CSV Import modal showing file upload, path, and delimiter fields -->
 
 :::info
+
 Importing does not replace existing rates — it adds to them. To reset a class's rates before importing, delete the existing rates manually first.
+
 :::
 
 ## Exporting Tax Rates to CSV
@@ -220,8 +237,3 @@ Enables detailed logging to `administrator/logs/app_taxrate.php`. Use this setti
 **Cause:** The CSV header row does not match the expected column names.
 
 **Solution:** Ensure the first row of your CSV contains exactly: `taxrate_country,taxrate_zone,taxrate_zip,address_type,taxrate_rate,taxrate_name,taxrate_priority` — spelling and case must match.
-
-## Related Topics
-
-- [Tax Profiles](../../configuration/tax-profiles.md)
-- [Data Validation](./app-validationrules.md)

@@ -28,10 +28,14 @@ The PDF Invoices app depends on the Dompdf library to render HTML into PDF files
 2. Go to **System** -> **Install** -> **Extensions**.
 3. Upload `lib_dompdf.zip` and click **Upload & Install**.
 
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
+
 The library creates a working directory at `tmp/dompdf/` inside your Joomla root. This directory must be writable by the web server.
 
 :::info
+
 If you attempt to install the PDF Invoices app before the Dompdf library is present, the installer will stop and display an error with a download link for the library.
+
 :::
 
 ## Installation
@@ -42,11 +46,19 @@ Once the Dompdf library is installed:
 2. Go to **System** -> **Install** -> **Extensions**.
 3. Upload the ZIP file and click **Upload & Install**.
 
-<!-- SCREENSHOT: System > Install > Extensions showing successful plugin installation message -->
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
-After installation completes, the plugin is not yet enabled. Enable it by going to **J2Commerce** -> **Apps**, finding **PDF Invoices** in the list, and clicking its toggle to enable it.
+## Enable the App
 
-<!-- SCREENSHOT: J2Commerce > Apps list showing PDF Invoices with its enable toggle -->
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the extension.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![shipping method](/img/accordions-app.webp)
+
+Look for **PDF Invoices**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ## Configuration
 
@@ -58,13 +70,15 @@ The configuration screen has two tabs: **Basic Settings** and **Advanced Setting
 
 ### Basic Settings
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **File Name Prefix** | The text prepended to the PDF file name. For example, a prefix of `invoice` produces a file named `invoice_INV001.pdf`. | `invoice` |
-| **Send PDF Invoice for Status** | Restrict PDF generation to specific order statuses. Select one or more statuses from the list. If nothing is selected, a PDF is generated for every order. | All statuses |
-| **Additional Files** | Attach an extra PDF file alongside the invoice. Upload the file to `media/j2commerce/` first, then select it here. | None |
-| **Attach Invoice To** | Choose who receives the PDF as an email attachment. Options: **None**, **Both Administrator and Customer**, **Customer Only**, **Administrator Only**. | Both Administrator and Customer |
-| **Show Link in Frontend** | When enabled, a **Download PDF** button appears on the customer's order history page so they can download their invoice at any time. | No |
+**File Name Prefix:** The text prepended to the PDF file name. For example, a prefix of `invoice` produces a file named `invoice_INV001.pdf`.
+
+**Send PDF Invoice for Status:** Restrict PDF generation to specific order statuses. Select one or more statuses from the list. If nothing is selected, a PDF is generated for every order.
+
+**Additional Files:** Attach an extra PDF file alongside the invoice. Upload the file to `media/j2commerce/` first, then select it here.
+
+**Attach Invoice To:** Choose who receives the PDF as an email attachment. Options: **None**, **Both Administrator and Customer**, **Customer Only**, **Administrator Only**.
+
+**Show Link in Frontend:** When enabled, a **Download PDF** button appears on the customer's order history page so they can download their invoice at any time.
 
 #### Setting Up Order Status Filtering
 
@@ -92,13 +106,15 @@ Both the generated invoice and the additional file will be attached to matching 
 
 <!-- SCREENSHOT: PDF Invoices configuration screen showing the Advanced Settings tab -->
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Enable Tidy Repair** | Uses PHP's Tidy extension to clean up malformed HTML in the invoice template before passing it to the PDF renderer. Requires `ext-tidy` on your server. | Yes |
-| **Enable HTML5 Parser** | Switches the Dompdf renderer to its HTML5-compatible parsing mode. Enable this if the invoice contains modern HTML5 elements that are not rendering correctly. | No |
-| **Font Family CSS** | Override the body font used throughout the PDF. Enter a valid CSS `font-family` declaration, for example: `font-family: Helvetica;` | None (uses Dompdf default) |
-| **Custom CSS** | Additional CSS rules applied to the entire invoice. Use this to adjust colours, spacing, borders, and layout. | None |
-| **Debug Mode** | Writes detailed log entries to the Joomla log directory. Useful for diagnosing PDF generation problems. Disable this in production. | No |
+**Enable Tidy Repair:** Uses PHP's Tidy extension to clean up malformed HTML in the invoice template before passing it to the PDF renderer. Requires `ext-tidy` on your server.
+
+**Enable HTML5 Parser:** Switches the Dompdf renderer to its HTML5-compatible parsing mode. Enable this if the invoice contains modern HTML5 elements that are not rendering correctly.
+
+**Font Family CSS:** Override the body font used throughout the PDF. Enter a valid CSS `font-family` declaration, for example: `font-family: Helvetica;`
+
+**Custom CSS:** Additional CSS rules applied to the entire invoice. Use this to adjust colours, spacing, borders, and layout.
+
+**Debug Mode:** Writes detailed log entries to the Joomla log directory. Useful for diagnosing PDF generation problems. Disable this in production.
 
 ## How Invoice PDFs Are Generated
 
@@ -144,7 +160,7 @@ Customers must be logged in to use the download link. The plugin verifies that t
 
 To enable this feature:
 
-1. Go to **J2Commerce** -> **Apps** -> **PDF Invoices**.
+1. Go to **J2Commerce -> Apps -> PDF Invoices**.
 2. On the **Basic Settings** tab, set **Show Link in Frontend** to **Yes**.
 3. Click **Save**.
 
@@ -175,8 +191,9 @@ These files are generated at email-send time and regenerated on each admin or fr
 **Cause:** The Dompdf library is not installed, or the plugin is not enabled.
 
 **Solution:**
-1. Go to **J2Commerce** -> **Apps** and confirm that **PDF Invoices** is enabled (toggle is green).
-2. Go to **System** -> **Extensions** -> **Manage** and verify that the Dompdf library (`lib_dompdf`) is listed and installed.
+
+1. Go to **J2Commerce** **->** **Apps** and confirm that **PDF Invoices** is enabled (toggle is green).
+2. Go to **System -> Extensions -> Manage** and verify that the Dompdf library (`lib_dompdf`) is listed and installed.
 3. Check that your **Attach Invoice To** setting is not set to **None**.
 4. If you have **Send PDF Invoice for Status** configured, confirm the order's current status matches one of the selected values.
 
@@ -185,7 +202,8 @@ These files are generated at email-send time and regenerated on each admin or fr
 **Cause:** The invoice HTML contains markup that Dompdf cannot parse.
 
 **Solution:**
-1. Enable **Enable Tidy Repair** in the **Advanced Settings** tab. This cleans malformed HTML before it reaches the PDF renderer.
+
+1. Enable **Tidy Repair** in the **Advanced Settings** tab. This cleans malformed HTML before it reaches the PDF renderer.
 2. If Tidy Repair is already enabled but the issue persists, also enable **Enable HTML5 Parser** and test again.
 3. Check that the PHP Tidy extension (`ext-tidy`) is installed on your server. Without it, Tidy Repair silently skips the cleanup step.
 
@@ -194,6 +212,7 @@ These files are generated at email-send time and regenerated on each admin or fr
 **Cause:** A session token mismatch or permission issue blocked the download request.
 
 **Solution:**
+
 1. Clear your browser cache and try the download again.
 2. Ensure the customer is logged in. Guest users cannot download invoices.
 3. In the Joomla backend, go to **System** -> **Clear Cache** and clear all caches.
@@ -209,6 +228,7 @@ These files are generated at email-send time and regenerated on each admin or fr
 **Cause:** Insufficient PHP memory or the `tmp/dompdf/` directory is not writable.
 
 **Solution:**
+
 1. Verify that `tmp/dompdf/` exists in your Joomla root and is writable by the web server.
 2. Enable **Debug Mode** in the **Advanced Settings** tab. Log entries are written to the Joomla log directory (usually `logs/app_pdfinvoices.php`). Review the log for specific error messages.
 3. If the log shows memory errors, contact your host about increasing the PHP memory limit for your site.
@@ -233,9 +253,3 @@ The PDF Invoices app for J2Commerce 6 is a complete rewrite of the J2Store PDF i
 - Frontend download verifies that the requesting user owns the order before sending the PDF, preventing customers from accessing other customers' invoices.
 - Debug mode writes structured log entries to a dedicated `app_pdfinvoices.php` log file in the Joomla logs directory, making it easier to trace problems.
 - The plugin caches generated PDF file paths per request, so if both the customer and admin emails are sent in the same transaction, the invoice is only rendered once.
-
-## Related Topics
-
-- [Dompdf Library](https://www.j2commerce.com) — the required library for PDF generation
-- [Order Statuses](../../configuration/orderstatuses.md) — configure the statuses used to filter PDF generation
-- [Email Templates](../../configuration/) — customise the invoice template content that appears in the PDF
