@@ -20,8 +20,7 @@ The Customers page displays all store customers who have placed orders or create
 1. Go to **J2Commerce** → **Dashboard**.
 2. Click **Customers** in the Sales section.
 
-![](/img/customers-list.webp)
-
+<!-- TEMP_IMG_OFF ![](/img/customers-list.webp) -->
 Alternatively: **Components** → **J2Commerce** → **Customers**.
 
 ## Customers List View
@@ -55,8 +54,7 @@ Customers are grouped by email address — if the same email appears in multiple
 | **Search** | Search by name, email, company, or city |
 | **Country** | Filter customers by country |
 
-![](/img/customers-filters.webp)
-
+<!-- TEMP_IMG_OFF ![](/img/customers-filters.webp) -->
 ## Customer Detail View
 
 Click on a customer's name to view their details:
@@ -78,8 +76,7 @@ Click on a customer's name to view their details:
 | **Country** | Country |
 | **Zone/State** | State/province |
 
-![](/img/customers-detail.webp)
-
+<!-- TEMP_IMG_OFF ![](/img/customers-detail.webp) -->
 ### Order History Tab
 
 View all orders placed by this customer:

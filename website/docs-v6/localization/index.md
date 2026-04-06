@@ -28,8 +28,7 @@ All localisation features are accessed from the J2Commerce Dashboard:
 
 The Localisation menu provides access to all regional configuration settings.
 
-![Localisation menu](/img/localisation-menu.webp)
-
+<!-- TEMP_IMG_OFF ![Localisation menu](/img/localisation-menu.webp) -->
 ## Localisation Features
 
 ### Countries

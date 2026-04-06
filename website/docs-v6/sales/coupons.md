@@ -20,8 +20,7 @@ Coupons allow you to create promotional codes that customers can apply at checko
 1. Go to **J2Commerce** → **Dashboard**.
 2. Click **Coupons** in the Sales section.
 
-![](/img/coupons-list.webp)
-
+<!-- TEMP_IMG_OFF ![](/img/coupons-list.webp) -->
 Alternatively: **Components** → **J2Commerce** → **Coupons**.
 
 ## Coupons List View
@@ -48,16 +47,14 @@ The coupons list displays all configured discount codes:
 | **Type** | Filter by discount type (percentage/fixed) |
 | **Free Shipping** | Filter by free shipping status |
 
-![](/img/coupons-filters.webp)
-
+<!-- TEMP_IMG_OFF ![](/img/coupons-filters.webp) -->
 ## Creating a Coupon
 
 1. Click **New** in the toolbar.
 2. Configure the coupon settings (see fields below).
 3. Click **Save** or **Save & Close**.
 
-![](/img/coupon-edit.webp)
-
+<!-- TEMP_IMG_OFF ![](/img/coupon-edit.webp) -->
 ## Coupon Fields
 
 ### Basic Settings Tab
@@ -158,8 +155,7 @@ When **Free Shipping** is enabled:
 5. Verify the order subtotal meets **Minimum Spending**.
 6. Check product restrictions — order must contain qualifying products.
 
-![](/img/coupon-troubleshoot.webp)
-
+<!-- TEMP_IMG_OFF ![](/img/coupon-troubleshoot.webp) -->
 ### Percentage Discount Exceeds Expected Amount
 
 **Cause:** Maximum discount value not set.

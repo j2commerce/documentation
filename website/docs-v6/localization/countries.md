@@ -23,8 +23,7 @@ Countries are managed from the J2Commerce Dashboard.
 2. Click **Localisation** in the left sidebar.
 3. Click **Countries**.
 
-![Countries list](/img/localisation-countries.webp)
-
+<!-- TEMP_IMG_OFF ![Countries list](/img/localisation-countries.webp) -->
 ## Country List
 
 The Countries list displays all countries configured in your store. Each country shows:
@@ -49,8 +48,7 @@ The Countries list displays all countries configured in your store. Each country
 2. Fill in the country details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-![Country edit form](/img/localisation-country-edit.webp)
-
+<!-- TEMP_IMG_OFF ![Country edit form](/img/localisation-country-edit.webp) -->
 ## Configuration
 
 **Country Name:** The display name shown to customers and in admin lists. **Example:** `United Kingdom`

@@ -23,8 +23,7 @@ Currencies are managed from the J2Commerce Dashboard.
 2. Click **Localisation** in the left sidebar.
 3. Click **Currencies**.
 
-![Currencies list](/img/localisation-currencies.webp)
-
+<!-- TEMP_IMG_OFF ![Currencies list](/img/localisation-currencies.webp) -->
 ## Currency List
 
 The Currencies list displays all currencies configured in your store. Each currency shows:
@@ -49,8 +48,7 @@ The Currencies list displays all currencies configured in your store. Each curre
 2. Fill in the currency details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-![Currency edit form](/img/localisation-currency-edit.webp)
-
+<!-- TEMP_IMG_OFF ![Currency edit form](/img/localisation-currency-edit.webp) -->
 ## Configuration
 
 **Currency Name:** The display name shown to customers and in admin lists. **Example:** `British Pound`

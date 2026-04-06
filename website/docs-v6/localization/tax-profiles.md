@@ -23,8 +23,7 @@ Tax profiles are managed from the J2Commerce Dashboard.
 2. Click **Localisation** in the left sidebar.
 3. Click **Tax Profiles**.
 
-![Tax profiles list](/img/localisation-taxprofiles.webp)
-
+<!-- TEMP_IMG_OFF ![Tax profiles list](/img/localisation-taxprofiles.webp) -->
 ## Tax Profile List
 
 The Tax Profiles list displays all tax profiles configured in your store. Each profile shows:
@@ -45,8 +44,7 @@ The Tax Profiles list displays all tax profiles configured in your store. Each p
 2. Fill in the tax profile details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-![Tax profile edit form](/img/localisation-taxprofile-edit.webp)
-
+<!-- TEMP_IMG_OFF ![Tax profile edit form](/img/localisation-taxprofile-edit.webp) -->
 ## Configuration
 
 **Tax Profile Name:** A descriptive name for this tax profile. **Example:** `Standard VAT`

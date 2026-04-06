@@ -20,8 +20,7 @@ The Orders page displays all customer orders with comprehensive filtering and ma
 1. Go to **J2Commerce** → **Dashboard**.
 2. Click **Orders** in the Sales section.
 
-![](/img/orders-list.webp)
-
+<!-- TEMP_IMG_OFF ![](/img/orders-list.webp) -->
 Alternatively: **Components** → **J2Commerce** → **Orders**.
 
 ## Orders List View
@@ -54,8 +53,7 @@ Use the filter bar to narrow down orders:
 | **Order ID Range** | Filter by order ID range |
 | **Date Range** | Filter by order date (From/To) |
 
-![](/img/orders-filters.webp)
-
+<!-- TEMP_IMG_OFF ![](/img/orders-filters.webp) -->
 ## Order Statuses
 
 J2Commerce includes default order statuses that represent the order lifecycle:
@@ -102,8 +100,7 @@ The order detail page shows:
 | **Payment** | Payment method, transaction ID, status |
 | **Customer Note** | Note provided by customer at checkout |
 
-![](/img/orders-detail.webp)
-
+<!-- TEMP_IMG_OFF ![](/img/orders-detail.webp) -->
 ### Order Actions
 
 From the order detail view:
@@ -125,8 +122,7 @@ From the order detail view:
 5. Check **Notify Customer** to send an email notification.
 6. Click **Save**.
 
-![](/img/orders-status-update.webp)
-
+<!-- TEMP_IMG_OFF ![](/img/orders-status-update.webp) -->
 ## Order History
 
 Each order maintains a history of status changes and notes. The History tab shows:
