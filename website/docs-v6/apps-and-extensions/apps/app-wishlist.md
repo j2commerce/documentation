@@ -17,23 +17,27 @@ Guest shoppers can build a wishlist without logging in. When they log in, their 
 - Joomla! 6.x
 - J2Commerce 6.x
 
-`app_wishlist.zip`
-
-**Wishlist**&#x20;
-
 ## Purchase and Download
 
-The **Wishlist** app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+The **Wishlist**  app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Go to the [J2Commerce website](https://www.j2commerce.com) -> **Apps**.
-2. Locate the **Wishlist** app -> click **View Details** -> **Add to cart** -> **Checkout**.
-3. Download the `app_wishlist.zip` file from your account downloads.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Apps**.
 
-## Installation
+**Step 2:** Locate the **Wishlist** app **->** click **View Details -> Add to cart -> Checkout**.
 
-1. Go to **System** -> **Install** -> **Extensions**.
-2. Upload the `app_wishlist.zip` package file.
-3. The plugin installs and enables automatically.
+**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions -> View Files ->** **Download**.
+
+## Install the App
+
+You can install this **Wishlist**  App using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the `app_wishlist.zip` package file or use the Install from URL option.
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
+
+The plugin installs and enables automatically.
 
 <!-- SCREENSHOT: Joomla Extensions installer showing successful Wishlist app installation -->
 
@@ -45,18 +49,25 @@ After installation, go to **J2Commerce** -> **Apps** and click **Wishlist** to o
 
 ### Settings
 
-| Setting                         | Description                                                                                  | Default             | Notes                                               |
-| ------------------------------- | -------------------------------------------------------------------------------------------- | ------------------- | --------------------------------------------------- |
-| **Wishlist button type**        | Display the button as **Text** or **Icon**                                                   | Text                | Choosing **Icon** reveals the two icon fields below |
-| **Button text**                 | Label for the add-to-wishlist button. Accepts a plain string or a language key.              | Add to Wishlist     | Visible only when type is **Text**                  |
-| **Icon CSS class**              | Font Awesome class for the button (e.g., `fa-solid fa-heart`)                                | `fa-solid fa-heart` | Visible only when type is **Icon**                  |
-| **Added to wishlist icon**      | Font Awesome class shown when the item is already saved                                      | `fa-solid fa-heart` | Visible only when type is **Icon**                  |
-| **Remove after adding to cart** | Automatically remove a wishlist item when it is added to the cart                            | No                  |                                                     |
-| **Link products to**            | Where product links on the wishlist page lead: **Product List Layout** or **Article Layout** | Product List Layout |                                                     |
-| **Thumbnail width**             | Width in pixels for product images on the wishlist page                                      | 50                  |                                                     |
-| **Redirect to wishlist**        | Redirect the customer to the wishlist page immediately after adding an item                  | No                  |                                                     |
-| **Wishlist link text**          | Text for the "browse wishlist" link in the add confirmation notification                     | Browse wishlist     |                                                     |
-| **Debug Mode**                  | Write debug entries to the Joomla log directory. Disable in production.                      | No                  |                                                     |
+**Wishlist button type:** Display the button as **Text** or **Icon.** Choosing **Icon** reveals the two icon fields below
+
+- **Button text:** Label for the add-to-wishlist button. Accepts a plain string or a language key.  Visible only when type is **Text**
+
+- **Icon CSS class:** Font Awesome class for the button (e.g., `fa-solid fa-heart`)  Visible only when type is **Icon**
+
+**Added to wishlist icon:** Font Awesome class shown when the item is already saved. Visible only when type is **Icon**
+
+**Remove after adding to cart:** Automatically remove a wishlist item when it is added to the cart
+
+**Link products to:** Where product links on the wishlist page lead: **Product List Layout** or **Article Layout**
+
+**Thumbnail width:** Width in pixels for product images on the wishlist page
+
+**Redirect to wishlist:** Redirect the customer to the wishlist page immediately after adding an item
+
+**Wishlist link text:** Text for the "browse wishlist" link in the add confirmation notification
+
+**Debug Mode:** Write debug entries to the Joomla log directory. Disable in production.
 
 Click **Save** to apply your settings.
 
@@ -64,9 +75,9 @@ Click **Save** to apply your settings.
 
 The wishlist page is displayed through a dedicated Joomla menu item. You must create this menu item before the wishlist page is accessible to customers.
 
-1. Go to **Menus** -> **\[Your Menu]** -> **Add New Menu Item**.
+1. Go to **Menus** **-> \[Your Menu] -> Add New Menu Item**.
 2. Click **Select** next to **Menu Item Type**.
-3. Choose **J2Commerce** -> **Wishlist**.
+3. Choose **J2Commerce** **->** **Wishlist**.
 4. Set a **Menu Title** (for example, "My Wishlist").
 5. Click **Save & Close**.
 
@@ -91,11 +102,11 @@ The wishlist module is also a separate add-on and is not included in the core J2
 
 ### Module Settings
 
-| Setting                | Description                                                         | Default |
-| ---------------------- | ------------------------------------------------------------------- | ------- |
-| **Display type**       | Show the counter as a plain **Link** or as a styled **Button**      | Link    |
-| **Hide when empty**    | Hide the module entirely when the wishlist has no items             | No      |
-| **Wishlist menu item** | Select the menu item created above. Leave empty for auto-detection. | (empty) |
+**Display type:** Show the counter as a plain **Link** or as a styled **Button**
+
+**Hide when empty:** Hide the module entirely when the wishlist has no items
+
+**Wishlist menu item:** Select the menu item created above. Leave empty for auto-detection.
 
 ### Module Position
 
@@ -226,8 +237,3 @@ This is a normal edge case when browser cookies expire between sessions. The wis
 
 1. Select at least one item by checking its checkbox.
 2. If the page has been open for a long time, refresh it to get a fresh CSRF token, then try again.
-
-## Related
-
-- [Gift Wrapping](app-giftwrapping.md) — add gift wrapping options at checkout
-- [Easy Reorder](app_reorder.md) — let customers reorder from previous orders
