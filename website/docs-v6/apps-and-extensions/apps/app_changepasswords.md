@@ -1,10 +1,3 @@
----
-title: "Change Password"
-sidebar_label: "Change Password"
-sidebar_position: 20
-description: "Allow logged-in customers to change their Joomla password directly from the J2Commerce My Profile page."
----
-
 # Change Password
 
 The Change Password app adds a dedicated tab to the J2Commerce My Profile page on the frontend. Logged-in customers can update their Joomla account password without leaving the store — no need to visit the Joomla User Profile or reset their password by email.
