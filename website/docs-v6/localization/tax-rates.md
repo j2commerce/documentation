@@ -19,7 +19,7 @@ Tax rates define the actual percentage of tax to apply based on a customer's loc
 
 Tax rates are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** -> **J2Commerce** -> **Dashboard**.
+1. Go to **Components** **-> J2Commerce ->** **Dashboard**.
 2. Click **Localisation** in the left sidebar.
 3. Click **Tax Rates**.
 
@@ -29,15 +29,19 @@ Tax rates are managed from the J2Commerce Dashboard.
 
 The Tax Rates list displays all tax rates configured in your store. Each rate shows:
 
-| Column | Description |
-|--------|-------------|
-| **Checkbox** | Select rates for batch actions. |
-| **Rate Name** | The display name of the tax rate. |
-| **Tax Profile** | The tax profile this rate belongs to. |
-| **Geozone** | The geographic zone where this rate applies. |
-| **Rate %** | The tax percentage. |
-| **Status** | Published (green check) or Unpublished (red X). |
-| **Ordering** | Drag-and-drop to reorder priority. |
+**Checkbox:** Select rates for batch actions.
+
+**Rate Name:** The display name of the tax rate.
+
+**Tax Profile:** The tax profile this rate belongs to.
+
+**Geozone:** The geographic zone where this rate applies.
+
+**Rate %:** The tax percentage.
+
+**Status:** Published (green check) or Unpublished (red X).
+
+**Ordering:** Drag-and-drop to reorder priority.
 
 ## Adding a Tax Rate
 
@@ -49,12 +53,13 @@ The Tax Rates list displays all tax rates configured in your store. Each rate sh
 
 ## Configuration
 
-| Field | Description | Required | Example |
-|-------|-------------|----------|---------|
-| **Rate Name** | A descriptive name for this tax rate. | Yes | `UK Standard VAT 20%` |
-| **Tax Percentage** | The tax rate as a percentage. Supports decimal precision. | Yes | `20.000` |
-| **Geozone** | The geographic zone where this tax rate applies. | Yes | `United Kingdom` |
-| **Status** | Set to Published to make the rate active. | Yes | Published |
+**Rate Name:** A descriptive name for this tax rate. **Example:** `UK Standard VAT 20%`
+
+**Tax Percentage:** The tax rate as a percentage. Supports decimal precision. **Example:** `20.000`
+
+**Geozone:** The geographic zone where this tax rate applies. **Example:** `United Kingdom`
+
+**Status:** Set to **Published** to make the rate active.
 
 ### Tax Percentage Precision
 
@@ -99,47 +104,43 @@ When multiple tax rates could apply, J2Commerce uses priority and specificity:
 
 ### Example 1: UK Store with EU Sales
 
-| Tax Profile | Geozone | Rate |
-|-------------|---------|------|
-| Standard VAT | United Kingdom | 20% |
+| Tax Profile  | Geozone          | Rate                    |
+| ------------ | ---------------- | ----------------------- |
+| Standard VAT | United Kingdom   | 20%                     |
 | Standard VAT | EU Member States | 19% (varies by country) |
-| Standard VAT | Rest of World | 0% |
-| Reduced VAT | United Kingdom | 5% |
-| Reduced VAT | EU Member States | 5-7% (varies) |
+| Standard VAT | Rest of World    | 0%                      |
+| Reduced VAT  | United Kingdom   | 5%                      |
+| Reduced VAT  | EU Member States | 5-7% (varies)           |
 
-A UK customer buying a book (Reduced VAT profile) pays 5% tax.
-An EU customer buying a standard product (Standard VAT profile) pays their local VAT rate.
+A UK customer buying a book (Reduced VAT profile) pays 5% tax. An EU customer buying a standard product (Standard VAT profile) pays their local VAT rate.
 
 ### Example 2: US Store with Nexus States
 
-| Tax Profile | Geozone | Rate |
-|-------------|---------|------|
-| Sales Tax | California | 7.25% |
-| Sales Tax | New York | 8.00% |
-| Sales Tax | Texas | 6.25% |
-| Sales Tax | Rest of US | 0% |
+| Tax Profile | Geozone    | Rate  |
+| ----------- | ---------- | ----- |
+| Sales Tax   | California | 7.25% |
+| Sales Tax   | New York   | 8.00% |
+| Sales Tax   | Texas      | 6.25% |
+| Sales Tax   | Rest of US | 0%    |
 
-A California customer pays 7.25% sales tax on taxable items.
-A Florida customer (no nexus state) pays 0% tax.
+A California customer pays 7.25% sales tax on taxable items. A Florida customer (no nexus state) pays 0% tax.
 
 ### Example 3: Mixed Tax Profile Store
 
-| Tax Profile | Geozone | Rate |
-|-------------|---------|------|
-| Standard VAT | United Kingdom | 20% |
-| Digital Goods | United Kingdom | 0% |
-| Standard VAT | EU | 19% |
-| Digital Goods | EU | VAT MOSS rates |
+| Tax Profile   | Geozone        | Rate           |
+| ------------- | -------------- | -------------- |
+| Standard VAT  | United Kingdom | 20%            |
+| Digital Goods | United Kingdom | 0%             |
+| Standard VAT  | EU             | 19%            |
+| Digital Goods | EU             | VAT MOSS rates |
 
-Physical goods sold to UK: 20% VAT.
-Digital goods sold to UK: 0% (reverse charge).
-Digital services sold to EU: Customer's local VAT rate (VAT MOSS).
+Physical goods sold to UK: 20% VAT. Digital goods sold to UK: 0% (reverse charge). Digital services sold to EU: Customer's local VAT rate (VAT MOSS).
 
 ## Creating Tax Rates for a Tax Profile
 
 After creating a tax profile, you need tax rates for each geozone:
 
-1. Go to **J2Commerce** -> **Localisation** -> **Tax Rates**.
+1. Go to **J2Commerce** **-> Localisation ->** **Tax Rates**.
 2. Click **New**.
 3. Enter the rate name (e.g., "UK Standard VAT 20%").
 4. Enter the tax percentage (e.g., `20`).
@@ -163,30 +164,30 @@ After creating a tax profile, you need tax rates for each geozone:
 
 Create a geozone for each country/region with different VAT rates:
 
-| Geozone | Profile: Standard | Profile: Reduced |
-|---------|------------------|------------------|
-| United Kingdom | 20% | 5% |
-| Germany | 19% | 7% |
-| France | 20% | 5.5% |
-| Ireland | 23% | 9% |
+| Geozone        | Profile: Standard | Profile: Reduced |
+| -------------- | ----------------- | ---------------- |
+| United Kingdom | 20%               | 5%               |
+| Germany        | 19%               | 7%               |
+| France         | 20%               | 5.5%             |
+| Ireland        | 23%               | 9%               |
 
 ### US Sales Tax
 
 Create a geozone for each state where you have tax nexus:
 
-| Geozone | Profile: Taxable | Profile: Exempt |
-|---------|-----------------|-----------------|
-| California | 7.25% | 0% |
-| New York | 8.00% | 0% |
-| Texas | 6.25% | 0% |
-| Florida | 0% | 0% |
+| Geozone    | Profile: Taxable | Profile: Exempt |
+| ---------- | ---------------- | --------------- |
+| California | 7.25%            | 0%              |
+| New York   | 8.00%            | 0%              |
+| Texas      | 6.25%            | 0%              |
+| Florida    | 0%               | 0%              |
 
 ### GST-Based Systems (Australia, Canada)
 
-| Geozone | Profile: Standard |
-|---------|------------------|
-| Australia | 10% |
-| Canada | 5% (plus provincial) |
+| Geozone   | Profile: Standard    |
+| --------- | -------------------- |
+| Australia | 10%                  |
+| Canada    | 5% (plus provincial) |
 
 ## Troubleshooting
 
@@ -196,7 +197,7 @@ Create a geozone for each state where you have tax nexus:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Localisation** -> **Tax Rates**.
+1. Go to **J2Commerce** **-> Localisation -> Tax Rates**.
 2. Click **New** to create a rate.
 3. Select the appropriate **Tax Profile** and **Geozone**.
 4. Enter the tax percentage.
@@ -219,7 +220,7 @@ Create a geozone for each state where you have tax nexus:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Localisation** -> **Geozones**.
+1. Go to **J2Commerce** **-> Localisation -> Geozones**.
 2. Create a "Rest of World" or catch-all geozone for countries without specific rates.
 3. Add countries not covered by existing geozones.
 4. Create a 0% tax rate for this geozone if you don't charge tax to those regions.
@@ -230,14 +231,7 @@ Create a geozone for each state where you have tax nexus:
 
 **Solution:**
 
-1. Clear Joomla cache: **System** -> **Clear Cache**.
+1. Clear Joomla cache: **Home Dashboard -> System** **->** **Clear Cache**.
 2. Verify the tax rate is published (green check).
 3. Check that the old rate is unpublished or deleted.
 4. Test with a new browser session.
-
-## Related Topics
-
-- [Tax Profiles](tax-profiles.md) — Create tax profiles to group tax rules.
-- [Geozones](geozones.md) — Create geographic zones for tax jurisdictions.
-- [Countries](countries.md) — Configure countries for geozone rules.
-- [Zones](zones.md) — Configure zones within countries.

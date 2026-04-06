@@ -19,7 +19,7 @@ Zones represent states, provinces, territories, or regions within countries. The
 
 Zones are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** -> **J2Commerce** -> **Dashboard**.
+1. Go to **Components -> J2Commerce ->** **Dashboard**.
 2. Click **Localisation** in the left sidebar.
 3. Click **Zones**.
 
@@ -29,14 +29,17 @@ Zones are managed from the J2Commerce Dashboard.
 
 The Zones list displays all zones configured in your store. Each zone shows:
 
-| Column | Description |
-|--------|-------------|
-| **Checkbox** | Select zones for batch actions. |
-| **Zone Name** | The display name of the zone (e.g., California, Ontario, New South Wales). |
-| **Zone Code** | A short code for the zone (e.g., CA, ON, NSW). |
-| **Country** | The country this zone belongs to. |
-| **Status** | Published (green check) or Unpublished (red X). |
-| **Ordering** | Drag-and-drop to reorder the display sequence within a country. |
+**Checkbox:** Select zones for batch actions.
+
+**Zone Name:** The display name of the zone (e.g., California, Ontario, New South Wales).
+
+**Zone Code:** A short code for the zone (e.g., CA, ON, NSW).
+
+**Country:** The country this zone belongs to.
+
+**Status:** Published (green check) or Unpublished (red X).
+
+**Ordering:** Drag-and-drop to reorder the display sequence within a country.
 
 ## Adding a Zone
 
@@ -48,12 +51,13 @@ The Zones list displays all zones configured in your store. Each zone shows:
 
 ## Configuration
 
-| Field | Description | Required | Example |
-|-------|-------------|----------|---------|
-| **Zone Name** | The full display name shown to customers and in admin lists. | Yes | `California` |
-| **Zone Code** | A short identifier for the zone, typically 2-3 uppercase letters. | Yes | `CA` |
-| **Country** | The country this zone belongs to. Select from the dropdown of published countries. | Yes | `United States` |
-| **Status** | Set to Published to make the zone available, or Unpublished to hide it. | Yes | Published |
+**Zone Name:** The full display name shown to customers and in admin lists. **Example:** `California`
+
+**Zone Code:** A short identifier for the zone, typically 2-3 uppercase letters. **Example:** `CA`
+
+**Country:** The country this zone belongs to. Select from the dropdown of published countries. **Example:** `United States`
+
+**Status:** Set to **Published** to make the zone available, or Unpublished to hide it.
 
 ## Zone Code Standards
 
@@ -65,6 +69,7 @@ Zone codes follow regional conventions:
 - **United Kingdom**: County abbreviations (ENG, SCT, WAL, NIR)
 
 These codes are used by:
+
 - Shipping carriers for rate calculations
 - Tax services for regional tax rates
 - Address validation services
@@ -119,35 +124,35 @@ Use the search and filter options to find zones:
 
 ### United States (50 States)
 
-| Zone Name | Zone Code |
-|-----------|-----------|
-| Alabama | AL |
-| Alaska | AK |
-| Arizona | AZ |
-| California | CA |
-| ... | ... |
+| Zone Name  | Zone Code |
+| ---------- | --------- |
+| Alabama    | AL        |
+| Alaska     | AK        |
+| Arizona    | AZ        |
+| California | CA        |
+| ...        | ...       |
 
 ### Canada (10 Provinces, 3 Territories)
 
-| Zone Name | Zone Code |
-|-----------|-----------|
-| Alberta | AB |
-| British Columbia | BC |
-| Manitoba | MB |
-| Ontario | ON |
-| Quebec | QC |
-| Yukon | YT |
-| ... | ... |
+| Zone Name        | Zone Code |
+| ---------------- | --------- |
+| Alberta          | AB        |
+| British Columbia | BC        |
+| Manitoba         | MB        |
+| Ontario          | ON        |
+| Quebec           | QC        |
+| Yukon            | YT        |
+| ...              | ...       |
 
 ### United Kingdom (Counties)
 
-| Zone Name | Zone Code |
-|-----------|-----------|
-| England | ENG |
-| Scotland | SCT |
-| Wales | WAL |
-| Northern Ireland | NIR |
-| ... | ... |
+| Zone Name        | Zone Code |
+| ---------------- | --------- |
+| England          | ENG       |
+| Scotland         | SCT       |
+| Wales            | WAL       |
+| Northern Ireland | NIR       |
+| ...              | ...       |
 
 ## Troubleshooting
 
@@ -157,7 +162,7 @@ Use the search and filter options to find zones:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Localisation** -> **Zones**.
+1. Go to **J2Commerce** **-> Localisation ->** **Zones**.
 2. Search for the zone by name or code.
 3. Check that the **Status** shows a green checkmark (Published).
 4. If the zone is published, check that the **Country** is also published in the Countries list.
@@ -181,7 +186,7 @@ Use the search and filter options to find zones:
 **Solution:**
 
 1. Search for existing zones with the same code within that country.
-2. Either use a different code for the new zone, or edit the existing zone.
+2. Either use a different code for the new zone or edit the existing zone.
 3. Zone codes can be reused across different countries (e.g., "WA" exists for both Washington state and Western Australia).
 
 ### Customer Cannot Select Zone After Choosing Country
@@ -190,12 +195,6 @@ Use the search and filter options to find zones:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Localisation** -> **Zones**.
+1. Go to **J2Commerce** **-> Localisation -> Zones**.
 2. Filter by the problematic country.
 3. Create zones for that country, or unpublish the country if it should not have zone selection.
-
-## Related Topics
-
-- [Countries](countries.md) — Configure countries before creating zones.
-- [Geozones](geozones.md) — Combine countries and zones for shipping and tax rules.
-- [Shipping Methods](../shipping-methods/index.md) — Configure shipping rates by zone.

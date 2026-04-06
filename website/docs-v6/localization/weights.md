@@ -19,7 +19,7 @@ The Weights feature allows you to configure measurement units for product weight
 
 Weight units are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** -> **J2Commerce** -> **Dashboard**.
+1. Go to **Components -> J2Commerce ->** **Dashboard**.
 2. Click **Localisation** in the left sidebar.
 3. Click **Weights**.
 
@@ -29,14 +29,14 @@ Weight units are managed from the J2Commerce Dashboard.
 
 The Weights list displays all weight units configured in your store. Each unit shows:
 
-| Column | Description |
-|--------|-------------|
-| **Checkbox** | Select units for batch actions. |
-| **Weight Title** | The display name of the unit (e.g., Kilogram). |
-| **Unit** | The short unit symbol (e.g., kg). |
-| **Value** | Conversion value relative to the base unit. |
-| **Status** | Published (green check) or Unpublished (red X). |
-| **Ordering** | Drag-and-drop to reorder the display sequence. |
+| Column           | Description                                     |
+| ---------------- | ----------------------------------------------- |
+| **Checkbox**     | Select units for batch actions.                 |
+| **Weight Title** | The display name of the unit (e.g., Kilogram).  |
+| **Unit**         | The short unit symbol (e.g., kg).               |
+| **Value**        | Conversion value relative to the base unit.     |
+| **Status**       | Published (green check) or Unpublished (red X). |
+| **Ordering**     | Drag-and-drop to reorder the display sequence.  |
 
 ## Adding a Weight Unit
 
@@ -48,13 +48,15 @@ The Weights list displays all weight units configured in your store. Each unit s
 
 ## Configuration
 
-| Field | Description | Required | Default | Example |
-|-------|-------------|----------|---------|---------|
-| **Weight Title** | The display name of the unit. | Yes | — | `Kilogram` |
-| **Unit** | The short symbol for the unit (1-4 characters). | Yes | — | `kg` |
-| **Conversion Value** | The multiplier to convert to the base unit. Base unit has value 1.00000000. | Yes | 1.00000000 | `0.45359237` for pound |
-| **Decimal Places** | Number of decimal places to display for this unit. | No | 2 | `2` |
-| **Status** | Set to Published to make the unit available. | Yes | Published | — |
+**Weight Title:** The display name of the unit. **Example:** `Kilogram`
+
+**Unit:** The short symbol for the unit (1-4 characters). **Example:** `kg`
+
+**Conversion Value:** The multiplier to convert to the base unit. Base unit has value 1.00000000.  **Example:** `0.45359237` for pound
+
+**Decimal Places:** Number of decimal places to display for this unit. **Example:** `2`
+
+**Status:** Set to **Published** to make the unit available.
 
 ### Conversion Value Explained
 
@@ -67,6 +69,7 @@ The conversion value defines how this unit relates to your base unit:
 - **Milligram**: Value = 0.000001 (1 mg = 0.000001 kg)
 
 To calculate the conversion value:
+
 ```
 conversion_value = number_of_base_units_in_this_unit
 ```
@@ -75,13 +78,13 @@ conversion_value = number_of_base_units_in_this_unit
 
 The decimal places setting controls how values are displayed:
 
-| Unit | Decimal Places | Example Display |
-|------|----------------|-----------------|
-| Milligram | 0 | `500 mg` |
-| Gram | 2 | `150.25 g` |
-| Kilogram | 3 | `1.525 kg` |
-| Pound | 2 | `2.50 lb` |
-| Ounce | 1 | `8.5 oz` |
+| Unit      | Decimal Places | Example Display |
+| --------- | -------------- | --------------- |
+| Milligram | 0              | `500 mg`        |
+| Gram      | 2              | `150.25 g`      |
+| Kilogram  | 3              | `1.525 kg`      |
+| Pound     | 2              | `2.50 lb`       |
+| Ounce     | 1              | `8.5 oz`        |
 
 ## Base Unit
 
@@ -97,24 +100,24 @@ All other units are defined relative to this base unit.
 
 Select your base unit based on your primary market and shipping carriers:
 
-| Primary Market | Recommended Base Unit |
-|----------------|----------------------|
-| International | Kilogram (kg) |
-| United States | Pound (lb) |
-| Jewellery/Small items | Gram (g) |
+| Primary Market        | Recommended Base Unit |
+| --------------------- | --------------------- |
+| International         | Kilogram (kg)         |
+| United States         | Pound (lb)            |
+| Jewellery/Small items | Gram (g)              |
 
 ## Common Weight Units
 
 | Weight Title | Unit | Conversion Value (base: kg) | Decimal Places |
-|--------------|------|---------------------------|----------------|
-| Milligram | mg | 0.000001 | 0 |
-| Gram | g | 0.001 | 2 |
-| Kilogram | kg | 1.00000000 | 3 |
-| Metric Tonne | t | 1000 | 2 |
-| Ounce | oz | 0.02834952 | 1 |
-| Pound | lb | 0.45359237 | 2 |
-| Stone | st | 6.35029 | 2 |
-| US Ton | ton | 907.185 | 2 |
+| ------------ | ---- | --------------------------- | -------------- |
+| Milligram    | mg   | 0.000001                    | 0              |
+| Gram         | g    | 0.001                       | 2              |
+| Kilogram     | kg   | 1.00000000                  | 3              |
+| Metric Tonne | t    | 1000                        | 2              |
+| Ounce        | oz   | 0.02834952                  | 1              |
+| Pound        | lb   | 0.45359237                  | 2              |
+| Stone        | st   | 6.35029                     | 2              |
+| US Ton       | ton  | 907.185                     | 2              |
 
 ## How Weight Units Are Used
 
@@ -150,6 +153,7 @@ Some carriers use dimensional weight instead of actual weight:
 ### Example 1: Order Weight Calculation
 
 A customer orders:
+
 - Product A: 0.5 kg × 2 units = 1.0 kg
 - Product B: 0.25 kg × 3 units = 0.75 kg
 - Product C: 1.2 kg × 1 unit = 1.2 kg
@@ -157,6 +161,7 @@ A customer orders:
 Total weight = 2.95 kg
 
 Shipping carrier requires weight in pounds:
+
 - 2.95 kg ÷ 0.45359237 = 6.50 lb
 
 ### Example 2: Product Weight Entry
@@ -188,7 +193,7 @@ A store uses kilograms as the base unit. A product weighs 500 grams:
 1. Verify product weights are entered correctly.
 2. Check the weight unit selected for each product.
 3. Review weight unit conversion values.
-4. Compare calculated weight against carrier's weight requirement.
+4. Compare the calculated weight against the carrier's weight requirement.
 
 ### Weight Showing Wrong Values
 
@@ -207,9 +212,9 @@ A store uses kilograms as the base unit. A product weighs 500 grams:
 
 **Solution:**
 
-1. Verify at least one weight unit is published.
+1. Verify that at least one weight unit is published.
 2. Check that the unit's conversion value is greater than 0.
-3. Clear Joomla cache after changing units.
+3. Clear the Joomla cache after changing units.
 
 ### Unit Not Appearing in Dropdown
 
@@ -217,7 +222,7 @@ A store uses kilograms as the base unit. A product weighs 500 grams:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Localisation** -> **Weights**.
+1. Go to **J2Commerce -> Localisation -> Weights**.
 2. Find the unit and check that **Status** shows Published (green check).
 3. If unpublished, click the status icon to publish it.
 
@@ -230,9 +235,3 @@ A store uses kilograms as the base unit. A product weighs 500 grams:
 1. Use 8 decimal places for conversion values for maximum precision.
 2. Example: Use `0.45359237` for pounds (not `0.454`).
 3. This ensures accurate calculations for small weights.
-
-## Related Topics
-
-- [Lengths](lengths.md) — Configure length units for product dimensions.
-- [Products](../products/index.md) — Set product weights.
-- [Shipping Methods](../shipping-methods/index.md) — Configure weight-based shipping rates.

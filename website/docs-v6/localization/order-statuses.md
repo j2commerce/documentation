@@ -19,7 +19,7 @@ Order statuses define the stages an order passes through in your store. Each sta
 
 Order statuses are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** -> **J2Commerce** -> **Dashboard**.
+1. Go to **Components -> J2Commerce ->** **Dashboard**.
 2. Click **Setup** in the left sidebar.
 3. Click **Order Statuses**.
 
@@ -29,28 +29,35 @@ Order statuses are managed from the J2Commerce Dashboard.
 
 The Order Statuses list displays all statuses configured in your store. Each status shows:
 
-| Column | Description |
-|--------|-------------|
-| **Checkbox** | Select statuses for batch actions. |
-| **Status Name** | The display name of the order status. |
-| **CSS Class** | The Bootstrap badge class controlling visual appearance. |
-| **Core** | Indicates whether this is a system-required status (cannot be deleted). |
-| **Status** | Published (green check) or Unpublished (red X). |
-| **Ordering** | Drag-and-drop to reorder the display sequence. |
+**Checkbox:** Select statuses for batch actions.
+
+**Status Name:** The display name of the order status.
+
+**CSS Class:** The Bootstrap badge class controls the visual appearance.
+
+**Core:** Indicates whether this is a system-required status (cannot be deleted).
+
+**Status:** Published (green check) or Unpublished (red X).
+
+**Ordering:** Drag-and-drop to reorder the display sequence.
 
 ## Core Order Statuses
 
 J2Commerce includes the following core statuses that cannot be deleted:
 
-| Status | Description | Typical Use |
-|--------|-------------|-------------|
-| **Pending** | Order received, awaiting payment or processing. | Initial status for new orders. |
-| **Confirmed** | Payment received, order confirmed. | Order ready for processing. |
-| **Processed** | Order prepared and ready for shipment. | Items picked and packed. |
-| **Shipped** | Order dispatched to customer. | Shipping carrier has collected the order. |
-| **Completed** | Order fulfilled and transaction complete. | Final successful status. |
-| **Cancelled** | Order cancelled by customer or admin. | Customer changed mind, fraud, or admin intervention. |
-| **Failed** | Payment or processing failed. | Payment declined, out of stock, etc. |
+**Pending:** Initial status for new orders. Order received, awaiting payment or processing.
+
+**Confirmed:** Order ready for processing. Payment received, order confirmed.
+
+**Processed:** Items picked and packed. Order prepared and ready for shipment.
+
+**Shipped:** Shipping carrier has collected the order. Order dispatched to customer.&#x20;
+
+**Completed:** Final successful status. Order fulfilled and transaction complete.
+
+**Cancelled:** Customer changed mind, fraud, or admin intervention. Order cancelled by customer or admin.
+
+**Failed:** Payment declined, out of stock, etc. Payment or processing failed.
 
 These core statuses are essential for J2Commerce's order processing and cannot be removed.
 
@@ -64,27 +71,28 @@ These core statuses are essential for J2Commerce's order processing and cannot b
 
 ## Configuration
 
-| Field | Description | Required | Example |
-|-------|-------------|----------|---------|
-| **Status Name** | The display name shown to customers and in admin lists. | Yes | `On Hold` |
-| **CSS Class** | Bootstrap badge class controlling the visual appearance of the status badge. | Yes | `badge text-bg-warning` |
-| **Core Status** | Indicates if this is a system-required status. Core statuses cannot be edited or deleted. | — | No (read-only) |
-| **Status** | Set to Published to make the status available for use. | Yes | Published |
+**Status Name:** The display name shown to customers and in admin lists. **Example:** `On Hold`
+
+**CSS Class:** Bootstrap badge class controlling the visual appearance of the status badge. **Example:** `badge text-bg-warning`
+
+**Core Status:** Indicates if this is a system-required status. Core statuses cannot be edited or deleted. **Example:** No (read-only)
+
+**Status:** Set to **Published** to make the status available for use.
 
 ### CSS Class Options
 
 The CSS Class field uses Bootstrap 5 badge classes. Common combinations:
 
-| CSS Class | Appearance | Use Case |
-|-----------|------------|----------|
-| `badge text-bg-primary` | Blue badge | Informational statuses |
-| `badge text-bg-secondary` | Grey badge | Neutral statuses |
-| `badge text-bg-success` | Green badge | Positive/completed statuses |
-| `badge text-bg-danger` | Red badge | Error/failure statuses |
-| `badge text-bg-warning` | Yellow badge | Pending/caution statuses |
-| `badge text-bg-info` | Light blue badge | Informational statuses |
-| `badge text-bg-light` | Light badge | Neutral/pending statuses |
-| `badge text-bg-dark` | Dark badge | Serious/processed statuses |
+| CSS Class                 | Appearance       | Use Case                    |
+| ------------------------- | ---------------- | --------------------------- |
+| `badge text-bg-primary`   | Blue badge       | Informational statuses      |
+| `badge text-bg-secondary` | Grey badge       | Neutral statuses            |
+| `badge text-bg-success`   | Green badge      | Positive/completed statuses |
+| `badge text-bg-danger`    | Red badge        | Error/failure statuses      |
+| `badge text-bg-warning`   | Yellow badge     | Pending/caution statuses    |
+| `badge text-bg-info`      | Light blue badge | Informational statuses      |
+| `badge text-bg-light`     | Light badge      | Neutral/pending statuses    |
+| `badge text-bg-dark`      | Dark badge       | Serious/processed statuses  |
 
 You can also create custom CSS classes in your template for unique styling.
 
@@ -157,14 +165,14 @@ Orders can move between statuses in various ways:
 
 ## Common Custom Order Statuses
 
-| Status Name | CSS Class | Use Case |
-|-------------|-----------|----------|
-| On Hold | `badge text-bg-warning` | Awaiting payment clarification or manual review |
-| Awaiting Stock | `badge text-bg-info` | Items out of stock, will ship when available |
-| Quality Check | `badge text-bg-secondary` | Order being verified before shipment |
-| Partial Shipment | `badge text-bg-primary` | Some items shipped, others pending |
-| Return Requested | `badge text-bg-danger` | Customer has requested a return |
-| Refunded | `badge text-bg-dark` | Order refunded to customer |
+| Status Name      | CSS Class                 | Use Case                                        |
+| ---------------- | ------------------------- | ----------------------------------------------- |
+| On Hold          | `badge text-bg-warning`   | Awaiting payment clarification or manual review |
+| Awaiting Stock   | `badge text-bg-info`      | Items out of stock, will ship when available    |
+| Quality Check    | `badge text-bg-secondary` | Order being verified before shipment            |
+| Partial Shipment | `badge text-bg-primary`   | Some items shipped, others pending              |
+| Return Requested | `badge text-bg-danger`    | Customer has requested a return                 |
+| Refunded         | `badge text-bg-dark`      | Order refunded to customer                      |
 
 ## Troubleshooting
 
@@ -205,13 +213,7 @@ Orders can move between statuses in various ways:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Setup** -> **Configuration** -> **Email Templates**.
+1. Go to **J2Commerce -> Setup -> Configuration ->** **Email Templates**.
 2. Verify email templates exist for order status updates.
 3. Check that the **Email on Status Change** option is enabled.
 4. Verify your Joomla mail settings are working.
-
-## Related Topics
-
-- [Orders](../orders/index.md) — Manage customer orders.
-- [Configuration](../configuration/index.md) — Configure order email notifications.
-- [Email Templates](../design/email-templates.md) — Customise order status email content.

@@ -19,7 +19,7 @@ Countries form the foundation of localisation in J2Commerce. They define the geo
 
 Countries are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** -> **J2Commerce** -> **Dashboard**.
+1. Go to **Components** **-> J2Commerce -> Dashboard**.
 2. Click **Localisation** in the left sidebar.
 3. Click **Countries**.
 
@@ -29,15 +29,19 @@ Countries are managed from the J2Commerce Dashboard.
 
 The Countries list displays all countries configured in your store. Each country shows:
 
-| Column | Description |
-|--------|-------------|
-| **Checkbox** | Select countries for batch actions. |
-| **Country Name** | The display name of the country. |
-| **ISO Code 2** | The 2-letter ISO 3166-1 alpha-2 code (e.g., US, GB, DE). |
-| **ISO Code 3** | The 3-letter ISO 3166-1 alpha-3 code (e.g., USA, GBR, DEU). |
-| **ISO Numeric** | The 3-digit ISO 3166-1 numeric code (e.g., 840, 826, 276). |
-| **Status** | Published (green check) or Unpublished (red X). |
-| **Ordering** | Drag-and-drop to reorder the display sequence. |
+**Checkbox:** Select countries for batch actions.
+
+**Country Name:** The display name of the country.
+
+**ISO Code 2:** The 2-letter ISO 3166-1 alpha-2 code (e.g., US, GB, DE).
+
+**ISO Code 3:** The 3-letter ISO 3166-1 alpha-3 code (e.g., USA, GBR, DEU).
+
+**ISO Numeric:** The 3-digit ISO 3166-1 numeric code (e.g., 840, 826, 276).
+
+**Status:** Published (green check) or Unpublished (red X).
+
+**Ordering:** Drag-and-drop to reorder the display sequence.
 
 ## Adding a Country
 
@@ -49,13 +53,15 @@ The Countries list displays all countries configured in your store. Each country
 
 ## Configuration
 
-| Field | Description | Required | Example |
-|-------|-------------|----------|---------|
-| **Country Name** | The display name shown to customers and in admin lists. | Yes | `United Kingdom` |
-| **ISO Code 2** | The 2-letter ISO 3166-1 alpha-2 country code. Must be exactly 2 characters, uppercase. | Yes | `GB` |
-| **ISO Code 3** | The 3-letter ISO 3166-1 alpha-3 country code. Must be exactly 3 characters, uppercase. | Yes | `GBR` |
-| **ISO Numeric** | The 3-digit ISO 3166-1 numeric country code. Optional but recommended for international integrations. | No | `826` |
-| **Status** | Set to Published to make the country available, or Unpublished to hide it. | Yes | Published |
+**Country Name:** The display name shown to customers and in admin lists. **Example:** `United Kingdom`
+
+**ISO Code 2:** The 2-letter ISO 3166-1 alpha-2 country code. Must be exactly 2 characters, uppercase. **Example:** `GB`
+
+**ISO Code 3:** The 3-letter ISO 3166-1 alpha-3 country code. Must be exactly 3 characters, uppercase. **Example:** `GBR`
+
+**ISO Numeric:** The 3-digit ISO 3166-1 numeric country code. Optional but recommended for international integrations. **Example:** `826`
+
+**Status:** Set to **Published** to make the country available, or Unpublished to hide it.
 
 ## ISO Code Standards
 
@@ -66,6 +72,7 @@ The ISO codes follow the **ISO 3166-1** international standard:
 - **ISO Numeric**: Three-digit codes that are language-independent. Examples: `840` (US), `124` (CA), `036` (AU), `826` (GB).
 
 These codes ensure compatibility with:
+
 - Shipping carriers (FedEx, UPS, DHL)
 - Payment gateways (Stripe, PayPal)
 - Address validation services
@@ -151,9 +158,3 @@ Use the search and filter options to find countries:
 1. Search for the existing country using the ISO code.
 2. Either edit the existing country to modify it, or unpublish duplicate entries if created in error.
 3. Each ISO code must be unique in the system.
-
-## Related Topics
-
-- [Zones](zones.md) — Configure states, provinces, and regions within countries.
-- [Geozones](geozones.md) — Create geographic zones for shipping and tax rules.
-- [Tax Rates](tax-rates.md) — Apply tax rates based on customer country.
