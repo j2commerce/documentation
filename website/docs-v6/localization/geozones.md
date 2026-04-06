@@ -29,12 +29,13 @@ Geozones are managed from the J2Commerce Dashboard.
 
 The Geozones list displays all geozones configured in your store. Each geozone shows:
 
-| Column | Description |
-|--------|-------------|
-| **Checkbox** | Select geozones for batch actions. |
-| **Geozone Name** | The display name of the geozone. |
-| **Status** | Published (green check) or Unpublished (red X). |
-| **Ordering** | Drag-and-drop to reorder the display sequence. |
+**Checkbox:** Select geozones for batch actions.
+
+**Geozone Name:** The display name of the geozone.
+
+**Status:** Published (green check) or Unpublished (red X).
+
+**Ordering:** Drag-and-drop to reorder the display sequence.
 
 ## Adding a Geozone
 
@@ -66,27 +67,28 @@ After creating a geozone, you add **rules** to define which countries and zones 
 ### Rule Examples
 
 **United Kingdom (All Zones):**
+
 - Country: United Kingdom
 - Zone: All Zones
 
 This rule includes all zones within the UK in the geozone.
 
 **California Only:**
+
 - Country: United States
 - Zone: California
 
 This rule includes only California, not other US states.
 
-**European Union:**
-Create multiple rules, one for each EU member country, or create a single rule per country:
+**European Union:** Create multiple rules, one for each EU member country, or create a single rule per country:
 
-| Rule | Country | Zone |
-|------|---------|------|
-| 1 | Germany | All Zones |
-| 2 | France | All Zones |
-| 3 | Italy | All Zones |
-| 4 | Spain | All Zones |
-| ... | ... | ... |
+| Rule | Country | Zone      |
+| ---- | ------- | --------- |
+| 1    | Germany | All Zones |
+| 2    | France  | All Zones |
+| 3    | Italy   | All Zones |
+| 4    | Spain   | All Zones |
+| ...  | ...     | ...       |
 
 ## How Geozones Are Used
 
@@ -123,67 +125,65 @@ Payment methods can be restricted to specific geozones:
 
 A geozone for your store's home country:
 
-| Country | Zone |
-|---------|------|
+| Country        | Zone      |
+| -------------- | --------- |
 | United Kingdom | All Zones |
 
 ### European Union
 
 A geozone for all EU member states:
 
-| Country | Zone |
-|---------|------|
-| Austria | All Zones |
-| Belgium | All Zones |
-| Bulgaria | All Zones |
-| Croatia | All Zones |
-| Cyprus | All Zones |
+| Country        | Zone      |
+| -------------- | --------- |
+| Austria        | All Zones |
+| Belgium        | All Zones |
+| Bulgaria       | All Zones |
+| Croatia        | All Zones |
+| Cyprus         | All Zones |
 | Czech Republic | All Zones |
-| Denmark | All Zones |
-| Estonia | All Zones |
-| Finland | All Zones |
-| France | All Zones |
-| Germany | All Zones |
-| Greece | All Zones |
-| Hungary | All Zones |
-| Ireland | All Zones |
-| Italy | All Zones |
-| Latvia | All Zones |
-| Lithuania | All Zones |
-| Luxembourg | All Zones |
-| Malta | All Zones |
-| Netherlands | All Zones |
-| Poland | All Zones |
-| Portugal | All Zones |
-| Romania | All Zones |
-| Slovakia | All Zones |
-| Slovenia | All Zones |
-| Spain | All Zones |
-| Sweden | All Zones |
+| Denmark        | All Zones |
+| Estonia        | All Zones |
+| Finland        | All Zones |
+| France         | All Zones |
+| Germany        | All Zones |
+| Greece         | All Zones |
+| Hungary        | All Zones |
+| Ireland        | All Zones |
+| Italy          | All Zones |
+| Latvia         | All Zones |
+| Lithuania      | All Zones |
+| Luxembourg     | All Zones |
+| Malta          | All Zones |
+| Netherlands    | All Zones |
+| Poland         | All Zones |
+| Portugal       | All Zones |
+| Romania        | All Zones |
+| Slovakia       | All Zones |
+| Slovenia       | All Zones |
+| Spain          | All Zones |
+| Sweden         | All Zones |
 
 ### US Tax Nexus States
 
 A geozone for states where you have tax nexus:
 
-| Country | Zone |
-|---------|------|
+| Country       | Zone       |
+| ------------- | ---------- |
 | United States | California |
-| United States | New York |
-| United States | Texas |
+| United States | New York   |
+| United States | Texas      |
 
 ## Configuration
 
-| Field | Description | Required | Example |
-|-------|-------------|----------|---------|
-| **Geozone Name** | A descriptive name for this geographic zone. | Yes | `United Kingdom` |
-| **Status** | Set to Published to make the geozone available for use. | Yes | Published |
+**Geozone Name:** A descriptive name for this geographic zone. **Example:** `United Kingdom`
+
+**Status:** Set to **Published** to make the geozone available for use.&#x20;
 
 ### Rule Fields
 
-| Field | Description | Required | Example |
-|-------|-------------|----------|---------|
-| **Country** | The country to include in this geozone. | Yes | `United States` |
-| **Zone** | The specific zone within the country, or "All Zones" for the entire country. | No | `California` or `All Zones` |
+**Country:** The country to include in this geozone. **Example:** `United States`
+
+**Zone:** The specific zone within the country, or "All Zones" for the entire country. **Example:** `California` or `All Zones`
 
 ## Tips
 
@@ -201,7 +201,7 @@ A geozone for states where you have tax nexus:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Localisation** -> **Geozones**.
+1. Go to **J2Commerce -> Localisation -> Geozones**.
 2. Edit the geozone and review the rules.
 3. Ensure the country and zone are correctly added.
 4. For countries, verify you selected "All Zones" or the specific zone.
@@ -223,7 +223,7 @@ A geozone for states where you have tax nexus:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Localisation** -> **Zones**.
+1. Go to **J2Commerce -> Localisation -> Zones**.
 2. Filter by the country you want to add.
 3. Verify zones exist and are published.
 4. If no zones exist, create zones for that country first.
@@ -237,11 +237,3 @@ A geozone for states where you have tax nexus:
 1. Check the shipping method configuration.
 2. Verify the geozone assigned to the shipping method includes the customer's country/zone.
 3. Create a new geozone or modify the existing one to include the missing locations.
-
-## Related Topics
-
-- [Countries](countries.md) — Configure countries before creating geozone rules.
-- [Zones](zones.md) — Configure zones within countries.
-- [Tax Profiles](tax-profiles.md) — Create tax profiles to group tax rules.
-- [Tax Rates](tax-rates.md) — Link tax rates to geozones.
-- [Shipping Methods](../shipping-methods/index.md) — Configure shipping rates by geozone.
