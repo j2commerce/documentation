@@ -17,6 +17,10 @@ Guest shoppers can build a wishlist without logging in. When they log in, their 
 - Joomla! 6.x
 - J2Commerce 6.x
 
+`app_wishlist.zip`
+
+**Wishlist**&#x20;
+
 ## Purchase and Download
 
 The **Wishlist** app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
@@ -41,18 +45,18 @@ After installation, go to **J2Commerce** -> **Apps** and click **Wishlist** to o
 
 ### Settings
 
-| Setting | Description | Default | Notes |
-|---------|-------------|---------|-------|
-| **Wishlist button type** | Display the button as **Text** or **Icon** | Text | Choosing **Icon** reveals the two icon fields below |
-| **Button text** | Label for the add-to-wishlist button. Accepts a plain string or a language key. | Add to Wishlist | Visible only when type is **Text** |
-| **Icon CSS class** | Font Awesome class for the button (e.g., `fa-solid fa-heart`) | `fa-solid fa-heart` | Visible only when type is **Icon** |
-| **Added to wishlist icon** | Font Awesome class shown when the item is already saved | `fa-solid fa-heart` | Visible only when type is **Icon** |
-| **Remove after adding to cart** | Automatically remove a wishlist item when it is added to the cart | No | |
-| **Link products to** | Where product links on the wishlist page lead: **Product List Layout** or **Article Layout** | Product List Layout | |
-| **Thumbnail width** | Width in pixels for product images on the wishlist page | 50 | |
-| **Redirect to wishlist** | Redirect the customer to the wishlist page immediately after adding an item | No | |
-| **Wishlist link text** | Text for the "browse wishlist" link in the add confirmation notification | Browse wishlist | |
-| **Debug Mode** | Write debug entries to the Joomla log directory. Disable in production. | No | |
+| Setting                         | Description                                                                                  | Default             | Notes                                               |
+| ------------------------------- | -------------------------------------------------------------------------------------------- | ------------------- | --------------------------------------------------- |
+| **Wishlist button type**        | Display the button as **Text** or **Icon**                                                   | Text                | Choosing **Icon** reveals the two icon fields below |
+| **Button text**                 | Label for the add-to-wishlist button. Accepts a plain string or a language key.              | Add to Wishlist     | Visible only when type is **Text**                  |
+| **Icon CSS class**              | Font Awesome class for the button (e.g., `fa-solid fa-heart`)                                | `fa-solid fa-heart` | Visible only when type is **Icon**                  |
+| **Added to wishlist icon**      | Font Awesome class shown when the item is already saved                                      | `fa-solid fa-heart` | Visible only when type is **Icon**                  |
+| **Remove after adding to cart** | Automatically remove a wishlist item when it is added to the cart                            | No                  |                                                     |
+| **Link products to**            | Where product links on the wishlist page lead: **Product List Layout** or **Article Layout** | Product List Layout |                                                     |
+| **Thumbnail width**             | Width in pixels for product images on the wishlist page                                      | 50                  |                                                     |
+| **Redirect to wishlist**        | Redirect the customer to the wishlist page immediately after adding an item                  | No                  |                                                     |
+| **Wishlist link text**          | Text for the "browse wishlist" link in the add confirmation notification                     | Browse wishlist     |                                                     |
+| **Debug Mode**                  | Write debug entries to the Joomla log directory. Disable in production.                      | No                  |                                                     |
 
 Click **Save** to apply your settings.
 
@@ -60,7 +64,7 @@ Click **Save** to apply your settings.
 
 The wishlist page is displayed through a dedicated Joomla menu item. You must create this menu item before the wishlist page is accessible to customers.
 
-1. Go to **Menus** -> **[Your Menu]** -> **Add New Menu Item**.
+1. Go to **Menus** -> **\[Your Menu]** -> **Add New Menu Item**.
 2. Click **Select** next to **Menu Item Type**.
 3. Choose **J2Commerce** -> **Wishlist**.
 4. Set a **Menu Title** (for example, "My Wishlist").
@@ -87,10 +91,10 @@ The wishlist module is also a separate add-on and is not included in the core J2
 
 ### Module Settings
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Display type** | Show the counter as a plain **Link** or as a styled **Button** | Link |
-| **Hide when empty** | Hide the module entirely when the wishlist has no items | No |
+| Setting                | Description                                                         | Default |
+| ---------------------- | ------------------------------------------------------------------- | ------- |
+| **Display type**       | Show the counter as a plain **Link** or as a styled **Button**      | Link    |
+| **Hide when empty**    | Hide the module entirely when the wishlist has no items             | No      |
 | **Wishlist menu item** | Select the menu item created above. Leave empty for auto-detection. | (empty) |
 
 ### Module Position
@@ -183,7 +187,7 @@ The J2Commerce Wishlist app includes several improvements over the J2Store versi
 **Solution:**
 
 1. Go to **System** -> **Manage** -> **Extensions** and confirm the Wishlist plugin is enabled.
-2. Check that your active template plugin (app_bootstrap5 or app_uikit) is also enabled.
+2. Check that your active template plugin (app\_bootstrap5 or app\_uikit) is also enabled.
 3. If you have customised the product cart template (`default_cart.php`), make sure it includes the `AfterAddToCartButton` event call.
 
 ### The wishlist page shows a blank page or "No items"

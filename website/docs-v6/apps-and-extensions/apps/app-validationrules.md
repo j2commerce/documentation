@@ -20,7 +20,7 @@ This app works with J2Commerce's custom checkout fields. You must have at least 
 
 ## Purchase and Download
 
-The **Change Password** app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+The **Data Validation** app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
 **Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Apps**.
 
