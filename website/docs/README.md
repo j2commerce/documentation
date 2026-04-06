@@ -2,11 +2,11 @@
 
 ---
 
-# Welcome to J2Commerce
+# Welcome to J2Commerce v4
 
 ![J2Commerce](https://docs.j2commerce.com/img/j2commerce-social-card.jpg)
 
-## J2Commerce Documentation
+## J2Commerce v4 Documentation
 
 J2Commerce is a native, flexible and modern ecommerce solution for Joomla Content Management System.
 
