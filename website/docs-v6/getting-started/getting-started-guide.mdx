@@ -1,7 +1,3 @@
----
-title: Getting Started with J2Commerce
----
-
 # Getting Started with J2Commerce
 
 This guide walks you through setting up your first J2Commerce store. Whether you're migrating from another platform or starting fresh, you'll have a functioning store ready to sell in under 15 minutes.
@@ -18,102 +14,186 @@ Before you begin, make sure you have:
 
 When you first open J2Commerce, the **Setup Wizard** appears automatically. This guided onboarding walks you through configuring your store in six simple steps:
 
-1. **Store Info** -- Name, address, and contact details
-2. **Currency** -- Your default currency and measurement units
-3. **Tax** -- Tax inclusion preferences and rates
-4. **Product Type** -- What you're selling (physical, digital, or service)
-5. **Payment** -- Payment method setup
-6. **Ready** -- Final review and sample data option
+1. **Store Info**: Name, address, and contact details
+2. **Currency**: Your default currency and measurement units
+3. **Tax**: Tax inclusion preferences and rates
+4. **Product Type**: What you're selling (physical, digital, or service)
+5. **Payment**: Payment method setup
+6. **Ready**: Final review and sample data option
 
 For detailed information about each step, see the [Onboarding documentation](/getting-started/onboarding).
 
 :::tip
+
 You can re-run the Setup Wizard anytime from the Dashboard by clicking the **Setup Guide** button in the toolbar.
+
 :::
 
 ## Quick Start Checklist
 
-### 1. Configure Basic Store Information
+### Configure Basic Store Information
 
-After the Setup Wizard completes:
+Go to **Settings -> Global Configuration**
 
-1. Go to **Settings -> Global Configuration -> J2Commerce**
-2. Click on the **Store** tab
-3. Verify your store name, email, and address
-4. Set your default currency and measurement units
+![](/img/store-systems.webp)
 
-### 2. Create Your First Product
+Go to **J2Commerce -> Store tab** and start filling in your store information
 
-1. Navigate to **Products** in the sidebar
-2. Click **New** to create a new product
-3. Fill in the product details:
-   - **Title**: Your product name
-   - **SKU**: Stock keeping unit (optional but recommended)
-   - **Price**: Regular price
-   - **Categories**: Assign to one or more categories
-4. Add images in the **Images** tab
-5. Write a description in the main editor
-6. Click **Save & Close**
+Enter your store name, email, and address
 
-### 3. Set Up Payments
+Set your default currency and measurement units
+
+:::tip
+
+**Helpful Tip:** When you *click on the **Toggle Inline Help** button, it will show a description below each section. See image below*
+
+:::
+
+![](/img/store-toggle.webp)
+
+### Create Your First Product
+
+There are multiple ways to navigate to the location for creating a new product.
+
+**Option A:** Go to **Content** **-> Articles -> New**.
+
+![](/img/simple.webp)
+
+**Option B:** Or go to **J2Commerce -> Catalog  -> Product -> New**
+
+![](/img/simple-product1.webp)
+
+### Creating a New Product
+
+![](/img/simple-content.webp)
+
+- Enter a product **title** and **description**.
+
+- Assign the article to a **category** (the category determines which J2Commerce category listing it appears in).&#x20;
+
+- Make sure the **Status** is '**Published'**. Published means it's viewable on the frontend
+
+### Configuring the Product
+
+![](/img/simple-product2.webp)
+
+Click on the **J2Commerce** tab to start configuring the product details
+
+**Use As Product:** Set this to '**Yes**' to set the product type
+
+**Product Type:** Set to **Simple** for a single-item product with one price and no variants.
+
+Click **Save and Continue**
+
+:::tip
+
+**Fill in the product details:** For more help setting up a standard Simple product, go to [https://docs.j2commerce.com/v6/catalog/product-types/simple\_product](https://docs.j2commerce.com/v6/catalog/product-types/simple_product) and follow the steps.
+
+:::
+
+### Set Up Payments
 
 J2Commerce includes several payment plugins ready to enable:
 
-1. Go to **Payments** in the sidebar
-2. Click on a payment method to configure it:
-   - **Stripe**: Enter your API keys
-   - **PayPal**: Enter your business email
-   - **Kustom**: Configure your account settings
-3. Set one as the **Default Payment Method**
+Go to the **J2Commerce** tab in the top right corner **-> Setup -> Payment Method**
 
-### 4. Configure Shipping (if selling physical products)
+![](/img/getting-started-payment.webp)
 
-1. Go to **Shipping** in the sidebar
-2. Enable one or more shipping methods:
-   - **Free Shipping**: Set a minimum order amount
-   - **Flat Rate**: Fixed price per order
-   - **UPS/FedEx/USPS**: Enter your carrier credentials
-3. Set up shipping zones to control where you ship
+Click on a payment method to configure it:
 
-### 5. Create Categories
+- **Stripe**: Enter your API keys
+
+- **PayPal**: Enter your business email
+
+- **Kustom**: Configure your account settings
+
+Set one as the **Default Payment Method** by going to **J2Commerce -> Setup -> Configuration -> Checkout** tab **-> Default Payment Method**
+
+![](/img/getting-started-payment-checkout.webp)
+
+### Configure Shipping (if selling physical products)
+
+Go to the **J2Commerce** tab in the top right corner **-> Setup -> Shipping Method**
+
+![](/img/getting-started-shipping.webp)
+
+Enable one or more shipping methods:
+
+- **Free Shipping**: Set a minimum order amount
+
+- **Flat Rate**: Fixed price per order
+
+- **UPS/FedEx/USPS**: Enter your carrier credentials
+
+Set up shipping zones to control where you ship
+
+### Create Categories
 
 Categories help organize your products:
 
-1. Go to **Catalog -> Categories**
-2. Click **New**
-3. Enter a category name and description
-4. Assign a parent category if needed
-5. Upload a category image
-6. Click **Save & Close**
+Go to the **J2Commerce** tab in the top right corner **-> Content -> Categories**
 
-### 6. Set Up Taxes
+Click **New**
 
-1. Go to **Catalog -> Tax Profiles**
-2. Create a new tax profile or edit the default
-3. Add tax rules for your regions
-4. Associate products with tax profiles
+![](/img/getting-started-categories.webp)
+
+Enter a category name and description
+
+Assign a parent category, if needed, in the **Category** tab
+
+Upload a category image under the **Options** tab
+
+Click **Save & Close**
+
+### Set Up Taxes
+
+:::info
+
+Before you can set up a **Tax Profile**, you need to set up the **Geozone** first, then the **Tax Rate** and then the **Tax Profile.** You can find all three of them by going to the **J2Commerce** tab in the top right corner **-> Localization ->**
+
+:::
+
+![](/img/getting-started-tax.webp)
+
+Go to the **J2Commerce** tab in the top right corner **-> Localization -> Tax Profiles**
+
+Create a new tax profile or edit the default
+
+Add tax rules for your regions
+
+Associate products with tax profiles
 
 ## Understanding the Admin Interface
 
 ### Navigation Bar
 
-The navigation bar at the top of every page provides quick access to:
+![](/img/getting-started-navigation.webp)
 
-| Section | Description |
-|---------|-------------|
-| **Products** | Manage your product catalog |
-| **Orders** | View and process customer orders |
-| **Customers** | View customer accounts and history |
-| **Catalog** | Categories, filters, options, manufacturers, vendors |
-| **Shipping** | Configure shipping methods and zones |
-| **Payments** | Manage payment gateways |
-| **Apps** | Install and configure app plugins |
-| **Reports** | Sales, product, and customer analytics |
-| **Settings** | Global configuration and store settings |
+The navigation bar at the top of every **J2Commerce** page provides quick access to:
+
+**Products:** Manage your product catalog
+
+**Orders:** View and process customer orders
+
+**Customers:** View customer accounts and history
+
+**Catalog:** Categories, filters, options, manufacturers, vendors
+
+**Shipping:** Configure shipping methods and zones
+
+**Payments:** Manage payment gateways
+
+**Apps:** Install and configure app plugins
+
+**Reports:** Sales, product, and customer analytics
+
+**Settings:** Global configuration and store settings
 
 ### Dashboard
 
-The Dashboard is your home base. It shows:
+![](/img/getting-started-dashboard.webp)
+
+The J2Commerce Dashboard is your home base. It shows:
 
 - **Today's revenue** and order count
 - **Sales trends** over time
@@ -124,7 +204,7 @@ For detailed dashboard information, see the [Dashboard documentation](/getting-s
 
 ## What's Next?
 
-- **[Onboarding Guide](/getting-started/onboarding)** -- Deep dive into the setup wizard
-- **[Product Types](/catalog/product-types)** -- Learn about all product types
-- **[Store Setup](/getting-started/store-setup)** -- Full configuration reference
-- **[Dashboard](/getting-started/dashboard)** -- Master the admin dashboard
+- [**Onboarding Guide**](/getting-started/onboarding) -- Deep dive into the setup wizard
+- [**Product Types**](/catalog/product-types) -- Learn about all product types
+- [**Store Setup**](/getting-started/store-setup) -- Full configuration reference
+- [**Dashboard**](/getting-started/dashboard) -- Master the admin dashboard
