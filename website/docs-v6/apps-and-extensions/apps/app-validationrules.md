@@ -18,31 +18,43 @@ This app works with J2Commerce's custom checkout fields. You must have at least 
 - J2Commerce 6.x
 - At least one enabled custom checkout field
 
-## Installation
+## Purchase and Download
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+The **Change Password** app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `plg_j2commerce_app_validationrules.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the ZIP file. The plugin installs and enables automatically.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Apps**.
 
-<!-- SCREENSHOT: System > Install > Extensions upload screen -->
+**Step 2:** Locate the `plg_j2commerce_app_validationrules.zip` package **->** click **View Details -> Add to cart -> Checkout**.
 
-## Enable the Plugin
+**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions -> View Files ->** **Download**.
 
-If the plugin did not enable automatically after installation:
+## Install the App
 
-1. Go to **System** -> **Manage** -> **Extensions**.
-2. Search for **Data Validation**.
-3. Click the status toggle to enable it (it turns green).
+You can install this **Data Validation** App using the Joomla installer. The following steps help you with a successful installation.
 
-You can also reach the plugin from **J2Commerce** -> **Apps**. Search for **Data Validation** and enable it there.
+In the Joomla admin, go to **System -> Install -> Extensions**
 
-<!-- SCREENSHOT: J2Commerce > Apps list showing Data Validation plugin with enable toggle -->
+Upload the `plg_j2commerce_app_validationrules.zip` package file or use the Install from URL option.
 
-## Open the Plugin Settings
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
-1. Go to **J2Commerce** -> **Apps**.
+## Enable the App
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the extension.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![shipping method](/img/accordions-app.webp)
+
+Look for **Data Validation**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+## Configure the App
+
+## App Settings
+
+1. Go to **J2Commerce ->** **Apps**.
 2. Find **Data Validation** in the list and click its title to open the settings.
 3. Select the **Rules** tab.
 
@@ -52,11 +64,11 @@ You can also reach the plugin from **J2Commerce** -> **Apps**. Search for **Data
 
 The **Rules** tab shows a table with one row for each of your enabled custom checkout fields. Each row has three columns:
 
-| Column | Purpose |
-|--------|---------|
-| **Custom Fields** | Shows the field name and its internal key |
-| **Rules Apply For** | Which checkout steps these rules run on |
-| **Rules** | The individual validation rules for this field |
+**Custom Fields:** Shows the field name and its internal key
+
+**Rules Apply For:** Which checkout steps do these rules run on
+
+**Rules:** The individual validation rules for this field
 
 ### Step 1: Choose which checkout steps the rules apply to
 
@@ -90,18 +102,25 @@ Click the **Apply** button at the bottom of the form to save all rules. The rule
 
 ## Available Rule Types
 
-| Rule | What it does | Requires a value? |
-|------|-------------|-------------------|
-| **Match Field** | Requires this field to equal another custom field (e.g., confirm email) | Yes — select the field to match |
-| **Max Length** | Fails if the entered text exceeds the character limit | Yes — enter the maximum number of characters |
-| **Min Length** | Fails if the entered text is shorter than the minimum | Yes — enter the minimum number of characters |
-| **Numeric** | Field must contain only digits | No |
-| **Alphabet** | Field must contain only letters (a–z, A–Z) | No |
-| **Alphanumeric** | Field must contain only letters and digits | No |
-| **Phone** | Field must match a phone number pattern (digits, spaces, `+`, `(`, `)`, `-`) | No |
-| **Email** | Field must be a valid email address | No |
-| **Postal/Zip Code Validation** | Validates the postal code against the format for the customer's selected country (85+ countries supported) | No |
-| **Match Table Field** | Checks that the entered value exists in a column of a database table | Yes — select the table and column |
+**Match Field:** Requires this field to equal another custom field (e.g., confirm email)
+
+**Max Length:** Fails if the entered text exceeds the character limit
+
+**Min Length:** Fails if the entered text is shorter than the minimum
+
+**Numeric:** Field must contain only digits
+
+**Alphabet:** Field must contain only letters (a–z, A–Z)
+
+**Alphanumeric:** Field must contain only letters and digits
+
+**Phone:** Field must match a phone number pattern (digits, spaces, `+`, `(`, `)`, `-`)
+
+**Email:** Field must be a valid email address
+
+**Postal/Zip Code Validation:** Validates the postal code against the format for the customer's selected country (85+ countries supported)
+
+**Match Table Field:** Checks that the entered value exists in a column of a database table
 
 ### Match Field
 
@@ -117,18 +136,18 @@ Use this rule carefully — it allows access to any database table visible to J2
 
 ## Error Messages Shown to Customers
 
-| Rule | Error message shown |
-|------|-------------------|
-| Match Field | "[Field A] does not match with [Field B]" |
-| Max Length | "Maximum allowed length is [N]" |
-| Min Length | "Minimum length [N] required" |
-| Numeric | "Field value must be numeric" |
-| Alphabet | "Field value must be alphabet" |
-| Alphanumeric | "Field value must be alphanumeric" |
-| Phone | "Field value must be a valid phone number" |
-| Email | "Field value must be a valid email" |
-| Postal/Zip Code | "Invalid Postal/Zip Code Format" |
-| Match Table Field | "Enter data not available" |
+| Rule              | Error message shown                         |
+| ----------------- | ------------------------------------------- |
+| Match Field       | "\[Field A] does not match with \[Field B]" |
+| Max Length        | "Maximum allowed length is \[N]"            |
+| Min Length        | "Minimum length \[N] required"              |
+| Numeric           | "Field value must be numeric"               |
+| Alphabet          | "Field value must be alphabet"              |
+| Alphanumeric      | "Field value must be alphanumeric"          |
+| Phone             | "Field value must be a valid phone number"  |
+| Email             | "Field value must be a valid email"         |
+| Postal/Zip Code   | "Invalid Postal/Zip Code Format"            |
+| Match Table Field | "Enter data not available"                  |
 
 ## Advanced: Debug Mode
 
@@ -151,16 +170,17 @@ Turn debug mode on only when you are troubleshooting. Disable it in production t
 
 **Cause:** No enabled custom checkout fields exist in your shop.
 
-**Solution:** Go to **J2Commerce** -> **Custom Fields** and create or enable at least one field. Return to **J2Commerce** -> **Apps** -> **Data Validation** -> **Rules** tab and the fields will appear.
+**Solution:** Go to **J2Commerce ->** **Custom Fields** and create or enable at least one field. Return to **J2Commerce -> Apps -> Data Validation ->** **Rules** tab and the fields will appear.
 
 ### Rules are not running at checkout
 
 **Cause:** No checkout step is selected in the **Rules Apply For** column for that field, or the field is not displayed on the step being validated.
 
 **Solution:**
+
 1. Open the Data Validation plugin settings and go to the **Rules** tab.
 2. Check that at least one step (Billing, Shipping, Payment, or Register) is selected for the field.
-3. Confirm the custom field itself is configured to display on that step — check the field's display settings in **J2Commerce** -> **Custom Fields**.
+3. Confirm the custom field itself is configured to display on that step — check the field's display settings in **J2Commerce ->** **Custom Fields**.
 4. Click **Apply** to save.
 
 ### Postal code validation always fails
@@ -174,14 +194,9 @@ Turn debug mode on only when you are troubleshooting. Disable it in production t
 **Cause:** Debug mode may be disabled, or the Joomla log directory is not writable.
 
 **Solution:**
+
 1. Open the plugin settings and go to the **Advanced** tab.
 2. Switch **Debug Mode** to **Yes**.
 3. Click **Save**.
 4. Complete a checkout to trigger the validation events.
-5. Check the Joomla log directory (configured under **System** -> **Global Configuration** -> **Server** -> **Path to Log Folder**).
-
-## Related Topics
-
-- [Custom Fields](../../configuration/custom-fields.md)
-- [Checkout Configuration](../../checkout/index.md)
-- [Apps and Extensions](../index.md)
+5. Check the Joomla log directory (configured under **System -> Global Configuration** **->** **Server -> Path to Log Folder**).
