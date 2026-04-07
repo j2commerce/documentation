@@ -83,6 +83,17 @@ This rule includes only Hawaii and Alaska, not other US states.
 
 Geozones are referenced throughout J2Commerce for location-based rules:
 
+### Tax Rates
+
+Tax rates are linked to geozones for location-based tax calculation:
+
+Go to **J2Commerce -> Localization -> Tax Rates** & **Tax Profiles** &#x20;
+
+1. Create a geozone for each tax jurisdiction (e.g., "UK", "EU", "California").
+2. Create tax profiles for different product types.
+3. Add tax rates to tax profiles for each geozone.
+4. During checkout, taxes are calculated based on the customer's billing/shipping address and the product's tax profile.
+
 ### Shipping Rates
 
 Shipping methods can be configured to apply only to specific geozones: Go to **J2Commerce -> Setup -> Shipping Methods** **-> Standard Shipping.** &#x20;
@@ -95,24 +106,15 @@ Shipping methods can be configured to apply only to specific geozones: Go to **J
 
 ### Shipping Method Restrictions
 
-Payment methods can be restricted to specific geozones:
+Shipping methods can be restricted to specific geozones:
 
-Go to **J2Commerce -> Setup -> Shipping Methods.** Select the shipping method that you want to add a Geozone Restriction to. Most people do it for each one
+Go to **J2Commerce -> Setup -> Shipping Methods.** Select the shipping method that you want to add a Geozone Restriction to. Most people do it for each method
 
-1. Create a geozone for regions where a shipping method is available.
-2. Configure the shipping method to only appear for customers in that geozone.
-3. Customers outside the geozone will not see that payment option.
+- Create a geozone for regions where a shipping method is available.
 
-### Tax Rates
+- Configure the shipping method to only appear for customers in that geozone.
 
-Tax rates are linked to geozones for location-based tax calculation:
-
-Go to **J2Commerce -> Localization -> Tax Rates** & **Tax Profiles** &#x20;
-
-1. Create a geozone for each tax jurisdiction (e.g., "UK", "EU", "California").
-2. Create tax profiles for different product types.
-3. Add tax rates to tax profiles for each geozone.
-4. During checkout, taxes are calculated based on the customer's billing/shipping address and the product's tax profile.
+- Customers outside the geozone will not see that shipping option.
 
 ### Payment Method Restrictions
 
@@ -130,9 +132,7 @@ Go to **J2Commerce -> Setup -> Payment Methods.** Select the payment method that
 
 A geozone for your store's home country:
 
-| Country        | Zone      |
-| -------------- | --------- |
-| United Kingdom | All Zones |
+**United Kingdom:** All Zones
 
 ### European Union
 
@@ -177,18 +177,6 @@ A geozone for states where you have tax nexus:
 | United States | California |
 | United States | New York   |
 | United States | Texas      |
-
-## Configuration
-
-**Geozone Name:** A descriptive name for this geographic zone. **Example:** `United Kingdom`
-
-**Status:** Set to **Published** to make the geozone available for use.&#x20;
-
-### Rule Fields
-
-**Country:** The country to include in this geozone. **Example:** `United States`
-
-**Zone:** The specific zone within the country, or "All Zones" for the entire country. **Example:** `California` or `All Zones`
 
 ## Tips
 
