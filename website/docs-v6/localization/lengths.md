@@ -110,6 +110,10 @@ Length units are referenced throughout J2Commerce:
 2. Dimensions are entered in the product's selected unit.
 3. The system converts to the base unit for storage and calculation.
 
+**The image below shows how the length is configured on a product**
+
+![](/img/lengths-product1.webp)
+
 ### Shipping Calculations
 
 1. Shipping carriers may use dimensional weight for rate calculations.
@@ -120,6 +124,10 @@ Length units are referenced throughout J2Commerce:
 
 1. Customers see dimensions in their preferred unit.
 2. The store can display dimensions in any published unit.
+
+## Frontend View
+
+![](/img/lengths-product-frontend.webp)
 
 ## Syncing Conversion Values
 
@@ -167,7 +175,7 @@ J2Commerce can automatically sync conversion values based on your base unit:
 
 **Solution:**
 
-1. Verify at least one length unit is published.
+1. Verify that at least one length unit is published.
 2. Check that the unit's conversion value is greater than 0.
 3. Clear Joomla cache after changing units.
 
@@ -180,3 +188,20 @@ J2Commerce can automatically sync conversion values based on your base unit:
 1. Go to **J2Commerce** -> **Localisation** -> **Lengths**.
 2. Find the unit and check that **Status** shows Published (green check).
 3. If unpublished, click the status icon to publish it.
+
+### Unit Not Appearing on the Product Frontend View
+
+**Cause:** The measurements are either not set up on the product or the specifications are not enabled.
+
+**Solution:**
+
+1. Go to **J2Commerce** **-> Products**&#x20;
+2. Find the product, then make sure the measurements are entered. Go to **J2Commerce** tab **-> Shipping tab**
+
+![](/img/lengths-product2.webp)
+
+- Go to Menus on the sidebar **-> Main Menu -> Store -> Product** tab&#x20;
+
+- Make sure **Specification** is set to '**Yes**'
+
+![](/img/lengths-product3.webp)
