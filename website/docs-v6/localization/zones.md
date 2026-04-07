@@ -89,22 +89,24 @@ This is useful when managing zones for stores with international shipping.
 
 ## Bulk Actions
 
-Use the toolbar to perform actions on multiple zones:
+The Actions button will be hidden until at least **one** country is chosen. It comes in handy when you need to change the status to a lot of zones at once.
 
-- **Publish** — Enable selected zones.
-- **Unpublish** — Disable selected zones.
-- **Archive** — Move selected zones to archive.
-- **Trash** — Move selected zones to trash.
-- **Check-in** — Release any checked-out zones.
+- **Publish** — Enable selected countries
+- **Unpublish** — Disable selected countries
+- **Trash** — Move selected countries to trash
+
+![](/img/zones-bulk.webp)
 
 ## Search and Filter
 
 Use the search and filter options to find zones:
 
 - **Search** — Type a zone name or code to filter the list.
-- **ID Search** — Type `id:123` to find a zone by its ID.
+- **ID Search** — Type `id:3668` to find a zone by its ID.
 - **Status Filter** — Filter by Published, Unpublished, Archived, or Trashed.
 - **Country Filter** — Filter zones by their parent country.
+
+![](/img/zones-enable1.webp)
 
 ## Tips
 
