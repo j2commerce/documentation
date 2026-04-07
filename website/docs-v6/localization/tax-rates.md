@@ -1,10 +1,3 @@
----
-title: "Tax Rates"
-sidebar_label: "Tax Rates"
-sidebar_position: 8
-description: "Define tax percentages for geographic zones and link them to tax profiles for accurate order tax calculation."
----
-
 # Tax Rates
 
 Tax rates define the actual percentage of tax to apply based on a customer's location (geozone) and the product's tax profile. Each tax rate links a tax profile, a geozone, and a percentage. When a customer checks out, J2Commerce calculates tax by finding the matching tax rate for the product's tax profile and the customer's geozone.
@@ -61,17 +54,9 @@ The Tax Rates list displays all tax rates configured in your store. Each rate sh
 
    ![](/img/tax-configure.webp)
 
-## Configuration
-
-**Rate Name:** A descriptive name for this tax rate. **Example:** `UK Standard VAT 20%`
-
-**Tax Percentage:**&#x20;
-
-**Geozone:**&#x20;
-
-**Status:**&#x20;
-
 ### Tax Percentage Precision
+
+![](/img/tax-percentage.webp)
 
 The tax percentage field supports up to 3 decimal places for precision:
 
@@ -101,6 +86,10 @@ When a customer places an order:
 3. For each product in the cart, J2Commerce finds the product's tax profile.
 4. The matching tax rate is found for the tax profile + geozone combination.
 5. Tax is calculated as `product_price × tax_rate / 100`.
+
+## Frontend View
+
+![](/img/tax-profiles-checkout.webp)
 
 ## Tax Rate Priority
 
