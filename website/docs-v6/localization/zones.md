@@ -1,10 +1,3 @@
----
-title: "Zones"
-sidebar_label: "Zones"
-sidebar_position: 3
-description: "Configure states, provinces, and regions within countries for accurate shipping rates and tax calculations."
----
-
 # Zones
 
 Zones represent states, provinces, territories, or regions within countries. They enable location-specific shipping rates, tax calculations, and address validation. When customers enter their address during checkout, they select their country first, then choose from the zones available for that country.
@@ -17,7 +10,7 @@ Zones represent states, provinces, territories, or regions within countries. The
 
 ## Locating Zones
 
-Zonesare managed from the J2Commerce Dashboard.
+Zones are managed from the J2Commerce Dashboard.
 
 There are **two** ways you can access the Zones.&#x20;
 
