@@ -1,10 +1,3 @@
----
-title: "Lengths"
-sidebar_label: "Lengths"
-sidebar_position: 9
-description: "Configure measurement units for product dimensions and shipping calculations."
----
-
 # Lengths
 
 The Lengths feature allows you to configure measurement units for product dimensions (width, height, depth). These units are essential for shipping carriers that calculate rates based on package dimensions, and for displaying product specifications to customers. J2Commerce supports automatic conversion between units, ensuring accurate calculations regardless of the unit used for data entry.
@@ -15,52 +8,33 @@ The Lengths feature allows you to configure measurement units for product dimens
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Accessing Lengths
+## Locating Length
 
-Length units are managed from the J2Commerce Dashboard.
+Lengths are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** **-> J2Commerce -> Dashboard**.
-2. Click **Localisation** in the left sidebar.
-3. Click **Lengths**.
+There are **two** ways you can access the Lengths .&#x20;
 
-![Lengths list](/img/localisation-lengths.webp)
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localization -> Length**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Localization -> Length**
+
+![](/img/lengths.webp)
 
 ## Length List
 
+![](/img/lengths1.webp)
+
 The Lengths list displays all length units configured in your store. Each unit shows:
 
-| Column           | Description                                      |
-| ---------------- | ------------------------------------------------ |
-| **Checkbox**     | Select units for batch actions.                  |
-| **Length Title** | The display name of the unit (e.g., Centimetre). |
-| **Unit**         | The short unit symbol (e.g., cm).                |
-| **Value**        | Conversion value relative to the base unit.      |
-| **Status**       | Published (green check) or Unpublished (red X).  |
-| **Ordering**     | Drag-and-drop to reorder the display sequence.   |
-
-## Adding a Length Unit
-
-1. Click the **New** button in the toolbar.
-2. Fill in the unit details (see Configuration below).
-3. Click **Save** or **Save & Close**.
-
-![Length edit form](/img/localisation-length-edit.webp)
-
-## Configuration
-
-**Length Title:** The display name of the unit. **Example:**  `Centimetre`
-
-**Unit:** The short symbol for the unit (1-4 characters). **Example:** `cm`
-
-**Conversion Value:** The multiplier to convert to the base unit. Base unit has value 1.00000000. **Example:** `2.54` for inch
-
-**Decimal Places:** Number of decimal places to display for this unit. **Example:** `2`
+**Checkbox:** Select units for batch actions.
 
 **Status:** Set to **Published** to make the unit available.
 
-### Conversion Value Explained
+**Length Title:** The display name of the unit. **Example:**  `Inch`
 
-The conversion value defines how this unit relates to your base unit:
+**Unit:** The short symbol for the unit (1-4 characters). **Example:** `in`
+
+**Conversion Value:** The multiplier to convert to the base unit. Base unit has value 1.00000000. **Example:** `2.54` for inch
 
 - **Base Unit**: Value = 1.00000000 (e.g., if centimetre is your base unit)
 - **Inch**: Value = 2.54 (1 inch = 2.54 centimetres)
@@ -74,9 +48,7 @@ To calculate the conversion value:
 conversion_value = number_of_base_units_in_this_unit
 ```
 
-### Decimal Places
-
-The decimal places setting controls how values are displayed:
+**Decimal Places:** Number of decimal places to display for this unit. **Example:** `2`
 
 | Unit       | Decimal Places | Example Display |
 | ---------- | -------------- | --------------- |
@@ -85,9 +57,19 @@ The decimal places setting controls how values are displayed:
 | Metre      | 2              | `1.52 m`        |
 | Inch       | 2              | `6.00 in`       |
 
+**Ordering:** Drag-and-drop to reorder the display sequence.
+
+## Adding a New Length Unit
+
+1. Click the **New** button in the toolbar.
+2. Fill in the unit details (see Configuration below).
+3. Click **Save** or **Save & Close**.
+
+![Length edit form](/img/lengths-new.webp)
+
 ## Base Unit
 
-Your **base unit** is the unit with a conversion value of **1.00000000**. This is the unit in which:
+Your **unit** is the unit with a conversion value of **1.00000000**. This is the unit in which:
 
 - Product dimensions are stored in the database
 - Shipping calculations are performed
@@ -95,7 +77,7 @@ Your **base unit** is the unit with a conversion value of **1.00000000**. This i
 
 All other units are defined relative to this base unit.
 
-### Choosing a Base Unit
+### Choosing a Unit
 
 Select your base unit based on your primary market:
 
