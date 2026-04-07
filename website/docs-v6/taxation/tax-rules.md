@@ -56,7 +56,7 @@ The tax rules list displays all configured rules:
 4. Choose the **Address Type**.
 5. Click **Save** or **Save & Close**.
 
-![](/img/tax-rule-edit.webp)
+<!-- ![](/img/tax-rule-edit.webp) -->
 
 ## Tax Rule Fields
 

@@ -78,7 +78,7 @@ Click on a customer's name to view their details:
 | **Country**        | Country                      |
 | **Zone/State**     | State/province               |
 
-![](/img/customers-detail.webp)
+<!-- ![](/img/customers-detail.webp) -->
 
 ### Order History Tab
 

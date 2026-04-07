@@ -56,7 +56,7 @@ The coupons list displays all configured discount codes:
 2. Configure the coupon settings (see fields below).
 3. Click **Save** or **Save & Close**.
 
-![](/img/coupon-edit.webp)
+<!-- ![](/img/coupon-edit.webp) -->
 
 ## Coupon Fields
 
@@ -162,7 +162,7 @@ When **Free Shipping** is enabled:
 5. Verify the order subtotal meets **Minimum Spending**.
 6. Check product restrictions — order must contain qualifying products.
 
-![](/img/coupon-troubleshoot.webp)
+<!-- ![](/img/coupon-troubleshoot.webp) -->
 
 ### Percentage Discount Exceeds Expected Amount
 

@@ -102,7 +102,7 @@ The order detail page shows:
 | **Payment**          | Payment method, transaction ID, status            |
 | **Customer Note**    | Note provided by customer at checkout             |
 
-![](/img/orders-detail.webp)
+<!-- ![](/img/orders-detail.webp) -->
 
 ### Order Actions
 
@@ -125,7 +125,7 @@ From the order detail view:
 5. Check **Notify Customer** to send an email notification.
 6. Click **Save**.
 
-![](/img/orders-status-update.webp)
+<!-- ![](/img/orders-status-update.webp) -->
 
 ## Order History
 
