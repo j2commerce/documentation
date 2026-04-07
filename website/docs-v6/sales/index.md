@@ -2,7 +2,6 @@
 title: "Sales Management"
 sidebar_label: "Sales"
 sidebar_position: 1
-unlisted: true
 description: "Manage orders, customers, and coupons in J2Commerce"
 ---
 
