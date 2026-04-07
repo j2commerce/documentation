@@ -57,7 +57,7 @@ conversion_value = number_of_base_units_in_this_unit
 | Metre      | 2              | `1.52 m`        |
 | Inch       | 2              | `6.00 in`       |
 
-**Ordering:** Drag-and-drop to reorder the display sequence.
+**ID:** The individual ID numbers assigned to each length
 
 ## Adding a New Length Unit
 

@@ -15,15 +15,17 @@ Zones represent states, provinces, territories, or regions within countries. The
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Accessing Zones
+## Locating Zones
 
-Zones are managed from the J2Commerce Dashboard.
+Zonesare managed from the J2Commerce Dashboard.
 
-1. Go to **Components -> J2Commerce ->** **Dashboard**.
-2. Click **Localisation** in the left sidebar.
-3. Click **Zones**.
+There are **two** ways you can access the Zones.&#x20;
 
-![Zones list](/img/localisation-zones.webp)
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localization -> Zones**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Localization -> Zones**
+
+![Zones list](/img/zones.webp)
 
 ## Zone List
 
@@ -31,15 +33,15 @@ The Zones list displays all zones configured in your store. Each zone shows:
 
 **Checkbox:** Select zones for batch actions.
 
-**Zone Name:** The display name of the zone (e.g., California, Ontario, New South Wales).
+**Zone Name:** The full display name shown to customers and in admin lists. **Example:** `California`,`Ontario, New South Wales`
 
-**Zone Code:** A short code for the zone (e.g., CA, ON, NSW).
+**Zone Code:** A short identifier for the zone, typically 2-3 uppercase letters. **Example:** `CA, ON, NSW`
 
-**Country:** The country this zone belongs to.
+**Country:** The country this zone belongs to. Select from the dropdown of published countries. **Example:** `United States`
 
-**Status:** Published (green check) or Unpublished (red X).
+**Status:** Set to **Published** to make the zone available, or Unpublished to hide it.
 
-**Ordering:** Drag-and-drop to reorder the display sequence within a country.
+**ID:** Drag-and-drop to reorder the display sequence within a country.
 
 ## Adding a Zone
 
@@ -51,13 +53,13 @@ The Zones list displays all zones configured in your store. Each zone shows:
 
 ## Configuration
 
-**Zone Name:** The full display name shown to customers and in admin lists. **Example:** `California`
+**Zone Name:**&#x20;
 
-**Zone Code:** A short identifier for the zone, typically 2-3 uppercase letters. **Example:** `CA`
+**Zone Code:**&#x20;
 
-**Country:** The country this zone belongs to. Select from the dropdown of published countries. **Example:** `United States`
+**Country:**&#x20;
 
-**Status:** Set to **Published** to make the zone available, or Unpublished to hide it.
+**Status:**&#x20;
 
 ## Zone Code Standards
 
