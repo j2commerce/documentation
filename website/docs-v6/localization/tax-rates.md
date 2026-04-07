@@ -35,21 +35,23 @@ There are **two** ways you can access the Tax Rates.&#x20;
 
 ## Tax Rate List
 
+![](/img/tax-title.webp)
+
 The Tax Rates list displays all tax rates configured in your store. Each rate shows:
 
 **Checkbox:** Select rates for batch actions.
 
-**Rate Name:** The display name of the tax rate.
+**Status:** Published (green check) or Unpublished (red X).
 
-**Tax Profile:** The tax profile this rate belongs to.
+**Tax Rate Name:** The display name of the tax rate.
+
+**Tax Rate %:** The tax percentage.
 
 **Geozone:** The geographic zone where this rate applies.
 
-**Rate %:** The tax percentage.
+**Tax Profile:** The tax profile this rate belongs to.
 
-**Status:** Published (green check) or Unpublished (red X).
-
-**Ordering:** Drag-and-drop to reorder priority.
+**ID:** Drag-and-drop to reorder priority.
 
 ## Adding a Tax Rate
 

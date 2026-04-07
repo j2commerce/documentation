@@ -38,7 +38,7 @@ The Tax Profiles list displays all tax profiles configured in your store. Each p
 
 **Status:** Published (green check) or Unpublished (red X).
 
-**Ordering:** Drag-and-drop to reorder the display sequence.
+**ID:** The individual ID number
 
 ## Adding a New Tax Profile
 
