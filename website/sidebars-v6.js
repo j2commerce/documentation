@@ -96,7 +96,7 @@ const sidebars = {
         },
         {
             type: 'category',
-            label: 'Localization',
+            label: 'Localisation',
             link: {
                 type: 'doc',
                 id: 'localization/index',
