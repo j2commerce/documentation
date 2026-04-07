@@ -30,7 +30,7 @@ There are **two** ways you can access the Tax Profiles.&#x20;
 
 The Tax Profiles list displays all tax profiles configured in your store. Each profile shows:
 
-**Checkbox:** Select profiles for batch actions.
+**Checkbox:** Select rates to activate the batch actions button.
 
 **Tax Profile Name:** The display name of the tax profile.
 

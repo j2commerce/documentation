@@ -39,37 +39,37 @@ There are **two** ways you can access the Tax Rates.&#x20;
 
 The Tax Rates list displays all tax rates configured in your store. Each rate shows:
 
-**Checkbox:** Select rates for batch actions.
+**Checkbox:** Select rates to activate the batch actions button.
 
-**Status:** Published (green check) or Unpublished (red X).
+**Status:** Set to **Published** to make the rate active.
 
-**Tax Rate Name:** The display name of the tax rate.
+**Tax Rate Name:** A descriptive name for this tax rate. **Example:** `UK Standard VAT 20%`
 
-**Tax Rate %:** The tax percentage.
+**Tax Rate %:** The tax rate as a percentage. Supports decimal precision. **Example:** `20.000`
 
-**Geozone:** The geographic zone where this rate applies.
+**Geozone:** The geographic zone where this tax rate applies. **Example:** `United Kingdom`
+
+**ID:** The individual ID number
 
 **Tax Profile:** The tax profile this rate belongs to.
 
-**ID:** Drag-and-drop to reorder priority.
-
-## Adding a Tax Rate
+## Adding a New Tax Rate
 
 1. Click the **New** button in the toolbar.
 2. Fill in the tax rate details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-![Tax rate edit form](/img/localisation-taxrate-edit.webp)
+   ![](/img/tax-configure.webp)
 
 ## Configuration
 
 **Rate Name:** A descriptive name for this tax rate. **Example:** `UK Standard VAT 20%`
 
-**Tax Percentage:** The tax rate as a percentage. Supports decimal precision. **Example:** `20.000`
+**Tax Percentage:**&#x20;
 
-**Geozone:** The geographic zone where this tax rate applies. **Example:** `United Kingdom`
+**Geozone:**&#x20;
 
-**Status:** Set to **Published** to make the rate active.
+**Status:**&#x20;
 
 ### Tax Percentage Precision
 
