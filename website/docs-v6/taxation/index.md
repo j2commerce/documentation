@@ -2,6 +2,7 @@
 title: "Taxation"
 sidebar_label: "Taxation"
 sidebar_position: 1
+unlisted: true
 description: "Configure tax profiles, rates, and rules in J2Commerce"
 ---
 

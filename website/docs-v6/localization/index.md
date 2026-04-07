@@ -2,6 +2,7 @@
 title: "Localisation"
 sidebar_label: "Localisation"
 sidebar_position: 1
+unlisted: true
 description: "Configure regional settings for your J2Commerce store including countries, zones, currencies, geozones, taxes, order statuses, and measurement units."
 ---
 
