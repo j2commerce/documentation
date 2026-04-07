@@ -11,25 +11,38 @@ The Product Compare add-on lets shoppers select multiple products and view them 
 
 The compare list is stored in the browser session, so it works for both guest shoppers and logged-in customers without requiring any account.
 
-## Installation
+## Purchase and Download
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+The **Product Compare** app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `app_productcompare.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_productcompare.zip` package file.
-4. The plugin installs and enables automatically.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) **-> Apps**.
 
-After installation, go to **J2Commerce** -> **Apps** to configure the plugin.
+**Step 2:** Locate the **Product Compare** app **->** click **View Details** **->** **Add to cart** **->** **Checkout**.
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Product Compare plugin with Enable/Configure options -->
+**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions** **->** **View Files** **->** **Download**.
 
-## Step 1: Create a Compare Page Menu Item
+## Install the App
+
+You can install this **Product Compare** App using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the `app_productcompare.zip` file or use the Install from URL option.
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
+
+The plugin installs and enables automatically.
+
+After installation, go to **J2Commerce** **->** **Apps** to configure the plugin.
+
+![shipping method](/img/accordions-app.webp)
+
+## Create a Compare Page Menu Item
 
 Before customers can view their comparison list, you need to create a menu item that points to the compare page. Without this, the compare list link will not work.
 
-1. Go to **Menus** -> **[Your Menu]** -> **Add New Menu Item**.
-2. Set the **Menu Item Type** to **J2Commerce** -> **Products** -> **Product Comparison**.
+1. Go to **Menus** **-> \[Your Menu] ->** **Add New Menu Item**.
+2. Set the **Menu Item Type** to **J2Commerce** **->** **Products** **->** **Product Comparison**.
 3. Give the menu item a title such as **Compare Products**.
 4. Set the menu item to **Published**.
 5. Click **Save & Close**.
@@ -39,57 +52,62 @@ Before customers can view their comparison list, you need to create a menu item 
 The plugin automatically detects this menu item and uses it to link shoppers to the comparison page after they click **Compare** on a product.
 
 :::tip
+
 You can place this menu item in a hidden menu that is not displayed in the navigation — it only needs to exist so J2Commerce can build the correct URL.
+
 :::
 
-## Step 2: Configure the Plugin
+## Configure the Plugin
 
-Go to **J2Commerce** -> **Apps** and click on **Product Compare** to open its settings.
+Go to **J2Commerce** **->** **Apps** and click on **Product Compare** to open its settings.
 
 <!-- SCREENSHOT: Product Compare plugin configuration screen showing all tabs: Basic Settings, Display Settings, Messages, Icons, Advanced -->
 
 ### Basic Settings
 
-| Setting | Description | Default | Options |
-|---------|-------------|---------|---------|
-| **Display In** | Where to show the Compare button | Both Views | Product View Only, Category View Only, Both Views |
-| **Product Link Type** | How to link to a product from the compare page | J2Commerce Product List | J2Commerce Product List, Article Layout |
-| **Maximum Products to Compare** | How many products a shopper can add to their compare list | 5 | 2 to 10 |
-
-**Display In** controls where the Compare button appears:
+**Display In:** Where to show the Compare button. It controls where the Compare button appears:
 
 - **Product View Only** — Shows the Compare button only on individual product detail pages.
 - **Category View Only** — Shows a compact icon-only Compare button on product listing and category pages.
 - **Both Views** — Shows the button on both product detail pages and category/listing pages.
 
-**Product Link Type** controls where the product title and image link to when the shopper clicks on a product name in the comparison table. Use **J2Commerce Product List** to link back to the J2Commerce product view. Use **Article Layout** if your products are linked to Joomla articles.
+**Product Link Type:** How to link to a product from the compare page. It controls where the product title and image link to when the shopper clicks on a product name in the comparison table. Use **J2Commerce Product List** to link back to the J2Commerce product view. Use **Article Layout** if your products are linked to Joomla articles.
+
+**Maximum Products to Compare:** How many products a shopper can add to their compare list
 
 ### Display Settings
 
 These settings control which rows appear in the comparison table.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Product Image Type** | Use thumbnail or main product image | Thumbnail Image |
-| **Product Image Height** | Maximum image height in pixels | 200 |
-| **Show SKU** | Display the product SKU row | Yes |
-| **Show Brand/Manufacturer** | Display the manufacturer row | Yes |
-| **Show Price** | Display the price row | Yes |
-| **Show Stock Status** | Display the stock availability row | Yes |
-| **Show Description** | Display the product short description row | Yes |
-| **Show Weight** | Display the product weight row | Yes |
-| **Show Dimensions** | Display the length × width × height row | Yes |
-| **Show Specifications** | Display product filter/specification rows | Yes |
-| **Show Add to Cart** | Display Add to Cart buttons on the compare page | Yes |
+**Product Image Type:** Use thumbnail or main product image
+
+**Product Image Height:** Maximum image height in pixels
+
+**Show SKU:** Display the product SKU row
+
+**Show Brand/Manufacturer:** Display the manufacturer row
+
+**Show Price:** Display the price row
+
+**Show Stock Status:** Display the stock availability row
+
+**Show Description:** Display the product short description row
+
+**Show Weight:** Display the product weight row
+
+**Show Dimensions:** Display the length × width × height row
+
+**Show Specifications:** Display product filter/specification rows
+
+**Show Add to Cart:** Display Add to Cart buttons on the compare page
 
 Turn off any rows your store does not use. For example, if your products have no weight data, disable **Show Weight** to keep the comparison table clean.
 
 ### Messages
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Show message after adding** | Display a success message when a product is added | No |
-| **Message text** | The text to show in the success message | _(empty — uses default language string)_ |
+**Show message after adding:** Display a success message when a product is added
+
+**Message text:** The text to show in the success message
 
 When **Show message after adding** is enabled, a small message appears near the Compare button after the shopper clicks it. You can enter a custom message such as "Product added to comparison list!" or leave the field blank to use the built-in default text.
 
@@ -97,18 +115,19 @@ When **Show message after adding** is enabled, a small message appears near the 
 
 The Compare button uses Font Awesome icons. You can change these to any valid Font Awesome icon class.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Icon before adding** | Icon shown on the Compare button before the product is added | `fa-solid fa-arrow-right-arrow-left` |
-| **Icon after adding** | Icon shown after the product has been added to the list | `fa-solid fa-circle-check` |
+**Icon before adding:** Icon shown on the Compare button before the product is added.&#x20;
+
+- Default: `fa-solid fa-arrow-right-arrow-left`
+
+**Icon after adding:** Icon shown after the product has been added to the list
+
+- Default: `fa-solid fa-circle-check`
 
 Enter the full Font Awesome class string, for example `fa-solid fa-scale-balanced` or `fa-regular fa-star`. The icon appears to the left of the button label.
 
 ### Advanced
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Debug Mode** | Write detailed plugin activity to the Joomla log file | No |
+**Debug Mode:** Write detailed plugin activity to the Joomla log file
 
 Enable **Debug Mode** only when troubleshooting. Logs are written to `[joomla]/logs/app_productcompare.php`. Disable this setting in production as it adds overhead to every page where the Compare button appears.
 
@@ -157,7 +176,7 @@ If a product has options (variants that require selection), the Add to Cart area
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Apps** and confirm the **Product Compare** plugin is enabled (green toggle).
+1. Go to **J2Commerce ->** **Apps** and confirm the **Product Compare** plugin is enabled (green toggle).
 2. Check the **Display In** setting. If it is set to **Product View Only**, the button will not appear in category listings. Change it to **Both Views** if you want it in both places.
 3. If using a custom template or layout, ensure the template calls the `onJ2CommerceAfterAddToCartButton` event position. Contact your template developer if you are unsure.
 
@@ -193,10 +212,4 @@ If a product has options (variants that require selection), the Add to Cart area
 
 **Cause:** The **Maximum Products to Compare** setting may be set lower than expected.
 
-**Solution:** Go to **J2Commerce** -> **Apps** -> **Product Compare** -> **Basic Settings** and increase the **Maximum Products to Compare** value. The default is 5 and can be set up to 10.
-
-## Related Topics
-
-- [Apps and Extensions Overview](../index.md)
-- [Gift Wrapping](app-giftwrapping.md)
-- [Wishlist](app-wishlist.md)
+**Solution:** Go to **J2Commerce -> Apps** **-> Product Compare** **->** **Basic Settings** and increase the **Maximum Products to Compare** value. The default is 5 and can be set up to 10.
