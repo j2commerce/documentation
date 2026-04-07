@@ -1,10 +1,3 @@
----
-title: "Localisation"
-sidebar_label: "Localisation"
-sidebar_position: 1
-description: "Configure regional settings for your J2Commerce store including countries, zones, currencies, geozones, taxes, order statuses, and measurement units."
----
-
 # Localisation
 
 J2Commerce provides comprehensive localisation features to help you configure your store for different regions and markets. From managing countries and currencies to setting up complex tax rules and order statuses, the localisation system ensures your store operates correctly for customers worldwide.
