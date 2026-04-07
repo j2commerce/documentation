@@ -75,9 +75,7 @@ Countries are referenced throughout J2Commerce:
 
 ## Bulk Actions
 
-Use the toolbar to perform actions on multiple countries:&#x20;
-
-The Actions button will be hidden until at least one country is chosen.
+The Actions button will be hidden until at least **one** country is chosen.
 
 - **Publish** — Enable selected countries
 - **Unpublish** — Disable selected countries

@@ -29,37 +29,29 @@ There are **two** ways you can access the Zones.&#x20;
 
 ## Zone List
 
+![](/img/zones-title.webp)
+
 The Zones list displays all zones configured in your store. Each zone shows:
 
 **Checkbox:** Select zones for batch actions.
+
+**Status:** Set to **Published** to make the zone available, or Unpublished to hide it.
 
 **Zone Name:** The full display name shown to customers and in admin lists. **Example:** `California`,`Ontario, New South Wales`
 
 **Zone Code:** A short identifier for the zone, typically 2-3 uppercase letters. **Example:** `CA, ON, NSW`
 
-**Country:** The country this zone belongs to. Select from the dropdown of published countries. **Example:** `United States`
+**Country Name:** The country this zone belongs to. Select from the dropdown of published countries. **Example:** `United States`
 
-**Status:** Set to **Published** to make the zone available, or Unpublished to hide it.
+**ID:** The individual ID numbers assigned to each zone
 
-**ID:** Drag-and-drop to reorder the display sequence within a country.
-
-## Adding a Zone
+## Adding a New Zone
 
 1. Click the **New** button in the toolbar.
 2. Fill in the zone details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-![Zone edit form](/img/localisation-zone-edit.webp)
-
-## Configuration
-
-**Zone Name:**&#x20;
-
-**Zone Code:**&#x20;
-
-**Country:**&#x20;
-
-**Status:**&#x20;
+![Zone edit form](/img/zones-config.webp)
 
 ## Zone Code Standards
 
