@@ -55,7 +55,7 @@ Customers are grouped by email address — if the same email appears in multiple
 | **Search**  | Search by name, email, company, or city |
 | **Country** | Filter customers by country             |
 
-![](/img/customers-filters.webp)
+<!-- ![](/img/customers-filters.webp) -->
 
 ## Customer Detail View
 

@@ -48,7 +48,7 @@ The coupons list displays all configured discount codes:
 | **Type**          | Filter by discount type (percentage/fixed) |
 | **Free Shipping** | Filter by free shipping status             |
 
-![](/img/coupons-filters.webp)
+<!-- ![](/img/coupons-filters.webp) -->
 
 ## Creating a Coupon
 

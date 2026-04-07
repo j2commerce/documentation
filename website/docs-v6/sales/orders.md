@@ -54,7 +54,7 @@ Use the filter bar to narrow down orders:
 | **Order ID Range** | Filter by order ID range                                   |
 | **Date Range**     | Filter by order date (From/To)                             |
 
-![](/img/orders-filters.webp)
+<!-- ![](/img/orders-filters.webp) -->
 
 ## Order Statuses
 
