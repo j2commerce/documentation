@@ -2,6 +2,14 @@
 
 J2Commerce provides comprehensive localisation features to help you configure your store for different regions and markets. From managing countries and currencies to setting up complex tax rules and order statuses, the localisation system ensures your store operates correctly for customers worldwide.
 
+## Requirements
+
+- PHP 8.3.0 or higher
+- Joomla 6.x
+- J2Commerce 6.x
+
+All localisation features are included with J2Commerce core and require no additional installation.
+
 ## Overview
 
 Localisation in J2Commerce covers several key areas:
@@ -13,15 +21,17 @@ Localisation in J2Commerce covers several key areas:
 - **Order Statuses** — Manage the workflow states for customer orders.
 - **Measurement Units** — Define weight and length units for products and shipping calculations.
 
-## Accessing Localisation
+## Accessing Localization
 
 All localisation features are accessed from the J2Commerce Dashboard:
 
-**J2Commerce -> Dashboard -> Localisation**
+There are **two** ways you can access the Localisation section.&#x20;
 
-The Localisation menu provides access to all regional configuration settings.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localisation**
 
-![Localisation menu](/img/localisation-menu.webp)
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Localisation**
+
+![Localisation menu](/img/localization.webp)
 
 ## Localisation Features
 
@@ -48,12 +58,6 @@ Configure multiple currencies for international stores. Set exchange rates, curr
 Create geographic zones by grouping countries and zones together. Geozones are used to apply shipping rates, tax rates, and payment method restrictions to specific regions.
 
 [Learn more about Geozones](geozones.md)
-
-### Order Statuses
-
-Manage the status values that track orders through your store's workflow, from pending to shipped to completed.
-
-[Learn more about Order Statuses](order-statuses.md)
 
 ### Tax Profiles
 
@@ -91,12 +95,3 @@ For a new store, configure localisation features in this order:
 6. **Currencies** — Configure your base currency and any additional currencies.
 7. **Tax Profiles** — Create tax profiles for different product types.
 8. **Tax Rates** — Add tax rates linked to geozones and tax profiles.
-9. **Order Statuses** — Customise order workflow statuses if needed.
-
-## Requirements
-
-- PHP 8.3.0 or higher
-- Joomla 6.x
-- J2Commerce 6.x
-
-All localisation features are included with J2Commerce core and require no additional installation.
