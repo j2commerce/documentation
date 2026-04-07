@@ -1,10 +1,3 @@
----
-title: "Geozones"
-sidebar_label: "Geozones"
-sidebar_position: 5
-description: "Create geographic zones by grouping countries and zones for shipping rates, tax rules, and payment method restrictions."
----
-
 # Geozones
 
 Geozones are geographic zones created by grouping countries and their zones together. They are essential for configuring shipping rates, tax rules, and payment method restrictions based on customer location. Instead of applying rules to individual countries, you create a geozone that includes all the regions you want to target.
