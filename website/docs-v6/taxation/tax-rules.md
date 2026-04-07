@@ -22,7 +22,7 @@ Tax Rules connect Tax Profiles to Tax Rates, determining which tax percentage ap
 1. Go to **J2Commerce** → **Dashboard**.
 2. Click **Localisation** → **Tax Rules**.
 
-![](/img/tax-rules-list.webp)
+<!-- ![](/img/tax-rules-list.webp) -->
 
 Alternatively: **Components** → **J2Commerce** → **Localisation** → **Tax Rules**.
 

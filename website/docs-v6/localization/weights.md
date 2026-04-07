@@ -60,7 +60,7 @@ conversion_value = number_of_base_units_in_this_unit
 2. Fill in the unit details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-![Weight edit form](/img/localisation-weight-edit.webp)
+<!-- ![Weight edit form](/img/localisation-weight-edit.webp) -->
 
 ## Base Unit
 

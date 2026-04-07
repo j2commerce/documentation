@@ -20,7 +20,7 @@ Coupons allow you to create promotional codes that customers can apply at checko
 1. Go to **J2Commerce** → **Dashboard**.
 2. Click **Coupons** in the Sales section.
 
-![](/img/coupons-list.webp)
+<!-- ![](/img/coupons-list.webp) -->
 
 Alternatively: **Components** → **J2Commerce** → **Coupons**.
 

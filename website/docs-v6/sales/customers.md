@@ -20,7 +20,7 @@ The Customers page displays all store customers who have placed orders or create
 1. Go to **J2Commerce** → **Dashboard**.
 2. Click **Customers** in the Sales section.
 
-![](/img/customers-list.webp)
+<!-- ![](/img/customers-list.webp) -->
 
 Alternatively: **Components** → **J2Commerce** → **Customers**.
 
