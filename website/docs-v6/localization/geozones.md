@@ -15,15 +15,17 @@ Geozones are geographic zones created by grouping countries and their zones toge
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Accessing Geozones
+## Locating Countries
 
 Geozones are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** -> **J2Commerce** -> **Dashboard**.
-2. Click **Localisation** in the left sidebar.
-3. Click **Geozones**.
+There are **two** ways you can access the Geozones.&#x20;
 
-![Geozones list](/img/localisation-geozones.webp)
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localization -> Geozones**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Localization -> Geozones**
+
+![](/img/geozones1.webp)
 
 ## Geozone List
 
@@ -37,48 +39,35 @@ The Geozones list displays all geozones configured in your store. Each geozone s
 
 **Ordering:** Drag-and-drop to reorder the display sequence.
 
-## Adding a Geozone
+## Adding a New Geozone
 
 1. Click the **New** button in the toolbar.
 2. Enter a **Geozone Name** (e.g., "UK & Ireland", "EU Member States", "North America").
 3. Set the **Status** to Published.
-4. Click **Save** to create the geozone.
-5. Add countries and zones to the geozone (see Adding Rules below).
+4. In the **Geozone Rules** section, click **Add Country/Zone**.
+5. Select a **Country** from the dropdown.
+6. Select a **Zone** from the dropdown, or select "All Zones" to include the entire country.
+7. Click **Save** to add the rule.
 
-![Geozone edit form](/img/localisation-geozone-edit.webp)
+![](/img/geozones-new.webp)
 
 ## Geozone Rules
 
 After creating a geozone, you add **rules** to define which countries and zones are included. Each rule specifies:
 
-- **Country** — A country to include in the geozone.
-- **Zone** — A specific zone within that country, or "All Zones" to include the entire country.
-
-### Adding Geozone Rules
-
-1. Create or edit a geozone.
-2. In the **Rules** section, click **Add Country/Zone**.
-3. Select a **Country** from the dropdown.
-4. Select a **Zone** from the dropdown, or select "All Zones" to include the entire country.
-5. Click **Save** to add the rule.
-
-![Geozone rules](/img/localisation-geozone-rules.webp)
-
-### Rule Examples
-
-**United Kingdom (All Zones):**
-
-- Country: United Kingdom
-- Zone: All Zones
+- **Country** — A country to include in the geozone. **Example**: United Kingdom
+- **Zone** — A specific zone within that country, or "All Zones" to include the entire country. **Example**: All Zones
 
 This rule includes all zones within the UK in the geozone.
 
-**California Only:**
+**Hawaii & Alaska:**
 
-- Country: United States
-- Zone: California
+- **Country:** United States
+- **Zone**: Select Hawaii and Alaska
 
-This rule includes only California, not other US states.
+This rule includes only Hawaii and Alaska, not other US states.
+
+![](/img/geozones-new1.webp)
 
 **European Union:** Create multiple rules, one for each EU member country, or create a single rule per country:
 
@@ -96,15 +85,29 @@ Geozones are referenced throughout J2Commerce for location-based rules:
 
 ### Shipping Rates
 
-Shipping methods can be configured to apply only to specific geozones:
+Shipping methods can be configured to apply only to specific geozones: Go to **J2Commerce -> Setup -> Shipping Methods** **-> Standard Shipping.** &#x20;
 
-1. Create a geozone for each shipping region (e.g., "Domestic", "Europe", "Rest of World").
+1. Manage existing Geozones or create a new geozone for each shipping region (e.g., "Domestic", "Europe", "Rest of World").
 2. Configure shipping rates for each geozone.
 3. During checkout, customers are quoted shipping rates based on their shipping address geozone.
+
+![](/img/shipping-rate-manage-new-1.webp)
+
+### Shipping Method Restrictions
+
+Payment methods can be restricted to specific geozones:
+
+Go to **J2Commerce -> Setup -> Shipping Methods.** Select the shipping method that you want to add a Geozone Restriction to. Most people do it for each one
+
+1. Create a geozone for regions where a shipping method is available.
+2. Configure the shipping method to only appear for customers in that geozone.
+3. Customers outside the geozone will not see that payment option.
 
 ### Tax Rates
 
 Tax rates are linked to geozones for location-based tax calculation:
+
+Go to **J2Commerce -> Localization -> Tax Rates** & **Tax Profiles** &#x20;
 
 1. Create a geozone for each tax jurisdiction (e.g., "UK", "EU", "California").
 2. Create tax profiles for different product types.
@@ -114,6 +117,8 @@ Tax rates are linked to geozones for location-based tax calculation:
 ### Payment Method Restrictions
 
 Payment methods can be restricted to specific geozones:
+
+Go to **J2Commerce -> Setup -> Payment Methods.** Select the payment method that you want to add a Geozone Restriction to. Most people do it for each one
 
 1. Create a geozone for regions where a payment method is available.
 2. Configure the payment method to only appear for customers in that geozone.
