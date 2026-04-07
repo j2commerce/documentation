@@ -1,10 +1,3 @@
----
-title: "Countries"
-sidebar_label: "Countries"
-sidebar_position: 2
-description: "Manage the list of countries available for shipping addresses, billing addresses, and tax calculations in your J2Commerce store."
----
-
 # Countries
 
 Countries form the foundation of localisation in J2Commerce. They define the geographic options available to customers during checkout, in shipping zones, and for tax calculations. Each country includes ISO standard codes that ensure compatibility with shipping carriers, payment gateways, and address validation services.
