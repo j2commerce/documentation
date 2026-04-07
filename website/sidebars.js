@@ -116,7 +116,6 @@ const sidebars = {
           label: 'Filters',
           link: {
             type: 'generated-index',
-            slug: '/catalog/filters',
           },
           items: [
             'catalog/filters/product-filters',

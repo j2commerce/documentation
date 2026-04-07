@@ -46,7 +46,6 @@ const sidebars = {
                             label: 'Payment',
                             link: {
                                 type: 'generated-index',
-                                slug: '/extensions/plugins/payment',
                             },
                             items: [
                                 {
@@ -60,7 +59,6 @@ const sidebars = {
                             label: 'Shipping',
                             link: {
                                 type: 'generated-index',
-                                slug: '/extensions/plugins/shipping',
                             },
                             items: [
                                 {

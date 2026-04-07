@@ -22,30 +22,32 @@ Tax Rules connect Tax Profiles to Tax Rates, determining which tax percentage ap
 1. Go to **J2Commerce** → **Dashboard**.
 2. Click **Localisation** → **Tax Rules**.
 
-<!-- TEMP_IMG_OFF ![](/img/tax-rules-list.webp) -->
+![](/img/tax-rules-list.webp)
+
 Alternatively: **Components** → **J2Commerce** → **Localisation** → **Tax Rules**.
 
 ## Tax Rules List View
 
 The tax rules list displays all configured rules:
 
-| Column | Description |
-|--------|-------------|
-| **Status** | Published (green) or Unpublished (grey) |
-| **Tax Profile** | The tax profile this rule applies to |
-| **Tax Rate** | The rate and geozone for this rule |
-| **Address Type** | Billing or Shipping |
-| **ID** | Internal rule ID |
+| Column           | Description                             |
+| ---------------- | --------------------------------------- |
+| **Status**       | Published (green) or Unpublished (grey) |
+| **Tax Profile**  | The tax profile this rule applies to    |
+| **Tax Rate**     | The rate and geozone for this rule      |
+| **Address Type** | Billing or Shipping                     |
+| **ID**           | Internal rule ID                        |
 
 ### Filter Options
 
-| Filter | Description |
-|--------|-------------|
-| **Search** | Search by tax profile name or tax rate name |
-| **Tax Profile** | Filter by tax profile |
-| **Address Type** | Filter by Billing or Shipping |
+| Filter           | Description                                 |
+| ---------------- | ------------------------------------------- |
+| **Search**       | Search by tax profile name or tax rate name |
+| **Tax Profile**  | Filter by tax profile                       |
+| **Address Type** | Filter by Billing or Shipping               |
 
-<!-- TEMP_IMG_OFF ![](/img/tax-rules-filters.webp) -->
+![](/img/tax-rules-filters.webp)
+
 ## Creating a Tax Rule
 
 1. Click **New** in the toolbar.
@@ -54,22 +56,23 @@ The tax rules list displays all configured rules:
 4. Choose the **Address Type**.
 5. Click **Save** or **Save & Close**.
 
-<!-- TEMP_IMG_OFF ![](/img/tax-rule-edit.webp) -->
+![](/img/tax-rule-edit.webp)
+
 ## Tax Rule Fields
 
-| Field | Description | Options |
-|-------|-------------|---------|
-| **Tax Profile** | The tax profile this rule applies to | Select from existing profiles |
-| **Tax Rate** | The tax rate (percentage and geozone) | Select from existing rates |
-| **Address Type** | Which address to use for geozone matching | Billing / Shipping |
-| **Ordering** | Priority for compound tax calculation | Numeric (lower = first) |
+| Field            | Description                               | Options                       |
+| ---------------- | ----------------------------------------- | ----------------------------- |
+| **Tax Profile**  | The tax profile this rule applies to      | Select from existing profiles |
+| **Tax Rate**     | The tax rate (percentage and geozone)     | Select from existing rates    |
+| **Address Type** | Which address to use for geozone matching | Billing / Shipping            |
+| **Ordering**     | Priority for compound tax calculation     | Numeric (lower = first)       |
 
 ### Address Type Options
 
-| Address Type | Use Case | Description |
-|--------------|----------|-------------|
-| **Billing** | EU VAT, GST | Tax calculated from where customer is billed |
-| **Shipping** | US Sales Tax | Tax calculated from delivery destination |
+| Address Type | Use Case     | Description                                  |
+| ------------ | ------------ | -------------------------------------------- |
+| **Billing**  | EU VAT, GST  | Tax calculated from where customer is billed |
+| **Shipping** | US Sales Tax | Tax calculated from delivery destination     |
 
 ## How Tax Rules Work
 
@@ -86,17 +89,17 @@ For a single tax rate in one region:
 
 For regions with multiple taxes (e.g., federal + state tax):
 
-| Priority | Tax Rule | Rate | Calculation |
-|----------|----------|------|-------------|
-| 1 | Federal Tax | 5% | Applied to base price |
-| 2 | State Tax | 7% | Applied to price + federal tax |
+| Priority | Tax Rule    | Rate | Calculation                    |
+| -------- | ----------- | ---- | ------------------------------ |
+| 1        | Federal Tax | 5%   | Applied to base price          |
+| 2        | State Tax   | 7%   | Applied to price + federal tax |
 
 **Example:**
 
-- Base price: [dollar]100
-- Priority 1: [dollar]100 × 5% = [dollar]5 (federal)
-- Priority 2: ([dollar]100 + [dollar]5) × 7% = [dollar]7.35 (state)
-- Total tax: [dollar]12.35
+- Base price: \[dollar]100
+- Priority 1: \[dollar]100 × 5% = \[dollar]5 (federal)
+- Priority 2: (\[dollar]100 + \[dollar]5) × 7% = \[dollar]7.35 (state)
+- Total tax: \[dollar]12.35
 
 ## Rule Matching Logic
 
@@ -106,6 +109,7 @@ When J2Commerce calculates tax for a product:
 2. Get the customer's address (billing or shipping based on rule)
 3. Match address to **Geozone**
 4. Find Tax Rules where:
+
    - Tax Profile matches product's profile
    - Tax Rate's geozone matches customer's location
 5. Apply matched Tax Rate(s) in priority order
@@ -124,11 +128,11 @@ If multiple rules match:
 
 Use descriptive names for Tax Rates:
 
-| Good Name | Poor Name |
-|-----------|-----------|
-| UK Standard VAT 20% | Tax Rate 1 |
-| California Sales Tax 9.25% | CA Tax |
-| Swiss VAT 7% | Switzerland |
+| Good Name                  | Poor Name   |
+| -------------------------- | ----------- |
+| UK Standard VAT 20%        | Tax Rate 1  |
+| California Sales Tax 9.25% | CA Tax      |
+| Swiss VAT 7%               | Switzerland |
 
 ### Rule Organization
 
@@ -140,39 +144,39 @@ Use descriptive names for Tax Rates:
 
 #### UK/EU VAT (Single Rate)
 
-| Setting | Value |
-|---------|-------|
-| Tax Profile | Standard VAT |
-| Tax Rate | UK VAT 20% (Geozone: UK) |
-| Address Type | Billing |
+| Setting      | Value                    |
+| ------------ | ------------------------ |
+| Tax Profile  | Standard VAT             |
+| Tax Rate     | UK VAT 20% (Geozone: UK) |
+| Address Type | Billing                  |
 
 #### US Sales Tax (Single State)
 
-| Setting | Value |
-|---------|-------|
-| Tax Profile | Taxable Goods |
-| Tax Rate | CA Sales Tax 9.25% (Geozone: California) |
-| Address Type | Shipping |
+| Setting      | Value                                    |
+| ------------ | ---------------------------------------- |
+| Tax Profile  | Taxable Goods                            |
+| Tax Rate     | CA Sales Tax 9.25% (Geozone: California) |
+| Address Type | Shipping                                 |
 
 #### Canadian Tax (GST + PST Compound)
 
 **Rule 1 (GST):**
 
-| Setting | Value |
-|---------|-------|
-| Tax Profile | Canadian Tax |
-| Tax Rate | Canada GST 5% |
-| Address Type | Shipping |
-| Ordering | 1 |
+| Setting      | Value         |
+| ------------ | ------------- |
+| Tax Profile  | Canadian Tax  |
+| Tax Rate     | Canada GST 5% |
+| Address Type | Shipping      |
+| Ordering     | 1             |
 
 **Rule 2 (PST):**
 
-| Setting | Value |
-|---------|-------|
-| Tax Profile | Canadian Tax |
-| Tax Rate | BC PST 7% |
-| Address Type | Shipping |
-| Ordering | 2 |
+| Setting      | Value        |
+| ------------ | ------------ |
+| Tax Profile  | Canadian Tax |
+| Tax Rate     | BC PST 7%    |
+| Address Type | Shipping     |
+| Ordering     | 2            |
 
 ## Tips
 
@@ -203,6 +207,7 @@ Use descriptive names for Tax Rates:
 **Solution:**
 
 1. Check **Address Type** — Should match your tax jurisdiction rules.
+
    - US sales tax: Use **Shipping** address
    - EU VAT: Use **Billing** address
 2. Verify the **Tax Rate** has the correct percentage.
@@ -238,6 +243,7 @@ Use descriptive names for Tax Rates:
 
 1. Review geozone configuration.
 2. Either:
+
    - Create a separate geozone for exempt areas
    - Remove exempt areas from the geozone
 3. Or create a "No Tax" Tax Profile with 0% rate for exempt products.

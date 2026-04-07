@@ -23,7 +23,8 @@ Length units are managed from the J2Commerce Dashboard.
 2. Click **Localisation** in the left sidebar.
 3. Click **Lengths**.
 
-<!-- TEMP_IMG_OFF ![Lengths list](/img/localisation-lengths.webp) -->
+![Lengths list](/img/localisation-lengths.webp)
+
 ## Length List
 
 The Lengths list displays all length units configured in your store. Each unit shows:
@@ -43,7 +44,8 @@ The Lengths list displays all length units configured in your store. Each unit s
 2. Fill in the unit details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-<!-- TEMP_IMG_OFF ![Length edit form](/img/localisation-length-edit.webp) -->
+![Length edit form](/img/localisation-length-edit.webp)
+
 ## Configuration
 
 **Length Title:** The display name of the unit. **Example:**  `Centimetre`

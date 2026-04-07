@@ -9,12 +9,12 @@ description: "Display a wishlist item count with a heart icon and link anywhere 
 
 The **J2Commerce - Wishlist** module (`mod_j2commerce_wishlist`) displays a heart icon alongside the current shopper's wishlist item count and a link to the wishlist page. Place it in your navbar, header, or any module position to give shoppers one-click access to their saved products.
 
-This module is a companion to the **app_wishlist** plugin. The plugin must be installed and enabled before this module will display a meaningful count.
+This module is a companion to the **app\_wishlist** plugin. The plugin must be installed and enabled before this module will display a meaningful count.
 
 ## Prerequisites
 
 - J2Commerce 6 installed and active.
-- The **app_wishlist** add-on plugin installed and enabled. See the [Wishlist app guide](app-wishlist.md) for setup instructions.
+- The **app\_wishlist** add-on plugin installed and enabled. See the [Wishlist app guide](app-wishlist.md) for setup instructions.
 - At least one menu item linked to the wishlist page (recommended for correct URL generation).
 
 ## Installation
@@ -39,10 +39,10 @@ To enable and position it:
 
 All settings are on the **Module** tab when editing the module.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Display type** | Show the wishlist link as a plain link or a Bootstrap 5 button. | Link |
-| **Hide when empty** | When enabled, the entire module is hidden if the wishlist contains zero items. | No |
+| Setting                | Description                                                                      | Default |
+| ---------------------- | -------------------------------------------------------------------------------- | ------- |
+| **Display type**       | Show the wishlist link as a plain link or a Bootstrap 5 button.                  | Link    |
+| **Hide when empty**    | When enabled, the entire module is hidden if the wishlist contains zero items.   | No      |
 | **Wishlist menu item** | Manually select the menu item for the wishlist page. Leave empty to auto-detect. | (empty) |
 
 ### Display Type
@@ -53,7 +53,7 @@ All settings are on the **Module** tab when editing the module.
 
 ### Wishlist Menu Item
 
-When left empty, the module scans your site's menu for an item whose query matches `view=products&task=wishlist` and uses that item's ID to build a SEF URL. This is the same auto-detection logic used by the app_wishlist plugin itself.
+When left empty, the module scans your site's menu for an item whose query matches `view=products&task=wishlist` and uses that item's ID to build a SEF URL. This is the same auto-detection logic used by the app\_wishlist plugin itself.
 
 If your site has multiple menu items pointing at the wishlist page, or if auto-detection is not working, use this field to pin the module to a specific menu item. Select the menu item from the dropdown.
 
@@ -65,7 +65,7 @@ If your site has multiple menu items pointing at the wishlist page, or if auto-d
 
 ## Live Count Refresh
 
-The module automatically refreshes the displayed count without a page reload when the `j2commerce:wishlist:updated` custom DOM event fires. This event is dispatched by the app_wishlist plugin whenever a product is added to or removed from the wishlist.
+The module automatically refreshes the displayed count without a page reload when the `j2commerce:wishlist:updated` custom DOM event fires. This event is dispatched by the app\_wishlist plugin whenever a product is added to or removed from the wishlist.
 
 No extra configuration is required — the JavaScript is output inline with the module and listens for the event on the document.
 
@@ -73,12 +73,12 @@ No extra configuration is required — the JavaScript is output inline with the 
 
 ### The module shows a count of zero even after adding items to the wishlist
 
-**Cause:** The app_wishlist plugin is not installed or not enabled, so no items are being saved to the wishlist table.
+**Cause:** The app\_wishlist plugin is not installed or not enabled, so no items are being saved to the wishlist table.
 
 **Solution:**
 
 1. Go to **System** -> **Manage** -> **Extensions**.
-2. Search for **app_wishlist**.
+2. Search for **app\_wishlist**.
 3. If it is not in the list, install it first.
 4. If it is installed but disabled, click the checkbox and click **Enable**.
 5. Reload the frontend and add a product to the wishlist.
@@ -96,11 +96,11 @@ No extra configuration is required — the JavaScript is output inline with the 
 
 ### The count does not refresh after adding a product
 
-**Cause:** The `j2commerce:wishlist:updated` event is not being dispatched by the theme or the app_wishlist plugin's JavaScript is not loaded.
+**Cause:** The `j2commerce:wishlist:updated` event is not being dispatched by the theme or the app\_wishlist plugin's JavaScript is not loaded.
 
 **Solution:**
 
-1. Check that the app_wishlist plugin is enabled and its JavaScript file loads on the product page (look for `wishlist.js` in the browser network panel).
+1. Check that the app\_wishlist plugin is enabled and its JavaScript file loads on the product page (look for `wishlist.js` in the browser network panel).
 2. If you have a custom template that suppresses JavaScript, ensure the `<head>` includes deferred scripts.
 3. If the event is dispatched under a different name in a customised build, update the listener in a template override of `tmpl/default.php`.
 

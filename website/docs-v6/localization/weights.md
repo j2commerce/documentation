@@ -23,7 +23,8 @@ Weight units are managed from the J2Commerce Dashboard.
 2. Click **Localisation** in the left sidebar.
 3. Click **Weights**.
 
-<!-- TEMP_IMG_OFF ![Weights list](/img/localisation-weights.webp) -->
+![Weights list](/img/localisation-weights.webp)
+
 ## Weight List
 
 The Weights list displays all weight units configured in your store. Each unit shows:
@@ -43,7 +44,8 @@ The Weights list displays all weight units configured in your store. Each unit s
 2. Fill in the unit details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-<!-- TEMP_IMG_OFF ![Weight edit form](/img/localisation-weight-edit.webp) -->
+![Weight edit form](/img/localisation-weight-edit.webp)
+
 ## Configuration
 
 **Weight Title:** The display name of the unit. **Example:** `Kilogram`

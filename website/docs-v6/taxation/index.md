@@ -46,12 +46,12 @@ flowchart TD
 
 A **Tax Profile** is a named tax configuration that you assign to products. Think of it as a "tax category."
 
-| Example Profiles | Use Case |
-|------------------|----------|
-| Standard VAT | Regular products subject to standard VAT |
-| Reduced VAT | Essential goods with lower tax rate |
-| No Tax | Tax-exempt products |
-| US Sales Tax | Products sold in specific US states |
+| Example Profiles | Use Case                                 |
+| ---------------- | ---------------------------------------- |
+| Standard VAT     | Regular products subject to standard VAT |
+| Reduced VAT      | Essential goods with lower tax rate      |
+| No Tax           | Tax-exempt products                      |
+| US Sales Tax     | Products sold in specific US states      |
 
 **Location:** J2Commerce → Dashboard → Localisation → Tax Profiles
 
@@ -59,11 +59,11 @@ A **Tax Profile** is a named tax configuration that you assign to products. Thin
 
 A **Tax Rate** defines the actual percentage charged and the geographic zone where it applies.
 
-| Example Rates | Percentage | Geozone |
-|--------------|------------|---------|
-| UK Standard VAT | 20% | United Kingdom |
-| US California Sales Tax | 9.25% | California |
-| Switzerland VAT | 7% | Switzerland |
+| Example Rates           | Percentage | Geozone        |
+| ----------------------- | ---------- | -------------- |
+| UK Standard VAT         | 20%        | United Kingdom |
+| US California Sales Tax | 9.25%      | California     |
+| Switzerland VAT         | 7%         | Switzerland    |
 
 **Location:** J2Commerce → Dashboard → Localisation → Tax Rates
 
@@ -94,9 +94,9 @@ When a customer checks out:
 
 Tax Rules can use either **Billing Address** or **Shipping Address** for geozone matching:
 
-| Address Type | Use When |
-|--------------|----------|
-| **Billing** | Tax based on where the customer is billed |
+| Address Type | Use When                                    |
+| ------------ | ------------------------------------------- |
+| **Billing**  | Tax based on where the customer is billed   |
 | **Shipping** | Tax based on where the product is delivered |
 
 For US sales tax, use **Shipping Address**. For VAT in the EU, use **Billing Address**.
@@ -116,27 +116,32 @@ Lower priority numbers are calculated first.
 ### For a Single Tax Rate (e.g., UK VAT)
 
 1. **Create a Geozone**
+
    - Go to **J2Commerce → Localisation → Geozones**
    - Create a geozone for "United Kingdom"
    - Add the UK country (and zones if needed)
 
 2. **Create a Tax Rate**
+
    - Go to **J2Commerce → Localisation → Tax Rates**
    - Create "UK Standard VAT 20%"
    - Set rate: `20`
    - Assign geozone: "United Kingdom"
 
 3. **Create a Tax Profile**
+
    - Go to **J2Commerce → Localisation → Tax Profiles**
    - Create "Standard VAT"
 
 4. **Create a Tax Rule**
+
    - Go to **J2Commerce → Localisation → Tax Rules**
    - Select Tax Profile: "Standard VAT"
    - Select Tax Rate: "UK Standard VAT 20%"
    - Address Type: "Billing"
 
 5. **Assign to Products**
+
    - Edit each product
    - Set the Tax Profile to "Standard VAT"
 

@@ -23,7 +23,8 @@ Order statuses are managed from the J2Commerce Dashboard.
 2. Click **Setup** in the left sidebar.
 3. Click **Order Statuses**.
 
-<!-- TEMP_IMG_OFF ![Order statuses list](/img/localisation-orderstatuses.webp) -->
+![Order statuses list](/img/localisation-orderstatuses.webp)
+
 ## Order Status List
 
 The Order Statuses list displays all statuses configured in your store. Each status shows:
@@ -66,7 +67,8 @@ These core statuses are essential for J2Commerce's order processing and cannot b
 2. Fill in the status details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-<!-- TEMP_IMG_OFF ![Order status edit form](/img/localisation-orderstatus-edit.webp) -->
+![Order status edit form](/img/localisation-orderstatus-edit.webp)
+
 ## Configuration
 
 **Status Name:** The display name shown to customers and in admin lists. **Example:** `On Hold`

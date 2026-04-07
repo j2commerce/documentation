@@ -15,51 +15,43 @@ Countries form the foundation of localisation in J2Commerce. They define the geo
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Accessing Countries
+## Locating Countries
 
 Countries are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** **-> J2Commerce -> Dashboard**.
-2. Click **Localisation** in the left sidebar.
-3. Click **Countries**.
+There are **two** ways you can access the Countries.&#x20;
 
-<!-- TEMP_IMG_OFF ![Countries list](/img/localisation-countries.webp) -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localization -> Countries**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Localization -> Countries**
+
+![](/img/countries.webp)
+
 ## Country List
 
 The Countries list displays all countries configured in your store. Each country shows:
 
 **Checkbox:** Select countries for batch actions.
 
-**Country Name:** The display name of the country.
+**Country Name:** The display name of the country. The display name is shown to customers and in admin lists. **Example:** `United Kingdom`
 
-**ISO Code 2:** The 2-letter ISO 3166-1 alpha-2 code (e.g., US, GB, DE).
+**ISO Code 2:** The 2-letter ISO 3166-1 alpha-2 country code. Must be exactly 2 characters, uppercase. **Example:** `US, GB, DE`
 
-**ISO Code 3:** The 3-letter ISO 3166-1 alpha-3 code (e.g., USA, GBR, DEU).
+**ISO Code 3:** The 3-letter ISO 3166-1 alpha-3 country code. Must be exactly 3 characters, uppercase. **Example:** `USA, GBR, DEU`
 
-**ISO Numeric:** The 3-digit ISO 3166-1 numeric code (e.g., 840, 826, 276).
+**ISO Numeric:** The 3-digit ISO 3166-1 numeric country code. Optional but recommended for international integrations. **Example:** `840, 826, 276`
 
-**Status:** Published (green check) or Unpublished (red X).
+**Status:** Set to **Published** to make the country available, or Unpublished to hide it.
 
 **Ordering:** Drag-and-drop to reorder the display sequence.
 
-## Adding a Country
+## Adding a New Country
 
 1. Click the **New** button in the toolbar.
 2. Fill in the country details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-<!-- TEMP_IMG_OFF ![Country edit form](/img/localisation-country-edit.webp) -->
-## Configuration
-
-**Country Name:** The display name shown to customers and in admin lists. **Example:** `United Kingdom`
-
-**ISO Code 2:** The 2-letter ISO 3166-1 alpha-2 country code. Must be exactly 2 characters, uppercase. **Example:** `GB`
-
-**ISO Code 3:** The 3-letter ISO 3166-1 alpha-3 country code. Must be exactly 3 characters, uppercase. **Example:** `GBR`
-
-**ISO Numeric:** The 3-digit ISO 3166-1 numeric country code. Optional but recommended for international integrations. **Example:** `826`
-
-**Status:** Set to **Published** to make the country available, or Unpublished to hide it.
+![](/img/countries-new.webp)
 
 ## ISO Code Standards
 
@@ -76,6 +68,8 @@ These codes ensure compatibility with:
 - Address validation services
 - Tax calculation services
 
+![](/img/countries-codes.webp)
+
 ## How Countries Are Used
 
 Countries are referenced throughout J2Commerce:
@@ -88,21 +82,25 @@ Countries are referenced throughout J2Commerce:
 
 ## Bulk Actions
 
-Use the toolbar to perform actions on multiple countries:
+Use the toolbar to perform actions on multiple countries:&#x20;
 
-- **Publish** — Enable selected countries.
-- **Unpublish** — Disable selected countries.
-- **Archive** — Move selected countries to archive.
-- **Trash** — Move selected countries to trash.
-- **Check-in** — Release any checked-out countries.
+The Actions button will be hidden until at least one country is chosen.
+
+- **Publish** — Enable selected countries
+- **Unpublish** — Disable selected countries
+- **Trash** — Move selected countries to trash
+
+![](/img/countries-bulk.webp)
 
 ## Search and Filter
 
 Use the search and filter options to find countries:
 
-- **Search** — Type a country name or ISO code to filter the list.
-- **ID Search** — Type `id:123` to find a country by its ID.
-- **Status Filter** — Filter by Published, Unpublished, Archived, or Trashed.
+- **Search** — Type a country Name or ISO code to filter the list.
+- **ID Search** — Type `id:222` to find a country by its ID.
+- **Status Filter** — Filter by Published, Unpublished, Trashed, or All
+
+![](/img/countries-search.webp)
 
 ## Tips
 
@@ -120,10 +118,12 @@ Use the search and filter options to find countries:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Localisation** -> **Countries**.
+1. Go to **J2Commerce** **-> Localisation ->** **Countries**.
 2. Search for the country by name or ISO code.
 3. Check that the **Status** shows a green checkmark (Published).
-4. Verify the **ISO Code 2** and **ISO Code 3** fields contain valid 2 and 3 character codes respectively.
+4. Verify the **ISO Code 2** and **ISO Code 3** fields contain valid 2 and 3 character codes, respectively.
+
+![](/img/countries-enable.webp)
 
 ### ISO Code Validation Error
 
@@ -142,10 +142,12 @@ Use the search and filter options to find countries:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Localisation** -> **Zones**.
+1. Go to **J2Commerce** **-> Localisation ->** **Zones**
 2. Filter by the country using the Country dropdown.
 3. Verify zones exist and are published.
 4. If no zones exist, create zones for the country.
+
+![](/img/countries-zones.webp)
 
 ### Country Already Exists Error
 

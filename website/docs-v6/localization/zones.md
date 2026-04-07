@@ -23,7 +23,8 @@ Zones are managed from the J2Commerce Dashboard.
 2. Click **Localisation** in the left sidebar.
 3. Click **Zones**.
 
-<!-- TEMP_IMG_OFF ![Zones list](/img/localisation-zones.webp) -->
+![Zones list](/img/localisation-zones.webp)
+
 ## Zone List
 
 The Zones list displays all zones configured in your store. Each zone shows:
@@ -46,7 +47,8 @@ The Zones list displays all zones configured in your store. Each zone shows:
 2. Fill in the zone details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-<!-- TEMP_IMG_OFF ![Zone edit form](/img/localisation-zone-edit.webp) -->
+![Zone edit form](/img/localisation-zone-edit.webp)
+
 ## Configuration
 
 **Zone Name:** The full display name shown to customers and in admin lists. **Example:** `California`

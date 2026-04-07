@@ -23,7 +23,8 @@ Geozones are managed from the J2Commerce Dashboard.
 2. Click **Localisation** in the left sidebar.
 3. Click **Geozones**.
 
-<!-- TEMP_IMG_OFF ![Geozones list](/img/localisation-geozones.webp) -->
+![Geozones list](/img/localisation-geozones.webp)
+
 ## Geozone List
 
 The Geozones list displays all geozones configured in your store. Each geozone shows:
@@ -44,7 +45,8 @@ The Geozones list displays all geozones configured in your store. Each geozone s
 4. Click **Save** to create the geozone.
 5. Add countries and zones to the geozone (see Adding Rules below).
 
-<!-- TEMP_IMG_OFF ![Geozone edit form](/img/localisation-geozone-edit.webp) -->
+![Geozone edit form](/img/localisation-geozone-edit.webp)
+
 ## Geozone Rules
 
 After creating a geozone, you add **rules** to define which countries and zones are included. Each rule specifies:
@@ -60,7 +62,8 @@ After creating a geozone, you add **rules** to define which countries and zones 
 4. Select a **Zone** from the dropdown, or select "All Zones" to include the entire country.
 5. Click **Save** to add the rule.
 
-<!-- TEMP_IMG_OFF ![Geozone rules](/img/localisation-geozone-rules.webp) -->
+![Geozone rules](/img/localisation-geozone-rules.webp)
+
 ### Rule Examples
 
 **United Kingdom (All Zones):**
