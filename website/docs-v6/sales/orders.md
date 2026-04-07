@@ -20,7 +20,7 @@ The Orders page displays all customer orders with comprehensive filtering and ma
 1. Go to **J2Commerce** → **Dashboard**.
 2. Click **Orders** in the Sales section.
 
-![](/img/orders-list.webp)
+<!-- ![](/img/orders-list.webp) -->
 
 Alternatively: **Components** → **J2Commerce** → **Orders**.
 

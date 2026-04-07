@@ -50,7 +50,7 @@ The Sales section contains three key areas:
 
 Navigate to **J2Commerce** → **Dashboard** → **Sales** to access all sales management features.
 
-![](/img/sales-dashboard.webp)
+<!-- ![](/img/sales-dashboard.webp) -->
 
 ## Related Topics
 
