@@ -50,7 +50,7 @@ Click on the **Gift Wrapping** Title to open it.
 
 ### Plugin Tab
 
-![](/img/gift-wrap-setup1.webp)
+![](/img/setutup7.webp)
 
 **Enable Gift Wrapping:** Show or hide the gift wrapping step in checkout.
 
@@ -58,7 +58,7 @@ Click on the **Gift Wrapping** Title to open it.
 
 :::info
 
-NOTE: The gift wrapping step can appear at different points in the checkout flow
+NOTE: The gift wrapping step can appear at different points in the checkout flow.&#x20;
 
 :::
 

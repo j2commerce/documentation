@@ -1,13 +1,12 @@
----
-title: "Tax Rates"
-sidebar_label: "Tax Rates"
-sidebar_position: 8
-description: "Define tax percentages for geographic zones and link them to tax profiles for accurate order tax calculation."
----
-
 # Tax Rates
 
 Tax rates define the actual percentage of tax to apply based on a customer's location (geozone) and the product's tax profile. Each tax rate links a tax profile, a geozone, and a percentage. When a customer checks out, J2Commerce calculates tax by finding the matching tax rate for the product's tax profile and the customer's geozone.
+
+:::tip
+
+**IMPORTANT:** You must create a **Geozone** before setting up the Tax Rate. If you need help, go to the Geozone Documentation
+
+:::
 
 ## Requirements
 
@@ -15,51 +14,49 @@ Tax rates define the actual percentage of tax to apply based on a customer's loc
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Accessing Tax Rates
+## Locating Tax Rates
 
-Tax rates are managed from the J2Commerce Dashboard.
+Tax Rates are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** **-> J2Commerce ->** **Dashboard**.
-2. Click **Localisation** in the left sidebar.
-3. Click **Tax Rates**.
+There are **two** ways you can access the Tax Rates.&#x20;
 
-<!-- TEMP_IMG_OFF ![Tax rates list](/img/localisation-taxrates.webp) -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localization -> Tax Rates**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Localization -> Tax Rates**
+
+![](/img/tax-profiles.webp)
+
 ## Tax Rate List
+
+![](/img/tax-title.webp)
 
 The Tax Rates list displays all tax rates configured in your store. Each rate shows:
 
-**Checkbox:** Select rates for batch actions.
+**Checkbox:** Select rates to activate the batch actions button.
 
-**Rate Name:** The display name of the tax rate.
+**Status:** Set to **Published** to make the rate active.
+
+**Tax Rate Name:** A descriptive name for this tax rate. **Example:** `UK Standard VAT 20%`
+
+**Tax Rate %:** The tax rate as a percentage. Supports decimal precision. **Example:** `20.000`
+
+**Geozone:** The geographic zone where this tax rate applies. **Example:** `United Kingdom`
+
+**ID:** The individual ID number
 
 **Tax Profile:** The tax profile this rate belongs to.
 
-**Geozone:** The geographic zone where this rate applies.
-
-**Rate %:** The tax percentage.
-
-**Status:** Published (green check) or Unpublished (red X).
-
-**Ordering:** Drag-and-drop to reorder priority.
-
-## Adding a Tax Rate
+## Adding a New Tax Rate
 
 1. Click the **New** button in the toolbar.
 2. Fill in the tax rate details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-<!-- TEMP_IMG_OFF ![Tax rate edit form](/img/localisation-taxrate-edit.webp) -->
-## Configuration
-
-**Rate Name:** A descriptive name for this tax rate. **Example:** `UK Standard VAT 20%`
-
-**Tax Percentage:** The tax rate as a percentage. Supports decimal precision. **Example:** `20.000`
-
-**Geozone:** The geographic zone where this tax rate applies. **Example:** `United Kingdom`
-
-**Status:** Set to **Published** to make the rate active.
+   ![](/img/tax-configure.webp)
 
 ### Tax Percentage Precision
+
+![](/img/tax-percentage.webp)
 
 The tax percentage field supports up to 3 decimal places for precision:
 
@@ -89,6 +86,10 @@ When a customer places an order:
 3. For each product in the cart, J2Commerce finds the product's tax profile.
 4. The matching tax rate is found for the tax profile + geozone combination.
 5. Tax is calculated as `product_price × tax_rate / 100`.
+
+## Frontend View
+
+![](/img/tax-profiles-checkout.webp)
 
 ## Tax Rate Priority
 

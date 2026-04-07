@@ -1,10 +1,3 @@
----
-title: "Lengths"
-sidebar_label: "Lengths"
-sidebar_position: 9
-description: "Configure measurement units for product dimensions and shipping calculations."
----
-
 # Lengths
 
 The Lengths feature allows you to configure measurement units for product dimensions (width, height, depth). These units are essential for shipping carriers that calculate rates based on package dimensions, and for displaying product specifications to customers. J2Commerce supports automatic conversion between units, ensuring accurate calculations regardless of the unit used for data entry.
@@ -15,50 +8,33 @@ The Lengths feature allows you to configure measurement units for product dimens
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Accessing Lengths
+## Locating Length
 
-Length units are managed from the J2Commerce Dashboard.
+Lengths are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** **-> J2Commerce -> Dashboard**.
-2. Click **Localisation** in the left sidebar.
-3. Click **Lengths**.
+There are **two** ways you can access the Lengths .&#x20;
 
-<!-- TEMP_IMG_OFF ![Lengths list](/img/localisation-lengths.webp) -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localization -> Length**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Localization -> Length**
+
+![](/img/lengths.webp)
+
 ## Length List
+
+![](/img/lengths1.webp)
 
 The Lengths list displays all length units configured in your store. Each unit shows:
 
-| Column           | Description                                      |
-| ---------------- | ------------------------------------------------ |
-| **Checkbox**     | Select units for batch actions.                  |
-| **Length Title** | The display name of the unit (e.g., Centimetre). |
-| **Unit**         | The short unit symbol (e.g., cm).                |
-| **Value**        | Conversion value relative to the base unit.      |
-| **Status**       | Published (green check) or Unpublished (red X).  |
-| **Ordering**     | Drag-and-drop to reorder the display sequence.   |
-
-## Adding a Length Unit
-
-1. Click the **New** button in the toolbar.
-2. Fill in the unit details (see Configuration below).
-3. Click **Save** or **Save & Close**.
-
-<!-- TEMP_IMG_OFF ![Length edit form](/img/localisation-length-edit.webp) -->
-## Configuration
-
-**Length Title:** The display name of the unit. **Example:**  `Centimetre`
-
-**Unit:** The short symbol for the unit (1-4 characters). **Example:** `cm`
-
-**Conversion Value:** The multiplier to convert to the base unit. Base unit has value 1.00000000. **Example:** `2.54` for inch
-
-**Decimal Places:** Number of decimal places to display for this unit. **Example:** `2`
+**Checkbox:** Select units for batch actions.
 
 **Status:** Set to **Published** to make the unit available.
 
-### Conversion Value Explained
+**Length Title:** The display name of the unit. **Example:**  `Inch`
 
-The conversion value defines how this unit relates to your base unit:
+**Unit:** The short symbol for the unit (1-4 characters). **Example:** `in`
+
+**Conversion Value:** The multiplier to convert to the base unit. Base unit has value 1.00000000. **Example:** `2.54` for inch
 
 - **Base Unit**: Value = 1.00000000 (e.g., if centimetre is your base unit)
 - **Inch**: Value = 2.54 (1 inch = 2.54 centimetres)
@@ -72,9 +48,7 @@ To calculate the conversion value:
 conversion_value = number_of_base_units_in_this_unit
 ```
 
-### Decimal Places
-
-The decimal places setting controls how values are displayed:
+**Decimal Places:** Number of decimal places to display for this unit. **Example:** `2`
 
 | Unit       | Decimal Places | Example Display |
 | ---------- | -------------- | --------------- |
@@ -83,9 +57,19 @@ The decimal places setting controls how values are displayed:
 | Metre      | 2              | `1.52 m`        |
 | Inch       | 2              | `6.00 in`       |
 
+**ID:** The individual ID numbers assigned to each length
+
+## Adding a New Length Unit
+
+1. Click the **New** button in the toolbar.
+2. Fill in the unit details (see Configuration below).
+3. Click **Save** or **Save & Close**.
+
+![Length edit form](/img/lengths-new.webp)
+
 ## Base Unit
 
-Your **base unit** is the unit with a conversion value of **1.00000000**. This is the unit in which:
+Your **unit** is the unit with a conversion value of **1.00000000**. This is the unit in which:
 
 - Product dimensions are stored in the database
 - Shipping calculations are performed
@@ -93,7 +77,7 @@ Your **base unit** is the unit with a conversion value of **1.00000000**. This i
 
 All other units are defined relative to this base unit.
 
-### Choosing a Base Unit
+### Choosing a Unit
 
 Select your base unit based on your primary market:
 
@@ -126,6 +110,10 @@ Length units are referenced throughout J2Commerce:
 2. Dimensions are entered in the product's selected unit.
 3. The system converts to the base unit for storage and calculation.
 
+**The image below shows how the length is configured on a product**
+
+![](/img/lengths-product1.webp)
+
 ### Shipping Calculations
 
 1. Shipping carriers may use dimensional weight for rate calculations.
@@ -136,6 +124,10 @@ Length units are referenced throughout J2Commerce:
 
 1. Customers see dimensions in their preferred unit.
 2. The store can display dimensions in any published unit.
+
+## Frontend View
+
+![](/img/lengths-product-frontend.webp)
 
 ## Syncing Conversion Values
 
@@ -183,7 +175,7 @@ J2Commerce can automatically sync conversion values based on your base unit:
 
 **Solution:**
 
-1. Verify at least one length unit is published.
+1. Verify that at least one length unit is published.
 2. Check that the unit's conversion value is greater than 0.
 3. Clear Joomla cache after changing units.
 
@@ -196,3 +188,20 @@ J2Commerce can automatically sync conversion values based on your base unit:
 1. Go to **J2Commerce** -> **Localisation** -> **Lengths**.
 2. Find the unit and check that **Status** shows Published (green check).
 3. If unpublished, click the status icon to publish it.
+
+### Unit Not Appearing on the Product Frontend View
+
+**Cause:** The measurements are either not set up on the product or the specifications are not enabled.
+
+**Solution:**
+
+1. Go to **J2Commerce** **-> Products**&#x20;
+2. Find the product, then make sure the measurements are entered. Go to **J2Commerce** tab **-> Shipping tab**
+
+![](/img/lengths-product2.webp)
+
+- Go to Menus on the sidebar **-> Main Menu -> Store -> Product** tab&#x20;
+
+- Make sure **Specification** is set to '**Yes**'
+
+![](/img/lengths-product3.webp)

@@ -1,10 +1,3 @@
----
-title: "Zones"
-sidebar_label: "Zones"
-sidebar_position: 3
-description: "Configure states, provinces, and regions within countries for accurate shipping rates and tax calculations."
----
-
 # Zones
 
 Zones represent states, provinces, territories, or regions within countries. They enable location-specific shipping rates, tax calculations, and address validation. When customers enter their address during checkout, they select their country first, then choose from the zones available for that country.
@@ -15,47 +8,43 @@ Zones represent states, provinces, territories, or regions within countries. The
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Accessing Zones
+## Locating Zones
 
 Zones are managed from the J2Commerce Dashboard.
 
-1. Go to **Components -> J2Commerce ->** **Dashboard**.
-2. Click **Localisation** in the left sidebar.
-3. Click **Zones**.
+There are **two** ways you can access the Zones.&#x20;
 
-<!-- TEMP_IMG_OFF ![Zones list](/img/localisation-zones.webp) -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localization -> Zones**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Localization -> Zones**
+
+![Zones list](/img/zones.webp)
+
 ## Zone List
+
+![](/img/zones-title.webp)
 
 The Zones list displays all zones configured in your store. Each zone shows:
 
 **Checkbox:** Select zones for batch actions.
 
-**Zone Name:** The display name of the zone (e.g., California, Ontario, New South Wales).
+**Status:** Set to **Published** to make the zone available, or Unpublished to hide it.
 
-**Zone Code:** A short code for the zone (e.g., CA, ON, NSW).
+**Zone Name:** The full display name shown to customers and in admin lists. **Example:** `California`,`Ontario, New South Wales`
 
-**Country:** The country this zone belongs to.
+**Zone Code:** A short identifier for the zone, typically 2-3 uppercase letters. **Example:** `CA, ON, NSW`
 
-**Status:** Published (green check) or Unpublished (red X).
+**Country Name:** The country this zone belongs to. Select from the dropdown of published countries. **Example:** `United States`
 
-**Ordering:** Drag-and-drop to reorder the display sequence within a country.
+**ID:** The individual ID numbers assigned to each zone
 
-## Adding a Zone
+## Adding a New Zone
 
 1. Click the **New** button in the toolbar.
 2. Fill in the zone details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-<!-- TEMP_IMG_OFF ![Zone edit form](/img/localisation-zone-edit.webp) -->
-## Configuration
-
-**Zone Name:** The full display name shown to customers and in admin lists. **Example:** `California`
-
-**Zone Code:** A short identifier for the zone, typically 2-3 uppercase letters. **Example:** `CA`
-
-**Country:** The country this zone belongs to. Select from the dropdown of published countries. **Example:** `United States`
-
-**Status:** Set to **Published** to make the zone available, or Unpublished to hide it.
+![Zone edit form](/img/zones-config.webp)
 
 ## Zone Code Standards
 
@@ -93,22 +82,24 @@ This is useful when managing zones for stores with international shipping.
 
 ## Bulk Actions
 
-Use the toolbar to perform actions on multiple zones:
+The Actions button will be hidden until at least **one** country is chosen. It comes in handy when you need to change the status to a lot of zones at once.
 
-- **Publish** — Enable selected zones.
-- **Unpublish** — Disable selected zones.
-- **Archive** — Move selected zones to archive.
-- **Trash** — Move selected zones to trash.
-- **Check-in** — Release any checked-out zones.
+- **Publish** — Enable selected countries
+- **Unpublish** — Disable selected countries
+- **Trash** — Move selected countries to trash
+
+![](/img/zones-bulk.webp)
 
 ## Search and Filter
 
 Use the search and filter options to find zones:
 
 - **Search** — Type a zone name or code to filter the list.
-- **ID Search** — Type `id:123` to find a zone by its ID.
+- **ID Search** — Type `id:3668` to find a zone by its ID.
 - **Status Filter** — Filter by Published, Unpublished, Archived, or Trashed.
 - **Country Filter** — Filter zones by their parent country.
+
+![](/img/zones-enable1.webp)
 
 ## Tips
 

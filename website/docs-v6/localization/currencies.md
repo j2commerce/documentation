@@ -1,10 +1,3 @@
----
-title: "Currencies"
-sidebar_label: "Currencies"
-sidebar_position: 4
-description: "Configure multiple currencies for international sales with exchange rates and formatting options."
----
-
 # Currencies
 
 The Currencies feature allows you to configure multiple currencies for your J2Commerce store. When selling internationally, customers may prefer to see prices and pay in their local currency. J2Commerce supports multi-currency stores with configurable exchange rates and formatting options.
@@ -15,47 +8,31 @@ The Currencies feature allows you to configure multiple currencies for your J2Co
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Accessing Currencies
+## Locating Currencies
 
 Currencies are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** **-> J2Commerce ->** **Dashboard**.
-2. Click **Localisation** in the left sidebar.
-3. Click **Currencies**.
+There are **two** ways you can access the Currencies.&#x20;
 
-<!-- TEMP_IMG_OFF ![Currencies list](/img/localisation-currencies.webp) -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localization -> Currencies**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Localization -> Currencies**
+
+![](/img/currencies.webp)
+
 ## Currency List
+
+![](/img/currencies-new.webp)
 
 The Currencies list displays all currencies configured in your store. Each currency shows:
 
 **Checkbox:** Select currencies for batch actions.
 
-**Currency Name:** The display name of the currency.
+**Currency Title:** The display title shown to customers and in admin lists. **Example:** `British Pound`
 
-**Code:** The 3-letter ISO 4217 currency code.
+**Code:** The 3-letter ISO 4217 currency code. Must be exactly 3 characters, uppercase. **Example:** `GBP`
 
-**Symbol:** The currency symbol displayed with prices.
-
-**Value:** The exchange rate relative to your base currency.
-
-**Status:** Published (green check) or Unpublished (red X).
-
-**Ordering:** Drag-and-drop to reorder the display sequence.
-
-## Adding a Currency
-
-1. Click the **New** button in the toolbar.
-2. Fill in the currency details (see Configuration below).
-3. Click **Save** or **Save & Close**.
-
-<!-- TEMP_IMG_OFF ![Currency edit form](/img/localisation-currency-edit.webp) -->
-## Configuration
-
-**Currency Name:** The display name shown to customers and in admin lists. **Example:** `British Pound`
-
-**Currency Code:** The 3-letter ISO 4217 currency code. Must be exactly 3 characters, uppercase. **Example:** `GBP`
-
-**Currency Symbol:** The symbol displayed with prices. **Example:** `£`
+**Symbol:** The symbol displayed with prices. **Example:** `£`
 
 **Symbol Position:** Where to display the symbol relative to the amount. **Example:** Before or After
 
@@ -68,6 +45,12 @@ The Currencies list displays all currencies configured in your store. Each curre
 **Exchange Rate:** Conversion value relative to your base currency. **Example:** 1.27000
 
 **Status:** Set to **Published** to make the currency available.
+
+## Adding a New Currency
+
+1. Click the **New** button in the toolbar.
+2. Fill in the currency details (see Configuration above).
+3. Click **Save** or **Save & Close**.
 
 ### Currency Code Standards
 
@@ -121,7 +104,7 @@ Your base currency is identified by having an exchange rate of **1.00000000**. T
 - Reports and statistics are calculated
 - Payment gateways receive payment amounts (unless multi-currency payments are enabled)
 
-To change your base currency:
+**To change your base currency:**
 
 1. Set the new currency's exchange rate to `1.00000000`.
 2. Update all other currency exchange rates relative to the new base.
@@ -145,32 +128,49 @@ Exchange rates fluctuate constantly. You have several options for keeping rates 
 
 Edit each currency and update the **Exchange Rate** field as needed.
 
-### Currency Updater App
+## Enable Currency Updater App
 
 J2Commerce includes a Currency Updater app that can automatically fetch exchange rates from external services:
 
-1. Go to **J2Commerce** -> **Apps**.
-2. Enable the **Currency Updater** app.
-3. Configure the app with your preferred exchange rate provider.
-4. Set the update frequency (daily, weekly, etc.).
+- Go to **J2Commerce** **->** **Apps**.
+
+- **Enable** the **Currency Exchange Rates Updater** app.
+
+- Configure the app with your preferred exchange rate provider and their API Key
+
+![](/img/currencies-updater1.webp)
+
+### Configure the Currency Updater App
+
+Go to **Settings ->  Scheduled Tasks**
+
+![](/img/currencies-updater-tasks1.webp)
+
+Search for **Update Currency Rates Daily** and set the **Execution Rate** frequency (daily, weekly, etc.)
+
+![](/img/currencies-updater-tasks.webp)
 
 ## Bulk Actions
 
-Use the toolbar to perform actions on multiple currencies:
+Go to the **J2Commerce** icon at the top right corner **-> Localization -> Currencies**
+
+The Actions button will be hidden until at least one currency is chosen.
 
 - **Publish** — Enable selected currencies.
 - **Unpublish** — Disable selected currencies.
-- **Archive** — Move selected currencies to archive.
 - **Trash** — Move selected currencies to trash.
-- **Check-in** — Release any checked-out currencies.
+
+![](/img/currencies-bulk.webp)
 
 ## Search and Filter
 
 Use the search and filter options to find currencies:
 
 - **Search** — Type a currency name, code, or symbol to filter the list.
-- **ID Search** — Type `id:123` to find a currency by its ID.
+- **ID Search** — Type `id:3` to find a currency by its ID.
 - **Status Filter** — Filter by Published, Unpublished, Archived, or Trashed.
+
+![](/img/currencies-id.webp)
 
 ## Tips
 
@@ -188,10 +188,12 @@ Use the search and filter options to find currencies:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Localisation** -> **Currencies**.
+1. Go to **J2Commerce** **-> Localisation -> Currencies**.
 2. Find the currency and check that **Status** shows Published (green check).
 3. Verify the **Currency Code** is exactly 3 uppercase letters.
 4. Verify the **Currency Symbol** is not empty.
+
+![](/img/currencies-codes.webp)
 
 ### Prices Show Wrong Currency Symbol
 
@@ -202,7 +204,9 @@ Use the search and filter options to find currencies:
 1. Edit the currency.
 2. Check **Symbol Position** — set to "Before" for currencies like USD ($99.99), "After" for some European formats (99.99€).
 3. Verify the **Currency Symbol** field contains the correct character.
-4. Save and clear cache.
+4. Save and clear the cache. Go to Home **Dashboard -> Cache -> Delete All**
+
+![](/img/currencies-codes1.webp)
 
 ### Exchange Rate Not Updating
 
@@ -210,11 +214,25 @@ Use the search and filter options to find currencies:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Apps**.
-2. Find **Currency Updater** and ensure it shows a green checkmark (enabled).
-3. Click the app title to configure settings.
-4. Verify your exchange rate provider API key is correct.
-5. Check the update frequency and last update time.
+- Go to **J2Commerce** **->** **Apps**.
+
+- Find **Currency Exchange Rates Updater** and ensure it shows a green checkmark (enabled).
+
+![](/img/currencies-updater2.webp)
+
+- Click the app title to configure settings.
+
+- Verify your exchange rate provider API key is correct.
+
+![](/img/currencies-updater-api.webp)
+
+- Check the update frequency and last update time. Go to **Settings ->  Scheduled Tasks**
+
+  ![](/img/currencies-updater-tasks1.webp)
+
+
+
+- Search for **Update Currency Rates Daily** and set the **Execution Rate** frequency (daily, weekly, etc.)
 
 ### Currency Conversion Shows Wrong Amounts
 
@@ -222,6 +240,10 @@ Use the search and filter options to find currencies:
 
 **Solution:**
 
+Go to **J2Commerce** **-> Localisation -> Currencies**.
+
 1. Edit the currency and verify the exchange rate has sufficient decimal places.
 2. For most currencies, 5-8 decimal places in the exchange rate provide accurate conversions.
-3. Check that **Decimal Places** matches your currency's standard (2 for most, 0 for JPY, 3 for some).
+3. Check that **the decimal places** match your currency's standard (2 for most, 0 for JPY, 3 for some).
+
+![](/img/currencies-decimal.webp)

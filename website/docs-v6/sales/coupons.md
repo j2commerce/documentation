@@ -20,95 +20,102 @@ Coupons allow you to create promotional codes that customers can apply at checko
 1. Go to **J2Commerce** → **Dashboard**.
 2. Click **Coupons** in the Sales section.
 
-<!-- TEMP_IMG_OFF ![](/img/coupons-list.webp) -->
+![](/img/coupons-list.webp)
+
 Alternatively: **Components** → **J2Commerce** → **Coupons**.
 
 ## Coupons List View
 
 The coupons list displays all configured discount codes:
 
-| Column | Description |
-|--------|-------------|
-| **Status** | Published (green) or Unpublished (grey) |
-| **Coupon Name** | Internal name for the coupon |
-| **Code** | Coupon code customers enter at checkout |
-| **Type** | Discount type (Fixed Cart, Percentage, etc.) |
-| **Value** | Discount amount or percentage |
-| **Valid From** | Start date of validity period |
-| **Valid To** | End date of validity period |
-| **ID** | Internal coupon ID |
+| Column          | Description                                  |
+| --------------- | -------------------------------------------- |
+| **Status**      | Published (green) or Unpublished (grey)      |
+| **Coupon Name** | Internal name for the coupon                 |
+| **Code**        | Coupon code customers enter at checkout      |
+| **Type**        | Discount type (Fixed Cart, Percentage, etc.) |
+| **Value**       | Discount amount or percentage                |
+| **Valid From**  | Start date of validity period                |
+| **Valid To**    | End date of validity period                  |
+| **ID**          | Internal coupon ID                           |
 
 ### Filter Options
 
-| Filter | Description |
-|--------|-------------|
-| **Search** | Search by coupon name or code |
-| **Status** | Filter by published/unpublished |
-| **Type** | Filter by discount type (percentage/fixed) |
-| **Free Shipping** | Filter by free shipping status |
+| Filter            | Description                                |
+| ----------------- | ------------------------------------------ |
+| **Search**        | Search by coupon name or code              |
+| **Status**        | Filter by published/unpublished            |
+| **Type**          | Filter by discount type (percentage/fixed) |
+| **Free Shipping** | Filter by free shipping status             |
 
-<!-- TEMP_IMG_OFF ![](/img/coupons-filters.webp) -->
+![](/img/coupons-filters.webp)
+
 ## Creating a Coupon
 
 1. Click **New** in the toolbar.
 2. Configure the coupon settings (see fields below).
 3. Click **Save** or **Save & Close**.
 
-<!-- TEMP_IMG_OFF ![](/img/coupon-edit.webp) -->
+![](/img/coupon-edit.webp)
+
 ## Coupon Fields
 
 ### Basic Settings Tab
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Coupon Name** | Internal name for identification | `Summer Sale 20%` |
-| **Coupon Code** | Code customers enter at checkout | `SUMMER20` |
-| **Coupon Type** | Type of discount | Fixed Cart, Percentage, etc. |
-| **Value** | Discount amount or percentage | `20` (for 20% or [dollar]20) |
-| **Free Shipping** | Enable free shipping with coupon | Yes/No |
-| **Valid From** | Start date for coupon validity | `2026-06-01` |
-| **Valid To** | End date for coupon validity | `2026-06-30` |
+| Field             | Description                      | Example                       |
+| ----------------- | -------------------------------- | ----------------------------- |
+| **Coupon Name**   | Internal name for identification | `Summer Sale 20%`             |
+| **Coupon Code**   | Code customers enter at checkout | `SUMMER20`                    |
+| **Coupon Type**   | Type of discount                 | Fixed Cart, Percentage, etc.  |
+| **Value**         | Discount amount or percentage    | `20` (for 20% or \[dollar]20) |
+| **Free Shipping** | Enable free shipping with coupon | Yes/No                        |
+| **Valid From**    | Start date for coupon validity   | `2026-06-01`                  |
+| **Valid To**      | End date for coupon validity     | `2026-06-30`                  |
 
 ### Coupon Types
 
-| Type | Description | Value Meaning |
-|------|-------------|---------------|
-| **Fixed Cart** | Fixed amount off entire cart | [dollar]20 off total |
-| **Fixed Product** | Fixed amount off each product | [dollar]5 per item |
-| **Percentage Cart** | Percentage off entire cart | 20% off total |
-| **Percentage Product** | Percentage off each product | 10% per item |
+| Type                   | Description                   | Value Meaning         |
+| ---------------------- | ----------------------------- | --------------------- |
+| **Fixed Cart**         | Fixed amount off entire cart  | \[dollar]20 off total |
+| **Fixed Product**      | Fixed amount off each product | \[dollar]5 per item   |
+| **Percentage Cart**    | Percentage off entire cart    | 20% off total         |
+| **Percentage Product** | Percentage off each product   | 10% per item          |
 
 ### Restrictions Tab
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Logged-in Users Only** | Restrict to registered customers | No |
-| **Uses Per Coupon** | Maximum total uses (0 = unlimited) | 0 |
-| **Uses Per Customer** | Max uses per customer (0 = unlimited) | 0 |
-| **Minimum Spending** | Minimum order subtotal required | — |
-| **Maximum Discount Value** | Max discount for percentage coupons | — |
-| **Limit Quantity Usage** | Max items for per-product discounts | — |
-| **Product Categories** | Restrict to selected categories | — |
-| **Products** | Restrict to selected products | — |
-| **Brand/Manufacturer** | Restrict to selected brands | — |
-| **Customer Groups** | Restrict to user groups | — |
-| **Users** | Restrict to specific users | — |
+| Field                      | Description                           | Default |
+| -------------------------- | ------------------------------------- | ------- |
+| **Logged-in Users Only**   | Restrict to registered customers      | No      |
+| **Uses Per Coupon**        | Maximum total uses (0 = unlimited)    | 0       |
+| **Uses Per Customer**      | Max uses per customer (0 = unlimited) | 0       |
+| **Minimum Spending**       | Minimum order subtotal required       | —       |
+| **Maximum Discount Value** | Max discount for percentage coupons   | —       |
+| **Limit Quantity Usage**   | Max items for per-product discounts   | —       |
+| **Product Categories**     | Restrict to selected categories       | —       |
+| **Products**               | Restrict to selected products         | —       |
+| **Brand/Manufacturer**     | Restrict to selected brands           | —       |
+| **Customer Groups**        | Restrict to user groups               | —       |
+| **Users**                  | Restrict to specific users            | —       |
 
 ## How Coupons Work
 
 ### Discount Calculation
 
 1. **Fixed Cart**: Subtract the value from the order subtotal
-   - Example: [dollar]20 off a [dollar]100 order = [dollar]80 total
+
+   - Example: \[dollar]20 off a \[dollar]100 order = \[dollar]80 total
 
 2. **Percentage Cart**: Apply percentage to subtotal
-   - Example: 20% off [dollar]100 = [dollar]20 discount = [dollar]80 total
+
+   - Example: 20% off \[dollar]100 = \[dollar]20 discount = \[dollar]80 total
 
 3. **Fixed Product**: Subtract value from each matching product
-   - Example: [dollar]5 off each item × 3 items = [dollar]15 total discount
+
+   - Example: \[dollar]5 off each item × 3 items = \[dollar]15 total discount
 
 4. **Percentage Product**: Apply percentage to each matching product
-   - Example: 10% off [dollar]50 item × 2 items = [dollar]10 total discount
+
+   - Example: 10% off \[dollar]50 item × 2 items = \[dollar]10 total discount
 
 ### Validation Process
 
@@ -155,7 +162,8 @@ When **Free Shipping** is enabled:
 5. Verify the order subtotal meets **Minimum Spending**.
 6. Check product restrictions — order must contain qualifying products.
 
-<!-- TEMP_IMG_OFF ![](/img/coupon-troubleshoot.webp) -->
+![](/img/coupon-troubleshoot.webp)
+
 ### Percentage Discount Exceeds Expected Amount
 
 **Cause:** Maximum discount value not set.
@@ -164,7 +172,7 @@ When **Free Shipping** is enabled:
 
 1. Edit the coupon.
 2. Set **Maximum Discount Value** to cap the discount.
-3. Example: 20% off with max [dollar]50 means even a [dollar]500 order only gets [dollar]50 off.
+3. Example: 20% off with max \[dollar]50 means even a \[dollar]500 order only gets \[dollar]50 off.
 
 ### Free Shipping Not Applying
 

@@ -1,10 +1,3 @@
----
-title: "Weights"
-sidebar_label: "Weights"
-sidebar_position: 10
-description: "Configure weight units for product weights and shipping rate calculations."
----
-
 # Weights
 
 The Weights feature allows you to configure measurement units for product weights. Weight units are essential for shipping carriers that calculate rates based on package weight, and for displaying product specifications to customers. J2Commerce supports automatic conversion between units, ensuring accurate shipping calculations regardless of the unit used for data entry.
@@ -15,50 +8,27 @@ The Weights feature allows you to configure measurement units for product weight
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Accessing Weights
+## Locating Weights
 
-Weight units are managed from the J2Commerce Dashboard.
+Weights are managed from the J2Commerce Dashboard.
 
-1. Go to **Components -> J2Commerce ->** **Dashboard**.
-2. Click **Localisation** in the left sidebar.
-3. Click **Weights**.
+There are **two** ways you can access the Weights.&#x20;
 
-<!-- TEMP_IMG_OFF ![Weights list](/img/localisation-weights.webp) -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localization -> Weights**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Localization -> Weights**
+
+![](/img/tax-profiles.webp)
+
 ## Weight List
 
 The Weights list displays all weight units configured in your store. Each unit shows:
-
-| Column           | Description                                     |
-| ---------------- | ----------------------------------------------- |
-| **Checkbox**     | Select units for batch actions.                 |
-| **Weight Title** | The display name of the unit (e.g., Kilogram).  |
-| **Unit**         | The short unit symbol (e.g., kg).               |
-| **Value**        | Conversion value relative to the base unit.     |
-| **Status**       | Published (green check) or Unpublished (red X). |
-| **Ordering**     | Drag-and-drop to reorder the display sequence.  |
-
-## Adding a Weight Unit
-
-1. Click the **New** button in the toolbar.
-2. Fill in the unit details (see Configuration below).
-3. Click **Save** or **Save & Close**.
-
-<!-- TEMP_IMG_OFF ![Weight edit form](/img/localisation-weight-edit.webp) -->
-## Configuration
 
 **Weight Title:** The display name of the unit. **Example:** `Kilogram`
 
 **Unit:** The short symbol for the unit (1-4 characters). **Example:** `kg`
 
 **Conversion Value:** The multiplier to convert to the base unit. Base unit has value 1.00000000.  **Example:** `0.45359237` for pound
-
-**Decimal Places:** Number of decimal places to display for this unit. **Example:** `2`
-
-**Status:** Set to **Published** to make the unit available.
-
-### Conversion Value Explained
-
-The conversion value defines how this unit relates to your base unit:
 
 - **Base Unit**: Value = 1.00000000 (e.g., if kilogram is your base unit)
 - **Gram**: Value = 0.001 (1 g = 0.001 kg)
@@ -72,9 +42,7 @@ To calculate the conversion value:
 conversion_value = number_of_base_units_in_this_unit
 ```
 
-### Decimal Places
-
-The decimal places setting controls how values are displayed:
+**Decimal Places:** Number of decimal places to display for this unit. **Example:** `2`&#x20;
 
 | Unit      | Decimal Places | Example Display |
 | --------- | -------------- | --------------- |
@@ -83,6 +51,16 @@ The decimal places setting controls how values are displayed:
 | Kilogram  | 3              | `1.525 kg`      |
 | Pound     | 2              | `2.50 lb`       |
 | Ounce     | 1              | `8.5 oz`        |
+
+**Status:** Set to **Published** to make the unit available.
+
+## Adding a New Weight Unit
+
+1. Click the **New** button in the toolbar.
+2. Fill in the unit details (see Configuration below).
+3. Click **Save** or **Save & Close**.
+
+![Weight edit form](/img/localisation-weight-edit.webp)
 
 ## Base Unit
 
@@ -98,11 +76,11 @@ All other units are defined relative to this base unit.
 
 Select your base unit based on your primary market and shipping carriers:
 
-| Primary Market        | Recommended Base Unit |
-| --------------------- | --------------------- |
-| International         | Kilogram (kg)         |
-| United States         | Pound (lb)            |
-| Jewellery/Small items | Gram (g)              |
+**International:** Kilogram (kg)
+
+**United States:** Pound (lb)
+
+**Jewellery/Small items:** Gram (g)
 
 ## Common Weight Units
 
@@ -141,10 +119,21 @@ Some carriers use dimensional weight instead of actual weight:
 2. The carrier charges for whichever is greater: actual weight or dimensional weight.
 3. This is why both weight and length units must be configured correctly.
 
-### Product Display
+## Setting the Product weight
 
-1. Customers see weight in their preferred unit.
-2. The store can display weight in any published unit.
+Open the product **-> J2Commerce** tab **->  Shipping** tab
+
+**The image below shows how the weight is configured on a product. Go to the product**&#x20;
+
+![](/img/tax-products.webp)
+
+## Frontend Product Display
+
+- Customers see weight in their preferred unit.
+
+- The store can display weight in any published unit.
+
+![](/img/tax-frontend.webp)
 
 ## Weight Calculation Examples
 

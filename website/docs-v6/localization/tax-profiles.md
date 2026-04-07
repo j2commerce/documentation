@@ -1,13 +1,12 @@
----
-title: "Tax Profiles"
-sidebar_label: "Tax Profiles"
-sidebar_position: 7
-description: "Create tax profiles (tax classes) to group tax rules and assign them to products for accurate tax calculation."
----
-
 # Tax Profiles
 
 Tax profiles (also called tax classes) group tax rules together and are assigned to products. When a customer purchases a product, J2Commerce calculates tax based on the product's tax profile, the customer's location (geozone), and the applicable tax rates. This allows different products to have different tax rates—essential for stores selling both taxable and tax-exempt items, or items with reduced tax rates.
+
+:::tip
+
+**IMPORTANT:** You have to create a **Tax Rate** and the **Geozones** before you can create a Tax Profile.  If you haven't set up your tax rates or need help, go to the Tax Rate and Geozone Documentations
+
+:::
 
 ## Requirements
 
@@ -15,41 +14,47 @@ Tax profiles (also called tax classes) group tax rules together and are assigned
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Accessing Tax Profiles
+## Locating Tax Profiles
 
-Tax profiles are managed from the J2Commerce Dashboard.
+Tax Profiles are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** **-> J2Commerce -> Dashboard**.
-2. Click **Localisation** in the left sidebar.
-3. Click **Tax Profiles**.
+There are **two** ways you can access the Tax Profiles.&#x20;
 
-<!-- TEMP_IMG_OFF ![Tax profiles list](/img/localisation-taxprofiles.webp) -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localization -> Tax Profiles**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Localization -> Tax Profiles**
+
+![](/img/tax-profiles.webp)
+
 ## Tax Profile List
 
 The Tax Profiles list displays all tax profiles configured in your store. Each profile shows:
 
-**Checkbox:** Select profiles for batch actions.
+**Checkbox:** Select rates to activate the batch actions button.
 
 **Tax Profile Name:** The display name of the tax profile.
 
-**Description:** A brief description of the tax profile purpose.
+**Description:** A brief description of the tax profile's purpose.
 
 **Status:** Published (green check) or Unpublished (red X).
 
-**Ordering:** Drag-and-drop to reorder the display sequence.
+**ID:** The individual ID number
 
-## Adding a Tax Profile
+## Adding a New Tax Profile
 
 1. Click the **New** button in the toolbar.
 2. Fill in the tax profile details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-<!-- TEMP_IMG_OFF ![Tax profile edit form](/img/localisation-taxprofile-edit.webp) -->
+![](/img/tax-profiles-config.webp)
+
 ## Configuration
 
-**Tax Profile Name:** A descriptive name for this tax profile. **Example:** `Standard VAT`
+**Tax Profile Name:** A descriptive name for this tax profile. **Example:** `Standard VAT` or `TN Tax`
 
 **Status:** Set to **Published** to make the profile available for use.
+
+![](/img/tax-profiles-enable.webp)
 
 ## How Tax Profiles Work
 
@@ -89,11 +94,18 @@ Most stores need a few standard tax profiles:
 
 After creating tax profiles, assign them to products:
 
-1. Go to **J2Commerce** -> **Products**.
+1. Go to **J2Commerce** **->** **Products**.
 2. Edit a product.
-3. In the product settings, find the **Tax Profile** field.
-4. Select the appropriate tax profile from the dropdown.
-5. Save the product.
+3. **J2Commerce** tab **->** **General** tab
+4. In the product settings, find the **Tax Profile** field.
+5. Select the appropriate tax profile from the dropdown.
+6. Save the product.
+
+![](/img/tax-profiles-product.webp)
+
+## Frontend View
+
+![](/img/tax-profiles-checkout.webp)
 
 ## Tax Rate Assignment
 
@@ -173,7 +185,7 @@ For **Zero Rate**:Below shows the Geozone and its rate
 
 ### Products Missing Tax Profile
 
-**Cause:** Products created without tax profile assignment.
+**Cause:** Products created without a tax profile assignment.
 
 **Solution:**
 

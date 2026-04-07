@@ -13,11 +13,11 @@ Sales management in J2Commerce provides comprehensive tools for managing your st
 
 The Sales section contains three key areas:
 
-| Area | Purpose |
-|------|---------|
-| **Orders** | View and manage customer orders, update statuses, process refunds |
-| **Customers** | View registered customers and their order history |
-| **Coupons** | Create and manage discount codes for promotions |
+| Area          | Purpose                                                           |
+| ------------- | ----------------------------------------------------------------- |
+| **Orders**    | View and manage customer orders, update statuses, process refunds |
+| **Customers** | View registered customers and their order history                 |
+| **Coupons**   | Create and manage discount codes for promotions                   |
 
 ## Key Features
 
@@ -50,7 +50,8 @@ The Sales section contains three key areas:
 
 Navigate to **J2Commerce** → **Dashboard** → **Sales** to access all sales management features.
 
-<!-- TEMP_IMG_OFF ![](/img/sales-dashboard.webp) -->
+![](/img/sales-dashboard.webp)
+
 ## Related Topics
 
 - [Orders](orders.md) — Order management and status workflow

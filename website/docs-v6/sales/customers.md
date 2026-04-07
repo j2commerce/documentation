@@ -20,22 +20,23 @@ The Customers page displays all store customers who have placed orders or create
 1. Go to **J2Commerce** → **Dashboard**.
 2. Click **Customers** in the Sales section.
 
-<!-- TEMP_IMG_OFF ![](/img/customers-list.webp) -->
+![](/img/customers-list.webp)
+
 Alternatively: **Components** → **J2Commerce** → **Customers**.
 
 ## Customers List View
 
 The customers list displays customer information aggregated from orders and addresses:
 
-| Column | Description |
-|--------|-------------|
-| **Name** | Customer full name (first name + last name) |
-| **Email** | Customer email address |
-| **Company** | Company name (if provided) |
-| **City** | Customer city |
-| **Country** | Customer country |
-| **Phone** | Primary phone number |
-| **Registered** | Date of first order |
+| Column         | Description                                 |
+| -------------- | ------------------------------------------- |
+| **Name**       | Customer full name (first name + last name) |
+| **Email**      | Customer email address                      |
+| **Company**    | Company name (if provided)                  |
+| **City**       | Customer city                               |
+| **Country**    | Customer country                            |
+| **Phone**      | Primary phone number                        |
+| **Registered** | Date of first order                         |
 
 ### Customer Information Source
 
@@ -49,34 +50,36 @@ Customers are grouped by email address — if the same email appears in multiple
 
 ### Filter Options
 
-| Filter | Description |
-|--------|-------------|
-| **Search** | Search by name, email, company, or city |
-| **Country** | Filter customers by country |
+| Filter      | Description                             |
+| ----------- | --------------------------------------- |
+| **Search**  | Search by name, email, company, or city |
+| **Country** | Filter customers by country             |
 
-<!-- TEMP_IMG_OFF ![](/img/customers-filters.webp) -->
+![](/img/customers-filters.webp)
+
 ## Customer Detail View
 
 Click on a customer's name to view their details:
 
 ### Customer Information Tab
 
-| Field | Description |
-|-------|-------------|
-| **First Name** | Customer first name |
-| **Last Name** | Customer last name |
-| **Email** | Customer email address |
-| **Company** | Company name (if applicable) |
-| **Phone 1** | Primary phone number |
-| **Phone 2** | Secondary phone number |
-| **Address Line 1** | Street address |
-| **Address Line 2** | Additional address info |
-| **City** | City/town |
-| **Postcode** | Postal/ZIP code |
-| **Country** | Country |
-| **Zone/State** | State/province |
+| Field              | Description                  |
+| ------------------ | ---------------------------- |
+| **First Name**     | Customer first name          |
+| **Last Name**      | Customer last name           |
+| **Email**          | Customer email address       |
+| **Company**        | Company name (if applicable) |
+| **Phone 1**        | Primary phone number         |
+| **Phone 2**        | Secondary phone number       |
+| **Address Line 1** | Street address               |
+| **Address Line 2** | Additional address info      |
+| **City**           | City/town                    |
+| **Postcode**       | Postal/ZIP code              |
+| **Country**        | Country                      |
+| **Zone/State**     | State/province               |
 
-<!-- TEMP_IMG_OFF ![](/img/customers-detail.webp) -->
+![](/img/customers-detail.webp)
+
 ### Order History Tab
 
 View all orders placed by this customer:
@@ -111,10 +114,10 @@ View all orders placed by this customer:
 
 ### Guest vs Registered Customers
 
-| Type | Data Source | Features |
-|------|-------------|----------|
-| **Guest** | Order billing address | Limited to order information |
-| **Registered** | Joomla user + orders | Full profile, order history, address book |
+| Type           | Data Source           | Features                                  |
+| -------------- | --------------------- | ----------------------------------------- |
+| **Guest**      | Order billing address | Limited to order information              |
+| **Registered** | Joomla user + orders  | Full profile, order history, address book |
 
 ### Customer Addresses
 

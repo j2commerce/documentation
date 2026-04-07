@@ -1,10 +1,3 @@
----
-title: "Order Statuses"
-sidebar_label: "Order Statuses"
-sidebar_position: 6
-description: "Manage the status values that track orders through your store's workflow from pending to shipped to completed."
----
-
 # Order Statuses
 
 Order statuses define the stages an order passes through in your store. Each status represents a step in the order lifecycle, from initial placement through processing, shipping, and completion. J2Commerce includes core statuses that are required by the system, and you can add custom statuses to match your specific workflow.
@@ -15,30 +8,37 @@ Order statuses define the stages an order passes through in your store. Each sta
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Accessing Order Statuses
+## Locating Order Statuses
 
-Order statuses are managed from the J2Commerce Dashboard.
+Order Statuses are managed from the J2Commerce Dashboard.
 
-1. Go to **Components -> J2Commerce ->** **Dashboard**.
-2. Click **Setup** in the left sidebar.
-3. Click **Order Statuses**.
+There are **two** ways you can access the Order Statuses.&#x20;
 
-<!-- TEMP_IMG_OFF ![Order statuses list](/img/localisation-orderstatuses.webp) -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Order Statuses**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Order Statuses**
+
+![](/img/order1.webp)
+
 ## Order Status List
+
+![](/img/order-titles.webp)
 
 The Order Statuses list displays all statuses configured in your store. Each status shows:
 
 **Checkbox:** Select statuses for batch actions.
 
-**Status Name:** The display name of the order status.
+**Status:** Set to **Published** to make the status available for use.
 
-**CSS Class:** The Bootstrap badge class controls the visual appearance.
+**Status Name:** The display name shown to customers and in admin lists. **Example:** `On Hold`
 
-**Core:** Indicates whether this is a system-required status (cannot be deleted).
+**Badge:** Displays the badge name and color
 
-**Status:** Published (green check) or Unpublished (red X).
+**CSS Class:** Bootstrap badge class controlling the visual appearance of the status badge. **Example:** `badge text-bg-warning`
 
-**Ordering:** Drag-and-drop to reorder the display sequence.
+**Core:** Indicates if this is a system-required status. Core statuses cannot be edited or deleted. **Example:** No (read-only)
+
+**ID:** Displays the individual ID number.
 
 ## Core Order Statuses
 
@@ -66,16 +66,7 @@ These core statuses are essential for J2Commerce's order processing and cannot b
 2. Fill in the status details (see Configuration below).
 3. Click **Save** or **Save & Close**.
 
-<!-- TEMP_IMG_OFF ![Order status edit form](/img/localisation-orderstatus-edit.webp) -->
-## Configuration
-
-**Status Name:** The display name shown to customers and in admin lists. **Example:** `On Hold`
-
-**CSS Class:** Bootstrap badge class controlling the visual appearance of the status badge. **Example:** `badge text-bg-warning`
-
-**Core Status:** Indicates if this is a system-required status. Core statuses cannot be edited or deleted. **Example:** No (read-only)
-
-**Status:** Set to **Published** to make the status available for use.
+![](/img/order-config.webp)
 
 ### CSS Class Options
 
@@ -102,6 +93,8 @@ Order statuses control the order workflow throughout J2Commerce:
 
 - New orders start with **Pending** status.
 - Payment methods may automatically change status (e.g., to **Confirmed** after successful payment).
+
+![](/img/order-badges.webp)
 
 ### Payment Processing
 
@@ -148,7 +141,7 @@ graph LR
 
 Orders can move between statuses in various ways:
 
-- **Manual changes** — Admin changes status in the order detail page.
+- **Manual changes** — Admin changes the status in the order detail page.
 - **Automatic updates** — Payment gateways update status on payment success/failure.
 - **Plugin triggers** — Shipping, inventory, or custom plugins update status based on events.
 - **Customer actions** — Some systems allow customers to cancel orders (changes to Cancelled).
@@ -203,11 +196,11 @@ Orders can move between statuses in various ways:
 1. Edit the order status.
 2. Verify the **CSS Class** uses valid Bootstrap 5 badge classes.
 3. Common format: `badge text-bg-success` (note the space between `badge` and `text-bg-*`).
-4. Clear browser cache and Joomla cache.
+4. Clear the browser cache and Joomla cache.
 
 ### Customers Not Receiving Status Update Emails
 
-**Cause:** Email notifications not configured for status changes.
+**Cause:** Email notifications are not configured for status changes.
 
 **Solution:**
 

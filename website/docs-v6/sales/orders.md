@@ -20,54 +20,56 @@ The Orders page displays all customer orders with comprehensive filtering and ma
 1. Go to **J2Commerce** → **Dashboard**.
 2. Click **Orders** in the Sales section.
 
-<!-- TEMP_IMG_OFF ![](/img/orders-list.webp) -->
+![](/img/orders-list.webp)
+
 Alternatively: **Components** → **J2Commerce** → **Orders**.
 
 ## Orders List View
 
 The orders list displays all orders with the following columns:
 
-| Column | Description |
-|--------|-------------|
+| Column       | Description                                     |
+| ------------ | ----------------------------------------------- |
 | **Order ID** | Unique order identifier (e.g., `1774713249236`) |
-| **Invoice** | Invoice number with prefix (e.g., `INV-00123`) |
-| **Customer** | Billing name (first name + last name) |
-| **Email** | Customer email address |
-| **Status** | Current order status with colour badge |
-| **Total** | Order total amount in the transaction currency |
-| **Payment** | Payment method used |
-| **Date** | Order creation date and time |
+| **Invoice**  | Invoice number with prefix (e.g., `INV-00123`)  |
+| **Customer** | Billing name (first name + last name)           |
+| **Email**    | Customer email address                          |
+| **Status**   | Current order status with colour badge          |
+| **Total**    | Order total amount in the transaction currency  |
+| **Payment**  | Payment method used                             |
+| **Date**     | Order creation date and time                    |
 
 ### Filter Options
 
 Use the filter bar to narrow down orders:
 
-| Filter | Description |
-|--------|-------------|
-| **Search** | Search by order ID, customer name, email, or product name |
-| **Status** | Filter by order status (Confirmed, Pending, Shipped, etc.) |
-| **Payment Method** | Filter by payment plugin (Cash, PayPal, Stripe, etc.) |
-| **User** | Filter by registered customer |
-| **Coupon Code** | Find orders that used a specific coupon |
-| **Amount Range** | Filter by order total (minimum/maximum) |
-| **Order ID Range** | Filter by order ID range |
-| **Date Range** | Filter by order date (From/To) |
+| Filter             | Description                                                |
+| ------------------ | ---------------------------------------------------------- |
+| **Search**         | Search by order ID, customer name, email, or product name  |
+| **Status**         | Filter by order status (Confirmed, Pending, Shipped, etc.) |
+| **Payment Method** | Filter by payment plugin (Cash, PayPal, Stripe, etc.)      |
+| **User**           | Filter by registered customer                              |
+| **Coupon Code**    | Find orders that used a specific coupon                    |
+| **Amount Range**   | Filter by order total (minimum/maximum)                    |
+| **Order ID Range** | Filter by order ID range                                   |
+| **Date Range**     | Filter by order date (From/To)                             |
 
-<!-- TEMP_IMG_OFF ![](/img/orders-filters.webp) -->
+![](/img/orders-filters.webp)
+
 ## Order Statuses
 
 J2Commerce includes default order statuses that represent the order lifecycle:
 
-| Status | Description |
-|--------|-------------|
-| **Confirmed** | Order payment confirmed, ready for processing |
-| **Processed** | Order being prepared for shipment |
-| **Failed** | Payment failed or order could not be completed |
-| **Pending** | Order placed, awaiting payment confirmation |
-| **New** | New order, not yet processed |
-| **Cancelled** | Order cancelled |
-| **Shipped** | Order shipped to customer |
-| **Delivered** | Order delivered to customer |
+| Status        | Description                                    |
+| ------------- | ---------------------------------------------- |
+| **Confirmed** | Order payment confirmed, ready for processing  |
+| **Processed** | Order being prepared for shipment              |
+| **Failed**    | Payment failed or order could not be completed |
+| **Pending**   | Order placed, awaiting payment confirmation    |
+| **New**       | New order, not yet processed                   |
+| **Cancelled** | Order cancelled                                |
+| **Shipped**   | Order shipped to customer                      |
+| **Delivered** | Order delivered to customer                    |
 
 ### Status Workflow
 
@@ -90,28 +92,29 @@ Click an order ID to view the full order details:
 
 The order detail page shows:
 
-| Section | Information |
-|---------|-------------|
-| **Order Summary** | Order ID, invoice number, status, date, totals |
-| **Billing Address** | Name, company, address, phone, tax number |
-| **Shipping Address** | Name, company, address, phone |
-| **Products** | Item name, SKU, quantity, price, tax, total |
-| **Order Totals** | Subtotal, shipping, taxes, discounts, grand total |
-| **Payment** | Payment method, transaction ID, status |
-| **Customer Note** | Note provided by customer at checkout |
+| Section              | Information                                       |
+| -------------------- | ------------------------------------------------- |
+| **Order Summary**    | Order ID, invoice number, status, date, totals    |
+| **Billing Address**  | Name, company, address, phone, tax number         |
+| **Shipping Address** | Name, company, address, phone                     |
+| **Products**         | Item name, SKU, quantity, price, tax, total       |
+| **Order Totals**     | Subtotal, shipping, taxes, discounts, grand total |
+| **Payment**          | Payment method, transaction ID, status            |
+| **Customer Note**    | Note provided by customer at checkout             |
 
-<!-- TEMP_IMG_OFF ![](/img/orders-detail.webp) -->
+![](/img/orders-detail.webp)
+
 ### Order Actions
 
 From the order detail view:
 
-| Action | Description |
-|--------|-------------|
-| **Edit** | Modify order details (addresses, items) |
-| **Update Status** | Change order status with optional notification |
-| **Print Invoice** | Generate printable invoice |
-| **Print Packing Slip** | Generate packing slip for fulfilment |
-| **Resend Email** | Resend order confirmation to customer |
+| Action                 | Description                                    |
+| ---------------------- | ---------------------------------------------- |
+| **Edit**               | Modify order details (addresses, items)        |
+| **Update Status**      | Change order status with optional notification |
+| **Print Invoice**      | Generate printable invoice                     |
+| **Print Packing Slip** | Generate packing slip for fulfilment           |
+| **Resend Email**       | Resend order confirmation to customer          |
 
 ## Updating Order Status
 
@@ -122,7 +125,8 @@ From the order detail view:
 5. Check **Notify Customer** to send an email notification.
 6. Click **Save**.
 
-<!-- TEMP_IMG_OFF ![](/img/orders-status-update.webp) -->
+![](/img/orders-status-update.webp)
+
 ## Order History
 
 Each order maintains a history of status changes and notes. The History tab shows:
