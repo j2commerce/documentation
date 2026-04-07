@@ -4,7 +4,7 @@ Tax profiles (also called tax classes) group tax rules together and are assigned
 
 :::tip
 
-**IMPORTANT:** You have to create a Tax Rate before you can create a Tax Profile.  If you haven't set up you tax rates or need help, go to the Tax Rate Documentation
+**IMPORTANT:** You have to create a **Tax Rate** and the **Geozones** before you can create a Tax Profile.  If you haven't set up your tax rates or need help, go to the Tax Rate and Geozone Documentations
 
 :::
 

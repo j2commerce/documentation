@@ -9,21 +9,29 @@ description: "Define tax percentages for geographic zones and link them to tax p
 
 Tax rates define the actual percentage of tax to apply based on a customer's location (geozone) and the product's tax profile. Each tax rate links a tax profile, a geozone, and a percentage. When a customer checks out, J2Commerce calculates tax by finding the matching tax rate for the product's tax profile and the customer's geozone.
 
+:::tip
+
+**IMPORTANT:** You must create a **Geozone** before setting up the Tax Rate. If you need help, go to the Geozone Documentation
+
+:::
+
 ## Requirements
 
 - PHP 8.3.0+
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Accessing Tax Rates
+## Locating Tax Rates
 
-Tax rates are managed from the J2Commerce Dashboard.
+Tax Rates are managed from the J2Commerce Dashboard.
 
-1. Go to **Components** **-> J2Commerce ->** **Dashboard**.
-2. Click **Localisation** in the left sidebar.
-3. Click **Tax Rates**.
+There are **two** ways you can access the Tax Rates.&#x20;
 
-![Tax rates list](/img/localisation-taxrates.webp)
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localization -> Tax Rates**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Localization -> Tax Rates**
+
+![](/img/tax-profiles.webp)
 
 ## Tax Rate List
 
