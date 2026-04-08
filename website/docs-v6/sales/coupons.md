@@ -181,7 +181,7 @@ When **Free Shipping** is enabled:
 5. Verify the order subtotal meets **Minimum Spending**.
 6. Check product restrictions — order must contain qualifying products.
 
-![](/img/coupon-troubleshoot.webp)
+<!-- ![](/img/coupon-troubleshoot.webp) ->
 
 ### Percentage Discount Exceeds Expected Amount
 

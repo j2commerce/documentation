@@ -158,7 +158,7 @@ From the order detail view:
 5. Check **Notify Customer** to send an email notification.
 6. Click **Save**.
 
-![](/img/orders-status-update.webp)
+<!-- ![](/img/orders-status-update.webp) -->
 
 ## Order History
 
