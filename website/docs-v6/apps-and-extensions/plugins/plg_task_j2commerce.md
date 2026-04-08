@@ -1,10 +1,3 @@
----
-title: "Scheduled Tasks"
-sidebar_label: "Scheduled Tasks"
-sidebar_position: 6
-description: "Automate store maintenance with J2Commerce scheduled tasks — clean up abandoned orders, process background queues, purge old logs, and update currency exchange rates."
----
-
 # Scheduled Tasks
 
 The J2Commerce Scheduled Tasks plugin connects your store to Joomla's built-in Task Scheduler. It runs maintenance jobs automatically on a schedule you choose — no manual clicks required. The plugin handles four essential housekeeping routines: removing abandoned orders, processing background queues, cleaning up old log entries, and updating currency exchange rates.
@@ -21,7 +14,7 @@ Without these tasks running, incomplete orders accumulate, background jobs stall
 
 This plugin ships with J2Commerce 6 and is available immediately after installation. To enable it:
 
-- Go to **System** -> **Manage** -> **Plugins**.
+- Go to **System** **-> Manage ->** **Plugins**.
 
 ![](/img/action-log-plugin.webp)
 
@@ -38,7 +31,7 @@ The Joomla Task Scheduler needs a trigger to run your scheduled tasks. Without t
 You have two options:
 
 - **Server cron job (recommended):** Set up a cron job on your hosting that calls Joomla's scheduler. This is the most reliable method.
-- **Lazy scheduler:** Enable the "Lazy" option in **System** **->** **Global Configuration** **-> System** tab. This runs tasks when visitors load your site, but tasks may be delayed during low-traffic periods.
+- **Scheduled Tasks:** Go to **Systems -> Manage -> Scheduled Tasks**. This runs tasks when visitors load your site, but tasks may be delayed during low-traffic periods.
 
 For server cron job setup, add this command to your hosting control panel's cron jobs (run every minute or every 5 minutes):
 
@@ -56,7 +49,9 @@ See the [Joomla documentation on Task Scheduler](https://manual.joomla.org/docs/
 
 - Click the **New** button.
 
-- From the task type list, select one of the **J2Commerce tasks** (described below).
+- From the task type list, **select one** of the **J2Commerce tasks** (each one is described below).
+
+  ![](/img/task-options.webp)
 
 - Give the task a **Title** (e.g., "Remove Abandoned Orders - Daily").
 
@@ -66,19 +61,17 @@ See the [Joomla documentation on Task Scheduler](https://manual.joomla.org/docs/
 
 - Click **Save & Close**.
 
-<!-- SCREENSHOT: System > Scheduled Tasks > New showing the J2Commerce task types in the selection list -->
-
 The task runs automatically at the interval you set. You can also click **Run** on any task to execute it immediately.
 
 ## Task 1: Remove Abandoned Orders
+
+![](/img/task-options-abandoned-cart.webp)
 
 **Task type:** J2Commerce: Remove Abandoned Orders
 
 This task deletes incomplete orders that have a "New" status and are older than a number of days you specify. When a customer starts checkout but never completes payment, the order stays in the system with a "New" status. Over time, these abandoned orders clutter your order list and waste database space.
 
 When an order is deleted, all related data is removed along with it — order items, shipping details, billing information, tax records, discount codes, and download links.
-
-<!-- SCREENSHOT: Scheduled Tasks configuration form for "Remove Abandoned Orders" showing all parameter fields -->
 
 ### Configuration
 
@@ -100,7 +93,11 @@ Always run this task with **Dry Run** set to **Yes** first. Check the task log i
 
 :::
 
+![](/img/task-options-abandoned-cart1.webp)
+
 ## Task 2: Process Queue
+
+![](/img/task-options-process-queue.webp)
 
 **Task type:** J2Commerce: Process Queue
 
@@ -109,8 +106,6 @@ J2Commerce uses a background queue system for jobs that should not block a custo
 The task also releases "stale locks" — items that were being processed when a previous task run crashed or timed out. Without this, stuck items would never be retried.
 
 Every run creates a detailed log entry so you can audit what was processed, what succeeded, and what failed.
-
-<!-- SCREENSHOT: Scheduled Tasks configuration form for "Process Queue" showing all parameter fields -->
 
 ### Configuration
 
@@ -132,17 +127,19 @@ Every run creates a detailed log entry so you can audit what was processed, what
 
 :::info
 
-This task only does something when there are items in the queue. If your store does not use any integrations that add items to the queue, the task finishes instantly each run with nothing to process. It is safe to leave it enabled regardless.
+This task only does something when there are items in the queue. If your store does not use any integrations that add items to the queue, the task finishes each run instantly with nothing to process. It is safe to leave it enabled regardless.
 
 :::
 
+![](/img/task-options-process-queue1.webp)
+
 ## Task 3: Cleanup Queue Logs
+
+![](/img/task-options-cleanup-queue.webp)
 
 **Task type:** J2Commerce: Cleanup Queue Logs
 
 Each time the Process Queue task runs, it creates a log entry in the database. Over months, these logs accumulate. This cleanup task deletes old log entries and completed queue items to keep your database lean.
-
-<!-- SCREENSHOT: Scheduled Tasks configuration form for "Cleanup Queue Logs" showing all parameter fields -->
 
 ### Configuration
 
@@ -162,15 +159,17 @@ Each time the Process Queue task runs, it creates a log entry in the database. O
 
 **Dry Run:** Start with **Yes**, then switch to **No**
 
+![](/img/task-options-cleanup-queue1.webp)
+
 ## Task 4: Update Currency Exchange Rates
+
+![](/img/task-options-currency.webp)
 
 **Task type:** J2Commerce: Update Currency Exchange Rates
 
 If your store accepts multiple currencies, exchange rates need to stay current. This task fetches the latest rates from your configured API provider and updates all enabled currencies in J2Commerce automatically.
 
 This task has no parameters of its own. It relies on the **Currency Updater** app plugin for API provider configuration (API key, base currency, etc.).
-
-<!-- SCREENSHOT: Scheduled Tasks configuration form for "Update Currency Exchange Rates" -->
 
 ### Prerequisites
 
@@ -186,24 +185,31 @@ If no currency updater plugin is enabled, the task skips execution and reports "
 
 **Execution Interval:** Once daily or twice daily
 
+![](/img/task-options-currency1.webp)
+
 ## Checking Task Results
 
 After a task runs, you can review what happened:
 
 1. Go to **System** -> **Scheduled Tasks**.
 2. Find your task in the list.
-3. The **Last Execution** column shows when the task last ran and its result status.
-4. Click the task name to see detailed execution logs.
+3. The **Last Run Date** column shows when the task last ran
 
-Task result statuses:
+![](/img/task-options-run.webp)
 
-**OK:** The task completed successfully.
+Click the Execution History button to see detailed execution logs.
 
-**No Run:** The task had nothing to do (e.g., no currency updater plugin enabled).
+![](/img/task-scheduled-history1.webp)
 
-**Knockout:** The task encountered an error. Check the log details for the error message.
+You can organise the results by clicking on Filter options and the Exit Code dropdown:
 
-<!-- SCREENSHOT: System > Scheduled Tasks list showing J2Commerce tasks with their last execution status -->
+![](/img/task-scheduled-history.webp)
+
+**Executed:** The task completed successfully.
+
+**Task Will Resume:** Something occurred that prevented it from being completed, but it didn't fail. It will try again automatically the next scheduled run
+
+**Failed:** The task encountered an error. Check the log details for the error message.
 
 ## Recommended Schedule Summary
 
