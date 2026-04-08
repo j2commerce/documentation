@@ -22,7 +22,7 @@ Tax Rules connect Tax Profiles to Tax Rates, determining which tax percentage ap
 1. Go to **J2Commerce** → **Dashboard**.
 2. Click **Localisation** → **Tax Rules**.
 
-<!-- ![](/img/tax-rules-list.webp) -->
+![](/img/tax-rules-list.webp)
 
 Alternatively: **Components** → **J2Commerce** → **Localisation** → **Tax Rules**.
 
@@ -46,7 +46,7 @@ The tax rules list displays all configured rules:
 | **Tax Profile**  | Filter by tax profile                       |
 | **Address Type** | Filter by Billing or Shipping               |
 
-<!-- ![](/img/tax-rules-filters.webp) -->
+![](/img/tax-rules-filters.webp)
 
 ## Creating a Tax Rule
 
@@ -56,7 +56,7 @@ The tax rules list displays all configured rules:
 4. Choose the **Address Type**.
 5. Click **Save** or **Save & Close**.
 
-<!-- ![](/img/tax-rule-edit.webp) -->
+![](/img/tax-rule-edit.webp)
 
 ## Tax Rule Fields
 

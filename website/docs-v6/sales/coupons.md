@@ -1,10 +1,3 @@
----
-title: "Coupons"
-sidebar_label: "Coupons"
-sidebar_position: 4
-description: "Create and manage discount codes and promotional coupons in J2Commerce"
----
-
 # Coupons
 
 Coupons allow you to create promotional codes that customers can apply at checkout for discounts. Create percentage discounts, fixed amount discounts, or free shipping offers with flexible restrictions.
@@ -15,29 +8,41 @@ Coupons allow you to create promotional codes that customers can apply at checko
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Accessing Coupons
+## Locating Coupons
 
-1. Go to **J2Commerce** → **Dashboard**.
-2. Click **Coupons** in the Sales section.
+Coupons are managed from the J2Commerce Dashboard.
 
-<!-- ![](/img/coupons-list.webp) -->
+There are **two** ways you can access the coupons.&#x20;
 
-Alternatively: **Components** → **J2Commerce** → **Coupons**.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Sales -> Coupons**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Sales -> Coupons**
+
+![](/img/coupons3.webp)
 
 ## Coupons List View
 
+![](/img/coupons-title.webp)
+
 The coupons list displays all configured discount codes:
 
-| Column          | Description                                  |
-| --------------- | -------------------------------------------- |
-| **Status**      | Published (green) or Unpublished (grey)      |
-| **Coupon Name** | Internal name for the coupon                 |
-| **Code**        | Coupon code customers enter at checkout      |
-| **Type**        | Discount type (Fixed Cart, Percentage, etc.) |
-| **Value**       | Discount amount or percentage                |
-| **Valid From**  | Start date of validity period                |
-| **Valid To**    | End date of validity period                  |
-| **ID**          | Internal coupon ID                           |
+**Status:** Published (green) or Unpublished (grey)
+
+**Coupon Name:** Internal name for the coupon
+
+**Coupon Code:** Coupon code customers enter at checkout
+
+**Value:** Discount amount or percentage
+
+**Value Type:** Discount type (Fixed Cart, Percentage, etc.)
+
+**Expiration:** Displays if the coupon is active or expired.
+
+**Valid From:** Start date of validity period
+
+**Valid To:** End date of validity period
+
+**ID:** Internal coupon ID
 
 ### Filter Options
 
@@ -48,7 +53,7 @@ The coupons list displays all configured discount codes:
 | **Type**          | Filter by discount type (percentage/fixed) |
 | **Free Shipping** | Filter by free shipping status             |
 
-<!-- ![](/img/coupons-filters.webp) -->
+![](/img/coupons-filters.webp)
 
 ## Creating a Coupon
 
@@ -56,11 +61,13 @@ The coupons list displays all configured discount codes:
 2. Configure the coupon settings (see fields below).
 3. Click **Save** or **Save & Close**.
 
-<!-- ![](/img/coupon-edit.webp) -->
+![](/img/coupon-edit.webp)
 
 ## Coupon Fields
 
 ### Basic Settings Tab
+
+![](/img/coupons-basic2.webp)
 
 | Field             | Description                      | Example                       |
 | ----------------- | -------------------------------- | ----------------------------- |
@@ -81,21 +88,33 @@ The coupons list displays all configured discount codes:
 | **Percentage Cart**    | Percentage off entire cart    | 20% off total         |
 | **Percentage Product** | Percentage off each product   | 10% per item          |
 
-### Restrictions Tab
+### Advanced Settings tab
 
-| Field                      | Description                           | Default |
-| -------------------------- | ------------------------------------- | ------- |
-| **Logged-in Users Only**   | Restrict to registered customers      | No      |
-| **Uses Per Coupon**        | Maximum total uses (0 = unlimited)    | 0       |
-| **Uses Per Customer**      | Max uses per customer (0 = unlimited) | 0       |
-| **Minimum Spending**       | Minimum order subtotal required       | —       |
-| **Maximum Discount Value** | Max discount for percentage coupons   | —       |
-| **Limit Quantity Usage**   | Max items for per-product discounts   | —       |
-| **Product Categories**     | Restrict to selected categories       | —       |
-| **Products**               | Restrict to selected products         | —       |
-| **Brand/Manufacturer**     | Restrict to selected brands           | —       |
-| **Customer Groups**        | Restrict to user groups               | —       |
-| **Users**                  | Restrict to specific users            | —       |
+**Product Categories:** Restrict to selected categories
+
+**Products:** Restrict to selected products
+
+**Brand/Manufacturer:** Restrict to selected brands
+
+**Logged-in Users Only:** Restrict to registered customers
+
+**Customer Groups:** Restrict to user groups
+
+**Users:** Restrict to specific users
+
+**Minimum Spending:** Minimum order subtotal required
+
+![](/img/coupons-basic1.webp)
+
+### Usage Limit Tab
+
+![](/img/coupons-usage.webp)
+
+**Uses Per Coupon:** Maximum total uses (0 = unlimited)
+
+**Uses Per Customer:** Max uses per customer (0 = unlimited)
+
+**Maximum Discount Value:** Max discount for percentage coupons
 
 ## How Coupons Work
 
@@ -121,14 +140,14 @@ The coupons list displays all configured discount codes:
 
 When a customer applies a coupon, J2Commerce validates:
 
-1. **Coupon exists and is published**
-2. **Date validity** — Current date is within Valid From/To range
-3. **Usage limits** — Total uses haven't exceeded limit
+1. **A coupon exists and is published**
+2. **Date validity** — Current date is within the Valid From/To range
+3. **Usage limits** — Total uses haven't exceeded the limit
 4. **Customer usage** — Customer hasn't exceeded their personal limit
 5. **Login requirement** — Customer is logged in (if required)
 6. **Minimum spending** — Order subtotal meets minimum
 7. **Product/category restrictions** — Order contains qualifying items
-8. **User/group restrictions** — Customer is in allowed group
+8. **User/group restrictions** — Customer is in the allowed group
 
 ### Free Shipping Coupons
 
@@ -162,7 +181,7 @@ When **Free Shipping** is enabled:
 5. Verify the order subtotal meets **Minimum Spending**.
 6. Check product restrictions — order must contain qualifying products.
 
-<!-- ![](/img/coupon-troubleshoot.webp) -->
+![](/img/coupon-troubleshoot.webp)
 
 ### Percentage Discount Exceeds Expected Amount
 
@@ -207,8 +226,3 @@ When **Free Shipping** is enabled:
 2. In the **Products** field, select the products.
 3. **Important:** Click **Save** after selecting products before leaving the page.
 4. The note in the interface reminds you: "If you add or delete product(s), you must click the save button before leaving."
-
-## Related Topics
-
-- [Orders](orders.md) — View orders that used coupons
-- [Configuration](../configuration/index.md) — Configure default coupon settings
