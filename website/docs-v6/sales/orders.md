@@ -133,7 +133,7 @@ The order detail page shows:
 
 **Customer Note:** Note provided by customer at checkout
 
-![](/img/orders-detail.webp)
+<!-- ![](/img/orders-detail.webp) -->
 
 ### Order Actions
 

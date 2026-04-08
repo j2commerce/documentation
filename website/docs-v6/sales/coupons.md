@@ -108,7 +108,7 @@ The coupons list displays all configured discount codes:
 
 ### Usage Limit Tab
 
-![](/img/coupons-usage.webp)
+<!-- ![](/img/coupons-usage.webp) -->
 
 **Uses Per Coupon:** Maximum total uses (0 = unlimited)
 
