@@ -41,7 +41,7 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 <!-- SCREENSHOT: J2Commerce Apps list with Subscription Products highlighted -->
 
----
+***
 
 ## Step 1: Configure Payment Methods
 
@@ -53,10 +53,12 @@ Subscription billing requires a payment gateway that supports automated recurrin
 When a customer checks out with a subscription product, J2Commerce automatically hides any payment method that does not support recurring billing. Only the gateways you select here are shown.
 
 :::note
+
 A payment gateway signals subscription support by responding to the `onJ2CommerceAcceptSubscriptionPayment` event. Check the documentation for your specific payment add-on to confirm subscription support.
+
 :::
 
----
+***
 
 ## Step 2: Set Up the Cron Job
 
@@ -97,7 +99,7 @@ wget -q -O /dev/null "https://yoursite.com/index.php?option=com_j2commerce&view=
 
 The example above runs every hour. Adjust the schedule to match your store's needs.
 
----
+***
 
 ## Step 3: Configure Global Plugin Settings
 
@@ -105,43 +107,43 @@ Open the plugin configuration from **J2Commerce** -> **Apps** -> **Subscription 
 
 ### Basic Settings
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Enable Cron Log** | Write a log file at `administrator/logs/app_subscriptionproduct.php` while the cron runs. Useful for diagnosing issues. | Yes |
-| **Cron URL** | Displays the current cron URL with security key. Read-only display field. | — |
-| **Notify before expiry (days)** | Send expiry reminder emails this many days before a subscription ends. Enter comma-separated values to send multiple reminders, for example `3,2` sends emails 3 days and 2 days before expiry. | — |
-| **Bcc to** | Send a blind copy of all customer lifecycle emails to these addresses. Separate multiple addresses with a comma. | — |
-| **Accepted Payment Methods** | Restrict checkout to these subscription-compatible gateways. Leave empty to allow all compatible gateways. | All |
-| **Allow card update** | Always show the card update option for supported payment gateways, even when the card has not expired. | No |
-| **Debug Mode** | Enable verbose debug logging. Disable in production environments. | No |
+| Setting                         | Description                                                                                                                                                                                     | Default |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Enable Cron Log**             | Write a log file at `administrator/logs/app_subscriptionproduct.php` while the cron runs. Useful for diagnosing issues.                                                                         | Yes     |
+| **Cron URL**                    | Displays the current cron URL with security key. Read-only display field.                                                                                                                       | —       |
+| **Notify before expiry (days)** | Send expiry reminder emails this many days before a subscription ends. Enter comma-separated values to send multiple reminders, for example `3,2` sends emails 3 days and 2 days before expiry. | —       |
+| **Bcc to**                      | Send a blind copy of all customer lifecycle emails to these addresses. Separate multiple addresses with a comma.                                                                                | —       |
+| **Accepted Payment Methods**    | Restrict checkout to these subscription-compatible gateways. Leave empty to allow all compatible gateways.                                                                                      | All     |
+| **Allow card update**           | Always show the card update option for supported payment gateways, even when the card has not expired.                                                                                          | No      |
+| **Debug Mode**                  | Enable verbose debug logging. Disable in production environments.                                                                                                                               | No      |
 
 ### Display Settings
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Show Duration** | Display the subscription duration (billing frequency) below the price on the product page. | Yes |
-| **Show Recurring Total** | Show a "Recurring Total" row in the cart and checkout. | Yes |
-| **Show Non-Recurring Total** | Show or hide the non-recurring total row (sign-up fees) in the cart. | Yes |
-| **Show Recurring Amount** | Show the recurring amount per billing period in the cart. | Yes |
-| **Show Recurring Discount** | Show the recurring discount amount in the cart. | Yes |
-| **Show Next Renewal Date** | Show the first renewal date in the cart. | Yes |
-| **Renewal Date Format** | PHP date format string for the renewal date display. See the [PHP date documentation](https://www.php.net/manual/en/function.date.php) for format codes. | `Y-m-d` |
-| **Show Renew Button** | Show a **Renew** button on the customer's subscription listing in their profile. | No |
+| Setting                      | Description                                                                                                                                              | Default |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Show Duration**            | Display the subscription duration (billing frequency) below the price on the product page.                                                               | Yes     |
+| **Show Recurring Total**     | Show a "Recurring Total" row in the cart and checkout.                                                                                                   | Yes     |
+| **Show Non-Recurring Total** | Show or hide the non-recurring total row (sign-up fees) in the cart.                                                                                     | Yes     |
+| **Show Recurring Amount**    | Show the recurring amount per billing period in the cart.                                                                                                | Yes     |
+| **Show Recurring Discount**  | Show the recurring discount amount in the cart.                                                                                                          | Yes     |
+| **Show Next Renewal Date**   | Show the first renewal date in the cart.                                                                                                                 | Yes     |
+| **Renewal Date Format**      | PHP date format string for the renewal date display. See the [PHP date documentation](https://www.php.net/manual/en/function.date.php) for format codes. | `Y-m-d` |
+| **Show Renew Button**        | Show a **Renew** button on the customer's subscription listing in their profile.                                                                         | No      |
 
 ### Renewal Settings
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Renewal Discount (%)** | Apply a global percentage discount to all automatic renewals. For example, `10` gives customers 10% off every renewal. | — |
-| **Send completed order email on renewal** | Send an order completion email to the customer after each successful automatic renewal payment. | Yes |
-| **Email notifications before renewal** | Send a reminder email to the customer before their next auto-renewal date. | No |
-| **Notify before renewal (days)** | How many days before renewal to send the reminder. Accepts comma-separated values, for example `7,3`. | — |
-| **Email notification before first renewal (from trial)** | Send a reminder before the first payment after a trial period ends. | No |
-| **Notify before first renewal from trial (days)** | Days before trial end to send the first-renewal notification. | — |
-| **Max Renewal Retries** | Maximum number of retry attempts after a failed renewal payment before marking the subscription as **Card Expired**. | 5 |
-| **Renewal Retry Interval** | How long to wait between retry attempts. Enter a number and select the period unit. | 1 Hour |
+| Setting                                                  | Description                                                                                                            | Default |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Renewal Discount (%)**                                 | Apply a global percentage discount to all automatic renewals. For example, `10` gives customers 10% off every renewal. | —       |
+| **Send completed order email on renewal**                | Send an order completion email to the customer after each successful automatic renewal payment.                        | Yes     |
+| **Email notifications before renewal**                   | Send a reminder email to the customer before their next auto-renewal date.                                             | No      |
+| **Notify before renewal (days)**                         | How many days before renewal to send the reminder. Accepts comma-separated values, for example `7,3`.                  | —       |
+| **Email notification before first renewal (from trial)** | Send a reminder before the first payment after a trial period ends.                                                    | No      |
+| **Notify before first renewal from trial (days)**        | Days before trial end to send the first-renewal notification.                                                          | —       |
+| **Max Renewal Retries**                                  | Maximum number of retry attempts after a failed renewal payment before marking the subscription as **Card Expired**.   | 5       |
+| **Renewal Retry Interval**                               | How long to wait between retry attempts. Enter a number and select the period unit.                                    | 1 Hour  |
 
----
+***
 
 ## Creating a Simple Subscription Product
 
@@ -164,23 +166,25 @@ A **Simple Subscription** is a single product with one set of billing terms.
 
 After selecting the product type, a **Subscription Products** fieldset appears. Fill in the following fields:
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Subscription Price** | The recurring charge per billing period. | `9.99` |
-| **Sign-Up Fee** | One-time fee charged at the start. Leave empty for no sign-up fee. | `4.99` |
-| **Add sign-up fee on each purchase** | When enabled, the sign-up fee is charged again even if the customer has had a previous subscription to this product. | No |
-| **Billing Frequency** | How often the customer is charged: Every, Every 2nd, Every 3rd, up to Every 6th period. | Every |
-| **Billing Period** | The period unit: Day, Week, Month, or Year. | Month |
-| **Subscription Length** | Number of billing periods. Enter `0` for a subscription that never expires. | `12` |
-| **Trial Length** | Number of trial periods before billing starts. Enter `0` for no trial. | `0` |
-| **Trial Period** | The trial period unit: Day, Week, Month, or Year. | — |
-| **Add To User Groups** | Automatically add the subscriber to these Joomla user groups when their subscription is active. | — |
-| **Remove From User Groups** | Automatically remove the subscriber from these Joomla user groups when the subscription expires or is cancelled. | — |
-| **Keep renewal discount** | Apply the same coupon discount used at first purchase to all subsequent renewals. | No |
-| **Disable Cancel** | Prevent customers from cancelling this subscription themselves from the front end. | No |
+| Field                                | Description                                                                                                          | Example |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Subscription Price**               | The recurring charge per billing period.                                                                             | `9.99`  |
+| **Sign-Up Fee**                      | One-time fee charged at the start. Leave empty for no sign-up fee.                                                   | `4.99`  |
+| **Add sign-up fee on each purchase** | When enabled, the sign-up fee is charged again even if the customer has had a previous subscription to this product. | No      |
+| **Billing Frequency**                | How often the customer is charged: Every, Every 2nd, Every 3rd, up to Every 6th period.                              | Every   |
+| **Billing Period**                   | The period unit: Day, Week, Month, or Year.                                                                          | Month   |
+| **Subscription Length**              | Number of billing periods. Enter `0` for a subscription that never expires.                                          | `12`    |
+| **Trial Length**                     | Number of trial periods before billing starts. Enter `0` for no trial.                                               | `0`     |
+| **Trial Period**                     | The trial period unit: Day, Week, Month, or Year.                                                                    | —       |
+| **Add To User Groups**               | Automatically add the subscriber to these Joomla user groups when their subscription is active.                      | —       |
+| **Remove From User Groups**          | Automatically remove the subscriber from these Joomla user groups when the subscription expires or is cancelled.     | —       |
+| **Keep renewal discount**            | Apply the same coupon discount used at first purchase to all subsequent renewals.                                    | No      |
+| **Disable Cancel**                   | Prevent customers from cancelling this subscription themselves from the front end.                                   | No      |
 
 :::tip Setting up free trials
+
 To offer a free trial, set **Trial Length** to a number (for example `14`) and **Trial Period** to **Day**. The subscription price is charged after the trial ends. A payment gateway that supports zero-amount trial authorisation is required.
+
 :::
 
 ### Step 4: Set the Regular Price
@@ -195,7 +199,7 @@ Click **Save** or **Save & Close** on the article. The product is now available 
 
 <!-- SCREENSHOT: J2Commerce product tab showing completed subscription pricing configuration -->
 
----
+***
 
 ## Creating a Variable Subscription Product
 
@@ -213,49 +217,49 @@ Follow the same process as for a simple subscription, but select **Variable Subs
 
 <!-- SCREENSHOT: Variants tab showing two subscription variants with individual subscription settings -->
 
----
+***
 
 ## Subscription Statuses
 
 Every subscription has a status that reflects its current state. You can see and change statuses from the **My Subscriptions** tab in a customer's admin profile, or from the subscriptions list in the admin.
 
-| Status | Meaning |
-|--------|---------|
-| **New** | Subscription created but payment not yet confirmed. |
-| **Active** | Subscription is current and billing normally. |
-| **Future** | Subscription is scheduled to start at a future date. |
-| **In Trial** | Customer is within the free trial period. |
-| **Expired** | Subscription reached its end date or subscription length. |
-| **Canceled** | Customer or administrator cancelled the subscription. |
-| **On Hold** | Subscription is temporarily paused. |
-| **Pending** | Renewal payment is pending confirmation from the gateway. |
-| **Payment Failed** | The most recent renewal payment attempt failed. |
-| **Card Expired** | All renewal retry attempts failed; the card on file needs updating. |
+| Status             | Meaning                                                             |
+| ------------------ | ------------------------------------------------------------------- |
+| **New**            | Subscription created but payment not yet confirmed.                 |
+| **Active**         | Subscription is current and billing normally.                       |
+| **Future**         | Subscription is scheduled to start at a future date.                |
+| **In Trial**       | Customer is within the free trial period.                           |
+| **Expired**        | Subscription reached its end date or subscription length.           |
+| **Canceled**       | Customer or administrator cancelled the subscription.               |
+| **On Hold**        | Subscription is temporarily paused.                                 |
+| **Pending**        | Renewal payment is pending confirmation from the gateway.           |
+| **Payment Failed** | The most recent renewal payment attempt failed.                     |
+| **Card Expired**   | All renewal retry attempts failed; the card on file needs updating. |
 
----
+***
 
 ## Email Notifications
 
 The plugin sends automated emails at 12 lifecycle events. All emails are sent to the customer. You can BCC additional addresses using the **Bcc to** setting.
 
-| Event | When it Sends |
-|-------|---------------|
-| Subscription Activated | When status changes to Active |
-| Trial Started | When status changes to In Trial |
-| Subscription Expired | When status changes to Expired |
-| Subscription Cancelled | When status changes to Canceled |
-| Payment Failed | When status changes to Payment Failed |
-| Expiry Reminder | Configurable number of days before expiry date |
-| Renewal Reminder | Configurable number of days before next renewal |
-| Trial-to-Renewal Reminder | Configurable days before first renewal after a trial |
-| Renewal Succeeded | After a successful automatic renewal payment |
-| Renewal Retry Failed | After each failed renewal retry attempt |
-| Card Expiry Notice | When the card on file is about to expire |
-| Card Updated | After the customer successfully updates their payment card |
+| Event                     | When it Sends                                              |
+| ------------------------- | ---------------------------------------------------------- |
+| Subscription Activated    | When status changes to Active                              |
+| Trial Started             | When status changes to In Trial                            |
+| Subscription Expired      | When status changes to Expired                             |
+| Subscription Cancelled    | When status changes to Canceled                            |
+| Payment Failed            | When status changes to Payment Failed                      |
+| Expiry Reminder           | Configurable number of days before expiry date             |
+| Renewal Reminder          | Configurable number of days before next renewal            |
+| Trial-to-Renewal Reminder | Configurable days before first renewal after a trial       |
+| Renewal Succeeded         | After a successful automatic renewal payment               |
+| Renewal Retry Failed      | After each failed renewal retry attempt                    |
+| Card Expiry Notice        | When the card on file is about to expire                   |
+| Card Updated              | After the customer successfully updates their payment card |
 
 Email templates are stored in `plugins/j2commerce/app_subscriptionproduct/mailtemplates/`. You can customise the template HTML files directly, or use template overrides.
 
----
+***
 
 ## Customer Subscription Portal
 
@@ -271,7 +275,7 @@ Logged-in customers can manage their subscriptions from **My Profile** in the fr
 
 <!-- SCREENSHOT: Front-end My Profile page showing the My Subscriptions tab with active subscription -->
 
----
+***
 
 ## Admin Subscription Management
 
@@ -293,7 +297,7 @@ From here you can:
 
 <!-- SCREENSHOT: Admin customer profile showing the Subscriptions tab with a list of subscriptions -->
 
----
+***
 
 ## Troubleshooting
 
@@ -344,7 +348,7 @@ From here you can:
 2. Run the cron URL once in a browser.
 3. Check `administrator/logs/app_subscriptionproduct.php`. If the file is still missing, ensure the `administrator/logs/` directory is writable by your web server.
 
----
+***
 
 ## Related Topics
 
