@@ -1,10 +1,3 @@
----
-title: "Orders"
-sidebar_label: "Orders"
-sidebar_position: 2
-description: "View and manage customer orders in J2Commerce"
----
-
 # Orders
 
 The Orders page displays all customer orders with comprehensive filtering and management capabilities. Track orders from placement through delivery, update statuses, and communicate with customers about their purchases.
