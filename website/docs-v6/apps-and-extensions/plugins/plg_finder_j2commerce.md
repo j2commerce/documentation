@@ -48,21 +48,19 @@ Go to **System** -> **Manage** -> **Plugins**, search for **Smart Search - J2Com
 
 ![](/img/smart-toggle.webp)
 
+### Basic Settings tab
+
+![](/img/smart-config1.webp)
+
 The plugin has three configuration options:
 
-| Setting                                 | Description                                                                                                                                                                                                                         | Default      | Options                    |
-| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------------------------- |
-| **Redirect Search Results To**          | Where search result links point when a customer clicks a product. Choose **Product View** to link to the J2Commerce product page, or **Article View** to link to the standard Joomla article.                                       | Product View | Product View, Article View |
-| **Exclude Linked Articles from Search** | When set to **Yes**, articles that have an associated J2Commerce product are removed from the Smart Search index. This prevents the same product from appearing twice in search results — once as a product and once as an article. | Yes          | Yes, No                    |
-| **Show Product Image**                  | Displays the product's thumbnail image alongside its result in Smart Search. The plugin uses the smallest available image version (tiny, then thumbnail, then main) to keep result pages fast.                                      | Yes          | Yes, No                    |
-
-### Redirect Search Results To
+- **Redirect Search Results To:** Where search result links point when a customer clicks a product. Choose **Product View** to link to the J2Commerce product page, or **Article View** to link to the standard Joomla article.
 
 Most stores should leave this set to **Product View**. This sends customers directly to the J2Commerce product page, where they can select options and add the item to their cart.
 
 Choose **Article View** only if your product pages are primarily Joomla articles and the J2Commerce product view is not your main storefront destination.
 
-### Exclude Linked Articles from Search
+- **Exclude Linked Articles from Search:** When set to **Yes**, articles that have an associated J2Commerce product are removed from the Smart Search index. This prevents the same product from appearing twice in search results — once as a product and once as an article.
 
 Leave this set to **Yes** in almost all cases. When J2Commerce products are backed by Joomla articles (which is the standard setup), both the article and the product would otherwise appear as separate results for the same product. Enabling exclusion keeps the results clean and prevents customer confusion.
 
@@ -71,6 +69,8 @@ Leave this set to **Yes** in almost all cases. When J2Commerce products are back
 If you have articles that discuss a product without being linked to a J2Commerce product record, those articles are unaffected by this setting. Only articles with a direct product link are excluded.
 
 :::
+
+- **Show Product Image:** Displays the product's thumbnail image alongside its result in Smart Search. The plugin uses the smallest available image version (tiny, then thumbnail, then main) to keep result pages fast.
 
 ## How It Works
 
@@ -94,10 +94,10 @@ The J2Commerce Smart Search plugin teaches Smart Search how to read your product
 
 You do not need to run the indexer manually every time you make a change. The plugin listens for the following events and updates the index automatically:
 
-- **Product saved** — the product entry in the index is refreshed.
-- **Product published or unpublished** — the product is shown or hidden in search results immediately.
-- **Product deleted** — the product is removed from the index.
-- **Category published or unpublished** — all products in that category are updated at once.
+- **Product saved**: The product entry in the index is refreshed.
+- **Product published or unpublished**: The product is shown or hidden in search results immediately.
+- **Product deleted**: The product is removed from the index.
+- **Category published or unpublished**: All products in that category are updated at once.
 
 Manual re-indexing is only required the first time (after enabling the plugin) and after a full site restore or migration.
 
@@ -105,15 +105,15 @@ Manual re-indexing is only required the first time (after enabling the plugin) a
 
 The first time you enable the plugin, you must run the Smart Search indexer to build the initial index. Without this step, no products appear in search results.
 
-1. Go to **Components** -> **Smart Search**.
-2. Click the **Index** button in the toolbar.
+1. Go to **Components** **->** **Smart Search** **-> Index**
+2. Click the **Index** button in the top toolbar.
 
-<!-- SCREENSHOT: Smart Search component main screen with the Index button highlighted in the toolbar -->
+![](/img/smart-index2.webp)
 
 1. Wait for the indexing process to complete. A progress indicator appears. The time required depends on the number of products and articles on your site.
 2. When the progress bar reaches 100%, the index is ready. Close the progress dialog.
 
-<!-- SCREENSHOT: Smart Search indexing progress dialog at 100% completion -->
+![](/img/smart-index1.webp)
 
 Products now appear in Smart Search results. You can confirm this by using the search box on the front end of your site.
 
@@ -152,7 +152,7 @@ Search results include the product title, a description excerpt, and (when enabl
 
 **Solution:**
 
-1. Go to **System** -> **Manage** -> **Extensions** and confirm the plugin shows as **Enabled**.
+1. Go to **System** -> **Manage** -> **Plugins** and confirm the plugin shows as **Enabled**.
 2. Go to **Components** -> **Smart Search** and click the **Index** button to run the indexer.
 3. Confirm that the products you are searching for are published and that their category is also published.
 4. Try purging the Smart Search index first (**Components** -> **Smart Search** -> **Options** -> **Purge Index**) and then re-running the indexer.
@@ -163,7 +163,7 @@ Search results include the product title, a description excerpt, and (when enabl
 
 **Solution:**
 
-1. Open the plugin settings (**System** -> **Manage** -> **Extensions** -> **Smart Search - J2Commerce**).
+1. Open the plugin settings (**System** -> **Manage** -> **Plugins** -> **Smart Search - J2Commerce**).
 2. Set **Exclude Linked Articles from Search** to **Yes**.
 3. Save the plugin settings.
 4. Run the indexer again from **Components** -> **Smart Search** -> **Index** to rebuild the index with the exclusion applied.
@@ -185,12 +185,7 @@ Search results include the product title, a description excerpt, and (when enabl
 
 **Solution:**
 
-1. Go to **System** -> **Manage** -> **Extensions** and search for **J2Commerce - Content**.
+1. Go to **System** -> **Manage** -> **Plugins** and search for **J2Commerce - Content**.
 2. Confirm it is **Enabled**.
 3. If it was disabled, re-enable it, then save a product to confirm the automatic re-indexing resumes.
 4. As a fallback, you can always run the indexer manually from **Components** -> **Smart Search** to rebuild the full index.
-
-## Related Topics
-
-- [Content Plugin for J2Commerce](../../catalog/content-j2commerce.md) — the companion plugin that triggers automatic re-indexing when products are saved
-- [Smart Search (Joomla documentation)](https://docs.joomla.org/Smart_Search_quickstart_guide) — how to set up the Smart Search module and menu item for your site visitors
