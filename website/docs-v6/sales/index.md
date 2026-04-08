@@ -49,4 +49,4 @@ There are **two** ways you can access the sales features.&#x20;
 
 ![](/img/sales.webp)
 
-![](/img/sales-dashboard.webp)
+<!-- ![](/img/sales-dashboard.webp) ->

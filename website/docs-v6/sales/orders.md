@@ -64,7 +64,7 @@ Use the filter bar to narrow down orders:
 
 **Date Range:** Filter by order date (From/To)
 
-![](/img/orders-filters.webp)
+<!-- ![](/img/orders-filters.webp) -->
 
 ## Order Statuses
 
