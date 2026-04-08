@@ -66,6 +66,9 @@ const sidebars = {
                 slug: '/design',
             },
             items: [
+                'design/template-overrides',
+                'design/email-templates',
+                'design/invoice-templates',
                 {
                     type: 'category',
                     label: 'Layout Overrides',
