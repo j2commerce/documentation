@@ -138,7 +138,7 @@ The plugin offers three preset profiles with different amounts of data:
 
 <!-- SCREENSHOT: Progress bar during sample data installation showing 4 steps -->
 
-Each step must complete successfully before the next begins. If any step fails, an error message displays with details.
+Each step must be completed successfully before the next begins. If any step fails, an error message displays with details.
 
 ***
 
@@ -146,7 +146,7 @@ Each step must complete successfully before the next begins. If any step fails, 
 
 ### Verify the Data
 
-After sample data installation completes:
+After the sample data installation completes:
 
 1. Go to **J2Commerce** -> **Catalog** -> **Products** to see the sample products.
 2. Go to **J2Commerce** -> **Sales** -> **Orders** to see sample orders.
@@ -177,14 +177,12 @@ Removing sample data permanently deletes all products, categories, customers, or
 
 To remove sample data:
 
-1. Go to **J2Commerce** -> **Dashboard**.
+1. Go to **J2Commerce** **->** **Dashboard**.
 2. Click the **Sample Data** tab.
 3. Click **Remove Sample Data**.
 4. Confirm the removal when prompted.
 
 The plugin identifies sample data by a special tag (`j2commerce-sample-data`) in the database, ensuring only sample data is removed without affecting your real products or orders.
-
-***
 
 ## Tips
 
@@ -194,18 +192,16 @@ The plugin identifies sample data by a special tag (`j2commerce-sample-data`) in
 - Customer accounts created by sample data use realistic email patterns (e.g., `james.smith@example.com`). These are not real addresses, but you may want to verify no real customers use similar addresses.
 - Orders created by sample data are marked with order statuses that progress through the typical order workflow. This lets you test status change notifications and filters.
 
-***
-
 ## Troubleshooting
 
-### Sample Data option does not appear in Dashboard
+### The Sample Data option does not appear in the Dashboard
 
-**Cause:** The plugin may be disabled or the J2Commerce component is not properly installed.
+**Cause:** The plugin may be disabled, or the J2Commerce component is not properly installed.
 
 **Solution:**
 
-1. Go to **System** -> **Manage** -> **Extensions**.
-2. Search for **J2Commerce - Sample Data**.
+1. Go to **System** -> **Manage** -> **Plugins**.
+2. Search for **Sample Data - J2Commerce**.
 3. If the plugin exists but shows as **Disabled**, click to enable it.
 4. If the plugin is missing, reinstall the J2Commerce component package.
 
@@ -227,19 +223,19 @@ The plugin identifies sample data by a special tag (`j2commerce-sample-data`) in
 **Solution:**
 
 1. Verify the `media/plg_sampledata_j2commerce/images/` directory is readable.
-2. Check that `images/` directory in your Joomla root is writable.
+2. Check that `images/` the directory in your Joomla root is writable.
 3. The plugin uses SVG placeholder images. Ensure your server serves SVG files with the correct MIME type (`image/svg+xml`).
 
 ### Sample data appears incomplete
 
-**Cause:** A step failed silently or the browser timed out during installation.
+**Cause:** A step failed silently, or the browser timed out during installation.
 
 **Solution:**
 
 1. Remove existing sample data using the **Remove Sample Data** button.
 2. Increase your PHP timeout settings (`max_execution_time` and `request_terminate_timeout` for PHP-FPM).
-3. For the **Full** profile, ensure at least 120 seconds timeout.
-4. Re-run sample data installation.
+3. For the **Full** profile, ensure at least a 120-second timeout.
+4. Re-run the sample data installation.
 
 ### Cannot log in as sample customers
 
@@ -253,12 +249,3 @@ Sample customer accounts are designed for order data and address testing, not fo
 2. Find a sample customer account.
 3. Click to edit and set a known password.
 4. Log in from the frontend with that email and password.
-
-***
-
-## Related Topics
-
-- [Products](../../catalog/products.md) — manage products after sample data is loaded
-- [Orders](../../sales/orders.md) — view and manage sample orders
-- [Coupons](../../marketing/coupons.md) — configure discount codes
-- [Order Statuses](../../localisation/order-statuses.md) — customize order workflow states
