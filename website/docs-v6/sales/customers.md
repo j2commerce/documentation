@@ -96,7 +96,7 @@ Click on a customer's name to view their details:
 
 **Zone/State:** State/province
 
-![](/img/customers-detail.webp)
+<!-- ![](/img/customers-detail.webp) -->
 
 ### Search for a Customer
 
