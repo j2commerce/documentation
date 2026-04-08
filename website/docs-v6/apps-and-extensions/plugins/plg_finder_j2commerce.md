@@ -1,10 +1,3 @@
----
-title: "Smart Search Plugin for J2Commerce"
-sidebar_label: "Smart Search"
-sidebar_position: 10
-description: "Integrate J2Commerce products with Joomla's built-in Smart Search so customers can find products by title, description, SKU, UPC, or brand."
----
-
 # Smart Search Plugin for J2Commerce
 
 Joomla includes a built-in search engine called Smart Search. It indexes your site content — articles, categories, and other items — so visitors can find what they need quickly using a search box. The J2Commerce Smart Search plugin extends this to your product catalogue.
@@ -20,41 +13,48 @@ Once the plugin is enabled and your products are indexed, customers can search f
 - A **Smart Search** module (`mod_finder`) or a Smart Search menu item set up so customers have a search box to use
 
 :::info
+
 The J2Commerce Content plugin (`plg_content_j2commerce`) should also be enabled. It triggers automatic re-indexing when you save, publish, or delete a product, keeping search results up to date without manual intervention.
+
 :::
 
 ## Installation
 
 This plugin ships with J2Commerce 6 and is available immediately after installation. To enable it:
 
-1. Go to **System** -> **Manage** -> **Extensions**.
-2. Search for **Smart Search - J2Commerce**.
-3. Click the checkbox next to it and then click **Enable** in the toolbar.
+- Go to **System** -> **Manage** -> **Plugins**.
 
-<!-- SCREENSHOT: System > Manage > Extensions search results showing "Smart Search - J2Commerce" with the Enable button highlighted -->
+![](/img/action-log-plugin.webp)
 
 ## Enable the Plugin
 
+- Search for **Smart Search - J2Commerce**.
+
+- Click the checkbox next to it and then click **Enable** in the toolbar.
+
+![](/img/smart-enable.webp)
+
 After clicking **Enable**, the plugin is active but the index is still empty. You must run the indexer at least once before products appear in search results. See [Running the Indexer](#running-the-indexer) below.
-
-To open the plugin settings at any time:
-
-1. Go to **System** -> **Manage** -> **Extensions**.
-2. Search for **Smart Search - J2Commerce**.
-3. Click the plugin name to open its configuration screen.
-4. Make your changes and click **Save & Close**.
 
 ## Configure the Plugin
 
-<!-- SCREENSHOT: Smart Search - J2Commerce plugin configuration screen showing the three parameter fields -->
+Go to **System** -> **Manage** -> **Plugins**, search for **Smart Search - J2Commerce**, and click the plugin name.
+
+:::tip
+
+**Helpful tip:** If you click on the **Toggle Inline Help** icon, it will explain each section
+
+:::
+
+![](/img/smart-toggle.webp)
 
 The plugin has three configuration options:
 
-| Setting | Description | Default | Options |
-|---------|-------------|---------|---------|
-| **Redirect Search Results To** | Where search result links point when a customer clicks a product. Choose **Product View** to link to the J2Commerce product page, or **Article View** to link to the standard Joomla article. | Product View | Product View, Article View |
-| **Exclude Linked Articles from Search** | When set to **Yes**, articles that have an associated J2Commerce product are removed from the Smart Search index. This prevents the same product from appearing twice in search results — once as a product and once as an article. | Yes | Yes, No |
-| **Show Product Image** | Displays the product's thumbnail image alongside its result in Smart Search. The plugin uses the smallest available image version (tiny, then thumbnail, then main) to keep result pages fast. | Yes | Yes, No |
+| Setting                                 | Description                                                                                                                                                                                                                         | Default      | Options                    |
+| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------------------------- |
+| **Redirect Search Results To**          | Where search result links point when a customer clicks a product. Choose **Product View** to link to the J2Commerce product page, or **Article View** to link to the standard Joomla article.                                       | Product View | Product View, Article View |
+| **Exclude Linked Articles from Search** | When set to **Yes**, articles that have an associated J2Commerce product are removed from the Smart Search index. This prevents the same product from appearing twice in search results — once as a product and once as an article. | Yes          | Yes, No                    |
+| **Show Product Image**                  | Displays the product's thumbnail image alongside its result in Smart Search. The plugin uses the smallest available image version (tiny, then thumbnail, then main) to keep result pages fast.                                      | Yes          | Yes, No                    |
 
 ### Redirect Search Results To
 
@@ -67,7 +67,9 @@ Choose **Article View** only if your product pages are primarily Joomla articles
 Leave this set to **Yes** in almost all cases. When J2Commerce products are backed by Joomla articles (which is the standard setup), both the article and the product would otherwise appear as separate results for the same product. Enabling exclusion keeps the results clean and prevents customer confusion.
 
 :::tip
+
 If you have articles that discuss a product without being linked to a J2Commerce product record, those articles are unaffected by this setting. Only articles with a direct product link are excluded.
+
 :::
 
 ## How It Works
@@ -76,17 +78,17 @@ Smart Search works by building an index — a database of searchable terms extra
 
 The J2Commerce Smart Search plugin teaches Smart Search how to read your product catalogue. When the indexer runs, it reads every enabled J2Commerce product and extracts the following information:
 
-| What is indexed | What customers can search for |
-|-----------------|-------------------------------|
-| Product title | The product name |
-| Product description | Words in the intro text and full description |
-| SKU codes | The exact SKU of any variant |
-| UPC codes | The exact UPC barcode of any variant |
-| Brand / manufacturer name | The company name assigned to the product |
-| Category name | The product category, usable as a filter |
-| Author | The Joomla user who created the article |
-| Meta keywords and description | Hidden SEO fields on the article |
-| Product image | Shown in results (when enabled) |
+| What is indexed               | What customers can search for                |
+| ----------------------------- | -------------------------------------------- |
+| Product title                 | The product name                             |
+| Product description           | Words in the intro text and full description |
+| SKU codes                     | The exact SKU of any variant                 |
+| UPC codes                     | The exact UPC barcode of any variant         |
+| Brand / manufacturer name     | The company name assigned to the product     |
+| Category name                 | The product category, usable as a filter     |
+| Author                        | The Joomla user who created the article      |
+| Meta keywords and description | Hidden SEO fields on the article             |
+| Product image                 | Shown in results (when enabled)              |
 
 ### Automatic Re-indexing
 
@@ -108,15 +110,17 @@ The first time you enable the plugin, you must run the Smart Search indexer to b
 
 <!-- SCREENSHOT: Smart Search component main screen with the Index button highlighted in the toolbar -->
 
-3. Wait for the indexing process to complete. A progress indicator appears. The time required depends on the number of products and articles on your site.
-4. When the progress bar reaches 100%, the index is ready. Close the progress dialog.
+1. Wait for the indexing process to complete. A progress indicator appears. The time required depends on the number of products and articles on your site.
+2. When the progress bar reaches 100%, the index is ready. Close the progress dialog.
 
 <!-- SCREENSHOT: Smart Search indexing progress dialog at 100% completion -->
 
 Products now appear in Smart Search results. You can confirm this by using the search box on the front end of your site.
 
 :::info
+
 If you run the indexer and your products do not appear, check that the plugin is enabled and that the products themselves are published. Unpublished products are intentionally excluded from the index.
+
 :::
 
 ## Searching for Products

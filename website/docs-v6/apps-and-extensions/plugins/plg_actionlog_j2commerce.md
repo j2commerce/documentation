@@ -12,13 +12,13 @@ This plugin ships with J2Commerce 6 and is available immediately after installat
 
 ![](/img/action-log-plugin.webp)
 
+## Enable the Plugin
+
 - Search for **J2Commerce - Action Log**.
 
 - Click the checkbox next to it and then click **Enable** in the toolbar.
 
 ![](/img/action-log-enable1.webp)
-
-## Enable the Plugin
 
 After enabling, the plugin starts recording store events immediately. No further action is needed unless you want to adjust which events are logged or set up email notifications.
 
