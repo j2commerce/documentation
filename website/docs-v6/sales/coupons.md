@@ -46,22 +46,20 @@ The coupons list displays all configured discount codes:
 
 ### Filter Options
 
-| Filter            | Description                                |
-| ----------------- | ------------------------------------------ |
-| **Search**        | Search by coupon name or code              |
-| **Status**        | Filter by published/unpublished            |
-| **Type**          | Filter by discount type (percentage/fixed) |
-| **Free Shipping** | Filter by free shipping status             |
+![](/img/coupons-filter.webp)
 
-<!-- ![](/img/coupons-filters.webp) -->
+**Search:** Search by coupon name or code
+
+**Status:** Filter by published/unpublished
+
+**Type:** Filter by discount type (percentage/fixed)
+
+**Free Shipping:** Filter by free shipping status
 
 ## Creating a Coupon
 
 1. Click **New** in the toolbar.
 2. Configure the coupon settings (see fields below).
-3. Click **Save** or **Save & Close**.
-
-<!-- ![](/img/coupon-edit.webp) -->
 
 ## Coupon Fields
 
@@ -90,6 +88,8 @@ The coupons list displays all configured discount codes:
 
 ### Advanced Settings tab
 
+![](/img/coupons-basic1.webp)
+
 **Product Categories:** Restrict to selected categories
 
 **Products:** Restrict to selected products
@@ -104,11 +104,9 @@ The coupons list displays all configured discount codes:
 
 **Minimum Spending:** Minimum order subtotal required
 
-![](/img/coupons-basic1.webp)
-
 ### Usage Limit Tab
 
-<!-- ![](/img/coupons-usage.webp) -->
+![](/img/coupons-usage.webp)
 
 **Uses Per Coupon:** Maximum total uses (0 = unlimited)
 
@@ -170,18 +168,16 @@ When **Free Shipping** is enabled:
 
 ### Coupon Not Working at Checkout
 
-**Cause:** One or more validation rules failing.
+**Cause:** One or more validation rules are failing.
 
 **Solution:**
 
-1. Check the coupon is **Published**.
+1. Check if the coupon is **Published**.
 2. Verify the current date is within **Valid From** and **Valid To**.
 3. Ensure **Uses Per Coupon** hasn't been reached.
-4. Check if **Logged-in Users Only** is enabled — customer must be logged in.
-5. Verify the order subtotal meets **Minimum Spending**.
+4. Check if **Logged-in Users Only** is enabled — the customer must be logged in.
+5. Verify the order subtotal meets **the minimum spending**.
 6. Check product restrictions — order must contain qualifying products.
-
-<!-- ![](/img/coupon-troubleshoot.webp) -->
 
 ### Percentage Discount Exceeds Expected Amount
 
@@ -190,7 +186,7 @@ When **Free Shipping** is enabled:
 **Solution:**
 
 1. Edit the coupon.
-2. Set **Maximum Discount Value** to cap the discount.
+2. Set the **Maximum Discount Value** to cap the discount.
 3. Example: 20% off with max \[dollar]50 means even a \[dollar]500 order only gets \[dollar]50 off.
 
 ### Free Shipping Not Applying
@@ -199,7 +195,7 @@ When **Free Shipping** is enabled:
 
 **Solution:**
 
-1. Go to **J2Commerce** → **Shipping** → **Shipping Methods**.
+1. Go to **J2Commerce** → **Setup**→ **Shipping Methods**.
 2. Ensure the **Free Shipping** plugin is published.
 3. Edit the Free Shipping plugin and check **Require Valid Coupon**.
 4. Set **Minimum Order Amount** if needed.

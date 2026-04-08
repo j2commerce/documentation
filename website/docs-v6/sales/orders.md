@@ -64,8 +64,6 @@ Use the filter bar to narrow down orders:
 
 **Date Range:** Filter by order date (From/To)
 
-<!-- ![](/img/orders-filters.webp) -->
-
 ## Order Statuses
 
 ![](/img/orders-status.webp)
@@ -133,8 +131,6 @@ The order detail page shows:
 
 **Customer Note:** Note provided by customer at checkout
 
-<!-- ![](/img/orders-detail.webp) -->
-
 ### Order Actions
 
 ![](/img/orders-order2.webp)
@@ -151,6 +147,8 @@ From the order detail view:
 
 ## Updating Order Status
 
+![](/img/orders-status-update.webp)
+
 1. Open the order you want to update.
 2. Click **Update Status** in the toolbar.
 3. Select the new **Order Status**.
@@ -158,9 +156,13 @@ From the order detail view:
 5. Check **Notify Customer** to send an email notification.
 6. Click **Save**.
 
-<!-- ![](/img/orders-status-update.webp) -->
+- You can also change the order status and notify the customer from the main order list
+
+![](/img/orders-status-update1.webp)
 
 ## Order History
+
+![](/img/orders-order.webp)
 
 Each order maintains a history of status changes and notes. The History tab shows:
 

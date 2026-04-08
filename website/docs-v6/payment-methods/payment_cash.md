@@ -1,72 +1,72 @@
----
-title: "Cash on Delivery Payment"
-sidebar_label: "Cash on Delivery"
-sidebar_position: 1
-description: "Accept cash on delivery payments in your J2Commerce store for local deliveries and in-person transactions."
----
-
 # Cash on Delivery Payment
 
 The Cash on Delivery plugin provides a simple payment method for stores that accept payment upon delivery or in-person pickup. Customers place their order online and pay with cash when they receive their goods — no credit cards, bank transfers, or third-party payment processors required.
 
 This is ideal for local delivery services, restaurant takeout, farmers markets, and any business where you deliver products and collect payment at the door.
 
-## Installation
+## Installation and Enable the Plugin
 
-This plugin ships with J2Commerce 6 and is available immediately after installation. To enable it:
+This plugin ships with J2Commerce 6 and is available immediately after installation. There are **three** ways you can access the plugin.&#x20;
 
-1. Go to **System** -> **Manage** -> **Extensions**.
-2. Search for **Cash on Delivery**.
-3. Click the checkbox and click **Enable** in the toolbar.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-<!-- SCREENSHOT: System > Manage > Extensions filtered to show "Cash on Delivery" plugin with the Enable button highlighted -->
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
 
-Alternatively, you can enable it from the payment methods list:
+**Option C:** Go to **Settings** on the left sidebar **-> Manage -> Plugins**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Find **Cash on Delivery** in the list.
-3. Click the toggle in the **Enabled** column to enable it.
+![](/img/cash-config1.webp)
 
-<!-- SCREENSHOT: Payment Methods list with Cash on Delivery plugin highlighted -->
+Look for **Cash on Demand**, click the **X,** and it will turn into a **green checkmark**. It is now enabled and ready for setup.
 
----
+![](/img/cash-enable1.webp)
 
 ## Configuration
 
-Go to **J2Commerce** -> **Payments** -> **Payment Methods** and click **Cash on Delivery** to open the settings.
+After enabling the plugin, click the **Cash on Demand** title to open the settings.
 
-<!-- SCREENSHOT: Cash on Delivery plugin configuration form in J2Commerce admin -->
+:::tip
+
+**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+
+:::
+
+![](/img/cash-toggle.webp)
 
 ### Display Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Display Name** | The label shown to customers at checkout. You can change this to anything — "Cash on Delivery", "Pay on Pickup", "Collect on Delivery", etc. | `Cash on Delivery` |
-| **Display Image** | Optional logo or image shown next to the payment option at checkout | _(none)_ |
+![](/img/cash-config3.webp)
+
+**Display Name:** The label shown to customers at checkout. You can change this to anything — "Cash on Delivery", "Pay on Pickup", "Collect on Delivery", etc.
+
+**Display Image:** Optional logo or image shown next to the payment option at checkout
 
 The Display Name supports language string keys. If you enter `PLG_J2COMMERCE_PAYMENT_CASH`, the plugin will use the translated name from your language files.
 
 ### Surcharge (Optional)
 
+![](/img/cash-config4.webp)
+
 Add a fee for cash on delivery orders. This is useful if you want to charge extra for the convenience or to cover handling costs.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Surcharge Name** | Label shown to customers for the surcharge (e.g., "COD Fee", "Handling Fee") | _(none)_ |
-| **Surcharge Percent** | Percentage of the order subtotal added as a surcharge | _(none)_ |
-| **Surcharge Fixed** | Fixed amount added as a surcharge (in your store currency) | _(none)_ |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount | _(none)_ |
+**Surcharge Name:** Label shown to customers for the surcharge (e.g., "COD Fee", "Handling Fee")
+
+**Surcharge Percent:** Percentage of the order subtotal added as a surcharge
+
+**Surcharge Fixed:** Fixed amount added as a surcharge (in your store currency)
+
+**Surcharge Tax Class:** Tax profile to apply to the surcharge amount
 
 You can combine a percentage and a fixed amount — both will be added together. For example, with 2% surcharge and a $5 fixed fee on a $100 order, the total surcharge is $7.
 
 ### Order Amount Limits
 
+![](/img/cash-config7.webp)
+
 Restrict cash on delivery to orders within a specific price range.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Minimum Subtotal** | Hide Cash on Delivery if the cart subtotal is below this amount | `0` (no minimum) |
-| **Maximum Subtotal** | Hide Cash on Delivery if the cart subtotal exceeds this amount. Set to `-1` for no maximum. | `-1` (no maximum) |
+**Minimum Subtotal:** Hide Cash on Delivery if the cart subtotal is below this amount
+
+**Maximum Subtotal:** Hide Cash on Delivery if the cart subtotal exceeds this amount. Set to `-1` for no maximum.
 
 **Why use limits?**
 
@@ -75,9 +75,9 @@ Restrict cash on delivery to orders within a specific price range.
 
 ### Order Status
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Order Status** | The status applied after the customer confirms the order | `Confirmed` |
+![](/img/cash-config5.webp)
+
+**Order Status:** The status applied after the customer confirms the order
 
 When a customer places an order using Cash on Delivery, the order is immediately marked with this status. Most stores use **Confirmed** or **Processing** since the customer has committed to pay on delivery.
 
@@ -85,9 +85,7 @@ Choose **Pending** if you want to manually review each COD order before proceedi
 
 ### Geo-Zone Restriction
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Geo-Zone Restriction** | Limit Cash on Delivery to customers in a specific region or country | _(none — available everywhere)_ |
+**Geo-Zone Restriction:** Limit Cash on Delivery to customers in a specific region or country
 
 Select a geo-zone to show this payment method only to customers whose billing or shipping address matches that zone. This is useful for:
 
@@ -99,22 +97,23 @@ Leave empty to show Cash on Delivery to all customers regardless of location.
 
 ### Thank You Page
 
-| Field | Description |
-|-------|-------------|
-| **Thank You Article** | Select a Joomla article to display after a successful order. This appears on the confirmation page in addition to the standard thank-you message. |
+**Thank You Article:** Select a Joomla article to display after a successful order. This appears on the confirmation page in addition to the standard thank-you message.
 
 Use this to show delivery instructions, payment reminders, or contact information. For example, create an article with your delivery hours and contact phone number.
 
 ### Custom Messages
 
+![](/img/cash-config6.webp)
+
 These text fields let you customize messages shown to customers at different points in the checkout process.
 
-| Field | When it displays |
-|-------|------------------|
-| **On Selection** | When the customer selects Cash on Delivery as their payment method — shown on the payment selection page |
-| **On Before Payment** | On the confirmation page before the customer clicks the final **Place Order** button |
-| **On After Payment** | On the thank-you page after the order is confirmed |
-| **On Error Payment** | When an error occurs during order processing |
+**On Selection:** It displays when the customer selects Cash on Delivery as their payment method — shown on the payment selection page
+
+**On Before Payment:** It displays on the confirmation page before the customer clicks the final **Place Order** button
+
+**On After Payment:** It displays on the thank-you page after the order is confirmed
+
+**On Error Payment:** It displays when an error occurs during order processing
 
 **Common use for On Before Payment:**
 
@@ -130,21 +129,15 @@ Thank you for your order! Please have payment ready when your order arrives.
 
 ### Button Text
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Button Text** | The text on the final confirmation button | `Place Order` |
+**Button Text:** The text on the final confirmation button
 
-Change this to something more specific like "Confirm Order" or "Complete Purchase" if you prefer.
+Change this to something more specific, like "Confirm Order" or "Complete Purchase" if you prefer.
 
-### Subtemplate
+### Template Style
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Subtemplate** | Select an alternative layout template for the Cash on Delivery payment form | _(default)_ |
+**Template Style:** Select an alternative layout template for the Cash on Delivery payment form
 
 Subtemplates let you customize how the payment step appears. If you've installed additional payment templates (via app plugins), they appear in this dropdown.
-
----
 
 ## Checkout Experience
 
@@ -158,11 +151,9 @@ When a customer selects Cash on Delivery at checkout:
 6. The order is created with the configured order status.
 7. The **On After Payment** message appears (if configured) along with the thank-you article.
 
-<!-- SCREENSHOT: Checkout payment step showing Cash on Delivery selected -->
+![](/img/cash-frontend.webp)
 
 No payment gateway interaction occurs — the order is simply recorded as awaiting cash payment on delivery.
-
----
 
 ## Order Management
 
@@ -176,14 +167,27 @@ After an order is placed:
 
 When you receive payment on delivery:
 
-1. Go to **J2Commerce** -> **Sales** -> **Orders**.
-2. Open the order.
-3. Change the order status to **Shipped**, **Delivered**, or a custom status that indicates successful payment.
-4. Add a note in the order history (e.g., "Payment collected on delivery").
+- Go to **J2Commerce** **-> Sales ->** **Orders**.
 
-<!-- SCREENSHOT: Order detail view showing status change and history note -->
+
+
+- Change the order status to **Shipped**, **Delivered**, or a custom status that indicates successful payment.
 
 There is no automatic "paid" status change — you update the order manually when you collect payment.
+
+There are two locations you can change the order status.
+
+**Option A:** on the main order page. Click Save after selecting the new status
+
+![](/img/cash-shipped.webp)
+
+**Option B:** Open the order and change it in the top right corner. Click Save after selecting the new status
+
+![](/img/cash-shipped1.webp)
+
+- Add a note in the order history (e.g., "Payment collected on delivery").
+
+![](/img/cash-shipped2.webp)
 
 ### Handling Failed Payments
 
@@ -194,19 +198,25 @@ If a customer refuses or cannot pay on delivery:
 3. Add an order history note explaining what happened.
 4. Contact the customer if needed to resolve the issue.
 
----
+## How to Add a New Order Status
+
+If you don't see the status you want, ie: delivered, paid, etc.&#x20;
+
+Go to **J2Commerce -> Setup -> Order Statuses -> New**. If you have questions on how to create a new status, check out the Order Status Documentation.
+
+![](/img/cash-status.webp)
 
 ## When to Use Cash on Delivery
 
 Cash on Delivery works best for:
 
-| Use Case | Why COD fits |
-|----------|--------------|
-| **Local delivery** | You deliver products within your city and can collect payment in person |
-| **Restaurant takeout** | Customers pick up orders and pay at the counter |
-| **Farmers markets** | Seasonal vendors who sell at physical locations |
-| **Customers without cards** | Serve customers who don't have credit cards or bank accounts |
-| **Building trust** | New customers may prefer paying when they see the product |
+| Use Case                    | Why COD fits                                                            |
+| --------------------------- | ----------------------------------------------------------------------- |
+| **Local delivery**          | You deliver products within your city and can collect payment in person |
+| **Restaurant takeout**      | Customers pick up orders and pay at the counter                         |
+| **Farmers markets**         | Seasonal vendors who sell at physical locations                         |
+| **Customers without cards** | Serve customers who don't have credit cards or bank accounts            |
+| **Building trust**          | New customers may prefer paying when they see the product               |
 
 Cash on Delivery is **not recommended** for:
 
@@ -214,8 +224,6 @@ Cash on Delivery is **not recommended** for:
 - High-value items (risk of non-payment)
 - Digital products (nothing to deliver)
 - Scalable e-commerce (manual payment collection doesn't scale)
-
----
 
 ## Tips
 
@@ -225,8 +233,6 @@ Cash on Delivery is **not recommended** for:
 - **Configure an "On Before Payment" message** to remind customers about exact change or delivery timing.
 - **Monitor unpaid orders** by creating a custom order status like "COD Pending" and regularly review orders in that status.
 
----
-
 ## Troubleshooting
 
 ### Cash on Delivery does not appear at checkout
@@ -235,7 +241,7 @@ Cash on Delivery is **not recommended** for:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and confirm Cash on Delivery is enabled.
+1. Go to **J2Commerce** **-> Setup ->** **Payment Methods** and confirm Cash on Delivery is enabled.
 2. Check the **Minimum Subtotal** and **Maximum Subtotal** settings. If the cart is outside this range, the payment method is hidden.
 3. Check the **Geo-Zone Restriction** setting. If set, only customers in that zone see Cash on Delivery.
 4. If your store uses multiple currencies, verify the cart total meets the minimum in the current currency.
@@ -275,13 +281,3 @@ Cash on Delivery is **not recommended** for:
 1. Check the Joomla error log at `administrator/logs/error.php` for details.
 2. Verify the J2Commerce component is fully installed and all database tables exist.
 3. Try placing a new order from a different browser session.
-
----
-
-## Related Topics
-
-- [Payment Methods Overview](./index.md) — managing all payment methods in J2Commerce
-- [Order Statuses](../localisation/order-statuses.md) — configure statuses for COD orders
-- [Geo Zones](../localisation/geozones.md) — set up geographic restrictions
-- [Money Order Payment](./payment_moneyorder.md) — similar offline payment method for mailed payments
-- [Bank Transfer Payment](./payment_banktransfer.md) — another offline payment method

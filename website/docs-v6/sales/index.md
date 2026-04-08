@@ -48,5 +48,3 @@ There are **two** ways you can access the sales features.&#x20;
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Sales**
 
 ![](/img/sales.webp)
-
-<!-- ![](/img/sales-dashboard.webp) -->

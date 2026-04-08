@@ -58,7 +58,7 @@ Customers are grouped by email address — if the same email appears in multiple
 
 **Country:** Filter customers by country
 
-<!-- ![](/img/customers-filters.webp) -->
+![](/img/customers-search1.webp)
 
 ## Customer Detail View
 
@@ -96,8 +96,6 @@ Click on a customer's name to view their details:
 
 **Zone/State:** State/province
 
-<!-- ![](/img/customers-detail.webp) -->
-
 ### Search for a Customer
 
 1. Use the **Search** field in the filter bar.
@@ -107,9 +105,15 @@ Click on a customer's name to view their details:
 
 ### Filter by Country
 
-1. Click the **Country** dropdown.
-2. Select one or more countries.
-3. The list updates automatically.
+- Click the **Country** dropdown.
+
+- Select one or more countries.
+
+- The list updates automatically.
+
+![](/img/customers-filter.webp)
+
+- Or you can organize them in alphabetical order
 
 ![](/img/customers-country.webp)
 
