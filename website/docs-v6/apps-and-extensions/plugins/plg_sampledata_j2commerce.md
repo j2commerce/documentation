@@ -2,6 +2,10 @@
 
 The J2Commerce Sample Data plugin lets you populate a new store with realistic sample products, customer accounts, and orders. This is essential for testing payment gateways, evaluating shipping options, and demonstrating store features before adding real inventory.
 
+:::warning
+The **Sample Data** plugin will only work on a new website that has no products. If you have any products set up, then you will not see the Sample Data plugin in the J2Commerce Dashboard
+:::
+
 ## Installation
 
 This plugin ships with J2Commerce 6 and is available immediately after installation. To enable it:
