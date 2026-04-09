@@ -57,8 +57,6 @@ Look for **Money Order Payment**, click the **X,** and it will turn into a green
 
 Click the **Money Order Payment** title to open its settings.
 
-<!-- SCREENSHOT: Money Order Payment configuration page -->
-
 ## Configure the App
 
 ### Basic Settings
