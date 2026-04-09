@@ -17,16 +17,31 @@ The plugin detects your J2Commerce product data automatically. No manual data en
 - Joomla! 6.x
 - J2Commerce 6.x
 
-## Installation
+`plg_schemaorg_ecommerce.zip`
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+**Schema.org - Ecommerce**
 
-1. Purchase and download the `plg_schemaorg_ecommerce.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `plg_schemaorg_ecommerce.zip` package file.
-4. The plugin installs and enables automatically.
+## Purchase and Download
 
-## Enable the Plugin
+The **Schema.org - Ecommerce** plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Plugin**.
+
+**Step 2:** Locate the **Schema.org - Ecommerce** plugin **->** click **View Details** -> **Add to cart** -> **Checkout**.
+
+**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
+
+## Install the App
+
+You can install this **Schema.org - Ecommerce** plugin using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the plugin `plg_console_j2commerce.zip` file or use the Install from URL option.
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
+
+## Enable the App
 
 1. Go to **System** -> **Manage** -> **Extensions**.
 2. Search for **Schema.org - Ecommerce**.
@@ -56,37 +71,37 @@ These rich snippets make your listings stand out in search results and can signi
 
 ### Basic Settings
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Enable Auto-Detection** | Automatically detect J2Commerce product data (name, price, stock, images) and include it in the schema output. | Yes |
-| **Shop Currency** | Read-only field showing your J2Commerce store currency (e.g., USD, EUR). This is pulled from your J2Commerce configuration. | Auto-detected |
-| **Default Brand** | A fallback brand name used when no manufacturer is assigned to a product. | Empty |
-| **Organization Name** | Your business name, used as the seller in the Offer schema. | Empty |
+| Setting                   | Description                                                                                                                 | Default       |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| **Enable Auto-Detection** | Automatically detect J2Commerce product data (name, price, stock, images) and include it in the schema output.              | Yes           |
+| **Shop Currency**         | Read-only field showing your J2Commerce store currency (e.g., USD, EUR). This is pulled from your J2Commerce configuration. | Auto-detected |
+| **Default Brand**         | A fallback brand name used when no manufacturer is assigned to a product.                                                   | Empty         |
+| **Organization Name**     | Your business name, used as the seller in the Offer schema.                                                                 | Empty         |
 
 ### Schema Types
 
 Control which types of structured data the plugin generates.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Enable Product Schema** | Generate `schema.org/Product` markup for individual product pages. | Yes |
-| **Enable ProductGroup for Variants** | Use `ProductGroup` schema for products with multiple variants (sizes, colors). Each variant gets its own `Product` entry nested under the group. | Yes |
-| **Enable BreadcrumbList** | Generate `BreadcrumbList` schema based on the product's category hierarchy. This creates breadcrumb navigation in search results. | Yes |
+| Setting                              | Description                                                                                                                                      | Default |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| **Enable Product Schema**            | Generate `schema.org/Product` markup for individual product pages.                                                                               | Yes     |
+| **Enable ProductGroup for Variants** | Use `ProductGroup` schema for products with multiple variants (sizes, colors). Each variant gets its own `Product` entry nested under the group. | Yes     |
+| **Enable BreadcrumbList**            | Generate `BreadcrumbList` schema based on the product's category hierarchy. This creates breadcrumb navigation in search results.                | Yes     |
 
 ### Restrictions
 
 Limit which pages receive structured data markup.
 
-| Setting | Description |
-|---------|-------------|
-| **Allowed Sections** | Only generate schema for these specific sections. Leave empty to allow all. |
-| **Forbidden Sections** | Never generate schema for these sections. |
+| Setting                | Description                                                                 |
+| ---------------------- | --------------------------------------------------------------------------- |
+| **Allowed Sections**   | Only generate schema for these specific sections. Leave empty to allow all. |
+| **Forbidden Sections** | Never generate schema for these sections.                                   |
 
 ### Advanced
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Debug Mode** | Outputs the generated schema as an HTML comment in the page source for troubleshooting. **Do not enable in production.** | No |
+| Setting        | Description                                                                                                              | Default |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------ | ------- |
+| **Debug Mode** | Outputs the generated schema as an HTML comment in the page source for troubleshooting. **Do not enable in production.** | No      |
 
 **Step 3:** Click **Save & Close** to apply your settings.
 
@@ -137,22 +152,22 @@ Review this tab to confirm the plugin is reading your product data correctly.
 
 Override any auto-detected value by entering a new value. **Leave fields empty to keep the auto-detected value.**
 
-| Field | Description |
-|-------|-------------|
-| **Product Name** | Override the product name in schema output. |
-| **Product Description** | Override the product description. |
-| **Product Image** | Override the main product image. |
-| **SKU** | Override the Stock Keeping Unit. |
-| **GTIN/EAN/UPC** | Override the Global Trade Item Number. |
-| **MPN** | Override the Manufacturer Part Number. |
-| **Brand Name** | Override the brand/manufacturer name. |
-| **Price** | Override the offer price (numeric value without currency symbol). |
-| **Availability** | Override the availability status: In Stock, Out of Stock, Pre-Order, Back Order, or Discontinued. |
-| **Price Valid Until** | Set an expiration date for the listed price. |
-| **Offer URL** | Override the URL where the product can be purchased. |
-| **Seller Name** | Override the seller/organization name. |
-| **Additional Images** | Add extra product images beyond the main image. |
-| **Custom Properties** | Add any custom schema.org property not covered above. |
+| Field                   | Description                                                                                       |
+| ----------------------- | ------------------------------------------------------------------------------------------------- |
+| **Product Name**        | Override the product name in schema output.                                                       |
+| **Product Description** | Override the product description.                                                                 |
+| **Product Image**       | Override the main product image.                                                                  |
+| **SKU**                 | Override the Stock Keeping Unit.                                                                  |
+| **GTIN/EAN/UPC**        | Override the Global Trade Item Number.                                                            |
+| **MPN**                 | Override the Manufacturer Part Number.                                                            |
+| **Brand Name**          | Override the brand/manufacturer name.                                                             |
+| **Price**               | Override the offer price (numeric value without currency symbol).                                 |
+| **Availability**        | Override the availability status: In Stock, Out of Stock, Pre-Order, Back Order, or Discontinued. |
+| **Price Valid Until**   | Set an expiration date for the listed price.                                                      |
+| **Offer URL**           | Override the URL where the product can be purchased.                                              |
+| **Seller Name**         | Override the seller/organization name.                                                            |
+| **Additional Images**   | Add extra product images beyond the main image.                                                   |
+| **Custom Properties**   | Add any custom schema.org property not covered above.                                             |
 
 ### Variant Overrides Tab
 
@@ -162,17 +177,17 @@ For products with multiple variants (sizes, colors, materials), you can override
 2. Enter the **Variant SKU** — this must exactly match the SKU in J2Commerce.
 3. Fill in any overrides for that variant:
 
-| Field | Description |
-|-------|-------------|
-| **Variant Name** | Custom name (e.g., "Blue T-Shirt - Large") |
-| **Variant GTIN** | GTIN specific to this variant |
-| **Variant MPN** | MPN specific to this variant |
-| **Variant Image** | Image specific to this variant |
-| **Color** | Color value (e.g., "Blue") |
-| **Size** | Size value (e.g., "XL") |
-| **Material** | Material type (e.g., "Cotton") |
-| **Price Override** | Override the variant's price |
-| **Availability Override** | Override the variant's stock status |
+| Field                     | Description                                |
+| ------------------------- | ------------------------------------------ |
+| **Variant Name**          | Custom name (e.g., "Blue T-Shirt - Large") |
+| **Variant GTIN**          | GTIN specific to this variant              |
+| **Variant MPN**           | MPN specific to this variant               |
+| **Variant Image**         | Image specific to this variant             |
+| **Color**                 | Color value (e.g., "Blue")                 |
+| **Size**                  | Size value (e.g., "XL")                    |
+| **Material**              | Material type (e.g., "Cotton")             |
+| **Price Override**        | Override the variant's price               |
+| **Availability Override** | Override the variant's stock status        |
 
 **Step 4:** Click **Save** to apply your overrides.
 
@@ -180,13 +195,13 @@ For products with multiple variants (sizes, colors, materials), you can override
 
 The plugin generates different schema types depending on the product:
 
-| Product Type | Schema Output | When Used |
-|-------------|---------------|-----------|
-| Simple product | `Product` with `Offer` | Products with one variant or no variants |
-| Variable product | `ProductGroup` with nested `Product` entries | Products with 2+ variants (sizes, colors, etc.) |
-| Category page | `ItemList` with `ListItem` entries | Product listing/category pages |
-| All product pages | `BreadcrumbList` | When breadcrumb schema is enabled |
-| Store-level | `Organization` | Seller information in Offer schema |
+| Product Type      | Schema Output                                | When Used                                       |
+| ----------------- | -------------------------------------------- | ----------------------------------------------- |
+| Simple product    | `Product` with `Offer`                       | Products with one variant or no variants        |
+| Variable product  | `ProductGroup` with nested `Product` entries | Products with 2+ variants (sizes, colors, etc.) |
+| Category page     | `ItemList` with `ListItem` entries           | Product listing/category pages                  |
+| All product pages | `BreadcrumbList`                             | When breadcrumb schema is enabled               |
+| Store-level       | `Organization`                               | Seller information in Offer schema              |
 
 ## Tips
 

@@ -30,7 +30,7 @@ The **J2Commerce Console** plugin is a separate add-on available from the [J2Com
 
 ## Install the App
 
-You can install this **J2Commerce Console** App using the Joomla installer. The following steps help you with a successful installation.
+You can install this **J2Commerce Console** plugin using the Joomla installer. The following steps help you with a successful installation.
 
 In the Joomla admin, go to **System -> Install -> Extensions**
 
