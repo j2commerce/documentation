@@ -200,20 +200,19 @@ const config = {
                         sidebarId: 'docSidebar',
                         position: 'left',
                         label: 'Documentation v4',
-                        algolia: {
-                            indexName: 'j2c_docs',
-                        },
+                        // algolia: {
+                        //     indexName: 'j2c_docs',
+                        // },
                     },
-                    // v6 documentation is hidden from navbar but still accessible via /v6/ URL
                     {
                       type: 'docSidebar',
                       docsPluginId: 'docs-v6',
                       sidebarId: 'docSidebarV6',
                       position: 'left',
                       label: 'Documentation v6',
-                      algolia: {
-                           indexName: 'j2c_docs_v6',
-                       },
+                      // algolia: {
+                      //      indexName: 'j2c_docs_v6',
+                      // },
                     },
                     // {
                     //   type: 'docSidebar',
@@ -231,6 +230,7 @@ const config = {
                 appId: 'WDTT4PYPY5',
                 apiKey: '19df50541882d5ffa3380ff7eb7227b7',
                 contextualSearch: false,
+                // Runtime index switching is handled in src/theme/SearchBar/index.js.
                 indexName: 'j2c_docs',
             },
             footer: {
