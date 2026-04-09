@@ -1,10 +1,3 @@
----
-title: "Template Overrides"
-sidebar_label: "Template Overrides"
-sidebar_position: 1
-description: "Learn how to customize J2Commerce layouts and templates using the Template Overrides manager."
----
-
 # Template Overrides
 
 The Template Overrides manager allows you to customize the HTML and PHP output of J2Commerce without modifying the core component files. By creating overrides, your customizations are preserved during system updates.
@@ -15,6 +8,8 @@ The Template Overrides manager allows you to customize the HTML and PHP output o
 - A Joomla template installed and set as the default.
 
 ## Accessing Template Overrides
+
+![](/img/template-overrides.webp)
 
 **Step 1:** Go to **J2Commerce** -> **Design** -> **Overrides**.
 
@@ -61,25 +56,33 @@ For specific block layouts, J2Commerce provides a **Visual Builder**. This drag-
 The Visual Builder consists of a central canvas and several tool panels.
 
 #### Adding Elements
+
 To add content to your layout:
+
 1. Open the **Components** panel (usually located on the left or right sidebar).
 2. Browse the available elements (e.g., Text, Images, Containers).
 3. **Click and drag** an element from the panel and drop it directly onto the canvas where you want it to appear.
 
 #### Editing Element Properties
+
 Once an element is on the canvas, you can customize its appearance and behavior:
+
 1. Click on the element within the canvas to select it.
 2. Use the **Settings/Style** panel to modify properties:
+
    - **Content:** Change text, links, or image sources.
    - **Styling:** Adjust margins, padding, colors, and alignment.
    - **Advanced:** Set custom CSS classes or IDs.
 
 #### Arranging Elements
+
 You can easily reorganize your layout:
+
 1. Click and hold an element on the canvas.
 2. **Drag and drop** it to a new position. The editor will show a guide line to help you place the element accurately.
 
 #### Previewing and Saving
+
 - **Preview:** Use the preview toggle to see how your layout will look on different screen sizes (Desktop, Tablet, Mobile).
 - **Save:** Click the **Save** button in the toolbar to commit your changes to the template override file.
 
@@ -98,6 +101,7 @@ You can easily reorganize your layout:
 **Cause:** The Joomla template cache or a browser cache may be showing an older version of the page.
 
 **Solution:**
+
 1. Clear the Joomla cache via **System** -> **Clear Cache**.
 2. Hard-refresh your browser (Ctrl+F5 or Cmd+Shift+R).
 3. Verify that you are editing the override for the *currently active* template.

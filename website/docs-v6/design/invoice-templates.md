@@ -1,6 +1,6 @@
 # Print Templates
 
-Invoice Templates allow you to design professional documents for your customers, including standard invoices, packing slips, and receipts.
+Print Templates allow you to design professional documents for your customers, including standard invoices, packing slips, and receipts.
 
 ## Prerequisites
 
