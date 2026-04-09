@@ -5,7 +5,7 @@ The Template Overrides manager allows you to customize the HTML and PHP output o
 ## Prerequisites
 
 - Administrator account with Super User permissions.
-- A Joomla template installed and set as the default.
+- A Joomla template is installed and set as the default.
 
 ## Accessing Template Overrides
 
