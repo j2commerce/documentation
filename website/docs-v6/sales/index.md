@@ -1,10 +1,3 @@
----
-title: "Sales Management"
-sidebar_label: "Sales"
-sidebar_position: 1
-description: "Manage orders, customers, and coupons in J2Commerce"
----
-
 # Sales Management
 
 Sales management in J2Commerce provides comprehensive tools for managing your store's commercial operations. Track orders from placement to delivery, manage customer relationships, and create promotional campaigns with discount coupons.
@@ -13,11 +6,11 @@ Sales management in J2Commerce provides comprehensive tools for managing your st
 
 The Sales section contains three key areas:
 
-| Area          | Purpose                                                           |
-| ------------- | ----------------------------------------------------------------- |
-| **Orders**    | View and manage customer orders, update statuses, process refunds |
-| **Customers** | View registered customers and their order history                 |
-| **Coupons**   | Create and manage discount codes for promotions                   |
+**Orders:** The purpose is to view and manage customer orders, update statuses, and process refunds
+
+**Customers:** The purpose is to view registered customers and their order history
+
+**Coupons:** The purpose is to create and manage discount codes for promotions
 
 ## Key Features
 
@@ -35,7 +28,7 @@ The Sales section contains three key areas:
 - Customer list with email, name, and contact information
 - View total orders and total spent per customer
 - Filter customers by country
-- View customer's order history
+- View the customer's order history
 
 ### Coupons
 
@@ -46,14 +39,12 @@ The Sales section contains three key areas:
 - Usage limits per coupon and per customer
 - Restrict by product, category, brand, or customer group
 
-## Accessing Sales Features
+## Locating the Sales Features
 
-Navigate to **J2Commerce** → **Dashboard** → **Sales** to access all sales management features.
+There are **two** ways you can access the sales features.&#x20;
 
-<!-- ![](/img/sales-dashboard.webp) -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Sales**
 
-## Related Topics
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Sales**
 
-- [Orders](orders.md) — Order management and status workflow
-- [Customers](customers.md) — Customer list and details
-- [Coupons](coupons.md) — Creating and managing discount codes
+![](/img/sales.webp)
