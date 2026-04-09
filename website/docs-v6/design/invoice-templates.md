@@ -1,10 +1,3 @@
----
-title: "Invoice Templates"
-sidebar_label: "Invoice Templates"
-sidebar_position: 3
-description: "Create and manage professional invoice and packing slip templates for your orders."
----
-
 # Print Templates
 
 Invoice Templates allow you to design professional documents for your customers, including standard invoices, packing slips, and receipts.
