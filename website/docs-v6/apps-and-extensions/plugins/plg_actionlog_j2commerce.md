@@ -24,7 +24,7 @@ To change settings, click the plugin name to open its configuration screen, make
 
 ## Configure the Plugin
 
-Go to **System** -> **Manage** -> **Plugins**, search for **J2Commerce - Action Log**, and click the plugin name.
+Go to **System -> Manage ->** **Plugins**, search for **J2Commerce - Action Log**, and click the plugin name.
 
 :::tip
 
