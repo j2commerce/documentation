@@ -214,16 +214,16 @@ const config = {
                       //      indexName: 'j2c_docs_v6',
                       // },
                     },
-                    // {
-                    //   type: 'docSidebar',
-                    //   docsPluginId: 'developer-v6',
-                    //   sidebarId: 'developerSidebarV6',
-                    //   position: 'left',
-                    //   label: 'Developer v6',
+                    {
+                      type: 'docSidebar',
+                      docsPluginId: 'developer-v6',
+                      sidebarId: 'developerSidebarV6',
+                      position: 'left',
+                      label: 'Developer v6',
                     //   algolia: {
                     //        indexName: 'j2c_developer_v6',
                     //    },
-                    // },
+                    },
                 ],
             },
             algolia: {
