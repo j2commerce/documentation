@@ -105,7 +105,7 @@ const sidebars = {
             label: 'Design',
             link: {
                 type: 'doc',
-                slug: '/design/index',
+                id: '/design/index',
             },
             items: [
                 {
@@ -113,7 +113,7 @@ const sidebars = {
                     label: 'Layouts',
                     link: {
                         type: 'doc',
-                        slug: '/design/layouts/index',
+                        id: '/design/layouts/index',
                     },
                     items: [
                         'design/layouts/bootstrap5-layouts',
