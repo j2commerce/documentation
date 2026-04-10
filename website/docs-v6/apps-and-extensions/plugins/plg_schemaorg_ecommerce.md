@@ -1,13 +1,6 @@
----
-title: "Schema.org - Ecommerce"
-sidebar_label: "Schema.org Ecommerce"
-sidebar_position: 4
-description: "Add Product structured data to your J2Commerce store for rich snippets in Google search results, including pricing, availability, and reviews."
----
-
 # Schema.org - Ecommerce
 
-The Schema.org Ecommerce plugin automatically adds structured data markup to your J2Commerce product pages. This tells search engines like Google exactly what your products are, how much they cost, and whether they are in stock — enabling rich snippets (star ratings, prices, and availability badges) directly in search results.
+The Schema.org Ecommerce plugin automatically adds structured data markup to your J2Commerce product pages. **This tells search engines like Google exactly what your products are, how much they cost, and whether they are in stock — enabling rich snippets (star ratings, prices, and availability badges) directly in search results.**
 
 The plugin detects your J2Commerce product data automatically. No manual data entry is required for most products.
 
@@ -108,17 +101,29 @@ All of this happens automatically. You do not need to edit each product unless y
 
 ## Overriding Schema Data Per Article
 
+:::info
+
+**Note:** This is ONLY used if you want to override the existing product schema
+
+:::
+
 For advanced control, you can override the auto-detected values on a per-article basis.
 
 **Step 1:** Go to **Content** -> **Articles** and open the article linked to your J2Commerce product.
 
-**Step 2:** Click the **Schema** tab in the article editor.
+**Step 2:** Click the **Schema** tab in the article editor. The link (this link to open the plugin) will only appear the first time you want to set it up. Once you click in the link and tell Google if the website is an organization or a personal website, that information will link to any other product you want to override
 
-**Step 3:** Select **Ecommerce** from the **Schema Type** dropdown.
+![](/img/schema-article1.webp)
 
-<!-- SCREENSHOT: Article editor Schema tab with Ecommerce type selected -->
+Click on the link, **this link to open the plugin**, and fill out the information for Google, ie; Company Name, logo, social media
 
-The schema editor has three sections:
+![](/img/schema-organization.webp)
+
+**Step 3:** Go back to the product, select the schema tab and now select **Ecommerce** from the **Schema Type** dropdown. Once you select E-commerce, your product information will appear and you can now customise the override information.&#x20;
+
+![](/img/schema-article2.webp)
+
+**The schema editor has three sections:**
 
 ### Existing Product Data Tab
 
