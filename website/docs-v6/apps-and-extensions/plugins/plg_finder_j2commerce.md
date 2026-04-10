@@ -6,7 +6,7 @@ Once the plugin is enabled and your products are indexed, customers can search f
 
 ## Prerequisites
 
-- J2Commerce 6 installed and active
+- J2Commerce 6 is installed and active
 - At least one product created
 - Joomla's **Smart Search** component enabled (`com_finder`)
 - The Joomla system plugin **Quick Icons — Smart Search Indexing** or the **Smart Search** (`plg_system_finder`) system plugin enabled so the index stays current
