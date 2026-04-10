@@ -1,10 +1,3 @@
----
-title: "PayPal Payment"
-sidebar_label: "PayPal"
-sidebar_position: 10
-description: "Accept PayPal payments in your J2Commerce store using PayPal Smart Payment Buttons and the REST API v2."
----
-
 # PayPal Payment
 
 The PayPal plugin lets your customers pay using PayPal's Smart Payment Buttons — a modern, secure checkout experience that supports PayPal accounts, credit cards, and other payment methods PayPal offers in your customers' region.
@@ -13,11 +6,9 @@ The plugin uses PayPal's REST API v2, so no redirects are needed. Customers comp
 
 ## Prerequisites
 
-- J2Commerce installed and active on your Joomla site
+- J2Commerce is installed and active on your Joomla site
 - A PayPal Business account (see the setup steps below)
 - REST API credentials (Client ID and Client Secret) from the PayPal Developer Dashboard
-
----
 
 ## Step 1: Set Up a PayPal Business Account
 
@@ -48,40 +39,49 @@ After your account is active:
 
 **Sandbox credentials** (for testing): Click the **Sandbox** tab on the same Apps & Credentials page. Create a separate sandbox app or use the default one. Copy the Sandbox Client ID and Sandbox Client Secret separately.
 
----
+## Enable the Plugin
 
-## Installation & Enabling
+This plugin ships with J2Commerce 6 and is available immediately after installation. Because it requires your bank details before it can be used, it is not enabled automatically.
 
-The PayPal plugin ships with J2Commerce 6 and is available immediately after installation. Because it requires your merchant credentials before it can process payments, it is not enabled automatically during installation.
+There are **three** ways you can access the plugin.&#x20;
 
-To enable it:
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Find **PayPal** in the list.
-3. Click the toggle in the **Enabled** column to enable the plugin, or click the plugin name to open its settings first.
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
 
-<!-- SCREENSHOT: Payment Methods list with PayPal plugin highlighted -->
+**Option C:** Go to **Settings** on the left sidebar **-> Manage -> Plugins**
 
----
+![](/img/cash-config1.webp)
+
+Look for **PayPal**, click the **X,** and it will turn into a **green checkmark**. It is now enabled and ready for setup.
+
+![](/img/paypal-enable.webp)
 
 ## Configuration
 
-Go to **J2Commerce** -> **Payments** -> **Payment Methods** and click **PayPal** to open the settings.
+After enabling the plugin, click the **Cash on Demand** title to open the settings.
 
-<!-- SCREENSHOT: PayPal plugin configuration form in J2Commerce admin -->
+:::tip
+
+**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+
+:::
+
+![](/img/paypal-toggle.webp)
 
 ### Display Settings
 
-| Field | Description | Default |
-|-------|-------------|--------|
-| **Display Name** | The label shown to customers at checkout | `PayPal` |
-| **Display Image** | Optional logo or image shown next to the payment option at checkout | _(none)_ |
+![](/img/paypal-config.webp)
+
+**Display Name:** The label shown to customers at checkout
+
+**Display Image:** Optional logo or image shown next to the payment option at checkout
 
 ### Sandbox Mode
 
-| Field | Description | Default |
-|-------|-------------|--------|
-| **Use PayPal Sandbox** | Switch this on to use PayPal's test environment. No real money is processed. | No |
+![](/img/paypal-config1.webp)
+
+**Use PayPal Sandbox:** Switch this on to use PayPal's test environment. No real money is processed.
 
 Turn sandbox mode **on** while you are setting up and testing. Turn it **off** before you go live.
 
@@ -91,28 +91,27 @@ When sandbox mode is active, a warning banner appears on the J2Commerce dashboar
 
 These are used when **Use PayPal Sandbox** is set to **No**.
 
-| Field | Description |
-|-------|-------------|
-| **Client ID** | Your live REST API Client ID from [developer.paypal.com](https://developer.paypal.com) |
-| **Client Secret** | Your live REST API Client Secret |
+**Client ID:** Your live REST API Client ID from [developer.paypal.com](https://developer.paypal.com)
+
+**Client Secret:** Your live REST API Client Secret
 
 ### Sandbox API Credentials
 
 These are used when **Use PayPal Sandbox** is set to **Yes**.
 
-| Field | Description |
-|-------|-------------|
-| **Sandbox Client ID** | Your sandbox REST API Client ID |
-| **Sandbox Client Secret** | Your sandbox REST API Client Secret |
+**Sandbox Client ID:** Your sandbox REST API Client ID
+
+**Sandbox Client Secret:** Your sandbox REST API Client Secret
 
 ### Webhooks (Optional but Recommended)
 
+![](/img/paypal-config2.webp)
+
 Webhooks allow PayPal to notify your store automatically when payment events occur — for example, when a payment completes, is refunded, or is disputed. Without webhooks, order status updates only happen when the customer completes checkout on your page.
 
-| Field | Description |
-|-------|-------------|
-| **Webhook ID** | The Webhook ID from your live PayPal app in the developer dashboard |
-| **Sandbox Webhook ID** | The Webhook ID from your sandbox PayPal app |
+**Webhook ID:** The Webhook ID from your live PayPal app in the developer dashboard
+
+**Sandbox Webhook ID:** The Webhook ID from your sandbox PayPal app
 
 **How to create a webhook in PayPal:**
 
@@ -126,9 +125,9 @@ Webhooks allow PayPal to notify your store automatically when payment events occ
 
 ### Order Status
 
-| Field | Description | Default |
-|-------|-------------|--------|
-| **Order Status** | The order status applied after a successful payment capture | `Confirmed` |
+![](/img/paypal-config3.webp)
+
+**Order Status:** The order status is applied after a successful payment capture
 
 Choose the status that fits your workflow. Most stores use **Confirmed** or **Processing** for paid orders.
 
@@ -136,78 +135,73 @@ Choose the status that fits your workflow. Most stores use **Confirmed** or **Pr
 
 Add an optional surcharge to orders paid via PayPal. This is useful if you want to pass on PayPal's processing fee to customers (check your local laws and PayPal's terms before doing this).
 
-| Field | Description | Default |
-|-------|-------------|--------|
-| **Surcharge Name** | Label shown to customers for the surcharge (e.g., "PayPal Fee") | _(none)_ |
-| **Surcharge Percent** | Percentage of the order subtotal added as a surcharge | _(none)_ |
-| **Surcharge Fixed** | Fixed amount added as a surcharge | _(none)_ |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount | _(none)_ |
+**Surcharge Name:** Label shown to customers for the surcharge (e.g., "PayPal Fee")
+
+**Surcharge Percent:** Percentage of the order subtotal added as a surcharge
+
+**Surcharge Fixed:** Fixed amount added as a surcharge
+
+**Surcharge Tax Class:** Tax profile to apply to the surcharge amount
 
 You can combine a percentage and a fixed amount — both will be added together.
 
 ### Geo-Zone Restriction
 
-| Field | Description | Default |
-|-------|-------------|--------|
-| **Geo-Zone Restriction** | Limit PayPal availability to customers in a specific geo-zone | _(none — available everywhere)_ |
+![](/img/paypal-config4.webp)
+
+**Geo-Zone Restriction:** Limit PayPal availability to customers in a specific geo-zone
 
 Leave this empty to show PayPal to all customers regardless of location.
 
 ### Order Amount Limits
 
-| Field | Description | Default |
-|-------|-------------|--------|
-| **Minimum Subtotal** | Hide PayPal if the cart subtotal is below this amount. Leave empty for no minimum. | _(none)_ |
-| **Maximum Subtotal** | Hide PayPal if the cart subtotal exceeds this amount. Leave empty or set to `-1` for no maximum. | _(none)_ |
+**Minimum Subtotal:** Hide PayPal if the cart subtotal is below this amount. Leave empty for no minimum.
+
+**Maximum Subtotal:** Hide PayPal if the cart subtotal exceeds this amount. Leave empty or set to `-1` for no maximum.
 
 ### Thank You Page
 
-| Field | Description |
-|-------|-------------|
-| **Thank You Article** | Select a Joomla article to display after a successful payment. This is shown on the confirmation page in addition to the standard confirmation message. |
+![](/img/paypal-config5.webp)
+
+**Thank You Article:** Select a Joomla article to display after a successful payment. This is shown on the confirmation page in addition to the standard confirmation message.
 
 ### Custom Messages
 
 These text fields let you customize messages shown to customers at different points in the payment process.
 
-| Field | When it displays |
-|-------|------------------|
-| **On Selection** | When the customer selects PayPal as their payment method |
-| **On Before Payment** | On the payment page before the customer clicks Pay |
-| **On After Payment** | On the confirmation page after a successful payment |
-| **On Error Payment** | When a payment error occurs |
-| **On Cancel Payment** | When the customer cancels payment and returns to the cart |
+**On Selection:** When the customer selects PayPal as their payment method
+
+**On Before Payment:** On the payment page before the customer clicks Pay
+
+**On After Payment:** On the confirmation page after a successful payment
+
+**On Error Payment:** When a payment error occurs
+
+**On Cancel Payment:** When the customer cancels payment and returns to the cart
 
 ### Dashboard Icon
 
-| Field | Description | Default |
-|-------|-------------|--------|
-| **Show Dashboard Icon** | Show a shortcut icon for PayPal on the J2Commerce dashboard | No |
-| **Dashboard Icon Label** | Label for the dashboard icon (only visible when Show Dashboard Icon is Yes) | _(none)_ |
+![](/img/paypal-config6.webp)
+
+**Show Dashboard Icon:** Show a shortcut icon for PayPal on the J2Commerce dashboard
+
+**Dashboard Icon Label:** Label for the dashboard icon (only visible when Show Dashboard Icon is Yes)
 
 ### Subtemplate
 
-| Field | Description | Default |
-|-------|-------------|--------|
-| **Subtemplate** | Select an alternative layout template for the PayPal payment form, if any are installed | _(default)_ |
+**Template Style:** Select an alternative layout template for the PayPal payment form, if any are installed
 
 ### Debug Mode
 
-| Field | Description | Default |
-|-------|-------------|--------|
-| **Debug Mode** | Write detailed PayPal API activity to `administrator/logs/payment_paypal.php` and the browser console | No |
+**Debug Mode:** Write detailed PayPal API activity to `administrator/logs/payment_paypal.php` and the browser console
 
 Enable debug mode only while troubleshooting. Disable it in production — logs can grow large quickly.
-
----
 
 ## Supported Currencies
 
 PayPal does not support every currency. If your store uses a currency not in this list, PayPal will not be available at checkout.
 
 Supported currencies: AUD, BRL, CAD, CNY, CZK, DKK, EUR, HKD, HUF, INR, ILS, JPY, MYR, MXN, TWD, NZD, NOK, PHP, PLN, GBP, RUB, SGD, SEK, CHF, THB, USD.
-
----
 
 ## Checkout Experience
 
@@ -219,13 +213,13 @@ When a customer selects PayPal at checkout:
 4. The payment is captured immediately.
 5. The customer is returned to your confirmation page.
 
-<!-- SCREENSHOT: PayPal Smart Payment Buttons on the checkout page -->
+![](/img/paypal-frontend.webp)
 
 Payment happens without the customer leaving your site. The PayPal popup or inline experience handles authentication securely.
 
 If the customer clicks **Cancel** in the PayPal window, they are returned to checkout and the cart remains intact. The cancellation message you configured is displayed.
 
----
+***
 
 ## Order Management
 
@@ -239,7 +233,7 @@ Once a customer pays, J2Commerce records the transaction details against the ord
 
 You can issue a refund directly from the order in the J2Commerce admin:
 
-1. Go to **J2Commerce** -> **Orders** and open the order.
+1. Go to **J2Commerce -> Sales -> Orders** and open the order.
 2. Click the **Refund** button.
 3. Enter the amount to refund (leave blank to refund the full amount).
 4. Confirm the refund.
@@ -250,19 +244,17 @@ The refund is sent to PayPal via the API. The order status is updated and a note
 
 If webhooks are configured, PayPal can update order statuses automatically for events that happen outside the normal checkout flow:
 
-| PayPal Event | What happens in J2Commerce |
-|-------------|---------------------------|
-| Payment capture completed | Order status updated to the configured "Confirmed" state |
-| Payment capture pending | Order status updated to Pending |
-| Payment capture denied | Order status updated to Failed |
-| Payment refunded | Order status updated to Refunded |
+| PayPal Event                  | What happens in J2Commerce                                          |
+| ----------------------------- | ------------------------------------------------------------------- |
+| Payment capture completed     | Order status updated to the configured "Confirmed" state            |
+| Payment capture pending       | Order status updated to Pending                                     |
+| Payment capture denied        | Order status updated to Failed                                      |
+| Payment refunded              | Order status updated to Refunded                                    |
 | Payment reversed (chargeback) | Order status updated to Failed, flagged for review in order history |
-| Dispute created | Warning logged in the application log |
-| Dispute resolved | Resolution logged in the application log |
+| Dispute created               | Warning logged in the application log                               |
+| Dispute resolved              | Resolution logged in the application log                            |
 
 Webhook events are deduplicated — if PayPal sends the same event twice, it is processed only once.
-
----
 
 ## Going Live Checklist
 
@@ -274,8 +266,6 @@ Before accepting real payments, confirm the following:
 - [ ] You have placed a test order using a real PayPal account with a small amount and then refunded it
 - [ ] **Debug Mode** is set to **No**
 
----
-
 ## Troubleshooting
 
 ### PayPal buttons do not appear at checkout
@@ -283,7 +273,8 @@ Before accepting real payments, confirm the following:
 **Cause:** The Client ID is missing or incorrect, or the plugin is not enabled.
 
 **Solution:**
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and confirm PayPal is enabled.
+
+1. Go to **J2Commerce -> Setup ->** **Payment Methods** and confirm PayPal is enabled.
 2. Check that a Client ID (or Sandbox Client ID if in sandbox mode) is entered.
 3. Enable **Debug Mode** and check the browser console for error messages.
 
@@ -298,6 +289,7 @@ Before accepting real payments, confirm the following:
 **Cause:** Webhooks are not configured, so J2Commerce does not receive the payment confirmation from PayPal.
 
 **Solution:**
+
 1. Set up a webhook in your PayPal app (see [Webhooks](#webhooks-optional-but-recommended) above).
 2. Enter the Webhook ID in the plugin settings.
 3. Alternatively, the order status is also updated during the capture step — if the customer completed checkout successfully, check whether the order status was set at that time.
@@ -313,6 +305,7 @@ Before accepting real payments, confirm the following:
 **Cause:** The PayPal capture ID is missing from the order, or the transaction has already been refunded.
 
 **Solution:**
+
 1. Open the order and check that a Transaction ID is recorded.
 2. If the Transaction ID is empty, the payment may not have been captured correctly. Check the debug log.
 3. Log in to your PayPal Business account and verify the transaction status there.
@@ -322,8 +315,6 @@ Before accepting real payments, confirm the following:
 **Cause:** **Use PayPal Sandbox** is set to **Yes**.
 
 **Solution:** If you are ready to go live, open the PayPal plugin settings and switch **Use PayPal Sandbox** to **No**, then enter your live credentials.
-
----
 
 ## Support
 

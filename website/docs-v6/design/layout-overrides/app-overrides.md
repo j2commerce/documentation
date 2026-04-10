@@ -7,7 +7,10 @@ description: "How to override app plugin templates (Bootstrap 5, UIkit) using Jo
 
 # Customising App Plugin Templates
 
-App plugins decide what your product pages look like — the list grid, the detail page, the cart view. J2Commerce 6 includes two of them: **Bootstrap 5** (`app_bootstrap5`) and **UIkit** (`app_uikit`), both enabled out of the box.
+App plugins decide what your product pages look like — the list grid, the detail page, the cart view. J2Commerce 6 includes two of them, both enabled out of the box.
+
+- **Bootstrap 5** (`app_bootstrap5`) - Modern Bootstrap 5 styling with responsive grid
+- **Uikit** (`app_uikit`) - UIkit 3 framework styling
 
 The good news is that you never need to edit plugin files directly. J2Commerce app plugins use Joomla's standard template override system, so your customisations live in your own template folder and are never touched by plugin updates.
 
@@ -15,10 +18,10 @@ The good news is that you never need to edit plugin files directly. J2Commerce a
 
 Each app plugin has two types of template files:
 
-| Type | Location in plugin | What it controls |
-|------|--------------------|------------------|
-| **View templates** (`tmpl/`) | `plugins/j2commerce/app_bootstrap5/tmpl/bootstrap5/` | Product list page, product detail page, cart display |
-| **Layout partials** (`layouts/`) | `components/com_j2commerce/layouts/app_bootstrap5/` | Individual product card sections (price, image, title, add-to-cart button, etc.) |
+| Type                             | Location in plugin                                   | What it controls                                                                 |
+| -------------------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **View templates** (`tmpl/`)     | `plugins/j2commerce/app_bootstrap5/tmpl/bootstrap5/` | Product list page, product detail page, cart display                             |
+| **Layout partials** (`layouts/`) | `components/com_j2commerce/layouts/app_bootstrap5/`  | Individual product card sections (price, image, title, add-to-cart button, etc.) |
 
 View templates are the entry points. They pull in partials to assemble each product card piece by piece. Overriding a single partial — say `item_price.php` or `item_cart.php` — is usually enough and far easier to maintain than replacing a whole page template.
 
@@ -26,17 +29,45 @@ View templates are the entry points. They pull in partials to assemble each prod
 
 `app_bootstrap5` has three tmpl sub-folders, each serving a different page context:
 
-| Folder | Used on |
-|--------|---------|
-| `bootstrap5/` | Category/product list pages |
-| `tag_bootstrap5/` | Tag-based product pages |
-| `categories_bootstrap5/` | Category landing page |
+| Folder                   | Used on                     |
+| ------------------------ | --------------------------- |
+| `bootstrap5/`            | Category/product list pages |
+| `tag_bootstrap5/`        | Tag-based product pages     |
+| `categories_bootstrap5/` | Category landing page       |
 
 `app_uikit` follows the same pattern with `uikit/`, `tag_uikit/`, and `categories_uikit/`.
 
 ## Creating a Template Override
 
-When J2Commerce loads a template file, it checks your active Joomla template's `html/` directory first. If a matching file exists there, that version wins. If not, it falls back to the plugin original. The folder name follows a simple rule: take the plugin element name and add a `plg_` prefix.
+**Step 1:** Go to **Systems -> Templates -> Site Templates**
+
+![](/img/overrides-site-templates6.webp)
+
+**Step 2:** Click on the first option, **Cassiopeia Details and Files**
+
+![](/img/overrides-site-templates5.webp)
+
+**Step 3:** Click on the **Create Overrides** tab. Look for the appropriate category (ie, Modules, Plugins, etc). Click on the **J2Commerce** override
+
+![](/img/overrides-site-templates2.webp)
+
+**Step 4:** In the dropdown menu, choose which one you want to create the override for
+
+![](/img/overrides-site-templates3.webp)
+
+**Step 5:** Click on the **Enter and Email Address for the User** tab. Open the html folder
+
+![](/img/overrides-site-templates1-1.png)
+
+**Step 6:** Open the extension you want to create. Open either Bootstrap or Uikit
+
+![](/img/overrides-site-templates1.webp)
+
+**Step 7:** Click on the file you want to customize.
+
+![](/img/overrides-site-templates1-3.webp)
+
+When J2Commerce loads a template file, it checks your active Joomla template's `html/` directory first. If a matching file exists there, that version wins. If not, it falls back to the original plugin. The folder name follows a simple rule: take the plugin element name and add a `plg_` prefix.
 
 ### Override path structure
 
@@ -108,7 +139,7 @@ The SKU partial for the category list is `item_sku.php`. To hide the SKU entirel
 <?php defined('_JEXEC') or die; ?>
 ```
 
-3. Save the file. The SKU no longer appears in the product list. No other pages or contexts are affected.
+1. Save the file. The SKU no longer appears in the product list. No other pages or contexts are affected.
 
 ## Overriding View Templates (Full Page Templates)
 
@@ -117,11 +148,13 @@ For larger changes — such as restructuring the entire product list layout — 
 **Example:** Override the main product list template for `app_bootstrap5`.
 
 Source file:
+
 ```
 plugins/j2commerce/app_bootstrap5/tmpl/bootstrap5/default.php
 ```
 
 Override destination:
+
 ```
 templates/cassiopeia/html/plg_j2commerce_app_bootstrap5/bootstrap5/default.php
 ```
@@ -171,8 +204,3 @@ That said, it is worth a quick check after major updates. Compare your override 
 **Cause:** Category list and tag list use separate tmpl sub-folders (`bootstrap5/` vs `tag_bootstrap5/`) and separate layout partial folders (`list/category/` vs `list/tag/`).
 
 **Solution:** Create parallel overrides in both locations.
-
-## Related Topics
-
-- [App Plugins Overview](../../apps-and-extensions/index.md)
-- [Joomla Template Overrides (Joomla Documentation)](https://docs.joomla.org/Layout_Overrides_in_Joomla)
