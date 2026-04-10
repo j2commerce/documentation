@@ -18,31 +18,15 @@ This plugin is designed for store owners and developers who prefer working from 
 - J2Commerce 6.x
 - SSH or terminal access to your server
 
-## Purchase and Download
+## Enable the Plugin
 
-The **J2Commerce Console** plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+![](/img/action-log-plugin.webp)
 
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Plugin**.
+- Go to **System** **->** **Manage -> Plugins**.
 
-**Step 2:** Locate the **J2Commerce CLI** plugin **->** click **View Details** -> **Add to cart** -> **Checkout**.
+- Search for **J2Commerce CLI**.
 
-**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
-
-## Install the App
-
-You can install this **J2Commerce Console** plugin using the Joomla installer. The following steps help you with a successful installation.
-
-In the Joomla admin, go to **System -> Install -> Extensions**
-
-Upload the plugin `plg_console_j2commerce.zip` file or use the Install from URL option.
-
-![Install extensions](<../../../assets/app install1 (1) (1).webp>)
-
-## Enable the App
-
-1. Go to **System** **->** **Manage -> Plugins**.
-2. Search for **J2Commerce CLI**.
-3. Verify the plugin shows a green checkmark (enabled). If not, click the status icon to enable it.
+- Verify the plugin shows a green checkmark (enabled). If not, click the status icon to enable it.
 
 ![](/img/j2commerce-cli-enable.webp)
 

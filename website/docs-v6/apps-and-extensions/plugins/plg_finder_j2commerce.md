@@ -18,15 +18,13 @@ The J2Commerce Content plugin (`plg_content_j2commerce`) should also be enabled.
 
 :::
 
-## Installation
-
-This plugin ships with J2Commerce 6 and is available immediately after installation. To enable it:
-
-- Go to **System** -> **Manage** -> **Plugins**.
+## Enable the Plugin
 
 ![](/img/action-log-plugin.webp)
 
-## Enable the Plugin
+- Go to **System** -> **Manage** -> **Plugins**.
+
+
 
 - Search for **Smart Search - J2Commerce**.
 

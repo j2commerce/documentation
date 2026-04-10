@@ -29,31 +29,15 @@ Structured data is a standardized way of describing your page content to search 
 
 These rich snippets make your listings stand out in search results and can significantly increase click-through rates.
 
-## Purchase and Download
+## Enable the Plugin
 
-The **Schema.org - Ecommerce** plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+![](/img/action-log-plugin.webp)
 
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Plugin**.
+- Go to **System** -> **Manage** -> **Plugins**.
 
-**Step 2:** Locate the **Schema.org - Ecommerce** plugin **->** click **View Details** -> **Add to cart** -> **Checkout**.
+- Search for **Schema.org - Ecommerce**.
 
-**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
-
-## Install the App
-
-You can install this **Schema.org - Ecommerce** plugin using the Joomla installer. The following steps help you with a successful installation.
-
-In the Joomla admin, go to **System -> Install -> Extensions**
-
-Upload the plugin `plg_schemaorg_ecommerce.zip` file or use the Install from URL option.
-
-![Install extensions](<../../../assets/app install1 (1) (1).webp>)
-
-## Enable the App
-
-1. Go to **System** -> **Manage** -> **Plugins**.
-2. Search for **Schema.org - Ecommerce**.
-3. Verify it shows a green checkmark (enabled). If not, click the status icon to enable it.
+- Verify it shows a green checkmark (enabled). If not, click the status icon to enable it.
 
 ![](/img/schema-enable.webp)
 

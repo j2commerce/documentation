@@ -18,20 +18,19 @@ This plugin is the gateway for all J2Commerce API access. Without it enabled, no
 - J2Commerce 6.x
 - HTTPS enabled on your site (strongly recommended)
 
-## Installation
+**Web Services - J2Commerce**
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Purchase and download the `plg_webservices_j2commerce.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `plg_webservices_j2commerce.zip` package file.
-4. The plugin installs and enables automatically.
+`plg_webservices_j2commerce.zip`
 
 ## Enable the Plugin
 
-1. Go to **System** -> **Manage** -> **Extensions**.
-2. Search for **Web Services - J2Commerce**.
-3. Verify it shows a green checkmark (enabled). If not, click the status icon to enable it.
+![](/img/action-log-plugin.webp)
+
+- Go to **System** -> **Manage** -> **Extensions**.
+
+- Search for **Web Services - J2Commerce**.
+
+- Verify it shows a green checkmark (enabled). If not, click the status icon to enable it.
 
 <!-- SCREENSHOT: Extensions list showing Web Services - J2Commerce plugin enabled -->
 
@@ -41,68 +40,68 @@ The plugin registers over 40 REST API endpoints organized into these groups:
 
 ### Catalog Data
 
-| Endpoint | Description |
-|----------|-------------|
-| `/v1/j2commerce/products` | List, view, create, update, and delete products |
-| `/v1/j2commerce/products/[id]/variants` | List product variants for a specific product |
-| `/v1/j2commerce/manufacturers` | Manage product manufacturers/brands |
-| `/v1/j2commerce/currencies` | View and manage store currencies |
-| `/v1/j2commerce/countries` | List countries |
-| `/v1/j2commerce/zones` | List zones (states/provinces) |
-| `/v1/j2commerce/countries/[id]/zones` | List zones for a specific country |
+| Endpoint                                | Description                                     |
+| --------------------------------------- | ----------------------------------------------- |
+| `/v1/j2commerce/products`               | List, view, create, update, and delete products |
+| `/v1/j2commerce/products/[id]/variants` | List product variants for a specific product    |
+| `/v1/j2commerce/manufacturers`          | Manage product manufacturers/brands             |
+| `/v1/j2commerce/currencies`             | View and manage store currencies                |
+| `/v1/j2commerce/countries`              | List countries                                  |
+| `/v1/j2commerce/zones`                  | List zones (states/provinces)                   |
+| `/v1/j2commerce/countries/[id]/zones`   | List zones for a specific country               |
 
 ### Orders and Customers
 
-| Endpoint | Description |
-|----------|-------------|
-| `/v1/j2commerce/orders` | List, view, create, and update orders |
-| `/v1/j2commerce/orders/[id]/items` | View line items for an order |
-| `/v1/j2commerce/orders/[id]/history` | View or add order history entries |
-| `/v1/j2commerce/customers` | List, view, and manage customer records |
-| `/v1/j2commerce/customers/[id]/addresses` | List addresses for a customer |
-| `/v1/j2commerce/customers/[id]/orders` | List orders for a customer |
+| Endpoint                                  | Description                             |
+| ----------------------------------------- | --------------------------------------- |
+| `/v1/j2commerce/orders`                   | List, view, create, and update orders   |
+| `/v1/j2commerce/orders/[id]/items`        | View line items for an order            |
+| `/v1/j2commerce/orders/[id]/history`      | View or add order history entries       |
+| `/v1/j2commerce/customers`                | List, view, and manage customer records |
+| `/v1/j2commerce/customers/[id]/addresses` | List addresses for a customer           |
+| `/v1/j2commerce/customers/[id]/orders`    | List orders for a customer              |
 
 ### Promotions
 
-| Endpoint | Description |
-|----------|-------------|
-| `/v1/j2commerce/coupons` | Create, view, update, and delete coupons |
+| Endpoint                  | Description                               |
+| ------------------------- | ----------------------------------------- |
+| `/v1/j2commerce/coupons`  | Create, view, update, and delete coupons  |
 | `/v1/j2commerce/vouchers` | Create, view, update, and delete vouchers |
 
 ### Inventory
 
-| Endpoint | Description |
-|----------|-------------|
+| Endpoint                   | Description                          |
+| -------------------------- | ------------------------------------ |
 | `/v1/j2commerce/inventory` | View and update product stock levels |
 
 ### Shipping and Payment
 
-| Endpoint | Description |
-|----------|-------------|
+| Endpoint                         | Description             |
+| -------------------------------- | ----------------------- |
 | `/v1/j2commerce/shippingmethods` | Manage shipping methods |
-| `/v1/j2commerce/paymentmethods` | Manage payment methods |
+| `/v1/j2commerce/paymentmethods`  | Manage payment methods  |
 
 ### Tax Configuration
 
-| Endpoint | Description |
-|----------|-------------|
-| `/v1/j2commerce/taxprofiles` | Manage tax profiles |
-| `/v1/j2commerce/taxrates` | Manage tax rates |
+| Endpoint                       | Description           |
+| ------------------------------ | --------------------- |
+| `/v1/j2commerce/taxprofiles`   | Manage tax profiles   |
+| `/v1/j2commerce/taxrates`      | Manage tax rates      |
 | `/v1/j2commerce/orderstatuses` | Manage order statuses |
 
 ### Reports
 
-| Endpoint | Description |
-|----------|-------------|
-| `/v1/j2commerce/reports/sales` | Sales report data |
-| `/v1/j2commerce/reports/products` | Product performance report |
-| `/v1/j2commerce/reports/customers` | Customer report data |
-| `/v1/j2commerce/reports/inventory` | Inventory report data |
+| Endpoint                           | Description                |
+| ---------------------------------- | -------------------------- |
+| `/v1/j2commerce/reports/sales`     | Sales report data          |
+| `/v1/j2commerce/reports/products`  | Product performance report |
+| `/v1/j2commerce/reports/customers` | Customer report data       |
+| `/v1/j2commerce/reports/inventory` | Inventory report data      |
 
 ### Configuration
 
-| Endpoint | Description |
-|----------|-------------|
+| Endpoint                | Description              |
+| ----------------------- | ------------------------ |
 | `/v1/j2commerce/config` | View store configuration |
 
 ## Authentication

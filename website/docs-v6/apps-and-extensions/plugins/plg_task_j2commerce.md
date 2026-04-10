@@ -10,13 +10,13 @@ Without these tasks running, incomplete orders accumulate, background jobs stall
 - Joomla! 6.x
 - J2Commerce 6.x
 
-## Installation
+## Enable the Plugin
 
-This plugin ships with J2Commerce 6 and is available immediately after installation. To enable it:
+![](/img/action-log-plugin.webp)
 
 - Go to **System** **-> Manage ->** **Plugins**.
 
-![](/img/action-log-plugin.webp)
+
 
 - Search for **Task - J2Commerce**.
 
