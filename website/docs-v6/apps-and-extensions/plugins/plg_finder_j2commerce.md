@@ -10,7 +10,7 @@ Once the plugin is enabled and your products are indexed, customers can search f
 - At least one product created
 - Joomla's **Smart Search** component enabled (`com_finder`)
 - The Joomla system plugin **Quick Icons — Smart Search Indexing** or the **Smart Search** (`plg_system_finder`) system plugin enabled so the index stays current
-- A **Smart Search** module (`mod_finder`) or a Smart Search menu item set up so customers have a search box to use
+- A Smart Search **module** (`mod_finder`) or a Smart Search **menu item** set up so customers have a search box to use on the frontend
 
 :::info
 
