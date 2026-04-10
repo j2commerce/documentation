@@ -1,10 +1,3 @@
----
-title: "Web Services - J2Commerce"
-sidebar_label: "Web Services (REST API)"
-sidebar_position: 6
-description: "Enable REST API access to your J2Commerce store for external integrations, mobile apps, and third-party services."
----
-
 # Web Services - J2Commerce
 
 The Web Services - J2Commerce plugin exposes your store data through a REST API. Once enabled, external applications can read and manage your products, orders, customers, inventory, coupons, reports, and more using standard HTTP requests.
@@ -18,10 +11,6 @@ This plugin is the gateway for all J2Commerce API access. Without it enabled, no
 - J2Commerce 6.x
 - HTTPS enabled on your site (strongly recommended)
 
-**Web Services - J2Commerce**
-
-`plg_webservices_j2commerce.zip`
-
 ## Enable the Plugin
 
 ![](/img/action-log-plugin.webp)
@@ -32,7 +21,7 @@ This plugin is the gateway for all J2Commerce API access. Without it enabled, no
 
 - Verify it shows a green checkmark (enabled). If not, click the status icon to enable it.
 
-<!-- SCREENSHOT: Extensions list showing Web Services - J2Commerce plugin enabled -->
+![](/img/web-enable.webp)
 
 ## What the Plugin Provides
 
@@ -40,81 +29,103 @@ The plugin registers over 40 REST API endpoints organized into these groups:
 
 ### Catalog Data
 
-| Endpoint                                | Description                                     |
-| --------------------------------------- | ----------------------------------------------- |
-| `/v1/j2commerce/products`               | List, view, create, update, and delete products |
-| `/v1/j2commerce/products/[id]/variants` | List product variants for a specific product    |
-| `/v1/j2commerce/manufacturers`          | Manage product manufacturers/brands             |
-| `/v1/j2commerce/currencies`             | View and manage store currencies                |
-| `/v1/j2commerce/countries`              | List countries                                  |
-| `/v1/j2commerce/zones`                  | List zones (states/provinces)                   |
-| `/v1/j2commerce/countries/[id]/zones`   | List zones for a specific country               |
+**Endpoint and Descriptions are listed below.**
+
+`/v1/j2commerce/products`: List, view, create, update, and delete products
+
+`/v1/j2commerce/products/[id]/variants` : List product variants for a specific product
+
+`/v1/j2commerce/manufacturers`: Manage product manufacturers/brands
+
+`/v1/j2commerce/currencies`: View and manage store currencies
+
+`/v1/j2commerce/countries`: List countries
+
+`/v1/j2commerce/zones`: List zones (states/provinces)
+
+`/v1/j2commerce/countries/[id]/zones`: List zones for a specific country
 
 ### Orders and Customers
 
-| Endpoint                                  | Description                             |
-| ----------------------------------------- | --------------------------------------- |
-| `/v1/j2commerce/orders`                   | List, view, create, and update orders   |
-| `/v1/j2commerce/orders/[id]/items`        | View line items for an order            |
-| `/v1/j2commerce/orders/[id]/history`      | View or add order history entries       |
-| `/v1/j2commerce/customers`                | List, view, and manage customer records |
-| `/v1/j2commerce/customers/[id]/addresses` | List addresses for a customer           |
-| `/v1/j2commerce/customers/[id]/orders`    | List orders for a customer              |
+**Endpoint and Descriptions are listed below.**
+
+`/v1/j2commerce/orders`: List, view, create, and update orders
+
+`/v1/j2commerce/orders/[id]/items`: View line items for an order
+
+`/v1/j2commerce/orders/[id]/history`: View or add order history entries
+
+`/v1/j2commerce/customers`: List, view, and manage customer records
+
+`/v1/j2commerce/customers/[id]/addresses`: List addresses for a customer
+
+`/v1/j2commerce/customers/[id]/orders`: List orders for a customer
 
 ### Promotions
 
-| Endpoint                  | Description                               |
-| ------------------------- | ----------------------------------------- |
-| `/v1/j2commerce/coupons`  | Create, view, update, and delete coupons  |
-| `/v1/j2commerce/vouchers` | Create, view, update, and delete vouchers |
+**Endpoint and Descriptions are listed below.**
+
+`/v1/j2commerce/coupons`: Create, view, update, and delete coupons
+
+`/v1/j2commerce/vouchers`: Create, view, update, and delete vouchers
 
 ### Inventory
 
-| Endpoint                   | Description                          |
-| -------------------------- | ------------------------------------ |
-| `/v1/j2commerce/inventory` | View and update product stock levels |
+**Endpoint and Descriptions are listed below.**
+
+`/v1/j2commerce/inventory`: View and update product stock levels
 
 ### Shipping and Payment
 
-| Endpoint                         | Description             |
-| -------------------------------- | ----------------------- |
-| `/v1/j2commerce/shippingmethods` | Manage shipping methods |
-| `/v1/j2commerce/paymentmethods`  | Manage payment methods  |
+**Endpoint and Descriptions are listed below.**
+
+`/v1/j2commerce/shippingmethods`: Manage shipping methods
+
+`/v1/j2commerce/paymentmethods`: Manage payment methods
 
 ### Tax Configuration
 
-| Endpoint                       | Description           |
-| ------------------------------ | --------------------- |
-| `/v1/j2commerce/taxprofiles`   | Manage tax profiles   |
-| `/v1/j2commerce/taxrates`      | Manage tax rates      |
-| `/v1/j2commerce/orderstatuses` | Manage order statuses |
+**Endpoint and Descriptions are listed below.**
+
+`/v1/j2commerce/taxprofiles`: Manage tax profiles
+
+`/v1/j2commerce/taxrates`: Manage tax rates
+
+`/v1/j2commerce/orderstatuses`: Manage order statuses
 
 ### Reports
 
-| Endpoint                           | Description                |
-| ---------------------------------- | -------------------------- |
-| `/v1/j2commerce/reports/sales`     | Sales report data          |
-| `/v1/j2commerce/reports/products`  | Product performance report |
-| `/v1/j2commerce/reports/customers` | Customer report data       |
-| `/v1/j2commerce/reports/inventory` | Inventory report data      |
+**Endpoint and Descriptions are listed below.**
+
+`/v1/j2commerce/reports/sales`: Sales report data
+
+`/v1/j2commerce/reports/products`: Product performance report
+
+`/v1/j2commerce/reports/customers`: Customer report data
+
+`/v1/j2commerce/reports/inventory`: Inventory report data
 
 ### Configuration
 
-| Endpoint                | Description              |
-| ----------------------- | ------------------------ |
-| `/v1/j2commerce/config` | View store configuration |
+**Endpoint and Descriptions are listed below.**
+
+`/v1/j2commerce/config`: View store configuration
 
 ## Authentication
 
-All write operations and most read operations require authentication using a Joomla API token (Bearer Token).
+All write operations and most read operations, require authentication using a Joomla API token (Bearer Token).
+
+Your API token can be used with External MCP Servers or Third-Party Apps as an example.&#x20;
 
 **Step 1:** Create an API token for your user account:
 
-1. Go to **Users** -> **Manage**.
+1. Go to **Users** **->** **Manage**.
 2. Click your user account.
 3. Switch to the **Joomla API Token** tab.
 4. Click **Generate** to create a new token.
 5. Copy and save the token securely — it will not be shown again.
+
+![](/img/web-api.webp)
 
 **Step 2:** Include the token in your API requests using the `Authorization` header:
 
@@ -166,7 +177,7 @@ If you do not need any of these capabilities, you can leave the plugin disabled.
 
 **Solution:**
 
-1. Go to **System** -> **Manage** -> **Extensions** and confirm **Web Services - J2Commerce** is enabled.
+1. Go to **System** -> **Manage** -> **Plugins** and confirm **Web Services - J2Commerce** is enabled.
 2. Verify the URL includes `/api/` before the version path (e.g., `https://yoursite.com/api/v1/j2commerce/products`).
 3. Check that Joomla's URL rewriting is configured. The `.htaccess` file (Apache) or equivalent must be in place.
 
@@ -199,8 +210,3 @@ If you do not need any of these capabilities, you can leave the plugin disabled.
 1. Verify that products, orders, or other data exists in your J2Commerce admin.
 2. Remove any query parameters that might be filtering results.
 3. Try the request without filters first to confirm the endpoint works, then add filters back one at a time.
-
-## Related Topics
-
-- [REST API Reference](../../configuration/rest-api.md) — full endpoint documentation with request/response examples
-- [J2Commerce MCP Server](plg_system_j2commercemcp.md) — AI assistant integration that uses this API
