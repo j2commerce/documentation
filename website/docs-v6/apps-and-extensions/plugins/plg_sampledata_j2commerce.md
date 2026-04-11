@@ -6,13 +6,13 @@ The J2Commerce Sample Data plugin lets you populate a new store with realistic s
 The **Sample Data** plugin will only work on a new website that has no products. If you have any products set up, then you will not see the Sample Data plugin in the J2Commerce Dashboard
 :::
 
-## Installation
+## Enable the Plugin
 
-This plugin ships with J2Commerce 6 and is available immediately after installation. To enable it:
+![](/img/action-log-plugin.webp)
 
 - Go to **System** -> **Manage** -> **Plugins**.
 
-![](/img/action-log-plugin.webp)
+
 
 - Search for **Sample Data - J2Commerce**.
 
