@@ -80,16 +80,21 @@ When customising your J2Commerce layout overrides, you will work with these Boot
 
 ## Selecting the Bootstrap 5 layout in J2Commerce
 
-1. Go to **J2Commerce -> Setup -> Configuration**.
-2. Click the **Store** tab.
-3. Find the **Default Subtemplate** and select **Bootstrap 5**.
-4. Click **Save**.
+- Go to **J2Commerce -> Setup -> Configuration**.
 
-![](/img/bootstrap1.png)
+![](/img/bootstrap-setup.webp)
+
+- Click the **Store** tab.
+
+- Find the **Default Subtemplate** and select **Bootstrap 5**.
+
+- Click **Save**.
+
+![](/img/bootstrap1.webp)
 
 All product listing and detail pages across your site will now use the Bootstrap 5 layout files. You can override this per menu item — open any J2Commerce menu item that connects to your products (ie; Store) in **Menus** -> **Main Menu**. Open the appropriate menu item and click on the **Categories AND Category** tabs, and set the **Sub-template** field on both tabs.
 
-![](/img/bootstrap-override.png)
+![](/img/bootstrap-override.webp)
 
 ## Joomla templates that use Bootstrap 5
 

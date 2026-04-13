@@ -9,8 +9,6 @@ description: "Guide to using UIKit 3 template layouts with J2Commerce for Joomla
 
 UIKit 3 is a lightweight CSS and JavaScript framework developed by YOOtheme. It is the foundation of YOOtheme Pro — one of the most popular Joomla template builders — and is also used by a handful of other Joomla template providers. When your Joomla template is built on UIKit 3, selecting the UIKit layout in J2Commerce makes your product pages use UIKit's grid, card, and button classes so everything looks consistent.
 
-<!-- SCREENSHOT: J2Commerce product listing page using UIKit layout inside a YOOtheme Pro template -->
-
 ## How to tell if your template uses UIKit
 
 The fastest way to check is to open any page on your site, right-click, and choose **Inspect** (or **View Page Source**). Look for class names that begin with `uk-` — for example `uk-grid`, `uk-card`, or `uk-button`. If you see that prefix consistently, your template is UIKit 3.
@@ -23,66 +21,66 @@ When customising your J2Commerce layout overrides for a UIKit template, you will
 
 ### Grid
 
-| Class | What it does |
-|-------|-------------|
-| `uk-grid` | Activates the UIKit grid on a container element |
-| `uk-child-width-1-2@m` | Makes each child element half-width at medium screens and above |
-| `uk-child-width-1-3@l` | Makes each child element one-third width at large screens and above |
-| `uk-child-width-1-4@xl` | Makes each child element one-quarter width at extra-large screens |
+| Class                   | What it does                                                        |
+| ----------------------- | ------------------------------------------------------------------- |
+| `uk-grid`               | Activates the UIKit grid on a container element                     |
+| `uk-child-width-1-2@m`  | Makes each child element half-width at medium screens and above     |
+| `uk-child-width-1-3@l`  | Makes each child element one-third width at large screens and above |
+| `uk-child-width-1-4@xl` | Makes each child element one-quarter width at extra-large screens   |
 
 ### Spacing
 
-| Class | What it does |
-|-------|-------------|
-| `uk-margin` | Adds default top margin |
-| `uk-margin-top` | Adds top margin only |
-| `uk-padding` | Adds default padding on all sides |
-| `uk-margin-remove` | Removes all margins |
+| Class              | What it does                      |
+| ------------------ | --------------------------------- |
+| `uk-margin`        | Adds default top margin           |
+| `uk-margin-top`    | Adds top margin only              |
+| `uk-padding`       | Adds default padding on all sides |
+| `uk-margin-remove` | Removes all margins               |
 
 ### Buttons
 
-| Class | What it does |
-|-------|-------------|
-| `uk-button` | Base button style — always required |
-| `uk-button-default` | Standard outlined button |
-| `uk-button-primary` | Filled button in the primary colour |
-| `uk-button-danger` | Filled button indicating a destructive action |
+| Class               | What it does                                  |
+| ------------------- | --------------------------------------------- |
+| `uk-button`         | Base button style — always required           |
+| `uk-button-default` | Standard outlined button                      |
+| `uk-button-primary` | Filled button in the primary colour           |
+| `uk-button-danger`  | Filled button indicating a destructive action |
 
 ### Cards
 
-| Class | What it does |
-|-------|-------------|
-| `uk-card` | Base card container — always required |
-| `uk-card-default` | Card with a subtle border and shadow |
-| `uk-card-body` | Inner padding area of a card |
-| `uk-card-title` | Heading inside a card |
+| Class             | What it does                          |
+| ----------------- | ------------------------------------- |
+| `uk-card`         | Base card container — always required |
+| `uk-card-default` | Card with a subtle border and shadow  |
+| `uk-card-body`    | Inner padding area of a card          |
+| `uk-card-title`   | Heading inside a card                 |
 
 ### Alerts
 
-| Class | What it does |
-|-------|-------------|
-| `uk-alert` | Base alert container — always required |
-| `uk-alert-success` | Green success message |
-| `uk-alert-danger` | Red error message |
-| `uk-alert-warning` | Yellow warning message |
+| Class              | What it does                           |
+| ------------------ | -------------------------------------- |
+| `uk-alert`         | Base alert container — always required |
+| `uk-alert-success` | Green success message                  |
+| `uk-alert-danger`  | Red error message                      |
+| `uk-alert-warning` | Yellow warning message                 |
 
 ### Display utilities
 
-| Class | What it does |
-|-------|-------------|
-| `uk-hidden` | Hides the element on all screen sizes |
-| `uk-visible@m` | Shows the element only at medium screens and above |
-| `uk-flex` | Applies flexbox layout |
-| `uk-flex-center` | Centres flex children horizontally |
+| Class            | What it does                                       |
+| ---------------- | -------------------------------------------------- |
+| `uk-hidden`      | Hides the element on all screen sizes              |
+| `uk-visible@m`   | Shows the element only at medium screens and above |
+| `uk-flex`        | Applies flexbox layout                             |
+| `uk-flex-center` | Centres flex children horizontally                 |
 
 ### Text utilities
 
-| Class | What it does |
-|-------|-------------|
-| `uk-text-center` | Centres text |
-| `uk-text-left` | Left-aligns text |
-| `uk-text-bold` | Makes text bold |
-| `uk-text-muted` | Applies a lighter muted colour to text |
+| Class            | What it does                           |
+| ---------------- | -------------------------------------- |
+| `uk-text-center` | Centres text                           |
+| `uk-text-left`   | Left-aligns text                       |
+| `uk-text-bold`   | Makes text bold                        |
+| `uk-text-muted`  | Applies a lighter muted colour to text |
 
 Full class reference: [getuikit.com/docs/introduction](https://getuikit.com/docs/introduction)
 
@@ -90,12 +88,12 @@ Full class reference: [getuikit.com/docs/introduction](https://getuikit.com/docs
 
 <!-- SCREENSHOT: J2Commerce Configuration, Store tab, Layout dropdown showing "UIKit" selected -->
 
-1. Go to **J2Commerce** -> **Configuration**.
+1. Go to **J2Commerce -> Setup -> Configuration**.
 2. Click the **Store** tab.
 3. Find the **Layout** field and select **UIKit**.
 4. Click **Save**.
 
-All product listing and detail pages will now use UIKit 3 classes. You can override this per menu item — open any J2Commerce menu item in **Menus** -> **[your menu]**, find the **J2Commerce** tab, and set the **Layout** field there.
+All product listing and detail pages will now use UIKit 3 classes. You can override this per menu item — open any J2Commerce menu item in **Menus** -> **\[your menu]**, find the **J2Commerce** tab, and set the **Layout** field there.
 
 ## Joomla templates that use UIKit
 
