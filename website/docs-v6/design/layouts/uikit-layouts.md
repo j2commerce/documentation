@@ -1,15 +1,6 @@
----
-title: "UIKit Layouts"
-sidebar_label: "UIKit"
-sidebar_position: 3
-description: "Guide to using UIKit 3 template layouts with J2Commerce for Joomla."
----
-
 # UIKit Layouts
 
 UIKit 3 is a lightweight CSS and JavaScript framework developed by YOOtheme. It is the foundation of YOOtheme Pro — one of the most popular Joomla template builders — and is also used by a handful of other Joomla template providers. When your Joomla template is built on UIKit 3, selecting the UIKit layout in J2Commerce makes your product pages use UIKit's grid, card, and button classes so everything looks consistent.
-
-<!-- SCREENSHOT: J2Commerce product listing page using UIKit layout inside a YOOtheme Pro template -->
 
 ## How to tell if your template uses UIKit
 
@@ -23,79 +14,84 @@ When customising your J2Commerce layout overrides for a UIKit template, you will
 
 ### Grid
 
-| Class | What it does |
-|-------|-------------|
-| `uk-grid` | Activates the UIKit grid on a container element |
-| `uk-child-width-1-2@m` | Makes each child element half-width at medium screens and above |
-| `uk-child-width-1-3@l` | Makes each child element one-third width at large screens and above |
-| `uk-child-width-1-4@xl` | Makes each child element one-quarter width at extra-large screens |
+| Class                   | What it does                                                        |
+| ----------------------- | ------------------------------------------------------------------- |
+| `uk-grid`               | Activates the UIKit grid on a container element                     |
+| `uk-child-width-1-2@m`  | Makes each child element half-width at medium screens and above     |
+| `uk-child-width-1-3@l`  | Makes each child element one-third width at large screens and above |
+| `uk-child-width-1-4@xl` | Makes each child element one-quarter width at extra-large screens   |
 
 ### Spacing
 
-| Class | What it does |
-|-------|-------------|
-| `uk-margin` | Adds default top margin |
-| `uk-margin-top` | Adds top margin only |
-| `uk-padding` | Adds default padding on all sides |
-| `uk-margin-remove` | Removes all margins |
+| Class              | What it does                      |
+| ------------------ | --------------------------------- |
+| `uk-margin`        | Adds default top margin           |
+| `uk-margin-top`    | Adds top margin only              |
+| `uk-padding`       | Adds default padding on all sides |
+| `uk-margin-remove` | Removes all margins               |
 
 ### Buttons
 
-| Class | What it does |
-|-------|-------------|
-| `uk-button` | Base button style — always required |
-| `uk-button-default` | Standard outlined button |
-| `uk-button-primary` | Filled button in the primary colour |
-| `uk-button-danger` | Filled button indicating a destructive action |
+| Class               | What it does                                  |
+| ------------------- | --------------------------------------------- |
+| `uk-button`         | Base button style — always required           |
+| `uk-button-default` | Standard outlined button                      |
+| `uk-button-primary` | Filled button in the primary colour           |
+| `uk-button-danger`  | Filled button indicating a destructive action |
 
 ### Cards
 
-| Class | What it does |
-|-------|-------------|
-| `uk-card` | Base card container — always required |
-| `uk-card-default` | Card with a subtle border and shadow |
-| `uk-card-body` | Inner padding area of a card |
-| `uk-card-title` | Heading inside a card |
+| Class             | What it does                          |
+| ----------------- | ------------------------------------- |
+| `uk-card`         | Base card container — always required |
+| `uk-card-default` | Card with a subtle border and shadow  |
+| `uk-card-body`    | Inner padding area of a card          |
+| `uk-card-title`   | Heading inside a card                 |
 
 ### Alerts
 
-| Class | What it does |
-|-------|-------------|
-| `uk-alert` | Base alert container — always required |
-| `uk-alert-success` | Green success message |
-| `uk-alert-danger` | Red error message |
-| `uk-alert-warning` | Yellow warning message |
+| Class              | What it does                           |
+| ------------------ | -------------------------------------- |
+| `uk-alert`         | Base alert container — always required |
+| `uk-alert-success` | Green success message                  |
+| `uk-alert-danger`  | Red error message                      |
+| `uk-alert-warning` | Yellow warning message                 |
 
 ### Display utilities
 
-| Class | What it does |
-|-------|-------------|
-| `uk-hidden` | Hides the element on all screen sizes |
-| `uk-visible@m` | Shows the element only at medium screens and above |
-| `uk-flex` | Applies flexbox layout |
-| `uk-flex-center` | Centres flex children horizontally |
+| Class            | What it does                                       |
+| ---------------- | -------------------------------------------------- |
+| `uk-hidden`      | Hides the element on all screen sizes              |
+| `uk-visible@m`   | Shows the element only at medium screens and above |
+| `uk-flex`        | Applies flexbox layout                             |
+| `uk-flex-center` | Centres flex children horizontally                 |
 
 ### Text utilities
 
-| Class | What it does |
-|-------|-------------|
-| `uk-text-center` | Centres text |
-| `uk-text-left` | Left-aligns text |
-| `uk-text-bold` | Makes text bold |
-| `uk-text-muted` | Applies a lighter muted colour to text |
+| Class            | What it does                           |
+| ---------------- | -------------------------------------- |
+| `uk-text-center` | Centres text                           |
+| `uk-text-left`   | Left-aligns text                       |
+| `uk-text-bold`   | Makes text bold                        |
+| `uk-text-muted`  | Applies a lighter muted colour to text |
 
-Full class reference: [getuikit.com/docs/introduction](https://getuikit.com/docs/introduction)
+**Full class reference: [getuikit.com/docs/introduction](https://getuikit.com/docs/introduction)**
 
 ## Selecting the UIKit layout in J2Commerce
 
-<!-- SCREENSHOT: J2Commerce Configuration, Store tab, Layout dropdown showing "UIKit" selected -->
+- Go to **J2Commerce -> Setup -> Configuration**.
 
-1. Go to **J2Commerce** -> **Configuration**.
-2. Click the **Store** tab.
-3. Find the **Layout** field and select **UIKit**.
-4. Click **Save**.
+![](/img/uikit-setup.webp)
 
-All product listing and detail pages will now use UIKit 3 classes. You can override this per menu item — open any J2Commerce menu item in **Menus** -> **[your menu]**, find the **J2Commerce** tab, and set the **Layout** field there.
+- Click the **Store** tab.
+
+- Find the **Sub-template** field and select **UIKit**.
+
+- Click **Save**.
+
+![](/img/uikit1.webp)
+
+All product listing and detail pages across your site will now use the Bootstrap 5 layout files. You can override this per menu item — open any J2Commerce menu item that connects to your products (ie; Store) in **Menus** -> **Main Menu**. Open the appropriate menu item and click on the **Categories AND Category** tabs, and set the **Sub-template** field on both tabs.
 
 ## Joomla templates that use UIKit
 
@@ -115,7 +111,7 @@ A smaller number of Joomla template providers use UIKit as their underlying fram
 
 ## Tips
 
-- If you switch your J2Commerce layout from Bootstrap 5 to UIKit (or vice versa), clear your Joomla cache after saving. Go to **System** -> **Clear Cache** and clear all caches.
+- If you switch your J2Commerce layout from Bootstrap 5 to UIKit (or vice versa), clear your Joomla cache after saving. Go to **Home Dashboard -> System -> Cache** and clear all caches.
 - When creating template overrides for J2Commerce on a UIKit site, copy files from `components/com_j2commerce/layouts/app_uikit/` as your starting point.
 - UIKit uses `@m`, `@l`, and `@xl` breakpoint suffixes (e.g., `uk-child-width-1-3@l`). This is different from Bootstrap 5's hyphenated breakpoints (`col-lg-4`). Keep this in mind when writing custom CSS.
 - The UIKit layout and the Bootstrap 5 layout cover the same product types and views, so switching between them is safe — no functionality is lost.
@@ -130,9 +126,9 @@ A smaller number of Joomla template providers use UIKit as their underlying fram
 
 1. Open any page on your site, right-click, and choose **Inspect**.
 2. Look for class names starting with `uk-` (UIKit) or `col-md-*` (Bootstrap 5).
-3. Go to **J2Commerce** -> **Configuration** -> **Store** tab.
-4. Set **Layout** to match what you found — **UIKit** or **Bootstrap 5**.
-5. Click **Save**, then go to **System** -> **Clear Cache** and clear all caches.
+3. Go to **J2Commerce -> Setup -> Configuration -> Store** tab.
+4. Set **Sub-template** to match what you found — **UIKit** or **Bootstrap 5**.
+5. Click **Save**, then go to **Home Dashboard -> System -> Cache** and clear all caches.
 
 ### The Layout dropdown is empty or shows a warning
 
@@ -143,7 +139,7 @@ A smaller number of Joomla template providers use UIKit as their underlying fram
 1. Go to **J2Commerce** -> **Apps**.
 2. Search for **UIKit** or **Bootstrap**.
 3. Enable the appropriate layout app by clicking the status toggle.
-4. Return to **J2Commerce** -> **Configuration** and the **Layout** field will now show options.
+4. Return to **J2Commerce -> Setup -> Configuration** and the **Sub-template** field will now show options.
 
 ### UIKit grid is not creating columns — products stack vertically
 

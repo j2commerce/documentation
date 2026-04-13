@@ -1,15 +1,6 @@
----
-title: "Bootstrap 5 Layouts"
-sidebar_label: "Bootstrap 5"
-sidebar_position: 2
-description: "Guide to using Bootstrap 5 template layouts with J2Commerce for Joomla."
----
-
 # Bootstrap 5 Layouts
 
 Bootstrap 5 is the default CSS framework built into Joomla 5 and Joomla 6. Most Joomla templates — including Joomla's own default template Cassiopeia — are built on Bootstrap 5. When you select the Bootstrap 5 layout in J2Commerce, your product listings and detail pages use Bootstrap 5 grid, card, and button classes that match the rest of your site.
-
-<!-- SCREENSHOT: J2Commerce product listing page using Bootstrap 5 layout inside a standard Joomla template -->
 
 ## How to tell if your template uses Bootstrap 5
 
@@ -23,80 +14,87 @@ When customising your J2Commerce layout overrides, you will work with these Boot
 
 ### Grid
 
-| Class | What it does |
-|-------|-------------|
-| `container` | Centres content and adds horizontal padding |
-| `row` | Creates a horizontal row of columns |
-| `col-[number]` | A column spanning [number] of 12 grid units |
+| Class             | What it does                                              |
+| ----------------- | --------------------------------------------------------- |
+| `container`       | Centres content and adds horizontal padding               |
+| `row`             | Creates a horizontal row of columns                       |
+| `col-[number]`    | A column spanning \[number] of 12 grid units              |
 | `col-md-[number]` | Column width applied at medium screens (768 px) and above |
-| `col-lg-[number]` | Column width applied at large screens (992 px) and above |
+| `col-lg-[number]` | Column width applied at large screens (992 px) and above  |
 
 ### Spacing
 
-| Class | What it does |
-|-------|-------------|
-| `mt-3` | Adds top margin (level 3 of 5) |
-| `mb-4` | Adds bottom margin (level 4 of 5) |
-| `p-3` | Adds padding on all sides (level 3) |
+| Class     | What it does                         |
+| --------- | ------------------------------------ |
+| `mt-3`    | Adds top margin (level 3 of 5)       |
+| `mb-4`    | Adds bottom margin (level 4 of 5)    |
+| `p-3`     | Adds padding on all sides (level 3)  |
 | `mx-auto` | Centres a block element horizontally |
 
 ### Buttons
 
-| Class | What it does |
-|-------|-------------|
-| `btn` | Base button style — always required |
-| `btn-primary` | Filled button in the primary colour |
-| `btn-secondary` | Filled button in the secondary colour |
+| Class                 | What it does                          |
+| --------------------- | ------------------------------------- |
+| `btn`                 | Base button style — always required   |
+| `btn-primary`         | Filled button in the primary colour   |
+| `btn-secondary`       | Filled button in the secondary colour |
 | `btn-outline-primary` | Outlined button in the primary colour |
 
 ### Cards
 
-| Class | What it does |
-|-------|-------------|
-| `card` | Container with border and rounded corners |
-| `card-body` | Inner padding area of a card |
-| `card-title` | Heading inside a card |
-| `card-img-top` | Image at the top of a card |
+| Class          | What it does                              |
+| -------------- | ----------------------------------------- |
+| `card`         | Container with border and rounded corners |
+| `card-body`    | Inner padding area of a card              |
+| `card-title`   | Heading inside a card                     |
+| `card-img-top` | Image at the top of a card                |
 
 ### Alerts
 
-| Class | What it does |
-|-------|-------------|
-| `alert` | Base alert container — always required |
-| `alert-success` | Green success message |
-| `alert-danger` | Red error message |
-| `alert-warning` | Yellow warning message |
+| Class           | What it does                           |
+| --------------- | -------------------------------------- |
+| `alert`         | Base alert container — always required |
+| `alert-success` | Green success message                  |
+| `alert-danger`  | Red error message                      |
+| `alert-warning` | Yellow warning message                 |
 
 ### Display utilities
 
-| Class | What it does |
-|-------|-------------|
-| `d-none` | Hides the element on all screen sizes |
-| `d-flex` | Applies flexbox layout |
-| `d-block` | Forces block display |
+| Class       | What it does                                  |
+| ----------- | --------------------------------------------- |
+| `d-none`    | Hides the element on all screen sizes         |
+| `d-flex`    | Applies flexbox layout                        |
+| `d-block`   | Forces block display                          |
 | `d-md-none` | Hides the element on medium screens and above |
 
 ### Text utilities
 
-| Class | What it does |
-|-------|-------------|
-| `text-center` | Centres text |
-| `text-start` | Left-aligns text |
-| `text-end` | Right-aligns text |
-| `fw-bold` | Makes text bold |
+| Class         | What it does      |
+| ------------- | ----------------- |
+| `text-center` | Centres text      |
+| `text-start`  | Left-aligns text  |
+| `text-end`    | Right-aligns text |
+| `fw-bold`     | Makes text bold   |
 
-Full class reference: [getbootstrap.com/docs/5.3](https://getbootstrap.com/docs/5.3/)
+**Full class reference: [getbootstrap.com/docs/5.3](https://getbootstrap.com/docs/5.3/)**
 
 ## Selecting the Bootstrap 5 layout in J2Commerce
 
-<!-- SCREENSHOT: J2Commerce Configuration, Store tab, Layout dropdown showing "Bootstrap 5" selected -->
+- Go to **J2Commerce -> Setup -> Configuration**.
 
-1. Go to **J2Commerce** -> **Configuration**.
-2. Click the **Store** tab.
-3. Find the **Layout** field and select **Bootstrap 5**.
-4. Click **Save**.
+![](/img/bootstrap-setup.webp)
 
-All product listing and detail pages across your site will now use the Bootstrap 5 layout files. You can override this per menu item — open any J2Commerce menu item in **Menus** -> **[your menu]**, find the **J2Commerce** tab, and set the **Layout** field there.
+- Click the **Store** tab.
+
+- Find the **Default Subtemplate** and select **Bootstrap 5**.
+
+- Click **Save**.
+
+![](/img/bootstrap1.webp)
+
+All product listing and detail pages across your site will now use the Bootstrap 5 layout files. You can override this per menu item — open any J2Commerce menu item that connects to your products (ie; Store) in **Menus** -> **Main Menu**. Open the appropriate menu item and click on the **Categories AND Category** tabs, and set the **Sub-template** field on both tabs.
+
+![](/img/bootstrap-override.webp)
 
 ## Joomla templates that use Bootstrap 5
 
@@ -141,9 +139,9 @@ Many templates sold on TemplateMonster, ThemeForest, and similar marketplaces fo
 **Solution:**
 
 1. Inspect your template's HTML source and confirm whether it uses `col-md-*` (Bootstrap 5) or `uk-grid` (UIKit) classes.
-2. Go to **J2Commerce** -> **Configuration** -> **Store** tab.
-3. Set **Layout** to match your template's CSS framework.
-4. Click **Save**, then go to **System** -> **Clear Cache** and clear all caches.
+2. Go to **J2Commerce -> Setup -> Configuration -> Store** tab.
+3. Set **Sub-template** to match your template's CSS framework.
+4. Click **Save**, then go to **Home Dashboard -> System ->** **Cache** -> and clear all caches.
 
 ### The Layout dropdown is empty or shows a warning
 
@@ -151,10 +149,10 @@ Many templates sold on TemplateMonster, ThemeForest, and similar marketplaces fo
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Apps**.
+1. Go to **J2Commerce** **->** **Apps**.
 2. Search for **Bootstrap** or **UIKit**.
 3. Enable the appropriate layout app by clicking the status toggle.
-4. Return to **J2Commerce** -> **Configuration** and the **Layout** field will now show options.
+4. Return to **J2Commerce -> Setup -> Configuration** and the **Sub-template** field will now show options.
 
 ### Column widths look wrong on mobile
 

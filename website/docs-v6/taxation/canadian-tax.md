@@ -1,10 +1,3 @@
----
-title: "Canadian Tax Configuration (GST/PST)"
-sidebar_label: "Canadian Tax"
-sidebar_position: 3
-description: "Configure GST and PST for Canadian stores with step-by-step instructions for setting up combined tax rates."
----
-
 # Canadian Tax Configuration (GST/PST)
 
 This guide explains how to configure tax for Canadian stores, using Saskatchewan (5% GST + 5% PST) as an example. Canadian stores often need to charge multiple taxes that compound.
@@ -12,12 +5,12 @@ This guide explains how to configure tax for Canadian stores, using Saskatchewan
 ## Important Legal Notice
 
 :::warning
-This is example configuration. J2Commerce is not responsible for tax compliance. Tax rates change frequently. Consult a tax expert before making decisions.
+This is an example configuration. J2Commerce is not responsible for tax compliance. Tax rates change frequently. Consult a tax expert before making decisions.
 :::
 
 ## Prerequisites
 
-- J2Commerce installed and configured
+- J2Commerce is installed and configured
 - At least one product created
 - Knowledge of your province's GST and PST rates
 
@@ -30,55 +23,65 @@ Canadian stores typically charge two taxes:
 
 Some provinces use **HST (Harmonized Sales Tax)**, which combines both into a single rate.
 
-| Province | GST | PST/HST | Total Rate |
-|----------|-----|---------|------------|
-| Alberta | 5% | 0% | 5% |
-| British Columbia | 5% | 7% | 12% |
-| Manitoba | 5% | 7% | 12% |
-| Ontario | 5% | 8% (HST) | 13% |
-| Saskatchewan | 5% | 6% | 11% |
-| Quebec | 5% | 9.975% (QST) | 14.975% |
+| Province         | GST | PST/HST      | Total Rate |
+| ---------------- | --- | ------------ | ---------- |
+| Alberta          | 5%  | 0%           | 5%         |
+| British Columbia | 5%  | 7%           | 12%        |
+| Manitoba         | 5%  | 7%           | 12%        |
+| Ontario          | 5%  | 8% (HST)     | 13%        |
+| Saskatchewan     | 5%  | 6%           | 11%        |
+| Quebec           | 5%  | 9.975% (QST) | 14.975%    |
 
 ## Step 1: Create a Geozone for Canada
 
 Create a geozone that covers Canada (or your specific province).
 
-1. Go to **J2Commerce** -> **Localization** -> **Geozones**.
-2. Click **New** to create a new geozone.
-3. Fill in the fields:
+There are **two** ways you can access the App.&#x20;
 
-| Field | Value | Description |
-|-------|-------|-------------|
-| **Geozone Name** | Canada | A descriptive name |
-| **Country** | Canada | Select from dropdown |
-| **Zone** | All zones | Covers all provinces, or select a specific province |
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localization** -> **Geozones**
 
-4. Click **Save & Close**.
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Localization** -> **Geozones**
+
+![](/img/canada-geozone.webp)
+
+- Click **New** to create a new geozone.
+
+- Fill in the fields:
+
+| Field            | Value     | Description                                         |
+| ---------------- | --------- | --------------------------------------------------- |
+| **Geozone Name** | Canada    | A descriptive name                                  |
+| **Country**      | Canada    | Select from dropdown                                |
+| **Zone**         | All zones | Covers all provinces, or select a specific province |
+
+![](/img/canada-saskatchewan2.webp)
 
 :::tip
-For province-specific tax (like Saskatchewan PST), create a geozone for just that province instead of all zones.
-:::
 
-<!-- SCREENSHOT: Geozones form with Canada selected -->
+For province-specific tax (like Saskatchewan PST), create a geozone for just that province instead of all zones.
+
+:::
 
 ## Step 2: Create the GST Tax Rate
 
 Create the federal GST rate.
 
-1. Go to **J2Commerce** -> **Localization** -> **Tax Rates**.
-2. Click **New** to create a new tax rate.
-3. Fill in the fields:
+- Go to **J2Commerce** -> **Localization** -> **Tax Rates**.
 
-| Field | Value | Description |
-|-------|-------|-------------|
-| **Name** | Canada-GST | Descriptive name for GST |
-| **Tax Percent** | 5 | Current GST rate |
-| **Geo Zone** | Canada | Select the geozone from Step 1 |
-| **Enabled** | Yes | Must be enabled |
+![](/img/canada-tax-rate.webp)
 
-4. Click **Save & Close**.
+- Click **New** to create a new tax rate.
 
-<!-- SCREENSHOT: Tax Rates form showing GST rate -->
+- Fill in the fields:
+
+| Field           | Value      | Description                    |
+| --------------- | ---------- | ------------------------------ |
+| **Name**        | Canada-GST | Descriptive name for GST       |
+| **Tax Percent** | 5          | Current GST rate               |
+| **Geo Zone**    | Canada     | Select the geozone from Step 1 |
+| **Status**      | Published  | Must be Published              |
+
+![](/img/canada-tax-rate2.webp)
 
 ## Step 3: Create the PST Tax Rate
 
@@ -88,69 +91,78 @@ Create the provincial sales tax rate.
 2. Click **New** to create another tax rate.
 3. Fill in the fields:
 
-| Field | Value | Description |
-|-------|-------|-------------|
-| **Name** | Saskatchewan-PST | Descriptive name for PST |
-| **Tax Percent** | 6 | Saskatchewan PST rate |
-| **Geo Zone** | Saskatchewan Zone | Select or create a Saskatchewan geozone |
-| **Enabled** | Yes | Must be enabled |
+| Field           | Value             | Description                             |
+| --------------- | ----------------- | --------------------------------------- |
+| **Name**        | Saskatchewan-PST  | Descriptive name for PST                |
+| **Tax Percent** | 6                 | Saskatchewan PST rate                   |
+| **Geo Zone**    | Saskatchewan Zone | Select or create a Saskatchewan geozone |
+| **Status**      | Published         | Must be published                       |
 
-4. Click **Save & Close**.
-
-<!-- SCREENSHOT: Tax Rates form showing PST rate -->
+![](/img/canada-tax-rate3.webp)
 
 ## Step 4: Create a Tax Profile
 
 Combine both tax rates in a single tax profile.
 
-1. Go to **J2Commerce** -> **Localization** -> **Tax Profiles**.
-2. Click **New** to create a new tax profile.
-3. Fill in the fields:
+- Go to **J2Commerce** -> **Localization** -> **Tax Profiles**.
 
-| Field | Value | Description |
-|-------|-------|-------------|
-| **Name** | Canada Tax Class | Descriptive name |
-| **Enabled** | Yes | Must be enabled |
+![](/img/canada-tax-profile.webp)
 
-4. In the **Tax Rules** section, click **Add** twice to create two rules.
-5. Configure the first rule:
+- Click **New** to create a new tax profile.
 
-| Field | Value | Description |
-|-------|-------|-------------|
-| **Rate** | Canada-GST | Select the GST rate |
-| **Associated Address** | Shipping Address | Use shipping address |
+**Basic Details tab**
 
-6. Configure the second rule:
+- Fill in the fields:
 
-| Field | Value | Description |
-|-------|-------|-------------|
-| **Rate** | Saskatchewan-PST | Select the PST rate |
-| **Associated Address** | Shipping Address | Use shipping address |
+| Field      | Value            | Description       |
+| ---------- | ---------------- | ----------------- |
+| **Name**   | Canada Tax Class | Descriptive name  |
+| **Status** | Published        | Must be published |
 
-7. Click **Save & Close**.
+![](/img/canada-tax-profile1.webp)
 
-<!-- SCREENSHOT: Tax Profile form showing two tax rules -->
+**Tax Rules tab**
+
+- In the **Tax Rules** section, click **Add** twice to create two rules.
+
+- Configure the **first** rule:
+
+| Field            | Value            | Description          |
+| ---------------- | ---------------- | -------------------- |
+| **Tax Rate**     | Canada-GST       | Select the GST rate  |
+| **Address Type** | Shipping Address | Use shipping address |
+
+- Configure the **second** rule:
+
+| Field            | Value            | Description          |
+| ---------------- | ---------------- | -------------------- |
+| **Tax Rate**     | Saskatchewan-PST | Select the PST rate  |
+| **Address Type** | Shipping Address | Use shipping address |
+
+![](/img/canada-tax-profile3.webp)
 
 ## Step 5: Configure Global Tax Settings
 
 Configure how J2Commerce handles tax display and calculation.
 
-1. Go to **J2Commerce** -> **Setup** -> **Configuration**.
-2. Click the **Tax** tab.
-3. Configure the following settings:
+- Go to **J2Commerce** -> **Setup** -> **Configuration**.
 
-| Setting | Value | Description |
-|---------|-------|-------------|
-| **Prices entered with tax** | No, I will enter prices EXCLUSIVE of tax | Canadian stores typically enter prices without tax |
-| **Calculate tax based on** | Shipping address | Tax based on destination |
-| **Default customer address** | Store address | Used before customer enters address |
-| **Display prices in product pages** | Excluding tax | Show prices without tax |
-| **Display prices in cart/checkout** | Excluding tax | Show prices without tax |
-| **Apply discounts** | Before tax | Discounts reduce pre-tax amount |
+- Click the **Product Settings** tab.
 
-4. Click **Save**.
+![](/img/canada-tax-config.webp)
 
-<!-- SCREENSHOT: Configuration Tax tab -->
+- Configure the following settings:
+
+![](/img/canada-tax-config1.webp)
+
+| Setting                      | Default            | Description                                                                                                                                                                                                     |
+| ---------------------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prices Include Tax**       | Prices exclude tax | Are your product prices entered with tax included? Canadian stores typically enter prices without tax                                                                                                           |
+| **Calculate tax based on**   | Shipping address   | Use the billing or shipping address for tax calculation. Tax based on destination                                                                                                                               |
+| **Default Tax Address**      | Store address      | Address to use for tax when the customer has not entered an address. Used before the customer enters their address                                                                                              |
+| **Price Display**            | Price Only         | How to display prices on product pages. Show prices without tax                                                                                                                                                 |
+| **Show Tax Info**            | Never              | Display tax information text with prices. Show prices without tax                                                                                                                                               |
+| **Combine Tax Calculations** | Yes                | Select 'Yes' to combine all applicable tax calculations into one line item at checkout. For example, Sales Tax on products and shipping will display as a single line item instead of two separate tax charges. |
 
 ## Step 6: Apply Tax Profile to Products
 
@@ -162,8 +174,12 @@ Each product must have the tax profile assigned.
 4. Find the **Tax Profile** field and select "Canada Tax Class".
 5. Click **Save**.
 
+![](/img/canada-tax-product.webp)
+
 :::danger Important
+
 If you do not choose the tax profile, tax will NOT be applied in the storefront.
+
 :::
 
 ## How Tax Appears in Checkout
@@ -176,11 +192,6 @@ With GST (5%) and PST (6%) configured:
 - **Total**: $111.00
 
 Both taxes are calculated on the base product price and displayed separately.
-
-## Video Tutorial
-
-A video tutorial demonstrating this setup is available at:
-https://www.youtube.com/watch?v=bchu7-Zysb8
 
 ## Tips
 
@@ -208,11 +219,3 @@ https://www.youtube.com/watch?v=bchu7-Zysb8
 **Cause:** Tax rates may be compounding incorrectly.
 
 **Solution:** Ensure both taxes use the same "Associated Address" and check that the "Apply discounts" setting is set to "Before tax."
-
-## Related Topics
-
-- [Geozones](../localisation/geozones.md)
-- [Tax Rates](../localisation/tax-rates.md)
-- [Tax Profiles](../localisation/tax-profiles.md)
-- [US Sales Tax Configuration](./us-sales-tax.md)
-- [How Tax is Calculated](./tax-calculation.md)
