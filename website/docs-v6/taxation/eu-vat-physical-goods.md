@@ -45,42 +45,97 @@ Set the State/Province
 
 ![](/img/eu-digital-config.webp)
 
-### 1. Install the VAT Plugin
+## Purchase and Download
+
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/)&#x20;
+
+**Step 2:** Locate the **European VAT** App **->** click **View Details** **->** **Add to cart** **->** **Checkout**.&#x20;
+
+**Step 3:** Go to your **My Download**s under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
+
+## Installing the Plugin
 
 To automate the validation of VAT numbers against the official EU database (VIES), you must install the **VAT Plugin** from the J2Commerce Extensions store.
 
-### 2. Configure Store Profile
+You can install this **European VAT** App using the Joomla installer. The following steps help you with a successful installation.
 
-Ensure your store location is accurate:
+In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
-1. Go to **J2Commerce** -> **Setup** -> **Configuration**.
-2. In the **Store** tab, set your **Country Name** and **Zone Name**.
+Upload the plugin ZIP file or use the install from URL option.
 
-### 3. Define the VAT Geo Zone
+![](/img/autho-install5.webp)
+
+## Enable the App
+
+:::info
+
+**NOTE**: You must enable the **EU VAT Plugin** to automate the verification of VAT IDs against the EU database. Without this, you cannot reliably distinguish between B2B and B2C transactions.
+
+:::
+
+Once you have installed the extension, you will need to enable it. There are **two** ways you can access the Apps.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![](/img/eu-digital.webp)
+
+Look for **European VAT** click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+## Define the VAT Geo Zone
 
 Group all taxable EU countries together.
 
-1. Go to **Localisation** -> **Geo Zones** -> **New**.
-2. **Name:** `VAT Zone`.
-3. **Important:** Add your home country **AND all other EU countries** to this Geo Zone. This ensures that EU residents without a valid VAT number are charged your home rate.
+Go to **Localisation** -> **Geo Zones** -> **New**.
 
-### 4. Set the VAT Rate
+![](/img/canada-geozone.webp)
 
-1. Go to **Localisation** -> **Tax Rates** -> **New**.
-2. **Name:** `VAT Rate`.
-3. **Tax Percent:** Enter your home country's VAT percentage (e.g., `21`).
-4. **Geo Zone:** Select the `VAT Zone` created above.
+- **Name:** `VAT Zone`.
 
-### 5. Create the Tax Profile
+- **Important:** Add your home country **AND all other EU countries** to this Geo Zone. This ensures that EU residents without a valid VAT number are charged your home rate.
 
-1. Go to **Localisation** -> **Tax Profiles** -> **New**.
-2. **Tax Profile Name:** `Physical Goods Tax Profile`.
-3. **Mapping:** Add a rule selecting the `VAT Rate` and set the **Associated Address** to **Billing Address**.
+## Set the VAT Rate
 
-### 6. Apply to Products
+Go to **Localisation** -> **Tax Rates** -> **New**.
 
-1. Go to **Content** -> **Articles** and edit your product.
-2. In the **J2Commerce** tab, select the `Physical Goods Tax Profile` from the **Tax Profile** dropdown.
+![](/img/canada-tax-rate.webp)
+
+**Name:** `VAT Rate`.
+
+**Tax Percent:** Enter your home country's VAT percentage (e.g., `21`).
+
+**Geo Zone:** Select the `VAT Zone` created above.
+
+## Create the Tax Profile
+
+Go to **Localisation** -> **Tax Profiles** -> **New**.
+
+![](/img/canada-tax-profile.webp)
+
+**Tax Profile Name:** `Physical Goods Tax Profile`.
+
+**Mapping:** Add a rule selecting the `VAT Rate` and set the **Associated Address** to **Billing Address**.
+
+## Apply Tax Profile to Products
+
+Each product must have the tax profile assigned.
+
+1. Go to **Content** **->** **Articles** and open a product article.
+2. Click the **J2Commerce** tab.
+3. Go to the **General** tab.
+4. Find the **Tax Profile** field and select "`Physical Goods Tax Profile`".
+5. Click **Save**.
+
+![](/img/eu-physical-product.webp)
+
+:::danger Important
+
+If you do not choose the tax profile, tax will NOT be applied in the storefront.
+
+:::
 
 ## Tips
 
@@ -106,11 +161,3 @@ Group all taxable EU countries together.
 **Cause:** Products have a tax profile assigned when they should be exempt.
 
 **Solution:** Edit the exempt products and set **Tax Profile** to "None" or create a separate "No Tax" profile.
-
-## Related Topics
-
-- [Geozones](../localisation/geozones.md)
-- [Tax Rates](../localisation/tax-rates.md)
-- [Tax Profiles](../localisation/tax-profiles.md)
-- [EU VAT Configuration](./eu-vat.md)
-- [How Tax is Calculated](./tax-calculation.md)
