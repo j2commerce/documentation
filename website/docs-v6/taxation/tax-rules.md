@@ -1,10 +1,3 @@
----
-title: "Tax Rules"
-sidebar_label: "Tax Rules"
-sidebar_position: 2
-description: "Configure tax rules that link tax profiles to tax rates for specific geozones"
----
-
 # Tax Rules
 
 Tax Rules connect Tax Profiles to Tax Rates, determining which tax percentage applies based on the customer's location. Each rule defines which Tax Profile, Tax Rate, and address type to use for tax calculation.
@@ -19,12 +12,7 @@ Tax Rules connect Tax Profiles to Tax Rates, determining which tax percentage ap
 
 ## Accessing Tax Rules
 
-1. Go to **J2Commerce** → **Dashboard**.
-2. Click **Localisation** → **Tax Rules**.
-
-<!-- ![](/img/tax-rules-list.webp) -->
-
-Alternatively: **Components** → **J2Commerce** → **Localisation** → **Tax Rules**.
+Go to **J2Commerce** **->** **Localisation** **->** **Tax Profiles**  **-> Tax Rules** tab
 
 ## Tax Rules List View
 
@@ -46,17 +34,17 @@ The tax rules list displays all configured rules:
 | **Tax Profile**  | Filter by tax profile                       |
 | **Address Type** | Filter by Billing or Shipping               |
 
-<!-- ![](/img/tax-rules-filters.webp) -->
+![](/img/eu-tax-rules.webp)
 
 ## Creating a Tax Rule
 
-1. Click **New** in the toolbar.
-2. Select the **Tax Profile**.
+1. Click **New**
+2. Select the **Tax Profile Name**.
 3. Select the **Tax Rate**.
 4. Choose the **Address Type**.
 5. Click **Save** or **Save & Close**.
 
-<!-- ![](/img/tax-rule-edit.webp) -->
+![](/img/eu-tax-rules-new.webp)
 
 ## Tax Rule Fields
 
@@ -136,9 +124,9 @@ Use descriptive names for Tax Rates:
 
 ### Rule Organization
 
-- **Group by Tax Profile** — Keep all rules for a profile together
-- **Use consistent ordering** — Priority 1, 2, 3 for compound taxes
-- **Document address types** — Note why billing vs shipping is used
+- **Group by Tax Profile**: Keep all rules for a profile together
+- **Use consistent ordering**: Priority 1, 2, 3 for compound taxes
+- **Document address types**: Note why billing vs shipping is used
 
 ### Common Configurations
 
@@ -180,21 +168,21 @@ Use descriptive names for Tax Rates:
 
 ## Tips
 
-- **Test with real addresses** — Create test orders from different locations
-- **Use geozones correctly** — Ensure geozone boundaries match tax jurisdictions
-- **Document your rules** — Keep notes on why each rule exists
-- **Check ordering** — Lower priority numbers are calculated first
-- **Match address types** — Use Shipping for US sales tax, Billing for EU VAT
+- **Test with real addresses**: Create test orders from different locations
+- **Use geozones correctly**: Ensure geozone boundaries match tax jurisdictions
+- **Document your rules**: Keep notes on why each rule exists
+- **Check ordering**: Lower priority numbers are calculated first
+- **Match address types**: Use Shipping for US sales tax, Billing for EU VAT
 
 ## Troubleshooting
 
 ### Tax Not Calculating
 
-**Cause:** No matching tax rule for customer's location.
+**Cause:** No matching tax rule for the customer's location.
 
 **Solution:**
 
-1. Go to **J2Commerce** → **Localisation** → **Geozones**.
+1. Go to **J2Commerce**  **-> Localisation** **->** **Geozones**.
 2. Verify the geozone includes the customer's country/zone.
 3. Go to **Tax Rates** and check the Tax Rate is linked to the correct geozone.
 4. Go to **Tax Rules** and verify a rule links the product's Tax Profile to the Tax Rate.
@@ -213,7 +201,7 @@ Use descriptive names for Tax Rates:
 2. Verify the **Tax Rate** has the correct percentage.
 3. Check if compound tax is applying multiple rates.
 
-### Tax Calculated on Different Address Than Expected
+### Tax Calculated on a Different Address Than Expected
 
 **Cause:** Address Type set incorrectly.
 
@@ -223,17 +211,6 @@ Use descriptive names for Tax Rates:
 2. Change **Address Type** to Billing or Shipping as needed.
 3. Save the rule.
 4. Test with a new order.
-
-### Compound Tax Not Working
-
-**Cause:** Ordering values not set correctly.
-
-**Solution:**
-
-1. Edit Tax Rules for compound tax.
-2. Set **Ordering** values: 1 for first tax, 2 for second tax.
-3. Lower numbers are calculated first.
-4. Clear cache and test.
 
 ### Customer in Exempt Location Being Charged Tax
 
@@ -247,9 +224,3 @@ Use descriptive names for Tax Rates:
    - Create a separate geozone for exempt areas
    - Remove exempt areas from the geozone
 3. Or create a "No Tax" Tax Profile with 0% rate for exempt products.
-
-## Related Topics
-
-- [Tax Profiles](../localisation/tax-profiles.md) — Create tax categories
-- [Tax Rates](../localisation/tax-rates.md) — Define tax percentages
-- [Geozones](../localisation/geozones.md) — Create geographic zones
