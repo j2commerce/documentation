@@ -137,7 +137,7 @@ Create **Geo Zones** for other EU countries (or groups of countries with the sam
 
 Each product must have the tax profile assigned.
 
-1. Go to **Content** -> **Articles** and open a product article.
+1. Go to **Content** **->** **Articles** and open a product article.
 2. Click the **J2Commerce** tab.
 3. Go to the **General** tab.
 4. Find the **Tax Profile** field and select "`Digital Goods Tax Profile`".
