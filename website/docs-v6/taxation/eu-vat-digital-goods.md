@@ -25,16 +25,6 @@ Since January 1, 2015, digital goods sold to EU customers must charge VAT based 
 - **EU Company (Invalid ID):** Charge the VAT rate of the **buyer's country**.
 - **Local Buyer:** Charge your own local VAT rate.
 
-## Set Up Store Profile
-
-Go to J2Commerce **->** Setup **->** Configuration **->** Store tab.
-
-Set the Country Name to United Kingdom
-
-Set your Zone Name to Bristol.
-
-![](/img/eu-digital-config1.webp)
-
 ## Purchase and Download
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
