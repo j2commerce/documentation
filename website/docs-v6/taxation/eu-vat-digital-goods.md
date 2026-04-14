@@ -79,6 +79,8 @@ Go to **J2Commerce** -> **Setup** -> **Configuration** -> **Store** tab.
 
 Set the Default Country to your home country. ie; United Kingdom
 
+Set the State/Province
+
 ![](/img/eu-digital-config.webp)
 
 ## Create a Geozone for Europe
