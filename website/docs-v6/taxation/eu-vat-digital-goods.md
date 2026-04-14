@@ -1,10 +1,3 @@
----
-title: "EU VAT for Digital Goods (2015 Rules)"
-sidebar_label: "Digital Goods VAT"
-sidebar_position: 6
-description: "Comply with 2015 EU VAT rules for digital products including e-books, software, and downloads with automatic VAT number validation."
----
-
 # EU VAT for Digital Goods (2015 Rules)
 
 If you sell digital goods (e-books, software, digital courses, downloads), you must follow the EU "Place of Supply" rules where VAT is charged based on the **buyer's location**, not the seller's location. This guide explains how to configure J2Commerce to comply with these rules.
@@ -74,11 +67,9 @@ Look for **European VAT** click the **X,** and it will turn into a green checkma
 
 Go to **J2Commerce** -> **Setup** -> **Configuration** -> **Store** tab.
 
+Set the Default Country to your home country. ie; United Kingdom
+
 ![](/img/eu-digital-config.webp)
-
-Set the Default Country to the **United Kingdom**.
-
-Set your Default Zone to **Bristol**
 
 ## Create a Geozone for Europe
 
@@ -94,25 +85,69 @@ There are **two** ways you can access the Geozones.&#x20;
 
 - Click **New** to create a new geozone.
 
-- Fill in the fields:
+- **Geo Zone Name:** Home VAT Zone ( It can be anything. It is used just as a reference )
+
+- **Status:** Published
+
+- **Add country / Zone**
+
+- Choose the United Kingdom from the Dropdown list and add it
+
+- Save and close
+
+:::tip
 
 Unlike physical goods, you must create rates for the different VAT percentages across the EU:
 
-- Create a **Geo Zone** for your home country **->** Create a **Tax Rate** for your local VAT.
+:::
 
-- Create **Geo Zones** for other EU countries (or groups of countries with the same rate, e.g., "EU 20% Zone") **->** Create the corresponding **Tax Rates**.
+## Create a Tax Rate for Europe
+
+Go to **J2Commerce > Localization > Tax Rates > New**
+
+![](/img/canada-tax-rate.webp)
+
+**Name:** Home VAT Rate
+
+**Tax Percent:** 20
+
+**Geo Zone:** Home VAT Zone&#x20;
+
+**Status:** Published
+
+Tax rule for an EU Country. Let us take the United Kingdom as an example. Let us say, Germany’s VAT charge is: 20 %
+
+A few countries might have the same VAT rate for digital goods. You can group them under one geo zone.
+
+Create **Geo Zones** for other EU countries (or groups of countries with the same rate, e.g., "EU 20% Zone") **->** Create the corresponding **Tax Rates**.
 
 ## Set Up the Digital Tax Profile
 
-1. Go to **Localisation** -> **Tax Profiles** -> **New**.
-2. **Name:** `Digital Goods Tax Profile`.
-3. **Rules:** Add all the various EU VAT rates you created.
-4. **Associated Address:** Set this to **Billing Address** (as digital goods are delivered to the buyer's legal residence).
+1. Go to **J2Commerce -> Localisation** **-> Tax Profiles ->** **New**.
 
-### 5. Assign to Products
+![](/img/canada-tax-profile.webp)
 
-1. Edit the Joomla article for your digital product.
-2. In the **J2Commerce** tab, select the `Digital Goods Tax Profile`.
+1. **Tax Profile Name:** `Digital Goods Tax Profile`.
+2. **Tax Rules:** Add all the various EU VAT rates you created.
+3. **Address Type:** Set this to **Billing Address** (as digital goods are delivered to the buyer's legal residence).
+
+## Apply Tax Profile to Products
+
+Each product must have the tax profile assigned.
+
+1. Go to **Content** -> **Articles** and open a product article.
+2. Click the **J2Commerce** tab.
+3. Go to the **General** tab.
+4. Find the **Tax Profile** field and select "`Digital Goods Tax Profile`".
+5. Click **Save**.
+
+![](/img/eu-digital-product.webp)
+
+:::danger Important
+
+If you do not choose the tax profile, tax will NOT be applied in the storefront.
+
+:::
 
 ## Summary of Logic
 
@@ -126,7 +161,7 @@ Unlike physical goods, you must create rates for the different VAT percentages a
 ## Tips
 
 - Create geozone groups for countries with the same VAT rate to reduce configuration work
-- Test with addresses from different EU countries to verify correct VAT rates apply
+- Test with addresses from different EU countries to verify that the correct VAT rates apply
 - The EU VAT plugin validates VAT numbers against the official VIES database in real-time
 
 ## Troubleshooting
