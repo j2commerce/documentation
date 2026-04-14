@@ -1,10 +1,3 @@
----
-title: "EU VAT for Physical Goods"
-sidebar_label: "Physical Goods VAT"
-sidebar_position: 5
-description: "Implement VAT rules for shipping physical products within the EU using the European VAT plugin for automatic validation."
----
-
 # EU VAT for Physical Goods
 
 When selling physical goods within the European Union, the VAT applied depends on the buyer's location and VAT registration status. J2Commerce offers a VAT plugin that validates VAT numbers automatically and applies the correct tax rules.
