@@ -36,7 +36,7 @@ Some provinces use **HST (Harmonized Sales Tax)**, which combines both into a si
 
 Create a geozone that covers Canada (or your specific province).
 
-There are **two** ways you can access the App.&#x20;
+There are **two** ways you can access the Geozones.&#x20;
 
 **Option A:** Go to the **J2Commerce** icon at the top right corner **-> Localization** -> **Geozones**
 
