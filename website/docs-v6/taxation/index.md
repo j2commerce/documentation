@@ -1,10 +1,3 @@
----
-title: "Taxation"
-sidebar_label: "Taxation"
-sidebar_position: 1
-description: "Configure tax profiles, rates, and rules in J2Commerce"
----
-
 # Taxation
 
 Taxation in J2Commerce uses a three-tier system: Tax Profiles, Tax Rates, and Tax Rules. Understanding how these work together is essential for configuring accurate tax calculations for your store.
@@ -42,7 +35,11 @@ flowchart TD
 
 ## Three-Tier System
 
-### 1. Tax Profiles
+### Tax Profiles
+
+**Location:** J2Commerce **->** Dashboard **->** Localisation **->** Tax Profiles
+
+![](/img/canada-tax-profile.webp)
 
 A **Tax Profile** is a named tax configuration that you assign to products. Think of it as a "tax category."
 
@@ -53,9 +50,11 @@ A **Tax Profile** is a named tax configuration that you assign to products. Thin
 | No Tax           | Tax-exempt products                      |
 | US Sales Tax     | Products sold in specific US states      |
 
-**Location:** J2Commerce → Dashboard → Localisation → Tax Profiles
+### Tax Rates
 
-### 2. Tax Rates
+**Location:** J2Commerce **->** Dashboard **->** Localisation **->** Tax Rates
+
+![](/img/canada-tax-rate.webp)
 
 A **Tax Rate** defines the actual percentage charged and the geographic zone where it applies.
 
@@ -65,19 +64,15 @@ A **Tax Rate** defines the actual percentage charged and the geographic zone whe
 | US California Sales Tax | 9.25%      | California     |
 | Switzerland VAT         | 7%         | Switzerland    |
 
-**Location:** J2Commerce → Dashboard → Localisation → Tax Rates
-
-### 3. Tax Rules
+### Tax Rules Tab with Tax Rates
 
 A **Tax Rule** connects a Tax Profile to a Tax Rate for a specific address type (billing or shipping).
-
-**Location:** J2Commerce → Dashboard → Localisation → Tax Rules
 
 ## How Tax Calculation Works
 
 When a customer checks out:
 
-1. **Get customer's address** — Billing or shipping address (based on rule configuration)
+1. **Get the customer's address** — Billing or shipping address (based on rule configuration)
 2. **Match to Geozone** — Find which geozone the address belongs to
 3. **Find Tax Rules** — Look for rules matching the product's Tax Profile
 4. **Calculate Tax** — Apply the Tax Rate percentage to the product price
@@ -85,7 +80,7 @@ When a customer checks out:
 ### Example: UK Customer Ordering a Standard Product
 
 1. Product has **Tax Profile: Standard VAT**
-2. Customer shipping address is in **United Kingdom**
+2. The customer's shipping address is in the **United Kingdom**
 3. Tax Rule matches: **Standard VAT** + **Shipping Address** + **UK VAT Rate**
 4. Tax Rate applies: **20% UK VAT**
 5. Tax calculated: Product price × 20%
@@ -107,7 +102,7 @@ When multiple tax rules match, J2Commerce can apply compound tax:
 
 - **Priority 1**: First tax rate applied to base price
 - **Priority 2**: Second tax rate applied to price + first tax
-- **Priority 3**: Third tax rate applied to cumulative total
+- **Priority 3**: Third tax rate applied to the cumulative total
 
 Lower priority numbers are calculated first.
 
@@ -117,25 +112,25 @@ Lower priority numbers are calculated first.
 
 1. **Create a Geozone**
 
-   - Go to **J2Commerce → Localisation → Geozones**
+   - Go to **J2Commerce -> Localisation -> Geozones**
    - Create a geozone for "United Kingdom"
    - Add the UK country (and zones if needed)
 
 2. **Create a Tax Rate**
 
-   - Go to **J2Commerce → Localisation → Tax Rates**
+   - Go to **J2Commerce -> Localisation -> Tax Rates**
    - Create "UK Standard VAT 20%"
    - Set rate: `20`
    - Assign geozone: "United Kingdom"
 
 3. **Create a Tax Profile**
 
-   - Go to **J2Commerce → Localisation → Tax Profiles**
+   - Go to **J2Commerce -> Localisation ->  Tax Profiles**
    - Create "Standard VAT"
 
 4. **Create a Tax Rule**
 
-   - Go to **J2Commerce → Localisation → Tax Rules**
+   - Go to **J2Commerce -> Localisation -> Tax Rules**
    - Select Tax Profile: "Standard VAT"
    - Select Tax Rate: "UK Standard VAT 20%"
    - Address Type: "Billing"
@@ -144,10 +139,3 @@ Lower priority numbers are calculated first.
 
    - Edit each product
    - Set the Tax Profile to "Standard VAT"
-
-## Related Topics
-
-- [Tax Rules](tax-rules.md) — Detailed configuration guide
-- [Geozones](../localisation/geozones.md) — Create geographic zones for tax rates
-- [Tax Profiles](../localisation/tax-profiles.md) — Manage tax categories
-- [Tax Rates](../localisation/tax-rates.md) — Define tax percentages
