@@ -86,7 +86,7 @@ Set how J2Commerce handles tax display and calculation.
 
 ![](/img/eu-digital-config2.webp)
 
-- Click the **Product Setttings** tab.
+- Click the **Product Settings** tab.
 
 - Configure the following settings:
 
