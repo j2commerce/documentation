@@ -191,10 +191,3 @@ The article is still in your Joomla **Content** -> **Articles** list. If you no 
 **Solution:**
 
 Click **Search Tools** to open the filter panel and review what is selected. Click **Clear** to reset all filters and show the full product list.
-
-## Related Topics
-
-- [Simple Products](./product-types/simple_product.md)
-- [Variable Products](./product-types/variable_product.md)
-- [Configurable Products](./product-types/configurable_product.md)
-- [Downloadable Products](./product-types/downloadable_product.md)
