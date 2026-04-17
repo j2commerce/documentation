@@ -6,7 +6,7 @@ Common uses include listing the brands you carry (Nike, Sony, Acme), restricting
 
 ## Accessing Manufacturers
 
-There are **two** ways you can access Options.&#x20;
+There are **two** ways you can access Manufacturers.&#x20;
 
 **Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Manufacturers**&#x20;
 
