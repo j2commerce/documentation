@@ -1,10 +1,3 @@
----
-title: "US Sales Tax Configuration"
-sidebar_label: "US Sales Tax"
-sidebar_position: 2
-description: "Configure sales tax for US-based stores with step-by-step instructions for setting up geozones, tax rates, and tax profiles."
----
-
 # US Sales Tax Configuration
 
 This guide walks you through setting up sales tax for a US-based J2Commerce store. The example uses Texas with an 8.5% sales tax rate, but you can adapt it to any state.
@@ -17,7 +10,7 @@ US law requires you to collect sales tax in states where you have a physical pre
 
 ## Prerequisites
 
-- J2Commerce installed and configured
+- J2Commerce is installed and configured
 - At least one product created
 - Understanding of your state's sales tax rate
 
@@ -25,101 +18,104 @@ US law requires you to collect sales tax in states where you have a physical pre
 
 A geozone defines the geographic area where you charge tax.
 
-1. Go to **J2Commerce** -> **Localization** -> **Geozones**.
-2. Click **New** to create a new geozone.
-3. Fill in the fields:
+- Go to **J2Commerce** **-> Localization ->** **Geozones**.
 
-| Field | Value | Description |
-|-------|-------|-------------|
-| **Geozone Name** | Texas Zone | A descriptive name for this zone |
-| **Country** | United States | Select from the dropdown |
-| **Zone** | Texas | Select the specific state |
-| **Status** | Enabled | Must be enabled to apply |
+![](/img/canada-geozone.webp)
 
-4. Click **Save & Close**.
+- Click **New** to create a new geozone.
 
-<!-- SCREENSHOT: Geozones list showing New button and form fields -->
+- Fill in the fields:
+
+| Field            | Value         | Description                      |
+| ---------------- | ------------- | -------------------------------- |
+| **Geozone Name** | Texas Zone    | A descriptive name for this zone |
+| **Country**      | United States | Select from the dropdown         |
+| **Zone**         | Texas         | Select the specific state        |
+| **Status**       | Published     | Must be published to apply       |
 
 ## Step 2: Create a Tax Rate
 
 The tax rate defines the percentage to charge and where it applies.
 
-1. Go to **J2Commerce** -> **Localization** -> **Tax Rates**.
-2. Click **New** to create a new tax rate.
-3. Fill in the fields:
+- Go to **J2Commerce** -> **Localization** -> **Tax Rates**.
 
-| Field | Value | Description |
-|-------|-------|-------------|
-| **Name** | Sales Tax | A descriptive name (shown on invoices) |
-| **Tax Percent** | 8.5 | Your state's sales tax rate |
-| **Geo Zone** | Texas Zone | Select the geozone from Step 1 |
-| **Enabled** | Yes | Must be enabled to apply |
+![](/img/canada-tax-rate.webp)
 
-4. Click **Save & Close**.
+- Click **New** to create a new tax rate.
 
-<!-- SCREENSHOT: Tax Rates edit form showing name, percentage, and geozone fields -->
+- Fill in the fields:
+
+| Field           | Value      | Description                            |
+| --------------- | ---------- | -------------------------------------- |
+| **Name**        | Sales Tax  | A descriptive name (shown on invoices) |
+| **Tax Percent** | 8.5        | Your state's sales tax rate            |
+| **Geo Zone**    | Texas Zone | Select the geozone from Step 1         |
+| **Status**      | Published  | Must be published to apply             |
 
 ## Step 3: Create a Tax Profile
 
 A tax profile links the tax rate to an address type.
 
-1. Go to **J2Commerce** -> **Localization** -> **Tax Profiles**.
-2. Click **New** to create a new tax profile.
-3. Fill in the fields:
+- Go to **J2Commerce** -> **Localization** -> **Tax Profiles**.
 
-| Field | Value | Description |
-|-------|-------|-------------|
-| **Name** | Default Tax Class | A descriptive name |
-| **Enabled** | Yes | Must be enabled to apply |
+![](/img/canada-tax-profile.webp)
 
-4. In the **Tax Rules** section, click **Add**.
-5. Configure the tax rule:
+- Click **New** to create a new tax profile.
 
-| Field | Value | Description |
-|-------|-------|-------------|
-| **Rate** | Sales Tax | Select the tax rate from Step 2 |
-| **Associated Address** | Shipping Address | Use the shipping address for tax calculation |
+- Fill in the fields:
 
-6. Click **Save & Close**.
+| Field      | Value             | Description                |
+| ---------- | ----------------- | -------------------------- |
+| **Name**   | Default Tax Class | A descriptive name         |
+| **Status** | Published         | Must be published to apply |
 
-<!-- SCREENSHOT: Tax Profiles edit form showing tax rules section -->
+- In the **Tax Rules tab** section, click **Add**.
+
+- Configure the tax rule:
+
+| Field            | Value            | Description                                  |
+| ---------------- | ---------------- | -------------------------------------------- |
+| **Tax Rate**     | Sales Tax        | Select the tax rate from Step 2              |
+| **Address Type** | Shipping Address | Use the shipping address for tax calculation |
 
 ## Step 4: Configure Global Tax Settings
 
 Set how J2Commerce handles tax display and calculation.
 
-1. Go to **J2Commerce** -> **Setup** -> **Configuration**.
-2. Click the **Tax** tab.
-3. Configure the following settings:
+- Go to **J2Commerce** -> **Setup** -> **Configuration**.
 
-| Setting | Value | Description |
-|---------|-------|-------------|
-| **Prices entered with tax** | No, I will enter prices EXCLUSIVE of tax | US stores typically enter prices without tax |
-| **Calculate tax based on** | Shipping address | Tax is calculated based on where goods are shipped |
-| **Default customer address** | Store address | Used when customer address is not yet known |
-| **Display prices in product pages** | Excluding tax | Show prices without tax |
-| **Display tax information below prices** | (Optional) Example: (Incl. 8.5% tax) | Shows tax info below the price |
-| **Display prices in cart/checkout** | Excluding tax | Show prices without tax |
-| **Apply discounts** | Before tax | Discounts reduce the pre-tax amount |
+![](/img/eu-digital-config2.webp)
 
-4. Click **Save**.
+- Click the **Product Setttings** tab.
 
-<!-- SCREENSHOT: Configuration Tax tab showing all settings -->
+- Configure the following settings:
+
+| Setting                      | Value              | Description                                                                                                                                                                                                     |
+| ---------------------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prices Include Tax**       | Prices exclude tax | Are your product prices entered with tax included? Canadian stores typically enter prices without tax                                                                                                           |
+| **Calculate tax based on**   | Shipping address   | Use the billing or shipping address for tax calculation. Tax based on destination                                                                                                                               |
+| **Default Tax Address**      | Store address      | Address to use for tax when the customer has not entered an address. Used before the customer enters their address                                                                                              |
+| **Price Display**            | Price Only         | How to display prices on product pages. Show prices without tax                                                                                                                                                 |
+| **Show Tax Info**            | Never              | Display tax information text with prices. Show prices without tax                                                                                                                                               |
+| **Combine Tax Calculations** | Yes                | Select 'Yes' to combine all applicable tax calculations into one line item at checkout. For example, Sales Tax on products and shipping will display as a single line item instead of two separate tax charges. |
+| **Prices Include Tax**       | Prices exclude tax | Are your product prices entered with tax included? Canadian stores typically enter prices without tax                                                                                                           |
 
 ## Step 5: Apply Tax Profile to Products
 
 Each product must have a tax profile assigned for tax to apply.
 
-1. Go to **Content** -> **Articles** and open a product article.
-2. Click the **J2Commerce** tab (or **J2Store Cart** tab in older versions).
+1. Go to **Content** -> **Articles** and open a **product** article.
+2. Click the **J2Commerce** tab.
 3. Go to the **General** tab.
 4. Find the **Tax Profile** field and select your tax class (e.g., "Default Tax Class").
 5. Click **Save**.
 
-<!-- SCREENSHOT: Article edit form showing J2Commerce tab with Tax Profile dropdown -->
+![](/img/eu-digital-product.webp)
 
 :::danger Important
+
 If you do not select a tax profile for a product, tax will NOT be applied in the storefront. Every taxable product must have a tax profile assigned.
+
 :::
 
 ## Multiple State Tax Example
@@ -131,11 +127,6 @@ If you need to collect tax in multiple states, create additional geozones and ta
 3. Add all tax rates to your single tax profile with "Shipping Address" as the associated address
 
 J2Commerce will automatically apply the correct rate based on the customer's shipping address.
-
-## Video Tutorial
-
-A video tutorial demonstrating this setup is available at:
-https://www.youtube.com/watch?v=n1sZ5Udbm3Q
 
 ## Tips
 
@@ -149,13 +140,14 @@ https://www.youtube.com/watch?v=n1sZ5Udbm3Q
 
 **Cause:** The product does not have a tax profile assigned.
 
-**Solution:** Edit the product article, go to the J2Commerce tab, and select a tax profile in the General tab.
+**Solution:** Edit the product article, go to the **J2Commerce** tab, and select a tax profile in the **General** tab.
 
 ### Tax shows the wrong rate
 
 **Cause:** The geozone or tax rate is misconfigured.
 
 **Solution:**
+
 1. Verify the geozone includes the correct state
 2. Check that the tax rate percentage is correct
 3. Ensure the tax rate is enabled
@@ -165,10 +157,3 @@ https://www.youtube.com/watch?v=n1sZ5Udbm3Q
 **Cause:** The geozone is configured for all zones instead of a specific state.
 
 **Solution:** Edit the geozone and change "Zone" from "All zones" to your specific state.
-
-## Related Topics
-
-- [Geozones](../localisation/geozones.md)
-- [Tax Rates](../localisation/tax-rates.md)
-- [Tax Profiles](../localisation/tax-profiles.md)
-- [How Tax is Calculated](./tax-calculation.md)

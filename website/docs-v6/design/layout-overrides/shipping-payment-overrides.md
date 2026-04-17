@@ -17,7 +17,7 @@ The following plugins include the **Template Style** setting:
 
 **Shipping plugins:** Standard Shipping, Free Shipping, AtoShip
 
----
+***
 
 ## How It Works
 
@@ -43,7 +43,7 @@ When **Default** is selected (blank value), only options 3 and 4 apply.
 
 > **Admin templates are not affected.** Files like `admin_charge_card.php` are admin-only and always load from the plugin's `tmpl/` root regardless of the Template Style setting.
 
----
+***
 
 ## Creating a Custom Override
 
@@ -75,10 +75,10 @@ templates/cassiopeia/html/plg_j2commerce_payment_authorizenet/mytheme/
 
 Copy only the files you need to change from the plugin's `tmpl/` root into your new folder. For Authorize.Net, the customer-facing files are:
 
-| File | What it renders |
-|------|----------------|
-| `prepayment.php` | The payment form at checkout |
-| `postpayment.php` | The confirmation screen after payment |
+| File                | What it renders                                  |
+| ------------------- | ------------------------------------------------ |
+| `prepayment.php`    | The payment form at checkout                     |
+| `postpayment.php`   | The confirmation screen after payment            |
 | `profile_cards.php` | The saved cards selector for returning customers |
 
 You do not need to copy all files — only the ones you are modifying. J2Commerce falls back to the plugin's own files for anything not found in your override.
@@ -89,17 +89,17 @@ Open the copied file(s) in your editor and make your changes. The file receives 
 
 #### Step 4: Activate your style in the plugin config
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods**.
 2. Click **Authorize.Net** to open its configuration.
 3. Find the **Template Style** field and select `Mytheme` from the dropdown.
 
 <!-- SCREENSHOT: Authorize.Net plugin configuration panel with the Template Style dropdown open, showing "Mytheme" as an option -->
 
-4. Click **Save**.
+1. Click **Save**.
 
 Your custom layout is now active for all customers.
 
----
+***
 
 ### Option B: Standard Joomla Template Override (Flat)
 
@@ -111,26 +111,26 @@ templates/{your-template}/html/plg_j2commerce_payment_authorizenet/prepayment.ph
 
 This works, but has a limitation: all plugins sharing this template use the same override root, and there is no way to maintain multiple named variants. Use Option A if you need more than one style or want to keep the default intact.
 
----
+***
 
 ## Naming Reference
 
 Use this table to find the correct override directory for each plugin:
 
-| Plugin | Override Directory |
-|--------|--------------------|
-| Authorize.Net | `templates/{tpl}/html/plg_j2commerce_payment_authorizenet/` |
-| PayPal | `templates/{tpl}/html/plg_j2commerce_payment_paypal/` |
-| Cash on Delivery | `templates/{tpl}/html/plg_j2commerce_payment_cash/` |
-| Money Order | `templates/{tpl}/html/plg_j2commerce_payment_moneyorder/` |
-| Bank Transfer | `templates/{tpl}/html/plg_j2commerce_payment_banktransfer/` |
-| Standard Shipping | `templates/{tpl}/html/plg_j2commerce_shipping_standard/` |
-| Free Shipping | `templates/{tpl}/html/plg_j2commerce_shipping_free/` |
-| AtoShip | `templates/{tpl}/html/plg_j2commerce_shipping_atoship/` |
+| Plugin            | Override Directory                                          |
+| ----------------- | ----------------------------------------------------------- |
+| Authorize.Net     | `templates/{tpl}/html/plg_j2commerce_payment_authorizenet/` |
+| PayPal            | `templates/{tpl}/html/plg_j2commerce_payment_paypal/`       |
+| Cash on Delivery  | `templates/{tpl}/html/plg_j2commerce_payment_cash/`         |
+| Money Order       | `templates/{tpl}/html/plg_j2commerce_payment_moneyorder/`   |
+| Bank Transfer     | `templates/{tpl}/html/plg_j2commerce_payment_banktransfer/` |
+| Standard Shipping | `templates/{tpl}/html/plg_j2commerce_shipping_standard/`    |
+| Free Shipping     | `templates/{tpl}/html/plg_j2commerce_shipping_free/`        |
+| AtoShip           | `templates/{tpl}/html/plg_j2commerce_shipping_atoship/`     |
 
 Replace `{tpl}` with your active template name (e.g., `cassiopeia`).
 
----
+***
 
 ## Tips
 
@@ -139,7 +139,7 @@ Replace `{tpl}` with your active template name (e.g., `cassiopeia`).
 - **Changes are immediate.** No cache clearing is needed after editing override files — the next page load picks them up.
 - **Admin files are always safe.** Files prefixed with `admin_` (such as `admin_charge_card.php`) are never affected by the Template Style selection.
 
----
+***
 
 ## Troubleshooting
 
@@ -160,10 +160,3 @@ Replace `{tpl}` with your active template name (e.g., `cassiopeia`).
 **Cause:** A flat override file exists in the template override root (Option B) that is outdated compared to the plugin's current default.
 
 **Solution:** Update or remove the flat override files in `templates/{tpl}/html/plg_j2commerce_{plugin}/`.
-
----
-
-## Related Topics
-
-- [Payment Methods](../../payments/index.md)
-- [Shipping Methods](../../shipping/index.md)

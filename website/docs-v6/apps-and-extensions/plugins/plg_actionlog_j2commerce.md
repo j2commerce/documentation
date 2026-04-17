@@ -4,15 +4,13 @@ The J2Commerce Action Log plugin records store activity in Joomla's built-in act
 
 The plugin works alongside Joomla's own action log system, so you see J2Commerce events together with any other Joomla events you already track.
 
-## Installation
-
-This plugin ships with J2Commerce 6 and is available immediately after installation. To enable it:
-
-- Go to **System** **-> Manage -> Plugins**.
+## Enable the Plugin
 
 ![](/img/action-log-plugin.webp)
 
-## Enable the Plugin
+- Go to **System** **-> Manage -> Plugins**.
+
+
 
 - Search for **J2Commerce - Action Log**.
 
@@ -26,7 +24,7 @@ To change settings, click the plugin name to open its configuration screen, make
 
 ## Configure the Plugin
 
-Go to **System** -> **Manage** -> **Plugins**, search for **J2Commerce - Action Log**, and click the plugin name.
+Go to **System -> Manage ->** **Plugins**, search for **J2Commerce - Action Log**, and click the plugin name.
 
 :::tip
 

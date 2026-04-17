@@ -10,7 +10,7 @@ This is an offline payment method — no payment gateway or API credentials are 
 - Joomla! 6.x
 - J2Commerce 6.x
 
-## Installation and Enable the Plugin
+## Enable the Plugin
 
 This plugin ships with J2Commerce 6 and is available immediately after installation. Because it requires your bank details before it can be used, it is not enabled automatically.
 

@@ -12,7 +12,7 @@ J2Commerce provides two sets of ready-made layouts to match the CSS framework yo
 ## Which layout should I use?
 
 | Your Joomla template uses... | Choose this layout |
-|------------------------------|--------------------|}
+|------------------------------|-----------------|
 | Bootstrap 5 (most Joomla templates) | [Bootstrap 5 Layouts](./bootstrap5-layouts.md) |
 | UIKit 3 (YOOtheme Pro and similar) | [UIKit Layouts](./uikit-layouts.md) |
 

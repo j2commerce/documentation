@@ -104,10 +104,22 @@ const sidebars = {
             type: 'category',
             label: 'Design',
             link: {
-                type: 'generated-index',
-                slug: '/design',
+                type: 'doc',
+                id: 'design/index',
             },
             items: [
+                {
+                    type: 'category',
+                    label: 'Layouts',
+                    link: {
+                        type: 'doc',
+                        id: 'design/layouts/index',
+                    },
+                    items: [
+                        'design/layouts/bootstrap5-layouts',
+                        'design/layouts/uikit-layouts',
+                    ],
+                },
                 {
                     type: 'category',
                     label: 'Layout Overrides',

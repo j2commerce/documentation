@@ -1,10 +1,3 @@
----
-title: "Email Templates"
-sidebar_label: "Email Templates"
-sidebar_position: 2
-description: "Customize the emails sent by J2Commerce to customers and administrators."
----
-
 # Email Templates
 
 Email Templates allow you to customize the subject lines and content of the automated emails sent by J2Commerce, such as order confirmations and status updates.
@@ -16,37 +9,44 @@ Email Templates allow you to customize the subject lines and content of the auto
 
 ## Accessing Email Templates
 
-**Step 1:** Go to **J2Commerce** -> **Design** -> **Email Templates**.
+There are **two** ways you can access the plugin.&#x20;
 
-<!-- SCREENSHOT: Email Templates manager list view showing various system emails -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Design -> Email Templates**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Design -> Email Templates**
+
+![](/img/email-template.webp)
 
 ## Creating and Managing Templates
 
 You can create new templates or edit existing ones to fit your brand's voice and requirements.
 
-### Step 1: Creating a New Template
+### General tab
 
-1. Click the **New** button in the toolbar.
-2. Fill in the following fields:
+![](/img/email-template-new-general.webp)
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Email Type** | The trigger for this email (e.g., Transactional) | `Transactional` |
-| **Subject** | The subject line the recipient will see | `Your Order #[order_id] has been shipped!` |
-| **Receiver Type** | Who receives this email | `Customer`, `Admin`, or `Both` |
-| **Language** | The language of the email content | `English (US)` |
+**Email Type:** The trigger for this email (e.g., Transactional). **Example:** `Transactional`
 
-### Step 2: Configuring the Content
+**Subject:** The subject line the recipient will see. **Example:** `Your Order #[order_id] has been shipped!` or `Hello [BILLING_FIRSTNAME] [BILLING_LASTNAME], your order has been placed with [SITENAME]`
+
+**Receiver Type:** Who receives the email. **Example:** `Customer`, `Admin`, or `Both`
+
+**Language:** The language of the email content. `English (US)`
+
+### Email Content tab
+
+![](/img/email-template-new-content1.webp)
 
 In the **Content** tab, define how the email body is generated:
 
-| Field | Description | Options |
-|-------|-------------|---------|
-| **Body Source** | How the email body is created | `Visual`, `Editor`, `File` |
-| **Body** | The actual content of the email | Visual Builder or HTML/Text editor |
-| **Custom CSS** | Optional CSS to style the email | CSS rules |
+**Body Source:** How the email body is created. **Options:** `Visual`, `Editor`, `File`
+
+**Body:** The actual content of the email. **Options:** Visual Builder or HTML/Text editor
+
+**Custom CSS:** Optional CSS to style the email. **Options:** CSS rules
 
 #### Using the Visual Builder
+
 If you select **Visual** as the Body Source, you can use the **Visual Builder** to design your email.
 
 1. **Add Elements:** Drag components (like text blocks or images) from the side panel onto the canvas.
@@ -55,19 +55,28 @@ If you select **Visual** as the Body Source, you can use the **Visual Builder** 
 4. **Preview:** Use the preview tools to ensure the email looks professional across different email clients.
 5. **Save:** Click **Save** in the toolbar to apply your design.
 
-<!-- SCREENSHOT: The Email Template edit screen showing the Visual Builder in action -->
+### Publishing
 
-### Step 3: Publishing
+![](/img/email-template-publish.webp)
 
-In the **Publishing** tab, ensure the template is set to **Published**. If a template is unpublished, J2Commerce will fallback to the default system email.
+In the **General** tab, ensure the template is set to **Published**. If a template is unpublished, J2Commerce will fall back to the default system email.
 
 ## Filtering Templates
 
+![](/img/email-template-filter.webp)
+
 Use the filter bar to quickly find templates based on:
+
 - **Status:** Published or Unpublished.
 - **Language:** Filter by specific customer languages.
 - **Order Status:** Find emails triggered by specific order states (e.g., "Pending").
 - **User Group:** Find templates tailored for specific customer groups.
+
+:::tip
+
+**Tip**: You can rearrange the order of the email templates by clicking on the arrows next to the categories. See screenshot above
+
+:::
 
 ## Tips
 
@@ -82,11 +91,7 @@ Use the filter bar to quickly find templates based on:
 **Cause:** The Joomla mail server settings might be incorrect, or the template is set to "Unpublished".
 
 **Solution:**
+
 1. Verify that the template is **Published**.
 2. Go to **System** -> **Global Configuration** -> **Server** and test the Mail settings.
 3. Check if your hosting provider blocks outgoing mail on port 25.
-
-## Related Topics
-
-- [Invoice Templates](../design/invoice-templates.md)
-- [Order Statuses](../localisation/order-statuses.md)

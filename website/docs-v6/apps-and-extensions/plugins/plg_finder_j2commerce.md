@@ -6,11 +6,11 @@ Once the plugin is enabled and your products are indexed, customers can search f
 
 ## Prerequisites
 
-- J2Commerce 6 installed and active
+- J2Commerce 6 is installed and active
 - At least one product created
 - Joomla's **Smart Search** component enabled (`com_finder`)
 - The Joomla system plugin **Quick Icons — Smart Search Indexing** or the **Smart Search** (`plg_system_finder`) system plugin enabled so the index stays current
-- A **Smart Search** module (`mod_finder`) or a Smart Search menu item set up so customers have a search box to use
+- A Smart Search **module** (`mod_finder`) or a Smart Search **menu item** set up so customers have a search box to use on the frontend
 
 :::info
 
@@ -18,15 +18,13 @@ The J2Commerce Content plugin (`plg_content_j2commerce`) should also be enabled.
 
 :::
 
-## Installation
-
-This plugin ships with J2Commerce 6 and is available immediately after installation. To enable it:
-
-- Go to **System** -> **Manage** -> **Plugins**.
+## Enable the Plugin
 
 ![](/img/action-log-plugin.webp)
 
-## Enable the Plugin
+- Go to **System** -> **Manage** -> **Plugins**.
+
+
 
 - Search for **Smart Search - J2Commerce**.
 
@@ -54,15 +52,15 @@ Go to **System** -> **Manage** -> **Plugins**, search for **Smart Search - J2Com
 
 The plugin has three configuration options:
 
-- **Redirect Search Results To:** Where search result links point when a customer clicks a product. Choose **Product View** to link to the J2Commerce product page, or **Article View** to link to the standard Joomla article.
+**Redirect Search Results To:** Where search result links point when a customer clicks a product. Choose **Product View** to link to the J2Commerce product page, or **Article View** to link to the standard Joomla article.
 
-Most stores should leave this set to **Product View**. This sends customers directly to the J2Commerce product page, where they can select options and add the item to their cart.
+- Most stores should leave this set to **Product View**. This sends customers directly to the J2Commerce product page, where they can select options and add the item to their cart.
 
-Choose **Article View** only if your product pages are primarily Joomla articles and the J2Commerce product view is not your main storefront destination.
+- Choose **Article View** only if your product pages are primarily Joomla articles and the J2Commerce product view is not your main storefront destination.
 
-- **Exclude Linked Articles from Search:** When set to **Yes**, articles that have an associated J2Commerce product are removed from the Smart Search index. This prevents the same product from appearing twice in search results — once as a product and once as an article.
+**Exclude Linked Articles from Search:** When set to **Yes**, articles that have an associated J2Commerce product are removed from the Smart Search index. This prevents the same product from appearing twice in search results — once as a product and once as an article.
 
-Leave this set to **Yes** in almost all cases. When J2Commerce products are backed by Joomla articles (which is the standard setup), both the article and the product would otherwise appear as separate results for the same product. Enabling exclusion keeps the results clean and prevents customer confusion.
+- Leave this set to **Yes** in almost all cases. When J2Commerce products are backed by Joomla articles (which is the standard setup), both the article and the product would otherwise appear as separate results for the same product. Enabling exclusion keeps the results clean and prevents customer confusion.
 
 :::tip
 
@@ -70,7 +68,7 @@ If you have articles that discuss a product without being linked to a J2Commerce
 
 :::
 
-- **Show Product Image:** Displays the product's thumbnail image alongside its result in Smart Search. The plugin uses the smallest available image version (tiny, then thumbnail, then main) to keep result pages fast.
+**Show Product Image:** Displays the product's thumbnail image alongside its result in Smart Search. The plugin uses the smallest available image version (tiny, then thumbnail, then main) to keep result pages fast.
 
 ## How It Works
 
@@ -115,6 +113,30 @@ The first time you enable the plugin, you must run the Smart Search indexer to b
 
 ![](/img/smart-index1.webp)
 
+## Assigning the Search bar to the Side Main Menu
+
+### Create a Menu Item
+
+In order for the search bar to show on the frontend, you need to create a menu item or a module, but in the example below, we will show you how to customise the Menu Item only.
+
+Go to **Menu -> Main Menu ->** **New**
+
+**Title:** Name the Search bar
+
+**Menu Item Type:** Select the Smarch Search  **->**  Search
+
+**Target Window:** Select what you want the Search bar to appear after the customer clicks it.
+
+![](/img/web-search-bar1.webp)
+
+When creating a new menu item, it will automatically appear at the bottom of the list on the frontend.&#x20;
+
+![](/img/web-frontend.webp)
+
+If you wish to move the search bar to the top, go to the Menu item and drag it to the top
+
+![](/img/web-frontend1.webp)
+
 Products now appear in Smart Search results. You can confirm this by using the search box on the front end of your site.
 
 :::info
@@ -122,6 +144,22 @@ Products now appear in Smart Search results. You can confirm this by using the s
 If you run the indexer and your products do not appear, check that the plugin is enabled and that the products themselves are published. Unpublished products are intentionally excluded from the index.
 
 :::
+
+## Customising the Search View
+
+Search results include the product title, a description excerpt, and (**when enabled**) the product image. The default settings will make your search bar and results show **all** of the product information and **hide** the product image. See image below.
+
+![](/img/smart-options1.webp)
+
+If you want to remove any of the information, go back to the **Search Menu Item** and click on the **Options tab** to customise which information you want shown on the frontend. In the example below, we have turned off all product information except for the **Title** and enabled the **Image**. The Query Explanation can be turned off in the Advanced tab. See below
+
+![](/img/smart-options4.webp)
+
+To remove the **Query Explanation**, click on the **Advanced tab -> Query Explanation ->** select **Never**&#x20;
+
+![](/img/smart-options2.webp)
+
+![](/img/smart-options3.webp)
 
 ## Searching for Products
 
@@ -132,9 +170,9 @@ Once the index is built, customers can use any Smart Search box on your site to 
 - **Brand search** — searching a manufacturer or brand name returns all products from that brand.
 - **Category filters** — Smart Search supports filtering by "J2Commerce Category" and "J2Commerce Brand" taxonomy facets if your Smart Search module or menu item is configured to show filters.
 
-Search results include the product title, a description excerpt, and (when enabled) the product image.
+## Frontend View
 
-<!-- SCREENSHOT: Front-end Smart Search results page showing J2Commerce product results with images and descriptions -->
+![](/img/smart-options5.webp)
 
 ## Tips
 

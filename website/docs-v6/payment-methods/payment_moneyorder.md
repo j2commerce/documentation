@@ -1,10 +1,3 @@
----
-title: "Money Order / Check Payment"
-sidebar_label: "Money Order / Check"
-sidebar_position: 6
-description: "Accept payments by money order or check in J2Commerce with custom payment instructions displayed at checkout."
----
-
 # Money Order / Check Payment
 
 The Money Order payment plugin lets you accept payments by money order, personal check, cashier's check, or bank draft. When a customer selects this payment method at checkout, they see your payment instructions (payee name, mailing address, etc.) and their order is placed immediately with a pending status. You then fulfill the order once you receive the physical payment.
@@ -17,106 +10,127 @@ This is an offline payment method — no online payment processing occurs. It is
 - Joomla! 6.x
 - J2Commerce 6.x
 
-## Installation
+## Purchase and Download
 
-This payment plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `payment_moneyorder.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_moneyorder.zip` package file.
-4. The plugin installs and enables automatically.
+‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Payment Plugin**
 
-## Enable the Plugin
+**Step 2:** Locate the **Money Order Payment** Plugin **->** click **View Details** **->** **Add to cart** **->** **Checkout**.&#x20;
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Look for **Money Order Payment** in the list.
-3. Click the status icon to enable it (green checkmark).
+**Step 3:** Go to your **My Download**s under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
 
-<!-- SCREENSHOT: Payment Methods list showing Money Order Payment enabled -->
+## Installing the Plugin
 
-## Configure the Plugin
+You can install this **Money Order** Payment plugin using the Joomla installer. The following steps help you with a successful installation.
 
-Click the **Money Order Payment** title to open its settings.
+In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
-<!-- SCREENSHOT: Money Order Payment configuration page -->
+Upload the plugin ZIP file or use the install from URL option.
 
-### Basic Settings
+![](/img/autho-install5.webp)
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Display Name** | The name shown to customers at checkout (e.g., "Money Order / Check", "Pay by Check"). | Money Order Payment |
-| **Display Image** | An optional image shown next to the payment method name at checkout. Use a check or money order icon. | Empty |
+## Enable the Plugin&#x20;
+
+Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
+
+![](/img/autho-methods.webp)
+
+Look for **Money Order Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/money-order-enable.webp)
+
+## Configuring the Plugin
+
+After enabling the plugin, click the **Money Order Payment** title to open the settings.
+
+:::tip
+
+**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+
+:::
+
+![](/img/money-order-toggle.webp)
+
+### Display Settings
+
+![](/img/money-order-config.webp)
+
+**Display Name:** The name shown to customers at checkout (e.g., "Money Order / Check", "Pay by Check").
+
+**Display Image:** An optional image shown next to the payment method name at checkout. Use a check or money order icon.
 
 ### Payment Instructions
 
-| Setting | Description |
-|---------|-------------|
-| **Money Order Information** | A rich-text editor where you enter the instructions customers see after selecting this payment method. Include the payee name, mailing address, and any reference number requirements. |
+![](/img/money-order-config1.webp)
+
+**Money Order Information:** A rich-text editor where you enter the instructions customers see after selecting this payment method. Include the payee name, mailing address, and any reference number requirements.
 
 This is the most important field. Write clear, complete instructions so customers know exactly how to send payment. For example:
 
 > Please make your money order or check payable to:
 >
-> **ACME Store, LLC**
-> 123 Commerce Street
-> Suite 400
-> New York, NY 10001
+> **ACME Store, LLC** 123 Commerce Street Suite 400 New York, NY 10001
 >
-> Include your order number on the memo line.
-> Orders are shipped within 2 business days of payment receipt.
+> Include your order number on the memo line. Orders are shipped within 2 business days of payment receipt.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Enable Strip Tags** | When set to **Yes**, HTML tags are removed from the payment instructions before display. Leave as **No** if you want formatted text with bold, links, etc. | No |
+**Enable Strip Tags:** When set to **Yes**, HTML tags are removed from the payment instructions before display. Leave as **No** if you want formatted text with bold, links, etc.
 
 ### Order Status
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Order Status** | The status assigned to orders placed using this payment method. Since payment is not received immediately, use a pending-type status (e.g., "Pending"). | Pending |
+![](/img/money-order-config2.webp)
+
+**Order Status:** The status assigned to orders placed using this payment method. Since payment is not received immediately, use a pending-type status (e.g., "Pending").
 
 ### Surcharge Settings
 
 Add an optional fee for customers who pay by money order or check.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Surcharge Name** | Label shown to the customer for the surcharge (e.g., "Processing Fee"). | Empty (no surcharge) |
-| **Surcharge Percent** | A percentage-based surcharge applied to the order total (e.g., `2` for 2%). | Empty |
-| **Surcharge Fixed** | A fixed dollar amount added to the order (e.g., `5.00`). | Empty |
-| **Surcharge Tax Class** | If the surcharge should be taxed, select the appropriate tax profile. | Empty (not taxed) |
+**Surcharge Name:** Label shown to the customer for the surcharge (e.g., "Processing Fee").
+
+**Surcharge Percent:** A percentage-based surcharge applied to the order total (e.g., `2` for 2%).
+
+**Surcharge Fixed:** A fixed dollar amount added to the order (e.g., `5.00`).
+
+**Surcharge Tax Class:** If the surcharge should be taxed, select the appropriate tax profile.
 
 You can use both a percentage and a fixed amount together. Leave all surcharge fields empty to charge no extra fees.
 
 ### Geozone Restriction
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Geozone** | Limit this payment method to customers in a specific geozone. For example, restrict money order payments to domestic customers only. Leave empty to allow all locations. | Empty (all geozones) |
+![](/img/money-order-config3.webp)
+
+**Geozone:** Limit this payment method to customers in a specific geozone. For example, restrict money order payments to domestic customers only. Leave empty to allow all locations.
 
 ### Thank You Message
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Thank You Article** | Select a Joomla article to display as the order confirmation page. If left empty, the default J2Commerce confirmation page is used. | Empty |
+![](/img/money-order-config4.webp)
+
+**Thank You Article:** Select a Joomla article to display as the order confirmation page. If left empty, the default J2Commerce confirmation page is used.
 
 ### Custom Messages
 
 Display custom text at different stages of the checkout process.
 
-| Setting | Description |
-|---------|-------------|
-| **On Selection** | Text shown when the customer first selects this payment method in the payment step. |
-| **On Before Payment** | Text shown on the payment confirmation page, before the customer clicks the place order button. |
-| **On After Payment** | Text shown on the thank-you page after the order is placed successfully. |
-| **On Error** | Text shown if an error occurs during order processing. |
+**On Selection:** Text shown when the customer first selects this payment method in the payment step.
+
+**On Before Payment:** Text shown on the payment confirmation page, before the customer clicks the place order button.
+
+**On After Payment:** Text shown on the thank-you page after the order is placed successfully.
+
+**On Error:** Text shown if an error occurs during order processing.
 
 ### Button and Template
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Button Text** | The label on the place order button (e.g., "Place Order", "Submit Order"). | Place Order |
-| **Sub Template** | Use a custom template override for the payment form. Leave empty to use the default template. | Empty |
+![](/img/money-order-config5.webp)
+
+**Button Text:** The label on the place order button (e.g., "Place Order", "Submit Order").
+
+**Template Style:** Use a custom template override for the payment form. Leave empty to use the default template.
 
 Click **Save & Close** to apply your settings.
 
@@ -130,6 +144,8 @@ Click **Save & Close** to apply your settings.
 6. The customer sees the confirmation page with your **On After Payment** message.
 7. The customer mails the money order or check to your address.
 8. When you receive the payment, manually update the order status to "Confirmed" (or "Complete") in **J2Commerce** -> **Sales** -> **Orders**.
+
+![](/img/money-order-frontend.webp)
 
 ## Tips
 
@@ -147,9 +163,9 @@ Click **Save & Close** to apply your settings.
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and verify **Money Order Payment** is enabled.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** and verify **Money Order Payment** is enabled.
 2. If a **Geozone** restriction is set, confirm the customer's billing address matches a country/zone in that geozone.
-3. Clear your site cache: **System** -> **Clear Cache**.
+3. Clear your site cache: **Home Dashboard -> System -> Clear Cache**.
 
 ### Payment instructions are not showing
 
@@ -171,7 +187,7 @@ Click **Save & Close** to apply your settings.
 2. Set **Enable Strip Tags** to **No**.
 3. Click **Save & Close**.
 
-### Order is marked as complete before receiving payment
+### The order is marked as complete before receiving payment
 
 **Cause:** The **Order Status** is set to a completed status instead of a pending status.
 
@@ -181,9 +197,3 @@ Click **Save & Close** to apply your settings.
 2. Change the **Order Status** to **Pending** (or another status that indicates payment has not been received).
 3. Click **Save & Close**.
 4. When you receive the physical payment, manually update the order status in **J2Commerce** -> **Sales** -> **Orders**.
-
-## Related Topics
-
-- [Cash Payment](../payment-methods/payment_cash.md)
-- [Stripe Payment](../payment-methods/payment_stripe.md)
-- [PayPal Payment](../payment-methods/payment_paypal.md)

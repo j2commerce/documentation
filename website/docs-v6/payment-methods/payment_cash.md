@@ -4,7 +4,7 @@ The Cash on Delivery plugin provides a simple payment method for stores that acc
 
 This is ideal for local delivery services, restaurant takeout, farmers markets, and any business where you deliver products and collect payment at the door.
 
-## Installation and Enable the Plugin
+## Enable the Plugin
 
 This plugin ships with J2Commerce 6 and is available immediately after installation. There are **three** ways you can access the plugin.&#x20;
 
@@ -168,8 +168,6 @@ After an order is placed:
 When you receive payment on delivery:
 
 - Go to **J2Commerce** **-> Sales ->** **Orders**.
-
-
 
 - Change the order status to **Shipped**, **Delivered**, or a custom status that indicates successful payment.
 
