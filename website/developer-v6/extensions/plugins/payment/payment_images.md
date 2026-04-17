@@ -224,7 +224,7 @@ class PaymentYourplugin extends CMSPlugin implements SubscriberInterface
         }
 
         $result   = $event->getArgument('result', []);
-        $result[] = '<div class="my-custom-badge">Secured by YourPluign</div>';
+        $result[] = '<div class="my-custom-badge">Secured by YourPlugin</div>';
         $event->setArgument('result', $result);
     }
 }
