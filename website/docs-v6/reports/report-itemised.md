@@ -1,10 +1,3 @@
----
-title: "Itemized Report"
-sidebar_label: "Itemized Report"
-sidebar_position: 2
-description: "Track which products and product options sell the most with the Itemized Report in J2Commerce."
----
-
 # Itemized Report
 
 The Itemized Report gives you a detailed breakdown of every product sold in your store, grouped by product and option combination. Use it to see exactly which sizes, colors, or other variants your customers are buying most.
@@ -15,25 +8,23 @@ The Itemized Report gives you a detailed breakdown of every product sold in your
 - Joomla! 6.x
 - J2Commerce 6.x
 
-## Installation
-
-This report plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Purchase and download the `report_itemised.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `report_itemised.zip` package file.
-4. The plugin installs and enables automatically.
-
 ## Accessing the Report
 
-1. Go to **J2Commerce** -> **Reports**.
-2. Click **Itemized Report** from the list.
+There are **two** ways you can access the **Reports**.&#x20;
 
-<!-- SCREENSHOT: Reports list showing Itemized Report entry -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Analytics -> Reports**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Analytics -> Reports**
+
+![](/img/analytics2.webp)
+
+- Click **Itemized Report** from the list.
+
+- Click **View Report**
+
+![](/img/report1.webp)
 
 The report loads with a bar chart at the top and a data table below.
-
-<!-- SCREENSHOT: Full Itemized Report view with chart and table -->
 
 ## Understanding the Report
 
@@ -45,15 +36,21 @@ The bar chart at the top of the page shows the quantity sold for each product. T
 
 The table displays one row for each unique product and option combination. For example, if you sell a T-shirt in three sizes, each size appears as its own row.
 
-| Column | Description |
-|--------|-------------|
-| **#** | Row number |
-| **Product ID** | The internal J2Commerce product ID |
-| **Product Name** | The name of the product, with SKU shown below it |
-| **Options** | The specific option values for this row (e.g., Size: Large, Color: Blue) |
-| **Category** | The Joomla category the product belongs to |
-| **Quantity** | Total number of units sold |
-| **No. of Orders** | How many separate orders included this product |
+![](/img/report2.webp)
+
+**#:** Row number
+
+**Product ID:** The internal J2Commerce product ID
+
+**Product Name:** The name of the product, with SKU shown below it
+
+**Options:** The specific option values for this row (e.g., Size: Large, Color: Blue)
+
+**Category:** The Joomla category the product belongs to
+
+**Quantity:** Total number of units sold
+
+**No. of Orders:** How many separate orders include this product
 
 A **Total** row at the bottom sums up the Quantity and No. of Orders columns.
 
@@ -73,16 +70,21 @@ Select an order status from the dropdown to include only orders with that status
 
 Choose a preset time period or set a custom date range:
 
-| Option | Description |
-|--------|-------------|
-| **Today** | Orders placed today |
-| **This Week** | Orders from the current week |
-| **This Month** | Orders from the current month |
-| **This Year** | Orders from the current year |
-| **Last 7 Days** | Orders from the past 7 days |
-| **Last Month** | Orders from the previous calendar month |
-| **Last Year** | Orders from the previous calendar year |
-| **Custom** | Enter a specific **From Date** and **To Date** |
+**Today:** Orders placed today
+
+**This Week:** Orders from the current week
+
+**This Month:** Orders from the current month
+
+**This Year:** Orders from the current year
+
+**Last 7 Days:** Orders from the past 7 days
+
+**Last Month:** Orders from the previous calendar month
+
+**Last Year:** Orders from the previous calendar year
+
+**Custom:** Enter a specific **From Date** and **To Date**
 
 When you select **Custom**, two date picker fields appear. Choose your start and end dates to define the exact range.
 
@@ -127,7 +129,9 @@ A totals row is included at the bottom of the exported file. Open the CSV in Exc
 
 1. Clear all filters by resetting the search box, order status, and duration dropdowns.
 2. Verify that you have completed orders in the system by checking **J2Commerce** -> **Sales** -> **Orders**.
-3. Go to **System** -> **Manage** -> **Extensions** and confirm the **Itemized Report** plugin is enabled.
+3. Go to the **J2Commerce** icon at the top right corner **-> Analytics -> Reports** and confirm the **Itemized Report** plugin is enabled.
+
+![](/img/report3.webp)
 
 ### Options column is empty
 
@@ -146,8 +150,3 @@ This is normal for simple products without variants. The Options column only dis
 1. Edit the product in **J2Commerce** -> **Catalog** -> **Products**.
 2. Check that the product is associated with a published Joomla article.
 3. Verify the article belongs to a published category.
-
-## Related Topics
-
-- [Products Report](../reports/report-products.md)
-- [Reports Overview](../reports/index.md)
