@@ -1,10 +1,3 @@
----
-title: "Products Report"
-sidebar_label: "Products Report"
-sidebar_position: 3
-description: "Analyze product revenue, discounts, and tax collected with the Products Report in J2Commerce."
----
-
 # Products Report
 
 The Products Report provides a financial overview of your product sales. It shows how much revenue each product has generated, how much tax was collected, and the impact of any discounts applied. Use it to understand which products drive the most income for your store.
@@ -15,25 +8,23 @@ The Products Report provides a financial overview of your product sales. It show
 - Joomla! 6.x
 - J2Commerce 6.x
 
-## Installation
-
-This report plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Purchase and download the `report_products.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `report_products.zip` package file.
-4. The plugin installs and enables automatically.
-
 ## Accessing the Report
 
-1. Go to **J2Commerce** -> **Reports**.
-2. Click **Products Report** from the list.
+There are **two** ways you can access the **Reports**.&#x20;
 
-<!-- SCREENSHOT: Reports list showing Products Report entry -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Analytics -> Reports**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Analytics -> Reports**
+
+![](/img/report5.webp)
+
+- Click **Products Report** from the list.
+
+- Click **View Report**
+
+![](/img/report6.webp)
 
 The report loads with a bar chart at the top and a data table below.
-
-<!-- SCREENSHOT: Full Products Report view with chart and table -->
 
 ## Understanding the Report
 
@@ -43,16 +34,21 @@ The bar chart displays the total revenue (price with tax) for each product. The 
 
 ### Data Table
 
+![](/img/report7.webp)
+
 Each row represents a unique product variant. The table provides a complete financial breakdown of sales.
 
-| Column | Description |
-|--------|-------------|
-| **Product Name** | The name of the product, with SKU shown below it |
-| **Total Quantity** | Total number of units sold |
-| **Discount** | Total discount amount applied to this product across all orders |
-| **Tax** | Total tax collected on this product |
-| **Price Without Tax** | Total revenue before tax |
-| **Price With Tax** | Total revenue including tax (the final amount collected) |
+**Product Name:** The name of the product, with SKU shown below it
+
+**Total Quantity:** Total number of units sold
+
+**Discount:** Total discount amount applied to this product across all orders
+
+**Tax:** Total tax collected on this product
+
+**Price Without Tax:** Total revenue before tax
+
+**Price With Tax:** Total revenue including tax (the final amount collected)
 
 A **Total** row at the bottom sums up all financial columns, giving you a store-wide snapshot.
 
@@ -72,16 +68,21 @@ Select an order status from the dropdown to include only orders with that status
 
 Choose a preset time period or set a custom date range:
 
-| Option | Description |
-|--------|-------------|
-| **Today** | Orders placed today |
-| **This Week** | Orders from the current week |
-| **This Month** | Orders from the current month |
-| **This Year** | Orders from the current year |
-| **Last 7 Days** | Orders from the past 7 days |
-| **Last Month** | Orders from the previous calendar month |
-| **Last Year** | Orders from the previous calendar year |
-| **Custom** | Enter a specific **From Date** and **To Date** |
+**Today:** Orders placed today
+
+**This Week:** Orders from the current week
+
+**This Month:** Orders from the current month
+
+**This Year:** Orders from the current year
+
+**Last 7 Days:** Orders from the past 7 days
+
+**Last Month:** Orders from the previous calendar month
+
+**Last Year:** Orders from the previous calendar year
+
+**Custom:** Enter a specific **From Date** and **To Date**
 
 When you select **Custom**, two date picker fields appear. Choose your start and end dates to define the exact range.
 
@@ -99,6 +100,8 @@ Click any column header to sort the table by that column. Click again to reverse
 By default, the report sorts by **Price With Tax** in descending order, showing your highest-revenue products first.
 
 ## Exporting to CSV
+
+![](/img/report8.webp)
 
 Click the **Export CSV** button in the toolbar to download the full report as a CSV file. The export includes all filtered results (not just the current page) with these columns:
 
@@ -128,7 +131,9 @@ A totals row is included at the bottom of the exported file. All monetary values
 
 1. Clear all filters by resetting the search box, order status, and duration dropdowns.
 2. Verify that you have completed orders in the system by checking **J2Commerce** -> **Sales** -> **Orders**.
-3. Go to **System** -> **Manage** -> **Extensions** and confirm the **Products Report** plugin is enabled.
+3. Go to the **J2Commerce** icon at the top right corner **-> Analytics -> Reports** and confirm the **Itemized Report** plugin is enabled.
+
+![](/img/report9.webp)
 
 ### Revenue numbers seem incorrect
 
@@ -147,8 +152,3 @@ A totals row is included at the bottom of the exported file. All monetary values
 **Solution:**
 
 This is normal if your store did not run any promotions during the filtered period. The Discount column only reflects coupon codes and cart-level discounts that were applied at checkout.
-
-## Related Topics
-
-- [Itemized Report](../reports/report-itemised.md)
-- [Reports Overview](../reports/index.md)
