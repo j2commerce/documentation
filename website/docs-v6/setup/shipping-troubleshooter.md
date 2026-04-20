@@ -1,10 +1,3 @@
----
-title: "Shipping Troubleshooter"
-sidebar_label: "Shipping Troubleshooter"
-sidebar_position: 10
-description: "Use the Shipping Troubleshooter to diagnose and fix shipping configuration issues in J2Commerce — covers shipping methods, geo zones, rates, and product settings."
----
-
 # Shipping Troubleshooter
 
 The Shipping Troubleshooter is a built-in diagnostic tool that helps you find and fix shipping problems in your store. If customers are not seeing shipping options at checkout, or if shipping rates are missing or incorrect, this tool guides you through the most common causes step by step.
@@ -23,28 +16,31 @@ There are **two** ways to open the Shipping Troubleshooter.
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Setup -> Shipping Troubleshooter**
 
-<!-- SCREENSHOT: J2Commerce admin menu showing the Setup section with Shipping Troubleshooter highlighted -->
+![](/img/troubleshooter.webp)
 
 ## Step 1: Shipping Configuration Dashboard
 
 When you first open the Shipping Troubleshooter, you land on the **Shipping Configuration Dashboard**. This page gives you an at-a-glance summary of your shipping setup.
 
-<!-- SCREENSHOT: Shipping Configuration Dashboard showing the four summary cards and action buttons -->
+![](/img/troubleshooter-dashboard.webp)
 
 ### Summary Cards
 
 Four cards display the current state of your shipping configuration:
 
-| Card | What It Shows |
-|------|---------------|
-| **Shipping Methods** | How many shipping methods are currently enabled. Green = at least one enabled. Red = none enabled. |
-| **Geo Zones** | How many geo zones are currently enabled. Green = at least one enabled. Red = none enabled. |
-| **Products with Shipping** | How many products have shipping turned on. Green = at least one. Red = none. |
-| **Total Products** | The total number of products in your catalog. |
+**Shipping Methods:** How many shipping methods are currently enabled. Green = at least one enabled. Red = none enabled.
+
+**Geo Zones:** How many geo zones are currently enabled. Green = at least one enabled. Red = none enabled.
+
+**Products with Shipping:** How many products have shipping turned on. Green = at least one. Red = none.
+
+**Total Products:** The total number of products in your catalog.
 
 If any card shows red, that area needs attention before shipping will work correctly.
 
 ### Next Steps
+
+![](/img/troubleshooter-dashboard1.webp)
 
 Two buttons guide you through the diagnostic process:
 
@@ -53,6 +49,8 @@ Two buttons guide you through the diagnostic process:
 
 ### Quick Actions
 
+![](/img/troubleshooter-dashboard2.webp)
+
 The **Quick Actions** section provides direct links to the most commonly needed configuration areas:
 
 - **Manage Shipping Methods** — Go to your shipping method list to enable or create methods.
@@ -60,6 +58,8 @@ The **Quick Actions** section provides direct links to the most commonly needed 
 - **Manage Products** — Go to your product catalog to update product settings.
 
 ### Common Issues
+
+![](/img/troubleshooter-dashboard3.webp)
 
 The **Common Issues** accordion at the bottom of the page expands to show solutions for the most frequent shipping problems:
 
@@ -71,17 +71,17 @@ The **Common Issues** accordion at the bottom of the page expands to show soluti
 
 Click **Check Shipping Methods** to open the **Shipping Methods Diagnostic** page. This step reviews your geo zones, shipping methods, and available rates.
 
-<!-- SCREENSHOT: Shipping Methods Diagnostic page showing the three metric cards and Quick Check section -->
+![](/img/troubleshooter-dashboard4.webp)
 
 ### Diagnostic Cards
 
 Three cards show the current state of each shipping component:
 
-| Card | Status |
-|------|--------|
-| **Enabled Geo Zones** | Green if one or more geo zones are enabled. Red if none. |
-| **Enabled Shipping Methods** | Green if one or more methods are enabled. Red if none. |
-| **Shipping Rates** | Green if rates are available. Red if no methods are enabled (which means no rates can apply). |
+**Enabled Geo Zones**: Green if one or more geo zones are enabled. Red if none.
+
+**Enabled Shipping Methods:** Green if one or more methods are enabled. Red if none.
+
+**Shipping Rates:** Green if rates are available. Red if no methods are enabled (which means no rates can apply).
 
 ### Quick Check
 
@@ -103,50 +103,62 @@ The troubleshooter analyses your configuration and shows one of three result box
 
 ### Navigation
 
+![](/img/troubleshooter-dashboard5.webp)
+
 - **Back to Start** — Returns to the Shipping Configuration Dashboard.
 - **Next: Products** — Moves to Step 3 to review product shipping settings.
 
 ## Step 3: Product Shipping Settings
 
-Click **Check Product Settings** (from the Dashboard) or **Next: Products** (from Step 2) to open the **Product Shipping Settings** page. This step checks every product in your catalog for shipping configuration issues.
+![](/img/troubleshooter-dashboard6.webp)
 
-<!-- SCREENSHOT: Product Shipping Settings page showing the summary cards and product table -->
+Click **Check Product Settings** (from the Dashboard by clicking the back button) or **Next: Products** (from Step 2) to open the **Product Shipping Settings** page. This step checks every product in your catalog for shipping configuration issues.
 
 ### Summary Cards
 
+![](/img/troubleshooter-dashboard7.webp)
+
 Four cards summarise the results across all products:
 
-| Card | Meaning |
-|------|--------|
-| **Products OK (green)** | Products with shipping fully configured. |
-| **Products with Warnings (yellow)** | Products with minor issues (e.g., missing weight or dimensions). |
-| **Products with Errors (red)** | Products with critical issues (e.g., shipping is turned off). |
-| **Total Products Checked (blue)** | The total number of products reviewed. |
+**Products OK (green):** Products with shipping fully configured.
+
+**Products with Warnings (yellow):** Products with minor issues (e.g., missing weight or dimensions).
+
+**Products with Errors (red):** Products with critical issues (e.g., shipping is turned off).
+
+**Total Products Checked (blue):** The total number of products reviewed.
 
 ### Status Legend
 
 Each product in the table is assigned one of four statuses:
 
-| Status | Meaning |
-|--------|--------|
-| **OK (green)** | Shipping is enabled and weight or dimensions are set. |
-| **Warning (yellow)** | Shipping is enabled but weight or dimensions are missing or incomplete. |
-| **Error (red)** | Shipping is disabled for this product. Customers cannot select a shipping method when purchasing it. |
-| **Unknown** | The product's configuration could not be determined. |
+**OK (green):** Shipping is enabled and weight or dimensions are set.
+
+**Warning (yellow):** Shipping is enabled but weight or dimensions are missing or incomplete.
+
+**Error (red):** Shipping is disabled for this product. Customers cannot select a shipping method when purchasing it.
+
+**Unknown:** The product's configuration could not be determined.
 
 ### Product Table
 
+![](/img/troubleshooter-dashboard8.webp)
+
 The product table lists every product with the following columns:
 
-| Column | Description |
-|--------|-------------|
-| **Product Name** | The product name. Issues and warnings appear below the name in red or yellow. |
-| **SKU** | The product's stock-keeping unit code. |
-| **Shipping Enabled** | Shows a tick (enabled) or cross (disabled). |
-| **Weight** | Green badge if a weight is set. Purple badge if no weight is configured. |
-| **Dimensions** | Green if length, width, and height are all set. Yellow if only some dimensions are set. Purple if no dimensions are set. |
-| **Status** | The overall shipping status badge for this product. |
-| **Actions** | An **Edit** button to open the product for editing. |
+**Product Name:** The product name. Issues and warnings appear below the name in red or yellow.
+
+**SKU:** The product's stock-keeping unit code.
+
+**Shipping Enabled:** Shows a tick (enabled) or cross (disabled).
+
+**Weight:** Green badge if a weight is set. Purple badge if no weight is configured.
+
+**Dimensions:** Green if length, width, and height are all set. Yellow if only some dimensions are set. Purple if no dimensions are set.
+
+**Status:** The overall shipping status badge for this product.
+
+**Actions:** An **Edit** button to open the product for editing.
 
 Use the **Search** box at the top of the table to find a specific product. Use the **pagination controls** at the bottom to browse all products.
 
@@ -154,14 +166,23 @@ Use the **Search** box at the top of the table to find a specific product. Use t
 
 To resolve a Warning or Error for a product:
 
-1. Click the **Edit** button next to the product.
-2. Go to the **J2Commerce** tab, then click the **Shipping** subtab.
-3. Set **Enable Shipping** to **Yes** to fix an Error.
-4. Enter a **Weight** and **Dimensions** (Length, Width, Height) to fix a Warning.
-5. Click **Save & Close**.
-6. Return to the Shipping Troubleshooter to verify the status has changed to **OK**.
+- Click the **Edit** button next to the product.
 
-<!-- SCREENSHOT: Product edit form showing the Shipping subtab with Enable Shipping, Weight, and Dimensions fields -->
+![](/img/troubleshooter-dashboard10.webp)
+
+- Go to the **J2Commerce** tab, then click the **Shipping** subtab.
+
+![](/img/troubleshooter-dashboard9.webp)
+
+- Set **Enable Shipping** to **Yes** to fix an Error.
+
+- Enter a **Weight** and **Dimensions** (Length, Width, Height) to fix a Warning.
+
+- Click **Save & Close**.
+
+- Return to the Shipping Troubleshooter to verify the status has changed to **OK**.
+
+![](/img/troubleshooter-dashboard11.webp)
 
 ### Navigation
 
@@ -221,9 +242,3 @@ To resolve a Warning or Error for a product:
 
 - If you use flat-rate shipping, warnings may not affect your store. No action is required.
 - If you use weight-based or dimension-based rates, add the missing weight and dimension data to each product showing a warning.
-
-## Related Topics
-
-- [Shipping Methods](../shipping-methods/index.md)
-- [Geo Zones](../shipping-methods/index.md)
-- [Configuration](./configuration/index.md)
