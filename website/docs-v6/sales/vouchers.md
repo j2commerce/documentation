@@ -6,36 +6,49 @@ Vouchers are different from coupons — a coupon gives a percentage or fixed dis
 
 ## Accessing Vouchers
 
-Go to **J2Commerce** -> **Sales** -> **Vouchers**.
+There are **two** ways you can access the Vouchers.&#x20;
 
-<!-- SCREENSHOT: J2Commerce Sales menu open showing Vouchers option -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Sales-> Vouchers**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Sales -> Vouchers**
+
+![](/img/vouchers.webp)
 
 ## Understanding the Vouchers List
 
-<!-- SCREENSHOT: Vouchers list showing status, voucher code, value, email, and date columns -->
+![](/img/vouchers7.webp)
 
 Each row in the list represents one voucher.
 
-| Column | Description |
-|--------|-------------|
-| **Status** | Whether the voucher is published (active) or unpublished (disabled). Click to toggle. |
-| **Voucher Code** | The code a customer enters at checkout. Click to open and edit. |
-| **Value** | The total monetary balance on the voucher. |
-| **Email To** | The email address the voucher was sent to. |
-| **Valid From** | The date the voucher becomes active. Empty means it is active immediately. |
-| **Valid To** | The date the voucher expires. Empty means it never expires. |
-| **ID** | The internal voucher ID number. |
+**Status:** Whether the voucher is published (active) or unpublished (disabled). Click to toggle.
+
+**Voucher Code:** The code a customer enters at checkout. Click to open and edit.
+
+**Value:** The total monetary balance on the voucher.
+
+**Email To:** The email address the voucher was sent to.
+
+**Valid From:** The date the voucher becomes active. Empty means it is active immediately.
+
+**Valid To:**The date the voucher expires. Empty means it never expires.
+
+**ID:** The internal voucher ID number.
 
 ## Toolbar Actions
 
-| Button | What It Does |
-|--------|-------------|
-| **New** | Opens the form to create a new voucher. |
-| **Publish** | Activates the selected vouchers so customers can use them. |
-| **Unpublish** | Deactivates the selected vouchers so they cannot be used. |
-| **Trash** | Moves the selected vouchers to the trash. |
-| **Delete** | Permanently deletes trashed vouchers (only visible when viewing the trash). |
-| **Preferences** | Opens the global J2Commerce configuration settings. |
+![](/img/vouchers6.webp)
+
+**New:** Opens the form to create a new voucher.
+
+**Actions:** To activate the Actions button, you have to select at least one Voucher
+
+- **Publish:** Activates the selected vouchers so customers can use them.
+
+- **Unpublish:** Deactivates the selected vouchers so they cannot be used.
+
+- **Trash:** Moves the selected vouchers to the trash.
+
+**Options:** Opens the global J2Commerce configuration settings.
 
 ## Searching and Filtering
 
@@ -43,9 +56,11 @@ Type in the search bar to find vouchers by **voucher code** or **recipient email
 
 To search by an exact voucher ID, type `id:` followed by the number (e.g., `id:12`).
 
+![](/img/vouchers8.webp)
+
 Click **Search Tools** to filter by **Status** (Published or Unpublished).
 
-<!-- SCREENSHOT: Search Tools panel showing Status filter dropdown -->
+![](/img/vouchers9-1.webp)
 
 ## Creating a Voucher
 
@@ -53,29 +68,35 @@ Click **Search Tools** to filter by **Status** (Published or Unpublished).
 2. Fill in the voucher details across the two tabs (described below).
 3. Click **Save & Close** to save and return to the list.
 
-<!-- SCREENSHOT: New voucher edit form showing Basic Settings tab with all fields -->
+![](/img/vouchers1.webp)
 
 ### Basic Settings Tab
 
-| Field | Description |
-|-------|-------------|
-| **Voucher Code** | The code a customer types at checkout. A unique 8-character code is generated automatically — you can change it to anything you like. |
-| **Voucher Value** | The monetary balance loaded onto this voucher (e.g., `50.00` for a $50 gift card). |
-| **Email To** | The recipient's email address. Used when you click **Send Voucher** to email the code to the customer. |
-| **Valid From** | The date and time this voucher becomes active. Leave empty for the voucher to work immediately. |
-| **Valid To** | The date and time this voucher expires. Leave empty for no expiry. |
-| **Status** | Set to **Published** so customers can use the voucher, or **Unpublished** to hold it until you are ready. |
+![](/img/vouchers2.webp)
+
+**Voucher Type:**  Gift Card
+
+**Voucher Code:** The code a customer types at checkout. A unique 8-character code is generated automatically — you can change it to anything you like.
+
+**Voucher Value:** The monetary balance loaded onto this voucher (e.g., `50.00` for a $50 gift card).
+
+**Email To:** The recipient's email address. Used when you click **Send Voucher** to email the code to the customer.
+
+**Valid From:** The date and time this voucher becomes active. Leave empty for the voucher to work immediately.
+
+**Valid To:** The date and time this voucher expires. Leave empty for no expiry.
+
+**Status:** Set to **Published** so customers can use the voucher, or **Unpublished** to hold it until you are ready.
 
 ### Message Settings Tab
 
+![](/img/vouchers3.webp)
+
 These fields control the email sent to the voucher recipient when you click **Send Voucher**.
 
-| Field | Description |
-|-------|-------------|
-| **Subject** | The subject line of the voucher email. Defaults to "Gift Voucher" if left empty. |
-| **Email Body** | The body of the voucher email. Use the editor to write a personalised message, include images, or format the content as you wish. |
+**Subject:** The subject line of the voucher email. Defaults to "Gift Voucher" if left empty.
 
-<!-- SCREENSHOT: Message Settings tab showing Subject and Email Body fields -->
+**Email Body:** The body of the voucher email. Use the editor to write a personalised message, include images, or format the content as you wish.
 
 :::tip
 
@@ -90,9 +111,9 @@ After creating and saving a voucher:
 1. Open the voucher from the list.
 2. Click **Send Voucher** in the toolbar.
 
-J2Commerce sends the email to the address in the **Email To** field using the subject and body from the **Message Settings** tab.
+![](/img/vouchers5.webp)
 
-<!-- SCREENSHOT: Edit form toolbar highlighting the Send Voucher button -->
+J2Commerce sends the email to the address in the **Email To** field using the subject and body from the **Message Settings** tab.
 
 ## How Vouchers Work at Checkout
 
@@ -115,7 +136,7 @@ To see which orders a voucher has been used on and how much balance has been spe
 
 The history screen shows each order the voucher was applied to, the amount used per order, the customer email, and the order date.
 
-<!-- SCREENSHOT: Voucher history screen showing orders, amounts, and customer emails -->
+![](/img/vouchers10.webp)
 
 ## Duplicating a Voucher
 
@@ -139,10 +160,12 @@ An unpublished voucher cannot be used at checkout even if a customer has the cod
 Vouchers must be trashed before they can be permanently deleted.
 
 **Step 1 — Trash the voucher:**
+
 1. Check the box next to the voucher.
 2. Click **Trash** in the toolbar.
 
 **Step 2 — Permanently delete:**
+
 1. Use the **Status** filter and select **Trashed**.
 2. Check the box next to the voucher.
 3. Click **Delete** in the toolbar.
@@ -183,8 +206,3 @@ Save the voucher first using **Save & Close**, then reopen it. The **Send Vouche
 **Solution:**
 
 Sort the list by **Valid To** (ascending) to bring the earliest expiry dates to the top. Scan for vouchers expiring within your target date range.
-
-## Related Topics
-
-- [Coupons](../sales/coupons.md)
-- [Orders](../sales/orders.md)
