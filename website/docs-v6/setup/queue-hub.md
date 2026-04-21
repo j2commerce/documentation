@@ -1,17 +1,18 @@
----
-title: "Queue Hub"
-sidebar_label: "Queue Hub"
-sidebar_position: 10
-description: "Monitor and manage background processing tasks in J2Commerce. Learn how to process, retry, and purge queue items."
----
-
 # Queue Hub
 
 The Queue Hub is where J2Commerce handles background tasks — things that happen quietly behind the scenes so your store stays fast and responsive. When third-party apps (like shipping integrations, accounting sync, or inventory tools) need to send or receive data, they add those jobs to the queue rather than making your customers wait.
 
 Think of it like a to-do list for your store. Items get added, processed one by one, and then marked complete. If something goes wrong, the system retries automatically before flagging it for your attention.
 
-Go to **J2Commerce -> Setup -> Queue Hub** to access this view.
+## Accessing the Queue Hub
+
+There are **two** ways to open the **Queue Hub.**
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Queue Hub**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Setup -> Queue Hub**
+
+![](/img/queue.webp)
 
 ## When Will I See Queue Items?
 
@@ -23,13 +24,15 @@ Common apps that use the queue include shipping integrations, ERP/accounting syn
 
 Each queue item moves through a lifecycle:
 
-| Status | What It Means |
-|--------|---------------|
-| **Pending** | Waiting to be processed |
-| **Processing** | Currently being worked on |
-| **Completed** | Finished successfully |
-| **Failed** | An error occurred — will retry automatically |
-| **Dead** | Failed too many times — needs your attention |
+**Pending:** Waiting to be processed
+
+**Processing:** Currently being worked on
+
+**Completed:** Finished successfully
+
+**Failed:** An error occurred — will retry automatically
+
+**Dead:** Failed too many times — needs your attention
 
 Items retry automatically after a failure using a gradual backoff schedule (waits a bit longer between each retry). After 10 failed attempts (by default), the item moves to **Dead** status and stops retrying.
 
@@ -44,7 +47,9 @@ If you want to process items immediately rather than waiting for the next schedu
 3. J2Commerce processes up to 10 items per click and logs the results.
 
 :::info
+
 The **Process Now** button only appears when a **Queue Type** filter is selected.
+
 :::
 
 ### Retry Failed Items
@@ -71,19 +76,22 @@ To clean up accumulated records in bulk, click the dropdown arrow next to the **
 - **Purge Dead** — Removes all dead-letter items that exceeded their retry limit.
 
 :::tip
+
 Run a purge periodically if your store processes high volumes of queue items. This keeps the list manageable and improves loading speed.
+
 :::
 
 ## Filtering and Searching
 
 Use the filter bar above the list to narrow down what you see:
 
-| Filter | Description |
-|--------|-------------|
-| **Search** | Search by relation ID (e.g., order number) or error message |
-| **Queue Type** | Filter by a specific app or integration |
-| **Item Type** | Filter by what kind of item is being processed (order, product, user) |
-| **Status** | Show only items with a specific status |
+**Search:** Search by relation ID (e.g., order number) or error message
+
+**Queue Type:** Filter by a specific app or integration
+
+**Item Type:** Filter by what kind of item is being processed (order, product, user)
+
+**Status:** Show only items with a specific status
 
 ## Queue Logs
 
@@ -99,12 +107,13 @@ Queue logs are useful for diagnosing patterns — for example, if a particular a
 
 ## Configuration
 
-To adjust queue settings, click **Options** in the toolbar (or go to **J2Commerce -> Configuration -> Queue**).
+To adjust queue settings, click **Options** in the toolbar (or go to **J2Commerce -> Setup -> Configuration -> Store** tab **-> Queue** section at the bottom).
 
-| Setting | Description |
-|---------|-------------|
-| **Queue Key** | A security key required for external or cron-based queue processing. Click **Regenerate** to create a new key if needed. |
-| **Maximum Retry Attempts** | How many times a failed item retries before becoming **Dead**. Default is 10. |
+![](/img/queue1.webp)
+
+**Queue Key:** A security key required for external or cron-based queue processing. Click **Regenerate** to create a new key if needed.
+
+**Maximum Retry Attempts:** How many times a failed item retries before becoming **Dead**. Default is 10.
 
 ## Tips
 
@@ -156,8 +165,3 @@ Locks expire automatically after 30 minutes. If you need to clear them immediate
 
 1. Use the **Queue Type** dropdown to select a specific app's queue.
 2. The **Process Now** button will appear in the toolbar.
-
-## Related Topics
-
-- [Scheduled Tasks](./configuration/cron-tasks.md)
-- [Apps and Extensions](../apps-and-extensions/index.md)
