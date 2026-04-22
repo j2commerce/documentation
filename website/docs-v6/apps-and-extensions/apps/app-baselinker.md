@@ -63,13 +63,33 @@ This tab connects J2Commerce to your BaseLinker account.
 
 Login / Create your BaseLinker Account. [**https://login.baselinker.com/**](https://login.baselinker.com/)
 
-**API Token:** Your BaseLinker API token. Obtain it from your BaseLinker account under **My Account -> API**.
+**API Token:** Your BaseLinker API token. Obtain it from your BaseLinker account under **My Account -> API**.&#x20;
+
+:::tip
+
+After entering the API Token in the App, click **Save**, before entering anything else or selecting the Test Connection button. If you don't save it, then you may receive an invalid Token error message when selecting the Test Connection or Sync buttons
+
+:::
 
 ![](/img/base-api.webp)
 
-**Inventory (Catalog) ID:** The target catalog ID in BaseLinker where products will be pushed. Use the **Test Connection** button to list your available catalogs.
+**Inventory (Catalog) ID:** The target catalog ID in BaseLinker where products will be pushed. Target catalog ID in BaseLinker. Use the Test Connection button to list available catalogs.
+
+- Click the **Test Connection** button to list your available catalogs.&#x20;
+
+- Click on the **Red ID** number and it will automatically place it in the **Catalog** ID section
+
+![](/img/screenshot-2026-04-22-1309441.webp)
 
 **Warehouse ID:** The warehouse in BaseLinker that receives stock level updates. **Order Source ID:** The source ID BaseLinker assigns to orders imported from J2Commerce. Find this in BaseLinker under your store source settings.
+
+**Price Group ID:** Price group for product prices. Use Test Connection to list available price groups for the selected inventory.
+
+- Click the **Test Connection** button to list your available Price Group.&#x20;
+
+- Click on the **Red ID** number and it will automatically place it in the **Price Group** section
+
+![](/img/screenshot-2026-04-22-131514.webp)
 
 **Actions panel:**
 
@@ -77,8 +97,6 @@ Login / Create your BaseLinker Account. [**https://login.baselinker.com/**](http
 - **Sync Now** — Triggers a full manual synchronisation immediately: pushes eligible orders and products, then pulls status changes and tracking info.
 
 ![](/img/base-config1-2.webp)
-
-***
 
 ### Synchronization Tab
 
@@ -128,7 +146,19 @@ A status with no mapping row is not synchronised in that direction. If you only 
 
 **Debug Logging:** Log every API call to `administrator/logs/plg_j2commerce_app_baselinker.log.php`. Useful for diagnosing sync problems. Disable in production.
 
-***
+:::info
+
+Once you have completed the app configuration, open any product you have created and click Save and Close. By doing this, it activates all of the products
+
+:::
+
+## Linking Products to your Base account
+
+**Step 1:** After configuring the app, open any **product** and then click **Save and Close**. By doing that, it activates the app and pushes the products through to Base.com. &#x20;
+
+**Step 2:** Open your Base account. Click on **Products** (on the left panel) **-> Product List** to verify your products have been linked to your Base Account.
+
+![](/img/base-products.webp)
 
 ## How It Works
 
