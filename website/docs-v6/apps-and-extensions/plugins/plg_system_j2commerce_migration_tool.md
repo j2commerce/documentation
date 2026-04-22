@@ -18,9 +18,7 @@ The migration happens in tiers. Eight tiers cover the store data itself (lookup 
 :::
 
 :::warning
-
 **Always do a full site and database backup before starting.** The migration tool does not delete your J2Store data, but a backup gives you a safe restore point if anything goes wrong.
-
 :::
 
 ## Before You Begin
@@ -32,12 +30,10 @@ The migration happens in tiers. Eight tiers cover the store data itself (lookup 
 :::
 
 :::warning
-
 **Test on a staging site first.** Run the migration on a copy of your site before you do it on the live store. This lets you confirm that products, orders, and settings all transfer correctly without risk to real customer data.
-
 :::
 
-:::caution
+:::info
 
 **Plan for downtime.** Depending on how many products and orders you have, migration can take several minutes. Put your site in maintenance mode while it runs to prevent new orders arriving mid-migration.
 
@@ -60,19 +56,25 @@ Before you start, confirm all of the following:
 - You have Super User access in Joomla
 - A full site and database backup has been completed
 
-## Installation
+## Download the Plugin
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+The `plg_system_j2commerce_migration_tool.zip` plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-**Step 1:** Purchase and download the `plg_system_j2commerce_migration_tool.zip` package from the J2Commerce website.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Plugin**.
 
-**Step 2:** Go to **System** -> **Install** -> **Extensions** in the Joomla admin.
+**Step 2:** Locate the **Upload Package File** plugin -> click **View Details** -> **Add to cart** -> **Checkout**.
 
-**Step 3:** Click the **Upload Package File** tab and drag the zip file onto the upload area, or click **Browse for file** to select it.
+**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
 
-<!-- SCREENSHOT: Joomla Extension Manager showing the Upload Package File tab with the migration tool zip selected -->
+## Install the Plugin
 
-**Step 4:** The plugin installs automatically. You will see a success confirmation.
+You can install this **j2commerce\_migration\_tool** plugin using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the plugin `plg_system_j2commerce_migration_tool.zip` file or use the Install from URL option. &#x20;
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
 ## Enable the Plugin
 
@@ -98,13 +100,13 @@ The plugin settings page contains the full **Migration Dashboard** — the entir
 
 The first section asks: **Where is your J2Store v4 database located?**
 
-Select the option that matches your setup:
+Select the option that matches your setup: Below shows the Option choices and when to choose it.
 
-| Option | When to choose it |
-|--------|-------------------|
-| **Same database as J2Commerce v6** | J2Store and J2Commerce 6 are on the same Joomla site. This is the most common scenario. No credentials needed. |
-| **Different database on the same server** | J2Store is in a separate database on the same MySQL server. You will need that database name, username, and password. |
-| **Different database on a different server** | J2Store is on a completely separate server. You will need the host, port, database name, and credentials. |
+**Same database as J2Commerce v6:** J2Store and J2Commerce 6 are on the same Joomla site. This is the most common scenario. No credentials needed.
+
+**Different database on the same server:** J2Store is in a separate database on the same MySQL server. You will need that database name, username, and password.
+
+**Different database on a different server:** J2Store is on a completely separate server. You will need the host, port, database name, and credentials.
 
 <!-- SCREENSHOT: Source Database Locator section showing the three radio button options -->
 
@@ -112,17 +114,21 @@ Select the option that matches your setup:
 
 **For "Different database on same server" or remote server:** Fill in the connection fields that appear:
 
-| Field | Description |
-|-------|-------------|
-| **Database Name** | The name of the J2Store database |
-| **Username** | MySQL user with SELECT access on that database |
-| **Password** | Password for the MySQL user |
-| **Source Prefix** | Table prefix used in the J2Store database (commonly `jos_`) |
-| **Host / IP** | (Remote server only) MySQL hostname or IP address |
-| **Port** | (Remote server only) MySQL port, default `3306` |
-| **Use SSL** | Enable if your MySQL server requires SSL connections |
+**Database Name:** The name of the J2Store database
 
-Click **Compare Databases** to verify the connection. The status changes to **Connected to [database] on [host]** when successful.
+**Username:** MySQL user with SELECT access on that database
+
+**Password:** Password for the MySQL user
+
+**Source Prefix:** Table prefix used in the J2Store database (commonly `jos_`)
+
+**Host / IP:** (Remote server only) MySQL hostname or IP address
+
+**Port:** (Remote server only) MySQL port, default `3306`
+
+**Use SSL:** Enable if your MySQL server requires SSL connections
+
+Click **Compare Databases** to verify the connection. The status changes to **Connected to \[database] on \[host]** when successful.
 
 :::tip
 
@@ -130,9 +136,9 @@ If you see "no J2Store tables found", double-check the **Source Prefix** field. 
 
 :::
 
-:::caution
+:::info
 
-The **pdo_mysql** PHP extension must be installed to connect to a different database. If you see an error about PDO not being available, contact your hosting provider to enable it.
+The **pdo\_mysql** PHP extension must be installed to connect to a different database. If you see an error about PDO not being available, contact your hosting provider to enable it.
 
 :::
 
@@ -162,14 +168,15 @@ After analysis, the **Conflicts** tab shows a number badge if conflicts were fou
 
 <!-- SCREENSHOT: Conflicts tab showing a list of conflicting rows with skip/overwrite/merge buttons -->
 
-For each conflict, choose how to handle it:
+For each conflict, choose how to handle it: Below shows the **Action** and their **Effects**.
 
-| Action | Effect |
-|--------|--------|
-| **Skip** | Keep the existing J2Commerce value. The J2Store value is ignored. |
-| **Overwrite** | Replace the J2Commerce value with the J2Store value. |
-| **Merge** | Keep the J2Commerce value but fill in any empty fields from J2Store. |
-| **Use Target** | Same as Skip — explicitly marks the J2Commerce version as the winner. |
+**Skip:** Keep the existing J2Commerce value. The J2Store value is ignored.
+
+**Overwrite:** Replace the J2Commerce value with the J2Store value.
+
+**Merge:** Keep the J2Commerce value but fill in any empty fields from J2Store.
+
+**Use Target:** Same as Skip — explicitly marks the J2Commerce version as the winner.
 
 You can also use the **global conflict mode** selector at the top of the Operations tab to apply a default strategy to all conflicts at once.
 
@@ -212,16 +219,16 @@ Each tier shows a progress bar while running. When a tier finishes, its badge ch
 
 The eight data tiers migrate in this order:
 
-| Tier | Name | What it migrates |
-|------|------|-----------------|
+| Tier       | Name          | What it migrates                                               |
+| ---------- | ------------- | -------------------------------------------------------------- |
 | **Tier 1** | Lookup Tables | Currencies, countries, zones, order statuses, lengths, weights |
-| **Tier 2** | Tax System | Tax profiles, tax rates, tax rules, geozones |
-| **Tier 3** | Catalog | Options, manufacturers, custom fields, filters |
-| **Tier 4** | Products | Products, variants, images, files, prices, quantities |
-| **Tier 5** | Customers | Addresses, coupons, vouchers, vendors |
-| **Tier 6** | Shipping | Shipping methods, shipping rates |
-| **Tier 7** | Orders | Orders, order items, history, fees, taxes, discounts |
-| **Tier 8** | Transactional | Carts, queues, email templates, invoice templates |
+| **Tier 2** | Tax System    | Tax profiles, tax rates, tax rules, geozones                   |
+| **Tier 3** | Catalog       | Options, manufacturers, custom fields, filters                 |
+| **Tier 4** | Products      | Products, variants, images, files, prices, quantities          |
+| **Tier 5** | Customers     | Addresses, coupons, vouchers, vendors                          |
+| **Tier 6** | Shipping      | Shipping methods, shipping rates                               |
+| **Tier 7** | Orders        | Orders, order items, history, fees, taxes, discounts           |
+| **Tier 8** | Transactional | Carts, queues, email templates, invoice templates              |
 
 :::tip
 
@@ -229,7 +236,7 @@ Always run tiers in order (1 through 8). Each tier can depend on data from the p
 
 :::
 
-:::caution
+:::info
 
 Large stores with thousands of products or tens of thousands of orders may take several minutes per tier. Leave the page open until each tier reports **Completed**. The migration processes data in batches of 500 rows at a time to avoid PHP timeouts.
 
@@ -237,7 +244,7 @@ Large stores with thousands of products or tens of thousands of orders may take 
 
 ### Step 7: Migrate Menus
 
-After the data tiers complete, scroll to the menu migration section.
+After the data tiers are complete, scroll to the menu migration section.
 
 1. Click **Load J2Store Menus** to retrieve a list of your existing J2Store menu items.
 2. For each menu item, select the matching J2Commerce view type from the dropdown (for example, **Category List**, **Single Product**, **Checkout**, **My Account**).
@@ -301,12 +308,12 @@ The J2Store tables (`j2store_*`) remain in your database until you explicitly re
 
 When migrating from a **separate database** (Modes B or C), the dashboard also shows four additional tiers for Joomla core data:
 
-| Tier | Name | What it migrates |
-|------|------|-----------------|
-| **Tier 9** | Access Control | Assets (ACL nodes), user groups, view levels |
-| **Tier 10** | Users | User accounts, group memberships, profiles |
-| **Tier 11** | Content | Categories, articles, tags, custom field values |
-| **Tier 12** | Workflows | Workflows, stages, transitions, content associations |
+| Tier        | Name           | What it migrates                                     |
+| ----------- | -------------- | ---------------------------------------------------- |
+| **Tier 9**  | Access Control | Assets (ACL nodes), user groups, view levels         |
+| **Tier 10** | Users          | User accounts, group memberships, profiles           |
+| **Tier 11** | Content        | Categories, articles, tags, custom field values      |
+| **Tier 12** | Workflows      | Workflows, stages, transitions, content associations |
 
 Run these tiers in order before the J2Store data tiers. They remap primary keys so that all foreign key relationships remain correct in the target database.
 
@@ -318,15 +325,21 @@ Pick the scenario that matches your situation, then apply the settings shown. Al
 
 You already upgraded your Joomla 3/4/5 site to Joomla 6, the old `j2store_*` tables still sit in the same database, and you now want to move that data into J2Commerce 6 on the same site.
 
-| Setting | Value |
-|---------|-------|
-| **Source Database Location** | **Same database as J2Commerce v6** (Mode A) |
-| **Source Prefix** | Your current Joomla prefix (usually what is in `configuration.php`) |
-| **Tiers to run** | Tiers 1-8 only |
-| **Joomla core tiers (9-12)** | Not shown — not needed |
-| **Menus** | Use **Load J2Store Menus** to remap, or **Create Store Pages** for a clean start |
-| **Images** | Use **Rebuild Product Images** — files are already in `images/` on this server |
-| **Conflict Mode** | **Skip** (safest default if J2Commerce already has any data) |
+- **Settings to use:** Below are the **Settings** and their **Value**.
+
+**Source Database Location: Same database as J2Commerce v6** (Mode A)
+
+**Source Prefix:** Your current Joomla prefix (usually what is in `configuration.php`)
+
+**Tiers to run:** Tiers 1-8 only
+
+**Joomla core tiers (9-12):** Not shown — not needed
+
+**Menus:** Use **Load J2Store Menus** to remap, or **Create Store Pages** for a clean start
+
+**Images:** Use **Rebuild Product Images** — files are already in `images/` on this server
+
+**Conflict Mode: Skip** (safest default if J2Commerce already has any data)
 
 :::tip
 
@@ -338,15 +351,21 @@ This is the fastest and safest scenario. No PDO, no credentials, no file copying
 
 You spun up a fresh Joomla 6 + J2Commerce 6 site and want to pull the store data from your old site's database (which lives on the same hosting account / same MySQL server).
 
-| Setting | Value |
-|---------|-------|
-| **Source Database Location** | **Different database on the same server** (Mode B) |
-| **Database Name / Username / Password** | Credentials for the old site's database |
-| **Source Prefix** | The old site's prefix (commonly `jos_` for Joomla 3) |
-| **Tiers to run** | Tiers 9-12 first (if you want users/content), then Tiers 1-8 |
-| **Menus** | **Create Store Pages** — cleaner than remapping old menus |
-| **Images** | Use **Copy Source Images** with the absolute path to the old site's `images/` folder, then **Rebuild Product Images** |
-| **Conflict Mode** | **Overwrite** on a fresh install (the target is empty, so conflicts are rare) |
+- **Settings to use:** Below are the **Settings** and their **Value**.
+
+**Source Database Location:** Different database on the same server (Mode B)
+
+**Database Name / Username / Password:** Credentials for the old site's database
+
+**Source Prefix:** The old site's prefix (commonly `jos_` for Joomla 3)
+
+**Tiers to run:** Tiers 9-12 first (if you want users/content), then Tiers 1-8
+
+**Menus: Create Store Pages** — cleaner than remapping old menus
+
+**Images:** Use **Copy Source Images** with the absolute path to the old site's `images/` folder, then **Rebuild Product Images**
+
+**Conflict Mode: Overwrite** on a fresh install (the target is empty, so conflicts are rare)
 
 :::caution
 
@@ -358,22 +377,28 @@ The `pdo_mysql` PHP extension must be enabled to connect to the old database. Ch
 
 Your old site is on a completely separate hosting account, VPS, or cloud provider. You want to migrate to a fresh Joomla 6 + J2Commerce 6 installation.
 
-| Setting | Value |
-|---------|-------|
-| **Source Database Location** | **Different database on a different server** (Mode C) |
-| **Host / IP, Port** | Hostname/IP and port of the old MySQL server |
-| **Database Name / Username / Password** | Credentials for the old database |
-| **Source Prefix** | The old site's prefix |
-| **Use SSL** | Enable if the remote MySQL requires SSL (most managed hosts do) |
-| **Tiers to run** | Tiers 9-12 first (if you want users/content), then Tiers 1-8 |
-| **Menus** | **Create Store Pages** |
-| **Images** | Manually copy `images/` from the old server to the new server using `rsync`, `scp`, SFTP, or your hosting migration tool. Then click **Rebuild Product Images**. |
-| **Conflict Mode** | **Overwrite** on a fresh install |
+- **Settings to use:** Below are the **Settings** and their **Value**.
+
+**Source Database Location: Different database on a different server** (Mode C)
+
+**Host / IP, Port:** Hostname/IP and port of the old MySQL server
+
+**Database Name / Username / Password:** Credentials for the old database
+
+**Source Prefix:** The old site's prefix
+
+**Use SSL:** Enable if the remote MySQL requires SSL (most managed hosts do)
+
+**Tiers to run:** Tiers 9-12 first (if you want users/content), then Tiers 1-8
+
+**Menus: Create Store Pages**
+
+**Images:** Manually copy `images/` from the old server to the new server using `rsync`, `scp`, SFTP, or your hosting migration tool. Then click **Rebuild Product Images**.
+
+**Conflict Mode: Overwrite** on a fresh install
 
 :::warning
-
 The remote MySQL server must accept connections from your new server's IP address. You may need to whitelist the IP in the old host's firewall or cPanel **Remote MySQL** settings.
-
 :::
 
 ### Scenario 4 — Skip the Joomla 3 -> 4 -> 5 -> 6 upgrade entirely (recommended for old sites)
@@ -385,21 +410,27 @@ You are on Joomla 3 with J2Store, and you do not want to go through three consec
 - Joomla 3 to 4 breaks most templates and many extensions.
 - Each upgrade (3 to 4, 4 to 5, 5 to 6) has its own compatibility surprises.
 - A fresh Joomla 6 install is faster, cleaner, and lets you adopt a modern Bootstrap 5 template from day one.
+- **Settings to use:** Below are the **Settings** and their **Value**.
 
-**Settings to use:**
+**New site:** Fresh Joomla 6 install with a **Joomla 6 compliant template** (your old Joomla 3 template will not work)
 
-| Setting | Value |
-|---------|-------|
-| **New site** | Fresh Joomla 6 install with a **Joomla 6 compliant template** (your old Joomla 3 template will not work) |
-| **J2Commerce 6** | Installed and published on the new site |
-| **Source Database Location** | **Mode B** if the old database is on the same server, **Mode C** if it is remote |
-| **Source Prefix** | Your Joomla 3 prefix (commonly `jos_`) |
-| **Tiers 9-12** | Run these if you also want to bring across Joomla users, articles, categories, tags, and content custom fields |
-| **Tiers 1-8** | Run to migrate the store itself |
-| **Menus** | **Create Store Pages** — your old Joomla 3 menu structure is unlikely to fit a modern template |
-| **Images** | Mode B: **Copy Source Images**. Mode C: manual `rsync`/`scp` + **Rebuild Product Images** |
-| **Template** | Pick and install a Joomla 6 template before migrating (so menu items and modules assign to the correct template when created) |
-| **Conflict Mode** | **Overwrite** (target is fresh — conflicts just mean placeholder data from the new install) |
+**J2Commerce 6:** Installed and published on the new site
+
+**Source Database Location: Mode B** if the old database is on the same server, **Mode C** if it is remote
+
+**Source Prefix:** Your Joomla 3 prefix (commonly `jos_`)
+
+**Tiers 9-12:** Run these if you also want to bring across Joomla users, articles, categories, tags, and content custom fields
+
+**Tiers 1-8:** Run to migrate the store itself
+
+**Menus: Create Store Pages** — your old Joomla 3 menu structure is unlikely to fit a modern template
+
+**Images:** Mode B: **Copy Source Images**. Mode C: manual `rsync`/`scp` + **Rebuild Product Images**
+
+**Template:** Pick and install a Joomla 6 template before migrating (so menu items and modules assign to the correct template when created)
+
+**Conflict Mode: Overwrite** (target is fresh — conflicts just mean placeholder data from the new install)
 
 :::tip
 
@@ -417,15 +448,19 @@ You are on Joomla 3 with J2Store, and you do not want to go through three consec
 
 You want to clone a live J2Commerce 6 store into a staging environment so you can test template or configuration changes without risk.
 
-| Setting | Value |
-|---------|-------|
-| **Source Database Location** | **Mode B** (same server) or **Mode C** (remote), pointing at the live site's database |
-| **Tiers 9-12** | Skip unless you also want to clone users and content |
-| **Tiers 1-8** | Run all eight to mirror the store |
-| **Conflict Mode** | **Overwrite** |
-| **Images** | Use **Copy Source Images** or `rsync` then **Rebuild Product Images** |
+- **Settings to use:** Below are the **Settings** and their **Value**.
 
-:::caution
+**Source Database Location: Mode B** (same server) or **Mode C** (remote), pointing at the live site's database
+
+**Tiers 9-12:** Skip unless you also want to clone users and content
+
+**Tiers 1-8:** Run all eight to mirror the store
+
+**Conflict Mode: Overwrite**
+
+**Images:** Use **Copy Source Images** or `rsync` then **Rebuild Product Images**
+
+:::info
 
 Staging clones containing real customer orders and addresses still contain personal data. Treat the staging database with the same security controls as production, and consider anonymizing customer records after cloning.
 
@@ -435,8 +470,8 @@ Staging clones containing real customer orders and addresses still contain perso
 
 The plugin has one parameter in the standard Joomla plugin edit form. All other settings are controlled from the Migration Dashboard UI itself.
 
-| Setting | Description | Notes |
-|---------|-------------|-------|
+| Setting           | Description                                                                                                                                            | Notes                                               |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------- |
 | **Conflict Mode** | Default strategy when a source row already exists in the target. Options: **Skip (keep target)**, **Overwrite (use source)**, **Merge (target wins)**. | You can override this per-row in the Conflicts tab. |
 
 ## Troubleshooting
@@ -490,8 +525,3 @@ Each log entry includes the action that failed, the exception class, and the fil
 **Cause:** The `com_j2commerce` component is not installed or not published on this site.
 
 **Solution:** Install J2Commerce 6 first, then return to the Migration Tool plugin settings. The dashboard will appear once J2Commerce is detected.
-
-## Related Topics
-
-- [Getting Started with J2Commerce](../../getting-started/dashboard.md)
-- [Apps and Extensions Overview](../index.md)
