@@ -939,5 +939,5 @@ The `access` column defaults to `0` on INSERT. J2Commerce admin list views filte
 
 ## Related
 
-- [Payment Plugin Development](../extensions/plugins/payment/payment-plugin-development)
+- [Payment Plugin Development](../../extensions/plugins/payment/payment-plugin-development)
 
