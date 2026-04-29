@@ -29,8 +29,10 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 ## Install the Plugin
 
-:::important
+:::info
+
 If the **Subscription Products** plugin is not installed when this add-on is activated, the plugin will refuse to load. Install and enable `app_subscriptionproduct` first.
+
 :::
 
 Go to **System > Install -> Extensions**
