@@ -2,6 +2,10 @@
 
 Tax Rules connect Tax Profiles to Tax Rates, determining which tax percentage applies based on the customer's location. Each rule defines which Tax Profile, Tax Rate, and address type to use for tax calculation.
 
+:::warning
+The information and examples provided are for general informational purposes only and do not constitute tax or legal advice. J2Commerce and its employees or affiliates make no representations or warranties regarding accuracy or applicability and accept no liability for VAT or tax compliance. Tax regulations, including but not limited to, US, CANADIAN tax or EU VAT rules for digital and physical goods, are complex and subject to change. Users are solely responsible for ensuring compliance and should consult a qualified tax advisor.
+:::
+
 ## Requirements
 
 - PHP 8.3.0+
@@ -18,21 +22,23 @@ Go to **J2Commerce** **->** **Localisation** **->** **Tax Profiles**  **-> Tax R
 
 The tax rules list displays all configured rules:
 
-| Column           | Description                             |
-| ---------------- | --------------------------------------- |
-| **Status**       | Published (green) or Unpublished (grey) |
-| **Tax Profile**  | The tax profile this rule applies to    |
-| **Tax Rate**     | The rate and geozone for this rule      |
-| **Address Type** | Billing or Shipping                     |
-| **ID**           | Internal rule ID                        |
+**Status:** Published (green) or Unpublished (grey)
+
+**Tax Profile:** The tax profile this rule applies to
+
+**Tax Rate:** The rate and geozone for this rule
+
+**Address Type:** Billing or Shipping
+
+**ID:** Internal rule ID
 
 ### Filter Options
 
-| Filter           | Description                                 |
-| ---------------- | ------------------------------------------- |
-| **Search**       | Search by tax profile name or tax rate name |
-| **Tax Profile**  | Filter by tax profile                       |
-| **Address Type** | Filter by Billing or Shipping               |
+**Search:** Search by tax profile name or tax rate name
+
+**Tax Profile:** Filter by tax profile
+
+**Address Type:** Filter by Billing or Shipping
 
 ![](/img/eu-tax-rules.webp)
 
