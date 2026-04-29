@@ -22,7 +22,7 @@ Look for **Cash on Demand**, click the **X,** and it will turn into a **green ch
 
 ## Configuration
 
-After enabling the plugin, click the **Cash on Demand** title to open the settings.
+After enabling the plugin, click the **Cash on Delivery** title to open the settings.
 
 :::tip
 
