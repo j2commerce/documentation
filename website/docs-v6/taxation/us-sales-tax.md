@@ -5,7 +5,9 @@ This guide walks you through setting up sales tax for a US-based J2Commerce stor
 ## Important Legal Notice
 
 :::warning
-US law requires you to collect sales tax in states where you have a physical presence — such as stores, distribution centers, or headquarters. Stores with annual revenues exceeding approximately $2 million should consider using a third-party tax provider for automated rate calculations. Consult a tax expert before making decisions. J2Commerce is not responsible for tax compliance.
+US law requires you to collect sales tax in states where you have a physical presence — such as stores, distribution centers, or headquarters. Stores with annual revenues exceeding approximately $2 million should consider using a third-party tax provider for automated rate calculations.&#x20;
+
+The information and examples provided are for general informational purposes only and do not constitute tax or legal advice. J2Commerce and its employees or affiliates make no representations or warranties regarding accuracy or applicability and accept no liability for VAT or tax compliance. Tax regulations, including but not limited to, US, CANADIAN tax or EU VAT rules for digital and physical goods, are complex and subject to change. Users are solely responsible for ensuring compliance and should consult a qualified tax advisor.
 :::
 
 ## Prerequisites
