@@ -5,7 +5,7 @@ If you sell digital goods (e-books, software, digital courses, downloads), you m
 ## Important Legal Notice
 
 :::warning
-This is example configuration. J2Commerce is not responsible for VAT/Tax compliance. EU VAT rules for digital goods are complex. Consult a tax expert before making decisions.
+This is **example** configuration. J2Commerce and it's employees or offiliates are **NOT** responsible for VAT/Tax compliance. EU VAT rules for digital goods are complex. Consult a tax expert before making decisions.
 :::
 
 ## Understanding the 2015 EU VAT Rules
