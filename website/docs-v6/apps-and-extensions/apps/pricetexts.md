@@ -39,12 +39,11 @@ After installation, you can adjust two global settings.
 
 <!-- SCREENSHOT: Plugins list filtered to "Price Texts for J2Commerce" showing the plugin row -->
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Show text on option prices** | When set to **Show**, the prefix and suffix also appear next to option prices, variant prices, and cart line items. Set to **Hide** to restrict the text to the main product price only. | Hide |
-| **Debug Mode** | When set to **Yes**, the plugin writes diagnostic messages to `administrator/logs/app_pricetexts.php`. Turn this off in production. | No |
+**Show text on option prices:** When set to **Show**, the prefix and suffix also appear next to option prices, variant prices, and cart line items. Set to **Hide** to restrict the text to the main product price only.
 
-4. Click **Save** after making any changes.
+**Debug Mode:** When set to **Yes**, the plugin writes diagnostic messages to `administrator/logs/app_pricetexts.php`. Turn this off in production.
+
+Click **Save** after making any changes.
 
 <!-- SCREENSHOT: Price Texts plugin editor showing the two settings fields -->
 
@@ -69,14 +68,13 @@ These steps set the price text on one individual product. Per-product values ove
 
 <!-- SCREENSHOT: Article editor showing the J2Commerce Cart tab > Apps sub-tab > Price Text section with Prefix and Suffix fields -->
 
-5. Fill in one or both fields:
+Fill in one or both fields:
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Price Prefix** | Text shown immediately before the price, followed by a space. | `From` |
-| **Price Suffix** | Text shown immediately after the price, preceded by a space. | `/ month` |
+**Price Prefix:** Text shown immediately before the price, followed by a space.  **Example**: `From`
 
-6. Click **Save** or **Save & Close**.
+**Price Suffix:** Text shown immediately after the price, preceded by a space. **Example**: `/ month`
+
+Click **Save** or **Save & Close**.
 
 The product detail page will now show the text next to the price. If you clear both fields, the plugin falls back to the category setting.
 
@@ -90,11 +88,14 @@ Category-level settings apply to all products in that category that do not have 
 <!-- SCREENSHOT: Category editor showing the Price Text tab with Prefix and Suffix fields -->
 
 :::note
+
 If you are creating a brand-new category, save it first. The **Price Text** tab shows a notice asking you to save before the fields become available. This is normal — open the category again after saving.
+
 :::
 
-3. Fill in the **Price Prefix** and/or **Price Suffix** fields using the same descriptions above.
-4. Click **Save**.
+Fill in the **Price Prefix** and/or **Price Suffix** fields using the same descriptions above.
+
+Click **Save**.
 
 Every product in this category will now display the text unless it has its own per-product values.
 
@@ -102,15 +103,15 @@ Every product in this category will now display the text unless it has its own p
 
 Once configured, the text renders automatically in every place J2Commerce displays a price:
 
-| Location | Prefix appears | Suffix appears |
-|----------|---------------|----------------|
-| Product detail page — main price | Yes | Yes |
-| Category list — product price | Yes | Yes |
-| Tag list — product price | Yes | Yes |
-| Featured / related product modules | Yes | Yes |
-| Cart line item price | Depends on **Show text on option prices** setting | Depends on **Show text on option prices** setting |
-| Order confirmation | Depends on **Show text on option prices** setting | Depends on **Show text on option prices** setting |
-| Option and variant prices | Depends on **Show text on option prices** setting | Depends on **Show text on option prices** setting |
+| Location                           | Prefix appears                                    | Suffix appears                                    |
+| ---------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| Product detail page — main price   | Yes                                               | Yes                                               |
+| Category list — product price      | Yes                                               | Yes                                               |
+| Tag list — product price           | Yes                                               | Yes                                               |
+| Featured / related product modules | Yes                                               | Yes                                               |
+| Cart line item price               | Depends on **Show text on option prices** setting | Depends on **Show text on option prices** setting |
+| Order confirmation                 | Depends on **Show text on option prices** setting | Depends on **Show text on option prices** setting |
+| Option and variant prices          | Depends on **Show text on option prices** setting | Depends on **Show text on option prices** setting |
 
 When **Show text on option prices** is set to **Hide**, the text only wraps the main product price. When set to **Show**, it also wraps option, variant, and cart prices.
 
@@ -118,13 +119,13 @@ When **Show text on option prices** is set to **Hide**, the text only wraps the 
 
 Here are some patterns you can set up today:
 
-| Goal | Prefix | Suffix |
-|------|--------|--------|
-| "From $29.99" pricing | `From` | _(empty)_ |
-| "$99 / month" subscription | _(empty)_ | `/ month` |
-| "$50 inc. VAT" tax-inclusive display | _(empty)_ | `inc. VAT` |
-| "$25 per kg" unit pricing | _(empty)_ | `per kg` |
-| "Starting at $100" range | `Starting at` | _(empty)_ |
+| Goal                                 | Prefix        | Suffix     |
+| ------------------------------------ | ------------- | ---------- |
+| "From $29.99" pricing                | `From`        | *(empty)*  |
+| "$99 / month" subscription           | *(empty)*     | `/ month`  |
+| "$50 inc. VAT" tax-inclusive display | *(empty)*     | `inc. VAT` |
+| "$25 per kg" unit pricing            | *(empty)*     | `per kg`   |
+| "Starting at $100" range             | `Starting at` | *(empty)*  |
 
 ## What Changed from J2Store
 
