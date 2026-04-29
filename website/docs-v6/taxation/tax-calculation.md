@@ -2,6 +2,10 @@
 
 Understanding how J2Commerce calculates tax is essential for troubleshooting why tax may or may not appear at checkout. The system follows a strict logic chain — if any link is broken, tax will not apply.
 
+:::warning
+The information and examples provided are for general informational purposes only and do not constitute tax or legal advice. J2Commerce and its employees or affiliates make no representations or warranties regarding accuracy or applicability and accept no liability for VAT or tax compliance. Tax regulations, including but not limited to, CANADIAN tax or EU VAT rules for digital and physical goods, are complex and subject to change. Users are solely responsible for ensuring compliance and should consult a qualified tax advisor.
+:::
+
 ## The Three Requirements for Tax
 
 For tax to be calculated correctly, **all three** conditions must be met:
