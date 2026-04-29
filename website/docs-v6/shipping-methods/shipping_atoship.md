@@ -44,9 +44,9 @@ Before configuring the plugin, you need an AtoShip account with API credentials.
 
    ![](/img/ato-api1.webp)
 
-:::note
+:::info
 
-NOTE: Keep both keys handy — you will enter them in the plugin settings below.&#x20;
+**NOTE**: Keep both keys handy — you will enter them in the plugin settings below.&#x20;
 
 :::
 
