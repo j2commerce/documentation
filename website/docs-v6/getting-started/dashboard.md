@@ -4,8 +4,6 @@ The J2Commerce Dashboard is the first screen you see after opening J2Commerce in
 
 The dashboard is also the home for the **Store Setup Wizard**, an onboarding checklist that walks you through every step needed to launch your store.
 
-***
-
 ## Requirements
 
 - with PHP 8.3.0 +
@@ -36,8 +34,6 @@ The direct URL is:
 index.php?option=com_j2commerce&view=dashboard
 ```
 
-***
-
 ## Prerequisites
 
 Before the dashboard displays meaningful data, make sure that:
@@ -47,8 +43,6 @@ Before the dashboard displays meaningful data, make sure that:
 - Your website timezone is correctly set in **System -> Global Configuration -> Server** tab -> **Website Time Zone**. All dashboard reporting depends on this setting (see [Timezone and Reporting](#timezone-and-reporting) below).
 
   ![](/img/timezone.webp)
-
-***
 
 ## Page Layout
 
@@ -64,8 +58,6 @@ The dashboard sections appear in this order from top to bottom: Each one will be
 8. **Plugin quick icons** -- shortcut tiles from app plugins
 9. **Bottom module position** -- full-width area for extra modules
 10. **Store Setup Wizard** -- offcanvas panel (only when setup is incomplete)
-
-***
 
 ## Toolbar
 
@@ -342,6 +334,8 @@ Each icon tile can include:
 - A Font Awesome icon
 - A color style (e.g., success, warning, danger)
 - An optional badge count that updates automatically via AJAX polling
+
+
 
 
 :::info
