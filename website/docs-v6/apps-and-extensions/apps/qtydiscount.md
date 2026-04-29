@@ -18,18 +18,33 @@ The app reads the tiers you already set up in **Advanced Pricing** and renders t
 - J2Commerce installed and active
 - At least one product with **Advanced Pricing** rows configured on its master variant (see [Advanced Pricing](../../catalog/advanced-pricing.md))
 
-## Installation
+## Purchase and Download
 
-The Quantity Discounts app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
+**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Extensions**
 
-1. Purchase and download the `app_qtydiscount.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_qtydiscount.zip` package file.
-4. The plugin installs and enables automatically.
+**Step 2:** Locate the **Quantity Discount** **->** click **View Details -> Add to cart -> Checkout**.&#x20;
 
-After installation, go to **J2Commerce** -> **Apps** to configure it.
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
 
-<!-- SCREENSHOT: J2Commerce Apps screen with the Quantity Discounts app visible in the list -->
+## Install the App
+
+Go to **System > Install -> Extensions**
+
+Upload the `app_qtydiscount.zip` package file or use the Install from URL option.
+
+![Custom Tabs](<../../../assets/user-group-3 (7).webp>)
+
+## Configure the Plugin
+
+The plugin installs and enables automatically.
+
+Once you have installed the plugin, there are **two** ways you can access it.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![Enable custom tab app](/img/tabs-apps.webp)
 
 ## Configuration
 
@@ -41,11 +56,13 @@ Open the plugin settings by clicking **Quantity Discounts** in the Apps list.
 
 Controls which pages display the quantity discount table.
 
-| Option | What it does |
-|--------|-------------|
-| **Product View Only** | Table appears only on single-product pages. Best for stores where the table would clutter category grid layouts. |
-| **Category View Only** | Table appears in category and tag listing pages but not on single-product pages. Rarely needed on its own. |
-| **Product and Category Views** | Table appears everywhere. Good when products are typically bought in bulk and you want the pricing visible at every stage. |
+Below shows the Options and what they do.
+
+**Product View Only:** Table appears only on single-product pages. Best for stores where the table would clutter category grid layouts.
+
+**Category View Only:** Table appears in category and tag listing pages but not on single-product pages. Rarely needed on its own.
+
+**Product and Category Views:** Table appears everywhere. Good when products are typically bought in bulk and you want the pricing visible at every stage.
 
 **Recommended:** Start with **Product View Only** (the default). Move to **Product and Category Views** if your customers frequently browse category pages before deciding on quantity.
 
@@ -53,14 +70,15 @@ Controls which pages display the quantity discount table.
 
 An optional PHP date format string used when a pricing tier has a start or end date. Leave the field empty to inherit the format from J2Commerce global settings.
 
-Common formats:
+Common formats and their Example Output are listed below:
 
-| Format | Example output |
-|--------|---------------|
-| `d-M-Y` | 01-Jan-2026 |
-| `d/m/Y` | 01/01/2026 |
-| `F j, Y` | January 1, 2026 |
-| `Y-m-d` | 2026-01-01 |
+`d-M-Y`: 01-Jan-2026
+
+`d/m/Y`:  01/01/2026
+
+`F j, Y`: January 1, 2026
+
+`Y-m-d`: 2026-01-01
 
 If you have no date-restricted tiers, this setting has no visible effect — the date column only appears in the table when at least one tier has a start or end date set.
 
@@ -174,9 +192,3 @@ The J2Commerce version of this app is a complete rewrite from the J2Store origin
 - **Vanilla JavaScript.** The variant-switching update uses no jQuery. It works with any Joomla 6 template.
 - **Parameterized queries throughout.** All database access uses bound parameters, following Joomla 6 security standards.
 - **Debug logging with the Joomla 6 Log API.** When debug mode is on, diagnostic entries go to the standard Joomla log directory in a dedicated log file.
-
-## Related Topics
-
-- [Advanced Pricing](../../catalog/advanced-pricing.md) — Set up the quantity tiers that this app displays
-- [Flexible Variable Products](app_flexivariable.md) — Variable products whose variant switching triggers live table updates
-- [Quantity Dropdown](quantityprice.md) — A companion app that shows a quantity selector with per-tier pricing
