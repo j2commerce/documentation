@@ -19,12 +19,12 @@ The tool opens on the **Shipping Configuration Dashboard** — a home screen tha
 
 At the top of the dashboard, four stat cards summarize your current shipping configuration. Each card displays a number and turns green or red based on whether things look healthy.
 
-| Card | What It Shows | Green Means | Red Means |
-|------|---------------|-------------|----------|
-| **Enabled Shipping Methods** | How many shipping methods are active | At least one method is ready | No methods are enabled — customers cannot check out |
-| **Enabled Geo Zones** | How many geo zones are active | At least one geo zone is defined | No geo zones exist — methods may not know where to apply |
-| **Products with Shipping** | How many products have shipping turned on | At least one shippable product exists | No products are set up to ship |
-| **Total Products** | The total number of products in your store | Informational only (always blue) | N/A |
+| Card                         | What It Shows                              | Green Means                           | Red Means                                                |
+| ---------------------------- | ------------------------------------------ | ------------------------------------- | -------------------------------------------------------- |
+| **Enabled Shipping Methods** | How many shipping methods are active       | At least one method is ready          | No methods are enabled — customers cannot check out      |
+| **Enabled Geo Zones**        | How many geo zones are active              | At least one geo zone is defined      | No geo zones exist — methods may not know where to apply |
+| **Products with Shipping**   | How many products have shipping turned on  | At least one shippable product exists | No products are set up to ship                           |
+| **Total Products**           | The total number of products in your store | Informational only (always blue)      | N/A                                                      |
 
 If any of the first three cards shows red, customers are likely to run into problems at checkout. Use the steps below to work through each issue.
 
@@ -64,14 +64,15 @@ Click the **Check Product Settings** button on the dashboard (or **Next: Product
 
 ### Product summary cards
 
-Four cards appear at the top of the product list:
+Four cards appear at the top of the product list: Below shows the Card and what it shows.
 
-| Card | What It Shows |
-|------|---------------|
-| **Products OK** (green) | Products fully configured for shipping |
-| **Products with Warnings** (yellow) | Products missing weight or dimensions |
-| **Products with Errors** (red) | Products with shipping disabled or critical data missing |
-| **Total Products Checked** (blue) | Total number of products scanned |
+**Products OK** (green): Products fully configured for shipping
+
+**Products with Warnings** (yellow): Products missing weight or dimensions
+
+**Products with Errors** (red): Products with shipping disabled or critical data missing
+
+**Total Products Checked** (blue): Total number of products scanned
 
 ### Product table
 
@@ -87,11 +88,13 @@ Below the summary, a table lists every product with its shipping status. The col
 
 ### Status badge legend
 
-| Badge | Meaning |
-|-------|--------|
-| **OK** (green) | Shipping is enabled and weight or dimensions are set |
-| **Warning** (yellow) | Shipping is enabled but weight or dimensions are missing |
-| **Error** (red) | Shipping is disabled, or the product has no weight and no dimensions |
+Below shows the Badge and their meaning.
+
+**OK** (green): Shipping is enabled and weight or dimensions are set
+
+**Warning** (yellow): Shipping is enabled but weight or dimensions are missing
+
+**Error** (red): Shipping is disabled, or the product has no weight and no dimensions
 
 You can use the search and filter tools above the table to narrow down to only products with warnings or errors.
 
@@ -103,11 +106,13 @@ Click the edit icon in the **Actions** column for any product to open its Joomla
 
 The dashboard and the Step 1 diagnostic page both include a **Quick Actions** panel with shortcut links. These save you from navigating through menus manually.
 
-| Link | Where It Goes |
-|------|---------------|
-| **Manage Shipping Methods** | **J2Commerce** -> **Shipping** -> **Shipping Methods** |
-| **Manage Geo Zones** | **J2Commerce** -> **Shipping** -> **Geo Zones** |
-| **Manage Products** | **J2Commerce** -> **Catalog** -> **Products** (dashboard only) |
+Below shows the Link and where it goes.
+
+**Manage Shipping Methods: J2Commerce** -> **Shipping** -> **Shipping Methods**
+
+**Manage Geo Zones: J2Commerce** -> **Shipping** -> **Geo Zones**
+
+**Manage Products: J2Commerce** -> **Catalog** -> **Products** (dashboard only)
 
 ## Common Issues
 
@@ -143,8 +148,6 @@ This is usually a geo zone issue. Open **Manage Geo Zones** and confirm that the
 2. Go to **J2Commerce** -> **Shipping** -> **Shipping Methods** and confirm the method has a green status icon.
 3. Return to the Shipping Troubleshooter and refresh the page.
 
----
-
 ### Step 1 shows geo zones as a warning even though I have geo zones configured
 
 **Cause:** Geo zones exist but may have no location rules assigned to them, so they appear incomplete.
@@ -154,8 +157,6 @@ This is usually a geo zone issue. Open **Manage Geo Zones** and confirm that the
 1. Go to **J2Commerce** -> **Shipping** -> **Geo Zones**.
 2. Open each geo zone and confirm it has at least one country or region added in its **Locations** list.
 3. Save and return to the troubleshooter.
-
----
 
 ### Step 2 shows all products with errors even though shipping is enabled on the product
 
@@ -168,8 +169,6 @@ This is usually a geo zone issue. Open **Manage Geo Zones** and confirm that the
 3. If the product has variants, check each variant's shipping setting individually.
 4. Save the product and return to the troubleshooter to re-run the check.
 
----
-
 ### The troubleshooter shows everything is OK but shipping still does not appear at checkout
 
 **Cause:** The issue may be more specific than the basic checks cover — for example, a shipping method rate range that does not match the cart total, or a geo zone that does not include the customer's state or province.
@@ -180,8 +179,6 @@ This is usually a geo zone issue. Open **Manage Geo Zones** and confirm that the
 2. Check whether minimum or maximum order amount settings on each method are excluding the customer's cart.
 3. Confirm the customer's country and zone (state or province) are both covered by an active geo zone.
 
----
-
 ### I fixed a product but it still shows a Warning in the table
 
 **Cause:** The page may be displaying results from before your edit.
@@ -189,10 +186,3 @@ This is usually a geo zone issue. Open **Manage Geo Zones** and confirm that the
 **Solution:**
 
 Reload the troubleshooter page or click **Back to Start** and then **Check Product Settings** again to refresh the data.
-
-## Related Topics
-
-- [Shipping Methods](../shipping-methods/)
-- [Geo Zones](../setup/geozones.md)
-- [Managing Products](./managing-products.md)
-- [Inventory](./inventory.md)

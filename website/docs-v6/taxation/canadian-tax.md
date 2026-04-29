@@ -5,7 +5,7 @@ This guide explains how to configure tax for Canadian stores, using Saskatchewan
 ## Important Legal Notice
 
 :::warning
-This is an example configuration. J2Commerce is not responsible for tax compliance. Tax rates change frequently. Consult a tax expert before making decisions.
+The information and examples provided are for general informational purposes only and do not constitute tax or legal advice. J2Commerce and its employees or affiliates make no representations or warranties regarding accuracy or applicability and accept no liability for VAT or tax compliance. Tax regulations, including but not limited to, US, CANADIAN tax or EU VAT rules for digital and physical goods, are complex and subject to change. Users are solely responsible for ensuring compliance and should consult a qualified tax advisor.
 :::
 
 ## Prerequisites

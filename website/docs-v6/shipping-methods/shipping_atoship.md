@@ -44,9 +44,9 @@ Before configuring the plugin, you need an AtoShip account with API credentials.
 
    ![](/img/ato-api1.webp)
 
-:::note
+:::info
 
-NOTE: Keep both keys handy — you will enter them in the plugin settings below.&#x20;
+**NOTE**: Keep both keys handy — you will enter them in the plugin settings below.&#x20;
 
 :::
 
@@ -66,9 +66,7 @@ Upload the `shipping_atoship.zip` package file
 
 ![](/img/ato-install.webp)
 
-## Configure the Plugin
-
-The plugin installs and enables automatically. All you have to do now is set it up.
+## Enable the Plugin
 
 There are **two** ways you can access the Plugin.&#x20;
 
@@ -77,8 +75,6 @@ There are **two** ways you can access the Plugin.&#x20;
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
 
 ![](/img/atoship-app.webp)
-
-## Enable the Plugin
 
 &#x20;Look for **AtoShip**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
@@ -100,9 +96,9 @@ Once you click on the **AtoShip** Title next to the green checkmark, you are rea
 
 ![](/img/atoship-config.webp)
 
-**Sandbox Mode:** When set to **Yes**, the plugin uses your test API key and no real charges are made. Set to **No** for live shipments.
+**Sandbox Mode:** When set to '**Yes'**, the plugin uses your test API key and no real charges are made. Set to '**No'** for live shipments.
 
-**Sandbox API Key:** Your test API key (starts with `ak_test_`). Only visible when Sandbox Mode is Yes.
+**Sandbox API Key:** Your test API key (starts with `ak_test_`). Only visible when Sandbox Mode is '**Yes**'.
 
 **Live API Key:** Your production API key (starts with `ak_live_`). Only visible when **Sandbox Mode** is '**No**'.
 
@@ -130,7 +126,7 @@ The ship-from address is your warehouse or business location. AtoShip uses this 
 
 All five fields are required. Save the plugin after filling it in — the service discovery tool relies on this address.
 
-:::caution
+:::info
 
 Make sure your state code is the standard 2-letter abbreviation (e.g., `CA` for California, `NY` for New York, `TX` for Texas). Using the full state name will cause rate calculation errors.
 
@@ -176,8 +172,10 @@ After saving your Ship-From address, use the **Discover Available Services** but
 4. Click **Apply Selection** to save your choices.
 5. Click **Save** at the top of the page to persist your selection.
 
-:::important
+:::info
+
 You **must** click both **Apply Selection** and then **Save** the plugin. If you only click Apply Selection without saving, your service choices will be lost when you leave the page.
+
 :::
 
 ### Show Delivery Time
@@ -441,7 +439,7 @@ If you need to cancel a shipping label (e.g., the order was cancelled or you nee
 
 The label status changes to **Voided** (dark badge) and the void button is removed. You can then create a new label if needed.
 
-:::note
+:::info
 
 Note: Voiding a label may not be possible after the carrier has scanned the package. Check your AtoShip account for carrier-specific void policies.
 

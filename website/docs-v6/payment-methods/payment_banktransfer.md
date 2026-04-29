@@ -28,7 +28,7 @@ Look for **Bank Transfer**, click the **X,** and it will turn into a **green che
 
 ## Configuration
 
-After enabling the plugin, click the **Cash on Demand** title to open the settings.
+After enabling the plugin, click the **Bank Transfer** title to open the settings.
 
 :::tip
 

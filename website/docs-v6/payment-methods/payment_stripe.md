@@ -53,7 +53,7 @@ You can install the **Stripe** Payment plugin using the Joomla installer. The fo
 
 In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
-1. Upload the plugin ZIP file or use the Install from URL option.
+1. Upload the **Payment\_Stripe** ZIP file or use the Install from URL option.
 
    ![](/img/autho-install5.webp)
 

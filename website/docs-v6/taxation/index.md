@@ -2,6 +2,10 @@
 
 Taxation in J2Commerce uses a three-tier system: Tax Profiles, Tax Rates, and Tax Rules. Understanding how these work together is essential for configuring accurate tax calculations for your store.
 
+:::warning
+The information and examples provided are for general informational purposes only and do not constitute tax or legal advice. J2Commerce and its employees or affiliates make no representations or warranties regarding accuracy or applicability and accept no liability for VAT or tax compliance. Tax regulations, including but not limited to, US, CANADIAN tax or EU VAT rules for digital and physical goods, are complex and subject to change. Users are solely responsible for ensuring compliance and should consult a qualified tax advisor.
+:::
+
 ## Requirements
 
 - PHP 8.3.0+

@@ -81,13 +81,13 @@ This plugin is a separate add-on available from the **J2Commerce Extensions Stor
 
 ## Installing the Plugin
 
-You can install this **Kustom** Payment plugin using the Joomla installer. The following steps help you with a successful installation.
+You can install this **Kustom** **Payment** plugin using the Joomla installer. The following steps help you with a successful installation.
 
 In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
-1. Upload the plugin ZIP file or use the Install from URL option.
+Upload the **Payment\_Kustom** ZIP file or use the Install from URL option.
 
-   ![](/img/autho-install5.webp)
+![](/img/autho-install5.webp)
 
 ## Enable the Plugin&#x20;
 
