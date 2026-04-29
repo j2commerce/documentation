@@ -16,7 +16,7 @@ Two separate email types are supported: an out-of-stock alert (sent when quantit
 - J2Commerce installed and active on your Joomla 6 site
 - An admin email address configured in J2Commerce (**J2Commerce** **->** **Configuration** **->** **Store Profile**)
 - Inventory tracking enabled on your products (the **Track Inventory** option must be on)
-- Joomla's mail settings configured and working (**System** -> **Global Configuration ->** **Server ->** **Mail Settings**)
+- Joomla's mail settings configured and working (**System** -> **Global Configuration ->** **Server** tab **->** **Mail Settings**)
 
 ## What's New in J2Commerce 6
 

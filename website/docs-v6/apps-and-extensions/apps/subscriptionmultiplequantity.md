@@ -17,53 +17,51 @@ Two optional settings let you control how the extra quantity affects pricing: yo
 - The **Subscription Products** (`app_subscriptionproduct`) add-on installed and enabled — this add-on depends on it
 - At least one subscription product created and published
 
-## Installation
+### Purchase and Download
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `app_subscriptionmultiplequantity.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_subscriptionmultiplequantity.zip` package file.
-4. The plugin installs automatically. A success message confirms the installation.
+**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
-<!-- SCREENSHOT: Extensions install page showing successful installation of Subscription Multiple Quantity -->
+**Step 2:** Locate the **Subscription Multiple Quantity** package **->** click **View Details -> Add to cart -> Checkout**.&#x20;
 
-:::important
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
+
+## Install the Plugin
+
+:::info
+
 If the **Subscription Products** plugin is not installed when this add-on is activated, the plugin will refuse to load. Install and enable `app_subscriptionproduct` first.
+
 :::
 
-### Enable the Plugin
+Go to **System > Install -> Extensions**
 
-After installation, the plugin must be enabled before it takes effect.
+Upload the `app_subscriptionmultiplequantity.zip` package file or use the Install from URL option.
 
-1. Go to **System** -> **Manage** -> **Plugins**.
-2. Search for **Subscription Multiple Quantity**.
-3. Click the status toggle to enable it, or open the plugin and set **Status** to **Enabled**, then click **Save & Close**.
+![Custom Tabs](<../../../assets/user-group-3 (7).webp>)
 
-<!-- SCREENSHOT: Joomla Plugin Manager showing Subscription Multiple Quantity with status toggle enabled -->
+## Enable the Plugin
 
----
+Once you have installed the app, you will need to enable it. There are **two** ways you can access the app.&#x20;
 
-## Configuration
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-With the plugin enabled, open its settings through the Joomla Plugin Manager.
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-1. Go to **System** -> **Manage** -> **Plugins**.
-2. Search for **Subscription Multiple Quantity**.
-3. Click the plugin name to open its settings.
-4. Adjust the options described below, then click **Save & Close**.
+![Enable custom tab app](/img/tabs-apps.webp)
 
-<!-- SCREENSHOT: Plugin Manager edit page for Subscription Multiple Quantity showing the three toggle switches -->
+Search for **Subscription Multiple Quantity**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-### Configuration Options
+## Configure the Plugin
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Multiply Sign-Up Fee by Quantity** | When set to **Yes**, the one-time sign-up fee is multiplied by the quantity the customer orders. If a customer buys 3 subscriptions and the sign-up fee is $5.00, they are charged $15.00 at checkout. Set to **No** to charge the sign-up fee only once regardless of quantity. | Yes |
-| **Remove Shipping for Subscription Renewals** | When set to **Yes**, shipping charges are zeroed out on automatic renewal orders. This prevents customers from being billed for delivery on a digital subscription or when shipping on renewal does not apply to your business model. Set to **No** to keep the original shipping amount on all renewal orders. | No |
-| **Debug Mode** | Enable debug logging for troubleshooting. Disable this in production environments once the add-on is working correctly. | No |
+Once enabled, click on the title to open it.
 
----
+**Multiply Sign-Up Fee by Quantity:** When set to **Yes**, the one-time sign-up fee is multiplied by the quantity the customer orders. If a customer buys 3 subscriptions and the sign-up fee is $5.00, they are charged $15.00 at checkout. Set to **No** to charge the sign-up fee only once regardless of quantity.
+
+**Remove Shipping for Subscription Renewals:** When set to **Yes**, shipping charges are zeroed out on automatic renewal orders. This prevents customers from being billed for delivery on a digital subscription or when shipping on renewal does not apply to your business model. Set to **No** to keep the original shipping amount on all renewal orders.
+
+**Debug Mode:** Enable debug logging for troubleshooting. Disable this in production environments once the add-on is working correctly.
 
 ## How It Works
 
@@ -93,15 +91,11 @@ With **Remove Shipping for Subscription Renewals** set to **Yes**, when the cron
 
 This setting has no effect on the initial checkout order — it only applies to orders created automatically by the renewal cron.
 
----
-
 ## Tips
 
 - If you sell physical subscription boxes, leave **Remove Shipping for Subscription Renewals** set to **No** so customers are charged for delivery on each shipment.
 - For digital subscriptions, memberships, or access-only products, set **Remove Shipping for Subscription Renewals** to **Yes** — there is nothing to ship on renewal.
 - The sign-up fee multiplication works together with the Subscription Products plugin settings. If the Subscription Products plugin has **Add sign-up fee on each purchase** disabled on the product, the sign-up fee is only charged once regardless of this setting.
-
----
 
 ## Troubleshooting
 
@@ -111,9 +105,9 @@ This setting has no effect on the initial checkout order — it only applies to 
 
 **Solution:**
 
-1. Go to **System** -> **Manage** -> **Plugins** and confirm **Subscription Multiple Quantity** is enabled (green status toggle).
+1. Go to **J2Commerce** -> **Apps** and confirm **Subscription Multiple Quantity** is enabled (green checkmark).
 2. Search for **Subscription Products** and confirm it is also enabled.
-3. If both are enabled, clear the Joomla cache: **System** -> **Clear Cache** -> **Clear All**.
+3. If both are enabled, clear the Joomla cache: **System -> Maintenance -> Clear Cache** -> **Clear All**.
 4. Test the product page again in an incognito browser window.
 
 ### The sign-up fee is not being multiplied despite the setting being Yes
@@ -132,7 +126,7 @@ This setting has no effect on the initial checkout order — it only applies to 
 
 **Solution:**
 
-1. Go to **System** -> **Manage** -> **Plugins** and open **Subscription Multiple Quantity**.
+1. Go to **J2Commerce** -> **Apps** and open **Subscription Multiple Quantity**.
 2. Confirm **Remove Shipping for Subscription Renewals** is set to **Yes** and click **Save & Close**.
 3. This change applies to future renewal orders only. Past renewal orders that already included shipping are not retroactively modified.
 
@@ -146,7 +140,7 @@ This setting has no effect on the initial checkout order — it only applies to 
 2. Trigger a cron run by visiting the Subscription Products cron URL in a browser.
 3. Check `administrator/logs/` for a log file from this plugin.
 
----
+***
 
 ## What Changed from J2Store
 
@@ -155,11 +149,3 @@ If you used this add-on with J2Store, here is what is different in J2Commerce 6:
 - **Plugin Manager configuration** — Settings are now managed directly in the standard Joomla **Plugin Manager** (**System** -> **Manage** -> **Plugins**). There is no longer a separate Apps screen for this plugin.
 - **Remove Shipping for Subscription Renewals** — This option was present in the J2Store version of the plugin but was hidden and undocumented. In J2Commerce 6 it is a clearly labelled toggle in the plugin settings.
 - **Debug Mode** — A dedicated debug toggle is now included for easier troubleshooting.
-
----
-
-## Related Topics
-
-- [Subscription Products](./subscriptionproduct.md)
-- [Apps and Extensions](../index.md)
-- [Cron Tasks](../../configuration/cron-tasks.md)

@@ -17,39 +17,46 @@ This is the right tool when your tax requirements vary by location. For example,
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Installation
+## Purchase and Download
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `plg_j2commerce_app_taxrate.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the ZIP file using the file picker. The plugin installs and enables automatically.
+**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
-<!-- SCREENSHOT: System > Install > Extensions upload screen with the taxrate zip selected -->
+**Step 2:** Locate the **Advanced Tax Rates** package **->** click **View Details -> Add to cart -> Checkout**.&#x20;
 
-## Enable the Plugin
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
 
-If the plugin did not enable automatically after installation:
+## Install the Plugin
 
-1. Go to **System** -> **Manage** -> **Extensions**.
-2. Search for **Advanced Tax Rates**.
-3. Click the status toggle so it turns green.
+Go to **System > Install -> Extensions**&#x20;
 
-You can also enable it from **J2Commerce** -> **Apps** by finding **Advanced Tax Rates** in the list.
+Install the `plg_j2commerce_app_taxrate.zip` package file or use the Install from URL option.
 
-<!-- SCREENSHOT: J2Commerce > Apps list showing Advanced Tax Rates with enabled toggle -->
+![Custom Tabs](<../../../assets/user-group-3 (7).webp>)
 
-## Open the Plugin Settings
+## Enable the App
 
-1. Go to **J2Commerce** -> **Apps**.
-2. Click the name **Advanced Tax Rates** to open its configuration page.
+Once you have installed the app, you will need to enable it. There are **two** ways you can access the app.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![Enable custom tab app](/img/tabs-apps.webp)
+
+**Search** for **Advanced Tax Rates**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+## Configure the Plugin Settings
+
+<!-- SCREENSHOT: Advanced Tax Rates configuration page showing the Tax Classes section -->
+
+Click the name **Advanced Tax Rates** to open its configuration page.
 
 The configuration page has two main areas:
 
 - **Tax Classes** — where you create and manage tax classes and their rates
 - **Advanced** — postcode suffix stripping and a debug logging option
-
-<!-- SCREENSHOT: Advanced Tax Rates configuration page showing the Tax Classes section -->
 
 ## How It Works
 
@@ -102,15 +109,19 @@ Click **View / Edit Rates** next to a tax class to open its rate management pane
 
 Use the "Add New Tax Rate" form at the top of the panel. Fill in the fields and click **New**:
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Country** | Country this rate applies to. Use `*` for all countries. | `USA` |
-| **Zone** | State or zone within the country. Use `*` for all zones. Zones load dynamically when you pick a country. | `CA` |
-| **Postcode** | Exact postcode, wildcard pattern, or `*` for all. | `90*` |
-| **Address Type** | Whether to match the **Billing** or **Shipping** address. | `Billing` |
-| **Rate (%)** | The tax percentage to apply. | `8.25` |
-| **Rate Name** | Label shown on invoices and order summaries. | `CA Sales Tax` |
-| **Priority** | Lower numbers run first when multiple rates match. | `0` |
+**Country:** Country this rate applies to. Use `*` for all countries. **Example:** `USA`
+
+**Zone:** State or zone within the country. Use `*` for all zones. Zones load dynamically when you pick a country. **Example:** `CA`
+
+**Postcode:** Exact postcode, wildcard pattern, or `*` for all. **Example:** `90*`
+
+**Address Type:** Whether to match the **Billing** or **Shipping** address. **Example:** `Billing`
+
+**Rate (%):** The tax percentage to apply. **Example:** `8.25`
+
+**Rate Name:** Label shown on invoices and order summaries. **Example:** `CA Sales Tax`
+
+**Priority:** Lower numbers run first when multiple rates match. **Example:** `0`
 
 <!-- SCREENSHOT: Add New Tax Rate form with fields filled in -->
 
@@ -118,12 +129,12 @@ Use the "Add New Tax Rate" form at the top of the panel. Fill in the fields and 
 
 Postcode matching supports partial wildcards using an asterisk at the end of the value.
 
-| Postcode value | What it matches |
-|----------------|----------------|
-| `*` | Any postcode |
-| `90210` | Exactly 90210 only |
-| `90*` | All postcodes starting with 90 |
-| `SW1A*` | All postcodes starting with SW1A |
+| Postcode value | What it matches                  |
+| -------------- | -------------------------------- |
+| `*`            | Any postcode                     |
+| `90210`        | Exactly 90210 only               |
+| `90*`          | All postcodes starting with 90   |
+| `SW1A*`        | All postcodes starting with SW1A |
 
 Use wildcards to cover a region without listing every individual postcode.
 
@@ -171,7 +182,9 @@ A message tells you how many rows were saved. Rows with formatting errors are sk
 <!-- SCREENSHOT: CSV Import form showing file upload, path field, and delimiter field -->
 
 :::info
+
 Importing adds to the existing rates — it does not replace them. To reset a class before importing, delete its existing rates first.
+
 :::
 
 ## Exporting Tax Rates to CSV
@@ -226,8 +239,3 @@ Spelling and capitalisation must match. There should be no extra spaces or colum
 **Cause:** The country has no zones (states or provinces) configured in J2Commerce, or the AJAX request failed.
 
 **Solution:** Go to **J2Commerce** -> **Localisation** -> **Zones** and verify that zones exist for the country. If zones exist but the dropdown still does not populate, check your browser's developer console for JavaScript errors.
-
-## Related Topics
-
-- [Tax Profiles](../../configuration/tax-profiles.md)
-- [Checkout Configuration](../../checkout/index.md)
