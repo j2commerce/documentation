@@ -1,10 +1,3 @@
----
-title: "Free Shipping"
-sidebar_label: "Free Shipping"
-sidebar_position: 2
-description: "Offer free shipping at checkout with optional order minimums, geozone restrictions, coupon requirements, and user group exclusions."
----
-
 # Free Shipping
 
 The Free Shipping plugin lets you offer customers a zero-cost shipping option at checkout. You can keep it simple — always free for everyone — or add conditions such as a minimum order total, a geographic restriction, a coupon code requirement, or exclusions for specific user groups.
@@ -19,13 +12,7 @@ This plugin is ideal for stores that want to reward customers who spend above a 
 
 ## Installation
 
-This plugin ships with J2Commerce 6 and is available immediately after installation. To enable it:
-
-1. Go to **System** -> **Manage** -> **Extensions**.
-2. Search for **Free Shipping**.
-3. Click the checkbox next to it and click **Enable** in the toolbar.
-
-You can also enable it directly from the shipping methods screen — see [Enable the Plugin](#enable-the-plugin) below.
+This plugin ships with J2Commerce 6 and is available immediately after installation.&#x20;
 
 ## Enable the Plugin
 
@@ -35,15 +22,15 @@ There are two ways to reach the shipping methods screen.
 
 **Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Shipping Methods**.
 
-<!-- SCREENSHOT: Shipping Methods list screen with Free Shipping entry visible -->
+![](/img/free-shipping.webp)
 
 Find **Free Shipping** in the list, click the **X** icon, and it will turn into a green checkmark. The plugin is now enabled and ready to configure.
+
+![](/img/free-shipping1.webp)
 
 ## Configure the Plugin
 
 Click the **Free Shipping** title (next to the green checkmark) to open the settings.
-
-<!-- SCREENSHOT: Free Shipping plugin settings screen showing all fields -->
 
 :::tip
 
@@ -51,15 +38,21 @@ Click the **Toggle Inline Help** button at the top of the plugin settings page t
 
 :::
 
+![](/img/free-shipping2.webp)
+
 ### Display Settings
+
+![](/img/free-shipping3.webp)
 
 **Display Name** — The shipping option label shown to customers at checkout. The default is "Free Shipping". You can change this to anything you like, such as "Free Delivery" or "Complimentary Shipping".
 
 **Display Image** — An optional image that appears next to the shipping option at checkout. Upload an image using the media picker.
 
----
+***
 
 ### Geozone Restriction
+
+![](/img/free-shipping4.webp)
 
 **Geozone Restriction** — Limit free shipping to customers in specific geographic zones. Select one or more geozones from the list. Leave this field empty to make free shipping available to customers in all locations.
 
@@ -69,9 +62,11 @@ Geozones are configured under **J2Commerce** -> **Setup** -> **Geozones**. Each 
 
 :::
 
----
+***
 
 ### Order Subtotal Limits
+
+![](/img/free-shipping5.webp)
 
 Use these two fields to set a spending window for free shipping. Both fields are optional.
 
@@ -85,13 +80,15 @@ The most common use case is setting a minimum subtotal only — for example, fre
 
 :::
 
----
+***
 
 ### Coupon and Product Options
 
-**Requires Free Shipping Coupon** — When set to **Yes**, free shipping only appears at checkout if the customer has applied a coupon that grants free shipping. This lets you run targeted promotions without making free shipping available to everyone. Default is **No**.
+![](/img/free-shipping6.webp)
 
-**Check Shipping Products Only** — When set to **Yes**, the subtotal thresholds (minimum and maximum) are calculated using only the products in the cart that require shipping. Digital or download products are excluded from the calculation. Default is **No**.
+**Requires Free Shipping Coupon** — When set to **Yes**, free shipping only appears at checkout if the customer has applied a coupon that grants free shipping. This lets you run targeted promotions without making free shipping available to everyone. Default is **Never**.
+
+**Check Shipping Products Only** — When set to **Yes**, the subtotal thresholds (minimum and maximum) are calculated using only the products in the cart that require shipping. Digital or download products are excluded from the calculation. Default is **Never**.
 
 :::info
 
@@ -99,38 +96,49 @@ Enable **Check Shipping Products Only** if your store sells a mix of physical an
 
 :::
 
----
+***
 
 ### Exclusions
+
+![](/img/free-shipping7.webp)
 
 **Exclude When These Methods Available** — Select other shipping methods from the list. If any of the selected methods are available in the customer's current rate set, free shipping will be hidden. This is useful if you want to prevent free shipping from appearing alongside premium options like express delivery.
 
 **Exclude User Groups** — Select one or more Joomla user groups. Members of these groups will not see the free shipping option at checkout. Use this to exclude wholesale customers, staff, or any group you do not want to receive free shipping.
 
----
+***
 
-### Subtemplate
+### Template Style
 
-**Subtemplate** — Select a custom layout template for how free shipping appears at checkout. Leave blank to use the default layout. This option is for stores that have created custom plugin subtemplates.
+![](/img/free-shipping8.webp)
 
----
+**Template Style** — Select a custom layout template for how free shipping appears at checkout. Leave blank to use the default layout. This option is for stores that have created custom plugin subtemplates.
+
+***
 
 ## Configuration Reference
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Display Name** | Label shown at checkout | Free Shipping |
-| **Display Image** | Optional checkout image | — |
-| **Geozone Restriction** | Restrict to selected geozones | None (all zones) |
-| **Minimum Subtotal** | Cart must be at or above this amount | `0` (disabled) |
-| **Maximum Subtotal** | Cart must be below this amount | `-1` (disabled) |
-| **Requires Free Shipping Coupon** | Only show when a free shipping coupon is applied | No |
-| **Check Shipping Products Only** | Apply subtotal limits to shippable items only | No |
-| **Exclude When These Methods Available** | Hide free shipping when selected methods are present | None |
-| **Exclude User Groups** | Hide free shipping for members of these groups | None |
-| **Subtemplate** | Custom layout override | Default |
+**Display Name:** Label shown at checkout. The name displayed to customers during checkout.
 
----
+**Display Image:** Optional checkout image. Image to display alongside the payment method
+
+**Geozone Restriction:** Restrict to selected geozones. Only show this payment method for customers in the selected geo zone
+
+**Minimum Subtotal:** Cart must be at or above this amount. Minimum basket subtotal required for free shipping. Set to 0 to disable.
+
+**Maximum Subtotal:** Cart must be below this amount. Maximum basket subtotal for free shipping. Set to -1 to disable.
+
+**Requires Free Shipping Coupon:** Only show when a free shipping coupon is applied. Only show free shipping if a free shipping coupon has been applied.
+
+**Check Shipping Products Only:** Apply subtotal limits to shippable items only. Calculate subtotal from only products that require shipping.
+
+**Exclude When These Methods Available:** Hide free shipping when selected methods are present. Remove free shipping when any of these shipping methods are available.
+
+**Exclude User Groups:** Hide free shipping for members of these groups. Remove free shipping for users in these groups.
+
+**Template Style:** Custom layout override. Select the CSS framework for this plugin's customer-facing templates
+
+***
 
 ## How It Works at Checkout
 
@@ -142,35 +150,49 @@ When a customer reaches the shipping step, J2Commerce checks whether free shippi
 4. **User group exclusion** — If the customer belongs to an excluded user group, free shipping is removed from the rate list.
 5. **Method exclusion** — If any of the excluded shipping methods are also available, free shipping is removed from the rate list.
 
+## Frontend Checkout View
+
 If all checks pass, **Free Shipping** appears as a selectable option with a price of $0.00. The customer can choose it just like any other shipping method.
 
-<!-- SCREENSHOT: Checkout shipping step showing "Free Shipping - $0.00" as a selectable option -->
+![](/img/free-shipping9.webp)
 
----
+***
 
 ## Common Setups
 
 ### Free shipping on all orders
 
-Leave all restriction fields at their defaults. Enable the plugin and every customer will see Free Shipping at checkout regardless of order size or location.
+Leave all restriction fields at their defaults. Enable the plugin and every customer will see **Free Shipping** at checkout regardless of order size or location.
 
 ### Free shipping above a spend threshold
 
 Set **Minimum Subtotal** to your target amount (for example, `50`) and leave **Maximum Subtotal** at `-1`. Customers spending $50 or more will see the free shipping option.
 
+![](/img/free-shipping5.webp)
+
 ### Free shipping for a promotion using a coupon
 
-Set **Requires Free Shipping Coupon** to **Yes**. Create a coupon in **J2Commerce** -> **Marketing** -> **Coupons** with the free shipping option enabled. Customers must enter the coupon code before free shipping appears.
+- Set **Requires Free Shipping Coupon** to **Yes**.&#x20;
+
+![](/img/free-shipping10a.webp)
+
+- Create a coupon in **J2Commerce** -> **Sales** -> **Coupons** with the free shipping option enabled. Customers must enter the coupon code before free shipping appears.
+
+![](/img/free-shipping11.webp)
 
 ### Free shipping only within one country
 
-Create a geozone for that country under **J2Commerce** -> **Setup** -> **Geozones**, then select it in the **Geozone Restriction** field. Customers with a shipping address outside the zone will not see the free shipping option.
+Create a geozone for that country/state under **J2Commerce** -> **Localization** -> **Geozones**, then select it in the **Geozone Restriction** field. Customers with a shipping address outside the zone will not see the free shipping option.
+
+![](/img/free-shipping12.webp)
 
 ### Hide free shipping when express delivery is available
 
 Select your express shipping method (for example, `shipping_standard` with an express rate) in the **Exclude When These Methods Available** field. When that method is available at checkout, free shipping is automatically hidden.
 
----
+![](/img/free-shipping13.webp)
+
+***
 
 ## Tips
 
@@ -180,7 +202,7 @@ Select your express shipping method (for example, `shipping_standard` with an ex
 - The **Exclude User Groups** feature is useful for wholesale stores where retail free shipping should not apply to trade accounts.
 - You can have multiple shipping plugins enabled at once. Free Shipping will appear alongside other options at checkout, so customers can still choose a paid service if they prefer faster delivery.
 
----
+***
 
 ## Troubleshooting
 
@@ -216,12 +238,12 @@ Select your express shipping method (for example, `shipping_standard` with an ex
 
 1. Open the Free Shipping plugin settings.
 2. If **Check Shipping Products Only** is **Yes**, the threshold applies only to products with shipping enabled.
-3. Go to **J2Commerce** -> **Catalog** -> **Products** and verify that the relevant products have **Enable Shipping** set to **Yes** under the **J2Commerce** -> **Shipping** tab.
-4. If you want the full cart subtotal to count, set **Check Shipping Products Only** to **No**.
+3. Go to **J2Commerce** -> **Catalog** -> **Products** and verify that the relevant products have **Enable Shipping** set to **Yes** under the **J2Commerce** tab -> **Shipping** tab.
+4. If you want the full cart subtotal to count, set **Check Shipping Products Only** to **Never**.
 
 ### Free Shipping appears even when a coupon has not been applied
 
-**Cause:** The **Requires Free Shipping Coupon** setting is set to **No**.
+**Cause:** The **Requires Free Shipping Coupon** setting is set to **Never**.
 
 **Solution:**
 
