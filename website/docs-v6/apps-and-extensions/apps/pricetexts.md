@@ -53,19 +53,17 @@ Search for **Price Texts**, Click the plugin name to open it.
 
 :::
 
-![](/img/price-text-1.webp)
+![](/img/price-text-8.webp)
 
 :::tip
 
-**Configuration Notes:**  Price prefix and suffix text can be set per product (Product editor → Apps → Price Text) or per category (Category editor → Price Text tab). Product-level values override category-level values. Enable the switch below to also show the text beside option / variant prices.
+**Configuration Notes:**  Price prefix and suffix text can be set per product (Product editor → Apps → Price Text) or per category (Category editor → Price Text tab). Product-level values override category-level values.&#x20;
 
 :::
 
 **Show Category Price Text:** Set to **Yes** to display the price prefix, suffix, or both next to product prices on category and tag listing pages. Set to **Never** to hide the price text on these list views.
 
 **Show Detail Price Text:** Set to **Yes** to display the price prefix, suffix, or both next to the main price on the product detail page. Set to **Never** to hide the price text on the detail view.
-
-**Show text on option prices:** When set to **Yes**, the prefix and suffix also appear next to option prices, variant prices, and cart line items. Set to **Never** to restrict the text to the main product price only.
 
 **Debug Mode:** When set to **Yes**, the plugin writes diagnostic messages to `administrator/logs/app_pricetexts.php`. Turn this off in production.
 
@@ -79,7 +77,11 @@ Price Texts uses a simple priority chain. The more specific setting wins:
 2. **Per-category** — set on the Joomla content category that contains the product. Used when no per-product value is set.
 3. **No global default** — if neither the product nor its category has a value set, no text is shown.
 
-Think of it like this: if you sell a range of SaaS plans and want most of them to show "/ month", set that suffix on their category. Then, for a single product that bills annually, override the suffix on that product alone.
+:::info
+
+**Think of it like this:** if you sell a range of SaaS plans and want most of them to show "/ month", set that suffix on their category. Then, for a single product that bills annually, override the suffix on that product alone.
+
+:::
 
 ## Setting Prefix and Suffix Per Product
 
@@ -142,19 +144,15 @@ Every product in this category will now display the text unless it has its own p
 
 Once configured, the text renders automatically in every place J2Commerce displays a price:
 
-| Location                           | Prefix appears                                    | Suffix appears                                    |
-| ---------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| Product detail page — main price   | Yes                                               | Yes                                               |
-| Category list — product price      | Yes                                               | Yes                                               |
-| Tag list — product price           | Yes                                               | Yes                                               |
-| Featured / related product modules | Yes                                               | Yes                                               |
-| Cart line item price               | Depends on **Show text on option prices** setting | Depends on **Show text on option prices** setting |
-| Order confirmation                 | Depends on **Show text on option prices** setting | Depends on **Show text on option prices** setting |
-| Option and variant prices          | Depends on **Show text on option prices** setting | Depends on **Show text on option prices** setting |
+**Location:**&#x20;
 
-## Frontend Option's View
+**Product detail page:** Main price.&#x20;
 
-When **Show text on option prices** is set to **Hide**, the text only wraps the **main** product price. When set to **Show**, it also wraps option, variant, and cart prices.
+**Category list:** Product price
+
+**Tag list:** Product price
+
+Featured / related product modules
 
 ## Common Use Cases
 
@@ -191,20 +189,8 @@ If you are migrating from J2Store, here is what is different in the J2Commerce v
 3. If you set the value on the product directly, confirm it is saved in the article's **J2Commerce Cart** tab -> **Apps** -> **Price Text** section.
 4. If the category was newly created, save it first, then reopen it to set the price text fields.
 
-### Text appears next to option prices and I do not want that
-
-**Cause:** The **Show text on option prices** setting in the plugin is set to **Yes**.
-
-**Solution:**
-
-1. Go to **J2Commerce** -> **Apps** -> search for **Price Texts for J2Commerce** and open it.
-2. Set **Show text on option prices** to **Never**.
-3. Click **Save**.
-
-The text will now only appear next to the main product price.
-
 ### HTML tags in my prefix or suffix are showing as plain text
 
 **Cause:** This is by design. The plugin escapes all prefix and suffix content before rendering it, which means angle brackets and other HTML characters are displayed as visible text rather than interpreted as markup. This prevents cross-site scripting attacks.
 
-**Solution:** Use plain text only. For example, write `inc. VAT` instead of `<em>inc. VAT</em>`. If you need styled text around prices, consider a template override instead.
+**Solution:** Use plain text only. **For example,** write `inc. VAT` instead of `<em>inc. VAT</em>`. If you need styled text around prices, consider a template override instead.
