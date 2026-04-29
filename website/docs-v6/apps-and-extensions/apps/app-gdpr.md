@@ -221,11 +221,3 @@ Visit your store's checkout as a test customer and confirm the terms text and li
 **Cause:** The form requires a CSRF token. If the session has expired or the page was cached, the token may be invalid.
 
 **Solution:** Ask the customer to refresh the My Profile page and submit the form again. If the problem persists, check that Joomla page caching is not enabled for the My Profile view.
-
-***
-
-## Related Topics
-
-- [Change Password](app_changepasswords.md)
-- [Gift Wrapping](app-giftwrapping.md)
-- [Validation Rules](app-validationrules.md)
