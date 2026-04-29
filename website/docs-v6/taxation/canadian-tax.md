@@ -5,7 +5,7 @@ This guide explains how to configure tax for Canadian stores, using Saskatchewan
 ## Important Legal Notice
 
 :::warning
-This is an example configuration. J2Commerce is not responsible for tax compliance. Tax rates change frequently. Consult a tax expert before making decisions.
+This is an **example** configuration. J2Commerce is not responsible for tax compliance. Tax rates change frequently. Consult a tax expert before making decisions.
 :::
 
 ## Prerequisites
