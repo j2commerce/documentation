@@ -26,7 +26,7 @@ You can install this **Money Order** Payment plugin using the Joomla installer. 
 
 In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
-Upload the plugin ZIP file or use the install from URL option.
+Upload the **Money Order Payment** ZIP file or use the install from URL option.
 
 ![](/img/autho-install5.webp)
 
