@@ -66,9 +66,7 @@ Upload the `shipping_atoship.zip` package file
 
 ![](/img/ato-install.webp)
 
-## Configure the Plugin
-
-The plugin installs and enables automatically. All you have to do now is set it up.
+## Enable the Plugin
 
 There are **two** ways you can access the Plugin.&#x20;
 
@@ -77,8 +75,6 @@ There are **two** ways you can access the Plugin.&#x20;
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
 
 ![](/img/atoship-app.webp)
-
-## Enable the Plugin
 
 &#x20;Look for **AtoShip**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
