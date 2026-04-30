@@ -1,6 +1,6 @@
 # Checkout Fields
 
-These are created for additional details to be used in checkout processes that involve billing, payment, shipping etc. For instance, the ‘last name’ of a customer is not required for billing, but it is required for shipment. So, it is created as a custom field and made to be displayed in the shipping address.
+These are created for additional details to be used in checkout processes that involve billing, payment, shipping etc. For instance, the ‘last name’ of a customer is not required for billing, but it is required for shipment. So, it is created as a checkout field and made to be displayed in the shipping address.
 
 ## Requirements
 
@@ -18,17 +18,17 @@ There are **two** ways you can access the plugin.&#x20;
 
 ![](/img/checkout-fields-plugin.webp)
 
-There are two types of custom fields, namely, **Core Checkout fields** and **Non-Core Checkout fields**.
+There are two types of checkout field, namely, **Core Checkout Fields** and **Non-Core Checkout Fields**.
 
-Custom fields that are in J2Commerce by default are **Core** custom fields, and those that are created by users are **Non-Core** custom fields.
+Checkout fields that are in J2Commerce by default are **Core** checkout field, and those that are created by users are **Non-Core** checkout field.
 
-Core custom fields can be edited as per the user's wish, but it is not advisable to make changes to **Core** custom fields except for changing the name and label of the fields.
+Core checkout field can be edited as per the user's wish, but it is not advisable to make changes to **Core** checkout field except for changing the name and label of the fields.
 
 ## Standard Checkout Fields
 
 ![](/img/checkout-fields-list.webp)
 
-The following is a list of **Core** custom fields:
+The following is a list of **Core** checkout field:
 
 - first\_name
 - last\_name
@@ -47,7 +47,7 @@ The following is a list of **Core** custom fields:
 
 ## Creating a Custom Checkout Field
 
-Apart from these Core Checkout fields, you can create your own Checkout fields according to your requirements.&#x20;
+Apart from these Core checkout field, you can create your own checkout field according to your requirements.&#x20;
 
 :::info
 
@@ -55,19 +55,19 @@ NOTE: *We recommend you look through the ones that already exist before you crea
 
 :::
 
-For example, if you want to add a custom note for your reference, you can create it as a Checkout field and make it be displayed in the billing or shipping process.
+For example, if you want to add a custom note for your reference, you can create it as a checkout field and make it be displayed in the billing or shipping process.
 
-Let us see how to create a custom field.
+Let us see how to create a checkout field.
 
-In the custom field list view, click the **New** button. You will get a screen as shown in the image below.
+In the checkout field list view, click the **New** button. You will get a screen as shown in the image below.
 
 ### Basic Tab
 
 ![Adding a new custom field](/img/checkout-fields-basic1.webp)
 
-To add a Checkout field, we need to enter the following details. They are given below one by one:
+To add a checkout field, we need to enter the following details. They are given below one by one:
 
-**Field Name:** Name of the Checkout field that is displayed in the layout
+**Field Name:** Name of the checkout field that is displayed in the layout
 
 Field name should be enclosed with square brackets (for example, **\[custom\_address3]** )
 
@@ -111,9 +111,9 @@ NOTE: The remaining fields after the **Field Type** is selected will be differen
 
 **Show for Guest Shipping**: Select '**Yes**' to display this field for guest checkout shipping address
 
-## Add the Checkout field in the checkout layout
+## Add the Checkout Field in the checkout layout
 
-Go to **J2Commerce -> setup -> configuration -> checkout tab -> checkout layout**
+Go to **J2Commerce -> setup -> configuration -> checkout** tab **-> checkout layout**
 
 ![](/img/checkout-layout.webp)
 
@@ -123,25 +123,25 @@ Here you can edit the billing and shipping layouts by reordering the fields or b
 
 For example, if you have created the field called custom\_address3 with the selection of billing address layout in custom field display settings, and if you want to display it in the checkout layout, add it in the billing layout section in the J2Commerce configuration checkout layout tab.
 
-### Adding Custom Fields to the Checkout Layout
+### Adding Checkout Fields to the Checkout Layout
 
-Custom fields can be used to collect extra input from users. For example, if you wish to collect the desired delivery date from the users at the checkout page, this can be done by creating a date-type custom field and adding it to the checkout layout as indicated below:
+Checkout field can be used to collect extra input from users. For example, if you wish to collect the desired delivery date from the users at the checkout page, this can be done by creating a date-type checkout field and adding it to the checkout layout as indicated below:
 
 ![Adding custom fields to the checkout](/img/checkout-layout1.webp)
 
-Adding the custom field at the J2Commerce > Setup > Configuration > Checkout layout page in the desired layout would display the custom field in that particular layout, thereby allowing users to choose their desired input.
+Adding the checkout field at the **J2Commerce > Setup > Configuration > Checkout layout** page in the desired layout would display the checkout field in that particular layout, thereby allowing users to choose their desired input.
 
-And if you wish to send the chosen custom fields in the email notifications, this can be done by adding the shortcode of the custom field in the email template.
+And if you wish to send the chosen checkout field in the email notifications, this can be done by adding the shortcode of the checkout field in the email template.
 
 ## How to add checkout fields inside the email template?
 
-Also, you can add the checkout fields you have created in the editor. To add a custom field in the editor for display, you need to follow the format given below:
+Also, you can add the checkout fields you have created in the editor. To add a checkout field in the editor for display, you need to follow the format given below:
 
 \[CUSTOM\_BILLING\_FIELD\:FIELDNAME ]
 
 Keep in mind the following when you add a checkout field to the editor:
 
-- The custom field should be enclosed in \[]
+- The checkout field should be enclosed in \[]
 - All the letters should be in CAPITAL letters
 - ‘CUSTOM’ is the first word inside the \[]
 - Next, the section in which you have created the field, like ‘BILLING\_FIELD’

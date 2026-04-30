@@ -61,9 +61,9 @@ Go to **System** -> **Manage** -> **Plugins**, search for **Payment Method Disco
 
 The **Percentage Base** setting controls what the discount percentage is calculated against when you choose the **Percentage** discount type for a payment method.
 
-| Option | What it means |
-|--------|---------------|
-| **Order Total** | Percentage is applied to the full order total, including shipping costs and taxes. |
+| Option            | What it means                                                                            |
+| ----------------- | ---------------------------------------------------------------------------------------- |
+| **Order Total**   | Percentage is applied to the full order total, including shipping costs and taxes.       |
 | **Cart Subtotal** | Percentage is applied only to the product subtotal, before shipping and taxes are added. |
 
 This is a global setting that applies to all payment methods configured below.
@@ -74,13 +74,15 @@ This is a global setting that applies to all payment methods configured below.
 
 The **Payment Method Discounts** table lists every enabled J2Commerce payment plugin on your site. Each row represents one payment method and has five columns:
 
-| Column | Description |
-|--------|-------------|
-| **Payment Method** | The name of the payment plugin. Read-only — determined by your installed payment plugins. |
-| **Access Level** | One or more Joomla view levels. The discount only applies when the customer belongs to at least one selected level. |
-| **Discount Value** | The numeric amount of the discount. Enter `0` or leave blank to disable the discount for that method. |
-| **Discount Type** | **Fixed Amount** deducts a specific currency amount. **Percentage** deducts a percentage of the Percentage Base. |
-| **Discount Label** | The text shown next to the discount line in the cart totals. Defaults to `Payment Discount`. |
+**Payment Method:** The name of the payment plugin. Read-only — determined by your installed payment plugins.
+
+**Access Level:** One or more Joomla view levels. The discount only applies when the customer belongs to at least one selected level.
+
+**Discount Value:** The numeric amount of the discount. Enter `0` or leave blank to disable the discount for that method.
+
+**Discount Type: Fixed Amount** deducts a specific currency amount. **Percentage** deducts a percentage of the Percentage Base.
+
+**Discount Label:** The text shown next to the discount line in the cart totals. Defaults to `Payment Discount`.
 
 <!-- SCREENSHOT: Payment Method Discounts table showing three payment method rows (Cash, Bank Transfer, PayPal) with different discount values and types configured -->
 
@@ -108,7 +110,7 @@ When you select an access level in the Payment Method Discount table, the discou
 
 You can create custom access levels (such as "Wholesale" or "VIP") under **System** -> **Manage** -> **Access Levels**. After creating them, they appear automatically in the Access Level dropdown inside the plugin.
 
-For a full explanation of how Joomla view levels work, see the [Joomla documentation on Access Control](https://docs.joomla.org/J4.x:Access_Control_List_Tutorial).
+For a full explanation of how Joomla view levels work, see the [Joomla documentation on Access Control](https://docs.joomla.org/J4.x\:Access_Control_List_Tutorial).
 
 ## How the Discount Appears at Checkout
 
@@ -130,15 +132,19 @@ The discount is also recorded in the order record and visible to admins in **J2C
 
 ## Configuration Reference
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Percentage Base** | Basis for percentage-type discounts: Order Total (incl. shipping and tax) or Cart Subtotal (products only). | Order Total |
-| **Payment Method** *(table column)* | Read-only label from the payment plugin. Populated automatically from enabled payment plugins. | — |
-| **Access Level** *(table column)* | Joomla view level(s) required for the discount to apply. Must select at least one level. | None |
-| **Discount Value** *(table column)* | Numeric discount amount. Set to `0` or leave empty to disable. | 0 |
-| **Discount Type** *(table column)* | Fixed Amount (currency) or Percentage. | Fixed Amount |
-| **Discount Label** *(table column)* | Text shown in the cart totals row for this discount. | Payment Discount |
-| **Debug Mode** | Write detailed discount calculation logs to the Joomla log directory. Disable in production. | No |
+**Percentage Base:** Basis for percentage-type discounts: Order Total (incl. shipping and tax) or Cart Subtotal (products only).
+
+**Payment Method** *(table column):* Read-only label from the payment plugin. Populated automatically from enabled payment plugins.
+
+**Access Level** *(table column):* Joomla view level(s) required for the discount to apply. Must select at least one level.
+
+**Discount Value** *(table column):* Numeric discount amount. Set to `0` or leave empty to disable.
+
+**Discount Type** *(table column):* Fixed Amount (currency) or Percentage.
+
+**Discount Label** *(table column):* Text shown in the cart totals row for this discount.
+
+**Debug Mode:** Write detailed discount calculation logs to the Joomla log directory. Disable in production.
 
 ## Debug Mode
 
@@ -171,7 +177,7 @@ If you previously used this app with J2Store, here is what changed in the J2Comm
 **Solution:**
 
 1. Go to **System** -> **Manage** -> **Plugins**.
-2. Search for plugins with the type "j2commerce" and an element starting with "payment_".
+2. Search for plugins with the type "j2commerce" and an element starting with "payment\_".
 3. Enable at least one payment plugin.
 4. Return to the Payment Method Discount plugin — the table will now list the enabled methods.
 
@@ -201,8 +207,3 @@ If you previously used this app with J2Store, here is what changed in the J2Comm
 
 1. Create the view level at **System** -> **Manage** -> **Access Levels**.
 2. Return to the Payment Method Discount plugin settings — the new level will appear in the Access Level multi-select.
-
-## Related Topics
-
-- [Payment Methods overview](../../payment-methods/index.md)
-- [Bulk Discount app](../../apps-and-extensions/apps/app-bulkdiscount.md)

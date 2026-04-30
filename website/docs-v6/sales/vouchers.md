@@ -8,7 +8,7 @@ Vouchers are different from coupons — a coupon gives a percentage or fixed dis
 
 There are **two** ways you can access the Vouchers.&#x20;
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Sales-> Vouchers**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Sales -> Vouchers**
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Sales -> Vouchers**
 
@@ -30,7 +30,7 @@ Each row in the list represents one voucher.
 
 **Valid From:** The date the voucher becomes active. Empty means it is active immediately.
 
-**Valid To:**The date the voucher expires. Empty means it never expires.
+\*\*Valid To:\*\*The date the voucher expires. Empty means it never expires.
 
 **ID:** The internal voucher ID number.
 

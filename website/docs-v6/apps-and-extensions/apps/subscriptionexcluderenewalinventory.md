@@ -17,47 +17,47 @@ This add-on solves that problem. Once enabled, it automatically skips stock dedu
 - The **Subscription Products** add-on installed and enabled (see [Subscription Products](subscriptionproduct.md))
 - Inventory tracking enabled on at least one product
 
-## Installation
+## Purchase and Download
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `app_subscriptionexcluderenewalinventory.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_subscriptionexcluderenewalinventory.zip` package file.
-4. The plugin installs automatically. A success message confirms installation.
+**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
-<!-- SCREENSHOT: Joomla Extensions install page showing successful installation of Subscription - Exclude Renewal Inventory -->
+**Step 2:** Locate the **Subscription Exclude Renewal Inventory** package **->** click **View Details -> Add to cart -> Checkout**.&#x20;
 
-### Enable the Plugin
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
 
-1. Go to **System** -> **Manage** -> **Plugins**.
-2. Search for **Subscription - Exclude Renewal Inventory**.
-3. Click the status toggle to enable it, or open the plugin and set **Status** to **Enabled**, then click **Save & Close**.
+## Install the Plugin
+
+Go to **System > Install -> Extensions**
+
+Upload the `app_subscriptionexcluderenewalinventory.zip` package file or use the Install from URL option.
+
+![Custom Tabs](<../../../assets/user-group-3 (7).webp>)
+
+## Enable the App
+
+Once you have installed the app, you will need to enable it. There are **two** ways you can access the app.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![Enable custom tab app](/img/tabs-apps.webp)
+
+Search for **Subscription - Exclude Renewal Inventory**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 <!-- SCREENSHOT: Plugin Manager showing Subscription - Exclude Renewal Inventory in the list with status toggle enabled -->
 
-### Open Plugin Configuration
-
-1. Go to **J2Commerce** -> **Apps**.
-2. Find **Subscription - Exclude Renewal Inventory** in the list and click its name to open configuration.
-
-<!-- SCREENSHOT: J2Commerce Apps list with Subscription - Exclude Renewal Inventory highlighted -->
-
----
-
-## Configuration
-
-This plugin has one configuration option.
-
-| Setting | Description | Default | Options |
-|---------|-------------|---------|---------|
-| **Debug Mode** | Write a log file recording each order item that is excluded from stock reduction. The log is saved to the Joomla log directory as `app_subscriptionexcluderenewalinventory.php`. Disable this in production. | No | Yes / No |
-
-To save your settings, click **Save** or **Save & Close**.
+## Configure the Plugin
 
 <!-- SCREENSHOT: Plugin configuration screen showing the Debug Mode toggle -->
 
----
+This plugin has one configuration option.
+
+**Debug Mode:** Write a log file recording each order item that is excluded from stock reduction. The log is saved to the Joomla log directory as `app_subscriptionexcluderenewalinventory.php`. Disable this in production.
+
+To save your settings, click **Save** or **Save & Close**.
 
 ## How It Works
 
@@ -69,13 +69,11 @@ Initial subscription purchases are not affected — when a customer subscribes f
 
 Here is a summary of what happens depending on order type:
 
-| Order Type | Stock Reduced? |
-|------------|----------------|
-| First-time subscription purchase | Yes — stock is deducted normally |
-| Subscription renewal | No — stock deduction is skipped |
+| Order Type                       | Stock Reduced?                    |
+| -------------------------------- | --------------------------------- |
+| First-time subscription purchase | Yes — stock is deducted normally  |
+| Subscription renewal             | No — stock deduction is skipped   |
 | Regular (non-subscription) order | Yes — not affected by this plugin |
-
----
 
 ## Use Cases
 
@@ -91,8 +89,6 @@ This plugin is most useful for stores that sell physical goods on a subscription
 
 If your subscription model works differently — for example, each renewal involves shipping a new physical item — you should leave this plugin disabled, because deducting stock on each renewal is the correct behaviour in that case.
 
----
-
 ## What's New in J2Commerce
 
 ### Version 6.0.0
@@ -100,8 +96,6 @@ If your subscription model works differently — for example, each renewal invol
 - Initial release for J2Commerce 6.
 - Automatically excludes subscription renewal order items from inventory reduction.
 - Debug mode added for logging excluded items to the Joomla log directory.
-
----
 
 ## Troubleshooting
 
@@ -111,7 +105,7 @@ If your subscription model works differently — for example, each renewal invol
 
 **Solution:**
 
-1. Go to **System** -> **Manage** -> **Plugins**.
+1. Go to **J2Commerce** -> **Apps**
 2. Search for **Subscription - Exclude Renewal Inventory** and confirm the status shows as enabled (green toggle).
 3. If it was just enabled, future renewals will be excluded. Past renewals that already reduced stock must be adjusted manually if needed.
 
@@ -122,8 +116,8 @@ If your subscription model works differently — for example, each renewal invol
 **Solution:**
 
 1. Go to **System** -> **Manage** -> **Extensions** and search for `subscriptionexcluderenewalinventory`.
-2. If it does not appear, the package was not installed. Follow the [Installation](#installation) steps above.
-3. If it appears but shows as disabled, enable it from **System** -> **Manage** -> **Plugins**.
+2. If it does not appear, the package was not installed. Follow the [Installation](#installation) steps at the begiining of the documentation.
+3. If it appears but shows as disabled (with a gray **X**), enable it by clicking on the **X**
 
 ### Debug mode is enabled but no log file appears
 
@@ -145,11 +139,3 @@ If your subscription model works differently — for example, each renewal invol
 1. Open the product in **J2Commerce** -> **Catalog** -> **Products**.
 2. Go to the **Inventory** tab and confirm **Manage Stock** is enabled and the stock quantity is greater than zero.
 3. Disable this plugin temporarily to confirm it is not the cause. If stock still does not reduce with the plugin disabled, the issue is unrelated to this add-on.
-
----
-
-## Related Topics
-
-- [Subscription Products](subscriptionproduct.md)
-- [Subscription - Extra Fields](subscriptionextrafields.md)
-- [Subscription - Multiple Quantity](subscriptionmultiplequantity.md)

@@ -51,7 +51,7 @@ Look for **UPS** Shipping, click the **X,** and it will turn into a green chec
 
 ![](/img/shipping-methods-enable.webp)
 
-:::note
+:::info
 
 NOTE: Before you can start configuring the plugin, you will need your API Credentials from UPS. &#x20;
 
@@ -102,13 +102,13 @@ After saving, UPS displays your app credentials:
 
 Copy both values. You will paste them into the plugin settings in the next section.
 
-:::note
+:::info
 
 NOTE: **Keep your Client Secret safe.** Treat it like a password — do not share it or commit it to version control.
 
 :::
 
-### Step 5: Link Your UPS Account Number (Optional)
+### Step 4: Link Your UPS Account Number (Optional)
 
 Your UPS shipper number (account number) appears on your UPS invoices and in your UPS.com profile. It is only required if you want negotiated (discounted) rates. You can find it by:
 

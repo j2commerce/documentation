@@ -22,7 +22,7 @@ Common uses include granting access to a members-only content area after purchas
 
 **Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
-**Step 2:** Locate the `app_usergroup.zip` App **->** click **View Details** **->** **Add to cart -> Checkout**.&#x20;
+**Step 2:** Locate the **Add to User Group** App **->** click **View Details** **->** **Add to cart -> Checkout**.&#x20;
 
 **Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
 
@@ -43,8 +43,6 @@ Upload the `app_usergroup.zip` file or use the Install from URL option.
 3. Assign user groups to each product, or to a content category.
 4. Test by placing an order and confirming the customer lands in the right group.
 
-***
-
 ## Enable the App
 
 Once you have installed the App, you will need to enable it. There are **three** ways you can access the extension.&#x20;
@@ -57,9 +55,7 @@ Once you have installed the App, you will need to enable it. There are **three**
 
 ![](/img/user-enable1.webp)
 
-Search for **Add to User Group**.
-
-Look for **Custom Accordions**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+**Search** for **Add to User Group**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ![](/img/user-enable.webp)
 
@@ -91,7 +87,7 @@ There are **three** ways you can access the products.&#x20;
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Products**
 
-**Option C:** Go to **Content -> Categories ->** Find the **category** and then click inside the **published**/article section
+**Option C:** Go to **Content -> Categories ->** Find the **category** and then click inside the **published**/**article** section
 
 ![](/img/accordions-products.webp)
 

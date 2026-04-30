@@ -14,7 +14,7 @@ Orders are managed from the J2Commerce Dashboard.
 
 There are **three** ways you can access the orders.&#x20;
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Sales-> Orders**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Sales -> Orders**
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Sales -> Orders**
 
@@ -209,7 +209,7 @@ The **Bulk Actions** button will be hidden until at least **one** order is chose
 
 1. Go to **J2Commerce** → **Setup** → **Configuration** → **Email** tab.
 2. Verify the sender email address is valid.
-3. Check Joomla's global configuration → **Server** → **Mail Settings**.
+3. Go to **Settings** → **Global Configuration** → **Server** tab → **Mail Settings**.
 4. Ask the customer to check their spam/junk folder.
 5. Test by resending the confirmation email from the order detail page.
 
