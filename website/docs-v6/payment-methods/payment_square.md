@@ -291,6 +291,24 @@ Sandbox and production each have separate webhook endpoints and signature keys. 
 
 :::
 
+### Webhook-Triggered Updates
+
+If webhooks are configured, Square can update order statuses automatically:
+
+| Square Event                  | What Happens in J2Commerce                                       |
+| ----------------------------- | ---------------------------------------------------------------- |
+| `payment.updated` (Completed) | Order status updated based on your Order Status setting          |
+| `refund.updated` (Completed)  | Order status updated if Change Order Status on Refund is **Yes** |
+
+### Payment Balance
+
+The order view shows a **Payment Balance** summary when a refund has been processed:
+
+- **Order Total** — the original order amount
+- **Refunded** — the total refunded so far
+- **Net Paid** — amount retained after refunds
+- **Balance Due** — outstanding amount (shown in red if positive)
+
 ***
 
 ## Checkout Experience
@@ -376,24 +394,6 @@ This is useful for manual reorders, phone orders, or collecting payment for ship
 
 <!-- SCREENSHOT: Charge Saved Card panel in the order admin view -->
 
-### Webhook-Triggered Updates
-
-If webhooks are configured, Square can update order statuses automatically:
-
-| Square Event                  | What Happens in J2Commerce                                       |
-| ----------------------------- | ---------------------------------------------------------------- |
-| `payment.updated` (Completed) | Order status updated based on your Order Status setting          |
-| `refund.updated` (Completed)  | Order status updated if Change Order Status on Refund is **Yes** |
-
-### Payment Balance
-
-The order view shows a **Payment Balance** summary when a refund has been processed:
-
-- **Order Total** — the original order amount
-- **Refunded** — the total refunded so far
-- **Net Paid** — amount retained after refunds
-- **Balance Due** — outstanding amount (shown in red if positive)
-
 ***
 
 ## Saved Cards (Customer Profile)
@@ -442,7 +442,7 @@ Before accepting real payments, confirm the following:
 3. When Sandbox is **No**, use the **Production** credentials. When Sandbox is **Yes**, use the **Sandbox** credentials.
 4. Enable **Debug Mode** and check `administrator/logs/payment_square.php` for the full API error.
 
-### Payment succeeds but order stays Pending
+### Payment succeeds but the order stays Pending
 
 **Cause:** Webhooks are not configured, so J2Commerce does not receive the payment confirmation from Square.
 
