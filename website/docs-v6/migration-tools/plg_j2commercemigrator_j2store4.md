@@ -1,10 +1,3 @@
----
-title: "J2Store 4 Migrator Adapter"
-sidebar_label: "J2Store 4 Adapter"
-sidebar_position: 2
-description: "How to install, enable, and use the J2Store 4 Migrator Adapter plugin — the source connector that lets the J2Commerce Migrator read your old J2Store v4 store data."
----
-
 # J2Store 4 Migrator Adapter
 
 The J2Store 4 Migrator Adapter is the source connector for the [J2Commerce Migrator](./j2commercemigrator.md). It gives the Migrator everything it needs to read your existing J2Store v4 store — products, orders, customers, and configuration — and move that data into J2Commerce 6. Without this adapter, the Migrator has no source to read from.
