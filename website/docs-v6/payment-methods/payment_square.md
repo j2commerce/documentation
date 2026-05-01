@@ -43,8 +43,6 @@ After your account is active:
 
 :::
 
-<!-- SCREENSHOT: Square Developer Dashboard Credentials tab showing Application ID and Access Token -->
-
 ## Purchase and Download
 
 This plugin is a separate add-on available from the **J2Commerce Extensions Store**. It does not come with the core J2Commerce 6 component.
@@ -59,11 +57,9 @@ This plugin is a separate add-on available from the **J2Commerce Extensions Stor
 
 In the Joomla admin, go to **System -> Install -> Extensions**
 
-1. Upload the plugin ZIP file using the **Upload Package File** tab.
+Upload the plugin ZIP file or use the Install from URL option.
 
-<!-- SCREENSHOT: Joomla Extensions installer upload panel with the Square plugin ZIP selected -->
-
-The plugin installs automatically.
+![](/img/install.webp)
 
 ## Enable the Plugin
 
@@ -73,11 +69,11 @@ Once installed, you need to enable it. There are two ways to reach the payment m
 
 **Option B:** Go to **Components** in the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list with Square shown as disabled (red X) -->
+![](/img/square.webp)
 
 Find **Square**, click the **X**, and it turns into a green checkmark. Square is now enabled and ready for configuration.
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list with Square enabled (green checkmark) -->
+![](/img/square-enable2.webp)
 
 ## Configuring the Plugin
 
@@ -89,33 +85,41 @@ Click the **Toggle Inline Help** button at the top of the plugin settings page t
 
 :::
 
-<!-- SCREENSHOT: Square plugin settings page, top of form -->
+![](/img/square-toggle.webp)
 
-### Display Settings
+### Display Settings tab
+
+![](/img/square-config12.webp)
 
 **Display Name:** The label shown to customers at checkout. Default is `Credit / Debit Card`.
 
 **Display Image:** Optional logo shown next to the payment option at checkout. The plugin ships with the Square logo as its default image.
 
-### Checkout Mode
+### Checkout & Capture Mode
 
-**Checkout Mode:** Choose how the payment form is presented to customers.
+![](/img/square-config2.webp)
 
-- **Embedded Card Form:** The Square card input loads directly on your J2Commerce checkout page. Customers never leave your site. This is the recommended option.
+:::info
 
-- **Hosted Checkout:** Customers are redirected to a Square-hosted payment page. After completing payment, Square redirects them back to your confirmation page.
+View the **frontend** examples of both Embedded and Hosted options towards the bottom of this document.
 
-<!-- SCREENSHOT: Checkout Mode dropdown showing Embedded Card Form and Hosted Checkout options -->
+:::
 
-### Capture Method
+- **Checkout Mode:** Choose how the payment form is presented to customers.
 
-**Capture Method:** Choose when Square charges the customer's card.
+  - **Embedded Card Form:** The Square card input loads directly on your J2Commerce checkout page. Customers never leave your site. This is the recommended option. The card form loads directly on your checkout page
 
-- **Automatic:** The card is charged immediately when the customer places the order. The order status updates to your configured paid status right away. Use this for most stores.
+  - **Hosted Checkout:** Customers are redirected to a Square-hosted payment page. After completing payment, Square redirects them back to your confirmation page.
 
-- **Manual (Authorize Only):** The card is authorized but not charged. You must manually capture the payment from the J2Commerce order admin. Use this for backorders or when you need to verify stock before charging.
+- **Capture Method:** Choose when Square charges the customer's card.
+
+  - **Automatic:** The card is charged immediately when the customer places the order. The order status updates to your configured paid status right away. Use this for most stores.
+
+  - **Manual (Authorize Only):** The card is authorized but not charged. You must manually capture the payment from the J2Commerce order admin. Use this for backorders or when you need to verify stock before charging.
 
 ### Sandbox Mode
+
+![](/img/square-config3.webp)
 
 **Use Sandbox (Test Mode):** Switch **Yes** to use Square's sandbox environment. No real payments are processed.
 
@@ -126,8 +130,6 @@ Turn sandbox mode **on** while you are setting up and testing. Switch it **off**
 When sandbox mode is active, a warning banner appears on the J2Commerce dashboard so you cannot accidentally forget.
 
 :::
-
-<!-- SCREENSHOT: J2Commerce dashboard showing the sandbox warning banner -->
 
 ### Production API Credentials
 
@@ -163,6 +165,8 @@ These fields appear when **Use Sandbox (Test Mode)** is set to **Yes**.
 
 ### Saved Cards
 
+![](/img/square-config10.webp)
+
 **Allow Saved Cards:** When set to **Yes**, logged-in customers can save their card details with Square for faster checkout on future orders. The card is stored in Square's vault — J2Commerce never holds raw card numbers.
 
 When this is enabled, a **Saved Cards** section appears at checkout for returning customers who have previously saved a card. They can select an existing card or enter a new one.
@@ -173,11 +177,11 @@ When this is enabled, a **Saved Cards** section appears at checkout for returnin
 - **UIkit** — Use if your Joomla template is UIkit-based (e.g., YOOtheme Pro).
 - Leave blank to use the default layout.
 
-<!-- SCREENSHOT: Square plugin settings showing Saved Cards and Template Style fields -->
-
 ### Order Status
 
-**Order Status:** The order status applied after a successful payment. Most stores choose **Confirmed** or **Processing** for paid orders.
+![](/img/square-config13.webp)
+
+**Order Status:** The order status is applied after a successful payment. Most stores choose **Confirmed** or **Processing** for paid orders.
 
 ### Refund Settings
 
@@ -193,6 +197,8 @@ When this is enabled, a **Saved Cards** section appears at checkout for returnin
 
 ### Surcharge
 
+![](/img/square-config6a.webp)
+
 Add an optional surcharge to orders paid via Square. This is useful if you want to pass on Square's processing fee to customers — check your local laws and Square's terms before doing this.
 
 **Surcharge Name:** Label shown to customers for the surcharge (e.g., `Processing Fee`).
@@ -207,15 +213,17 @@ You can combine a percentage and a fixed amount — both are added together.
 
 ### Geo-Zone Restriction & Subtotals
 
+![](/img/square-config7.webp)
+
 **Geo-Zone Restriction:** Limit Square availability to customers in a specific geo-zone. Leave empty to show Square to all customers regardless of location.
 
 **Minimum Subtotal:** Hide Square if the cart subtotal is below this amount. Leave empty for no minimum.
 
 **Maximum Subtotal:** Hide Square if the cart subtotal exceeds this amount. Leave empty for no maximum.
 
-<!-- SCREENSHOT: Geo-Zone Restriction and Subtotal fields in the Square plugin settings -->
-
 ### Thank You Page & Custom Messages
+
+![](/img/square-config8.webp)
 
 **Thank You Article:** Select a Joomla article to display after a successful payment. This is shown on the confirmation page alongside the standard confirmation message.
 
@@ -223,15 +231,17 @@ You can combine a percentage and a fixed amount — both are added together.
 
 These text fields let you customize messages shown to customers at different points in the payment process.
 
-| Field | When It Appears |
-|-------|-----------------|
-| **On Selection** | When the customer selects Square as their payment method |
-| **On Before Payment** | On the payment page before the customer clicks Pay |
-| **On After Payment** | On the confirmation page after a successful payment |
-| **On Error Payment** | When a payment error occurs |
-| **On Cancel Payment** | When the customer cancels and returns to the cart |
+| Field                 | When It Appears                                          |
+| --------------------- | -------------------------------------------------------- |
+| **On Selection**      | When the customer selects Square as their payment method |
+| **On Before Payment** | On the payment page before the customer clicks Pay       |
+| **On After Payment**  | On the confirmation page after a successful payment      |
+| **On Error Payment**  | When a payment error occurs                              |
+| **On Cancel Payment** | When the customer cancels and returns to the cart        |
 
 ### Dashboard Icon
+
+![](/img/square-config9.webp)
 
 **Show Dashboard Icon:** When enabled, this plugin adds a tile to the J2Commerce dashboard and the quick icons module.
 
@@ -247,7 +257,7 @@ Enable debug mode only while troubleshooting. Disable it in production — logs 
 
 :::
 
----
+***
 
 ## Webhooks
 
@@ -262,18 +272,18 @@ The plugin settings page displays a **Webhook Endpoint URL** — copy this URL, 
 3. Paste the **Webhook Endpoint URL** from the J2Commerce plugin settings into the **URL** field.
 4. Select the events to listen for. Recommended events:
 
-| Square Event | What Happens in J2Commerce |
-|---|---|
-| `payment.created` | New payment recorded |
+| Square Event      | What Happens in J2Commerce                 |
+| ----------------- | ------------------------------------------ |
+| `payment.created` | New payment recorded                       |
 | `payment.updated` | Order status updated on payment completion |
-| `refund.created` | Refund recorded |
-| `refund.updated` | Order status updated on refund completion |
+| `refund.created`  | Refund recorded                            |
+| `refund.updated`  | Order status updated on refund completion  |
 
-5. Click **Save** to create the webhook endpoint.
-6. Square displays a **Signature Key** for the new endpoint. Click **Show** to reveal it.
-7. Copy the signature key.
-8. Paste it into the **Webhook Signature Key** field in the J2Commerce Square plugin settings.
-9. Click **Save** in J2Commerce.
+1. Click **Save** to create the webhook endpoint.
+2. Square displays a **Signature Key** for the new endpoint. Click **Show** to reveal it.
+3. Copy the signature key.
+4. Paste it into the **Webhook Signature Key** field in the J2Commerce Square plugin settings.
+5. Click **Save** in J2Commerce.
 
 :::info
 
@@ -281,11 +291,29 @@ Sandbox and production each have separate webhook endpoints and signature keys. 
 
 :::
 
-<!-- SCREENSHOT: Square Developer Dashboard Webhooks tab with endpoint configured -->
+### Webhook-Triggered Updates
 
----
+If webhooks are configured, Square can update order statuses automatically:
+
+| Square Event                  | What Happens in J2Commerce                                       |
+| ----------------------------- | ---------------------------------------------------------------- |
+| `payment.updated` (Completed) | Order status updated based on your Order Status setting          |
+| `refund.updated` (Completed)  | Order status updated if Change Order Status on Refund is **Yes** |
+
+### Payment Balance
+
+The order view shows a **Payment Balance** summary when a refund has been processed:
+
+- **Order Total** — the original order amount
+- **Refunded** — the total refunded so far
+- **Net Paid** — amount retained after refunds
+- **Balance Due** — outstanding amount (shown in red if positive)
+
+***
 
 ## Checkout Experience
+
+![](/img/square-checkout.webp)
 
 ### Embedded Card Form
 
@@ -312,9 +340,9 @@ When **Checkout Mode** is set to **Hosted Checkout**:
 
 <!-- SCREENSHOT: Square hosted checkout page on Square's domain -->
 
----
+***
 
-## Order Management
+## Order History
 
 Once a customer pays, J2Commerce records the transaction details on the order:
 
@@ -366,25 +394,7 @@ This is useful for manual reorders, phone orders, or collecting payment for ship
 
 <!-- SCREENSHOT: Charge Saved Card panel in the order admin view -->
 
-### Webhook-Triggered Updates
-
-If webhooks are configured, Square can update order statuses automatically:
-
-| Square Event | What Happens in J2Commerce |
-|---|---|
-| `payment.updated` (Completed) | Order status updated based on your Order Status setting |
-| `refund.updated` (Completed) | Order status updated if Change Order Status on Refund is **Yes** |
-
-### Payment Balance
-
-The order view shows a **Payment Balance** summary when a refund has been processed:
-
-- **Order Total** — the original order amount
-- **Refunded** — the total refunded so far
-- **Net Paid** — amount retained after refunds
-- **Balance Due** — outstanding amount (shown in red if positive)
-
----
+***
 
 ## Saved Cards (Customer Profile)
 
@@ -404,7 +414,7 @@ Saved cards are only available when the customer checks out using the **Embedded
 
 :::
 
----
+***
 
 ## Going Live Checklist
 
@@ -417,7 +427,7 @@ Before accepting real payments, confirm the following:
 - [ ] You have placed a test order using a real card with a small amount and then issued a refund
 - [ ] **Debug Mode** is set to **No**
 
----
+***
 
 ## Troubleshooting
 
@@ -432,7 +442,7 @@ Before accepting real payments, confirm the following:
 3. When Sandbox is **No**, use the **Production** credentials. When Sandbox is **Yes**, use the **Sandbox** credentials.
 4. Enable **Debug Mode** and check `administrator/logs/payment_square.php` for the full API error.
 
-### Payment succeeds but order stays Pending
+### Payment succeeds but the order stays Pending
 
 **Cause:** Webhooks are not configured, so J2Commerce does not receive the payment confirmation from Square.
 
@@ -478,7 +488,7 @@ Before accepting real payments, confirm the following:
 2. Confirm the customer is logged in — saved cards require an active login session.
 3. Saved cards are only created during an embedded checkout. Customers who previously used Hosted Checkout will not have saved cards.
 
----
+***
 
 ## Support
 
