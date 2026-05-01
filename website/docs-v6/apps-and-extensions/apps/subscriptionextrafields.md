@@ -100,13 +100,17 @@ Click **New** to create a field.
 
 - The following field types are fully supported on subscription records:
 
-| Type                               | Description                                       |
-| ---------------------------------- | ------------------------------------------------- |
-| **text**                           | A single-line text input.                         |
-| **textarea**                       | A multi-line text area for longer content.        |
-| **select** (or **singledropdown**) | A dropdown with predefined options.               |
-| **radio**                          | A set of radio buttons, one selectable at a time. |
-| **checkbox**                       | A single checkbox returning a yes/no value.       |
+  - **Text:** A single-line text input.
+
+  - **textarea:** A multi-line text area for longer content.
+
+  - **select** (or **singledropdown**): A dropdown with predefined options.
+
+  - **radio:** A set of radio buttons, one selectable at a time.
+
+  - **checkbox:** A single checkbox returning a yes/no value.
+
+
 
 - Any other field type falls back to a standard text input on the subscription detail screen.
 

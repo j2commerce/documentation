@@ -57,31 +57,41 @@ Click on the **J2Commerce MCP** title
 
 ### Basic Settings tab
 
-| Setting                        | Description                                                                                                                                                                     | Default                                    |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| **Enabled Tool Groups**        | Checkboxes to select which groups of MCP tools are available to AI assistants. Disable groups you do not need to reduce the attack surface.                                     | All groups except Scaffold and Sample Data |
-| **Enable Write Operations**    | Allow AI assistants to modify data (update stock, change order status, load/remove sample data, scaffold plugins). Disabled by default for safety.                              | No                                         |
-| **Rate Limit (requests/hour)** | Maximum number of MCP requests each client can make per hour. Between 10 and 1000.                                                                                              | 100                                        |
-| **Audit Log Retention (days)** | Number of days to keep MCP request audit logs. Between 1 and 365.                                                                                                               | 30                                         |
-| **Allowed Transports**         | Select which communication methods are available. HTTP uses Joomla's `com_ajax` endpoint. STDIO uses a CLI script for local desktop AI tools.                                   | HTTP and STDIO                             |
-| **Debug Mode**                 | Write detailed debug information to the Joomla log. Useful when troubleshooting connection problems.                                                                            | No                                         |
-| **Joomla Root Path**           | Absolute path to the Joomla root directory (for example `/var/www/html`). Leave empty for auto-detection. Only needed when running the CLI script from a non-standard location. | (empty)                                    |
+**Enabled Tool Groups:** Checkboxes to select which groups of MCP tools are available to AI assistants. Disable groups you do not need to reduce the attack surface.
+
+**Enable Write Operations:** Allow AI assistants to modify data (update stock, change order status, load/remove sample data, scaffold plugins). Disabled by default for safety.
+
+**Rate Limit (requests/hour):** Maximum number of MCP requests each client can make per hour. Between 10 and 1000.
+
+**Audit Log Retention (days):** Number of days to keep MCP request audit logs. Between 1 and 365.
+
+**Allowed Transports:** Select which communication methods are available. HTTP uses Joomla's `com_ajax` endpoint. STDIO uses a CLI script for local desktop AI tools.
+
+**Debug Mode:** Write detailed debug information to the Joomla log. Useful when troubleshooting connection problems.
+
+**Joomla Root Path:** Absolute path to the Joomla root directory (for example `/var/www/html`). Leave empty for auto-detection. Only needed when running the CLI script from a non-standard location.
 
 ### Tool Groups
 
 Each tool group can be independently enabled or disabled. Disabling a group removes those tools from the MCP tool list entirely, so the AI assistant never sees or calls them.
 
-| Group                  | What it includes                                                                              |
-| ---------------------- | --------------------------------------------------------------------------------------------- |
-| **Products**           | List products, get product detail, list variants                                              |
-| **Orders**             | List orders, get order detail, list orders for a customer                                     |
-| **Customers**          | List customers, get customer detail                                                           |
-| **Analytics**          | Store stats, top products, sales report, customer report, inventory report                    |
-| **Coupons**            | List coupons, get coupon, validate coupon code                                                |
-| **Shipping & Payment** | List shipping methods, list payment gateways, list inventory                                  |
-| **Reference Data**     | Countries, zones, currencies, tax profiles, tax rates, vouchers, order statuses, store config |
-| **Scaffold**           | Generate boilerplate for new payment and shipping plugins. Requires Write Operations enabled. |
-| **Sample Data**        | Load or remove test store data. Requires Write Operations enabled.                            |
+**Products:** List products, get product details, list variants
+
+**Orders:** List orders, get order detail, list orders for a customer
+
+**Customers:** List customers, get customer details
+
+**Analytics:** Store stats, top products, sales report, customer report, inventory report
+
+**Coupons:** List coupons, get a coupon, validate a coupon code
+
+**Shipping & Payment:** List shipping methods, list payment gateways, list inventory
+
+**Reference Data:** Countries, zones, currencies, tax profiles, tax rates, vouchers, order statuses, store config
+
+**Scaffold:** Generate boilerplate for new payment and shipping plugins. Requires Write Operations enabled.
+
+**Sample Data:** Load or remove test store data. Requires Write Operations enabled.
 
 ## Authentication
 
