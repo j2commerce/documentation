@@ -178,7 +178,7 @@ Click **Migration Wizard** at the top of the **Tools** section, or click on the 
 
 :::tip
 
-J2Commerce 6 can only be installed on Joomla 6 so you need to update your J2Store to version 4.1.x on a Joomla 6 site to use the Method A in the migration plugin otherwise, you would need to use Method B if they want to migrate your J2Store site from a different website on the same server
+J2Commerce 6 can only be installed on Joomla 6, so you need to update your J2Store to version 4.1.x on a Joomla 6 site to use Method A in the migration plugin; otherwise, you would need to use Method B if you want to migrate your J2Store site from a different website on the same server.
 
 :::
 
