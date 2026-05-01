@@ -73,17 +73,15 @@ If you already have the Migrator component installed and only need to reinstall 
 
 When installing via the package, the adapter is **automatically enabled** — you do not need to enable it manually on a fresh install. You can confirm this or re-enable it at any time using either of the two methods below.
 
-**Option A:** Go to **System -> Manage -> Plugins** using the left sidebar.
+Go to **System -> Manage -> Plugins** using the left sidebar.
 
-**Option B:** Click the **System** menu at the top of the Joomla admin and choose **Manage -> Plugins**.
+![](/img/migrator22.webp)
 
-Once on the Plugins screen:
+- Look for **J2Commerce Migrator — J2Store 4 Adapter** in the results.
 
-**Step 1:** Type `j2store4` into the search bar and press Enter.
+- If the status column shows an **X**, click it to enable the plugin. It will turn into a green checkmark.
 
-**Step 2:** Look for **J2Commerce Migrator — J2Store 4 Adapter** in the results.
-
-**Step 3:** If the status column shows a red X, click it to enable the plugin. It will turn into a green checkmark.
+![](/img/migrator21.webp)
 
 :::tip
 

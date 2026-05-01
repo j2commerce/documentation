@@ -61,7 +61,7 @@ Go to **J2Commerce Migrator -> Options** (toolbar button in the top right) to op
 
 ![](/img/migrator2.webp)
 
-### Options {#options}
+### Options General tab{#options}
 
 ![](/img/migrator3.webp)
 
@@ -91,14 +91,14 @@ Go to **J2Commerce Migrator -> Options** (toolbar button in the top right) to op
 
 ### Dashboard {#dashboard}
 
-![](/img/migrator4.webp)
+![](/img/migrator23.webp)
 
 The Dashboard is the first screen you see after opening the Migrator. It shows four status cards:
 
 - **Migrator Version** — whether your installed Migrator is up to date.
 - **J2Commerce Version** — whether J2Commerce itself is up to date.
 - **Akeeba Backup** — whether Akeeba is configured for pre-migration backups.
-- **J2Store Detected** — whether J2Store v4 tables are found in the database.&#x20;
+- **J2Store Detected** — whether J2Store v4 tables are found in the database.  If this section doesn't appear, it's because you don't have J2Store v4 installed
 
 Below the cards, the **Migration Adapters** section lists every source connector plugin that is installed. Currently, one adapter ships with the Migrator: **J2Store 4**. Click **Start Migration** on the J2Store 4 card to launch the Migration Wizard.
 
