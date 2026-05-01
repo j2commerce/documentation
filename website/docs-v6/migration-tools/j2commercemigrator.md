@@ -176,6 +176,14 @@ Click **Migration Wizard** at the top of the **Tools** section, or click on the 
 
 7. **Finalize** — Summary statistics are shown (rows migrated, skipped, errored). The Migrator also offers to copy your J2Store configuration settings into J2Commerce, copy product images from the source server (Mode B), and migrate Joomla core data such as users and categories if the source is on a separate site.
 
+:::tip
+
+J2Commerce 6 can only be installed on Joomla 6 so you need to update your J2Store to version 4.1.x on a Joomla 6 site to use the Method A in the migration plugin otherwise, you would need to use Method B if they want to migrate your J2Store site from a different website on the same server
+
+:::
+
+![](/img/migrator19.webp)
+
 ## Tips {#tips}
 
 - **Back up before every run.** Enable Akeeba Backup in the Migrator options so a backup is triggered automatically.

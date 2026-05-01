@@ -43,7 +43,7 @@ A standalone adapter zip (`plg_j2commercemigrator_j2store4_*.zip`) also exists f
 
 **Step 3:** Joomla installs the Migrator component and the J2Store 4 adapter together. You will see a success message confirming both were installed.
 
-:::note
+:::info
 
 The package installer checks that J2Commerce is already installed and enabled. If it is not, the installation will be refused. Install J2Commerce first, then come back to install the Migrator package.
 
