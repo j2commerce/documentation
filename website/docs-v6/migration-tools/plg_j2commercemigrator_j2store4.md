@@ -17,6 +17,14 @@ The J2Store 4 Migrator Adapter is the source connector for the [J2Commerce Migra
 - **J2Commerce Migrator component installed** (the adapter cannot work without it)
 - An existing J2Store v4 installation — either on the same Joomla site, or accessible via a separate database server or SSH tunnel
 
+:::tip
+
+J2Commerce 6 can only be installed on Joomla 6 so you need to update your J2Store to version 4.1.x on a Joomla 6 site to use the Method A in the migration plugin otherwise, you would need to use Method B if they want to migrate your J2Store site from a different website on the same server
+
+:::
+
+![](/img/migrator19.webp)
+
 ## Get the Adapter {#get-the-adapter}
 
 The J2Store 4 Migrator Adapter is bundled inside the `pkg_j2commercemigrator_*.zip` package alongside the Migrator component. Installing the package installs both the Migrator and the adapter together in a single step — you do not need to download or install them separately.
