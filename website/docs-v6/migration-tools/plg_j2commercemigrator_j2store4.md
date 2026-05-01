@@ -178,7 +178,7 @@ J2Store used Joomla's core categories (`#__categories` with `extension='com_j2st
 **Solution:**
 
 1. On the **Connection** screen, double-check the host, port, database name, username, password, and table prefix.
-2. If you are in Mode A (same site), confirm that `j2store_*` tables actually exist in your current database. Go to **System -> Manage -> Database** and check for any J2Store-related tables.
+2. If you are in Mode A (same site), confirm that `j2store_*` tables actually exist in your current database. Go to **System -> Maintenance -> Database** and check for any J2Store-related tables.
 3. If you are in Mode B (remote database), verify that the remote MySQL server allows connections from this server's IP address. Contact your hosting provider if you are unsure.
 4. Check the Joomla error log at **System -> Global Configuration -> Logging** for any connection error details.
 
