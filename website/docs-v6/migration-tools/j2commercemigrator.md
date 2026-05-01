@@ -98,7 +98,7 @@ The Dashboard is the first screen you see after opening the Migrator. It shows f
 - **Migrator Version** — whether your installed Migrator is up to date.
 - **J2Commerce Version** — whether J2Commerce itself is up to date.
 - **Akeeba Backup** — whether Akeeba is configured for pre-migration backups.
-- **J2Store Detected** — whether J2Store v4 tables are found in the database.
+- **J2Store Detected** — whether J2Store v4 tables are found in the database.&#x20;
 
 Below the cards, the **Migration Adapters** section lists every source connector plugin that is installed. Currently, one adapter ships with the Migrator: **J2Store 4**. Click **Start Migration** on the J2Store 4 card to launch the Migration Wizard.
 
@@ -110,7 +110,7 @@ Click the magnifying glass icon on any row to open a detailed view of that run, 
 
 ### Tools {#tools}
 
-![](/img/migrator6.webp)
+![](/img/migrator16.webp)
 
 **Tools** provide targeted re-sync operations that you can run after an initial migration — for example, to pull in new orders that arrived while you were testing, without re-running a full migration.
 
