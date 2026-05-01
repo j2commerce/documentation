@@ -97,7 +97,7 @@ When you start a migration from the Migrator Dashboard and reach the **Connectio
 
   ![](/img/migrator24.webp)
 
-Once enabled, **Mode C** will now appear
+Once enabled, **Mode C** will now appear. This is for advanced users only
 
 ![](/img/migrator25.webp)
 
