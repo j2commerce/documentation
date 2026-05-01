@@ -91,13 +91,22 @@ If the adapter does not appear in the search results at all, the package install
 
 ## Configure the Adapter {#configure-the-adapter}
 
-There is nothing to configure in the adapter plugin itself. The adapter has no settings panel of its own — all connection details are entered inside the J2Commerce Migrator's **Connection** step of the Migration Wizard.
+***There is nothing to configure in the adapter plugin itself.*** The adapter has no settings panel of its own — all connection details are entered inside the J2Commerce Migrator's **Connection** step of the Migration Wizard.
 
 When you start a migration from the Migrator Dashboard and reach the **Connection** screen, you choose one of three modes:
 
 - **Mode A — Same site:** Your old J2Store data is in the same database as your current Joomla site. No extra credentials are needed.
 - **Mode B — Remote database:** Your old J2Store data is on a different MySQL/MariaDB server. You provide the host, port, database name, username, and password on that screen.
-- **Mode C — SSH tunnel:** Your old database is only reachable through an SSH tunnel. Enable this mode in the Migrator's **Options** first.
+
+![](/img/migrator19.webp)
+
+- **Mode C — SSH tunnel:** Your old database is only reachable through an SSH tunnel. Enable this mode in the Migrator's **Options** first in order for it to appear as one of the database options.
+
+  ![](/img/migrator24.webp)
+
+Once enabled, **Mode C** will now appear
+
+![](/img/migrator25.webp)
 
 See the [J2Commerce Migrator](./j2commercemigrator.md) guide for a full walkthrough of the Migration Wizard.
 
