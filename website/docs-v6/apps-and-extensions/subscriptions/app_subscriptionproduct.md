@@ -25,11 +25,11 @@ The Subscription Product app turns any J2Commerce product into a recurring billi
 
 ## Install the App
 
-This app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-In the Joomla admin, go to **System -> Install -> Extensions**
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
 Upload the plugin ZIP file or use the Install from URL option.
+
+![](/img/install.webp)
 
 ## Enable the App
 
@@ -39,7 +39,9 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-Look for **Subscription Products**, click the **X**, and it will turn into a green checkmark. It is now enabled and ready for setup.
+![](/img/gift-wrap-apps.webp)
+
+Search for **Subscription Products**, click the **X**, and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ## Configure the App
 
@@ -53,113 +55,79 @@ Click the **Toggle Inline Help** button on any app to show a description below e
 
 ### Basic Settings
 
-**Enable Cron Log**
-Writes a log file while the automatic renewal job runs. Leave this **Yes** during setup so you can confirm renewals are firing correctly. You can disable it in production to reduce disk writes.
+**Enable Cron Log** Writes a log file while the automatic renewal job runs. Leave this **Yes** during setup so you can confirm renewals are firing correctly. You can disable it in production to reduce disk writes.
 
-**Cron URL**
-A read-only display of the URL you need to give your server's cron scheduler. Copy this URL and paste it into your hosting control panel's cron job configuration. The renewal job must run at least once per day for renewals and expirations to process on time. You can change the security key for this URL in **J2Commerce -> Setup -> Configuration**.
+**Cron URL** A read-only display of the URL you need to give your server's cron scheduler. Copy this URL and paste it into your hosting control panel's cron job configuration. The renewal job must run at least once per day for renewals and expirations to process on time. You can change the security key for this URL in **J2Commerce -> Setup -> Configuration**.
 
-**Accepted Payment Methods**
-Choose which payment gateways are available to customers buying subscription products. Leave empty to allow any payment method that supports recurring billing. Only gateways that save a billing token (such as Stripe) can process automatic renewals — cash, bank transfer, and other offline methods do not work with automatic renewals.
+**Accepted Payment Methods** Choose which payment gateways are available to customers buying subscription products. Leave empty to allow any payment method that supports recurring billing. Only gateways that save a billing token (such as Stripe) can process automatic renewals — cash, bank transfer, and other offline methods do not work with automatic renewals.
 
-**Allow Card Update**
-When enabled, customers always see an option to update their saved card in the account area, even if no renewal failure has occurred. Useful if you want proactive card management for customers on older cards.
+**Allow Card Update** When enabled, customers always see an option to update their saved card in the account area, even if no renewal failure has occurred. Useful if you want proactive card management for customers on older cards.
 
-**Debug Mode**
-Writes detailed diagnostic output to `administrator/logs/app_subscriptionproduct.php`. Always disable this in production.
+**Debug Mode** Writes detailed diagnostic output to `administrator/logs/app_subscriptionproduct.php`. Always disable this in production.
 
 ### Email Settings
 
-**Send Welcome Email on New Subscription**
-Sends a welcome message to the customer as soon as their subscription is created. Disable this only if you are migrating from J2Store v4 and want to suppress unexpected welcome emails for existing subscribers.
+**Send Welcome Email on New Subscription** Sends a welcome message to the customer as soon as their subscription is created. Disable this only if you are migrating from J2Store v4 and want to suppress unexpected welcome emails for existing subscribers.
 
-**Notify Before Expiry (days)**
-Sends an expiry warning email the specified number of days before a subscription ends. Enter multiple values separated by commas to send multiple reminders — for example, `7,3` sends one email seven days before and another three days before. Leave empty to skip expiry warnings.
+**Notify Before Expiry (days)** Sends an expiry warning email the specified number of days before a subscription ends. Enter multiple values separated by commas to send multiple reminders — for example, `7,3` sends one email seven days before and another three days before. Leave empty to skip expiry warnings.
 
-**Bcc to**
-Sends a blind copy of every customer subscription email to these addresses. Separate multiple addresses with a comma. Useful for keeping a record of all subscription lifecycle emails.
+**Bcc to** Sends a blind copy of every customer subscription email to these addresses. Separate multiple addresses with a comma. Useful for keeping a record of all subscription lifecycle emails.
 
-**Trial Ending Notification (days before)**
-Number of days before the trial ends to send a "your trial is ending soon" email. Set to `0` to disable trial-ending notifications.
+**Trial Ending Notification (days before)** Number of days before the trial ends to send a "your trial is ending soon" email. Set to `0` to disable trial-ending notifications.
 
-**Email Notifications Before Renewal**
-Toggle this on to send the customer a heads-up email before their next automatic renewal date.
+**Email Notifications Before Renewal** Toggle this on to send the customer a heads-up email before their next automatic renewal date.
 
-**Notify Before Renewal (days)**
-Works in tandem with the toggle above. Enter the number of days before renewal to send the notification — for example, `3,1` sends a reminder three days out and again the day before. Effective for reducing involuntary churn.
+**Notify Before Renewal (days)** Works in tandem with the toggle above. Enter the number of days before renewal to send the notification — for example, `3,1` sends a reminder three days out and again the day before. Effective for reducing involuntary churn.
 
-**Email Notification Before First Renewal (from Trial)**
-Separately controls whether customers on a trial get a special notice before their first paid renewal. This is distinct from the general renewal notification so you can write a more targeted message ("Your trial is about to convert to a paid subscription").
+**Email Notification Before First Renewal (from Trial)** Separately controls whether customers on a trial get a special notice before their first paid renewal. This is distinct from the general renewal notification so you can write a more targeted message ("Your trial is about to convert to a paid subscription").
 
-**Notify Before First Renewal from Trial (days)**
-Days before end-of-trial to send that first-renewal notice. Same comma-separated format as the standard renewal notice.
+**Notify Before First Renewal from Trial (days)** Days before end-of-trial to send that first-renewal notice. Same comma-separated format as the standard renewal notice.
 
-**Send Completed Order Email on Renewal**
-When a renewal succeeds, J2Commerce creates a new order. This toggle controls whether the standard order-completed email is also sent for that renewal order. Customers typically appreciate receiving a receipt for each billing cycle.
+**Send Completed Order Email on Renewal** When a renewal succeeds, J2Commerce creates a new order. This toggle controls whether the standard order-completed email is also sent for that renewal order. Customers typically appreciate receiving a receipt for each billing cycle.
 
-**Use Legacy Email Templates as Fallback**
-When enabled, the plugin falls back to its built-in PHP email templates if no customized template exists in the database email hub. Enable this only if you have not yet set up custom email templates for subscription events.
+**Use Legacy Email Templates as Fallback** When enabled, the plugin falls back to its built-in PHP email templates if no customized template exists in the database email hub. Enable this only if you have not yet set up custom email templates for subscription events.
 
 ### Display Settings
 
-**Template**
-Selects the frontend template used to render subscription content on product pages, the cart, and the customer account area. **Auto** inherits the template from the active menu item (Bootstrap 5 or UIkit depending on your site setup).
+**Template** Selects the frontend template used to render subscription content on product pages, the cart, and the customer account area. **Auto** inherits the template from the active menu item (Bootstrap 5 or UIkit depending on your site setup).
 
-**Show My Subscriptions Tab**
-When enabled, a **My Subscriptions** tab appears on the customer's **My Profile** page, giving them a self-service panel to view and manage their active subscriptions. Disable only if you want to restrict customer access to subscription management.
+**Show My Subscriptions Tab** When enabled, a **My Subscriptions** tab appears on the customer's **My Profile** page, giving them a self-service panel to view and manage their active subscriptions. Disable only if you want to restrict customer access to subscription management.
 
-**Show Duration**
-Displays the billing cycle label next to the product price — for example, "Every month" or "/month". Recommended for clarity on product pages and listing pages.
+**Show Duration** Displays the billing cycle label next to the product price — for example, "Every month" or "/month". Recommended for clarity on product pages and listing pages.
 
-**Duration Position**
-Controls where the billing-cycle label appears relative to the price. **Below price** keeps it in its own block beneath the price. **Before price** and **After price** inject it inline alongside the price.
+**Duration Position** Controls where the billing-cycle label appears relative to the price. **Below price** keeps it in its own block beneath the price. **Before price** and **After price** inject it inline alongside the price.
 
-**Duration Text**
-Sets the phrasing used to describe the billing cycle. **Every** produces "Every month". **/** produces "/month". **Per** produces "Per month". With a frequency of 2 or more, the number is included — "Every 2 months".
+**Duration Text** Sets the phrasing used to describe the billing cycle. **Every** produces "Every month". **/** produces "/month". **Per** produces "Per month". With a frequency of 2 or more, the number is included — "Every 2 months".
 
-**Show Single Value**
-When the billing frequency is exactly 1, controls whether the digit is shown. **No** (default) displays "Every month". **Yes** displays "Every 1 month". Most stores prefer the cleaner display without the digit.
+**Show Single Value** When the billing frequency is exactly 1, controls whether the digit is shown. **No** (default) displays "Every month". **Yes** displays "Every 1 month". Most stores prefer the cleaner display without the digit.
 
-**Show Sign-Up Fee**
-Displays the one-time sign-up fee next to the product price so customers see the full upfront cost before adding to cart.
+**Show Sign-Up Fee** Displays the one-time sign-up fee next to the product price so customers see the full upfront cost before adding to cart.
 
-**Sign-Up Fee Position**
-Same three options as Duration Position — **Below price**, **Before price**, or **After price**.
+**Sign-Up Fee Position** Same three options as Duration Position — **Below price**, **Before price**, or **After price**.
 
-**Show Recurring Total**
-Shows a "Recurring Total" line in the cart and checkout summarizing the subscription amount the customer will be charged on each renewal. Strongly recommended so customers understand what they are signing up for.
+**Show Recurring Total** Shows a "Recurring Total" line in the cart and checkout summarizing the subscription amount the customer will be charged on each renewal. Strongly recommended so customers understand what they are signing up for.
 
-**Show Non-Recurring Total**
-Shows a separate "Non-Recurring Total" line in the cart for any one-time charges (sign-up fee, one-time products mixed in the same cart). Useful when a cart contains both subscription and regular products.
+**Show Non-Recurring Total** Shows a separate "Non-Recurring Total" line in the cart for any one-time charges (sign-up fee, one-time products mixed in the same cart). Useful when a cart contains both subscription and regular products.
 
-**Show Recurring Amount**
-Shows the per-item recurring amount in the cart line for subscription products.
+**Show Recurring Amount** Shows the per-item recurring amount in the cart line for subscription products.
 
-**Show Recurring Discount**
-If a coupon or renewal discount applies to the recurring amount, displays the discounted price in the cart.
+**Show Recurring Discount** If a coupon or renewal discount applies to the recurring amount, displays the discounted price in the cart.
 
-**Show Next Renewal Date**
-Displays the calculated first renewal date in the cart and checkout so customers know exactly when they will next be charged.
+**Show Next Renewal Date** Displays the calculated first renewal date in the cart and checkout so customers know exactly when they will next be charged.
 
-**Renewal Date Format**
-PHP date format string used to display the next renewal date. Leave empty to inherit the global Date Format from **J2Commerce -> Setup -> Configuration**. For example, `F j, Y` produces "May 1, 2026".
+**Renewal Date Format** PHP date format string used to display the next renewal date. Leave empty to inherit the global Date Format from **J2Commerce -> Setup -> Configuration**. For example, `F j, Y` produces "May 1, 2026".
 
-**Show Renew Button**
-Adds a manual **Renew** button to the front-end subscription listing in the customer account. Enable if you want to let customers initiate an early renewal themselves.
+**Show Renew Button** Adds a manual **Renew** button to the front-end subscription listing in the customer account. Enable if you want to let customers initiate an early renewal themselves.
 
 ### Renewal Settings
 
-**Renewal Discount (%)**
-Apply a global percentage discount to all subscription renewal payments across every product. For example, entering `10` gives every customer 10% off their second and subsequent billings. This applies store-wide; use per-product settings for product-specific discounts.
+**Renewal Discount (%)** Apply a global percentage discount to all subscription renewal payments across every product. For example, entering `10` gives every customer 10% off their second and subsequent billings. This applies store-wide; use per-product settings for product-specific discounts.
 
-**Max Renewal Retries**
-How many times the system will automatically retry a failed renewal payment before marking the subscription as **Card Expired** and stopping retries. Default is 5 attempts.
+**Max Renewal Retries** How many times the system will automatically retry a failed renewal payment before marking the subscription as **Card Expired** and stopping retries. Default is 5 attempts.
 
-**Renewal Retry Interval**
-The number of time units to wait between retry attempts. Combine this with the Renewal Retry Period — for example, **1** + **Day(s)** retries once per day.
+**Renewal Retry Interval** The number of time units to wait between retry attempts. Combine this with the Renewal Retry Period — for example, **1** + **Day(s)** retries once per day.
 
-**Renewal Retry Period**
-The time unit for the retry interval: Hours, Days, Weeks, or Months.
+**Renewal Retry Period** The time unit for the retry interval: Hours, Days, Weeks, or Months.
 
 :::info
 
@@ -191,35 +159,27 @@ In the product edit screen, go to the **J2Commerce** tab **-> General** tab. Cha
 
 Scroll down (or look for the **Subscription** section within the J2Commerce tab) to find the subscription-specific fields.
 
-**Subscription Price**
-The recurring price charged on each billing cycle. This is separate from the product's regular price field and is what the customer pays every period after any trial ends.
+**Subscription Price** The recurring price charged on each billing cycle. This is separate from the product's regular price field and is what the customer pays every period after any trial ends.
 
-**Sign-Up Fee**
-A one-time fee charged at the very first purchase, on top of the first period's subscription price. Leave empty for no sign-up fee.
+**Sign-Up Fee** A one-time fee charged at the very first purchase, on top of the first period's subscription price. Leave empty for no sign-up fee.
 
-**Add Sign-Up Fee on Each Purchase**
-When enabled, the sign-up fee is charged every time a customer purchases this product — even if they already have an active or expired subscription to the same product. Leave this off for the standard "one-time fee per customer" behavior.
+**Add Sign-Up Fee on Each Purchase** When enabled, the sign-up fee is charged every time a customer purchases this product — even if they already have an active or expired subscription to the same product. Leave this off for the standard "one-time fee per customer" behavior.
 
 ### Step 4: Set the Billing Interval
 
-**Billing Frequency**
-How often the customer is billed: Every, Every 2nd, Every 3rd, up to Every 6th.
+**Billing Frequency** How often the customer is billed: Every, Every 2nd, Every 3rd, up to Every 6th.
 
-**Billing Period**
-The unit: Days, Weeks, Months, or Years.
+**Billing Period** The unit: Days, Weeks, Months, or Years.
 
 Combine these two fields to describe the billing cycle. For example, **Every** + **Month** bills once a month. **Every 3rd** + **Month** bills once per quarter.
 
-**Subscription Length**
-The total number of billing periods the subscription runs. Enter `0` for a subscription that never expires and renews indefinitely. Enter `12` with a monthly period for a one-year subscription that automatically stops after 12 payments.
+**Subscription Length** The total number of billing periods the subscription runs. Enter `0` for a subscription that never expires and renews indefinitely. Enter `12` with a monthly period for a one-year subscription that automatically stops after 12 payments.
 
 ### Step 5: Configure a Trial Period (Optional)
 
-**Trial Length**
-The number of trial periods. Leave as `0` for no trial.
+**Trial Length** The number of trial periods. Leave as `0` for no trial.
 
-**Trial Period**
-The unit for the trial: Days, Weeks, Months, or Years. Select **No Trial** to remove the trial.
+**Trial Period** The unit for the trial: Days, Weeks, Months, or Years. Select **No Trial** to remove the trial.
 
 For example, **Trial Length** `7` + **Trial Period** **Days** gives new subscribers a free 7-day trial before their first payment.
 
@@ -231,19 +191,15 @@ During a trial, no payment is collected (unless the payment gateway requires a $
 
 ### Step 6: User Group Management (Optional)
 
-**Add To User Groups**
-When this subscription becomes active, J2Commerce automatically adds the subscriber to the selected Joomla user groups. This is the standard way to grant access to members-only content or restricted areas on your site.
+**Add To User Groups** When this subscription becomes active, J2Commerce automatically adds the subscriber to the selected Joomla user groups. This is the standard way to grant access to members-only content or restricted areas on your site.
 
-**Remove From User Groups**
-When this subscription expires or is cancelled, J2Commerce removes the subscriber from these groups. Combine the two fields to implement a complete membership access system — grant on subscribe, revoke on cancel.
+**Remove From User Groups** When this subscription expires or is cancelled, J2Commerce removes the subscriber from these groups. Combine the two fields to implement a complete membership access system — grant on subscribe, revoke on cancel.
 
 ### Step 7: Renewal Discount and Cancel Settings
 
-**Keep Renewal Discount**
-If a customer used a coupon code at first purchase, enabling this applies that same discount to all subsequent automatic renewals. Useful for first-month-free or introductory offer coupons that you want to honor for the life of the subscription.
+**Keep Renewal Discount** If a customer used a coupon code at first purchase, enabling this applies that same discount to all subsequent automatic renewals. Useful for first-month-free or introductory offer coupons that you want to honor for the life of the subscription.
 
-**Disable Cancel**
-When enabled, customers cannot cancel this subscription from their account area — only an administrator can cancel it. Use with care and only when contractually appropriate.
+**Disable Cancel** When enabled, customers cannot cancel this subscription from their account area — only an administrator can cancel it. Use with care and only when contractually appropriate.
 
 ## How It Works {#how-it-works}
 
