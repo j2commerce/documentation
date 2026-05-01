@@ -39,19 +39,15 @@ To enable and position it:
 
 All settings are on the **Module** tab when editing the module.
 
-| Setting                | Description                                                                      | Default |
-| ---------------------- | -------------------------------------------------------------------------------- | ------- |
-| **Display type**       | Show the wishlist link as a plain link or a Bootstrap 5 button.                  | Link    |
-| **Hide when empty**    | When enabled, the entire module is hidden if the wishlist contains zero items.   | No      |
-| **Wishlist menu item** | Manually select the menu item for the wishlist page. Leave empty to auto-detect. | (empty) |
+**Display type:** Show the wishlist link as a plain link or a Bootstrap 5 button.
 
-### Display Type
+- **Link** renders a plain `<a>` tag that inherits your template's link styles. The badge count appears next to a heart icon, and a text label shows the item count or the word "Wishlist" when empty.
 
-**Link** renders a plain `<a>` tag that inherits your template's link styles. The badge count appears next to a heart icon, and a text label shows the item count or the word "Wishlist" when empty.
+- **Button** renders an `<a>` tag styled as a Bootstrap 5 `btn btn-outline-secondary`. Only the heart icon and badge count are shown — no text label — making it compact for tight spaces like navbars.
 
-**Button** renders an `<a>` tag styled as a Bootstrap 5 `btn btn-outline-secondary`. Only the heart icon and badge count are shown — no text label — making it compact for tight spaces like navbars.
+**Hide when empty:** When enabled, the entire module is hidden if the wishlist contains zero items.
 
-### Wishlist Menu Item
+**Wishlist menu item:** Manually select the menu item for the wishlist page. Leave empty to auto-detect.
 
 When left empty, the module scans your site's menu for an item whose query matches `view=products&task=wishlist` and uses that item's ID to build a SEF URL. This is the same auto-detection logic used by the app\_wishlist plugin itself.
 
@@ -103,9 +99,3 @@ No extra configuration is required — the JavaScript is output inline with the 
 1. Check that the app\_wishlist plugin is enabled and its JavaScript file loads on the product page (look for `wishlist.js` in the browser network panel).
 2. If you have a custom template that suppresses JavaScript, ensure the `<head>` includes deferred scripts.
 3. If the event is dispatched under a different name in a customised build, update the listener in a template override of `tmpl/default.php`.
-
-## Related Topics
-
-- [Wishlist App Plugin](app-wishlist.md)
-- [Cart Module](../apps-and-extensions/advanced_cart.md)
-- [Products Module](../apps-and-extensions/mod_j2commerce_products.md)

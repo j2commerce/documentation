@@ -1,10 +1,3 @@
----
-title: "J2Store 4 Migrator Adapter"
-sidebar_label: "J2Store 4 Adapter"
-sidebar_position: 2
-description: "How to install, enable, and use the J2Store 4 Migrator Adapter plugin — the source connector that lets the J2Commerce Migrator read your old J2Store v4 store data."
----
-
 # J2Store 4 Migrator Adapter
 
 The J2Store 4 Migrator Adapter is the source connector for the [J2Commerce Migrator](./j2commercemigrator.md). It gives the Migrator everything it needs to read your existing J2Store v4 store — products, orders, customers, and configuration — and move that data into J2Commerce 6. Without this adapter, the Migrator has no source to read from.
@@ -17,6 +10,14 @@ The J2Store 4 Migrator Adapter is the source connector for the [J2Commerce Migra
 - **J2Commerce Migrator component installed** (the adapter cannot work without it)
 - An existing J2Store v4 installation — either on the same Joomla site, or accessible via a separate database server or SSH tunnel
 
+:::tip
+
+J2Commerce 6 can only be installed on Joomla 6, so you need to update your J2Store to version 4.1.x on a Joomla 6 site to use Method A in the migration plugin; otherwise, you would need to use Method B if you want to migrate your J2Store site from a different website on the same server.
+
+:::
+
+![](/img/migrator19.webp)
+
 ## Get the Adapter {#get-the-adapter}
 
 The J2Store 4 Migrator Adapter is bundled inside the `pkg_j2commercemigrator_*.zip` package alongside the Migrator component. Installing the package installs both the Migrator and the adapter together in a single step — you do not need to download or install them separately.
@@ -25,7 +26,7 @@ The J2Store 4 Migrator Adapter is bundled inside the `pkg_j2commercemigrator_*.z
 
 **Step 2:** Search for **J2Commerce Migrator** and click **View Files -> Download Now** to get `pkg_j2commercemigrator_*.zip`.
 
-:::note
+:::info
 
 A standalone adapter zip (`plg_j2commercemigrator_j2store4_*.zip`) also exists for advanced cases, such as reinstalling only the adapter without touching the Migrator component. Most users should use the package zip.
 
@@ -37,11 +38,13 @@ A standalone adapter zip (`plg_j2commercemigrator_j2store4_*.zip`) also exists f
 
 **Step 1:** In your Joomla admin, go to **System -> Install -> Extensions**.
 
+![](/img/install.webp)
+
 **Step 2:** Drag and drop the `pkg_j2commercemigrator_*.zip` file into the upload area, or click **Browse for file** and select it.
 
 **Step 3:** Joomla installs the Migrator component and the J2Store 4 adapter together. You will see a success message confirming both were installed.
 
-:::note
+:::info
 
 The package installer checks that J2Commerce is already installed and enabled. If it is not, the installation will be refused. Install J2Commerce first, then come back to install the Migrator package.
 
@@ -53,6 +56,8 @@ If you already have the Migrator component installed and only need to reinstall 
 
 **Step 1:** Go to **System -> Install -> Extensions**.
 
+![](/img/install.webp)
+
 **Step 2:** Upload the `plg_j2commercemigrator_j2store4_*.zip` file.
 
 **Step 3:** The adapter installs and is ready to enable.
@@ -61,17 +66,15 @@ If you already have the Migrator component installed and only need to reinstall 
 
 When installing via the package, the adapter is **automatically enabled** — you do not need to enable it manually on a fresh install. You can confirm this or re-enable it at any time using either of the two methods below.
 
-**Option A:** Go to **System -> Manage -> Plugins** using the left sidebar.
+Go to **System -> Manage -> Plugins** using the left sidebar.
 
-**Option B:** Click the **System** menu at the top of the Joomla admin and choose **Manage -> Plugins**.
+![](/img/migrator22.webp)
 
-Once on the Plugins screen:
+- Look for **J2Commerce Migrator — J2Store 4 Adapter** in the results.
 
-**Step 1:** Type `j2store4` into the search bar and press Enter.
+- If the status column shows an **X**, click it to enable the plugin. It will turn into a green checkmark.
 
-**Step 2:** Look for **J2Commerce Migrator — J2Store 4 Adapter** in the results.
-
-**Step 3:** If the status column shows a red X, click it to enable the plugin. It will turn into a green checkmark.
+![](/img/migrator21.webp)
 
 :::tip
 
@@ -81,13 +84,22 @@ If the adapter does not appear in the search results at all, the package install
 
 ## Configure the Adapter {#configure-the-adapter}
 
-There is nothing to configure in the adapter plugin itself. The adapter has no settings panel of its own — all connection details are entered inside the J2Commerce Migrator's **Connection** step of the Migration Wizard.
+***There is nothing to configure in the adapter plugin itself.*** The adapter has no settings panel of its own — all connection details are entered inside the J2Commerce Migrator's **Connection** step of the Migration Wizard.
 
 When you start a migration from the Migrator Dashboard and reach the **Connection** screen, you choose one of three modes:
 
 - **Mode A — Same site:** Your old J2Store data is in the same database as your current Joomla site. No extra credentials are needed.
 - **Mode B — Remote database:** Your old J2Store data is on a different MySQL/MariaDB server. You provide the host, port, database name, username, and password on that screen.
-- **Mode C — SSH tunnel:** Your old database is only reachable through an SSH tunnel. Enable this mode in the Migrator's **Options** first.
+
+![](/img/migrator19.webp)
+
+- **Mode C — SSH tunnel:** Your old database is only reachable through an SSH tunnel. Enable this mode in the Migrator's **Options** first in order for it to appear as one of the database options.
+
+  ![](/img/migrator24.webp)
+
+Once enabled, **Mode C** will now appear. This is for advanced users only
+
+![](/img/migrator25.webp)
 
 See the [J2Commerce Migrator](./j2commercemigrator.md) guide for a full walkthrough of the Migration Wizard.
 
@@ -157,7 +169,7 @@ J2Store used Joomla's core categories (`#__categories` with `extension='com_j2st
 1. Go to **System -> Manage -> Plugins** and search for `j2store4`.
 2. If the plugin appears but shows a red X, click the X to enable it.
 3. If the plugin does not appear at all, the package did not install fully. Reinstall `pkg_j2commercemigrator_*.zip` from **System -> Install -> Extensions**.
-4. Confirm that **com_j2commercemigrator** appears in **System -> Manage -> Extensions** and is enabled.
+4. Confirm that **com\_j2commercemigrator** appears in **System -> Manage -> Extensions** and is enabled.
 
 ### Cannot connect to the J2Store database {#cannot-connect}
 
@@ -166,7 +178,7 @@ J2Store used Joomla's core categories (`#__categories` with `extension='com_j2st
 **Solution:**
 
 1. On the **Connection** screen, double-check the host, port, database name, username, password, and table prefix.
-2. If you are in Mode A (same site), confirm that `j2store_*` tables actually exist in your current database. Go to **System -> Manage -> Database** and check for any J2Store-related tables.
+2. If you are in Mode A (same site), confirm that `j2store_*` tables actually exist in your current database. Go to **System -> Maintenance -> Database** and check for any J2Store-related tables.
 3. If you are in Mode B (remote database), verify that the remote MySQL server allows connections from this server's IP address. Contact your hosting provider if you are unsure.
 4. Check the Joomla error log at **System -> Global Configuration -> Logging** for any connection error details.
 
