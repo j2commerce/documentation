@@ -17,14 +17,27 @@ This plugin works equally well for physical store pickups ("Downtown Branch", "W
 - Joomla! 6.x
 - J2Commerce 6.x
 
-## Installation
+## Purchase and Download
+
+You can install the **Pickup Options** shipping plugin using the Joomla installer. The following steps help you with a successful installation.
+
+‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Extensions -> Shipping Plugin**
+
+**Step 2:** Locate the **Pickup** Plugin **->** click **View Details** **->** **Add to cart -> Checkout**.&#x20;
+
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
+
+## Install the Plugin
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `shipping_pickup.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `shipping_pickup.zip` package file.
-4. The plugin installs and enables automatically.
+Purchase and download the `shipping_pickup.zip` package from the J2Commerce website.
+
+Go to **System** -> **Install** -> **Extensions**.
+
+Upload the `shipping_pickup.zip` package file.
+
+![Install extensions](<../../assets/app install1 (1) (1).webp>)
 
 ## Enable the Plugin
 
@@ -34,7 +47,7 @@ There are two ways to reach the shipping methods screen.
 
 **Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Shipping Methods**.
 
-<!-- SCREENSHOT: Shipping Methods list screen with Pickup Options entry visible -->
+![](/img/pickup-enable.webp)
 
 Find **Pickup Options** in the list, click the **X** icon, and it will turn into a green checkmark. The plugin is now enabled and ready to configure.
 
@@ -48,17 +61,20 @@ Click the **Toggle Inline Help** button at the top of the settings page to show 
 
 :::
 
----
+![](/img/pickup-toggle.webp)
+
+***
 
 ### General Settings Tab
 
-<!-- SCREENSHOT: General Settings tab showing all fields -->
+![](/img/pickup-config.webp)
 
 **Display Name** — The shipping option label shown to customers at checkout. The default is `Pickup`. You can change this to anything that suits your store, such as "Store Pickup", "Click & Collect", or "In-Store Collection".
 
-**Pickup Fee** — An optional flat charge added to the order when pickup is chosen. Enter `0` for free pickup.
+**Pickup Fee** — An optional flat charge added to the order when pickup is chosen. Enter `0` for free pickup.&#x20;
 
 **Option Display Style** — Controls how the list of pickup options appears after a customer selects Pickup:
+
 - **Radio cards** (default) — Each option is shown as a card with an image, name, and description. Best for a small number of clearly differentiated locations or time slots.
 - **Dropdown** — A compact dropdown list. Best when you have many options or limited screen space.
 
@@ -78,43 +94,30 @@ Geozones are configured under **J2Commerce** -> **Setup** -> **Geozones**. If a 
 
 **Maximum Order Subtotal** — Hide the Pickup option if the cart subtotal is above this amount. Set to `0` to disable this check.
 
----
+***
 
 ### Pickup Options Tab
 
-<!-- SCREENSHOT: Pickup Options tab showing a repeatable table with example rows -->
+![](/img/pickup-config3.webp)
 
 This is where you define each pickup option that customers can choose from. You must add at least one option before the plugin will appear at checkout.
 
 Each row in the table represents one option. Click **Add item** to add a new row.
 
-| Field | Description |
-|-------|-------------|
+| Field           | Description                                                                        |
+| --------------- | ---------------------------------------------------------------------------------- |
 | **Option Name** | The name customers see, e.g. "Main Street Store" or "Saturday 10am–2pm". Required. |
 | **Description** | A short description shown below the option name, e.g. an address or extra details. |
-| **Image** | An optional photo or icon for this option, shown in radio-card style. |
-| **Enabled** | Toggle individual options on or off without deleting them. |
+| **Image**       | An optional photo or icon for this option, shown in radio-card style.              |
+| **Enabled**     | Toggle individual options on or off without deleting them.                         |
 
 To reorder options, drag the rows into the order you want. Click **Save** or **Save & Close** when done.
 
----
+***
 
-## Configuration Reference
+## Frontend Checkout View
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Display Name** | Label shown at checkout | Pickup |
-| **Pickup Fee** | Flat charge for pickup orders | `0` (free) |
-| **Option Display Style** | Radio cards or dropdown | Radio cards |
-| **Supporting Text** | Prompt shown above options list | Default prompt |
-| **Geographic Zones** | Restrict by geozone | All geozones |
-| **Tax Profile** | Tax applied to pickup fee | None |
-| **Minimum Order Subtotal** | Hide below this subtotal | `0` (disabled) |
-| **Maximum Order Subtotal** | Hide above this subtotal | `0` (disabled) |
-
----
-
-## How It Works at Checkout
+### How It Works at Checkout
 
 When a customer reaches the shipping step, J2Commerce checks whether Pickup Options should appear:
 
@@ -122,13 +125,13 @@ When a customer reaches the shipping step, J2Commerce checks whether Pickup Opti
 2. **Subtotal Limits** — If minimum or maximum subtotals are set, the cart must be within range.
 3. **Pickup appears** — If all checks pass, Pickup Options is listed as a selectable shipping method alongside any other enabled methods.
 
-When the customer selects Pickup, a second panel appears immediately below showing their available options. In **Radio cards** mode each option shows its name, description, and image. In **Dropdown** mode it is a compact list.
+When the customer selects Pickup, a second panel appears immediately below showing their available options. In **Radio cards** mode, each option shows its name, description, and image. In **Dropdown** mode, it is a compact list.
 
 <!-- SCREENSHOT: Checkout shipping step with Pickup selected, showing radio-card options panel -->
 
 The customer must select one option before they can continue to the next checkout step. Their chosen option name is saved to the order.
 
----
+***
 
 ## Common Setups
 
@@ -148,7 +151,7 @@ Add one row with your store name and address. Leave **Pickup Fee** at `0` and **
 
 Create a geozone for your city or region under **J2Commerce** -> **Setup** -> **Geozones**. Select that geozone in the **Geographic Zones** field. Customers with a shipping address outside the zone will not see the Pickup option.
 
----
+***
 
 ## Tips
 
@@ -158,7 +161,7 @@ Create a geozone for your city or region under **J2Commerce** -> **Setup** -> **
 - Seasonal or limited-availability options can be disabled temporarily using the **Enabled** toggle on each row rather than deleting them.
 - The **Pickup Fee** applies to the entire order, not per item. For free pickup, leave it at `0`.
 
----
+***
 
 ## Troubleshooting
 
