@@ -26,17 +26,17 @@ The EShop adapter is sold separately from the core J2Commerce package. It is ava
 
 ## Install the Adapter {#install-the-adapter}
 
-**Step 1:** In your Joomla admin, go to **System -> Install -> Extensions**.
+In your Joomla admin, go to **System -> Install -> Extensions**.
+
+Upload the **EShop Migration Adapter** file or use the Install from URL option.
 
 ![](/img/install.webp)
 
-**Step 2:** Drag and drop the adapter zip into the upload area, or click **Browse for file** and select it.
-
-**Step 3:** Joomla installs the adapter. You will see a success message confirming installation.
+You will see a success message confirming installation.
 
 :::info
 
-The adapter checks that J2Commerce is installed before it will install. If J2Commerce is not found, installation will be refused. Install J2Commerce first, then come back to install the adapter.
+The adapter checks that J2Commerce is installed before it installs. If J2Commerce is not found, installation will be refused. Install J2Commerce first, then come back to install the adapter.
 
 :::
 
@@ -53,25 +53,25 @@ After installation the adapter is automatically enabled. To confirm or re-enable
 
 The adapter migrates the following data from your EShop store to J2Commerce:
 
-| EShop Data | What It Becomes in J2Commerce |
-|---|---|
-| Categories | Joomla content categories linked to J2Commerce |
-| Manufacturers | J2Commerce manufacturer records with linked address and description article |
-| Products (names, descriptions, SKUs, pricing, stock) | Joomla article (description) + J2Commerce product (price/SKU/stock) |
-| Product images (main, thumbnail, tiny) | Copied into `images/j2commerce/products/` with all size variants |
-| Product options and option values | J2Commerce product options and option values |
-| Product discounts and special prices | J2Commerce product price rules |
-| Product downloads and attachments | J2Commerce product files |
-| Tax classes and tax rates | J2Commerce tax profiles and tax rates |
-| Tax rules and geozones | J2Commerce tax rules and geozone rules |
-| Customer addresses | J2Commerce customer address records |
-| Coupons | J2Commerce coupons |
-| Vouchers | J2Commerce vouchers |
-| Orders, order items, order options | J2Commerce orders and order line items |
-| Order downloads | J2Commerce order download records |
-| Currencies, countries, zones | J2Commerce lookup tables |
-| Order statuses, lengths, weights | J2Commerce lookup tables |
-| Product reviews (if App Reviews installed) | J2Commerce App Reviews records |
+| EShop Data                                           | What It Becomes in J2Commerce                                                        |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Categories                                           | Joomla content categories linked to J2Commerce                                       |
+| Manufacturers                                        | J2Commerce manufacturer records with a linked address and description of the article |
+| Products (names, descriptions, SKUs, pricing, stock) | Joomla article (description) + J2Commerce product (price/SKU/stock)                  |
+| Product images (main, thumbnail, tiny)               | Copied into `images/j2commerce/products/` with all size variants                     |
+| Product options and option values                    | J2Commerce product options and option values                                         |
+| Product discounts and special prices                 | J2Commerce product price rules                                                       |
+| Product downloads and attachments                    | J2Commerce product files                                                             |
+| Tax classes and tax rates                            | J2Commerce tax profiles and tax rates                                                |
+| Tax rules and geozones                               | J2Commerce tax rules and geozone rules                                               |
+| Customer addresses                                   | J2Commerce customer address records                                                  |
+| Coupons                                              | J2Commerce coupons                                                                   |
+| Vouchers                                             | J2Commerce vouchers                                                                  |
+| Orders, order items, order options                   | J2Commerce orders and order line items                                               |
+| Order downloads                                      | J2Commerce order download records                                                    |
+| Currencies, countries, zones                         | J2Commerce lookup tables                                                             |
+| Order statuses, lengths, weights                     | J2Commerce lookup tables                                                             |
+| Product reviews (if App Reviews installed)           | J2Commerce App Reviews records                                                       |
 
 ### What is not migrated (current version) {#what-is-not-migrated}
 
@@ -82,7 +82,7 @@ The following EShop features do not have a direct equivalent in J2Commerce and a
 - **Catalog discounts** — Use J2Commerce coupons or special prices as an alternative.
 - **Product labels** — J2Commerce has no equivalent label system.
 - **Postcode-range geozone rules** — J2Commerce only supports country/zone-based geozone rules.
-- **Product Q&A records** — J2Commerce has no built-in Q&A feature.
+- **Product Q\&A records** — J2Commerce has no built-in Q\&A feature.
 - **Wishlists** — Requires the separate J2Commerce Wishlist app.
 - **Quote/RFQ records** — J2Commerce has no quote system.
 - **Secondary-language product records** — Only the default EShop language is migrated.
@@ -143,15 +143,15 @@ Click the **Sync Products** button.
 
 This is the main migration step. The migrator processes your product catalog in batches. A progress bar shows the current stage:
 
-| Stage label | What is happening |
-|---|---|
-| **initializing** | Setting up the batch run |
-| **fetching source** | Reading product rows from EShop |
-| **syncing categories** | Linking products to their categories |
-| **creating articles** | Creating Joomla articles for product descriptions |
-| **creating products** | Writing J2Commerce product records |
-| **next batch** | Moving to the next group of products |
-| **done** | The sync is complete |
+| Stage label            | What is happening                                 |
+| ---------------------- | ------------------------------------------------- |
+| **initializing**       | Setting up the batch run                          |
+| **fetching source**    | Reading product rows from EShop                   |
+| **syncing categories** | Linking products to their categories              |
+| **creating articles**  | Creating Joomla articles for product descriptions |
+| **creating products**  | Writing J2Commerce product records                |
+| **next batch**         | Moving to the next group of products              |
+| **done**               | The sync is complete                              |
 
 If the sync shows **done**, the product tier is complete. If it stops on **next batch** without finishing (for example because your server has a short time limit), simply click **Sync Products** again. The sync is safe to re-run — it picks up where it left off and skips products already written.
 
@@ -161,12 +161,12 @@ If the sync shows **done**, the product tier is complete. If it stops on **next 
 
 After **Sync Products** completes, the migrator automatically triggers four post-sync operations in sequence. You can also run each one manually from the **Post-Sync Tools** section if the automatic trigger was interrupted by a server timeout.
 
-| Button | What it does |
-|---|---|
-| **Migrate Tax Classes** | Creates J2Commerce tax profile, tax rate, and tax rule records from your EShop tax classes. Run this before checking that products have the correct tax profile. |
+| Button                      | What it does                                                                                                                                                                                       |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Migrate Tax Classes**     | Creates J2Commerce tax profile, tax rate, and tax rule records from your EShop tax classes. Run this before checking that products have the correct tax profile.                                   |
 | **Migrate Master Variants** | Creates the master variant row for each product. This variant holds the product's main SKU, price, and stock level. Products without this row will appear to have no price or stock in J2Commerce. |
-| **Migrate Product Images** | Copies your EShop product images from `media/com_eshop/products/` into `images/j2commerce/products/` and generates thumbnail and tiny variants. |
-| **Audit Product Options** | Counts how many of your products have EShop option combinations and reports the number. This pass does not write data — it gives you the information you need to plan any manual variant entry. |
+| **Migrate Product Images**  | Copies your EShop product images from `media/com_eshop/products/` into `images/j2commerce/products/` and generates thumbnail and tiny variants.                                                    |
+| **Audit Product Options**   | Counts how many of your products have EShop option combinations and reports the number. This pass does not write data — it gives you the information you need to plan any manual variant entry.    |
 
 To trigger a pass manually, scroll to the **Post-Sync Tools** section on the Tools page and click the appropriate button.
 

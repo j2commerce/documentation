@@ -39,14 +39,35 @@ This plugin is ideal for stores that ship physical products internationally and 
 
 Before configuring the plugin, you need an EasyShip account with API credentials.
 
-1. Go to [app.easyship.com](https://app.easyship.com) and click **Sign Up**.
-2. Complete the registration form with your business details.
-3. Verify your email address and log in.
-4. In the EasyShip dashboard, go to **Settings** -> **API** (or **Connect** -> **API**).
-5. Click **Create Token** and give it a descriptive name (e.g., "J2Commerce").
-6. Copy your **Sandbox API token** (starts with `sand_`) for testing, or your **Production API token** (starts with `prod_`) for live shipments.
+Go to [app.easyship.com](https://app.easyship.com) and click **Sign Up**.
 
-<!-- SCREENSHOT: EasyShip dashboard API token creation screen -->
+Complete the registration form with your business details.
+
+Verify your email address and log in.
+
+**Navigate to Connect:** Click on Connect in the left-hand sidebar.
+
+**Select API Integration:** Click on the **API Integration** option.
+
+**Configure Integration:**
+
+- Enter a name for your integration (e.g., your store's name).
+
+- For the integration type, select I'm developing a custom integration or My platform isn't listed.
+
+**Generate and Copy:** Click Connect. Your Access Token will be displayed on the screen. Be sure to copy it immediately and store it securely, as it serves as your API key for authentication.
+
+You can choose between a Production token for live shipments or a Sandbox token for testing purposes during this process.
+
+![](/img/easy-ship-api1-1.webp)
+
+In the EasyShip dashboard, go to **Settings** -> **API** (or **Connect** -> **API**).
+
+Click **Create Token** and give it a descriptive name (e.g., "J2Commerce").
+
+Copy your **Sandbox API token** (starts with `sand_`) for testing, or your **Production API token** (starts with `prod_`) for live shipments.
+
+![](/img/easy-ship-api2.webp)
 
 :::info
 
@@ -68,7 +89,7 @@ Go to **System** -> **Install** -> **Extensions**.
 
 Upload the `shipping_easyship.zip` package file.
 
-<!-- SCREENSHOT: Joomla extension install screen with shipping_easyship.zip uploaded -->
+![](/img/install.webp)
 
 ## Enable the Plugin
 
@@ -78,7 +99,7 @@ There are **two** ways you can access the plugin.
 
 **Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Shipping Methods**.
 
-<!-- SCREENSHOT: J2Commerce Shipping Methods list showing EasyShip entry disabled -->
+![shipping method](/img/shipping-methods.webp)
 
 Look for **EasyShip**, click the **X**, and it will turn into a green checkmark. It is now enabled and ready for setup.
 
@@ -290,11 +311,11 @@ These settings control what happens automatically when you create shipping label
 
 **Address Validation:** Controls how EasyShip validates the customer's shipping address before allowing label creation.
 
-| Option | Behavior |
-|--------|----------|
-| **Off** | No address check is performed. |
-| **Warn** | An advisory is shown if the address appears invalid, but label creation is still allowed. |
-| **Block** | Label creation is blocked until the address is corrected. |
+| Option    | Behavior                                                                                  |
+| --------- | ----------------------------------------------------------------------------------------- |
+| **Off**   | No address check is performed.                                                            |
+| **Warn**  | An advisory is shown if the address appears invalid, but label creation is still allowed. |
+| **Block** | Label creation is blocked until the address is corrected.                                 |
 
 The default is **Warn**, which gives store owners a heads-up about potentially bad addresses without preventing label creation. Use **Block** for high-value shipments where an undeliverable address is especially costly.
 
@@ -327,9 +348,9 @@ Webhooks allow EasyShip to push delivery events to your store automatically, so 
 https://your-site.com/index.php?option=com_j2commerce&task=shippingplugin.ajax&plugin=shipping_easyship&action=processWebhook
 ```
 
-3. Enable the following events: `shipment_label_created`, `shipment_label_failed`, `shipment_tracking_checkpoints_created`, `shipment_tracking_status_changed`, `shipment_cancelled`, `credit_balance_low`.
-4. Copy the **Webhook Secret** that EasyShip generates for this endpoint.
-5. Paste the secret into the **Webhook Secret** field in the plugin configuration and click **Save**.
+1. Enable the following events: `shipment_label_created`, `shipment_label_failed`, `shipment_tracking_checkpoints_created`, `shipment_tracking_status_changed`, `shipment_cancelled`, `credit_balance_low`.
+2. Copy the **Webhook Secret** that EasyShip generates for this endpoint.
+3. Paste the secret into the **Webhook Secret** field in the plugin configuration and click **Save**.
 
 EasyShip signs all webhook payloads with HMAC-SHA256. The plugin verifies this signature automatically using your webhook secret to ensure requests are genuinely from EasyShip.
 
@@ -381,6 +402,7 @@ When an order is placed with an EasyShip shipping method, you can purchase and p
 ### Create the Label
 
 1. Click the **Create Label** button. You will find this button:
+
    - In the order toolbar at the top of the page, or
    - In the **Shipping Information** card within the order details.
 
@@ -390,19 +412,19 @@ A modal window opens with the label creation form:
 
 <!-- SCREENSHOT: /img/easyship-label1.webp — EasyShip label creation modal with carrier dropdown and package fields -->
 
-| Field | Description | Pre-filled With |
-|-------|-------------|-----------------|
-| **Carrier** | The carrier and service for this label | The courier the customer selected at checkout |
-| **Weight** | Total package weight | Sum of all order item weights |
-| **Length** | Package length | Your configured default length |
-| **Width** | Package width | Your configured default width |
-| **Height** | Package height | Your configured default height |
-| **Add Insurance** | Toggle to add shipping insurance | Your **Auto-Insure Shipments** default |
-| **Insurance Amount** | Insured value (shown when insurance is toggled on) | The order customs value |
+| Field                | Description                                        | Pre-filled With                               |
+| -------------------- | -------------------------------------------------- | --------------------------------------------- |
+| **Carrier**          | The carrier and service for this label             | The courier the customer selected at checkout |
+| **Weight**           | Total package weight                               | Sum of all order item weights                 |
+| **Length**           | Package length                                     | Your configured default length                |
+| **Width**            | Package width                                      | Your configured default width                 |
+| **Height**           | Package height                                     | Your configured default height                |
+| **Add Insurance**    | Toggle to add shipping insurance                   | Your **Auto-Insure Shipments** default        |
+| **Insurance Amount** | Insured value (shown when insurance is toggled on) | The order customs value                       |
 
-2. Review and adjust the package details if needed. The carrier is pre-filled from the customer's checkout selection.
-3. Toggle **Add Insurance** if you want to insure this specific shipment.
-4. Click **Purchase Label**.
+1. Review and adjust the package details if needed. The carrier is pre-filled from the customer's checkout selection.
+2. Toggle **Add Insurance** if you want to insure this specific shipment.
+3. Click **Purchase Label**.
 
 ### What Happens Next
 
@@ -411,7 +433,7 @@ After the label is created:
 - A shipping label is purchased through EasyShip and the URL is stored on the order.
 - The tracking number is saved to the order's shipping information.
 - The order status automatically changes to your configured **Status After Label Creation**.
-- A history note is added to the order: "Easyship label created for order [number] (tracking [tracking number])".
+- A history note is added to the order: "Easyship label created for order \[number] (tracking \[tracking number])".
 - The page reloads to show the new label and tracking information.
 
 ### Print the Label
@@ -436,8 +458,8 @@ Use this feature when a customer needs to return an item and you want to provide
 
 <!-- SCREENSHOT: /img/easyship-label.webp — Shipping and Tracking panel with Create Return Label button visible -->
 
-3. A confirmation modal appears showing the original outbound tracking number.
-4. Click **Create Return Label** in the modal to generate the return shipment.
+1. A confirmation modal appears showing the original outbound tracking number.
+2. Click **Create Return Label** in the modal to generate the return shipment.
 
 Once created, the return label appears as a separate entry in the **Shipping and Tracking** panel with a **Return** badge. The return tracking number and label URL are stored on the order.
 
@@ -465,16 +487,16 @@ Click **Refresh Tracking** to pull the latest status from EasyShip immediately. 
 
 ### Tracking Status Badges
 
-| Status | Badge Color | Meaning |
-|--------|-------------|---------|
-| **Created** | Grey | Label has been created but not yet scanned by the carrier |
-| **In Transit** | Blue | Package is moving through the carrier network |
-| **Out for Delivery** | Teal | Package is on the delivery vehicle |
-| **Delivered** | Green | Package has been delivered |
-| **Return to Sender** | Yellow | Package is being returned to the sender |
-| **Exception** | Red | A delivery exception has occurred |
-| **Cancelled** | Red | The shipment has been cancelled |
-| **Voided** | Dark | Label has been voided |
+| Status               | Badge Color | Meaning                                                   |
+| -------------------- | ----------- | --------------------------------------------------------- |
+| **Created**          | Grey        | Label has been created but not yet scanned by the carrier |
+| **In Transit**       | Blue        | Package is moving through the carrier network             |
+| **Out for Delivery** | Teal        | Package is on the delivery vehicle                        |
+| **Delivered**        | Green       | Package has been delivered                                |
+| **Return to Sender** | Yellow      | Package is being returned to the sender                   |
+| **Exception**        | Red         | A delivery exception has occurred                         |
+| **Cancelled**        | Red         | The shipment has been cancelled                           |
+| **Voided**           | Dark        | Label has been voided                                     |
 
 ### Manual Tracking Refresh
 
@@ -520,6 +542,7 @@ If you have many orders to fulfill at once, you can create shipping labels in bu
 2. Check the boxes next to the orders you want to create labels for.
 3. Click the **Create EasyShip Labels** button in the toolbar.
 4. The plugin processes each order:
+
    - For **10 or fewer orders**, labels are created one by one with a progress indicator.
    - For **more than 10 orders**, the batch is queued for background processing.
 5. When complete, a summary shows how many labels were created and how many failed (if any).
@@ -559,15 +582,15 @@ The easiest way is to use the **Create Webhook** button in the plugin's diagnost
 
 ### What Webhooks Automate
 
-| EasyShip Event | What Happens in J2Commerce |
-|----------------|---------------------------|
-| Tracking Checkpoints Created | New checkpoint entries are added to the order history |
-| Tracking Status Changed | The label's tracking status is updated in your order |
-| Package Delivered | Order status changes to your configured "Delivered" status; customer email sent if enabled |
-| Label Created | Label status updates to In Transit |
-| Label Failed | Label status updates to Exception |
-| Shipment Cancelled | Label is marked as Voided in your order |
-| Credit Balance Low | Informational — no automatic action |
+| EasyShip Event               | What Happens in J2Commerce                                                                 |
+| ---------------------------- | ------------------------------------------------------------------------------------------ |
+| Tracking Checkpoints Created | New checkpoint entries are added to the order history                                      |
+| Tracking Status Changed      | The label's tracking status is updated in your order                                       |
+| Package Delivered            | Order status changes to your configured "Delivered" status; customer email sent if enabled |
+| Label Created                | Label status updates to In Transit                                                         |
+| Label Failed                 | Label status updates to Exception                                                          |
+| Shipment Cancelled           | Label is marked as Voided in your order                                                    |
+| Credit Balance Low           | Informational — no automatic action                                                        |
 
 ## Automated Tracking with Cron (Alternative)
 
@@ -597,10 +620,10 @@ When a customer ships internationally, EasyShip calculates estimated import duti
 
 The **Incoterms** setting in your plugin configuration controls who pays:
 
-| Setting | Meaning |
-|---------|---------|
-| **DDU** (Delivered Duty Unpaid) | The recipient pays import duties and taxes on delivery. An estimate is shown at checkout. |
-| **DDP** (Delivered Duty Paid) | Duties and taxes are collected at checkout. The total includes them in the shipping charge. |
+| Setting                         | Meaning                                                                                     |
+| ------------------------------- | ------------------------------------------------------------------------------------------- |
+| **DDU** (Delivered Duty Unpaid) | The recipient pays import duties and taxes on delivery. An estimate is shown at checkout.   |
+| **DDP** (Delivered Duty Paid)   | Duties and taxes are collected at checkout. The total includes them in the shipping charge. |
 
 When **Show Duties Notice at Checkout** is enabled and the shipment is international with a DDU incoterm, customers see an advisory message similar to: "Import duties and taxes may be due on delivery. Estimated: $12.50."
 
@@ -616,49 +639,49 @@ For stores primarily shipping within one country, you can leave **Incoterms** se
 
 ### All Settings at a Glance
 
-| Section | Setting | Default | Description |
-|---------|---------|---------|-------------|
-| **API** | Sandbox Mode | Yes | Use sandbox token (no real charges) |
-| **API** | Sandbox API Key | — | Sandbox token (`sand_...`) |
-| **API** | Production API Key | — | Production token (`prod_...`) |
-| **API** | Webhook Secret | — | HMAC signing secret from EasyShip (`webh_...`) |
-| **Origin** | Origin Address Line 1 | — | Ship-from street address |
-| **Origin** | Origin Address Line 2 | — | Optional suite / unit |
-| **Origin** | Origin City | — | Ship-from city |
-| **Origin** | Origin Country | — | Ship-from country |
-| **Origin** | Origin State / Province | — | Ship-from state or province |
-| **Origin** | Origin Postal Code | — | Ship-from ZIP (required) |
-| **Origin** | Origin Company Name | — | Printed on labels |
-| **Origin** | Origin Contact Name | — | Printed on labels |
-| **Origin** | Origin Contact Phone | — | Printed on labels |
-| **Origin** | Origin Contact Email | — | Printed on labels |
-| **Package** | Weight Unit | kg | kg or lb |
-| **Package** | Dimension Unit | cm | cm or in |
-| **Package** | Default Weight | `1` | Fallback item weight |
-| **Package** | Default Length | `10` | Fallback package length |
-| **Package** | Default Width | `10` | Fallback package width |
-| **Package** | Default Height | `10` | Fallback package height |
-| **Carriers** | Allowed Carriers | (all) | Carriers to include at checkout |
-| **Rates** | Handling Fee | `0` | Extra fee per rate |
-| **Rates** | Handling Fee Type | Flat | Flat amount or percentage |
-| **Rates** | Auto-Insure Shipments | No | Apply insurance to every label |
-| **Rates** | Show Duties Notice | Yes | Show import duties estimate at checkout |
-| **Rates** | Incoterms | DDU | DDU = recipient pays; DDP = collected at checkout |
-| **Rates** | Show Delivery Time Estimate | Yes | Show estimated days at checkout |
-| **Rates** | Address Validation | Warn | Off / Warn / Block |
-| **Rates** | Tax Profile | None | Tax class for shipping charges |
-| **Rates** | Geozone Restriction | All Zones | Restrict to a geographic zone |
-| **Rates** | Minimum Cart Subtotal | `0` | Minimum cart value (0 = off) |
-| **Rates** | Maximum Cart Subtotal | `0` | Maximum cart value (0 = off) |
-| **Tracking** | Status After Label Creation | Shipped | Auto-set when label is created |
-| **Tracking** | Status After Delivery Confirmed | Delivered | Auto-set when delivered |
-| **Tracking** | Notify Customer on Delivery | No | Email customer on delivery confirmation |
-| **Tracking** | Webhook Event Types | (all) | Events to subscribe to via webhook |
-| **Tracking** | Tracking Poll Limit | `50` | Max shipments per cron run |
-| **Labels** | Label Format | URL | URL / PDF / PNG / ZPL |
-| **Labels** | Label Size | 4x6 | A4 / A5 / 4x6 |
-| **Labels** | Commercial Invoice Size | A4 | A4 / 4x6 / None |
-| **Debug** | Debug Logging | No | Log API requests/responses |
+| Section      | Setting                         | Default   | Description                                       |
+| ------------ | ------------------------------- | --------- | ------------------------------------------------- |
+| **API**      | Sandbox Mode                    | Yes       | Use sandbox token (no real charges)               |
+| **API**      | Sandbox API Key                 | —         | Sandbox token (`sand_...`)                        |
+| **API**      | Production API Key              | —         | Production token (`prod_...`)                     |
+| **API**      | Webhook Secret                  | —         | HMAC signing secret from EasyShip (`webh_...`)    |
+| **Origin**   | Origin Address Line 1           | —         | Ship-from street address                          |
+| **Origin**   | Origin Address Line 2           | —         | Optional suite / unit                             |
+| **Origin**   | Origin City                     | —         | Ship-from city                                    |
+| **Origin**   | Origin Country                  | —         | Ship-from country                                 |
+| **Origin**   | Origin State / Province         | —         | Ship-from state or province                       |
+| **Origin**   | Origin Postal Code              | —         | Ship-from ZIP (required)                          |
+| **Origin**   | Origin Company Name             | —         | Printed on labels                                 |
+| **Origin**   | Origin Contact Name             | —         | Printed on labels                                 |
+| **Origin**   | Origin Contact Phone            | —         | Printed on labels                                 |
+| **Origin**   | Origin Contact Email            | —         | Printed on labels                                 |
+| **Package**  | Weight Unit                     | kg        | kg or lb                                          |
+| **Package**  | Dimension Unit                  | cm        | cm or in                                          |
+| **Package**  | Default Weight                  | `1`       | Fallback item weight                              |
+| **Package**  | Default Length                  | `10`      | Fallback package length                           |
+| **Package**  | Default Width                   | `10`      | Fallback package width                            |
+| **Package**  | Default Height                  | `10`      | Fallback package height                           |
+| **Carriers** | Allowed Carriers                | (all)     | Carriers to include at checkout                   |
+| **Rates**    | Handling Fee                    | `0`       | Extra fee per rate                                |
+| **Rates**    | Handling Fee Type               | Flat      | Flat amount or percentage                         |
+| **Rates**    | Auto-Insure Shipments           | No        | Apply insurance to every label                    |
+| **Rates**    | Show Duties Notice              | Yes       | Show import duties estimate at checkout           |
+| **Rates**    | Incoterms                       | DDU       | DDU = recipient pays; DDP = collected at checkout |
+| **Rates**    | Show Delivery Time Estimate     | Yes       | Show estimated days at checkout                   |
+| **Rates**    | Address Validation              | Warn      | Off / Warn / Block                                |
+| **Rates**    | Tax Profile                     | None      | Tax class for shipping charges                    |
+| **Rates**    | Geozone Restriction             | All Zones | Restrict to a geographic zone                     |
+| **Rates**    | Minimum Cart Subtotal           | `0`       | Minimum cart value (0 = off)                      |
+| **Rates**    | Maximum Cart Subtotal           | `0`       | Maximum cart value (0 = off)                      |
+| **Tracking** | Status After Label Creation     | Shipped   | Auto-set when label is created                    |
+| **Tracking** | Status After Delivery Confirmed | Delivered | Auto-set when delivered                           |
+| **Tracking** | Notify Customer on Delivery     | No        | Email customer on delivery confirmation           |
+| **Tracking** | Webhook Event Types             | (all)     | Events to subscribe to via webhook                |
+| **Tracking** | Tracking Poll Limit             | `50`      | Max shipments per cron run                        |
+| **Labels**   | Label Format                    | URL       | URL / PDF / PNG / ZPL                             |
+| **Labels**   | Label Size                      | 4x6       | A4 / A5 / 4x6                                     |
+| **Labels**   | Commercial Invoice Size         | A4        | A4 / 4x6 / None                                   |
+| **Debug**    | Debug Logging                   | No        | Log API requests/responses                        |
 
 ## Tips
 
@@ -696,6 +719,7 @@ For stores primarily shipping within one country, you can leave **Incoterms** se
 2. Try creating the label again.
 3. Check `administrator/logs/plg_j2commerce_shipping_easyship.php` for the full error message.
 4. Common causes:
+
    - Invalid or incomplete destination address on the order
    - Package weight or dimensions outside the carrier's limits
    - Insufficient credit in your EasyShip account
