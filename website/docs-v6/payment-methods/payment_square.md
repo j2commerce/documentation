@@ -311,6 +311,18 @@ The order view shows a **Payment Balance** summary when a refund has been proces
 
 ***
 
+## Checkout API Sandbox Testing Panel
+
+When in **Sandbox** Mode, you will receive a Sandbox message the **first** time you're testing the checkout process.&#x20;
+
+- Click **Next**
+
+![](/img/square-sandbox-next.webp)
+
+- Then click Test Payment. You will receive a successful message. Log back into the backend and you will find the order in the order section. **J2Commerce -> Sales -> Orders**
+
+![](/img/square-sandbox-test.webp)
+
 ## Checkout Experience
 
 ![](/img/square-checkout.webp)
@@ -326,7 +338,7 @@ When **Checkout Mode** is set to **Embedded Card Form** and the customer selects
 5. Square tokenizes the card data in the browser — raw card details never touch your server.
 6. The payment is processed and the customer is taken to the order confirmation page.
 
-<!-- SCREENSHOT: Embedded card form at checkout showing the Square card input -->
+![](/img/square-embedded-automatic-checkout.webp)
 
 ### Hosted Checkout
 
@@ -351,20 +363,20 @@ Once a customer pays, J2Commerce records the transaction details on the order:
 - **Transaction status** — Completed, Authorized, or Partially Refunded — is tracked.
 - **Order history** is updated with a payment note including the amount and transaction ID.
 
-<!-- SCREENSHOT: J2Commerce order view showing transaction ID and payment history -->
+![](/img/square-embedded-automatic-checkout2.webp)
 
 ### Capture Authorized Payments (Manual Capture)
 
 If you set **Capture Method** to **Manual (Authorize Only)**, payments are authorized but not charged. To capture a payment:
 
-1. Go to **J2Commerce -> Orders** and open the order.
+1. Go to **J2Commerce -> Sales -> Orders** and open the order.
 2. Find the **Payment** section in the order view.
 3. Click **Capture Payment** to charge the authorized amount.
 4. The order status updates and the order history is updated with a capture note.
 
 You can also click **Void Authorization** to cancel the authorization without charging the customer.
 
-<!-- SCREENSHOT: Order admin view showing Capture Payment and Void Authorization buttons -->
+![](/img/square-embedded-manual1.webp)
 
 ### Refunds
 
@@ -378,7 +390,7 @@ Issue a refund directly from the order in J2Commerce:
 
 The refund is sent to Square via the API. If you enabled **Change Order Status on Refund**, the order status updates automatically.
 
-<!-- SCREENSHOT: Refund modal in J2Commerce order admin showing full and partial refund options -->
+![](/img/square-embedded-automatic-checkout1.webp)
 
 ### Charge a Saved Card
 
@@ -392,7 +404,7 @@ For orders placed by returning customers who have saved cards:
 
 This is useful for manual reorders, phone orders, or collecting payment for shipping adjustments.
 
-<!-- SCREENSHOT: Charge Saved Card panel in the order admin view -->
+![](/img/square-embedded-manual2.webp)
 
 ***
 
@@ -406,7 +418,7 @@ When **Allow Saved Cards** is enabled, customers can manage their saved cards fr
 4. Delete any cards they no longer want stored.
 5. Set a card as the renewal default (used for subscription renewals).
 
-<!-- SCREENSHOT: My Account -> Payment Methods page showing saved Square cards -->
+![](/img/square-saved-cc.webp)
 
 :::info
 
