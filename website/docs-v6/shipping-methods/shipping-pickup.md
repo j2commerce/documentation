@@ -1,10 +1,3 @@
----
-title: "Pickup Options"
-sidebar_label: "Pickup Options"
-sidebar_position: 10
-description: "Offer in-store or curbside pickup at checkout. Configure multiple pickup locations or time slots that customers choose from when they select this shipping option."
----
-
 # Pickup Options
 
 The Pickup Options plugin adds a local pickup choice to your checkout shipping step. When a customer selects it, they are shown a list of pickup locations or time slots you have configured — such as store branches, drop-off points, or collection windows. Their choice is stored on the order so you know exactly which option they selected.
@@ -125,9 +118,15 @@ When a customer reaches the shipping step, J2Commerce checks whether Pickup Opti
 2. **Subtotal Limits** — If minimum or maximum subtotals are set, the cart must be within range.
 3. **Pickup appears** — If all checks pass, Pickup Options is listed as a selectable shipping method alongside any other enabled methods.
 
-When the customer selects Pickup, a second panel appears immediately below showing their available options. In **Radio cards** mode, each option shows its name, description, and image. In **Dropdown** mode, it is a compact list.
+When the customer selects Pickup, a second panel appears immediately below showing their available options.&#x20;
 
-<!-- SCREENSHOT: Checkout shipping step with Pickup selected, showing radio-card options panel -->
+In **Radio cards** mode, each option shows its name, description, and image.&#x20;
+
+![](/img/pickup-checkout2.webp)
+
+In **Dropdown** mode, it is a compact list.
+
+![](/img/pickup-checkout1.webp)
 
 The customer must select one option before they can continue to the next checkout step. Their chosen option name is saved to the order.
 

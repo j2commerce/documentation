@@ -103,7 +103,7 @@ There are **two** ways you can access the plugin.
 
 Look for **EasyShip**, click the **X**, and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-<!-- SCREENSHOT: EasyShip entry enabled with green checkmark -->
+![](/img/easy-ship-enable.webp)
 
 ## Configure the Plugin
 
