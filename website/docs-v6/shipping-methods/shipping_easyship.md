@@ -115,11 +115,11 @@ Click the **EasyShip** title next to the green checkmark to open the configurati
 
 :::
 
-<!-- SCREENSHOT: EasyShip plugin configuration screen with Toggle Inline Help visible -->
+![](/img/easy-ship-toggle.webp)
 
 ### API Credentials
 
-<!-- SCREENSHOT: API Credentials section of EasyShip config -->
+![](/img/easy-ship-config1.webp)
 
 **Sandbox Mode:** When set to **Yes**, the plugin uses your sandbox API token and no real shipping charges are made. Set to **No** for live shipments.
 
@@ -147,8 +147,6 @@ The **Connection and Webhook Diagnostics** panel gives you three one-click diagn
 
 **Create Webhook:** Automatically creates a webhook subscription in EasyShip for the event types you have selected, saves the generated webhook secret to the **Webhook Secret** field, and marks the webhook as configured.
 
-<!-- SCREENSHOT: Health Check / diagnostics panel showing the three action buttons -->
-
 :::tip
 
 Use **Test Connection** any time rates stop appearing at checkout. A failed connection test usually means the API token has been revoked or the wrong token type (sandbox vs. production) is entered.
@@ -156,6 +154,8 @@ Use **Test Connection** any time rates stop appearing at checkout. A failed conn
 :::
 
 ### Ship-From Address
+
+![](/img/easy-ship-config2.webp)
 
 The ship-from address is your warehouse or business location. EasyShip uses this as the origin for all rate calculations and label creation.
 
@@ -187,25 +187,9 @@ The company name, contact name, phone, and email are printed on the label and in
 
 :::
 
-### Select Your Carriers
-
-<!-- SCREENSHOT: Allowed Carriers field showing carrier cards with logos -->
-
-The **Allowed Carriers** field shows a multi-select list of carriers linked to your EasyShip account, each displayed with its logo. Only rates from selected carriers are offered at checkout. Leave the field empty to allow all carriers linked to your EasyShip account.
-
-:::tip
-
-Connect the carriers you want to offer under **Couriers** in your EasyShip dashboard before returning to J2Commerce to configure this field. Carriers you have not yet connected to EasyShip will not appear in rate results.
-
-:::
-
-### Show Delivery Time
-
-**Show Delivery Time Estimate:** When set to **Yes**, estimated delivery days appear below each shipping option at checkout (e.g., "3 - 5 business days").
-
 ### Set Package Defaults
 
-<!-- SCREENSHOT: Package defaults fields showing weight unit, dimension unit, and fallback values -->
+![](/img/easy-ship-config3.webp)
 
 These defaults are used when your products do not have their own weight and dimension values configured. Setting them ensures rate calculations always work even if a product is missing measurements.
 
@@ -233,11 +217,23 @@ The plugin calculates the total parcel weight by summing each item's weight mult
 
 :::
 
+### Select Your Carriers
+
+![](/img/easy-ship-config4.webp)
+
+The **Allowed Carriers** field shows a multi-select list of carriers linked to your EasyShip account, each displayed with its logo. Only rates from selected carriers are offered at checkout. Leave the field empty to allow all carriers linked to your EasyShip account.
+
+:::tip
+
+Connect the carriers you want to offer under **Couriers** in your EasyShip dashboard before returning to J2Commerce to configure this field. Carriers you have not yet connected to EasyShip will not appear in rate results.
+
+:::
+
 ### Configure Rate Adjustments (Optional)
 
-These settings let you adjust the rates returned by EasyShip before they are shown to customers, and restrict which customers see EasyShip rates.
+![](/img/easy-ship-config5.webp)
 
-<!-- SCREENSHOT: Rate adjustments section showing handling fee, geozone, and subtotal fields -->
+These settings let you adjust the rates returned by EasyShip before they are shown to customers, and restrict which customers see EasyShip rates.
 
 **Handling Fee:** An additional fee added to each shipping rate. Use this to cover packaging materials or labor costs.
 
@@ -245,7 +241,27 @@ These settings let you adjust the rates returned by EasyShip before they are sho
 
 **Auto-Insure Shipments:** When enabled, every label is created with insurance equal to the declared customs value. You can also toggle insurance per-label when creating individual labels.
 
-**Tax Profile:** If shipping is taxable in your jurisdiction, select a J2Commerce tax profile. Leave as **None** to not charge tax on shipping.
+**Show Duties Notice at Checkout:** When enabled, international customers see an estimated duties and taxes disclosure (DDU).
+
+**Incoterms:** DDU means duties and taxes are paid by the recipient on delivery. DDP (v2) means they are collected at checkout.
+
+**Show Delivery Time Estimate:** Display estimated business days in the rate label at checkout. When set to **Yes**, estimated delivery days appear below each shipping option at checkout (e.g., "3 - 5 business days").
+
+**Address Validation:** Check the destination address before label purchase. Off = no check; Warn = show advisory; Block = prevent label if invalid. It controls how EasyShip validates the customer's shipping address before allowing label creation.
+
+| Option    | Behavior                                                                                  |
+| --------- | ----------------------------------------------------------------------------------------- |
+| **Off**   | No address check is performed.                                                            |
+| **Warn**  | An advisory is shown if the address appears invalid, but label creation is still allowed. |
+| **Block** | Label creation is blocked until the address is corrected.                                 |
+
+The default is **Warn**, which gives store owners a heads-up about potentially bad addresses without preventing label creation. Use **Block** for high-value shipments where an undeliverable address is especially costly.
+
+### Shipping Class
+
+![](/img/easy-ship-config6.webp)
+
+**Shipping Tax Class:** Apply this tax class to shipping charges. If shipping is taxable in your jurisdiction, select a J2Commerce tax profile. Leave as **None** to not charge tax on shipping.
 
 **Geozone Restriction:** Restrict EasyShip rates to customers shipping to destinations within the selected geozone. Leave as **All Zones** to show rates to all customers worldwide.
 
@@ -275,13 +291,25 @@ Setting an accurate default category reduces the likelihood of customs delays fo
 
 These settings control what happens automatically when you create shipping labels and how tracking updates affect your orders.
 
-<!-- SCREENSHOT: Label and tracking settings section -->
+![](/img/easy-ship-config9.webp)
 
 **Status After Label Creation:** The order status to set automatically when a shipping label is created.
 
 **Status After Delivery Confirmed:** The order status to set automatically when EasyShip tracking reports the package as delivered.
 
 **Notify Customer on Delivery:** Send an order status notification email to the customer when delivery is confirmed by EasyShip.
+
+### Label Format and Size
+
+![](/img/easy-ship-config7.webp)
+
+**Label Format:** The output format for generated shipping labels. Options are **URL** (a direct link), **PDF**, **PNG**, or **ZPL** (for thermal label printers).
+
+**Label Size:** Physical size for generated labels: **A4**, **A5**, or **4x6** (standard thermal label size, the default).
+
+**Commercial Invoice Size:** Page size for international commercial invoice downloads: **A4**, **4x6**, or **None** (disables commercial invoice download).
+
+![](/img/easy-ship-config8.webp)
 
 **Webhook Event Types:** Select which EasyShip event types to subscribe to when you use the **Create Webhook** button. Available events:
 
@@ -298,26 +326,6 @@ These settings control what happens automatically when you create shipping label
 2. Select the webhook event types you want to subscribe to.
 3. Leave the **Webhook Secret** field for now — it is covered in the [Webhook Setup](#webhook-setup-optional) section below.
 4. Click **Save**.
-
-### Label Format and Size
-
-**Label Format:** The output format for generated shipping labels. Options are **URL** (a direct link), **PDF**, **PNG**, or **ZPL** (for thermal label printers).
-
-**Label Size:** Physical size for generated labels: **A4**, **A5**, or **4x6** (standard thermal label size, the default).
-
-**Commercial Invoice Size:** Page size for international commercial invoice downloads: **A4**, **4x6**, or **None** (disables commercial invoice download).
-
-### Address Validation
-
-**Address Validation:** Controls how EasyShip validates the customer's shipping address before allowing label creation.
-
-| Option    | Behavior                                                                                  |
-| --------- | ----------------------------------------------------------------------------------------- |
-| **Off**   | No address check is performed.                                                            |
-| **Warn**  | An advisory is shown if the address appears invalid, but label creation is still allowed. |
-| **Block** | Label creation is blocked until the address is corrected.                                 |
-
-The default is **Warn**, which gives store owners a heads-up about potentially bad addresses without preventing label creation. Use **Block** for high-value shipments where an undeliverable address is especially costly.
 
 ### Enable Debug Mode (Optional)
 
@@ -384,10 +392,8 @@ Once you are satisfied with testing:
 
 Your store is now using real EasyShip rates and can create real shipping labels.
 
-:::note
-
-Make sure you have sufficient credit balance in your EasyShip account before creating live labels. EasyShip deducts the label cost from your pre-funded wallet.
-
+:::warning
+Make sure you have a sufficient credit balance in your EasyShip account before creating live labels. EasyShip deducts the label cost from your pre-funded wallet.
 :::
 
 ## Creating Shipping Labels
@@ -700,7 +706,7 @@ For stores primarily shipping within one country, you can leave **Incoterms** se
 
 **Solution:**
 
-1. Verify that the plugin is enabled in **J2Commerce** -> **Shipping** -> **Shipping Methods**.
+1. Verify that the plugin is enabled in **J2Commerce** -> **Setup** -> **Shipping Methods**.
 2. Check that the **Origin Postal Code** and **Origin Country** are filled in.
 3. In the plugin settings, click **Test Connection** to confirm the API token is valid.
 4. Click **Test Rate Quote** to confirm EasyShip returns rates from your origin.
