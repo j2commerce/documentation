@@ -1,0 +1,274 @@
+---
+title: "Auto-Coupon Pop Up"
+sidebar_label: "Auto-Coupon"
+sidebar_position: 5
+description: "Apply J2Commerce coupon codes automatically from URL parameters and show a branded confirmation modal."
+---
+
+# Auto-Coupon Pop Up
+
+The Auto-Coupon Pop Up app reads a coupon code directly from the page URL and applies it to the visitor's cart automatically — no typing required. A branded modal then appears to confirm whether the code was accepted, expired, not yet active, or not eligible, keeping shoppers informed at every step.
+
+## Requirements
+
+- with PHP 8.3.0 +
+- Joomla! 6.x
+- J2Commerce 6.x
+
+## Purchase and Download
+
+**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
+
+**Step 2:** Locate the **Auto-Coupon Pop Up** App **->** click **View Details** **->** **Add to cart -> Checkout**.&#x20;
+
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
+
+## Install the App
+
+You can install this **Auto-Coupon Pop Up** App using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the plugin ZIP file or use the Install from URL option.
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
+
+## Enable the App
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the extension.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![](/img/auto-coupon-app.webp)
+
+Look for **Auto-Coupon Pop Up**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/auto-coupon-enable1.webp)
+
+## Configure the App
+
+Once you click on the **Auto-Coupon Pop Up** title next to the green checkmark, you are ready to start setting up the parameters.
+
+:::tip
+
+**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+
+:::
+
+![](/img/auto-coupon-toggle.webp)
+
+### URL Capture tab
+
+This tab controls how the plugin detects a coupon code in the page URL and how often the modal is shown.
+
+- **Capture coupon from URL** — Turn this on to allow the plugin to read a coupon code from the URL on every page load and apply it to the visitor's cart automatically. Leave it off if you want to pause the feature without disabling the whole plugin.
+
+- **URL parameter name** — The query string key the plugin looks for. The default is `couponcode`, so a URL like `https://yoursite.com/sale?couponcode=PROMO10` triggers the plugin. Change this only if your marketing platform uses a different parameter name. Use letters, numbers, and underscores only.
+
+- **Modal display frequency** — Choose **Every time** to show the modal on every page load while the code is in the URL. Choose **Once per session (per coupon code)** to show it only once per browser session for the same code — useful for avoiding repeated interruptions when visitors browse multiple pages after clicking a campaign link.
+
+- **Debug logging** — Set to **Yes** during setup or troubleshooting to write detailed entries to `administrator/logs/plg_j2commerce_app_autocoupon.log.php`. Turn this off in production.
+
+### Modal Appearance tab
+
+This tab controls the look and feel of the pop-up modal.
+
+- **Frontend framework** — Choose **Bootstrap 5** (the J2Commerce default) or **UIkit**. Select UIkit only if your storefront uses the UIkit subtemplate AND the **J2Commerce - UIkit** app plugin is enabled. If UIkit is selected but its plugin is disabled, the modal is silently skipped.
+
+- **Visual treatment** — Sets the overall design style of the modal:
+  - **Flat** — Clean, minimal layout with no background effects. Works well for any brand.
+  - **Gradient** — Adds a soft hero glow behind the icon for a polished, modern look.
+  - **Ticket stub** — Styles the modal to look like a perforated coupon ticket — fun for discount-focused campaigns.
+  - **Confetti** — Adds a subtle celebratory backdrop on the success (Active) state. Ideal for big promotions.
+
+- **Padding density** — Controls the inner spacing, icon size, and headline size. **Compact** fits tight layouts, **Regular** is the balanced default, and **Comfy** adds breathing room for spacious designs.
+
+- **Accent palette** — Curated color presets applied to the icon, status pill, code pill, and primary button. Options: **Green** (default), **Blue**, **Amber**, **Coral**, **Violet**, **Espresso**, or **Custom hex**. Choose the one that best matches your store's brand color.
+
+- **Custom accent color** — Visible only when **Accent palette** is set to **Custom hex**. Enter any valid hex color (e.g. `#15803d`) to use your exact brand color across the modal's accents.
+
+- **Confetti backdrop on success** — Visible only when **Visual treatment** is set to **Confetti**. Toggle this on to render the animated confetti behind the modal when a coupon is successfully applied.
+
+- **Show status pill** — Displays a small uppercase label above the icon (e.g. APPLIED, EXPIRED) that summarizes the coupon state at a glance.
+
+- **Show coupon code pill** — Renders the coupon code itself in a monospace pill below the headline. On the Active status this pill becomes a savings row showing the discount value.
+
+- **Modal width** — Any valid CSS length (e.g. `472px`, `32rem`, `90vw`). Applied at viewports 576 px and wider. The modal is full-width on mobile.
+
+- **Modal minimum height** — Any valid CSS length. Applied at viewports 576 px and wider.
+
+- **Border radius** — Corner rounding of the modal panel (e.g. `18px`). Set to `0` for sharp corners.
+
+- **Backdrop opacity** — How dark the page behind the modal appears. `0` is fully transparent, `1` is fully opaque. The default `0.5` dims the page without hiding it.
+
+- **Headline font family** — CSS font-family stack for the modal title. Defaults to a serif stack (`"Instrument Serif"`, Georgia). Enter any font stack your theme loads.
+
+- **Body font family** — CSS font-family stack for the message text, buttons, and pills. Defaults to a system sans-serif stack.
+
+- **Coupon code font family** — Monospace stack used inside the coupon code pill and savings row. Defaults to `"JetBrains Mono"`, `ui-monospace`.
+
+- **Extra title CSS classes** — Optional additional CSS classes appended to the headline element. Leave empty to use the design defaults.
+
+- **Extra body CSS classes** — Optional additional CSS classes appended to the message paragraph. Leave empty to use the design defaults.
+
+### Copy Tone & Disclaimer tab
+
+This tab sets the voice of the built-in default messages and an optional fine-print line.
+
+- **Default copy tone** — Selects the writing style used for the canned default status messages when you haven't entered custom text in the Status Messages tab:
+  - **Friendly** — Warm and personable, e.g. "You're in! Savings Applied."
+  - **Professional** — Concise and neutral, e.g. "Discount Applied."
+  - **Witty** — Playful with a bit of personality, e.g. "Discount: Deployed and Locked In."
+
+  You can override any individual message in the Status Messages tab for per-status customization.
+
+- **Disclaimer text** — Optional fine print rendered beneath the call-to-action buttons, such as a link to your terms and conditions. Leave empty to hide this area entirely.
+
+### Modal Call-to-Action tab
+
+This tab configures the button or buttons that appear at the bottom of the modal.
+
+- **CTA button layout** — Choose **Single** to show one primary action button, or **Dual** to stack a primary and a secondary button side by side (e.g. "Shop Now" plus "Continue shopping").
+
+- **Call-to-action menu item** — Select a Joomla menu item the primary button routes visitors to — typically your product listing or sale page. This is the preferred option since it generates a proper SEF URL automatically.
+
+- **Fallback URL** — A direct URL used only when no menu item is selected above. Enter an absolute or relative URL.
+
+- **Primary button text** — The label shown on the main action button. Defaults to "Shop Now". You can enter literal text or a translation key.
+
+- **Primary button CSS class** — CSS classes for the primary button. Defaults to `btn btn-primary`. Adjust to match your theme.
+
+- **Secondary button text** — Visible only when **CTA button layout** is set to **Dual**. Label for the secondary action, defaulting to "Continue shopping".
+
+- **Secondary button URL** — Visible only when **CTA button layout** is set to **Dual**. Where the secondary button sends the visitor. Leave empty to close the modal without navigating.
+
+- **Secondary button CSS class** — Visible only when **CTA button layout** is set to **Dual**. CSS classes for the secondary button, defaulting to `btn ac-btn-secondary` (a subtle, underlined style).
+
+### Status Messages tab
+
+This tab lets you customize the headline and body text shown for each coupon state. There are four states, each with a title field and a body field.
+
+- **Title: coupon not found** and **Body: coupon not found** — Shown when the coupon code does not exist in the system at all. Use a gentle message that encourages the visitor to double-check the code.
+
+- **Title: coupon expired** and **Body: coupon expired** — Shown when the coupon's end date has passed.
+
+- **Title: coupon not active yet** and **Body: coupon not active yet** — Shown when the coupon's start date is still in the future. Useful for pre-launch campaigns where you want visitors to know the deal is coming soon.
+
+- **Title: coupon applied** and **Body: coupon applied** — Shown when the coupon was found and successfully applied to the cart. In the title and body fields, `%s` is replaced with the discount value (e.g. `20%` or `$10.00`) and the coupon code, in that order. Both values are automatically escaped before substitution, so you do not need to worry about special characters.
+
+Leave any field at its default to use the built-in tone-based copy controlled by the **Default copy tone** setting in the Copy Tone tab.
+
+### Ineligible Coupon Message tab
+
+This tab handles the case where the coupon code exists and is in date, but cannot be applied to the visitor's current cart.
+
+- **Title: coupon ineligible** — Shown when the coupon is valid but the cart doesn't meet its requirements. Common reasons include the order subtotal being below the minimum, the visitor's user group not being permitted, restricted product categories, or the usage cap being reached.
+
+- **Body: coupon ineligible** — Supporting message shown below the title. You can use `%s` placeholders for the discount value and coupon code, both auto-escaped.
+
+:::info
+
+**Note:** In version 1 the plugin does not reveal which specific condition blocked the coupon — all ineligibility reasons share the same message. Write one friendly, generic message and consider linking to your terms-and-conditions page for details.
+
+:::
+
+### Admin Dashboard Banner tab
+
+This tab controls an optional announcement banner that appears in the J2Commerce admin dashboard message slider, visible only to administrators.
+
+- **Publish admin dashboard banner** — Toggle on to add a banner to the J2Commerce dashboard. Toggle off to hide it.
+
+- **Banner text** — Plain-text message displayed in the slider, such as a reminder of your current active campaign URL. Visible only when the banner is published.
+
+- **Banner priority** — A number controlling sort order in the slider. Lower numbers appear first. Default is `500`. Visible only when the banner is published.
+
+- **Banner icon class** — Font Awesome class for the icon displayed next to the banner text (default `fa-solid fa-tag`). Visible only when the banner is published.
+
+- **Banner type** — Visual style of the banner: **Info (blue)**, **Success (green)**, or **Warning (amber)**. Visible only when the banner is published.
+
+- **Banner link menu item** — Optional Joomla menu item. If set, clicking the banner routes admins to that page. Visible only when the banner is published.
+
+- **Banner link URL fallback** — Used only when no menu item is selected above. Enter a direct URL. Visible only when the banner is published.
+
+## How It Works{#how-it-works}
+
+1. A visitor lands on any frontend page with `?couponcode=XYZ` (or your custom parameter name) in the URL.
+2. Auto-Coupon reads the code from the URL and attempts to apply it to the visitor's cart.
+3. The plugin classifies the result as one of five states: **Active** (applied), **Empty** (not found), **Expired**, **Pending** (not yet active), or **Ineligible** (exists but cart doesn't qualify).
+4. A modal appears with the headline and body text matching that state, plus the configured call-to-action button.
+5. The visitor clicks the CTA to continue shopping, or closes the modal manually.
+
+## Display Conditions{#display-conditions}
+
+The modal appears when all of these conditions are true:
+
+- The Auto-Coupon Pop Up plugin is enabled under **J2Commerce** -> **Apps**.
+- The page URL contains the configured query parameter (default `couponcode`).
+- The parameter has a non-empty value.
+
+The **Once per session** frequency option suppresses repeat showings for the same coupon code within the same browser session. Opening a new browser tab, using a private/incognito window, or using a different coupon code will trigger a fresh modal.
+
+## Tips{#tips}
+
+- Share promotional URLs with the coupon parameter in newsletters and social posts — for example, `https://yoursite.com/sale?couponcode=SUMMER20`.
+- Test each state (Active, Empty, Expired, Pending, Ineligible) at least once before going live to confirm your custom messages and CTA destination look correct.
+- Use the **Friendly** tone for general retail stores and the **Professional** tone for B2B stores where a neutral voice is expected.
+- Match the **Accent palette** to your storefront brand color — or select **Custom hex** to enter your exact brand color value.
+- Keep status titles short — long titles wrap on mobile screens and may push the CTA button out of view.
+
+## Troubleshooting{#troubleshooting}
+
+### Modal Does Not Appear{#modal-does-not-appear}
+
+**Cause:** The plugin is disabled, the URL parameter name doesn't match, or the URL is missing the parameter entirely.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Apps** and verify **Auto-Coupon Pop Up** shows a green checkmark.
+2. Check the URL you are testing. It must include the exact parameter name configured under **URL parameter name** (default `couponcode`), for example `?couponcode=TEST`.
+3. Confirm **Capture coupon from URL** is set to **Yes** in the URL Capture tab.
+4. If you selected the **UIkit** frontend framework, verify the **J2Commerce - UIkit** app plugin is also enabled.
+
+### Coupon Always Shows "Ineligible"{#coupon-always-shows-ineligible}
+
+**Cause:** The coupon exists and is in date, but the cart does not meet the coupon's conditions.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Sales** -> **Coupons** and open the coupon.
+2. Check the **Minimum order value** — add enough items to the cart to meet it.
+3. Check **User group restrictions** — the test visitor may not belong to the required group.
+4. Check **Category restrictions** — the coupon may apply only to specific product categories.
+5. Check the **Usage limit** — the coupon may have reached its maximum number of uses.
+
+### UIkit Modal Not Rendering{#uikit-modal-not-rendering}
+
+**Cause:** **Frontend framework** is set to UIkit but the J2Commerce UIkit app plugin is not enabled.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Apps** and verify **J2Commerce - UIkit** shows a green checkmark.
+2. If the UIkit plugin is not installed, switch **Frontend framework** back to **Bootstrap 5** in the Modal Appearance tab and save.
+
+### Once Per Session Setting Not Suppressing Repeat Modals{#once-per-session-not-suppressing}
+
+**Cause:** The browser session was reset, the visitor is using a private/incognito tab, or a different coupon code is in the URL.
+
+**Solution:**
+
+1. Confirm **Modal display frequency** is set to **Once per session (per coupon code)** in the URL Capture tab.
+2. Note that incognito/private windows start a fresh session — the modal will appear once per incognito session by design.
+3. If the URL contains a different code than the one previously shown, the modal appears again — this is expected behavior.
+
+### Dashboard Banner Not Showing{#dashboard-banner-not-showing}
+
+**Cause:** The banner toggle is off, or the admin has not refreshed the J2Commerce dashboard.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Apps** and open **Auto-Coupon Pop Up**.
+2. Click the **Admin Dashboard Banner** tab and verify **Publish admin dashboard banner** is set to **Yes**.
+3. Navigate to the J2Commerce dashboard and refresh the page.
+4. If the banner still does not appear, check **Banner priority** — a very high number may push it off the visible area of the slider if other banners with lower numbers are present.
