@@ -311,18 +311,6 @@ The order view shows a **Payment Balance** summary when a refund has been proces
 
 ***
 
-## Checkout API Sandbox Testing Panel
-
-When in **Sandbox** Mode, you will receive a Sandbox message the **first** time you're testing the checkout process.&#x20;
-
-- Click **Next**
-
-![](/img/square-sandbox-next.webp)
-
-- Then click Test Payment. You will receive a successful message. Log back into the backend and you will find the order in the order section. **J2Commerce -> Sales -> Orders**
-
-![](/img/square-sandbox-test.webp)
-
 ## Checkout Experience
 
 ![](/img/square-checkout.webp)
@@ -351,6 +339,18 @@ When **Checkout Mode** is set to **Hosted Checkout**:
 5. Square redirects them back to your J2Commerce confirmation page.
 
 <!-- SCREENSHOT: Square hosted checkout page on Square's domain -->
+
+## Checkout API Sandbox Testing Panel
+
+When in **Sandbox** Mode and using the **Hosted** option, you will receive a Sandbox message the **first** time you're testing the checkout process.&#x20;
+
+- Click **Next**
+
+![](/img/square-sandbox-next.webp)
+
+- Then click Test Payment. You will receive a successful message. Log back into the backend and you will find the order in the order section. **J2Commerce -> Sales -> Orders**
+
+![](/img/square-sandbox-test.webp)
 
 ***
 
