@@ -3,7 +3,7 @@ description: >-
     This article is a guide to help you update your Joomla 5 site using J2Commerce v4 to Joomla 6.
 ---
 
-# Updating J2Commerce 4 to Joomla 6
+# Using J2Commerce 4 in Joomla 6
 
 This article is a guide to help you update a Joomla 5 site (running J2Commerce v4) to Joomla 6.
 
