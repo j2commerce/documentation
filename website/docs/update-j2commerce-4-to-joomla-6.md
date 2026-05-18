@@ -1,11 +1,13 @@
 ---
 description: >-
-    This article is a guide to help you update your Joomla 5 site using J2Commerce v4 to Joomla 6.
+    This article is a guide to help you use J2Commerce v4 in Joomla 6.
 ---
 
 # Using J2Commerce 4 in Joomla 6
 
-This article is a guide to help you update a Joomla 5 site (running J2Commerce v4) to Joomla 6.
+This article is a guide to help you use J2Commerce v4 in Joomla 6.
+For a Joomla 6 native experience, download the new J2Commerce v6 extension.
+J2Commerce v6 is not an update to J2Commerce v4, you will need to use our migration tool to move your store to J2Commerce v6.
 
 :::warning
 On a new Joomla 6 install, before installing J2Commerce v4.1.x, go to plugins, filter by the 'behavior' plugin type and enable the Backward Compatibility 6 plugin and all its options.
