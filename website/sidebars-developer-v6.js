@@ -37,6 +37,8 @@ const sidebars = {
                         'core-concepts/orders/order_item_attributes',
                     ],
                 },
+                'core-concepts/custom-templates',
+                'core-concepts/ajax-product-list-grid',
             ],
         },
         {
