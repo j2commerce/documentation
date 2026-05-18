@@ -49,8 +49,27 @@ const sidebars = {
                         'catalog/product-types/app_boxbuilderproduct',
                     ],
                 },
+                'catalog/managing-products',
                 'catalog/content-j2commerce',
+                'catalog/advanced-pricing',
+                'catalog/inventory',
                 'catalog/creating-options',
+                {
+                    type: 'category',
+                    label: 'Vendors',
+                    link: {
+                        type: 'doc',
+                        id: 'catalog/vendors/index',
+                    },
+                },
+                {
+                    type: 'category',
+                    label: 'Manufacturers',
+                    link: {
+                        type: 'doc',
+                        id: 'catalog/manufacturers/index',
+                    },
+                },
                 'catalog/creating-filters',
             ],
         },
@@ -65,6 +84,7 @@ const sidebars = {
                 'sales/orders',
                 'sales/customers',
                 'sales/coupons',
+                'sales/vouchers',
             ],
         },
         {
@@ -158,7 +178,10 @@ const sidebars = {
                     ],
                 },
                 'setup/custom-fields',
+                'setup/uikit3-custom-fields',
                 'setup/order-statuses',
+                'setup/shipping-troubleshooter',
+                'setup/queue-hub',
             ],
         },
         {
