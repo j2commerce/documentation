@@ -61,6 +61,7 @@ const sidebars = {
                         type: 'doc',
                         id: 'catalog/vendors/index',
                     },
+                    items: [],
                 },
                 {
                     type: 'category',
@@ -69,6 +70,7 @@ const sidebars = {
                         type: 'doc',
                         id: 'catalog/manufacturers/index',
                     },
+                    items: [],
                 },
                 'catalog/creating-filters',
             ],
