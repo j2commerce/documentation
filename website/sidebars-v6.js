@@ -25,6 +25,18 @@ const sidebars = {
         },
         {
             type: 'category',
+            label: 'Migration Tools',
+            link: {
+                type: 'generated-index',
+                slug: '/migration-tools',
+            },
+            items: [
+                'migration-tools/j2commercemigrator',
+                'migration-tools/plg_j2commercemigrator_j2store4',
+            ],
+        },
+        {
+            type: 'category',
             label: 'Catalog',
             link: {
                 type: 'generated-index',
@@ -365,6 +377,8 @@ const sidebars = {
                 'payment-methods/payment_moneyorder',
                 // PayPal Payment
                 'payment-methods/payment_paypal',
+                // PayPal Complete
+                'payment-methods/payment_paypalcomplete',
                 // Simplify Payments (Mastercard Simplify Commerce)
                 'payment-methods/simplifypayment',
                 // Square Payment
