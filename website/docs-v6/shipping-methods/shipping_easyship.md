@@ -28,9 +28,9 @@ This plugin is ideal for stores that ship physical products internationally and 
 
 ## Prerequisites
 
-- J2Commerce 6 installed and enabled on your Joomla 6 site
+- J2Commerce 6 is installed and enabled on your Joomla 6 site
 - An EasyShip account at [app.easyship.com](https://app.easyship.com)
-- At least one product in your store marked as shipping enabled
+- At least one product in your store is marked as shipping enabled
 - A valid ship-from address (your warehouse or business address)
 
 ## Create an EasyShip Account
