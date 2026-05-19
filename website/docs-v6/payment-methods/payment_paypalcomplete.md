@@ -27,7 +27,7 @@ In the Joomla admin, go to **System -> Install -> Extensions**
 
 Upload the plugin ZIP file or use the Install from URL option.
 
-![Install extensions](/img/paypalcomplete-install.webp)
+[//]: # (![Install extensions]&#40;/img/paypalcomplete-install.webp&#41;)
 
 ## Enable the Plugin
 
@@ -37,11 +37,11 @@ Once installed, you need to enable the plugin. There are **two** ways to reach t
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Payments**
 
-![Payments list](/img/paypalcomplete-payments-list.webp)
+[//]: # (![Payments list]&#40;/img/paypalcomplete-payments-list.webp&#41;)
 
 Look for **PayPal Complete Payments**, click the red **X**, and it turns into a green checkmark. The plugin is now enabled and ready for configuration.
 
-![Enable PayPal Complete Payments](/img/paypalcomplete-enable.webp)
+[//]: # (![Enable PayPal Complete Payments]&#40;/img/paypalcomplete-enable.webp&#41;)
 
 ## Configure the Plugin
 
@@ -53,7 +53,7 @@ Click the **Toggle Inline Help** button at the top of any plugin or app screen t
 
 :::
 
-![Toggle inline help](/img/paypalcomplete-toggle-help.webp)
+[//]: # (![Toggle inline help]&#40;/img/paypalcomplete-toggle-help.webp&#41;)
 
 ---
 
