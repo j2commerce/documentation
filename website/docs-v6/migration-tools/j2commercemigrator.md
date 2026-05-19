@@ -15,7 +15,7 @@ Before you start, install [Akeeba Backup](https://www.akeeba.com/) and take a fu
 
 :::
 
-## Purchase and Download
+## Download
 
 The **J2Commerce Migrator** is available from the J2Commerce extension directory and is not part of core Joomla.
 
