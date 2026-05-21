@@ -79,13 +79,35 @@ This tab controls how the plugin detects a coupon code in the page URL and how o
 
 - **Debug logging** — Set to **Yes** during setup or troubleshooting to write detailed entries to `administrator/logs/plg_j2commerce_app_autocoupon.log.php`. Turn this off in production.
 
+- **Shareable URL Example** — A read-only preview field displayed inside the URL Capture tab. It constructs a live example URL using your current **URL parameter name** setting and the most recently created active coupon code, with a **Click to view** link that opens the URL in a new tab. Use this to quickly copy and share your campaign link without leaving the plugin settings.
+
+- **Auto Coupon URL Builder** — A multi-row widget added in v6.0.4 that makes it easy to construct, copy, and generate QR codes for your auto-apply campaign URLs without leaving the plugin settings.
+
+  ![](/img/auto-coupon-url-builder.webp)
+
+  - **Coupon dropdown** — A searchable fancy-select listing all enabled coupons from **J2Commerce -> Sales -> Coupons**, formatted as `coupon name (COUPON_CODE)` and sorted alphabetically by name. Disabled coupons are filtered out. If no enabled coupons exist, the entire URL Builder hides itself and shows the warning: *No active coupons found. Create one in J2Commerce → Coupons first.*
+
+  - **URL preview** — A read-only input that shows the auto-apply URL composed from your site's base URL, the current **URL parameter name**, and the selected coupon's code. The URL recomposes automatically whenever you pick a different coupon or edit the URL parameter name field — no save required.
+
+  - **Copy URL button** — Copies the previewed URL to your clipboard in one click. A Joomla success toast ("Copied to clipboard") confirms the copy. If the browser denies clipboard access, the toast reads "Copy failed — select and copy manually."
+
+  - **QR Size selector** — Choose the pixel dimensions of the generated QR code PNG: **Small** (~120 px), **Medium** (~180 px, default), **Large** (~300 px), or **X-Large** (~480 px). Select X-Large for print materials; Small or Medium for digital embeds.
+
+  - **Generate QR Code button** — Sends the selected coupon and size to a server-side endpoint, which uses the bundled phpqrcode library to render the auto-apply URL as a PNG. The image downloads immediately to your machine as `coupon-COUPON_CODE.png`. No external QR service is called, so this works even on air-gapped staging environments.
+
+:::info
+
+The URL Builder AJAX endpoint requires a logged-in administrator with `core.edit` or `core.admin` permission on com_j2commerce, plus a valid Joomla CSRF token. These are standard framework checks — no additional configuration is needed.
+
+:::
+
 ### Modal Appearance tab
 
 ![](/img/auto-coupon-modal.webp)
 
 This tab controls the look and feel of the pop-up modal.
 
-- **Frontend framework** — Choose **Bootstrap 5** (the J2Commerce default) or **UIkit**. Select UIkit only if your storefront uses the UIkit subtemplate AND the **J2Commerce - UIkit** app plugin is enabled. If UIkit is selected but its plugin is disabled, the modal is silently skipped.
+- **Frontend framework** — A subtemplate picker that lists the J2Commerce subtemplates installed on your site. The default selection is **app\_bootstrap5** (the J2Commerce Bootstrap 5 subtemplate). If your storefront uses the UIkit subtemplate, select the UIkit option here — but only if the **J2Commerce - UIkit** app plugin is also enabled. If UIkit is selected but its plugin is disabled, the modal is silently skipped.
 
 - **Visual treatment** — Sets the overall design style of the modal:
 
@@ -214,6 +236,59 @@ This tab handles the case where the coupon code exists and is in date, but canno
 
 :::
 
+The **Default copy tone** setting in the **Copy Tone & Disclaimer** tab applies here too. When you leave both fields at their defaults, the plugin selects tone-appropriate ineligibility copy automatically: **Friendly** ("So close — this coupon doesn't fit your basket yet"), **Professional** ("This coupon's conditions aren't met by your current order"), or **Witty** ("Your cart needs a little more love before this one applies").
+
+### Auto Popup tab
+
+<!-- SCREENSHOT: Auto Popup tab in the Auto-Coupon plugin settings, showing the Enable Promotion Popup toggle and coupon picker -->
+
+This tab is where you configure the promotion popup — an independent modal that appears automatically on pages that do **not** contain the URL parameter. Use it to announce a sale and apply a coupon in one click, even when visitors arrive through organic search or direct links rather than a campaign URL.
+
+:::info
+
+The promotion popup is independent of the URL-driven flow. You can enable both at the same time. When the URL parameter is present on the page, the URL-capture flow takes priority and the promo popup is suppressed for that page load.
+
+:::
+
+- **Enable Promotion Popup** — Toggle **Yes** to activate the promo popup. When on, the modal fires on any frontend page that does not include the URL capture parameter. Toggle **No** to disable without affecting the URL-capture modal.
+
+- **Coupon to Offer** — A searchable dropdown listing all enabled coupons from **J2Commerce -> Sales -> Coupons**. Only published (enabled) coupons appear. Select the coupon whose discount you want to promote. Leave this empty and the popup will not display even if **Enable Promotion Popup** is on.
+
+- **Coupon: Valid From** — A read-only display that mirrors the selected coupon's own **valid\_from** date (stored as UTC). No data is duplicated — this field reads directly from the coupon row. Click the **Edit** button inline to jump to the coupon record and update the start date there.
+
+- **Coupon: Valid To** — A read-only display that mirrors the selected coupon's own **valid\_to** date (UTC). Click **Edit** to update the coupon's expiry date directly in the coupon record. The promo popup automatically respects these dates at runtime — if the current date falls outside the valid window, the popup will not show.
+
+- **Show Coupon Expiration** — When set to **Yes**, the coupon's **valid\_to** date is displayed inside the popup (for example, "Expires May 31, 2026"). This creates a sense of urgency that encourages visitors to act quickly.
+
+- **Headline** — The large text at the top of the promo popup. You can use two `%s` placeholders: the first is replaced with the discount amount (for example, `20%` or `$10.00`), and the second with the coupon code. Both values are automatically escaped before substitution. The default constant translates to: *Take %s off — today only*.
+
+- **Supporting Text** — Optional secondary copy shown below the headline. HTML is allowed. Use the same `%s` placeholders for discount and coupon code. Leave this empty to show the headline and button only.
+
+- **Apply Button Text** — The label on the button shoppers click to apply the coupon. Leave the default to use the translated value ("Apply This Coupon"), or enter your own copy.
+
+- **Display Frequency** — Controls how often the promo popup appears to a single visitor:
+  - **Every Time** — The popup fires on every qualifying page load until the session ends or the Stop After limit is reached.
+  - **Once per Session (per Coupon Code)** — The popup appears only once per browser session for the configured coupon. Useful when visitors browse multiple pages and you do not want to interrupt them repeatedly.
+
+- **Stop After** — Visible only when **Display Frequency** is set to **Every Time**. Sets a hard cap on how many times the popup displays within a single browser session. Once the limit is reached the popup stops showing for the rest of that session.
+  - **Never** — No cap; the popup fires on every qualifying page load (default).
+  - **2 / 3 / 4 / 5 / 6 Times** — Stop showing after the chosen number of displays.
+
+- **Popup Theme** — The color scheme applied to the promo popup panel. This is separate from the main modal's **Accent Palette** and **Visual Treatment** settings.
+  - **Inherit** — Reuses the main modal's accent palette. The promo popup matches the URL-capture modal's colors automatically.
+  - **Spotlight — Clean White** — A bright, minimal white panel with strong contrast.
+  - **Midnight — Dark High-Contrast** — A near-black background with high-contrast text for dramatic impact.
+  - **Sunrise — Warm Amber** — A warm amber color scheme suited to seasonal or food-related stores.
+  - **Custom Hex** — Opens three color pickers for full manual control (see below).
+
+- **Custom: Background** — Visible only when **Popup Theme** is set to **Custom Hex**. The hex color for the modal panel background (default `#ffffff`).
+
+- **Custom: Foreground** — Visible only when **Popup Theme** is set to **Custom Hex**. The hex color for headline and body text (default `#1a1410`).
+
+- **Custom: Accent** — Visible only when **Popup Theme** is set to **Custom Hex**. The hex color applied to the coupon code pill, icon halo, and the apply button (default `#15803d`).
+
+![Auto Popup tab — theme and color settings](/img/auto-coupon-promo-theme.webp)
+
 ### Admin Dashboard Banner tab
 
 ![](/img/auto-coupon-admin.webp)
@@ -234,7 +309,21 @@ This tab controls an optional announcement banner that appears in the J2Commerce
 
 - **Banner link URL fallback:** Used only when no menu item is selected above. Enter a direct URL. Visible only when the banner is published.
 
+### Generating Marketing QR Codes
+
+The URL Builder makes it straightforward to produce print-ready QR codes for any campaign coupon. Pick the coupon from the dropdown, select **X-Large** (~480 px) for high-resolution output, then click **Generate QR Code**. The PNG downloads to your machine instantly — drop it straight into Canva, InDesign, or any design tool and place it on a postcard, poster, trade-show backdrop, or product insert.
+
+The QR code is generated at error-correction level Q, which means roughly 25% of the code can be obscured or damaged — by smudging, folding, or partial cropping — and still scan reliably. That tolerance makes it a solid choice for printed materials where perfect reproduction isn't guaranteed.
+
+:::tip
+
+For email newsletters or PDF brochures, **Small** (~120 px) or **Medium** (~180 px) keeps file size down without sacrificing scannability on-screen. Reserve **X-Large** for anything destined for physical print.
+
+:::
+
 ## How It Works{#how-it-works}
+
+**URL-capture flow:**
 
 1. A visitor lands on any frontend page with `?couponcode=XYZ` (or your custom parameter name) in the URL.
 2. Auto-Coupon reads the code from the URL and attempts to apply it to the visitor's cart.
@@ -242,15 +331,32 @@ This tab controls an optional announcement banner that appears in the J2Commerce
 4. A modal appears with the headline and body text matching that state, plus the configured call-to-action button.
 5. The visitor clicks the **CTA** to continue shopping or closes the modal manually.
 
+**Promotion Popup flow (v6.0.3+):**
+
+6. A visitor lands on any frontend page that does **not** contain the URL capture parameter.
+7. If **Enable Promotion Popup** is on, the configured coupon is enabled, and the current date falls within the coupon's valid\_from / valid\_to window, the promo popup fires.
+8. The popup displays the configured **Headline** (with the discount amount substituted), optional **Supporting Text**, and an optional **Coupon expiration** date.
+9. The visitor clicks **Apply This Coupon** (or your custom apply button text). The coupon is applied to the cart and the modal switches to the Active (success) state.
+10. The visitor then clicks the call-to-action to continue shopping or closes the modal manually.
+
 ## Display Conditions{#display-conditions}
 
-The modal appears when all of these conditions are true:
+**URL-capture modal** — appears when all of these conditions are true:
 
 - The Auto-Coupon Pop Up plugin is enabled under **J2Commerce** **->** **Apps**.
 - The page URL contains the configured query parameter (default `couponcode`).
 - The parameter has a non-empty value.
 
 The **Once per session** frequency option suppresses repeat showings for the same coupon code within the same browser session. Opening a new browser tab, using a private/incognito window, or using a different coupon code will trigger a fresh modal.
+
+**Promotion Popup** — fires when all of these conditions are true:
+
+- The Auto-Coupon Pop Up plugin is enabled.
+- **Enable Promotion Popup** is set to **Yes** in the Auto Popup tab.
+- A coupon is selected in the **Coupon to Offer** field and that coupon is enabled.
+- The current date is within the selected coupon's valid\_from / valid\_to window (or those dates are not set).
+- The page URL does **not** contain the URL capture parameter (if it does, the URL-capture flow takes priority).
+- The popup's own **Display Frequency** and **Stop After** limits have not been reached for this browser session.
 
 ## Tips{#tips}
 
@@ -259,6 +365,7 @@ The **Once per session** frequency option suppresses repeat showings for the sam
 - Use the **Friendly** tone for general retail stores and the **Professional** tone for B2B stores where a neutral voice is expected.
 - Match the **Accent palette** to your storefront brand color — or select **Custom hex** to enter your exact brand color value.
 - Keep status titles short — long titles wrap on mobile screens and may push the CTA button out of view.
+- Generate a QR code at **X-Large** for print materials (postcards, posters, trade-show backdrops). Use **Small** or **Medium** for digital embeds in emails and PDFs.
 
 ## Troubleshooting{#troubleshooting}
 
@@ -304,6 +411,19 @@ The **Once per session** frequency option suppresses repeat showings for the sam
 2. Note that incognito/private windows start a fresh session — the modal will appear once per incognito session by design.
 3. If the URL contains a different code than the one previously shown, the modal appears again — this is expected behavior.
 
+### Promotion Popup Does Not Appear{#promotion-popup-does-not-appear}
+
+**Cause:** One or more required conditions for the promo popup are not met.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Apps** and verify **Auto-Coupon Pop Up** shows a green checkmark.
+2. Open the plugin and click the **Auto Popup** tab. Confirm **Enable Promotion Popup** is set to **Yes**.
+3. Check that a coupon is selected in **Coupon to Offer**. If the field is empty, the popup will not fire.
+4. Open the selected coupon under **J2Commerce** -> **Sales** -> **Coupons** and verify it is enabled and that today's date falls within the **Valid From** and **Valid To** dates (or that those dates are blank).
+5. Check the **Stop After** setting. If you are testing in the same browser session and the popup already displayed the configured number of times, it will not appear again until you start a fresh session. Open a private/incognito window to reset the session counter.
+6. Check the URL of the page you are testing. If it contains the configured URL capture parameter (default `couponcode`), the URL-capture flow takes priority and the promo popup is suppressed for that page load. Remove the parameter from the URL to trigger the promo popup instead.
+
 ### Dashboard Banner Not Showing{#dashboard-banner-not-showing}
 
 **Cause:** The banner toggle is off, or the admin has not refreshed the J2Commerce dashboard.
@@ -314,3 +434,14 @@ The **Once per session** frequency option suppresses repeat showings for the sam
 2. Click the **Admin Dashboard Banner** tab and verify **Publish admin dashboard banner** is set to **Yes**.
 3. Navigate to the J2Commerce dashboard and refresh the page.
 4. If the banner still does not appear, check **Banner priority** — a very high number may push it off the visible area of the slider if other banners with lower numbers are present.
+
+### QR Code Generation Fails{#qr-code-generation-fails}
+
+**Cause:** PHP's GD extension is not loaded on the server, or the phpqrcode vendor file was not uploaded when the plugin was installed.
+
+**Solution:**
+
+1. Verify GD is available by running `php -m | grep gd` in your server's terminal. If there is no output, ask your host to enable the `gd` PHP extension.
+2. Re-install the Auto-Coupon Pop Up plugin ZIP from your **My Downloads** page on the J2Commerce website. A clean install restores the bundled phpqrcode vendor file if it was missing or corrupted.
+3. Enable **Debug logging** in the URL Capture tab, attempt to generate a QR code, then check `administrator/logs/plg_j2commerce_app_autocoupon.log.php` for lines tagged `[QR-DEBUG]`. These entries identify whether the failure is a missing library, a GD error, or a permissions problem with the download output.
+4. If the log shows a phpqrcode load failure after a clean re-install, contact J2Commerce support with the full `[QR-DEBUG]` entries.
