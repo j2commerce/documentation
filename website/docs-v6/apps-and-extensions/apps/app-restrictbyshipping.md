@@ -1,10 +1,3 @@
----
-title: "Product Shipping Restrictions"
-sidebar_label: "Shipping Restrictions"
-sidebar_position: 50
-description: "Restrict which shipping methods are available for specific products or categories, based on geo zones and postal codes."
----
-
 # Product Shipping Restrictions
 
 The Product Shipping Restrictions add-on lets you control which shipping methods appear at checkout depending on what is in the cart. Restrictions can be set per product, per variant, or inherited from a Joomla content category. Two modes are available: **Simple** (pick allowed methods per product) and **Advanced** (create named restriction groups with geo zone and postal code rules).
