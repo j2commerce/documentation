@@ -180,6 +180,8 @@ You then assign a restriction group to a product, variant, or category in the **
 3. Under the **Shipping** section, find **Restriction Group** and select the group.
 4. Click **Save**.
 
+![](/img/restrict-shipping-variable1.webp)
+
 ### Assigning Restrictions to a Category
 
 Category-level restrictions apply to **all** products in a specific category (when no product-level restriction is set).
@@ -215,7 +217,7 @@ On **variable products**, the notice updates dynamically when the customer selec
 
 On the **checkout shipping/payment step**, if the customer's delivery address falls within a restricted zone and no allowed shipping method is available, a warning banner is displayed listing the restricted cart items.
 
-## Frontend View
+## Frontend Product View
 
 **Product View Only**
 
@@ -234,6 +236,10 @@ On the **checkout shipping/payment step**, if the customer's delivery address fa
 ![](/img/restrict-shipping-message.webp)
 
 ***
+
+## Frontend Checkout View
+
+![](/img/restrict-shipping-checkout1.webp)
 
 ## GeoZone Configuration
 
