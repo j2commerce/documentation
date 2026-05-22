@@ -33,27 +33,27 @@ The **Payment Method Discount** app is a separate add-on available from the [J2C
 2. Locate **Payment Method Discount**, click **View Details**, add it to your cart, and complete the checkout.
 3. Go to **My Downloads** under your profile menu, find the app, and click **Available Versions** -> **View Files** -> **Download** to save the ZIP file.
 
-## Install the App
+## Install the Plugin
 
 1. In the Joomla admin panel, go to **System** -> **Install** -> **Extensions**.
 2. Upload the `app_paymentdiscount.zip` file using the **Upload Package File** tab.
 3. The app installs and **enables automatically** — you do not need to manually enable it after installation.
 
-<!-- SCREENSHOT: Joomla Extensions installer showing the Upload Package File tab with the zip selected and a success notification after install -->
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
-## Open the Plugin Settings
+## Open the Plugin
 
-There are two ways to reach the plugin configuration:
+Once you have installed the App, it will automatically enable itself. You can now configure it by going to either:&#x20;
 
-**Option A — Via J2Commerce Apps:**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-Go to **J2Commerce** -> **Apps**. Find **Payment Method Discount** in the list and click its name to open settings.
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-**Option B — Via System Plugins:**
+![shipping method](/img/accordions-app.webp)
 
-Go to **System** -> **Manage** -> **Plugins**, search for **Payment Method Discount**, and click the plugin name.
+Search for **Payment Method Discount**, make sure there is a green checkmark and not a **X,** click on the title to open it.
 
-<!-- SCREENSHOT: System > Manage > Plugins screen showing the Payment Method Discount plugin in the search results list -->
+![](/img/payment-method-discount-enable.webp)
 
 ## Configure the Plugin
 
