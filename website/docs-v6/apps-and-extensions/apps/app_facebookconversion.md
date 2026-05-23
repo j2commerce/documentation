@@ -32,8 +32,7 @@ In the Joomla admin, go to **System -> Install -> Extensions**
 
 Upload the plugin ZIP file or use the Install from URL option.
 
-![](placeholder.webp)
-*Upload the app ZIP file from the Joomla Extensions installer screen.*
+![](/img/install.webp)
 
 ## Enable the App
 
@@ -43,10 +42,9 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-![](placeholder.webp)
-*The Apps list showing Meta Pixel / Facebook Conversion.*
+![](/img/address-apps.webp)
 
-Look for **Meta Pixel / Facebook Conversion**, click the **X**, and it will turn into a green checkmark. It is now enabled and ready for setup.
+Search for **Meta Pixel / Facebook Conversion**, click the **X**, and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ## Find Your Pixel ID {#find-pixel-id}
 
@@ -68,8 +66,7 @@ If no Pixel exists yet, click **Add -> Create a pixel**, give it a name that mat
 
 **Step 6:** Paste that number into the **Pixel ID** field in the plugin settings (described in the next section) and click **Save**.
 
-![](placeholder.webp)
-*The Dataset/Pixel ID shown in Business Settings under Events dataset and pixel.*
+![](placeholder.webp) *The Dataset/Pixel ID shown in Business Settings under Events dataset and pixel.*
 
 :::info
 
@@ -89,16 +86,15 @@ Click on the **Meta Pixel / Facebook Conversion** title next to the green checkm
 
 ### Meta Pixel Settings tab {#meta-pixel-settings}
 
-![](placeholder.webp)
-*The Meta Pixel Settings fieldset in the plugin configuration.*
+![](placeholder.webp) *The Meta Pixel Settings fieldset in the plugin configuration.*
 
 #### Pixel ID
 
 Enter the numeric Pixel ID you copied from Meta Business Settings. Leave this blank and the plugin will not load any tracking code at all — useful if you need to temporarily disable tracking without uninstalling the app.
 
 | Recommended value | Your 15–16 digit Pixel ID |
-|---|---|
-| Example | `1234567890123456` |
+| ----------------- | ------------------------- |
+| Example           | `1234567890123456`        |
 
 #### Additional Pixel IDs
 
@@ -114,24 +110,24 @@ NOTE: Most stores only need one Pixel. Use this field only when a store must sen
 
 A multi-select list of the standard Meta Pixel events the plugin can fire. All seven events are selected by default. Deselect any event you do not want fired without affecting the others.
 
-| Event | When it fires |
-|---|---|
-| **ViewContent** | A shopper opens a product detail page |
-| **AddToCart** | A shopper adds a product to the cart |
-| **RemoveFromCart** | A shopper removes a product from the cart (sent as a custom event) |
-| **InitiateCheckout** | A shopper reaches the checkout page |
-| **AddPaymentInfo** | A shopper submits payment details during checkout |
-| **Purchase** | An order is confirmed and the thank-you page loads |
-| **Search** | A shopper submits a search query using the store's search filter |
+| Event                | When it fires                                                      |
+| -------------------- | ------------------------------------------------------------------ |
+| **ViewContent**      | A shopper opens a product detail page                              |
+| **AddToCart**        | A shopper adds a product to the cart                               |
+| **RemoveFromCart**   | A shopper removes a product from the cart (sent as a custom event) |
+| **InitiateCheckout** | A shopper reaches the checkout page                                |
+| **AddPaymentInfo**   | A shopper submits payment details during checkout                  |
+| **Purchase**         | An order is confirmed and the thank-you page loads                 |
+| **Search**           | A shopper submits a search query using the store's search filter   |
 
 #### Content ID Source
 
 Tells the plugin which product identifier to include as the `content_ids` value in each Pixel event. This must match the identifier used in your Meta Commerce Catalog product feed.
 
-| Option | When to choose it |
-|---|---|
+| Option                    | When to choose it                                                           |
+| ------------------------- | --------------------------------------------------------------------------- |
 | **J2Commerce Product ID** | Your catalog feed uses the internal J2Commerce numeric product ID (default) |
-| **Product SKU** | Your catalog feed uses the product SKU field |
+| **Product SKU**           | Your catalog feed uses the product SKU field                                |
 
 Pick one and stick with it. Switching after your catalog is live will break the connection between ad events and catalog products.
 
@@ -139,10 +135,10 @@ Pick one and stick with it. Switching after your catalog is live will break the 
 
 Controls the `content_type` value sent with Pixel events.
 
-| Option | Meaning |
-|---|---|
-| **product** | Matches events to individual variants in the catalog (recommended for stores with variable products) |
-| **product_group** | Matches events to the parent product group regardless of variant |
+| Option             | Meaning                                                                                              |
+| ------------------ | ---------------------------------------------------------------------------------------------------- |
+| **product**        | Matches events to individual variants in the catalog (recommended for stores with variable products) |
+| **product\_group** | Matches events to the parent product group regardless of variant                                     |
 
 #### Track Category Views
 
@@ -156,14 +152,13 @@ When set to **Yes**, the plugin logs each fired Pixel event to the browser's dev
 
 **Always turn this off before going live.** The log file grows quickly under real traffic and the console output is visible to anyone who inspects the page.
 
----
+***
 
 ### Conversions API (Server-Side) tab {#capi-settings}
 
 The Conversions API (CAPI) sends the same events from your Joomla server directly to Meta, in parallel with the browser Pixel. This recovers conversions that ad blockers, iOS 14.5+ privacy restrictions, or browser extensions would otherwise silently drop. Configure the browser Pixel first and verify it is working before enabling CAPI.
 
-![](placeholder.webp)
-*The Conversions API fieldset — additional fields appear after enabling.*
+![](placeholder.webp) *The Conversions API fieldset — additional fields appear after enabling.*
 
 #### Enable Conversions API
 
@@ -181,8 +176,7 @@ The access token authenticates your server's requests to Meta's Graph API. Follo
 
 **Step 4:** Copy the long token that appears and paste it into the **Access Token** field. Save it somewhere safe — Meta only shows it once.
 
-![](placeholder.webp)
-*The Generate access token button in the Dataset Settings tab.*
+![](placeholder.webp) *The Generate access token button in the Dataset Settings tab.*
 
 :::info
 
@@ -226,7 +220,7 @@ When **Yes**, the plugin includes the visitor's email address (hashed with SHA-2
 
 When **Yes**, the plugin includes the billing phone number (SHA-256 hashed, digits only) in CAPI events. The phone number comes from the order's billing information.
 
----
+***
 
 ## How It Works {#how-it-works}
 
