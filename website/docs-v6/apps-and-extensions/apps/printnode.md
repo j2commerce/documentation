@@ -85,7 +85,7 @@ This plugin is a separate add-on and must be purchased and downloaded from the J
 
 Go to **System -> Install -> Extensions ->** Install the app
 
-![User Group](<../../assets/user-group-3 (10).webp>)
+[//]: # (![User Group]&#40;<../../assets/user-group-3 &#40;10&#41;.webp>&#41;)
 
 ## Enable the App
 
