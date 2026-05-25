@@ -21,13 +21,13 @@ The **J2Commerce Migrator** is a separate add-on available from the [J2Commerce 
 
 ## Install the Migrator {#install}
 
-The downloaded file is a single Migrator Package zip that installs both the component and all four source-platform adapter plugins in one step.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-1. In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
-2. Upload the Migrator Package ZIP file.
-3. Joomla installs the **J2Commerce Migrator** component along with the four adapter plugins: J2Store 4, J2Commerce 4, eShop, and HikaShop.
+Upload the `pkg_j2commercemigrator_*.zip` file or use the Install from URL option.
 
-<!-- SCREENSHOT: System -> Install -> Extensions showing the upload area with the migrator zip selected -->
+![](/img/install.webp)
+
+Joomla installs the **J2Commerce Migrator** component along with the four adapter plugins: J2Store 4, J2Commerce 4, eShop, and HikaShop.
 
 :::info
 
@@ -49,12 +49,12 @@ After installing, you must activate the plugin that corresponds to your old stor
 
 The four available adapter plugins are:
 
-| Plugin Name | Source Platform |
-|---|---|
-| J2Commerce Migrator — J2Store 4 | J2Store v4 |
-| J2Commerce Migrator — J2Commerce 4 | J2Commerce v4 |
-| J2Commerce Migrator — eShop | eShop |
-| J2Commerce Migrator — HikaShop | HikaShop |
+| Plugin Name                        | Source Platform |
+| ---------------------------------- | --------------- |
+| J2Commerce Migrator — J2Store 4    | J2Store v4      |
+| J2Commerce Migrator — J2Commerce 4 | J2Commerce v4   |
+| J2Commerce Migrator — eShop        | eShop           |
+| J2Commerce Migrator — HikaShop     | HikaShop        |
 
 :::info
 
@@ -99,16 +99,16 @@ Go to **Components** -> **J2Commerce Migrator** -> click **Options** in the tool
 
 <!-- SCREENSHOT: J2Commerce Migrator Options page showing all configuration fields -->
 
-| Setting | Description | Default |
-|---|---|---|
-| **Default Batch Size** | Number of source rows processed per AJAX call. Larger values are faster on big catalogs but risk PHP timeouts on slow servers. Range: 10–5000. | 200 |
-| **Default Conflict Mode** | How to handle a row that already exists in the target database. Options: **Skip — keep existing target rows**, **Overwrite — replace target rows with source data**, **Merge — fill empty target fields from source**, **Report only — do not write, just report conflicts**. | Skip — keep existing target rows |
-| **Enable Migration Log** | Write detailed migration activity to `administrator/logs/com_j2commercemigrator.log`. | Yes |
-| **Enable SSH Tunnel Mode (Mode C)** | Show the remote SSH tunnel connection option in the Migration Wizard. Requires a pre-configured SSH tunnel on the server. Disable to keep the connection step simple. | No |
-| **Add to J2Commerce Menu** | Show a J2Commerce Migrator Tool shortcut in the J2Commerce admin navigation bar. | Yes |
-| **Trigger Akeeba Backup** | Automatically trigger a fresh Akeeba backup before any migration run. Only available when Akeeba Backup is installed and enabled. | Yes (when Akeeba is present) |
-| **Akeeba Backup Profile** | Which Akeeba Backup profile to use for the pre-migration backup. Shown only when Akeeba backup is enabled. | 1 |
-| **Backup Description** | Description tag applied to the Akeeba backup. Leave blank to auto-generate. | (blank) |
+| Setting                             | Description                                                                                                                                                                                                                                                                   | Default                          |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| **Default Batch Size**              | Number of source rows processed per AJAX call. Larger values are faster on big catalogs but risk PHP timeouts on slow servers. Range: 10–5000.                                                                                                                                | 200                              |
+| **Default Conflict Mode**           | How to handle a row that already exists in the target database. Options: **Skip — keep existing target rows**, **Overwrite — replace target rows with source data**, **Merge — fill empty target fields from source**, **Report only — do not write, just report conflicts**. | Skip — keep existing target rows |
+| **Enable Migration Log**            | Write detailed migration activity to `administrator/logs/com_j2commercemigrator.log`.                                                                                                                                                                                         | Yes                              |
+| **Enable SSH Tunnel Mode (Mode C)** | Show the remote SSH tunnel connection option in the Migration Wizard. Requires a pre-configured SSH tunnel on the server. Disable to keep the connection step simple.                                                                                                         | No                               |
+| **Add to J2Commerce Menu**          | Show a J2Commerce Migrator Tool shortcut in the J2Commerce admin navigation bar.                                                                                                                                                                                              | Yes                              |
+| **Trigger Akeeba Backup**           | Automatically trigger a fresh Akeeba backup before any migration run. Only available when Akeeba Backup is installed and enabled.                                                                                                                                             | Yes (when Akeeba is present)     |
+| **Akeeba Backup Profile**           | Which Akeeba Backup profile to use for the pre-migration backup. Shown only when Akeeba backup is enabled.                                                                                                                                                                    | 1                                |
+| **Backup Description**              | Description tag applied to the Akeeba backup. Leave blank to auto-generate.                                                                                                                                                                                                   | (blank)                          |
 
 :::tip
 
@@ -141,16 +141,16 @@ At the bottom of the screen a summary footer shows: **tiles synced** / **rows mi
 
 The tiles are organized into the following lanes, displayed in dependency order:
 
-| Lane | Title | What it migrates |
-|---|---|---|
-| 1 | **Foundations** | Currencies, countries and zones, geozones and tax, order statuses, address custom fields, product filters |
-| 2 | **Catalog Setup** | Manufacturers, product categories, product options (depends on Foundations) |
-| 3 | **Products** | Products, variants, prices, images, related products, downloadable files (depends on Catalog Setup) |
-| 4 | **Promotions & Logistics** | Coupons, shipping methods, payment methods checklist (depends on Products) |
-| 5 | **Customers** | Users, addresses (independent of catalog lanes) |
-| 6 | **Orders** | Orders, order infos, order items, order breakdown, order histories (depends on Customers and Foundations) |
-| 7 | **Customer Activity** | Carts, reviews (optional) |
-| 8 | **Finalize** | Component config patches, multilingual flatten (run last) |
+| Lane | Title                      | What it migrates                                                                                          |
+| ---- | -------------------------- | --------------------------------------------------------------------------------------------------------- |
+| 1    | **Foundations**            | Currencies, countries and zones, geozones and tax, order statuses, address custom fields, product filters |
+| 2    | **Catalog Setup**          | Manufacturers, product categories, product options (depends on Foundations)                               |
+| 3    | **Products**               | Products, variants, prices, images, related products, downloadable files (depends on Catalog Setup)       |
+| 4    | **Promotions & Logistics** | Coupons, shipping methods, payment methods checklist (depends on Products)                                |
+| 5    | **Customers**              | Users, addresses (independent of catalog lanes)                                                           |
+| 6    | **Orders**                 | Orders, order infos, order items, order breakdown, order histories (depends on Customers and Foundations) |
+| 7    | **Customer Activity**      | Carts, reviews (optional)                                                                                 |
+| 8    | **Finalize**               | Component config patches, multilingual flatten (run last)                                                 |
 
 Within each lane, individual tiles represent a single data type. The section header shows how many tiles are synced out of the total for that lane.
 
@@ -160,14 +160,14 @@ Within each lane, individual tiles represent a single data type. The section hea
 
 Each tile displays a colored status pill:
 
-| Status | Color | Meaning |
-|---|---|---|
-| **Pending** | Gray | Not yet run. The tile is ready to sync. |
-| **Running** | Blue / animated | Migration is actively running. The pill may show a percentage, for example Running (42%). |
-| **Synced** | Green | Migration completed successfully. All source rows have been written. |
-| **Partial** | Yellow | Completed but some rows could not be migrated (for example, duplicate unique values). Review the tile log. |
-| **Error** | Red | The last run ended in an error. Click **Retry** to try again. |
-| **Locked** | Gray / padlock | This tile's dependencies have not been synced yet. Complete the required lane first. |
+| Status      | Color           | Meaning                                                                                                    |
+| ----------- | --------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Pending** | Gray            | Not yet run. The tile is ready to sync.                                                                    |
+| **Running** | Blue / animated | Migration is actively running. The pill may show a percentage, for example Running (42%).                  |
+| **Synced**  | Green           | Migration completed successfully. All source rows have been written.                                       |
+| **Partial** | Yellow          | Completed but some rows could not be migrated (for example, duplicate unique values). Review the tile log. |
+| **Error**   | Red             | The last run ended in an error. Click **Retry** to try again.                                              |
+| **Locked**  | Gray / padlock  | This tile's dependencies have not been synced yet. Complete the required lane first.                       |
 
 A tile with zero rows in the source (nothing to migrate) is automatically marked **Synced** and its button shows **Empty Source** (disabled). You do not need to click anything for these.
 
@@ -175,13 +175,13 @@ A tile with zero rows in the source (nothing to migrate) is automatically marked
 
 The button on each tile changes depending on the tile's current status:
 
-| Button | When it appears | What it does |
-|---|---|---|
-| **Sync** | Tile is **Pending** | Starts the migration for this tile |
-| **Re-sync** | Tile is **Synced** | Re-runs the migration to pick up new rows from the source |
-| **Retry** | Tile is **Error** | Attempts the migration again from where it left off |
-| **Resume** | Tile was interrupted mid-run | Continues from the last completed batch |
-| **Syncing…** | Tile is actively **Running** | In-progress indicator — click **Cancel** to stop |
+| Button       | When it appears              | What it does                                              |
+| ------------ | ---------------------------- | --------------------------------------------------------- |
+| **Sync**     | Tile is **Pending**          | Starts the migration for this tile                        |
+| **Re-sync**  | Tile is **Synced**           | Re-runs the migration to pick up new rows from the source |
+| **Retry**    | Tile is **Error**            | Attempts the migration again from where it left off       |
+| **Resume**   | Tile was interrupted mid-run | Continues from the last completed batch                   |
+| **Syncing…** | Tile is actively **Running** | In-progress indicator — click **Cancel** to stop          |
 
 Some tiles show additional badges such as **Audit**, **Optional**, **Conditional**, or **Parallel-safe** to indicate special behavior.
 
@@ -224,7 +224,7 @@ Customers and the catalog lanes (Foundations through Promotions) are independent
 
 Each adapter handles the field-by-field mapping, schema differences, and any quirks of its source platform. This guide covers only the shared Migrator workflow. For per-platform details, see the companion adapter documentation:
 
-- **J2Store 4:** See [plg_j2commercemigrator_j2store4.md](plg_j2commercemigrator_j2store4.md)
+- **J2Store 4:** See [plg\_j2commercemigrator\_j2store4.md](plg_j2commercemigrator_j2store4.md)
 - **J2Commerce 4:** See `plg_j2commercemigrator_j2commerce4.md`
 - **eShop:** See [eshop.md](eshop.md)
 - **HikaShop:** See `plg_j2commercemigrator_hikashop.md`
@@ -301,18 +301,18 @@ The **Reset** and **Drop tables** tools are available from the tile action menu 
 
 - **Reset J2Commerce Data** — Truncates all J2Commerce data tables populated by the migration (orders, products, customers, etc.) while preserving your J2Commerce configuration, email templates, and invoice templates.
 - **Remove Old J2Store Database Tables** — Removes `#__j2store_*` tables after you have verified the migration and uninstalled J2Store.
-- **Uninstall J2Store v4** — Permanently removes the com_j2store component from this Joomla installation (database tables are not deleted by this action).
+- **Uninstall J2Store v4** — Permanently removes the com\_j2store component from this Joomla installation (database tables are not deleted by this action).
 
 After resetting, return to **Sync Tools** and all tiles will show **Pending** again so you can run a fresh migration.
 
 <!-- Screenshots needed:
-  - migrator-dashboard.webp: Dashboard landing screen with adapter cards, version cards, and recent runs panel
-  - migrator-plugins-list.webp: Plugins list filtered to type j2commercemigrator showing the four adapter plugins
-  - migrator-install-upload.webp: System -> Install -> Extensions upload area with migrator zip
-  - migrator-sync-tools-overview.webp: Full Sync Tools screen showing all lane sections with tile status pills
-  - migrator-foundations-lane.webp: Foundations lane close-up showing tile cards with Pending/Synced/Running pills
-  - migrator-tile-status-pills.webp: Close-up of individual tile showing Synced pill, row count, and Re-sync button
-  - migrator-options.webp: Component Options page showing all configuration settings
-  - migrator-no-connection.webp: Sync Tools "Database Connection Required" state
-  - migrator-export-log.webp: Export log download button in footer summary bar
+- migrator-dashboard.webp: Dashboard landing screen with adapter cards, version cards, and recent runs panel
+- migrator-plugins-list.webp: Plugins list filtered to type j2commercemigrator showing the four adapter plugins
+- migrator-install-upload.webp: System -> Install -> Extensions upload area with migrator zip
+- migrator-sync-tools-overview.webp: Full Sync Tools screen showing all lane sections with tile status pills
+- migrator-foundations-lane.webp: Foundations lane close-up showing tile cards with Pending/Synced/Running pills
+- migrator-tile-status-pills.webp: Close-up of individual tile showing Synced pill, row count, and Re-sync button
+- migrator-options.webp: Component Options page showing all configuration settings
+- migrator-no-connection.webp: Sync Tools "Database Connection Required" state
+- migrator-export-log.webp: Export log download button in footer summary bar
 -->
