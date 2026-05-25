@@ -21,32 +21,87 @@ Before installing, confirm you have all of the following in place:
 - The **Dompdf library** installed on your Joomla site (required for PDF generation — see [Invoice Settings](#invoice-settings) for a built-in status check)
 - J2Commerce 6 installed and working
 
-## Installation
+**PrintNode works on all major brands of printers and scales, including:**
+
+![](/img/printnode-brands.webp)
+
+## Creating a PrintNode Account
+
+### Sign-up tab
+
+Go to [Printnode.com](http://Printnode.com) and create an account by clicking Sign-up
+
+![](/img/printnode-sign-up.webp)
+
+### Pricing tab
+
+- Click on the Pricing tab
+
+- Choose what type of account you want. ie: Single, Integrator, Standalone
+
+- Choose the appropriate plan for your business.
+
+  &#x20;Example: If you choose the 5,000 prints and have multiple departments using the same account, the 5,000 prints will be shared between the different computers.
+
+![](/img/printnode-pricing.webp)
+
+### Download tab&#x20;
+
+Download the printer that will work with the type of computer you have. ie: PC/Mac
+
+![](/img/printnode-download.webp)
+
+### Install the Printer
+
+Once you have downloaded the printer, double-click on it to start the installation.  When it gets to the page shown below, select Create a desktop Shortcut. This will come in handy if your computer shuts down and you need to easily turn on the printer again.
+
+![](/img/printnode-install.webp)
+
+### API Key tab
+
+**Step 1:** Enter your PrintNode Password to open the API Key page
+
+![](/img/printnode-api.webp)
+
+**Step 2:**  Name your 'API Key Description', then select Create&#x20;
+
+![](/img/printnode-api-1.webp)
+
+**Step 3:** Your new API Key will appear below. This is the API Key you will need when setting up the configuration in the App on your website.
+
+![](/img/printnode-api-2.webp)
+
+## Purchase and Download
 
 This plugin is a separate add-on and must be purchased and downloaded from the J2Commerce website.
 
-1. Purchase and download the `app_printnode.zip` package from the [J2Commerce Extensions Store](https://www.j2commerce.com).
-2. In Joomla admin, go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_printnode.zip` file using the **Upload Package File** tab.
-4. The plugin installs and enables automatically.
-5. To confirm it is active, go to **System** -> **Manage** -> **Extensions**, search for `printnode`, and verify the status column shows a green check.
+**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
-<!-- SCREENSHOT: Extensions list filtered by "printnode" showing the plugin enabled -->
+**Step 2:** Locate the **Print Node** App **->** click **View Details** **->** **Add to cart** **->** **Checkout**.&#x20;
 
-## Step-by-Step Setup
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**
 
-### Step 1: Get Your PrintNode API Key
+## Install the App
 
-1. Log in to [printnode.com](https://www.printnode.com/).
-2. Click your account name in the top-right corner, then choose **API Keys**.
-3. Click **Generate** to create a new key.
-4. Copy the key — you will need it in the next step.
+Go to **System -> Install -> Extensions ->** Install the app
 
-<!-- SCREENSHOT: PrintNode account portal showing the API Keys page with a generated key -->
+[//]: # (![User Group]&#40;<../../assets/user-group-3 &#40;10&#41;.webp>&#41;)
 
-### Step 2: Enter the API Key and Test the Connection
+## Enable the App
 
-1. In Joomla admin, go to **J2Commerce** -> **Apps**.
+Go to **J2Commerce -> App ->** search for **PrintNode**
+
+Click on the 'X' under Status to enable it.
+
+![User Group](/img/printnode-enable1.webp)
+
+**Configure the App**
+
+Click on the Printnode title to open the app and start configuring it.
+
+### Enter the API Key and Test the Connection
+
+1. In Joomla admin, go to **J2Commerce** **->** **Apps**.
 2. Find **PrintNode for J2Commerce** in the list and click to open its settings.
 3. On the **Basic Settings** tab, paste your API key into the **API Key** field.
 4. Click **Save** in the toolbar.
@@ -128,37 +183,37 @@ The order history is updated with the username of the admin who requested the pr
 
 ### Basic Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **API Key** | Your PrintNode API key. Keep this private. | — |
-| **Test Connection** | Button that verifies the API key is valid and returns the connected account email. | — |
-| **Printer** | Dropdown of printers registered to your PrintNode account. Refresh to load the latest list. | — |
+| Field               | Description                                                                                 | Default |
+| ------------------- | ------------------------------------------------------------------------------------------- | ------- |
+| **API Key**         | Your PrintNode API key. Keep this private.                                                  | —       |
+| **Test Connection** | Button that verifies the API key is valid and returns the connected account email.          | —       |
+| **Printer**         | Dropdown of printers registered to your PrintNode account. Refresh to load the latest list. | —       |
 
 ### Order Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Trigger Statuses** | Order statuses that automatically trigger printing. Multi-select. Leave empty to disable auto-print. | — |
-| **Post-Print Status** | Status to move the order to after a successful print. Leave empty to keep the current status. Must not match any trigger status. | — Do not change — |
-| **Enable Manual Print Button** | Show the Print Invoice button on the admin order detail page. | Yes |
-| **Enable Automatic Printing** | Automatically print when an order reaches a trigger status. | Yes |
+| Field                          | Description                                                                                                                      | Default           |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| **Trigger Statuses**           | Order statuses that automatically trigger printing. Multi-select. Leave empty to disable auto-print.                             | —                 |
+| **Post-Print Status**          | Status to move the order to after a successful print. Leave empty to keep the current status. Must not match any trigger status. | — Do not change — |
+| **Enable Manual Print Button** | Show the Print Invoice button on the admin order detail page.                                                                    | Yes               |
+| **Enable Automatic Printing**  | Automatically print when an order reaches a trigger status.                                                                      | Yes               |
 
 ### Invoice Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field                | Description                                                                        | Default              |
+| -------------------- | ---------------------------------------------------------------------------------- | -------------------- |
 | **Invoice Template** | Invoice template to use for the printed PDF. Leave empty for the default template. | — Default Template — |
-| **Paper Size** | Paper size for printed invoices. Options: A4, Letter, Legal, A5. | A4 |
-| **Number of Copies** | How many copies to print per job (1–10). | 1 |
-| **Dompdf Library** | Read-only status indicator showing whether the Dompdf library is installed. | — |
+| **Paper Size**       | Paper size for printed invoices. Options: A4, Letter, Legal, A5.                   | A4                   |
+| **Number of Copies** | How many copies to print per job (1–10).                                           | 1                    |
+| **Dompdf Library**   | Read-only status indicator showing whether the Dompdf library is installed.        | —                    |
 
 ### Advanced Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Mode** | Write detailed log entries to `administrator/logs/app_printnode.php`. Disable in production. | No |
-| **Retry Attempts** | How many times to retry a failed print job (0–5). Retries use exponential backoff. | 0 |
-| **API Timeout (seconds)** | Timeout for PrintNode API requests (5–60 seconds). | 30 |
+| Field                     | Description                                                                                  | Default |
+| ------------------------- | -------------------------------------------------------------------------------------------- | ------- |
+| **Debug Mode**            | Write detailed log entries to `administrator/logs/app_printnode.php`. Disable in production. | No      |
+| **Retry Attempts**        | How many times to retry a failed print job (0–5). Retries use exponential backoff.           | 0       |
+| **API Timeout (seconds)** | Timeout for PrintNode API requests (5–60 seconds).                                           | 30      |
 
 ### Status and Help Tab
 
@@ -180,6 +235,7 @@ Save your API key and refresh the page to see current data in this panel.
 **Cause:** The API key is incorrect, or the server does not have the PHP cURL extension enabled.
 
 **Solution:**
+
 1. Copy the API key directly from the PrintNode website — avoid extra spaces.
 2. Ask your hosting provider to confirm that the PHP `curl` extension is enabled.
 3. Re-save the plugin settings and test again.
@@ -189,6 +245,7 @@ Save your API key and refresh the page to see current data in this panel.
 **Cause:** The PrintNode client is not running on the host computer, or the printer has not been added to your PrintNode account.
 
 **Solution:**
+
 1. On the computer connected to your printer, open the PrintNode client application and confirm it shows a green "Connected" status.
 2. Log in to [printnode.com](https://www.printnode.com/) and verify the printer appears under **Printers**.
 3. Return to the plugin settings and click the refresh icon next to the **Printer** field.
@@ -198,6 +255,7 @@ Save your API key and refresh the page to see current data in this panel.
 **Cause:** The printer may be offline, or the PrintNode client may have lost its connection.
 
 **Solution:**
+
 1. Open the **Status and Help** tab inside the plugin settings. Check the computer state — a "disconnected" warning means the PrintNode client is no longer connected to the cloud service.
 2. Restart the PrintNode client on the host computer.
 3. Verify the printer is powered on and shows as online in your PrintNode account.
@@ -219,6 +277,7 @@ Save your API key and refresh the page to see current data in this panel.
 **Cause:** The Joomla temporary directory used by Dompdf may not be writable.
 
 **Solution:**
+
 1. Enable **Debug Mode** in the Advanced Settings tab and save.
 2. Attempt a print, then check `administrator/logs/app_printnode.php` for error details.
 3. Ensure the `tmp/` directory at the root of your Joomla site is writable by the web server.
