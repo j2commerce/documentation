@@ -87,7 +87,7 @@ Price Texts uses a simple priority chain. The more specific setting wins:
 
 These steps set the price text on one individual product. Per-product values override the category setting.
 
-1. Go to **Content** -> **Articles** and open the article that is linked to your product.
+1. Go to **Content** **->** **Articles** and open the article that is linked to your product.
 2. Click the **J2Commerce Cart** tab
 3. Click the **Apps** sub-tab.
 4. Locate the **Price Text** section.
