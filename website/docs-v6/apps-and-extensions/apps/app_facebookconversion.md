@@ -66,7 +66,7 @@ If no Pixel exists yet, click **Add -> Create a pixel**, give it a name that mat
 
 **Step 6:** Paste that number into the **Pixel ID** field in the plugin settings (described in the next section) and click **Save**.
 
-![](placeholder.webp) *The Dataset/Pixel ID shown in Business Settings under Events dataset and pixel.*
+[//]: # (![]&#40;placeholder.webp&#41; *The Dataset/Pixel ID shown in Business Settings under Events dataset and pixel.*)
 
 :::info
 
@@ -86,7 +86,7 @@ Click on the **Meta Pixel / Facebook Conversion** title next to the green checkm
 
 ### Meta Pixel Settings tab {#meta-pixel-settings}
 
-![](placeholder.webp) *The Meta Pixel Settings fieldset in the plugin configuration.*
+[//]: # (![]&#40;placeholder.webp&#41; *The Meta Pixel Settings fieldset in the plugin configuration.*)
 
 #### Pixel ID
 
@@ -158,7 +158,7 @@ When set to **Yes**, the plugin logs each fired Pixel event to the browser's dev
 
 The Conversions API (CAPI) sends the same events from your Joomla server directly to Meta, in parallel with the browser Pixel. This recovers conversions that ad blockers, iOS 14.5+ privacy restrictions, or browser extensions would otherwise silently drop. Configure the browser Pixel first and verify it is working before enabling CAPI.
 
-![](placeholder.webp) *The Conversions API fieldset — additional fields appear after enabling.*
+[//]: # (![]&#40;placeholder.webp&#41; *The Conversions API fieldset — additional fields appear after enabling.*)
 
 #### Enable Conversions API
 
@@ -176,7 +176,7 @@ The access token authenticates your server's requests to Meta's Graph API. Follo
 
 **Step 4:** Copy the long token that appears and paste it into the **Access Token** field. Save it somewhere safe — Meta only shows it once.
 
-![](placeholder.webp) *The Generate access token button in the Dataset Settings tab.*
+[//]: # (![]&#40;placeholder.webp&#41; *The Generate access token button in the Dataset Settings tab.*)
 
 :::info
 

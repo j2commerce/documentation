@@ -32,7 +32,7 @@ const sidebars = {
             },
             items: [
                 'migration-tools/j2commercemigrator',
-                'migration-tools/plg_j2commercemigrator_j2store4',
+                'migration-tools/plg_j2commercemigrator_j2commerce4',
             ],
         },
         {
@@ -215,6 +215,10 @@ const sidebars = {
                     items: [
                         // Add to User Group
                         'apps-and-extensions/apps/usergroup',
+                        // Additional Fees
+                        'apps-and-extensions/apps/extrafee',
+                        // Additional Terms
+                        'apps-and-extensions/apps/additionalterms',
                         // Address Autocomplete
                         'apps-and-extensions/apps/app-addressautocomplete',
                         // Advanced Cart Drawer
@@ -237,6 +241,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app_calculatorsortbyprice',
                         // Change Password
                         'apps-and-extensions/apps/app_changepasswords',
+                        // Content Fields
+                        'apps-and-extensions/apps/contentfields',
                         // Currency Exchange Rates Updater
                         'apps-and-extensions/apps/app_currencyupdater',
                         // Custom Accordions
@@ -251,10 +257,14 @@ const sidebars = {
                         'apps-and-extensions/apps/digifactu',
                         // Easy Reorder
                         'apps-and-extensions/apps/app_reorder',
+                        // Email Cart
+                        'apps-and-extensions/apps/emailbasket',
                         // EU VAT Rules
                         'apps-and-extensions/apps/euvat',
                         // ExpertVoice Recommendations
                         'apps-and-extensions/apps/expertvoice',
+                        // Meta Pixel / Facebook Conversion
+                        'apps-and-extensions/apps/app_facebookconversion',
                         // GDPR Compliance
                         'apps-and-extensions/apps/app-gdpr',
                         // Gift Wrapping
@@ -263,6 +273,14 @@ const sidebars = {
                         'apps-and-extensions/apps/ecommercegoogletagmanager',
                         // Inventory Email Notifications
                         'apps-and-extensions/apps/stocknotification',
+                        // Minimum Order Restriction
+                        'apps-and-extensions/apps/minimumorder',
+                        // Opening Hours
+                        'apps-and-extensions/apps/openinghours',
+                        // Order Files
+                        'apps-and-extensions/apps/orderfiles',
+                        // Partial Payment
+                        'apps-and-extensions/apps/partialpayment',
                         // Pay Later / Pay Against Invoice
                         'apps-and-extensions/apps/app-profileorder',
                         // Payment Method Discount
@@ -291,6 +309,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app-socialmedia',
                         // Square Integration (there is a duplicate)
                         'apps-and-extensions/apps/square-integration',
+                        // Storepoint Store Locator
+                        'apps-and-extensions/apps/storepoint',
                         // Subscription - Exclude Renewal Inventory
                         'apps-and-extensions/apps/subscriptionexcluderenewalinventory',
                         // Subscription Extra Fields
@@ -363,16 +383,36 @@ const sidebars = {
                 slug: '/payment-methods', // Custom slug removes /category prefix
             },
             items: [
+                // 2Checkout (Verifone) — Legacy Redirect Gateway
+                'payment-methods/2checkout',
+                // Alipay Payment
+                'payment-methods/alipay',
                 // Authorize.Net Payment Plugin
                 'payment-methods/authorize-net',
                 // Bank Transfer Payment
                 'payment-methods/payment_banktransfer',
+                // Braintree Payment
+                'payment-methods/braintree',
+                // CardSave / Worldpay Legacy Gateway
+                'payment-methods/cardsave',
                 // Cash on Delivery Payment
                 'payment-methods/payment_cash',
+                // CCAvenue Payment
+                'payment-methods/payment_ccavenue',
+                // CECA Payment (Cecabank TPV)
+                'payment-methods/payment_ceca',
+                // Coinbase Commerce
+                'payment-methods/coinbase',
+                // Conekta Payment
+                'payment-methods/conekta',
                 // Credova Financing
                 'payment-methods/payment_credova',
+                // Culqi Payment Gateway
+                'payment-methods/culqi',
                 // Kustom Payment
                 'payment-methods/payment_kustom',
+                // Mollie Payments
+                'payment-methods/payment_mollie',
                 // Money Order / Check Payment
                 'payment-methods/payment_moneyorder',
                 // PayPal Payment
