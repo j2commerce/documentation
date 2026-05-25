@@ -32,7 +32,7 @@ In the Joomla admin, go to **System** **->** **Install** **->** **Extensions**
 
 Drag and drop the ZIP file onto the upload area, or click **Browse for file** and select it.
 
-![Install the ExpertVoice app](/img/expertvoice-install.webp)
+[//]: # (![Install the ExpertVoice app]&#40;/img/expertvoice-install.webp&#41;)
 
 The plugin installs and enables itself automatically. No separate enable step is needed.
 
@@ -44,11 +44,11 @@ Once the app is installed it enables itself. If you ever need to re-enable it, t
 
 **Option B:** Go to **Components** on the left sidebar **->** **J2Commerce** **->** **Apps**
 
-![J2Commerce Apps list](/img/expertvoice-apps-list.webp)
+[//]: # (![J2Commerce Apps list]&#40;/img/expertvoice-apps-list.webp&#41;)
 
 Look for **ExpertVoice Recommendations**. If you see an **X**, click it and it turns into a green checkmark — the app is now enabled and ready to configure.
 
-![ExpertVoice app enabled](/img/expertvoice-enable.webp)
+<!-- ![ExpertVoice app enabled](/img/expertvoice-enable.webp) -->
 
 ## Configure the App
 
@@ -60,11 +60,11 @@ Click the **Toggle Inline Help** button on any app you install to see a descript
 
 :::
 
-![Toggle Inline Help button](/img/expertvoice-inline-help.webp)
+<!-- ![Toggle Inline Help button](/img/expertvoice-inline-help.webp) -->
 
 ### Basic Settings tab
 
-![ExpertVoice Basic Settings screen](/img/expertvoice-config.webp)
+<!-- ![ExpertVoice Basic Settings screen](/img/expertvoice-config.webp) -->
 
 ### Display Location
 
@@ -96,7 +96,7 @@ If the **API Key** field is empty, the ExpertVoice widget is silently hidden on 
 
 :::
 
-![API Key field](/img/expertvoice-apikey.webp)
+<!-- ![API Key field](/img/expertvoice-apikey.webp) -->
 
 ### Target Type
 
@@ -125,7 +125,7 @@ Click the color swatch to open a color picker and choose the text color for the 
 
 Make sure there is enough contrast between the **Header Background Color** and the **Header Text Color** so the header text is easy to read.
 
-![Color picker fields](/img/expertvoice-colors.webp)
+<!-- ![Color picker fields](/img/expertvoice-colors.webp) -->
 
 ### Debug Mode
 
@@ -188,7 +188,7 @@ The whole process is automatic and SKU-driven — you do not need to configure a
 3. Edit the product you are testing. Confirm the **SKU** field is filled in on the product's **General** tab (or on the variant row if it is a variable product).
 4. Check the **Display Location** setting. If you selected **After product title**, **Before product content**, or **After product content**, those options only fire on Joomla article (com_content) pages. If your store uses J2Commerce native product templates, switch to **After Add to Cart button** or **J2Commerce product detail** instead.
 
-![Checking the Display Location setting](/img/expertvoice-display-location.webp)
+<!-- ![Checking the Display Location setting](/img/expertvoice-display-location.webp) -->
 
 ### Widget Appears but Shows No Reviews
 
@@ -220,4 +220,4 @@ Switch the **Display Location** to **After Add to Cart button** or **J2Commerce 
 3. In the Joomla admin, open the file `administrator/logs/plg_j2commerce_app_expertvoice.php` in a text editor. Look for the most recent log entries — they will tell you exactly which condition caused the widget to be skipped (empty API key, missing SKU, etc.).
 4. Fix the identified issue, then return to the app settings and set **Debug Mode** back to **No** and click **Save**.
 
-![Debug Mode setting](/img/expertvoice-debug.webp)
+<!-- ![Debug Mode setting](/img/expertvoice-debug.webp) -->

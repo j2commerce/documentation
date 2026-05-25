@@ -401,6 +401,8 @@ const sidebars = {
                 'payment-methods/payment_ccavenue',
                 // CECA Payment (Cecabank TPV)
                 'payment-methods/payment_ceca',
+                // Checkout Finland (Paytrail)
+                'payment-methods/checkoutfi',
                 // Coinbase Commerce
                 'payment-methods/coinbase',
                 // Conekta Payment
@@ -409,6 +411,14 @@ const sidebars = {
                 'payment-methods/payment_credova',
                 // Culqi Payment Gateway
                 'payment-methods/culqi',
+                // Dojo Payment
+                'payment-methods/payment-dojo',
+                // Elavon Converge Payment
+                'payment-methods/elavon',
+                // ePDQ / Worldline Hosted Payment Page
+                'payment-methods/epdq',
+                // eWAY Rapid Payment
+                'payment-methods/ewayrapid',
                 // Kustom Payment
                 'payment-methods/payment_kustom',
                 // Mollie Payments
@@ -419,6 +429,8 @@ const sidebars = {
                 'payment-methods/payment_paypal',
                 // PayPal Complete
                 'payment-methods/payment_paypalcomplete',
+                // PayTrace
+                'payment-methods/payment_paytrace',
                 // Simplify Payments (Mastercard Simplify Commerce)
                 'payment-methods/simplifypayment',
                 // Square Payment

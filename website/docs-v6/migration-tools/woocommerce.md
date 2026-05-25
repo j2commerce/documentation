@@ -45,7 +45,7 @@ A standalone adapter zip (`plg_j2commercemigrator_wordpress_*.zip`) also exists 
 
 <!-- Screenshot: Joomla System menu with Install → Extensions highlighted -->
 
-![](/img/PLACEHOLDER.webp)
+<!-- ![](/img/PLACEHOLDER.webp) -->
 
 **Step 2:** Drag and drop the `pkg_j2commercemigrator_*.zip` file into the upload area, or click **Browse for file** and select it.
 
@@ -75,7 +75,7 @@ Go to **System -> Manage -> Plugins** using the left sidebar and search for `wor
 
 <!-- Screenshot: Plugin Manager filtered to "wordpress", showing the J2Commerce Migrator WordPress adapter row with a green checkmark -->
 
-![](/img/PLACEHOLDER.webp)
+<!-- ![](/img/PLACEHOLDER.webp) -->
 
 - If the status column shows a red **X**, click it to enable the plugin. It will turn into a green checkmark.
 
@@ -95,7 +95,7 @@ There is nothing to configure in the adapter plugin itself. The adapter has no s
 
 <!-- Screenshot: J2Commerce Migrator Dashboard showing the "WordPress + WooCommerce" tile card -->
 
-![](/img/PLACEHOLDER.webp)
+<!-- ![](/img/PLACEHOLDER.webp) -->
 
 **Step 2:** On the Migrator Dashboard you will see a **WordPress + WooCommerce** card. Its status badge reads **Ready to migrate** when everything is in place. Click **Start Migration**.
 
@@ -106,7 +106,7 @@ There is nothing to configure in the adapter plugin itself. The adapter has no s
 
 <!-- Screenshot: Migrator Connection screen with Mode A and Mode B options visible, WordPress database fields highlighted -->
 
-![](/img/PLACEHOLDER.webp)
+<!-- ![](/img/PLACEHOLDER.webp) -->
 
 :::info
 
@@ -127,7 +127,7 @@ The tools screen is split into two pages controlled by a toggle at the top:
 
 <!-- Screenshot: The tools page toggle showing "Content Migration" and "Commerce Migration" options, with the toggle bar visible -->
 
-![](/img/PLACEHOLDER.webp)
+<!-- ![](/img/PLACEHOLDER.webp) -->
 
 You can run them in any order, but running Content Migration first is recommended because users must exist in Joomla before Commerce Migration can link customer addresses to the right accounts.
 
@@ -141,7 +141,7 @@ Before migrating users, you need to tell the Migrator which Joomla user group ea
 
 <!-- Screenshot: The role mapping tile showing WordPress roles on the left (Administrator, Editor, Author, etc.) and Joomla User Group dropdowns on the right -->
 
-![](/img/PLACEHOLDER.webp)
+<!-- ![](/img/PLACEHOLDER.webp) -->
 
 **Step 2:** For each WordPress role, choose the matching Joomla user group from the dropdown. Common starting defaults:
 
@@ -176,7 +176,7 @@ Each section on the tools screen shows a row of tiles. Each tile represents one 
 
 <!-- Screenshot: A section of tiles on the Content Migration page, showing tiles with Synced green badges and Running badges, with Detect / Migrate / List / Reset buttons -->
 
-![](/img/PLACEHOLDER.webp)
+<!-- ![](/img/PLACEHOLDER.webp) -->
 
 If a tile's source table has zero rows (for example, you never created coupons in WooCommerce), it automatically shows a gray **Synced** badge and a disabled **Empty Source** button — no action needed.
 
@@ -192,7 +192,7 @@ After running all sections, check the results:
 
 <!-- Screenshot: The Export Log button at the top of the tools screen, and an example of the downloaded log file open in a text editor -->
 
-![](/img/PLACEHOLDER.webp)
+<!-- ![](/img/PLACEHOLDER.webp) -->
 
 **Spot-check in J2Commerce:**
 
