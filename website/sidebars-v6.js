@@ -258,11 +258,11 @@ const sidebars = {
                         // Easy Reorder
                         'apps-and-extensions/apps/app_reorder',
                         // Email Cart
-                        'apps-and-extensions/apps/emailbasket',
+                        'apps-and-extensions/apps/app-emailbasket',
                         // EU VAT Rules
                         'apps-and-extensions/apps/euvat',
                         // ExpertVoice Recommendations
-                        'apps-and-extensions/apps/expertvoice',
+                        'apps-and-extensions/apps/app-expertvoice',
                         // Meta Pixel / Facebook Conversion
                         'apps-and-extensions/apps/app_facebookconversion',
                         // GDPR Compliance
