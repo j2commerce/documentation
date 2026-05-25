@@ -2,234 +2,359 @@
 title: "Partial Payment"
 sidebar_label: "Partial Payment"
 sidebar_position: 10
-description: "Accept deposits at checkout and collect the remaining balance on a schedule. Ideal for high-ticket products, custom orders, courses, and services."
+description: "Collect a deposit at checkout and schedule the remaining balance for later, with payment plans, automatic reminder emails, and a customer Pay Now page."
 ---
 
 # Partial Payment
 
-The Partial Payment app lets you collect a deposit at checkout and schedule the remaining balance for a later date. Customers pay a percentage or fixed-amount deposit when they place the order, then return to their account to pay the outstanding balance when it becomes due. Automated reminder emails keep the payment process on track without manual follow-up.
+The Partial Payment app lets you take a deposit when a customer places an order, then collect the rest of the balance on a schedule you control. Customers pay a percentage or a fixed-amount deposit at checkout, and return to their account to pay the balance when it becomes due. Automated reminder emails keep payments on track so you do not have to chase them by hand.
 
-This app is well-suited for stores selling high-ticket items, custom-made goods, services booked in advance, online courses, and any product where splitting the payment makes the purchase easier for the customer.
+This app is a great fit for stores selling high-ticket items, custom-made goods, services booked in advance, online courses, and any product where splitting the cost makes the purchase easier for the customer.
 
-## Prerequisites
+## Requirements
 
-- J2Commerce 6 installed and activated
-- At least one product with a published price
+- PHP 8.3.0 +
+- Joomla! 6.x
+- J2Commerce 6.x
 - Joomla email (SMTP or PHP mail) configured so reminder emails can send
 
-## Installation
+## Purchase and Download
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **-> Apps**
 
-1. Purchase and download the `app_partialpayment.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_partialpayment.zip` package file.
-4. The installer enables the plugin automatically and creates three database tables along with a "Scheduled" order status.
+**Step 2:** Locate the **Partial Payment** App **->** click **View Details** **-> Add to cart -> Checkout**.
 
-You should see a green "Partial Payment plugin installed successfully" confirmation message when complete.
+**Step 3:** Go to **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
 
-<!-- SCREENSHOT: Joomla extension manager showing the successful partial payment installation message -->
+## Install the App
 
-## Global Configuration
+You can install the **Partial Payment** App using the Joomla installer. The following steps help you with a successful installation.
 
-After installation, configure the plugin's global settings before assigning it to individual products. Go to **J2Commerce** -> **Apps**, find **Partial Payment**, and click its name to open the plugin editor.
+In the Joomla admin, go to **System -> Install -> Extensions**
 
-<!-- SCREENSHOT: J2Commerce Apps list with Partial Payment highlighted -->
+Upload the `app_partialpayment.zip` file or use the Install from URL option.
 
-The configuration panel has two tabs: **General Settings** and **Mail Settings**.
+<!-- SCREENSHOT: System -> Install -> Extensions upload screen -->
 
-### General Settings
+On a successful install you will see a green "Partial Payment plugin installed successfully" message. The installer also creates the database tables it needs and adds a **Scheduled** order status automatically.
 
-<!-- SCREENSHOT: Partial Payment General Settings tab showing all fields -->
+## Enable the App
 
-| Field | Description | Default | Options |
-|-------|-------------|---------|---------|
-| **Cron URL** | A URL you copy and schedule via your server's cron or the companion Joomla Task plugin. Run at least once daily so scheduled orders activate on time and reminder emails send. | — | Read-only generated URL |
-| **Enable partial payment (default)** | Whether partial payment applies to products storewide by default. You can override this on individual products. | Disabled | Disabled, Enabled (required), Enabled (optional) |
-| **Select by default** | Which option is pre-selected on the product page when partial payment is set to "optional" — the customer can still change their choice. | Full payment | Full payment, Partial payment |
-| **Partial payment type (default)** | How the deposit amount is calculated storewide. | Percentage | Percentage, Fixed amount |
-| **Amount (default)** | The default deposit amount. Enter a number: `50` means 50% when the type is Percentage, or 50 in your store currency when Fixed. | 50 | Any positive number |
-| **Payment plans (default)** | Assign one or more payment plans to apply storewide. Plans must be created first (see [Payment Plans](#payment-plans-admin-plans-crud)). | — | Multi-select from your enabled plans |
-| **Scheduled order status** | The order status assigned to future payment instalments after the deposit is placed. Defaults to "Scheduled," which is created automatically at install. | Scheduled | Any active order status |
-| **Allowed payment methods** | Restrict partial-payment orders to specific gateways. Useful when only certain gateways support deferred billing. Leave blank to allow all gateways. | All | Multi-select from your enabled payment methods |
-| **Payment display** | Controls what total appears at checkout: the full order amount, or only the deposit amount due today. | Full order total | Full order total, Partial amount only |
-| **Debug mode** | Writes partial payment events to the J2Commerce log for troubleshooting. Turn off on live stores. | No | Yes, No |
+Once you have installed the App, you need to enable it. There are **two** ways to reach it.
 
-**Recommended starting point:** Set **Enable partial payment (default)** to **Disabled** and configure each product individually until you are comfortable with how the feature behaves.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-### Mail Settings
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+<!-- SCREENSHOT: J2Commerce Apps list with Partial Payment in the list -->
+
+Look for **Partial Payment**, click the **X**, and it turns into a green checkmark. It is now enabled and ready for setup.
+
+## Configure the App
+
+Click the **Partial Payment** title next to the green checkmark to open the settings.
+
+:::tip
+
+**Tip:** Click the **Toggle Inline Help** button on any app you install and it shows a short description below each field.
+
+:::
+
+The settings are split across five tabs: **General Settings**, **Schedule Settings**, **Escalation Settings**, **Mail Settings**, and **Automatic Charge (Saved Card)**.
+
+### General Settings tab
+
+<!-- SCREENSHOT: Partial Payment General Settings tab -->
+
+**Cron URL:** A read-only URL you copy into your server cron (or the Joomla Scheduler). Run it at least once a day so scheduled orders activate on time and reminder emails go out. See [Cron Setup](#cron-setup) below.
+
+**Framework:** Choose **Bootstrap 5** for standard Joomla templates, or **UIkit** for UIkit 3 based templates. This controls how the front-end displays look.
+
+**Enable partial payment (default):** The storewide default. You can override it on each product.
+
+- **Disabled** — partial payment is off unless a product turns it on
+- **Enabled (required)** — every buyer must pay a deposit
+- **Enabled (optional)** — the customer chooses full payment or a deposit
+
+**Pre-Selected Payment Option:** When partial payment is *optional*, this is the choice that is ticked first on the product page. The customer can still change it.
+
+**Partial payment type (default):** How the deposit is calculated — **Percentage** of the price, or a **Fixed amount** in your store currency.
+
+**Default Amount:** The default deposit value. Enter `50` for 50% when the type is Percentage, or 50 in your currency when Fixed.
+
+**Default Payment Plans:** One or more saved payment plans offered storewide. Create plans first (see [Creating Payment Plans](#creating-payment-plans)).
+
+**Scheduled Order Status:** The order status given to future instalments after the deposit is paid. Defaults to **Scheduled**, created for you at install.
+
+**Allowed payment methods:** Restrict deposit orders to specific gateways. Leave empty to allow all gateways.
+
+**Payment display:** What total shows at checkout — the **Full order total**, or only the **Partial amount only** (the deposit due today).
+
+**Tax Allocation:** How tax is split between the deposit and the instalments.
+
+- **Proportional** — each payment carries its share of the total tax
+- **Upfront (with deposit)** — all tax is collected with the deposit; instalments are tax-free
+
+**Vendor Commission Split:** For marketplaces, how vendor commission is spread across instalments. **Proportional** is recommended; **Upfront (first instalment)** takes the whole commission from the first payment.
+
+**Coupon Scope:** How a coupon discount applies.
+
+- **Full order (proportional)** — the discount is spread across all payments (default)
+- **Deposit only** — the discount reduces the deposit; instalments stay full price
+- **Each installment** — the discount is re-applied to every instalment
+
+**Debug:** Logs partial payment events to the J2Commerce log for troubleshooting. Leave **No** on a live store.
+
+:::tip
+
+**Recommended starting point:** Leave **Enable partial payment (default)** on **Disabled** and turn the feature on per product until you are comfortable with how it behaves.
+
+:::
+
+### Schedule Settings tab
+
+**Maximum Installment Horizon (days):** The longest a payment plan is allowed to run, in days. Set `0` to remove the limit. Default is `365`. This stops a plan from scheduling a payment too far into the future.
+
+### Escalation Settings tab
+
+These settings decide what happens when a customer misses an instalment.
+
+**Escalate After (days):** How many days past the due date before escalation kicks in. Set `0` to turn escalation off.
+
+**Escalation Action:**
+
+- **No action**
+- **Notify admin by email**
+- **Cancel this installment**
+- **Cancel all remaining installments**
+
+**Escalation Admin Email:** The address notified when the action is **Notify admin**. Leave empty to use the site's global admin email.
+
+### Mail Settings tab
 
 <!-- SCREENSHOT: Partial Payment Mail Settings tab -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Send email when order is ready for payment** | Sends the "on_enable_pay" email to the customer when a scheduled order transitions to ready-for-payment status during the cron run. | Yes |
-| **Notify payment pending on (days)** | Comma-separated number of days after the scheduled payment date to send overdue reminders. For example, `2,5` sends a reminder 2 days and again 5 days after the due date. Leave blank to disable overdue reminders. | — (disabled) |
-| **Send thank-you email for deposit payment** | Sends the "thanks_for_deposit_payment" email immediately when the customer's initial deposit is confirmed. | Yes |
+**Send email when order is ready for payment:** Emails the customer when a scheduled instalment becomes due. Default **Yes**.
 
-## Per-Product Settings
+**Notify payment pending on (days):** Comma-separated days *after* the due date to send overdue reminders — for example `2,5` sends one reminder 2 days late and another 5 days late. Leave empty to disable overdue reminders.
 
-Each product can override the global defaults. Open a product in **J2Commerce** -> **Catalog** -> **Products**, click the **Apps** tab, and locate the **Partial Payment** section.
+**Send thank-you email for deposit payment:** Emails a thank-you the moment the deposit is confirmed. Default **Yes**.
 
-<!-- SCREENSHOT: Product edit form with the Apps tab selected, showing the Partial Payment section -->
+### Automatic Charge (Saved Card) tab
 
-| Field | Description | Default | Appears when |
-|-------|-------------|---------|--------------|
-| **Enable partial payment** | Sets partial payment availability for this product. Use **Disabled** to turn it off even if the global default is on. Use **Enabled (required)** to force all buyers to pay a deposit. Use **Enabled (optional)** to let customers choose. | Disabled | Always |
-| **Select by default** | Which payment option is pre-selected when the toggle appears on the product page. | Full payment | Only when Enable = Optional |
-| **Partial payment type** | Whether the deposit is a percentage of the product price or a fixed currency amount. | Percentage | When Enable is not Disabled |
-| **Deposit amount** | The deposit percentage or fixed amount for this product. Overrides the global default. | 50 | When Enable is not Disabled |
-| **Payment plans** | Plans available specifically for this product. Overrides the global plan selection. | — | When Enable is not Disabled |
-| **Enable pending payment notification** | Activates a product-specific reminder email sent before the scheduled payment date arrives. | No | When Enable is not Disabled |
-| **Notification date** | A calendar date on or before which the reminder email is sent. | — | When pending notification is Yes |
-| **Days before notification date** | Send the reminder this many days before the notification date as well. Enter `0` to send only on the date itself. | 0 | When pending notification is Yes |
+**Enable Automatic Charge:** When on, the cron tries to charge saved-card instalments automatically on their due date instead of emailing the customer to pay manually.
 
-**Example:** A photography course priced at $800 where you want a $200 deposit — set **Partial payment type** to **Fixed amount**, set **Deposit amount** to `200`, and set **Enable partial payment** to **Enabled (required)**. Every buyer pays $200 at checkout; the remaining $600 is collected later.
+:::info
+
+NOTE: Automatic charging requires a compatible payment gateway that supports saved cards (for example a Stripe plugin with vault/saved-card support). Without one, leave this **No** and customers pay each instalment from the **Pay Now** link.
+
+:::
+
+## Creating Payment Plans
+
+A payment plan defines how the balance is collected after the deposit — for example "deposit today, then three monthly instalments." You assign plans storewide (General Settings) or per product.
+
+To manage plans, open **Partial Payment** in **J2Commerce -> Apps**, then click the **Manage Plans** button in the toolbar.
+
+<!-- SCREENSHOT: Partial Payment plugin editor showing the Manage Plans toolbar button -->
+
+Click **Create New Plan** and fill in the **Plan Details**:
+
+**Plan Name:** A short, customer-facing label (e.g., "3 Monthly Payments").
+
+**Plan Description:** Optional text shown to the customer when they pick the plan.
+
+**Visible at Checkout:** When off, the plan is hidden from customers but still usable by admins.
+
+Then open the **Schedule** tab to build the instalments.
+
+<!-- SCREENSHOT: Plan edit screen showing the schedule editor and live preview -->
+
+- Click **Add Installment** to add a row.
+- For each row enter the **Payment amount** — use a trailing `%` (e.g. `33.33%`) for a percentage of the order, or a plain number for a fixed amount.
+- Set **When** the payment is charged using an interval after the deposit (Days, Weeks, Months, or Years).
+- Drag rows to reorder them.
+
+The **Schedule preview** updates as you type and shows whether the full order amount has been allocated. Click **Save** when the preview reads **✓ allocated**.
+
+:::tip
+
+**Tip:** Use the **Duplicate** and **Reset Schedule to Defaults** toolbar buttons to build similar plans quickly.
+
+:::
+
+## Enabling Partial Payment on a Product
+
+Each product can use the storewide defaults or set its own deposit terms. There are **three** ways to reach a product.
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Products**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Products**
+
+**Option C:** Go to **Content -> Categories ->** find the **category**, then open the product
+
+Open the product, click the **J2Commerce** tab, then the **Apps** tab, and find the **Partial Payment** section.
+
+<!-- SCREENSHOT: Product edit -> J2Commerce tab -> Apps tab -> Partial Payment section -->
+
+**Enable Partial Payment:** Set this product's availability — **Disabled**, **Enabled (required)**, or **Enabled (optional)**. Use **Disabled** to turn the feature off even when the storewide default is on.
+
+**Pre-Selected Payment Option:** *(shows only when set to Enabled (optional))* Which option is ticked first on the product page.
+
+**Partial Payment Type:** *(shows when not Disabled)* Percentage or fixed amount.
+
+**Deposit Amount:** *(shows when not Disabled)* The deposit for this product. Overrides the storewide default.
+
+**Payment Plans:** *(shows when not Disabled)* The plans offered for this product. Overrides the storewide plan list.
+
+:::info
+
+**Example:** An $800 photography course where you want a $200 deposit — set **Partial Payment Type** to **Fixed amount**, **Deposit Amount** to `200`, and **Enable Partial Payment** to **Enabled (required)**. Every buyer pays $200 at checkout; the remaining $600 is collected later.
+
+:::
+
+## How It Works
+
+When a customer reaches a product or checkout:
+
+1. J2Commerce checks whether Partial Payment is enabled for that product (or storewide).
+2. If it is **optional**, the customer sees a **Pay in Full / Pay Deposit** choice. If it is **required**, the deposit is applied automatically.
+3. At checkout the customer pays the deposit (or full amount if they chose that).
+4. The remaining balance is saved as a scheduled order using your **Scheduled Order Status**.
+5. When an instalment's date arrives, the **cron** activates it and emails the customer (or auto-charges a saved card, if enabled).
+6. The customer pays from the **Pay Now** link in their account, and a thank-you email confirms each payment.
 
 ## Customer Experience
 
 ### Product Detail Page
 
-When partial payment is set to **Enabled (optional)**, a toggle appears between the product price and the add-to-cart button. The customer sees two choices:
+When partial payment is **optional**, a toggle appears near the add-to-cart button with two choices:
 
 - **Pay in Full** — proceeds normally
-- **Pay Deposit** — shows the deposit label, for example "Pay a 30% deposit" or "Pay a deposit of $150"
+- **Pay Deposit** — shows the deposit label, e.g. "Pay a 30% deposit" or "Pay a deposit of $150"
 
-The option marked as the default is pre-selected, but the customer can switch before adding to the cart.
+When partial payment is **required**, the deposit label shows without a toggle.
 
-When partial payment is **Enabled (required)**, the deposit label displays without a toggle — the customer always pays the deposit at checkout.
-
-<!-- SCREENSHOT: Product detail page showing the Pay in Full / Pay Deposit toggle -->
+<!-- SCREENSHOT: Product page showing the Pay in Full / Pay Deposit toggle -->
 
 ### Cart
 
-Line items that use partial payment display a **Deposit** badge next to the product name. The cart totals section shows two extra rows:
+Line items using partial payment show a **Deposit** badge next to the product name, and the totals area adds two rows:
 
 - **Full Subtotal** — the complete price before the deposit arrangement
-- **Future Payments** — the balance remaining after today's deposit
+- **Future Payments** — the balance still owed after today's deposit
 
-<!-- SCREENSHOT: Cart showing a Deposit badge on a line item and the Full Subtotal / Future Payments rows -->
+<!-- SCREENSHOT: Cart showing the Deposit badge and Full Subtotal / Future Payments rows -->
 
 ### Checkout
 
-If you have configured **Allowed payment methods**, the checkout payment step only shows the gateways that are permitted for partial payment orders. This prevents customers from accidentally choosing a gateway that does not support the deposit workflow.
+If you set **Allowed payment methods**, only those gateways appear at checkout. The total shown follows your **Payment display** setting — either the full order total or just the deposit due today.
 
-The order total shown at checkout depends on the **Payment display** setting — either the full order amount with the deposit called out, or only the deposit amount due today.
+### Customer Profile — Pay Now and Schedule
 
-### Customer Profile — Pay Now
+After the deposit order is placed, the customer can see the remaining payments in their account under **My Profile -> Orders**. When a balance is due, a **Pay Now** alert appears on the order with a direct link to complete payment. A **Payment Schedule** view lists all instalments and their dates.
 
-After the deposit order is placed, the customer can see the remaining scheduled payment in their account under **My Profile** -> **Orders**. When the balance becomes due, a **Pay Now** alert appears on that order detail page with a direct link to complete the payment.
-
-<!-- SCREENSHOT: Customer profile order detail showing the Pay Now alert and balance amount -->
-
-## Payment Plans (Admin Plans CRUD)
-
-Payment plans let you define instalment schedules — for example, "three monthly payments of 33%" — that can be assigned to products or used as the global default.
-
-**Plans are a Tranche 3 (coming soon) feature.** The database tables and the plan-selector field are in place, so plans can be created directly in the database now if needed. A full admin UI for creating and managing plans from inside J2Commerce will be available in a future release.
-
-When the Plans admin UI ships, you will find it under **J2Commerce** -> **Apps** -> **Partial Payment** -> **Plans**.
-
-Each plan will support:
-- A name and description shown to customers
-- Multiple schedule rows, each specifying a payment amount and an interval (days, weeks, months, or years after the order)
-
-## Email Templates
-
-Three email templates are installed automatically. You can view and edit them from the database or — once the Tranche 3 Email Templates admin UI ships — directly inside J2Commerce.
-
-| Template type | When it sends | Default subject |
-|---------------|---------------|-----------------|
-| `on_enable_pay` | When a scheduled order is activated by the cron and is ready for the customer to pay the balance | "Your order for [PARTIAL_PAYMENT_ORDER_ITEM_NAME] is ready for payment" |
-| `notify_pending_payment` | On each day listed in the **Notify payment pending on (days)** setting, after the due date has passed | "Your order for [PARTIAL_PAYMENT_ORDER_ITEM_NAME] is overdue" |
-| `thanks_for_deposit_payment` | Immediately after the customer's deposit payment is confirmed | "[PARTIAL_PAYMENT_ORDER_ITEM_NAME] - Thank you for your deposit payment!" |
-
-### Merge Tags
-
-Use these tags anywhere in the subject or body of an email template. They are replaced with actual values when the email sends.
-
-| Merge tag | What it inserts |
-|-----------|-----------------|
-| `[CUSTOMER_NAME]` | The customer's full name |
-| `[PARTIAL_PAYMENT_ORDER_ITEM_NAME]` | The product name from the order |
-| `[INVOICE_URL]` | A direct link to the customer's invoice / order detail page |
-| `[PARTIAL_PAYMENT_DAYS_PASSED]` | Number of days elapsed since the scheduled payment date (used in overdue reminders) |
-| `[PAID_PARTIAL_AMOUNT]` | The deposit amount the customer has already paid |
-| `[PARTIAL_PAYMENT_FULL_AMOUNT]` | The full order total |
-| `[BALANCE_PARTIAL_AMOUNT]` | The outstanding balance still owed |
-| `[PARTIAL_PAYMENT_DATE]` | The scheduled payment due date |
+<!-- SCREENSHOT: Customer profile order showing the Pay Now alert and payment schedule -->
 
 ## Cron Setup
 
-The cron job drives two key actions: activating scheduled orders when their payment date arrives, and sending payment-due emails to customers.
+The cron does two jobs: it activates scheduled orders when their date arrives, and it sends payment-due emails. **Run it at least once a day.** Running it more often (say every few hours) means customers are notified sooner.
 
-**Run the cron at least once per day.** Running it more frequently (for example, every four hours) means customers are notified sooner when a balance becomes due.
+### Option A — Joomla Scheduler
 
-### Option A — Joomla Scheduler (Recommended)
-
-A companion Joomla Task plugin that wires the partial payment cron into the native Joomla Scheduler is coming in Tranche 3. Once installed, no server-level cron is required.
+If a companion Joomla Task plugin is installed, you can wire the partial payment cron into the native **System -> Scheduled Tasks** area, so no server-level cron is needed.
 
 ### Option B — Server Cron
 
-Copy the **Cron URL** shown in the plugin's General Settings tab. Add an entry to your server's cron table that calls this URL once daily.
+Copy the **Cron URL** from the General Settings tab and add it to your server's cron table once daily.
 
 **cPanel example:**
+
 1. Log in to cPanel and open **Cron Jobs**.
-2. Set the schedule to once daily (for example, `0 6 * * *`).
-3. Paste the cron URL into the command field, using: `curl -s "PASTE_YOUR_CRON_URL_HERE" > /dev/null 2>&1`
+2. Set the schedule to once daily (for example `0 6 * * *`).
+3. In the command field use: `curl -s "PASTE_YOUR_CRON_URL_HERE" > /dev/null 2>&1`
 
-**Linux crontab example:**
-```
-0 6 * * * curl -s "https://www.example.com/?option=com_j2commerce&task=..." > /dev/null 2>&1
-```
+<!-- SCREENSHOT: cPanel Cron Jobs page with the partial payment cron URL pasted in -->
 
-<!-- SCREENSHOT: cPanel Cron Jobs page with the partial payment cron URL pasted in the command field -->
+## Email Templates and Merge Tags
 
-## What's New in J2Commerce 6
+The app sends four types of email. Each has a built-in default, and you can override the subject and body with your own template.
 
-The original J2Store version of this plugin has been rewritten from the ground up for J2Commerce 6. These changes are invisible to store owners but mean the plugin is faster, more secure, and fully compatible with Joomla 6.
+| Email type | When it sends |
+|------------|---------------|
+| On enable for payment | When a scheduled instalment becomes due |
+| Notify pending payment | On each day listed in **Notify payment pending on (days)**, after the due date |
+| Thank you for deposit | Immediately after a deposit payment is confirmed |
+| Escalation (admin) | When an overdue instalment escalates and the action is **Notify admin** |
 
-- **Security — JSON instead of PHP serialize:** Partial payment data stored on order items previously used PHP `serialize()`, which is a known attack vector when user-supplied data reaches `unserialize()`. All stored data is now JSON, eliminating this class of vulnerability.
-- **Security — no core schema mutation:** The old version modified the J2Commerce core `cartitems` table schema. The new version uses the standard metafields system and its own dedicated tables, leaving the core schema untouched. This means updates to J2Commerce 6 core cannot break partial payment data.
-- **Compatibility — dual-shape OrderStatusChange:** The J2Commerce 6 core dispatches order status change events in two different argument shapes depending on the call site. The plugin correctly handles both shapes so status transitions are never missed.
-- **Security — Joomla Mailer with header-injection guards:** Reminder emails are now sent through Joomla's native mail system with proper input sanitization. Raw `mail()` calls and unescaped header construction from the original plugin are gone.
-- **Modern JavaScript:** The payment-method filter at checkout is implemented in vanilla ES6+ JavaScript. No jQuery dependency.
-- **Parameterized SQL throughout:** Every database query uses bound parameters. The original plugin contained SQL injection risks from concatenated user values in WHERE clauses; all of these have been eliminated.
+### Merge Tags
+
+Use these tags in any custom email subject or body. They are replaced with real values when the email sends. Always include the square brackets.
+
+| Merge tag | What it inserts |
+|-----------|-----------------|
+| `[CUSTOMER_NAME]` | The customer's name |
+| `[PARTIAL_PAYMENT_ORDER_ITEM_NAME]` | The product name from the order |
+| `[INVOICE_URL]` | A direct link to the customer's order / payment page |
+| `[PARTIAL_PAYMENT_DATE]` | The scheduled payment due date |
+| `[PARTIAL_PAYMENT_DAYS_PASSED]` | Days elapsed since the due date (for overdue reminders) |
+| `[PAID_PARTIAL_AMOUNT]` | The deposit already paid |
+| `[PARTIAL_PAYMENT_FULL_AMOUNT]` | The full order total |
+| `[BALANCE_PARTIAL_AMOUNT]` | The outstanding balance still owed |
+| `[INSTALLMENT_INDEX]` | This instalment's number |
+| `[INSTALLMENT_TOTAL]` | The total number of instalments |
+
+## Tips
+
+- **Start small** — test with one product set to **Enabled (optional)** before turning partial payment on storewide.
+- **Run the cron daily** — scheduled orders will not activate and reminders will not send without it.
+- **Keep plan names short** — they appear on the product page and cart, where space is limited.
+- **Use Upfront tax** if your accounting needs the full tax collected at order time rather than spread across instalments.
+- **Match the framework** — set **Framework** to whatever your template uses (Bootstrap 5 or UIkit) so the displays look right.
 
 ## Troubleshooting
 
-### The "Scheduled" order status does not appear in the order status list
+### The "Scheduled" order status is missing
 
-The installer script creates the "Scheduled" status automatically on first install. If it is missing, go to **J2Commerce** -> **Configuration** -> **Order Statuses** and check whether it was manually deleted. You can re-add it there with the label "Scheduled" and a Yellow/Warning colour. After adding it, return to the Partial Payment plugin settings and select it in the **Scheduled order status** field.
+**Cause:** The status was deleted after install.
+
+**Solution:** Go to **J2Commerce -> Setup -> Order Statuses** and re-add a status named **Scheduled** (a Yellow/Warning colour is a good choice). Then open the Partial Payment settings and pick it in **Scheduled Order Status**.
 
 ### Reminder emails are not sending
 
-Check the following in order:
+**Cause:** The cron is not running, email is misconfigured, or the email setting is off.
 
-1. Confirm the cron job is running. Visit the Cron URL in a browser — you should see a success message.
-2. Verify Joomla's email settings at **System** -> **Global Configuration** -> **Server** tab. Send a test email to confirm basic email delivery is working.
-3. In the plugin's **Mail Settings** tab, confirm that **Send email when order is ready for payment** is set to **Yes**.
-4. Enable **Debug mode** in the plugin's General Settings. Run the cron again and check the J2Commerce log at **J2Commerce** -> **Reports** or the Joomla error log for any error messages.
-5. Check that the email template for the relevant email type (`on_enable_pay`, `notify_pending_payment`) is enabled in the database.
+**Solution:**
 
-### The balance shown in the cart or checkout appears in the wrong currency
+1. Confirm the cron runs — open the Cron URL in a browser and look for a success message.
+2. Check Joomla email at **System -> Global Configuration -> Server** and send a test email.
+3. In the **Mail Settings** tab, confirm **Send email when order is ready for payment** is **Yes**.
+4. Turn on **Debug** in General Settings, run the cron again, and check the J2Commerce log for errors.
 
-The plugin reads the active currency from the customer's session at the time the deposit is recorded. If you switch currencies in the store admin after orders are placed, existing orders retain the currency from the original session. For new orders, ensure the currency switcher is set correctly before the customer adds to the cart. If the mismatch persists, confirm that the J2Commerce currency plugin is enabled and that exchange rates are current.
+### The balance shows in the wrong currency
 
-### Customers can still choose a payment method that should be restricted
+**Cause:** The store currency changed after the order was placed; existing orders keep the original currency.
 
-Open the plugin's General Settings tab. In the **Allowed payment methods** field, confirm your intended gateway appears in the selected list and that no entries have been accidentally removed. If the field is empty, all gateways are allowed — add your permitted gateways explicitly. After saving, clear the Joomla cache at **System** -> **Clear Cache**.
+**Solution:** For new orders, make sure the currency switcher is set correctly before the customer adds to the cart. Confirm the J2Commerce currency plugin is enabled and exchange rates are current.
 
-### The Pay Now button does not appear on the customer's profile
+### Customers can still pick a restricted payment method
 
-The Pay Now link appears only when the order has reached the status configured in **Scheduled order status** and the cron has processed the scheduled instalment. Confirm:
+**Cause:** The gateway is not actually restricted, or the field is empty.
 
-1. The order's current status matches the configured scheduled status.
-2. The cron has run since the payment date passed.
-3. The customer is viewing the correct order in their profile (not the parent order for a multi-instalment plan).
+**Solution:** Open **General Settings -> Allowed payment methods** and confirm only your intended gateways are selected (an empty field allows all). Save, then clear the cache at **System -> Clear Cache**.
+
+### The Pay Now button does not appear
+
+**Cause:** The order has not reached the scheduled status, or the cron has not processed the instalment yet.
+
+**Solution:**
+
+1. Confirm the order's status matches your **Scheduled Order Status**.
+2. Confirm the cron has run since the due date passed.
+3. Make sure the customer is viewing the correct instalment order, not the original parent order.
 
 ## Related Topics
 
 - [Payment Methods](../../payment-methods/payment_cash.md) — configure the gateways used at checkout
-- [Order Statuses](../../setup/index.md) — manage and customize order statuses
-- [Apps and Extensions](../index.md) — browse all available J2Commerce add-ons
+- [Store Setup](../../setup/index.md) — manage order statuses and configuration
+- [Apps and Extensions](../index.md) — browse all J2Commerce add-ons
