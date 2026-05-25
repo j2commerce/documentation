@@ -1,6 +1,6 @@
-# Calculator - Sort by Price
+# Sort by Price Calculator
 
-The Calculator - Sort by Price plugin adds an alternative pricing calculator to J2Commerce. When a product has multiple price levels set up in its **Additional Pricing** table, this calculator automatically finds and applies the **lowest matching price** for each customer based on three factors: their Joomla user group, the quantity they are ordering, and the current date.
+The Sort by Price Calculator plugin adds an alternative pricing calculator to J2Commerce. When a product has multiple price levels set up in its **Additional Pricing** table, this calculator automatically finds and applies the **lowest matching price** for each customer based on three factors: their Joomla user group, the quantity they are ordering, and the current date.
 
 This is useful for stores that offer tiered pricing, wholesale discounts, time-limited promotions, or group-specific pricing. Without this plugin, J2Commerce uses the **Standard** calculator, which only uses the base variant price.
 
@@ -11,17 +11,17 @@ This is useful for stores that offer tiered pricing, wholesale discounts, time-l
 
 ## Purchase and Download
 
-The **Calculator Sort By Price** app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+The **Sort By Price** **Calculator** app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
 **Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Apps**.
 
-**Step 2:** Locate the **Calculator Sort By Price** app -> click **View Details** -> **Add to cart** -> **Checkout**.
+**Step 2:** Locate the **Sort By Price** **Calculator** app -> click **View Details** -> **Add to cart** -> **Checkout**.
 
 **Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
 
 ## Install the App
 
-You can install this **Calculator Sort By Price** App using the Joomla installer. The following steps help you with a successful installation.
+You can install this **Sort By Price** **Calculator** App using the Joomla installer. The following steps help you with a successful installation.
 
 In the Joomla admin, go to **System -> Install -> Extensions**
 
@@ -39,7 +39,7 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 ![shipping method](/img/accordions-app.webp)
 
-Look for **Calculator Sort By Price**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+Look for **Sort By Price** **Calculator**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ![](/img/calculator-enable.webp)
 

@@ -33,44 +33,45 @@ The **Payment Method Discount** app is a separate add-on available from the [J2C
 2. Locate **Payment Method Discount**, click **View Details**, add it to your cart, and complete the checkout.
 3. Go to **My Downloads** under your profile menu, find the app, and click **Available Versions** -> **View Files** -> **Download** to save the ZIP file.
 
-## Install the App
+## Install the Plugin
 
 1. In the Joomla admin panel, go to **System** -> **Install** -> **Extensions**.
 2. Upload the `app_paymentdiscount.zip` file using the **Upload Package File** tab.
 3. The app installs and **enables automatically** — you do not need to manually enable it after installation.
 
-<!-- SCREENSHOT: Joomla Extensions installer showing the Upload Package File tab with the zip selected and a success notification after install -->
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
-## Open the Plugin Settings
+## Open the Plugin
 
-There are two ways to reach the plugin configuration:
+Once you have installed the App, it will automatically enable itself. You can now configure it by going to either:&#x20;
 
-**Option A — Via J2Commerce Apps:**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-Go to **J2Commerce** -> **Apps**. Find **Payment Method Discount** in the list and click its name to open settings.
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-**Option B — Via System Plugins:**
+![shipping method](/img/accordions-app.webp)
 
-Go to **System** -> **Manage** -> **Plugins**, search for **Payment Method Discount**, and click the plugin name.
+Search for **Payment Method Discount**, make sure there is a green checkmark and not a **X,** click on the title to open it.
 
-<!-- SCREENSHOT: System > Manage > Plugins screen showing the Payment Method Discount plugin in the search results list -->
+![](/img/payment-method-discount-enable.webp)
 
 ## Configure the Plugin
 
-### Step 1: Choose the Percentage Base
+:::tip
 
-The **Percentage Base** setting controls what the discount percentage is calculated against when you choose the **Percentage** discount type for a payment method.
+**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
 
-| Option            | What it means                                                                            |
-| ----------------- | ---------------------------------------------------------------------------------------- |
-| **Order Total**   | Percentage is applied to the full order total, including shipping costs and taxes.       |
-| **Cart Subtotal** | Percentage is applied only to the product subtotal, before shipping and taxes are added. |
+:::
 
-This is a global setting that applies to all payment methods configured below.
+![](/img/payment-method-discount-toggle.webp)
 
-<!-- SCREENSHOT: Plugin configuration screen showing the Percentage Base dropdown set to "Order Total" -->
+**Click the green + button below** to add a discount rule. Each row links one payment method to a discount: pick the method, choose which customer access levels can use it, then set a fixed amount or a percentage. Add as many rows as you need — one per payment method you want to discount. Rules with a zero value are skipped. Save when finished.
 
-### Step 2: Configure Discounts Per Payment Method
+![](/img/payment-method-discount-config.webp)
+
+### Configure Discounts Per Payment Method
+
+![](/img/payment-method-discount-new.webp)
 
 The **Payment Method Discounts** table lists every enabled J2Commerce payment plugin on your site. Each row represents one payment method and has five columns:
 
@@ -80,9 +81,25 @@ The **Payment Method Discounts** table lists every enabled J2Commerce payment pl
 
 **Discount Value:** The numeric amount of the discount. Enter `0` or leave blank to disable the discount for that method.
 
-**Discount Type: Fixed Amount** deducts a specific currency amount. **Percentage** deducts a percentage of the Percentage Base.
+**Discount Type:**&#x20;
+
+- **Fixed Amount** deducts a specific currency amount.&#x20;
+
+- **Percentage** deducts a percentage of the Percentage Base.
 
 **Discount Label:** The text shown next to the discount line in the cart totals. Defaults to `Payment Discount`.
+
+### Percentage Base
+
+![](/img/payment-method-discount-percentage2.webp)
+
+The **Percentage Base** setting controls what the discount percentage is calculated against when you choose the **Percentage** discount type for a payment method.
+
+**Order Total:** Percentage is applied to the full order total, including shipping costs and taxes.
+
+**Cart Subtotal:** The percentage applies only to the product subtotal, before shipping and taxes are added.
+
+This is a global setting that applies to all payment methods configured below.
 
 <!-- SCREENSHOT: Payment Method Discounts table showing three payment method rows (Cash, Bank Transfer, PayPal) with different discount values and types configured -->
 
@@ -94,9 +111,9 @@ The **Payment Method Discounts** table lists every enabled J2Commerce payment pl
 
 Click **Save** or **Save & Close** in the toolbar when you are done.
 
-<!-- SCREENSHOT: Plugin toolbar with the Save and Save & Close buttons highlighted -->
-
 ## Understanding Access Levels
+
+![](/img/payment-method-discount-access.webp)
 
 J2Commerce uses Joomla's built-in **view levels** to control who sees what. Each view level groups one or more user groups. For example, the default Joomla site has:
 
