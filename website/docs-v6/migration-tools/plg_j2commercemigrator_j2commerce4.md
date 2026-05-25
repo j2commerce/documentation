@@ -1,260 +1,429 @@
 ---
 title: "J2Commerce 4 Migrator Adapter"
 sidebar_label: "J2Commerce 4 Adapter"
-sidebar_position: 3
-description: "Migrate your J2Commerce 4 or J2Store v4 store data, custom tables, menu items, and storefront CSS into J2Commerce 6 using the J2Commerce 4 source adapter bundled with the J2Commerce Migrator."
+sidebar_position: 4
+description: "Step-by-step guide to installing and using the J2Commerce 4 Migrator Adapter to move data from a legacy J2Store v4 store into J2Commerce 6."
 ---
 
-The J2Commerce 4 Migrator Adapter is the source connector that lets the [J2Commerce Migrator](./j2commercemigrator.md) read from a **J2Commerce 4 or J2Store v4** database and move that data into J2Commerce 6. Both J2Commerce 4 and J2Store v4 shared the same `j2store_*` database table family, so this adapter handles both sources. It ships bundled with the J2Commerce Migrator package — you do not need a separate download or install step.
+# J2Commerce 4 Migrator Adapter
 
-## Requirements {#requirements}
+The J2Commerce 4 Migrator Adapter is the source connector for the [J2Commerce Migrator](./j2commercemigrator.md). It reads your existing J2Store v4 store — products, orders, customers, tax setup, and configuration — and moves that data into J2Commerce 6. Without this adapter installed and enabled, the Migrator has no source to read from.
+
+<!-- SCREENSHOT: J2Commerce Migrator dashboard showing the J2Store card with "Ready to migrate" status -->
+
+## Requirements
 
 - PHP 8.3 or later
 - Joomla 6.0 or later
 - J2Commerce 6 installed and enabled
-- **J2Commerce Migrator component installed** (the adapter is bundled inside it)
-- An existing J2Commerce 4 or J2Store v4 installation — either on the same Joomla site, or accessible via a separate database server or SSH tunnel
+- **J2Commerce Migrator component installed** — the adapter cannot work without it
+- An existing J2Store v4 installation (version 4.1.x or 4.2.x), either on the same Joomla site or accessible via a separate MySQL server or SSH tunnel
+
+## Get the Adapter
+
+The J2Commerce 4 Migrator Adapter is a separate add-on available from the [J2Commerce website](https://www.j2commerce.com). It is not included with J2Commerce 6 or with the Migrator component — you purchase and download it separately.
+
+**Step 1:** Log in to your account at [j2commerce.com](https://www.j2commerce.com/) and open your customer downloads area.
+
+**Step 2:** Search for **J2Commerce 4 Migrator Adapter** and download the `plg_j2commercemigrator_j2commerce4_*.zip` file.
+
+## Install the Adapter
+
+**Step 1:** In your Joomla admin, go to **System** -> **Install** -> **Extensions**.
+
+<!-- SCREENSHOT: Joomla System -> Install -> Extensions upload area -->
+
+**Step 2:** Drag and drop the `plg_j2commercemigrator_j2commerce4_*.zip` file into the upload area, or click **Browse for file** and select it.
+
+**Step 3:** Joomla installs the adapter. You will see a success message when it is complete.
+
+:::info
+
+The installer checks that both J2Commerce 6 and the J2Commerce Migrator component are already installed. If either is missing, installation will be refused. Install J2Commerce and the Migrator first, then install the adapter.
+
+:::
+
+## Enable the Adapter
+
+**Step 1:** Go to **System** -> **Manage** -> **Plugins**.
+
+<!-- SCREENSHOT: Joomla Plugins list filtered to "j2commerce4" showing the adapter plugin -->
+
+**Step 2:** Search for **J2Commerce Migrator — J2Commerce 4 Adapter** in the search bar.
+
+**Step 3:** If the status column shows a red X, click it to enable the plugin. It will turn into a green checkmark.
 
 :::tip
 
-J2Commerce 6 requires Joomla 6. If your J2Commerce 4 or J2Store v4 store is still running on Joomla 3 or 4, you have two options: upgrade that site to Joomla 6 first and use the same-site connection mode, or leave the old site in place and connect the Migrator to it remotely using Mode B or Mode C.
+If the adapter does not appear in the search results at all, the installation may not have completed successfully. Try reinstalling from **System** -> **Install** -> **Extensions**.
 
 :::
 
-## Start at the Migrator Dashboard {#start-at-dashboard}
+## Verify the Adapter Is Working
 
-The J2Commerce 4 adapter ships inside the `pkg_j2commercemigrator_*.zip` package and is automatically enabled when the package installs. There is nothing to install or enable separately.
+**Step 1:** Go to **Components** -> **J2Commerce Migrator** in the admin menu.
 
-To begin, go to **Components -> J2Commerce Migrator** in your Joomla admin. The Migrator dashboard shows a source card for **J2Store** (the common display name for both J2Commerce 4 and J2Store v4). Click **Start Migration** on that card to open the Migration Wizard.
+**Step 2:** The Migrator Dashboard loads. Look for a **J2Store** card. Its status line tells you whether the adapter can see your J2Store installation:
 
-<!-- SCREENSHOT: J2Commerce Migrator dashboard showing the J2Store source card with the Start Migration button -->
+| Status shown | What it means |
+|---|---|
+| **Ready to migrate** | J2Store 4 is installed and enabled — you can proceed |
+| **Installed but disabled** | J2Store is installed but disabled in your Extensions list |
+| **Not installed** | J2Store 4 was not found on this Joomla site — check that it exists, or switch to a remote database connection |
+
+<!-- SCREENSHOT: Migrator dashboard J2Store card showing "Ready to migrate" -->
+
+## Configure the Connection
+
+There is nothing to configure in the adapter plugin itself. All connection settings are entered through the J2Commerce Migrator's **Tools** view.
+
+**Step 1:** On the Migrator Dashboard, click **Start Migration** on the J2Store card. This takes you to the **Tools** view for this adapter.
+
+**Step 2:** At the top of the Tools view, look for the **Connection** panel. Choose the mode that matches your setup:
+
+- **Mode A — Same site:** Your J2Store data is in the same database as your current Joomla site. No extra credentials needed — this is the fastest and simplest option.
+- **Mode B — Remote database:** Your J2Store data lives on a different MySQL or MariaDB server. Enter the host, port, database name, username, and password.
+- **Mode C — SSH tunnel:** Your source database is only reachable through an SSH connection. Enable SSH tunnel support in **J2Commerce Migrator** -> **Options** first; Mode C will then appear on the Connection screen.
+
+<!-- SCREENSHOT: Migrator Tools view connection panel showing Mode A / Mode B / Mode C tabs -->
+
+**Step 3:** Click **Test Connection** to confirm the adapter can reach your J2Store data. A green success message confirms you are ready to start syncing.
+
+## The Tools View — How to Read the Screen
+
+Once you are connected, the main area shows a **kanban-style board** organized into sections (A through I). Each section contains one or more **tiles**, and each tile represents one type of data — for example, "Currencies" or "Products."
+
+<!-- SCREENSHOT: Tools view showing sections A through I with multiple tiles per section -->
+
+### What a tile shows
+
+Every tile displays four things at a glance:
+
+- **Name** — what type of data this tile handles (for example, "Orders" or "Variants")
+- **Source table** — the J2Store database table being read, shown in small text below the name
+- **Row count** — how many rows were found in the source table
+- **Status badge** — the current state of this tile (see below)
+
+### Tile status badges
+
+| Badge | What it means |
+|---|---|
+| **Pending** | Not started yet. Click **Sync** to begin. |
+| **Syncing…** | Migration is running right now. The tile shows a live progress percentage. |
+| **Synced** | All rows from this tile have been copied to J2Commerce. |
+| **Re-sync** | The tile ran before, but new rows have been added to the source since then. Click to pick up the new records. |
+| **Empty Source** | The source table has zero rows — there is nothing to migrate here. The tile is automatically marked done and the button is disabled. |
+| **Error** | Something went wrong. Check the message below the badge for details, then click **Retry**. |
+| **Retry** | A previous attempt failed and the tile is waiting for you to try again. |
+| **Resume** | A previous run stopped partway through. Click to continue from where it left off. |
+
+:::tip
+
+While a tile is running, the **Syncing…** badge shows a live percentage, for example **Syncing… (45%)**. You can watch the whole board update in real time without refreshing the page.
+
+:::
+
+### Progress summary bar
+
+At the top of the board you will see a summary row showing **tiles done**, **total rows migrated**, and **error count**. Use this to track overall progress without scrolling through every section.
+
+<!-- SCREENSHOT: Summary bar at top of Tools view showing tiles done / rows migrated / errors -->
+
+## Sections A through H — Data Migration
+
+Work through sections A to H **from left to right, top to bottom**. Each section depends on the ones before it — you cannot migrate orders (Section G) before migrating order statuses (Section A) and products (Section D).
+
+### Section A — Lookup Tables
+
+The first section you run. Every later tile depends on these records existing first.
+
+| Tile | What it migrates |
+|---|---|
+| **Currencies** | Currency definitions — code, name, symbol, exchange rate, decimal places |
+| **Countries** | Country records — names, two-letter codes, enabled/disabled flags |
+| **Zones** | State and province records linked to their countries |
+| **Order Statuses** | Order status labels — Pending, Confirmed, Shipped, and any custom statuses you created |
+| **Lengths** | Length unit definitions (cm, in, mm, and so on) |
+| **Weights** | Weight unit definitions (kg, lb, oz, and so on) |
+
+<!-- SCREENSHOT: Section A tiles showing Currencies, Countries, Zones, Order Statuses, Lengths, Weights -->
+
+### Section B — Tax System
+
+Tax records must exist before products can be assigned a tax profile.
+
+| Tile | What it migrates |
+|---|---|
+| **Tax Profiles** | Tax profile definitions that products are assigned to |
+| **Tax Rates** | The actual tax percentage rows attached to geographic zones |
+| **Tax Rules** | Rules controlling how rates apply to specific products and customers |
+| **Geo Zones** | Geographic tax and delivery zone definitions |
+| **Geo Zone Rules** | Country and zone inclusion rules attached to each geo zone |
+
+### Section C — Catalogue Setup
+
+Option groups, filter groups, manufacturers, and custom checkout fields. Products in Section D are built on top of these.
+
+| Tile | What it migrates |
+|---|---|
+| **Options** | Option group definitions (Color, Size, and so on) |
+| **Option Values** | The individual values within each option group (Red, Blue, Small, Large, and so on) |
+| **Manufacturers** | Manufacturer and brand records |
+| **Custom Fields** | Checkout custom field definitions |
+| **Filter Groups** | Product filter group definitions |
+| **Filters** | Individual product filter values within each filter group |
+| **Product–Filter Links** | The assignments connecting products to their filters |
+
+### Section D — Products
+
+The largest section. Migrate tiles from top to bottom — products first, then everything that hangs off them.
+
+| Tile | What it migrates |
+|---|---|
+| **Products** | Core product records, including the extension link from `com_j2store` to `com_content` so your Joomla articles display correctly |
+| **Variants** | Variant records — SKU, stock, weight, and dimensions per variant |
+| **Product Images** | Image metadata (file paths, alt text, ordering). After the row sync finishes, images are automatically converted to WebP and resized |
+| **Product Files** | Downloadable file records for digital products |
+| **Product Prices** | Per-user-group tiered price rules |
+| **Product Options** | Assignments linking products to their option groups |
+| **Product Option Values** | The selected option values per product |
+| **Variant Option Values** | The mapping rows connecting variants to specific option values |
+| **Product Quantities** | Per-variant inventory quantity records |
+| **Price Index** | The denormalized price index used for sorting and filtering in the catalog |
+| **Meta Fields** | Plugin metadata stored in the J2Store key-value table |
 
 :::info
 
-If the J2Store card does not appear on the dashboard, confirm that the J2Commerce Migrator package is installed and that the adapter plugin is enabled. Go to **System -> Manage -> Plugins**, search for `j2commerce4`, and check that the status is green.
+The **Product Images** tile shows a link to **Open Image Processing settings** below its description. Click this link to configure the target directory and image quality settings before running this tile.
 
 :::
 
-## Configure the Adapter {#configure-the-adapter}
+### Section E — Customers
 
-There is nothing to configure in the adapter plugin itself. All connection settings are entered on the **Connection** screen of the Migration Wizard.
+Customer records depend on countries and zones (Section A) already being migrated.
 
-When you reach the Connection screen, choose one of three modes:
+| Tile | What it migrates |
+|---|---|
+| **Addresses** | Saved billing and delivery addresses linked to Joomla user accounts |
+| **Coupons** | Coupon codes, discount rules, and usage counts |
+| **Vouchers** | Gift voucher records and balances |
+| **Vendors** | Multi-vendor seller accounts |
 
-- **Mode A — Same site:** Your J2Commerce 4 or J2Store v4 tables are in the same database as your current Joomla 6 site. No extra credentials needed — the Migrator uses the existing database connection.
-- **Mode B — Remote database:** Your old store data lives on a different MySQL or MariaDB server. Enter the host, port, database name, username, password, and table prefix on this screen.
-- **Mode C — SSH tunnel:** Your old database is only reachable through an SSH tunnel. Enable this mode first in **J2Commerce Migrator -> Options** to make it appear as a connection option. This is an advanced option for hosted environments that restrict direct database connections.
+### Section F — Delivery
 
-<!-- SCREENSHOT: Migrator Connection screen showing Mode A, Mode B, and Mode C options -->
+Delivery method configuration. Geo zones (Section B) must exist first.
 
-See the [J2Commerce Migrator](./j2commercemigrator.md) guide for a full walkthrough of the Migration Wizard.
+| Tile | What it migrates |
+|---|---|
+| **Delivery Methods** | Delivery method plugin configurations |
+| **Delivery Rates** | Flat-rate and table-rate delivery rule rows |
 
-## How It Works {#how-it-works}
+### Section G — Orders
 
-When a migration run begins, the adapter and the Migrator engine work together in six steps:
+Orders depend on products, customers, currencies, and order statuses all being migrated first. Run Sections A through F before starting here.
 
-1. **Registration.** When the Migrator loads, it fires an internal event. The adapter listens for that event and registers itself as the "J2Store" source. This is why the J2Store card appears on the Migrator Dashboard automatically.
+| Tile | What it migrates |
+|---|---|
+| **Orders** | Order header records |
+| **Order Info** | Billing and delivery address snapshots captured at order time |
+| **Order Items** | Line items — product, quantity, unit price |
+| **Order Item Attributes** | Option and attribute selections per line item |
+| **Order Histories** | Status change history and customer notification logs |
+| **Order Fees** | Handling fees and surcharge rows per order |
+| **Order Taxes** | Tax breakdown rows per order |
+| **Order Discounts** | Coupon and discount application records per order |
+| **Order Deliveries** | Delivery method and rate records per order |
+| **Order Downloads** | Downloadable product purchase and download-tracking records |
 
-2. **Connection.** When you start a run, the Migrator asks the adapter to open a connection to your J2Commerce 4 or J2Store v4 database. In Mode A it reuses the existing Joomla database connection; in Mode B or C it opens a new connection using the credentials you provided.
+### Section H — Transactional Data
 
-3. **Reading.** The adapter reads rows from the source `j2store_*` tables in a safe dependency order — lookup data first (currencies, countries, order statuses, units of measure), then the tax system, then catalog, then products, and finally customers and orders. This ordering prevents broken foreign-key references in the migrated data.
+Optional data. Baskets, email queues, and templates. These tiles are marked **optional** — you can skip them if they are not relevant to your store.
 
-4. **Translating.** Each row is transformed into a format J2Commerce 6 understands. Table names change from `j2store_*` to `j2commerce_*`, primary key column names are updated to match the new naming convention, and any JSON payloads stored inside columns are updated so plugin keys and internal references use J2Commerce naming.
+| Tile | What it migrates |
+|---|---|
+| **Baskets** | Abandoned and active shopping basket sessions |
+| **Basket Items** | Individual line items within basket sessions |
+| **Email Queues** | Queued outbound email records |
+| **Uploads** | Customer-uploaded file records attached to orders |
+| **Email Templates** | Customized transactional email templates |
+| **Invoice Templates** | Customized PDF invoice templates |
 
-5. **Writing.** The Migrator engine writes the translated rows into the J2Commerce 6 tables. Your original J2Commerce 4 or J2Store v4 tables are never modified.
+## Section I — Tools and Finalize
 
-6. **Verification.** After each batch finishes, the adapter checks that source and destination row counts match and flags any gaps so you can investigate or re-run the affected tile.
+Section I contains finishing tools that you run **after** your data migration is complete. Unlike Sections A through H, these tiles do not copy database rows — they help you clean up, convert your templates, and remove J2Store once you have confirmed everything looks good in J2Commerce.
 
-## What Gets Migrated {#what-gets-migrated}
+<!-- SCREENSHOT: Section I tiles showing Migrate Store Settings, Detect/Migrate J2Store CSS, Detect J2Store Menu Items, Custom Tables, Template Overrides, Transform Template Code, Plugin List, Reset Migration ID Map, Uninstall J2Store, Drop J2Store Database Tables -->
 
-The adapter migrates the following data from your J2Commerce 4 or J2Store v4 store:
+:::caution
 
-- **Your products** — names, descriptions, SKUs, pricing, stock quantities, and product images
-- **Product variants** — all variant combinations with their individual prices, SKUs, and stock levels
-- **Product options** — the option groups and values used to build variants (size, color, and so on)
-- **Manufacturers and brands** — manufacturer records and images
-- **Filter groups and filter values** — catalog filter configuration
-- **Your orders** — every order including line items, applied discounts, shipping charges, fees, taxes, and order history notes
-- **Order statuses** — your custom and built-in order status definitions
-- **Your customers** — billing and shipping addresses linked to Joomla user accounts
-- **Coupons and vouchers** — discount codes and gift voucher records
-- **Tax configuration** — tax profiles, tax rates, tax rules, and geo-zones
-- **Shipping methods and rates** — your configured shipping methods and rate tables
-- **Currencies** — your currency list and exchange rate settings
-- **Countries and zones** — the countries and sub-regions you have configured
-- **Store configuration** — your general store settings
-- **Email and invoice templates** — your customized notification templates
-- **Active carts and cart items** — in-progress cart sessions (useful for continuity during a live cutover)
-- **Custom add-on tables** — non-core J2Store add-on data (see [Extra Migration Tools](#extra-tools))
-- **Storefront CSS overrides** — your `.j2store-*` custom styles rewritten for J2Commerce (see [Extra Migration Tools](#extra-tools))
-- **Joomla menu items** — menu items pointing at J2Store views rewired to J2Commerce views (see [Extra Migration Tools](#extra-tools))
-- **J2Store template overrides** — sub-template files copied and converted to J2Commerce paths (see [Extra Migration Tools](#extra-tools))
+Run the tools in Section I only after you have verified your migrated data in J2Commerce. The last three tiles — **Reset Migration ID Map**, **Uninstall J2Store**, and **Drop J2Store Database Tables** — are destructive or difficult to reverse. Back up your database before using them.
+
+:::
+
+### Migrate Store Settings
+
+Reads your J2Store configuration rows and converts them into J2Commerce component settings. Run this once after your data migration is complete.
+
+### Detect / Migrate J2Store CSS Overrides
+
+Scans your installed Joomla templates for `j2store.css` override files. If found, you can copy them into the J2Commerce media folder so your storefront styling is preserved.
+
+**Step 1:** Click **Detect** to scan for override files.
+
+**Step 2:** If overrides are found, click **Migrate** to copy the selected file to J2Commerce.
+
+### Detect J2Store Menu Items
+
+Lists all Joomla menu items that currently point to J2Store views (for example, your "Shop" menu item linking to the J2Store product list). From the results table you can choose to remap each menu item in-place to the equivalent J2Commerce view, or duplicate it as a new item while leaving the original in place.
+
+**Step 1:** Click **List** to retrieve all J2Store menu items.
+
+**Step 2:** For each item, choose the target J2Commerce view from the dropdown.
+
+**Step 3:** Click **Apply Menu Migrations** to save your choices.
+
+### Custom J2Store Tables
+
+If you have third-party plugins that created their own `j2store_*` database tables, this tool finds and copies them across to `j2commerce_*` tables so those plugins can keep working after J2Store is removed.
 
 :::info
 
-J2Store used Joomla's core categories (`#__categories` with `extension='com_j2store'`) to organize products — not a separate categories table. Your category structure is already in Joomla and does not need to be migrated. J2Commerce reads the same categories automatically.
+This tool only works when connected via **Mode A** (same-site database). It cannot scan a remote or SSH-tunnel database.
 
 :::
 
-## Per-Tile Sync Dashboard {#per-tile-dashboard}
+**Step 1:** Click **Detect** to scan for non-core J2Store tables.
 
-This adapter uses a **per-tile sync dashboard** inside the Migrator's Tools view. Every entity type gets its own card — Currencies, Countries, Tax Rates, Products, Orders, Customers, Coupons, and many more.
+**Step 2:** For each table found, choose **Import Table** (create a new copy) or **Update Table** (re-sync rows into an existing copy) or **Do Not Import**.
 
-<!-- SCREENSHOT: Migrator Tools view showing multiple entity tiles, each with a status pill and action button -->
+**Step 3:** Click **Run Selected** to execute your choices.
 
-Each tile shows:
+### Template Overrides
 
-- **Entity name** — a plain-language label such as "Products" or "Order Statuses"
-- **Source table** — the `j2store_*` table the adapter reads from
-- **Row counter** — how many rows exist in the source, and how many have been migrated
-- **Status pill** — the current state of that entity (see below)
-- **Action button** — a verb-labeled button that changes as the tile progresses
+If your Joomla template has a `html/com_j2store/` override folder, this tool finds those files and rewrites them for J2Commerce — updating class names, helper calls, and path references so the overrides work with J2Commerce 6 layouts.
 
-### Tile Status Pills
+**Step 1:** Click **Detect** to find templates with J2Store overrides.
 
-| Status | Meaning |
-|--------|---------|
-| **Pending** | Not yet started — ready to sync |
-| **Running** | Actively syncing — shows a live `(NN%)` percentage badge |
-| **Synced** | All rows migrated successfully |
-| **Error** | One or more rows failed — click the tile to review the log |
-| **Empty Source** | The source table has zero rows — nothing to migrate |
+**Step 2:** Click **Analyse** on a template to preview what changes will be made before committing.
 
-### Empty Source Detection
+**Step 3:** Type `MIGRATE TEMPLATES` into the confirmation box and click **Migrate** to apply the changes.
 
-When the adapter loads the Tools view, it checks every source table for row counts. If a table has zero rows, the tile automatically shows a green **Synced** pill and a disabled **Empty Source** button — you do not need to click anything for those tables. This keeps the dashboard clean for stores that have not used every J2Store feature.
+You can also use **Discover File Overrides** to see a flat list of every override file, and **Migrate Selected Overrides** to process only specific files rather than the entire template.
 
-### Live Progress Badge
+If the automated rewriter cannot handle a pattern in your file, use **Apply Manual Replacement** to do a targeted find-and-replace on that file. Use **Re-Migrate From Plugin** to re-apply the transformer using the latest plugin source as input.
 
-When a tile is in the **Running** state, the pill updates in real time to show the current percentage — for example, **Running (45%)**. This lets you see how far a large batch has progressed without waiting for it to finish.
+### Transform Template Code
 
-## Extra Migration Tools {#extra-tools}
+A code transformer you can point at a single file or paste a code snippet into. It applies an eleven-category rewrite — converting FOF2 and Joomla 3 PHP patterns to their Joomla 6 equivalents. Useful for any custom override files the Template Overrides tool did not cover.
 
-Beyond moving raw data, this adapter includes four tools that help your storefront continue to work after migration. You find them in the **Tools** section of the Migrator dashboard, under the **Section I** heading.
+### Plugin List
 
-<!-- SCREENSHOT: Migrator Tools view showing the Section I tools panel with the four extra tools -->
+Generates a list of the J2Store payment plugins that were detected on your site. Each entry describes which J2Commerce payment plugin to install and configure as the replacement. This tile makes no database changes — it produces guidance only.
 
-### Custom Tables Migrator
+### Reset Migration ID Map
 
-If you used J2Store add-ons that created their own database tables (for example, a vendor marketplace, order attribute storage, or shipping restriction groups), this tool copies those tables across to J2Commerce so the data from those add-ons survives migration.
+Deletes all internal tracking rows that the Migrator uses to remember which source rows have already been copied. Use this only if you want to start the entire migration over from scratch.
 
-Click **Migrate** on the **Custom Tables** tile to start. The tile reports how many tables were found and how many rows were copied.
+:::caution
 
-### CSS Override Migrator
-
-J2Store used its own CSS class names (`.j2store-*`). If your active site template has a custom CSS file that overrides J2Store styles, those rules will stop applying after migration because J2Commerce uses `.j2c-*` class names instead.
-
-Click **Transform** on the **CSS Overrides** tile. The adapter scans your active template's CSS override files, finds every `.j2store-*` selector, and rewrites them to the matching `.j2c-*` selector — saving the result as a new CSS file that J2Commerce loads automatically. Your storefront keeps its custom look without you having to update the CSS manually.
-
-### Menu Migrator
-
-Joomla menu items that link to J2Store pages (`com_j2store`) will show "not found" errors after J2Commerce replaces J2Store. Click **Migrate** on the **Menu Items** tile. The adapter finds every menu item pointing at a J2Store view and rewires it to the equivalent J2Commerce view — keeping the same aliases and menu positions. Views covered include the product list, product detail, cart, checkout, my profile, product tags, and categories.
-
-### Template Override Migrator
-
-If you have J2Store sub-template overrides in your template folder (for example, a customized product detail layout), those files reference J2Store class names and helpers that no longer exist in J2Commerce. Click **Transform** on the **Template Overrides** tile. The adapter copies the override files to the corresponding J2Commerce template paths and rewrites the PHP inside them — renaming J2Store namespaces, class names, language keys, and helper calls to their J2Commerce equivalents.
-
-:::warning
-
-After the Template Override Migrator runs, review the converted files before going live. Complex custom PHP may need minor manual adjustments that the automated transformer cannot predict.
+Type `RESET J2COMMERCE4` to confirm before this tool runs. This action cannot be undone.
 
 :::
 
-## Tools Section {#tools-section}
+### Uninstall J2Store
 
-The Tools section in the Migrator includes a few additional controls worth knowing about.
+Removes the J2Store component and all of its associated plugins from this Joomla installation. Run this only after you have fully verified your migrated data in J2Commerce.
 
-### Export Log
+:::caution
 
-Click the **Export Log** button at the bottom of the Tools view to download a `.log` file that captures every tile's current status, row counts, source table name, and any error notes. This file is useful when opening a support ticket — it gives the support team a complete snapshot of the migration state without needing access to your site.
-
-### Destructive Actions
-
-Some tiles have action buttons for removing or resetting data. These are flagged with a red warning icon and are intended for special situations such as starting a migration over from scratch or uninstalling a migrated set of records.
-
-:::warning
-
-Destructive actions (Drop, Uninstall, Reset) permanently remove data. Take a full site backup before using them.
+Type `UNINSTALL J2STORE` to confirm. Verify all orders, products, and customers are correct in J2Commerce before using this tile.
 
 :::
 
-## Tips {#tips}
+### Drop J2Store Database Tables
 
-- **Back up before every run.** Take a full Joomla database and files backup before starting. The Migrator can trigger an Akeeba Backup automatically if you enable that option in **J2Commerce Migrator -> Options**. Your J2Commerce 4 or J2Store tables are never modified, but a backup gives you a safe rollback point for J2Commerce data.
+Permanently deletes all `j2store_*` tables from the database. This tile is only shown **after** J2Store has been uninstalled — dropping tables while J2Store is still installed would break Joomla's built-in uninstaller.
 
-- **Use same-site mode when possible.** If your old J2Commerce 4 or J2Store v4 tables and your new J2Commerce 6 installation share the same Joomla database, choose Mode A on the Connection screen. It is faster and requires no extra credentials.
+:::danger
 
-- **Run on a staging copy first.** Set up a staging clone of your site, run the full migration there, and verify the results before touching your live site. When you are satisfied, repeat the migration on production.
+Type `DELETE J2STORE TABLES` to confirm. This action cannot be undone. Take a full database backup before proceeding.
 
-- **Leave J2Commerce 4 or J2Store v4 installed until you have verified everything.** Do not uninstall the old store until you have confirmed that all your products, orders, and customers appear correctly in J2Commerce 6. The Migrator will warn you if any tables have not been fully migrated before you attempt to uninstall.
+:::
 
-- **Clear caches after migration.** Once the run is complete and you have verified the data, go to **Home Dashboard -> Cache -> Delete All** to clear any stale cached data.
+## How the Sync Button Works
 
-## Troubleshooting {#troubleshooting}
+Every tile in Sections A through H has a **Sync** button. Here is what happens when you click it:
 
-### Adapter not listed in the Migrator's source dropdown {#adapter-not-listed}
+1. The Migrator reads rows from the J2Store source table in batches.
+2. Each row is translated — table names change from `j2store_*` to `j2commerce_*`, primary key column names are updated to match (for example, `j2store_order_id` becomes `j2commerce_order_id`), and any JSON data stored in columns is updated internally so plugin keys and references use J2Commerce naming.
+3. Translated rows are inserted into the corresponding J2Commerce table. Rows that already exist are skipped — they are never inserted twice.
+4. The tile updates live as work progresses. When complete, the badge changes to **Synced** and shows the final row count.
 
-**Cause:** The adapter plugin is not enabled, or the J2Commerce Migrator component is not installed.
+If a tile shows **Re-sync**, new rows have appeared in the source since the last run. Clicking Re-sync picks up only the new rows and does not re-process records that were already copied.
 
-**Solution:**
+## The Export Log Button
 
-1. Go to **System -> Manage -> Plugins** and search for `j2commerce4`.
-2. If the plugin appears but shows a red X, click the X to enable it.
-3. If the plugin does not appear at all, the package did not install fully. Reinstall `pkg_j2commercemigrator_*.zip` from **System -> Install -> Extensions**.
-4. Confirm that **com\_j2commercemigrator** appears in **System -> Manage -> Extensions** and is enabled.
+At the bottom of the Tools view there is an **Export Log** button. Clicking it downloads a plain-text `.log` file that captures the current state of every tile — names, status badges, row counts, and any notes or error messages visible on the screen. Share this file with J2Commerce support if you need help troubleshooting a problem.
 
-### Cannot connect to the J2Commerce 4 or J2Store database {#cannot-connect}
+<!-- SCREENSHOT: Tools view footer showing the Export Log button -->
 
-**Cause:** The credentials entered on the Connection screen are incorrect, the table prefix does not match, or the remote database host is not accessible from this server.
+## Tips
 
-**Solution:**
+- **Back up before every run.** Take a full Joomla database and files backup before starting. Your J2Store tables are never modified by the Migrator, but a backup gives you a safe rollback point.
 
-1. On the **Connection** screen, double-check the host, port, database name, username, password, and table prefix. The prefix for J2Commerce 4 and J2Store v4 is typically `j2store_` (without the Joomla prefix, e.g. `jos_j2store_`).
-2. If you are in Mode A (same site), confirm that `j2store_*` tables actually exist in your current database. Go to **System -> Maintenance -> Database** and look for any J2Store-related tables.
-3. If you are in Mode B (remote database), verify that the remote MySQL server allows connections from this server's IP address. Contact your hosting provider if you are unsure.
-4. Check the Joomla error log at **System -> Global Configuration -> Logging** for any connection error details.
+- **Use same-site mode when possible.** If your J2Store data is in the same database as your current Joomla site, choose **Mode A** on the Connection screen. It is faster and requires no extra credentials.
 
-### Some products did not migrate {#products-missing}
+- **Run on a staging copy first.** Set up a staging clone of your site, run the full migration there, and verify everything looks correct in J2Commerce before touching your live site.
 
-**Cause:** Products may have been unpublished or trashed in J2Commerce 4 or J2Store v4, or they had a conflict with an existing J2Commerce record at the same ID.
+- **Follow the section order.** Always run Section A first, then B, C, D, E, F, G, H, and lastly I. The dependency arrows in the tools view show you when a tile is waiting for another to finish.
 
-**Solution:**
+- **Empty Source tiles are fine.** If a tile shows **Empty Source**, the source table had no rows — there is nothing to migrate and you can move on. For example, if you never used vouchers in J2Store, the Vouchers tile will automatically show Empty Source.
 
-1. Open the run detail from **J2Commerce Migrator -> Runs** and click the magnifying glass icon next to the run.
-2. Review the **Activity Log** and **Errors** sections for the Products tile.
-3. Check whether the missing products were unpublished or trashed in the source store before migration.
-4. If records were skipped because a product with the same ID already existed in J2Commerce, change the **Conflict Mode** to **Overwrite** in the Migrator Options and re-run.
+- **Leave J2Store installed until you have verified everything.** Do not uninstall J2Store until you have confirmed that all your products, orders, and customers appear correctly in J2Commerce.
 
-### Orders are missing their customers {#orders-missing-customers}
+- **Clear caches after migration.** Once the run is complete and you have verified the data, go to **Home Dashboard** -> **System** -> **Clear Cache** to remove any stale cached data.
 
-**Cause:** The Joomla user account linked to an order was deleted in the source store before migration, leaving an orphaned order with no matching customer record.
+## Troubleshooting
+
+### The J2Store card on the Migrator Dashboard shows "Not installed"
+
+**Cause:** The Migrator cannot find a J2Store 4 component installed on this Joomla site.
 
 **Solution:**
 
-1. Open the run detail from **J2Commerce Migrator -> Runs** and review the Orders tile log for orphan warnings.
-2. Orphaned orders are still migrated — they will appear in J2Commerce with billing and shipping address data intact, but without a linked Joomla user account.
-3. You can manually reassign these orders to a customer account in **J2Commerce -> Sales -> Orders** after migration.
+1. Go to **System** -> **Manage** -> **Extensions** and search for `j2store`. Confirm J2Store is listed.
+2. If J2Store is listed but disabled, click its status to enable it — the card should update to "Installed but disabled" and then "Ready to migrate."
+3. If you are migrating from a J2Store installation on a **different server**, you do not need J2Store installed locally. Use **Mode B** or **Mode C** on the Connection screen to point the Migrator at the remote database instead.
 
-### Migration completed but the storefront looks wrong {#storefront-looks-wrong}
+### A tile shows Error and will not retry cleanly
 
-**Cause:** Stale cache, menu items still pointing at J2Store views, missing CSS overrides, or SEF routes that need rebuilding.
-
-**Solution:**
-
-1. Clear all Joomla caches: go to **Home Dashboard -> Cache -> Delete All**.
-2. Go to **System -> Maintenance -> Clear Cache** and clear both standard and expired cache entries.
-3. Run the **Menu Migrator** tool in **J2Commerce Migrator -> Tools** to rewire any menu items that still point at J2Store views.
-4. Run the **CSS Override Migrator** tool to convert your template's custom `.j2store-*` styles to `.j2c-*` equivalents.
-5. Rebuild SEF routes: go to **System -> Maintenance -> Rebuild URLs** and click **Rebuild**.
-6. If product images are not showing, use the **Rebuild Product Images** tool in **J2Commerce Migrator -> Tools** to regenerate thumbnails.
-
-### A tile is stuck on Running and never finishes {#tile-stuck-running}
-
-**Cause:** The source table is very large. The adapter processes large tables in batches with an internal time budget of approximately 20 seconds per click, then pauses so the server can breathe. This is expected behavior, not an error.
+**Cause:** A row in the source data could not be translated — common causes include corrupt JSON in a product params column, a zero date value, or a missing foreign-key record.
 
 **Solution:**
 
-1. Check the tile's row counter and percentage badge — if the number is still increasing, the migration is progressing normally.
-2. Click **Sync** again to resume the next batch. For very large tables (hundreds of thousands of rows), you may need to click several times.
-3. If the percentage is stuck at the same number across multiple clicks, open the run detail log to check for repeated errors on the same source rows.
-4. Consider running the migration during off-peak hours to reduce server load.
+1. Click the **Export Log** button to download the current state log.
+2. Check the server log at `administrator/logs/com_j2commercemigrator.log` for the specific error message.
+3. Fix the source data if possible (for example, correct a malformed product params field in J2Store).
+4. Click **Retry** on the tile to continue.
+5. If the error persists on a single row, contact J2Commerce support with the log file.
+
+### The Custom Tables tool says "This tool only runs in Mode A"
+
+**Cause:** You are connected to a remote or SSH-tunnel database. The Custom Tables scanner can only see tables in the local Joomla database.
+
+**Solution:** If you need to copy custom J2Store tables from a remote source, export them manually using a database tool (such as phpMyAdmin) and import them into your Joomla database before running the Custom Tables tool in Mode A.
+
+### A tile is stuck on "Syncing…" and does not complete
+
+**Cause:** A very large table may take several minutes to process. If the browser window is closed mid-run, the tile may get stuck in a partial state.
+
+**Solution:**
+
+1. Refresh the Tools view page. The tile should show **Resume** if the run was interrupted.
+2. Click **Resume** to continue from where the sync stopped.
+3. If the tile shows **Error** instead, click **Retry** to restart that batch.
+
+## Related Topics
+
+- [J2Commerce Migrator](./j2commercemigrator.md) — overview of the Migrator component and the full migration workflow
+- [J2Store 4 Migrator Adapter](./plg_j2commercemigrator_j2store4.md) — if your source site runs the original J2Store package on Joomla 3 or 4
