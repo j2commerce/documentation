@@ -2,238 +2,293 @@
 title: "Wishlist"
 sidebar_label: "Wishlist"
 sidebar_position: 15
-description: "Let customers save products to a personal wishlist and add them to the cart later — with guest support, session migration on login, and configurable buttons."
+description: "Let customers save products to a personal wishlist and add them to the cart later — with guest support, automatic merge on login, and configurable buttons."
 ---
 
 # Wishlist
 
-The Wishlist app lets customers save products for later without adding them to the cart immediately. A heart icon or text button appears on product pages and product list views. Customers can view their full wishlist, add individual items or all items to the cart, and remove items they no longer want.
-
-Guest shoppers can build a wishlist without logging in. When they log in, their guest wishlist automatically merges with their account.
+The Wishlist app lets your customers save products for later instead of adding them straight to the cart. A heart icon or text button appears on product pages and product lists, so shoppers can build a list of items they love and come back to them any time. From their wishlist they can add one item or everything to the cart, remove items, and — as guests — keep their list even after they log in.
 
 ## Requirements
 
-- PHP 8.3.0+
+- with PHP 8.3.0 +
 - Joomla! 6.x
 - J2Commerce 6.x
 
 ## Purchase and Download
 
-The **Wishlist**  app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Apps**.
+**Step 2:** Locate the **Wishlist** App **->** click **View Details** **->** **Add to cart -> Checkout**.
 
-**Step 2:** Locate the **Wishlist** app **->** click **View Details -> Add to cart -> Checkout**.
-
-**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions -> View Files ->** **Download**.
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
 
 ## Install the App
 
-You can install this **Wishlist**  App using the Joomla installer. The following steps help you with a successful installation.
+You can install this **Wishlist** App using the Joomla installer. The following steps help you with a successful installation.
 
 In the Joomla admin, go to **System -> Install -> Extensions**
 
-Upload the `app_wishlist.zip` package file or use the Install from URL option.
+Upload the plugin ZIP file or use the Install from URL option.
 
 ![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
-The plugin installs and enables automatically.
+## Enable the App
 
-<!-- SCREENSHOT: Joomla Extensions installer showing successful Wishlist app installation -->
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the extension.
 
-## Configuration
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-After installation, go to **J2Commerce** -> **Apps** and click **Wishlist** to open the plugin settings.
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-<!-- SCREENSHOT: Apps list showing Wishlist plugin with Edit button -->
+Look for **Wishlist**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-### Settings
+## Configure the App
 
-**Wishlist button type:** Display the button as **Text** or **Icon.** Choosing **Icon** reveals the two icon fields below
+Once you click on the **Wishlist** Title next to the green checkmark, you are ready to start setting up the parameters.
 
-- **Button text:** Label for the add-to-wishlist button. Accepts a plain string or a language key.  Visible only when type is **Text**
+:::tip
 
-- **Icon CSS class:** Font Awesome class for the button (e.g., `fa-solid fa-heart`)  Visible only when type is **Icon**
+**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section.
 
-**Added to wishlist icon:** Font Awesome class shown when the item is already saved. Visible only when type is **Icon**
+:::
 
-**Remove after adding to cart:** Automatically remove a wishlist item when it is added to the cart
+### Basic Settings tab
 
-**Link products to:** Where product links on the wishlist page lead: **Product List Layout** or **Article Layout**
+The Basic Settings tab controls how the wishlist button looks and how the wishlist page behaves.
 
-**Thumbnail width:** Width in pixels for product images on the wishlist page
+### Layout Style
 
-**Redirect to wishlist:** Redirect the customer to the wishlist page immediately after adding an item
+Choose the template style for the wishlist page and buttons: **Bootstrap 5** or **UIkit**. Pick the one that matches your site template so everything lines up with the rest of your store.
 
-**Wishlist link text:** Text for the "browse wishlist" link in the add confirmation notification
+### Wishlist Button Type
 
-**Debug Mode:** Write debug entries to the Joomla log directory. Disable in production.
+Choose how the add-to-wishlist button appears on your product pages:
 
-Click **Save** to apply your settings.
+- **Text** - shows a worded button (for example, "Add to Wishlist").
 
-## Creating the Wishlist Menu Item
+- **Icon** - shows a small icon button (for example, a heart). Choosing **Icon** reveals the two icon fields below.
 
-The wishlist page is displayed through a dedicated Joomla menu item. You must create this menu item before the wishlist page is accessible to customers.
+**Button text:** The label for the button. Shown only when the type is **Text**.
 
-1. Go to **Menus** **-> \[Your Menu] -> Add New Menu Item**.
+**Icon CSS class:** The Font Awesome class for the button, such as `fa-solid fa-heart`. Shown only when the type is **Icon**.
+
+**Added to wishlist icon:** The Font Awesome class shown once the item is already saved, such as `fa-solid fa-heart`. Shown only when the type is **Icon**.
+
+### Remove After Adding to Cart
+
+Select '**Yes**' to automatically remove a wishlist item once the customer adds it to the cart. Leave it on '**No**' (the default) if you want customers to be able to add the same wishlist item to the cart more than once.
+
+### Link Products To
+
+Choose where a product name on the wishlist page links to:
+
+- **Product List Layout** - the standard J2Commerce product page (default).
+
+- **Article Layout** - the linked Joomla article view.
+
+### Thumbnail Width
+
+Set the width, in pixels, of product images in the list view of the wishlist page. The default is `50`.
+
+### Grid Image Height
+
+Set the height, in pixels, of product images when the wishlist page uses the grid view. The range is 50 to 1000 and the default is `250`.
+
+:::info
+
+NOTE: This only applies when the wishlist menu item is set to the **Grid** view. See [Creating the Wishlist Menu Item](#creating-the-wishlist-menu-item).
+
+:::
+
+### Redirect to Wishlist
+
+Select '**Yes**' to send the customer straight to their wishlist page after they add an item. This is handy for gift-registry style stores. Leave it on '**No**' to keep customers on the product page.
+
+### Wishlist Link Text
+
+Set the text for the "browse wishlist" link that appears in the confirmation notification after a customer adds an item. The default is **Browse Wishlist**.
+
+### Debug Mode
+
+Select '**Yes**' to write debug entries to the Joomla log folder. This helps when troubleshooting.
+
+:::info
+
+NOTE: Turn Debug Mode off in production. It is only meant for diagnosing problems.
+
+:::
+
+## Creating the Wishlist Menu Item{#creating-the-wishlist-menu-item}
+
+The wishlist page is shown through a dedicated Joomla menu item. You must create this menu item before customers can reach their wishlist.
+
+1. Go to **Menus -> [Your Menu] -> Add New Menu Item**.
+
 2. Click **Select** next to **Menu Item Type**.
-3. Choose **J2Commerce** **->** **Wishlist**.
+
+3. Choose **J2Commerce -> Wishlist**.
+
 4. Set a **Menu Title** (for example, "My Wishlist").
+
 5. Click **Save & Close**.
 
-<!-- SCREENSHOT: Menu item type selection showing J2Commerce > Wishlist -->
+The plugin automatically detects this menu item to build wishlist links across the store.
 
-The plugin automatically detects this menu item to build wishlist links throughout the store. If no menu item exists, the plugin falls back to a direct URL, but product "browse wishlist" links may not be SEF.
+### Wishlist View
 
-## Setting Up the Wishlist Module
+Each wishlist menu item has a **Wishlist view** option in its settings:
+
+- **List** - one product per row in a table (default).
+
+- **Grid** - product cards arranged in a grid, using the **Grid Image Height** from the app settings.
+
+## Setting Up the Wishlist Module{#wishlist-module}
 
 The companion **J2Commerce - Wishlist** module (`mod_j2commerce_wishlist`) shows the current wishlist item count and a link to the wishlist page. Place it in your header or navigation area so customers can always see how many items they have saved.
 
-The wishlist module is also a separate add-on and is not included in the core J2Commerce 6 package. Purchase it from the [J2Commerce Extensions Store](https://www.j2commerce.com).
+:::info
+
+NOTE: The wishlist module is a separate add-on and is not included in the core J2Commerce 6 package. Purchase it from the [J2Commerce Extensions Store](https://www.j2commerce.com).
+
+:::
 
 ### Installing the Module
 
-1. Go to **System** -> **Install** -> **Extensions**.
-2. Upload the `mod_j2commerce_wishlist.zip` file.
-3. Go to **Content** -> **Site Modules** -> **New**.
-4. Select **J2Commerce - Wishlist** from the module type list.
+1. Go to **System -> Install -> Extensions** and upload the `mod_j2commerce_wishlist.zip` file.
 
-<!-- SCREENSHOT: Module type selection showing J2Commerce - Wishlist -->
+2. Go to **Content -> Site Modules -> New**.
+
+3. Select **J2Commerce - Wishlist** from the module type list.
 
 ### Module Settings
 
-**Display type:** Show the counter as a plain **Link** or as a styled **Button**
+**Display type:** Show the counter as a plain **Link** or a styled **Button**.
 
-**Hide when empty:** Hide the module entirely when the wishlist has no items
+**Hide when empty:** Hide the module entirely when the wishlist has no items.
 
-**Wishlist menu item:** Select the menu item created above. Leave empty for auto-detection.
+**Wishlist menu item:** Select the menu item you created above. Leave empty for auto-detection.
 
-### Module Position
+The module updates its count automatically when a customer adds or removes a wishlist item — no page reload needed.
 
-Assign the module to the position in your template where the header or navigation icons appear. For most Bootstrap 5 and UIkit templates, the `nav-right` or `header` position works well.
+## Managing Saved Wishlists in the Admin{#saved-wishlists}
 
-<!-- SCREENSHOT: Module position assignment showing nav-right selected -->
+The app adds a **Saved Wishlists** screen to the J2Commerce dashboard so you can see what your customers have saved.
 
-### Live Count Updates
+1. Go to the **J2Commerce** icon at the top right corner.
 
-The module updates its count automatically when a customer adds or removes a wishlist item — no page reload needed. It listens for the `j2commerce:wishlist:updated` browser event dispatched by the wishlist plugin after every change.
+2. Open **Saved Wishlists** (listed under the Products area).
 
-## How It Works
+From this screen you can review saved items and remove entries when needed.
 
-### Adding Products to the Wishlist
+## How It Works{#how-it-works}
 
-Once the plugin is enabled, an **Add to Wishlist** button appears in two locations:
+When a customer browses your store:
 
-- **Product detail page** — directly below the Add to Cart button
-- **Product list views** — as a compact icon button in the cart action row
+1. An **Add to Wishlist** button appears below the Add to Cart button on the product page, and as a small icon button in product lists.
 
-<!-- SCREENSHOT: Product detail page showing Add to Wishlist button below Add to Cart -->
+2. The customer clicks the button to save the product. The button then switches to an "already saved" state and a short notification appears with a link to the wishlist page.
 
-Customers click the button to save the product. After adding, the button changes to an "already in wishlist" state and a short notification appears with a link to the wishlist page.
+3. For products with options (such as size or colour), the customer selects their options first, and those options are saved with the wishlist entry.
 
-For variable products with options (such as size or colour), the customer must select their options before adding to the wishlist. The exact options chosen are saved with the wishlist entry.
+4. The customer opens the wishlist page from the menu item you created, where they can add items to the cart or remove them.
 
-If a customer tries to add a variable product without selecting options first, they see the message: "Please select product options before adding to wishlist."
+5. Guest wishlists are stored against the browser session. When the guest logs in, their wishlist automatically merges into their account.
 
-### Viewing the Wishlist
+## Display Conditions{#display-conditions}
 
-Customers visit the wishlist page through the menu item you created. The page shows a table with:
+**The Add to Wishlist button appears when:**
 
-- Product thumbnail, name, and any saved options
-- An **Add to Cart** button for each item
-- A **Remove** (trash icon) button for each item
-- A **Select All** checkbox and per-row checkboxes for bulk actions
-- **Add all to cart** and **Remove all items** buttons that appear when items are checked
-- A **Continue Shopping** button that returns to the previous page
+- The plugin is enabled in **J2Commerce** **->** **Apps** **-> Wishlist**.
 
-<!-- SCREENSHOT: Full wishlist page showing product list with action buttons -->
+- The active template plugin (app_bootstrap5 or app_uikit) is enabled.
 
-### Guest Customers — Save Wishlist Prompt
+- The product is published and visible.
 
-Customers who are browsing as guests see a **Save wishlist** button at the bottom of their wishlist page. Clicking it takes them to the Joomla login page. Once they log in, their session wishlist automatically migrates to their account.
+**The wishlist page appears when:**
 
-This prompt only appears when the wishlist contains at least one item and the visitor is not logged in.
+- A menu item of type **J2Commerce -> Wishlist** has been created and published.
 
-### Bulk Actions
+**The "Save wishlist" login prompt appears when:**
 
-Customers can select multiple items using the checkboxes. When any item is checked, the bulk action buttons appear:
+- The visitor is not logged in (a guest), and
 
-- **Add all to cart** — adds every checked item to the shopping cart
-- **Remove all items** — removes every checked item from the wishlist
+- Their wishlist contains at least one item.
 
-If **Remove after adding to cart** is enabled in settings, items automatically leave the wishlist when they enter the cart.
+## Tips{#tips}
 
-### Guest Wishlist and Login Migration
+- **Use Icon on compact stores** - choose the **Icon** button type when your product lists are tight on space, to keep the cart row tidy.
 
-Customers who are not logged in can still add products to a wishlist. The wishlist is stored against their browser session. When the customer logs in, their session wishlist automatically migrates to their account — no items are lost.
+- **Match your template** - set **Layout Style** to the same framework your site template uses (Bootstrap 5 or UIkit) so the wishlist page looks consistent.
 
-If the logged-in account already has the same product in the wishlist, the duplicate is silently discarded so the wishlist stays clean.
+- **Avoid icon clashes** - if your template already uses a heart icon elsewhere, change the **Icon CSS class** to something else, such as `fa-solid fa-bookmark`.
 
-## Tips
+- **Set the module menu item explicitly** - select the **Wishlist menu item** in the module settings instead of relying on auto-detection, which scans all menu items and adds a small overhead on every page load.
 
-- Set **Wishlist button type** to **Icon** on stores with compact product list layouts to keep the cart row tidy.
-- Leave **Remove after adding to cart** off (the default) if you want customers to be able to add the same wishlist item to the cart more than once.
-- If your template already uses a heart icon for another purpose, change the **Icon CSS class** to something else (for example, `fa-solid fa-bookmark`) to avoid confusion.
-- Enable **Redirect to wishlist** if you want customers taken to their wishlist immediately after adding an item — useful for gift registry workflows.
-- Set the **Wishlist menu item** in the module settings explicitly rather than relying on auto-detection. Auto-detection scans all menu items, which adds a small overhead on every page load.
-- Enable **Hide when empty** on the module to keep the header uncluttered until a customer has saved at least one item.
+- **Hide the empty module** - enable **Hide when empty** to keep your header uncluttered until a customer saves their first item.
 
-## What's New in J2Commerce
+## Troubleshooting{#troubleshooting}
 
-The J2Commerce Wishlist app includes several improvements over the J2Store version:
+### Add to Wishlist Button Does Not Appear{#button-does-not-appear}
 
-- **Live count updates** — the wishlist module refreshes its counter instantly when items are added or removed, without any page reload. J2Store required a full page reload.
-- **Icon-only mode for list views** — a dedicated icon layout keeps product list rows compact. In J2Store the same text button appeared everywhere.
-- **Guest migration on login** — guest wishlist entries now migrate automatically using Joomla's standard user login events, making the flow more reliable across different authentication plugins.
-- **Bootstrap 5 layout** — the wishlist page and all buttons use Bootstrap 5 markup and classes natively. J2Store used Bootstrap 3/4 markup.
-- **Select All and bulk actions** — customers can check all items and add or remove them in a single click. J2Store required item-by-item actions.
-- **Save wishlist login prompt** — guests see a contextual prompt to log in and save their wishlist rather than losing items at session end.
-
-## Troubleshooting
-
-### The Add to Wishlist button does not appear
-
-**Cause:** The plugin may not be enabled, or the product template does not fire the `AfterAddToCartButton` event.
+**Cause:** The plugin is disabled, or the active template plugin is not running.
 
 **Solution:**
 
-1. Go to **System** -> **Manage** -> **Extensions** and confirm the Wishlist plugin is enabled.
-2. Check that your active template plugin (app\_bootstrap5 or app\_uikit) is also enabled.
-3. If you have customised the product cart template (`default_cart.php`), make sure it includes the `AfterAddToCartButton` event call.
+1. Go to **J2Commerce** **->** **Apps** **-> Wishlist** and verify it shows a green checkmark (enabled).
 
-### The wishlist page shows a blank page or "No items"
+2. Verify your active template plugin (app_bootstrap5 or app_uikit) is also enabled.
 
-**Cause:** The wishlist menu item has not been created, or it points to the wrong task.
+3. If you customised the product cart template, make sure your override still includes the add-to-wishlist button area.
+
+### Wishlist Page Is Blank or Shows "No Items"{#wishlist-page-blank}
+
+**Cause:** The wishlist menu item has not been created, or the customer has not saved anything yet.
 
 **Solution:**
 
-1. Confirm you have created a menu item of type **J2Commerce -> Wishlist** (see [Creating the Wishlist Menu Item](#creating-the-wishlist-menu-item)).
+1. Confirm you created a menu item of type **J2Commerce -> Wishlist** (see [Creating the Wishlist Menu Item](#creating-the-wishlist-menu-item)).
+
 2. Check that the menu item is published.
-3. If the page renders but shows "No items", the customer may not have added anything yet, or the plugin is not recording additions. Enable **Debug Mode** in settings and check the Joomla logs directory for `j2commerce` log entries.
 
-### The module count does not update after adding an item
+3. If the page renders but stays empty, the customer may simply not have added anything. To investigate, set **Debug Mode** to **Yes** and check the Joomla logs folder for `j2commerce_app_wishlist` entries.
 
-**Cause:** The module may be cached, or the `j2commerce:wishlist:updated` browser event is not reaching the module.
+### Wishlist Page Layout Looks Broken{#layout-broken}
+
+**Cause:** The **Layout Style** does not match your site template.
+
+**Solution:**
+
+1. Go to **J2Commerce** **->** **Apps** **-> Wishlist**.
+
+2. Set **Layout Style** to **Bootstrap 5** or **UIkit** to match the framework your site template uses.
+
+3. Click **Save**.
+
+### Module Count Does Not Update After Adding an Item{#module-count}
+
+**Cause:** The module is cached.
 
 **Solution:**
 
 1. Open the module settings and set **Caching** to **No Caching**.
-2. Clear the Joomla cache (**System** -> **Clear Cache**).
-3. Check the browser console for JavaScript errors that might prevent event listeners from running.
 
-### Guest wishlist items did not carry over after login
+2. Clear cache: Go to **Home Dashboard -> Cache -> Delete All**
 
-**Cause:** The session expired before login, or browser cookies were cleared between the shopping session and the login.
+3. Check the browser console for JavaScript errors that might stop the live update.
+
+### Guest Wishlist Items Did Not Carry Over After Login{#guest-merge}
+
+**Cause:** The browser session expired, or cookies were cleared between the shopping session and login.
+
+**Solution:** The merge happens at the moment of login. If the browser session had already expired before the customer logged in, there is no guest wishlist left to merge. This is a normal edge case when cookies expire between visits.
+
+### "Add All to Cart" Does Nothing{#add-all-nothing}
+
+**Cause:** No items are checked, or the security token has expired.
 
 **Solution:**
 
-This is a normal edge case when browser cookies expire between sessions. The wishlist migration happens at the moment of login. If the browser session had already expired before the customer logged in, there is no guest wishlist left to migrate.
+1. Select at least one item by ticking its checkbox.
 
-### The "Add all to cart" action does nothing
-
-**Cause:** No items are checked, or the CSRF token has expired.
-
-**Solution:**
-
-1. Select at least one item by checking its checkbox.
-2. If the page has been open for a long time, refresh it to get a fresh CSRF token, then try again.
+2. If the page has been open a long time, refresh it to get a fresh security token, then try again.
