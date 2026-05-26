@@ -33,6 +33,7 @@ const sidebars = {
             items: [
                 'migration-tools/j2commercemigrator',
                 'migration-tools/plg_j2commercemigrator_j2commerce4',
+                'migration-tools/woocommerce',
             ],
         },
         {
