@@ -83,73 +83,113 @@ This plugin is a separate add-on and must be purchased and downloaded from the J
 
 ## Install the App
 
-Go to **System -> Install -> Extensions ->** Install the app
+You can install PrintNode using the Joomla installer. The following steps help you with a successful installation.
 
-[//]: # (![User Group]&#40;<../../assets/user-group-3 &#40;10&#41;.webp>&#41;)
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the plugin `app_printnode.zip` package file or use the Install from URL option.
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
 ## Enable the App
 
-Go to **J2Commerce -> App ->** search for **PrintNode**
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-Click on the 'X' under Status to enable it.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-![User Group](/img/printnode-enable1.webp)
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-**Configure the App**
+![](/img/gift-wrap-apps.webp)
+
+To help you narrow down the list, you can do a search for **PrintNode**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![User Group](/img/print-node-enable.webp)
+
+## Configure the App
 
 Click on the Printnode title to open the app and start configuring it.
 
+:::tip
+
+Click the **Toggle Inline Help** button at the top of any app to show a description below each field.
+
+:::
+
+![](/img/print-node-toggle.webp)
+
 ### Enter the API Key and Test the Connection
 
-1. In Joomla admin, go to **J2Commerce** **->** **Apps**.
-2. Find **PrintNode for J2Commerce** in the list and click to open its settings.
-3. On the **Basic Settings** tab, paste your API key into the **API Key** field.
-4. Click **Save** in the toolbar.
-5. After saving, return to the plugin settings. The **Test Connection** button is now active — click it.
-6. A result appears below the button. A successful connection shows the email address of your PrintNode account. If it shows "Connection error", double-check the key and verify your server has cURL enabled.
+![](/img/print-node-api.webp)
 
-<!-- SCREENSHOT: Basic Settings tab showing the API Key field and the Test Connection button with a green "Connected" result -->
+**API Key:** Your PrintNode API key. Keep this private. It's located on the PrinNode website
 
-### Step 3: Select Your Printer
+After saving, return to the plugin settings. The **Test Connection** button is now active — click it.
+
+**Test Connection:** Button that verifies the API key is valid and returns the connected account email.
+
+A result appears below the button. A successful connection shows the email address of your PrintNode account. If it shows "Connection error", double-check the key and verify your server has cURL enabled.
+
+**Printer:** Dropdown of printers registered to your PrintNode account. Refresh to load the latest list.
+
+![](/img/print-node-test.webp)
 
 1. Still on the **Basic Settings** tab, click the **Refresh** icon next to the **Printer** field.
 2. The dropdown populates with printers registered to your PrintNode account. Each printer shows its name and whether it is currently online or offline.
 3. Select the printer that should receive invoice print jobs.
 4. Click **Save**.
 
-If no printers appear, see [Troubleshooting](#troubleshooting).
+If no printers appear, see [Troubleshooting](#troubleshooting). It's most likely that you haven't downloaded the printers from the PrintNode website.
 
-<!-- SCREENSHOT: Printer dropdown showing a list of available printers with online/offline status labels -->
+### Order Settings tab
 
-### Step 4: Configure Order Trigger Statuses
+![](/img/print-node-order-status.webp)
 
-1. Click the **Order Settings** tab.
-2. In the **Trigger Statuses** field, select one or more order statuses that should automatically trigger printing. Hold Ctrl (or Cmd on Mac) to select multiple. Common choices are "Confirmed" or "Paid".
-3. Leave **Enable Automatic Printing** set to **Yes** if you want printing to happen without any manual action.
+**Trigger Statuses:** In the **Trigger Statuses** field, select one or more order statuses that should automatically trigger printing. Hold Ctrl (or Cmd on Mac) to select multiple. Common choices are "Confirmed" or "Paid".
 
-<!-- SCREENSHOT: Order Settings tab showing the Trigger Statuses multi-select with "Confirmed" and "Paid" selected -->
-
-### Step 5: Set a Post-Print Status (Optional)
-
-The **Post-Print Status** field lets you automatically move the order to a different status after a successful print — for example, moving it from "Confirmed" to "Ready to Ship" so your team knows the invoice has been printed.
+**Post-Print Status (Optional):** The **Post-Print Status** field lets you automatically move the order to a different status after a successful print — for example, moving it from "Confirmed" to "Ready to Ship" so your team knows the invoice has been printed.
 
 Leave this field set to **— Do not change —** if you do not need automatic status transitions.
 
+:::warning
 **Important:** The post-print status must not match any of your trigger statuses. If it did, every print would trigger another print, creating an infinite loop. The plugin detects this and skips the status change automatically, but it is better to configure the statuses correctly so the intended workflow runs as expected.
+:::
 
-### Step 6: Configure Invoice Settings
+**Enable Manual Print Button:**Show the Print Invoice button on the admin order detail page.
 
-1. Click the **Invoice Settings** tab.
-2. Choose an **Invoice Template** from the dropdown. Leave it on **— Default Template —** to use your store's default invoice layout.
-3. Set the **Paper Size** that matches the paper loaded in your printer: A4, Letter, Legal, or A5.
-4. Set the **Number of Copies** (1 to 10) to print per order.
-5. Check the **Dompdf Library** status indicator. It should show "Dompdf library installed and ready." If it shows a warning, install the Dompdf library before proceeding.
+**Enable Automatic Printing:** Leave **Enable Automatic Printing** set to **Yes** if you want printing to happen without any manual action.
 
-<!-- SCREENSHOT: Invoice Settings tab showing paper size, copies, and the Dompdf status indicator -->
+### Print Settings tab
 
-### Step 7: Save
+![](/img/print-node-print-tab.webp)
 
-Click **Save** in the toolbar. Setup is complete.
+
+
+**Invoice Template:** Invoice template to use for the printed PDF. Leave empty for the default template. If you want to create a new Invoice template and need help, visit [https://docs.j2commerce.com/v6/design/invoice-templates](https://docs.j2commerce.com/v6/design/invoice-templates)
+
+**Paper Size:** Paper size for printed invoices. Options: A4, Letter, Legal, A5.
+
+**Number of Copies:** How many copies to print per job (1–10).
+
+**Dompdf Library:** Read-only status indicator showing whether the Dompdf library is installed. Check the **Dompdf Library** status indicator. It should show "Dompdf library installed and ready." If it shows a warning, install the Dompdf library before proceeding.
+
+### Status and Help Tab
+
+![](/img/print-node-status.webp)
+
+The **Status and Help** tab shows a live panel pulled from the PrintNode API. It displays:
+
+- Your PrintNode account email and account ID
+- The name, ID, and current state (online/offline) of the selected printer
+- The state of the computer running the PrintNode client
+- A table of recent print jobs with job ID, title, state, and creation time
+
+Save your API key and refresh the page to see current data in this panel.
+
+**Debug Mode:** Write detailed log entries to `administrator/logs/app_printnode.php`. Disable in production.
+
+**Retry Attempts:** How many times to retry a failed print job (0–5). Retries use exponential backoff.
+
+**API Timeout (seconds):** Timeout for PrintNode API requests (5–60 seconds).
 
 ## How Automatic Printing Works
 
@@ -163,7 +203,7 @@ When an order status changes in J2Commerce, the plugin checks whether the new st
 
 A record of each print attempt — whether successful or failed — is added to the order history log so you have a complete audit trail.
 
-<!-- SCREENSHOT: Order history showing a PrintNode log entry with job ID and printer name -->
+![](/img/print-node-status1.webp)
 
 ## Manual Printing
 
@@ -179,54 +219,13 @@ The order history is updated with the username of the admin who requested the pr
 
 <!-- SCREENSHOT: Order detail page showing the Print Invoice card at the top with the Print Invoice button -->
 
-## Configuration Reference
+## Creating Invoice Templates
 
-### Basic Settings
+To create an invoice template, go to J2Commerce > Design > Invoice Template > New
 
-| Field               | Description                                                                                 | Default |
-| ------------------- | ------------------------------------------------------------------------------------------- | ------- |
-| **API Key**         | Your PrintNode API key. Keep this private.                                                  | —       |
-| **Test Connection** | Button that verifies the API key is valid and returns the connected account email.          | —       |
-| **Printer**         | Dropdown of printers registered to your PrintNode account. Refresh to load the latest list. | —       |
+![](/img/print-node-template.webp)
 
-### Order Settings
-
-| Field                          | Description                                                                                                                      | Default           |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| **Trigger Statuses**           | Order statuses that automatically trigger printing. Multi-select. Leave empty to disable auto-print.                             | —                 |
-| **Post-Print Status**          | Status to move the order to after a successful print. Leave empty to keep the current status. Must not match any trigger status. | — Do not change — |
-| **Enable Manual Print Button** | Show the Print Invoice button on the admin order detail page.                                                                    | Yes               |
-| **Enable Automatic Printing**  | Automatically print when an order reaches a trigger status.                                                                      | Yes               |
-
-### Invoice Settings
-
-| Field                | Description                                                                        | Default              |
-| -------------------- | ---------------------------------------------------------------------------------- | -------------------- |
-| **Invoice Template** | Invoice template to use for the printed PDF. Leave empty for the default template. | — Default Template — |
-| **Paper Size**       | Paper size for printed invoices. Options: A4, Letter, Legal, A5.                   | A4                   |
-| **Number of Copies** | How many copies to print per job (1–10).                                           | 1                    |
-| **Dompdf Library**   | Read-only status indicator showing whether the Dompdf library is installed.        | —                    |
-
-### Advanced Settings
-
-| Field                     | Description                                                                                  | Default |
-| ------------------------- | -------------------------------------------------------------------------------------------- | ------- |
-| **Debug Mode**            | Write detailed log entries to `administrator/logs/app_printnode.php`. Disable in production. | No      |
-| **Retry Attempts**        | How many times to retry a failed print job (0–5). Retries use exponential backoff.           | 0       |
-| **API Timeout (seconds)** | Timeout for PrintNode API requests (5–60 seconds).                                           | 30      |
-
-### Status and Help Tab
-
-The **Status and Help** tab shows a live panel pulled from the PrintNode API. It displays:
-
-- Your PrintNode account email and account ID
-- The name, ID, and current state (online/offline) of the selected printer
-- The state of the computer running the PrintNode client
-- A table of recent print jobs with job ID, title, state, and creation time
-
-Save your API key and refresh the page to see current data in this panel.
-
-<!-- SCREENSHOT: Status and Help tab showing account information, printer state, and recent jobs table -->
+To learn more on how to set up an invoice template, visti the documentation below [https://docs.j2commerce.com/v6/design/invoice-templates](https://docs.j2commerce.com/v6/design/invoice-templates)
 
 ## Troubleshooting
 
@@ -300,9 +299,3 @@ If you are upgrading from the J2Store version of this plugin, here is what is di
 - **Retry with exponential backoff** — failed print jobs can now be retried automatically (0–5 attempts, configurable)
 - **API key masked in logs** — the API key is never written in full to the debug log file, only the last four characters appear
 - **Vanilla JavaScript** — the manual print button and admin UI use no jQuery
-
-## Related Topics
-
-- [PDF Invoices](pdfinvoices.md)
-- [Order Statuses](../../sales/order-statuses.md)
-- [Apps and Extensions](../index.md)
