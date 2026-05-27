@@ -225,7 +225,7 @@ To create an invoice template, go to J2Commerce > Design > Invoice Template > Ne
 
 ![](/img/print-node-template.webp)
 
-To learn more on how to set up an invoice template, visti the documentation below [https://docs.j2commerce.com/v6/design/invoice-templates](https://docs.j2commerce.com/v6/design/invoice-templates)
+To learn more on how to set up an invoice template, visit the documentation below [https://docs.j2commerce.com/v6/design/invoice-templates](https://docs.j2commerce.com/v6/design/invoice-templates)
 
 ## Troubleshooting
 
