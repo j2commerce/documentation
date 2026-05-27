@@ -64,6 +64,8 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 Look for **PDF Invoices**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
+![](/img/pdf-invoice-enable.webp)
+
 ## Configuration
 
 Go to **J2Commerce** -> **Apps** and click **PDF Invoices** to open its settings.

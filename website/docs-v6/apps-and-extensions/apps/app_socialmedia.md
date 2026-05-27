@@ -1,10 +1,3 @@
----
-title: "Social Media Sharing"
-sidebar_label: "Social Media Sharing"
-sidebar_position: 70
-description: "Add social sharing buttons for Facebook, X (Twitter), Pinterest, LinkedIn, WhatsApp, and more to your J2Commerce product pages, with automatic Open Graph and Twitter Card meta tag injection."
----
-
 # Social Media Sharing
 
 The Social Media Sharing app adds share buttons directly to your product pages so customers can share products on Facebook, X (Twitter), Pinterest, LinkedIn, WhatsApp, Reddit, Threads, TikTok, Instagram, YouTube, and more — with a single click. The app also automatically injects Open Graph and Twitter Card meta tags into each product page, so shared links display a rich preview card (product image, name, price, and availability) on every major platform. You choose which networks appear, where the buttons sit on the page, and how they look — using icon fonts, brand colors, or your own custom images.
@@ -26,29 +19,27 @@ The Social Media Sharing app adds share buttons directly to your product pages s
 
 ## Install the App
 
-You can install the Social Media Sharing app using the standard Joomla installer.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-In the Joomla admin, go to **System** -> **Install** -> **Extensions**
+Upload the `app_socialmedia.zip` ZIP file or use the Install from URL option.
 
-Upload the `app_socialmedia.zip` file or use the Install from URL option.
-
-<!-- SCREENSHOT: Joomla Extension Manager upload area with app_socialmedia.zip highlighted -->
+![](/img/install.webp)
 
 ## Enable the App
 
-Once installed, the app is enabled automatically. To verify and access settings, there are **two** ways:
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-**Option A:** Click the **J2Commerce** icon at the top right corner -> **Apps**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list showing "Social Media Sharing" with enabled green checkmark -->
+![](/img/gift-wrap-apps.webp)
 
-Look for **Social Media Sharing** in the Apps list. If the status shows a red **X**, click it to turn it into a green checkmark. The app is now enabled and ready to configure.
+To help you narrow down the list, you can do a search for **Social Media Sharing**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/social-media-enable.webp)
 
 ## Configure the App
-
-Click the **Social Media Sharing** title to open the settings. Settings are organized into three tabs: **Display**, **General**, and **Social Networks**.
 
 :::tip
 
@@ -56,15 +47,15 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-### Display Tab
+![](/img/social-media-toggle.webp)
 
-The **Display** tab has a single setting that controls which CSS framework the share buttons use for layout and styling.
+### Basic Tab
 
-<!-- SCREENSHOT: Display tab showing Framework selector dropdown -->
+![](/img/social-media-basic.webp)
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Framework** | Choose **Bootstrap 5** if your site template is based on Bootstrap (the most common). Choose **UIkit** if your template is UIkit 3 based. This affects button layout and icon rendering. | Bootstrap 5 |
+**Framework:** Choose **Bootstrap 5** if your site template is based on Bootstrap (the most common). Choose **UIkit** if your template is UIkit 3 based. This affects button layout and icon rendering.
+
+The **Framework** is a single setting that controls which CSS framework the share buttons use for layout and styling.
 
 :::info
 
@@ -72,43 +63,41 @@ If you are unsure which framework your template uses, leave this set to **Bootst
 
 :::
 
-### General Tab
+**Show Label:** Show a text heading above the social icons (for example: "Share This Product").
 
-The **General** tab controls what appears in the share message, where the button row is aligned, and whether a heading label shows above the icons.
+**Icons Label:** The heading text shown above the icon row when **Show Label** is enabled. You can type plain text or enter a Joomla language key.
 
-<!-- SCREENSHOT: General tab showing all settings -->
+**Icon Justification:** Horizontal alignment of the icon row: **Start** (left), **Center**, or **End** (right).
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Show Label** | Show a text heading above the social icons (for example: "Share This Product"). | Yes |
-| **Icons Label** | The heading text shown above the icon row when **Show Label** is enabled. You can type plain text or enter a Joomla language key. | Share This Product |
-| **Icon Justification** | Horizontal alignment of the icon row: **Start** (left), **Center**, or **End** (right). | Start |
-| **Social Share Product Image** | Which product image to use for Open Graph tags and the Pinterest share URL. **Main Image** uses the primary product image; **Thumbnail Image** uses the thumbnail. | Main Image |
-| **Image Width (px)** | Width in pixels for buttons using custom uploaded images (Image mode). Icon-mode buttons are not affected. | 30 |
-| **Share Message** | The opening text prepended to the product name in the share link. The product name is always appended automatically. | Check this out! |
-| **Include Price in Message** | When set to **Yes**, the formatted product price is appended to the share message in parentheses: for example, "Check this out! Blue Widget (€29.99)". | Yes |
-| **Debug Mode** | Writes diagnostic log entries to `administrator/logs/plg_j2commerce_app_socialmedia.php`. Only enable this when troubleshooting. Disable on a live site. | No |
+**Social Share Product Image:** Which product image to use for Open Graph tags and the Pinterest share URL. **Main Image** uses the primary product image; **Thumbnail Image** uses the thumbnail.
+
+**Image Width (px):** Width in pixels for buttons using custom uploaded images (Image mode). Icon-mode buttons are not affected.
+
+**Share Message:** The opening text prepended to the product name in the share link. The product name is always appended automatically.
+
+**Include Price in Message:** When set to **Yes**, the formatted product price is appended to the share message in parentheses: for example, "Check this out! Blue Widget (€29.99)".
+
+**Debug Mode:** Writes diagnostic log entries to `administrator/logs/plg_j2commerce_app_socialmedia.php`. Only enable this when troubleshooting. Disable on a live site.
 
 ### Social Networks Tab
 
 The **Social Networks** tab is where you control which social channels appear, in what order, and how each one looks. It has two parts: a **Display Location** selector and the **Networks** manager.
 
-<!-- SCREENSHOT: Social Networks tab showing Display Location dropdown and the network rows -->
-
-#### Display Location
+![](/img/social-media-display.webp)
 
 The **Display Location** setting controls exactly where the sharing buttons appear relative to the product. The available positions are:
 
-| Option | Where buttons appear |
-|--------|---------------------|
-| **Before Title** | Above the product title (fires on J2Commerce product pages and Joomla article pages via `onJ2CommerceBeforeProductTitle`) |
-| **After Title** | Below the product title on Joomla article pages (`onContentAfterTitle`) |
-| **After Add to Cart Button** | Directly below the Add to Cart button — the default position and works for most stores | 
-| **Before Add to Cart Button** | Directly above the Add to Cart button |
-| **Before Product Content** | Above the product description text |
-| **After Product Gallery** | Below the product image gallery |
+**Before Title:** Above the product title (fires on J2Commerce product pages and Joomla article pages via `onJ2CommerceBeforeProductTitle`)
 
-**Default:** After Add to Cart Button
+**After Title:** Below the product title on Joomla article pages (`onContentAfterTitle`)
+
+**After Add to Cart Button:** Directly below the Add to Cart button — the default position and works for most stores
+
+**Before Add to Cart Button:** Directly above the Add to Cart button
+
+**Before Product Content:** Above the product description text
+
+**After Product Gallery:** Below the product image gallery
 
 :::tip
 
@@ -118,17 +107,13 @@ For most stores the default position — **After Add to Cart Button** — works 
 
 #### Networks Manager
 
+![](/img/social-media-networks.webp)
+
 The Networks manager shows all available social channels in a drag-and-drop list. Each row has:
 
 - A toggle switch to **enable or disable** that network
 - The network **name** and **icon preview**
 - An **expand arrow** (chevron) to open per-network advanced settings
-
-<!-- SCREENSHOT: Networks manager showing Facebook, X (Twitter), Pinterest, LinkedIn rows with toggle switches -->
-
-**Default enabled networks:** Facebook, X (Twitter), LinkedIn
-
-**Default disabled networks:** Pinterest, Instagram, YouTube, TikTok, WhatsApp, Threads, Reddit
 
 To change which networks appear, click the toggle switch on any row. To reorder the buttons, drag rows up or down by their drag handle. The order here matches the order on your product pages.
 
@@ -136,33 +121,49 @@ To change which networks appear, click the toggle switch on any row. To reorder 
 
 Click the expand arrow on any network row to open its advanced settings. The available options differ by network.
 
+![](/img/social-media-socials.webp)
+
 **All networks share these settings:**
 
-| Setting | Description |
-|---------|-------------|
-| **Display Mode** | **Icon** renders a CSS icon class (default). **Image** renders a custom uploaded image file. |
-| **Icon Class** | The CSS class string for the icon — for example, `fa-brands fa-facebook-f`. Works with any icon library your template loads (Font Awesome, Bootstrap Icons, UIkit, etc.). |
-| **Custom Image** | A file path to a custom button image. Only used when **Display Mode** is set to **Image**. |
-| **Link Target** | Whether clicking opens in a **New Window** (default) or the **Same Window**. |
-| **Rel Attribute** | The `rel` attribute on the share link. Default: `noopener`. |
-| **Channel URL** | Advanced: override the share URL template entirely with your own URL. Supports `[url]`, `[text]`, `[title]`, and `[media]` placeholders. |
+**Display Mode:**
+
+- **Icon** renders a CSS icon class (default).&#x20;
+
+- **Image** renders a custom uploaded image file.
+
+**Icon Class:** The CSS class string for the icon — for example, `fa-brands fa-facebook-f`. Works with any icon library your template loads (Font Awesome, Bootstrap Icons, UIkit, etc.).
+
+**Custom Image:** A file path to a custom button image. Only used when **Display Mode** is set to **Image**.
+
+**Link Target:** Whether clicking opens in a **New Window** (default) or the **Same Window**.
+
+**Rel Attribute:** The `rel` attribute on the share link. Default: `noopener`.
+
+**Channel URL:** Advanced: override the share URL template entirely with your own URL. Supports `[url]`, `[text]`, `[title]`, and `[media]` placeholders.
 
 **Facebook-specific advanced settings:**
 
-| Setting | Description |
-|---------|-------------|
-| **Facebook App ID** | Your Facebook App ID from the Meta developer portal. Adds the `fb:app_id` Open Graph meta tag, which enables Facebook Insights for shared links and improves link tracking. |
+![](/img/social-media-facebook1.webp)
+
+**Facebook App ID:** Your Facebook App ID from the Meta developer portal. Adds the `fb:app_id` Open Graph meta tag, which enables Facebook Insights for shared links and improves link tracking.
 
 **X (Twitter)-specific advanced settings:**
 
-| Setting | Description |
-|---------|-------------|
-| **Include Twitter Meta Tags** | Inject Twitter Card meta tags into the product page head. Can be enabled even if the Twitter share button is disabled — useful for rich link previews without showing a button. |
-| **Twitter Card Type** | **Summary** shows a small square thumbnail. **Summary Large Image** shows a wide hero image — recommended for stores with high-quality product photography. |
-| **Website Twitter Account** | Your site's @username (without the @ symbol). Used for the `twitter:site` meta tag. |
-| **Personal Twitter Account** | Your personal @username (without the @ symbol). Used for the `twitter:creator` meta tag. |
-| **Twitter Image Width** | Width in pixels for the `twitter:image:width` meta tag. |
-| **Twitter Description Limit** | Maximum number of characters from the product short description to include in `twitter:description`. The plugin trims at a word boundary. |
+![](/img/social-media-twitter.webp)
+
+**Twitter Handle:** Enter your Twitter handle. ie; @ballsychocolates
+
+**Twitter Card Type: Summary** shows a small square thumbnail. **Summary Large Image** shows a wide hero image — recommended for stores with high-quality product photography.
+
+**Website Twitter Account:** Your site's @username (without the @ symbol). Used for the `twitter:site` meta tag.
+
+**Personal Twitter Account:** Your personal @username (without the @ symbol). Used for the `twitter:creator` meta tag.
+
+**Include Twitter Meta Tags:** Inject Twitter Card meta tags into the product page head. Can be enabled even if the Twitter share button is disabled — useful for rich link previews without showing a button.
+
+**Twitter Image Width:** Width in pixels for the `twitter:image:width` meta tag.
+
+**Twitter Description Limit:** Maximum number of characters from the product short description to include in `twitter:description`. The plugin trims at a word boundary.
 
 ## Open Graph and Twitter Card Meta Tags
 
@@ -227,12 +228,12 @@ Click the **Add Custom Channel** button at the bottom of the Networks manager to
 
 When setting up a custom channel, enter a custom share URL in the **Channel URL** field using these placeholders:
 
-| Placeholder | Value |
-|-------------|-------|
-| `[url]` | The product page URL (URL-encoded) |
-| `[text]` | The full share message text (URL-encoded) |
-| `[title]` | The bare product name (URL-encoded) |
-| `[media]` | The product image URL (URL-encoded) |
+| Placeholder | Value                                     |
+| ----------- | ----------------------------------------- |
+| `[url]`     | The product page URL (URL-encoded)        |
+| `[text]`    | The full share message text (URL-encoded) |
+| `[title]`   | The bare product name (URL-encoded)       |
+| `[media]`   | The product image URL (URL-encoded)       |
 
 For example, a Telegram share link would be: `https://t.me/share/url?url=[url]&text=[text]`
 
@@ -247,6 +248,10 @@ When a customer views a product page:
 5. Clicking a standard share button opens the platform's share dialog in a new window.
 6. Clicking a copy-link button (TikTok, Instagram, YouTube) copies the URL to the clipboard without leaving the page.
 7. Open Graph and Twitter Card meta tags are injected into the page `<head>` server-side, independent of whether the share buttons are visible.
+
+## Frontend Product View
+
+![](/img/social-media-icons.webp)
 
 ## Tips
 
@@ -280,7 +285,7 @@ When a customer views a product page:
 3. In the Social Networks tab of the app settings, check which image the plugin is configured to use (**Social Share Product Image** in the General tab). If set to **Thumbnail Image**, ensure a thumbnail is assigned.
 4. Clear the Joomla cache: **Home Dashboard** -> **Cache** -> **Delete All**.
 
-<!-- SCREENSHOT: J2Commerce product editor Images section showing a main image assigned -->
+![](/img/social-media-pinterest.webp)
 
 ### Open Graph meta tags do not appear in the page source
 
@@ -313,7 +318,3 @@ When a customer views a product page:
 2. Check the **Share Message** field. This is the opening text that appears before the product name.
 3. Verify **Include Price in Message** is set to **Yes** if you want the price appended.
 4. Save the settings, clear the cache, and click a share button to open the share dialog — the pre-filled message should reflect the new settings.
-
-## Related Topics
-
-- [Apps and Extensions](../index.md)

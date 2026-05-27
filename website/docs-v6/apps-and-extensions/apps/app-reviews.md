@@ -1,11 +1,3 @@
----
-title: "Product Reviews"
-sidebar_label: "Product Reviews"
-sidebar_position: 60
-description: "Let customers submit star ratings and written reviews on product pages — with email review requests, image uploads, spam protection, rich snippet support, and a full admin moderation dashboard."
-keywords: [j2commerce, product reviews, star ratings, customer reviews, review moderation, review emails]
----
-
 # Product Reviews
 
 The Product Reviews app lets customers submit star ratings and written reviews directly on your product pages. Reviews appear below the product with a summary showing the average rating and star distribution. Store owners can moderate submissions, respond to reviews, and trigger automated email requests after purchase.
@@ -22,7 +14,7 @@ Key capabilities include image uploads per review, Google reCAPTCHA spam protect
 
 The **Product Reviews** app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Go to the [J2Commerce website](https://www.j2commerce.com) -> **Apps**.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) **->** **Apps**.
 2. Locate the **Product Reviews** app **->** click **View Details** **-> Add to cart -> Checkout**.
 3. Download the `app_reviews.zip` file from your account downloads.
 
@@ -48,13 +40,11 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 Look for **Product Review**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-
-
 ## Configure the App
 
-## Settings Reference
-
 ### Basic Settings
+
+![](/img/product-review-basic.webp)
 
 **Enable Reviews:** Turn review functionality on or off globally
 
@@ -66,27 +56,41 @@ Look for **Product Review**, click the **X,** and it will turn into a green ch
 
 **Enable Quick Icon:** Show a quick-access icon in the Joomla administrator dashboard
 
+**Enable Dashboard Statistics Tab:** Add a Review Statistics tab to the main dashboard chart area with date-filtered review metrics.
+
+**Debug Mode:** Enable debug logging. Logs are written to the Joomla log file app\_reviews.php. Disable in production.
+
 ### Display Settings
+
+![](/img/product-review-display1.webp)
+
+**Sub Template:** Select the sub template to use for rendering the review star ratings. Auto inherits from the active menu item.
 
 **Product Display Stars:** Where to show the star summary on product detail pages
 
+![](/img/product-review-product.webp)
+
 **Category Display Stars:** Where to show the star summary in category listing views
+
+![](/img/product-review-category.webp)
 
 **Show Average Rating:** Display the numeric average alongside stars in the summary
 
 **Clickable Star Rating:** Make the review count a link that scrolls to the reviews section
 
+**Reviews Per Page:** Number of reviews to show per page in the list
+
 **Show Rating Distribution:** Show the breakdown bar chart (5-star, 4-star, etc.)
 
-**Show User Reviews Tab:** Add a tab on the customer profile page listing their submitted reviews
-
-**Reviews Per Page:** Number of reviews to show per page in the list
+**Show Rating Distribution:** Display the star rating distribution chart.
 
 **Default Sort Order:** Initial sort when the reviews list loads
 
 **Form Display Mode:** Show the review form inline on the page or in a modal popup
 
 ### Style Settings
+
+![](/img/product-review-style.webp)
 
 **Theme Color:** Accent color applied to buttons and interactive elements
 
@@ -95,6 +99,8 @@ Look for **Product Review**, click the **X,** and it will turn into a green ch
 **Custom CSS:** Additional CSS rules applied to all review output
 
 ### Submission Settings
+
+![](/img/product-review-submission1.webp)
 
 **Minimum Review Length:** Minimum characters required in review text
 
@@ -126,31 +132,37 @@ Look for **Product Review**, click the **X,** and it will turn into a green ch
 
 ### Security Settings
 
+![](/img/product-review-security.webp)
+
 **Enable reCAPTCHA:** Add Google reCAPTCHA to the review form
 
-**reCAPTCHA Type:** Version to use: v2 (checkbox) or v3 (invisible)
+- **reCAPTCHA Type:** Version to use: v2 (checkbox) or v3 (invisible)
 
-**reCAPTCHA Site Key:** Your Google reCAPTCHA public site key
+- **reCAPTCHA Site Key:** Your Google reCAPTCHA public site key
 
-**reCAPTCHA Secret Key:** Your Google reCAPTCHA private secret key
+- **reCAPTCHA Secret Key:** Your Google reCAPTCHA private secret key
 
-**reCAPTCHA v3 Threshold:** Minimum score for v3 (0.0–1.0, higher = stricter)
+- **reCAPTCHA v3 Threshold:** Minimum score for v3 (0.0–1.0, higher = stricter)
+
+**Disable For Logged In Users:** Skip reCAPTCHA for logged-in customers
 
 **Rate Limit (Per Hour):** Maximum review submissions per user per hour
 
 **Enable Honeypot:** Add a hidden field to catch spam bots
 
-**Disable For Logged In Users:** Skip reCAPTCHA for logged-in customers
-
 ### Email Settings
+
+![](/img/product-review-email1.webp)
 
 The app can automatically send review request emails to customers after their order reaches a specific status.
 
+**Brand Logo:** Your store logo displayed in review request emails
+
 **Enable Review Requests:** Send automated post-purchase review request emails
 
-**Trigger Order Status:** Which order status triggers the email
-
 **Request Delay (Days):** Days to wait after trigger status before sending
+
+**Trigger Order Status:** Which order status triggers the email
 
 **Token Expiration (Days):** Days the one-click review link in the email remains valid
 
@@ -159,8 +171,6 @@ The app can automatically send review request emails to customers after their or
 **Admin Email Addresses:** Addresses to notify (one per line) — leave blank for site admin
 
 **Customer Approval Email:** Email customers when their review is approved
-
-**Brand Logo:** Your store logo displayed in review request emails
 
 ## Setting Up the Cron Job
 
@@ -199,6 +209,8 @@ Click **Send Test Email** to preview the email against a real product in your st
 
 ## UTM Tracking
 
+![](/img/product-review-utm.webp)
+
 Add UTM parameters to review links in emails to track campaign performance in Google Analytics:
 
 | Field            | Example Value               |
@@ -209,6 +221,8 @@ Add UTM parameters to review links in emails to track campaign performance in Go
 | **UTM Content**  | *(optional differentiator)* |
 
 ## Google Rich Snippets
+
+![](/img/product-review-google.webp)
 
 When enabled, the app outputs JSON-LD structured data on product pages so Google can display star ratings in search results.
 
@@ -232,11 +246,13 @@ When enabled, the app outputs JSON-LD structured data on product pages so Google
 
 ## Managing Reviews
 
-Go to **J2Commerce** -> **Apps** -> **Product Reviews** -> **Reviews** to access the review management screen.
+Go to **J2Commerce** -> **Apps** -> **Product Reviews** -> **Manage** Reviews to access the review management screen.
 
-<!-- SCREENSHOT: Reviews management list with status filter dropdowns -->
+![](/img/product-review-manage.webp)
 
 ### Review Statuses
+
+![](/img/product-review-status.webp)
 
 **Pending:** Submitted but not yet reviewed by a moderator
 
@@ -244,17 +260,26 @@ Go to **J2Commerce** -> **Apps** -> **Product Reviews** -> **Reviews** to access
 
 **Rejected:** Hidden from the public but kept in the database
 
-**Spam:** Identified as spam, hidden from public
+**Spam:** Identified as spam, hidden from the public
 
 ### Moderating Reviews
 
-- Click the **Approve** or **Reject** button in the Actions column for individual reviews.
+![](/img/product-review-manage-bulk.webp)
+
+- Click the **checkbox (**next to the individual review or select more than one) **-> Action.**&#x20;
 - Use the **Bulk Actions** dropdown to approve, reject, mark as spam, or delete multiple selected reviews at once.
-- Filter by status, rating, or product using the toolbar dropdowns.
+
+### Filter Reviews
+
+![](/img/product-review-filter2.webp)
+
+Click on Filter Options. Filter by status, rating, or product using the toolbar dropdowns.
 
 ### Editing a Review
 
-Click **Edit Review** to open the full edit form. You can:
+![](/img/product-review-manage-add-new-review.webp)
+
+Click on a reviewer's name to open the full edit form. You can:
 
 - Change the rating, title, and content
 - Write a **Store Response** that appears publicly below the review
@@ -263,21 +288,13 @@ Click **Edit Review** to open the full edit form. You can:
 - Toggle **Verified Purchase** status
 - Change the review status
 
-<!-- SCREENSHOT: Review edit form showing Store Response field -->
-
-## Enabling Reviews Per Product
-
-By default, the global **Enable Reviews** setting controls all products. You can override this on individual products:
-
-1. Edit a product in **J2Commerce -> Catalog ->** **Products**.
-2. Scroll to the **Reviews** tab in the product form.
-3. Set **Enable Reviews for this Product** to **Yes** or **No** to override the global default.
-
 ## Importing Reviews
+
+![](/img/product-review-import.webp)
 
 The app includes a CSV import tool to migrate reviews from another platform.
 
-1. Go to **J2Commerce** -> **Apps** -> **Product Reviews** -> **Import**.
+1. Go to **J2Commerce** -> **Apps** -> **Product Reviews** -> **Import Reviews**
 2. Choose the **Product Identifier** — either **Product ID** or **SKU**.
 3. Set the **Default Status** for imported reviews that have no status column.
 4. Enable **Skip Duplicate Reviews** to avoid re-importing reviews by the same email for the same product.
@@ -297,13 +314,19 @@ The app includes a CSV import tool to migrate reviews from another platform.
 | `review_content` | No                  | Full review text                             | `Arrived quickly...`  |
 | `status`         | No                  | `pending`, `approved`, `rejected`, or `spam` | `approved`            |
 | `verified`       | No                  | `1` for verified purchase, `0` otherwise     | `1`                   |
-| `created`        | No                  | Date created (YYYY-MM-DD HH\:MM\:SS&#xA;)    | `2025-03-15 09:00:00` |
+| `created`        | No                  | Date created (YYYY-MM-DD HH\:MM\:SS )        | `2025-03-15 09:00:00` |
 | `order_id`       | No                  | Associated order ID                          | `1001`                |
 | `helpful`        | No                  | Helpful vote count                           | `12`                  |
 
-## Analytics
+## Review Analytics
 
-Go to **J2Commerce** **-> Apps -> Product Reviews ->** **Analytics** for a summary of review activity, including:
+Go to **J2Commerce** **-> Analytics -> Review Stats**
+
+![](/img/product-review-analytics.webp)
+
+You can now review the entire summary of review activity:
+
+![](/img/product-review-analytics1.webp)
 
 - Total, pending, and approved review counts
 - Average rating
@@ -316,7 +339,15 @@ Go to **J2Commerce** **-> Apps -> Product Reviews ->** **Analytics** for a summa
 - Most reviewed products
 - Top-rated products
 
-<!-- SCREENSHOT: Analytics dashboard showing charts and stats -->
+## Frontend Category View
+
+Before/Above Product Card
+
+![](/img/category-above-card.webp)
+
+Before/Above Add-to-Cart Button
+
+![](/img/category-before-cart.webp)
 
 ## Troubleshooting
 
