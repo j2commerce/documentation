@@ -20,7 +20,7 @@ Before installing, ensure the following are in place:
 - PHP 8.2 or higher
 - Joomla 5 or 6
 
-### Install the Dompdf Library
+### Install the Dompdf Library and&#x20;
 
 The PDF Invoices app depends on the Dompdf library to render HTML into PDF files. This library is a separate add-on also available from the [J2Commerce Extensions Store](https://www.j2commerce.com).
 
@@ -37,6 +37,10 @@ The library creates a working directory at `tmp/dompdf/` inside your Joomla root
 If you attempt to install the PDF Invoices app before the Dompdf library is present, the installer will stop and display an error with a download link for the library.
 
 :::
+
+![](/img/pdf-install-library.webp)
+
+Simply click on the DOMpdf link, then download and install the library link.
 
 ## Installation
 

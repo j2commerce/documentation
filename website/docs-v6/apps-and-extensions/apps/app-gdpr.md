@@ -56,11 +56,23 @@ Once installed, you must enable the app. There are two ways to access it:
 
 Look for **GDPR**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
+![](/img/gdpr-enable.webp)
+
 ## Configuration
 
 Open the GDPR app settings by clicking its name in the Apps list.
 
+:::tip
+
+**Helpful Hint:** If you click on the **Toggle Inline Help** button, it will explain each section.&#x20;
+
+:::
+
+![](/img/gdpr-toggle.webp)
+
 ### Email Notifications
+
+![](/img/gdpr-config-email.webp)
 
 **Notify store administrators about data changes:** Send an email to the admin addresses below whenever a customer edits or deletes address data
 
@@ -86,6 +98,8 @@ IP removal only applies to **new** carts and orders created after the setting is
 
 ### General Requirements
 
+![](/img/gdpr-config-general.webp)
+
 **Enable GDPR tab in My Profile:** Show a GDPR data request form as a tab on the customer My Profile page
 
 **GDPR terms and conditions:** Show or hide terms and conditions at checkout
@@ -102,6 +116,8 @@ IP removal only applies to **new** carts and orders created after the setting is
 
 ### Terms Label Customisation
 
+![](/img/gdpr-config-general1.webp)
+
 These three fields control the text displayed around the terms link at checkout. They support Joomla language key strings or plain text.
 
 **Terms prefix text:** Text before the clickable link
@@ -113,6 +129,8 @@ These three fields control the text displayed around the terms link at checkout.
 **Validation error message:** Message shown when the customer does not tick the checkbox
 
 ### Customer Buttons
+
+![](/img/gdpr-config-customer.webp)
 
 **Show delete all addresses button:** Display a button on the My Profile page allowing customers to delete all their saved addresses
 
@@ -150,7 +168,7 @@ When the **Enable GDPR tab in My Profile** setting is enabled, a **GDPR Request*
 
 The request is saved to the activity log and — if admin email notifications are enabled — sends an email to the store administrator with the customer's message.
 
-<!-- SCREENSHOT: My Profile page showing the GDPR Request tab with the message form -->
+![](/img/gdpr-request.webp)
 
 ### Activity Log
 
@@ -173,6 +191,8 @@ You can view the activity log from the J2Commerce Apps page by clicking the GDPR
 2. Write your GDPR privacy policy or terms and conditions.
 3. Save the article and note its ID (shown in the article list).
 
+![](/img/gdpr-terms.webp)
+
 ### Step 2: Link the Article to the Plugin
 
 1. Go to **J2Commerce** -> **Apps** -> **GDPR** settings.
@@ -181,9 +201,13 @@ You can view the activity log from the J2Commerce Apps page by clicking the GDPR
 4. Set **Terms display position** to where you want the terms to appear (**Billing** or **Payment**).
 5. Click **Save**.
 
+![](/img/gdpr-terms1.webp)
+
 ### Step 3: Verify at Checkout
 
 Visit your store's checkout as a test customer and confirm the terms text and link appear at the expected step.
+
+<!-- SCREENSHOT: GDPR checkout -->
 
 ## Troubleshooting
 
@@ -198,14 +222,19 @@ Visit your store's checkout as a test customer and confirm the terms text and li
 3. Confirm **Terms display position** matches the step where you expect terms to appear.
 4. If using **Checkbox** display, confirm the correct step's validation is completing without errors from other plugins.
 
+![](/img/gdpr-terms3.webp)
+
 ### The delete address button is not visible on My Profile
 
 **Cause:** The **Show delete all addresses button** setting may be disabled, or the customer has no saved addresses.
 
 **Solution:**
 
-1. Confirm **Show delete all addresses button** is set to **Show** in the plugin settings.
-2. Log in as a test customer who has at least one saved address. The button only appears when addresses exist.
+- Confirm **Show delete all addresses button** is set to **Show** in the plugin settings.
+
+![](/img/gdpr-config-customer.webp)
+
+- Log in as a test customer who has at least one saved address. The button only appears when addresses exist.
 
 ### Admin notification emails are not arriving
 
@@ -213,11 +242,16 @@ Visit your store's checkout as a test customer and confirm the terms text and li
 
 **Solution:**
 
-1. Open the GDPR app settings and verify the **Store administrator emails** field contains valid comma-separated addresses with no spaces.
-2. Go to **System** -> **Global Configuration** -> **Server** tab and confirm the mail settings are working by using the **Send Test Mail** option.
+- Open the GDPR app settings and verify the **Store administrator emails** field contains valid comma-separated addresses with no spaces.
+
+![](/img/gdpr-terms4.webp)
+
+- Go to **System** -> **Global Configuration** -> **Server** tab and confirm the mail settings are working by using the **Send Test Mail** option.
 
 ### GDPR request form submissions are not saving
 
 **Cause:** The form requires a CSRF token. If the session has expired or the page was cached, the token may be invalid.
 
 **Solution:** Ask the customer to refresh the My Profile page and submit the form again. If the problem persists, check that Joomla page caching is not enabled for the My Profile view.
+
+![](/img/gdpr-request.webp)
