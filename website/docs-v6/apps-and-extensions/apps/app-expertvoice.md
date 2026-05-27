@@ -1,13 +1,8 @@
----
-title: "ExpertVoice Recommendations"
-sidebar_label: "ExpertVoice Recommendations"
-sidebar_position: 36
-description: "Add ExpertVoice expert review widgets to your J2Commerce product pages. Enter your API key, choose a display location, and expert recommendations appear automatically based on each product's SKU."
----
-
 # ExpertVoice Recommendations
 
-The ExpertVoice Recommendations app adds trusted expert review widgets to your product pages. When a shopper views a product, the widget loads automatically from ExpertVoice's servers and displays real recommendations from verified experts — all based on your product's SKU. You do not need to edit any templates or write any code. Setup takes just a few minutes.
+The **ExpertVoice Recommendation app** connects your product catalog to the ExpertVoice platform by syncing product SKUs between the two systems. Once the SKUs are synced, the app displays personalized product recommendations to shoppers — but only to users who have an active ExpertVoice account. If a shopper does not have an ExpertVoice account, the app will not appear on the page. Because of this, it is important that product SKUs match correctly between your catalog and ExpertVoice. Any SKU that is not synced will not be included in recommendations.
+
+ExpertVoice accounts are for verified industry professionals, not the general public — so developers testing the app will need to qualify and get approved, which can take up to 24 hours. Might be useful to mention that in your documentation so developers aren't caught off guard during testing.  To sign up for ExpertVoice, visit [**www.expertvoice.com**](http://www.expertvoice.com) and click **Join Now.**
 
 ## Requirements
 
@@ -26,29 +21,27 @@ The ExpertVoice Recommendations app adds trusted expert review widgets to your p
 
 ## Install the App
 
-You can install the ExpertVoice Recommendations app using the standard Joomla installer.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-In the Joomla admin, go to **System** **->** **Install** **->** **Extensions**
+Upload the plugin ZIP file or use the Install from URL option.
 
-Drag and drop the ZIP file onto the upload area, or click **Browse for file** and select it.
-
-[//]: # (![Install the ExpertVoice app]&#40;/img/expertvoice-install.webp&#41;)
-
-The plugin installs and enables itself automatically. No separate enable step is needed.
+![](/img/install.webp)
 
 ## Enable the App
 
-Once the app is installed it enables itself. If you ever need to re-enable it, there are **two** ways to reach the Apps list.
+The plugin installs and enables itself automatically. No separate enable step is needed. However, it's important to know where to go to enable or disable it in the future .
 
-**Option A:** Click the **J2Commerce** icon at the top right corner **->** **Apps**
+There are **two** ways to reach the Apps list.
 
-**Option B:** Go to **Components** on the left sidebar **->** **J2Commerce** **->** **Apps**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-[//]: # (![J2Commerce Apps list]&#40;/img/expertvoice-apps-list.webp&#41;)
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-Look for **ExpertVoice Recommendations**. If you see an **X**, click it and it turns into a green checkmark — the app is now enabled and ready to configure.
+![](/img/gift-wrap-apps.webp)
 
-<!-- ![ExpertVoice app enabled](/img/expertvoice-enable.webp) -->
+To help you narrow down the list, you can do a search for **ExpertVoice Recommendations**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/expert-voice-enable.webp)
 
 ## Configure the App
 
@@ -60,22 +53,24 @@ Click the **Toggle Inline Help** button on any app you install to see a descript
 
 :::
 
-<!-- ![Toggle Inline Help button](/img/expertvoice-inline-help.webp) -->
+![](/img/expert-voice-toggle.webp)
 
 ### Basic Settings tab
 
-<!-- ![ExpertVoice Basic Settings screen](/img/expertvoice-config.webp) -->
+![](/img/expert-voice-config.webp)
 
 ### Display Location
 
 The **Display Location** setting controls exactly where the widget appears on the page. Choose the option that matches the way your store displays products.
 
-| Option | Where the widget appears | Best for |
-|--------|--------------------------|----------|
-| **After product title** | Between the product title and the body text | Stores using Joomla articles for products |
-| **Before product content** | Immediately before the product description | Stores using Joomla articles for products |
-| **After product content** | Immediately after the product description | Stores using Joomla articles for products |
-| **After Add to Cart button** | Directly below the Add to Cart button | Stores using J2Commerce native product pages |
+![](/img/expert-voice-display.webp)
+
+| Option                        | Where the widget appears                         | Best for                                     |
+| ----------------------------- | ------------------------------------------------ | -------------------------------------------- |
+| **After product title**       | Between the product title and the body text      | Stores using Joomla articles for products    |
+| **Before product content**    | Immediately before the product description       | Stores using Joomla articles for products    |
+| **After product content**     | Immediately after the product description        | Stores using Joomla articles for products    |
+| **After Add to Cart button**  | Directly below the Add to Cart button            | Stores using J2Commerce native product pages |
 | **J2Commerce product detail** | At the top of the J2Commerce product detail area | Stores using J2Commerce native product pages |
 
 :::tip
@@ -91,14 +86,12 @@ Enter your ExpertVoice API key here. This field is **required** — without it, 
 To find your API key, log into your ExpertVoice account at [expertvoice.com](https://www.expertvoice.com/), navigate to **Account Settings** **->** **API**, and copy the key shown there. If you do not see an API section, contact your ExpertVoice account representative.
 
 :::warning
-
 If the **API Key** field is empty, the ExpertVoice widget is silently hidden on every product page. No error is shown to shoppers. Enable **Debug Mode** (see below) if you need to confirm whether a missing API key is the cause.
-
 :::
 
-<!-- ![API Key field](/img/expertvoice-apikey.webp) -->
-
 ### Target Type
+
+![](/img/expert-voice-display1.webp)
 
 The **Target Type** setting controls which HTML container the widget is rendered into.
 
@@ -125,8 +118,6 @@ Click the color swatch to open a color picker and choose the text color for the 
 
 Make sure there is enough contrast between the **Header Background Color** and the **Header Text Color** so the header text is easy to read.
 
-<!-- ![Color picker fields](/img/expertvoice-colors.webp) -->
-
 ### Debug Mode
 
 When set to **Yes**, the app writes a log entry every time it decides whether to show or skip the widget. Log entries are saved to `administrator/logs/plg_j2commerce_app_expertvoice.php`.
@@ -134,9 +125,7 @@ When set to **Yes**, the app writes a log entry every time it decides whether to
 Keep this set to **No** on a live store. Turn it on temporarily only when you are diagnosing why a widget is not appearing, then turn it off again straight away.
 
 :::warning
-
 Debug log files grow with every page view while Debug Mode is on. Turn it back off as soon as you have finished diagnosing.
-
 :::
 
 ## How It Works
@@ -183,12 +172,21 @@ The whole process is automatic and SKU-driven — you do not need to configure a
 
 **Solution:**
 
-1. Go to **J2Commerce** **->** **Apps** and confirm **ExpertVoice Recommendations** shows a green checkmark (enabled).
-2. Open the app settings and verify the **API Key** field contains your key from the ExpertVoice dashboard. If it is empty, the widget will not appear on any page.
-3. Edit the product you are testing. Confirm the **SKU** field is filled in on the product's **General** tab (or on the variant row if it is a variable product).
-4. Check the **Display Location** setting. If you selected **After product title**, **Before product content**, or **After product content**, those options only fire on Joomla article (com_content) pages. If your store uses J2Commerce native product templates, switch to **After Add to Cart button** or **J2Commerce product detail** instead.
+- Go to **J2Commerce** **->** **Apps** and confirm **ExpertVoice Recommendations** shows a green checkmark (enabled).
 
-<!-- ![Checking the Display Location setting](/img/expertvoice-display-location.webp) -->
+![](/img/expert-voice-enable.webp)
+
+- Open the app settings and verify the **API Key** field contains your key from the ExpertVoice dashboard. If it is empty, the widget will not appear on any page.
+
+
+
+- Check the **Display Location** setting. If you selected **After product title**, **Before product content**, or **After product content**, those options only fire on Joomla article (com\_content) pages. If your store uses J2Commerce native product templates, switch to **After Add to Cart button** or **J2Commerce product detail** instead.
+
+![](/img/expert-voice-display.webp)
+
+- Edit the product you are testing. Confirm the **SKU** field is filled in on the product's **General** tab (or on the variant row if it is a variable product).
+
+![](/img/expert-voice-sku.webp)
 
 ### Widget Appears but Shows No Reviews
 
@@ -219,5 +217,3 @@ Switch the **Display Location** to **After Add to Cart button** or **J2Commerce 
 2. Open the product page that should show the widget.
 3. In the Joomla admin, open the file `administrator/logs/plg_j2commerce_app_expertvoice.php` in a text editor. Look for the most recent log entries — they will tell you exactly which condition caused the widget to be skipped (empty API key, missing SKU, etc.).
 4. Fix the identified issue, then return to the app settings and set **Debug Mode** back to **No** and click **Save**.
-
-<!-- ![Debug Mode setting](/img/expertvoice-debug.webp) -->
