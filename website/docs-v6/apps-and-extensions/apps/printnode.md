@@ -1,10 +1,3 @@
----
-title: "PrintNode for J2Commerce"
-sidebar_label: "PrintNode"
-sidebar_position: 50
-description: "Automatically print order invoices to any physical printer using the PrintNode cloud printing service when an order reaches a configured status."
----
-
 # PrintNode for J2Commerce
 
 PrintNode connects your J2Commerce store to a cloud printing service that can send invoice PDFs directly to a physical printer the moment an order reaches a status you choose — no one needs to be sitting at a computer to click Print. The PrintNode client runs quietly in the background on any machine near your printer and picks up jobs automatically.
