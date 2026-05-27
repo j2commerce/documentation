@@ -1,10 +1,3 @@
----
-title: "PrintNode for J2Commerce"
-sidebar_label: "PrintNode"
-sidebar_position: 50
-description: "Automatically print order invoices to any physical printer using the PrintNode cloud printing service when an order reaches a configured status."
----
-
 # PrintNode for J2Commerce
 
 PrintNode connects your J2Commerce store to a cloud printing service that can send invoice PDFs directly to a physical printer the moment an order reaches a status you choose — no one needs to be sitting at a computer to click Print. The PrintNode client runs quietly in the background on any machine near your printer and picks up jobs automatically.
@@ -210,14 +203,14 @@ A record of each print attempt — whether successful or failed — is added to 
 If you want to print a single invoice on demand rather than waiting for a status change:
 
 1. In Joomla admin, go to **J2Commerce** -> **Orders** and open any order.
-2. At the top of the order detail page, a **Print Invoice** card is displayed (only when **Enable Manual Print Button** is set to **Yes** in plugin settings).
-3. Click **Print Invoice**.
+2. At the top of the order detail page, a **PrintNode** button is displayed (only when **Enable Manual Print Button** is set to **Yes** in plugin settings).
+3. Click **PrintNode**.
 4. A confirmation prompt appears. Click **OK** to submit the print job.
 5. A status message confirms the job was submitted, including the PrintNode job ID.
 
 The order history is updated with the username of the admin who requested the print.
 
-<!-- SCREENSHOT: Order detail page showing the Print Invoice card at the top with the Print Invoice button -->
+![](/img/print-node-order-button.webp)
 
 ## Creating Invoice Templates
 
@@ -225,7 +218,7 @@ To create an invoice template, go to J2Commerce > Design > Invoice Template > Ne
 
 ![](/img/print-node-template.webp)
 
-To learn more on how to set up an invoice template, visti the documentation below [https://docs.j2commerce.com/v6/design/invoice-templates](https://docs.j2commerce.com/v6/design/invoice-templates)
+To learn more on how to set up an invoice template, visit the documentation below [https://docs.j2commerce.com/v6/design/invoice-templates](https://docs.j2commerce.com/v6/design/invoice-templates)
 
 ## Troubleshooting
 
