@@ -238,6 +238,8 @@ const sidebars = {
                         'apps-and-extensions/apps/avalaratax',
                         // BaseLinker Integration
                         'apps-and-extensions/apps/app-baselinker',
+                        // Bulk Discounts
+                        'apps-and-extensions/apps/app-bulkdiscount',
                         // Calculator - Sort by Price
                         'apps-and-extensions/apps/app_calculatorsortbyprice',
                         // Change Password
@@ -274,6 +276,8 @@ const sidebars = {
                         'apps-and-extensions/apps/ecommercegoogletagmanager',
                         // Inventory Email Notifications
                         'apps-and-extensions/apps/stocknotification',
+                        // Klaviyo Integration
+                        'apps-and-extensions/apps/klaviyo',
                         // Minimum Order Restriction
                         'apps-and-extensions/apps/minimumorder',
                         // Opening Hours
@@ -362,6 +366,8 @@ const sidebars = {
                         'apps-and-extensions/plugins/plg_system_j2commercemcp',
                         // J2Commerce Migration Tool
                         'apps-and-extensions/plugins/plg_system_j2commerce_migration_tool',
+                        // OSMap - J2Commerce
+                        'apps-and-extensions/plugins/osmap-j2commerce',
                         // Sample Data Plugin
                         'apps-and-extensions/plugins/plg_sampledata_j2commerce',
                         // Schema.org - Ecommerce
@@ -438,6 +444,8 @@ const sidebars = {
                 'payment-methods/payment_square',
                 // Stripe Payment
                 'payment-methods/payment_stripe',
+                // Worldpay Payment
+                'payment-methods/payment_worldpay',
             ],
         },
         {
