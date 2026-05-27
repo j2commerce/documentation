@@ -238,8 +238,6 @@ const sidebars = {
                         'apps-and-extensions/apps/avalaratax',
                         // BaseLinker Integration
                         'apps-and-extensions/apps/app-baselinker',
-                        // Calculator - Sort by Price
-                        'apps-and-extensions/apps/app_calculatorsortbyprice',
                         // Change Password
                         'apps-and-extensions/apps/app_changepasswords',
                         // Content Fields
@@ -310,6 +308,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app-socialmedia',
                         // Square Integration (there is a duplicate)
                         'apps-and-extensions/apps/square-integration',
+                        // Sort by Price Calculator
+                        'apps-and-extensions/apps/app_calculatorsortbyprice',
                         // Storepoint Store Locator
                         'apps-and-extensions/apps/storepoint',
                         // Subscription - Exclude Renewal Inventory
