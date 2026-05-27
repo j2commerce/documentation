@@ -1,4 +1,9 @@
-# OSMap - J2Commerce
+---
+title: "OSMap - J2Commerce"
+sidebar_label: "OSMap"
+sidebar_position: 30
+description: "Connect J2Commerce to the OSMap sitemap component so every product page appears once in your XML and HTML sitemaps for search engines and visitors."
+---
 
 The OSMap - J2Commerce plugin connects your store to the Joomlashack OSMap sitemap component. Once installed, OSMap automatically discovers and lists every one of your J2Commerce product pages in both your XML sitemap (for search engines) and your HTML sitemap (for visitors). Each product appears exactly once — as its proper shop URL — so search engines never see the same product duplicated between your store and a plain Joomla article.
 
