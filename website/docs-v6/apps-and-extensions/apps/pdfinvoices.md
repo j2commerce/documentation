@@ -160,7 +160,7 @@ Because PDF rendering with Dompdf does not support all CSS properties, keep styl
 
 When **Show Link in Frontend** is set to **Yes**, a **Download PDF** button appears on the customer's order history page for each order.
 
-<!-- SCREENSHOT: Customer order history page showing the Download PDF button next to an order -->
+![](/img/pdf-order1.webp)
 
 Customers must be logged in to use the download link. The plugin verifies that the customer requesting the download is the owner of the order before streaming the PDF. Guests and other users cannot download invoices this way.
 

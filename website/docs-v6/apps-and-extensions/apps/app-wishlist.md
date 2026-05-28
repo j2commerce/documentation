@@ -35,13 +35,15 @@ Upload the plugin ZIP file or use the Install from URL option.
 
 ## Enable the App
 
-Once you have installed the App, you will need to enable it. There are **two** ways you can access the extension.
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
 **Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-Look for **Wishlist**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+![](/img/gift-wrap-apps.webp)
+
+Search for **Wishlist**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ## Configure the App
 
@@ -123,7 +125,7 @@ NOTE: Turn Debug Mode off in production. It is only meant for diagnosing problem
 
 The wishlist page is shown through a dedicated Joomla menu item. You must create this menu item before customers can reach their wishlist.
 
-1. Go to **Menus -> [Your Menu] -> Add New Menu Item**.
+1. Go to **Menus -> \[Your Menu] -> Add New Menu Item**.
 
 2. Click **Select** next to **Menu Item Type**.
 
@@ -201,7 +203,7 @@ When a customer browses your store:
 
 - The plugin is enabled in **J2Commerce** **->** **Apps** **-> Wishlist**.
 
-- The active template plugin (app_bootstrap5 or app_uikit) is enabled.
+- The active template plugin (app\_bootstrap5 or app\_uikit) is enabled.
 
 - The product is published and visible.
 
@@ -237,7 +239,7 @@ When a customer browses your store:
 
 1. Go to **J2Commerce** **->** **Apps** **-> Wishlist** and verify it shows a green checkmark (enabled).
 
-2. Verify your active template plugin (app_bootstrap5 or app_uikit) is also enabled.
+2. Verify your active template plugin (app\_bootstrap5 or app\_uikit) is also enabled.
 
 3. If you customised the product cart template, make sure your override still includes the add-to-wishlist button area.
 

@@ -13,27 +13,57 @@ This module is a companion to the **app\_wishlist** plugin. The plugin must be i
 
 ## Prerequisites
 
-- J2Commerce 6 installed and active.
-- The **app\_wishlist** add-on plugin installed and enabled. See the [Wishlist app guide](app-wishlist.md) for setup instructions.
-- At least one menu item linked to the wishlist page (recommended for correct URL generation).
+- J2Commerce 6 is installed and active.
+- The **app\_wishlist** add-on plugin is installed and enabled. See the [Wishlist app guide](app-wishlist.md) for setup instructions.
+- At least one menu item is linked to the wishlist page (recommended for correct URL generation).
 
-## Installation
+## Purchase and Download
 
-This module is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+The **Wishlist** Module is a premium add-on available from the J2Commerce extension directory.
 
-1. Purchase and download the `mod_j2commerce_wishlist.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `mod_j2commerce_wishlist.zip` package file.
-4. The module installs automatically.
+‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Modules**
 
-To enable and position it:
+**Step 2:** Locate the **Wishlist** Module **->** click **View Details -> Add to cart -> Checkout**.&#x20;
 
-1. Go to **Content** -> **Site Modules**.
-2. Find **J2Commerce - Wishlist** in the list and click to open it.
-3. Set **Status** to **Published**.
-4. Assign the module to a **Position** (e.g., `menu`, `header`, or your template's top-right position).
-5. Assign it to the pages where it should appear under the **Menu Assignment** tab.
-6. Click **Save & Close**.
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**&#x20;
+
+## Install the Module
+
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
+
+Upload the `mod_j2commerce_wishlist.zip` package ZIP file or use the Install from URL option.
+
+![](/img/install.webp)
+
+## Enable the Module
+
+Once you have installed the module, you will need to enable it. Go to the **Content** icon in the left sidebar **-> Site Modules**
+
+![](/img/wishlist-enable.webp)
+
+Search for **Wishlist**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+## Configure the Module
+
+Once you click on the **Wishlist** Title next to the green checkmark, you are ready to start setting up the parameters.
+
+:::tip
+
+**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section.
+
+:::
+
+![](/img/wishlist-toggle.webp)
+
+### Basic Settings tab
+
+Assign the module to a **Position** (e.g., `menu`, `header`, or your template's top-right position).
+
+Assign it to the pages where it should appear under the Wishlist **Menu Assignment** tab.
+
+![](/img/wishlist-menu-assignment1.webp)
+
+Click **Save & Close**.
 
 ## Configuration Options
 
