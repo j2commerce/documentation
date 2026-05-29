@@ -1,10 +1,3 @@
----
-title: "Culqi Payment Gateway"
-sidebar_label: "Culqi"
-sidebar_position: 25
-description: "Accept Visa, Mastercard, American Express, Diners Club, and Yape payments in Peru and Latin America using the Culqi payment gateway for J2Commerce."
----
-
 # Culqi Payment Gateway
 
 Culqi is Peru's leading payment gateway, founded in 2014 and now part of Banco de Crédito del Perú (BCP). It lets Peruvian and Latin American merchants accept Visa, Mastercard, American Express, Diners Club, and Yape directly on their store. Charges happen in real time — no redirect to a third-party site. The J2Commerce plugin handles card tokenization through Culqi's JavaScript library, then sends the charge from your server, so shoppers never leave your checkout.
@@ -15,17 +8,28 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 ***
 
-## Before You Begin
+## Get Your Culqi API Keys
 
-You need an active Culqi merchant account. If you do not have one yet:
+Culqi gives you four API keys: two for testing (sandbox) and two for live payments. You need all four before configuring the plugin.
 
-1. Go to [https://culqi.com](https://culqi.com) and click **Crear cuenta** (Create account).
-2. Complete the verification steps Culqi requires for your business type.
-3. Once your dashboard is ready, go to **Developers** -> **API Keys**.
-4. You will see two sets of keys: **Test** keys (prefixed `pk_test_` and `sk_test_`) and **Live** keys (prefixed `pk_live_` and `sk_live_`).
-5. Copy all four keys to a secure location before you start configuring the plugin.
+**Step 1:** Log in to your Culqi dashboard at [culqi.com](https://culqi.com). (If you don't have one, click on Login and then **Sign up for Culqi.**
 
-Keep your secret keys (`sk_test_` and `sk_live_`) private. Never paste them into a publicly visible field or commit them to version control.
+**Step 2:** Go to **Desarrollo** (Development) -> **Llaves** (API Keys).
+
+**Step 3:** Copy all four keys to a secure location:
+
+| Key                    | Prefix        | Use                                  |
+| ---------------------- | ------------- | ------------------------------------ |
+| **Public Key** (live)  | `pk_live_...` | Safe to use in the browser           |
+| **Secret Key** (live)  | `sk_live_...` | Server-only — never share            |
+| **Sandbox Public Key** | `pk_test_...` | Safe to use in the browser (testing) |
+| **Sandbox Secret Key** | `sk_test_...` | Server-only — never share (testing)  |
+
+:::tip
+
+**Publishable keys** (those beginning with `pk_`) are safe to use in the browser. **Secret keys** (those beginning with `sk_`) are server-only credentials. Never share a secret key in email, chat, or screenshots. If a secret key is ever exposed, regenerate it immediately from the Culqi dashboard.
+
+:::
 
 ***
 
@@ -55,7 +59,7 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
 
-![](/img/2checkout1.webp)
+![](/img/culqi.webp)
 
 To help you narrow down the list, you can do a search for **Culqi**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
@@ -75,7 +79,7 @@ To help you narrow down the list, you can do a search for **Culqi**, click the 
 
 ### Display Settings
 
-![](/img/culqi-config1.webp)
+![](/img/culqi-config1-1.webp)
 
 **Display name:** The label shoppers see at checkout when choosing a payment method.
 
@@ -217,6 +221,10 @@ Before you take real money, verify the full checkout flow using Culqi's test car
 If the charge fails, check `logs/plg_j2commerce_payment_culqi.php` for the error returned by Culqi.
 
 ***
+
+Frontend View
+
+![](/img/culqi-frontend.webp)
 
 ## Going Live
 

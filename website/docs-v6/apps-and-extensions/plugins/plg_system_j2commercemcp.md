@@ -39,7 +39,7 @@ Upload the plugin `plg_system_j2commercemcp.zip` file or use the Install from UR
 
 ## Enable the App
 
-1. Go to **System** -> **Manage** -> **Plugins**.
+1. Go to **System** **->** **Manage** **->** **Plugins**
 2. Search for **J2Commerce MCP**.
 3. Verify it shows a green checkmark (enabled). If not, click the status icon to enable it.
 
