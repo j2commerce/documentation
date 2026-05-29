@@ -77,7 +77,7 @@ Click the **Toggle Inline Help** button at the top of any plugin settings screen
 
 ### Appearance
 
-![](/img/worldpay-config-1.webp)
+![](/img/worldpay-logo.webp)
 
 **Display Name:** Label shown to customers on the checkout page (e.g., "Credit/Debit Card")
 
@@ -129,7 +129,7 @@ These fields appear when **Sandbox / Test Mode** is turned off.
 
 These fields appear when **Sandbox / Test Mode** is turned on. They work identically to the live fields but connect to the Worldpay test environment.
 
-![](/img/worldpay-config-sandbox.webp)
+![](/img/worldpay_sandbox.webp)
 
 **Sandbox API Username:** Worldpay test API username
 
@@ -155,7 +155,7 @@ Only available in **Embedded Checkout** mode. Customers see a checkbox at checko
 
 ### Order Statuses
 
-![](/img/worldpay-config-order.webp)
+![](/img/worldpay_order.webp)
 
 **Authorized Status:** Order status set when payment is authorized but not yet settled — only shown when Transaction Type is Authorize Only
 
@@ -264,17 +264,23 @@ Supported webhook events:
 | `payment.reversed`          | Full refund recorded                                            |
 | `payment.partiallyReversed` | Partial refund recorded                                         |
 
+## Frontend Sandbox View
+
+![](/img/worldpay_frontend.webp)
+
 ## Managing Payments from the Order Screen
 
 After an order is paid, you can take follow-up actions directly from the J2Commerce order detail page without leaving your admin panel.
 
-Go to **J2Commerce** -> **Orders** -> click the order number to open it. The Worldpay action buttons appear in the payment section.
+Go to **J2Commerce** **-> Sales ->** **Orders** **->** click the order number to open it. The Worldpay action buttons appear in the payment section.
 
 ### Settle a Payment (Authorize Only mode only)
 
+![](/img/worldpay-order.webp)
+
 If you set **Transaction Type** to **Authorize Only**, payments are held but not collected. When you are ready to capture the funds:
 
-1. Open the order in **J2Commerce** -> **Orders**.
+1. Open the order in **J2Commerce** **-> Sales ->** **Orders**.
 2. Click **Settle (Capture)** and confirm the prompt.
 3. The funds are collected from the customer's card and the order status updates automatically.
 
@@ -307,12 +313,19 @@ If the **Cancel Payment** button is not visible, the payment has already been se
 
 Always test in sandbox mode before going live.
 
-1. Enable **Sandbox / Test Mode** in the plugin settings and enter your Worldpay test credentials.
-2. Place a test order on your storefront using a [Worldpay test card number](https://developer.worldpay.com/docs/wpg/mobileandwebgateways/checkoutjs/testing).
-3. Check that the order appears in **J2Commerce** -> **Orders** with the correct status.
-4. Test a refund from the order screen to confirm it processes without errors.
-5. Check your Joomla log (**System** -> **Logs**) for any errors — enable **Debug Mode** temporarily if needed.
-6. When everything is working, disable **Sandbox / Test Mode** and replace the sandbox credentials with your live credentials.
+- Enable **Sandbox / Test Mode** in the plugin settings and enter your Worldpay test credentials.
+
+- Place a test order on your storefront using a [Worldpay test card number](https://developer.worldpay.com/docs/wpg/mobileandwebgateways/checkoutjs/testing).
+
+![](/img/worldpay-config-payment-sandbox.webp)
+
+- Check that the order appears in **J2Commerce** **-> Sales ->** **Orders** with the correct status.
+
+- Test a refund from the order screen to confirm it processes without errors.
+
+- Check your Joomla log (**System** -> **Logs**) for any errors — enable **Debug Mode** temporarily if needed.
+
+- When everything is working, disable **Sandbox / Test Mode** and replace the sandbox credentials with your live credentials.
 
 :::warning
 Remember to turn off **Sandbox / Test Mode** before accepting real orders. A warning banner on the J2Commerce dashboard will remind you if sandbox mode is still active.
@@ -326,7 +339,7 @@ Remember to turn off **Sandbox / Test Mode** before accepting real orders. A war
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and verify the Worldpay plugin shows a green enabled indicator.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** and verify the Worldpay plugin shows a green enabled indicator.
 2. Open the plugin settings and confirm the **Checkout ID** field is filled in (Embedded Checkout mode only).
 3. Check that the correct Checkout ID is being used — sandbox and live IDs are different.
 4. Clear the Joomla cache: **System** -> **Clear Cache** -> **Delete All**.
@@ -368,6 +381,6 @@ Remember to turn off **Sandbox / Test Mode** before accepting real orders. A war
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Worldpay Payment**.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** -> **Worldpay Payment**.
 2. Fill in all three credential fields (**API Username**, **API Password**, **Merchant Entity**) for whichever environment (live or sandbox) is currently active.
 3. Click **Save** to apply the changes.
