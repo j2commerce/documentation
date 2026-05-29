@@ -322,6 +322,8 @@ const sidebars = {
                         'apps-and-extensions/apps/subscriptionextrafields',
                         // Subscription Multiple Quantity
                         'apps-and-extensions/apps/subscriptionmultiplequantity',
+                        // Tax Manager
+                        'apps-and-extensions/apps/app_taxmanager',
                         // Twilio SMS Notifications
                         'apps-and-extensions/apps/twilio',
                         // User Group Tax Exemptions
