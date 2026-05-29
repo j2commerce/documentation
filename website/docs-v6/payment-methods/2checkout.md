@@ -208,6 +208,10 @@ To test the full payment flow before going live:
 
 - When ready for live traffic, switch **Sandbox Mode** to **No** and update your SID and Secret Word with your live account credentials.
 
+## Frontend View
+
+![](/img/2checkout-frontend.webp)
+
 ## Order Flow
 
 Here is what happens from the customer's perspective and behind the scenes:
