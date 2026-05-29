@@ -303,6 +303,8 @@ A cancellation voids an authorized payment before it has been settled. Once a pa
 2. Click **Cancel Payment** and confirm the prompt.
 3. The authorization is released — the customer is not charged and the hold on their card is removed.
 
+<!-- SCREENSHOT: J2Commerce order edit screen showing Worldpay action buttons (Void Transaction, Refund) below the payment summary -->
+
 :::info
 
 If the **Cancel Payment** button is not visible, the payment has already been settled and cannot be cancelled. Use **Issue Refund** in that case.
