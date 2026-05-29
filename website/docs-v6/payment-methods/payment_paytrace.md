@@ -63,7 +63,7 @@ Click the **Toggle Inline Help** button at the top of any plugin configuration p
 
 ### Basic Settings tab
 
-![](/img/paytrace-config1.webp)
+![](/img/paytrace-basic.webp)
 
 **Display Name:** The label customers see at checkout when selecting this payment method
 
@@ -154,7 +154,7 @@ Many US states have specific laws about credit card surcharging — some prohibi
 
 ![](/img/paytrace-config6.webp)
 
-**Geozone Restriction:** Select a J2Commerce geozone. PayTrace will only appear for customers whose billing address falls within that zone. Leave blank to allow all locations.
+**Geozone Restriction:** Select a J2Commerce geozone. PayTrace **will only appear for customers whose billing address falls within that zone**. Leave blank to allow all locations.
 
 **Min Subtotal:** The minimum order subtotal (before tax and shipping) required for PayTrace to appear. Leave blank for no minimum.
 
@@ -201,7 +201,7 @@ When a customer completes checkout with PayTrace, this is the sequence of events
 7. If PayTrace approves the transaction, the order status is updated to your configured **Payment Status** and the customer is redirected to the order confirmation page.
 8. If PayTrace declines the transaction, an error message is shown and the order remains unpaid.
 
-<!-- SCREENSHOT: Checkout payment step showing the PayTrace card form with card number, expiry, and CVV fields -->
+![](/img/paytrace-frontend1.webp)
 
 ## Admin Actions on Orders
 
@@ -248,7 +248,7 @@ Before going live, use the PayTrace sandbox environment to verify the full check
 6. Test void and refund actions from the order edit screen in the J2Commerce admin.
 7. When testing is complete, set **Sandbox Mode** back to **No** and enter your live credentials.
 
-<!-- SCREENSHOT: PayTrace plugin configuration showing the sandbox test card notice with Visa and Mastercard test numbers -->
+![](/img/paytrace-sandbox1.webp)
 
 ## Tips
 
