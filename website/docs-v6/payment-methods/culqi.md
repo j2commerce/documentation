@@ -55,7 +55,7 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
 
-![](/img/2checkout1.webp)
+![](/img/culqi.webp)
 
 To help you narrow down the list, you can do a search for **Culqi**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
