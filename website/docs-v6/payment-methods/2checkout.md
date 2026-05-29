@@ -40,7 +40,7 @@ The **2Checkout** app is a premium add-on available from the J2Commerce extensio
 
 **Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**&#x20;
 
-## Install the App
+## Install the Plugin
 
 In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
@@ -48,7 +48,7 @@ Upload the `payment_2checkout.zip` package ZIP file or use the Install from URL 
 
 ![](/img/install.webp)
 
-## Enable the App
+## Enable the Plugin
 
 Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 

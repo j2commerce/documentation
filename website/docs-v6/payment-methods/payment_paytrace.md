@@ -29,25 +29,23 @@ This plugin connects your J2Commerce store to the PayTrace REST API v3. Once con
 
 ## Install the Plugin
 
-Install the PayTrace plugin using the standard Joomla installer.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-In the Joomla admin, go to **System -> Install -> Extensions**
+Upload the `payment_paytrace.zip` package ZIP file or use the Install from URL option.
 
-Upload the `payment_paytrace.zip` file or use the Install from URL option.
-
-<!-- SCREENSHOT: System -> Install -> Extensions upload screen with payment_paytrace.zip ready to upload -->
+![](/img/install.webp)
 
 ## Enable the Plugin
 
-Once installed, you need to enable the plugin before it appears at checkout. There are two ways to reach the Payments list.
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Payments**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Payments**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
 
-<!-- SCREENSHOT: J2Commerce Payments list showing the PayTrace row with an X (disabled) status -->
+![](/img/2checkout1.webp)
 
-Find **PayTrace** in the list, click the **X** next to it, and it will turn into a green checkmark. The plugin is now enabled and ready to configure.
+To help you narrow down the list, you can do a search for **PayTrace**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 <!-- SCREENSHOT: PayTrace row in the Payments list showing a green checkmark -->
 
@@ -65,17 +63,17 @@ Click the **Toggle Inline Help** button at the top of any plugin configuration p
 
 ### Basic Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Display Name** | The label customers see at checkout when selecting this payment method | `Credit Card` |
-| **Display Image** | Optional logo or card image shown alongside the payment option at checkout | *(none)* |
+| Field             | Description                                                                | Default       |
+| ----------------- | -------------------------------------------------------------------------- | ------------- |
+| **Display Name**  | The label customers see at checkout when selecting this payment method     | `Credit Card` |
+| **Display Image** | Optional logo or card image shown alongside the payment option at checkout | *(none)*      |
 
 ### Transaction Type
 
-| Option | When to use it |
-|--------|----------------|
-| **Sale (Capture Immediately)** | Charges the customer's card in full at the moment they place the order. Use this for most stores — physical goods, digital downloads, services. |
-| **Authorize Only** | Places a hold on the customer's card without capturing the funds. You capture (charge) the card later from the order screen in the admin. Use this when you ship goods from inventory or need to verify stock before charging. |
+| Option                         | When to use it                                                                                                                                                                                                                 |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Sale (Capture Immediately)** | Charges the customer's card in full at the moment they place the order. Use this for most stores — physical goods, digital downloads, services.                                                                                |
+| **Authorize Only**             | Places a hold on the customer's card without capturing the funds. You capture (charge) the card later from the order screen in the admin. Use this when you ship goods from inventory or need to verify stock before charging. |
 
 :::info
 
@@ -87,14 +85,14 @@ If you choose **Authorize Only**, remember to capture each order manually from t
 
 PayTrace uses an OAuth2 username and password for API access. Keep sandbox and live credentials separate — the plugin shows the correct pair based on your **Sandbox Mode** setting.
 
-| Field | When shown | Description |
-|-------|-----------|-------------|
-| **Merchant ID** | Always | Your numeric PayTrace Merchant ID. Required for transaction query endpoints. |
-| **Sandbox Mode** | Always | Toggle between the test (sandbox) and live environments. |
-| **Sandbox API Username** | When Sandbox = Yes | Your PayTrace sandbox API username. |
-| **Sandbox API Password** | When Sandbox = Yes | Your PayTrace sandbox API password. |
-| **API Username** | When Sandbox = No | Your PayTrace live API username. |
-| **API Password** | When Sandbox = No | Your PayTrace live API password. |
+| Field                    | When shown         | Description                                                                  |
+| ------------------------ | ------------------ | ---------------------------------------------------------------------------- |
+| **Merchant ID**          | Always             | Your numeric PayTrace Merchant ID. Required for transaction query endpoints. |
+| **Sandbox Mode**         | Always             | Toggle between the test (sandbox) and live environments.                     |
+| **Sandbox API Username** | When Sandbox = Yes | Your PayTrace sandbox API username.                                          |
+| **Sandbox API Password** | When Sandbox = Yes | Your PayTrace sandbox API password.                                          |
+| **API Username**         | When Sandbox = No  | Your PayTrace live API username.                                             |
+| **API Password**         | When Sandbox = No  | Your PayTrace live API password.                                             |
 
 :::info
 
@@ -124,11 +122,11 @@ Default: **Yes**
 
 Choose the visual style for the card form at checkout:
 
-| Option | Use with |
-|--------|---------|
-| *(blank)* | Default layout |
+| Option         | Use with                               |
+| -------------- | -------------------------------------- |
+| *(blank)*      | Default layout                         |
 | **bootstrap5** | Bootstrap 5-based J2Commerce templates |
-| **uikit** | UIkit-based J2Commerce templates |
+| **uikit**      | UIkit-based J2Commerce templates       |
 
 Match this setting to the template framework your site uses.
 
@@ -136,23 +134,23 @@ Match this setting to the template framework your site uses.
 
 Control which order status is applied when payments succeed, and optionally change statuses automatically when you void or refund a transaction.
 
-| Field | Description |
-|-------|-------------|
-| **Payment Status** | The order status set when a payment succeeds (sale or authorized capture). |
-| **Change Order Status on Void** | Toggle on to automatically update the order status when you void a transaction. |
-| **Void Order Status** | The order status to apply after a successful void. Only visible when the toggle above is on. |
-| **Change Order Status on Refund** | Toggle on to automatically update the order status when a refund is processed. |
-| **Refund Order Status** | The order status to apply after a successful refund. Only visible when the toggle above is on. |
+| Field                             | Description                                                                                    |
+| --------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Payment Status**                | The order status set when a payment succeeds (sale or authorized capture).                     |
+| **Change Order Status on Void**   | Toggle on to automatically update the order status when you void a transaction.                |
+| **Void Order Status**             | The order status to apply after a successful void. Only visible when the toggle above is on.   |
+| **Change Order Status on Refund** | Toggle on to automatically update the order status when a refund is processed.                 |
+| **Refund Order Status**           | The order status to apply after a successful refund. Only visible when the toggle above is on. |
 
 ### Surcharge Settings
 
 Add a credit card surcharge to orders paid through PayTrace. You can combine a percentage and a fixed amount.
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Name** | Label displayed to customers at checkout (for example, `Credit Card Fee`). |
-| **Surcharge Percent** | Percentage of the order subtotal to add (for example, `2.5` for 2.5%). |
-| **Surcharge Fixed** | A flat dollar amount added to every order (for example, `0.30`). |
+| Field                   | Description                                                                                |
+| ----------------------- | ------------------------------------------------------------------------------------------ |
+| **Surcharge Name**      | Label displayed to customers at checkout (for example, `Credit Card Fee`).                 |
+| **Surcharge Percent**   | Percentage of the order subtotal to add (for example, `2.5` for 2.5%).                     |
+| **Surcharge Fixed**     | A flat dollar amount added to every order (for example, `0.30`).                           |
 | **Surcharge Tax Class** | Tax profile to apply to the surcharge amount. Leave blank if the surcharge is not taxable. |
 
 :::note
@@ -165,11 +163,11 @@ Many US states have specific laws about credit card surcharging — some prohibi
 
 Limit when PayTrace appears as a payment option.
 
-| Field | Description |
-|-------|-------------|
+| Field                   | Description                                                                                                                                            |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Geozone Restriction** | Select a J2Commerce geozone. PayTrace will only appear for customers whose billing address falls within that zone. Leave blank to allow all locations. |
-| **Min Subtotal** | The minimum order subtotal (before tax and shipping) required for PayTrace to appear. Leave blank for no minimum. |
-| **Max Subtotal** | The maximum order subtotal allowed for PayTrace to appear. Leave blank for no maximum. |
+| **Min Subtotal**        | The minimum order subtotal (before tax and shipping) required for PayTrace to appear. Leave blank for no minimum.                                      |
+| **Max Subtotal**        | The maximum order subtotal allowed for PayTrace to appear. Leave blank for no maximum.                                                                 |
 
 Since PayTrace is a US-based processor, you may want to restrict it to a geozone covering the United States and Canada.
 
@@ -177,28 +175,28 @@ Since PayTrace is a US-based processor, you may want to restrict it to a geozone
 
 You can add custom text messages at five points in the payment process. All fields accept plain text or basic HTML.
 
-| Field | When it appears |
-|-------|----------------|
-| **On Selection** | Shown when the customer selects PayTrace as their payment method at checkout. |
-| **On Before Payment** | Shown on the payment step before the customer submits their card. |
-| **On After Payment** | Shown on the order confirmation page after a successful payment. |
-| **On Error Payment** | Shown when the payment attempt fails. |
-| **On Cancel Payment** | Shown if the customer cancels or leaves the payment step. |
+| Field                 | When it appears                                                               |
+| --------------------- | ----------------------------------------------------------------------------- |
+| **On Selection**      | Shown when the customer selects PayTrace as their payment method at checkout. |
+| **On Before Payment** | Shown on the payment step before the customer submits their card.             |
+| **On After Payment**  | Shown on the order confirmation page after a successful payment.              |
+| **On Error Payment**  | Shown when the payment attempt fails.                                         |
+| **On Cancel Payment** | Shown if the customer cancels or leaves the payment step.                     |
 
 Leave any field blank to show no message at that point.
 
 ### Dashboard Icon
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Show Dashboard Icon** | Display a shortcut icon for PayTrace on the J2Commerce dashboard. | No |
+| Field                    | Description                                                         | Default   |
+| ------------------------ | ------------------------------------------------------------------- | --------- |
+| **Show Dashboard Icon**  | Display a shortcut icon for PayTrace on the J2Commerce dashboard.   | No        |
 | **Dashboard Icon Label** | The label shown under the icon. Uses the plugin name if left blank. | *(blank)* |
 
 ### Debug Mode
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Mode** | Write detailed API request and response data to the Joomla log directory. | No |
+| Field          | Description                                                               | Default |
+| -------------- | ------------------------------------------------------------------------- | ------- |
+| **Debug Mode** | Write detailed API request and response data to the Joomla log directory. | No      |
 
 When Debug Mode is enabled, logs are written to your Joomla logs folder (typically `administrator/logs/`) as `payment_paytrace.log`. Only enable this while troubleshooting — debug logs can grow large and may contain sensitive request metadata.
 
@@ -257,6 +255,7 @@ Before going live, use the PayTrace sandbox environment to verify the full check
 2. Enter your **Sandbox API Username** and **Sandbox API Password** (provided by PayTrace when you sign up for a developer account at [paytrace.net](https://paytrace.net)).
 3. Save the plugin configuration.
 4. Place a test order on your storefront using one of the test card numbers shown in the **Test Mode - Credit Cards** notice:
+
    - **Visa:** `4012000098765439` — Exp: `02/28` — CVV: `999`
    - **Mastercard:** `5499740000000057` — Exp: `02/28` — CVV: `998`
 5. After checkout, check your PayTrace sandbox dashboard at [api.sandbox.paytrace.com](https://api.sandbox.paytrace.com) to verify the transaction appeared.
