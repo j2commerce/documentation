@@ -39,7 +39,7 @@ The **Culqi** app is a premium add-on available from the J2Commerce extension di
 
 **Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**&#x20;
 
-## Install the App
+## Install the Plugin
 
 In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
@@ -47,7 +47,7 @@ Upload the `plg_j2commerce_payment_culqi.zip` ZIP file or use the Install from U
 
 ![](/img/install.webp)
 
-## Enable the App
+## Enable the Plugin
 
 Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
