@@ -70,6 +70,8 @@ To help you narrow down the list, you can do a search for **2Checkout**, click t
 
 :::
 
+![](/img/2checkout-toggle.webp)
+
 ### Basic Settings tab
 
 ![](/img/2checkout-basic1.webp)
