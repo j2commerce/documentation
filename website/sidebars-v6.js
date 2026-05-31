@@ -222,6 +222,8 @@ const sidebars = {
                         'apps-and-extensions/apps/additionalterms',
                         // Address Autocomplete
                         'apps-and-extensions/apps/app-addressautocomplete',
+                        // Already Purchased Badge
+                        'apps-and-extensions/apps/app_alreadypurchased',
                         // Advanced Cart Drawer
                         'apps-and-extensions/apps/j2commerce_advancedcart',
                         // Advanced Tax Rates (there is a duplicate)
@@ -258,6 +260,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app-validationrules',
                         // DigiFactu — VERI*FACTU E-Invoicing
                         'apps-and-extensions/apps/digifactu',
+                        // Donation
+                        'apps-and-extensions/apps/app-donation',
                         // Easy Reorder
                         'apps-and-extensions/apps/app_reorder',
                         // Email Cart
@@ -292,6 +296,8 @@ const sidebars = {
                         'apps-and-extensions/apps/paymentdiscount',
                         // PDF Invoices
                         'apps-and-extensions/apps/pdfinvoices',
+                        // Points and Rewards
+                        'apps-and-extensions/apps/points-rewards',
                         // Price Texts
                         'apps-and-extensions/apps/pricetexts',
                         // Printify Print-on-Demand
@@ -310,6 +316,8 @@ const sidebars = {
                         'apps-and-extensions/apps/quantityprice',
                         // ShipStation Integration
                         'apps-and-extensions/apps/shipstation',
+                        // Simple CSV Import
+                        'apps-and-extensions/apps/simple-csv-import',
                         // Social Media Sharing
                         'apps-and-extensions/apps/app-socialmedia',
                         // Square Integration (there is a duplicate)
@@ -428,12 +436,24 @@ const sidebars = {
                 'payment-methods/epdq',
                 // eWAY Rapid Payment
                 'payment-methods/ewayrapid',
+                // First Data (Global Gateway e4 / IPG Connect)
+                'payment-methods/firstdata',
+                // Flo2Cash Web2Pay
+                'payment-methods/flo2cash',
+                // GestPay / Axerve (Banca Sella) Payment
+                'payment-methods/gestpay',
+                // Icepay
+                'payment-methods/icepay',
                 // Kustom Payment
                 'payment-methods/payment_kustom',
                 // Mollie Payments
                 'payment-methods/payment_mollie',
+                // Moneris Checkout
+                'payment-methods/moneris',
                 // Money Order / Check Payment
                 'payment-methods/payment_moneyorder',
+                // MultiSafepay
+                'payment-methods/multisafepay',
                 // PayPal Payment
                 'payment-methods/payment_paypal',
                 // PayPal Complete
