@@ -1,10 +1,3 @@
----
-title: "Already Purchased Badge"
-sidebar_label: "Already Purchased"
-sidebar_position: 10
-description: "Show returning customers a personalized badge on any product they have already bought, with purchase count, last purchase date, and a link back to their order."
----
-
 # Already Purchased Badge
 
 The Already Purchased app recognizes your logged-in customers and shows them a friendly badge on any product page for items they have already bought. The badge displays how many times they have purchased the product, when they last ordered it, and a direct link to that order. For digital or non-repeatable products you can optionally block re-purchase entirely, showing an ownership notice above the cart button instead.
@@ -25,13 +18,11 @@ The Already Purchased app recognizes your logged-in customers and shows them a f
 
 ## Install the App
 
-You can install this **Already Purchased** app using the Joomla installer. The following steps help you with a successful installation.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-In the Joomla admin, go to **System -> Install -> Extensions**
+Upload the `app_alreadypurchased.zip` ZIP file or use the Install from URL option.
 
-Upload the plugin ZIP file or use the Install from URL option.
-
-<!-- SCREENSHOT: System > Install > Extensions upload screen -->
+![](/img/install.webp)
 
 ## Enable the App
 
@@ -41,7 +32,7 @@ Once you have installed the app, you will need to enable it. There are **two** w
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Already Purchased with enable/disable toggle -->
+![](/img/gift-wrap-apps.webp)
 
 Look for **Already Purchased**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
@@ -55,21 +46,23 @@ Once you click the **Already Purchased** title next to the green checkmark, you 
 
 :::
 
-<!-- SCREENSHOT: Already Purchased plugin configuration screen showing all Basic Settings fields -->
+![](/img/already-purchased-toggle.webp)
 
 ### Basic Settings tab
 
 #### Display Position
 
+![](/img/already-purchased-config.webp)
+
 Choose where the already-purchased badge appears on the product detail page.
 
-| Option | Where it appears |
-|--------|-----------------|
-| **Before Product Detail** | Above all product content (default) |
-| **Before Product Title** | Immediately before the product title |
-| **After Product Title** | Immediately after the product title |
-| **Before Add to Cart Button** | Above the cart button area |
-| **After Add to Cart Button** | Below the cart button area |
+| Option                        | Where it appears                     |
+| ----------------------------- | ------------------------------------ |
+| **Before Product Detail**     | Above all product content (default)  |
+| **Before Product Title**      | Immediately before the product title |
+| **After Product Title**       | Immediately after the product title  |
+| **Before Add to Cart Button** | Above the cart button area           |
+| **After Add to Cart Button**  | Below the cart button area           |
 
 #### Qualifying Order Statuses
 
@@ -85,19 +78,13 @@ The opening line of the badge — for example, "You've purchased this before." L
 
 When enabled, the badge shows how many times the customer has ordered this product (for example, "Purchased 3 times"). Disable this if you prefer a simpler badge with no count.
 
-Default: **Yes**
-
 #### Show Last Purchased Date
 
 When enabled, the badge includes the date of the customer's most recent order for this product. The date format follows the store-wide date format setting in **J2Commerce -> Setup -> Configuration**.
 
-Default: **Yes**
-
 #### Show 'View Order' Link
 
 When enabled, the badge includes a clickable link that takes the customer directly to their most recent order containing this product. This helps customers who want to check their order details, download a file again, or track delivery.
-
-Default: **Yes**
 
 #### Restrict Re-Purchase
 
@@ -105,9 +92,9 @@ When enabled, customers who already own a product of the configured types will s
 
 Subscription products are always restricted automatically while the subscription is active — the **Restrict Re-Purchase** toggle does not need to be on for that behavior.
 
-Default: **No**
-
 #### Product Types to Restrict
+
+![](/img/already-purchased-restrict.webp)
 
 This field appears only when **Restrict Re-Purchase** is set to **Yes**.
 
@@ -117,15 +104,11 @@ Select which product types should block re-purchase for customers who already ow
 
 Choose the frontend framework used to render the badge and notices. **Auto** follows the active Joomla menu item's subtemplate setting, which works correctly for most stores. Select **Bootstrap 5** or **UIkit** only if you need to lock the output to a specific framework regardless of the active template.
 
-Default: **Auto**
-
 ### Advanced tab
 
 #### Debug Logging
 
 When enabled, the plugin writes detailed activity to a log file (`plg_j2commerce_app_alreadypurchased.php` in the Joomla logs folder). Use this only while troubleshooting — disable it in production.
-
-Default: **No**
 
 ## How It Works
 
@@ -136,6 +119,12 @@ When a logged-in customer views a product page:
 3. For **subscription products**, the plugin checks whether the customer has an active subscription to that product. If they do, an informational notice replaces the cart button area ("You have an active subscription to this product — no need to purchase it again"). If the subscription has expired, a different notice shows the expiry date and confirms the customer can purchase again.
 4. For other product types with **Restrict Re-Purchase** enabled, owned products show an ownership warning notice above the cart button.
 5. Each badge or notice appears only once per page load, even if the theme renders multiple product views.
+
+## Frontend View
+
+The example below shows the position set as 'After Product Title.'
+
+![](/img/already-purchased-product-title-under1.webp)
 
 ## Display Conditions
 

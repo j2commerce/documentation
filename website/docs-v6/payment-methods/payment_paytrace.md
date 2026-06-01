@@ -227,7 +227,7 @@ If the customer has saved cards in the PayTrace Customer Vault and the order has
 
 Select a card from the customer's saved cards and click **Charge Card**. The plugin runs a Sale or Authorize transaction (matching your **Transaction Type** setting) and records the result against the order.
 
-:::note
+:::tip
 
 The **Charge Saved Card** panel only appears when the customer is a registered user with at least one saved card on file. It will not appear for guest orders.
 
