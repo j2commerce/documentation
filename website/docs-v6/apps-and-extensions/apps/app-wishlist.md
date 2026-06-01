@@ -223,7 +223,7 @@ When a customer browses your store:
 
 ## Frontend Category View
 
-![](/img/wishlist-category.webp)
+![](/img/wishlist-category2.webp)
 
 ## Tips{#tips}
 
