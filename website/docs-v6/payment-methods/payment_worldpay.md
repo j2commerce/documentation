@@ -1,10 +1,3 @@
----
-title: "Worldpay Payment"
-sidebar_label: "Worldpay"
-sidebar_position: 45
-description: "Accept credit and debit card payments via Worldpay Access in your J2Commerce store — with embedded checkout, 3DS2/SCA support, saved cards, and admin settle/refund/cancel tools."
----
-
 # Worldpay Payment
 
 The Worldpay Payment plugin connects your J2Commerce store to the **Worldpay Access** platform so customers can pay by credit or debit card at checkout. It supports two integration modes: a secure embedded card form that keeps shoppers on your site the entire time, and a redirect to a Worldpay-hosted payment page. Both modes include 3DS2/SCA (the extra card-security step banks now require in the UK and Europe), and both let you manage settled, refunded, and cancelled payments directly from the J2Commerce order screen.
