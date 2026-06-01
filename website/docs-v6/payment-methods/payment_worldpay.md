@@ -284,9 +284,25 @@ If you set **Transaction Type** to **Authorize Only**, payments are held but not
 2. Click **Settle (Capture)** and confirm the prompt.
 3. The funds are collected from the customer's card and the order status updates automatically.
 
+### Cancel a Payment
+
+![](/img/worldpay_cancel.webp)
+
+A cancellation voids an authorized payment before it has been settled. Once a payment has been settled, use **Issue Refund** button shows up instead.
+
+1. Open the order.
+2. Click **Cancel Payment** and confirm the prompt.
+3. The authorization is released — the customer is not charged and the hold on their card is removed.
+
+:::info
+
+If the **Cancel Payment** button is not visible, the payment has already been settled and cannot be cancelled. Use **Issue Refund** in that case.
+
+:::
+
 ### Issue a Refund
 
-You can refund a settled payment in full or in part.
+You can refund a **settled** payment in full or in part.
 
 1. Open the order.
 2. Click **Issue Refund**.
@@ -294,22 +310,6 @@ You can refund a settled payment in full or in part.
 4. Click **Process Refund** to confirm.
 
 The refund is sent to the customer's original card. If **Change Status on Refund** is enabled, the order status updates automatically.
-
-### Cancel a Payment
-
-A cancellation voids an authorized payment before it has been settled. Once a payment has been settled, use **Issue Refund** instead.
-
-1. Open the order.
-2. Click **Cancel Payment** and confirm the prompt.
-3. The authorization is released — the customer is not charged and the hold on their card is removed.
-
-<!-- SCREENSHOT: J2Commerce order edit screen showing Worldpay action buttons (Void Transaction, Refund) below the payment summary -->
-
-:::info
-
-If the **Cancel Payment** button is not visible, the payment has already been settled and cannot be cancelled. Use **Issue Refund** in that case.
-
-:::
 
 ## Testing Payments
 
