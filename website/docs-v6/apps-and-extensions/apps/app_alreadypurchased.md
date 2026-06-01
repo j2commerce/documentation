@@ -1,4 +1,4 @@
-# Already Purchased Badge
+# Already Purchased
 
 The Already Purchased app recognizes your logged-in customers and shows them a friendly badge on any product page for items they have already bought. The badge displays how many times they have purchased the product, when they last ordered it, and a direct link to that order. For digital or non-repeatable products you can optionally block re-purchase entirely, showing an ownership notice above the cart button instead.
 
