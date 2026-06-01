@@ -217,6 +217,14 @@ When a customer browses your store:
 
 - Their wishlist contains at least one item.
 
+## Frontend Product View
+
+![](/img/wishlist-frontend-product.webp)
+
+## Frontend Category View
+
+![](/img/wishlist-category2.webp)
+
 ## Tips{#tips}
 
 - **Use Icon on compact stores** - choose the **Icon** button type when your product lists are tight on space, to keep the cart row tidy.

@@ -1,10 +1,3 @@
----
-title: "PayTrace"
-sidebar_label: "PayTrace"
-sidebar_position: 40
-description: "Step-by-step guide for setting up the PayTrace credit card payment plugin in J2Commerce for US merchants."
----
-
 # PayTrace
 
 PayTrace is a US-based payment processor built for both brick-and-mortar and online merchants. It offers end-to-end encryption (E2EE) on card data before it ever leaves the customer's browser, supports a Customer Vault for storing cards securely, and lets admins void, refund, or charge saved cards directly from the order screen.
@@ -207,9 +200,9 @@ When a customer completes checkout with PayTrace, this is the sequence of events
 
 When you open a paid order in **J2Commerce -> Sales -> Orders** and the order was paid through PayTrace, the order edit screen shows additional action buttons.
 
-<!-- SCREENSHOT: J2Commerce order edit screen showing PayTrace action buttons (Void Transaction, Refund) below the payment summary -->
-
 ### Void Transaction
+
+![](/img/paytrace-order-void.webp)
 
 Cancels a transaction that has been authorized but not yet settled by the bank. Voiding is only possible while the transaction is still in **Approved** or **Pending Settlement** status. Once the batch settles overnight, you must use Refund instead.
 
@@ -223,11 +216,13 @@ Click **Refund**, enter the amount to refund (the maximum refundable amount is s
 
 ### Charge Saved Card
 
+![](/img/paytrace-order-saved-cc.webp)
+
 If the customer has saved cards in the PayTrace Customer Vault and the order has no transaction yet (for example, an invoice order or an Authorize Only order that was never captured), the **Charge Saved Card** panel appears below the order summary.
 
 Select a card from the customer's saved cards and click **Charge Card**. The plugin runs a Sale or Authorize transaction (matching your **Transaction Type** setting) and records the result against the order.
 
-:::note
+:::tip
 
 The **Charge Saved Card** panel only appears when the customer is a registered user with at least one saved card on file. It will not appear for guest orders.
 

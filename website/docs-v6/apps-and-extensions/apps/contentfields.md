@@ -36,61 +36,87 @@ To create a custom field, go to **System** -> **Manage** -> **Fields** and click
 
 Fields can be organised into groups using **System** -> **Manage** -> **Field Groups**. Field groups are useful when you want to show or hide a related set of fields together. The shortcode mode described later in this guide supports both individual fields and field groups.
 
-## Installation
+## Purchase and Download
 
-1. Purchase and download the `app_contentfields.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_contentfields.zip` file.
-4. The plugin installs automatically. Go to **System** -> **Manage** -> **Plugins**, search for **Content Fields**, and confirm the plugin is enabled (green toggle). If it is not, click the toggle to enable it.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Apps**
 
-<!-- SCREENSHOT: Plugin Manager search results showing "Content Fields" plugin with the status toggle set to enabled (green) -->
+**Step 2:** Locate **Content Fields** -> click **View Details** -> **Add to Cart** -> **Checkout**
 
-After enabling the plugin, open it to configure which fields appear and where.
+**Step 3:** After purchase, open your account and go to **My Downloads**. Find **Social Media Sharing**, click **Available Versions** -> **View Files** -> **Download Now** to get the `app_socialmedia.zip` file.
+
+## Install the App
+
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
+
+Upload the `app_contentfields.zip` ZIP file or use the Install from URL option.
+
+![](/img/install.webp)
+
+## Enable the App
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps -> Content Fields**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps -> Content Fields**
+
+![](/img/gift-wrap-apps.webp)
+
+To help you narrow down the list, you can do a search for **Content Fields**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/content-fields-enable.webp)
 
 ## Configuration
 
-Go to **J2Commerce** -> **Apps**, find **Content Fields**, and click the plugin name to open its settings.
+:::tip
 
-<!-- SCREENSHOT: J2Commerce Apps list with "Content Fields" highlighted -->
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
+![](/img/content-fields-toggle.webp)
 
 ### Display Method
 
 Controls *where* the fields are injected on the page. Choose the option that matches your layout goal.
 
-| Option | When to use |
-|--------|-------------|
-| **Shortcode** | You want to place fields at exact spots inside the article text using `{field N}` tokens. |
-| **End of Product Description** | Fields appear after the article description. Works with either the short (intro) or long (full) description. |
-| **Before Price** | Fields appear directly above the price block. Good for a short spec summary. |
-| **After Price** | Fields appear directly below the price block. |
-| **Before Add to Cart Button** | Fields appear immediately above the Cart button. |
-| **After Add to Cart Button** | Fields appear immediately below the Cart button. |
+![](/img/content-fields-display-method.webp)
 
-Default: **End of Product Description**.
+Belos shows the Disply methods and when to use them.&#x20;
 
-<!-- SCREENSHOT: Display Method dropdown open showing all six options -->
+- **Shortcode:** You want to place fields at exact spots inside the article text using `{field N}` tokens.
+
+- **End of Product Description:** Fields appear after the article description. Works with either the short (intro) or long (full) description. **Default Option**
+
+- **Before Price:** Fields appear directly above the price block. Good for a short spec summary.
+
+- **After Price:** Fields appear directly below the price block.
+
+- **Before Add to Cart Button:** Fields appear immediately above the Cart button.
+
+- **After Add to Cart Button:** Fields appear immediately below the Cart button.
 
 ### Description Slot
 
 Visible only when **Display Method** is set to **End of Product Description**.
 
-| Option | Meaning |
-|--------|---------|
-| **Short Description (Intro)** | Appends fields to the intro text shown in category and article views. |
-| **Long Description (Full Text)** | Appends fields to the full article text shown only on the product detail page. |
+![](/img/content-fields-description.webp)
+
+- **Short Description (Intro):** Appends fields to the intro text shown in category and article views.
+
+- **Long Description (Full Text):** Appends fields to the full article text shown only on the product detail page.
 
 ### Pages to Display
 
 Controls which pages show the fields.
 
-| Option | Meaning |
-|--------|---------|
-| **Product View** | Detail page only. |
-| **Category View** | Product list / category page only. |
-| **Product & Category View** | Both pages. |
-| **None (Hidden)** | Fields are never shown. Use this to temporarily hide all output without disabling the plugin. |
+- **Product View:** Detail page only.
 
-Default: **Product & Category View**.
+- **Category View:** Product list / category page only.
+
+- **Product & Category View:** Both pages.
+
+- **None (Hidden):** Fields are never shown. Use this to temporarily hide all output without disabling the plugin.
 
 ### Category View Fields
 
@@ -104,9 +130,11 @@ Same picker, applied to the product detail page. You can select different fields
 
 ### Bootstrap 5 Accordion
 
-| Setting | Description |
-|---------|-------------|
-| **Bootstrap 5 Accordion** | Set to **Yes** to wrap each field value in a collapsible Bootstrap 5 accordion panel. The field label becomes the panel header. |
+
+
+| Setting                              | Description                                                                                                                                            |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Bootstrap 5 Accordion**            | Set to **Yes** to wrap each field value in a collapsible Bootstrap 5 accordion panel. The field label becomes the panel header.                        |
 | **Accordion Threshold (characters)** | Minimum character count that triggers the accordion wrapper. Field values shorter than this number are displayed inline (no accordion). Default: `10`. |
 
 Use the accordion when you have long field values — care instructions, ingredient lists, detailed specs — that would push the layout down. Short values like a one-word colour name display inline regardless of the accordion setting.
@@ -116,6 +144,8 @@ Use the accordion when you have long field values — care instructions, ingredi
 Set to **Yes** to write detailed log entries to `administrator/logs/plg_j2commerce_app_contentfields.php`. Each log line shows how many fields were resolved for a given article ID. Turn this off in production — it writes on every product page load.
 
 ## Shortcode Mode Walkthrough
+
+![](/img/content-fields-shortcode.webp)
 
 When **Display Method** is set to **Shortcode**, the plugin processes tokens inside your article text and replaces them with the rendered field HTML.
 
@@ -163,7 +193,7 @@ Set **Display Method** to **Shortcode**. In each article, place `{field N}` toke
 
 ### Fields are not appearing on the page
 
-1. Confirm the plugin is enabled under **System** -> **Manage** -> **Plugins**.
+1. Confirm the plugin is enabled under **J2Commerce -> Apps -> Content Fields**.
 2. Check **Pages to Display** — if it is set to **None (Hidden)**, no fields will appear.
 3. Verify that at least one field is selected in **Category View Fields** or **Product View Fields**.
 4. Open the article attached to the product and confirm the custom field has a saved value. Empty fields produce no output.

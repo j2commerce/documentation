@@ -30,93 +30,127 @@ The J2Commerce version is a complete rewrite of the original J2Store app. Key im
 - **Four checkout positions** — `After Billing`, `After Shipping`, `Before Payment`, and `Before Confirmation` (the original app had two).
 - **`enable_admin_ui` param** — hide the standalone Fees admin route without disabling the plugin.
 
-## Installation
+## Purchase and Download
 
-The Additional Fees app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+The **Additional Fees** app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `app_extrafee.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_extrafee.zip` package file.
-4. The plugin installs and enables automatically.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Apps**.
 
-<!-- SCREENSHOT: Joomla Extensions installer page after successful upload, showing "Additional Fees" in the confirmation message. -->
+**Step 2:** Locate the **Additional Fees** app -> click **View Details** -> **Add to cart** -> **Checkout**.
+
+**Step 3:** Go to **My Downloads** under your profile menu at the top right corner and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
+
+## Install the App
+
+You can install this **Additional Fees** App using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**
+
+Upload the `app_extrafee.zip` ZIP file or use the Install from URL option.
+
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
 ## Enable the App
 
-After installation, confirm the plugin is enabled:
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the extension.&#x20;
 
-1. Go to **J2Commerce** -> **Apps**.
-2. Search for **Additional Fees**.
-3. If the status indicator shows a red X, click it to enable the plugin.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list with "Additional Fees" highlighted and the enable/disable toggle visible. -->
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-## Configuration — Plugin Settings
+![shipping method](/img/accordions-app.webp)
 
-Open the plugin settings by clicking the **Additional Fees** title in the Apps list, or by going to **System** -> **Manage** -> **Plugins** and searching for **Additional Fees**.
+Look for **Additional Fees**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-*Screenshot: Plugin Settings tab showing the seven parameter fields with default values.*
+![](/img/additonal-fee-enable.webp)
 
-<!-- SCREENSHOT: Plugin edit screen, Basic tab, showing all seven fields described below. -->
+## Configuring the App
 
-| Field | Description | Default | Options |
-|-------|-------------|---------|---------|
-| **Apply Fees Per** | Controls whether fees are evaluated at the order level (one set of fees for the whole cart) or the product level (fees configured per product in the product's Apps tab). | Order | Order / Product |
-| **Order Price Based On** | Which subtotal to use when evaluating price-range conditions or calculating percentage fees. | Subtotal (excl. shipping) | Subtotal (excl. shipping) / Subtotal + Shipping |
-| **Auto Apply Fees** | When enabled, all applicable fees are added to the order total without asking the customer. When disabled, the customer sees a checklist and chooses which fees to accept. | No | Yes / No |
-| **Display Fee Amount** | Show the fee amount next to the fee name in the checkout step. Useful when customers are choosing between multiple optional fees. | No | Yes / No |
-| **Checkout Step Position** | Where the fee selection step appears in the checkout flow. | After Billing | After Billing / After Shipping / Before Payment / Before Confirmation |
-| **Tax Class** | Apply this J2Commerce tax profile to all extra fees. Tax is calculated against the customer's billing geozone using the standard tax engine. Leave blank for no tax on fees. | (none) | Any enabled tax profile |
-| **Enable Admin UI** | Show the standalone Fees management screen in the J2Commerce admin panel. Disable this only if you manage all fees at the product level and do not want the admin route. | Yes | Yes / No |
+:::tip
 
-### Recommended settings for common use cases
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
 
-| Use case | Apply Fees Per | Auto Apply | Step Position |
-|----------|---------------|------------|---------------|
-| Flat handling fee on every order | Order | Yes | After Billing |
-| Optional gift message surcharge | Order | No | After Shipping |
-| Per-product heavy-item fee | Product | Yes | After Shipping |
-| Express handling upgrade at checkout | Order | No | Before Payment |
-| Volume discount (negative percentage fee) | Order | Yes | After Billing |
+:::
 
-Click **Save** to apply any changes.
+![](/img/additonal-fee-toggle.webp)
+
+### Plugin tab
+
+![](/img/additonal-fee-config.webp)
+
+
+
+**Apply Fees Per:** Controls whether fees are evaluated at the **order** level (one set of fees for the whole cart) or the **product** level (fees configured per product in the product's Apps tab).
+
+**Order Price Based On:** Which subtotal to use when evaluating price-range conditions or calculating percentage fees. The options are **Subtotal (excl. shipping)** or  **Subtotal + Shipping**
+
+**Auto Apply Fees:** When enabled, all applicable fees are added to the order total without asking the customer. When disabled, the customer sees a checklist and chooses which fees to accept.
+
+**Display Fee Amount:** Show the fee amount next to the fee name in the checkout step. Useful when customers are choosing between multiple optional fees.
+
+**Checkout Step Position:** Where the fee selection step appears in the checkout flow.
+
+- **After Billing**
+
+- **After Shipping**
+
+- **Before Payment**
+
+- **Before Confirmation**
+
+| Use case                                  | Apply Fees Per | Auto Apply | Step Position      |
+| ----------------------------------------- | -------------- | ---------- | ------------------ |
+| Flat handling fee on every order          | Order          | Yes        | **After Billing**  |
+| Optional gift message surcharge           | Order          | No         | **After Shipping** |
+| Per-product heavy-item fee                | Product        | Yes        | **After Shipping** |
+| Express handling upgrade at checkout      | Order          | No         | **Before Payment** |
+| Volume discount (negative percentage fee) | Order          | Yes        | **After Billing**  |
+
+**Tax Class:** Apply this J2Commerce tax profile to all extra fees. Tax is calculated against the customer's billing geozone using the standard tax engine. Leave blank for no tax on fees.
+
+**Enable Admin UI:** Show the standalone Fees management screen in the J2Commerce admin panel. Disable this only if you manage all fees at the product level and do not want the admin route.
 
 ## Managing Fees (Order-Level)
 
-When **Apply Fees Per** is set to **Order**, all fees are managed from the central Fees list. This list is accessible via:
+![](/img/additonal-fee-manage.webp)
 
-- **J2Commerce** -> **Apps** -> **Additional Fees** toolbar button **Manage Fees**, or
-- **System** -> **Manage** -> **Plugins** -> open **Additional Fees** -> click **Manage Fees** in the toolbar.
-
-<!-- SCREENSHOT: J2Commerce admin, Additional Fees list screen showing columns for Fee Name, Type, Amount, and the enabled toggle. -->
+When **Apply Fees Per** is set to **Order**, all fees are managed from the central Fees list.&#x20;
 
 ### Adding a new fee
 
-1. In the Fees list, click **New Fee** in the toolbar.
+In the Fees list, click **New Fee** in the toolbar.
 
-<!-- SCREENSHOT: Fees list with the "New Fee" toolbar button visible. -->
+![](/img/additonal-fee-manage-new.webp)
 
-2. Fill in the fee form:
-
-| Field | Description |
-|-------|-------------|
-| **Fee Name** | The label shown to customers (e.g., "Environmental Levy", "Handling Fee"). |
-| **Description** | Optional text displayed below the fee name in the checkout step. |
-| **Fee Type** | **Fixed** — a flat dollar amount. **Percentage** — a percentage of the order subtotal (or subtotal plus shipping, depending on **Order Price Based On**). |
-| **Amount** | The numeric value. For a percentage fee, enter `5` for 5 %. |
-| **Per Item** | When enabled, a fixed fee is multiplied by the total quantity of items in the cart. A $2 per-item fee on a cart with 3 items totals $6. |
-| **Min Order Qty** | Only apply this fee when the cart contains at least this many items. Leave `0` to ignore. |
-| **Max Order Qty** | Only apply this fee when the cart contains no more than this many items. Leave `0` to ignore. |
-| **Min Order Price** | Only apply this fee when the order subtotal is at or above this value. Leave `0` to ignore. |
-| **Max Order Price** | Only apply this fee when the order subtotal is at or below this value. Leave `0` to ignore. |
-| **Geo Zone** | Restrict this fee to one or more geozones. The fee applies only when the customer's billing address falls within the selected geozone(s). Leave blank to apply to all locations. |
-| **User IDs** | Comma-separated Joomla user IDs. The fee applies only to those specific accounts. Leave blank for all users. |
-| **User Groups** | Restrict this fee to customers in specific Joomla user groups (e.g., "Wholesale", "VIP"). Leave blank for all groups. |
-| **Category** | Restrict this fee to orders that contain a product linked to one of these Joomla content categories. Leave blank to apply regardless of category. |
+**Fill in the fee form:**
 
 <!-- SCREENSHOT: Fee add/edit form with all fields visible and a sample "Handling Fee" filled in. -->
 
-3. Click **Save** or **Save & New** to create another fee immediately.
+**Fee Name:** The label shown to customers (e.g., "Environmental Levy", "Handling Fee").
+
+**Description:** Optional text displayed below the fee name in the checkout step.
+
+**Fee Type: Fixed** — a flat dollar amount. **Percentage** — a percentage of the order subtotal (or subtotal plus shipping, depending on **Order Price Based On**).
+
+**Amount:** The numeric value. For a percentage fee, enter `5` for 5 %.
+
+**Per Item:** When enabled, a fixed fee is multiplied by the total quantity of items in the cart. A $2 per-item fee on a cart with 3 items totals $6.
+
+**Min Order Qty:** Only apply this fee when the cart contains at least this many items. Leave `0` to ignore.
+
+**Max Order Qty:** Only apply this fee when the cart contains no more than this many items. Leave `0` to ignore.
+
+**Min Order Price:** Only apply this fee when the order subtotal is at or above this value. Leave `0` to ignore.
+
+**Max Order Price:** Only apply this fee when the order subtotal is at or below this value. Leave `0` to ignore.
+
+**Geo Zone:** Restrict this fee to one or more geozones. The fee applies only when the customer's billing address falls within the selected geozone(s). Leave blank to apply to all locations.
+
+**User IDs:** Comma-separated Joomla user IDs. The fee applies only to those specific accounts. Leave blank for all users.
+
+**User Groups:** Restrict this fee to customers in specific Joomla user groups (e.g., "Wholesale", "VIP"). Leave blank for all groups.
+
+**Category:** Restrict this fee to orders that contain a product linked to one of these Joomla content categories. Leave blank to apply regardless of category.
 
 ### Editing an existing fee
 
@@ -142,9 +176,9 @@ When **Apply Fees Per** is set to **Product** in the plugin settings, fees are a
 
 <!-- SCREENSHOT: Product edit screen, Apps tab, with the Additional Fees accordion expanded showing the enable toggle and fee multi-select. -->
 
-4. Set **Enable Product-Level Fees** to **Yes**.
-5. In the **Applicable Fees** field, select all fees that should apply to this product. The dropdown shows all enabled fees from the central Fees list.
-6. Click **Save** or **Save & Close**.
+1. Set **Enable Product-Level Fees** to **Yes**.
+2. In the **Applicable Fees** field, select all fees that should apply to this product. The dropdown shows all enabled fees from the central Fees list.
+3. Click **Save** or **Save & Close**.
 
 When a customer adds this product to their cart, only the fees selected here are evaluated for this product. Fees not in the list are ignored for that product even if they would otherwise match the geozone, user group, or quantity rules.
 
@@ -168,12 +202,12 @@ When **Auto Apply Fees** is set to **No**, the checkout step presents a checklis
 
 ### Step positions explained
 
-| Position | Where in checkout |
-|----------|------------------|
-| After Billing | Immediately after the billing address step — earliest possible. Useful for fees that apply regardless of shipping. |
-| After Shipping | After the shipping method step — the fee can react to shipping totals if **Order Price Based On** is set to **Subtotal + Shipping**. |
-| Before Payment | After shipping, before the payment method step — good for upgrade fees the customer decides on before paying. |
-| Before Confirmation | The last step before the customer places the order — maximum visibility for optional add-ons. |
+| Position            | Where in checkout                                                                                                                    |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| After Billing       | Immediately after the billing address step — earliest possible. Useful for fees that apply regardless of shipping.                   |
+| After Shipping      | After the shipping method step — the fee can react to shipping totals if **Order Price Based On** is set to **Subtotal + Shipping**. |
+| Before Payment      | After shipping, before the payment method step — good for upgrade fees the customer decides on before paying.                        |
+| Before Confirmation | The last step before the customer places the order — maximum visibility for optional add-ons.                                        |
 
 ## Tax Handling
 
@@ -288,14 +322,14 @@ This section is a quick reference for developers integrating with or extending t
 
 ### Events subscribed
 
-| Event | When fired | What the handler does |
-|-------|-----------|----------------------|
-| `onJ2CommerceBeforeDisplayCart` | Cart view loads | Clears the `extrafee_selected` session key and removes all `extrafee_*` entries from `order_fees`. |
-| `onJ2CommerceAfterDisplayProductForm` | Product edit form renders | Injects the Additional Fees fieldset into the product Apps tab via `$event->addResult()`. |
-| `onJ2CommerceCheckoutStart` | Checkout page initializes | Registers `checkout.css` and `checkout.js` via the Web Asset Manager. |
-| `onJ2CommerceGetCheckoutSteps` | Checkout step list built | Registers `$this` (the plugin) as a `CheckoutStepInterface` step. |
-| `onJ2CommerceCheckoutCleanup` | Checkout controller cleans up after order placement | Removes all `extrafee_*` session keys. |
-| `onJ2CommerceAfterUpdateCart` | Cart model updates the cart | When auto-apply is on, rebuilds applicable fees and calls `CartOrder::addFee()` for each. |
+| Event                                 | When fired                                          | What the handler does                                                                              |
+| ------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `onJ2CommerceBeforeDisplayCart`       | Cart view loads                                     | Clears the `extrafee_selected` session key and removes all `extrafee_*` entries from `order_fees`. |
+| `onJ2CommerceAfterDisplayProductForm` | Product edit form renders                           | Injects the Additional Fees fieldset into the product Apps tab via `$event->addResult()`.          |
+| `onJ2CommerceCheckoutStart`           | Checkout page initializes                           | Registers `checkout.css` and `checkout.js` via the Web Asset Manager.                              |
+| `onJ2CommerceGetCheckoutSteps`        | Checkout step list built                            | Registers `$this` (the plugin) as a `CheckoutStepInterface` step.                                  |
+| `onJ2CommerceCheckoutCleanup`         | Checkout controller cleans up after order placement | Removes all `extrafee_*` session keys.                                                             |
+| `onJ2CommerceAfterUpdateCart`         | Cart model updates the cart                         | When auto-apply is on, rebuilds applicable fees and calls `CartOrder::addFee()` for each.          |
 
 ### CheckoutStepInterface
 
