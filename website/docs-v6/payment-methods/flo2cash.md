@@ -29,7 +29,7 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 <!-- SCREENSHOT: Joomla Extensions installer showing the payment_flo2cash.zip upload step -->
 
-## Configuration
+## Setup Before Configuration
 
 :::tip
 
