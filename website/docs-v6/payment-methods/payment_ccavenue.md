@@ -27,6 +27,12 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 ## Enable and Configure
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 After installation, go to **J2Commerce** -> **Payments** -> **Payment Methods** to find and configure CCAvenue.
 
 <!-- SCREENSHOT: Payment Methods list with CCAvenue visible -->
