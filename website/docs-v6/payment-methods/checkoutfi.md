@@ -105,6 +105,12 @@ Click **Save**. Then place a test order using the sandbox credentials. See [Sand
 
 ## Configuration reference
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 Every field in the plugin settings is explained here.
 
 ### Display settings
