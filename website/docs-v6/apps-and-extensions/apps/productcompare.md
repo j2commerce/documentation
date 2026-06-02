@@ -61,6 +61,12 @@ You can place this menu item in a hidden menu that is not displayed in the navig
 
 Go to **J2Commerce** **->** **Apps** and click on **Product Compare** to open its settings.
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 <!-- SCREENSHOT: Product Compare plugin configuration screen showing all tabs: Basic Settings, Display Settings, Messages, Icons, Advanced -->
 
 ### Basic Settings
