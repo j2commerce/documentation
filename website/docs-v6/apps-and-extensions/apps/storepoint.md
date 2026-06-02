@@ -49,13 +49,19 @@ After installation the plugin is enabled and ready to configure. There are two w
 
 All settings are on a single **General** tab.
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 <!-- SCREENSHOT: Storepoint plugin settings screen showing all four fields -->
 
 ### Storepoint Map ID
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Storepoint Map ID** | The Map ID from your Storepoint embed code. Required — the widget will not load without it. | _(empty)_ |
+| Field                 | Description                                                                                 | Default   |
+| --------------------- | ------------------------------------------------------------------------------------------- | --------- |
+| **Storepoint Map ID** | The Map ID from your Storepoint embed code. Required — the widget will not load without it. | *(empty)* |
 
 Find your Map ID inside your Storepoint dashboard. When you view the embed code for your map, it appears as the `data-map-id` attribute value in the snippet, for example:
 
@@ -73,31 +79,33 @@ If **Storepoint Map ID** is empty, the widget is silently skipped on all article
 
 The **Display Location** dropdown controls where the widget appears within the article.
 
-| Option | Widget appears… |
-|--------|-----------------|
-| **After article title** | Between the article title and the article body |
-| **Before article content** | Immediately before the article body text |
-| **After article content** | Immediately after the article body text (default) |
+| Option                     | Widget appears…                                   |
+| -------------------------- | ------------------------------------------------- |
+| **After article title**    | Between the article title and the article body    |
+| **Before article content** | Immediately before the article body text          |
+| **After article content**  | Immediately after the article body text (default) |
 
 **Recommended default:** "After article content" places the map after your store or brand information, where shoppers naturally look next.
 
 ### Menu Items
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Menu Items** | Select menu items (linked to articles) where the widget should appear. Leave empty to show on all articles. | _(empty — all articles)_ |
+| Field          | Description                                                                                                 | Default                  |
+| -------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------ |
+| **Menu Items** | Select menu items (linked to articles) where the widget should appear. Leave empty to show on all articles. | *(empty — all articles)* |
 
 This field accepts menu items that link to individual Joomla articles (`com_content` article view). Select one or more menu items to restrict the widget to specific articles. When the field is empty, the widget appears on every `com_content` article page.
 
 :::note Articles accessed directly by URL
+
 The **Menu Items** filter works by resolving the menu item to its linked article ID. Articles visited through a URL that does not match any selected menu item will not show the widget, even if the article would otherwise qualify. If you want the widget on every store-locator article regardless of the URL used to reach it, leave the field empty.
+
 :::
 
 ### Debug Mode
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Mode** | When **Yes**, writes diagnostic log entries to `administrator/logs/plg_j2commerce_app_storepoint.php`. | No |
+| Field          | Description                                                                                            | Default |
+| -------------- | ------------------------------------------------------------------------------------------------------ | ------- |
+| **Debug Mode** | When **Yes**, writes diagnostic log entries to `administrator/logs/plg_j2commerce_app_storepoint.php`. | No      |
 
 Always leave this **No** on a live site. Enable it temporarily only when diagnosing why the widget is not appearing.
 
