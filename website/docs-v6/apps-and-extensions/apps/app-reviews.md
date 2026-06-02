@@ -42,6 +42,12 @@ Look for **Product Review**, click the **X,** and it will turn into a green ch
 
 ## Configure the App
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 ### Basic Settings
 
 ![](/img/product-review-basic.webp)
@@ -266,7 +272,7 @@ Go to **J2Commerce** -> **Apps** -> **Product Reviews** -> **Manage** Reviews to
 
 ![](/img/product-review-manage-bulk.webp)
 
-- Click the **checkbox (**next to the individual review or select more than one) **-> Action.**&#x20;
+- Click the \*\*checkbox (\*\*next to the individual review or select more than one) **-> Action.**&#x20;
 - Use the **Bulk Actions** dropdown to approve, reject, mark as spam, or delete multiple selected reviews at once.
 
 ### Filter Reviews
