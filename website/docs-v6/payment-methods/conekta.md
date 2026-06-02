@@ -13,7 +13,7 @@ Card payments are tokenized in the customer's browser by the Conekta JavaScript 
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
----
+***
 
 ## Why Mexican Stores Need Conekta
 
@@ -25,17 +25,17 @@ More than 40% of Mexican online buyers prefer to pay with cash or direct bank tr
 
 Without Conekta, roughly 40% of Mexican buyers cannot complete a purchase on your store. Enabling all three modes gives every Mexican shopper a path to checkout.
 
----
+***
 
 ## Supported Payment Modes
 
-| Mode | Settlement | Best For |
-|------|-----------|---------|
-| **Credit / Debit Card** | Instant | All product types |
-| **OXXO Cash Voucher** | 1–3 business days after store visit | Physical goods, cash-preference customers |
-| **SPEI Bank Transfer** | Minutes to hours | High-value orders, B2B, bank-preference customers |
+| Mode                    | Settlement                          | Best For                                          |
+| ----------------------- | ----------------------------------- | ------------------------------------------------- |
+| **Credit / Debit Card** | Instant                             | All product types                                 |
+| **OXXO Cash Voucher**   | 1–3 business days after store visit | Physical goods, cash-preference customers         |
+| **SPEI Bank Transfer**  | Minutes to hours                    | High-value orders, B2B, bank-preference customers |
 
----
+***
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ Before installing the plugin, confirm the following:
 - For live mode: your Conekta account is verified with a valid **Mexican RFC** (tax ID) — Conekta requires this for production OXXO and SPEI
 - Your store currency is **MXN** — OXXO and SPEI only process in Mexican pesos; card payments in USD are supported on some Conekta account types
 
----
+***
 
 ## Get Your Conekta API Keys
 
@@ -74,7 +74,7 @@ Never share your **Private Key** publicly or commit it to version control. It au
 
 :::
 
----
+***
 
 ## Get Your Webhook Signing Key
 
@@ -88,7 +88,7 @@ The webhook signing key is separate from the API keys. Conekta signs every webho
 
 <!-- SCREENSHOT: Conekta Webhooks page showing the Signing Secret field with a Copy button -->
 
----
+***
 
 ## Purchase and Download
 
@@ -96,7 +96,7 @@ The webhook signing key is separate from the API keys. Conekta signs every webho
 2. Add it to your cart and complete checkout.
 3. Under your account menu, go to **My Downloads** and download the `payment_conekta.zip` file.
 
----
+***
 
 ## Install and Enable
 
@@ -116,7 +116,7 @@ The webhook signing key is separate from the API keys. Conekta signs every webho
 
 <!-- SCREENSHOT: J2Commerce Payment Methods list showing Conekta with the Enabled toggle -->
 
----
+***
 
 ## Register Your Webhook URL
 
@@ -137,9 +137,15 @@ The plugin automatically generates your webhook URL. Copy it into Conekta's dash
 
 <!-- SCREENSHOT: Conekta Add Webhook screen with the J2Commerce webhook URL pasted and events selected -->
 
----
+***
 
 ## Configuration Walkthrough
+
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
 
 Click the **Conekta** payment method title to open the plugin settings. Settings are organized into three tabs: **Basic Settings**, **Payment Methods**, and **Advanced**.
 
@@ -149,18 +155,18 @@ Click the **Conekta** payment method title to open the plugin settings. Settings
 
 <!-- SCREENSHOT: Basic Settings tab with all fields visible including sandbox toggle, key fields, and webhook fields -->
 
-| Field | Description | Recommended Value |
-|-------|-------------|-------------------|
-| **Payment Method Name** | Label shown to customers at checkout | `Conekta` |
-| **Payment Method Image** | URL or path to a logo image shown at checkout | Leave blank for the default Conekta logo |
-| **Display Image** | Whether to show the image next to the payment method name | **Yes** |
-| **Sandbox** | Toggle between test mode and live mode | **Yes** while testing; **No** when going live |
-| **Live Public Key** | Your production Public Key from the Conekta live dashboard | Visible only when Sandbox is **No** |
-| **Live Private Key** | Your production Private Key | Visible only when Sandbox is **No** |
-| **Test Public Key** | Your sandbox Public Key from the Conekta test panel | Visible only when Sandbox is **Yes** |
-| **Test Private Key** | Your sandbox Private Key | Visible only when Sandbox is **Yes** |
-| **Webhook Signing Key** | The signing secret copied from your Conekta webhook entry | Required for OXXO and SPEI |
-| **Webhook URL** | Auto-generated URL for Conekta to call — copy this into Conekta's Webhooks settings | Read-only display field with Copy button |
+| Field                    | Description                                                                         | Recommended Value                             |
+| ------------------------ | ----------------------------------------------------------------------------------- | --------------------------------------------- |
+| **Payment Method Name**  | Label shown to customers at checkout                                                | `Conekta`                                     |
+| **Payment Method Image** | URL or path to a logo image shown at checkout                                       | Leave blank for the default Conekta logo      |
+| **Display Image**        | Whether to show the image next to the payment method name                           | **Yes**                                       |
+| **Sandbox**              | Toggle between test mode and live mode                                              | **Yes** while testing; **No** when going live |
+| **Live Public Key**      | Your production Public Key from the Conekta live dashboard                          | Visible only when Sandbox is **No**           |
+| **Live Private Key**     | Your production Private Key                                                         | Visible only when Sandbox is **No**           |
+| **Test Public Key**      | Your sandbox Public Key from the Conekta test panel                                 | Visible only when Sandbox is **Yes**          |
+| **Test Private Key**     | Your sandbox Private Key                                                            | Visible only when Sandbox is **Yes**          |
+| **Webhook Signing Key**  | The signing secret copied from your Conekta webhook entry                           | Required for OXXO and SPEI                    |
+| **Webhook URL**          | Auto-generated URL for Conekta to call — copy this into Conekta's Webhooks settings | Read-only display field with Copy button      |
 
 :::info
 
@@ -168,7 +174,7 @@ When **Sandbox** is set to **Yes**, the plugin uses your Test keys and sends cha
 
 :::
 
----
+***
 
 ### Payment Methods Tab
 
@@ -176,11 +182,11 @@ This tab controls which of the three Conekta modes appear to customers at checko
 
 <!-- SCREENSHOT: Payment Methods tab with Enable Card, Enable OXXO, Enable SPEI toggles -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field           | Description                                     | Default |
+| --------------- | ----------------------------------------------- | ------- |
 | **Enable Card** | Show the credit / debit card option at checkout | **Yes** |
-| **Enable OXXO** | Show the OXXO cash voucher option at checkout | **Yes** |
-| **Enable SPEI** | Show the SPEI bank transfer option at checkout | **Yes** |
+| **Enable OXXO** | Show the OXXO cash voucher option at checkout   | **Yes** |
+| **Enable SPEI** | Show the SPEI bank transfer option at checkout  | **Yes** |
 
 The **Registration** item at the bottom of this tab is informational — it links to Conekta's partner registration page if you need to create or verify your merchant account.
 
@@ -190,19 +196,19 @@ The **Registration** item at the bottom of this tab is informational — it link
 - **Disable SPEI** for general consumer stores where bank-wire instructions feel unfamiliar. Keep SPEI enabled for B2B or high-ticket stores where bank transfers are standard.
 - **Disable Card** only if you want to force a cash-only or bank-transfer-only flow — this is unusual and not recommended for most stores.
 
----
+***
 
 ### Advanced Tab
 
 <!-- SCREENSHOT: Advanced tab showing Send Notification, Geo-Zone, Payment Article, Cancel Article, and Debug fields -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Send Notification** | Send a J2Commerce order status email when payment is confirmed (by card approval or incoming webhook) | **Yes** |
-| **Geo-Zone** | Restrict Conekta to customers in a specific geo-zone. Leave at All Zones to show it to everyone | All Zones |
-| **Payment Article** | A Joomla article to display on the confirmation page after a successful payment | None |
-| **Cancel Article** | A Joomla article to redirect the customer to if they cancel a payment | None (returns to cart) |
-| **Debug** | Write Conekta API activity and webhook event details to the Joomla log | **No** |
+| Field                 | Description                                                                                           | Default                |
+| --------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------- |
+| **Send Notification** | Send a J2Commerce order status email when payment is confirmed (by card approval or incoming webhook) | **Yes**                |
+| **Geo-Zone**          | Restrict Conekta to customers in a specific geo-zone. Leave at All Zones to show it to everyone       | All Zones              |
+| **Payment Article**   | A Joomla article to display on the confirmation page after a successful payment                       | None                   |
+| **Cancel Article**    | A Joomla article to redirect the customer to if they cancel a payment                                 | None (returns to cart) |
+| **Debug**             | Write Conekta API activity and webhook event details to the Joomla log                                | **No**                 |
 
 :::tip
 
@@ -210,7 +216,7 @@ Enable **Debug** only while troubleshooting. The log includes full API request a
 
 :::
 
----
+***
 
 ## Sandbox Testing
 
@@ -218,11 +224,11 @@ Enable **Debug** only while troubleshooting. The log includes full API request a
 
 These card numbers only work in sandbox mode and never process a real charge. Use any future expiry date and any three-digit CVV.
 
-| Card Number | Network | Expected Result |
-|-------------|---------|----------------|
-| `4242 4242 4242 4242` | Visa | Successful payment |
-| `5100 0000 0000 0081` | Mastercard | Successful payment |
-| `4000 0000 0000 0002` | Visa | Declined — do not honor |
+| Card Number           | Network    | Expected Result         |
+| --------------------- | ---------- | ----------------------- |
+| `4242 4242 4242 4242` | Visa       | Successful payment      |
+| `5100 0000 0000 0081` | Mastercard | Successful payment      |
+| `4000 0000 0000 0002` | Visa       | Declined — do not honor |
 
 For a full list of test cards covering 3DS challenges and specific processor declines, see the [Conekta testing documentation](https://developers.conekta.com/docs/testing).
 
@@ -249,7 +255,7 @@ Before switching to live mode, verify each of these flows in sandbox:
 - [ ] A test `order.paid` webhook from the Conekta dashboard updates the order status to Confirmed
 - [ ] A test `charge.declined` webhook updates the order status to Failed
 
----
+***
 
 ## Going Live Checklist
 
@@ -266,27 +272,27 @@ Before setting **Sandbox** to **No** and accepting real payments:
 - [ ] **Debug** is set to **No**
 - [ ] OXXO and SPEI are disabled if your store sells digital goods with immediate delivery
 
----
+***
 
 ## What Is New vs the J2Store Version
 
 The J2Commerce 6 version includes substantial improvements over the original J2Store plugin:
 
-| Area | Change |
-|------|--------|
-| **Webhook signature verification** | The J2Store version accepted any POST request to the webhook URL with zero authentication — anyone who discovered the URL could mark orders as paid. J2Commerce 6 validates every incoming webhook using HMAC SHA-256 against the signing key. Requests without a valid signature are rejected with a 401 immediately. |
-| **Installer class name corrected** | The J2Store installer class was named after a different payment plugin (a copy-paste error), so the preflight check — which verifies J2Commerce is installed and at the required version — never ran during installation. The correct class name is used in J2Commerce 6. |
-| **Order status events fire correctly** | The J2Store version updated order status using J2Store internal model calls that bypassed the event system entirely. The J2Commerce 6 version routes all status changes through `OrderModel::updateOrderStatus()` so email notifications, order history, and third-party listeners (such as app_pdfinvoices) all fire as expected. |
-| **PCI scope reduced to SAQ-A** | The J2Store version posted raw card fields (card number, CVV, cardholder name) to the PHP server as hidden form inputs, even though a Conekta token was also generated. This unnecessarily expanded PCI scope to SAQ-D. J2Commerce 6 sends only the Conekta token to the server — raw card data never leaves the browser. |
+| Area                                          | Change                                                                                                                                                                                                                                                                                                                                   |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Webhook signature verification**            | The J2Store version accepted any POST request to the webhook URL with zero authentication — anyone who discovered the URL could mark orders as paid. J2Commerce 6 validates every incoming webhook using HMAC SHA-256 against the signing key. Requests without a valid signature are rejected with a 401 immediately.                   |
+| **Installer class name corrected**            | The J2Store installer class was named after a different payment plugin (a copy-paste error), so the preflight check — which verifies J2Commerce is installed and at the required version — never ran during installation. The correct class name is used in J2Commerce 6.                                                                |
+| **Order status events fire correctly**        | The J2Store version updated order status using J2Store internal model calls that bypassed the event system entirely. The J2Commerce 6 version routes all status changes through `OrderModel::updateOrderStatus()` so email notifications, order history, and third-party listeners (such as app\_pdfinvoices) all fire as expected.      |
+| **PCI scope reduced to SAQ-A**                | The J2Store version posted raw card fields (card number, CVV, cardholder name) to the PHP server as hidden form inputs, even though a Conekta token was also generated. This unnecessarily expanded PCI scope to SAQ-D. J2Commerce 6 sends only the Conekta token to the server — raw card data never leaves the browser.                |
 | **Hardcoded Spanish moved to language files** | OXXO and SPEI payment instructions (`Monto a pagar`, `Ficha digital`, `Acude a la tienda OXXO más cercana`) were embedded directly in the PHP templates in the J2Store version, making them impossible to translate. All user-visible strings are now in language `.ini` files with en-US, en-GB, es-ES, and genuine es-MX translations. |
-| **Error messages fixed** | The J2Store version had a typo (`getMesage()`) in six error-handling catch blocks. Calling an undefined method inside a catch block caused PHP to throw a secondary error and show the customer a blank screen instead of an error message. All six are corrected to `getMessage()` in J2Commerce 6. |
-| **Dead switch branch removed** | A switch case in the J2Store version checked for the string `'pre_authorized y voided'` — using the Spanish word "y" for "and" instead of a real Conekta status value. That branch was unreachable and could never fire. J2Commerce 6 maps real Conekta API statuses to the correct J2Commerce order state IDs. |
-| **CSS path typo fixed** | The J2Store version referenced the OXXO stylesheet using the path `plg_j2store_payment_coneckta` (with an extra "k"), which produced a 404 and left the OXXO voucher panel completely unstyled. The correct path is used in J2Commerce 6. |
-| **Refactored payment processing** | The J2Store version had a single 347-line method handling credit, OXXO, and SPEI charges with nearly-duplicated code. J2Commerce 6 separates these into dedicated per-mode methods sharing a common payload builder — easier to maintain and debug. |
-| **Vanilla JavaScript** | The J2Store version used a jQuery IIFE with `$.ajax()` calls. J2Commerce 6 uses standard `fetch()` with async/await and `addEventListener()` — no jQuery dependency. |
-| **Genuine Mexican Spanish** | The J2Store version shipped an es-MX language pack that was a byte-for-byte copy of the es-ES (Spain Spanish) file. J2Commerce 6 includes an authentic Mexican Spanish translation. |
+| **Error messages fixed**                      | The J2Store version had a typo (`getMesage()`) in six error-handling catch blocks. Calling an undefined method inside a catch block caused PHP to throw a secondary error and show the customer a blank screen instead of an error message. All six are corrected to `getMessage()` in J2Commerce 6.                                     |
+| **Dead switch branch removed**                | A switch case in the J2Store version checked for the string `'pre_authorized y voided'` — using the Spanish word "y" for "and" instead of a real Conekta status value. That branch was unreachable and could never fire. J2Commerce 6 maps real Conekta API statuses to the correct J2Commerce order state IDs.                          |
+| **CSS path typo fixed**                       | The J2Store version referenced the OXXO stylesheet using the path `plg_j2store_payment_coneckta` (with an extra "k"), which produced a 404 and left the OXXO voucher panel completely unstyled. The correct path is used in J2Commerce 6.                                                                                                |
+| **Refactored payment processing**             | The J2Store version had a single 347-line method handling credit, OXXO, and SPEI charges with nearly-duplicated code. J2Commerce 6 separates these into dedicated per-mode methods sharing a common payload builder — easier to maintain and debug.                                                                                      |
+| **Vanilla JavaScript**                        | The J2Store version used a jQuery IIFE with `$.ajax()` calls. J2Commerce 6 uses standard `fetch()` with async/await and `addEventListener()` — no jQuery dependency.                                                                                                                                                                     |
+| **Genuine Mexican Spanish**                   | The J2Store version shipped an es-MX language pack that was a byte-for-byte copy of the es-ES (Spain Spanish) file. J2Commerce 6 includes an authentic Mexican Spanish translation.                                                                                                                                                      |
 
----
+***
 
 ## Troubleshooting
 
@@ -349,7 +355,7 @@ Conekta uses **different signing keys** for sandbox and live webhooks. If your p
 
 Update to J2Commerce 6.0.0 of this plugin. The error-handling typo is corrected — declined cards now display a clear error message and return the customer to the payment step.
 
----
+***
 
 ## Support
 
