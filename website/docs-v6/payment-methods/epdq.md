@@ -56,6 +56,12 @@ ePDQ is a payment gateway originally launched by Barclays Merchant Services for 
 
 ## Configuration
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 Navigate to **System → Plugins → J2Commerce - ePDQ Payment** to configure the plugin.
 
 ### Gateway credentials
