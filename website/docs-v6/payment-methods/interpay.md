@@ -48,7 +48,13 @@ Log in to your InterPay Canada merchant account and note down your **TERMID** an
 
 If you plan to test with the sandbox first, InterPay provides a separate **Test TERMID** and **Test Password** for sandbox transactions. The sandbox TERMID defaults to `TESTTERM`; InterPay support can confirm the correct test password for your account.
 
-### Step 3: Open the Plugin Configuration
+### Step 3: Configuration
+
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
 
 1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
 2. Find **InterPay** in the list and click its name to open the configuration.
