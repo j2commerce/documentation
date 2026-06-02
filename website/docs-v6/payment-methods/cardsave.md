@@ -92,6 +92,12 @@ To confirm the plugin is active:
 
 ## Configuration
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 Go to **J2Commerce** -> **Payments** -> **Payment Methods** and click **CardSave** to open the settings panel.
 
 <!-- SCREENSHOT: J2Commerce Payment Methods editor for CardSave showing the full settings panel with the sunset warning banner visible at the top -->
