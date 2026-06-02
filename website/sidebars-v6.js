@@ -217,7 +217,7 @@ const sidebars = {
                         // Add to User Group
                         'apps-and-extensions/apps/usergroup',
                         // Additional Fees
-                        'apps-and-extensions/apps/additional_fee',
+                        'apps-and-extensions/apps/extrafee',
                         // Additional Terms
                         'apps-and-extensions/apps/additionalterms',
                         // Address Autocomplete
@@ -225,7 +225,7 @@ const sidebars = {
                         // Already Purchased Badge
                         'apps-and-extensions/apps/app_alreadypurchased',
                         // Advanced Cart Drawer
-                        'apps-and-extensions/apps/advancedcart',
+                        'apps-and-extensions/apps/j2commerce_advancedcart',
                         // Advanced Tax Rates (there is a duplicate)
                         'apps-and-extensions/apps/taxrate',
                         // Akeeba Release System Download ID (there is a duplicate)
@@ -284,8 +284,6 @@ const sidebars = {
                         'apps-and-extensions/apps/klaviyo',
                         // Minimum Order Restriction
                         'apps-and-extensions/apps/minimumorder',
-                        // Modal Bouncer
-                        'apps-and-extensions/apps/app_modalbouncer',
                         // Opening Hours
                         'apps-and-extensions/apps/openinghours',
                         // Order Files
@@ -404,8 +402,6 @@ const sidebars = {
             items: [
                 // 2Checkout (Verifone) — Legacy Redirect Gateway
                 'payment-methods/2checkout',
-                // Adyen Payment
-                'payment-methods/payment_adyen',
                 // Alipay Payment
                 'payment-methods/alipay',
                 // Authorize.Net Payment Plugin
@@ -458,8 +454,6 @@ const sidebars = {
                 'payment-methods/payment_moneyorder',
                 // MultiSafepay
                 'payment-methods/multisafepay',
-                // Opayo (Sage Pay) Card Payments
-                'payment-methods/payment_opayo',
                 // PayPal Payment
                 'payment-methods/payment_paypal',
                 // PayPal Complete
