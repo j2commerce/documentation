@@ -47,6 +47,12 @@ After installation, the plugin is enabled automatically. To verify:
 
 Open the plugin settings by clicking **Simplify Payments** in **J2Commerce** -> **Payments** -> **Payment Methods**.
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 <!-- Screenshot: J2Commerce Payment Methods editor for Simplify Payments, showing the full configuration panel -->
 
 All configuration fields are on a single settings panel. The table below describes every field in the order it appears.
