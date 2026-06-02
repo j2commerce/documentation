@@ -44,6 +44,12 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 ### Step 2: Open the Plugin Configuration
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
 2. Find **MultiSafepay** in the list and click its name to open the configuration.
 
