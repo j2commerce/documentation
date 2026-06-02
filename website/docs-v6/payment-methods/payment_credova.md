@@ -46,6 +46,12 @@ Click the **Toggle Inline Help** button at the top of the plugin settings page t
 
 ## Configuring the Plugin
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 ### Display Settings
 
 **Display Name:** The label shown to customers at checkout when they select Credova as their payment method. Default is `Credova Financing`.
