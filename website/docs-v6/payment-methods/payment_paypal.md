@@ -61,7 +61,7 @@ After enabling the plugin, click the **Cash on Demand** title to open the settin
 
 :::tip
 
-**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+**Tip**: Click on the **Toggle Inline Help** button on any app/plugin you install and it will show a description below each section. See image below
 
 :::
 
