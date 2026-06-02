@@ -229,7 +229,7 @@ When a customer browses your store:
 
 ## Frontend Product View
 
-![](/img/wishlist-frontend-product.webp)
+![](/img/wishlist-frontend-product1.webp)
 
 ## Frontend Category View
 
@@ -239,7 +239,7 @@ When a customer browses your store:
 
 ![](/img/wishlist-frontend.webp)
 
-You can add the product to the cart indivually or you can all multiple in bulk by click on the boxes in the top left corner.&#x20;
+You can add the product to the cart individually, or you can add multiple in bulk by clicking on the boxes in the top left corner.&#x20;
 
 :::info
 
