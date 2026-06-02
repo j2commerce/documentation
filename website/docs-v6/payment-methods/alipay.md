@@ -15,7 +15,7 @@ Alipay retired the MAPI/MD5 `create_forex_trade` product for **new** merchant si
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
----
+***
 
 ## Supported Currencies
 
@@ -25,7 +25,7 @@ USD, HKD, GBP, EUR, JPY, KRW, CHF, CAD, AUD, NZD, SGD, MYR, TWD, THB, NOK, SEK, 
 
 If your store's active currency is not on this list, Alipay will refuse the transaction and the customer will see an error message.
 
----
+***
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ Before you install the plugin, confirm you have all of the following:
 - Your **Partner ID (PID)** and **MD5 security key** from the Alipay merchant portal
 - (Optional) Separate sandbox Partner ID and MD5 key for testing
 
----
+***
 
 ## Installation
 
@@ -49,7 +49,7 @@ After installation, go to **J2Commerce** -> **Payments** -> **Payment Methods** 
 
 <!-- SCREENSHOT: Payment Methods list showing Alipay listed and enabled -->
 
----
+***
 
 ## Configuration
 
@@ -57,41 +57,47 @@ Open the Alipay payment method in your payment methods list and work through eac
 
 ### Alipay Credentials tab
 
-| Field | Description | Notes |
-|-------|-------------|-------|
-| **Display Name** | The label shown to customers at checkout | Default: `Alipay` |
-| **Display Image** | Logo image shown next to the payment name | A default Alipay logo is included; replace with your own if needed |
-| **Partner ID** | Your live Alipay Partner ID (PID) | Required for live transactions |
-| **MD5 Key** | Your live Alipay MD5 security key | Stored encrypted; hidden in the admin form |
-| **Use Sandbox** | Toggle sandbox mode on/off | Set to **Yes** while testing; always turn off before going live |
-| **Sandbox Partner ID** | Partner ID for the Alipay sandbox | Appears only when **Use Sandbox** is enabled |
-| **Sandbox MD5 Key** | MD5 key for the sandbox environment | Appears only when **Use Sandbox** is enabled |
-| **Debug Mode** | Write all gateway interactions to the J2Commerce log file | Never enable on a live store; disable when testing is complete |
+| Field                  | Description                                               | Notes                                                              |
+| ---------------------- | --------------------------------------------------------- | ------------------------------------------------------------------ |
+| **Display Name**       | The label shown to customers at checkout                  | Default: `Alipay`                                                  |
+| **Display Image**      | Logo image shown next to the payment name                 | A default Alipay logo is included; replace with your own if needed |
+| **Partner ID**         | Your live Alipay Partner ID (PID)                         | Required for live transactions                                     |
+| **MD5 Key**            | Your live Alipay MD5 security key                         | Stored encrypted; hidden in the admin form                         |
+| **Use Sandbox**        | Toggle sandbox mode on/off                                | Set to **Yes** while testing; always turn off before going live    |
+| **Sandbox Partner ID** | Partner ID for the Alipay sandbox                         | Appears only when **Use Sandbox** is enabled                       |
+| **Sandbox MD5 Key**    | MD5 key for the sandbox environment                       | Appears only when **Use Sandbox** is enabled                       |
+| **Debug Mode**         | Write all gateway interactions to the J2Commerce log file | Never enable on a live store; disable when testing is complete     |
 
 <!-- SCREENSHOT: Alipay Credentials tab in payment method configuration -->
 
 ### Payment Settings tab
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **After Payment Status** | Order status set when Alipay confirms payment | `1` (Confirmed) |
-| **Failed Status** | Order status set when Alipay reports failure or cancellation | `3` (Failed) |
-| **On Selection text** | Custom HTML shown when the customer picks Alipay at checkout | Empty |
-| **Before Payment text** | Custom HTML shown on the order confirmation page before the "Place Order" button | Empty |
-| **After Payment text** | Custom HTML shown on the return page after a successful payment | Empty |
-| **On Error text** | Custom HTML shown if the payment fails | Empty |
-| **On Cancel text** | Custom HTML shown if the customer cancels at Alipay | Empty |
-| **Button Text** | Label on the submit button that sends the customer to Alipay | `Place Order` |
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+| Field                    | Description                                                                      | Default         |
+| ------------------------ | -------------------------------------------------------------------------------- | --------------- |
+| **After Payment Status** | Order status set when Alipay confirms payment                                    | `1` (Confirmed) |
+| **Failed Status**        | Order status set when Alipay reports failure or cancellation                     | `3` (Failed)    |
+| **On Selection text**    | Custom HTML shown when the customer picks Alipay at checkout                     | Empty           |
+| **Before Payment text**  | Custom HTML shown on the order confirmation page before the "Place Order" button | Empty           |
+| **After Payment text**   | Custom HTML shown on the return page after a successful payment                  | Empty           |
+| **On Error text**        | Custom HTML shown if the payment fails                                           | Empty           |
+| **On Cancel text**       | Custom HTML shown if the customer cancels at Alipay                              | Empty           |
+| **Button Text**          | Label on the submit button that sends the customer to Alipay                     | `Place Order`   |
 
 ### Restrictions tab
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Geozone** | Limit Alipay to customers in a specific geozone; leave at **All Geozones** to show to everyone | All Geozones |
-| **Minimum Order Subtotal** | Hide Alipay if the cart subtotal is below this amount (`0` = no minimum) | `0` |
-| **Maximum Order Subtotal** | Hide Alipay if the cart subtotal is above this amount (`0` = no maximum) | `0` |
+| Field                      | Description                                                                                    | Default      |
+| -------------------------- | ---------------------------------------------------------------------------------------------- | ------------ |
+| **Geozone**                | Limit Alipay to customers in a specific geozone; leave at **All Geozones** to show to everyone | All Geozones |
+| **Minimum Order Subtotal** | Hide Alipay if the cart subtotal is below this amount (`0` = no minimum)                       | `0`          |
+| **Maximum Order Subtotal** | Hide Alipay if the cart subtotal is above this amount (`0` = no maximum)                       | `0`          |
 
----
+***
 
 ## How It Works — Checkout Flow
 
@@ -102,16 +108,19 @@ Understanding the two-step confirmation process helps you diagnose issues and co
 3. **Customer clicks Place Order.** The browser submits a signed form directly to Alipay's gateway (`mapi.alipay.com` in live mode, `openapi.alipaydev.com` in sandbox mode).
 4. **Customer pays at Alipay.** They log in to their Alipay account and complete the transaction on Alipay's site.
 5. **Two things happen in parallel after payment:**
+
    - The customer's browser is redirected back to your store (this is a convenience redirect — it does not confirm the order on its own).
    - Alipay makes a **server-to-server notify call** (IPN) to your store at a URL like `index.php?option=com_ajax&plugin=payment_alipay&group=j2commerce&format=raw`. This is what actually updates the order status.
 6. **The server-side notify fires.** J2Commerce verifies the MD5 signature, checks that the amount and currency match the order on file, records the notification to prevent duplicate processing, and then updates the order status to **Confirmed** (or your configured **After Payment Status**).
 7. **The order confirmation email is sent** and the customer sees the **After Payment text** on the return page.
 
 :::tip Server-to-server notify is required
+
 If your store's notify URL is blocked by a firewall or your hosting does not allow incoming connections on standard HTTP ports, orders will remain in a pending state even after the customer pays. The browser redirect alone does not finalize the order.
+
 :::
 
----
+***
 
 ## Sandbox Testing
 
@@ -128,10 +137,12 @@ Use sandbox mode to verify your configuration without processing real payments.
 <!-- SCREENSHOT: Plugin configuration with Use Sandbox enabled showing sandbox fields -->
 
 :::caution Turn off Debug Mode in production
+
 Debug Mode writes the full gateway payload to the log file, which may include order totals and transaction IDs. It should never be left on in a live store.
+
 :::
 
----
+***
 
 ## What Changed from J2Store
 
@@ -147,7 +158,7 @@ If you previously used this plugin with J2Store, here is what improved in the J2
 - **No more standalone success.php.** The original plugin included a direct-access PHP file at `tmpl/success.php` that could be called outside of Joomla. The new version routes all callbacks through Joomla's `com_ajax` component.
 - **Centralized logging.** Debug output is written to Joomla's standard log system instead of raw file writes to the `cache/` directory.
 
----
+***
 
 ## Troubleshooting
 
@@ -156,6 +167,7 @@ If you previously used this plugin with J2Store, here is what improved in the J2
 **Cause:** The server-to-server notify from Alipay never reached your store.
 
 **Steps to resolve:**
+
 1. Confirm the notify URL `index.php?option=com_ajax&plugin=payment_alipay&group=j2commerce&format=raw` is publicly reachable. Test it from outside your network.
 2. Check that your server firewall allows incoming HTTP/HTTPS connections from Alipay's IP ranges.
 3. Enable **Debug Mode**, repeat the test payment, and review the log for any error entries.
@@ -172,6 +184,7 @@ If you previously used this plugin with J2Store, here is what improved in the J2
 **Cause:** Either the MD5 key entered in the plugin does not match the key in your Alipay merchant account, or you have Sandbox mode enabled but are using live credentials (or the reverse).
 
 **Steps to resolve:**
+
 1. Log in to the Alipay merchant portal and copy the MD5 key again exactly, including any leading/trailing characters.
 2. Verify that **Use Sandbox** matches the environment you are testing (sandbox or live).
 3. The MD5 key field is a password field — paste directly rather than typing to avoid transcription errors.
@@ -188,7 +201,7 @@ If you previously used this plugin with J2Store, here is what improved in the J2
 
 **Solution:** Update to the current version (6.0.0 or later), which includes replay protection. The first `notify_id` wins; subsequent retries for the same transaction are ignored.
 
----
+***
 
 ## Related Topics
 
