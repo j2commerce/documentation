@@ -50,7 +50,13 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 Look for **Pay Later / Pay Against Invoice**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-## Configure the Plugin
+## Configuration
+
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
 
 Click the **Pay Later / Pay Against Invoice** title to open the plugin settings.
 
@@ -112,6 +118,8 @@ The Pay Now button is shown only when all three of the following conditions are 
 1. The order's status matches one of the configured **Order Statuses** (or the setting is empty, meaning all statuses are allowed).
 2. The configured **interval time** has passed since the order was placed — this prevents the button from appearing while a gateway callback may still be in flight.
 3. The order was placed within the configured **expiry** window — the button will not appear for orders older than this limit.
+
+
 
 
 :::info Example: 
