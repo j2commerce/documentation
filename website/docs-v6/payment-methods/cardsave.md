@@ -7,14 +7,13 @@ description: "How to configure the CardSave legacy payment gateway plugin for J2
 
 # CardSave / Worldpay Legacy Gateway
 
-> **Legacy gateway — new sign-ups are not possible.**
-> This plugin is for store owners who already hold active pre-acquisition CardSave merchant credentials. If you do not have existing CardSave credentials, this plugin will not work. See [Migrating away from CardSave](#migrating-away-from-cardsave).
+> **Legacy gateway — new sign-ups are not possible.** This plugin is for store owners who already hold active pre-acquisition CardSave merchant credentials. If you do not have existing CardSave credentials, this plugin will not work. See [Migrating away from CardSave](#migrating-away-from-cardsave).
 
 This plugin connects J2Commerce to the CardSave payment gateway. It supports both a hosted payment page (low PCI scope) and an on-site card form via SOAP (high PCI scope).
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
 
----
+***
 
 ## What is CardSave?
 
@@ -24,7 +23,7 @@ Through all of these ownership changes, the legacy CardSave gateway endpoints ha
 
 **This plugin is a legacy bridge.** It exists only for merchants who signed up before the acquisition and still hold valid Merchant ID, password, and pre-shared key credentials. If you are one of those merchants, this plugin lets you keep your existing gateway integration working on J2Commerce without changing your banking relationship. When you are ready to migrate, see [Migrating away from CardSave](#migrating-away-from-cardsave).
 
----
+***
 
 ## Two payment modes
 
@@ -44,7 +43,7 @@ A card entry form is rendered directly on your checkout page. The customer enter
 
 > **Security warning:** Enabling Direct mode without current SAQ-D compliance exposes you to significant financial and legal liability if a data breach occurs. Use Hosted mode unless you have a confirmed business reason to collect card data on your server.
 
----
+***
 
 ## Prerequisites
 
@@ -68,7 +67,7 @@ Your CardSave credentials were emailed when your account was first created. Chec
 
 If you cannot locate these details, contact Worldpay merchant support. They inherited all legacy CardSave accounts and may be able to retrieve your credentials.
 
----
+***
 
 ## Installation
 
@@ -89,7 +88,7 @@ To confirm the plugin is active:
 
 <!-- SCREENSHOT: J2Commerce Payment Methods list showing CardSave enabled with a green status indicator -->
 
----
+***
 
 ## Configuration
 
@@ -99,15 +98,15 @@ Go to **J2Commerce** -> **Payments** -> **Payment Methods** and click **CardSave
 
 ### Display
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Display Name** | The label customers see at the payment selection step. | `CardSave` |
-| **Display Image** | An optional image displayed next to the payment name. | _(none)_ |
+| Field             | Description                                            | Default    |
+| ----------------- | ------------------------------------------------------ | ---------- |
+| **Display Name**  | The label customers see at the payment selection step. | `CardSave` |
+| **Display Image** | An optional image displayed next to the payment name.  | *(none)*   |
 
 ### Payment Mode
 
-| Field | Description | Default | Options |
-|-------|-------------|---------|---------|
+| Field            | Description                 | Default                             | Options                                                |
+| ---------------- | --------------------------- | ----------------------------------- | ------------------------------------------------------ |
 | **Payment Mode** | How card data is collected. | `Hosted Payment Page (recommended)` | Hosted Payment Page (recommended), Direct SOAP (SAQ-D) |
 
 Use **Hosted Payment Page** unless your organisation has completed PCI SAQ-D certification. See [Two payment modes](#two-payment-modes) above for a full explanation.
@@ -116,39 +115,45 @@ Use **Hosted Payment Page** unless your organisation has completed PCI SAQ-D cer
 
 ### Merchant Credentials
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Merchant ID** | Your CardSave Merchant ID. Find it in your CardSave welcome email. | _(empty)_ |
-| **Merchant Password** | Your CardSave account password. Stored securely. | _(empty)_ |
-| **Pre-Shared Key** | Your CardSave pre-shared key. Used to sign and verify payment hashes. | _(empty)_ |
-| **Payment Processor Domain** | The CardSave/Worldpay gateway domain. | `cardsaveonlinepayments.com` |
-| **Payment Processor Port** | The SOAP gateway port. | `4430` |
+| Field                        | Description                                                           | Default                      |
+| ---------------------------- | --------------------------------------------------------------------- | ---------------------------- |
+| **Merchant ID**              | Your CardSave Merchant ID. Find it in your CardSave welcome email.    | *(empty)*                    |
+| **Merchant Password**        | Your CardSave account password. Stored securely.                      | *(empty)*                    |
+| **Pre-Shared Key**           | Your CardSave pre-shared key. Used to sign and verify payment hashes. | *(empty)*                    |
+| **Payment Processor Domain** | The CardSave/Worldpay gateway domain.                                 | `cardsaveonlinepayments.com` |
+| **Payment Processor Port**   | The SOAP gateway port.                                                | `4430`                       |
 
 Leave **Payment Processor Domain** and **Payment Processor Port** at their defaults unless CardSave support has given you different values for your account.
 
 ### Hash Method
 
-| Field | Description | Default | Options |
-|-------|-------------|---------|---------|
+| Field           | Description                                                | Default     | Options                                                  |
+| --------------- | ---------------------------------------------------------- | ----------- | -------------------------------------------------------- |
 | **Hash Method** | The algorithm used to sign transaction data with CardSave. | `HMAC-SHA1` | HMAC-SHA1, HMAC-MD5, SHA1 (deprecated), MD5 (deprecated) |
 
 **Use HMAC-SHA1.** It incorporates your pre-shared key into the hash calculation, making the signature cryptographically much harder to forge. MD5 and plain SHA1 are included only for merchants whose CardSave account was originally configured with those methods. If your account supports HMAC-SHA1, switch to it — contact Worldpay support to update your account's hash configuration if needed.
 
 ### Order Description
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field                 | Description                                                                                                       | Default                |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------- |
 | **Order Description** | Text sent to CardSave alongside each transaction. Appears in your Worldpay merchant dashboard for reconciliation. | `Order Id - [ORDERID]` |
 
 Use `[ORDERID]` and `[INVOICE_NO]` as placeholders. The plugin replaces them with the actual order ID and invoice number at runtime. For example, `Order [ORDERID] - Inv [INVOICE_NO]` becomes `Order 1042 - Inv INV-1042` in your merchant dashboard.
 
 ### Order Statuses
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Authorized Order Status** | Status applied when CardSave approves payment. | `Confirmed` |
-| **Declined Order Status** | Status applied when CardSave declines payment or an error occurs. | `Failed` |
-| **Pending Order Status** | Status applied when 3D Secure authentication is pending (CardSave status code 3). | `Pending` |
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+| Field                       | Description                                                                       | Default     |
+| --------------------------- | --------------------------------------------------------------------------------- | ----------- |
+| **Authorized Order Status** | Status applied when CardSave approves payment.                                    | `Confirmed` |
+| **Declined Order Status**   | Status applied when CardSave declines payment or an error occurs.                 | `Failed`    |
+| **Pending Order Status**    | Status applied when 3D Secure authentication is pending (CardSave status code 3). | `Pending`   |
 
 All three status transitions route through J2Commerce's order status pipeline. This means notifications, order history entries, invoice emails, and digital download grants fire automatically on every change. Go to **J2Commerce** -> **Setup** -> **Order Statuses** to see and edit the available statuses.
 
@@ -156,79 +161,79 @@ All three status transitions route through J2Commerce's order status pipeline. T
 
 Add an optional surcharge for customers paying with CardSave. Leave all fields blank or at zero to skip it.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Surcharge Name** | Label shown on the order summary. Example: `Card Processing Fee`. | _(empty)_ |
-| **Surcharge Percent** | Percentage of the order subtotal charged as a fee. Example: `1.5` for 1.5%. | _(empty)_ |
-| **Surcharge Fixed** | Fixed amount charged as a fee. Example: `0.25` for £0.25. | _(empty)_ |
-| **Surcharge Tax Class** | Tax profile applied to the surcharge, if applicable. | _(none)_ |
+| Field                   | Description                                                                 | Default   |
+| ----------------------- | --------------------------------------------------------------------------- | --------- |
+| **Surcharge Name**      | Label shown on the order summary. Example: `Card Processing Fee`.           | *(empty)* |
+| **Surcharge Percent**   | Percentage of the order subtotal charged as a fee. Example: `1.5` for 1.5%. | *(empty)* |
+| **Surcharge Fixed**     | Fixed amount charged as a fee. Example: `0.25` for £0.25.                   | *(empty)* |
+| **Surcharge Tax Class** | Tax profile applied to the surcharge, if applicable.                        | *(none)*  |
 
 You can combine percent and fixed surcharges. Both are added together.
 
 ### Subtotal Limits (optional)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Minimum Order Total** | Hide this payment method if the cart subtotal is below this amount. Set `0` to disable. | `0` |
-| **Maximum Order Total** | Hide this payment method if the cart subtotal is above this amount. Set `-1` to disable. | `-1` |
+| Field                   | Description                                                                              | Default |
+| ----------------------- | ---------------------------------------------------------------------------------------- | ------- |
+| **Minimum Order Total** | Hide this payment method if the cart subtotal is below this amount. Set `0` to disable.  | `0`     |
+| **Maximum Order Total** | Hide this payment method if the cart subtotal is above this amount. Set `-1` to disable. | `-1`    |
 
 ### Geozone Restriction (optional)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Geozone Restriction** | Limit this payment method to customers in a specific geozone. | _(none — available everywhere)_ |
+| Field                   | Description                                                   | Default                         |
+| ----------------------- | ------------------------------------------------------------- | ------------------------------- |
+| **Geozone Restriction** | Limit this payment method to customers in a specific geozone. | *(none — available everywhere)* |
 
 Select a geozone to restrict CardSave to customers in that geographic area. Leave blank to offer it worldwide. Create and manage geozones in **J2Commerce** -> **Setup** -> **Geozones**.
 
 ### Thank-You Article (optional)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Thank You Message Article** | A Joomla article displayed on the order confirmation page after a successful payment. | _(none)_ |
+| Field                         | Description                                                                           | Default  |
+| ----------------------------- | ------------------------------------------------------------------------------------- | -------- |
+| **Thank You Message Article** | A Joomla article displayed on the order confirmation page after a successful payment. | *(none)* |
 
 ### Custom HTML Snippets (optional)
 
 These fields let you display a message to the customer at specific stages of checkout. All are optional. Most stores leave them blank.
 
-| Field | When it is shown |
-|-------|-----------------|
-| **On Selection** | Immediately after the customer selects CardSave, before they click to proceed. Useful for displaying accepted card logos or payment instructions. |
-| **On Before Payment** | Shown on the payment detail step, before the customer submits card data. |
-| **On After Payment** | Shown on the confirmation page after a successful payment. |
-| **On Error Payment** | Shown when a payment error occurs. Add support contact details here. |
-| **On Cancel Payment** | Shown if the customer cancels from the hosted payment page and returns to your store. |
+| Field                 | When it is shown                                                                                                                                  |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **On Selection**      | Immediately after the customer selects CardSave, before they click to proceed. Useful for displaying accepted card logos or payment instructions. |
+| **On Before Payment** | Shown on the payment detail step, before the customer submits card data.                                                                          |
+| **On After Payment**  | Shown on the confirmation page after a successful payment.                                                                                        |
+| **On Error Payment**  | Shown when a payment error occurs. Add support contact details here.                                                                              |
+| **On Cancel Payment** | Shown if the customer cancels from the hosted payment page and returns to your store.                                                             |
 
 ### Checkout Button Text
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field           | Description                         | Default       |
+| --------------- | ----------------------------------- | ------------- |
 | **Button Text** | Label on the payment submit button. | `Place Order` |
 
 ### Admin Notification Group
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field           | Description                                                                              | Default       |
+| --------------- | ---------------------------------------------------------------------------------------- | ------------- |
 | **Admin Group** | Joomla user group whose members receive email alerts when a payment cannot be validated. | `Super Users` |
 
 When CardSave returns an invalid or failed transaction response, J2Commerce emails all members of this group. The email includes error details and scrubbed transaction data (card numbers are never included). Ensure the users in this group have **Receive System Emails** enabled in their Joomla user account.
 
 ### Debug Logging
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Mode** | Write plugin activity and transaction data to the Joomla log file. | `No` |
+| Field          | Description                                                        | Default |
+| -------------- | ------------------------------------------------------------------ | ------- |
+| **Debug Mode** | Write plugin activity and transaction data to the Joomla log file. | `No`    |
 
 Enable debug temporarily when investigating payment issues. Logs are written to `administrator/logs/plg_j2commerce_payment_cardsave.log.php`. Card numbers and CVV values are scrubbed before logging. Disable debug mode in production once your investigation is complete — logs contain transaction details and should be treated as sensitive.
 
 ### Layout Template
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Subtemplate** | Frontend framework layout used for the payment form. | _(auto-detected from your active app plugin)_ |
+| Field           | Description                                          | Default                                       |
+| --------------- | ---------------------------------------------------- | --------------------------------------------- |
+| **Subtemplate** | Frontend framework layout used for the payment form. | *(auto-detected from your active app plugin)* |
 
 Leave blank to use your store's active subtemplate (Bootstrap 5 or UIkit). Change this only if you have custom layout overrides.
 
----
+***
 
 ## Test transactions
 
@@ -250,7 +255,7 @@ If you do not have test credentials, you can do a limited configuration check:
 
 Disable **Debug Mode** before going live.
 
----
+***
 
 ## Order lifecycle
 
@@ -315,7 +320,7 @@ Your server calls CardSave SOAP API (gw1/gw2/gw3.cardsaveonlinepayments.com:4430
                                            Admin notification email sent
 ```
 
----
+***
 
 ## PCI compliance notes
 
@@ -337,7 +342,7 @@ When you use **Direct SOAP** mode, raw card data (PAN, CVV, expiry) passes throu
 
 Only enable Direct mode if your organisation has a current, signed PCI SAQ-D or equivalent formal assessment on file.
 
----
+***
 
 ## Sunset notice for new merchants
 
@@ -351,7 +356,7 @@ CardSave V1 is feature-frozen. Worldpay no longer issues new credentials for thi
 
 If you are setting up a new store, choose a modern J2Commerce payment plugin instead. Options available on the J2Commerce Extensions Store include Stripe, PayPal Complete (PPCP), and Square — all actively maintained, 3DS2-compliant, and supporting Apple Pay and Google Pay.
 
----
+***
 
 ## What is new in J2Commerce 6
 
@@ -371,7 +376,7 @@ The following changes were made when migrating this plugin from J2Store v4 to J2
 - **Minimum and maximum order subtotal limits.** Hide the payment method for orders below or above defined thresholds, consistent with other J2Commerce payment plugins.
 - **`generateStringToHash2()` return bug fixed.** In the J2Store plugin, the 3DS hash string function built its return value but never returned it — the 3DS integrity check always failed silently. The J2Commerce version returns the string correctly.
 
----
+***
 
 ## Going live
 
@@ -386,7 +391,7 @@ Once you have confirmed your configuration is correct:
 7. Confirm the order status in **J2Commerce** -> **Sales** -> **Orders** updates to your **Authorized Order Status**.
 8. Disable **Debug Mode** if you had it enabled.
 
----
+***
 
 ## Troubleshooting
 
@@ -395,6 +400,7 @@ Once you have confirmed your configuration is correct:
 **Cause:** The hash your server computes does not match the hash CardSave sends back. This means the **Pre-Shared Key** or **Hash Method** does not match what is configured on your CardSave account.
 
 **Solution:**
+
 1. Check that **Pre-Shared Key** contains exactly the key from your CardSave welcome email, with no leading or trailing spaces.
 2. Confirm **Hash Method** matches your account's setting. Older accounts may use SHA1 or MD5. Contact Worldpay support if you are unsure which method your account uses.
 3. Enable **Debug Mode**, trigger the error, and check the log file at `administrator/logs/plg_j2commerce_payment_cardsave.log.php` for the raw hash string to compare.
@@ -407,18 +413,20 @@ Once you have confirmed your configuration is correct:
 
 ### "The order could not be found or is invalid" after returning from the CardSave payment page
 
-**Cause:** The order session expired, the order ID was not passed back correctly, or the gateway timed out before the SERVER_PULL callback completed.
+**Cause:** The order session expired, the order ID was not passed back correctly, or the gateway timed out before the SERVER\_PULL callback completed.
 
 **Solution:**
+
 1. Enable **Debug Mode** and reproduce the issue.
 2. Check the log file for the order ID returned by CardSave and compare it with the order in **J2Commerce** -> **Sales** -> **Orders**.
-3. If the order exists in J2Commerce but the status was not updated, the SERVER_PULL callback may not have reached your site. See the next troubleshooting entry.
+3. If the order exists in J2Commerce but the status was not updated, the SERVER\_PULL callback may not have reached your site. See the next troubleshooting entry.
 
 ### Payment approved by CardSave but order status not updated in J2Commerce
 
-**Cause:** The SERVER_PULL callback from CardSave could not reach your server. This happens when your site is behind a firewall that blocks external requests, when the server IP is not on an allowed list, or when the site is on a local or staging server inaccessible from the internet.
+**Cause:** The SERVER\_PULL callback from CardSave could not reach your server. This happens when your site is behind a firewall that blocks external requests, when the server IP is not on an allowed list, or when the site is on a local or staging server inaccessible from the internet.
 
 **Solution:**
+
 1. Confirm your site is publicly reachable from the internet on a standard HTTPS port.
 2. If you have a firewall or reverse proxy, check whether it is blocking incoming requests from Worldpay/CardSave IP ranges.
 3. Enable **Debug Mode** and check the log file for any callback activity. If no callback log entries appear, the callback is not arriving.
@@ -429,6 +437,7 @@ Once you have confirmed your configuration is correct:
 **Cause:** The SOAP API call to CardSave failed. Possible causes are incorrect credentials, incorrect domain or port, or the CardSave SOAP endpoint being unreachable.
 
 **Solution:**
+
 1. Verify all merchant credential fields are correct and contain no extra spaces.
 2. Confirm **Payment Processor Domain** is `cardsaveonlinepayments.com` and **Port** is `4430`.
 3. Enable **Debug Mode** and check the log for the SOAP response detail — it will indicate whether the connection failed entirely or whether CardSave returned a specific error code.
@@ -439,6 +448,7 @@ Once you have confirmed your configuration is correct:
 **Cause:** Status code 5 means the card was declined by the issuing bank. Status code 30 means a processing error occurred on the CardSave side.
 
 **Solution:**
+
 1. Enable **Debug Mode** and note the `CrossRef` value from the transaction log.
 2. Ask the customer to try a different card or contact their bank.
 3. For status code 30 errors, contact Worldpay support with the `CrossRef` value — they can look up the transaction in their system and identify the cause.
@@ -448,6 +458,7 @@ Once you have confirmed your configuration is correct:
 **Cause:** CardSave returned status code 3, meaning the card requires a 3D Secure challenge. The CardSave V1 SOAP API does not implement the full 3DS2 browser redirect step-up flow. The plugin sets the order to Pending status and stops there.
 
 **Solution:**
+
 1. Log in to your Worldpay merchant portal and check the status of the transaction.
 2. If the card challenge completed successfully in the Worldpay portal, manually set the order status to your **Authorized Order Status** in **J2Commerce** -> **Sales** -> **Orders**.
 3. Contact the customer to let them know the payment is under review.
@@ -457,10 +468,11 @@ Once you have confirmed your configuration is correct:
 **Cause:** Either the **Admin Group** setting does not match the correct user group, or the users in that group do not have **Receive System Emails** enabled in their Joomla user account.
 
 **Solution:**
+
 1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**, open CardSave, and confirm **Admin Group** is set to the group containing your store managers.
 2. Go to **System** -> **Manage** -> **Users**. Open each user in the admin group and confirm the **Receive System Emails** toggle is set to **Yes**.
 
----
+***
 
 ## Migrating away from CardSave
 
