@@ -43,34 +43,40 @@ After installation, confirm the plugin is enabled:
 
 <!-- SCREENSHOT: Extensions manager showing Ask Question / Quote with green enabled status -->
 
-## Open Plugin Settings
+## Configuration
+
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
 
 1. Go to **J2Commerce -> Apps**.
 2. Find **Ask Question / Quote** and click its name to open the settings panel.
 
 <!-- SCREENSHOT: J2Commerce Apps screen with Ask Question / Quote listed -->
 
----
+***
 
 ## Basic Settings
 
 ### Enable for All Products
 
-| Setting | Description |
-|---------|-------------|
+| Setting                                      | Description                                                                                                                                                                                                 |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Enable Ask Quote button for all products** | When set to **Yes**, the form trigger appears on every product regardless of per-product settings. When set to **No**, you enable the form per product (see [Per-Product Settings](#per-product-settings)). |
-| **Hide Add to Cart button globally** | Hides the **Add to Cart** button on all products. Useful for quote-only stores. |
-| **Hide Cart button for zero-price products** | Automatically hides the **Add to Cart** button for any product with a price of zero. |
+| **Hide Add to Cart button globally**         | Hides the **Add to Cart** button on all products. Useful for quote-only stores.                                                                                                                             |
+| **Hide Cart button for zero-price products** | Automatically hides the **Add to Cart** button for any product with a price of zero.                                                                                                                        |
 
 ### Display Settings
 
-| Setting | Description |
-|---------|-------------|
-| **Form display style** | **Popup** — the form opens in a Bootstrap 5 modal overlay. **Accordion** — the form expands inline below the trigger button. |
-| **Display position** | Where the trigger button appears: **Before Add to Cart**, **After Add to Cart**, or **Before Price**. |
-| **Display button / link in** | Choose whether the button appears on **Product view only**, **Category view only**, or **Both views**. |
-| **Display as** | Render the trigger as a styled **Button** or a plain text **Link**. |
-| **Button / link text** | The text shown on the trigger. Default: "Ask Quote". |
+| Setting                      | Description                                                                                                                  |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **Form display style**       | **Popup** — the form opens in a Bootstrap 5 modal overlay. **Accordion** — the form expands inline below the trigger button. |
+| **Display position**         | Where the trigger button appears: **Before Add to Cart**, **After Add to Cart**, or **Before Price**.                        |
+| **Display button / link in** | Choose whether the button appears on **Product view only**, **Category view only**, or **Both views**.                       |
+| **Display as**               | Render the trigger as a styled **Button** or a plain text **Link**.                                                          |
+| **Button / link text**       | The text shown on the trigger. Default: "Ask Quote".                                                                         |
 
 ### Terms and Conditions
 
@@ -88,41 +94,41 @@ To protect the form from spam, enable Google reCAPTCHA v2:
 
 <!-- SCREENSHOT: Basic Settings tab showing the reCAPTCHA fields filled in -->
 
----
+***
 
 ## Email Configuration
 
 The email tab controls what is sent when a customer submits an enquiry.
 
-| Setting | Description |
-|---------|-------------|
-| **Send email to** | **Admin and customer** — sends a copy to both. **Admin only** — sends only to the store admin. **Customer only** — sends only to the submitting customer. |
-| **Include field labels in email** | When **Yes**, the email body includes the field label before each value — e.g., "First Name: John". |
-| **Email subject** | The subject line. Use the short codes listed below. |
-| **Email body** | The email body. Supports HTML and short codes. |
+| Setting                           | Description                                                                                                                                               |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Send email to**                 | **Admin and customer** — sends a copy to both. **Admin only** — sends only to the store admin. **Customer only** — sends only to the submitting customer. |
+| **Include field labels in email** | When **Yes**, the email body includes the field label before each value — e.g., "First Name: John".                                                       |
+| **Email subject**                 | The subject line. Use the short codes listed below.                                                                                                       |
+| **Email body**                    | The email body. Supports HTML and short codes.                                                                                                            |
 
 ### Email Short Codes
 
 Use these placeholders in the **Email subject** and **Email body** fields. They are replaced with real values when each email is sent.
 
-| Short code | Replaced with |
-|------------|--------------|
-| `[SITENAME]` | Your Joomla site name |
-| `[FIRST_NAME]` | Customer first name |
-| `[LAST_NAME]` | Customer last name |
-| `[EMAIL]` | Customer email address |
-| `[PHONE_1]` | Customer primary phone |
-| `[PHONE_2]` | Customer secondary phone |
-| `[COMPANY]` | Customer company name |
-| `[TAX_NUMBER]` | Customer tax / VAT number |
-| `[ADDRESS_1]` | Address line 1 |
-| `[ADDRESS_2]` | Address line 2 |
-| `[CITY]` | City |
-| `[ZIP]` | Postcode / ZIP |
-| `[COUNTRY_NAME]` | Country name (resolved from selection) |
-| `[ZONE_NAME]` | State / zone name (resolved from selection) |
-| `[PRODUCT_NAME]` | Product name (with a clickable link) |
-| `[PRODUCT_SKU]` | Product SKU |
+| Short code        | Replaced with                                     |
+| ----------------- | ------------------------------------------------- |
+| `[SITENAME]`      | Your Joomla site name                             |
+| `[FIRST_NAME]`    | Customer first name                               |
+| `[LAST_NAME]`     | Customer last name                                |
+| `[EMAIL]`         | Customer email address                            |
+| `[PHONE_1]`       | Customer primary phone                            |
+| `[PHONE_2]`       | Customer secondary phone                          |
+| `[COMPANY]`       | Customer company name                             |
+| `[TAX_NUMBER]`    | Customer tax / VAT number                         |
+| `[ADDRESS_1]`     | Address line 1                                    |
+| `[ADDRESS_2]`     | Address line 2                                    |
+| `[CITY]`          | City                                              |
+| `[ZIP]`           | Postcode / ZIP                                    |
+| `[COUNTRY_NAME]`  | Country name (resolved from selection)            |
+| `[ZONE_NAME]`     | State / zone name (resolved from selection)       |
+| `[PRODUCT_NAME]`  | Product name (with a clickable link)              |
+| `[PRODUCT_SKU]`   | Product SKU                                       |
 | `[PRODUCT_PRICE]` | Product price, formatted with your store currency |
 
 For custom address fields, use the field's column name as the short code — for example, `[my_field]`.
@@ -133,7 +139,7 @@ Use `[PRODUCT_NAME]` in the subject line so both you and the customer can instan
 
 :::
 
----
+***
 
 ## Layout (Form Builder)
 
@@ -159,7 +165,7 @@ For custom address fields created in **J2Commerce -> Localisation -> Custom Fiel
 
 <!-- SCREENSHOT: Layout tab showing the Form layout textarea with short codes entered -->
 
----
+***
 
 ## Per-Product Settings
 
@@ -169,13 +175,13 @@ When **Enable Ask Quote button for all products** is set to **No**, you control 
 2. Click the **Ask Question / Quote** tab in the product edit form.
 3. Configure the fields:
 
-| Field | Description |
-|-------|-------------|
-| **Enable Ask Question / Quote for this product** | Set to **Yes** to show the enquiry form trigger on this product's page. |
-| **Hide Add to Cart for this product** | Set to **Yes** to hide the Add to Cart button specifically for this product. |
-| **Hide price for this product** | Set to **Yes** to hide the price display for this product. |
+| Field                                            | Description                                                                  |
+| ------------------------------------------------ | ---------------------------------------------------------------------------- |
+| **Enable Ask Question / Quote for this product** | Set to **Yes** to show the enquiry form trigger on this product's page.      |
+| **Hide Add to Cart for this product**            | Set to **Yes** to hide the Add to Cart button specifically for this product. |
+| **Hide price for this product**                  | Set to **Yes** to hide the price display for this product.                   |
 
-4. Click **Save** or **Save & Close**.
+1. Click **Save** or **Save & Close**.
 
 <!-- SCREENSHOT: Product edit form showing the Ask Question / Quote tab with enable set to Yes -->
 
@@ -185,7 +191,7 @@ Per-product settings work alongside the global plugin settings. The **Hide Add t
 
 :::
 
----
+***
 
 ## How the Form Works
 
@@ -209,7 +215,7 @@ When display style is set to **Accordion**:
 3. Submission and error handling work the same as popup mode.
 4. A **Close** button at the bottom collapses the form.
 
----
+***
 
 ## Debug Mode
 
@@ -222,7 +228,7 @@ Disable debug mode on production sites to avoid large log files.
 
 <!-- SCREENSHOT: Plugin settings showing Debug mode set to Yes -->
 
----
+***
 
 ## Tips
 
@@ -232,7 +238,7 @@ Disable debug mode on production sites to avoid large log files.
 - When **Include field labels in email** is **Yes**, empty fields are omitted from the email body, so there are no blank lines for fields the customer skipped.
 - reCAPTCHA is loaded only on pages where the quote form renders — it does not add script overhead to the rest of your site.
 
----
+***
 
 ## Troubleshooting
 
@@ -287,7 +293,7 @@ Disable debug mode on production sites to avoid large log files.
 2. Enable **Debug Mode** and check the browser console for `[J2C ProductQuote]` zone-load entries.
 3. If zones exist but still do not load, confirm the J2Commerce frontend component is accessible (the zone lookup uses the `com_j2commerce` component route).
 
----
+***
 
 ## Related Topics
 
