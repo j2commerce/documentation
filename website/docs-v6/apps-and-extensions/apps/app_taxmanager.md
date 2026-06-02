@@ -51,15 +51,21 @@ Look for **Tax Manager** in the list. If the status icon shows a red **X**, clic
 
 Click the **Tax Manager** title (next to the checkmark) to open its settings.
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 <!-- SCREENSHOT: Tax Manager plugin settings page — basic settings tab -->
 
 ### Basic Settings
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Tax-Exempt User Groups** | Users in any selected group will pay no tax on their orders. Leave empty to disable exemptions. | None |
-| **Ignore Postcode Suffix** | When enabled, the hyphen suffix on postcodes like `94403-1234` is stripped before matching rates, so `94403` is used for lookup. Enable this if customers may enter postcodes with a hyphen suffix. | Yes |
-| **Debug Mode** | Writes detailed rate-matching logs to `administrator/logs/plg_j2commerce_app_taxmanager.php`. Useful when a rate is not applying as expected. Disable in production. | No |
+| Setting                    | Description                                                                                                                                                                                         | Default |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Tax-Exempt User Groups** | Users in any selected group will pay no tax on their orders. Leave empty to disable exemptions.                                                                                                     | None    |
+| **Ignore Postcode Suffix** | When enabled, the hyphen suffix on postcodes like `94403-1234` is stripped before matching rates, so `94403` is used for lookup. Enable this if customers may enter postcodes with a hyphen suffix. | Yes     |
+| **Debug Mode**             | Writes detailed rate-matching logs to `administrator/logs/plg_j2commerce_app_taxmanager.php`. Useful when a rate is not applying as expected. Disable in production.                                | No      |
 
 Click **Save** after adjusting these settings.
 
@@ -83,12 +89,12 @@ There are two ways to reach the Tax Classes screen:
 2. Fill in the **Tax Class Name** — for example, `US Standard Tax` or `EU VAT 20%`.
 3. Choose a **Rate Mode**:
 
-| Rate Mode | What it does |
-|-----------|-------------|
-| **Add to Core Rate** | The rates in this class are added on top of any rate from the product's core tax profile. |
+| Rate Mode             | What it does                                                                              |
+| --------------------- | ----------------------------------------------------------------------------------------- |
+| **Add to Core Rate**  | The rates in this class are added on top of any rate from the product's core tax profile. |
 | **Replace Core Rate** | The rates in this class completely replace the core profile rate. Only these rates apply. |
 
-4. Click **Save** to create the class and stay on the edit screen, or **Save & Close** to return to the list.
+1. Click **Save** to create the class and stay on the edit screen, or **Save & Close** to return to the list.
 
 <!-- SCREENSHOT: Edit Tax Class screen — Name field, Rate Mode toggle, Save button -->
 
@@ -98,14 +104,14 @@ After saving a Tax Class, the **Tax Rates** table appears at the bottom of the e
 
 Click **Add New Tax Rate** to add a row, then fill in the fields:
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Country** | Two-letter ISO country code, or `*` for all countries. | `US`, `GB`, `*` |
-| **Zone** | State or province code, or `*` for all zones. | `CA`, `TX`, `*` |
-| **Postcode** | Exact postcode, a prefix with wildcard (`940*`), or `*` for all postcodes. | `94403`, `940*`, `*` |
-| **Rate (%)** | The tax percentage to apply. | `8.25` |
-| **Rate Name** | A display label for this rate. | `CA State Tax` |
-| **Priority** | Sort order when multiple rates match. Lower numbers apply first. | `0` |
+| Field         | Description                                                                | Example              |
+| ------------- | -------------------------------------------------------------------------- | -------------------- |
+| **Country**   | Two-letter ISO country code, or `*` for all countries.                     | `US`, `GB`, `*`      |
+| **Zone**      | State or province code, or `*` for all zones.                              | `CA`, `TX`, `*`      |
+| **Postcode**  | Exact postcode, a prefix with wildcard (`940*`), or `*` for all postcodes. | `94403`, `940*`, `*` |
+| **Rate (%)**  | The tax percentage to apply.                                               | `8.25`               |
+| **Rate Name** | A display label for this rate.                                             | `CA State Tax`       |
+| **Priority**  | Sort order when multiple rates match. Lower numbers apply first.           | `0`                  |
 
 Click **Save All** to save all rate rows at once.
 
@@ -134,14 +140,14 @@ taxrate_country, taxrate_zone, taxrate_zip, taxrate_rate, taxrate_name, taxrate_
 
 The required CSV columns are:
 
-| Column | Required | Description |
-|--------|----------|-------------|
-| `taxrate_country` | Yes | Two-letter ISO code or `*` |
-| `taxrate_zone` | Yes | Zone/state code or `*` |
-| `taxrate_zip` | Yes | Postcode, prefix wildcard, or `*` |
-| `taxrate_rate` | Yes | Tax percentage as a number, e.g. `8.25` |
-| `taxrate_name` | Yes | Display name for the rate |
-| `taxrate_priority` | Yes | Integer sort priority |
+| Column             | Required | Description                             |
+| ------------------ | -------- | --------------------------------------- |
+| `taxrate_country`  | Yes      | Two-letter ISO code or `*`              |
+| `taxrate_zone`     | Yes      | Zone/state code or `*`                  |
+| `taxrate_zip`      | Yes      | Postcode, prefix wildcard, or `*`       |
+| `taxrate_rate`     | Yes      | Tax percentage as a number, e.g. `8.25` |
+| `taxrate_name`     | Yes      | Display name for the rate               |
+| `taxrate_priority` | Yes      | Integer sort priority                   |
 
 ### Duplicate a Tax Class
 
