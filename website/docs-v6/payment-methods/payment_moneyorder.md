@@ -50,7 +50,7 @@ After enabling the plugin, click the **Money Order Payment** title to open the s
 
 :::tip
 
-**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+**Tip**: Click on the **Toggle Inline Help** button on any app/plugin you install and it will show a description below each section. See image below
 
 :::
 
