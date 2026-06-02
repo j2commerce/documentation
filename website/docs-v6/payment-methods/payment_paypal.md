@@ -35,8 +35,6 @@ After your account is active:
 6. Click **Create App** to confirm.
 7. On the next page you will see your **Client ID** and **Client Secret**. Copy both and keep them somewhere safe.
 
-<!-- SCREENSHOT: PayPal Developer Dashboard — Apps and Credentials page showing Client ID and Secret -->
-
 **Sandbox credentials** (for testing): Click the **Sandbox** tab on the same Apps & Credentials page. Create a separate sandbox app or use the default one. Copy the Sandbox Client ID and Sandbox Client Secret separately.
 
 ## Enable the Plugin
@@ -121,11 +119,15 @@ Webhooks allow PayPal to notify your store automatically when payment events occ
 4. Select the events you want to receive. Recommended events: `PAYMENT.CAPTURE.COMPLETED`, `PAYMENT.CAPTURE.DENIED`, `PAYMENT.CAPTURE.REFUNDED`, `PAYMENT.CAPTURE.REVERSED`, `CUSTOMER.DISPUTE.CREATED`, `CUSTOMER.DISPUTE.RESOLVED`.
 5. Click **Save**. Copy the **Webhook ID** shown and paste it into the plugin configuration.
 
-<!-- SCREENSHOT: PayPal webhook creation form -->
-
 ### Order Status
 
 ![](/img/paypal-config3.webp)
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
 
 **Order Status:** The order status is applied after a successful payment capture
 
