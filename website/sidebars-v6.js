@@ -217,7 +217,7 @@ const sidebars = {
                         // Add to User Group
                         'apps-and-extensions/apps/usergroup',
                         // Additional Fees
-                        'apps-and-extensions/apps/extrafee',
+                        'apps-and-extensions/apps/additional_fee',
                         // Additional Terms
                         'apps-and-extensions/apps/additionalterms',
                         // Address Autocomplete
@@ -225,7 +225,7 @@ const sidebars = {
                         // Already Purchased Badge
                         'apps-and-extensions/apps/app_alreadypurchased',
                         // Advanced Cart Drawer
-                        'apps-and-extensions/apps/j2commerce_advancedcart',
+                        'apps-and-extensions/apps/advancedcart',
                         // Advanced Tax Rates (there is a duplicate)
                         'apps-and-extensions/apps/taxrate',
                         // Akeeba Release System Download ID (there is a duplicate)
