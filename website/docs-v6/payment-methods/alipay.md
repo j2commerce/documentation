@@ -53,6 +53,12 @@ After installation, go to **J2Commerce** -> **Payments** -> **Payment Methods** 
 
 ## Configuration
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 Open the Alipay payment method in your payment methods list and work through each tab.
 
 ### Alipay Credentials tab
