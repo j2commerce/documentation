@@ -247,6 +247,12 @@ Available subtemplates: **Bootstrap 5** and **UIkit**. Leave blank to use the de
 
 ![](/img/stripe-config4.webp)
 
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
 **Order Status:** The order status applied after a successful payment
 
 Choose the status that fits your workflow. Most stores use **Confirmed** or **Processing** for paid orders.
