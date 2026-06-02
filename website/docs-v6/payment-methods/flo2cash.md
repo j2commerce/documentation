@@ -29,7 +29,13 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 <!-- SCREENSHOT: Joomla Extensions installer showing the payment_flo2cash.zip upload step -->
 
-## Setup
+## Configuration
+
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
 
 ### Step 1: Add NZD Currency
 
