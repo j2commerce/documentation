@@ -76,6 +76,12 @@ If you are unsure where this setting is in your account, contact Banca Sella / A
 
 ## Configuration
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 In your Joomla admin, go to **J2Commerce** -> **Payments** -> **Payment Methods** and open the **GestPay** row to configure it.
 
 <!-- SCREENSHOT: J2Commerce -> Payments -> Payment Methods list with GestPay row highlighted -->
