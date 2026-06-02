@@ -113,7 +113,15 @@ Saved cards are stored as secure tokens in PayTrace — your server never holds 
 
 - **uikit:** UIkit-based J2Commerce templates
 
+### Order Status
+
 ![](/img/paytrace-config4.webp)
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
 
 **Order Status Settings:** Control which order status is applied when payments succeed, and optionally change statuses automatically when you void or refund a transaction.
 
@@ -127,7 +135,9 @@ Saved cards are stored as secure tokens in PayTrace — your server never holds 
 
 - **Refund Order Status:** The order status to apply after a successful refund. Only visible when the toggle above is on.
 
-  ![](/img/paytrace-config5.webp)
+### Surcharge Name
+
+![](/img/paytrace-config5.webp)
 
 **Surcharge Name:** Label displayed to customers at checkout (for example, `Credit Card Fee`).
 
@@ -143,7 +153,9 @@ Many US states have specific laws about credit card surcharging — some prohibi
 
 :::
 
-**Restrictions:** Limit when PayTrace appears as a payment option.
+### Restrictions
+
+Limit when PayTrace appears as a payment option.
 
 ![](/img/paytrace-config6.webp)
 
