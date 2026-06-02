@@ -84,6 +84,12 @@ This is the most important field. Write clear, complete instructions so customer
 
 ![](/img/money-order-config2.webp)
 
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
 **Order Status:** The status assigned to orders placed using this payment method. Since payment is not received immediately, use a pending-type status (e.g., "Pending").
 
 ### Surcharge Settings
