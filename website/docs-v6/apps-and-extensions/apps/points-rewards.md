@@ -35,11 +35,17 @@ This app is a separate add-on available from the [J2Commerce Extensions Store](h
 
 ## Enable and Open Settings
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 After installation, navigate to **J2Commerce** **->** **Apps** and find **Points and Rewards** in the list. Click the app name to open its settings panel.
 
 <!-- SCREENSHOT: J2Commerce Apps list with "Points and Rewards" row highlighted and the Settings link visible -->
 
----
+***
 
 ## Points Settings
 
@@ -47,79 +53,79 @@ These are the global controls for how points are earned and redeemed across your
 
 ### Enable Points and Rewards
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Enable points and rewards for all products** | When **Yes**, every product participates in points earning automatically. When **No**, points only apply to products where you have set the per-product option to **Override Global Settings**. | No |
+| Field                                          | Description                                                                                                                                                                                     | Default |
+| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Enable points and rewards for all products** | When **Yes**, every product participates in points earning automatically. When **No**, points only apply to products where you have set the per-product option to **Override Global Settings**. | No      |
 
 ### Earn and Redeem Conversion Rates
 
 The earn and redeem rates are set using a two-part conversion field that reads "X points = Y currency amount."
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Earn Points Conversion Rate** | How many points a customer earns per unit of currency spent. | 1 point for every $1.00 spent |
-| **Redeem Points Conversion Rate** | How much monetary discount a set number of points is worth. | 100 points = $1.00 discount |
+| Field                             | Description                                                  | Example                       |
+| --------------------------------- | ------------------------------------------------------------ | ----------------------------- |
+| **Earn Points Conversion Rate**   | How many points a customer earns per unit of currency spent. | 1 point for every $1.00 spent |
+| **Redeem Points Conversion Rate** | How much monetary discount a set number of points is worth.  | 100 points = $1.00 discount   |
 
 <!-- SCREENSHOT: The Earn Points Conversion Rate and Redeem Points Conversion Rate fields showing the dual-input layout -->
 
 ### Discount Controls
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Maximum Discount (Per Order)** | The highest dollar amount of discount that points can apply to a single order. Set to `0` for no limit. | 0 |
-| **Minimum Points Required** | A customer must hold at least this many points before the redeem option appears in the cart. Set to `0` to allow redemption at any balance. | 0 |
+| Field                            | Description                                                                                                                                 | Default |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Maximum Discount (Per Order)** | The highest dollar amount of discount that points can apply to a single order. Set to `0` for no limit.                                     | 0       |
+| **Minimum Points Required**      | A customer must hold at least this many points before the redeem option appears in the cart. Set to `0` to allow redemption at any balance. | 0       |
 
 ### Rounding
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Round Points** | When enabled, earned point values are rounded. | No |
-| **Rounding Decimal Places** | How many decimal places to round to (only active when rounding is enabled). | 0 |
-| **Round Discount Amount** | When enabled, the discount amount calculated from redeemed points is also rounded. | No |
+| Field                       | Description                                                                        | Default |
+| --------------------------- | ---------------------------------------------------------------------------------- | ------- |
+| **Round Points**            | When enabled, earned point values are rounded.                                     | No      |
+| **Rounding Decimal Places** | How many decimal places to round to (only active when rounding is enabled).        | 0       |
+| **Round Discount Amount**   | When enabled, the discount amount calculated from redeemed points is also rounded. | No      |
 
 ### Tax Handling
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Reduce tax from discount amount when prices include tax** | When **Yes**, the tax portion is stripped out of the discount calculation. Recommended when your prices are displayed tax-inclusive. | Yes |
+| Field                                                       | Description                                                                                                                          | Default |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| **Reduce tax from discount amount when prices include tax** | When **Yes**, the tax portion is stripped out of the discount calculation. Recommended when your prices are displayed tax-inclusive. | Yes     |
 
 ### Points Label
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field             | Description                                                                                                                                    | Default       |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
 | **Points Suffix** | The text appended after every point value, for example "14 Reward Points". Change this to match your brand — "Stars", "Credits", "Coins", etc. | Reward Points |
 
 ### Signup Bonus
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Account Signup Bonus** | Points credited automatically when a new customer registers during checkout or from the frontend My Profile area. Set to `0` to disable. | 0 |
+| Field                    | Description                                                                                                                              | Default |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Account Signup Bonus** | Points credited automatically when a new customer registers during checkout or from the frontend My Profile area. Set to `0` to disable. | 0       |
 
 ### Display
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Show Message on Category/List Pages** | When **Yes**, the earn-points message appears on product cards in category and product list views. When **No**, the message only shows on individual product pages. | No |
+| Field                                   | Description                                                                                                                                                         | Default |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Show Message on Category/List Pages** | When **Yes**, the earn-points message appears on product cards in category and product list views. When **No**, the message only shows on individual product pages. | No      |
 
 ### Point History Limit
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Point History Limit** | How many transactions to display in the **Rewards** tab on the customer's My Profile page. | 10 |
+| Field                   | Description                                                                                | Default |
+| ----------------------- | ------------------------------------------------------------------------------------------ | ------- |
+| **Point History Limit** | How many transactions to display in the **Rewards** tab on the customer's My Profile page. | 10      |
 
 <!-- SCREENSHOT: The complete Points Settings fieldset in the J2Commerce Apps panel -->
 
----
+***
 
 ## Order Status Rules
 
 Three multi-select fields control exactly when points are credited, deducted, and recovered as an order moves through its lifecycle. Select one or more order statuses from each list.
 
-| Field | What it does | Default |
-|-------|-------------|---------|
-| **Add points if order status matches** | Points earned on the purchase are credited to the customer when the order reaches one of these statuses. Typical choice: **Confirmed**. | Confirmed |
-| **Deduct points if order status matches** | When a customer redeemed points on an order and that order reaches one of these statuses, the redeemed amount is deducted from their balance. Typical choice: **Failed**. | Failed |
-| **Recover points if order status matches** | If a customer had redeemed points and the order fails or is cancelled, those redeemed points are returned. Typical choice: **Failed** or **Cancelled**. | Failed |
+| Field                                      | What it does                                                                                                                                                              | Default   |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| **Add points if order status matches**     | Points earned on the purchase are credited to the customer when the order reaches one of these statuses. Typical choice: **Confirmed**.                                   | Confirmed |
+| **Deduct points if order status matches**  | When a customer redeemed points on an order and that order reaches one of these statuses, the redeemed amount is deducted from their balance. Typical choice: **Failed**. | Failed    |
+| **Recover points if order status matches** | If a customer had redeemed points and the order fails or is cancelled, those redeemed points are returned. Typical choice: **Failed** or **Cancelled**.                   | Failed    |
 
 Available statuses: **Confirmed**, **Processed**, **Failed**, **Pending**, **New**, **Cancelled**.
 
@@ -132,7 +138,7 @@ Available statuses: **Confirmed**, **Processed**, **Failed**, **Pending**, **New
 
 <!-- SCREENSHOT: The three order-status multi-select fields showing Confirmed selected for "Add points" -->
 
----
+***
 
 ## Product/Cart/Checkout Messages
 
@@ -140,24 +146,24 @@ These are the text messages shown to customers on product pages and in the cart.
 
 You can use the following shortcodes inside any message:
 
-| Shortcode | Replaced with |
-|-----------|---------------|
-| `{points}` | The number of points the customer will earn (or can redeem) |
-| `{points_label}` | The Points Suffix you configured (for example, "Reward Points") |
-| `{points_value}` | The monetary discount value of the redeemable points |
-| `{price_in_points}` | The product price expressed as a points cost |
+| Shortcode           | Replaced with                                                   |
+| ------------------- | --------------------------------------------------------------- |
+| `{points}`          | The number of points the customer will earn (or can redeem)     |
+| `{points_label}`    | The Points Suffix you configured (for example, "Reward Points") |
+| `{points_value}`    | The monetary discount value of the redeemable points            |
+| `{price_in_points}` | The product price expressed as a points cost                    |
 
-| Field | Description | Default message |
-|-------|-------------|-----------------|
-| **Product Page Message** | Shown below the price on individual product pages. | "Purchase this product now and earn [points] [points_label]" |
-| **Cart Earn Message** | Shown in the cart, telling the customer how many points this order will earn. | "Complete your order and earn [points] [points_label] for a discount on a future purchase." |
-| **Cart Redeem Message** | Shown in the cart when the customer has enough points to redeem. Includes the **Apply Discount** button. | "Use [points] [points_label] for a [points_value] discount on this order!" |
+| Field                    | Description                                                                                              | Default message                                                                                |
+| ------------------------ | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Product Page Message** | Shown below the price on individual product pages.                                                       | "Purchase this product now and earn \[points] \[points\_label]"                                |
+| **Cart Earn Message**    | Shown in the cart, telling the customer how many points this order will earn.                            | "Complete your order and earn \[points] \[points\_label] for a discount on a future purchase." |
+| **Cart Redeem Message**  | Shown in the cart when the customer has enough points to redeem. Includes the **Apply Discount** button. | "Use \[points] \[points\_label] for a \[points\_value] discount on this order!"                |
 
 Note that the default messages shown above use square brackets to represent shortcodes in this documentation. In the actual message fields you enter the shortcodes with curly braces, for example `{points}` and `{points_label}`.
 
 <!-- SCREENSHOT: The Messages tab showing all three message textarea fields with their default content -->
 
----
+***
 
 ## Per-Product Point Overrides
 
@@ -165,13 +171,13 @@ You can override the global settings on individual products. Open any product in
 
 <!-- SCREENSHOT: The "Points and Rewards" tab panel in the product edit form -->
 
-| Field | Description | Options |
-|-------|-------------|---------|
-| **Points Setting** | Choose how this product interacts with the global points configuration. | Use Global Settings / Override Global Settings / Disable Points for This Product |
-| **Earn Point Type** | Whether the custom earn amount is a fixed number of points or a percentage of the product price. | Fixed / Percentage |
-| **Earn Points** | The fixed point amount or the percentage to award for this product. Only active when **Override Global Settings** is selected. | — |
-| **Maximum Point Type** | Whether the per-product maximum discount is a fixed amount or a percentage. | Fixed / Percentage |
-| **Maximum Discount for This Product** | The maximum points-based discount allowed for this product. Overrides the global maximum for this item only. | — |
+| Field                                 | Description                                                                                                                    | Options                                                                          |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| **Points Setting**                    | Choose how this product interacts with the global points configuration.                                                        | Use Global Settings / Override Global Settings / Disable Points for This Product |
+| **Earn Point Type**                   | Whether the custom earn amount is a fixed number of points or a percentage of the product price.                               | Fixed / Percentage                                                               |
+| **Earn Points**                       | The fixed point amount or the percentage to award for this product. Only active when **Override Global Settings** is selected. | —                                                                                |
+| **Maximum Point Type**                | Whether the per-product maximum discount is a fixed amount or a percentage.                                                    | Fixed / Percentage                                                               |
+| **Maximum Discount for This Product** | The maximum points-based discount allowed for this product. Overrides the global maximum for this item only.                   | —                                                                                |
 
 **Use Global Settings** — The product follows whatever the global configuration says. This is the default for all products.
 
@@ -179,7 +185,7 @@ You can override the global settings on individual products. Open any product in
 
 **Disable Points for This Product** — No points are earned on this product and no points discount can be applied to it, regardless of global settings.
 
----
+***
 
 ## Customer Experience
 
@@ -214,7 +220,7 @@ Logged-in customers can view their points history at **My Profile** **->** **Rew
 
 <!-- SCREENSHOT: The Rewards tab on the customer My Profile page showing balance and transaction list -->
 
----
+***
 
 ## Admin: Managing Customer Points
 
@@ -240,21 +246,21 @@ Click **Add User Points** in the toolbar to manually grant points to a customer.
 
 <!-- SCREENSHOT: The Add User Points form showing the User selector and Points field -->
 
----
+***
 
 ## Email Tags
 
 The following tags can be placed in any J2Commerce email template and will be replaced with live values for that order:
 
-| Tag | Replaced with |
-|-----|---------------|
-| `[EARN_POINT]` | The number of points the customer earned on this order |
-| `[REDEEM_POINT]` | The number of points the customer redeemed on this order |
-| `[TOTAL_POINT]` | The customer's total point balance after this transaction |
+| Tag              | Replaced with                                             |
+| ---------------- | --------------------------------------------------------- |
+| `[EARN_POINT]`   | The number of points the customer earned on this order    |
+| `[REDEEM_POINT]` | The number of points the customer redeemed on this order  |
+| `[TOTAL_POINT]`  | The customer's total point balance after this transaction |
 
 These tags are only populated in emails sent after an order has been confirmed and the earned points have been credited.
 
----
+***
 
 ## What's New in J2Commerce 6
 
@@ -266,7 +272,7 @@ If you used Points and Rewards with J2Store, here is what has changed in the J2C
 - **Security hardening** — all admin AJAX actions require a valid CSRF token and a `core.manage` permission check. Point history records are stored separately from the order record so they cannot be altered by re-saving an order.
 - **Automatic update notifications** — the plugin registers with the J2Commerce update server, so new releases appear directly in your Joomla Update Manager.
 
----
+***
 
 ## Troubleshooting
 
@@ -308,7 +314,7 @@ If you used Points and Rewards with J2Store, here is what has changed in the J2C
 
 **Solution:** Go to the plugin settings and add **Cancelled** (or whichever status your cancellation flow uses) to the **Recover points if order status matches** field.
 
----
+***
 
 ## Related Topics
 
