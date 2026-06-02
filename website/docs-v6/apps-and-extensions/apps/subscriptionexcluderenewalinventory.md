@@ -51,6 +51,12 @@ Search for **Subscription - Exclude Renewal Inventory**, click the **X,** and 
 
 ## Configure the Plugin
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 <!-- SCREENSHOT: Plugin configuration screen showing the Debug Mode toggle -->
 
 This plugin has one configuration option.
