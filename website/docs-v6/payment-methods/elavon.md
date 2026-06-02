@@ -99,7 +99,13 @@ After installation, navigate to **J2Commerce** -> **Payments** -> **Payment Meth
 
 ***
 
-## Step-by-Step Configuration
+## Configuration
+
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
 
 Open the plugin settings by clicking **Payment - Elavon Converge** in the Payment Methods list, or go to **System** -> **Manage** -> **Plugins**, search for "Elavon", and click to edit.
 
