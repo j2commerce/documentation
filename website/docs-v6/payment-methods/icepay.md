@@ -35,6 +35,12 @@ After installation, configure it at **J2Commerce** -> **Payments** -> **Payment 
 
 ## Configuration
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 Find the ICEPAY plugin in the payment methods list and click its name to open settings.
 
 ### Credentials
