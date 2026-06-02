@@ -27,8 +27,6 @@ In the Joomla admin, go to **System -> Install -> Extensions**
 
 Upload the plugin ZIP file or use the Install from URL option.
 
-[//]: # (![Install extensions]&#40;/img/paypalcomplete-install.webp&#41;)
-
 ## Enable the Plugin
 
 Once installed, you need to enable the plugin. There are **two** ways to reach the Payments list.
@@ -37,11 +35,7 @@ Once installed, you need to enable the plugin. There are **two** ways to reach t
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Payments**
 
-[//]: # (![Payments list]&#40;/img/paypalcomplete-payments-list.webp&#41;)
-
 Look for **PayPal Complete Payments**, click the red **X**, and it turns into a green checkmark. The plugin is now enabled and ready for configuration.
-
-[//]: # (![Enable PayPal Complete Payments]&#40;/img/paypalcomplete-enable.webp&#41;)
 
 ## Configure the Plugin
 
@@ -53,9 +47,7 @@ Click the **Toggle Inline Help** button at the top of any plugin or app screen t
 
 :::
 
-[//]: # (![Toggle inline help]&#40;/img/paypalcomplete-toggle-help.webp&#41;)
-
----
+***
 
 ### Display Name
 
@@ -65,7 +57,7 @@ The label customers see at checkout when they choose this payment method. Defaul
 
 An optional image (logo or badge) shown alongside the payment option at checkout. Upload from your media manager or leave blank to show text only.
 
----
+***
 
 ### Sandbox Mode
 
@@ -77,7 +69,7 @@ You need separate credentials for sandbox and live. Fill in both sets of fields 
 
 :::
 
----
+***
 
 ### Partner Client ID (Live)
 
@@ -89,13 +81,13 @@ The Client Secret paired with the live Client ID. Keep this private — never sh
 
 ### Partner Merchant ID (Live)
 
-Your own PayPal account Merchant ID (also called payer_id). Find it in **PayPal Account Settings -> Business Information**.
+Your own PayPal account Merchant ID (also called payer\_id). Find it in **PayPal Account Settings -> Business Information**.
 
 ### BN Code (Attribution)
 
-Your PayPal Build Notation code. This identifies your integration to PayPal for support and analytics purposes. Default: **J2Commerce_SP**. Leave as-is unless PayPal has assigned you a different code.
+Your PayPal Build Notation code. This identifies your integration to PayPal for support and analytics purposes. Default: **J2Commerce\_SP**. Leave as-is unless PayPal has assigned you a different code.
 
----
+***
 
 ### Partner Client ID (Sandbox)
 
@@ -109,13 +101,13 @@ Sandbox Client Secret paired with the sandbox Client ID.
 
 Your sandbox account Merchant ID.
 
----
+***
 
 ### Webhook ID (Live)
 
 The webhook subscription ID from your PayPal Developer Dashboard for live mode. PayPal sends this ID in every webhook event so J2Commerce can verify the signature. To get this value:
 
-1. In the PayPal Developer Dashboard, go to **My Apps & Credentials -> [Your App] -> Webhooks**.
+1. In the PayPal Developer Dashboard, go to **My Apps & Credentials -> \[Your App] -> Webhooks**.
 2. Create a webhook pointing to: `https://yoursite.com/index.php?option=com_ajax&plugin=paypalcomplete&group=j2commerce`
 3. Subscribe to: `PAYMENT.CAPTURE.COMPLETED`, `PAYMENT.CAPTURE.DENIED`, `PAYMENT.CAPTURE.REFUNDED`, `PAYMENT.CAPTURE.REVERSED`, `MERCHANT.ONBOARDING.COMPLETED`, `MERCHANT.PARTNER-CONSENT.REVOKED`, `CUSTOMER.DISPUTE.CREATED`, `CUSTOMER.DISPUTE.RESOLVED`
 4. Copy the generated **Webhook ID** and paste it here.
@@ -130,17 +122,17 @@ Webhook signature verification is required. If this field is empty, incoming web
 
 :::
 
----
+***
 
 ### Checkout Tier
 
 Controls which PayPal checkout experience appears on your site.
 
-| Option | What it means |
-|--------|---------------|
-| **Standard (Smart Buttons)** | PayPal-hosted Smart Buttons (PPCP_STANDARD). Buyers are redirected to a PayPal-hosted popup or page to approve payment. Lowest PCI compliance scope. **Recommended for most stores.** |
-| **Advanced (Custom Card Fields)** | Custom branded card fields rendered directly on your checkout page via secure PayPal iframes (PPCP_CUSTOM). Buyers never leave your site. Requires PayPal to approve your account for PPCP_CUSTOM eligibility. |
-| **Auto-detect** | J2Commerce checks your seller account's PayPal capabilities. If PPCP_CUSTOM is approved and active, Advanced is used. Otherwise it falls back to Standard automatically. |
+| Option                            | What it means                                                                                                                                                                                                    |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Standard (Smart Buttons)**      | PayPal-hosted Smart Buttons (PPCP\_STANDARD). Buyers are redirected to a PayPal-hosted popup or page to approve payment. Lowest PCI compliance scope. **Recommended for most stores.**                           |
+| **Advanced (Custom Card Fields)** | Custom branded card fields rendered directly on your checkout page via secure PayPal iframes (PPCP\_CUSTOM). Buyers never leave your site. Requires PayPal to approve your account for PPCP\_CUSTOM eligibility. |
+| **Auto-detect**                   | J2Commerce checks your seller account's PayPal capabilities. If PPCP\_CUSTOM is approved and active, Advanced is used. Otherwise it falls back to Standard automatically.                                        |
 
 :::tip
 
@@ -148,25 +140,25 @@ Start with **Standard** until your store is live and processing real orders. Swi
 
 :::
 
----
+***
 
 ### Marketplace Mode
 
 Controls how a payment is split between recipients.
 
-| Option | When to use |
-|--------|-------------|
-| **Vendor Marketplace** | You operate a marketplace where multiple sellers list products. One purchase unit is created per seller; each seller receives their portion directly. Requires the Vendor Marketplace app and sellers onboarded via PayPal Partner Referrals. |
-| **Affiliate / Commission** | A single purchase unit is created for the full order amount. A platform fee (your commission percentage) is deducted at capture and routed to your partner account. |
-| **Single Payee** | Standard single-merchant checkout. No split is performed — the full amount goes to your account. |
+| Option                     | When to use                                                                                                                                                                                                                                   |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Vendor Marketplace**     | You operate a marketplace where multiple sellers list products. One purchase unit is created per seller; each seller receives their portion directly. Requires the Vendor Marketplace app and sellers onboarded via PayPal Partner Referrals. |
+| **Affiliate / Commission** | A single purchase unit is created for the full order amount. A platform fee (your commission percentage) is deducted at capture and routed to your partner account.                                                                           |
+| **Single Payee**           | Standard single-merchant checkout. No split is performed — the full amount goes to your account.                                                                                                                                              |
 
 ### Disbursement Mode
 
 Controls when sellers receive their funds.
 
-| Option | What happens |
-|--------|-------------|
-| **Instant** | Seller receives their share immediately when the payment is captured. Default setting for most stores. |
+| Option               | What happens                                                                                                                                                                              |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Instant**          | Seller receives their share immediately when the payment is captured. Default setting for most stores.                                                                                    |
 | **Delayed (Escrow)** | Funds are held in escrow after capture. You release them manually from the PayPal dashboard. Useful for stores that need to verify order fulfillment before releasing payment to sellers. |
 
 ### Default Platform Fee (%)
@@ -175,13 +167,19 @@ Controls when sellers receive their funds.
 
 The fallback commission percentage your platform retains from each order. For example, entering `10` means 10% of the order total is kept as a platform fee. In Vendor Marketplace mode, per-vendor rates from the Vendor Marketplace app override this value.
 
----
+***
 
 ### Payment Confirmed Status
 
 The J2Commerce order status applied when PayPal successfully captures the payment. Default: **Confirmed**. Choose the order status that fits your fulfillment workflow.
 
----
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+***
 
 ### Surcharge Label
 
@@ -199,7 +197,7 @@ A flat dollar amount added to every order as a surcharge. Leave blank for no fix
 
 If your surcharge is taxable, select the tax profile that applies to it. Leave blank to charge the surcharge without tax.
 
----
+***
 
 ### Restrict to Geozone
 
@@ -213,13 +211,13 @@ Only show this payment method when the order subtotal is at or above this amount
 
 Only show this payment method when the order subtotal is at or below this amount. Leave blank for no maximum.
 
----
+***
 
 ### Thank-You Article
 
 Select a Joomla article to display on the order confirmation page after a successful payment. Leave blank to use the default J2Commerce confirmation message.
 
----
+***
 
 ### On-Selection Text
 
@@ -241,7 +239,7 @@ Text shown when a payment fails or is declined.
 
 Text shown when the buyer cancels from the PayPal payment window and returns to your checkout.
 
----
+***
 
 ### Show Dashboard Icon
 
@@ -251,19 +249,19 @@ Set to **Yes** to add a quick-access icon for this plugin to the J2Commerce admi
 
 *Shown only when Show Dashboard Icon is Yes.* The label text for the dashboard icon. Leave blank to use the plugin display name.
 
----
+***
 
 ### Subtemplate
 
 Lets you select a custom layout template for the PayPal checkout button area, if your active template or theme provides one. Leave blank to use the default layout.
 
----
+***
 
 ### Debug Mode
 
 Set to **Yes** to write detailed PayPal API request and response data to the J2Commerce log file. **Always disable in production** — debug logs can contain sensitive order data.
 
----
+***
 
 ## How It Works {#how-it-works}
 
@@ -331,7 +329,7 @@ Set to **Yes** to write detailed PayPal API request and response data to the J2C
 5. Check that **Sandbox Mode** matches your intent — sandbox credentials in live mode (or vice versa) cause a silent failure.
 6. Save the plugin and reload the checkout page.
 
----
+***
 
 ### Order Status Does Not Update After Payment {#status-not-updating}
 
@@ -339,12 +337,12 @@ Set to **Yes** to write detailed PayPal API request and response data to the J2C
 
 **Solution:**
 
-1. In the PayPal Developer Dashboard, go to **My Apps & Credentials -> [Your App] -> Webhooks** and confirm a webhook exists pointing to your site's endpoint.
+1. In the PayPal Developer Dashboard, go to **My Apps & Credentials -> \[Your App] -> Webhooks** and confirm a webhook exists pointing to your site's endpoint.
 2. Confirm the **Webhook ID** field in J2Commerce matches the ID shown in the PayPal dashboard.
 3. Make sure your site is publicly accessible — PayPal cannot deliver webhooks to a localhost or staging URL without a tunnel.
 4. Enable **Debug Mode** temporarily and check the J2Commerce log for webhook verification errors.
 
----
+***
 
 ### Seller Stuck in Pending After Onboarding {#seller-pending}
 
@@ -357,7 +355,7 @@ Set to **Yes** to write detailed PayPal API request and response data to the J2C
 3. After the seller completes the form, click **Refresh Capabilities** on their dashboard tab to pull the latest status from PayPal.
 4. If the status remains Pending after several minutes, check the J2Commerce log for webhook delivery errors.
 
----
+***
 
 ### Payment Captured but Seller Did Not Receive Funds {#seller-not-paid}
 
@@ -370,7 +368,7 @@ Set to **Yes** to write detailed PayPal API request and response data to the J2C
 3. If Disbursement Mode is Delayed, log into your PayPal dashboard to release the held funds to the seller.
 4. If `payments_receivable` is false, the seller must complete their PayPal account setup (business verification, bank account connection). Click **Refresh Capabilities** to recheck.
 
----
+***
 
 ### Sandbox Transactions Appearing in Live Mode {#sandbox-vs-live}
 
@@ -384,7 +382,7 @@ Set to **Yes** to write detailed PayPal API request and response data to the J2C
 4. Confirm the **Webhook ID (Live)** matches the webhook subscription in your live PayPal app, not the sandbox app.
 5. Save and test with a small real transaction.
 
----
+***
 
 ### Platform Fee Rejected or Capture Returns 422 Error {#partner-fee-rejected}
 
@@ -396,7 +394,7 @@ Set to **Yes** to write detailed PayPal API request and response data to the J2C
 2. Review the **Default Platform Fee (%)** value — extremely high percentages may be rejected by PayPal.
 3. Enable **Debug Mode** and retry the transaction. The full PayPal API response appears in the J2Commerce log and will include the specific error detail from PayPal.
 
----
+***
 
 ### Refund Fails with "Partner-fee refunds are not enabled" {#partner-fee-refund-disabled}
 
@@ -407,7 +405,7 @@ Set to **Yes** to write detailed PayPal API request and response data to the J2C
 1. Contact PayPal support and request that partner-fee refunds be enabled on your partner account.
 2. Until enabled, you can issue refunds for the seller portion only. The platform fee portion must be refunded manually from the PayPal dashboard.
 
----
+***
 
 ### Currency Mismatch Error at Checkout {#currency-mismatch}
 
