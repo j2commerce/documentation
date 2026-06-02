@@ -17,7 +17,9 @@ ICEPAY is a Dutch payment gateway supporting a wide range of payment methods pop
 - PHP 8.1 or later
 
 :::info Joomla SOAP Check
+
 To verify SOAP is enabled, go to **System** -> **System Information** -> **PHP Information** and search for `soap`. If you see `SOAP` with status `enabled`, you are ready to proceed.
+
 :::
 
 ## Installation
@@ -37,10 +39,10 @@ Find the ICEPAY plugin in the payment methods list and click its name to open se
 
 ### Credentials
 
-| Field | Description |
-|-------|-------------|
-| **Merchant ID** | Your numeric ICEPAY Merchant ID from the ICEPAY merchant portal. |
-| **Secret Code** | Your ICEPAY secret code used for request signing. |
+| Field            | Description                                                                                 |
+| ---------------- | ------------------------------------------------------------------------------------------- |
+| **Merchant ID**  | Your numeric ICEPAY Merchant ID from the ICEPAY merchant portal.                            |
+| **Secret Code**  | Your ICEPAY secret code used for request signing.                                           |
 | **Postback URL** | Read-only. Copy this URL into your ICEPAY merchant portal as the postback/notification URL. |
 
 <!-- SCREENSHOT: ICEPAY plugin settings page showing Merchant ID, Secret Code, and read-only Postback URL fields -->
@@ -52,37 +54,45 @@ After entering your Merchant ID and Secret Code and saving the plugin, reload th
 Select the methods you want to offer at checkout. If nothing is selected, all methods returned by ICEPAY are shown to customers.
 
 :::tip iDEAL Bank Selection
+
 When a customer selects iDEAL at checkout, they are shown a list of Dutch banks (issuers) to choose from before being redirected to ICEPAY. This selection step is built into the checkout flow.
+
 :::
 
 ### Sandbox Mode
 
-| Field | Description |
-|-------|-------------|
-| **Use Sandbox** | Enable to use test/sandbox credentials instead of live credentials. |
-| **Merchant ID (Sandbox)** | Sandbox Merchant ID — only used when Sandbox is enabled. |
-| **Secret Code (Sandbox)** | Sandbox secret code — only used when Sandbox is enabled. |
+| Field                     | Description                                                         |
+| ------------------------- | ------------------------------------------------------------------- |
+| **Use Sandbox**           | Enable to use test/sandbox credentials instead of live credentials. |
+| **Merchant ID (Sandbox)** | Sandbox Merchant ID — only used when Sandbox is enabled.            |
+| **Secret Code (Sandbox)** | Sandbox secret code — only used when Sandbox is enabled.            |
 
 When sandbox mode is on, the sandbox credentials are used automatically. Keep your live credentials in the main fields and sandbox credentials in the sandbox fields so switching between modes is instant.
 
 ### Order Statuses
 
-| Field | Default | Description |
-|-------|---------|-------------|
-| **Confirmed Payment Status** | Confirmed | Status applied when ICEPAY reports a successful payment. |
-| **Pending Payment Status** | Pending | Status applied when ICEPAY reports an open/pending payment. |
-| **Failed Payment Status** | Failed | Status applied when ICEPAY reports an error or the customer cancels. |
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+| Field                        | Default   | Description                                                          |
+| ---------------------------- | --------- | -------------------------------------------------------------------- |
+| **Confirmed Payment Status** | Confirmed | Status applied when ICEPAY reports a successful payment.             |
+| **Pending Payment Status**   | Pending   | Status applied when ICEPAY reports an open/pending payment.          |
+| **Failed Payment Status**    | Failed    | Status applied when ICEPAY reports an error or the customer cancels. |
 
 ### Surcharge
 
 Add an optional payment surcharge — useful if your payment processor charges a transaction fee you wish to pass on.
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Name** | Label shown on the order summary (e.g. "Payment fee"). |
-| **Surcharge Percent** | Percentage of the order total added as a fee (e.g. `2.5` for 2.5%). |
-| **Surcharge Fixed Amount** | Fixed amount added as a fee regardless of order total. |
-| **Surcharge Tax Class** | Optional tax class applied to the surcharge. |
+| Field                      | Description                                                         |
+| -------------------------- | ------------------------------------------------------------------- |
+| **Surcharge Name**         | Label shown on the order summary (e.g. "Payment fee").              |
+| **Surcharge Percent**      | Percentage of the order total added as a fee (e.g. `2.5` for 2.5%). |
+| **Surcharge Fixed Amount** | Fixed amount added as a fee regardless of order total.              |
+| **Surcharge Tax Class**    | Optional tax class applied to the surcharge.                        |
 
 Both percent and fixed surcharges can be combined — they are added together.
 
@@ -96,21 +106,21 @@ Select a Joomla article to display as extra content on the post-payment confirma
 
 ### On-Page Text
 
-| Field | Description |
-|-------|-------------|
-| **On Selection Text** | Shown when the customer selects ICEPAY at checkout (above the issuer selector). |
-| **On Before Payment Text** | Shown on the redirect page before the customer clicks the pay button. |
-| **On After Payment Text** | Shown after a successful payment return. |
-| **On Cancel Text** | Shown if the customer cancels the payment at ICEPAY. |
-| **On Error Text** | Shown if a payment error occurs. |
+| Field                      | Description                                                                     |
+| -------------------------- | ------------------------------------------------------------------------------- |
+| **On Selection Text**      | Shown when the customer selects ICEPAY at checkout (above the issuer selector). |
+| **On Before Payment Text** | Shown on the redirect page before the customer clicks the pay button.           |
+| **On After Payment Text**  | Shown after a successful payment return.                                        |
+| **On Cancel Text**         | Shown if the customer cancels the payment at ICEPAY.                            |
+| **On Error Text**          | Shown if a payment error occurs.                                                |
 
 ### Other Settings
 
-| Field | Default | Description |
-|-------|---------|-------------|
-| **Button Text** | Place Order | Label on the pay button. Use a J2Commerce language key or plain text. |
-| **Admin Email Group** | Administrators (8) | User group notified by email when a payment postback validation fails. |
-| **Debug Mode** | No | Logs ICEPAY events to `administrator/logs/payment_icepay.php`. Disable in production. |
+| Field                 | Default            | Description                                                                           |
+| --------------------- | ------------------ | ------------------------------------------------------------------------------------- |
+| **Button Text**       | Place Order        | Label on the pay button. Use a J2Commerce language key or plain text.                 |
+| **Admin Email Group** | Administrators (8) | User group notified by email when a payment postback validation fails.                |
+| **Debug Mode**        | No                 | Logs ICEPAY events to `administrator/logs/payment_icepay.php`. Disable in production. |
 
 ## Checkout Flow
 
@@ -155,13 +165,13 @@ The postback URL must be used exactly as shown. Routing the URL through a URL re
 
 J2Commerce maps ICEPAY status codes to your configured order statuses:
 
-| ICEPAY Status | Meaning | J2Commerce Status Applied |
-|---------------|---------|--------------------------|
-| `SUCCESS` | Payment confirmed | Confirmed Payment Status |
-| `OPEN` | Payment pending | Pending Payment Status |
-| `ERROR` | Payment failed | Failed Payment Status |
-| `REFUND` | Refund processed | Failed Payment Status (with note) |
-| `CHARGEBACK` | Chargeback received | Failed Payment Status (with note) |
+| ICEPAY Status | Meaning             | J2Commerce Status Applied         |
+| ------------- | ------------------- | --------------------------------- |
+| `SUCCESS`     | Payment confirmed   | Confirmed Payment Status          |
+| `OPEN`        | Payment pending     | Pending Payment Status            |
+| `ERROR`       | Payment failed      | Failed Payment Status             |
+| `REFUND`      | Refund processed    | Failed Payment Status (with note) |
+| `CHARGEBACK`  | Chargeback received | Failed Payment Status (with note) |
 
 ## Troubleshooting
 
@@ -170,6 +180,7 @@ J2Commerce maps ICEPAY status codes to your configured order statuses:
 **Cause:** Either your Merchant ID and Secret Code have not been saved yet, or ICEPAY returned no methods matching the customer's billing country or the store currency.
 
 **Solution:**
+
 1. Verify your Merchant ID and Secret Code are correct.
 2. Save the plugin and reload the settings page.
 3. Confirm the **Accepted Payment Methods** list is populated.
@@ -180,6 +191,7 @@ J2Commerce maps ICEPAY status codes to your configured order statuses:
 **Cause:** The postback URL may not be configured in the ICEPAY merchant portal, or the server-to-server request is being blocked by a firewall or security plugin.
 
 **Solution:**
+
 1. Check that the Postback URL in your ICEPAY portal matches the URL shown in the plugin settings exactly.
 2. Enable **Debug Mode** and check `administrator/logs/payment_icepay.php` for error messages.
 3. Verify your server is reachable from external systems (no firewall blocking incoming POST requests).
