@@ -65,6 +65,12 @@ After installation the plugin is disabled by default.
 
 ## Configuration
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 Once enabled, open the plugin to configure it.
 
 1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
