@@ -50,17 +50,23 @@ Click the **Simple CSV Import** title in the Apps list to open the import/export
 
 ## Configuration Settings
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 The following settings control how the app reads and processes your CSV file. You set these each time you run an import — there is no separate "save settings" step.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Choose Import Type** | **Upload** to upload a CSV from your computer. **Path** to import from a file already on the server. | Upload |
-| **Upload the CSV File** | Visible when Import Type is **Upload**. Choose the `.csv` file from your local machine. | — |
-| **Enter the File Path** | Visible when Import Type is **Path**. Enter the path to the CSV file relative to the Joomla root (e.g., `tmp/products.csv`). Do not include a leading slash. | — |
-| **Character Set** | The character encoding of your CSV file. Leave blank to let the app auto-detect. | Auto-detect |
-| **Date Format** | The PHP date format string used for date fields in your CSV. See [PHP date formats](https://www.php.net/manual/en/datetime.format.php). | `Y-m-d H:i:s` |
-| **Update Product if SKU Already Exists** | When **Yes**, existing products matching a CSV SKU are updated. When **No**, those rows are skipped. | No |
-| **Debug Mode** | Writes detailed activity to a Joomla log file (`app_simplecsv.php` in the Joomla logs directory). Turn this off in production. | No |
+| Setting                                  | Description                                                                                                                                                  | Default       |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
+| **Choose Import Type**                   | **Upload** to upload a CSV from your computer. **Path** to import from a file already on the server.                                                         | Upload        |
+| **Upload the CSV File**                  | Visible when Import Type is **Upload**. Choose the `.csv` file from your local machine.                                                                      | —             |
+| **Enter the File Path**                  | Visible when Import Type is **Path**. Enter the path to the CSV file relative to the Joomla root (e.g., `tmp/products.csv`). Do not include a leading slash. | —             |
+| **Character Set**                        | The character encoding of your CSV file. Leave blank to let the app auto-detect.                                                                             | Auto-detect   |
+| **Date Format**                          | The PHP date format string used for date fields in your CSV. See [PHP date formats](https://www.php.net/manual/en/datetime.format.php).                      | `Y-m-d H:i:s` |
+| **Update Product if SKU Already Exists** | When **Yes**, existing products matching a CSV SKU are updated. When **No**, those rows are skipped.                                                         | No            |
+| **Debug Mode**                           | Writes detailed activity to a Joomla log file (`app_simplecsv.php` in the Joomla logs directory). Turn this off in production.                               | No            |
 
 ## Step 1 — Back Up Your Site
 
@@ -97,58 +103,58 @@ The CSV can include any combination of the following columns. Unrecognised colum
 
 **Product details**
 
-| Column | Description |
-|--------|-------------|
-| `product_type` | Product type: `simple`, `variable`, `configurable`, or `downloadable`. Defaults to `simple` if absent or invalid. |
-| `enabled` | `1` to publish, `0` to unpublish. |
-| `visibility` | `1` to show in catalog listings, `0` to hide. |
-| `taxprofile_id` | Numeric ID of the tax profile to assign. |
-| `manufacturer_id` | Numeric ID of the manufacturer. |
-| `vendor_id` | Numeric ID of the vendor (multi-vendor setups). |
+| Column            | Description                                                                                                       |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `product_type`    | Product type: `simple`, `variable`, `configurable`, or `downloadable`. Defaults to `simple` if absent or invalid. |
+| `enabled`         | `1` to publish, `0` to unpublish.                                                                                 |
+| `visibility`      | `1` to show in catalog listings, `0` to hide.                                                                     |
+| `taxprofile_id`   | Numeric ID of the tax profile to assign.                                                                          |
+| `manufacturer_id` | Numeric ID of the manufacturer.                                                                                   |
+| `vendor_id`       | Numeric ID of the vendor (multi-vendor setups).                                                                   |
 
 **Variant and pricing fields**
 
-| Column | Description |
-|--------|-------------|
-| `sku` | **Required.** Unique identifier for this product. |
-| `upc` | UPC or barcode. |
-| `price` | Decimal price, e.g., `19.99`. |
-| `weight` | Product weight (decimal). |
-| `weight_class_id` | Numeric ID of the weight unit. |
-| `length` | Length (decimal). |
-| `width` | Width (decimal). |
-| `height` | Height (decimal). |
-| `length_class_id` | Numeric ID of the length/dimension unit. |
-| `shipping` | `1` if the product requires shipping, `0` if not. |
-| `manage_stock` | `1` to enable stock management for this product. |
-| `quantity` | Stock quantity (integer). |
-| `allow_backorder` | `1` to allow orders when stock is zero. |
-| `availability` | Availability status (numeric). |
+| Column            | Description                                       |
+| ----------------- | ------------------------------------------------- |
+| `sku`             | **Required.** Unique identifier for this product. |
+| `upc`             | UPC or barcode.                                   |
+| `price`           | Decimal price, e.g., `19.99`.                     |
+| `weight`          | Product weight (decimal).                         |
+| `weight_class_id` | Numeric ID of the weight unit.                    |
+| `length`          | Length (decimal).                                 |
+| `width`           | Width (decimal).                                  |
+| `height`          | Height (decimal).                                 |
+| `length_class_id` | Numeric ID of the length/dimension unit.          |
+| `shipping`        | `1` if the product requires shipping, `0` if not. |
+| `manage_stock`    | `1` to enable stock management for this product.  |
+| `quantity`        | Stock quantity (integer).                         |
+| `allow_backorder` | `1` to allow orders when stock is zero.           |
+| `availability`    | Availability status (numeric).                    |
 
 **Content and article fields**
 
-| Column | Description |
-|--------|-------------|
-| `product_name` | Product title (maps to the backing Joomla article title). |
-| `introtext` | Short description (article intro text). |
-| `fulltext` | Full description (article full text). |
-| `catid` | Joomla category ID for the product article. Defaults to `2`. |
-| `state` | Article published state: `1` = published, `0` = unpublished. |
-| `access` | Joomla access level ID. Defaults to `1` (Public). |
-| `language` | Language tag, e.g., `en-GB`, or `*` for all languages. |
-| `metakey` | Meta keywords. |
-| `metadesc` | Meta description. |
+| Column         | Description                                                  |
+| -------------- | ------------------------------------------------------------ |
+| `product_name` | Product title (maps to the backing Joomla article title).    |
+| `introtext`    | Short description (article intro text).                      |
+| `fulltext`     | Full description (article full text).                        |
+| `catid`        | Joomla category ID for the product article. Defaults to `2`. |
+| `state`        | Article published state: `1` = published, `0` = unpublished. |
+| `access`       | Joomla access level ID. Defaults to `1` (Public).            |
+| `language`     | Language tag, e.g., `en-GB`, or `*` for all languages.       |
+| `metakey`      | Meta keywords.                                               |
+| `metadesc`     | Meta description.                                            |
 
 **Image fields**
 
-| Column | Description |
-|--------|-------------|
-| `main_image` | Path or URL to the main product image. |
-| `main_image_alt` | Alt text for the main image. |
-| `thumb_image` | Path or URL to the thumbnail image. |
-| `thumb_image_alt` | Alt text for the thumbnail. |
-| `additional_images` | Additional images separated by `\|` (pipe character). |
-| `additional_images_alt` | Alt text for additional images, also pipe-separated. |
+| Column                  | Description                                           |
+| ----------------------- | ----------------------------------------------------- |
+| `main_image`            | Path or URL to the main product image.                |
+| `main_image_alt`        | Alt text for the main image.                          |
+| `thumb_image`           | Path or URL to the thumbnail image.                   |
+| `thumb_image_alt`       | Alt text for the thumbnail.                           |
+| `additional_images`     | Additional images separated by `\|` (pipe character). |
+| `additional_images_alt` | Alt text for additional images, also pipe-separated.  |
 
 ## Step 4 — Import the CSV
 
@@ -185,11 +191,11 @@ Individual row errors — such as mismatched column counts or missing SKUs — a
 
 The app compares each CSV row's `sku` value against the SKU column of existing product variants in the database.
 
-| Scenario | Result |
-|----------|--------|
-| CSV SKU not found in database | New product, article, master variant, stock quantity, and images are created. |
-| CSV SKU found, **Update if SKU exists** is **Yes** | The existing product, article, master variant, and images are updated. |
-| CSV SKU found, **Update if SKU exists** is **No** | Row is skipped. A notice is shown. |
+| Scenario                                             | Result                                                                           |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------- |
+| CSV SKU not found in database                        | New product, article, master variant, stock quantity, and images are created.    |
+| CSV SKU found, **Update if SKU exists** is **Yes**   | The existing product, article, master variant, and images are updated.           |
+| CSV SKU found, **Update if SKU exists** is **No**    | Row is skipped. A notice is shown.                                               |
 | CSV SKU found but product type differs from database | Row is skipped. A notice is shown. Correct the product type before re-importing. |
 
 Products are processed in batches of 50 rows at a time for memory efficiency.
@@ -231,6 +237,7 @@ The J2Commerce 6 version of Simple CSV Import was rebuilt from the ground up as 
 **Cause:** The CSV encoding does not match the selected **Character Set** setting, or auto-detection chose the wrong encoding.
 
 **Solution:**
+
 1. Open the **Simple CSV Import** app.
 2. Set **Character Set** to match your file's actual encoding — for example, `Windows-1252` for files saved from Windows Excel, or `ISO-8859-1` for Western European files.
 3. Re-import the file.
@@ -252,6 +259,7 @@ The J2Commerce 6 version of Simple CSV Import was rebuilt from the ground up as 
 **Cause:** The file path is incorrect, the file does not exist at that location, or the path is not a `.csv` file.
 
 **Solution:**
+
 1. Confirm the file has been uploaded to the server via FTP or File Manager.
 2. Enter the path relative to the Joomla root — do not include a leading slash. Use `tmp/products.csv`, not `/tmp/products.csv` or an absolute server path.
 3. Confirm the file has a `.csv` extension.
