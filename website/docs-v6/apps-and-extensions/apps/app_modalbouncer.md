@@ -207,8 +207,8 @@ Defines the rule that determines whether the visitor's answer passes:
 | Operator | Use it when |
 |----------|------------|
 | **Minimum Age (years from date)** | The visitor entered a date of birth, and you want to verify they are at least N years old. Set **Threshold Value** to the minimum age (e.g., `18`). |
-| **Above (value >)** | The visitor entered a number that must be strictly greater than the threshold. |
-| **Below (value <)** | The visitor entered a number that must be strictly less than the threshold. |
+| **Above (value `>`)** | The visitor entered a number that must be strictly greater than the threshold. |
+| **Below (value `<`)** | The visitor entered a number that must be strictly less than the threshold. |
 | **Equals (exact match)** | The visitor's answer must match the threshold exactly (not case-sensitive). For example, operator **Equals**, threshold `yes` on a text field. |
 | **Checked (checkbox must be ticked)** | The checkbox field must be ticked. No threshold value is needed. |
 
