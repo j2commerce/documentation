@@ -126,6 +126,8 @@ The wishlist page is shown through a dedicated Joomla menu item. **You must crea
 
 - Click **Select** next to **Menu Item Type**.
 
+![](/img/wishlist-menu1.webp)
+
 - Choose **J2Commerce -> Wishlist**.
 
 - Set a **Menu Title** (for example, "My Wishlist").
@@ -134,9 +136,11 @@ The wishlist page is shown through a dedicated Joomla menu item. **You must crea
 
 The plugin automatically detects this menu item to build wishlist links across the store.
 
-### Wishlist View
+### Frontend Layout
 
-Each wishlist menu item has a **Wishlist view** option in its settings:
+![](/img/wishlist-menu2.webp)
+
+Each wishlist menu item has a **View Mode** option in its settings:
 
 - **List** - one product per row in a table (default).
 
