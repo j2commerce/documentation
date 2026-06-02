@@ -32,7 +32,7 @@ Go to [https://portal.playground.kustom.co/](https://portal.playground.kustom.co
 
 Click on the verification link in the email that Kustom sends you if you clicked on the **Magic Link sign-in**
 
-Go to **Integrations -> API ->** **Generate New. **
+Go to **Integrations -> API ->** \*\*Generate New. \*\*
 
 ![](/img/kustom-api2.webp)
 
@@ -205,7 +205,7 @@ Available subtemplates: **Bootstrap 5** and **UIkit**. Leave blank to use the de
 
 :::info
 
-**NOTE**: If the order status you want isn't listed, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+**NOTE**: If the order status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
 
 :::
 
