@@ -53,10 +53,10 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 In the **Basic** configuration tab, fill in the following required fields:
 
-| Field | What to enter |
-|-------|--------------|
-| **API Key** | Paste your live API key from the MultiSafepay dashboard |
-| **Use Sandbox** | Leave set to **No** for live transactions |
+| Field           | What to enter                                           |
+| --------------- | ------------------------------------------------------- |
+| **API Key**     | Paste your live API key from the MultiSafepay dashboard |
+| **Use Sandbox** | Leave set to **No** for live transactions               |
 
 Click **Save** at the top right.
 
@@ -66,11 +66,11 @@ Click **Save** at the top right.
 
 MultiSafepay sends your store a status for every payment. The plugin maps those statuses to your J2Commerce order statuses:
 
-| MultiSafepay Status | Meaning | Recommended J2Commerce Status |
-|---------------------|---------|-------------------------------|
-| `completed` | Payment confirmed | **Confirmed** (the order is paid and ready to fulfill) |
-| `initialized`, `uncleared` | Payment started but not yet settled (e.g. bank transfer initiated) | **Pending** |
-| `void`, `declined`, `expired`, `refunded`, `cancelled` | Payment failed or reversed | **Failed** |
+| MultiSafepay Status                                    | Meaning                                                            | Recommended J2Commerce Status                          |
+| ------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------ |
+| `completed`                                            | Payment confirmed                                                  | **Confirmed** (the order is paid and ready to fulfill) |
+| `initialized`, `uncleared`                             | Payment started but not yet settled (e.g. bank transfer initiated) | **Pending**                                            |
+| `void`, `declined`, `expired`, `refunded`, `cancelled` | Payment failed or reversed                                         | **Failed**                                             |
 
 To set these:
 
@@ -115,73 +115,79 @@ The following table describes every field in the plugin configuration.
 
 ### General
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Display Name** | The payment method name shown to customers at checkout | MultiSafepay |
-| **Display Image** | Optional logo or icon shown next to the payment name at checkout | — |
-| **Description Prefix** | A short label prepended to the order description sent to MultiSafepay (e.g. "Order#") | `Order#` |
+| Field                  | Description                                                                           | Default      |
+| ---------------------- | ------------------------------------------------------------------------------------- | ------------ |
+| **Display Name**       | The payment method name shown to customers at checkout                                | MultiSafepay |
+| **Display Image**      | Optional logo or icon shown next to the payment name at checkout                      | —            |
+| **Description Prefix** | A short label prepended to the order description sent to MultiSafepay (e.g. "Order#") | `Order#`     |
 
 ### API Credentials
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **API Key** | Your live API key from the MultiSafepay dashboard | — |
-| **Use Sandbox** | Toggle Yes to switch to the test environment | No |
-| **Sandbox API Key** | Your test API key (only visible when Use Sandbox is Yes) | — |
+| Field               | Description                                              | Default |
+| ------------------- | -------------------------------------------------------- | ------- |
+| **API Key**         | Your live API key from the MultiSafepay dashboard        | —       |
+| **Use Sandbox**     | Toggle Yes to switch to the test environment             | No      |
+| **Sandbox API Key** | Your test API key (only visible when Use Sandbox is Yes) | —       |
 
-### Order Status Mapping
+### Order Status
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Completed Order Status** | Status applied when MultiSafepay reports `completed` | Confirmed |
-| **Pending Order Status** | Status applied for `initialized` or `uncleared` payments | Pending |
-| **Failed Order Status** | Status applied for `void`, `declined`, `expired`, `refunded`, or `cancelled` | Failed |
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+| Field                      | Description                                                                  | Default   |
+| -------------------------- | ---------------------------------------------------------------------------- | --------- |
+| **Completed Order Status** | Status applied when MultiSafepay reports `completed`                         | Confirmed |
+| **Pending Order Status**   | Status applied for `initialized` or `uncleared` payments                     | Pending   |
+| **Failed Order Status**    | Status applied for `void`, `declined`, `expired`, `refunded`, or `cancelled` | Failed    |
 
 ### Surcharge (Optional)
 
 Add an optional payment surcharge to cover gateway fees. Leave all fields empty if you do not want a surcharge.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Surcharge Name** | Label shown to customers for the surcharge line (e.g. "Payment fee") | — |
-| **Surcharge Percent** | Percentage of the order total to add as a surcharge (e.g. `1.5` for 1.5%) | — |
-| **Surcharge Fixed** | Fixed amount to add as a surcharge (e.g. `0.50` for €0.50) | — |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount | — |
+| Field                   | Description                                                               | Default |
+| ----------------------- | ------------------------------------------------------------------------- | ------- |
+| **Surcharge Name**      | Label shown to customers for the surcharge line (e.g. "Payment fee")      | —       |
+| **Surcharge Percent**   | Percentage of the order total to add as a surcharge (e.g. `1.5` for 1.5%) | —       |
+| **Surcharge Fixed**     | Fixed amount to add as a surcharge (e.g. `0.50` for €0.50)                | —       |
+| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount                              | —       |
 
 Both a percentage and a fixed amount can be active at the same time — they are added together.
 
 ### Geographic Restriction (Optional)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Geozone Restriction** | Limit this payment method to customers in a specific geozone. Leave blank to show to all customers. | — |
+| Field                   | Description                                                                                         | Default |
+| ----------------------- | --------------------------------------------------------------------------------------------------- | ------- |
+| **Geozone Restriction** | Limit this payment method to customers in a specific geozone. Leave blank to show to all customers. | —       |
 
 ### Thank-You Page
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Thank-You Article** | Select a Joomla article to display on the order confirmation page after a successful payment | — |
+| Field                 | Description                                                                                  | Default |
+| --------------------- | -------------------------------------------------------------------------------------------- | ------- |
+| **Thank-You Article** | Select a Joomla article to display on the order confirmation page after a successful payment | —       |
 
 ### Customer-Facing Messages
 
 These text fields let you customize what customers read at each stage of the payment flow. The defaults are suitable for most stores.
 
-| Field | When shown | Default text |
-|-------|-----------|--------------|
-| **On Selection** | When the customer selects MultiSafepay at checkout (before clicking Pay) | — |
-| **Before Payment** | On the redirect button page, just before the customer is sent to MultiSafepay | "You will be redirected to MultiSafepay to complete your payment." |
-| **After Payment** | When the customer returns from MultiSafepay after a successful payment | "Thank you for your order. Your payment has been received." |
-| **On Error** | When a gateway or configuration error occurs | "An error occurred. Please try again." |
-| **On Cancel** | When the customer clicks Cancel on the MultiSafepay payment page | "Your payment was cancelled. Your order has been saved — please try again." |
-| **Button Text** | The text on the Pay button shown before the redirect | Place Order |
+| Field              | When shown                                                                    | Default text                                                                |
+| ------------------ | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| **On Selection**   | When the customer selects MultiSafepay at checkout (before clicking Pay)      | —                                                                           |
+| **Before Payment** | On the redirect button page, just before the customer is sent to MultiSafepay | "You will be redirected to MultiSafepay to complete your payment."          |
+| **After Payment**  | When the customer returns from MultiSafepay after a successful payment        | "Thank you for your order. Your payment has been received."                 |
+| **On Error**       | When a gateway or configuration error occurs                                  | "An error occurred. Please try again."                                      |
+| **On Cancel**      | When the customer clicks Cancel on the MultiSafepay payment page              | "Your payment was cancelled. Your order has been saved — please try again." |
+| **Button Text**    | The text on the Pay button shown before the redirect                          | Place Order                                                                 |
 
 ### Advanced
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field                       | Description                                                                                                                                                                          | Default     |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
 | **Notification User Group** | Joomla user group whose members receive an admin email if a payment error occurs (e.g. a gateway API failure). Members must have **Receive System Emails** enabled in their profile. | Super Users |
-| **Debug Logging** | When set to Yes, the plugin writes detailed gateway request/response information to the Joomla log. Enable only while troubleshooting — disable on live stores. | No |
-| **Subtemplate** | Choose `bootstrap5` or `uikit` to match your store's front-end framework. | bootstrap5 |
+| **Debug Logging**           | When set to Yes, the plugin writes detailed gateway request/response information to the Joomla log. Enable only while troubleshooting — disable on live stores.                      | No          |
+| **Subtemplate**             | Choose `bootstrap5` or `uikit` to match your store's front-end framework.                                                                                                            | bootstrap5  |
 
 ## How Payments Are Confirmed
 
