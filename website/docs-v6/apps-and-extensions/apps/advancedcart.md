@@ -82,6 +82,12 @@ The drawer itself does not require a menu item. It is injected automatically int
 
 ## Configuring the App
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 Go to **J2Commerce** -> **Apps** and click the **Advanced Cart Drawer** title to open its settings. The settings are organized into seven tabs.
 
 <!-- SCREENSHOT: Apps list screen showing Advanced Cart Drawer with settings link -->
