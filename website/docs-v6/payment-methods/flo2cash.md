@@ -58,11 +58,11 @@ If you are setting up testing first, also note your **Sandbox Account ID** and *
 
 Fill in the fields in the **Basic** section:
 
-| Field | What to enter |
-|-------|---------------|
-| **Account ID** | Your live Flo2Cash Account ID from the merchant portal |
-| **Secret Key** | Your live Flo2Cash Secret Key |
-| **Use Sandbox** | Set to **No** for live transactions; set to **Yes** while testing |
+| Field                  | What to enter                                                       |
+| ---------------------- | ------------------------------------------------------------------- |
+| **Account ID**         | Your live Flo2Cash Account ID from the merchant portal              |
+| **Secret Key**         | Your live Flo2Cash Secret Key                                       |
+| **Use Sandbox**        | Set to **No** for live transactions; set to **Yes** while testing   |
 | **Sandbox Account ID** | Your Flo2Cash sandbox Account ID (visible only when Sandbox is Yes) |
 | **Sandbox Secret Key** | Your Flo2Cash sandbox Secret Key (visible only when Sandbox is Yes) |
 
@@ -74,11 +74,11 @@ When **Use Sandbox** is set to **Yes**, all transactions go to `sandbox.flo2cash
 
 These fields control what order status J2Commerce sets after Flo2Cash responds.
 
-| Field | Default | Meaning |
-|-------|---------|---------|
-| **Payment Received Status** | Confirmed (1) | Set when Flo2Cash reports the payment approved |
-| **Pending Status** | Pending (4) | Set when the transaction outcome is not yet final |
-| **Failed Status** | Failed (3) | Set when Flo2Cash declines or reports a failure |
+| Field                       | Default       | Meaning                                           |
+| --------------------------- | ------------- | ------------------------------------------------- |
+| **Payment Received Status** | Confirmed (1) | Set when Flo2Cash reports the payment approved    |
+| **Pending Status**          | Pending (4)   | Set when the transaction outcome is not yet final |
+| **Failed Status**           | Failed (3)    | Set when Flo2Cash declines or reports a failure   |
 
 The defaults work well for most stores. Change them only if your store uses custom order statuses.
 
@@ -94,81 +94,87 @@ The defaults work well for most stores. Change them only if your store uses cust
 
 ### Gateway Credentials
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Account ID** | Live Flo2Cash Account ID from your merchant portal | _(empty)_ |
-| **Secret Key** | Live Flo2Cash Secret Key | _(empty)_ |
-| **Use Sandbox** | Route transactions to the Flo2Cash sandbox server | No |
-| **Sandbox Account ID** | Sandbox Account ID (shown only when Sandbox is Yes) | _(empty)_ |
-| **Sandbox Secret Key** | Sandbox Secret Key (shown only when Sandbox is Yes) | _(empty)_ |
+| Field                  | Description                                         | Default   |
+| ---------------------- | --------------------------------------------------- | --------- |
+| **Account ID**         | Live Flo2Cash Account ID from your merchant portal  | *(empty)* |
+| **Secret Key**         | Live Flo2Cash Secret Key                            | *(empty)* |
+| **Use Sandbox**        | Route transactions to the Flo2Cash sandbox server   | No        |
+| **Sandbox Account ID** | Sandbox Account ID (shown only when Sandbox is Yes) | *(empty)* |
+| **Sandbox Secret Key** | Sandbox Secret Key (shown only when Sandbox is Yes) | *(empty)* |
 
-### Order Status Mapping
+### Order Status
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Payment Received Status** | Order status applied when Flo2Cash confirms approval | Confirmed |
-| **Pending Status** | Order status applied when the outcome is not yet final | Pending |
-| **Failed Status** | Order status applied when Flo2Cash declines the payment | Failed |
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+| Field                       | Description                                             | Default   |
+| --------------------------- | ------------------------------------------------------- | --------- |
+| **Payment Received Status** | Order status applied when Flo2Cash confirms approval    | Confirmed |
+| **Pending Status**          | Order status applied when the outcome is not yet final  | Pending   |
+| **Failed Status**           | Order status applied when Flo2Cash declines the payment | Failed    |
 
 ### Surcharge
 
 Add an optional surcharge when customers pay by Flo2Cash. You can use a percentage, a fixed amount, or both — they are added together.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Surcharge Name** | Label shown on the order summary (e.g., "Card Processing Fee") | _(empty)_ |
-| **Surcharge Percent** | Percentage of the order total to add as a fee | _(empty)_ |
-| **Surcharge Fixed** | Fixed dollar amount to add as a fee | _(empty)_ |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount | _(empty)_ |
+| Field                   | Description                                                    | Default   |
+| ----------------------- | -------------------------------------------------------------- | --------- |
+| **Surcharge Name**      | Label shown on the order summary (e.g., "Card Processing Fee") | *(empty)* |
+| **Surcharge Percent**   | Percentage of the order total to add as a fee                  | *(empty)* |
+| **Surcharge Fixed**     | Fixed dollar amount to add as a fee                            | *(empty)* |
+| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount                   | *(empty)* |
 
 ### Restrictions
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Geo Zone Restriction** | Limit this payment method to customers in a specific geo zone. Leave blank to show it to everyone. | _(empty)_ |
+| Field                    | Description                                                                                        | Default   |
+| ------------------------ | -------------------------------------------------------------------------------------------------- | --------- |
+| **Geo Zone Restriction** | Limit this payment method to customers in a specific geo zone. Leave blank to show it to everyone. | *(empty)* |
 
 ### Confirmation Page
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Thank You Article** | A Joomla article to display on the post-payment confirmation screen | _(empty)_ |
+| Field                 | Description                                                         | Default   |
+| --------------------- | ------------------------------------------------------------------- | --------- |
+| **Thank You Article** | A Joomla article to display on the post-payment confirmation screen | *(empty)* |
 
 ### Customer Messages
 
 These text fields control the messages customers see at different stages of checkout. You can leave them at their defaults or customise them to match your store's voice.
 
-| Field | When it appears | Default text |
-|-------|-----------------|--------------|
-| **On Selection** | When the customer selects Flo2Cash as the payment method | "After submitting your order, you will be redirected to Flo2Cash to complete payment..." |
-| **Before Payment** | On the pre-payment screen just before the customer is redirected | "Please click the button below to complete payment. You will be redirected to Flo2Cash..." |
-| **After Payment** | On the confirmation screen after a successful return | "Your Flo2Cash payment is being validated now. Your order status will be updated shortly..." |
-| **On Error** | When the gateway returns an error or invalid response | "There was an error processing your payment. Flo2Cash returned an invalid action." |
+| Field              | When it appears                                                  | Default text                                                                                 |
+| ------------------ | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| **On Selection**   | When the customer selects Flo2Cash as the payment method         | "After submitting your order, you will be redirected to Flo2Cash to complete payment..."     |
+| **Before Payment** | On the pre-payment screen just before the customer is redirected | "Please click the button below to complete payment. You will be redirected to Flo2Cash..."   |
+| **After Payment**  | On the confirmation screen after a successful return             | "Your Flo2Cash payment is being validated now. Your order status will be updated shortly..." |
+| **On Error**       | When the gateway returns an error or invalid response            | "There was an error processing your payment. Flo2Cash returned an invalid action."           |
 
 ### Button
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field           | Description                               | Default     |
+| --------------- | ----------------------------------------- | ----------- |
 | **Button Text** | Label on the "proceed to Flo2Cash" button | Place Order |
 
 ### Appearance
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Display Name** | Payment method name shown to customers during checkout | Flo2Cash |
-| **Display Image** | Optional logo or image shown beside the payment method name | _(empty)_ |
-| **Template** | Frontend template style — Bootstrap 5 or UIkit | Bootstrap 5 |
+| Field             | Description                                                 | Default     |
+| ----------------- | ----------------------------------------------------------- | ----------- |
+| **Display Name**  | Payment method name shown to customers during checkout      | Flo2Cash    |
+| **Display Image** | Optional logo or image shown beside the payment method name | *(empty)*   |
+| **Template**      | Frontend template style — Bootstrap 5 or UIkit              | Bootstrap 5 |
 
 ### Admin Notifications
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field                             | Description                                                                                                           | Default         |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------- |
 | **Error Notification User Group** | Members of this Joomla user group (with email notifications enabled) receive an alert when a payment fails validation | Super Users (8) |
 
 ### Diagnostics
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Logging** | Write gateway responses to the Joomla log | No |
+| Field             | Description                               | Default |
+| ----------------- | ----------------------------------------- | ------- |
+| **Debug Logging** | Write gateway responses to the Joomla log | No      |
 
 ## How the Payment Flow Works
 
@@ -211,6 +217,7 @@ If you previously used Flo2Cash with J2Store, the J2Commerce 6 version brings se
 **Cause:** The NZD currency has not been added to J2Commerce, or it is disabled.
 
 **Solution:**
+
 1. Go to **J2Commerce** -> **Localization** -> **Currencies**.
 2. Click **New** and add NZD, or click the existing NZD row and set it to **Enabled**.
 3. Click **Save**.
@@ -220,6 +227,7 @@ If you previously used Flo2Cash with J2Store, the J2Commerce 6 version brings se
 **Cause:** The post-payment notification from Flo2Cash may not have reached your store. This can happen if your server blocks external POST requests, or if the customer closed their browser before the redirect completed.
 
 **Solution:**
+
 1. Enable **Debug Logging** in the plugin configuration.
 2. Place a test order and check **System** -> **Logs** for entries from `plg_j2commerce_payment_flo2cash`.
 3. If no log entries appear at all, your server firewall may be blocking the return from Flo2Cash. Contact your hosting provider.
@@ -237,6 +245,7 @@ If you previously used Flo2Cash with J2Store, the J2Commerce 6 version brings se
 **Cause:** The selected **Error Notification User Group** has no members, or those members have **Receive System Emails** turned off in their user profile.
 
 **Solution:**
+
 1. Go to **System** -> **Manage** -> **Users** and find an administrator.
 2. Confirm **Receive System Emails** is set to **Yes** in their user profile.
 3. Return to the Flo2Cash plugin and verify the correct group is selected in **Error Notification User Group**.
