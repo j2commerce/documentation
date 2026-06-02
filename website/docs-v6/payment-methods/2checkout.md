@@ -116,6 +116,12 @@ To help you narrow down the list, you can do a search for **2Checkout**, click t
 
 **Order Status:** The J2Commerce order status applied when a payment is confirmed by 2Checkout. Defaults to **Confirmed**.
 
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
 ![](/img/2checkout-basic5.webp)
 
 **On Selection Text:** Custom HTML or text displayed when the customer selects 2Checkout as their payment method during checkout.
