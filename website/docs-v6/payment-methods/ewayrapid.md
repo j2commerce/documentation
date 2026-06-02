@@ -59,7 +59,13 @@ After installation, navigate to **J2Commerce** -> **Payments** -> **Payment Meth
 
 ***
 
-## Step-by-Step Configuration
+## Configuration
+
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
 
 Go to **J2Commerce** -> **Payments** -> **Payment Methods** and click **eWAY Rapid** (or the edit icon next to it) to open the settings.
 
