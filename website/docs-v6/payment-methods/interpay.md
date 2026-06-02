@@ -59,13 +59,13 @@ If you plan to test with the sandbox first, InterPay provides a separate **Test 
 
 Fill in the following fields in the **Basic** tab:
 
-| Field | What to enter |
-|-------|---------------|
-| **TERMID** | Your live InterPay Terminal ID |
-| **Password (PASS)** | Your live InterPay password |
-| **Test Mode** | Set to **Yes** while testing; set to **No** for live transactions |
-| **Test TERMID** | Your InterPay sandbox Terminal ID (visible only when Test Mode is Yes) |
-| **Test Password (PASS)** | Your InterPay sandbox password (visible only when Test Mode is Yes) |
+| Field                    | What to enter                                                          |
+| ------------------------ | ---------------------------------------------------------------------- |
+| **TERMID**               | Your live InterPay Terminal ID                                         |
+| **Password (PASS)**      | Your live InterPay password                                            |
+| **Test Mode**            | Set to **Yes** while testing; set to **No** for live transactions      |
+| **Test TERMID**          | Your InterPay sandbox Terminal ID (visible only when Test Mode is Yes) |
+| **Test Password (PASS)** | Your InterPay sandbox password (visible only when Test Mode is Yes)    |
 
 <!-- SCREENSHOT: InterPay plugin config showing TERMID and password fields -->
 
@@ -75,9 +75,9 @@ When **Test Mode** is **Yes**, all transactions go to the InterPay sandbox serve
 
 The **Transaction Type** setting controls what happens to the funds when the card is verified.
 
-| Option | What it does |
-|--------|-------------|
-| **Sale** | Processes and captures the payment immediately. The customer's card is charged straight away. This is the correct setting for most stores. |
+| Option                | What it does                                                                                                                                                                                                                                                                                                                |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Sale**              | Processes and captures the payment immediately. The customer's card is charged straight away. This is the correct setting for most stores.                                                                                                                                                                                  |
 | **Pre-Authorization** | Holds (reserves) the funds on the customer's card without actually capturing the money. The order moves to your **Pending Status** and the funds remain on hold until you manually capture them in the InterPay portal. Use Pre-Authorization only if your workflow requires approving orders before charging the customer. |
 
 The default is **Sale**. If you select **Pre-Authorization**, remember that held funds will expire if you do not capture them within the timeframe your gateway agreement allows.
@@ -86,22 +86,28 @@ The default is **Sale**. If you select **Pre-Authorization**, remember that held
 
 When Test Mode is off, you can select which InterPay live server endpoint to use.
 
-| Option | Server |
-|--------|--------|
+| Option                 | Server                                                                           |
+| ---------------------- | -------------------------------------------------------------------------------- |
 | **Server B (Primary)** | `svrb.InterPayCanada.com` — use this unless InterPay support tells you otherwise |
-| **Server A** | `svra.InterPayCanada.com` — alternate endpoint |
+| **Server A**           | `svra.InterPayCanada.com` — alternate endpoint                                   |
 
 Leave this on **Server B** unless your InterPay account manager has specifically directed you to Server A.
 
-### Step 7: Review Order Status Mapping
+### Step 7: Review Order Status
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
 
 These three fields control which J2Commerce order status is applied depending on the payment outcome.
 
-| Field | Default | When it is applied |
-|-------|---------|-------------------|
-| **Payment Received Status** | Confirmed | InterPay reports the payment approved |
-| **Pending Status** | Pending | Transaction type is Pre-Authorization (funds held, not captured), or the outcome is not yet final |
-| **Failed Status** | Failed | InterPay declines or returns an error |
+| Field                       | Default   | When it is applied                                                                                |
+| --------------------------- | --------- | ------------------------------------------------------------------------------------------------- |
+| **Payment Received Status** | Confirmed | InterPay reports the payment approved                                                             |
+| **Pending Status**          | Pending   | Transaction type is Pre-Authorization (funds held, not captured), or the outcome is not yet final |
+| **Failed Status**           | Failed    | InterPay declines or returns an error                                                             |
 
 The defaults work well for most stores. You only need to change these if your store uses custom order statuses.
 
@@ -118,84 +124,84 @@ The defaults work well for most stores. You only need to change these if your st
 
 ### Gateway Credentials
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **TERMID** | Your InterPay Terminal ID | _(empty)_ |
-| **Password (PASS)** | Your InterPay account password | _(empty)_ |
-| **Transaction Type** | Sale (immediate capture) or Pre-Authorization (hold only) | Sale |
-| **Test Mode** | Route transactions to the InterPay sandbox | No |
-| **Test TERMID** | Sandbox Terminal ID (shown only when Test Mode is Yes) | TESTTERM |
-| **Test Password (PASS)** | Sandbox password (shown only when Test Mode is Yes) | _(empty)_ |
-| **Live Server** | Primary (Server B) or alternate (Server A) live endpoint | Server B |
+| Field                    | Description                                               | Default   |
+| ------------------------ | --------------------------------------------------------- | --------- |
+| **TERMID**               | Your InterPay Terminal ID                                 | *(empty)* |
+| **Password (PASS)**      | Your InterPay account password                            | *(empty)* |
+| **Transaction Type**     | Sale (immediate capture) or Pre-Authorization (hold only) | Sale      |
+| **Test Mode**            | Route transactions to the InterPay sandbox                | No        |
+| **Test TERMID**          | Sandbox Terminal ID (shown only when Test Mode is Yes)    | TESTTERM  |
+| **Test Password (PASS)** | Sandbox password (shown only when Test Mode is Yes)       | *(empty)* |
+| **Live Server**          | Primary (Server B) or alternate (Server A) live endpoint  | Server B  |
 
 ### Order Status Mapping
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Payment Received Status** | Status applied when InterPay confirms a successful payment | Confirmed |
-| **Pending Status** | Status applied when funds are on hold (Pre-Authorization) or the outcome is not yet final | Pending |
-| **Failed Status** | Status applied when InterPay declines or reports an error | Failed |
+| Field                       | Description                                                                               | Default   |
+| --------------------------- | ----------------------------------------------------------------------------------------- | --------- |
+| **Payment Received Status** | Status applied when InterPay confirms a successful payment                                | Confirmed |
+| **Pending Status**          | Status applied when funds are on hold (Pre-Authorization) or the outcome is not yet final | Pending   |
+| **Failed Status**           | Status applied when InterPay declines or reports an error                                 | Failed    |
 
 ### Surcharge
 
 Add an optional surcharge when customers pay by InterPay. A percentage and a fixed amount can be combined — they are added together.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Surcharge Name** | Label shown on the order summary (e.g., "Card Processing Fee") | _(empty)_ |
-| **Surcharge Percent** | Percentage of the order total to add as a fee | _(empty)_ |
-| **Surcharge Fixed** | Fixed dollar amount to add as a fee | _(empty)_ |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount | _(empty)_ |
+| Field                   | Description                                                    | Default   |
+| ----------------------- | -------------------------------------------------------------- | --------- |
+| **Surcharge Name**      | Label shown on the order summary (e.g., "Card Processing Fee") | *(empty)* |
+| **Surcharge Percent**   | Percentage of the order total to add as a fee                  | *(empty)* |
+| **Surcharge Fixed**     | Fixed dollar amount to add as a fee                            | *(empty)* |
+| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount                   | *(empty)* |
 
 ### Restrictions
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Geo Zone Restriction** | Limit this payment method to customers in a specific geo zone. Leave blank to show it to all customers. | _(empty)_ |
+| Field                    | Description                                                                                             | Default   |
+| ------------------------ | ------------------------------------------------------------------------------------------------------- | --------- |
+| **Geo Zone Restriction** | Limit this payment method to customers in a specific geo zone. Leave blank to show it to all customers. | *(empty)* |
 
 ### Confirmation Page
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Thank You Article** | A Joomla article to display on the post-payment confirmation screen | _(empty)_ |
+| Field                 | Description                                                         | Default   |
+| --------------------- | ------------------------------------------------------------------- | --------- |
+| **Thank You Article** | A Joomla article to display on the post-payment confirmation screen | *(empty)* |
 
 ### Customer Messages
 
 These text fields control what customers read at each stage of the payment process. You can leave them at their defaults or customise them to match your store's tone.
 
-| Field | When it appears | Default text |
-|-------|-----------------|--------------|
-| **On Selection** | When the customer picks InterPay as their payment method | "Please enter your card details below. You will be redirected to the InterPay secure verification page to complete your payment." |
-| **Before Payment** | On the card entry form above the card fields | "Your card details have been received. Click the button below to complete your payment on the InterPay secure page." |
-| **After Payment** | On the confirmation screen after a successful return | "Your payment is being processed. Your order status will be updated shortly. Thank you for your order!" |
-| **On Cancel** | When the customer cancels on the InterPay page | "Your payment was cancelled. Please try again or choose a different payment method." |
-| **On Error** | When the gateway returns an error | "There was an error processing your payment. Please try again or contact us for assistance." |
+| Field              | When it appears                                          | Default text                                                                                                                      |
+| ------------------ | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **On Selection**   | When the customer picks InterPay as their payment method | "Please enter your card details below. You will be redirected to the InterPay secure verification page to complete your payment." |
+| **Before Payment** | On the card entry form above the card fields             | "Your card details have been received. Click the button below to complete your payment on the InterPay secure page."              |
+| **After Payment**  | On the confirmation screen after a successful return     | "Your payment is being processed. Your order status will be updated shortly. Thank you for your order!"                           |
+| **On Cancel**      | When the customer cancels on the InterPay page           | "Your payment was cancelled. Please try again or choose a different payment method."                                              |
+| **On Error**       | When the gateway returns an error                        | "There was an error processing your payment. Please try again or contact us for assistance."                                      |
 
 ### Button
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field           | Description                                                                 | Default     |
+| --------------- | --------------------------------------------------------------------------- | ----------- |
 | **Button Text** | Label on the button that redirects the customer to the InterPay secure page | Place Order |
 
 ### Appearance
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Display Name** | Payment method label shown to customers at checkout | InterPay |
-| **Display Image** | Optional logo or image shown beside the payment method name | _(empty)_ |
-| **Template** | Frontend template style — Bootstrap 5 or UIkit | Bootstrap 5 |
+| Field             | Description                                                 | Default     |
+| ----------------- | ----------------------------------------------------------- | ----------- |
+| **Display Name**  | Payment method label shown to customers at checkout         | InterPay    |
+| **Display Image** | Optional logo or image shown beside the payment method name | *(empty)*   |
+| **Template**      | Frontend template style — Bootstrap 5 or UIkit              | Bootstrap 5 |
 
 ### Admin Notifications
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field                             | Description                                                                                                           | Default     |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ----------- |
 | **Error Notification User Group** | Members of this Joomla user group (with email notifications enabled) receive an alert when a payment fails validation | Super Users |
 
 ### Diagnostics
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Logging** | Write gateway responses to the Joomla log | No |
+| Field             | Description                               | Default |
+| ----------------- | ----------------------------------------- | ------- |
+| **Debug Logging** | Write gateway responses to the Joomla log | No      |
 
 ## How a Customer Pays
 
@@ -214,11 +220,11 @@ You do not need to configure any return URLs in your InterPay merchant account �
 
 ## Order Statuses
 
-| Payment outcome | Order status |
-|-----------------|-------------|
-| Payment approved (Sale) | Confirmed (or your configured Payment Received Status) |
-| Pre-Authorization approved (funds held) | Pending (or your configured Pending Status) |
-| Payment declined or gateway error | Failed (or your configured Failed Status) |
+| Payment outcome                         | Order status                                           |
+| --------------------------------------- | ------------------------------------------------------ |
+| Payment approved (Sale)                 | Confirmed (or your configured Payment Received Status) |
+| Pre-Authorization approved (funds held) | Pending (or your configured Pending Status)            |
+| Payment declined or gateway error       | Failed (or your configured Failed Status)              |
 
 When **Transaction Type** is set to **Pre-Authorization**, your order will stay in the **Pending** status until you manually log in to your InterPay merchant portal and capture the held funds. Once you capture them there, you can manually move the order to **Confirmed** in J2Commerce using the order status controls.
 
@@ -258,6 +264,7 @@ If you previously used InterPay with J2Store, the J2Commerce 6 version brings se
 **Cause:** The CAD currency has not been added to J2Commerce, or it exists but is disabled.
 
 **Solution:**
+
 1. Go to **J2Commerce** -> **Localization** -> **Currencies**.
 2. If CAD is in the list but disabled, click it and set its status to **Enabled**, then click **Save**.
 3. If CAD is not in the list at all, click **New**, enter the currency details for Canadian Dollar (CAD), and click **Save**.
@@ -267,6 +274,7 @@ If you previously used InterPay with J2Store, the J2Commerce 6 version brings se
 **Cause:** The server-to-server GetResult call from J2Commerce to InterPay may have failed, or the customer returned before the result was confirmed.
 
 **Solution:**
+
 1. Enable **Debug Logging** in the plugin configuration.
 2. Place a test order and check **System** -> **Logs** for entries categorised as `plg_j2commerce_payment_interpay`.
 3. Look for a GetResult response — any error message there will explain the problem.
@@ -284,6 +292,7 @@ If you previously used InterPay with J2Store, the J2Commerce 6 version brings se
 **Cause:** The StartSession call to InterPay failed. This is usually a credentials issue or a network problem.
 
 **Solution:**
+
 1. Enable **Debug Logging** and repeat the checkout.
 2. Check **System** -> **Logs** for the StartSession response. The log entry will include any error code returned by InterPay.
 3. Confirm your **TERMID** and **Password** are correct — copy them fresh from your InterPay merchant account.
@@ -294,6 +303,7 @@ If you previously used InterPay with J2Store, the J2Commerce 6 version brings se
 **Cause:** Either the plugin is disabled, or a **Geo Zone Restriction** is set and the customer's billing address is outside that zone.
 
 **Solution:**
+
 1. Go to **System** -> **Manage** -> **Extensions**, search for **InterPay**, and confirm the plugin status is **Enabled**.
 2. Open the plugin configuration and check the **Geo Zone Restriction** field. If a zone is selected, verify that the customer's billing country and state fall within that zone under **J2Commerce** -> **Localization** -> **Geo Zones**.
 3. If the restriction is the cause but you want the method to be available everywhere, clear the **Geo Zone Restriction** field and click **Save**.
@@ -303,6 +313,7 @@ If you previously used InterPay with J2Store, the J2Commerce 6 version brings se
 **Cause:** The selected **Error Notification User Group** has no members, or the members have system emails turned off.
 
 **Solution:**
+
 1. Go to **System** -> **Manage** -> **Users** and find an administrator in the selected group.
 2. Open their user profile and confirm **Receive System Emails** is set to **Yes**.
 3. Return to the InterPay plugin configuration and confirm the correct group is selected in **Error Notification User Group**.
