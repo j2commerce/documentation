@@ -123,17 +123,21 @@ NOTE: Turn Debug Mode off in production. It is only meant for diagnosing problem
 
 ## Creating the Wishlist Menu Item{#creating-the-wishlist-menu-item}
 
-The wishlist page is shown through a dedicated Joomla menu item. You must create this menu item before customers can reach their wishlist.
+![](/img/wishlist-menu-new.webp)
 
-1. Go to **Menus -> \[Your Menu] -> Add New Menu Item**.
+The wishlist page is shown through a dedicated Joomla menu item. **You must create this menu item before customers can reach their wishlist.**
 
-2. Click **Select** next to **Menu Item Type**.
+- Go to **Menus -> J2Commerce -> Add New Menu Item**.
 
-3. Choose **J2Commerce -> Wishlist**.
 
-4. Set a **Menu Title** (for example, "My Wishlist").
 
-5. Click **Save & Close**.
+- Click **Select** next to **Menu Item Type**.
+
+- Choose **J2Commerce -> Wishlist**.
+
+- Set a **Menu Title** (for example, "My Wishlist").
+
+- Click **Save & Close**.
 
 The plugin automatically detects this menu item to build wishlist links across the store.
 
@@ -162,6 +166,12 @@ NOTE: The wishlist module is a separate add-on and is not included in the core J
 2. Go to **Content -> Site Modules -> New**.
 
 3. Select **J2Commerce - Wishlist** from the module type list.
+
+:::info
+
+NOTE: It is recommended to change the title of the module after creating it, otherwise it will have the default title 'J2COMMERCE-WISHLIST' shown on the frontend. The most common name is just 'Wishlist'.
+
+:::
 
 ### Module Settings
 
@@ -223,7 +233,19 @@ When a customer browses your store:
 
 ## Frontend Category View
 
-![](/img/wishlist-category2.webp)
+![](/img/wishlist-frontend-wishlist2.webp)
+
+## Frontend Wishlist Page
+
+![](/img/wishlist-frontend.webp)
+
+You can add the product to the cart indivually or you can all multiple in bulk by click on the boxes in the top left corner.&#x20;
+
+:::info
+
+NOTE: For customers who are not logged in, a 'Save Wishlist' button will appear next to the 'Continue Shopping' button. If they want to save their wishlist, it will redirect them to sign in or create an account.&#x20;
+
+:::
 
 ## Tips{#tips}
 
@@ -302,3 +324,9 @@ When a customer browses your store:
 1. Select at least one item by ticking its checkbox.
 
 2. If the page has been open a long time, refresh it to get a fresh security token, then try again.
+
+### The Wishlist page shows all products and random tabs{#guest-merge}
+
+**Cause:** The Wishlist Menu hasn't been created or hasn't been set up properly.
+
+**Solution:** Create a Wishlist Menu item. Go to **Menus -> J2Commerce**  (instructions are above in the doc)
