@@ -67,6 +67,12 @@ The credential fields for each mode are shown and hidden automatically based on 
 
 ## Configuration
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 Navigate to **J2Commerce** -> **Payments** -> **Payment Methods** -> **First Data** to configure the plugin.
 
 <!-- SCREENSHOT: First Data plugin configuration page in J2Commerce admin, showing the two gateway-mode radio buttons -->
