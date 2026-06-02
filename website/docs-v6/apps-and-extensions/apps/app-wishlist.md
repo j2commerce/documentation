@@ -1,10 +1,3 @@
----
-title: "Wishlist"
-sidebar_label: "Wishlist"
-sidebar_position: 15
-description: "Let customers save products to a personal wishlist and add them to the cart later — with guest support, automatic merge on login, and configurable buttons."
----
-
 # Wishlist
 
 The Wishlist app lets your customers save products for later instead of adding them straight to the cart. A heart icon or text button appears on product pages and product lists, so shoppers can build a list of items they love and come back to them any time. From their wishlist they can add one item or everything to the cart, remove items, and — as guests — keep their list even after they log in.
