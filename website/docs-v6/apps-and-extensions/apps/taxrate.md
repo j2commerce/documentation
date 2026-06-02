@@ -49,6 +49,12 @@ Once you have installed the app, you will need to enable it. There are **two** w
 
 ## Configure the Plugin Settings
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 <!-- SCREENSHOT: Advanced Tax Rates configuration page showing the Tax Classes section -->
 
 Click the name **Advanced Tax Rates** to open its configuration page.
