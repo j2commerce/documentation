@@ -64,7 +64,7 @@ Open the GDPR app settings by clicking its name in the Apps list.
 
 :::tip
 
-**Helpful Hint:** If you click on the **Toggle Inline Help** button, it will explain each section.&#x20;
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
 
 :::
 
