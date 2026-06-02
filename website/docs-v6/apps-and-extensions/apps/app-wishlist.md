@@ -1,10 +1,3 @@
----
-title: "Wishlist"
-sidebar_label: "Wishlist"
-sidebar_position: 15
-description: "Let customers save products to a personal wishlist and add them to the cart later — with guest support, automatic merge on login, and configurable buttons."
----
-
 # Wishlist
 
 The Wishlist app lets your customers save products for later instead of adding them straight to the cart. A heart icon or text button appears on product pages and product lists, so shoppers can build a list of items they love and come back to them any time. From their wishlist they can add one item or everything to the cart, remove items, and — as guests — keep their list even after they log in.
@@ -123,23 +116,31 @@ NOTE: Turn Debug Mode off in production. It is only meant for diagnosing problem
 
 ## Creating the Wishlist Menu Item{#creating-the-wishlist-menu-item}
 
-The wishlist page is shown through a dedicated Joomla menu item. You must create this menu item before customers can reach their wishlist.
+![](/img/wishlist-menu-new.webp)
 
-1. Go to **Menus -> \[Your Menu] -> Add New Menu Item**.
+The wishlist page is shown through a dedicated Joomla menu item. **You must create this menu item before customers can reach their wishlist.**
 
-2. Click **Select** next to **Menu Item Type**.
+- Go to **Menus -> J2Commerce -> Add New Menu Item**.
 
-3. Choose **J2Commerce -> Wishlist**.
 
-4. Set a **Menu Title** (for example, "My Wishlist").
 
-5. Click **Save & Close**.
+- Click **Select** next to **Menu Item Type**.
+
+![](/img/wishlist-menu1.webp)
+
+- Choose **J2Commerce -> Wishlist**.
+
+- Set a **Menu Title** (for example, "My Wishlist").
+
+- Click **Save & Close**.
 
 The plugin automatically detects this menu item to build wishlist links across the store.
 
-### Wishlist View
+### Frontend Layout
 
-Each wishlist menu item has a **Wishlist view** option in its settings:
+![](/img/wishlist-menu2.webp)
+
+Each wishlist menu item has a **View Mode** option in its settings:
 
 - **List** - one product per row in a table (default).
 
@@ -162,6 +163,12 @@ NOTE: The wishlist module is a separate add-on and is not included in the core J
 2. Go to **Content -> Site Modules -> New**.
 
 3. Select **J2Commerce - Wishlist** from the module type list.
+
+:::info
+
+NOTE: It is recommended to change the title of the module after creating it, otherwise it will have the default title 'J2COMMERCE-WISHLIST' shown on the frontend. The most common name is just 'Wishlist'.
+
+:::
 
 ### Module Settings
 
@@ -219,11 +226,23 @@ When a customer browses your store:
 
 ## Frontend Product View
 
-![](/img/wishlist-frontend-product.webp)
+![](/img/wishlist-frontend-product1.webp)
 
 ## Frontend Category View
 
-![](/img/wishlist-category2.webp)
+![](/img/wishlist-frontend-wishlist2.webp)
+
+## Frontend Wishlist Page
+
+![](/img/wishlist-frontend.webp)
+
+You can add the product to the cart individually, or you can add multiple in bulk by clicking on the boxes in the top left corner.&#x20;
+
+:::info
+
+NOTE: For customers who are not logged in, a 'Save Wishlist' button will appear next to the 'Continue Shopping' button. If they want to save their wishlist, it will redirect them to sign in or create an account.&#x20;
+
+:::
 
 ## Tips{#tips}
 
@@ -302,3 +321,9 @@ When a customer browses your store:
 1. Select at least one item by ticking its checkbox.
 
 2. If the page has been open a long time, refresh it to get a fresh security token, then try again.
+
+### The Wishlist page shows all products and random tabs{#guest-merge}
+
+**Cause:** The Wishlist Menu hasn't been created or hasn't been set up properly.
+
+**Solution:** Create a Wishlist Menu item. Go to **Menus -> J2Commerce**  (instructions are above in the doc)
