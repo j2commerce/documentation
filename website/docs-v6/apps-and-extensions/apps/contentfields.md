@@ -1,10 +1,3 @@
----
-title: "Content Fields for J2Commerce"
-sidebar_label: "Content Fields"
-sidebar_position: 10
-description: "Display Joomla article custom fields inside J2Commerce product pages — before the price, after the Cart button, or via shortcodes — without writing PHP."
----
-
 # Content Fields for J2Commerce
 
 This plugin bridges Joomla's built-in Custom Fields system and J2Commerce product pages. Once enabled, it reads the custom fields you already attach to your articles and injects them into product detail and category list views at the position you choose. No code changes are needed.
@@ -27,14 +20,6 @@ Version 6.0.0 is a full rewrite from the J2Store v4 predecessor. Key differences
 - J2Commerce 6.0 or later installed and enabled.
 - At least one Joomla Article Custom Field created for the context `com_content.article` (details below).
 - Your products must be linked to Joomla articles. Products sourced from something other than `com_content` will not have fields to display.
-
-## How Joomla Custom Fields Work
-
-Joomla has a built-in Custom Fields system that lets you attach extra data to content items. You create a field once — for example, a text field called "Material" — and Joomla stores and displays its value alongside the article it is assigned to.
-
-To create a custom field, go to **System** -> **Manage** -> **Fields** and click **New**. Set the **Context** dropdown to **Articles**. Fill in a label, choose a field type (Text, List, Textarea, etc.), and save. That field now appears in the article edit form under a **Fields** tab.
-
-Fields can be organised into groups using **System** -> **Manage** -> **Field Groups**. Field groups are useful when you want to show or hide a related set of fields together. The shortcode mode described later in this guide supports both individual fields and field groups.
 
 ## Purchase and Download
 
@@ -118,24 +103,71 @@ Controls which pages show the fields.
 
 - **None (Hidden):** Fields are never shown. Use this to temporarily hide all output without disabling the plugin.
 
-### Category View Fields
+### Category/Product View Fields
 
-A multi-select picker listing all your `com_content.article` custom fields. Only the fields you select here appear on category (product list) pages. Leave empty to show nothing in the category view even if **Pages to Display** includes category pages.
+These fields will be empty until you create your custom Content Fields. (See examples below on how to create the fields) Once they have been created, go back to the app and select which Joomla article custom fields to display in the product detail view
 
-### Product View Fields
+![](/img/content-fields-config1.webp)
 
-Same picker, applied to the product detail page. You can select different fields for each view — for example, show only a brief "Material" field on the list page but add "Care Instructions" and "Dimensions" on the detail page.
+### Creating Content Fields Groups
 
-<!-- SCREENSHOT: Plugin params screen showing Category View Fields and Product View Fields multi-select pickers with several fields selected -->
+Before the fields can be attached to a category and/or product, the custom content **Fields**  and **Field Groups** need to be created. Field groups are useful when you want to show or hide a related set of fields together.&#x20;
 
-### Bootstrap 5 Accordion
+Go to **Content -> Field Group -> New**. Set the **Context** dropdown to **Articles or Category.**&#x20;
 
+![](/img/content-fields-group-category2.webp)
 
+Whatever you name your **Field Group** will appear as a new **tab** in the individual products or category level. For example purposes only, we have named the Field Group 'Category'; therefore, the tab is now named 'Category' when you open a category.&#x20;
 
-| Setting                              | Description                                                                                                                                            |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Bootstrap 5 Accordion**            | Set to **Yes** to wrap each field value in a collapsible Bootstrap 5 accordion panel. The field label becomes the panel header.                        |
-| **Accordion Threshold (characters)** | Minimum character count that triggers the accordion wrapper. Field values shorter than this number are displayed inline (no accordion). Default: `10`. |
+![](/img/content-fields-category.webp)
+
+### Creating Content Fields
+
+Joomla has a built-in Custom Fields system that lets you attach extra data to content items. You create a field once — for example, a text field called "Material" — and Joomla stores and displays its value alongside the article it is assigned to.&#x20;
+
+:::tip
+
+The Title and Description that you create in 'Fields' will appear on the frontend once it's been assigned to a product or category
+
+:::
+
+### Article Fields
+
+![](/img/content-fields-article.webp)
+
+To create a custom field, go to **Content** -> **Fields** and click **New**. Set the **Context** dropdown to **Articles**. Fill in a label, choose a field type (Text, List, Textarea, etc.), and save. That field now appears in the article edit form under a **Fields** tab.
+
+### Category Fields
+
+![](/img/content-fields-group-category0.webp)
+
+Fields can be organised into groups using **Content** -> **Field**. Set the **Context** dropdown to **Category**. The shortcode mode described later in this guide supports both individual fields and field groups. A multi-select picker listing all your `com_content.article` custom fields. Only the fields you select here appear on category (product list) pages. Leave empty to show nothing in the category view even if **Pages to Display** includes category pages.
+
+![](/img/content-fields-group-category1.webp)
+
+The description section is if you want to explain what should be written on the frontend. The example below shows the description appearing in the Category and the category field group tab
+
+![](/img/content-fields-category.webp)
+
+### Customise the Fields to a Product
+
+Open your **product** **->** click on your new custom content field **tab** (in the example below, we named the tab Product but you can name it whatever is appropriate for the field. Same picker, applied to the product detail page. You can select different fields for each view — for example, show only a brief "Material" field on the list page but add "Care Instructions" and "Dimensions" on the detail page.
+
+![](/img/content-fields-product.webp)
+
+## Frontend Product View
+
+![](/img/content-fields-product-frontend.webp)
+
+**Show Field Label:** Set to Yes to display each field's label followed by its value. Set to No to display only the field value.
+
+### **Bootstrap 5 Accordion**
+
+![](/img/content-fields-config.webp)
+
+**Bootstrap 5 Accordion:** Set to **Yes** to wrap each field value in a collapsible Bootstrap 5 accordion panel. The field label becomes the panel header.
+
+**Accordion Threshold (characters):** Minimum character count that triggers the accordion wrapper. Field values shorter than this number are displayed inline (no accordion). Default: `10`.
 
 Use the accordion when you have long field values — care instructions, ingredient lists, detailed specs — that would push the layout down. Short values like a one-word colour name display inline regardless of the accordion setting.
 
