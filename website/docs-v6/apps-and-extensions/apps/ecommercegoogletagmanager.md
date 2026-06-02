@@ -51,6 +51,12 @@ After installation, the plugin is already enabled. To confirm:
 
 ## Configure the Plugin
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 1. Go to **J2Commerce** -> **Apps**.
 2. Click **Google Tag Manager** to open its settings.
 
@@ -58,15 +64,15 @@ After installation, the plugin is already enabled. To confirm:
 
 ### Configuration Fields
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Google Tag Manager Container ID** | Your GTM container ID. Must match the format `GTM-XXXXXXX` (GTM dash then letters and numbers). The plugin validates this format — an incorrectly formatted ID disables tracking. | _(empty)_ |
-| **Enable Guest Tracking** | When set to **Yes**, logged-out (guest) shoppers fire the `initiate_login` checkout event and their billing details are included in the `purchase_user_data` event. When set to **No**, these actions are skipped for guests. | No |
-| **Enable Debug Log** | When set to **Yes**, every dataLayer push and internal action is written to `administrator/logs/plg_j2commerce_app_ecommercegoogletagmanager.log`. Turn this off in production. | No |
+| Field                               | Description                                                                                                                                                                                                                   | Default   |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| **Google Tag Manager Container ID** | Your GTM container ID. Must match the format `GTM-XXXXXXX` (GTM dash then letters and numbers). The plugin validates this format — an incorrectly formatted ID disables tracking.                                             | *(empty)* |
+| **Enable Guest Tracking**           | When set to **Yes**, logged-out (guest) shoppers fire the `initiate_login` checkout event and their billing details are included in the `purchase_user_data` event. When set to **No**, these actions are skipped for guests. | No        |
+| **Enable Debug Log**                | When set to **Yes**, every dataLayer push and internal action is written to `administrator/logs/plg_j2commerce_app_ecommercegoogletagmanager.log`. Turn this off in production.                                               | No        |
 
-3. Enter your **Container ID** in the first field.
-4. Set **Enable Guest Tracking** and **Enable Debug Log** to match your requirements.
-5. Click **Save**.
+1. Enter your **Container ID** in the first field.
+2. Set **Enable Guest Tracking** and **Enable Debug Log** to match your requirements.
+3. Click **Save**.
 
 ## Verify It Is Working
 
@@ -103,22 +109,22 @@ If you have a GA4 tag configured in GTM:
 
 The plugin fires the following events. All event names match GA4's enhanced ecommerce specification — you can create standard GA4 tags in GTM using these event names without any custom trigger configuration.
 
-| Event | When It Fires |
-|-------|--------------|
-| `view_item_list` | Customer views a product category or product list page |
-| `view_item` | Customer views a product detail page |
-| `select_item` | Customer clicks a product link on a list page |
-| `add_to_cart` | Customer adds a product to cart |
-| `view_cart` | Customer clicks the View Cart link |
-| `remove_from_cart` | Customer removes an item from cart |
-| `begin_checkout` | Checkout page first loads |
-| `initiate_login` | Login step is shown to a logged-out customer during checkout |
-| `initiate_billing_address` | Billing address step is shown during checkout |
-| `initiate_shipping_address` | Shipping address step is shown during checkout |
-| `add_shipping_info` | Customer selects a shipping method |
-| `add_payment_info` | Customer selects a payment method |
-| `purchase` | Order is placed successfully — includes line items, transaction ID, currency, value, tax, shipping, and coupon |
-| `purchase_user_data` | Sent immediately after `purchase` — contains billing email, phone, and address for use with GA4's User-Provided Data tag |
+| Event                       | When It Fires                                                                                                            |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `view_item_list`            | Customer views a product category or product list page                                                                   |
+| `view_item`                 | Customer views a product detail page                                                                                     |
+| `select_item`               | Customer clicks a product link on a list page                                                                            |
+| `add_to_cart`               | Customer adds a product to cart                                                                                          |
+| `view_cart`                 | Customer clicks the View Cart link                                                                                       |
+| `remove_from_cart`          | Customer removes an item from cart                                                                                       |
+| `begin_checkout`            | Checkout page first loads                                                                                                |
+| `initiate_login`            | Login step is shown to a logged-out customer during checkout                                                             |
+| `initiate_billing_address`  | Billing address step is shown during checkout                                                                            |
+| `initiate_shipping_address` | Shipping address step is shown during checkout                                                                           |
+| `add_shipping_info`         | Customer selects a shipping method                                                                                       |
+| `add_payment_info`          | Customer selects a payment method                                                                                        |
+| `purchase`                  | Order is placed successfully — includes line items, transaction ID, currency, value, tax, shipping, and coupon           |
+| `purchase_user_data`        | Sent immediately after `purchase` — contains billing email, phone, and address for use with GA4's User-Provided Data tag |
 
 The `purchase_user_data` event is intentionally separate from `purchase`. Google's User-Provided Data tag type requires user data to arrive in a dedicated event, not alongside the ecommerce transaction. If you use the User-Provided Data tag in GTM, point it at the `purchase_user_data` event trigger.
 
