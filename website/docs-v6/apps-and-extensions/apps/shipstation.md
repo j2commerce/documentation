@@ -53,6 +53,12 @@ Keep this browser tab open — you will need both values in the next step.
 
 ## Enable and Configure the Plugin
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 ### Open the Plugin Settings
 
 Go to **J2Commerce** -> **Apps**. Search for **ShipStation Integration**, click the status toggle to enable it, then click the plugin title to open its settings.
@@ -61,33 +67,33 @@ Go to **J2Commerce** -> **Apps**. Search for **ShipStation Integration**, click 
 
 The settings are organised into five tabs: **Connection**, **Order Status Mapping**, **Custom Fields**, **Shipping Mappings**, and **Advanced**.
 
----
+***
 
 ### Connection Tab
 
 <!-- SCREENSHOT: ShipStation plugin - Connection tab showing API Key, API Secret, Webhook Token, and Webhook URL fields -->
 
-| Field | Description |
-|-------|-------------|
-| **API Key** | Paste the API Key from your ShipStation account settings. |
-| **API Secret** | Paste the API Secret from your ShipStation account settings. |
+| Field             | Description                                                                                                                                                          |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **API Key**       | Paste the API Key from your ShipStation account settings.                                                                                                            |
+| **API Secret**    | Paste the API Secret from your ShipStation account settings.                                                                                                         |
 | **Webhook Token** | Enter a random 32-character string. This is a secret you generate — not something ShipStation provides. Use a password manager or an online random-string generator. |
-| **Webhook URL** | Read-only. This URL appears automatically after you save the plugin with a webhook token. Copy it into ShipStation as described below. |
+| **Webhook URL**   | Read-only. This URL appears automatically after you save the plugin with a webhook token. Copy it into ShipStation as described below.                               |
 
 After filling in the API Key, API Secret, and Webhook Token, click **Save** to reveal the **Webhook URL**.
 
----
+***
 
 ### Order Status Mapping Tab
 
 <!-- SCREENSHOT: ShipStation plugin - Order Status Mapping tab -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Allowed Order Statuses** | Multi-select. Orders in these statuses are eligible to sync with ShipStation. Add every status you want included — for example, Confirmed and Processing. | None |
-| **Batch Trigger Status** | Orders in this single status are picked up by the cron job and sent as a batch, grouped by customer and shipping address. | — |
-| **Status After Submission** | The status J2Commerce sets on an order immediately after it is successfully submitted to ShipStation. | — |
-| **Shipped Order Status** | The status J2Commerce sets when a tracking number arrives from ShipStation. | — |
+| Field                       | Description                                                                                                                                               | Default |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Allowed Order Statuses**  | Multi-select. Orders in these statuses are eligible to sync with ShipStation. Add every status you want included — for example, Confirmed and Processing. | None    |
+| **Batch Trigger Status**    | Orders in this single status are picked up by the cron job and sent as a batch, grouped by customer and shipping address.                                 | —       |
+| **Status After Submission** | The status J2Commerce sets on an order immediately after it is successfully submitted to ShipStation.                                                     | —       |
+| **Shipped Order Status**    | The status J2Commerce sets when a tracking number arrives from ShipStation.                                                                               | —       |
 
 A typical setup looks like this:
 
@@ -96,7 +102,7 @@ A typical setup looks like this:
 - **Status After Submission:** Shipped (pending tracking)
 - **Shipped Order Status:** Shipped
 
----
+***
 
 ### Custom Fields Tab
 
@@ -104,15 +110,15 @@ ShipStation supports three custom text fields per order. Map them to your J2Comm
 
 <!-- SCREENSHOT: ShipStation plugin - Custom Fields tab showing three dropdown selectors -->
 
-| Field | Description |
-|-------|-------------|
+| Field              | Description                                                             |
+| ------------------ | ----------------------------------------------------------------------- |
 | **Mapped Field 1** | Select a J2Commerce custom field to send as ShipStation custom field 1. |
 | **Mapped Field 2** | Select a J2Commerce custom field to send as ShipStation custom field 2. |
 | **Mapped Field 3** | Select a J2Commerce custom field to send as ShipStation custom field 3. |
 
 For example, if you have a checkout field called "Company Name", map it to Mapped Field 1 so it appears in the ShipStation order details.
 
----
+***
 
 ### Shipping Mappings Tab
 
@@ -130,21 +136,21 @@ Express Shipping|FedEx - Priority Overnight
 
 The left side is the exact name of your J2Commerce shipping method. The right side is the ShipStation carrier and service level name exactly as it appears in ShipStation.
 
-| Field | Description |
-|-------|-------------|
-| **Shipping Mappings** | One mapping per line. Format: `J2Commerce method name\|Carrier - Service Level` |
+| Field                            | Description                                                                                                                              |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Shipping Mappings**            | One mapping per line. Format: `J2Commerce method name\|Carrier - Service Level`                                                          |
 | **Force Ground Shipping States** | Comma-separated two-letter US state codes that always use ground shipping, regardless of what the customer selected. Example: `FL,TX,TN` |
-| **Ground Shipping Service** | The carrier and service to use for forced-ground states. Example: `FedEx - Ground` |
+| **Ground Shipping Service**      | The carrier and service to use for forced-ground states. Example: `FedEx - Ground`                                                       |
 
----
+***
 
 ### Advanced Tab
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Mode** | When enabled, all ShipStation API activity is written to `administrator/logs/plg_j2commerce_app_shipstation.log.php`. Turn this on when troubleshooting. | No |
+| Field          | Description                                                                                                                                              | Default |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Debug Mode** | When enabled, all ShipStation API activity is written to `administrator/logs/plg_j2commerce_app_shipstation.log.php`. Turn this on when troubleshooting. | No      |
 
----
+***
 
 ## Set Up the Webhook in ShipStation
 

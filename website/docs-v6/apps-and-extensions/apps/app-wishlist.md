@@ -44,7 +44,7 @@ Once you click on the **Wishlist** Title next to the green checkmark, you are re
 
 :::tip
 
-**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section.
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
 
 :::
 

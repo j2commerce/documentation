@@ -37,10 +37,10 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 Before configuring the plugin you need three values from Moneris. Log in to the **Moneris Merchant Resource Center** (MRC) at [moneris.com](https://www.moneris.com) (or the test MRC at [esqa.moneris.com](https://esqa.moneris.com) for test credentials).
 
-| Credential | Where to find it |
-|------------|-----------------|
-| **Store ID** | Shown on the MRC home screen and in the "My Store" section |
-| **API Token** | **Admin** -> **Store Settings** -> **API Token** |
+| Credential      | Where to find it                                                                                          |
+| --------------- | --------------------------------------------------------------------------------------------------------- |
+| **Store ID**    | Shown on the MRC home screen and in the "My Store" section                                                |
+| **API Token**   | **Admin** -> **Store Settings** -> **API Token**                                                          |
 | **Checkout ID** | **Admin** -> **Moneris Checkout Configurator** — create a new profile or copy the ID from an existing one |
 
 The Checkout ID comes from the **Checkout Configurator** inside the MRC. If you have not created a profile yet, create one there first. The configurator lets you set your store logo, accepted card types, and language preferences for the hosted form. Once the profile is saved, the Configurator lists its **Checkout ID** — copy that value.
@@ -51,6 +51,12 @@ For test mode, Moneris provides a separate set of test credentials accessible th
 
 ### Step 1: Open the Plugin Configuration
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
 2. Find **Moneris** (or **Credit Card (Moneris)**) in the list and click its name to open the configuration.
 
@@ -60,12 +66,12 @@ For test mode, Moneris provides a separate set of test credentials accessible th
 
 Fill in the following fields:
 
-| Field | What to enter |
-|-------|---------------|
-| **Mode** | Set to **Test** while configuring. Switch to **Live** only when you are ready to accept real payments. |
-| **Store ID** | Your Moneris Store ID |
-| **API Token** | Your Moneris API Token |
-| **Checkout ID** | The Checkout ID from the Moneris Checkout Configurator |
+| Field           | What to enter                                                                                          |
+| --------------- | ------------------------------------------------------------------------------------------------------ |
+| **Mode**        | Set to **Test** while configuring. Switch to **Live** only when you are ready to accept real payments. |
+| **Store ID**    | Your Moneris Store ID                                                                                  |
+| **API Token**   | Your Moneris API Token                                                                                 |
+| **Checkout ID** | The Checkout ID from the Moneris Checkout Configurator                                                 |
 
 <!-- SCREENSHOT: Moneris plugin configuration showing Mode, Store ID, API Token, and Checkout ID fields -->
 
@@ -73,12 +79,18 @@ When **Mode** is **Test**, all transactions go to the Moneris QA gateway (`gatew
 
 ### Step 3: Configure Order Statuses
 
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
 These two fields control which J2Commerce order status is applied after Moneris reports a result.
 
-| Field | Default | When it is applied |
-|-------|---------|-------------------|
-| **Payment Received Status** | Confirmed | Moneris approves the payment |
-| **Payment Failed Status** | Failed | Moneris declines the payment or an error occurs |
+| Field                       | Default   | When it is applied                              |
+| --------------------------- | --------- | ----------------------------------------------- |
+| **Payment Received Status** | Confirmed | Moneris approves the payment                    |
+| **Payment Failed Status**   | Failed    | Moneris declines the payment or an error occurs |
 
 The defaults work for most stores. Only change them if your store uses custom order statuses or a different workflow for approved and declined payments.
 
@@ -86,12 +98,12 @@ The defaults work for most stores. Only change them if your store uses custom or
 
 If your payment processing agreement permits passing a fee to customers, you can add a surcharge for Moneris payments. All three surcharge fields are optional — leave them blank to charge no fee.
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Name** | Label shown on the order summary (for example, "Card Processing Fee") |
-| **Surcharge Percent** | Percentage of the order total added as a fee |
-| **Surcharge Fixed** | Fixed dollar amount added as a fee |
-| **Surcharge Tax Class** | Tax profile applied to the surcharge amount |
+| Field                   | Description                                                           |
+| ----------------------- | --------------------------------------------------------------------- |
+| **Surcharge Name**      | Label shown on the order summary (for example, "Card Processing Fee") |
+| **Surcharge Percent**   | Percentage of the order total added as a fee                          |
+| **Surcharge Fixed**     | Fixed dollar amount added as a fee                                    |
+| **Surcharge Tax Class** | Tax profile applied to the surcharge amount                           |
 
 Percentage and fixed amounts are combined: a 2% surcharge plus a $0.30 fixed fee both apply when both fields are filled in.
 
@@ -111,22 +123,22 @@ The **Thank You Article** field lets you display a Joomla article on the post-pa
 
 These text fields control what customers read at each stage of the payment process. The defaults are reasonable — feel free to leave them as is or adjust the wording to match your store's tone.
 
-| Field | When it appears | Default |
-|-------|-----------------|---------|
-| **On Selection** | When the customer picks Moneris as their payment method in the payment list | _(empty)_ |
-| **Before Payment** | Above the Moneris hosted form on the confirm step | "Please complete your payment in the secure form below." |
-| **After Payment** | On the confirmation screen after a successful payment | "Thank you. Your payment was received." |
-| **On Cancel** | When the customer cancels on the Moneris hosted form | "Your payment was cancelled. Your order has not been paid." |
-| **On Error** | When the gateway returns an error or the payment cannot be processed | "The payment could not be processed. Please try again or choose another payment method." |
+| Field              | When it appears                                                             | Default                                                                                  |
+| ------------------ | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| **On Selection**   | When the customer picks Moneris as their payment method in the payment list | *(empty)*                                                                                |
+| **Before Payment** | Above the Moneris hosted form on the confirm step                           | "Please complete your payment in the secure form below."                                 |
+| **After Payment**  | On the confirmation screen after a successful payment                       | "Thank you. Your payment was received."                                                  |
+| **On Cancel**      | When the customer cancels on the Moneris hosted form                        | "Your payment was cancelled. Your order has not been paid."                              |
+| **On Error**       | When the gateway returns an error or the payment cannot be processed        | "The payment could not be processed. Please try again or choose another payment method." |
 
 ### Step 8: Configure Remaining Options
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Button Text** | Label on the submit button at the confirm step | Place Order |
+| Field                        | Description                                                                                                   | Default               |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------- | --------------------- |
+| **Button Text**              | Label on the submit button at the confirm step                                                                | Place Order           |
 | **Error Notification Group** | Joomla user group whose members (with system emails enabled) receive an alert when a payment fails validation | Super Users (group 8) |
-| **Debug Logging** | Write gateway requests and responses to the Joomla log. No card data or credentials are ever logged. | No |
-| **Template** | Frontend display style — **Bootstrap 5** (default) or **UIkit** | Bootstrap 5 |
+| **Debug Logging**            | Write gateway requests and responses to the Joomla log. No card data or credentials are ever logged.          | No                    |
+| **Template**                 | Frontend display style — **Bootstrap 5** (default) or **UIkit**                                               | Bootstrap 5           |
 
 ### Step 9: Save and Test
 
@@ -141,75 +153,75 @@ These text fields control what customers read at each stage of the payment proce
 
 ### Gateway Credentials
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Display Name** | Payment method label shown to customers at checkout | Credit Card (Moneris) |
-| **Display Image** | Optional logo or icon shown beside the payment method name | _(empty)_ |
-| **Mode** | Test or Live | Test |
-| **Store ID** | Your Moneris Store ID | _(empty)_ |
-| **API Token** | Your Moneris API Token | _(empty)_ |
-| **Checkout ID** | The Checkout ID from the Moneris Checkout Configurator | _(empty)_ |
+| Field             | Description                                                | Default               |
+| ----------------- | ---------------------------------------------------------- | --------------------- |
+| **Display Name**  | Payment method label shown to customers at checkout        | Credit Card (Moneris) |
+| **Display Image** | Optional logo or icon shown beside the payment method name | *(empty)*             |
+| **Mode**          | Test or Live                                               | Test                  |
+| **Store ID**      | Your Moneris Store ID                                      | *(empty)*             |
+| **API Token**     | Your Moneris API Token                                     | *(empty)*             |
+| **Checkout ID**   | The Checkout ID from the Moneris Checkout Configurator     | *(empty)*             |
 
 ### Order Status Mapping
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Payment Received Status** | Status applied when Moneris approves the payment | Confirmed |
-| **Payment Failed Status** | Status applied when Moneris declines or an error occurs | Failed |
+| Field                       | Description                                             | Default   |
+| --------------------------- | ------------------------------------------------------- | --------- |
+| **Payment Received Status** | Status applied when Moneris approves the payment        | Confirmed |
+| **Payment Failed Status**   | Status applied when Moneris declines or an error occurs | Failed    |
 
 ### Surcharge (Optional)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Surcharge Name** | Label on the order summary line for the surcharge | _(empty)_ |
-| **Surcharge Percent** | Percentage of the order subtotal plus shipping to add as a fee | _(empty)_ |
-| **Surcharge Fixed** | Fixed amount to add as a fee | _(empty)_ |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge | _(empty)_ |
+| Field                   | Description                                                    | Default   |
+| ----------------------- | -------------------------------------------------------------- | --------- |
+| **Surcharge Name**      | Label on the order summary line for the surcharge              | *(empty)* |
+| **Surcharge Percent**   | Percentage of the order subtotal plus shipping to add as a fee | *(empty)* |
+| **Surcharge Fixed**     | Fixed amount to add as a fee                                   | *(empty)* |
+| **Surcharge Tax Class** | Tax profile to apply to the surcharge                          | *(empty)* |
 
 ### Restrictions
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Geo Zone Restriction** | Show this payment method only to customers whose billing address falls within the selected geo zone. Leave blank for all customers. | _(empty)_ |
+| Field                    | Description                                                                                                                         | Default   |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| **Geo Zone Restriction** | Show this payment method only to customers whose billing address falls within the selected geo zone. Leave blank for all customers. | *(empty)* |
 
 ### Confirmation Page
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Thank You Article** | Joomla article shown on the post-payment confirmation screen | _(empty)_ |
+| Field                 | Description                                                  | Default   |
+| --------------------- | ------------------------------------------------------------ | --------- |
+| **Thank You Article** | Joomla article shown on the post-payment confirmation screen | *(empty)* |
 
 ### Customer Messages
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **On Selection** | Message shown when the customer selects Moneris | _(empty)_ |
-| **Before Payment** | Message shown above the secure iframe on the confirm step | "Please complete your payment in the secure form below." |
-| **After Payment** | Message shown on the confirmation screen after a successful payment | "Thank you. Your payment was received." |
-| **On Cancel** | Message shown when the customer cancels on the Moneris hosted form | "Your payment was cancelled. Your order has not been paid." |
-| **On Error** | Message shown when the gateway returns an error | "The payment could not be processed. Please try again or choose another payment method." |
+| Field              | Description                                                         | Default                                                                                  |
+| ------------------ | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| **On Selection**   | Message shown when the customer selects Moneris                     | *(empty)*                                                                                |
+| **Before Payment** | Message shown above the secure iframe on the confirm step           | "Please complete your payment in the secure form below."                                 |
+| **After Payment**  | Message shown on the confirmation screen after a successful payment | "Thank you. Your payment was received."                                                  |
+| **On Cancel**      | Message shown when the customer cancels on the Moneris hosted form  | "Your payment was cancelled. Your order has not been paid."                              |
+| **On Error**       | Message shown when the gateway returns an error                     | "The payment could not be processed. Please try again or choose another payment method." |
 
 ### Button
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field           | Description                | Default     |
+| --------------- | -------------------------- | ----------- |
 | **Button Text** | Label on the submit button | Place Order |
 
 ### Admin Notifications
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field                        | Description                                                                                               | Default     |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------- | ----------- |
 | **Error Notification Group** | Joomla user group whose members (with system emails enabled) receive an email when a payment error occurs | Super Users |
 
 ### Diagnostics
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Logging** | Write gateway communication details to the Joomla log for troubleshooting. No card data or API secrets are ever written. | No |
+| Field             | Description                                                                                                              | Default |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------ | ------- |
+| **Debug Logging** | Write gateway communication details to the Joomla log for troubleshooting. No card data or API secrets are ever written. | No      |
 
 ### Appearance
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field        | Description                                    | Default     |
+| ------------ | ---------------------------------------------- | ----------- |
 | **Template** | Frontend template style — Bootstrap 5 or UIkit | Bootstrap 5 |
 
 ## How a Customer Pays
@@ -251,11 +263,11 @@ Moneris provides a fully functional QA (test) environment. Set **Mode** to **Tes
 
 Moneris publishes test card numbers in their developer documentation. Common ones include:
 
-| Card Number | Result |
-|-------------|--------|
-| `4242424242424242` | Approved (Visa) |
+| Card Number        | Result                |
+| ------------------ | --------------------- |
+| `4242424242424242` | Approved (Visa)       |
 | `5454545454545454` | Approved (Mastercard) |
-| `4242424242424291` | Declined |
+| `4242424242424291` | Declined              |
 
 Use any future expiry date (for example, `12/27`) and any three-digit CVV. For the current complete list of Moneris test cards and response codes, refer to the [Moneris Developer Centre](https://developer.moneris.com) documentation for Moneris Checkout.
 

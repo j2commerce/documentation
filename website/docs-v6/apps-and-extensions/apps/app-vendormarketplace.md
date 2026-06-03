@@ -30,23 +30,29 @@ After installation, go to **J2Commerce** -> **Apps** to configure the plugin.
 
 <!-- SCREENSHOT: Apps list with Vendor Marketplace highlighted -->
 
----
+***
 
-## General Settings
+## Configuration
+
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
 
 Open the plugin by clicking **Vendor Marketplace** in the Apps list.
 
 ### Basic Tab
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Default Commission Rate (%)** | Global commission rate applied when no vendor or product override exists. | `15` |
-| **Default Product Approval** | Whether vendor-submitted products require admin review before publishing. | Manual |
-| **Vendor Sign-Up Mode** | Who can register as a vendor: open to anyone, invitation only, or admin-creates-only. | Invitation only |
-| **Re-validate Products on Edit** | When enabled, editing an approved product resets it to Pending Review. | No |
-| **Commission Trigger Statuses** | Order statuses that cause commissions to be calculated. Select the status that represents a confirmed, paid order. | *(empty — falls back to status ID 3)* |
-| **Commission Void Statuses** | Order statuses that void or reverse existing commissions (for refunds and cancellations). | *(empty — falls back to status ID 8)* |
-| **Debug Mode** | Logs additional detail to the Joomla log. Disable on production. | No |
+| Setting                          | Description                                                                                                        | Default                               |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------- |
+| **Default Commission Rate (%)**  | Global commission rate applied when no vendor or product override exists.                                          | `15`                                  |
+| **Default Product Approval**     | Whether vendor-submitted products require admin review before publishing.                                          | Manual                                |
+| **Vendor Sign-Up Mode**          | Who can register as a vendor: open to anyone, invitation only, or admin-creates-only.                              | Invitation only                       |
+| **Re-validate Products on Edit** | When enabled, editing an approved product resets it to Pending Review.                                             | No                                    |
+| **Commission Trigger Statuses**  | Order statuses that cause commissions to be calculated. Select the status that represents a confirmed, paid order. | *(empty — falls back to status ID 3)* |
+| **Commission Void Statuses**     | Order statuses that void or reverse existing commissions (for refunds and cancellations).                          | *(empty — falls back to status ID 8)* |
+| **Debug Mode**                   | Logs additional detail to the Joomla log. Disable on production.                                                   | No                                    |
 
 :::tip Configuring Trigger and Void Statuses
 
@@ -56,28 +62,28 @@ After installation, open the plugin settings and set **Commission Trigger Status
 
 ### Payout Settings Tab
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Default Minimum Payout** | Global minimum unpaid balance required before a payout fires. | `25.00` |
-| **Default Payout Schedule** | When payouts are sent: manual, weekly, monthly, threshold-based, or combined. | Monthly |
-| **Default Payout Day** | Day of the month (1–31) for monthly schedules, or day of week (0=Sunday) for weekly. | `15` |
-| **Enable PayPal Payouts** | Allow vendor payouts via the PayPal Payouts API. | Yes |
-| **PayPal Environment** | Sandbox for testing; Live for production. | Sandbox |
-| **PayPal Client ID / Secret** | REST API credentials from your PayPal developer dashboard. | — |
-| **Enable Stripe Connect** | Allow vendor onboarding and payouts via Stripe Connect Express. | Yes |
-| **Stripe Secret Key** | Platform Stripe secret key (`sk_live_...` or `sk_test_...`). | — |
-| **Stripe Webhook Secret** | Signing secret for Stripe webhook payload verification (`whsec_...`). | — |
-| **Cross-Currency Handling** | What to do when order items are in a different currency from the store base currency. | Reject |
+| Setting                       | Description                                                                           | Default |
+| ----------------------------- | ------------------------------------------------------------------------------------- | ------- |
+| **Default Minimum Payout**    | Global minimum unpaid balance required before a payout fires.                         | `25.00` |
+| **Default Payout Schedule**   | When payouts are sent: manual, weekly, monthly, threshold-based, or combined.         | Monthly |
+| **Default Payout Day**        | Day of the month (1–31) for monthly schedules, or day of week (0=Sunday) for weekly.  | `15`    |
+| **Enable PayPal Payouts**     | Allow vendor payouts via the PayPal Payouts API.                                      | Yes     |
+| **PayPal Environment**        | Sandbox for testing; Live for production.                                             | Sandbox |
+| **PayPal Client ID / Secret** | REST API credentials from your PayPal developer dashboard.                            | —       |
+| **Enable Stripe Connect**     | Allow vendor onboarding and payouts via Stripe Connect Express.                       | Yes     |
+| **Stripe Secret Key**         | Platform Stripe secret key (`sk_live_...` or `sk_test_...`).                          | —       |
+| **Stripe Webhook Secret**     | Signing secret for Stripe webhook payload verification (`whsec_...`).                 | —       |
+| **Cross-Currency Handling**   | What to do when order items are in a different currency from the store base currency. | Reject  |
 
 ### Display Settings Tab
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Show Vendor on Product Page** | Display a "Sold by [vendor]" badge on the product detail page. | Yes |
-| **Vendor Name Links To** | Whether clicking the vendor name on a product page goes to their store page or nowhere. | Vendor store page |
-| **Subtemplate** | Layout subtemplate used for vendor-facing pages. | Bootstrap 5 |
+| Setting                         | Description                                                                             | Default           |
+| ------------------------------- | --------------------------------------------------------------------------------------- | ----------------- |
+| **Show Vendor on Product Page** | Display a "Sold by \[vendor]" badge on the product detail page.                         | Yes               |
+| **Vendor Name Links To**        | Whether clicking the vendor name on a product page goes to their store page or nowhere. | Vendor store page |
+| **Subtemplate**                 | Layout subtemplate used for vendor-facing pages.                                        | Bootstrap 5       |
 
----
+***
 
 ## Vendor Profiles
 
@@ -95,21 +101,21 @@ Admin-managed vendor profiles are edited from the vendor edit form.
 
 ### Marketplace Tab Fields
 
-| Field | Description |
-|-------|-------------|
-| **Store Name** | Public brand name shown on the vendor store page. |
-| **Store URL Slug** | URL-safe identifier used in `/vendor/[slug]`. Must be unique. |
-| **Logo URL** | Full URL to the vendor logo image. |
-| **Short Description** | Brief summary shown in meta descriptions and the store page header. |
-| **About** | Longer text shown in the About section of the store page. Basic HTML is allowed. |
-| **Commission Rate Override (%)** | Override the global rate for this vendor. Leave blank to use the global default. |
-| **Auto-Approve Products** | When enabled, this vendor's product submissions are published without admin review. |
-| **Payout Method** | How this vendor receives payouts: PayPal, Stripe Connect, or Manual. |
-| **PayPal Email** | Vendor's PayPal email for receiving payouts. |
-| **Payout Schedule** | Per-vendor override for payout frequency. Leave blank to use the global default. |
-| **Minimum Payout Amount** | Per-vendor override for the minimum balance before a payout fires. |
+| Field                            | Description                                                                         |
+| -------------------------------- | ----------------------------------------------------------------------------------- |
+| **Store Name**                   | Public brand name shown on the vendor store page.                                   |
+| **Store URL Slug**               | URL-safe identifier used in `/vendor/[slug]`. Must be unique.                       |
+| **Logo URL**                     | Full URL to the vendor logo image.                                                  |
+| **Short Description**            | Brief summary shown in meta descriptions and the store page header.                 |
+| **About**                        | Longer text shown in the About section of the store page. Basic HTML is allowed.    |
+| **Commission Rate Override (%)** | Override the global rate for this vendor. Leave blank to use the global default.    |
+| **Auto-Approve Products**        | When enabled, this vendor's product submissions are published without admin review. |
+| **Payout Method**                | How this vendor receives payouts: PayPal, Stripe Connect, or Manual.                |
+| **PayPal Email**                 | Vendor's PayPal email for receiving payouts.                                        |
+| **Payout Schedule**              | Per-vendor override for payout frequency. Leave blank to use the global default.    |
+| **Minimum Payout Amount**        | Per-vendor override for the minimum balance before a payout fires.                  |
 
----
+***
 
 ## Product Approvals
 
@@ -125,6 +131,7 @@ When **Default Product Approval** is set to Manual, vendor-submitted products go
 <!-- SCREENSHOT: Admin approvals list showing pending products -->
 
 The plugin sends automatic email notifications:
+
 - **Vendor receives** an email when their product is approved or rejected.
 - **Admin receives** an email when a vendor submits a new product.
 
@@ -132,7 +139,7 @@ The plugin sends automatic email notifications:
 
 To skip the review queue for a trusted vendor, open their vendor profile and set **Auto-Approve Products** to **Yes**. Products submitted by that vendor are published immediately without appearing in the approvals queue.
 
----
+***
 
 ## Commission Engine
 
@@ -148,14 +155,14 @@ Commission Amount = (Item Price × Quantity) × (Commission Rate ÷ 100)
 
 The rate applied to each item is resolved in priority order:
 
-| Priority | Source | Example |
-|----------|--------|---------|
-| 1 (highest) | Product-specific rule in Commission Rules | Product ID 42 → 10% |
-| 2 | Category rule in Commission Rules | Category "Electronics" → 12% |
-| 3 | Vendor rule in Commission Rules | Vendor "Acme" → 14% |
-| 4 | Vendor profile commission rate override | Vendor profile → 18% |
-| 5 | Global rule in Commission Rules | Global → 15% |
-| 6 (lowest) | Plugin param: Default Commission Rate | Config → 15% |
+| Priority    | Source                                    | Example                      |
+| ----------- | ----------------------------------------- | ---------------------------- |
+| 1 (highest) | Product-specific rule in Commission Rules | Product ID 42 → 10%          |
+| 2           | Category rule in Commission Rules         | Category "Electronics" → 12% |
+| 3           | Vendor rule in Commission Rules           | Vendor "Acme" → 14%          |
+| 4           | Vendor profile commission rate override   | Vendor profile → 18%         |
+| 5           | Global rule in Commission Rules           | Global → 15%                 |
+| 6 (lowest)  | Plugin param: Default Commission Rate     | Config → 15%                 |
 
 Commission records are **idempotent** — if the trigger fires twice for the same order (e.g., a webhook retry), the engine skips items that already have a commission record.
 
@@ -163,12 +170,12 @@ Commission records are **idempotent** — if the trigger fires twice for the sam
 
 Each commission record moves through the following states:
 
-| Status | Meaning |
-|--------|---------|
-| **Pending** | Calculated but not yet reviewed. |
-| **Approved** | Admin has confirmed the commission is valid for payout. |
-| **Paid** | Included in a completed payout to the vendor. |
-| **Voided** | Cancelled before being paid — no payout will be made. |
+| Status       | Meaning                                                                               |
+| ------------ | ------------------------------------------------------------------------------------- |
+| **Pending**  | Calculated but not yet reviewed.                                                      |
+| **Approved** | Admin has confirmed the commission is valid for payout.                               |
+| **Paid**     | Included in a completed payout to the vendor.                                         |
+| **Voided**   | Cancelled before being paid — no payout will be made.                                 |
 | **Reversed** | A paid commission was clawed back after a refund. Manual vendor recovery is required. |
 
 ### Refund Clawback
@@ -195,7 +202,7 @@ Vendors can view their own commission history from their dashboard.
 
 Vendors see their own records only — they cannot see other vendors' commissions.
 
----
+***
 
 ## Commission Rules
 
@@ -214,15 +221,15 @@ Commission Rules let you override the default rate for specific vendors, product
 1. Click **Add Rule** in the top right.
 2. Fill in the form fields:
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Scope Type** | What the rule applies to: Global, Per Vendor, Per Product, or Per Category. | Per Product |
-| **Scope ID** | The ID of the vendor, product, or category. Leave 0 for Global rules. | `42` |
-| **Commission Rate (%)** | The override rate to apply. | `10.00` |
-| **Priority** | Higher number wins when multiple rules could match. Use 0 for normal priority. | `10` |
-| **Enabled** | Toggle the rule on or off without deleting it. | Enabled |
+| Field                   | Description                                                                    | Example     |
+| ----------------------- | ------------------------------------------------------------------------------ | ----------- |
+| **Scope Type**          | What the rule applies to: Global, Per Vendor, Per Product, or Per Category.    | Per Product |
+| **Scope ID**            | The ID of the vendor, product, or category. Leave 0 for Global rules.          | `42`        |
+| **Commission Rate (%)** | The override rate to apply.                                                    | `10.00`     |
+| **Priority**            | Higher number wins when multiple rules could match. Use 0 for normal priority. | `10`        |
+| **Enabled**             | Toggle the rule on or off without deleting it.                                 | Enabled     |
 
-3. Click **Save** to apply the rule immediately.
+1. Click **Save** to apply the rule immediately.
 
 ### Editing and Deleting Rules
 
@@ -237,7 +244,7 @@ Commission Rules let you override the default rate for specific vendors, product
 
 :::
 
----
+***
 
 ## Vendor Store Pages
 
@@ -248,9 +255,9 @@ Each vendor with a published store profile gets a public store page at `/vendor/
 - "Member since" date
 - All published products assigned to that vendor
 
-The **Show Vendor on Product Page** setting controls whether product pages display a "Sold by [vendor name]" badge that links back to the vendor store.
+The **Show Vendor on Product Page** setting controls whether product pages display a "Sold by \[vendor name]" badge that links back to the vendor store.
 
----
+***
 
 ## Vendor Dashboard
 
@@ -258,7 +265,7 @@ Vendors access their self-service dashboard through a standard Joomla menu item.
 
 ### Creating the Menu Item
 
-1. Go to **Menus** -> **[Your Menu]** -> **Add New Menu Item**.
+1. Go to **Menus** -> **\[Your Menu]** -> **Add New Menu Item**.
 2. Set **Menu Item Type** to **J2Commerce** -> **Vendor Dashboard**.
 3. Set **Default Tab** to the tab shown on initial load (Sales, Commissions, Payouts, Profile, or Products).
 4. Save and assign to your menu.
@@ -267,15 +274,15 @@ Non-vendor users who visit this page are redirected to the Joomla login page.
 
 ### Dashboard Tabs
 
-| Tab | Contents |
-|-----|---------|
-| **Sales** | KPI cards (gross sales, items sold, orders, pending commission) and a recent orders table with date range filter. |
-| **Commissions** | Commission history with status filter showing vendor's own commission records. |
-| **Payouts** | Payout history showing each payout's date, amount, gateway, status, and reference. Includes a link to Payout Settings. |
-| **Products** | Product list with add/edit/delete. Submitted products show approval status badge. |
-| **Store Profile** | Edit store name, slug, logo, description, and About section. |
+| Tab               | Contents                                                                                                               |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Sales**         | KPI cards (gross sales, items sold, orders, pending commission) and a recent orders table with date range filter.      |
+| **Commissions**   | Commission history with status filter showing vendor's own commission records.                                         |
+| **Payouts**       | Payout history showing each payout's date, amount, gateway, status, and reference. Includes a link to Payout Settings. |
+| **Products**      | Product list with add/edit/delete. Submitted products show approval status badge.                                      |
+| **Store Profile** | Edit store name, slug, logo, description, and About section.                                                           |
 
----
+***
 
 ## Payouts
 
@@ -294,25 +301,25 @@ Payout creation and gateway execution run in a database transaction — a gatewa
 
 ### Payout Statuses
 
-| Status | Meaning |
-|--------|---------|
-| **Pending** | Payout row created; gateway call not yet complete. |
-| **Processing** | Gateway accepted the payout; awaiting webhook confirmation. |
-| **Completed** | Gateway confirmed successful disbursement. |
-| **Failed** | Gateway rejected or timed out; commissions reverted to Approved. |
-| **Manual** | Admin recorded an external payment (wire, cheque, etc.) without calling a gateway. |
+| Status         | Meaning                                                                            |
+| -------------- | ---------------------------------------------------------------------------------- |
+| **Pending**    | Payout row created; gateway call not yet complete.                                 |
+| **Processing** | Gateway accepted the payout; awaiting webhook confirmation.                        |
+| **Completed**  | Gateway confirmed successful disbursement.                                         |
+| **Failed**     | Gateway rejected or timed out; commissions reverted to Approved.                   |
+| **Manual**     | Admin recorded an external payment (wire, cheque, etc.) without calling a gateway. |
 
 ### Payout Schedule
 
 The schedule controls when automatic payouts fire (via the J2Commerce task plugin or a cron job calling the payout endpoint).
 
-| Schedule Type | When payouts fire |
-|---------------|-------------------|
-| **Manual** | Never automatic — admin must trigger payouts. |
-| **Weekly** | Once per week on the configured payout day (0 = Sunday). |
-| **Monthly** | Once per month on the configured payout day (1–31). |
-| **Threshold** | As soon as the vendor's approved balance reaches the minimum. |
-| **Combined** | Threshold-based — fires on the configured day OR when threshold is hit, whichever comes first. |
+| Schedule Type | When payouts fire                                                                              |
+| ------------- | ---------------------------------------------------------------------------------------------- |
+| **Manual**    | Never automatic — admin must trigger payouts.                                                  |
+| **Weekly**    | Once per week on the configured payout day (0 = Sunday).                                       |
+| **Monthly**   | Once per month on the configured payout day (1–31).                                            |
+| **Threshold** | As soon as the vendor's approved balance reaches the minimum.                                  |
+| **Combined**  | Threshold-based — fires on the configured day OR when threshold is hit, whichever comes first. |
 
 Per-vendor schedule overrides take precedence over the global default. Set a per-vendor schedule in the vendor's **Payout Settings** tab or through the vendor dashboard.
 
@@ -365,15 +372,15 @@ Vendors can configure their preferred payout method from their dashboard.
 
 ### Payout Email Notifications
 
-| Notification | Recipient | Trigger |
-|--------------|-----------|---------|
-| Payout processed | Vendor | Payout status changes to Completed |
-| Payout failed | Admin | Payout status changes to Failed |
-| Payout failed (vendor copy) | Vendor | Payout status changes to Failed |
+| Notification                | Recipient | Trigger                            |
+| --------------------------- | --------- | ---------------------------------- |
+| Payout processed            | Vendor    | Payout status changes to Completed |
+| Payout failed               | Admin     | Payout status changes to Failed    |
+| Payout failed (vendor copy) | Vendor    | Payout status changes to Failed    |
 
 Email templates are stored in `plugins/j2commerce/app_vendormarketplace/tmpl/email/`. Customize them by editing the HTML files directly.
 
----
+***
 
 ## Stripe Connect Onboarding
 
@@ -396,10 +403,12 @@ Stripe sends webhook events to confirm transfer outcomes and account updates. Se
 
 1. Go to **Developers** -> **Webhooks** -> **Add Endpoint**.
 2. Enter the webhook URL:
+
    ```
    https://yoursite.com/index.php?option=com_j2commerce&view=appplugin&plugin=app_vendormarketplace&task=stripeWebhook
    ```
 3. Select the following events to listen for:
+
    - `transfer.failed`
    - `account.updated`
 4. Copy the **Signing Secret** (`whsec_...`) and paste it into the **Stripe Webhook Secret** plugin setting.
@@ -411,6 +420,7 @@ Stripe sends webhook events to confirm transfer outcomes and account updates. Se
 3. They are redirected to Stripe's hosted onboarding form to enter business and banking details.
 4. After completing the form, Stripe redirects back to the vendor's **Payout Settings** page.
 5. The plugin reads the account status:
+
    - **Active** — onboarding complete; transfers enabled.
    - **Pending** — Stripe is still reviewing the account. Payouts will be held until active.
    - **Restricted** — Stripe requires additional information. The vendor sees a **Continue Onboarding** button to return to Stripe and complete verification.
@@ -423,7 +433,7 @@ The Vendor Marketplace uses the **Separate Charges and Transfers** model. Your p
 
 The vendor's current Stripe onboarding status is stored in their profile. View it by opening the vendor's record in **Catalog** -> **Vendors** -> **Marketplace tab** -> **Stripe Onboarding Status** field.
 
----
+***
 
 ## PayPal Payouts
 
@@ -446,10 +456,12 @@ PayPal sends webhook events to confirm payout outcomes. Set up the webhook in yo
 
 1. Go to **My Apps & Credentials** -> your app -> **Webhooks** -> **Add Webhook**.
 2. Enter the webhook URL:
+
    ```
    https://yoursite.com/index.php?option=com_j2commerce&view=appplugin&plugin=app_vendormarketplace&task=paypalWebhook
    ```
 3. Select the following events:
+
    - `PAYMENT.PAYOUTS-ITEM.SUCCEEDED`
    - `PAYMENT.PAYOUTS-ITEM.FAILED`
    - `PAYMENT.PAYOUTS-ITEM.RETURNED`
@@ -461,7 +473,7 @@ Without the webhook ID configured, webhook signature verification is skipped in 
 
 The vendor enters their PayPal email address in **Payout Settings**. The platform sends payouts to that address. No vendor-side Stripe or OAuth flow is required — just an email address.
 
----
+***
 
 ## Troubleshooting
 
@@ -504,9 +516,9 @@ Manual recovery is required. Contact the vendor and arrange repayment, or deduct
 
 Open the vendor's profile in **Catalog** -> **Vendors** -> **Marketplace tab** and set **Auto-Approve Products** to **No**. Future submissions from that vendor will require admin approval.
 
----
+***
 
----
+***
 
 ## Scheduled Payouts
 
@@ -524,23 +536,23 @@ The `plg_task_j2commerce_marketplace_payouts` plugin ships separately from the m
 4. Set your preferred schedule (daily is recommended — the plugin evaluates each vendor's individual schedule, not the cron frequency).
 5. Configure the task options:
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| Dry Run | No | Log which vendors are due without creating payouts — useful for testing before going live. |
-| Vendor Batch Size | 50 | Max vendors evaluated per task execution. Increase for large marketplaces. |
-| Minimum Payout Amount Override | — | Overrides each vendor's individual threshold for this run. Leave blank to use per-vendor or global defaults. |
-| Notify Admin on Failure | Yes | Sends a failure report to the site administrator email when any payout fails. |
+| Option                         | Default | Description                                                                                                  |
+| ------------------------------ | ------- | ------------------------------------------------------------------------------------------------------------ |
+| Dry Run                        | No      | Log which vendors are due without creating payouts — useful for testing before going live.                   |
+| Vendor Batch Size              | 50      | Max vendors evaluated per task execution. Increase for large marketplaces.                                   |
+| Minimum Payout Amount Override | —       | Overrides each vendor's individual threshold for this run. Leave blank to use per-vendor or global defaults. |
+| Notify Admin on Failure        | Yes     | Sends a failure report to the site administrator email when any payout fails.                                |
 
 ### How Schedule Evaluation Works
 
 Each approved vendor can have an individual payout schedule set in their profile. The task evaluates each vendor independently:
 
-| Schedule Type | Fires when |
-|---------------|-----------|
-| **Weekly** | Today's weekday matches the vendor's chosen day AND the last successful payout was more than 6 days ago. |
-| **Monthly** | Today's day-of-month matches the vendor's chosen day (wraps to last day of month for months with fewer days) AND the last successful payout was more than 27 days ago. |
-| **Threshold** | The vendor's outstanding approved commission balance equals or exceeds their configured threshold. |
-| **Combined** | Both the time condition (weekly or monthly) AND the threshold condition must be true simultaneously. |
+| Schedule Type | Fires when                                                                                                                                                             |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Weekly**    | Today's weekday matches the vendor's chosen day AND the last successful payout was more than 6 days ago.                                                               |
+| **Monthly**   | Today's day-of-month matches the vendor's chosen day (wraps to last day of month for months with fewer days) AND the last successful payout was more than 27 days ago. |
+| **Threshold** | The vendor's outstanding approved commission balance equals or exceeds their configured threshold.                                                                     |
+| **Combined**  | Both the time condition (weekly or monthly) AND the threshold condition must be true simultaneously.                                                                   |
 
 Vendors with a **Manual** schedule are always skipped by the task; they must request payouts via the dashboard.
 
@@ -548,7 +560,7 @@ Vendors with a **Manual** schedule are always skipped by the task; they must req
 
 Before creating a payout, the task checks for any existing payout in `pending` or `processing` status for that vendor. If one exists, the vendor is skipped to prevent duplicate payouts in the event of slow gateway responses.
 
----
+***
 
 ## Extending the Marketplace (Developer Guide)
 
@@ -564,9 +576,9 @@ Fired by the vendor dashboard navigation partial. Add tabs to the vendor's dashb
 
 **Arguments:**
 
-| Argument | Type | Description |
-|----------|------|-------------|
-| `$menu` | `array` (by reference) | Array of existing nav items. Append your own. |
+| Argument | Type                   | Description                                   |
+| -------- | ---------------------- | --------------------------------------------- |
+| `$menu`  | `array` (by reference) | Array of existing nav items. Append your own. |
 
 **Usage:**
 
@@ -589,7 +601,7 @@ public function onJ2CommerceVendorDashboardMenu(Event $event): void
 - Keys must be unique. If your key matches a core tab (`sales`, `products`, `commissions`, `payouts`, `profile`), your tab is silently ignored.
 - The `label` value is passed through `Text::_()`, so it can be a language key string.
 
----
+***
 
 #### `onJ2CommerceVendorDashboardLayout`
 
@@ -597,10 +609,10 @@ Fired when the vendor requests a layout that is not one of the built-in core lay
 
 **Arguments:**
 
-| Argument | Type | Description |
-|----------|------|-------------|
-| `$layout` | `string` | The requested layout name (from URL `?layout=`). |
-| `result` | `array` | Append HTML strings here using `$event->addResult($html)`. |
+| Argument  | Type     | Description                                                |
+| --------- | -------- | ---------------------------------------------------------- |
+| `$layout` | `string` | The requested layout name (from URL `?layout=`).           |
+| `result`  | `array`  | Append HTML strings here using `$event->addResult($html)`. |
 
 **Usage:**
 
@@ -627,7 +639,7 @@ public function onJ2CommerceVendorDashboardLayout(Event $event): void
 - If no listener provides HTML for an unknown layout, the dashboard falls back to the `sales` layout.
 - Your listener must check `$layout` before rendering — multiple apps may listen to this event.
 
----
+***
 
 #### `onJ2CommerceMarketplaceVendorStorePage`
 
@@ -635,12 +647,12 @@ Fired on the public vendor store page at specific injection points. Use this to 
 
 **Arguments:**
 
-| Argument | Type | Description |
-|----------|------|-------------|
-| `$vendorId` | `int` | The vendor's ID. |
-| `$profile` | `object` | The vendor profile record. |
-| `$section` | `string` | Injection point: `'header'`, `'sidebar'`, or `'footer'`. |
-| `result` | `array` | Append HTML using `$event->addResult($html)`. |
+| Argument    | Type     | Description                                              |
+| ----------- | -------- | -------------------------------------------------------- |
+| `$vendorId` | `int`    | The vendor's ID.                                         |
+| `$profile`  | `object` | The vendor profile record.                               |
+| `$section`  | `string` | Injection point: `'header'`, `'sidebar'`, or `'footer'`. |
+| `result`    | `array`  | Append HTML using `$event->addResult($html)`.            |
 
 **Usage:**
 
@@ -667,7 +679,7 @@ public function onJ2CommerceMarketplaceVendorStorePage(Event $event): void
 - `header` content appears above the hero section; `footer` appears below the product grid.
 - All three sections are output only when at least one listener provides non-empty HTML.
 
----
+***
 
 #### `onJ2CommerceMarketplaceVendorOnboardingStep`
 
@@ -675,11 +687,11 @@ Fired on the vendor profile dashboard page after the main profile form. Allows o
 
 **Arguments:**
 
-| Argument | Type | Description |
-|----------|------|-------------|
-| `$vendorId` | `int` | The vendor's ID. |
-| `$step` | `string` | The current step context (e.g., `'profile'`, `'kyc'`, `'agreement'`). |
-| `result` | `array` | Append HTML using `$event->addResult($html)`. |
+| Argument    | Type     | Description                                                           |
+| ----------- | -------- | --------------------------------------------------------------------- |
+| `$vendorId` | `int`    | The vendor's ID.                                                      |
+| `$step`     | `string` | The current step context (e.g., `'profile'`, `'kyc'`, `'agreement'`). |
+| `result`    | `array`  | Append HTML using `$event->addResult($html)`.                         |
 
 **Usage:**
 
@@ -700,7 +712,7 @@ public function onJ2CommerceMarketplaceVendorOnboardingStep(Event $event): void
 }
 ```
 
----
+***
 
 #### `onJ2CommerceVendorBeforeRegister`
 
@@ -708,9 +720,9 @@ Fired before a vendor application is processed. Listeners can validate or decora
 
 **Arguments:**
 
-| Argument | Type | Description |
-|----------|------|-------------|
-| `$data` | `array` (by reference) | The submitted registration data. Mutate to decorate or validate. |
+| Argument | Type                   | Description                                                      |
+| -------- | ---------------------- | ---------------------------------------------------------------- |
+| `$data`  | `array` (by reference) | The submitted registration data. Mutate to decorate or validate. |
 
 **Usage:**
 
@@ -736,7 +748,7 @@ public function onJ2CommerceVendorBeforeRegister(Event $event): void
 - If `$event->stopPropagation()` is called, the application is rejected and the user sees a generic error message. Log the reason server-side.
 - Mutations to `$data` are passed back to the application processor.
 
----
+***
 
 #### `onJ2CommerceVendorAfterRegister`
 
@@ -744,10 +756,10 @@ Fired after a vendor has been successfully registered. Use for CRM sync, custom 
 
 **Arguments:**
 
-| Argument | Type | Description |
-|----------|------|-------------|
-| `$vendorId` | `int` | The new vendor's ID. |
-| `$data` | `array` | The registration data as submitted (post-mutation from `BeforeRegister`). |
+| Argument    | Type    | Description                                                               |
+| ----------- | ------- | ------------------------------------------------------------------------- |
+| `$vendorId` | `int`   | The new vendor's ID.                                                      |
+| `$data`     | `array` | The registration data as submitted (post-mutation from `BeforeRegister`). |
 
 **Usage:**
 
@@ -762,23 +774,23 @@ public function onJ2CommerceVendorAfterRegister(Event $event): void
 }
 ```
 
----
+***
 
 #### Other Available Events
 
-| Event | Fires when | Key use cases |
-|-------|-----------|---------------|
-| `onJ2CommerceVendorBeforeProductSubmit` | Vendor submits a product | Inject default fields, custom validation, spam filtering |
-| `onJ2CommerceVendorAfterProductSubmit` | Product is submitted | Sync to external catalogue, notify review team |
-| `onJ2CommerceCommissionCalculated` | Commission is calculated for an order item | Override commission amount for loyalty programs |
-| `onJ2CommerceMarketplaceCommissionRateResolve` | Commission rate is resolved | Override rate per vendor/category/product |
-| `onJ2CommerceVendorBeforePayout` | Payout is about to be created | Fraud screening, final balance check |
-| `onJ2CommerceVendorAfterPayout` | Payout is created successfully | Accounting export, vendor notification |
-| `onJ2CommerceVendorPayoutFailed` | Payout creation fails | Custom alerting, retry queue |
-| `onJ2CommerceMarketplacePayoutMethods` | Payout gateway list is built | Register custom gateways (Wise, Payoneer, etc.) |
-| `onJ2CommerceMarketplaceProductCard` | A vendor product card is rendered | Add vendor badge, ratings, badges |
+| Event                                          | Fires when                                 | Key use cases                                            |
+| ---------------------------------------------- | ------------------------------------------ | -------------------------------------------------------- |
+| `onJ2CommerceVendorBeforeProductSubmit`        | Vendor submits a product                   | Inject default fields, custom validation, spam filtering |
+| `onJ2CommerceVendorAfterProductSubmit`         | Product is submitted                       | Sync to external catalogue, notify review team           |
+| `onJ2CommerceCommissionCalculated`             | Commission is calculated for an order item | Override commission amount for loyalty programs          |
+| `onJ2CommerceMarketplaceCommissionRateResolve` | Commission rate is resolved                | Override rate per vendor/category/product                |
+| `onJ2CommerceVendorBeforePayout`               | Payout is about to be created              | Fraud screening, final balance check                     |
+| `onJ2CommerceVendorAfterPayout`                | Payout is created successfully             | Accounting export, vendor notification                   |
+| `onJ2CommerceVendorPayoutFailed`               | Payout creation fails                      | Custom alerting, retry queue                             |
+| `onJ2CommerceMarketplacePayoutMethods`         | Payout gateway list is built               | Register custom gateways (Wise, Payoneer, etc.)          |
+| `onJ2CommerceMarketplaceProductCard`           | A vendor product card is rendered          | Add vendor badge, ratings, badges                        |
 
----
+***
 
 ## FAQ
 
@@ -816,11 +828,11 @@ Enable **Dry Run** on the scheduled task. The task logs which vendors would be p
 
 Yes. In the vendor profile dashboard, the vendor can set their **Payout Schedule** to **Manual**. Vendors with a manual schedule are skipped entirely by the scheduled payout task.
 
-### Does this plugin work alongside app_vendormanagement?
+### Does this plugin work alongside app\_vendormanagement?
 
 Yes — both plugins operate on disjoint database tables. `app_vendormanagement` manages dealer tiers and bulk discounts; `app_vendormarketplace` manages vendor storefronts and commissions. They share the core `#__j2commerce_vendors` table in read-only fashion. There is no interaction between the two commission engines.
 
----
+***
 
 ## Troubleshooting
 
@@ -856,7 +868,7 @@ The event only fires for layouts that are NOT in the core allowed list. If you r
 
 `onJ2CommerceMarketplaceVendorStorePage` requires `$vendorId > 0` and a valid `$profile` object. Verify the vendor store page URL includes a valid vendor ID (e.g., `/vendor-store/1:acme-crafts`). An invalid or deleted vendor returns a "store not found" message before the event fires.
 
----
+***
 
 ## Related Topics
 

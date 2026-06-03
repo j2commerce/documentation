@@ -50,6 +50,12 @@ Once you have installed the plugin, there are **two** ways you can access it.&#x
 
 Open the plugin settings by clicking **Quantity Discounts** in the Apps list.
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 <!-- SCREENSHOT: The Quantity Discounts plugin settings panel showing all three fields -->
 
 ### Show Discount Table In

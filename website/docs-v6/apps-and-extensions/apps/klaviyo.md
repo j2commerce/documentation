@@ -29,7 +29,7 @@ After installation, go to **J2Commerce** -> **Apps** to configure it.
 - Your Klaviyo **Private API Key** (for server-side event tracking)
 - Your Klaviyo **Public Site ID** (for the onsite tracking script, if you want it)
 
----
+***
 
 ## Finding Your Klaviyo Keys
 
@@ -57,44 +57,50 @@ The Public Site ID is a 6-character code used by the Klaviyo onsite JavaScript s
 
 <!-- SCREENSHOT: Klaviyo API Keys screen showing Public Site ID at the top -->
 
----
+***
 
 ## Configuration
 
 Open the Klaviyo app settings by going to **J2Commerce** -> **Apps**, then clicking the name of the Klaviyo app.
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 <!-- SCREENSHOT: Klaviyo app settings form with all fields visible -->
 
-| Field | Description | Recommended Value |
-|-------|-------------|-------------------|
-| **Private API Key** | Server-side key for sending events. Starts with `pk_`. Required for all event tracking and backfill. | Your `pk_live_...` key |
-| **Public Site ID** | 6-character site ID for the onsite JavaScript snippet. Required only if **Enable Onsite Tracking** is set to **Yes**. | Your 6-character code |
-| **Enable Onsite Tracking** | Loads the Klaviyo tracking snippet (`klaviyo.js`) on every frontend page of your site. Needed for Klaviyo's on-site forms and browse abandonment features. | **Yes** (unless you load the snippet another way) |
-| **Product Feed Categories** | Limits the product feed to products in the selected Joomla content categories. Leave empty to include all published products. | Leave empty for all products, or select specific categories |
-| **Feed Brand Name** | Populates the `brand` field in the product feed. Usually your store or company name. | Your store name |
-| **Custom Field Mappings** | Maps Joomla custom field IDs to feed keys, one per line. See [Custom Field Mappings](#custom-field-mappings) below. | Leave empty unless you use Joomla custom fields |
-| **Backfill Order States** | Comma-separated order state IDs to include when running the historical backfill. | `1,2,7,8` (Confirmed, Processed, Shipped, Delivered) |
+| Field                       | Description                                                                                                                                                | Recommended Value                                           |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **Private API Key**         | Server-side key for sending events. Starts with `pk_`. Required for all event tracking and backfill.                                                       | Your `pk_live_...` key                                      |
+| **Public Site ID**          | 6-character site ID for the onsite JavaScript snippet. Required only if **Enable Onsite Tracking** is set to **Yes**.                                      | Your 6-character code                                       |
+| **Enable Onsite Tracking**  | Loads the Klaviyo tracking snippet (`klaviyo.js`) on every frontend page of your site. Needed for Klaviyo's on-site forms and browse abandonment features. | **Yes** (unless you load the snippet another way)           |
+| **Product Feed Categories** | Limits the product feed to products in the selected Joomla content categories. Leave empty to include all published products.                              | Leave empty for all products, or select specific categories |
+| **Feed Brand Name**         | Populates the `brand` field in the product feed. Usually your store or company name.                                                                       | Your store name                                             |
+| **Custom Field Mappings**   | Maps Joomla custom field IDs to feed keys, one per line. See [Custom Field Mappings](#custom-field-mappings) below.                                        | Leave empty unless you use Joomla custom fields             |
+| **Backfill Order States**   | Comma-separated order state IDs to include when running the historical backfill.                                                                           | `1,2,7,8` (Confirmed, Processed, Shipped, Delivered)        |
 
 Click **Save** after filling in your settings.
 
----
+***
 
 ## What Events Are Sent
 
 The plugin sends these events to Klaviyo automatically. You can use them to trigger flows in Klaviyo's Flow Builder.
 
-| Event Name (in Klaviyo) | When It Fires | Key Properties |
-|-------------------------|---------------|---------------|
-| **Added to Cart** | When a shopper adds any product to the cart | Product ID, name, SKU, quantity, item price, total value, image URL, product URL, checkout URL |
-| **Started Checkout** | When the checkout page loads | Subtotal, total, currency |
-| **Placed Order** | After a successful payment | Order ID, total, subtotal, discount, currency, line items |
-| **Ordered Product** | One event per line item on a completed order | Order ID, product ID, name, SKU, quantity, item price, row total |
-| **Renewed Order** | After a subscription renewal payment succeeds | Same properties as Placed Order |
-| **Renewed Product** | One event per line item on a renewal | Same properties as Ordered Product |
+| Event Name (in Klaviyo) | When It Fires                                 | Key Properties                                                                                 |
+| ----------------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Added to Cart**       | When a shopper adds any product to the cart   | Product ID, name, SKU, quantity, item price, total value, image URL, product URL, checkout URL |
+| **Started Checkout**    | When the checkout page loads                  | Subtotal, total, currency                                                                      |
+| **Placed Order**        | After a successful payment                    | Order ID, total, subtotal, discount, currency, line items                                      |
+| **Ordered Product**     | One event per line item on a completed order  | Order ID, product ID, name, SKU, quantity, item price, row total                               |
+| **Renewed Order**       | After a subscription renewal payment succeeds | Same properties as Placed Order                                                                |
+| **Renewed Product**     | One event per line item on a renewal          | Same properties as Ordered Product                                                             |
 
 For logged-in customers, the event profile includes their email, display name, and Joomla user ID. For guests, the email is taken from the session when available.
 
----
+***
 
 ## Product Feed
 
@@ -159,7 +165,7 @@ Valid target keys are: `custom_label_0`, `custom_label_1`, `custom_label_2`. The
 
 To find a Joomla custom field ID, go to **System** -> **Custom Fields** and look at the **ID** column in the fields list.
 
----
+***
 
 ## Historical Order Backfill
 
@@ -185,26 +191,29 @@ When the run completes, a message tells you how many orders were sent to Klaviyo
 
 The backfill uses the **Backfill Order States** setting to filter orders. The default value `1,2,7,8` covers:
 
-| State ID | Status |
-|----------|--------|
-| 1 | Confirmed |
-| 2 | Processed |
-| 7 | Shipped |
-| 8 | Delivered |
+| State ID | Status    |
+| -------- | --------- |
+| 1        | Confirmed |
+| 2        | Processed |
+| 7        | Shipped   |
+| 8        | Delivered |
 
 To include additional states, add their IDs to the **Backfill Order States** field as a comma-separated list.
 
 :::note
+
 The backfill sends **Placed Order** and **Ordered Product** events only. It does not send Added to Cart or Started Checkout events for historical orders.
+
 :::
 
----
+***
 
 ## What's New vs the Old J2Store Klaviyo Plugin
 
 If you used the Klaviyo plugin on J2Store v4, here is what changed in J2Commerce 6.
 
-**Klaviyo Events API replaces the deprecated track API.** Klaviyo sunset the old base64-encoded `GET /api/track` endpoint. The J2Commerce plugin uses the modern `POST /api/events` endpoint with proper JSON:API payloads and an `Authorization: Klaviyo-API-Key` header. Events now appear in Klaviyo reliably and with full property support.
+**Klaviyo Events API replaces the deprecated track API.** Klaviyo sunset the old base64-encoded `GET /api/track` endpoint. The J2Commerce plugin uses the modern `POST /api/events` endpoint with proper JSON\:API
+&#x20;payloads and an `Authorization: Klaviyo-API-Key` header. Events now appear in Klaviyo reliably and with full property support.
 
 **Secure admin-only backfill.** The old plugin exposed a public URL that would return order data to anyone who knew the address — a significant data leak. The J2Commerce plugin replaces that with an admin panel tool that requires J2Commerce administrator permissions and a CSRF token. Order data never leaves the server over a public URL.
 
@@ -214,7 +223,7 @@ If you used the Klaviyo plugin on J2Store v4, here is what changed in J2Commerce
 
 **Native Joomla 6 architecture.** The plugin is built on native Joomla 6 MVC with proper dependency injection, a typed service provider, and no FOF or jQuery dependencies.
 
----
+***
 
 ## Troubleshooting
 
@@ -249,7 +258,7 @@ If the feed URL returns an empty JSON array (`[]`), check:
 - Check the **Backfill Order States** setting. If your orders have a custom state ID not in the list, add it.
 - The backfill caps at 200 orders per run. If you selected a very wide range with more than 200 orders, only the first 200 (oldest) are sent. Run again with a narrower range to continue.
 
----
+***
 
 ## Related Topics
 

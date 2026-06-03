@@ -33,7 +33,7 @@ Social Media Sharing adds share buttons for Facebook, Twitter/X, Pinterest, and 
 2. Drag and drop the `app_socialmedia.zip` file onto the upload area, or click **Browse for file** and select it.
 3. The plugin installs and enables itself automatically.
 
-> [Screenshot: Joomla Extension Manager upload area with app_socialmedia.zip highlighted]
+> \[Screenshot: Joomla Extension Manager upload area with app\_socialmedia.zip highlighted]
 
 ## Enabling and Accessing Settings
 
@@ -43,109 +43,115 @@ After installation, the plugin is enabled automatically. To verify and open the 
 
 **Option B (via Plugin Manager):** Go to **System** -> **Manage** -> **Plugins** -> search for **Social Media Sharing** -> click the plugin name.
 
-> [Screenshot: Plugin Manager search results showing "Social Media Sharing" with Enabled status]
+> \[Screenshot: Plugin Manager search results showing "Social Media Sharing" with Enabled status]
 
 The settings are organized into five tabs: **General**, **Facebook**, **Twitter**, **Pinterest**, and **LinkedIn**.
 
-## Configuration Walkthrough
+## Configuration
+
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
 
 ### General Tab
 
 The General tab controls where buttons appear, which product image is shared, and the share message text.
 
-> [Screenshot: General tab showing all settings with default values]
+> \[Screenshot: General tab showing all settings with default values]
 
-| Setting | What it controls | Default |
-|---------|-----------------|---------|
-| **Pages to Display** | Which page types show the share buttons: product detail page only, category/list pages only, or both. | Product View |
-| **Display Location** | The exact position on the page where buttons are injected — relative to price, cart button, or article content. See the [Display Location table](#display-location-options) below. | After Add to Cart button |
-| **Social Share Product Image** | Which product image to use when building the share URL (Pinterest) and Open Graph tags: the main image or the thumbnail. | Main Image |
-| **Image Width (px)** | Width in pixels for custom button images. This setting only affects buttons using **Image** mode, not icon mode. | 30 |
-| **Share Message** | The opening text prepended to the product name in the share message. The product name is always appended automatically. | Check this out! |
-| **Include Price in Message** | When set to **Yes**, the formatted product price is appended to the share message in parentheses. | Yes |
-| **Debug Mode** | Writes diagnostic entries to `administrator/logs/plg_j2commerce_app_socialmedia.php`. Always set to **No** on a live site. | No |
+| Setting                        | What it controls                                                                                                                                                                   | Default                  |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| **Pages to Display**           | Which page types show the share buttons: product detail page only, category/list pages only, or both.                                                                              | Product View             |
+| **Display Location**           | The exact position on the page where buttons are injected — relative to price, cart button, or article content. See the [Display Location table](#display-location-options) below. | After Add to Cart button |
+| **Social Share Product Image** | Which product image to use when building the share URL (Pinterest) and Open Graph tags: the main image or the thumbnail.                                                           | Main Image               |
+| **Image Width (px)**           | Width in pixels for custom button images. This setting only affects buttons using **Image** mode, not icon mode.                                                                   | 30                       |
+| **Share Message**              | The opening text prepended to the product name in the share message. The product name is always appended automatically.                                                            | Check this out!          |
+| **Include Price in Message**   | When set to **Yes**, the formatted product price is appended to the share message in parentheses.                                                                                  | Yes                      |
+| **Debug Mode**                 | Writes diagnostic entries to `administrator/logs/plg_j2commerce_app_socialmedia.php`. Always set to **No** on a live site.                                                         | No                       |
 
 #### Pages to Display options
 
-| Option | Where buttons appear |
-|--------|---------------------|
-| **Product View** | Product detail pages only |
-| **Category View** | Category/product list pages only |
+| Option                      | Where buttons appear               |
+| --------------------------- | ---------------------------------- |
+| **Product View**            | Product detail pages only          |
+| **Category View**           | Category/product list pages only   |
 | **Product & Category View** | Both product detail and list pages |
 
 #### Display Location options
 
 The **Display Location** dropdown controls which event hook the buttons attach to. The seven available positions are:
 
-| Option | Where buttons appear | Works on |
-|--------|---------------------|----------|
-| **After product title** | Between the article title and the article body | Joomla content (com_content) pages |
-| **Before product content** | Immediately before the article body text | Joomla content (com_content) pages |
-| **After product content** | Immediately after the article body text | Joomla content (com_content) pages |
-| **After Add to Cart button** | Directly below the Add to Cart button (default) | J2Commerce product views |
-| **Before Add to Cart button** | Directly above the Add to Cart button | J2Commerce product views |
-| **Before product price** | Above the displayed price | J2Commerce product views |
-| **After product price** | Below the displayed price | J2Commerce product views |
+| Option                        | Where buttons appear                            | Works on                            |
+| ----------------------------- | ----------------------------------------------- | ----------------------------------- |
+| **After product title**       | Between the article title and the article body  | Joomla content (com\_content) pages |
+| **Before product content**    | Immediately before the article body text        | Joomla content (com\_content) pages |
+| **After product content**     | Immediately after the article body text         | Joomla content (com\_content) pages |
+| **After Add to Cart button**  | Directly below the Add to Cart button (default) | J2Commerce product views            |
+| **Before Add to Cart button** | Directly above the Add to Cart button           | J2Commerce product views            |
+| **Before product price**      | Above the displayed price                       | J2Commerce product views            |
+| **After product price**       | Below the displayed price                       | J2Commerce product views            |
 
 The first three options fire on Joomla's built-in content events (`onContentAfterTitle`, `onContentBeforeDisplay`, `onContentAfterDisplay`). They work when your products are displayed via Joomla articles or a content plugin. The last four options fire on J2Commerce-specific events and are the right choice for most stores using J2Commerce's native product templates.
 
-> [Screenshot: Display Location dropdown open showing all seven options]
+> \[Screenshot: Display Location dropdown open showing all seven options]
 
 ### Facebook Tab
 
-> [Screenshot: Facebook tab showing Enable Facebook toggled to Yes and all fields visible]
+> \[Screenshot: Facebook tab showing Enable Facebook toggled to Yes and all fields visible]
 
-| Setting | What it controls | Default |
-|---------|-----------------|---------|
-| **Enable Facebook** | Show the Facebook share button. Also enables Open Graph meta tags on product pages when set to Yes. | No |
-| **Image or Icon** | **Icon** renders a CSS icon class; **Image** renders a custom uploaded image. Only shown when Facebook is enabled. | Icon |
-| **Icon** | The CSS class string for the Facebook icon. Works with any icon library loaded by your template. | `fab fa-brands fa-facebook-f fs-2` |
-| **Facebook Image** | A custom button image uploaded via the Joomla Media Manager. Only used when **Image or Icon** is set to **Image**. | — |
-| **Facebook App ID** | Your Facebook App ID from the Meta developer portal. Required for the `fb:app_id` Open Graph meta tag, which improves click tracking and enables Facebook Insights for your store pages. | — |
-| **Facebook Contact Email** | A contact email associated with your Facebook developer account, stored in plugin settings for reference. | — |
+| Setting                    | What it controls                                                                                                                                                                         | Default                            |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| **Enable Facebook**        | Show the Facebook share button. Also enables Open Graph meta tags on product pages when set to Yes.                                                                                      | No                                 |
+| **Image or Icon**          | **Icon** renders a CSS icon class; **Image** renders a custom uploaded image. Only shown when Facebook is enabled.                                                                       | Icon                               |
+| **Icon**                   | The CSS class string for the Facebook icon. Works with any icon library loaded by your template.                                                                                         | `fab fa-brands fa-facebook-f fs-2` |
+| **Facebook Image**         | A custom button image uploaded via the Joomla Media Manager. Only used when **Image or Icon** is set to **Image**.                                                                       | —                                  |
+| **Facebook App ID**        | Your Facebook App ID from the Meta developer portal. Required for the `fb:app_id` Open Graph meta tag, which improves click tracking and enables Facebook Insights for your store pages. | —                                  |
+| **Facebook Contact Email** | A contact email associated with your Facebook developer account, stored in plugin settings for reference.                                                                                | —                                  |
 
 When **Enable Facebook** is set to **Yes**, the plugin injects a full set of Open Graph and Facebook Product Graph meta tags on product detail pages, including price, currency, availability, SKU, weight, brand, and category. See [Open Graph and Twitter Card Meta Tags](#open-graph-and-twitter-card-meta-tags) for details.
 
 ### Twitter Tab
 
-> [Screenshot: Twitter tab showing Enable Twitter toggled to Yes]
+> \[Screenshot: Twitter tab showing Enable Twitter toggled to Yes]
 
-| Setting | What it controls | Default |
-|---------|-----------------|---------|
-| **Enable Twitter (X)** | Show the Twitter/X share button. | No |
-| **Image or Icon** | **Icon** or **Image** mode for the button. Only shown when Twitter is enabled. | Icon |
-| **Icon** | CSS class for the Twitter/X icon. | `fab fa-brands fa-x-twitter fs-2` |
-| **Twitter Image** | Custom image for the button when in Image mode. | — |
-| **Include Twitter Meta Tags** | Inject Twitter Card meta tags into the page head. Can be set to **Yes** independently of whether the share button is enabled — useful when you want rich link previews without showing a share button. | Yes |
-| **Personal Twitter Account** | Your personal @username (without the @ symbol). Populates the `twitter:creator` meta tag. | — |
-| **Website Twitter Account** | Your site's @username (without the @ symbol). Populates the `twitter:site` meta tag. | — |
-| **Product Image Width** | Width in pixels of the product image referenced in `twitter:image:width`. Set to 0 to omit this tag entirely. | 50 |
-| **Description Limit (characters)** | Maximum number of characters from the product short description to include in `twitter:description`. The plugin trims at a word boundary. | 50 |
-| **Twitter Card Type** | **Summary** shows a small thumbnail. **Summary Large Image** shows a large hero image — recommended for stores with high-quality product photography. | Summary |
+| Setting                            | What it controls                                                                                                                                                                                       | Default                           |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------- |
+| **Enable Twitter (X)**             | Show the Twitter/X share button.                                                                                                                                                                       | No                                |
+| **Image or Icon**                  | **Icon** or **Image** mode for the button. Only shown when Twitter is enabled.                                                                                                                         | Icon                              |
+| **Icon**                           | CSS class for the Twitter/X icon.                                                                                                                                                                      | `fab fa-brands fa-x-twitter fs-2` |
+| **Twitter Image**                  | Custom image for the button when in Image mode.                                                                                                                                                        | —                                 |
+| **Include Twitter Meta Tags**      | Inject Twitter Card meta tags into the page head. Can be set to **Yes** independently of whether the share button is enabled — useful when you want rich link previews without showing a share button. | Yes                               |
+| **Personal Twitter Account**       | Your personal @username (without the @ symbol). Populates the `twitter:creator` meta tag.                                                                                                              | —                                 |
+| **Website Twitter Account**        | Your site's @username (without the @ symbol). Populates the `twitter:site` meta tag.                                                                                                                   | —                                 |
+| **Product Image Width**            | Width in pixels of the product image referenced in `twitter:image:width`. Set to 0 to omit this tag entirely.                                                                                          | 50                                |
+| **Description Limit (characters)** | Maximum number of characters from the product short description to include in `twitter:description`. The plugin trims at a word boundary.                                                              | 50                                |
+| **Twitter Card Type**              | **Summary** shows a small thumbnail. **Summary Large Image** shows a large hero image — recommended for stores with high-quality product photography.                                                  | Summary                           |
 
 ### Pinterest Tab
 
-> [Screenshot: Pinterest tab]
+> \[Screenshot: Pinterest tab]
 
-| Setting | What it controls | Default |
-|---------|-----------------|---------|
-| **Enable Pinterest** | Show the Pinterest share button. | Yes |
-| **Image or Icon** | **Icon** or **Image** mode for the button. Only shown when Pinterest is enabled. | Icon |
-| **Icon** | CSS class for the Pinterest icon. | `fab fa-brands fa-pinterest` |
-| **Pinterest Image** | Custom image for the button when in Image mode. | — |
+| Setting              | What it controls                                                                 | Default                      |
+| -------------------- | -------------------------------------------------------------------------------- | ---------------------------- |
+| **Enable Pinterest** | Show the Pinterest share button.                                                 | Yes                          |
+| **Image or Icon**    | **Icon** or **Image** mode for the button. Only shown when Pinterest is enabled. | Icon                         |
+| **Icon**             | CSS class for the Pinterest icon.                                                | `fab fa-brands fa-pinterest` |
+| **Pinterest Image**  | Custom image for the button when in Image mode.                                  | —                            |
 
 Pinterest requires a product image to create a pin. If the product has no main image or thumbnail assigned, the Pinterest button is hidden automatically even when enabled — see [Pinterest Behavior](#pinterest-behavior).
 
 ### LinkedIn Tab
 
-> [Screenshot: LinkedIn tab]
+> \[Screenshot: LinkedIn tab]
 
-| Setting | What it controls | Default |
-|---------|-----------------|---------|
-| **Enable LinkedIn** | Show the LinkedIn share button. | Yes |
-| **Image or Icon** | **Icon** or **Image** mode for the button. Only shown when LinkedIn is enabled. | Icon |
-| **Icon** | CSS class for the LinkedIn icon. | `fab fa-brands fa-linkedin-in` |
-| **LinkedIn Image** | Custom image for the button when in Image mode. | — |
+| Setting             | What it controls                                                                | Default                        |
+| ------------------- | ------------------------------------------------------------------------------- | ------------------------------ |
+| **Enable LinkedIn** | Show the LinkedIn share button.                                                 | Yes                            |
+| **Image or Icon**   | **Icon** or **Image** mode for the button. Only shown when LinkedIn is enabled. | Icon                           |
+| **Icon**            | CSS class for the LinkedIn icon.                                                | `fab fa-brands fa-linkedin-in` |
+| **LinkedIn Image**  | Custom image for the button when in Image mode.                                 | —                              |
 
 ## Custom Icons vs. Custom Images
 
@@ -250,7 +256,7 @@ If you used the Social Media Sharing app in J2Store, the J2Commerce version incl
 
 **Check 1 — Plugin is enabled.** Go to **System** -> **Manage** -> **Plugins**, search for **Social Media Sharing**, and confirm the status shows **Enabled**. Click the status icon to toggle it on if needed.
 
-**Check 2 — At least one network is enabled.** Open the plugin settings. On the **Facebook**, **Twitter**, **Pinterest**, and **LinkedIn** tabs, check that **Enable [Network]** is set to **Yes** for at least one network. All four default to **No** except Pinterest and LinkedIn.
+**Check 2 — At least one network is enabled.** Open the plugin settings. On the **Facebook**, **Twitter**, **Pinterest**, and **LinkedIn** tabs, check that **Enable \[Network]** is set to **Yes** for at least one network. All four default to **No** except Pinterest and LinkedIn.
 
 **Check 3 — Pages to Display matches your test page.** If **Pages to Display** is set to **Product View**, the buttons will not appear on category listing pages. If you are testing on a category page, set this to **Product & Category View**.
 

@@ -12,6 +12,7 @@ Some businesses can only accept orders during specific hours of the day. A baker
 The Opening Hours app solves this. It lets you define a from/to window for each day of the week and automatically blocks order placement outside those hours. Customers see a clear message explaining when the store is open instead of hitting a confusing error.
 
 **Good fits for this app:**
+
 - Bakeries, cafes, and restaurants
 - Food trucks and meal kit services
 - Florists and time-sensitive perishable products
@@ -44,6 +45,12 @@ Once enabled, go to **J2Commerce** -> **Apps** to access the plugin settings. Cl
 
 ## Configuration
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 <!-- SCREENSHOT: J2Commerce Apps screen showing the Opening Hours app card -->
 
 ### Available Store Times
@@ -52,10 +59,10 @@ This is the core of the plugin. The **Available Store Times** table shows one ro
 
 <!-- SCREENSHOT: The Available Store Times table with all seven days visible, showing sample times filled in for Monday through Friday and blank fields for Saturday and Sunday -->
 
-| Day | From field | To field | Result |
-|-----|-----------|---------|--------|
-| Monday | `09:00` | `17:00` | Orders accepted 9 AM to 5 PM |
-| Saturday | *(blank)* | *(blank)* | Store closed all day — no orders accepted |
+| Day      | From field | To field  | Result                                    |
+| -------- | ---------- | --------- | ----------------------------------------- |
+| Monday   | `09:00`    | `17:00`   | Orders accepted 9 AM to 5 PM              |
+| Saturday | *(blank)*  | *(blank)* | Store closed all day — no orders accepted |
 
 **How the fields work:**
 
@@ -87,10 +94,10 @@ You can also enter a Joomla language constant here if your site is multilingual 
 
 The **Debug Mode** toggle writes decision logs to your Joomla log directory whenever the plugin runs its time check.
 
-| Setting | Value | Effect |
-|---------|-------|--------|
-| **Debug Mode** | No (default) | No log file written. Recommended for live stores. |
-| **Debug Mode** | Yes | Writes `plg_j2commerce_app_openinghours.php` to your Joomla logs folder. |
+| Setting        | Value        | Effect                                                                   |
+| -------------- | ------------ | ------------------------------------------------------------------------ |
+| **Debug Mode** | No (default) | No log file written. Recommended for live stores.                        |
+| **Debug Mode** | Yes          | Writes `plg_j2commerce_app_openinghours.php` to your Joomla logs folder. |
 
 Turn debug mode on temporarily when testing your configuration. Turn it off before the store goes live — the log file grows with every checkout attempt.
 

@@ -52,6 +52,12 @@ Look for **Data Validation**, click the **X,** and it will turn into a green c
 
 ## Configure the App
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 ## App Settings
 
 1. Go to **J2Commerce ->** **Apps**.

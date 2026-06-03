@@ -7,7 +7,7 @@ description: "Automatically generate and display Akeeba Release System (ARS) dow
 
 # Akeeba Release System Download ID
 
-The **ARS Download ID** app integrates J2Commerce with [Akeeba Release System (com_ars)](https://www.akeeba.com/products/akeeba-release-system.html) to automatically generate a unique download/license ID for each customer the moment they complete an order. The ID is stored in ARS and displayed on the customer's profile page so they can copy it into their J2Commerce account settings to activate software updates.
+The **ARS Download ID** app integrates J2Commerce with [Akeeba Release System (com\_ars)](https://www.akeeba.com/products/akeeba-release-system.html) to automatically generate a unique download/license ID for each customer the moment they complete an order. The ID is stored in ARS and displayed on the customer's profile page so they can copy it into their J2Commerce account settings to activate software updates.
 
 This app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
@@ -21,9 +21,7 @@ Before installing, ensure the following are in place:
 - Joomla 5 or 6
 
 :::warning ARS is required
-
 This plugin will not install if `com_ars` is not already present on your site. The installer checks for ARS during the preflight step and aborts with an error message if it is missing.
-
 :::
 
 ## Installation
@@ -48,11 +46,17 @@ Find **Akeeba Release System Download ID** in the list, click the toggle to enab
 
 ## Configuration
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 The plugin has one global configuration option, accessible from the J2Commerce Apps screen by clicking **Akeeba Release System Download ID**.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Debug Mode** | Writes detailed log entries to `administrator/logs/app_arsdlid.php`. Useful for diagnosing problems. Disable in production. | No |
+| Setting        | Description                                                                                                                 | Default |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Debug Mode** | Writes detailed log entries to `administrator/logs/app_arsdlid.php`. Useful for diagnosing problems. Disable in production. | No      |
 
 ### Per-Product Settings
 
@@ -60,10 +64,10 @@ Each product can be linked to a specific ARS package and can advertise which tra
 
 <!-- SCREENSHOT: Product edit screen showing the Apps tab with the ARS Download ID accordion expanded -->
 
-| Field | Description |
-|-------|-------------|
-| **ARS Package ID** | The numeric ID of the ARS package (release category) that this product grants access to. Find this ID in the Akeeba Release System backend. Leave blank if the product does not correspond to a specific ARS package. |
-| **Language Translations** | Select which translations this product ships with. Selected languages appear as a pill list on the product detail page to inform shoppers before they buy. |
+| Field                     | Description                                                                                                                                                                                                           |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ARS Package ID**        | The numeric ID of the ARS package (release category) that this product grants access to. Find this ID in the Akeeba Release System backend. Leave blank if the product does not correspond to a specific ARS package. |
+| **Language Translations** | Select which translations this product ships with. Selected languages appear as a pill list on the product detail page to inform shoppers before they buy.                                                            |
 
 The supported translation locales are: English (en-GB), German (de-DE), Spanish (es-ES), Portuguese (pt-PT), Italian (it-IT), Dutch (nl-NL), French (fr-FR), Russian (ru-RU), Greek (el-GR), Arabic (ar-AA), Japanese (ja-JP), Polish (pl-PL), and Swedish (sv-SE).
 

@@ -46,6 +46,12 @@ Click the **Toggle Inline Help** button at the top of the plugin settings page t
 
 ## Configuring the Plugin
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 ### Display Settings
 
 **Display Name:** The label shown to customers at checkout when they select Credova as their payment method. Default is `Credova Financing`.
@@ -63,16 +69,22 @@ Always test with sandbox mode enabled before going live.
 
 ### Credentials
 
-| Field | Description |
-|-------|-------------|
-| **Store Code (Username)** | Your Credova production store code / username |
-| **Password** | Your Credova production account password |
-| **Sandbox Store Code (Username)** | Your Credova sandbox store code for test transactions |
-| **Sandbox Password** | Your Credova sandbox account password for test transactions |
+| Field                             | Description                                                 |
+| --------------------------------- | ----------------------------------------------------------- |
+| **Store Code (Username)**         | Your Credova production store code / username               |
+| **Password**                      | Your Credova production account password                    |
+| **Sandbox Store Code (Username)** | Your Credova sandbox store code for test transactions       |
+| **Sandbox Password**              | Your Credova sandbox account password for test transactions |
 
 The plugin uses the production credentials when **Use Sandbox** is **No**, and the sandbox credentials when it is **Yes**.
 
 ### Order Status
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
 
 **Order Status After Payment:** The order status to set when Credova returns a **Signed** (approved) result. Most stores use **Confirmed** or **Processing** here.
 
@@ -80,12 +92,12 @@ The plugin uses the production credentials when **Use Sandbox** is **No**, and t
 
 Add an optional surcharge to orders paid via Credova.
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Name** | Label shown to customers for the surcharge (e.g., `Financing Fee`) |
-| **Surcharge Percent** | Percentage of the order subtotal added as a surcharge |
-| **Surcharge Fixed** | Fixed amount added as a surcharge |
-| **Surcharge Tax Class** | Tax profile applied to the surcharge amount |
+| Field                   | Description                                                        |
+| ----------------------- | ------------------------------------------------------------------ |
+| **Surcharge Name**      | Label shown to customers for the surcharge (e.g., `Financing Fee`) |
+| **Surcharge Percent**   | Percentage of the order subtotal added as a surcharge              |
+| **Surcharge Fixed**     | Fixed amount added as a surcharge                                  |
+| **Surcharge Tax Class** | Tax profile applied to the surcharge amount                        |
 
 You can use a percentage, a fixed amount, or both together.
 
@@ -109,13 +121,13 @@ These settings control where and how the "as low as $X/mo" widget appears on you
 
 **Widget Display Position:** Choose where the financing widget appears on individual product pages.
 
-| Option | Where It Appears |
-|--------|-----------------|
-| After Article Title | Immediately below the product title |
-| Before Product Price | Just above the product price |
-| After Product Price | Just below the product price |
-| Before Add to Cart Button | Just above the Add to Cart button |
-| After Add to Cart Button | Just below the Add to Cart button |
+| Option                    | Where It Appears                    |
+| ------------------------- | ----------------------------------- |
+| After Article Title       | Immediately below the product title |
+| Before Product Price      | Just above the product price        |
+| After Product Price       | Just below the product price        |
+| Before Add to Cart Button | Just above the Add to Cart button   |
+| After Add to Cart Button  | Just below the Add to Cart button   |
 
 #### Finance Amount Limits
 
@@ -125,10 +137,10 @@ These settings control where and how the "as low as $X/mo" widget appears on you
 
 #### Show Widget On
 
-| Setting | Description |
-|---------|-------------|
-| **Show Widget on Category Pages** | Display the financing widget on product listing and category pages |
-| **Show Widget on Product Pages** | Display the financing widget on individual product detail pages |
+| Setting                                 | Description                                                                                |
+| --------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Show Widget on Category Pages**       | Display the financing widget on product listing and category pages                         |
+| **Show Widget on Product Pages**        | Display the financing widget on individual product detail pages                            |
 | **Show Widget in Checkout Payment Row** | Display the "as low as $X/mo" estimate next to Credova in the checkout payment method list |
 
 #### Brand Appearance
@@ -145,13 +157,13 @@ These settings control where and how the "as low as $X/mo" widget appears on you
 
 These text fields let you customize messages shown to customers during the payment flow.
 
-| Field | When It Appears |
-|-------|----------------|
-| **On Selection** | When the customer selects Credova as their payment method |
+| Field                 | When It Appears                                                      |
+| --------------------- | -------------------------------------------------------------------- |
+| **On Selection**      | When the customer selects Credova as their payment method            |
 | **On Before Payment** | On the payment redirect page before the customer proceeds to Credova |
-| **On After Payment** | On the confirmation page after a completed financing application |
-| **On Error Payment** | When a financing error occurs |
-| **On Cancel Payment** | When the customer cancels the Credova application |
+| **On After Payment**  | On the confirmation page after a completed financing application     |
+| **On Error Payment**  | When a financing error occurs                                        |
+| **On Cancel Payment** | When the customer cancels the Credova application                    |
 
 ### Dashboard Icon
 
@@ -169,7 +181,7 @@ Enable debug mode only while troubleshooting. Disable it in production — logs 
 
 :::
 
----
+***
 
 ## How the Financing Flow Works
 
@@ -199,7 +211,7 @@ When Credova returns a **Signed** (approved) status:
 
 If the application is declined or cancelled, the order remains in a **Pending** state and the order history notes the outcome.
 
----
+***
 
 ## Sandbox Testing
 
@@ -210,7 +222,7 @@ If the application is declined or cancelled, the order remains in a **Pending** 
 5. Confirm the order status updates correctly in **J2Commerce -> Sales -> Orders**.
 6. Enable **Debug Mode** and review `administrator/logs/payment_credova.php` to inspect the API request and response.
 
----
+***
 
 ## Going Live Checklist
 
@@ -224,7 +236,7 @@ Before accepting real financing applications:
 - [ ] **Debug Mode** is set to **No**
 - [ ] You have completed a full end-to-end test order using sandbox credentials before switching to production
 
----
+***
 
 ## Troubleshooting
 
@@ -233,6 +245,7 @@ Before accepting real financing applications:
 **Cause:** The product's category is not in the **Brand Categories** list, or the product price falls outside the configured finance amount limits.
 
 **Solution:**
+
 1. Go to the Credova plugin settings and check the **Brand Categories** field. Add the Joomla category for the product.
 2. Verify the product price is within the **Minimum Finance Amount** and **Maximum Finance Amount** range.
 3. Check which **Widget Display Position** is configured and confirm the position is supported by your template.
@@ -243,6 +256,7 @@ Before accepting real financing applications:
 **Cause:** The Credova API returned an error when creating the financing application, or the store credentials are incorrect.
 
 **Solution:**
+
 1. Enable **Debug Mode** and check `administrator/logs/payment_credova.php` for the API error.
 2. Confirm the correct credentials are entered for the active environment (sandbox or production).
 3. Verify your Credova account is active and in good standing.
@@ -252,6 +266,7 @@ Before accepting real financing applications:
 **Cause:** The Credova application was not approved (status was not Signed), or the customer cancelled the application.
 
 **Solution:**
+
 1. Check the order history in **J2Commerce -> Sales -> Orders** for a note from Credova about the application outcome.
 2. Enable **Debug Mode** and check `administrator/logs/payment_credova.php` to see the status returned by the Credova API.
 3. If the application was approved on Credova's side but the order is still Pending, contact J2Commerce support with the Credova Application ID and the debug log.
@@ -268,7 +283,7 @@ Before accepting real financing applications:
 
 **Solution:** This is a Credova SDK behavior. For stores with variable pricing that changes significantly based on variant selection, consider setting the **Widget Display Position** to **After Add to Cart Button** to reduce confusion, or contact Credova support for guidance on dynamic pricing integration.
 
----
+***
 
 ## Support
 

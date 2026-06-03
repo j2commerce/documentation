@@ -85,7 +85,7 @@ Click on the **Address Autocomplete** title to open the configuration.
 
 :::tip
 
-**Helpful Hint:** If you click on the Toggle Inline Help button, it will explain each section.: If you need to find your API Key in the future, go back to this same page and click **Show Key** in the **Additional Information** section
+**Helpful Hint:** If you click on the **Toggle Inline Help** button, it will explain each section.: If you need to find your API Key in the future, go back to this same page and click **Show Key** in the **Additional Information** section
 
 :::
 

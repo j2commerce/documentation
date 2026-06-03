@@ -26,14 +26,14 @@ Admins can download any attached file directly from the order edit screen. Custo
 
 The Order Files app was completely rewritten for J2Commerce 6. If you used a similar feature in a previous J2Store-based site, here is what changed:
 
-| Area | Previous behaviour | J2Commerce 6 |
-|------|--------------------|--------------|
-| File storage | Uploaded files landed in `media/j2store/uploads/`, a publicly accessible web directory | Files go to `files/com_j2commerce/orders/[order_id]/`, outside the web root, with an `.htaccess` deny-all guard |
-| Security | Minimal validation | CSRF token on every request, ACL guard on every admin action, MIME allowlist, PHP-tag content scan, 100 MB hard cap |
-| Privacy | No session scoping | Each upload is recorded against the uploading session; only the placing customer's files attach to their order |
-| Expiry | Files persisted indefinitely | Pending files expire 24 hours after upload if no order is completed |
-| JavaScript | jQuery | Vanilla JavaScript (ES6+) |
-| Admin UI | Separate Apps view | Native Joomla Plugin Manager; configuration inside **System** -> **Manage** -> **Plugins** |
+| Area         | Previous behaviour                                                                     | J2Commerce 6                                                                                                        |
+| ------------ | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| File storage | Uploaded files landed in `media/j2store/uploads/`, a publicly accessible web directory | Files go to `files/com_j2commerce/orders/[order_id]/`, outside the web root, with an `.htaccess` deny-all guard     |
+| Security     | Minimal validation                                                                     | CSRF token on every request, ACL guard on every admin action, MIME allowlist, PHP-tag content scan, 100 MB hard cap |
+| Privacy      | No session scoping                                                                     | Each upload is recorded against the uploading session; only the placing customer's files attach to their order      |
+| Expiry       | Files persisted indefinitely                                                           | Pending files expire 24 hours after upload if no order is completed                                                 |
+| JavaScript   | jQuery                                                                                 | Vanilla JavaScript (ES6+)                                                                                           |
+| Admin UI     | Separate Apps view                                                                     | Native Joomla Plugin Manager; configuration inside **System** -> **Manage** -> **Plugins**                          |
 
 ## Installation
 
@@ -56,28 +56,34 @@ To verify the installation:
 
 Open the plugin for editing: **System** -> **Manage** -> **Plugins** -> search **Order Files** -> click the name.
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 <!-- SCREENSHOT: Plugin edit screen showing Basic Settings and Advanced fieldsets -->
 
 ### Basic Settings
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Allowed File Types** | The file extensions customers may upload. Select from the list. Only selected types are accepted. | `pdf, doc, docx, jpg, jpeg, png` |
-| **Maximum File Size (MB)** | Maximum size per file in megabytes. The server enforces a 100 MB hard cap regardless of this value. | `10` |
-| **Maximum Files Per Order** | How many files a customer can attach to a single order. | `5` |
-| **Upload Field Label** | Text shown above the upload widget on the checkout page. Leave blank to use the default label "Attach Files to Your Order". | _(blank)_ |
-| **Upload Field Description** | Optional helper text shown below the label, for example "Please upload a print-ready PDF or JPG." | _(blank)_ |
-| **Required** | When set to **Yes**, the customer cannot complete checkout without uploading at least one file. | No |
-| **Show on Order Confirmation** | When set to **Yes**, a list of uploaded file names appears on the order confirmation page and in the customer's account order detail. | Yes |
+| Setting                        | Description                                                                                                                           | Default                          |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| **Allowed File Types**         | The file extensions customers may upload. Select from the list. Only selected types are accepted.                                     | `pdf, doc, docx, jpg, jpeg, png` |
+| **Maximum File Size (MB)**     | Maximum size per file in megabytes. The server enforces a 100 MB hard cap regardless of this value.                                   | `10`                             |
+| **Maximum Files Per Order**    | How many files a customer can attach to a single order.                                                                               | `5`                              |
+| **Upload Field Label**         | Text shown above the upload widget on the checkout page. Leave blank to use the default label "Attach Files to Your Order".           | *(blank)*                        |
+| **Upload Field Description**   | Optional helper text shown below the label, for example "Please upload a print-ready PDF or JPG."                                     | *(blank)*                        |
+| **Required**                   | When set to **Yes**, the customer cannot complete checkout without uploading at least one file.                                       | No                               |
+| **Show on Order Confirmation** | When set to **Yes**, a list of uploaded file names appears on the order confirmation page and in the customer's account order detail. | Yes                              |
 
 **Tip about Allowed File Types:** Be deliberate about what you accept. If your business only processes PDFs, select only `pdf`. Do not add `php`, `phtml`, `exe`, `sh`, or other executable extensions — the server also performs a content scan, but there is no reason to enable those types in the first place.
 
 ### Advanced
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Sync Allowed Types to Media Manager** | When **Yes**, the allowed types list is also added to Joomla's **Media Manager** upload extensions on every plugin save. Leave this **No** unless you specifically need Media Manager to accept the same types. | No |
-| **Debug Mode** | When **Yes**, upload activity and file-attach events are logged to `administrator/logs/app_orderfiles.php`. Disable on production sites. | No |
+| Setting                                 | Description                                                                                                                                                                                                     | Default |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Sync Allowed Types to Media Manager** | When **Yes**, the allowed types list is also added to Joomla's **Media Manager** upload extensions on every plugin save. Leave this **No** unless you specifically need Media Manager to accept the same types. | No      |
+| **Debug Mode**                          | When **Yes**, upload activity and file-attach events are logged to `administrator/logs/app_orderfiles.php`. Disable on production sites.                                                                        | No      |
 
 Click **Save & Close** after configuring.
 
@@ -210,23 +216,17 @@ This should never happen with a correctly configured J2Commerce 6 installation. 
 
 ## Frequently Asked Questions
 
-**Can customers download the files they uploaded?**
-Not directly from the frontend. Customers can see the file names in their order history, but they cannot re-download the files. If you need to provide customers with a copy of what they uploaded, download it from the order view and send it to them separately.
+**Can customers download the files they uploaded?** Not directly from the frontend. Customers can see the file names in their order history, but they cannot re-download the files. If you need to provide customers with a copy of what they uploaded, download it from the order view and send it to them separately.
 
-**What happens to uploaded files if an order is cancelled or refunded?**
-Files remain attached until an admin manually deletes them. Cancelling or refunding an order does not automatically remove attached files.
+**What happens to uploaded files if an order is cancelled or refunded?** Files remain attached until an admin manually deletes them. Cancelling or refunding an order does not automatically remove attached files.
 
-**Can I set a different upload area for different products?**
-The current version shows one upload widget per checkout. There is no product-level configuration. The widget is shown to all customers on all checkouts while the plugin is enabled.
+**Can I set a different upload area for different products?** The current version shows one upload widget per checkout. There is no product-level configuration. The widget is shown to all customers on all checkouts while the plugin is enabled.
 
-**Can I increase the limit beyond 100 MB per file?**
-The 100 MB limit is a hard cap enforced in the server code, regardless of the **Maximum File Size** parameter. If you need to accept files larger than 100 MB, contact the J2Commerce team.
+**Can I increase the limit beyond 100 MB per file?** The 100 MB limit is a hard cap enforced in the server code, regardless of the **Maximum File Size** parameter. If you need to accept files larger than 100 MB, contact the J2Commerce team.
 
-**Can I require upload for only certain products?**
-Not in the current version. The **Required** setting applies globally to all orders. If you need conditional requirements, contact the J2Commerce team.
+**Can I require upload for only certain products?** Not in the current version. The **Required** setting applies globally to all orders. If you need conditional requirements, contact the J2Commerce team.
 
-**Does this work with all payment gateways?**
-Yes. Files are held in temporary storage until the payment gateway sends a confirmation event. This works with synchronous gateways (PayPal, Stripe, bank transfer) and asynchronous gateways (webhook-based). If a gateway never confirms, the files expire after 24 hours.
+**Does this work with all payment gateways?** Yes. Files are held in temporary storage until the payment gateway sends a confirmation event. This works with synchronous gateways (PayPal, Stripe, bank transfer) and asynchronous gateways (webhook-based). If a gateway never confirms, the files expire after 24 hours.
 
 ## Related Topics
 

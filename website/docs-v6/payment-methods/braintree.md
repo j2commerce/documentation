@@ -13,7 +13,7 @@ You can choose between two form styles: **Hosted Fields** (a customizable card f
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
----
+***
 
 ## Supported Features
 
@@ -25,7 +25,7 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 - Subscriptions — initial charge + stored customer token for manual-confirm renewal
 - Parameterized SQL and proper order-status-change events throughout
 
----
+***
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ Before installing the plugin, confirm the following:
 - You have a Braintree merchant account (both a **Sandbox** account for testing and a **Production** account for real payments)
 - Your server can reach `api.braintreegateway.com` (production) and `api.sandbox.braintreegateway.com` (sandbox) outbound on port 443
 
----
+***
 
 ## Get Your Braintree Credentials
 
@@ -66,7 +66,7 @@ Never share your **Private Key** publicly. Treat it like a password — it autho
 
 :::
 
----
+***
 
 ## Purchase and Download
 
@@ -74,7 +74,7 @@ Never share your **Private Key** publicly. Treat it like a password — it autho
 2. Add it to your cart and complete checkout.
 3. Go to **My Downloads** under your account menu and download the `payment_braintree.zip` file.
 
----
+***
 
 ## Install and Enable
 
@@ -94,9 +94,15 @@ Never share your **Private Key** publicly. Treat it like a password — it autho
 
 <!-- SCREENSHOT: J2Commerce Payment Methods list showing Braintree with the toggle -->
 
----
+***
 
 ## Configuration Walkthrough
+
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
 
 Click the **Braintree** payment method title to open the settings. Settings are organized into five tabs.
 
@@ -106,13 +112,13 @@ Click the **Braintree** payment method title to open the settings. Settings are 
 
 <!-- SCREENSHOT: Basic tab with Display Name, Payment Image, Sandbox toggle, Payment Type, and Accepted Cards fields -->
 
-| Field | Description | Recommended Value |
-|-------|-------------|-------------------|
-| **Display Name** | Label shown to customers at checkout when selecting their payment method | `Credit Card` or `Pay by Card` |
-| **Payment Image** | URL or path to an image shown next to the payment method name | Leave blank to show the accepted card icons instead |
-| **Sandbox** | Switch between test (Sandbox) and live (Production) modes | **Yes** while testing; **No** when going live |
-| **Payment Type** | Choose the checkout UI style — see [Hosted Fields vs Drop-in UI](#hosted-fields-vs-drop-in-ui) below | `Hosted Fields` for design-consistent stores |
-| **Accepted Card Types** | Cards shown as accepted icons during payment method selection | Select all cards your Braintree account accepts |
+| Field                   | Description                                                                                          | Recommended Value                                   |
+| ----------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| **Display Name**        | Label shown to customers at checkout when selecting their payment method                             | `Credit Card` or `Pay by Card`                      |
+| **Payment Image**       | URL or path to an image shown next to the payment method name                                        | Leave blank to show the accepted card icons instead |
+| **Sandbox**             | Switch between test (Sandbox) and live (Production) modes                                            | **Yes** while testing; **No** when going live       |
+| **Payment Type**        | Choose the checkout UI style — see [Hosted Fields vs Drop-in UI](#hosted-fields-vs-drop-in-ui) below | `Hosted Fields` for design-consistent stores        |
+| **Accepted Card Types** | Cards shown as accepted icons during payment method selection                                        | Select all cards your Braintree account accepts     |
 
 :::info
 
@@ -120,7 +126,7 @@ When **Sandbox** is set to **Yes**, the plugin reads the Sandbox credentials tab
 
 :::
 
----
+***
 
 ### Live Credentials
 
@@ -128,16 +134,16 @@ These settings are used when **Sandbox** is set to **No**.
 
 <!-- SCREENSHOT: Live tab showing Merchant ID, Public Key, Private Key, and Merchant Account ID fields -->
 
-| Field | Description |
-|-------|-------------|
-| **Live Merchant ID** | Your production Merchant ID from the Braintree Control Panel |
-| **Live Public Key** | Your production Public Key |
-| **Live Private Key** | Your production Private Key (stored encrypted) |
+| Field                        | Description                                                                                                                |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Live Merchant ID**         | Your production Merchant ID from the Braintree Control Panel                                                               |
+| **Live Public Key**          | Your production Public Key                                                                                                 |
+| **Live Private Key**         | Your production Private Key (stored encrypted)                                                                             |
 | **Live Merchant Account ID** | Auto-populated list of merchant accounts on your live Braintree account — select which account to charge for each currency |
 
 The **Live Merchant Account ID** field queries the Braintree API using your live credentials and shows a table of your configured merchant accounts. If your account has only one currency, you can leave this on the default. If you process multiple currencies, see [Multi-Currency Merchant Accounts](#multi-currency-merchant-accounts) below.
 
----
+***
 
 ### Sandbox Credentials
 
@@ -145,14 +151,14 @@ These settings are used when **Sandbox** is set to **Yes**.
 
 <!-- SCREENSHOT: Sandbox tab showing Test Merchant ID, Test Public Key, Test Private Key, and Test Merchant Account ID fields -->
 
-| Field | Description |
-|-------|-------------|
-| **Test Merchant ID** | Your sandbox Merchant ID from sandbox.braintreegateway.com |
-| **Test Public Key** | Your sandbox Public Key |
-| **Test Private Key** | Your sandbox Private Key |
+| Field                        | Description                                                                                       |
+| ---------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Test Merchant ID**         | Your sandbox Merchant ID from sandbox.braintreegateway.com                                        |
+| **Test Public Key**          | Your sandbox Public Key                                                                           |
+| **Test Private Key**         | Your sandbox Private Key                                                                          |
 | **Test Merchant Account ID** | Auto-populated list of merchant accounts on your sandbox — works the same way as the live version |
 
----
+***
 
 ### Messages
 
@@ -160,31 +166,31 @@ These optional text fields let you add instructions or confirmation text at diff
 
 <!-- SCREENSHOT: Messages tab with four text areas and button text field -->
 
-| Field | When Displayed | Example Use |
-|-------|----------------|-------------|
-| **On Selection** | When the customer picks Braintree as their payment method | "Your card details are encrypted and never stored on our servers." |
-| **On Before Payment** | On the payment form page, above the card input | "Enter your card details below to complete your order securely." |
-| **On After Payment** | On the confirmation page after a successful payment | "Thank you — your payment was received and your order is confirmed." |
-| **On Error Payment** | When a payment fails or is declined | "There was a problem processing your payment. Please check your card details and try again." |
-| **Button Text** | The label on the Pay button | `Place Order` or `Pay Now` |
+| Field                 | When Displayed                                            | Example Use                                                                                  |
+| --------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| **On Selection**      | When the customer picks Braintree as their payment method | "Your card details are encrypted and never stored on our servers."                           |
+| **On Before Payment** | On the payment form page, above the card input            | "Enter your card details below to complete your order securely."                             |
+| **On After Payment**  | On the confirmation page after a successful payment       | "Thank you — your payment was received and your order is confirmed."                         |
+| **On Error Payment**  | When a payment fails or is declined                       | "There was a problem processing your payment. Please check your card details and try again." |
+| **Button Text**       | The label on the Pay button                               | `Place Order` or `Pay Now`                                                                   |
 
 All fields accept plain text or a Joomla language key. Leave fields blank to show no additional message.
 
----
+***
 
 ### Advanced Settings
 
 <!-- SCREENSHOT: Advanced tab with Debug, Order Status, Failed Status, Pending Status, Geo-Zone, Show Tax, and Tax Profile fields -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug** | Write detailed Braintree API activity to `administrator/logs/payment_braintree.php` | No |
-| **Order Status** | The status applied to an order after a successful payment (e.g., authorized, settled) | Confirmed |
-| **Failed Status** | The status applied when Braintree returns a declined or failed transaction | Failed |
-| **Pending Status** | The status applied when Braintree reports `settlement_pending` (funds not yet settled) | Pending |
-| **Geo-Zone** | Restrict Braintree to customers in a specific geo-zone. Leave at "All" to show it to everyone | All |
-| **Show Tax** | Display the tax amount as a separate line on the payment page | No |
-| **Tax Profile** | The tax profile to apply when **Show Tax** is enabled | None |
+| Field              | Description                                                                                   | Default   |
+| ------------------ | --------------------------------------------------------------------------------------------- | --------- |
+| **Debug**          | Write detailed Braintree API activity to `administrator/logs/payment_braintree.php`           | No        |
+| **Order Status**   | The status applied to an order after a successful payment (e.g., authorized, settled)         | Confirmed |
+| **Failed Status**  | The status applied when Braintree returns a declined or failed transaction                    | Failed    |
+| **Pending Status** | The status applied when Braintree reports `settlement_pending` (funds not yet settled)        | Pending   |
+| **Geo-Zone**       | Restrict Braintree to customers in a specific geo-zone. Leave at "All" to show it to everyone | All       |
+| **Show Tax**       | Display the tax amount as a separate line on the payment page                                 | No        |
+| **Tax Profile**    | The tax profile to apply when **Show Tax** is enabled                                         | None      |
 
 :::tip
 
@@ -192,7 +198,7 @@ Enable **Debug** only while troubleshooting. The log file can grow quickly in a 
 
 :::
 
----
+***
 
 ## Hosted Fields vs Drop-in UI
 
@@ -203,6 +209,7 @@ The **Payment Type** setting controls which checkout experience customers see.
 Hosted Fields renders individual card number, expiry date, and CVV inputs that are iframes hosted on Braintree's servers. From the customer's perspective the form looks like part of your site and you can style it to match your colors and fonts. Card data never touches your PHP — only a short-lived nonce is submitted.
 
 **Choose Hosted Fields when:**
+
 - You want the card form to match your site's design closely
 - You need consistent branding across all screen sizes
 - You want the most control over layout and styling
@@ -212,11 +219,12 @@ Hosted Fields renders individual card number, expiry date, and CVV inputs that a
 Drop-in UI is a pre-built form widget that Braintree injects into your checkout page. It automatically displays relevant payment methods based on what Braintree has enabled for your account and the customer's region. This can include saved cards (for returning customers) and additional wallet options.
 
 **Choose Drop-in UI when:**
+
 - You want a zero-configuration payment UI with no CSS work
 - You want Braintree to handle showing saved payment methods to returning customers automatically
 - Speed of setup is more important than design consistency
 
----
+***
 
 ## Multi-Currency Merchant Accounts
 
@@ -233,7 +241,7 @@ When you enter your API credentials and save the settings, the **Merchant Accoun
 
 The same auto-routing applies to Sandbox — add sandbox merchant accounts with different currencies in the Braintree sandbox to test multi-currency flows.
 
----
+***
 
 ## Sandbox Testing
 
@@ -241,14 +249,14 @@ The same auto-routing applies to Sandbox — add sandbox merchant accounts with 
 
 Braintree provides standard test card numbers for sandbox testing. These cards are only accepted in sandbox mode and never process real charges.
 
-| Card Number | Type | Result |
-|-------------|------|--------|
-| `4111 1111 1111 1111` | Visa | Successful payment |
-| `5431 1111 1111 1111` | Mastercard | Successful payment |
-| `3782 822463 10005` | American Express | Successful payment |
-| `6011 1111 1111 1117` | Discover | Successful payment |
-| `4000 0000 0000 0002` | Visa | Declined — do not honor |
-| `4000 0000 0000 0077` | Visa | Processor declined — insufficient funds |
+| Card Number           | Type             | Result                                  |
+| --------------------- | ---------------- | --------------------------------------- |
+| `4111 1111 1111 1111` | Visa             | Successful payment                      |
+| `5431 1111 1111 1111` | Mastercard       | Successful payment                      |
+| `3782 822463 10005`   | American Express | Successful payment                      |
+| `6011 1111 1111 1117` | Discover         | Successful payment                      |
+| `4000 0000 0000 0002` | Visa             | Declined — do not honor                 |
+| `4000 0000 0000 0077` | Visa             | Processor declined — insufficient funds |
 
 Use any future expiry date and any 3-digit CVV (4-digit for Amex). Braintree also provides [a full list of test cards](https://developer.paypal.com/braintree/docs/reference/general/testing) on its developer documentation site for testing 3DS challenges, processor-specific declines, and settlement failures.
 
@@ -264,7 +272,7 @@ Before switching to live mode, verify each of these flows in your sandbox:
 - [ ] A 3DS challenge test card triggers the verification step (see Braintree docs for test 3DS card numbers)
 - [ ] If you sell subscriptions, a subscription product checkout stores the customer token and the order status updates correctly
 
----
+***
 
 ## Going Live Checklist
 
@@ -280,7 +288,7 @@ Before switching **Sandbox** to **No** and accepting real payments:
 - [ ] You have tested a declined card in live mode (use a card with insufficient funds, then cancel in your Braintree Control Panel)
 - [ ] If selling subscriptions, you have confirmed the renewal manual-confirm flow works as expected
 
----
+***
 
 ## Subscriptions
 
@@ -300,24 +308,24 @@ For subscription **renewals**, the plugin uses the stored payment token to attem
 
 If the stored payment token is no longer valid (expired card, account closed), the renewal fails and the subscription status is updated to Failed. The customer receives an email notification and must update their payment details.
 
----
+***
 
 ## What Is New in J2Commerce 6
 
 The J2Commerce 6 version of this plugin includes the following improvements over the original J2Store version:
 
-| Area | Change |
-|------|--------|
-| **Order status events** | Status changes now route through `OrderModel::updateOrderStatus()` so the `onJ2CommerceOrderStatusChange` event fires correctly — enabling email notifications, webhooks, and third-party listeners |
-| **Parameterized SQL** | All database queries use bound parameters — no string concatenation of user values |
-| **Vanilla JavaScript** | The card form and Drop-in UI JavaScript has been rewritten without jQuery — works independently of any jQuery version on your site |
-| **3DS2 enforced** | The original J2Store plugin did not send 3DS options in its charge requests. The J2Commerce 6 version enforces `threeDSecure: required` for both Hosted Fields and Drop-in UI |
-| **`byReference` typo fixed** | The original plugin had a method named `byRefference` (double-f typo) that caused fatal errors on subscription renewals. This is corrected in J2Commerce 6 |
-| **Shared payment profiles table** | Customer tokens are stored in `#__j2commerce_paymentprofiles` (shared with other payment plugins) instead of the metafields blob — cleaner and queryable |
-| **SDK pinned to current LTS** | The vendored Braintree PHP SDK is pinned to a specific LTS release. The original J2Store plugin shipped an unknown SDK commit with no version pin |
-| **CSRF refresh after AJAX login** | If a customer logs in during checkout via an AJAX call, the plugin refreshes the CSRF token in the JS context before the next request — prevents 403 errors on the payment submission |
+| Area                              | Change                                                                                                                                                                                              |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Order status events**           | Status changes now route through `OrderModel::updateOrderStatus()` so the `onJ2CommerceOrderStatusChange` event fires correctly — enabling email notifications, webhooks, and third-party listeners |
+| **Parameterized SQL**             | All database queries use bound parameters — no string concatenation of user values                                                                                                                  |
+| **Vanilla JavaScript**            | The card form and Drop-in UI JavaScript has been rewritten without jQuery — works independently of any jQuery version on your site                                                                  |
+| **3DS2 enforced**                 | The original J2Store plugin did not send 3DS options in its charge requests. The J2Commerce 6 version enforces `threeDSecure: required` for both Hosted Fields and Drop-in UI                       |
+| **`byReference` typo fixed**      | The original plugin had a method named `byRefference` (double-f typo) that caused fatal errors on subscription renewals. This is corrected in J2Commerce 6                                          |
+| **Shared payment profiles table** | Customer tokens are stored in `#__j2commerce_paymentprofiles` (shared with other payment plugins) instead of the metafields blob — cleaner and queryable                                            |
+| **SDK pinned to current LTS**     | The vendored Braintree PHP SDK is pinned to a specific LTS release. The original J2Store plugin shipped an unknown SDK commit with no version pin                                                   |
+| **CSRF refresh after AJAX login** | If a customer logs in during checkout via an AJAX call, the plugin refreshes the CSRF token in the JS context before the next request — prevents 403 errors on the payment submission               |
 
----
+***
 
 ## Troubleshooting
 
@@ -378,7 +386,7 @@ Braintree Sandbox and Production use completely separate credential sets. The Sa
 1. Contact your hosting provider and ask them to enable the missing extension(s).
 2. After enabling, re-upload the `payment_braintree.zip` in Joomla's Extension Installer.
 
----
+***
 
 ## Support
 

@@ -7,14 +7,13 @@ description: "How to configure the Worldline ePDQ (formerly Barclays ePDQ) payme
 
 # ePDQ / Worldline Hosted Payment Page
 
-> **Legacy gateway — existing merchants only.**
-> Barclays sold ePDQ to Worldline in 2023. Existing ePDQ merchant accounts continue to function under Worldline branding. If you do not already hold an ePDQ PSPID, contact Worldline directly for current payment gateway options. This plugin is for merchants with active ePDQ credentials.
+> **Legacy gateway — existing merchants only.** Barclays sold ePDQ to Worldline in 2023. Existing ePDQ merchant accounts continue to function under Worldline branding. If you do not already hold an ePDQ PSPID, contact Worldline directly for current payment gateway options. This plugin is for merchants with active ePDQ credentials.
 
 This plugin connects J2Commerce to the Worldline ePDQ Hosted Payment Page (HPP). Customers are redirected from your checkout to the ePDQ secure payment page, where they enter their card details. After payment, ePDQ redirects them back to your store and optionally sends a server-to-server notification to confirm the transaction.
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
 
----
+***
 
 ## What is ePDQ?
 
@@ -22,7 +21,7 @@ ePDQ is a payment gateway originally launched by Barclays Merchant Services for 
 
 **New merchant accounts** are now managed through Worldline's standard onboarding process. If you are setting up a new store, contact Worldline directly to obtain ePDQ / Worldline e-Commerce credentials.
 
----
+***
 
 ## How it works
 
@@ -36,7 +35,7 @@ ePDQ is a payment gateway originally launched by Barclays Merchant Services for 
 
 **PCI scope: SAQ-A.** Card data never passes through your server. This is the lowest PCI compliance burden.
 
----
+***
 
 ## Prerequisites
 
@@ -44,7 +43,7 @@ ePDQ is a payment gateway originally launched by Barclays Merchant Services for 
 - SHA-IN and SHA-OUT passphrases configured in your ePDQ back-office
 - Hash algorithm (SHA-1, SHA-256, or SHA-512) selected and matching in both ePDQ back-office and this plugin
 
----
+***
 
 ## Installation
 
@@ -53,82 +52,94 @@ ePDQ is a payment gateway originally launched by Barclays Merchant Services for 
 3. Go to **System → Plugins**, search for "ePDQ", and enable the plugin.
 4. Open the plugin parameters and enter your credentials (see Configuration below).
 
----
+***
 
 ## Configuration
+
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
 
 Navigate to **System → Plugins → J2Commerce - ePDQ Payment** to configure the plugin.
 
 ### Gateway credentials
 
-| Field | Description |
-|-------|-------------|
-| **Merchant PSPID** | Your ePDQ merchant account identifier (PSPID). |
-| **SHA-IN Passphrase** | The secret passphrase configured in your ePDQ back-office under **Configuration → Technical information → Global transaction parameters → Hash algorithm** section. |
-| **SHA-OUT Passphrase** | The secret passphrase configured in your ePDQ back-office under **Configuration → Technical information → Transaction feedback** section. |
-| **Hash Algorithm** | Must match the algorithm selected in your ePDQ back-office. SHA-256 or SHA-512 recommended. SHA-1 is available for legacy accounts. |
-| **Validate SHA-OUT Response** | Verify the signature on every gateway response. **Strongly recommended.** Disable only for debugging. |
+| Field                         | Description                                                                                                                                                         |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Merchant PSPID**            | Your ePDQ merchant account identifier (PSPID).                                                                                                                      |
+| **SHA-IN Passphrase**         | The secret passphrase configured in your ePDQ back-office under **Configuration → Technical information → Global transaction parameters → Hash algorithm** section. |
+| **SHA-OUT Passphrase**        | The secret passphrase configured in your ePDQ back-office under **Configuration → Technical information → Transaction feedback** section.                           |
+| **Hash Algorithm**            | Must match the algorithm selected in your ePDQ back-office. SHA-256 or SHA-512 recommended. SHA-1 is available for legacy accounts.                                 |
+| **Validate SHA-OUT Response** | Verify the signature on every gateway response. **Strongly recommended.** Disable only for debugging.                                                               |
 
 ### Test mode
 
-| Field | Description |
-|-------|-------------|
+| Field                | Description                                                                                    |
+| -------------------- | ---------------------------------------------------------------------------------------------- |
 | **Use Test Account** | Routes transactions to `mdepayments.epdq.co.uk` (test environment). Disable for live payments. |
 
 When test mode is enabled, you can also override any gateway credential with a sandbox equivalent by adding the prefix `sandbox_` to the parameter name in the XML (advanced use only).
 
 ### Payment page customisation
 
-| Field | Description |
-|-------|-------------|
+| Field                  | Description                                                          |
+| ---------------------- | -------------------------------------------------------------------- |
 | **Payment Page Title** | Optional title displayed at the top of the ePDQ Hosted Payment Page. |
-| **Custom Logo URL** | URL of your logo to display on the payment page. **Must use HTTPS.** |
-| **Background Colour** | Hex colour for the ePDQ payment page background (e.g. `#0055B3`). |
+| **Custom Logo URL**    | URL of your logo to display on the payment page. **Must use HTTPS.** |
+| **Background Colour**  | Hex colour for the ePDQ payment page background (e.g. `#0055B3`).    |
 
 ### Order statuses
 
-| Field | Default | Description |
-|-------|---------|-------------|
-| **Confirmed Payment Status** | Confirmed | Applied when ePDQ returns STATUS 5 (Authorized) or STATUS 9 (Payment Requested). |
-| **Pending Payment Status** | Pending | Applied when ePDQ returns STATUS 51 (Authorization Waiting) or STATUS 91 (Payment Processing). The customer has been charged but confirmation is delayed. |
-| **Failed Payment Status** | Failed | Applied when ePDQ returns any other status, including declined and cancelled transactions. |
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+| Field                        | Default   | Description                                                                                                                                               |
+| ---------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Confirmed Payment Status** | Confirmed | Applied when ePDQ returns STATUS 5 (Authorized) or STATUS 9 (Payment Requested).                                                                          |
+| **Pending Payment Status**   | Pending   | Applied when ePDQ returns STATUS 51 (Authorization Waiting) or STATUS 91 (Payment Processing). The customer has been charged but confirmation is delayed. |
+| **Failed Payment Status**    | Failed    | Applied when ePDQ returns any other status, including declined and cancelled transactions.                                                                |
 
 ### Email notifications
 
-| Field | Description |
-|-------|-------------|
+| Field                 | Description                                                                                                                                            |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Admin Email Group** | Joomla user group to notify by email when payment validation fails (e.g. SHA signature mismatch, invalid order ID). Defaults to the Super Users group. |
 
 ### Surcharges
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Name** | Label shown to customers for the surcharge line item. |
-| **Surcharge Percentage** | Percentage of order total to add as a surcharge. |
-| **Surcharge Fixed** | Fixed amount to add as a surcharge. |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount. |
+| Field                    | Description                                           |
+| ------------------------ | ----------------------------------------------------- |
+| **Surcharge Name**       | Label shown to customers for the surcharge line item. |
+| **Surcharge Percentage** | Percentage of order total to add as a surcharge.      |
+| **Surcharge Fixed**      | Fixed amount to add as a surcharge.                   |
+| **Surcharge Tax Class**  | Tax profile to apply to the surcharge amount.         |
 
 ### Messaging
 
-| Field | Description |
-|-------|-------------|
-| **On Selection Text** | Text displayed when the customer selects ePDQ as their payment method at checkout. |
-| **On Before Payment Text** | Text displayed on the pre-payment confirmation step. |
-| **On After Payment Text** | Text displayed on the thank-you page after successful payment. |
-| **On Cancel Text** | Text displayed when the customer cancels payment on the ePDQ page. |
-| **On Error Text** | Text displayed when an error occurs during payment processing. |
-| **Button Text** | Label for the "Proceed to payment" button. Default: "Place Order". |
-| **Thank-You Article** | Optionally display a Joomla article as a thank-you message after payment. |
+| Field                      | Description                                                                        |
+| -------------------------- | ---------------------------------------------------------------------------------- |
+| **On Selection Text**      | Text displayed when the customer selects ePDQ as their payment method at checkout. |
+| **On Before Payment Text** | Text displayed on the pre-payment confirmation step.                               |
+| **On After Payment Text**  | Text displayed on the thank-you page after successful payment.                     |
+| **On Cancel Text**         | Text displayed when the customer cancels payment on the ePDQ page.                 |
+| **On Error Text**          | Text displayed when an error occurs during payment processing.                     |
+| **Button Text**            | Label for the "Proceed to payment" button. Default: "Place Order".                 |
+| **Thank-You Article**      | Optionally display a Joomla article as a thank-you message after payment.          |
 
 ### Other settings
 
-| Field | Description |
-|-------|-------------|
-| **Geographic Restriction** | Limit this payment method to customers within a specific geo-zone. |
-| **Support Subscriptions** | Allow this payment method for subscription products. Because ePDQ HPP cannot store card tokens, subscription renewal must be handled manually or via bank mandate. Disabled by default. |
-| **Debug Mode** | Logs SHA-IN and SHA-OUT details to Joomla's log system (category: `plg_j2commerce_payment_epdq`). **Disable in production.** |
+| Field                      | Description                                                                                                                                                                             |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Geographic Restriction** | Limit this payment method to customers within a specific geo-zone.                                                                                                                      |
+| **Support Subscriptions**  | Allow this payment method for subscription products. Because ePDQ HPP cannot store card tokens, subscription renewal must be handled manually or via bank mandate. Disabled by default. |
+| **Debug Mode**             | Logs SHA-IN and SHA-OUT details to Joomla's log system (category: `plg_j2commerce_payment_epdq`). **Disable in production.**                                                            |
 
----
+***
 
 ## ePDQ back-office configuration
 
@@ -143,6 +154,7 @@ These settings must be configured in your ePDQ back-office to match the plugin.
 
 - **HTTP redirection in the browser:** Not used (the plugin uses server-to-server notification).
 - **Direct HTTP server-to-server request:**
+
   - **Timing:** "Always deferred" or "Always online" — both work.
   - **URL of the page:** `https://yoursite.com/index.php?option=com_j2commerce&task=checkout.confirmPayment&orderpayment_type=payment_epdq&paction=process`
   - Replace `https://yoursite.com` with your actual site URL.
@@ -150,7 +162,7 @@ These settings must be configured in your ePDQ back-office to match the plugin.
 
 > **Important:** The callback URL must be the plain URL without Joomla SEF routing. Do not apply any URL rewriting to the callback URL. The plugin generates the correct raw URL automatically.
 
----
+***
 
 ## SHA signing
 
@@ -159,6 +171,7 @@ The ePDQ gateway requires all outbound parameters to be signed (SHA-IN) and all 
 ### SHA-IN (outbound)
 
 When building the payment form, the plugin:
+
 1. Collects all non-empty parameters (AMOUNT, CURRENCY, ORDERID, etc.)
 2. Sorts them alphabetically by uppercase parameter name
 3. Concatenates each as `PARAM=value{SHA-IN passphrase}`
@@ -168,6 +181,7 @@ When building the payment form, the plugin:
 ### SHA-OUT (inbound)
 
 When the gateway posts back:
+
 1. The plugin uppercases and sorts all received parameters
 2. Excludes parameters in the skip list (SHASIGN, OPTION, TASK, PROCESSOR, LAYOUT, RESULT, SESSIONID)
 3. Only includes parameters in the ePDQ allowlist (AMOUNT, BRAND, CURRENCY, etc.)
@@ -176,22 +190,22 @@ When the gateway posts back:
 
 If the signatures do not match and **Validate SHA-OUT Response** is enabled, the transaction is rejected and an admin notification email is sent.
 
----
+***
 
 ## ePDQ payment status codes
 
-| STATUS | Meaning | J2Commerce action |
-|--------|---------|------------------|
-| 5 | Authorized | Confirmed payment status applied, customer notified |
-| 9 | Payment Requested | Confirmed payment status applied, customer notified |
-| 51 | Authorization Waiting | Pending status applied |
-| 91 | Payment Processing | Pending status applied |
-| 0 | Incomplete / Invalid | Failed status applied |
-| 1 | Cancelled by Customer | Failed status applied |
-| 2 | Authorization Refused | Failed status applied |
-| All other codes | Various pending/refund/error states | Failed status applied |
+| STATUS          | Meaning                             | J2Commerce action                                   |
+| --------------- | ----------------------------------- | --------------------------------------------------- |
+| 5               | Authorized                          | Confirmed payment status applied, customer notified |
+| 9               | Payment Requested                   | Confirmed payment status applied, customer notified |
+| 51              | Authorization Waiting               | Pending status applied                              |
+| 91              | Payment Processing                  | Pending status applied                              |
+| 0               | Incomplete / Invalid                | Failed status applied                               |
+| 1               | Cancelled by Customer               | Failed status applied                               |
+| 2               | Authorization Refused               | Failed status applied                               |
+| All other codes | Various pending/refund/error states | Failed status applied                               |
 
----
+***
 
 ## Transaction security
 
@@ -200,7 +214,7 @@ If the signatures do not match and **Validate SHA-OUT Response** is enabled, the
 - **Double-charge protection.** If the gateway posts back twice for the same order, the plugin detects the existing transaction ID and status and skips the second update.
 - **Debug logs** are allowlisted and never contain raw card numbers, encrypted card data, or CVV values.
 
----
+***
 
 ## Subscriptions
 
@@ -211,7 +225,7 @@ Setting **Support Subscriptions** to yes allows ePDQ to be selected for subscrip
 
 If you need automatic subscription renewal, consider a gateway that supports tokenisation, such as Stripe or Authorize.net.
 
----
+***
 
 ## Troubleshooting
 
@@ -238,16 +252,16 @@ If you need automatic subscription renewal, consider a gateway that supports tok
 - ePDQ may be returning STATUS 51 or 91 (authorization waiting). This is normal for certain card types. The order will move to confirmed once ePDQ sends a final STATUS 9 or 5 notification.
 - If the final notification never arrives, check the ePDQ back-office under **Operations → Transactions** to see the final payment status.
 
----
+***
 
 ## Migrating from J2Store
 
 If you were using the J2Store `payment_epdq` plugin, this J2Commerce version preserves all your parameter names where possible. The key differences:
 
-| J2Store parameter | J2Commerce parameter | Notes |
-|------------------|---------------------|-------|
-| `epdq_SHA_1_pre` | `epdq_sha_in` | Renamed for clarity |
-| `epdq_SHA_1_post` | `epdq_sha_out` | Renamed for clarity |
-| `epdq_encription` | `epdq_hash_method` | Fixed typo; now a dropdown |
+| J2Store parameter | J2Commerce parameter | Notes                      |
+| ----------------- | -------------------- | -------------------------- |
+| `epdq_SHA_1_pre`  | `epdq_sha_in`        | Renamed for clarity        |
+| `epdq_SHA_1_post` | `epdq_sha_out`       | Renamed for clarity        |
+| `epdq_encription` | `epdq_hash_method`   | Fixed typo; now a dropdown |
 
 After updating the plugin, re-enter your SHA passphrases in the new parameter fields. All other settings carry over automatically.

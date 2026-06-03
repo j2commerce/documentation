@@ -32,7 +32,7 @@ After enabling the plugin, click the **Bank Transfer** title to open the setting
 
 :::tip
 
-**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+**Tip**: Click on the **Toggle Inline Help** button on any app/plugin you install and it will show a description below each section. See image below
 
 :::
 
@@ -75,6 +75,12 @@ Always include a note asking customers to use their **order number** as the paym
 ### Order Status
 
 ![](/img/bank-config2.webp)
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
 
 **Order Status:** The order status set after payment is confirmed. Choose the status that best represents a confirmed but not-yet-shipped order (e.g., "Confirmed" or "Processing").
 

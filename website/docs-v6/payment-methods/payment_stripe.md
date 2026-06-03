@@ -77,7 +77,7 @@ After enabling the plugin, click the **Stripe Payment** title to open the settin
 
 :::tip
 
-**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+**Tip**: Click on the **Toggle Inline Help** button on any app/plugin you install and it will show a description below each section. See image below
 
 :::
 
@@ -246,6 +246,12 @@ Available subtemplates: **Bootstrap 5** and **UIkit**. Leave blank to use the de
 ### Order Status
 
 ![](/img/stripe-config4.webp)
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
 
 **Order Status:** The order status applied after a successful payment
 

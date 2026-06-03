@@ -55,7 +55,7 @@ Click on the **Bulk Discounts** title next to the green checkmark to open the se
 
 :::tip
 
-Click the **Toggle Inline Help** button on any app to show a description below each field.
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
 
 :::
 
@@ -63,17 +63,17 @@ Click the **Toggle Inline Help** button on any app to show a description below e
 
 <!-- SCREENSHOT: Basic Settings tab of the Bulk Discounts app -->
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Display Name** | The label shown to customers when bulk discount savings appear in the cart and on product pages. | `Bulk Discount` |
-| **Prevent Double Discounts** | When set to **Yes**, the bulk discount is automatically removed if the customer applies a coupon code — preventing customers from combining two discounts at once. | Yes |
-| **Display Message In Cart** | When set to **Yes**, a promotional message appears beneath each qualifying cart line item showing the applied discount. | Yes |
-| **Apply Bulk Discount For** | Controls which quantity figure triggers the discount tier: **Line Item Qty** counts the quantity of that specific product line; **Cart Qty** counts the total number of all items in the cart. | Line Item Qty |
-| **Product Discount Display** | Controls the number shown in the discount table on the product page: **Per Quantity Discount** shows the discount per unit; **Total Discount Price** shows the total price for that quantity tier. | Total Discount Price |
-| **Display Single Qty Discount** | When set to **Yes**, a tier with a minimum quantity of 1 is shown in the product discount table. | No |
-| **Display Discounts In** | Where the discount table appears: **Product View** (individual product page only), **Category View** (product listings only), **Product and Category Views** (both), or **Never Show** (hide the table entirely but still apply the discount). | Product View |
-| **Display Quick Icon** | When set to **Yes**, a shortcut icon for this app appears on the J2Commerce home dashboard. Requires the J2Commerce Quick Icons plugin to be installed and enabled. | No |
-| **Quick Icon Title** | The label displayed on the dashboard quick icon. Only visible when **Display Quick Icon** is enabled. | `J2Commerce Bulk Discount` |
+| Setting                         | Description                                                                                                                                                                                                                                    | Default                    |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| **Display Name**                | The label shown to customers when bulk discount savings appear in the cart and on product pages.                                                                                                                                               | `Bulk Discount`            |
+| **Prevent Double Discounts**    | When set to **Yes**, the bulk discount is automatically removed if the customer applies a coupon code — preventing customers from combining two discounts at once.                                                                             | Yes                        |
+| **Display Message In Cart**     | When set to **Yes**, a promotional message appears beneath each qualifying cart line item showing the applied discount.                                                                                                                        | Yes                        |
+| **Apply Bulk Discount For**     | Controls which quantity figure triggers the discount tier: **Line Item Qty** counts the quantity of that specific product line; **Cart Qty** counts the total number of all items in the cart.                                                 | Line Item Qty              |
+| **Product Discount Display**    | Controls the number shown in the discount table on the product page: **Per Quantity Discount** shows the discount per unit; **Total Discount Price** shows the total price for that quantity tier.                                             | Total Discount Price       |
+| **Display Single Qty Discount** | When set to **Yes**, a tier with a minimum quantity of 1 is shown in the product discount table.                                                                                                                                               | No                         |
+| **Display Discounts In**        | Where the discount table appears: **Product View** (individual product page only), **Category View** (product listings only), **Product and Category Views** (both), or **Never Show** (hide the table entirely but still apply the discount). | Product View               |
+| **Display Quick Icon**          | When set to **Yes**, a shortcut icon for this app appears on the J2Commerce home dashboard. Requires the J2Commerce Quick Icons plugin to be installed and enabled.                                                                            | No                         |
+| **Quick Icon Title**            | The label displayed on the dashboard quick icon. Only visible when **Display Quick Icon** is enabled.                                                                                                                                          | `J2Commerce Bulk Discount` |
 
 ### Global Discount Settings tab
 
@@ -81,12 +81,12 @@ This tab lets you define store-wide discount rules that apply to every product u
 
 <!-- SCREENSHOT: Global Discount Settings tab showing the discount rules table -->
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Enable Bulk Discount Globally** | When set to **Yes**, the discount rules defined on this tab apply across the entire store. | No |
-| **Discount Type** | **Fixed Amount Per Product** deducts a specific currency amount per item; **Cart Percentage** deducts a percentage of the item price. | Fixed Amount Per Product |
-| **Cart Promotional Text** | Optional text displayed under each cart line item as a promotional message. Only shown on the cart page. | _(empty)_ |
-| **Single Quantity Class** | A CSS class applied to the discount display element when the minimum quantity is 1. Useful for styling a "default" discounted price differently. | `bulk-price` |
+| Setting                           | Description                                                                                                                                      | Default                  |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------ |
+| **Enable Bulk Discount Globally** | When set to **Yes**, the discount rules defined on this tab apply across the entire store.                                                       | No                       |
+| **Discount Type**                 | **Fixed Amount Per Product** deducts a specific currency amount per item; **Cart Percentage** deducts a percentage of the item price.            | Fixed Amount Per Product |
+| **Cart Promotional Text**         | Optional text displayed under each cart line item as a promotional message. Only shown on the cart page.                                         | *(empty)*                |
+| **Single Quantity Class**         | A CSS class applied to the discount display element when the minimum quantity is 1. Useful for styling a "default" discounted price differently. | `bulk-price`             |
 
 #### Adding Global Discount Rules
 
@@ -112,13 +112,14 @@ You can apply bulk discount rules to all products within a specific Joomla categ
 
 <!-- SCREENSHOT: Category edit screen showing the Bulk Discounts fieldset in the J2Commerce tab -->
 
-4. Set **Enable Bulk Discount** to **Yes**.
-5. Choose the **Apply Bulk Discount For** option:
+1. Set **Enable Bulk Discount** to **Yes**.
+2. Choose the **Apply Bulk Discount For** option:
+
    - **Line Item Qty** — checks each product line individually.
    - **Total quantity of products in cart that fall under this category** — sums the quantities of all products from this category that are in the cart.
-6. Select the **Discount Type** and optionally enter **Cart Promotional Text**.
-7. Click **Add Bulk Discount** to add your tier rules.
-8. Click **Save** to apply.
+3. Select the **Discount Type** and optionally enter **Cart Promotional Text**.
+4. Click **Add Bulk Discount** to add your tier rules.
+5. Click **Save** to apply.
 
 :::info
 
@@ -148,12 +149,12 @@ There are **three** ways to access products.
 
 <!-- SCREENSHOT: Product edit screen showing the Apps tab with Bulk Discounts fieldset -->
 
-4. Set **Enable Bulk Discount** to **Yes**.
-5. Choose the **Discount Type**: Fixed Amount Per Product or Cart Percentage.
-6. Optionally enter **Cart Promotional Text** to show a message in the cart for this product.
-7. Set **Combine Product Quantity In Cart** to **Yes** if you want quantities of the same product variant in different cart rows to be added together before the tier threshold is checked.
-8. Click **Add Bulk Discount** and fill in your tier rows (Quantity, Cart Price, Customer Group, Discount Value).
-9. Click **Save** to apply.
+1. Set **Enable Bulk Discount** to **Yes**.
+2. Choose the **Discount Type**: Fixed Amount Per Product or Cart Percentage.
+3. Optionally enter **Cart Promotional Text** to show a message in the cart for this product.
+4. Set **Combine Product Quantity In Cart** to **Yes** if you want quantities of the same product variant in different cart rows to be added together before the tier threshold is checked.
+5. Click **Add Bulk Discount** and fill in your tier rows (Quantity, Cart Price, Customer Group, Discount Value).
+6. Click **Save** to apply.
 
 <!-- SCREENSHOT: Product Apps tab with a filled-out Bulk Discounts tier table -->
 
@@ -171,11 +172,11 @@ When a customer views a product page:
 
 ### Discount Priority
 
-| Level | Takes Priority Over |
-|-------|---------------------|
-| Product level | Category and global |
-| Category level | Global only |
-| Global level | Nothing (lowest priority) |
+| Level          | Takes Priority Over       |
+| -------------- | ------------------------- |
+| Product level  | Category and global       |
+| Category level | Global only               |
+| Global level   | Nothing (lowest priority) |
 
 ### Tax Handling
 

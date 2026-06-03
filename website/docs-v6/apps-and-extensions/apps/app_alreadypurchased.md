@@ -42,7 +42,7 @@ Once you click the **Already Purchased** title next to the green checkmark, you 
 
 :::tip
 
-**Tip:** Click the Toggle Inline Help button on any app you install and it will show a description below each field.
+**Tip:** Click the **Toggle Inline Help** button on any app you install and it will show a description below each field.
 
 :::
 

@@ -68,6 +68,12 @@ Look for **PDF Invoices**, click the **X,** and it will turn into a green chec
 
 ## Configuration
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 Go to **J2Commerce** -> **Apps** and click **PDF Invoices** to open its settings.
 
 The configuration screen has two tabs: **Basic Settings** and **Advanced Settings**.

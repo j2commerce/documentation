@@ -7,7 +7,7 @@ description: "Add a second terms-and-conditions acknowledgement at checkout — 
 
 # Additional Terms
 
-J2Commerce includes a built-in primary terms and conditions acknowledgement at checkout. The **Additional Terms** app adds a second, independent agreement on top of that — useful when a single catch-all T&amp;C is not enough.
+J2Commerce includes a built-in primary terms and conditions acknowledgement at checkout. The **Additional Terms** app adds a second, independent agreement on top of that — useful when a single catch-all T\&C is not enough.
 
 Common use cases: a 14-day cancellation policy, a returns policy that differs from your general terms, a GDPR data processing addendum, an age-verification gate, or an NDA layered on top of a standard purchase agreement. The app lets you choose whether customers must actively tick a checkbox before they can place an order, or whether the terms appear as a passive disclosure link they can read without being required to acknowledge.
 
@@ -56,27 +56,33 @@ The article can belong to any category. It does not need to appear in a menu —
 
 ## Configure the Plugin
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 Go to **Components** -> **J2Commerce** -> **Apps**, click the name **Additional Terms for J2Commerce**, then click **Options** (or open the plugin directly via **System** -> **Manage** -> **Plugins** -> **Additional Terms**).
 
 <!-- SCREENSHOT: Additional Terms plugin configuration screen showing the Basic tab with all fields visible -->
 
 ### Basic Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Show Additional Terms** | Master on/off switch. When set to **No**, the entire feature is disabled and nothing appears at checkout. | Yes |
-| **Display Type** | How the terms are shown. See the next section for guidance on which mode to choose. | Link only (display) |
-| **Terms Article** | The Joomla article that contains your additional policy text. Click **Select** to pick the article by title, or type the article ID directly. | — |
-| **Label Prefix** | Text shown before the clickable link label. For example: `I agree to the` | I agree to the |
-| **Label** | The clickable text customers see. This text opens the modal when clicked. | additional terms and conditions |
-| **Label Suffix** | Optional text shown after the label. Leave blank if the prefix reads as a complete sentence on its own. | _(empty)_ |
-| **Warning Message** | The error message shown when a customer tries to complete checkout without ticking the box. Only visible when **Display Type** is set to **Checkbox**. | Please accept the additional terms and conditions to continue. |
+| Field                     | Description                                                                                                                                            | Default                                                        |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
+| **Show Additional Terms** | Master on/off switch. When set to **No**, the entire feature is disabled and nothing appears at checkout.                                              | Yes                                                            |
+| **Display Type**          | How the terms are shown. See the next section for guidance on which mode to choose.                                                                    | Link only (display)                                            |
+| **Terms Article**         | The Joomla article that contains your additional policy text. Click **Select** to pick the article by title, or type the article ID directly.          | —                                                              |
+| **Label Prefix**          | Text shown before the clickable link label. For example: `I agree to the`                                                                              | I agree to the                                                 |
+| **Label**                 | The clickable text customers see. This text opens the modal when clicked.                                                                              | additional terms and conditions                                |
+| **Label Suffix**          | Optional text shown after the label. Leave blank if the prefix reads as a complete sentence on its own.                                                | *(empty)*                                                      |
+| **Warning Message**       | The error message shown when a customer tries to complete checkout without ticking the box. Only visible when **Display Type** is set to **Checkbox**. | Please accept the additional terms and conditions to continue. |
 
 ### Advanced Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Mode** | Writes validation decisions to the Joomla log file at `administrator/logs/plg_j2commerce_app_additionalterms.php`. Useful when testing. Disable this in a live store. | No |
+| Field          | Description                                                                                                                                                           | Default |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Debug Mode** | Writes validation decisions to the Joomla log file at `administrator/logs/plg_j2commerce_app_additionalterms.php`. Useful when testing. Disable this in a live store. | No      |
 
 ## Choosing a Display Type
 
@@ -98,30 +104,30 @@ The three text fields — **Label Prefix**, **Label**, and **Label Suffix** — 
 
 **Example 1 — Cancellation policy checkbox:**
 
-| Field | Value |
-|-------|-------|
-| Label Prefix | `I have read and agree to the` |
-| Label | `cancellation policy` |
-| Label Suffix | `, including the 14-day return window` |
-| Result | I have read and agree to the **cancellation policy**, including the 14-day return window |
+| Field        | Value                                                                                    |
+| ------------ | ---------------------------------------------------------------------------------------- |
+| Label Prefix | `I have read and agree to the`                                                           |
+| Label        | `cancellation policy`                                                                    |
+| Label Suffix | `, including the 14-day return window`                                                   |
+| Result       | I have read and agree to the **cancellation policy**, including the 14-day return window |
 
 **Example 2 — Age verification:**
 
-| Field | Value |
-|-------|-------|
-| Label Prefix | `I confirm that I am` |
-| Label | `18 years of age or older` |
-| Label Suffix | _(empty)_ |
-| Result | I confirm that I am **18 years of age or older** |
+| Field        | Value                                            |
+| ------------ | ------------------------------------------------ |
+| Label Prefix | `I confirm that I am`                            |
+| Label        | `18 years of age or older`                       |
+| Label Suffix | *(empty)*                                        |
+| Result       | I confirm that I am **18 years of age or older** |
 
 **Example 3 — GDPR data processing addendum:**
 
-| Field | Value |
-|-------|-------|
-| Label Prefix | `I accept the` |
-| Label | `data processing addendum` |
-| Label Suffix | `required under GDPR` |
-| Result | I accept the **data processing addendum** required under GDPR |
+| Field        | Value                                                         |
+| ------------ | ------------------------------------------------------------- |
+| Label Prefix | `I accept the`                                                |
+| Label        | `data processing addendum`                                    |
+| Label Suffix | `required under GDPR`                                         |
+| Result       | I accept the **data processing addendum** required under GDPR |
 
 The prefix and suffix fields accept plain text. If you type a language key (for example `MY_CUSTOM_KEY`), Joomla's translation system will resolve it — otherwise the text is shown as-is. Most store owners simply type plain sentences directly into these fields.
 
@@ -137,9 +143,9 @@ When the customer clicks the link (in either mode), a scrollable Bootstrap modal
 
 ## Difference from J2Commerce's Built-in Primary Terms
 
-J2Commerce includes a **Primary Terms and Conditions** setting in **J2Commerce** -> **Configuration** -> **Checkout**. That setting handles the first, main T&amp;C agreement your customers sign.
+J2Commerce includes a **Primary Terms and Conditions** setting in **J2Commerce** -> **Configuration** -> **Checkout**. That setting handles the first, main T\&C agreement your customers sign.
 
-The **Additional Terms** app is for everything else — a second, third, or specialised agreement that sits alongside the primary terms. Both can be active at the same time. Customers see the primary T&amp;C and the additional terms as separate, independent acknowledgements.
+The **Additional Terms** app is for everything else — a second, third, or specialised agreement that sits alongside the primary terms. Both can be active at the same time. Customers see the primary T\&C and the additional terms as separate, independent acknowledgements.
 
 ## Troubleshooting
 
@@ -153,25 +159,25 @@ The **Additional Terms** app is for everything else — a second, third, or spec
 
 **Check 4:** Enable **Debug Mode** in the plugin's **Advanced** tab. Then reproduce the checkout and check the log file at `administrator/logs/plg_j2commerce_app_additionalterms.php` for entries that explain why the block was skipped.
 
----
+***
 
 ### The modal opens but is empty
 
 The article you linked may not be published, or the article ID may be incorrect. Go to **Content** -> **Articles**, confirm the article exists, its **Status** is **Published**, and that the ID in the plugin matches the ID shown in the Articles list.
 
----
+***
 
 ### The checkbox validation error does not appear
 
 Confirm **Display Type** is set to **Checkbox (required to checkout)** — not **Link only (display)**. Link mode never blocks checkout regardless of whether the customer clicks the link.
 
----
+***
 
 ### Error message at checkout reads a raw language key instead of text
 
 If the **Warning Message** field is blank and the default has been cleared, the plugin falls back to the internal language key. Open the plugin configuration, clear the **Warning Message** field completely, and type your own message in plain English. Save the plugin.
 
----
+***
 
 ### Debug log shows "Checkout halted" but the error does not appear on screen
 
@@ -179,11 +185,11 @@ This can happen if a caching plugin is serving a stale page. Clear the Joomla ca
 
 ## What Changed from the J2Store Version
 
-| Area | Old (J2Store 4) | New (J2Commerce 6) |
-|------|-----------------|---------------------|
-| Modal | Fancybox (jQuery) | Native Bootstrap 5 modal, no jQuery dependency |
-| Validation | Custom return-value pattern | `RuntimeException` thrown inside `onJ2CommerceAfterOrderValidate` — the checkout controller catches it and surfaces a styled `alert-danger` automatically |
-| Error display | Inconsistent placement | Always rendered as a red alert above the confirm form |
-| JavaScript | jQuery required | No JavaScript required — modal is pure Bootstrap 5 CSS/HTML |
-| Queries | String-concatenated SQL | Parameterised queries throughout |
-| Architecture | FOF 2 plugin | Native Joomla 6 plugin with `SubscriberInterface`, strict types, PHP 8.3+ |
+| Area          | Old (J2Store 4)             | New (J2Commerce 6)                                                                                                                                        |
+| ------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Modal         | Fancybox (jQuery)           | Native Bootstrap 5 modal, no jQuery dependency                                                                                                            |
+| Validation    | Custom return-value pattern | `RuntimeException` thrown inside `onJ2CommerceAfterOrderValidate` — the checkout controller catches it and surfaces a styled `alert-danger` automatically |
+| Error display | Inconsistent placement      | Always rendered as a red alert above the confirm form                                                                                                     |
+| JavaScript    | jQuery required             | No JavaScript required — modal is pure Bootstrap 5 CSS/HTML                                                                                               |
+| Queries       | String-concatenated SQL     | Parameterised queries throughout                                                                                                                          |
+| Architecture  | FOF 2 plugin                | Native Joomla 6 plugin with `SubscriberInterface`, strict types, PHP 8.3+                                                                                 |

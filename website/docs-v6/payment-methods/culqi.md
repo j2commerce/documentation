@@ -71,7 +71,7 @@ To help you narrow down the list, you can do a search for **Culqi**, click the 
 
 :::tip
 
-**Tip**: Click on the Toggle Inline Help button on any app/plugin you install and it will show a description below each section. See image below
+**Tip**: Click on the **Toggle Inline Help** button on any app/plugin you install and it will show a description below each section. See image below
 
 :::
 
@@ -123,7 +123,13 @@ Peruvian banks let shoppers pay in monthly installments. The plugin sends the in
 
 **Allow retry on failure:** If a charge fails, keep the shopper on the confirm page with a **Retry payment** button instead of finalizing the order as failed.
 
-### Order Status Mappings
+### Order Status
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
 
 **Order status after successful payment:** The status is applied when Culqi confirms the charge.
 

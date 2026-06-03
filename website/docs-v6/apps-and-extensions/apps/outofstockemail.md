@@ -48,6 +48,12 @@ After installation, verify the plugin is enabled:
 
 ## Configure the App
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 1. Go to **J2Commerce** -> **Apps**.
 2. Find **Availability Notification** in the list and click its name to open the settings screen.
 
@@ -77,7 +83,7 @@ By default, the notify-me form only shows on variants that are genuinely out of 
 
 **Field:** Product URL type
 
-Controls which URL format is used for the [PRODUCT_URL] placeholder in the back-in-stock email. Two options are available:
+Controls which URL format is used for the \[PRODUCT\_URL] placeholder in the back-in-stock email. Two options are available:
 
 - **Article URL** — the standard Joomla article URL for the product page
 - **J2Commerce URL** — the J2Commerce SEF (search-engine-friendly) URL for the product
@@ -169,14 +175,14 @@ The notification trigger is the **product save action in the admin**, not a back
 
 Both the **Email Subject** and **Email Body** fields support the following placeholders. Each tag is replaced with the actual value when the email is sent.
 
-| Tag | Replaced With | Example Output |
-|-----|--------------|----------------|
-| `[SITENAME]` | Your Joomla site name | My Online Store |
-| `[EMAIL]` | The customer's email address | customer@example.com |
-| `[PRODUCT_SKU]` | The variant's SKU | TSHIRT-L-BLUE |
-| `[PRODUCT_NAME]` | The product name | Classic Cotton T-Shirt |
-| `[PRODUCT_URL]` | Direct link to the product page | https://example.com/shop/classic-cotton-t-shirt |
-| `[OPTION_NAME]` | The selected variant option label | Large / Blue |
+| Tag              | Replaced With                     | Example Output                                                                                     |
+| ---------------- | --------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `[SITENAME]`     | Your Joomla site name             | My Online Store                                                                                    |
+| `[EMAIL]`        | The customer's email address      | [customer@example.com](mailto\:customer@example.com)                                               |
+| `[PRODUCT_SKU]`  | The variant's SKU                 | TSHIRT-L-BLUE                                                                                      |
+| `[PRODUCT_NAME]` | The product name                  | Classic Cotton T-Shirt                                                                             |
+| `[PRODUCT_URL]`  | Direct link to the product page   | [https://example.com/shop/classic-cotton-t-shirt](https://example.com/shop/classic-cotton-t-shirt) |
+| `[OPTION_NAME]`  | The selected variant option label | Large / Blue                                                                                       |
 
 The admin notification email uses a separate, hardcoded template that includes the customer's email address, the product name, and the variant option. It is sent to the **Admin Email** address set in **J2Commerce** -> **Setup** -> **Configuration**.
 

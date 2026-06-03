@@ -59,6 +59,12 @@ Once you have installed the app, you will need to enable it. There are **two** w
 
 ## Configure the Plugin
 
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 When you open the pligin and you will see two settings.
 
 The plugin has two settings.
@@ -109,8 +115,6 @@ Click **New** to create a field.
   - **radio:** A set of radio buttons, one selectable at a time.
 
   - **checkbox:** A single checkbox returning a yes/no value.
-
-
 
 - Any other field type falls back to a standard text input on the subscription detail screen.
 

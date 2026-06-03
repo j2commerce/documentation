@@ -40,7 +40,7 @@ Upload the `app_quantityprice.zip` file or use the Install from URL option.
 
 The plugin installs and enables automatically.
 
-## Configure Basic Settings
+## Configuration
 
 Once you have installed the App, you will need to configure it. There are **two** ways you can access the plugin.&#x20;
 
@@ -51,6 +51,12 @@ Once you have installed the App, you will need to configure it. There are **two*
 ![shipping method](/img/accordions-app.webp)
 
 Click on the **Quantity Dropdown** title to open the plugin configuration screen.
+
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
 
 ### Basic Settings
 
