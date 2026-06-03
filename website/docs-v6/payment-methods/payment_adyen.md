@@ -350,7 +350,7 @@ The refund is submitted to Adyen. Adyen processes refunds asynchronously — the
 
 Always test in sandbox mode before going live.
 
-:::info
+:::tip
 
 To get the **Test credit card number**, go to [Test card numbers | Adyen Docs](https://docs.adyen.com/development-resources/test-cards-and-credentials/test-card-numbers). Each number is different based on what country you are from.
 
