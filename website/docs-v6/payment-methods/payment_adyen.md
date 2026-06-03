@@ -1,10 +1,3 @@
----
-title: "Adyen Payment"
-sidebar_label: "Adyen"
-sidebar_position: 5
-description: "Accept credit cards, digital wallets, and local payment methods through Adyen — with 3DS2/SCA, saved cards, subscription support, and full order-level capture, refund, and cancel actions."
----
-
 # Adyen Payment
 
 The Adyen Payment plugin connects your J2Commerce store to the **Adyen** payment platform. Adyen is used by thousands of businesses worldwide and accepts credit cards, debit cards, digital wallets (Google Pay, Apple Pay), buy-now-pay-later options (Klarna), and many regional payment methods — all from a single integration.
@@ -28,6 +21,8 @@ The plugin also supports:
 - Your store must be accessible over HTTPS
 
 ## Get Your Adyen Credentials
+
+![](/img/ayden-credentials-3.webp)
 
 Before configuring the plugin, you need a few pieces of information from your Adyen **Customer Area** (the Adyen management portal).
 
@@ -55,6 +50,8 @@ Adyen confirms payment results by sending a notification to your store — calle
 5. Save the webhook and copy the HMAC key value before closing.
 
 ### Live credentials
+
+![](/img/ayden-credentials-1.webp)
 
 When you are ready to go live, you will also need:
 
@@ -312,17 +309,17 @@ Go to **J2Commerce** -> **Sales** -> **Orders** -> click the order number to ope
 
 ### Capture a Payment (Manual Capture mode only)
 
-<!-- SCREENSHOT: Order screen showing Capture Payment button -->
+![](/img/adyen-payment-order-page-manual-capture.webp)
 
 If you set **Capture Mode** to **Manual Capture**, payments are authorized but not collected. When you are ready to charge the customer:
 
-1. Open the order in **J2Commerce** -> **Sales** -> **Orders**.
+1. Open the order in **J2Commerce -> Sales ->** **Orders**.
 2. Click **Capture Payment** and confirm the prompt.
 3. The funds are collected from the customer's card. The order status updates when Adyen confirms the capture via webhook.
 
 ### Cancel a Payment
 
-<!-- SCREENSHOT: Order screen showing Cancel Payment button -->
+![](/img/adyen-payment-order-page-manual-cancel.webp)
 
 A cancellation releases an authorized payment before it has been captured. Once a payment has been captured, use **Issue Refund** instead.
 
@@ -353,9 +350,15 @@ The refund is submitted to Adyen. Adyen processes refunds asynchronously — the
 
 Always test in sandbox mode before going live.
 
+:::info
+
+To get the **Test credit card number**, go to [Test card numbers | Adyen Docs](https://docs.adyen.com/development-resources/test-cards-and-credentials/test-card-numbers). Each number is different based on what country you are from.
+
+:::
+
 1. Enable **Test Mode** in the plugin settings and enter your Adyen sandbox credentials (sandbox API key, sandbox client key, sandbox merchant account, and sandbox HMAC key).
 2. Place a test order on your storefront.
-3. At the payment step, enter a test card number. Adyen provides test card numbers in the Customer Area under **Developers** -> **Test cards**. A basic Visa test card number is `4111 1111 1111 1111` with any future expiry date and any three-digit CVV.
+3. At the payment step, enter a test card number. Adyen provides test card numbers in the Customer Area under **Developers** -> **Test cards** on the Adyen website.
 4. Complete checkout and confirm the order appears in **J2Commerce** -> **Sales** -> **Orders** with the correct status.
 5. Test a refund from the order screen to confirm it processes without errors.
 6. Check the Joomla log under **System** **->** **Logs** for any errors — enable **Debug Mode** temporarily if needed.
