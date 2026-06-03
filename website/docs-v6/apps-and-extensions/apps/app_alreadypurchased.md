@@ -36,6 +36,8 @@ Once you have installed the app, you will need to enable it. There are **two** w
 
 Look for **Already Purchased**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
+![](/img/already-purchased-enable.webp)
+
 ## Configure the App
 
 Once you click the **Already Purchased** title next to the green checkmark, you are ready to start setting up the parameters.

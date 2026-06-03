@@ -26,29 +26,23 @@ You control how many products appear, how they are ordered, and whether to inclu
 
 **Step 3:** Go to **My Downloads** under your profile button at the top right and find the app. Click **Available Versions** -> **View Files** -> **Download Now**
 
-## Install the App
+## In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-Install Related Category Products using the standard Joomla installer.
+Upload the `app_alreadypurchased.zip` ZIP file or use the Install from URL option.
 
-Go to **System** -> **Install** -> **Extensions**
-
-Upload the plugin ZIP file, or use the **Install from URL** option.
-
-<!-- SCREENSHOT: System → Install → Extensions upload screen with ZIP selected -->
+![](/img/install.webp)
 
 ## Enable the App
 
-After installation, enable the plugin. There are two ways to reach it.
+Once you have installed the app, you will need to enable it. There are **two** ways you can access the extension.
 
-**Option A:** Click the **J2Commerce** icon at the top right -> **Apps**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Related Category Products with X status icon -->
+![](/img/gift-wrap-apps.webp)
 
-Find **Related Category Products** in the list, click the **X**, and it turns into a green checkmark. The app is now enabled and will start showing the related section on your product pages.
-
-<!-- SCREENSHOT: Related Category Products row showing green checkmark after enabling -->
+Look for **Related Category Products**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ## Configure the App
 
@@ -62,7 +56,7 @@ Click the **Toggle Inline Help** button on any app settings screen to see a desc
 
 <!-- SCREENSHOT: Related Category Products settings screen showing all global fields -->
 
----
+***
 
 ### Section Title
 
@@ -70,69 +64,69 @@ The heading displayed above the related products grid or scroller on the product
 
 **Default:** blank (shows "Related Products")
 
----
+***
 
 ### Number of Products
 
 The maximum number of related products to show in the section. Set this based on how much space you want the section to take up and how many products your typical category contains.
 
-**Default:** 4  
+**Default:** 4\
 **Range:** 1–24
 
----
+***
 
 ### Display Mode
 
 Controls how the related products are laid out on the page.
 
-| Option | What the shopper sees |
-|--------|-----------------------|
-| **Grid** | Products displayed in a static grid of columns. Good when you want a tidy, scan-friendly layout that doesn't auto-scroll. |
+| Option                | What the shopper sees                                                                                                                                                  |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Grid**              | Products displayed in a static grid of columns. Good when you want a tidy, scan-friendly layout that doesn't auto-scroll.                                              |
 | **Scroller (Swiper)** | Products displayed in a touch-friendly swipeable carousel. Good for mobile shoppers and when you want to show more products without taking up a lot of vertical space. |
 
 **Default:** Scroller (Swiper)
 
----
+***
 
 ### Grid Columns
 
 How many columns the grid uses when **Display Mode** is set to **Grid**. This setting only has an effect when you have chosen Grid display — it is ignored when using the Scroller.
 
-**Default:** 3  
+**Default:** 3\
 **Range:** 1–6
 
----
+***
 
 ### Ordering
 
 Determines the order in which related products appear in the section.
 
-| Option | Description |
-|--------|-------------|
-| **Most Hits** | Products with the most page views appear first. |
-| **Alphabetical (A–Z)** | Products sorted alphabetically by name. |
-| **Random** | A different random selection each time the page loads. Good for variety. |
-| **Price (Low to High)** | Cheapest products appear first. |
-| **Price (High to Low)** | Most expensive products appear first. |
-| **Newest** | Most recently added products appear first. |
+| Option                  | Description                                                              |
+| ----------------------- | ------------------------------------------------------------------------ |
+| **Most Hits**           | Products with the most page views appear first.                          |
+| **Alphabetical (A–Z)**  | Products sorted alphabetically by name.                                  |
+| **Random**              | A different random selection each time the page loads. Good for variety. |
+| **Price (Low to High)** | Cheapest products appear first.                                          |
+| **Price (High to Low)** | Most expensive products appear first.                                    |
+| **Newest**              | Most recently added products appear first.                               |
 
 **Default:** Random
 
----
+***
 
 ### Category Match Type
 
 Defines which categories count as "related" when selecting products to show.
 
-| Option | Which products are included |
-|--------|----------------------------|
-| **Same Category** | Only products in the exact same category as the current product. |
-| **Same Category And Child Categories** | Products from the same category plus any sub-categories nested beneath it. |
+| Option                                   | Which products are included                                                                         |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| **Same Category**                        | Only products in the exact same category as the current product.                                    |
+| **Same Category And Child Categories**   | Products from the same category plus any sub-categories nested beneath it.                          |
 | **Same Category And Sibling Categories** | Products from the same category plus other categories at the same level that share the same parent. |
 
 **Default:** Same Category
 
----
+***
 
 ### Only In-Stock Products
 
@@ -142,7 +136,7 @@ When set to **No**, all matching products are shown regardless of stock status.
 
 **Default:** No
 
----
+***
 
 ## Per-Product Override
 
@@ -158,7 +152,7 @@ Set to **Yes** to activate per-product settings for this product. When set to **
 
 **Default:** No
 
----
+***
 
 When **Override Global Settings** is set to **Yes**, the following additional fields appear:
 
@@ -176,25 +170,25 @@ The maximum number of related products to display on this product's page. Leave 
 
 Override the layout for this product only.
 
-| Option | Description |
-|--------|-------------|
+| Option                 | Description                                                       |
+| ---------------------- | ----------------------------------------------------------------- |
 | **Use Global Setting** | Inherits whatever Display Mode is set in the global app settings. |
-| **Grid** | Forces a static grid for this product. |
-| **Scroller (Swiper)** | Forces a carousel for this product. |
+| **Grid**               | Forces a static grid for this product.                            |
+| **Scroller (Swiper)**  | Forces a carousel for this product.                               |
 
 ### Ordering
 
 Override the sort order for this product only.
 
-| Option | Description |
-|--------|-------------|
-| **Use Global Setting** | Inherits whatever Ordering is set in the global app settings. |
-| **Most Hits** | Products with the most page views appear first. |
-| **Alphabetical** | Products sorted A–Z by name. |
-| **Random** | A random selection each page load. |
-| **Price (Low to High)** | Cheapest first. |
-| **Price (High to Low)** | Most expensive first. |
-| **Newest** | Most recently added first. |
+| Option                  | Description                                                   |
+| ----------------------- | ------------------------------------------------------------- |
+| **Use Global Setting**  | Inherits whatever Ordering is set in the global app settings. |
+| **Most Hits**           | Products with the most page views appear first.               |
+| **Alphabetical**        | Products sorted A–Z by name.                                  |
+| **Random**              | A random selection each page load.                            |
+| **Price (Low to High)** | Cheapest first.                                               |
+| **Price (High to Low)** | Most expensive first.                                         |
+| **Newest**              | Most recently added first.                                    |
 
 :::tip
 
@@ -202,7 +196,7 @@ Grid Columns, Category Match Type, Only In-Stock Products, and Section Title are
 
 :::
 
----
+***
 
 ## How It Works
 
@@ -218,7 +212,7 @@ When a shopper opens a product page:
 
 The section appears below the main product content and above the page footer — the same position used by the built-in cross-sells.
 
----
+***
 
 ## Tips
 
@@ -228,7 +222,7 @@ The section appears below the main product content and above the page footer —
 - **Use a small Number of Products on mobile-heavy stores.** Four to six products in Scroller mode tend to perform better than a large grid that requires a lot of scrolling.
 - If you have a product that genuinely has no related products (for example, a one-of-a-kind item in a single-product category), use the per-product **Enable Related Category Products: No** override to hide the section cleanly on that page.
 
----
+***
 
 ## Troubleshooting
 
