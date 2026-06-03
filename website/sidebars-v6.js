@@ -316,6 +316,8 @@ const sidebars = {
                         'apps-and-extensions/apps/qtydiscount',
                         // Quantity Dropdown
                         'apps-and-extensions/apps/quantityprice',
+                        // Related Category Products
+                        'apps-and-extensions/apps/app-relatedcategoryproducts',
                         // ShipStation Integration
                         'apps-and-extensions/apps/shipstation',
                         // Simple CSV Import
