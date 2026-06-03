@@ -1,11 +1,3 @@
----
-id: app-relatedcategoryproducts
-title: "Related Category Products"
-sidebar_label: "Related Category Products"
-sidebar_position: 93
-description: "Automatically show a Related Products section on every product page by pulling in products from the same category — no manual linking needed."
----
-
 # Related Category Products
 
 The Related Category Products app adds a **Related Products** section to the bottom of every product detail page. Instead of you having to hand-pick related items product by product, the app does it automatically: it looks at the category the currently viewed product belongs to, then pulls in other products from that same category and displays them in a familiar product grid or swipeable scroller — the same style as the built-in cross-sells.
@@ -54,141 +46,93 @@ Click the **Toggle Inline Help** button on any app settings screen to see a desc
 
 :::
 
-<!-- SCREENSHOT: Related Category Products settings screen showing all global fields -->
+![](/img/related-category-products-toggle.webp)
 
-***
+### Basic Settings
 
-### Section Title
+![](/img/related-category-products-config.webp)
 
-The heading displayed above the related products grid or scroller on the product page. If you leave this blank, the section uses the default heading "Related Products". You can change it to anything that fits your store's language and style — for example, "More From This Category" or "You Might Also Like".
+**Section Title:** The heading is displayed above the related products grid or scroller on the product page. If you leave this blank, the section uses the default heading "Related Products". You can change it to anything that fits your store's language and style — for example, "More From This Category" or "You Might Also Like".
 
-**Default:** blank (shows "Related Products")
+**Number of Products:** The maximum number of related products to show in the section. Set this based on how much space you want the section to take up and how many products your typical category contains. **Range:** 1–24
 
-***
+**Display Mode:** Controls how the related products are laid out on the page. Below are the options and what the customer sees
 
-### Number of Products
+- **Grid:** Products displayed in a static grid of columns. Good when you want a tidy, scan-friendly layout that doesn't auto-scroll.
 
-The maximum number of related products to show in the section. Set this based on how much space you want the section to take up and how many products your typical category contains.
+  - **Grid Columns:** How many columns the grid uses when **Display Mode** is set to **Grid**. This setting only has an effect when you have chosen Grid display — it is ignored when using the Scroller. **Range:** 1–6
 
-**Default:** 4\
-**Range:** 1–24
+- **Scroller (Swiper):** Products displayed in a touch-friendly swipeable carousel. Good for mobile shoppers and when you want to show more products without taking up a lot of vertical space.
 
-***
+**Ordering:** Determines the order in which related products appear in the section.
 
-### Display Mode
+- **Most Hits:** Products with the most page views appear first.
 
-Controls how the related products are laid out on the page.
+- **Alphabetical (A–Z):** Products sorted alphabetically by name.
 
-| Option                | What the shopper sees                                                                                                                                                  |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Grid**              | Products displayed in a static grid of columns. Good when you want a tidy, scan-friendly layout that doesn't auto-scroll.                                              |
-| **Scroller (Swiper)** | Products displayed in a touch-friendly swipeable carousel. Good for mobile shoppers and when you want to show more products without taking up a lot of vertical space. |
+- **Random:** A different random selection each time the page loads. Good for variety.
 
-**Default:** Scroller (Swiper)
+- **Price (Low to High):** Cheapest products appear first.
 
-***
+- **Price (High to Low):** Most expensive products appear first.
 
-### Grid Columns
+- **Newest:** Most recently added products appear first.
 
-How many columns the grid uses when **Display Mode** is set to **Grid**. This setting only has an effect when you have chosen Grid display — it is ignored when using the Scroller.
+**Category Match Type:** Defines which categories count as "related" when selecting products to show.
 
-**Default:** 3\
-**Range:** 1–6
+- **Same Category:** Only products in the exact same category as the current product.
 
-***
+- **Same Category And Child Categories:** Products from the same category plus any sub-categories nested beneath it.
 
-### Ordering
+- **Same Category And Sibling Categories:** Products from the same category plus other categories at the same level that share the same parent.
 
-Determines the order in which related products appear in the section.
+**Only In-Stock Products:** When set to **Yes**, products that are out of stock are excluded from the related section. Shoppers only see products they can actually add to their cart.
 
-| Option                  | Description                                                              |
-| ----------------------- | ------------------------------------------------------------------------ |
-| **Most Hits**           | Products with the most page views appear first.                          |
-| **Alphabetical (A–Z)**  | Products sorted alphabetically by name.                                  |
-| **Random**              | A different random selection each time the page loads. Good for variety. |
-| **Price (Low to High)** | Cheapest products appear first.                                          |
-| **Price (High to Low)** | Most expensive products appear first.                                    |
-| **Newest**              | Most recently added products appear first.                               |
-
-**Default:** Random
-
-***
-
-### Category Match Type
-
-Defines which categories count as "related" when selecting products to show.
-
-| Option                                   | Which products are included                                                                         |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| **Same Category**                        | Only products in the exact same category as the current product.                                    |
-| **Same Category And Child Categories**   | Products from the same category plus any sub-categories nested beneath it.                          |
-| **Same Category And Sibling Categories** | Products from the same category plus other categories at the same level that share the same parent. |
-
-**Default:** Same Category
-
-***
-
-### Only In-Stock Products
-
-When set to **Yes**, products that are out of stock are excluded from the related section. Shoppers only see products they can actually add to their cart.
-
-When set to **No**, all matching products are shown regardless of stock status.
-
-**Default:** No
-
-***
+- When set to **No**, all matching products are shown regardless of stock status.
 
 ## Per-Product Override
 
 In addition to the global settings above, each individual product can use its own related-products configuration. This is useful when a particular product belongs to a large category and you want to show fewer items, or when you want to turn the section off for a specific product entirely.
 
-To access the per-product settings, open the product for editing and look for the **Related Category Products** fieldset in the **J2Commerce** tab.
+To access the per-product settings, open the product for editing and look for the **Related Category Products** fieldset in the **J2Commerce** tab **-> App** tab
 
-<!-- SCREENSHOT: Product edit screen J2Commerce tab showing Related Category Products override fieldset -->
+![](/img/related-category-products-override.webp)
 
 ### Override Global Settings
 
+![](/img/related-category-products-override1.webp)
+
 Set to **Yes** to activate per-product settings for this product. When set to **No** (the default), the product uses whatever you have configured in the global app settings, and the fields below are hidden.
-
-**Default:** No
-
-***
 
 When **Override Global Settings** is set to **Yes**, the following additional fields appear:
 
-### Enable Related Category Products
+**Enable Related Category Products:** Turns the related section on or off for just this one product. Set to **No** to hide the section on this product's page without affecting any other products.
 
-Turns the related section on or off for just this one product. Set to **No** to hide the section on this product's page without affecting any other products.
+**Number of Products:** The maximum number of related products to display on this product's page. Leave blank to fall back to the global setting.
 
-**Default:** Yes
+**Display Mode:** Override the layout for this product only.
 
-### Number of Products
+**Use Global Setting:** Inherits whatever Display Mode is set in the global app settings.
 
-The maximum number of related products to display on this product's page. Leave blank to fall back to the global setting.
+- **Grid:** Forces a static grid for this product.
 
-### Display Mode
+- **Scroller (Swiper):** Forces a carousel for this product.
 
-Override the layout for this product only.
+**Ordering:** Override the sort order for this product only.
 
-| Option                 | Description                                                       |
-| ---------------------- | ----------------------------------------------------------------- |
-| **Use Global Setting** | Inherits whatever Display Mode is set in the global app settings. |
-| **Grid**               | Forces a static grid for this product.                            |
-| **Scroller (Swiper)**  | Forces a carousel for this product.                               |
+- **Use Global Setting:** Inherits whatever Ordering is set in the global app settings.
 
-### Ordering
+- **Most Hits:** Products with the most page views appear first.
 
-Override the sort order for this product only.
+- **Alphabetical:** Products sorted A–Z by name.
 
-| Option                  | Description                                                   |
-| ----------------------- | ------------------------------------------------------------- |
-| **Use Global Setting**  | Inherits whatever Ordering is set in the global app settings. |
-| **Most Hits**           | Products with the most page views appear first.               |
-| **Alphabetical**        | Products sorted A–Z by name.                                  |
-| **Random**              | A random selection each page load.                            |
-| **Price (Low to High)** | Cheapest first.                                               |
-| **Price (High to Low)** | Most expensive first.                                         |
-| **Newest**              | Most recently added first.                                    |
+- **Random:** A random selection each page load.
+
+- **Price (Low to High):** Cheapest first.
+
+- **Price (High to Low):** Most expensive first.
+
+- **Newest:** Most recently added first.
 
 :::tip
 
@@ -212,7 +156,11 @@ When a shopper opens a product page:
 
 The section appears below the main product content and above the page footer — the same position used by the built-in cross-sells.
 
-***
+## Frontend View
+
+When you open a product, the related products will automatically appear at the bottom of the product page.&#x20;
+
+![](/img/related-category-products-frontend.webp)
 
 ## Tips
 
