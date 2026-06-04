@@ -31,7 +31,7 @@ const sidebars = {
                 slug: '/migration-tools',
             },
             items: [
-                'migration-tools/j2commercemigrator',
+                'migration-tools/com_j2commercemigrator',
                 'migration-tools/plg_j2commercemigrator_j2commerce4',
                 'migration-tools/woocommerce',
             ],

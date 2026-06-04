@@ -1,6 +1,6 @@
 # J2Commerce 4 Migrator Adapter
 
-The J2Commerce 4 Migrator Adapter is the source connector for the [J2Commerce Migrator](./j2commercemigrator.md). It reads your existing J2Store v4 store — products, orders, customers, tax setup, and configuration — and moves that data into J2Commerce 6. Without this adapter installed and enabled, the Migrator has no source to read from.
+The J2Commerce 4 Migrator Adapter is the source connector for the [J2Commerce Migrator](./com_j2commercemigrator.md). It reads your existing J2Store v4 store — products, orders, customers, tax setup, and configuration — and moves that data into J2Commerce 6. Without this adapter installed and enabled, the Migrator has no source to read from.
 
 ## Requirements
 
