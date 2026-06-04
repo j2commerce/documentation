@@ -229,7 +229,7 @@ const sidebars = {
                         // Advanced Tax Rates (there is a duplicate)
                         'apps-and-extensions/apps/taxrate',
                         // Akeeba Release System Download ID (there is a duplicate)
-                        'apps-and-extensions/apps/arsdlid',
+                        'apps-and-extensions/apps/app-arsdlid',
                         // Ask Question / Quote
                         'apps-and-extensions/apps/app-productquote',
                         // Auto-Coupon Pop Up
