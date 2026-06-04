@@ -64,8 +64,8 @@ const sidebars = {
                 },
                 'catalog/managing-products',
                 'catalog/content-j2commerce',
-                'catalog/advanced-pricing',
                 'catalog/inventory',
+                'catalog/advanced-pricing',
                 'catalog/creating-options',
                 {
                     type: 'category',
