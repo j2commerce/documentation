@@ -215,6 +215,10 @@ Visible when **Box Packing** is selected. Define the boxes available in your war
 
 **Debug Mode:** Write API requests and responses to `administrator/logs/shipping_fedex.php`. Disable in production.
 
+## Frontend View
+
+![](/img/fedex-frontend.webp)
+
 ## FedEx Services Reference
 
 The following services are supported. Select any combination in the **Enabled Services** field.
