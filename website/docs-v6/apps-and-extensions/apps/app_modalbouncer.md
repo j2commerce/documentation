@@ -1,11 +1,3 @@
----
-id: app-modalbouncer
-title: "Modal Bouncer"
-sidebar_label: "Modal Bouncer"
-sidebar_position: 70
-description: "Add an age gate, terms acceptance, or any custom entry requirement to your J2Commerce store with the Modal Bouncer app."
----
-
 # Modal Bouncer
 
 The Modal Bouncer app displays a blocking popup that visitors must satisfy before they can browse or buy in your store. Use it to enforce an age gate (date-of-birth check), a terms acceptance checkbox, a region confirmation, or any custom question — then remember the answer in a browser cookie so returning visitors are not interrupted again.
@@ -212,7 +204,9 @@ The modal is a blocking gate — pressing Escape does not close it, and clicking
 
 ## Common Use Cases
 
-### Age Gate (Date of Birth)
+### Age Verification (Date of Birth)
+
+![](/img/modal-bouncer-config-gate1.webp)
 
 A date-of-birth age gate is the most common use of Modal Bouncer. Example setup:
 
@@ -225,9 +219,17 @@ A date-of-birth age gate is the most common use of Modal Bouncer. Example setup:
 
 The app calculates the visitor's age from the entered date and compares it to the threshold. Leap-day birthdays are handled correctly.
 
-![](/img/modal-bouncer-config-gate1.webp)
+### Frontend View - Age Verification
+
+![](/img/modal-bouncer-frontend-age.webp)
+
+### Frontend View - Failed Message
+
+![](/img/modal-bouncer-error-message.webp)
 
 ### Terms Acceptance Checkbox
+
+![](/img/modal-bouncer-config-gate2.webp)
 
 1. **Visitor-Facing Label:** I have read and agree to the Terms and Conditions
 2. **Field Key:** `terms`
@@ -235,7 +237,17 @@ The app calculates the visitor's age from the entered date and compares it to th
 4. **Operator:** Checked (checkbox must be ticked)
 5. **Error Message:** You must accept the terms to continue.
 
+### Frontend View - Terms
+
+![](/img/modal-bouncer-config-terms.webp)
+
+### Frontend View - Failed Message
+
+![](/img/modal-bouncer-config-terms-failed.webp)
+
 ### Region Confirmation (Dropdown)
+
+![](/img/modal-bouncer-config-gate3.webp)
 
 1. **Visitor-Facing Label:** Select your region
 2. **Field Key:** `region`
@@ -245,7 +257,17 @@ The app calculates the visitor's age from the entered date and compares it to th
 6. **Threshold Value:** `us`
 7. **Error Message:** This store ships to the United States only.
 
+### Frontend View - Region
+
+![](/img/modal-bouncer-region.webp)
+
+### Frontend View - Failed Message
+
+![](/img/modal-bouncer-region-failed.webp)
+
 ### Combined Age Gate and Terms
+
+![](/img/modal-bouncer-config-gate4.webp)
 
 Add two rows to the **Gate Requirements** tab — one for date of birth (Minimum Age) and one for the terms checkbox (Checked). Set **Requirement Match Mode** to **ALL requirements must pass** so both must be satisfied.
 
@@ -296,7 +318,7 @@ The modal appears when ALL of these conditions are true:
 2. If you recently changed any requirement rows, the app automatically invalidates old cookies because the rules have changed — this is expected behavior. The modal appears once after a configuration change.
 3. Enable **Debug Mode** in the app settings. A **Reset Modal Bouncer** button appears at the bottom of the page — click it to clear all pass cookies and see the modal fresh. If the cookie is written correctly after passing, the button disappears on reload.
 
-<!-- SCREENSHOT: Debug Mode Reset Modal Bouncer button at bottom of page -->
+![](/img/modal-bouncer-reset.webp)
 
 ### Error Message Shown Even With Correct Input
 
