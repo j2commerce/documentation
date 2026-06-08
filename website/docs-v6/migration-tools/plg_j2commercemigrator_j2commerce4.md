@@ -1,6 +1,15 @@
+---
+title: "J2Commerce 4 Migrator Adapter"
+sidebar_label: "J2Commerce 4 Adapter"
+sidebar_position: 4
+description: "Step-by-step guide to installing and using the J2Commerce 4 Migrator Adapter to move data from a legacy J2Store v4 store into J2Commerce 6."
+---
+
 # J2Commerce 4 Migrator Adapter
 
-The J2Commerce 4 Migrator Adapter is the source connector for the [J2Commerce Migrator](./com_j2commercemigrator.md). It reads your existing J2Store v4 store — products, orders, customers, tax setup, and configuration — and moves that data into J2Commerce 6. Without this adapter installed and enabled, the Migrator has no source to read from.
+The J2Commerce 4 Migrator Adapter is the source connector for the [J2Commerce Migrator](./j2commercemigrator.md). It reads your existing J2Store v4 store — products, orders, customers, tax setup, and configuration — and moves that data into J2Commerce 6. Without this adapter installed and enabled, the Migrator has no source to read from.
+
+<!-- SCREENSHOT: J2Commerce Migrator dashboard showing the J2Store card with "Ready to migrate" status -->
 
 ## Requirements
 
@@ -22,9 +31,11 @@ The J2Commerce 4 Migrator Adapter is a separate add-on available from the [J2Com
 
 **Step 1:** In your Joomla admin, go to **System** -> **Install** -> **Extensions**.
 
+<!-- SCREENSHOT: Joomla System -> Install -> Extensions upload area -->
+
 **Step 2:** Drag and drop the `plg_j2commercemigrator_j2commerce4_*.zip` file into the upload area, or click **Browse for file** and select it.
 
-![](/img/install.webp)
+**Step 3:** Joomla installs the adapter. You will see a success message when it is complete.
 
 :::info
 
@@ -36,15 +47,11 @@ The installer checks that both J2Commerce 6 and the J2Commerce Migrator componen
 
 **Step 1:** Go to **System** -> **Manage** -> **Plugins**.
 
-![](/img/migrator-plugin.webp)
+<!-- SCREENSHOT: Joomla Plugins list filtered to "j2commerce4" showing the adapter plugin -->
 
-**Step 2:** In the **Filter Options -> Select Type** dropdown **->** choose **j2commercemigrator**.
+**Step 2:** Search for **J2Commerce Migrator — J2Commerce 4 Adapter** in the search bar.
 
-![](/img/migrator-plugin-filter-type1.webp)
-
-**Step 3:** Locate the plugin matching your source platform and click the status toggle to enable it.
-
-![](/img/migrator6-enable1.webp)
+**Step 3:** If the status column shows a red X, click it to enable the plugin. It will turn into a green checkmark.
 
 :::tip
 
@@ -56,15 +63,15 @@ If the adapter does not appear in the search results at all, the installation ma
 
 **Step 1:** Go to **Components** -> **J2Commerce Migrator** in the admin menu.
 
-**Step 2:** The Migrator **Dashboard** loads. Look for a **J2Store** card. Its status line tells you whether the adapter can see your J2Store installation:
+**Step 2:** The Migrator Dashboard loads. Look for a **J2Store** card. Its status line tells you whether the adapter can see your J2Store installation:
 
-![](/img/migrator-connector4.webp)
+| Status shown | What it means |
+|---|---|
+| **Ready to migrate** | J2Store 4 is installed and enabled — you can proceed |
+| **Installed but disabled** | J2Store is installed but disabled in your Extensions list |
+| **Not installed** | J2Store 4 was not found on this Joomla site — check that it exists, or switch to a remote database connection |
 
-| Status shown               | What it means                                                                                                 |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Ready to migrate**       | J2Store 4 is installed and enabled — you can proceed                                                          |
-| **Installed but disabled** | J2Store is installed but disabled in your Extensions list                                                     |
-| **Not installed**          | J2Store 4 was not found on this Joomla site — check that it exists, or switch to a remote database connection |
+<!-- SCREENSHOT: Migrator dashboard J2Store card showing "Ready to migrate" -->
 
 ## Configure the Connection
 
@@ -72,17 +79,13 @@ There is nothing to configure in the adapter plugin itself. All connection setti
 
 **Step 1:** On the Migrator Dashboard, click **Start Migration** on the J2Store card. This takes you to the **Tools** view for this adapter.
 
-![](/img/migrator-connector3.webp)
-
-**Step 2:** Go to **Migration Wizard** on the left side panel. At the top of the Tools view, look for the **Connection** panel. Choose the mode that matches your setup:
-
-![](/img/migrator-connector1.webp)
+**Step 2:** At the top of the Tools view, look for the **Connection** panel. Choose the mode that matches your setup:
 
 - **Mode A — Same site:** Your J2Store data is in the same database as your current Joomla site. No extra credentials needed — this is the fastest and simplest option.
 - **Mode B — Remote database:** Your J2Store data lives on a different MySQL or MariaDB server. Enter the host, port, database name, username, and password.
 - **Mode C — SSH tunnel:** Your source database is only reachable through an SSH connection. Enable SSH tunnel support in **J2Commerce Migrator** -> **Options** first; Mode C will then appear on the Connection screen.
 
-![](/img/migrator-connector2.webp)
+<!-- SCREENSHOT: Migrator Tools view connection panel showing Mode A / Mode B / Mode C tabs -->
 
 **Step 3:** Click **Test Connection** to confirm the adapter can reach your J2Store data. A green success message confirms you are ready to start syncing.
 
@@ -90,7 +93,7 @@ There is nothing to configure in the adapter plugin itself. All connection setti
 
 Once you are connected, the main area shows a **kanban-style board** organized into sections (A through I). Each section contains one or more **tiles**, and each tile represents one type of data — for example, "Currencies" or "Products."
 
-![](/img/migrator-wizard6.webp)
+<!-- SCREENSHOT: Tools view showing sections A through I with multiple tiles per section -->
 
 ### What a tile shows
 
@@ -103,16 +106,16 @@ Every tile displays four things at a glance:
 
 ### Tile status badges
 
-| Badge            | What it means                                                                                                                        |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| **Pending**      | Not started yet. Click **Sync** to begin.                                                                                            |
-| **Syncing…**     | Migration is running right now. The tile shows a live progress percentage.                                                           |
-| **Synced**       | All rows from this tile have been copied to J2Commerce.                                                                              |
-| **Re-sync**      | The tile ran before, but new rows have been added to the source since then. Click to pick up the new records.                        |
+| Badge | What it means |
+|---|---|
+| **Pending** | Not started yet. Click **Sync** to begin. |
+| **Syncing…** | Migration is running right now. The tile shows a live progress percentage. |
+| **Synced** | All rows from this tile have been copied to J2Commerce. |
+| **Re-sync** | The tile ran before, but new rows have been added to the source since then. Click to pick up the new records. |
 | **Empty Source** | The source table has zero rows — there is nothing to migrate here. The tile is automatically marked done and the button is disabled. |
-| **Error**        | Something went wrong. Check the message below the badge for details, then click **Retry**.                                           |
-| **Retry**        | A previous attempt failed and the tile is waiting for you to try again.                                                              |
-| **Resume**       | A previous run stopped partway through. Click to continue from where it left off.                                                    |
+| **Error** | Something went wrong. Check the message below the badge for details, then click **Retry**. |
+| **Retry** | A previous attempt failed and the tile is waiting for you to try again. |
+| **Resume** | A previous run stopped partway through. Click to continue from where it left off. |
 
 :::tip
 
@@ -122,9 +125,9 @@ While a tile is running, the **Syncing…** badge shows a live percentage, for e
 
 ### Progress summary bar
 
-![](/img/migrator-wizard8.webp)
+At the top of the board you will see a summary row showing **tiles done**, **total rows migrated**, and **error count**. Use this to track overall progress without scrolling through every section.
 
-At the bottom of the board you will see a summary row showing **tiles synced**, **total rows migrated**, and **error count**. Use this to track overall progress without scrolling through every section.
+<!-- SCREENSHOT: Summary bar at top of Tools view showing tiles done / rows migrated / errors -->
 
 ## Sections A through H — Data Migration
 
@@ -132,68 +135,62 @@ Work through sections A to H **from left to right, top to bottom**. Each section
 
 ### Section A — Lookup Tables
 
-![](/img/migrator-wizard7.webp)
-
 The first section you run. Every later tile depends on these records existing first.
 
-| Tile               | What it migrates                                                                       |
-| ------------------ | -------------------------------------------------------------------------------------- |
-| **Currencies**     | Currency definitions — code, name, symbol, exchange rate, decimal places               |
-| **Countries**      | Country records — names, two-letter codes, enabled/disabled flags                      |
-| **Zones**          | State and province records linked to their countries                                   |
+| Tile | What it migrates |
+|---|---|
+| **Currencies** | Currency definitions — code, name, symbol, exchange rate, decimal places |
+| **Countries** | Country records — names, two-letter codes, enabled/disabled flags |
+| **Zones** | State and province records linked to their countries |
 | **Order Statuses** | Order status labels — Pending, Confirmed, Shipped, and any custom statuses you created |
-| **Lengths**        | Length unit definitions (cm, in, mm, and so on)                                        |
-| **Weights**        | Weight unit definitions (kg, lb, oz, and so on)                                        |
+| **Lengths** | Length unit definitions (cm, in, mm, and so on) |
+| **Weights** | Weight unit definitions (kg, lb, oz, and so on) |
+
+<!-- SCREENSHOT: Section A tiles showing Currencies, Countries, Zones, Order Statuses, Lengths, Weights -->
 
 ### Section B — Tax System
 
-![](/img/migrator-wizard9.webp)
-
 Tax records must exist before products can be assigned a tax profile.
 
-| Tile               | What it migrates                                                     |
-| ------------------ | -------------------------------------------------------------------- |
-| **Tax Profiles**   | Tax profile definitions that products are assigned to                |
-| **Tax Rates**      | The actual tax percentage rows attached to geographic zones          |
-| **Tax Rules**      | Rules controlling how rates apply to specific products and customers |
-| **Geo Zones**      | Geographic tax and delivery zone definitions                         |
-| **Geo Zone Rules** | Country and zone inclusion rules attached to each geo zone           |
+| Tile | What it migrates |
+|---|---|
+| **Tax Profiles** | Tax profile definitions that products are assigned to |
+| **Tax Rates** | The actual tax percentage rows attached to geographic zones |
+| **Tax Rules** | Rules controlling how rates apply to specific products and customers |
+| **Geo Zones** | Geographic tax and delivery zone definitions |
+| **Geo Zone Rules** | Country and zone inclusion rules attached to each geo zone |
 
 ### Section C — Catalogue Setup
 
-![](/img/migrator-wizard10.webp)
-
 Option groups, filter groups, manufacturers, and custom checkout fields. Products in Section D are built on top of these.
 
-| Tile                     | What it migrates                                                                    |
-| ------------------------ | ----------------------------------------------------------------------------------- |
-| **Options**              | Option group definitions (Color, Size, and so on)                                   |
-| **Option Values**        | The individual values within each option group (Red, Blue, Small, Large, and so on) |
-| **Manufacturers**        | Manufacturer and brand records                                                      |
-| **Custom Fields**        | Checkout custom field definitions                                                   |
-| **Filter Groups**        | Product filter group definitions                                                    |
-| **Filters**              | Individual product filter values within each filter group                           |
-| **Product–Filter Links** | The assignments connecting products to their filters                                |
+| Tile | What it migrates |
+|---|---|
+| **Options** | Option group definitions (Color, Size, and so on) |
+| **Option Values** | The individual values within each option group (Red, Blue, Small, Large, and so on) |
+| **Manufacturers** | Manufacturer and brand records |
+| **Custom Fields** | Checkout custom field definitions |
+| **Filter Groups** | Product filter group definitions |
+| **Filters** | Individual product filter values within each filter group |
+| **Product–Filter Links** | The assignments connecting products to their filters |
 
 ### Section D — Products
 
-![](/img/migrator-wizard11.webp)
-
 The largest section. Migrate tiles from top to bottom — products first, then everything that hangs off them.
 
-| Tile                      | What it migrates                                                                                                                     |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| **Products**              | Core product records, including the extension link from `com_j2store` to `com_content` so your Joomla articles display correctly     |
-| **Variants**              | Variant records — SKU, stock, weight, and dimensions per variant                                                                     |
-| **Product Images**        | Image metadata (file paths, alt text, ordering). After the row sync finishes, images are automatically converted to WebP and resized |
-| **Product Files**         | Downloadable file records for digital products                                                                                       |
-| **Product Prices**        | Per-user-group tiered price rules                                                                                                    |
-| **Product Options**       | Assignments linking products to their option groups                                                                                  |
-| **Product Option Values** | The selected option values per product                                                                                               |
-| **Variant Option Values** | The mapping rows connecting variants to specific option values                                                                       |
-| **Product Quantities**    | Per-variant inventory quantity records                                                                                               |
-| **Price Index**           | The denormalized price index used for sorting and filtering in the catalog                                                           |
-| **Meta Fields**           | Plugin metadata stored in the J2Store key-value table                                                                                |
+| Tile | What it migrates |
+|---|---|
+| **Products** | Core product records, including the extension link from `com_j2store` to `com_content` so your Joomla articles display correctly |
+| **Variants** | Variant records — SKU, stock, weight, and dimensions per variant |
+| **Product Images** | Image metadata (file paths, alt text, ordering). After the row sync finishes, images are automatically converted to WebP and resized |
+| **Product Files** | Downloadable file records for digital products |
+| **Product Prices** | Per-user-group tiered price rules |
+| **Product Options** | Assignments linking products to their option groups |
+| **Product Option Values** | The selected option values per product |
+| **Variant Option Values** | The mapping rows connecting variants to specific option values |
+| **Product Quantities** | Per-variant inventory quantity records |
+| **Price Index** | The denormalized price index used for sorting and filtering in the catalog |
+| **Meta Fields** | Plugin metadata stored in the J2Store key-value table |
 
 :::info
 
@@ -203,67 +200,59 @@ The **Product Images** tile shows a link to **Open Image Processing settings** b
 
 ### Section E — Customers
 
-![](/img/migrator-wizard12.webp)
-
 Customer records depend on countries and zones (Section A) already being migrated.
 
-| Tile          | What it migrates                                                    |
-| ------------- | ------------------------------------------------------------------- |
+| Tile | What it migrates |
+|---|---|
 | **Addresses** | Saved billing and delivery addresses linked to Joomla user accounts |
-| **Coupons**   | Coupon codes, discount rules, and usage counts                      |
-| **Vouchers**  | Gift voucher records and balances                                   |
-| **Vendors**   | Multi-vendor seller accounts                                        |
+| **Coupons** | Coupon codes, discount rules, and usage counts |
+| **Vouchers** | Gift voucher records and balances |
+| **Vendors** | Multi-vendor seller accounts |
 
 ### Section F — Delivery
 
-![](/img/migrator-wizard13.webp)
-
 Delivery method configuration. Geo zones (Section B) must exist first.
 
-| Tile                 | What it migrates                            |
-| -------------------- | ------------------------------------------- |
-| **Delivery Methods** | Delivery method plugin configurations       |
-| **Delivery Rates**   | Flat-rate and table-rate delivery rule rows |
+| Tile | What it migrates |
+|---|---|
+| **Delivery Methods** | Delivery method plugin configurations |
+| **Delivery Rates** | Flat-rate and table-rate delivery rule rows |
 
 ### Section G — Orders
 
-![](/img/migrator-wizard14.png)
-
 Orders depend on products, customers, currencies, and order statuses all being migrated first. Run Sections A through F before starting here.
 
-| Tile                      | What it migrates                                              |
-| ------------------------- | ------------------------------------------------------------- |
-| **Orders**                | Order header records                                          |
-| **Order Info**            | Billing and delivery address snapshots captured at order time |
-| **Order Items**           | Line items — product, quantity, unit price                    |
-| **Order Item Attributes** | Option and attribute selections per line item                 |
-| **Order Histories**       | Status change history and customer notification logs          |
-| **Order Fees**            | Handling fees and surcharge rows per order                    |
-| **Order Taxes**           | Tax breakdown rows per order                                  |
-| **Order Discounts**       | Coupon and discount application records per order             |
-| **Order Deliveries**      | Delivery method and rate records per order                    |
-| **Order Downloads**       | Downloadable product purchase and download-tracking records   |
+| Tile | What it migrates |
+|---|---|
+| **Orders** | Order header records |
+| **Order Info** | Billing and delivery address snapshots captured at order time |
+| **Order Items** | Line items — product, quantity, unit price |
+| **Order Item Attributes** | Option and attribute selections per line item |
+| **Order Histories** | Status change history and customer notification logs |
+| **Order Fees** | Handling fees and surcharge rows per order |
+| **Order Taxes** | Tax breakdown rows per order |
+| **Order Discounts** | Coupon and discount application records per order |
+| **Order Deliveries** | Delivery method and rate records per order |
+| **Order Downloads** | Downloadable product purchase and download-tracking records |
 
 ### Section H — Transactional Data
 
 Optional data. Baskets, email queues, and templates. These tiles are marked **optional** — you can skip them if they are not relevant to your store.
 
-![](/img/migrator-wizard15.webp)
-
-| Tile                  | What it migrates                                  |
-| --------------------- | ------------------------------------------------- |
-| **Baskets**           | Abandoned and active shopping basket sessions     |
-| **Basket Items**      | Individual line items within basket sessions      |
-| **Email Queues**      | Queued outbound email records                     |
-| **Uploads**           | Customer-uploaded file records attached to orders |
-| **Email Templates**   | Customized transactional email templates          |
-| **Invoice Templates** | Customized PDF invoice templates                  |
+| Tile | What it migrates |
+|---|---|
+| **Baskets** | Abandoned and active shopping basket sessions |
+| **Basket Items** | Individual line items within basket sessions |
+| **Email Queues** | Queued outbound email records |
+| **Uploads** | Customer-uploaded file records attached to orders |
+| **Email Templates** | Customized transactional email templates |
+| **Invoice Templates** | Customized PDF invoice templates |
 
 ## Section I — Tools and Finalize
 
-![](/img/migrator-wizard16.webp)
-
 Section I contains finishing tools that you run **after** your data migration is complete. Unlike Sections A through H, these tiles do not copy database rows — they help you clean up, convert your templates, and remove J2Store once you have confirmed everything looks good in J2Commerce.
+
+<!-- SCREENSHOT: Section I tiles showing Migrate Store Settings, Detect/Migrate J2Store CSS, Detect J2Store Menu Items, Custom Tables, Template Overrides, Transform Template Code, Plugin List, Reset Migration ID Map, Uninstall J2Store, Drop J2Store Database Tables -->
 
 :::caution
 
@@ -374,9 +363,9 @@ If a tile shows **Re-sync**, new rows have appeared in the source since the last
 
 ## The Export Log Button
 
-At the **bottom** of the Tools view there is an **Export Log** button. Clicking it downloads a plain-text `.log` file that captures the current state of every tile — names, status badges, row counts, and any notes or error messages visible on the screen. Share this file with J2Commerce support if you need help troubleshooting a problem.
+At the bottom of the Tools view there is an **Export Log** button. Clicking it downloads a plain-text `.log` file that captures the current state of every tile — names, status badges, row counts, and any notes or error messages visible on the screen. Share this file with J2Commerce support if you need help troubleshooting a problem.
 
-![](/img/migrator-wizard-export.webp)
+<!-- SCREENSHOT: Tools view footer showing the Export Log button -->
 
 ## Tips
 
@@ -433,3 +422,8 @@ At the **bottom** of the Tools view there is an **Export Log** button. Clicking 
 1. Refresh the Tools view page. The tile should show **Resume** if the run was interrupted.
 2. Click **Resume** to continue from where the sync stopped.
 3. If the tile shows **Error** instead, click **Retry** to restart that batch.
+
+## Related Topics
+
+- [J2Commerce Migrator](./j2commercemigrator.md) — overview of the Migrator component and the full migration workflow
+- [J2Store 4 Migrator Adapter](./plg_j2commercemigrator_j2store4.md) — if your source site runs the original J2Store package on Joomla 3 or 4
