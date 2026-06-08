@@ -5,6 +5,8 @@ sidebar_position: 30
 description: "Connect J2Commerce to the OSMap sitemap component so every product page appears once in your XML and HTML sitemaps for search engines and visitors."
 ---
 
+# OSMap Plugin
+
 The OSMap - J2Commerce plugin connects your store to the Joomlashack OSMap sitemap component. Once installed, OSMap automatically discovers and lists every one of your J2Commerce product pages in both your XML sitemap (for search engines) and your HTML sitemap (for visitors). Each product appears exactly once — as its proper shop URL — so search engines never see the same product duplicated between your store and a plain Joomla article.
 
 :::info
@@ -50,11 +52,11 @@ The plugin has three settings on the **Basic** tab:
 
 ### Settings Reference
 
-| Setting | Description | Default | Options |
-|---------|-------------|---------|---------|
-| **Product Priority** | The sitemap priority value assigned to product pages. A value of `0.5` is a neutral middle priority. Choose **Use Parent Menu Settings** to inherit the priority from the OSMap menu item instead. | `0.5` | `0.0` to `1.0`, or **Use Parent Menu Settings** |
-| **Product Change Frequency** | How often search engines are told your product pages change. Most stores update products less than daily, so **Weekly** is a safe default. | `weekly` | Always, Hourly, Daily, Weekly, Monthly, Yearly, Never, **Use Parent Menu Settings** |
-| **Show Restricted Products** | When set to **No** (the default), products that require login or a membership to view are hidden from the public sitemap. Set to **Yes** only if you intentionally want restricted products to appear in sitemaps shown to all visitors. | No | Yes / No |
+| Setting                      | Description                                                                                                                                                                                                                              | Default  | Options                                                                             |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------------------------- |
+| **Product Priority**         | The sitemap priority value assigned to product pages. A value of `0.5` is a neutral middle priority. Choose **Use Parent Menu Settings** to inherit the priority from the OSMap menu item instead.                                       | `0.5`    | `0.0` to `1.0`, or **Use Parent Menu Settings**                                     |
+| **Product Change Frequency** | How often search engines are told your product pages change. Most stores update products less than daily, so **Weekly** is a safe default.                                                                                               | `weekly` | Always, Hourly, Daily, Weekly, Monthly, Yearly, Never, **Use Parent Menu Settings** |
+| **Show Restricted Products** | When set to **No** (the default), products that require login or a membership to view are hidden from the public sitemap. Set to **Yes** only if you intentionally want restricted products to appear in sitemaps shown to all visitors. | No       | Yes / No                                                                            |
 
 :::tip
 
@@ -100,7 +102,7 @@ J2Commerce products are backed by Joomla articles — every product has an artic
 
 ### Order Your Menus So the Shop URL Wins
 
-OSMap's de-duplication keeps the **first** URL it finds for each product and discards later duplicates. To make sure your product shop URL (not the plain article URL) is what ends up in the sitemap, you need the J2Commerce menu to be processed **before** any com_content / Articles menu.
+OSMap's de-duplication keeps the **first** URL it finds for each product and discards later duplicates. To make sure your product shop URL (not the plain article URL) is what ends up in the sitemap, you need the J2Commerce menu to be processed **before** any com\_content / Articles menu.
 
 In your OSMap sitemap configuration, drag the J2Commerce menu to the top of the menu list — above any content or article menu that covers the same products.
 
@@ -153,12 +155,12 @@ OSMap generates sitemaps on request. If you add new products or change your menu
 
 If you previously used the J2Store OSMap plugin (`plg_osmap_com_j2store`), here is what has changed:
 
-| Feature | Old J2Store Plugin | J2Commerce Plugin |
-|---------|-------------------|-------------------|
-| Product URLs | Legacy J2Store URL format | J2Commerce 6 SEF URLs (e.g., `/shop/category/product-alias`) |
-| Duplicate article prevention | Not implemented | Built-in — each product entry claims the article's identity so OSMap de-duplicates automatically |
-| Access level filtering | Not applied | Respects article and category access levels — restricted products stay out of public sitemaps |
-| Publish window filtering | Not applied | Respects publish up / publish down dates on articles |
-| Subcategory support | Flat list only | Includes subcategories up to the menu's configured depth |
-| Product tag support | Not supported | Product Tags (`producttags`) menu items are fully supported |
-| SQL safety | Direct string concatenation | Parameterised queries throughout |
+| Feature                      | Old J2Store Plugin          | J2Commerce Plugin                                                                                |
+| ---------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------ |
+| Product URLs                 | Legacy J2Store URL format   | J2Commerce 6 SEF URLs (e.g., `/shop/category/product-alias`)                                     |
+| Duplicate article prevention | Not implemented             | Built-in — each product entry claims the article's identity so OSMap de-duplicates automatically |
+| Access level filtering       | Not applied                 | Respects article and category access levels — restricted products stay out of public sitemaps    |
+| Publish window filtering     | Not applied                 | Respects publish up / publish down dates on articles                                             |
+| Subcategory support          | Flat list only              | Includes subcategories up to the menu's configured depth                                         |
+| Product tag support          | Not supported               | Product Tags (`producttags`) menu items are fully supported                                      |
+| SQL safety                   | Direct string concatenation | Parameterised queries throughout                                                                 |
