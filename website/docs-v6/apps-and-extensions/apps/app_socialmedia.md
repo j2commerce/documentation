@@ -35,7 +35,7 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 ![](/img/gift-wrap-apps.webp)
 
-To help you narrow down the list, you can do a search for **Social Media Sharing**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+To help you narrow down the list, you can do a search for **Social Media Sharing**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ![](/img/social-media-enable.webp)
 

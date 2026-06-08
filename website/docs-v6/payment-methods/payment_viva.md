@@ -393,4 +393,3 @@ If **Change Status on Refund** is enabled, the order status updates automaticall
 
 1. Confirm **Pre-Authorize (capture later)** is enabled in the plugin settings.
 2. Check the order status — if the transaction has already been captured or settled, it cannot be voided. Issue a refund instead.
-:::
