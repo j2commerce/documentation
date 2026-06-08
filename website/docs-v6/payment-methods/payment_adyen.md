@@ -75,7 +75,7 @@ In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
 Upload the `payment_adyen.zip` file or use the Install from URL option.
 
-![Install extensions](<../../../assets/app install1 (1) (1).webp>)
+![Install extensions](<../../assets/app install1 (1) (1).webp>)
 
 ## Enable the Plugin
 
