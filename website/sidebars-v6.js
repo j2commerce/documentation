@@ -31,7 +31,7 @@ const sidebars = {
                 slug: '/migration-tools',
             },
             items: [
-                'migration-tools/j2commercemigrator',
+                'migration-tools/com_j2commercemigrator',
                 'migration-tools/plg_j2commercemigrator_j2commerce4',
                 'migration-tools/woocommerce',
             ],
@@ -64,8 +64,8 @@ const sidebars = {
                 },
                 'catalog/managing-products',
                 'catalog/content-j2commerce',
-                'catalog/advanced-pricing',
                 'catalog/inventory',
+                'catalog/advanced-pricing',
                 'catalog/creating-options',
                 {
                     type: 'category',
@@ -229,7 +229,7 @@ const sidebars = {
                         // Advanced Tax Rates (there is a duplicate)
                         'apps-and-extensions/apps/taxrate',
                         // Akeeba Release System Download ID (there is a duplicate)
-                        'apps-and-extensions/apps/arsdlid',
+                        'apps-and-extensions/apps/app-arsdlid',
                         // Ask Question / Quote
                         'apps-and-extensions/apps/app-productquote',
                         // Auto-Coupon Pop Up
@@ -317,7 +317,7 @@ const sidebars = {
                         // Quantity Dropdown
                         'apps-and-extensions/apps/quantityprice',
                         // Related Category Products
-                        'apps-and-extensions/apps/app-relatedcategoryproducts',
+                        'apps-and-extensions/apps/relatedcategoryproducts',
                         // ShipStation Integration
                         'apps-and-extensions/apps/shipstation',
                         // Simple CSV Import
