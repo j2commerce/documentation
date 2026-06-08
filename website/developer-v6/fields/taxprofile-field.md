@@ -1,23 +1,23 @@
 ---
-title: "TaxProfileField Field Type"
-sidebar_label: "TaxProfileField"
+title: "TaxprofileField Field Type"
+sidebar_label: "TaxprofileField"
 sidebar_position: 8
 description: "A Joomla list field that populates a dropdown with all enabled J2Commerce tax profiles for product tax assignment."
 ---
 
-# TaxProfileField Field Type
+# TaxprofileField Field Type
 
-`TaxProfileField` extends Joomla's `ListField` to render a `<select>` populated with every enabled tax profile from `#__j2commerce_taxprofiles`. Tax profiles define which tax rates apply to a product based on geo-zone rules. The stored value is the integer primary key `j2commerce_taxprofile_id`.
+`TaxprofileField` extends Joomla's `ListField` to render a `<select>` populated with every enabled tax profile from `#__j2commerce_taxprofiles`. Tax profiles define which tax rates apply to a product based on geo-zone rules. The stored value is the integer primary key `j2commerce_taxprofile_id`.
 
 ## Class Reference
 
 | Property | Value |
 |----------|-------|
-| Class | `TaxProfileField` |
+| Class | `TaxprofileField` |
 | Namespace | `J2Commerce\Component\J2commerce\Administrator\Field` |
-| File | `administrator/components/com_j2commerce/src/Field/TaxProfileField.php` |
+| File | `administrator/components/com_j2commerce/src/Field/TaxprofileField.php` |
 | Extends | `Joomla\CMS\Form\Field\ListField` |
-| Field type token | `TaxProfile` |
+| Field type token | `Taxprofile` |
 | Since | 6.0.7 |
 
 ## Database Query
@@ -38,7 +38,7 @@ The stored value is `j2commerce_taxprofile_id` (integer).
 ```xml
 <field
     name="taxprofile_id"
-    type="TaxProfile"
+    type="Taxprofile"
     label="COM_MYPLUGIN_FIELD_TAXPROFILE_LABEL"
     description="COM_MYPLUGIN_FIELD_TAXPROFILE_DESC"
 />
@@ -51,7 +51,7 @@ Adding a child `<option value="">` is the standard way to represent an untaxed p
 ```xml
 <field
     name="taxprofile_id"
-    type="TaxProfile"
+    type="Taxprofile"
     label="COM_MYPLUGIN_FIELD_TAXPROFILE_LABEL">
     <option value="">COM_J2COMMERCE_NOT_TAXABLE</option>
 </field>
@@ -79,7 +79,7 @@ Adding a child `<option value="">` is the standard way to represent an untaxed p
 
         <field
             name="taxprofile_id"
-            type="TaxProfile"
+            type="Taxprofile"
             label="COM_MYPLUGIN_FIELD_TAXPROFILE_LABEL"
             description="COM_MYPLUGIN_FIELD_TAXPROFILE_DESC">
             <option value="">COM_J2COMMERCE_NOT_TAXABLE</option>
@@ -98,7 +98,7 @@ Adding a child `<option value="">` is the standard way to represent an untaxed p
         <fieldset name="basic">
             <field
                 name="default_taxprofile_id"
-                type="TaxProfile"
+                type="Taxprofile"
                 label="COM_MYPLUGIN_DEFAULT_TAXPROFILE_LABEL"
                 description="COM_MYPLUGIN_DEFAULT_TAXPROFILE_DESC"
             />
@@ -110,7 +110,7 @@ Adding a child `<option value="">` is the standard way to represent an untaxed p
 ## Source Code
 
 ```php
-// File: administrator/components/com_j2commerce/src/Field/TaxProfileField.php
+// File: administrator/components/com_j2commerce/src/Field/TaxprofileField.php
 
 declare(strict_types=1);
 
@@ -122,9 +122,9 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\Database\DatabaseInterface;
 
-class TaxProfileField extends ListField
+class TaxprofileField extends ListField
 {
-    protected $type = 'TaxProfile';
+    protected $type = 'Taxprofile';
 
     public function getOptions(): array
     {
