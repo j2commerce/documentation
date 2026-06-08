@@ -28,126 +28,99 @@ The gate can apply to your entire Joomla site or only to J2Commerce store pages.
 
 ## Install the App
 
-Install Modal Bouncer using the standard Joomla installer.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-Go to **System** -> **Install** -> **Extensions**
+Upload the plugin ZIP file or use the Install from URL option.
 
-Upload the plugin ZIP file, or use the **Install from URL** option.
-
-<!-- SCREENSHOT: System → Install → Extensions upload screen -->
+![](/img/install.webp)
 
 ## Enable the App
 
-After installation, enable the plugin. There are two ways to reach it.
+The plugin installs and enables itself automatically. No separate enable step is needed. However, it's important to know where to go to enable or disable it in the future .
 
-**Option A:** Click the **J2Commerce** icon at the top right -> **Apps**
+There are **two** ways to reach the Apps list.
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Modal Bouncer with X status icon -->
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-Find **Modal Bouncer** in the list, click the **X**, and it turns into a green checkmark. The app is now enabled and ready to configure.
+![](/img/gift-wrap-apps.webp)
 
-<!-- SCREENSHOT: Modal Bouncer row showing green checkmark after enabling -->
+To help you narrow down the list, you can do a search for **Modal Bouncer**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/modal-bouncer-enable.webp)
 
 ## Configure the App
 
-Click the **Modal Bouncer** title next to the green checkmark to open the settings.
+Click the **Modal Bouncer** title (next to the green checkmark) to open the settings screen.
 
 :::tip
 
-Click the **Toggle Inline Help** button on any app to see a description below each setting.
+Click the **Toggle Inline Help** button on any app you install to see a description below each field directly in the admin panel.
 
 :::
 
-The settings are organized across two tabs: **Basic Settings** and **Gate Requirements**.
-
----
-
 ### Basic Settings Tab
 
-<!-- SCREENSHOT: Modal Bouncer Basic Settings tab showing all fields -->
+![](/img/modal-bouncer-config1-1.webp)
 
-#### Enable Modal Bouncer
+**Enable Modal Bouncer:** Turns the gate on or off sitewide without requiring you to disable the whole plugin. Set to **Yes** to show the modal, **No** to hide it temporarily (for maintenance or seasonal use).
 
-Turns the gate on or off sitewide without requiring you to disable the whole plugin. Set to **Yes** to show the modal, **No** to hide it temporarily (for maintenance or seasonal use).
+**Apply Gate To:** Choose where the gate appears:
 
-#### Apply Gate To
+- **Entire Site:** The modal appears on every page of your Joomla site. It is useful for age-restricted or region-restricted stores where even non-store pages need gating. The visitor will only see it on the first page they visit as long as they acknowledge the modal bouncer.&#x20;
 
-Choose where the gate appears:
+- **J2Commerce Pages Only:** The modal appears only on J2Commerce store pages (product lists, product detail, cart, checkout). It is the right choice when your site has a public-facing blog or news section but your store has entry requirements.
 
-| Option | What it does |
-|--------|-------------|
-| **Entire Site** | The modal appears on every page of your Joomla site. |
-| **J2Commerce Pages Only** | The modal appears only on J2Commerce store pages (product lists, product detail, cart, checkout). |
+**Requirement Match Mode:** Controls how multiple requirement rows (set up in the **Gate Requirements** tab) are evaluated:
 
-**Entire Site** is useful for age-restricted or region-restricted stores where even non-store pages need gating. **J2Commerce Pages Only** is the right choice when your site has a public-facing blog or news section but your store has entry requirements.
+**ALL requirements must pass:** Every requirement row must be satisfied. This is the standard choice for a date-of-birth check combined with a terms checkbox.
 
-#### Requirement Match Mode
+**ANY one requirement is enough:** The visitor only needs to satisfy one row. Useful when you offer alternative ways to confirm eligibility.
 
-Controls how multiple requirement rows (set up in the **Gate Requirements** tab) are evaluated:
+**Modal Title:** The heading displayed at the top of the popup. Leave blank to show no title. Examples: "Age Verification", "Welcome", "Please Confirm".
 
-| Option | What it means |
-|--------|--------------|
-| **ALL requirements must pass** | Every requirement row must be satisfied. This is the standard choice for a date-of-birth check combined with a terms checkbox. |
-| **ANY one requirement is enough** | The visitor only needs to satisfy one row. Useful when you offer alternative ways to confirm eligibility. |
+**Modal Introductory Text:** A short paragraph shown below the title to explain what the visitor must do. Keep it brief and plain — for example: "You must be 18 or older to enter this store" or "Please confirm you have read and accept our terms."
 
-#### Modal Title
+**Submit Button Label:** The text on the button visitors click to submit their answers. Defaults to **Enter**. You can change it to "Continue", "I Confirm", "I Am 18+", or any label that fits your use case.
 
-The heading displayed at the top of the popup. Leave blank to show no title. Examples: "Age Verification", "Welcome", "Please Confirm".
-
-#### Modal Introductory Text
-
-A short paragraph shown below the title to explain what the visitor must do. Keep it brief and plain — for example: "You must be 18 or older to enter this store" or "Please confirm you have read and accept our terms."
-
-#### Submit Button Label
-
-The text on the button visitors click to submit their answers. Defaults to **Enter**. You can change it to "Continue", "I Confirm", "I Am 18+", or any label that fits your use case.
-
----
+***
 
 ### Cookie Settings
 
 These settings control how long the app remembers that a visitor has already passed the gate.
 
-#### Pass Cookie Name
+![](/img/modal-bouncer-config2-2.webp)
 
-The internal name stored in the visitor's browser. The default (`j2c_modalbouncer_pass`) works for most stores. Only change this if you are running multiple gates on the same domain and need to track them separately.
+**Pass Cookie Name:** The internal name stored in the visitor's browser. The default (`j2c_modalbouncer_pass`) works for most stores. Only change this if you are running multiple gates on the same domain and need to track them separately.
 
-#### Cookie Lifetime (days)
+**Cookie Lifetime (days):** How many days the browser remembers a passed gate before asking again:
 
-How many days the browser remembers a passed gate before asking again:
+`0:` Session only — the gate reappears every time the browser is closed and reopened.
 
-| Value | Behavior |
-|-------|---------|
-| `0` | Session only — the gate reappears every time the browser is closed and reopened. |
-| `30` (default) | The visitor is not asked again for 30 days. |
-| Up to `365` | Up to one year. |
+`30` (default): The visitor is not asked again for 30 days.
 
-#### Cookie Path
+Up to `365:` Up to one year.
 
-The URL path where the pass cookie is active. The default `/` covers your entire site. If your J2Commerce store is in a subfolder (for example `/shop`), you can enter `/shop` so the cookie does not interfere with other subfolders.
+**Cookie Path:** The URL path where the pass cookie is active. The default `/` covers your entire site. If your J2Commerce store is in a subfolder (for example `/shop`), you can enter `/shop` so the cookie does not interfere with other subfolders.
 
-#### Cookie Strategy
+**Cookie Strategy:**&#x20;
 
-| Option | What it does |
-|--------|-------------|
-| **Global (one cookie)** | One cookie stores the result of all requirements together. This is the simplest setup and the right choice for most stores. |
-| **Per Requirement** | A separate cookie is stored for each individual requirement row. Use this when different requirements need different expiry logic, or when you add or remove requirements frequently (each change invalidates only the affected cookie). |
+- **Global (one cookie):** One cookie stores the result of all requirements together. This is the simplest setup and the right choice for most stores.
 
-#### Cookie SameSite Policy
+- **Per Requirement:** A separate cookie is stored for each individual requirement row. Use this when different requirements need different expiry logic, or when you add or remove requirements frequently (each change invalidates only the affected cookie).
 
-Controls whether the pass cookie travels with cross-site requests:
+**Cookie SameSite Policy:** Controls whether the pass cookie travels with cross-site requests:
 
-| Option | When to use it |
-|--------|---------------|
-| **Lax** (default) | Recommended for most stores. The cookie is sent on normal navigation but blocked on cross-site requests. |
-| **Strict** | Maximum restriction. Use only if your store is never accessed via a link from another website. |
-| **None** | Needed only for storefronts embedded inside an iframe on another domain. Requires HTTPS. |
+**Lax** (default): Recommended for most stores. The cookie is sent on normal navigation but blocked on cross-site requests.
 
-#### Enable Server-Side Verification
+**Strict:** Maximum restriction. Use only if your store is never accessed via a link from another website.
 
-When enabled, the app sends the visitor's answers to the server for a second check before writing the pass cookie. This makes it harder for a technically savvy visitor to bypass the gate by manipulating their browser.
+**None:** Needed only for storefronts embedded inside an iframe on another domain. Requires HTTPS.
+
+![](/img/modal-bouncer-config3.webp)
+
+**Enable Server-Side Verification:** When enabled, the app sends the visitor's answers to the server for a second check before writing the pass cookie. This makes it harder for a technically savvy visitor to bypass the gate by manipulating their browser.
 
 :::info
 
@@ -155,70 +128,55 @@ Server-side verification raises the bar, but this is still a soft gate — it is
 
 :::
 
----
+**Template Style:** Choose between the **Bootstrap 5** template (default) and the **UIkit** template. Select the one that matches your active Joomla template's front-end framework.
 
-### Display and Template
-
-#### Template
-
-Choose between the **Bootstrap 5** template (default) and the **UIkit** template. Select the one that matches your active Joomla template's front-end framework.
-
-#### Debug Mode
-
-When enabled, a small **Reset Modal Bouncer** button appears on the page so you can clear your own pass cookie and see the modal again without clearing all browser cookies. Also logs diagnostic messages to the browser console.
+**Debug Mode:** When enabled, a small **Reset Modal Bouncer** button appears on the page so you can clear your own pass cookie and see the modal again without clearing all browser cookies. Also logs diagnostic messages to the browser console.
 
 Turn this **off** on production sites.
 
----
+***
 
 ### Gate Requirements Tab
 
-<!-- SCREENSHOT: Gate Requirements tab showing the repeatable subform rows -->
+![](/img/modal-bouncer-config-gate1.webp)
 
-This is where you define what the visitor must enter or confirm. Click **Add Item** to add a requirement row. You can add as many rows as you need.
+This is where you define what the visitor must enter or confirm. Click the **green plus sign** to Add Item to add a requirement row. You can add as many rows as you need.
 
 Each row has the following fields:
 
-#### Visitor-Facing Label
+**Visitor-Facing Label:** The label displayed next to the input field in the modal. Write something clear and descriptive — for example: "Date of Birth", "I agree to the Terms and Conditions", "Select your region".
 
-The label displayed next to the input field in the modal. Write something clear and descriptive — for example: "Date of Birth", "I agree to the Terms and Conditions", "Select your region".
+**Field Key (machine name):** A short internal identifier for this requirement. Use only letters, numbers, and underscores (no spaces). For example: `dob`, `terms_agreed`, `region`. This key is also used as part of the cookie name when the **Per Requirement** cookie strategy is selected.
 
-#### Field Key (machine name)
+**Input Type:** The type of field presented to the visitor:
 
-A short internal identifier for this requirement. Use only letters, numbers, and underscores (no spaces). For example: `dob`, `terms_agreed`, `region`. This key is also used as part of the cookie name when the **Per Requirement** cookie strategy is selected.
+- **Date**: A date picker (calendar). Use this for date-of-birth age gates.
 
-#### Input Type
+- **Number:** A numeric input box.
 
-The type of field presented to the visitor:
+- **Text:** A plain text input.
 
-| Type | What the visitor sees |
-|------|----------------------|
-| **Date** | A date picker (calendar). Use this for date-of-birth age gates. |
-| **Number** | A numeric input box. |
-| **Text** | A plain text input. |
-| **Email** | An email address input. |
-| **Checkbox** | A checkbox the visitor must tick to confirm. Use this for terms acceptance. |
-| **Dropdown** | A select list with your own options. |
+- **Email:** An email address input.
 
-#### Operator
+- **Checkbox:** A checkbox the visitor must tick to confirm. Use this for terms acceptance.
 
-Defines the rule that determines whether the visitor's answer passes:
+- **Dropdown:** A select list with your own options.
 
-| Operator | Use it when |
-|----------|------------|
-| **Minimum Age (years from date)** | The visitor entered a date of birth, and you want to verify they are at least N years old. Set **Threshold Value** to the minimum age (e.g., `18`). |
-| **Above (value `>`)** | The visitor entered a number that must be strictly greater than the threshold. |
-| **Below (value `<`)** | The visitor entered a number that must be strictly less than the threshold. |
-| **Equals (exact match)** | The visitor's answer must match the threshold exactly (not case-sensitive). For example, operator **Equals**, threshold `yes` on a text field. |
-| **Checked (checkbox must be ticked)** | The checkbox field must be ticked. No threshold value is needed. |
+**Operator:** Defines the rule that determines whether the visitor's answer passes:
 
-#### Threshold Value
+- **Minimum Age (years from date):** The visitor entered a date of birth, and you want to verify they are at least N years old. Set **Threshold Value** to the minimum age (e.g., `18`).
 
-The value the visitor's answer is compared against. For **Minimum Age**, enter the required age in years (e.g., `18`, `21`). For **Equals**, enter the exact expected answer. Leave blank for **Checked**.
+- **Above (value** `>`**):** The visitor entered a number that must be strictly greater than the threshold.
 
-#### Dropdown Options (one per line: value|label)
+- **Below (value** `<`**):** The visitor entered a number that must be strictly less than the threshold.
 
-Only used when **Input Type** is **Dropdown**. Enter one option per line in `value|label` format — for example:
+- **Equals (exact match):** The visitor's answer must match the threshold exactly (not case-sensitive). For example, operator **Equals**, threshold `yes` on a text field.
+
+- **Checked (checkbox must be ticked):** The checkbox field must be ticked. No threshold value is needed.
+
+**Threshold Value:** The value the visitor's answer is compared against. For **Minimum Age**, enter the required age in years (e.g., `18`, `21`). For **Equals**, enter the exact expected answer. Leave blank for **Checked**.
+
+**Dropdown Options (one per line: value|label):** Only used when **Input Type** is **Dropdown**. Enter one option per line in `value|label` format — for example:
 
 ```
 us|United States
@@ -228,11 +186,9 @@ other|Other
 
 The left side of the `|` is the internal value that gets matched against the threshold; the right side is the text the visitor sees in the dropdown.
 
-#### Error Message (shown on failure)
+**Error Message (shown on failure):** The message displayed inside the modal when the visitor's answer for this row does not pass. Write a clear, helpful message — for example: "You must be 18 or older to enter", "You must accept the terms to continue".
 
-The message displayed inside the modal when the visitor's answer for this row does not pass. Write a clear, helpful message — for example: "You must be 18 or older to enter", "You must accept the terms to continue".
-
----
+***
 
 ## How It Works
 
@@ -252,7 +208,7 @@ The modal is a blocking gate — pressing Escape does not close it, and clicking
 
 :::
 
----
+***
 
 ## Common Use Cases
 
@@ -269,7 +225,7 @@ A date-of-birth age gate is the most common use of Modal Bouncer. Example setup:
 
 The app calculates the visitor's age from the entered date and compares it to the threshold. Leap-day birthdays are handled correctly.
 
-<!-- SCREENSHOT: Gate Requirements row filled in for a date-of-birth age gate -->
+![](/img/modal-bouncer-config-gate1.webp)
 
 ### Terms Acceptance Checkbox
 
@@ -293,7 +249,7 @@ The app calculates the visitor's age from the entered date and compares it to th
 
 Add two rows to the **Gate Requirements** tab — one for date of birth (Minimum Age) and one for the terms checkbox (Checked). Set **Requirement Match Mode** to **ALL requirements must pass** so both must be satisfied.
 
----
+***
 
 ## Display Conditions
 
@@ -304,7 +260,7 @@ The modal appears when ALL of these conditions are true:
 - The current page matches the **Apply Gate To** scope setting.
 - The visitor does not already have a valid pass cookie.
 
----
+***
 
 ## Tips
 
@@ -314,7 +270,7 @@ The modal appears when ALL of these conditions are true:
 - **Keep requirement rows short** — asking for more than two or three inputs increases abandonment. Use the minimum needed.
 - **Apply Gate To: J2Commerce Pages Only** when your site has public content areas that should remain freely accessible.
 
----
+***
 
 ## Troubleshooting
 
