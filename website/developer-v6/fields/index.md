@@ -27,7 +27,7 @@ For plugin manifests:
 ```xml
 <config>
     <fields name="params" addfieldprefix="J2Commerce\Component\J2commerce\Administrator\Field">
-        <field name="tax_profile" type="TaxProfile" label="Tax Profile" />
+        <field name="tax_profile" type="Taxprofile" label="Tax Profile" />
     </fields>
 </config>
 ```
@@ -52,7 +52,7 @@ Dropdown fields populated from J2Commerce database tables. All extend `ListField
 | [`GeoZone`](./geozone-field.md) | `GeoZoneField` | `#__j2commerce_geozones` | `j2commerce_geozone_id` (int) |
 | [`Currencies`](./currencies-field.md) | `CurrenciesField` | `#__j2commerce_currencies` | `currency_code` (string) |
 | [`OrderStatus`](./orderstatus-field.md) | `OrderStatusField` | `#__j2commerce_orderstatuses` | `j2commerce_orderstatus_id` (int) |
-| [`TaxProfile`](./taxprofile-field.md) | `TaxProfileField` | `#__j2commerce_taxprofiles` | `j2commerce_taxprofile_id` (int) |
+| [`Taxprofile`](./taxprofile-field.md) | `TaxprofileField` | `#__j2commerce_taxprofiles` | `j2commerce_taxprofile_id` (int) |
 | [`TaxRate`](./taxrate-field.md) | `TaxRateField` | `#__j2commerce_taxrates` | `j2commerce_taxrate_id` (int) |
 | [`Manufacturers`](./manufacturers-field.md) | `ManufacturersField` | `#__j2commerce_manufacturers` | `j2commerce_manufacturer_id` (int) |
 | [`Vendors`](./vendors-field.md) | `VendorsField` | `#__j2commerce_vendors` | `j2commerce_vendor_id` (int) |

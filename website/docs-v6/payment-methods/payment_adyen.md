@@ -1,3 +1,10 @@
+---
+title: "Adyen Payment"
+sidebar_label: "Adyen"
+sidebar_position: 5
+description: "Accept credit cards, digital wallets, and local payment methods through Adyen — with 3DS2/SCA, saved cards, subscription support, and full order-level capture, refund, and cancel actions."
+---
+
 # Adyen Payment
 
 The Adyen Payment plugin connects your J2Commerce store to the **Adyen** payment platform. Adyen is used by thousands of businesses worldwide and accepts credit cards, debit cards, digital wallets (Google Pay, Apple Pay), buy-now-pay-later options (Klarna), and many regional payment methods — all from a single integration.
@@ -20,9 +27,16 @@ The plugin also supports:
 - An Adyen merchant account (test or live)
 - Your store must be accessible over HTTPS
 
-## Get Your Adyen Credentials
+## Purchase and Download
 
-![](/img/ayden-credentials-3.webp)
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Adyen Payment**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
+## Get Your Adyen Credentials
 
 Before configuring the plugin, you need a few pieces of information from your Adyen **Customer Area** (the Adyen management portal).
 
@@ -40,18 +54,14 @@ Adyen confirms payment results by sending a notification to your store — calle
 1. In the Adyen Customer Area, go to **Developers** -> **Webhooks**.
 2. Click **Add webhook** -> **Standard webhook**.
 3. Set the URL to:
-
    ```
    https://your-site.com/index.php?option=com_ajax&group=j2commerce&plugin=payment_adyen&format=raw&task=webhook
    ```
-
    Replace `your-site.com` with your actual domain.
 4. Under **Security** -> **HMAC Key**, generate a new HMAC key and copy it. The **HMAC key** (which stands for Hash-based Message Authentication Code) is a shared secret that lets J2Commerce verify that each webhook notification genuinely came from Adyen — not from a third party.
 5. Save the webhook and copy the HMAC key value before closing.
 
 ### Live credentials
-
-![](/img/ayden-credentials-1.webp)
 
 When you are ready to go live, you will also need:
 
@@ -60,22 +70,13 @@ When you are ready to go live, you will also need:
 
 Keep the Customer Area open while you configure the plugin in Joomla.
 
-## Purchase and Download
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Adyen Payment**.
-2. Add it to your cart and complete checkout.
-3. Go to **My Downloads** under your account profile and find the plugin.
-4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
-
 ## Install the Plugin
 
 In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
 Upload the `payment_adyen.zip` file or use the Install from URL option.
 
-![Install extensions](<../../assets/app install1 (1) (1).webp>)
+<!-- SCREENSHOT: System > Install > Extensions upload screen -->
 
 ## Enable the Plugin
 
@@ -85,35 +86,29 @@ Once installed, you need to enable the plugin. There are two ways to reach it.
 
 **Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Payment Methods**
 
-![](/img/adyen-payment-method.webp)
+<!-- SCREENSHOT: J2Commerce Payment Methods list showing Adyen disabled -->
 
 Search for **Adyen Payment**, click the **X** next to it, and it turns into a green checkmark. The plugin is now enabled and ready for setup.
 
-![](/img/adyen-enable.webp)
+<!-- SCREENSHOT: Adyen Payment showing green checkmark -->
 
 ## Configure the Plugin
 
 Click the **Adyen Payment** title to open its settings.
 
 :::tip
-
 Click the **Toggle Inline Help** button at the top of any plugin settings screen to show a description below each field.
-
 :::
 
-![](/img/adyen-toggle.webp)
+<!-- SCREENSHOT: Plugin settings screen with Toggle Inline Help button highlighted -->
 
 ### Appearance
-
-![](/img/adyen-config1.webp)
 
 **Display Name:** The label shown to customers on the checkout page (for example, "Pay by Card"). Change this to whatever makes sense for your store.
 
 **Display Image:** An optional logo or card-brand image to show next to the payment method name at checkout.
 
 ### Integration Mode
-
-![](/img/adyen-config2.webp)
 
 **Integration Mode:** Controls how the payment is processed behind the scenes.
 
@@ -135,43 +130,39 @@ Enable this during setup and initial testing. When Test Mode is active, a warnin
 
 ### Live Credentials
 
-These fields appear when **Test Mode** is turned **off**.
+These fields appear when **Test Mode** is turned off.
 
-![](/img/adyen-config3-1.webp)
+<!-- SCREENSHOT: Plugin configuration showing live credentials fields -->
 
-**API Key:** Your Adyen live API key — a server-side secret, never shared with browsers
-
-**Client Key:** Your Adyen live client key — browser-safe, used by the Drop-in card form
-
-**Merchant Account:** Your Adyen merchant account name (for example, `MyStoreECOM`)
-
-**Live URL Prefix:** The URL prefix from your Adyen Customer Area (for example, `1797ab8e0c-adyen`)
-
-**Live Company Name:** Your Adyen company name from the Customer Area — combined with the prefix to build the live API host
-
-**Webhook HMAC Key:** The HMAC key you generated in the Adyen webhook setup — used to verify incoming notifications
+| Field | Description |
+|-------|-------------|
+| **API Key** | Your Adyen live API key — a server-side secret, never shared with browsers |
+| **Client Key** | Your Adyen live client key — browser-safe, used by the Drop-in card form |
+| **Merchant Account** | Your Adyen merchant account name (for example, `MyStoreECOM`) |
+| **Live URL Prefix** | The URL prefix from your Adyen Customer Area (for example, `1797ab8e0c-adyen`) |
+| **Live Company Name** | Your Adyen company name from the Customer Area — combined with the prefix to build the live API host |
+| **Webhook HMAC Key** | The HMAC key you generated in the Adyen webhook setup — used to verify incoming notifications |
 
 ### Sandbox Credentials
 
-![](/img/adyen-config3.webp)
+These fields appear when **Test Mode** is turned on. They work identically to the live fields but connect to the Adyen test environment.
 
-These fields appear when **Test Mode** is turned **on**. They work identically to the live fields but connect to the Adyen test environment.
+<!-- SCREENSHOT: Plugin configuration showing sandbox credentials fields -->
 
-**Sandbox API Key:** Your Adyen test API key
-
-**Sandbox Client Key:** Your Adyen test client key
-
-**Sandbox Merchant Account:** Your Adyen test merchant account name
-
-**Sandbox Webhook HMAC Key:** The HMAC key for your test webhook endpoint
+| Field | Description |
+|-------|-------------|
+| **Sandbox API Key** | Your Adyen test API key |
+| **Sandbox Client Key** | Your Adyen test client key |
+| **Sandbox Merchant Account** | Your Adyen test merchant account name |
+| **Sandbox Webhook HMAC Key** | The HMAC key for your test webhook endpoint |
 
 ### Fallback Country Code
 
-**Fallback Country Code:** The two-letter country code (for example, `US`, `GB`, `DE`) used to filter available payment methods when the customer's billing country cannot be determined from the order. Adyen uses the country to decide which payment methods are shown. This defaults to the United States (US).
+**Fallback Country Code:** The two-letter country code (for example, `US`, `GB`, `DE`) used to filter available payment methods when the customer's billing country cannot be determined from the order. Adyen uses the country to decide which payment methods are shown. This defaults to United States (US).
 
 ### Saved Cards
 
-![](/img/adyen-config4.webp)
+<!-- SCREENSHOT: Saved cards configuration section -->
 
 **Allow Saved Cards:** When turned on, logged-in customers can save their card at checkout for faster purchases in the future. Saved cards can also be used for automatic subscription renewals.
 
@@ -189,71 +180,55 @@ This controls icon display only — Adyen determines which payment methods are a
 
 ### Order Statuses
 
-![](/img/adyen-config5.webp)
+<!-- SCREENSHOT: Order status configuration fields -->
 
 These settings control which J2Commerce order status is applied when specific payment events occur.
 
-**Order Status (Payment Success):** Status applied when Adyen confirms a successful payment via webhook
-
-**Failed Payment Status:** Status applied when Adyen reports a failed or declined payment
-
-**Authorized Status:** Status applied when payment is authorized but not yet captured — only shown when Capture Mode is Manual Capture
-
-**Change Status on Refund:** When turned on, it automatically updates the order status after a refund is processed
-
-**Refund Order Status:** The status to apply after a refund — only shown when Change Status on Refund is enabled
-
-**Change Status on Cancel:** When turned on, it automatically updates the order status after a payment is cancelled
-
-**Cancel Order Status:** The status to apply after a cancellation — only shown when Change Status on Cancel is enabled
+| Field | Description | Default |
+|-------|-------------|---------|
+| **Order Status (Payment Success)** | Status applied when Adyen confirms a successful payment via webhook | Confirmed |
+| **Failed Payment Status** | Status applied when Adyen reports a failed or declined payment | Failed |
+| **Authorized Status** | Status applied when payment is authorized but not yet captured — only shown when Capture Mode is Manual Capture | Confirmed |
+| **Change Status on Refund** | When turned on, automatically updates the order status after a refund is processed | No |
+| **Refund Order Status** | The status to apply after a refund — only shown when Change Status on Refund is enabled | — |
+| **Change Status on Cancel** | When turned on, automatically updates the order status after a payment is cancelled | No |
+| **Cancel Order Status** | The status to apply after a cancellation — only shown when Change Status on Cancel is enabled | — |
 
 ### Surcharge
 
-![](/img/adyen-config6.webp)
-
 Add an optional handling fee when a customer chooses Adyen.
 
-**Surcharge Name:** The label shown to the customer (for example, "Card processing fee")
-
-**Surcharge Percent:** A percentage of the order total added as a fee (for example, `1.5` for 1.5%)
-
-**Surcharge Fixed:** A fixed amount added regardless of order size
-
-**Surcharge Tax Class:** A tax profile to apply to the surcharge — leave blank if no tax applies
+| Field | Description |
+|-------|-------------|
+| **Surcharge Name** | The label shown to the customer (for example, "Card processing fee") |
+| **Surcharge Percent** | A percentage of the order total added as a fee (for example, `1.5` for 1.5%) |
+| **Surcharge Fixed** | A fixed amount added regardless of order size |
+| **Surcharge Tax Class** | A tax profile to apply to the surcharge — leave blank if no tax applies |
 
 Leave both Surcharge Percent and Surcharge Fixed empty to charge no surcharge.
 
 ### GeoZone and Order Value Restrictions
 
-![](/img/adyen-config7.webp)
-
-**Geozone Restriction:** Limit Adyen to customers in a specific geozone — leave blank to allow all locations
-
-**Minimum Order Subtotal:** Hide Adyen as a payment option when the cart subtotal is below this amount
-
-**Maximum Order Subtotal:** Hide Adyen when the cart subtotal is above this amount
+| Field | Description |
+|-------|-------------|
+| **Geozone Restriction** | Limit Adyen to customers in a specific geozone — leave blank to allow all locations |
+| **Minimum Order Subtotal** | Hide Adyen as a payment option when the cart subtotal is below this amount |
+| **Maximum Order Subtotal** | Hide Adyen when the cart subtotal is above this amount |
 
 ### Custom HTML Snippets
 
-![](/img/adyen-config8.webp)
-
 These optional fields let you inject custom text or HTML at different points in the payment flow.
 
-**Thank-You Article:** Optional Joomla article shown on the order confirmation page after successful payment
-
-**On Selection Text:** Displayed when the customer selects Adyen as their payment method
-
-**Before Payment Text:** Displayed just above the card form, before the customer enters card details
-
-**After Payment Text:** Displayed on the confirmation page after a successful payment
-
-**On Error Text:** Displayed when a payment attempt fails
-
-**Order Cancelled Message:** Displayed when the customer cancels or navigates away
+| Field | When it appears |
+|-------|----------------|
+| **Thank-You Article** | Optional Joomla article shown on the order confirmation page after successful payment |
+| **On Selection Text** | Displayed when the customer selects Adyen as their payment method |
+| **Before Payment Text** | Displayed just above the card form, before the customer enters card details |
+| **After Payment Text** | Displayed on the confirmation page after a successful payment |
+| **On Error Text** | Displayed when a payment attempt fails |
+| **Order Cancelled Message** | Displayed when the customer cancels or navigates away |
 
 ### Dashboard Icon
-
-![](/img/adyen-config9.webp)
 
 **Show Dashboard Icon:** Add a quick-access shortcut for this plugin to the J2Commerce dashboard.
 
@@ -275,9 +250,7 @@ Only enable this when diagnosing a specific problem. Disable it on live sites �
 6. If the customer's bank requires a 3DS2 verification step (the extra security check sometimes called "Verified by Visa" or "Mastercard Identity Check"), an additional screen appears inside the payment form — the customer completes it and is returned to checkout.
 7. On success, the customer sees the order confirmation page.
 
-Frontend Checkout View
-
-![](/img/adyen-frontend.webp)
+<!-- SCREENSHOT: Adyen Drop-in card form displayed at checkout step -->
 
 ## Webhooks
 
@@ -293,13 +266,13 @@ Replace `your-site.com` with your actual domain. **The site must be publicly rea
 
 Key webhook events the plugin handles:
 
-| Adyen Event             | What Happens in J2Commerce                                                                            |
-| ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| Adyen Event | What Happens in J2Commerce |
+|-------------|---------------------------|
 | AUTHORISATION (success) | Order status updates to Authorized Status (Manual Capture mode) or Payment Status (Automatic Capture) |
-| CAPTURE                 | Order status updates to Payment Status                                                                |
-| AUTHORISATION (failure) | Order status updates to Failed Payment Status                                                         |
-| REFUND                  | Refund recorded; order status updated if Change Status on Refund is enabled                           |
-| CANCELLATION            | Cancellation recorded; order status updated if Change Status on Cancel is enabled                     |
+| CAPTURE | Order status updates to Payment Status |
+| AUTHORISATION (failure) | Order status updates to Failed Payment Status |
+| REFUND | Refund recorded; order status updated if Change Status on Refund is enabled |
+| CANCELLATION | Cancellation recorded; order status updated if Change Status on Cancel is enabled |
 
 ## Managing Payments from the Order Screen
 
@@ -309,17 +282,17 @@ Go to **J2Commerce** -> **Sales** -> **Orders** -> click the order number to ope
 
 ### Capture a Payment (Manual Capture mode only)
 
-![](/img/adyen-payment-order-page-manual-capture.webp)
+<!-- SCREENSHOT: Order screen showing Capture Payment button -->
 
 If you set **Capture Mode** to **Manual Capture**, payments are authorized but not collected. When you are ready to charge the customer:
 
-1. Open the order in **J2Commerce -> Sales ->** **Orders**.
+1. Open the order in **J2Commerce** -> **Sales** -> **Orders**.
 2. Click **Capture Payment** and confirm the prompt.
 3. The funds are collected from the customer's card. The order status updates when Adyen confirms the capture via webhook.
 
 ### Cancel a Payment
 
-![](/img/adyen-payment-order-page-manual-cancel.webp)
+<!-- SCREENSHOT: Order screen showing Cancel Payment button -->
 
 A cancellation releases an authorized payment before it has been captured. Once a payment has been captured, use **Issue Refund** instead.
 
@@ -328,9 +301,7 @@ A cancellation releases an authorized payment before it has been captured. Once 
 3. The authorization is released — the customer is not charged and any hold on their card is removed.
 
 :::info
-
 If the **Cancel Payment** button is not visible, the payment has already been captured. Use **Issue Refund** in that case.
-
 :::
 
 ### Issue a Refund
@@ -350,18 +321,12 @@ The refund is submitted to Adyen. Adyen processes refunds asynchronously — the
 
 Always test in sandbox mode before going live.
 
-:::tip
-
-To get the **Test credit card number**, go to [Test card numbers | Adyen Docs](https://docs.adyen.com/development-resources/test-cards-and-credentials/test-card-numbers). Each number is different based on what country you are from.
-
-:::
-
 1. Enable **Test Mode** in the plugin settings and enter your Adyen sandbox credentials (sandbox API key, sandbox client key, sandbox merchant account, and sandbox HMAC key).
 2. Place a test order on your storefront.
-3. At the payment step, enter a test card number. Adyen provides test card numbers in the Customer Area under **Developers** -> **Test cards** on the Adyen website.
+3. At the payment step, enter a test card number. Adyen provides test card numbers in the Customer Area under **Developers** -> **Test cards**. A basic Visa test card number is `4111 1111 1111 1111` with any future expiry date and any three-digit CVV.
 4. Complete checkout and confirm the order appears in **J2Commerce** -> **Sales** -> **Orders** with the correct status.
 5. Test a refund from the order screen to confirm it processes without errors.
-6. Check the Joomla log under **System** **->** **Logs** for any errors — enable **Debug Mode** temporarily if needed.
+6. Check the Joomla log under **System** -> **Logs** for any errors — enable **Debug Mode** temporarily if needed.
 7. When everything is working, turn off **Test Mode** and replace the sandbox credentials with your live credentials.
 
 :::warning
