@@ -30,11 +30,11 @@ This plugin is a separate add-on available from the [J2Commerce website](https:/
 
 You need a PayTabs merchant account. Sign up at [www.paytabs.com](https://www.paytabs.com) and then locate three credentials inside the PayTabs merchant portal:
 
-| Credential | Where to find it | What it is |
-|---|---|---|
-| **Profile ID** | PayTabs portal -> Account Settings | A short number that identifies your merchant profile |
+| Credential     | Where to find it                               | What it is                                                                                             |
+| -------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Profile ID** | PayTabs portal -> Account Settings             | A short number that identifies your merchant profile                                                   |
 | **Server Key** | PayTabs portal -> Account Settings -> Security | A long secret key used by your server to communicate securely with PayTabs — never share this publicly |
-| **Client Key** | PayTabs portal -> Account Settings -> Security | A key used by the payment form in the browser to load the card fields |
+| **Client Key** | PayTabs portal -> Account Settings -> Security | A key used by the payment form in the browser to load the card fields                                  |
 
 :::tip
 
@@ -74,17 +74,17 @@ Click the **Toggle Inline Help** button in the toolbar and a description will ap
 
 ### Display Settings
 
-| Field | Description | Default |
-|---|---|---|
-| **Display Name** | The payment option name shown to customers at checkout (e.g., "Credit Card" or "Pay by Card") | Credit Card |
-| **Display Image** | Upload a logo or card icons to show next to the payment option | — |
+| Field             | Description                                                                                   | Default     |
+| ----------------- | --------------------------------------------------------------------------------------------- | ----------- |
+| **Display Name**  | The payment option name shown to customers at checkout (e.g., "Credit Card" or "Pay by Card") | Credit Card |
+| **Display Image** | Upload a logo or card icons to show next to the payment option                                | —           |
 
 ### Transaction Type
 
-| Option | What it does |
-|---|---|
-| **Auth & Capture** | Charges the customer's card immediately when they place the order. This is the standard choice for most stores. |
-| **Auth Only** | Reserves the funds but does not charge the card. You then capture (collect) the payment manually from the admin order page when you are ready to ship. |
+| Option             | What it does                                                                                                                                           |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Auth & Capture** | Charges the customer's card immediately when they place the order. This is the standard choice for most stores.                                        |
+| **Auth Only**      | Reserves the funds but does not charge the card. You then capture (collect) the payment manually from the admin order page when you are ready to ship. |
 
 ### Region
 
@@ -118,16 +118,14 @@ Enable **Test Mode** to use your sandbox credentials and process dummy payments 
 
 When **Test Mode** is off, fill in your **live** credentials. When **Test Mode** is on, fill in your **test** credentials. Both sets of fields appear separately so you can switch between them easily.
 
-| Field | Description |
-|---|---|
+| Field          | Description                                                      |
+| -------------- | ---------------------------------------------------------------- |
 | **Profile ID** | Your numeric merchant profile identifier from the PayTabs portal |
-| **Server Key** | Your secret server key — paste it in and keep it confidential |
-| **Client Key** | Your browser-side key used to load the secure card input fields |
+| **Server Key** | Your secret server key — paste it in and keep it confidential    |
+| **Client Key** | Your browser-side key used to load the secure card input fields  |
 
 :::warning
-
 Never share your **Server Key** publicly or paste it into any frontend code. It must stay on the server side only.
-
 :::
 
 ### Accepted Card Types
@@ -152,34 +150,42 @@ If your site uses the UIkit template framework, choose **UIkit** from the layout
 
 ### Order Statuses
 
-| Field | Description |
-|---|---|
-| **Successful Payment Status** | The order status applied when a payment is confirmed. "Confirmed" is the typical choice. |
-| **Change Order Status on Void** | When enabled, voiding a transaction automatically moves the order to a status you choose. |
-| **Void Order Status** | The order status to set after a successful void. Only visible when the option above is enabled. |
-| **Change Order Status on Refund** | When enabled, processing a refund automatically moves the order to a status you choose. |
-| **Refund Order Status** | The order status to set after a successful refund. Only visible when the option above is enabled. |
+| Field                             | Description                                                                                       |
+| --------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Successful Payment Status**     | The order status applied when a payment is confirmed. "Confirmed" is the typical choice.          |
+| **Change Order Status on Void**   | When enabled, voiding a transaction automatically moves the order to a status you choose.         |
+| **Void Order Status**             | The order status to set after a successful void. Only visible when the option above is enabled.   |
+| **Change Order Status on Refund** | When enabled, processing a refund automatically moves the order to a status you choose.           |
+| **Refund Order Status**           | The order status to set after a successful refund. Only visible when the option above is enabled. |
+
+:::tip
+
+If the status you want is not listed in a dropdown, create a new one first by going to **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge / Payment Fee
 
 If PayTabs charges you a processing fee and you want to pass part or all of it on to customers, fill in these fields:
 
-| Field | Description |
-|---|---|
-| **Surcharge Name** | The label shown to customers (e.g., "Card processing fee") |
-| **Surcharge %** | A percentage of the order subtotal added as a fee (e.g., `2.5` for 2.5%) |
-| **Surcharge Fixed Amount** | A flat fee added to every order (e.g., `0.50` for $0.50) |
-| **Surcharge Tax Class** | Select a tax profile if the fee itself needs to be taxed |
+| Field                      | Description                                                              |
+| -------------------------- | ------------------------------------------------------------------------ |
+| **Surcharge Name**         | The label shown to customers (e.g., "Card processing fee")               |
+| **Surcharge %**            | A percentage of the order subtotal added as a fee (e.g., `2.5` for 2.5%) |
+| **Surcharge Fixed Amount** | A flat fee added to every order (e.g., `0.50` for $0.50)                 |
+| **Surcharge Tax Class**    | Select a tax profile if the fee itself needs to be taxed                 |
 
 Leave all three blank if you do not want to add a fee.
 
 ### Availability Restrictions
 
-| Field | Description |
-|---|---|
-| **Geozone Restriction** | Only show this payment method to customers whose billing address falls inside a specific geozone. Leave blank to show it to everyone. |
-| **Minimum Order Subtotal** | Hide this payment method if the order subtotal is below this amount. Leave blank for no minimum. |
-| **Maximum Order Subtotal** | Hide this payment method if the order subtotal is above this amount. Leave blank for no maximum. |
+| Field                      | Description                                                                                                                           |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **Geozone Restriction**    | Only show this payment method to customers whose billing address falls inside a specific geozone. Leave blank to show it to everyone. |
+| **Minimum Order Subtotal** | Hide this payment method if the order subtotal is below this amount. Leave blank for no minimum.                                      |
+| **Maximum Order Subtotal** | Hide this payment method if the order subtotal is above this amount. Leave blank for no maximum.                                      |
 
 ### Thank You Message
 
@@ -189,19 +195,19 @@ Use the **Thank You Article** field to select a Joomla article that appears on t
 
 These optional text fields let you add HTML messages at specific moments during checkout:
 
-| Field | When it appears |
-|---|---|
-| **On Selection** | When the customer chooses PayTabs as their payment method |
-| **On Before Payment** | Inside the payment form area, above the card input |
-| **On After Payment** | On the order confirmation page after a successful payment |
-| **On Error Payment** | When a payment attempt fails |
-| **On Cancel Payment** | When the customer cancels the payment process |
+| Field                 | When it appears                                           |
+| --------------------- | --------------------------------------------------------- |
+| **On Selection**      | When the customer chooses PayTabs as their payment method |
+| **On Before Payment** | Inside the payment form area, above the card input        |
+| **On After Payment**  | On the order confirmation page after a successful payment |
+| **On Error Payment**  | When a payment attempt fails                              |
+| **On Cancel Payment** | When the customer cancels the payment process             |
 
 ### Debug Mode
 
 Enable **Debug Mode** to log all communication between J2Commerce and PayTabs. This is helpful when diagnosing configuration issues. Logs are written to the Joomla system log file. Disable this on a live store once everything is working.
 
----
+***
 
 ## What the Customer Sees
 
@@ -222,7 +228,7 @@ PayTabs handles card security on their end. Your store never receives or stores 
 
 :::
 
----
+***
 
 ## Managing Payments from the Order Screen
 
@@ -242,7 +248,7 @@ If a customer has saved cards on file and an order has not yet been paid, you ca
 
 <!-- SCREENSHOT: Admin order page showing Void, Refund, and Charge Stored Card action buttons -->
 
----
+***
 
 ## Tips
 
@@ -252,7 +258,7 @@ If a customer has saved cards on file and an order has not yet been paid, you ca
 - **Use the surcharge to recover fees** — PayTabs charges a processing fee per transaction. The surcharge fields let you offset this cost transparently.
 - **Check the dashboard warning** — When Test Mode is on, a warning banner appears on the J2Commerce dashboard to remind you that real payments are not being processed.
 
----
+***
 
 ## Troubleshooting
 
