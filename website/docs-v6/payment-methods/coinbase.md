@@ -107,12 +107,6 @@ See [Choosing Redirect vs Modal](#choosing-redirect-vs-modal) below for guidance
 
 ### Order Status
 
-:::info
-
-NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
-
-:::
-
 These three fields control what J2Commerce order status is assigned when Coinbase reports each payment event.
 
 | Field                | Default       | When it triggers                                                     |
@@ -124,6 +118,14 @@ These three fields control what J2Commerce order status is assigned when Coinbas
 The defaults match the standard J2Commerce order status IDs and work for most stores. Change them if you use custom order statuses.
 
 **Note on `charge:resolved`:** Coinbase uses this event when a charge was overpaid or underpaid and a Coinbase support agent has manually resolved it. The plugin treats `charge:resolved` the same as `charge:confirmed` — both move the order to your Confirmed Status. This is the correct behavior for almost all cases.
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge (Optional)
 
