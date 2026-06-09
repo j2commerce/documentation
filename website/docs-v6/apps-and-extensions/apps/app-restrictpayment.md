@@ -1,10 +1,3 @@
----
-title: "Payment Method Restrictions"
-sidebar_label: "Payment Method Restrictions"
-sidebar_position: 50
-description: "Control which payment methods appear at checkout based on the products in the cart, with per-product whitelists and global keep/remove rules."
----
-
 # Payment Method Restrictions
 
 The Payment Method Restrictions app lets you control which payment methods your customers can use at checkout. You can restrict methods on a per-product basis — so that some products only allow bank transfer, for example — and you can also set store-wide rules that always keep or always remove specific methods.
@@ -57,19 +50,25 @@ Click the **Toggle Inline Help** button on any app you install to see a descript
 
 ### Payment Restrictions Tab
 
+![](/img/payment-method-restriction-config.webp)
+
 The global settings apply to every checkout in your store. They work on top of any per-product restriction you set on individual products.
 
-| Field                                   | Description                                                                                                                                     | Default                                |
-| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| **Keep only these payment methods**     | If one or more methods are selected, only those methods ever appear at checkout. Leave empty to allow all methods (subject to the other rules). | *(empty — no global keep restriction)* |
-| **Always remove these payment methods** | The selected methods are always hidden at checkout, regardless of product settings or the keep list.                                            | *(empty — nothing globally removed)*   |
-| **Debug logging**                       | Writes diagnostic messages to `administrator/logs/plg_j2commerce_app_restrictpayment.log.php`. Disable on production sites.                     | **No**                                 |
+**Keep only these payment methods:** If one or more methods are selected, only those methods ever appear at checkout. Leave empty to allow all methods (subject to the other rules).
+
+**Always remove these payment methods:** The selected methods are always hidden at checkout, regardless of product settings or the keep list.
+
+**Debug logging:** Writes diagnostic messages to `administrator/logs/plg_j2commerce_app_restrictpayment.log.php`. Disable on production sites.
+
+:::tip
 
 Both the **Keep** and **Remove** fields show only the payment method plugins that are currently enabled in your store. If a gateway is not listed, publish it first under **J2Commerce** -> **Payments** -> **Payment Methods**.
 
-Click **Save** to apply your settings.
+:::
 
 ## Set Allowed Payment Methods Per Product
+
+![](/img/payment-method-restriction-product-app.webp)
 
 The per-product restriction is the most targeted control available. When a cart contains multiple products, the plugin calculates the union of all allowed methods across those products and removes anything outside that set.
 
@@ -77,9 +76,6 @@ The per-product restriction is the most targeted control available. When a cart 
 2. Click the **J2Commerce** tab, then the **Apps** sub-tab.
 3. Under **Payment Restrictions**, find the **Allowed payment methods** field.
 4. Select the payment methods you want to allow for this product. To apply no restriction, select **All payment methods**.
-5. Click **Save**.
-
-<!-- SCREENSHOT: Product edit screen showing the J2Commerce > Apps sub-tab with the Allowed payment methods multi-select field -->
 
 :::info Multiple products in the cart
 
@@ -99,7 +95,9 @@ When a customer reaches the payment step, the plugin evaluates three layers of r
 
 A method must pass all three layers to appear at checkout. The final list is shown to the customer.
 
-<!-- SCREENSHOT: Checkout page showing the filtered payment method options visible to the customer -->
+## Frontend View
+
+![](/img/payment-method-restriction-checkout.webp)
 
 :::warning All methods removed
 If your rules are too restrictive — for example, a product allows only Bank Transfer but you have also added Bank Transfer to the Always Remove list — the customer will see no payment methods at checkout and will be unable to complete the order. Test your configuration after making changes.
