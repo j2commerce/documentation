@@ -115,7 +115,7 @@ A typical setup looks like this:
 
 :::tip
 
-If you do not see the order status you prefer, then it needs to be created. Go to J2Commerce Setup Order Status
+If the status you want is not listed in a dropdown, create a new one first by going to **J2Commerce** -> **Setup** -> **Order Statuses**.
 
 :::
 

@@ -70,7 +70,7 @@ Click the **Fiserv Commerce Hub** title to open its settings.
 
 :::tip
 
-Click the **Toggle Inline Help** button at the top of the settings screen to show a description below each field as you work through the configuration.
+**Helpful tip:** Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
 
 :::
 
@@ -145,6 +145,14 @@ If the status you want is not listed in a dropdown, create a new one first by go
 | **Refunded Order Status**   | Status to apply after a refund — only shown when Change Status on Refund is enabled                                          |
 | **Change Status on Void**   | Toggle on to automatically update the order status when a payment is voided                                                  |
 | **Voided Order Status**     | Status to apply after a void — only shown when Change Status on Void is enabled                                              |
+
+:::tip
+
+If you do not see the order status you prefer, then it needs to be created. Go to J2Commerce Setup Order Status
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge
 
