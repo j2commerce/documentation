@@ -84,6 +84,14 @@ To set these:
 2. Set **Pending Order Status** to the status for payments in progress (default: **Pending**).
 3. Set **Failed Order Status** to the status for declined or cancelled payments (default: **Failed**).
 
+:::tip
+
+If the status you want is not listed in a dropdown, create a new one first by going to **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
+
 <!-- SCREENSHOT: MultiSafepay plugin showing the three order status dropdowns -->
 
 ### Step 5: Set the Display Name and Image (Optional)
