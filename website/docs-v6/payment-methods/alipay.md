@@ -78,12 +78,6 @@ Open the Alipay payment method in your payment methods list and work through eac
 
 ### Payment Settings tab
 
-:::info
-
-NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
-
-:::
-
 | Field                    | Description                                                                      | Default         |
 | ------------------------ | -------------------------------------------------------------------------------- | --------------- |
 | **After Payment Status** | Order status set when Alipay confirms payment                                    | `1` (Confirmed) |
@@ -94,6 +88,14 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 | **On Error text**        | Custom HTML shown if the payment fails                                           | Empty           |
 | **On Cancel text**       | Custom HTML shown if the customer cancels at Alipay                              | Empty           |
 | **Button Text**          | Label on the submit button that sends the customer to Alipay                     | `Place Order`   |
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Restrictions tab
 
