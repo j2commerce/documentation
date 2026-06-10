@@ -16,16 +16,6 @@ PayTabs is a payment gateway built for merchants in the Middle East and North Af
 - J2Commerce 6.x
 - An active PayTabs merchant account
 
-## Purchase and Download
-
-This plugin is a separate add-on available from the [J2Commerce website](https://www.j2commerce.com). It is not included with the core J2Commerce component.
-
-**Step 1:** Go to [www.j2commerce.com](https://www.j2commerce.com) and find the **PayTabs Payment** plugin.
-
-**Step 2:** Click **View Details**, add it to your cart, and complete checkout.
-
-**Step 3:** Go to **My Downloads** under your profile at the top right. Click **Available Versions** -> **View Files** -> **Download Now**.
-
 ## Before You Start
 
 You need a PayTabs merchant account. Sign up at [www.paytabs.com](https://www.paytabs.com) and then locate three credentials inside the PayTabs merchant portal:
@@ -42,23 +32,39 @@ PayTabs provides separate test credentials so you can process dummy payments wit
 
 :::
 
-## Install the Plugin
+## Purchase and Download
 
-1. Go to **System** -> **Install** -> **Extensions** in the Joomla admin panel.
-2. Upload the `payment_paytabs.zip` file you downloaded.
-3. The plugin installs automatically.
+This plugin is a separate add-on available from the [J2Commerce website](https://www.j2commerce.com). It is not included with the core J2Commerce component.
 
-<!-- SCREENSHOT: Joomla extension installer upload screen with the PayTabs zip ready to upload -->
+**Step 1:** Go to [www.j2commerce.com](https://www.j2commerce.com) and find the **PayTabs Payment** plugin.
 
-## Enable the Plugin
+**Step 2:** Click **View Details**, add it to your cart, and complete checkout.
 
-After installation, the plugin needs to be enabled before it appears at checkout.
+**Step 3:** Go to **My Downloads** under your profile at the top right. Click **Available Versions** -> **View Files** -> **Download Now**.
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Find **PayTabs Payment** in the list.
-3. Click the toggle in the **Enabled** column to turn it on (it should show green).
+## Installing the Plugin
 
-<!-- SCREENSHOT: Payment Methods list with PayTabs showing a green enabled toggle -->
+You can install this **PayTabs Payment** plugin using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
+
+Upload the `payment_paytabs.zip` file or use the Install from URL option.
+
+![](/img/autho-install5.webp)
+
+## Enable the Plugin&#x20;
+
+Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
+
+![](/img/autho-methods.webp)
+
+Look for **PayTabs Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/paytabs-enable.webp)
 
 ## Configure the Plugin
 
@@ -70,21 +76,23 @@ Click the **Toggle Inline Help** button in the toolbar and a description will ap
 
 :::
 
-<!-- SCREENSHOT: PayTabs plugin settings screen showing all fields -->
+![](/img/paytabs-toggle.webp)
 
 ### Display Settings
 
-| Field             | Description                                                                                   | Default     |
-| ----------------- | --------------------------------------------------------------------------------------------- | ----------- |
-| **Display Name**  | The payment option name shown to customers at checkout (e.g., "Credit Card" or "Pay by Card") | Credit Card |
-| **Display Image** | Upload a logo or card icons to show next to the payment option                                | —           |
+![](/img/paytabs-display.webp)
+
+**Display Name:** The payment option name shown to customers at checkout (e.g., "Credit Card" or "Pay by Card")
+
+**Display Image:** Upload a logo or card icons to show next to the payment option
 
 ### Transaction Type
 
-| Option             | What it does                                                                                                                                           |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Auth & Capture** | Charges the customer's card immediately when they place the order. This is the standard choice for most stores.                                        |
-| **Auth Only**      | Reserves the funds but does not charge the card. You then capture (collect) the payment manually from the admin order page when you are ready to ship. |
+![](/img/paytabs-region.webp)
+
+- **Auth & Capture:** Charges the customer's card immediately when they place the order. This is the standard choice for most stores.
+
+- **Auth Only:** Reserves the funds but does not charge the card. You then capture (collect) the payment manually from the admin order page when you are ready to ship.
 
 ### Region
 
@@ -108,27 +116,29 @@ Selecting the wrong region will cause all payments to fail. Match this setting t
 
 :::
 
-### Test Mode
+### Credentials
+
+![](/img/paytabs-api.webp)
+
+### Sandbox Test Mode
 
 Enable **Test Mode** to use your sandbox credentials and process dummy payments without charging any real cards. Set this to **No** when you are ready to go live.
 
-<!-- SCREENSHOT: Sandbox toggle switch set to Yes -->
-
-### Credentials
-
 When **Test Mode** is off, fill in your **live** credentials. When **Test Mode** is on, fill in your **test** credentials. Both sets of fields appear separately so you can switch between them easily.
 
-| Field          | Description                                                      |
-| -------------- | ---------------------------------------------------------------- |
-| **Profile ID** | Your numeric merchant profile identifier from the PayTabs portal |
-| **Server Key** | Your secret server key — paste it in and keep it confidential    |
-| **Client Key** | Your browser-side key used to load the secure card input fields  |
+**Profile ID:** Your numeric merchant profile identifier from the PayTabs portal
+
+**Server Key:** Your secret server key — paste it in and keep it confidential
+
+**Client Key:** Your browser-side key used to load the secure card input fields
 
 :::warning
 Never share your **Server Key** publicly or paste it into any frontend code. It must stay on the server side only.
 :::
 
 ### Accepted Card Types
+
+![](/img/paytabs-cc.webp)
 
 Choose which card networks to accept. You can select multiple options:
 
@@ -144,19 +154,23 @@ When enabled, logged-in customers can tick a box at checkout to save their card 
 
 Set this to **No** if you prefer customers to always enter their card details fresh each time.
 
-### Layout (Subtemplate)
+### Template Style
 
 If your site uses the UIkit template framework, choose **UIkit** from the layout dropdown. Otherwise leave this on the default Bootstrap 5 layout.
 
 ### Order Statuses
 
-| Field                             | Description                                                                                       |
-| --------------------------------- | ------------------------------------------------------------------------------------------------- |
-| **Successful Payment Status**     | The order status applied when a payment is confirmed. "Confirmed" is the typical choice.          |
-| **Change Order Status on Void**   | When enabled, voiding a transaction automatically moves the order to a status you choose.         |
-| **Void Order Status**             | The order status to set after a successful void. Only visible when the option above is enabled.   |
-| **Change Order Status on Refund** | When enabled, processing a refund automatically moves the order to a status you choose.           |
-| **Refund Order Status**           | The order status to set after a successful refund. Only visible when the option above is enabled. |
+![](/img/paytabs-status.webp)
+
+**Successful Payment Status:** The order status applied when a payment is confirmed. "Confirmed" is the typical choice.
+
+**Change Order Status on Void:** When enabled, voiding a transaction automatically moves the order to a status you choose.
+
+- **Void Order Status:** The order status to set after a successful void. Only visible when the option above is enabled.
+
+**Change Order Status on Refund:** When enabled, processing a refund automatically moves the order to a status you choose.
+
+- **Refund Order Status:** The order status to set after a successful refund. Only visible when the option above is enabled.
 
 :::tip
 
@@ -168,42 +182,55 @@ If the status you want is not listed in a dropdown, create a new one first by go
 
 ### Surcharge / Payment Fee
 
+![](/img/paytabs-surcharge.webp)
+
 If PayTabs charges you a processing fee and you want to pass part or all of it on to customers, fill in these fields:
 
-| Field                      | Description                                                              |
-| -------------------------- | ------------------------------------------------------------------------ |
-| **Surcharge Name**         | The label shown to customers (e.g., "Card processing fee")               |
-| **Surcharge %**            | A percentage of the order subtotal added as a fee (e.g., `2.5` for 2.5%) |
-| **Surcharge Fixed Amount** | A flat fee added to every order (e.g., `0.50` for $0.50)                 |
-| **Surcharge Tax Class**    | Select a tax profile if the fee itself needs to be taxed                 |
+**Surcharge Name:** The label shown to customers (e.g., "Card processing fee")
+
+**Surcharge %:** A percentage of the order subtotal added as a fee (e.g., `2.5` for 2.5%)
+
+**Surcharge Fixed Amount:** A flat fee added to every order (e.g., `0.50` for $0.50)
+
+**Surcharge Tax Class:** Select a tax profile if the fee itself needs to be taxed
 
 Leave all three blank if you do not want to add a fee.
 
 ### Availability Restrictions
 
-| Field                      | Description                                                                                                                           |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| **Geozone Restriction**    | Only show this payment method to customers whose billing address falls inside a specific geozone. Leave blank to show it to everyone. |
-| **Minimum Order Subtotal** | Hide this payment method if the order subtotal is below this amount. Leave blank for no minimum.                                      |
-| **Maximum Order Subtotal** | Hide this payment method if the order subtotal is above this amount. Leave blank for no maximum.                                      |
+![](/img/paytabs-geozone.webp)
 
-### Thank You Message
+**Geozone Restriction:** Only show this payment method to customers whose billing address falls inside a specific geozone. Leave blank to show it to everyone.
 
-Use the **Thank You Article** field to select a Joomla article that appears on the order confirmation page after a successful payment. This is a good place for delivery instructions, next-step information, or a personal note.
+**Minimum Order Subtotal:** Hide this payment method if the order subtotal is below this amount. Leave blank for no minimum.
+
+**Maximum Order Subtotal:** Hide this payment method if the order subtotal is above this amount. Leave blank for no maximum.
 
 ### Custom Messages
 
+![](/img/paytabs-message.webp)
+
+Use the **Thank You Article** field to select a Joomla article that appears on the order confirmation page after a successful payment. This is a good place for delivery instructions, next-step information, or a personal note.
+
 These optional text fields let you add HTML messages at specific moments during checkout:
 
-| Field                 | When it appears                                           |
-| --------------------- | --------------------------------------------------------- |
-| **On Selection**      | When the customer chooses PayTabs as their payment method |
-| **On Before Payment** | Inside the payment form area, above the card input        |
-| **On After Payment**  | On the order confirmation page after a successful payment |
-| **On Error Payment**  | When a payment attempt fails                              |
-| **On Cancel Payment** | When the customer cancels the payment process             |
+**On Selection:** When the customer chooses PayTabs as their payment method
 
-### Debug Mode
+**On Before Payment:** Inside the payment form area, above the card input
+
+**On After Payment:** On the order confirmation page after a successful payment
+
+**On Error Payment:** When a payment attempt fails
+
+**On Cancel Payment:** When the customer cancels the payment process
+
+### Dashboard Icon & Debug Mode
+
+![](/img/paytabs-icon.webp)
+
+**Show Dashboard Icon:** When enabled, this plugin adds an icon tile to the J2Commerce dashboard and the J2Commerce quick icons module.
+
+- **Icon Label:** Override the default label shown on the icon tile. Leave empty to use the plugin default.
 
 Enable **Debug Mode** to log all communication between J2Commerce and PayTabs. This is helpful when diagnosing configuration issues. Logs are written to the Joomla system log file. Disable this on a live store once everything is working.
 
