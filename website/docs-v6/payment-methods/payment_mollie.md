@@ -171,6 +171,24 @@ If the status you want is not listed in a dropdown, create a new one first by go
 
 ![](/img/shipstation-order-status2-1.webp)
 
+### Saved Cards
+
+**Enable Saved Cards** — When set to **Yes** (the default), logged-in customers can save their payment method after checkout for faster future purchases. Saved cards are also used for automatic subscription renewals.
+
+Saved payment methods are displayed to the customer on their next visit so they can check out without re-entering details.
+
+---
+
+### Order Status Settings
+
+**Confirmed Payment Status** — The J2Commerce order status to apply when Mollie confirms a successful payment. Default: Confirmed.
+
+**Change Status on Refund** — When set to **Yes**, J2Commerce automatically updates the order status after a refund is processed.
+
+**Refund Order Status** — The status to apply after a successful refund. This field only appears when **Change Status on Refund** is set to **Yes**.
+
+---
+
 ### Webhook URL
 
 ![](/img/mollie-config-webhook.webp)
@@ -193,17 +211,24 @@ Unlike some other payment gateways, you do not need to register the webhook URL 
 
 **Template Style:** Select the CSS framework for this plugin's customer-facing templates
 
-### Surcharge
+### Order Value Restrictions
 
 ![](/img/mollie-config-surcharge.webp)
 
 Add an optional extra fee for customers who pay via Mollie. You can use a percentage, a fixed amount, or both together. Check your local laws before using surcharges — they are regulated in some countries.
 
-**Surcharge (%)** — A percentage of the order subtotal added as a surcharge.
+---
 
-**Surcharge (Fixed)** — A flat amount added to every order.
+### Surcharge
 
-Both amounts are labeled **Mollie Payment Surcharge** on the customer's order summary.
+Add an optional extra fee for customers who pay via Mollie. Check your local laws before using surcharges — they are regulated in some countries.
+
+| Field | Description |
+|-------|-------------|
+| **Surcharge Label** | The name shown for the surcharge line item at checkout. Leave blank to use the default label "Mollie Payment Surcharge". |
+| **Surcharge (%)** | A percentage of the order subtotal added as a surcharge. |
+| **Surcharge (Fixed)** | A flat amount added to every order. |
+| **Surcharge Tax Class** | A tax profile to apply to the surcharge. Leave blank if no tax applies. |
 
 ### Custom Messages
 
@@ -306,29 +331,30 @@ When you are ready to accept real payments:
 
 ## Refunds
 
-You can issue a refund directly from the order in the J2Commerce admin:
+You can issue a full or partial refund directly from the order in the J2Commerce admin:
 
 1. Go to **J2Commerce** -> **Orders** and open the order.
 2. Look for the **Payment** section on the order detail screen.
-3. Click **Refund**.
-4. Enter the amount to refund, or leave blank to refund the full order.
-5. Confirm the refund.
+3. Click **Refund (Full)** to return the entire amount, or **Refund (Partial)** to enter a specific amount.
+4. Confirm the refund.
 
 J2Commerce sends the refund request to Mollie via the API. The customer receives their refund according to Mollie's processing timeline for their payment method (typically 2–5 business days for bank transfers, faster for card payments).
 
-<!-- SCREENSHOT: Order detail screen showing Payment section with Refund button -->
+If **Change Status on Refund** is enabled, the order status updates automatically after the refund is processed.
+
+<!-- SCREENSHOT: Order detail screen showing Payment section with Refund (Full) and Refund (Partial) buttons -->
 
 ***
 
-## Subscriptions and Recurring Payments
+## Saved Cards and Subscription Renewals
 
-If you use the **Subscription Product** app alongside Mollie Payments, the plugin supports automatic recurring billing:
+When **Enable Saved Cards** is turned on (the default), the plugin supports saved payment methods and automatic subscription renewals:
 
-- On the **first payment** of a subscription order, J2Commerce creates a Mollie customer record and requests a `sequenceType=first` payment. This sets up a mandate (billing authorization) in Mollie.
-- The customer's Mollie customer ID is stored in J2Commerce's payment profiles table so future renewals can reference it.
-- On each **renewal**, J2Commerce charges the stored customer profile using Mollie's recurring payment API — no redirect to Mollie is needed for subsequent billing cycles.
+- On the **first payment**, J2Commerce creates a Mollie customer record and establishes a billing mandate (authorization). The customer's Mollie profile is stored for future use.
+- On subsequent orders, logged-in customers see their saved payment method at checkout and can pay without re-entering details.
+- On each **subscription renewal**, J2Commerce charges the stored customer profile using Mollie's recurring payment API — no redirect to Mollie is needed for automatic billing cycles.
 
-This requires the customer to complete an initial payment that establishes the mandate. Without this, automatic renewals cannot be processed.
+This requires the J2Commerce **Subscription Product** app. The customer must complete an initial payment to establish the mandate before automatic renewals can be processed.
 
 ***
 
@@ -391,6 +417,14 @@ This requires the customer to complete an initial payment that establishes the m
 
 ***
 
+### Mollie Payments is not visible to some customers
+
+**Cause:** A Geo Zone restriction, Minimum Order Subtotal, or Maximum Order Subtotal setting is filtering out those customers.
+
+**Solution:** Check the **Geo Zone**, **Minimum Order Subtotal**, and **Maximum Order Subtotal** fields in the plugin settings. Leave them blank to show Mollie to all customers without restrictions.
+
+---
+
 ## FAQ
 
 **Does Mollie require a separate webhook registration in the Mollie Dashboard?** No. J2Commerce passes the webhook URL directly to Mollie each time it creates a payment. You do not need to configure a static webhook endpoint in the Mollie Dashboard.
@@ -410,7 +444,7 @@ This requires the customer to complete an initial payment that establishes the m
 ## Related Topics
 
 - [Payment Methods overview](../payment-methods/index.md)
-- [Geozones](../localisation/geozones.md)
-- [Currencies](../localisation/currencies.md)
+- [Geozones](../localization/geozones.md)
+- [Currencies](../localization/currencies.md)
 - [Subscription Product app](../apps-and-extensions/apps/app_subscriptionproduct.md)
 - [Order management](../sales/orders.md)
