@@ -17,15 +17,6 @@ The PublicSquare Payment plugin connects your J2Commerce store to the **PublicSq
 - A PublicSquare merchant account
 - Your store must be accessible over HTTPS
 
-## Purchase and Download
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **PublicSquare Payment**.
-2. Add it to your cart and complete checkout.
-3. Go to **My Downloads** under your account profile and find the plugin.
-4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
-
 ## Get Your PublicSquare Credentials
 
 Before configuring the plugin you need API keys from the PublicSquare dashboard.
@@ -39,27 +30,38 @@ Before configuring the plugin you need API keys from the PublicSquare dashboard.
 
 Keep this browser tab open while you configure the plugin in Joomla.
 
-## Install the Plugin
+## Purchase and Download
 
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **PublicSquare Payment**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
+## Installing the Plugin
+
+You can install this **PublicSquare Payment** plugin using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
 Upload the `payment_publicsquare.zip` file or use the Install from URL option.
 
-<!-- SCREENSHOT: Joomla Extensions installer upload screen -->
+![](/img/autho-install5.webp)
 
-## Enable the Plugin
+## Enable the Plugin&#x20;
 
-Once installed, you need to enable the plugin. There are two ways to access it.
+Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner -> **Setup** -> **Payment Methods**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Payment Methods**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list -->
+![](/img/autho-methods.webp)
 
-Search for **PublicSquare Payment**, click the **X**, and it will turn into a green checkmark. The plugin is now enabled and ready to configure.
+Look for **PublicSquare Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-<!-- SCREENSHOT: PublicSquare Payment enabled with green checkmark -->
+![](/img/publicsquare-enable.webp)
 
 ## Configure the Plugin
 
@@ -71,37 +73,37 @@ Click the **Toggle Inline Help** button at the top of any plugin settings screen
 
 :::
 
+![](/img/publicsquare-toggle.webp)
+
 ### Appearance
+
+![](/img/publicsquare-display.webp)
 
 **Payment Method Name:** The label shown to customers on the checkout page (e.g., "Credit/Debit Card"). Defaults to "PublicSquare".
 
 **Display Image:** Optional logo or card-brand image displayed beside the payment method name at checkout.
 
-### Test Mode
+### Credentials
+
+![](/img/publicsquare-api.webp)
 
 **Test Mode:** When set to **Yes**, all transactions go to the PublicSquare test environment — no real money moves.
 
 Enable this during setup and testing. Switch it to **No** when you are ready to accept live payments. While test mode is active, a warning banner appears on the J2Commerce dashboard to remind you.
 
-### API Credentials
-
 The credential fields shown depend on whether **Test Mode** is enabled.
 
-**When Test Mode is ON:**
+- **When Test Mode is ON:**
 
-| Field                      | Description                            |
-| -------------------------- | -------------------------------------- |
-| **Secret Key (Test)**      | Your PublicSquare test secret API key  |
-| **Publishable Key (Test)** | Your PublicSquare test publishable key |
+**Secret Key (Test):** Your PublicSquare test secret API key
 
-**When Test Mode is OFF (live):**
+**Publishable Key (Test):** Your PublicSquare test publishable key
 
-| Field                      | Description                            |
-| -------------------------- | -------------------------------------- |
-| **Secret Key (Live)**      | Your PublicSquare live secret API key  |
-| **Publishable Key (Live)** | Your PublicSquare live publishable key |
+- **When Test Mode is OFF (live):**
 
-<!-- SCREENSHOT: PublicSquare credential fields in test mode -->
+**Secret Key (Live):** Your PublicSquare live secret API key
+
+**Publishable Key (Live):** Your PublicSquare live publishable key
 
 ### Webhooks
 
@@ -127,30 +129,32 @@ Replace `your-site.com` with your actual domain.
 
 ### Capture Method
 
+![](/img/publicsquare-capture-cc.webp)
+
 **Capture Method:** Controls whether funds are collected immediately or held for manual capture.
 
 - **Automatic** — funds are collected from the customer's card as soon as the order is placed. This is the recommended setting for most stores.
 - **Manual (authorize only)** — the funds are reserved on the customer's card but not collected yet. You then capture (settle) the payment from the order admin when you are ready to ship. This is useful when you want to confirm stock or fulfillment details before taking money.
 
-### Saved Cards
-
 **Allow Saved Cards:** Let logged-in customers save their card for faster checkout next time.
 
 When enabled, customers see a checkbox at checkout to save their card. On future visits they can select a saved card instead of re-entering their details. Saved cards also power automatic subscription renewals if you have the Subscriptions add-on installed.
-
-### Template Style
 
 **Template Style:** Choose between **Bootstrap 5** and **UIkit** layout for the checkout card form — match this to your site's front-end template.
 
 ### Order Statuses
 
-| Field                       | Description                                                                               | Default   |
-| --------------------------- | ----------------------------------------------------------------------------------------- | --------- |
-| **Completed Order Status**  | Status applied when payment succeeds                                                      | Confirmed |
-| **Authorized Order Status** | Status applied when payment is authorized but not yet captured (Manual capture mode only) | Confirmed |
-| **Failed Order Status**     | Status applied when payment fails                                                         | Failed    |
-| **Canceled Order Status**   | Status applied when a payment is canceled                                                 | Canceled  |
-| **Refunded Order Status**   | Status applied after a refund is issued                                                   | Refunded  |
+![](/img/publicsquare-status.webp)
+
+**Completed Order Status:** Status applied when payment succeeds
+
+**Authorized Order Status:** Status applied when payment is authorized but not yet captured (Manual capture mode only)
+
+**Failed Order Status:** Status applied when payment fails
+
+**Canceled Order Status:** Status applied when a payment is canceled
+
+**Refunded Order Status:** Status applied after a refund is issued
 
 :::info
 
@@ -162,13 +166,17 @@ If the status you want is not listed in a dropdown, you can create a new one by 
 
 ### GeoZone Availability Restrictions
 
+![](/img/publicsquare-geozone.webp)
+
 **Geozone Restriction:** Limit PublicSquare to customers in a specific geozone. Leave blank to allow all locations.
 
 **Minimum Order Subtotal:** Hide PublicSquare as a payment option when the cart subtotal is below this amount. Leave blank for no minimum.
 
 **Maximum Order Subtotal:** Hide PublicSquare when the cart subtotal is above this amount. Leave blank for no maximum.
 
-### Custom Content
+### Custom Messages
+
+![](/img/publicsquare-messages.webp)
 
 **Thank-You Article:** Optional Joomla article to display on the order confirmation page after a successful payment.
 
@@ -178,9 +186,11 @@ If the status you want is not listed in a dropdown, you can create a new one by 
 
 ### Dashboard Icon
 
+![](/img/publicsquare-icon.webp)
+
 **Show Dashboard Icon:** Add a quick-access icon for this plugin to the J2Commerce dashboard.
 
-**Dashboard Icon Label:** Label for the icon. Defaults to "PublicSquare Payment" if left blank. Only shown when **Show Dashboard Icon** is enabled.
+- **Icon Label:** Label for the icon. Defaults to "PublicSquare Payment" if left blank. Only shown when **Show Dashboard Icon** is enabled.
 
 ### Debug Mode
 
