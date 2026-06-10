@@ -203,12 +203,6 @@ Available subtemplates: **Bootstrap 5** and **UIkit**. Leave blank to use the de
 
 ![](/img/kustom-config3.webp)
 
-:::info
-
-**NOTE**: If the order status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
-
-:::
-
 :::tip
 
 **Tip**: If you want refunded or voided orders to move to a specific status (e.g., "Cancelled" or "Refunded"), enable the relevant toggle and select the desired status. If left disabled, only the transaction record is updated — the order status stays unchanged.
@@ -236,6 +230,14 @@ Set this to whichever status makes sense for your workflow. A common choice is *
 **Refund Order Status:** The status to set when a full refund is processed (shown when Change Status on Refund is )
 
 **Partial Refund Order Status:** The status to set when a partial refund is processed (shown when Change Status on Refund is '**Yes**')
+
+:::info
+
+**NOTE**: If the order status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Order Status View
 

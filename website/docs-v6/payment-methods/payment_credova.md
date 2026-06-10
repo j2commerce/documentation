@@ -80,13 +80,15 @@ The plugin uses the production credentials when **Use Sandbox** is **No**, and t
 
 ### Order Status
 
+**Order Status After Payment:** The order status to set when Credova returns a **Signed** (approved) result. Most stores use **Confirmed** or **Processing** here.
+
 :::info
 
 NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
 
 :::
 
-**Order Status After Payment:** The order status to set when Credova returns a **Signed** (approved) result. Most stores use **Confirmed** or **Processing** here.
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge
 

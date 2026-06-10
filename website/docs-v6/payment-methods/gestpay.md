@@ -99,12 +99,6 @@ In your Joomla admin, go to **J2Commerce** -> **Payments** -> **Payment Methods*
 
 ### Order status
 
-:::info
-
-NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
-
-:::
-
 These settings control which J2Commerce order status is applied for each payment outcome.
 
 | Field                        | Description                                                                                            | Default   |
@@ -112,6 +106,14 @@ These settings control which J2Commerce order status is applied for each payment
 | **Confirmed Payment Status** | Applied when GestPay returns `TransactionResult = OK` (payment accepted).                              | Confirmed |
 | **Pending Payment Status**   | Applied when GestPay returns `TransactionResult = XX` (payment suspended or under review by the bank). | Pending   |
 | **Failed Payment Status**    | Applied when payment is declined, an error code is returned, or GestPay returns `KO`.                  | Failed    |
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Optional surcharge
 

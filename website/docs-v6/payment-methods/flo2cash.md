@@ -88,6 +88,14 @@ These fields control what order status J2Commerce sets after Flo2Cash responds.
 
 The defaults work well for most stores. Change them only if your store uses custom order statuses.
 
+:::tip
+
+If the status you want is not listed in a dropdown, create a new one first by going to **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
+
 ### Step 6: Save and Test
 
 1. Click **Save** in the toolbar.

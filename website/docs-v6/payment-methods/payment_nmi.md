@@ -19,24 +19,6 @@ You can choose to charge cards immediately at checkout or authorize them first a
 - An NMI merchant account with API access enabled
 - Your store must be accessible over **HTTPS** — NMI's Collect.js will not load over an insecure connection
 
-## Purchase and Download
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com) -> **Apps**
-
-**Step 2:** Locate the **NMI Payment** plugin -> click **View Details** -> **Add to Cart** -> **Checkout**
-
-**Step 3:** Go to **My Downloads** under your account profile (top-right corner) -> find **NMI Payment** -> click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file
-
-## Install the Plugin
-
-1. In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
-2. Upload the `payment_nmi.zip` package file.
-3. The plugin installs and enables automatically.
-
-<!-- SCREENSHOT: System > Install > Extensions upload screen with payment_nmi.zip selected -->
-
 ## Get Your NMI API Keys
 
 Before configuring the plugin you need two keys from your NMI account. These are different in purpose:
@@ -52,6 +34,48 @@ To find them:
 
 Keep a separate set of sandbox keys (for testing) and live keys (for real transactions) — the plugin has dedicated fields for each.
 
+## Purchase and Download
+
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com) -> **Apps**
+
+**Step 2:** Locate the **NMI Payment** plugin -> click **View Details** -> **Add to Cart** -> **Checkout**
+
+**Step 3:** Go to **My Downloads** under your account profile (top-right corner) -> find **NMI Payment** -> click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file
+
+## Install the App
+
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
+
+Upload the `payment_nmi.zip` ZIP file or use the Install from URL option.
+
+![](/img/install.webp)
+
+## Enable the App
+
+The plugin installs and enables itself automatically. No separate enable step is needed. However, it's important to know where to go to enable or disable it in the future .
+
+There are **two** ways to reach the Apps list.
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![](/img/gift-wrap-apps.webp)
+
+To help you narrow down the list, you can do a search for **NMI Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/shipstation-enable1.webp)
+
+## Configure the Plugin
+
+:::tip
+
+**Helpful tip:** Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+
+:::
+
 ## Configure the Plugin
 
 1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
@@ -61,105 +85,113 @@ Keep a separate set of sandbox keys (for testing) and live keys (for real transa
 
 ### Basic Settings
 
-| Field | What it does | Default |
-|-------|-------------|---------|
-| **Display Name** | The label shown to shoppers at checkout (e.g., "Credit/Debit Card"). | `Credit/Debit Card` |
-| **Display Image** | An optional logo shown at checkout alongside the display name. | — |
-| **Transaction Type** | **Sale (Authorize + Capture)** charges the card immediately when the order is placed. **Authorize Only** reserves the funds without collecting them — you capture manually from the order screen later. | `Sale` |
-| **Sandbox / Test Mode** | When enabled, all transactions go to sandbox.nmi.com. No real money moves. Switch this off only when you are ready to go live. | `Yes` |
+| Field                   | What it does                                                                                                                                                                                            | Default             |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| **Display Name**        | The label shown to shoppers at checkout (e.g., "Credit/Debit Card").                                                                                                                                    | `Credit/Debit Card` |
+| **Display Image**       | An optional logo shown at checkout alongside the display name.                                                                                                                                          | —                   |
+| **Transaction Type**    | **Sale (Authorize + Capture)** charges the card immediately when the order is placed. **Authorize Only** reserves the funds without collecting them — you capture manually from the order screen later. | `Sale`              |
+| **Sandbox / Test Mode** | When enabled, all transactions go to sandbox.nmi.com. No real money moves. Switch this off only when you are ready to go live.                                                                          | `Yes`               |
 
 ### Live Credentials
 
 These fields appear when **Sandbox** is set to **No**.
 
-| Field | What it does |
-|-------|-------------|
-| **Live Security Key** | Your NMI private security key for the live environment. Server-side only — never exposed to shoppers. |
-| **Live Tokenization Key** | Your NMI public tokenization key for the live environment. Used by Collect.js in the shopper's browser. |
+| Field                        | What it does                                                                                                                                                                                                                      |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Live Security Key**        | Your NMI private security key for the live environment. Server-side only — never exposed to shoppers.                                                                                                                             |
+| **Live Tokenization Key**    | Your NMI public tokenization key for the live environment. Used by Collect.js in the shopper's browser.                                                                                                                           |
 | **Live Webhook Signing Key** | Your NMI webhook signing key for the live environment (found under **Settings** -> **Webhooks** in your NMI portal). Used to verify that webhook notifications are genuinely from NMI. Leave blank if you are not using webhooks. |
 
 ### Sandbox Credentials
 
 These fields appear when **Sandbox** is set to **Yes**. They come pre-filled with verified J2Commerce test keys so you can start testing right away without needing your own sandbox account.
 
-| Field | What it does |
-|-------|-------------|
-| **Sandbox Security Key** | Pre-filled with a working NMI test security key. |
-| **Sandbox Tokenization Key** | Pre-filled with a working NMI test tokenization key. |
+| Field                           | What it does                                                      |
+| ------------------------------- | ----------------------------------------------------------------- |
+| **Sandbox Security Key**        | Pre-filled with a working NMI test security key.                  |
+| **Sandbox Tokenization Key**    | Pre-filled with a working NMI test tokenization key.              |
 | **Sandbox Webhook Signing Key** | Leave blank unless you are specifically testing webhook delivery. |
 
 ### Saved Cards
 
-| Field | What it does | Default |
-|-------|-------------|---------|
-| **Allow Saved Cards** | Let logged-in customers save their card via the NMI Customer Vault for faster future purchases and automatic subscription renewals. Guests cannot save cards. | `Yes` |
+| Field                 | What it does                                                                                                                                                  | Default |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Allow Saved Cards** | Let logged-in customers save their card via the NMI Customer Vault for faster future purchases and automatic subscription renewals. Guests cannot save cards. | `Yes`   |
 
 ### Layout
 
-| Field | What it does |
-|-------|-------------|
+| Field           | What it does                                                                                                                                            |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Subtemplate** | Choose between the **Bootstrap 5** layout (default for most themes) and the **UIkit** layout. Select the one that matches your active J2Commerce theme. |
 
 ### Order Status Settings
 
-| Field | What it does | Default |
-|-------|-------------|---------|
-| **Order Status (on payment)** | The status applied to the order after a successful payment. | `Confirmed` |
-| **Authorized Status** | The status applied when a payment is authorized but not yet captured (only appears when **Transaction Type** is set to **Authorize Only**). | `Confirmed` |
-| **Change Status on Refund** | When enabled, the order status changes automatically when you issue a refund. | `No` |
-| **Refund Order Status** | The status to set on refund. Only visible when **Change Status on Refund** is enabled. | — |
-| **Change Status on Cancel** | When enabled, the order status changes automatically when you void or cancel a payment. | `No` |
-| **Cancel Order Status** | The status to set on cancel/void. Only visible when **Change Status on Cancel** is enabled. | — |
+| Field                         | What it does                                                                                                                                | Default     |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| **Order Status (on payment)** | The status applied to the order after a successful payment.                                                                                 | `Confirmed` |
+| **Authorized Status**         | The status applied when a payment is authorized but not yet captured (only appears when **Transaction Type** is set to **Authorize Only**). | `Confirmed` |
+| **Change Status on Refund**   | When enabled, the order status changes automatically when you issue a refund.                                                               | `No`        |
+| **Refund Order Status**       | The status to set on refund. Only visible when **Change Status on Refund** is enabled.                                                      | —           |
+| **Change Status on Cancel**   | When enabled, the order status changes automatically when you void or cancel a payment.                                                     | `No`        |
+| **Cancel Order Status**       | The status to set on cancel/void. Only visible when **Change Status on Cancel** is enabled.                                                 | —           |
+
+:::tip
+
+If the status you want is not listed in a dropdown, create a new one first by going to **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge
 
 Add an optional surcharge for using this payment method. Leave all three fields blank if you do not want to add one.
 
-| Field | What it does |
-|-------|-------------|
-| **Surcharge Name** | Label shown to the customer (e.g., "Card processing fee"). |
-| **Surcharge Percent** | A percentage added to the order subtotal (e.g., `1.5` for 1.5%). |
-| **Surcharge Fixed Amount** | A fixed amount added to the order (e.g., `0.30` for 30 cents). |
-| **Surcharge Tax Class** | Select a tax profile if the surcharge is taxable in your jurisdiction. |
+| Field                      | What it does                                                           |
+| -------------------------- | ---------------------------------------------------------------------- |
+| **Surcharge Name**         | Label shown to the customer (e.g., "Card processing fee").             |
+| **Surcharge Percent**      | A percentage added to the order subtotal (e.g., `1.5` for 1.5%).       |
+| **Surcharge Fixed Amount** | A fixed amount added to the order (e.g., `0.30` for 30 cents).         |
+| **Surcharge Tax Class**    | Select a tax profile if the surcharge is taxable in your jurisdiction. |
 
 ### Availability Restrictions
 
-| Field | What it does |
-|-------|-------------|
+| Field                   | What it does                                                                                                       |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | **Geozone Restriction** | Limit this payment method to customers in a specific geozone (country/region). Leave blank to allow all locations. |
-| **Minimum Subtotal** | Hide this method if the cart total falls below this amount. Leave blank for no minimum. |
-| **Maximum Subtotal** | Hide this method if the cart total exceeds this amount. Leave `-1` or leave blank for no maximum. |
+| **Minimum Subtotal**    | Hide this method if the cart total falls below this amount. Leave blank for no minimum.                            |
+| **Maximum Subtotal**    | Hide this method if the cart total exceeds this amount. Leave `-1` or leave blank for no maximum.                  |
 
 ### Custom Messages
 
 These optional text areas let you display short HTML messages to the customer at specific points during checkout.
 
-| Field | When it appears |
-|-------|----------------|
-| **On Selection** | When the customer selects NMI as their payment method. |
-| **Before Payment** | Just before the payment form loads. |
-| **After Payment** | On the confirmation page after a successful payment. |
-| **On Error** | When a payment fails. |
-| **On Cancel** | When the customer cancels. |
+| Field              | When it appears                                        |
+| ------------------ | ------------------------------------------------------ |
+| **On Selection**   | When the customer selects NMI as their payment method. |
+| **Before Payment** | Just before the payment form loads.                    |
+| **After Payment**  | On the confirmation page after a successful payment.   |
+| **On Error**       | When a payment fails.                                  |
+| **On Cancel**      | When the customer cancels.                             |
 
 ### Thank You Article
 
-| Field | What it does |
-|-------|-------------|
+| Field                         | What it does                                                                                                                              |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | **Thank You Message Article** | Select a Joomla article to display on the post-payment confirmation page. Optional — leave blank to use the default confirmation message. |
 
 ### Dashboard Icon
 
-| Field | What it does | Default |
-|-------|-------------|---------|
-| **Show Dashboard Icon** | Add a quick-access icon for this plugin to the J2Commerce dashboard. | `No` |
-| **Dashboard Icon Label** | Custom label for the icon. | Plugin name |
+| Field                    | What it does                                                         | Default     |
+| ------------------------ | -------------------------------------------------------------------- | ----------- |
+| **Show Dashboard Icon**  | Add a quick-access icon for this plugin to the J2Commerce dashboard. | `No`        |
+| **Dashboard Icon Label** | Custom label for the icon.                                           | Plugin name |
 
 ### Debug Mode
 
-| Field | What it does | Default |
-|-------|-------------|---------|
-| **Debug Mode** | Log all API requests and responses to `payment_nmi.php` in your Joomla log directory. Useful when diagnosing problems. **Do not enable on a live site** — turn it off once your issue is resolved. | `No` |
+| Field          | What it does                                                                                                                                                                                       | Default |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Debug Mode** | Log all API requests and responses to `payment_nmi.php` in your Joomla log directory. Useful when diagnosing problems. **Do not enable on a live site** — turn it off once your issue is resolved. | `No`    |
 
 ## Checkout Experience
 
@@ -200,8 +232,7 @@ NMI can send webhook notifications to your site when a transaction status change
 To set up webhooks:
 
 1. Log in to your NMI portal -> **Settings** -> **Webhooks**.
-2. Add a new webhook endpoint pointing to:
-   `https://yoursite.com/index.php?option=com_ajax&plugin=payment_nmi&group=j2commerce&format=raw&task=webhook`
+2. Add a new webhook endpoint pointing to: `https://yoursite.com/index.php?option=com_ajax&plugin=payment_nmi&group=j2commerce&format=raw&task=webhook`
 3. Copy the **Webhook Signing Key** that NMI generates and paste it into the matching field in the plugin settings (**Live Webhook Signing Key** or **Sandbox Webhook Signing Key**).
 
 The plugin verifies every incoming webhook using HMAC-SHA256 signature validation to ensure it genuinely comes from NMI.
@@ -218,12 +249,12 @@ The plugin comes pre-filled with working sandbox credentials, so you can test im
 
 **Step 2:** Use a standard NMI sandbox test card at checkout:
 
-| Card Number | Network | Result |
-|-------------|---------|--------|
-| `4111111111111111` | Visa | Approved |
-| `4111111111111111` (amount `2.00`) | Visa | Declined (use a different amount or card to test decline) |
-| `5431111111111111` | Mastercard | Approved |
-| `371449635398431` | Amex | Approved |
+| Card Number                        | Network    | Result                                                    |
+| ---------------------------------- | ---------- | --------------------------------------------------------- |
+| `4111111111111111`                 | Visa       | Approved                                                  |
+| `4111111111111111` (amount `2.00`) | Visa       | Declined (use a different amount or card to test decline) |
+| `5431111111111111`                 | Mastercard | Approved                                                  |
+| `371449635398431`                  | Amex       | Approved                                                  |
 
 Use any future expiry date and any three-digit CVV. The sandbox does not process real money.
 
@@ -236,6 +267,7 @@ Use any future expiry date and any three-digit CVV. The sandbox does not process
 **Cause:** The plugin is disabled, the security key is blank, or a minimum/maximum subtotal restriction is hiding it.
 
 **Solution:**
+
 1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and confirm the NMI plugin is enabled (green checkmark).
 2. Check that the correct **Security Key** and **Tokenization Key** are filled in for the active environment (sandbox or live).
 3. Review **Minimum Subtotal** and **Maximum Subtotal** settings — if your cart total falls outside those limits, the method is hidden by design.
@@ -246,6 +278,7 @@ Use any future expiry date and any three-digit CVV. The sandbox does not process
 **Cause:** The tokenization key is missing or incorrect, or the store is not on HTTPS.
 
 **Solution:**
+
 1. Confirm **Live Tokenization Key** (or **Sandbox Tokenization Key**) is filled in and correct.
 2. Verify your store loads over `https://` — Collect.js will not initialize over an unencrypted connection.
 3. Check the browser console for JavaScript errors. A "Failed to load resource" error for the Collect.js script indicates a key or HTTPS problem.
@@ -255,6 +288,7 @@ Use any future expiry date and any three-digit CVV. The sandbox does not process
 **Cause:** The security key field is blank for the active environment.
 
 **Solution:**
+
 1. Go to the NMI plugin settings.
 2. If **Sandbox** is **Yes**, fill in **Sandbox Security Key**. If **Sandbox** is **No**, fill in **Live Security Key**.
 3. Save the settings and test again.
@@ -264,6 +298,7 @@ Use any future expiry date and any three-digit CVV. The sandbox does not process
 **Cause:** Using a sandbox key against the live NMI host (`secure.nmi.com`) or a live key against the sandbox host (`sandbox.nmi.com`). The two environments do not share keys.
 
 **Solution:**
+
 1. Confirm the **Sandbox / Test Mode** toggle matches the keys you are using.
 2. Sandbox keys only work when Sandbox is **Yes**. Live keys only work when Sandbox is **No**.
 
@@ -272,6 +307,7 @@ Use any future expiry date and any three-digit CVV. The sandbox does not process
 **Cause:** Authorized payments must be captured manually from the order screen.
 
 **Solution:**
+
 1. Go to **J2Commerce** -> **Sales** -> **Orders** and open the order.
 2. Find the NMI payment panel and click **Capture Payment**.
 3. Note that authorizations expire after a number of days (typically 7) — if the authorization has lapsed, you will need to ask the customer to place the order again.
@@ -281,6 +317,7 @@ Use any future expiry date and any three-digit CVV. The sandbox does not process
 **Cause:** The webhook endpoint URL is not registered in your NMI portal, or the signing key is incorrect.
 
 **Solution:**
+
 1. Log in to the NMI portal -> **Settings** -> **Webhooks** and confirm the endpoint URL is correct.
 2. Copy the signing key from NMI and paste it into **Live Webhook Signing Key** (or **Sandbox Webhook Signing Key**) in the plugin settings.
 3. Enable **Debug Mode** temporarily and check `payment_nmi.php` in your Joomla log directory for incoming webhook activity.

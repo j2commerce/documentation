@@ -30,12 +30,12 @@ This plugin is a separate add-on available from the [J2Commerce website](https:/
 
 You need a Worldline Connect merchant account. Contact Worldline or a local acquirer to open one, then log into the Worldline Client Portal. You will need four pieces of information:
 
-| Credential | Where to find it | What it is |
-|---|---|---|
-| **Merchant ID** | Client Portal home screen | A numeric identifier for your merchant account (for example, 9000000765) |
-| **API Key ID** | Client Portal -> **Configuration** -> **API Keys** | A short identifier that tells Worldline which key you are using to sign requests |
-| **API Secret** | Client Portal -> **Configuration** -> **API Keys** (shown once at creation) | A long secret used to sign every request your server sends to Worldline — never share this publicly |
-| **Webhook Secret** | Client Portal -> **Configuration** -> **Webhooks** | A key Worldline uses to sign the payment notifications it sends back to your store, so you can verify they are genuine |
+| Credential         | Where to find it                                                            | What it is                                                                                                             |
+| ------------------ | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Merchant ID**    | Client Portal home screen                                                   | A numeric identifier for your merchant account (for example, 9000000765)                                               |
+| **API Key ID**     | Client Portal -> **Configuration** -> **API Keys**                          | A short identifier that tells Worldline which key you are using to sign requests                                       |
+| **API Secret**     | Client Portal -> **Configuration** -> **API Keys** (shown once at creation) | A long secret used to sign every request your server sends to Worldline — never share this publicly                    |
+| **Webhook Secret** | Client Portal -> **Configuration** -> **Webhooks**                          | A key Worldline uses to sign the payment notifications it sends back to your store, so you can verify they are genuine |
 
 Worldline provides a separate sandbox environment for testing. The sandbox has its own set of credentials — find them in the Client Portal under the sandbox account.
 
@@ -77,10 +77,10 @@ Click the **Toggle Inline Help** button in the toolbar and a description will ap
 
 ### Display Settings
 
-| Field | Description | Default |
-|---|---|---|
-| **Display Name** | The payment option name shown to customers at checkout (for example, "Pay by Card" or "Worldline") | Worldline |
-| **Display Image** | Upload a logo or card icons to show next to the payment option | — |
+| Field             | Description                                                                                        | Default   |
+| ----------------- | -------------------------------------------------------------------------------------------------- | --------- |
+| **Display Name**  | The payment option name shown to customers at checkout (for example, "Pay by Card" or "Worldline") | Worldline |
+| **Display Image** | Upload a logo or card icons to show next to the payment option                                     | —         |
 
 ### Test Mode (Sandbox)
 
@@ -100,28 +100,26 @@ The credentials section changes depending on whether Sandbox Mode is on or off. 
 
 **When Sandbox Mode is off (live):**
 
-| Field | Description |
-|---|---|
-| **Live Merchant ID** | Your numeric live merchant ID from the Worldline Client Portal |
-| **Live API Key ID** | Your live API Key ID — the short identifier shown in the portal |
-| **Live API Secret** | Your live API secret — the long signing key shown once at creation |
-| **Live Webhook Secret** | Your live webhook secret from the portal's Webhooks section |
+| Field                   | Description                                                        |
+| ----------------------- | ------------------------------------------------------------------ |
+| **Live Merchant ID**    | Your numeric live merchant ID from the Worldline Client Portal     |
+| **Live API Key ID**     | Your live API Key ID — the short identifier shown in the portal    |
+| **Live API Secret**     | Your live API secret — the long signing key shown once at creation |
+| **Live Webhook Secret** | Your live webhook secret from the portal's Webhooks section        |
 
 **When Sandbox Mode is on (test):**
 
 The same four fields appear, prefixed with "Sandbox", and accept your test-environment credentials.
 
 :::warning
-
 Never share your **API Secret** or **Webhook Secret** publicly. These keys must stay on your server only and should never be pasted into any code that runs in the customer's browser.
-
 :::
 
 ### Integration Mode
 
-| Option | What it does |
-|---|---|
-| **Hosted Checkout (redirect)** | The customer is redirected to Worldline's secure MyCheckout hosted page to enter their payment details. This is the default and the lowest-compliance option (your store never sees card data). |
+| Option                             | What it does                                                                                                                                                                                                                                                                    |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Hosted Checkout (redirect)**     | The customer is redirected to Worldline's secure MyCheckout hosted page to enter their payment details. This is the default and the lowest-compliance option (your store never sees card data).                                                                                 |
 | **On-site Card Form (Client SDK)** | A card form appears directly on your checkout page. Card data is encrypted in the customer's browser by the Worldline Client SDK before being sent to Worldline — your server never receives raw card numbers. This option keeps the customer on your site throughout checkout. |
 
 Most stores should use **Hosted Checkout**. The on-site card form requires an additional Worldline account configuration step (Sessions must be enabled) and provides a more seamless experience at the cost of a slightly higher compliance scope.
@@ -132,10 +130,10 @@ This field only appears when **Integration Mode** is set to **Hosted Checkout**.
 
 ### Payment Capture
 
-| Option | What it does |
-|---|---|
-| **Auto Capture (recommended)** | Charges the customer immediately when the payment is authorized. This is the right choice for most stores. |
-| **Authorize Only** | Reserves the funds on the customer's card but does not charge them yet. You then capture the payment manually from the admin order page when you are ready to ship. |
+| Option                         | What it does                                                                                                                                                        |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Auto Capture (recommended)** | Charges the customer immediately when the payment is authorized. This is the right choice for most stores.                                                          |
+| **Authorize Only**             | Reserves the funds on the customer's card but does not charge them yet. You then capture the payment manually from the admin order page when you are ready to ship. |
 
 ### Allow Saved Payment Methods
 
@@ -153,36 +151,44 @@ If your Joomla template is built on the UIkit framework, choose **UIkit** from t
 
 ### Order Statuses
 
-| Field | Description | Default |
-|---|---|---|
-| **Successful Payment Status** | The order status applied when a payment is confirmed and captured | Confirmed |
-| **Authorized Status** | The order status applied when a payment is authorized but not yet captured (only visible in Authorize Only mode) | Confirmed |
-| **Change Status on Refund** | When enabled, processing a refund automatically moves the order to a status you choose | No |
-| **Refund Order Status** | The order status to set after a successful refund (only visible when the option above is enabled) | — |
-| **Change Status on Cancel** | When enabled, cancelling a payment authorization automatically moves the order to a status you choose | No |
-| **Cancel Order Status** | The order status to set after a successful cancellation (only visible when the option above is enabled) | — |
-| **Failed Payment Status** | The order status applied when a payment fails or is rejected | Failed |
+| Field                         | Description                                                                                                      | Default   |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------- | --------- |
+| **Successful Payment Status** | The order status applied when a payment is confirmed and captured                                                | Confirmed |
+| **Authorized Status**         | The order status applied when a payment is authorized but not yet captured (only visible in Authorize Only mode) | Confirmed |
+| **Change Status on Refund**   | When enabled, processing a refund automatically moves the order to a status you choose                           | No        |
+| **Refund Order Status**       | The order status to set after a successful refund (only visible when the option above is enabled)                | —         |
+| **Change Status on Cancel**   | When enabled, cancelling a payment authorization automatically moves the order to a status you choose            | No        |
+| **Cancel Order Status**       | The order status to set after a successful cancellation (only visible when the option above is enabled)          | —         |
+| **Failed Payment Status**     | The order status applied when a payment fails or is rejected                                                     | Failed    |
+
+:::tip
+
+If the status you want is not listed in a dropdown, create a new one first by going to **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge / Payment Fee
 
 If Worldline charges you a processing fee and you want to pass part or all of it on to customers, fill in these fields:
 
-| Field | Description |
-|---|---|
-| **Surcharge Label** | The label shown to customers on the order total (for example, "Card processing fee") |
-| **Surcharge Percent** | A percentage of the order total added as a fee (for example, `2` for 2%) |
-| **Surcharge Fixed Amount** | A flat fee added to every order (for example, `0.50` for $0.50) |
-| **Surcharge Tax Class** | Select a tax profile if the fee itself should be taxed |
+| Field                      | Description                                                                          |
+| -------------------------- | ------------------------------------------------------------------------------------ |
+| **Surcharge Label**        | The label shown to customers on the order total (for example, "Card processing fee") |
+| **Surcharge Percent**      | A percentage of the order total added as a fee (for example, `2` for 2%)             |
+| **Surcharge Fixed Amount** | A flat fee added to every order (for example, `0.50` for $0.50)                      |
+| **Surcharge Tax Class**    | Select a tax profile if the fee itself should be taxed                               |
 
 Leave all fields blank if you do not want to add a surcharge.
 
 ### Availability Restrictions
 
-| Field | Description |
-|---|---|
+| Field                | Description                                                                                                                           |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | **Allowed Geo Zone** | Only show this payment method to customers whose billing address falls inside a specific geozone. Leave blank to show it to everyone. |
-| **Minimum Subtotal** | Hide this payment method if the order subtotal is below this amount. Leave blank for no minimum. |
-| **Maximum Subtotal** | Hide this payment method if the order subtotal is above this amount. Leave blank for no maximum. |
+| **Minimum Subtotal** | Hide this payment method if the order subtotal is below this amount. Leave blank for no minimum.                                      |
+| **Maximum Subtotal** | Hide this payment method if the order subtotal is above this amount. Leave blank for no maximum.                                      |
 
 :::caution
 
@@ -198,26 +204,26 @@ Use the **Post-Payment Article** field to select a Joomla article that appears o
 
 These optional text fields let you add HTML messages at specific moments during checkout:
 
-| Field | When it appears |
-|---|---|
-| **Text on Selection** | When the customer selects Worldline as their payment method |
-| **Text Before Payment** | Above the Place Order button, inside the payment form area |
-| **Text After Payment** | On the order confirmation page after a successful payment |
-| **Text on Error** | When a payment attempt fails |
-| **Text on Cancel** | When the customer cancels the payment |
+| Field                   | When it appears                                             |
+| ----------------------- | ----------------------------------------------------------- |
+| **Text on Selection**   | When the customer selects Worldline as their payment method |
+| **Text Before Payment** | Above the Place Order button, inside the payment form area  |
+| **Text After Payment**  | On the order confirmation page after a successful payment   |
+| **Text on Error**       | When a payment attempt fails                                |
+| **Text on Cancel**      | When the customer cancels the payment                       |
 
 ### Dashboard Icon
 
-| Field | Description |
-|---|---|
-| **Show Dashboard Icon** | When set to Yes, a quick-access icon appears on the J2Commerce dashboard |
+| Field                    | Description                                                                                 |
+| ------------------------ | ------------------------------------------------------------------------------------------- |
+| **Show Dashboard Icon**  | When set to Yes, a quick-access icon appears on the J2Commerce dashboard                    |
 | **Dashboard Icon Label** | The label displayed under the dashboard icon (only visible when Show Dashboard Icon is Yes) |
 
 ### Debug Mode
 
 Enable **Debug Mode** to write all API requests and responses to a log file (`logs/payment_worldline.php`). This is helpful when diagnosing configuration issues. Always disable Debug Mode on a live store once everything is working, since log files can contain sensitive order information.
 
----
+***
 
 ## What the Customer Sees
 
@@ -246,7 +252,7 @@ In both modes, your store never receives or stores raw card numbers. Worldline h
 
 :::
 
----
+***
 
 ## Managing Payments from the Order Screen
 
@@ -272,7 +278,7 @@ From the order screen you can issue a **full refund** (the entire order amount) 
 
 <!-- SCREENSHOT: Admin order page showing Capture, Cancel, and Refund action buttons -->
 
----
+***
 
 ## Tips
 
@@ -282,7 +288,7 @@ From the order screen you can issue a **full refund** (the entire order amount) 
 - **Enable saved payment methods for subscription stores** — If you sell subscription products, saved methods allow automatic renewal payments without asking the customer to re-enter their details each cycle.
 - **Leave subtotal limits blank if you have no restrictions** — Entering `0` in the Maximum Subtotal field hides the payment method from all orders.
 
----
+***
 
 ## Troubleshooting
 

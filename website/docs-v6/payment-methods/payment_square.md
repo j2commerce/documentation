@@ -181,12 +181,6 @@ When this is enabled, a **Saved Cards** section appears at checkout for returnin
 
 ![](/img/square-config13.webp)
 
-:::info
-
-NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
-
-:::
-
 **Order Status:** The order status is applied after a successful payment. Most stores choose **Confirmed** or **Processing** for paid orders.
 
 ### Refund Settings
@@ -200,6 +194,14 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 **Change Order Status on Void:** Set to **Yes** to automatically update the order status when an authorized payment is voided.
 
 **Void Order Status:** The order status to set when a void is processed (shown when Change Order Status on Void is **Yes**).
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge
 

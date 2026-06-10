@@ -101,12 +101,6 @@ Leave this on **Server B** unless your InterPay account manager has specifically
 
 ### Step 7: Review Order Status
 
-:::info
-
-NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
-
-:::
-
 These three fields control which J2Commerce order status is applied depending on the payment outcome.
 
 | Field                       | Default   | When it is applied                                                                                |
@@ -116,6 +110,14 @@ These three fields control which J2Commerce order status is applied depending on
 | **Failed Status**           | Failed    | InterPay declines or returns an error                                                             |
 
 The defaults work well for most stores. You only need to change these if your store uses custom order statuses.
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Step 8: Save and Test
 

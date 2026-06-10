@@ -32,6 +32,7 @@ Before configuring the plugin you need API keys from the PublicSquare dashboard.
 
 1. Log in to your PublicSquare merchant dashboard.
 2. Locate your API credentials section and note two values for each environment:
+
    - **Secret Key** — used by your server to authorize API calls. Keep this private.
    - **Publishable Key** — used by the card form in the customer's browser. This is safe to expose publicly.
 3. PublicSquare provides separate **Test** and **Live** key pairs. Collect both sets so you can test safely before going live.
@@ -65,7 +66,9 @@ Search for **PublicSquare Payment**, click the **X**, and it will turn into a gr
 Click the **PublicSquare Payment** title to open its settings.
 
 :::tip
+
 Click the **Toggle Inline Help** button at the top of any plugin settings screen to show a description below each field.
+
 :::
 
 ### Appearance
@@ -86,16 +89,16 @@ The credential fields shown depend on whether **Test Mode** is enabled.
 
 **When Test Mode is ON:**
 
-| Field | Description |
-|---|---|
-| **Secret Key (Test)** | Your PublicSquare test secret API key |
+| Field                      | Description                            |
+| -------------------------- | -------------------------------------- |
+| **Secret Key (Test)**      | Your PublicSquare test secret API key  |
 | **Publishable Key (Test)** | Your PublicSquare test publishable key |
 
 **When Test Mode is OFF (live):**
 
-| Field | Description |
-|---|---|
-| **Secret Key (Live)** | Your PublicSquare live secret API key |
+| Field                      | Description                            |
+| -------------------------- | -------------------------------------- |
+| **Secret Key (Live)**      | Your PublicSquare live secret API key  |
 | **Publishable Key (Live)** | Your PublicSquare live publishable key |
 
 <!-- SCREENSHOT: PublicSquare credential fields in test mode -->
@@ -109,7 +112,9 @@ PublicSquare sends real-time notifications to your store when payment events occ
 **Webhook URL:** The plugin displays your store's webhook URL in the settings screen. Copy this URL and register it in your PublicSquare dashboard as the webhook endpoint.
 
 :::info
+
 If your site runs on a local server (localhost), the webhook URL field shows a warning instead of a URL. Webhooks require a publicly reachable HTTPS URL. Deploy to a live server before registering the webhook.
+
 :::
 
 The webhook URL format is:
@@ -139,17 +144,21 @@ When enabled, customers see a checkbox at checkout to save their card. On future
 
 ### Order Statuses
 
+| Field                       | Description                                                                               | Default   |
+| --------------------------- | ----------------------------------------------------------------------------------------- | --------- |
+| **Completed Order Status**  | Status applied when payment succeeds                                                      | Confirmed |
+| **Authorized Order Status** | Status applied when payment is authorized but not yet captured (Manual capture mode only) | Confirmed |
+| **Failed Order Status**     | Status applied when payment fails                                                         | Failed    |
+| **Canceled Order Status**   | Status applied when a payment is canceled                                                 | Canceled  |
+| **Refunded Order Status**   | Status applied after a refund is issued                                                   | Refunded  |
+
 :::info
+
 If the status you want is not listed in a dropdown, you can create a new one by going to **J2Commerce** -> **Setup** -> **Order Statuses**.
+
 :::
 
-| Field | Description | Default |
-|---|---|---|
-| **Completed Order Status** | Status applied when payment succeeds | Confirmed |
-| **Authorized Order Status** | Status applied when payment is authorized but not yet captured (Manual capture mode only) | Confirmed |
-| **Failed Order Status** | Status applied when payment fails | Failed |
-| **Canceled Order Status** | Status applied when a payment is canceled | Canceled |
-| **Refunded Order Status** | Status applied after a refund is issued | Refunded |
+![](/img/shipstation-order-status2-1.webp)
 
 ### GeoZone Availability Restrictions
 
@@ -207,7 +216,9 @@ If you set **Capture Method** to **Manual**, payments are authorized but not col
 3. The funds are collected from the customer's card and the order status updates automatically.
 
 :::info
+
 The **Capture Payment** button only appears when the payment is in an authorized state awaiting capture. Once captured, use **Refund** if you need to return funds.
+
 :::
 
 ### Cancel a Payment
@@ -219,7 +230,9 @@ A cancellation voids an authorized payment before it has been captured. Once a p
 3. The authorization is released — the customer is not charged and the hold on their card is removed.
 
 :::info
+
 If the **Cancel Payment** button is not visible, the payment is not in a cancelable state. If funds have already been collected, use **Refund** instead.
+
 :::
 
 ### Issue a Refund

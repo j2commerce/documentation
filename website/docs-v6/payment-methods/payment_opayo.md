@@ -94,10 +94,10 @@ Click the **Toggle Inline Help** button at the top of any plugin settings screen
 
 **Integration Mode:** Controls how the card entry form works.
 
-| Option | What it means | PCI scope |
-|--------|--------------|-----------|
-| **Drop-in Checkout (recommended, SAQ-A)** | Opayo injects its own hosted card fields directly into your checkout page. Card data never passes through your server. | SAQ-A (lowest) |
-| **Own Form (opayo.js, SAQ-A-EP)** | Your checkout page contains the card entry fields, but opayo.js tokenizes the data in the browser before submission. Card data still does not reach your server. | SAQ-A-EP |
+| Option                                    | What it means                                                                                                                                                    | PCI scope      |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| **Drop-in Checkout (recommended, SAQ-A)** | Opayo injects its own hosted card fields directly into your checkout page. Card data never passes through your server.                                           | SAQ-A (lowest) |
+| **Own Form (opayo.js, SAQ-A-EP)**         | Your checkout page contains the card entry fields, but opayo.js tokenizes the data in the browser before submission. Card data still does not reach your server. | SAQ-A-EP       |
 
 The Drop-in mode is recommended for most stores because it gives you the lowest PCI compliance overhead.
 
@@ -105,10 +105,10 @@ The Drop-in mode is recommended for most stores because it gives you the lowest 
 
 **Transaction Type:** Controls whether funds are collected immediately or held for manual release.
 
-| Option | What happens | When to use |
-|--------|-------------|------------|
-| **Payment (Authorize + Capture)** | Funds are reserved and collected from the customer's card in one step at checkout. | Suitable for most stores — goods or digital products dispatched immediately. |
-| **Deferred (Authorize only)** | Funds are reserved on the customer's card at checkout but not collected. You manually capture them from the order admin screen when you are ready to dispatch. | Useful if you want to verify stock or review the order before charging the customer. |
+| Option                            | What happens                                                                                                                                                   | When to use                                                                          |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| **Payment (Authorize + Capture)** | Funds are reserved and collected from the customer's card in one step at checkout.                                                                             | Suitable for most stores — goods or digital products dispatched immediately.         |
+| **Deferred (Authorize only)**     | Funds are reserved on the customer's card at checkout but not collected. You manually capture them from the order admin screen when you are ready to dispatch. | Useful if you want to verify stock or review the order before charging the customer. |
 
 When **Deferred** is selected, an additional **Deferred Authorization Status** setting appears (see Order Statuses below).
 
@@ -150,10 +150,10 @@ These fields are shown when **Sandbox / Test Mode** is **Yes**.
 
 **Apply 3D Secure:** Controls whether 3DS is applied to transactions.
 
-| Option | What it does |
-|--------|-------------|
-| **Use MyOpayo Setting** | Follows whatever 3DS rule you have configured in your Opayo account. This is the default and recommended setting. |
-| **Force 3DS** | Always requires 3DS authentication, even for low-risk transactions that might otherwise be exempt. |
+| Option                               | What it does                                                                                                                                                     |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Use MyOpayo Setting**              | Follows whatever 3DS rule you have configured in your Opayo account. This is the default and recommended setting.                                                |
+| **Force 3DS**                        | Always requires 3DS authentication, even for low-risk transactions that might otherwise be exempt.                                                               |
 | **Disable (SCA exemption required)** | Skips 3DS entirely. Only use this if your account has an active SCA exemption — enabling it without proper exemptions will cause transactions to fail in the EU. |
 
 **3DS Notification Base URL (testing):** Leave this blank in production. If you are testing 3DS on a local development server that is not publicly accessible (e.g., `localhost`), enter the public HTTPS address of a tunnel tool here so Opayo can send the 3DS callback to a reachable URL.
@@ -162,12 +162,12 @@ These fields are shown when **Sandbox / Test Mode** is **Yes**.
 
 **Apply AVS/CVC Check:** Controls address verification (AVS) and card security code (CVC) fraud checks.
 
-| Option | What it does |
-|--------|-------------|
-| **Use MyOpayo Setting** | Uses the fraud check rules configured in your Opayo account. Recommended. |
-| **Force Check** | Always performs AVS/CVC checks. |
-| **Disable** | Skips AVS/CVC checks. |
-| **Force (Ignore Rules)** | Forces checks but ignores any rule-based results (advanced use only). |
+| Option                   | What it does                                                              |
+| ------------------------ | ------------------------------------------------------------------------- |
+| **Use MyOpayo Setting**  | Uses the fraud check rules configured in your Opayo account. Recommended. |
+| **Force Check**          | Always performs AVS/CVC checks.                                           |
+| **Disable**              | Skips AVS/CVC checks.                                                     |
+| **Force (Ignore Rules)** | Forces checks but ignores any rule-based results (advanced use only).     |
 
 ### Saved Cards
 
@@ -183,14 +183,22 @@ Set this to **No** if you do not want to store card tokens or if you do not use 
 
 These settings control the order status J2Commerce assigns at each stage of the payment lifecycle.
 
-| Setting | What it controls | Default |
-|---------|-----------------|---------|
-| **Order Status (on payment)** | Status applied when a Payment transaction is confirmed successfully. | Confirmed (1) |
+| Setting                           | What it controls                                                                                                                  | Default       |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| **Order Status (on payment)**     | Status applied when a Payment transaction is confirmed successfully.                                                              | Confirmed (1) |
 | **Deferred Authorization Status** | Status applied when a Deferred payment is authorised but not yet captured. Only visible when Transaction Type is set to Deferred. | Confirmed (1) |
-| **Change Status on Refund** | Toggle on to update the order status automatically when you issue a refund. | No |
-| **Refund Order Status** | Status to set when a refund is processed (only shown when Change Status on Refund is Yes). | — |
-| **Change Status on Void/Cancel** | Toggle on to update the order status automatically when you void or abort a payment. | No |
-| **Cancel Order Status** | Status to set when a payment is voided or aborted (only shown when Change Status on Void/Cancel is Yes). | — |
+| **Change Status on Refund**       | Toggle on to update the order status automatically when you issue a refund.                                                       | No            |
+| **Refund Order Status**           | Status to set when a refund is processed (only shown when Change Status on Refund is Yes).                                        | —             |
+| **Change Status on Void/Cancel**  | Toggle on to update the order status automatically when you void or abort a payment.                                              | No            |
+| **Cancel Order Status**           | Status to set when a payment is voided or aborted (only shown when Change Status on Void/Cancel is Yes).                          | —             |
+
+:::tip
+
+If the status you want is not listed in a dropdown, create a new one first by going to **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge
 

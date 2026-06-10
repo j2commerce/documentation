@@ -92,17 +92,19 @@ When test mode is enabled, you can also override any gateway credential with a s
 
 ### Order statuses
 
+| Field                        | Default   | Description                                                                                                                                               |
+| ---------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Confirmed Payment Status** | Confirmed | Applied when ePDQ returns STATUS 5 (Authorized) or STATUS 9 (Payment Requested).                                                                          |
+| **Pending Payment Status**   | Pending   | Applied when ePDQ returns STATUS 51 (Authorization Waiting) or STATUS 91 (Payment Processing). The customer has been charged but confirmation is delayed. |
+| **Failed Payment Status**    | Failed    | Applied when ePDQ returns any other status, including declined and cancelled transactions.                                                                |
+
 :::info
 
 NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
 
 :::
 
-| Field                        | Default   | Description                                                                                                                                               |
-| ---------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Confirmed Payment Status** | Confirmed | Applied when ePDQ returns STATUS 5 (Authorized) or STATUS 9 (Payment Requested).                                                                          |
-| **Pending Payment Status**   | Pending   | Applied when ePDQ returns STATUS 51 (Authorization Waiting) or STATUS 91 (Payment Processing). The customer has been charged but confirmation is delayed. |
-| **Failed Payment Status**    | Failed    | Applied when ePDQ returns any other status, including declined and cancelled transactions.                                                                |
+![](/img/shipstation-order-status2-1.webp)
 
 ### Email notifications
 

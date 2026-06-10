@@ -17,7 +17,9 @@ The plugin operates in two modes depending on your Mercury plan:
 Because both modes involve bank transfers, **orders are not confirmed in real time**. ACH transfers typically take 2 to 3 business days to settle. The plugin places orders in a pending status immediately at checkout and updates them to paid once the funds arrive.
 
 :::info
+
 Mercury is a US-only banking service. This plugin is intended for US-based stores. Your Mercury account must be set up and active before you configure the plugin.
+
 :::
 
 ## Requirements
@@ -51,7 +53,9 @@ Before configuring the plugin, generate an API token in your Mercury dashboard.
 For sandbox testing, use the Mercury sandbox dashboard at [app.mercury.com](https://app.mercury.com) (sandbox tokens begin with `mercury_sandbox_wma_`).
 
 :::tip
+
 Save your API token to a secure location before leaving the Mercury settings page. You will not be able to view the full token again after closing the page.
+
 :::
 
 ## Install the Plugin
@@ -81,7 +85,9 @@ Search for **Mercury ACH Bank Payment**, click the **X** next to it, and it turn
 Click **Mercury ACH Bank Payment** to open the settings screen.
 
 :::tip
+
 Click the **Toggle Inline Help** button at the top of any plugin settings screen to show a description below each field.
+
 :::
 
 <!-- SCREENSHOT: Plugin settings screen with Toggle Inline Help button highlighted -->
@@ -100,12 +106,12 @@ When Sandbox Mode is on, the **API Token (Sandbox)** and **Webhook Secret (Sandb
 
 ### Credentials
 
-| Field | When shown | Description |
-|-------|-----------|-------------|
-| **API Token (Live)** | Sandbox Mode off | Your Mercury production API token. Must include the `secret-token:` prefix. |
-| **Webhook Secret (Live)** | Sandbox Mode off | The signing secret from your Mercury webhook endpoint. Used to verify incoming `transaction.created` events. Leave blank to skip webhook verification. |
-| **API Token (Sandbox)** | Sandbox Mode on | Your Mercury sandbox API token. |
-| **Webhook Secret (Sandbox)** | Sandbox Mode on | The signing secret for your sandbox webhook endpoint. |
+| Field                        | When shown       | Description                                                                                                                                            |
+| ---------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **API Token (Live)**         | Sandbox Mode off | Your Mercury production API token. Must include the `secret-token:` prefix.                                                                            |
+| **Webhook Secret (Live)**    | Sandbox Mode off | The signing secret from your Mercury webhook endpoint. Used to verify incoming `transaction.created` events. Leave blank to skip webhook verification. |
+| **API Token (Sandbox)**      | Sandbox Mode on  | Your Mercury sandbox API token.                                                                                                                        |
+| **Webhook Secret (Sandbox)** | Sandbox Mode on  | The signing secret for your sandbox webhook endpoint.                                                                                                  |
 
 ### Destination Account
 
@@ -119,11 +125,11 @@ Enter and save your API token first, then return to this field — the dropdown 
 
 **ACH Mode:** Controls how the payment is processed at checkout. Three options are available:
 
-| Option | Description |
-|--------|-------------|
+| Option                                              | Description                                                                                                                                                                              |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Auto (Invoice if available, Reconcile fallback)** | Attempts Invoice mode first. If Mercury reports that AR (Accounts Receivable) is not available on your plan, the plugin falls back to Reconcile mode automatically. This is the default. |
-| **Hosted Invoice (paid Mercury plan)** | Always uses Invoice mode. A Mercury-hosted payment page is created for each order. Requires a paid Mercury plan with AR enabled. |
-| **Account/Routing Reconcile (free plan)** | Always shows account and routing details to the customer. Works on any Mercury plan. |
+| **Hosted Invoice (paid Mercury plan)**              | Always uses Invoice mode. A Mercury-hosted payment page is created for each order. Requires a paid Mercury plan with AR enabled.                                                         |
+| **Account/Routing Reconcile (free plan)**           | Always shows account and routing details to the customer. Works on any Mercury plan.                                                                                                     |
 
 **What does each mode mean for your customers?**
 
@@ -135,11 +141,11 @@ In **Reconcile mode**, the customer sees your account number, routing number, an
 
 These fields appear when **ACH Mode** is set to Hosted Invoice or Auto.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Enable ACH Debit on Invoice** | Allow customers to pay the invoice by ACH bank debit. No Stripe account required. | Yes |
-| **Enable Card Payment on Invoice** | Allow customers to pay the invoice by card. Requires a Stripe account connected to your Mercury organisation. | No |
-| **Invoice Due in (days)** | Number of days from today until the invoice is due. | `7` |
+| Field                              | Description                                                                                                   | Default |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------- |
+| **Enable ACH Debit on Invoice**    | Allow customers to pay the invoice by ACH bank debit. No Stripe account required.                             | Yes     |
+| **Enable Card Payment on Invoice** | Allow customers to pay the invoice by card. Requires a Stripe account connected to your Mercury organisation. | No      |
+| **Invoice Due in (days)**          | Number of days from today until the invoice is due.                                                           | `7`     |
 
 ### Reconcile Mode Options
 
@@ -151,32 +157,40 @@ This field appears when **ACH Mode** is set to Account/Routing Reconcile or Auto
 
 These settings control which J2Commerce order status is applied when specific payment events occur.
 
-| Field | Description | Default |
-|-------|-------------|---------|
+| Field                      | Description                                                                                                                                            | Default   |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
 | **Confirmed Order Status** | Status applied when payment is confirmed — either when the Mercury invoice is reported as Paid, or when the cron finds a matching inbound transaction. | Confirmed |
-| **Pending Order Status** | Status applied immediately at checkout while the bank transfer is awaited. | Pending |
-| **Failed Order Status** | Status applied when a Mercury invoice is cancelled or a payment error occurs. | Failed |
+| **Pending Order Status**   | Status applied immediately at checkout while the bank transfer is awaited.                                                                             | Pending   |
+| **Failed Order Status**    | Status applied when a Mercury invoice is cancelled or a payment error occurs.                                                                          | Failed    |
+
+:::tip
+
+If the status you want is not listed in a dropdown, create a new one first by going to **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge
 
 Add an optional handling fee when a customer chooses Mercury ACH.
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Name** | The label shown to the customer (for example, "Bank transfer fee") |
-| **Surcharge Percent** | A percentage of the order subtotal added as a fee |
-| **Surcharge Fixed** | A fixed amount added regardless of order size |
+| Field                   | Description                                                             |
+| ----------------------- | ----------------------------------------------------------------------- |
+| **Surcharge Name**      | The label shown to the customer (for example, "Bank transfer fee")      |
+| **Surcharge Percent**   | A percentage of the order subtotal added as a fee                       |
+| **Surcharge Fixed**     | A fixed amount added regardless of order size                           |
 | **Surcharge Tax Class** | A tax profile to apply to the surcharge — leave blank if no tax applies |
 
 Leave both Surcharge Percent and Surcharge Fixed empty to charge no surcharge.
 
 ### GeoZone and Order Value Restrictions
 
-| Field | Description |
-|-------|-------------|
-| **Geozone Restriction** | Limit this payment method to customers in a specific geozone — leave blank to allow all locations |
-| **Minimum Order Subtotal** | Hide this option when the cart subtotal is below this amount |
-| **Maximum Order Subtotal** | Hide this option when the cart subtotal is above this amount |
+| Field                      | Description                                                                                       |
+| -------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Geozone Restriction**    | Limit this payment method to customers in a specific geozone — leave blank to allow all locations |
+| **Minimum Order Subtotal** | Hide this option when the cart subtotal is below this amount                                      |
+| **Maximum Order Subtotal** | Hide this option when the cart subtotal is above this amount                                      |
 
 ### Dashboard Icon
 
@@ -216,7 +230,9 @@ Only enable this when diagnosing a specific problem. Disable it on live sites �
 <!-- SCREENSHOT: Checkout screen showing bank transfer details with routing number and payment reference -->
 
 :::tip
+
 In Reconcile mode, always encourage your customers to include the order reference in the payment memo. This is what the plugin uses to match the transaction to the correct order automatically. Without a memo match, the cron will log the transaction as a possible match and require manual confirmation from the admin.
+
 :::
 
 ## Automatic Order Confirmation (Cron)
@@ -238,7 +254,9 @@ The cron polls pending Mercury orders and checks the following:
 - **Reconcile mode orders:** Calls the Mercury API to list recent inbound transactions on the destination account. If a transaction matches the order total and contains the order reference in the memo, the order is confirmed. If the amount matches but there is no memo match, the plugin logs a possible match and waits for admin confirmation.
 
 :::info
+
 Mercury webhooks (real-time notifications) are supported in production as a supplement to cron polling. Webhooks speed up reconcile detection when a `transaction.created` event arrives. However, Mercury does not send webhook events for invoice status changes — cron polling is the only way to detect invoice payments.
+
 :::
 
 ## Setting Up Webhooks (Optional, Production Only)
@@ -249,9 +267,11 @@ Mercury only delivers webhooks to publicly accessible HTTPS URLs — they cannot
 
 1. In your Mercury dashboard, go to **Settings** -> **Webhooks** (or the equivalent in your Mercury plan).
 2. Create a new webhook endpoint pointed at:
+
    ```
    https://your-site.com/index.php?option=com_ajax&plugin=payment_mercury&format=raw&action=webhook
    ```
+
    Replace `your-site.com` with your actual domain.
 3. Mercury shows you a signing secret when you create the endpoint. Copy it immediately — it will not be shown again.
 4. Paste the secret into the **Webhook Secret (Live)** field in the plugin settings.

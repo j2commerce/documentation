@@ -125,17 +125,19 @@ Peruvian banks let shoppers pay in monthly installments. The plugin sends the in
 
 ### Order Status
 
+**Order status after successful payment:** The status is applied when Culqi confirms the charge.
+
+**Order status after failed payment:** The status is applied when Culqi rejects the charge.
+
+These fields show the order statuses you have defined in **J2Commerce** -> **Sales** -> **Order Statuses**. Match them to whatever terms make sense for your workflow.
+
 :::info
 
 NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
 
 :::
 
-**Order status after successful payment:** The status is applied when Culqi confirms the charge.
-
-**Order status after failed payment:** The status is applied when Culqi rejects the charge.
-
-These fields show the order statuses you have defined in **J2Commerce** -> **Sales** -> **Order Statuses**. Match them to whatever terms make sense for your workflow.
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge (Optional)
 

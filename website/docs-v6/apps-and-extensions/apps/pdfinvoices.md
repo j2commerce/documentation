@@ -1,10 +1,3 @@
----
-title: "PDF Invoices"
-sidebar_label: "PDF Invoices"
-sidebar_position: 11
-description: "Automatically generate and email PDF invoices for J2Commerce orders, with a frontend download link for customers and an admin download button in the order detail view."
----
-
 # PDF Invoices
 
 The **PDF Invoices** app automatically generates a PDF invoice for each order and can attach it to the notification emails sent to your customer, your store admin, or both. Customers can also download their invoice from their order history page, and store admins can download any order's invoice directly from the order detail screen.
@@ -74,21 +67,27 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-Go to **J2Commerce** -> **Apps** and click **PDF Invoices** to open its settings.
+![](/img/pdf-toggle.webp)
 
-The configuration screen has two tabs: **Basic Settings** and **Advanced Settings**.
+### Basic Settings tab
 
-<!-- SCREENSHOT: PDF Invoices plugin configuration screen showing the Basic Settings tab -->
+![](/img/pdf-config.webp)
 
-### Basic Settings
+**File Name Prefix:** The text prepended to the PDF file name. The value provided will be used as the file name prefix. Example: Invoice. For example, a prefix of `invoice` produces a file named `invoice_INV001.pdf`.
 
-**File Name Prefix:** The text prepended to the PDF file name. For example, a prefix of `invoice` produces a file named `invoice_INV001.pdf`.
+**Send PDF Invoice for Status:** Restrict PDF generation to specific order statuses. Select one or more statuses from the list. The PDF will be attached and sent only when the status of the order is among the chosen values here. If nothing is selected, a PDF is generated for every order.
 
-**Send PDF Invoice for Status:** Restrict PDF generation to specific order statuses. Select one or more statuses from the list. If nothing is selected, a PDF is generated for every order.
+**Additional Files:** Attach an extra PDF file alongside the invoice. You can send additional files along with the PDF Invoice. Use the Joomla Media Manager to upload files, then select them here. Upload the file to `media/j2commerce/` first, then select it here. You can add multiple files by clicking on the green plus sign. Both the generated invoice and the additional file will be attached to matching order emails.
 
-**Additional Files:** Attach an extra PDF file alongside the invoice. Upload the file to `media/j2commerce/` first, then select it here.
+![](/img/pdf-config-files.webp)
 
-**Attach Invoice To:** Choose who receives the PDF as an email attachment. Options: **None**, **Both Administrator and Customer**, **Customer Only**, **Administrator Only**.
+**Attach Invoice To:** Select who should receive the PDF invoice as an email attachment.
+
+- **None**
+
+- **Both Administrator and Customer**
+
+- **Customer Only**, **Administrator Only**
 
 **Show Link in Frontend:** When enabled, a **Download PDF** button appears on the customer's order history page so they can download their invoice at any time.
 
@@ -100,23 +99,14 @@ For example, to only send invoices for orders that have been paid:
 
 1. Click the **Send PDF Invoice for Status** dropdown.
 2. Select **Confirmed** (or whatever status your store uses for paid orders).
-3. Click **Save**.
+
+![](/img/pdf-config-confirmed.webp)
 
 Orders in other statuses will not have a PDF attached to their email notification.
 
-#### Attaching Additional PDF Files
-
-You can send a static PDF file — such as a return policy or terms of service — alongside every invoice:
-
-1. Upload your PDF file to `media/j2commerce/` on your server using FTP or the Joomla Media Manager.
-2. In the **Additional Files** field, select the uploaded file.
-3. Click **Save**.
-
-Both the generated invoice and the additional file will be attached to matching order emails.
-
 ### Advanced Settings
 
-<!-- SCREENSHOT: PDF Invoices configuration screen showing the Advanced Settings tab -->
+![](/img/pdf-config-advanced.webp)
 
 **Enable Tidy Repair:** Uses PHP's Tidy extension to clean up malformed HTML in the invoice template before passing it to the PDF renderer. Requires `ext-tidy` on your server.
 
@@ -134,7 +124,9 @@ When an order notification email is sent — either to the customer or the store
 
 The invoice content is taken from the J2Commerce invoice template stored in your Joomla installation. The same template that appears when you view or print an invoice in the admin is used to produce the PDF. Images in the invoice are automatically converted to embedded data so they appear correctly in the rendered PDF.
 
-## Customising the Invoice Appearance
+## Customizing the Invoice Appearance
+
+![](/img/pdf-font.webp)
 
 ### Changing the Font
 
@@ -166,23 +158,26 @@ Because PDF rendering with Dompdf does not support all CSS properties, keep styl
 
 When **Show Link in Frontend** is set to **Yes**, a **Download PDF** button appears on the customer's order history page for each order.
 
-![](/img/pdf-order1.webp)
-
 Customers must be logged in to use the download link. The plugin verifies that the customer requesting the download is the owner of the order before streaming the PDF. Guests and other users cannot download invoices this way.
 
 To enable this feature:
 
+![](/img/pdf-config-frontend-link.webp)
+
 1. Go to **J2Commerce -> Apps -> PDF Invoices**.
 2. On the **Basic Settings** tab, set **Show Link in Frontend** to **Yes**.
-3. Click **Save**.
+
+### Frontend Customer View
+
+Customers who are logged in will now appear under **My Account -> Orders**
+
+![](/img/pdf-config-frontend-link1.webp)
 
 ## Admin Download Button
 
-When viewing an order in the backend, the PDF invoice download button appears in the order's sidebar panel under the heading **PDF Invoice**.
+![](/img/pdf-order1.webp)
 
-<!-- SCREENSHOT: Admin order detail view showing the PDF Invoice card in the sidebar with the Download button -->
-
-Click **Download** to open the generated PDF in a new browser tab. The PDF is rendered on demand using the current order data — no stored file is needed.
+When viewing an order in the backend, the PDF invoice download button appears in the order's sidebar panel. Click **PDF invoice** to open the generated PDF in a new browser tab. The PDF is rendered on demand using the current order data — no stored file is needed.
 
 ## Where PDF Files Are Stored
 

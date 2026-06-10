@@ -121,12 +121,6 @@ Most stores use **Sale**. Use **Authorisation** only if you need to review order
 
 ### Order Statuses
 
-:::info
-
-NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
-
-:::
-
 These settings control which J2Commerce order status is applied based on the payment result.
 
 | Field                    | Description                                                        | Default Status |
@@ -136,6 +130,14 @@ These settings control which J2Commerce order status is applied based on the pay
 | **Failed Order Status**  | Applied when eWAY declines or rejects the payment                  | Failed (3)     |
 
 The defaults match the standard J2Commerce order status IDs. Only change these if you have renamed or reordered your statuses.
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge (Optional)
 

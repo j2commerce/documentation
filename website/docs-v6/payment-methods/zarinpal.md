@@ -44,10 +44,10 @@ Find the **Merchant ID** field and paste your UUID from the ZarinPal merchant da
 
 The field only appears when **Sandbox Mode** is set to **No**. When Sandbox Mode is **Yes**, the **Sandbox Merchant ID** field appears in its place — you can leave that field empty or enter any placeholder value for testing.
 
-| Field | Description |
-|-------|-------------|
-| **Merchant ID** | Your live ZarinPal UUID (shown when Sandbox = No) |
-| **Sandbox Merchant ID** | Your test UUID (shown when Sandbox = Yes) |
+| Field                   | Description                                       |
+| ----------------------- | ------------------------------------------------- |
+| **Merchant ID**         | Your live ZarinPal UUID (shown when Sandbox = No) |
+| **Sandbox Merchant ID** | Your test UUID (shown when Sandbox = Yes)         |
 
 ### Step 2: Set Amount Currency — Rial vs Toman
 
@@ -55,10 +55,10 @@ This is the most important setting to get right. ZarinPal's API accepts amounts 
 
 The key fact: **1 Toman = 10 Rials**. Iran informally uses Toman for most prices, but the Rial is the official currency. If you send 50,000 to ZarinPal but the shopper sees 5,000 on the payment page (or vice versa), this setting is the cause.
 
-| Setting | Currency Unit | What happens to the amount |
-|---------|--------------|---------------------------|
-| **IRR — Iranian Rial** (default) | Rial | Sent as-is to ZarinPal |
-| **IRT — Iranian Toman** | Toman | Divided by 10 before sending to ZarinPal |
+| Setting                          | Currency Unit | What happens to the amount               |
+| -------------------------------- | ------------- | ---------------------------------------- |
+| **IRR — Iranian Rial** (default) | Rial          | Sent as-is to ZarinPal                   |
+| **IRT — Iranian Toman**          | Toman         | Divided by 10 before sending to ZarinPal |
 
 Set this to match the unit your store uses for product prices. If your products are priced in Toman (e.g., a product costs 50,000 Toman), choose **IRT**. If prices are in Rial, choose **IRR**.
 
@@ -76,39 +76,47 @@ The **Access Token** field is optional and only needed if you plan to process re
 
 ### Step 5: Configure Order Statuses
 
-| Field | Default | Description |
-|-------|---------|-------------|
+| Field                         | Default   | Description                                                            |
+| ----------------------------- | --------- | ---------------------------------------------------------------------- |
 | **Successful Payment Status** | Confirmed | Order status applied when payment verification returns code 100 or 101 |
-| **Failed Order Status** | Failed | Order status applied when the customer cancels or verification fails |
+| **Failed Order Status**       | Failed    | Order status applied when the customer cancels or verification fails   |
 
 You can change these to any status in your J2Commerce order status list.
+
+:::tip
+
+If the status you want is not listed in a dropdown, create a new one first by going to **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Step 6: Optional Surcharge
 
 If ZarinPal processing costs need to be passed to the customer, fill in the surcharge fields:
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Name** | Label shown in the cart, e.g. "Payment fee" |
-| **Surcharge (%)** | Percentage of the order total |
-| **Surcharge (fixed)** | Fixed amount added to the order |
+| Field                   | Description                                                    |
+| ----------------------- | -------------------------------------------------------------- |
+| **Surcharge Name**      | Label shown in the cart, e.g. "Payment fee"                    |
+| **Surcharge (%)**       | Percentage of the order total                                  |
+| **Surcharge (fixed)**   | Fixed amount added to the order                                |
 | **Surcharge Tax Class** | Tax profile to apply to the surcharge (leave empty for no tax) |
 
 ### Step 7: Optional Settings
 
-| Field | Description |
-|-------|-------------|
-| **Display Name** | Text shown to the customer at checkout (default: "ZarinPal") |
-| **Display Image** | Logo or icon shown next to the payment option |
-| **Geozone Restriction** | Limit this payment method to specific countries/regions |
-| **Minimum Subtotal** | Hide this method if cart is below a minimum value |
-| **Maximum Subtotal** | Hide this method if cart exceeds a maximum value |
-| **Thank-You Article** | A Joomla article to display after successful payment |
-| **On Selection** | Text shown when the customer selects this payment method |
-| **On After Payment** | Text shown on the success screen after payment |
-| **On Error Payment** | Text shown when a gateway error occurs |
-| **On Cancel Payment** | Text shown when the customer cancels payment |
-| **Debug Mode** | Log all API requests and responses — disable in production |
+| Field                   | Description                                                  |
+| ----------------------- | ------------------------------------------------------------ |
+| **Display Name**        | Text shown to the customer at checkout (default: "ZarinPal") |
+| **Display Image**       | Logo or icon shown next to the payment option                |
+| **Geozone Restriction** | Limit this payment method to specific countries/regions      |
+| **Minimum Subtotal**    | Hide this method if cart is below a minimum value            |
+| **Maximum Subtotal**    | Hide this method if cart exceeds a maximum value             |
+| **Thank-You Article**   | A Joomla article to display after successful payment         |
+| **On Selection**        | Text shown when the customer selects this payment method     |
+| **On After Payment**    | Text shown on the success screen after payment               |
+| **On Error Payment**    | Text shown when a gateway error occurs                       |
+| **On Cancel Payment**   | Text shown when the customer cancels payment                 |
+| **Debug Mode**          | Log all API requests and responses — disable in production   |
 
 Click **Save** when done.
 
@@ -144,16 +152,16 @@ No real money is processed during sandbox testing. Switch **Sandbox Mode** back 
 
 If you previously used the ZarinPal plugin for J2Store, here is what changed in this J2Commerce 6 version:
 
-| Area | Old J2Store Plugin | J2Commerce 6 Plugin |
-|------|--------------------|---------------------|
-| Architecture | FOF 2 framework, non-namespaced | Native Joomla 6 MVC, fully namespaced |
-| Gateway host | `api.zarinpal.com` (deprecated — dead) | `payment.zarinpal.com` (ZarinPal v4 live host) |
-| Sandbox support | No sandbox toggle | Built-in Sandbox Mode toggle |
-| Amount currency | Hard-coded divide-by-10 (assumed Toman) | Configurable: IRR Rial or IRT Toman |
-| SDK | Raw cURL | Official ZarinPal SDK bundled in `lib/` |
-| Refunds | Not supported | Refund/inquiry/reverse via GraphQL API (requires Access Token) |
-| Language files | Persian hard-coded, no `.ini` files | Full English + Persian (`fa-IR`) language files |
-| Error handling | Persian gate messages only | Localised error codes with English translations |
+| Area            | Old J2Store Plugin                      | J2Commerce 6 Plugin                                            |
+| --------------- | --------------------------------------- | -------------------------------------------------------------- |
+| Architecture    | FOF 2 framework, non-namespaced         | Native Joomla 6 MVC, fully namespaced                          |
+| Gateway host    | `api.zarinpal.com` (deprecated — dead)  | `payment.zarinpal.com` (ZarinPal v4 live host)                 |
+| Sandbox support | No sandbox toggle                       | Built-in Sandbox Mode toggle                                   |
+| Amount currency | Hard-coded divide-by-10 (assumed Toman) | Configurable: IRR Rial or IRT Toman                            |
+| SDK             | Raw cURL                                | Official ZarinPal SDK bundled in `lib/`                        |
+| Refunds         | Not supported                           | Refund/inquiry/reverse via GraphQL API (requires Access Token) |
+| Language files  | Persian hard-coded, no `.ini` files     | Full English + Persian (`fa-IR`) language files                |
+| Error handling  | Persian gate messages only              | Localised error codes with English translations                |
 
 The most common breakage when migrating from the J2Store version is the gateway host. The old `api.zarinpal.com` endpoint no longer exists. The J2Commerce 6 plugin uses `payment.zarinpal.com`, which is the correct ZarinPal v4 address.
 
@@ -175,7 +183,7 @@ The most common breakage when migrating from the J2Store version is the gateway 
 
 **Solution:** If your products are priced in Toman, set Amount Currency to **IRT**. If priced in Rial, set it to **IRR**. This is the only calculation ZarinPal requires — the plugin handles the conversion automatically once the correct unit is selected.
 
-### Error code -10 — "Invalid merchant_id"
+### Error code -10 — "Invalid merchant\_id"
 
 This error code means the Merchant ID UUID you entered is not recognised by ZarinPal. Double-check the value in your ZarinPal dashboard. Note that sandbox and live accounts have different Merchant IDs — use the **Sandbox Merchant ID** field for the sandbox account and the **Merchant ID** field for the live account.
 
