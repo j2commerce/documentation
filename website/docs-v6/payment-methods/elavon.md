@@ -156,12 +156,6 @@ When **Sandbox** is set to **Yes**, the live credential fields are hidden and sa
 
 ### Order Status
 
-:::info
-
-NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
-
-:::
-
 | Field                         | Description                                                                                                             | Default                   |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------- |
 | **Order Status (on payment)** | The order status applied when a payment is successfully completed. Set this to your "Confirmed" or "Processing" status. | `Confirmed` (status ID 1) |
@@ -169,6 +163,14 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 | **Order Status (on void)**    | The status to apply when a void succeeds. Only shown when the above toggle is enabled.                                  | *(empty)*                 |
 | **Change Status on Refund**   | When enabled, issuing a refund from the order screen also changes the order status.                                     | `No`                      |
 | **Order Status (on refund)**  | The status to apply when a refund succeeds. Only shown when the above toggle is enabled.                                | *(empty)*                 |
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge (Optional)
 
@@ -270,6 +272,8 @@ Once testing is complete, switch the plugin to live mode.
 5. Click **Save**.
 
 The warning banner on the dashboard will disappear, confirming the store is in live mode.
+
+
 
 
 :::caution

@@ -154,17 +154,19 @@ When sandbox mode is enabled, the plugin automatically uses the sandbox credenti
 
 ### Order statuses
 
+| Field                        | Default   | Description                                                                                                                                       |
+| ---------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Confirmed Payment Status** | Confirmed | Applied when First Data returns `Transaction_Approved=YES` (US) or `status=APPROVED` (UK). The customer confirmation email is sent at this point. |
+| **Pending Payment Status**   | Pending   | Applied when the gateway returns an unrecognised status other than approved or declined.                                                          |
+| **Failed Payment Status**    | Failed    | Applied when the gateway returns `Transaction_Approved=NO` (US), `status=DECLINED` (UK), an invalid transaction type, or a signature mismatch.    |
+
 :::info
 
 NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
 
 :::
 
-| Field                        | Default   | Description                                                                                                                                       |
-| ---------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Confirmed Payment Status** | Confirmed | Applied when First Data returns `Transaction_Approved=YES` (US) or `status=APPROVED` (UK). The customer confirmation email is sent at this point. |
-| **Pending Payment Status**   | Pending   | Applied when the gateway returns an unrecognised status other than approved or declined.                                                          |
-| **Failed Payment Status**    | Failed    | Applied when the gateway returns `Transaction_Approved=NO` (US), `status=DECLINED` (UK), an invalid transaction type, or a signature mismatch.    |
+![](/img/shipstation-order-status2-1.webp)
 
 ***
 

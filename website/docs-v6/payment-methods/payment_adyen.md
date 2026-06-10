@@ -207,6 +207,14 @@ These settings control which J2Commerce order status is applied when specific pa
 
 **Cancel Order Status:** The status to apply after a cancellation — only shown when Change Status on Cancel is enabled
 
+:::tip
+
+If the status you want is not listed in a dropdown, create a new one first by going to **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
+
 ### Surcharge
 
 ![](/img/adyen-config6.webp)

@@ -87,6 +87,14 @@ Configure how order states map to payment outcomes:
 - **Authorised Order Status** — applied when Dojo returns status `Authorised` (funds held, manual capture pending). Default: **Confirmed**. Tip: create a distinct status such as "Processing" or "Awaiting Capture" so you can identify orders needing manual action in the Dojo terminal.
 - **Failed Order Status** — applied when payment fails, is cancelled, or fails verification. Default: **Failed**.
 
+:::tip
+
+If the status you want is not listed in a dropdown, create a new one first by going to **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
+
 ### Step 5: Set the display name (optional)
 
 The **Display Name** controls the label customers see at checkout. The default is "Pay with Dojo". Change it to anything that matches your store's language and tone.
