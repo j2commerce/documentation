@@ -1,10 +1,3 @@
----
-title: "2Checkout (Verifone) — Legacy Redirect Gateway"
-sidebar_label: "2Checkout"
-sidebar_position: 10
-description: "How to install, configure, and use the 2Checkout (Verifone) hosted payment gateway plugin for J2Commerce. Covers SID, Secret Word, IPN setup, sandbox testing, and migration from J2Store."
----
-
 # 2Checkout (Verifone) — Legacy Redirect Gateway
 
 :::info
