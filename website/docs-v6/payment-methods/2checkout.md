@@ -1,10 +1,3 @@
----
-title: "2Checkout (Verifone) — Legacy Redirect Gateway"
-sidebar_label: "2Checkout"
-sidebar_position: 10
-description: "How to install, configure, and use the 2Checkout (Verifone) hosted payment gateway plugin for J2Commerce. Covers SID, Secret Word, IPN setup, sandbox testing, and migration from J2Store."
----
-
 # 2Checkout (Verifone) — Legacy Redirect Gateway
 
 :::info
@@ -166,7 +159,9 @@ Use the **Limits** tab to restrict when 2Checkout appears as a payment option ba
 
 ## 2Checkout Vendor Area Setup
 
+:::warning
 You must register a notification URL in your 2Checkout merchant dashboard. Without this, your store will not receive fraud-status updates in the background, and orders may remain in a pending state even after 2Checkout approves the payment.
+:::
 
 - Log in to your 2Checkout / Verifone Central dashboard.
 
@@ -181,8 +176,6 @@ https://yoursite.com/index.php?option=com_j2commerce&view=checkout&task=checkout
 ```
 
 - **Save** the setting.
-
-<!-- SCREENSHOT: 2Checkout Site Management screen showing the INS URL field with the notification URL pasted in -->
 
 :::tip
 

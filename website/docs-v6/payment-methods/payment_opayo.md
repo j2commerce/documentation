@@ -31,15 +31,6 @@ Opayo Pi is available to **UK and Ireland merchants only**. Your Opayo account m
 - An active Opayo (Elavon) merchant account — register at [opayo.eu.elavon.com](https://opayo.eu.elavon.com)
 - Your store must be served over HTTPS
 
-## Purchase and Download
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Opayo Payment**.
-2. Add it to your cart and complete checkout.
-3. Go to **My Downloads** under your account profile and find the plugin.
-4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
-
 ## Get Your Opayo Credentials
 
 Before configuring the plugin you need three pieces of information from your Opayo account. These come from the **MyOpayo** portal at [admin.opayo.eu.elavon.com](https://admin.opayo.eu.elavon.com).
@@ -50,27 +41,38 @@ Before configuring the plugin you need three pieces of information from your Opa
 
 For testing, Opayo provides a sandbox environment with its own set of credentials. You can register for sandbox access at no cost, independently of a live account.
 
-<!-- SCREENSHOT: MyOpayo admin portal showing the API credentials section with Integration Key and Integration Password fields -->
+## Purchase and Download
 
-## Install the Plugin
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Opayo Payment**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
+## Installing the Plugin
+
+You can install this **Opayo Payment** plugin using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
 Upload the `payment_opayo.zip` file or use the Install from URL option.
 
-<!-- SCREENSHOT: Joomla extension installer with the upload field highlighted -->
+![](/img/autho-install5.webp)
 
-## Enable the Plugin
+## Enable the Plugin&#x20;
 
-Once installed, you need to enable the plugin. There are two ways to reach the Payment Methods list.
+Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
 
-**Option A:** Click the **J2Commerce** icon at the top right corner -> **Setup** -> **Payment Methods**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Payment Methods**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list showing the Opayo Payment row with the enable/disable toggle -->
+![](/img/autho-methods.webp)
 
-Search for **Opayo Payment**, click the **X**, and it will turn into a green checkmark. The plugin is now enabled and ready to configure.
+Look for **Opayo Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/opayo-enable.webp)
 
 ## Configure the Plugin
 
@@ -82,43 +84,55 @@ Click the **Toggle Inline Help** button at the top of any plugin settings screen
 
 :::
 
-<!-- SCREENSHOT: Plugin settings screen for Opayo Payment showing the full configuration form -->
+![](/img/opayo-toggle.webp)
 
 ### Appearance
+
+![](/img/opayo-display.webp)
 
 **Display Name:** The label shown to customers at checkout. Default is `Credit/Debit Card`. Change this to something like "Pay by card (Opayo)" if you prefer to show the brand name.
 
 **Display Image:** Optional logo or card-type icon displayed beside the payment method name at checkout.
 
-### Integration Mode
+### Integration Mode & Transaction Type
+
+![](/img/opayo-transaction.webp)
 
 **Integration Mode:** Controls how the card entry form works.
 
-| Option                                    | What it means                                                                                                                                                    | PCI scope      |
-| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| **Drop-in Checkout (recommended, SAQ-A)** | Opayo injects its own hosted card fields directly into your checkout page. Card data never passes through your server.                                           | SAQ-A (lowest) |
-| **Own Form (opayo.js, SAQ-A-EP)**         | Your checkout page contains the card entry fields, but opayo.js tokenizes the data in the browser before submission. Card data still does not reach your server. | SAQ-A-EP       |
+- **Drop-in Checkout (recommended, SAQ-A):** Opayo injects its own hosted card fields directly into your checkout page. Card data never passes through your server.
+
+- **Own Form (opayo.js, SAQ-A-EP):** Your checkout page contains the card entry fields, but opayo.js tokenizes the data in the browser before submission. Card data still does not reach your server.
 
 The Drop-in mode is recommended for most stores because it gives you the lowest PCI compliance overhead.
 
-### Transaction Type
-
 **Transaction Type:** Controls whether funds are collected immediately or held for manual release.
 
-| Option                            | What happens                                                                                                                                                   | When to use                                                                          |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| **Payment (Authorize + Capture)** | Funds are reserved and collected from the customer's card in one step at checkout.                                                                             | Suitable for most stores — goods or digital products dispatched immediately.         |
-| **Deferred (Authorize only)**     | Funds are reserved on the customer's card at checkout but not collected. You manually capture them from the order admin screen when you are ready to dispatch. | Useful if you want to verify stock or review the order before charging the customer. |
+**Payment (Authorize + Capture):** Funds are reserved and collected from the customer's card in one step at checkout.&#x20;
+
+***Use when:*** Suitable for most stores — goods or digital products dispatched immediately.
+
+**Deferred (Authorize only):** Funds are reserved on the customer's card at checkout but not collected. You manually capture them from the order admin screen when you are ready to dispatch.
+
+***Use when:*** Useful if you want to verify stock or review the order before charging the customer.
 
 When **Deferred** is selected, an additional **Deferred Authorization Status** setting appears (see Order Statuses below).
 
-### Sandbox / Test Mode
+### Credentials
+
+![](/img/opayo-sandbox.webp)
 
 **Sandbox / Test Mode:** When set to **Yes**, all transactions are sent to the Opayo sandbox environment and no real money is moved. Default is **No** (live mode on).
 
 Switch this to **Yes** during initial setup and testing. A warning banner will appear on the J2Commerce dashboard while sandbox mode is active as a reminder to switch it off before going live.
 
-:::caution
+**Sandbox Vendor Name:** Your Opayo sandbox vendor name. Defaults to `sandbox`.
+
+**Sandbox Integration Key:** Your sandbox integration key from the Opayo test portal.
+
+**Sandbox Integration Password:** Your sandbox integration password.
+
+:::note
 
 Remember to turn **Sandbox / Test Mode** to **No** before accepting real orders. Transactions processed in sandbox mode never charge the customer's real card.
 
@@ -134,63 +148,57 @@ These fields are shown when **Sandbox / Test Mode** is **No**.
 
 **Integration Password:** Your live API integration password from MyOpayo. This field is masked for security.
 
-### Sandbox Credentials
-
-These fields are shown when **Sandbox / Test Mode** is **Yes**.
-
-**Sandbox Vendor Name:** Your Opayo sandbox vendor name. Defaults to `sandbox`.
-
-**Sandbox Integration Key:** Your sandbox integration key from the Opayo test portal.
-
-**Sandbox Integration Password:** Your sandbox integration password.
-
 ### 3D Secure (SCA)
+
+![](/img/opayo-3d-avs.webp)
 
 3D Secure 2 (3DS2) is the strong customer authentication mechanism required for most European card payments. The plugin handles the full 3DS flow automatically, including showing a bank verification challenge to the customer when required.
 
 **Apply 3D Secure:** Controls whether 3DS is applied to transactions.
 
-| Option                               | What it does                                                                                                                                                     |
-| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Use MyOpayo Setting**              | Follows whatever 3DS rule you have configured in your Opayo account. This is the default and recommended setting.                                                |
-| **Force 3DS**                        | Always requires 3DS authentication, even for low-risk transactions that might otherwise be exempt.                                                               |
-| **Disable (SCA exemption required)** | Skips 3DS entirely. Only use this if your account has an active SCA exemption — enabling it without proper exemptions will cause transactions to fail in the EU. |
+- **Use MyOpayo Setting:** Follows whatever 3DS rule you have configured in your Opayo account. This is the default and recommended setting.
+
+- **Force 3DS:** Always requires 3DS authentication, even for low-risk transactions that might otherwise be exempt.
+
+- **Disable (SCA exemption required):** Skips 3DS entirely. Only use this if your account has an active SCA exemption — enabling it without proper exemptions will cause transactions to fail in the EU.
 
 **3DS Notification Base URL (testing):** Leave this blank in production. If you are testing 3DS on a local development server that is not publicly accessible (e.g., `localhost`), enter the public HTTPS address of a tunnel tool here so Opayo can send the 3DS callback to a reachable URL.
 
-### AVS/CVC Check
-
 **Apply AVS/CVC Check:** Controls address verification (AVS) and card security code (CVC) fraud checks.
 
-| Option                   | What it does                                                              |
-| ------------------------ | ------------------------------------------------------------------------- |
-| **Use MyOpayo Setting**  | Uses the fraud check rules configured in your Opayo account. Recommended. |
-| **Force Check**          | Always performs AVS/CVC checks.                                           |
-| **Disable**              | Skips AVS/CVC checks.                                                     |
-| **Force (Ignore Rules)** | Forces checks but ignores any rule-based results (advanced use only).     |
+- **Use MyOpayo Setting:** Uses the fraud check rules configured in your Opayo account. Recommended.
 
-### Saved Cards
+- **Force Check:** Always performs AVS/CVC checks.
+
+- **Disable:** Skips AVS/CVC checks.
+
+- **Force (Ignore Rules):** Forces checks but ignores any rule-based results (advanced use only).
+
+### Saved Cards & Style
+
+![](/img/opayo-cc.webp)
 
 **Allow Saved Cards:** When set to **Yes** (default), logged-in customers can choose to save their card during checkout. On future orders they can select the saved card instead of re-entering their details. Saved card tokens are also used for subscription renewal payments.
 
 Set this to **No** if you do not want to store card tokens or if you do not use the Subscriptions add-on.
 
-### Template Style
-
 **Template Style:** Choose between **Bootstrap 5** and **UIkit** to match the front-end template framework your Joomla site uses. Select the option that matches your active template.
 
 ### Order Statuses
 
+![](/img/opayo-status.webp)
+
 These settings control the order status J2Commerce assigns at each stage of the payment lifecycle.
 
-| Setting                           | What it controls                                                                                                                  | Default       |
-| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| **Order Status (on payment)**     | Status applied when a Payment transaction is confirmed successfully.                                                              | Confirmed (1) |
-| **Deferred Authorization Status** | Status applied when a Deferred payment is authorised but not yet captured. Only visible when Transaction Type is set to Deferred. | Confirmed (1) |
-| **Change Status on Refund**       | Toggle on to update the order status automatically when you issue a refund.                                                       | No            |
-| **Refund Order Status**           | Status to set when a refund is processed (only shown when Change Status on Refund is Yes).                                        | —             |
-| **Change Status on Void/Cancel**  | Toggle on to update the order status automatically when you void or abort a payment.                                              | No            |
-| **Cancel Order Status**           | Status to set when a payment is voided or aborted (only shown when Change Status on Void/Cancel is Yes).                          | —             |
+**Confirmed Order Status (on payment):** Status applied when a Payment transaction is confirmed successfully.
+
+**Change Status on Refund:** Toggle on to update the order status automatically when you issue a refund.
+
+- **Refund Order Status:** Status to set when a refund is processed (only shown when Change Status on Refund is Yes).
+
+**Change Status on Void/Cancel:** Toggle on to update the order status automatically when you void or abort a payment.
+
+- **Cancel Order Status:** Status to set when a payment is voided or aborted (only shown when Change Status on Void/Cancel is Yes).
 
 :::tip
 
@@ -201,6 +209,8 @@ If the status you want is not listed in a dropdown, create a new one first by go
 ![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge
+
+![](/img/opayo-surcharge.webp)
 
 Add an optional handling fee when customers choose Opayo as their payment method.
 
@@ -216,13 +226,17 @@ Leave both percent and fixed fields empty to charge no surcharge.
 
 ### GeoZone and Order Limits
 
+![](/img/opayo-geozone.webp)
+
 **GeoZone Restriction:** Limit Opayo to customers in a specific geozone — leave blank to allow all locations.
 
 **Minimum Order Subtotal:** Hide Opayo as a payment option when the cart subtotal is below this amount.
 
 **Maximum Order Subtotal:** Hide Opayo when the cart subtotal is above this amount.
 
-### Custom HTML Snippets
+### Custom Messages
+
+![](/img/opayo-text.webp)
 
 **Thank-You Article:** Optional Joomla article to display on the order confirmation page after a successful payment.
 
@@ -234,13 +248,15 @@ Leave both percent and fixed fields empty to charge no surcharge.
 
 **On Error Text:** Displayed when an error occurs during the payment.
 
-**On Cancel Payment:** Displayed when the payment is abandoned or cancelled.
+**On Cancelled Payment:** Displayed when the payment is abandoned or cancelled.
 
 ### Dashboard Icon
 
+![](/img/opayo-icon.webp)
+
 **Show Dashboard Icon:** Add a quick-access icon for Opayo to the J2Commerce dashboard.
 
-**Dashboard Icon Label:** Label for the icon. Defaults to "Opayo Payment" if left blank.
+- **Icon Label:** Label for the icon. Defaults to "Opayo Payment" if left blank.
 
 ### Debug Mode
 
