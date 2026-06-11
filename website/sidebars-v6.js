@@ -285,7 +285,7 @@ const sidebars = {
                         // Minimum Order Restriction
                         'apps-and-extensions/apps/minimumorder',
                         // Modal Bouncer
-                        'apps-and-extensions/apps/app-modalbouncer',
+                        'apps-and-extensions/apps/app_modalbouncer',
                         // Opening Hours
                         'apps-and-extensions/apps/openinghours',
                         // Order Files
