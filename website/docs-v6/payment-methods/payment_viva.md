@@ -26,15 +26,6 @@ Because card data is entered and handled entirely on Viva's own servers, your st
 - A Viva.com merchant account (demo or live)
 - Your store must be accessible over HTTPS
 
-## Purchase and Download {#purchase-and-download}
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Viva.com Payment**.
-2. Add it to your cart and complete checkout.
-3. Go to **My Downloads** under your account profile and find the plugin.
-4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
-
 ## Get Your Viva Credentials {#get-credentials}
 
 Before configuring the plugin, you need four pieces of information from the Viva banking app. Viva uses two separate sets of credentials for different operations:
@@ -55,73 +46,60 @@ Viva uses entirely separate credentials and portal URLs for demo and live enviro
 
 :::
 
-### Payment Source
+## Purchase and Download {#purchase-and-download}
 
-Viva organizes payments into **payment sources**. Each source has its own Success URL, Failure URL, and return settings. The plugin defaults to a source named `Default`. If you have created a custom payment source in your Viva account, note its **Source Code** (a short code such as `9876`).
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-### Return URLs
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Viva.com Payment**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-After completing the payment on Viva's page, Viva redirects the customer back to your store using the **Success URL** and **Failure URL** configured on your payment source — not via the API. You must copy these URLs from the plugin settings screen and paste them into your Viva payment source. Without this step, customers will not be redirected back to your store after payment.
+## Installing the Plugin
 
-### Webhook URL
+You can install this **Viva.com Payment** plugin using the Joomla installer. The following steps help you with a successful installation.
 
-Viva sends a payment notification to your store via a webhook. You must register this URL in the Viva banking app so Viva knows where to send the notification.
-
-1. In the Viva banking app, go to **Settings** -> **API Access** -> **Webhooks**.
-2. Add a new webhook for the **Transaction Payment Created** event.
-3. Paste the Webhook Endpoint URL displayed in the plugin settings screen.
-
-:::note
-
-Viva webhooks are not signed with a cryptographic key. Instead, Viva verifies ownership at registration time by sending a GET request to your webhook URL — the plugin responds with a key fetched from the Viva API. At runtime, whenever a webhook POST arrives, the plugin always re-fetches the transaction from Viva's API before updating your order. Your orders are never updated based on the raw incoming webhook alone.
-
-:::
-
-## Install the Plugin {#install}
-
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
 Upload the `payment_viva.zip` file or use the Install from URL option.
 
-<!-- SCREENSHOT: System > Install > Extensions upload screen -->
+![](/img/autho-install5.webp)
 
-## Enable the Plugin {#enable}
+## Enable the Plugin&#x20;
 
-Once installed, you need to enable the plugin. There are two ways to reach it.
+Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner -> **Setup** -> **Payment Methods**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Payment Methods**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list showing Viva.com disabled -->
+![](/img/autho-methods.webp)
 
-Search for **Viva.com Payment**, click the **X** next to it, and it turns into a green checkmark. The plugin is now enabled and ready for setup.
+Look for **Viva.com Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-<!-- SCREENSHOT: Viva.com Payment showing green checkmark -->
+![](/img/viva-enable.webp)
 
-## Configure the Plugin {#configure}
+## Configuring the Plugin
 
-Click the **Viva.com Payment** title to open its settings.
+After enabling the plugin, click the **Viva.com Payment** title to open the settings.
 
 :::tip
 
-Click the **Toggle Inline Help** button at the top of the plugin settings screen to show a description below each field as you configure it.
+**Tip**: Click on the **Toggle Inline Help** button on any app/plugin you install and it will show a description below each section. See image below
 
 :::
 
-<!-- SCREENSHOT: Plugin settings screen with Toggle Inline Help button highlighted -->
+![](/img/viva-toggle.webp)
 
-### Basic Settings tab {#basic-settings}
+### Display Settings tab
 
-### Display Name {#display-name}
+![](/img/viva-display.webp)
 
 **Display Name:** The label shown to customers on the checkout page. The default is `Credit/Debit Card (Viva.com)`. Change this to whatever makes sense for your store — for example, "Pay by Card" or "Viva.com".
 
-### Display Image {#display-image}
-
 **Display Image:** An optional logo or card-brand image shown next to the payment method name at checkout. Leave blank to show only the display name.
 
-### Demo / Test Mode {#demo-test-mode}
+### Credentials
 
 **Demo / Test Mode:** When turned on, the plugin connects to the Viva demo environment (`demo.vivapayments.com`). All transactions are simulated — no real money is moved.
 
@@ -135,36 +113,51 @@ Enable this during initial setup and testing. When demo mode is active, a warnin
 
 ### Live Credentials {#live-credentials}
 
-These fields appear when **Demo / Test Mode** is turned off. All four are required.
+![](/img/viva-config-api.webp)
 
-| Field                            | Description                                                                                                                                |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Smart Checkout Client ID**     | Your live Viva OAuth2 Client ID — used to create Smart Checkout orders. Found in the Viva banking app under **Settings** -> **API Access** |
-| **Smart Checkout Client Secret** | Your live Viva OAuth2 Client Secret. Never exposed to the browser                                                                          |
-| **Merchant ID**                  | Your live Viva Merchant ID (a GUID). Used as the username for capture, void, refund, and recurring charges                                 |
-| **API Key**                      | Your live Viva API Key. Used as the password for the classic API. Never exposed to the browser                                             |
-| **Payment Source Code**          | The code of the payment source in your Viva account. Defaults to `Default`. Change this only if you have multiple sources                  |
+When enabled, all transactions are sent to the Viva demo environment ([demo.vivapayments.com](http://demo.vivapayments.com)).
 
-### Demo Credentials {#demo-credentials}
+These fields appear when **Demo / Test Mode** is turned off.
 
-These fields appear when **Demo / Test Mode** is turned on. They work identically to the live fields but connect to your Viva demo merchant account.
+**Smart Checkout Client ID:** Your Viva Smart Checkout OAuth2 Client ID ([xxx.apps.vivapayments.com](http://xxx.apps.vivapayments.com)). Found in the Viva banking app under Settings > API Access. Your live Viva OAuth2 Client ID — used to create Smart Checkout orders. Found in the Viva banking app under **Settings** -> **API Access**
 
-| Field                        | Description                                                          |
-| ---------------------------- | -------------------------------------------------------------------- |
-| **Demo Client ID**           | Your Viva demo OAuth2 Client ID                                      |
-| **Demo Client Secret**       | Your Viva demo OAuth2 Client Secret                                  |
-| **Demo Merchant ID**         | Your Viva demo Merchant ID                                           |
-| **Demo API Key**             | Your Viva demo API Key                                               |
-| **Demo Payment Source Code** | The payment source code for your demo account. Defaults to `Default` |
+**Smart Checkout Client Secret:** Your live Viva OAuth2 Client Secret. Never exposed to the browser
 
-### Return URLs {#return-urls}
+**Merchant ID:** Your Viva Merchant ID (GUID). Used as the Basic-auth username for capture, void, refund, and recurring charges.
 
-These fields are read-only — they display the URLs you need to copy into your Viva payment source.
+**API Key:** Your Viva API Key. Used as the Basic-auth password. Never exposed to the browser or logged.
 
-| Field           | Description                                                                                                                                                                                      |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Success URL** | Copy this into the **Success URL** field of your Viva payment source in the Viva banking app. Viva redirects the customer here after a successful payment so the order confirmation page appears |
-| **Failure URL** | Copy this into the **Failure URL** field of your Viva payment source. Viva redirects the customer here when a payment fails or is cancelled                                                      |
+**Payment Source Code:** The 4-digit code of the payment source created in your Viva account (case-sensitive). Defaults to 'Default'. Required if you have multiple payment sources
+
+### Sandbox Credentials {#sandbox-credentials}
+
+![](/img/viva-config-api1.webp)
+
+These fields appear when **Demo / Test Mode** is turned on. They work identically to the live fields but connect to your SumUp test merchant account.
+
+**Demo Client ID:** Your Viva Smart Checkout OAuth2 Client ID ([xxx.apps.vivapayments.com](http://xxx.apps.vivapayments.com)). Found in the Viva banking app under Settings > API Access. Your live Viva OAuth2 Client ID — used to create Smart Checkout orders. Found in the Viva banking app under **Settings** -> **API Access**
+
+**Demo Client Secret:** Your Viva Smart Checkout OAuth2 Client Secret. Never exposed to the browser or logged.
+
+**Demo Merchant ID:** Your Viva Merchant ID (GUID). Used as the Basic-auth username for capture, void, refund, and recurring charges.
+
+**Demo API Key:** Your Viva API Key. Used as the Basic-auth password. Never exposed to the browser or logged.
+
+**Demo Payment Source Code:** The 4-digit code of the payment source created in your Viva account (case-sensitive). Defaults to 'Default'. Required if you have multiple payment sources
+
+### Payment Source
+
+Viva organizes payments into **payment sources**. Each source has its own Success URL, Failure URL, and return settings. The plugin defaults to a source named `Default`. If you have created a custom payment source in your Viva account, note its **Source Code** (a short code such as `9876`).
+
+### Return URLs
+
+![](/img/viva-config-url.webp)
+
+After completing the payment on Viva's page, Viva redirects the customer back to your store using the **Success URL** and **Failure URL** configured on your payment source — not via the API. You must copy these URLs from the plugin settings screen and paste them into your Viva payment source. Without this step, customers will not be redirected back to your store after payment.
+
+- **Success URL:** Copy this into the **Success URL** field of your Viva payment source in the Viva banking app. Viva redirects the customer here after a successful payment so the order confirmation page appears
+
+- **Failure URL:** Copy this into the **Failure URL** field of your Viva payment source. Viva redirects the customer here when a payment fails or is cancelled
 
 :::info
 
@@ -172,9 +165,23 @@ Viva Smart Checkout reads the return URLs from the payment source configuration 
 
 :::
 
-### Webhook Endpoint URL {#webhook-url}
+### Webhook URL
 
 **Webhook Endpoint URL:** This read-only field shows the URL to register in the Viva banking app (**Settings** -> **API Access** -> **Webhooks**) for the **Transaction Payment Created** event. Copy this URL and paste it into your Viva webhook settings.
+
+Viva sends a payment notification to your store via a webhook. You must register this URL in the Viva banking app so Viva knows where to send the notification.
+
+1. In the Viva banking app, go to **Settings** -> **API Access** -> **Webhooks**.
+2. Add a new webhook for the **Transaction Payment Created** event.
+3. Paste the Webhook Endpoint URL displayed in the plugin settings screen.
+
+:::note
+
+Viva webhooks are not signed with a cryptographic key. Instead, Viva verifies ownership at registration time by sending a GET request to your webhook URL — the plugin responds with a key fetched from the Viva API. At runtime, whenever a webhook POST arrives, the plugin always re-fetches the transaction from Viva's API before updating your order. Your orders are never updated based on the raw incoming webhook alone.
+
+:::
+
+![](/img/viva-config-cards.webp)
 
 ### Multicurrency Account {#multicurrency}
 
@@ -190,7 +197,7 @@ On a single-currency Viva account, the currency for your payment source is fixed
 
 **Pre-Authorize (capture later):** When turned on, Viva reserves the funds on the customer's card without charging immediately. You then capture the payment manually from the order screen when you are ready to ship.
 
-:::note
+:::info
 
 Pre-authorization is not compatible with subscriptions or instalments. If you enable subscriptions or instalments, leave pre-authorization off.
 
@@ -200,7 +207,7 @@ Pre-authorization is not compatible with subscriptions or instalments. If you en
 
 **Allow Saved Cards:** When turned on, logged-in customers can save their card at checkout for faster future purchases. Saved cards are also used for automatic subscription renewals when the J2Commerce Subscriptions add-on is installed.
 
-:::note
+:::info
 
 Saved cards are available to logged-in customers only. Guest shoppers check out without this option.
 
@@ -210,7 +217,7 @@ Saved cards are available to logged-in customers only. Guest shoppers check out 
 
 **Enable Subscriptions:** When turned on, the plugin supports recurring payment charges via the J2Commerce Subscriptions add-on. The first payment saves a recurring key; future renewals are charged automatically without requiring 3D Secure.
 
-:::note
+:::info
 
 Subscriptions require the J2Commerce Subscriptions add-on to be installed and enabled. Enable subscriptions is not compatible with pre-authorization or instalments.
 
@@ -220,23 +227,27 @@ Subscriptions require the J2Commerce Subscriptions add-on to be installed and en
 
 **Maximum Instalments (Greece only):** Set the maximum number of instalments to offer customers (1–36). Set to `0` to disable instalments. This option is available only for Viva accounts registered in Greece, and is not compatible with subscriptions or pre-authorization.
 
-### Template {#template}
-
-**Template:** If your theme includes a custom checkout template override for the Viva payment form, select it here. Leave blank to use the default layout.
+**Template Style:** If your theme includes a custom checkout template override for the Viva payment form, select it here. Leave blank to use the default layout.
 
 ### Order Statuses {#order-statuses}
 
+![](/img/viva-config-status.webp)
+
 These settings control which J2Commerce order status is applied when specific payment events occur.
 
-| Field                              | Description                                                                                                                | Default   |
-| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | --------- |
-| **Order Status (Payment Success)** | Status applied when Viva confirms a successful payment                                                                     | Confirmed |
-| **Authorised Status**              | Status applied when a pre-authorized payment is reserved but not yet captured — only visible when Pre-Authorize is enabled | Confirmed |
-| **Change Status on Refund**        | When turned on, automatically updates the order status after a refund is processed                                         | No        |
-| **Refund Order Status**            | The status to apply after a refund — only visible when Change Status on Refund is enabled                                  | —         |
-| **Change Status on Cancel**        | When turned on, automatically updates the order status after a payment is voided                                           | No        |
-| **Cancel Order Status**            | The status to apply after a void — only visible when Change Status on Cancel is enabled                                    | —         |
-| **Failed Payment Status**          | Status applied when a payment fails or expires                                                                             | Failed    |
+**Order Status (Payment Success):** Status applied when Viva confirms a successful payment
+
+**Authorised Status:** Status applied when a pre-authorized payment is reserved but not yet captured — only visible when Pre-Authorize is enabled
+
+**Change Status on Refund:** When turned on, automatically updates the order status after a refund is processed
+
+- **Refund Order Status:** The status to apply after a refund — only visible when Change Status on Refund is enabled
+
+**Change Status on Cancel:** When turned on, automatically updates the order status after a payment is voided
+
+- **Cancel Order Status:** The status to apply after a void — only visible when Change Status on Cancel is enabled
+
+**Failed Payment Status:** Status applied when a payment fails or expires
 
 :::tip
 
@@ -248,43 +259,55 @@ If the status you want is not listed in a dropdown, create a new one first by go
 
 ### Surcharge {#surcharge}
 
+![](/img/viva-config-surcharge.webp)
+
 Add an optional handling fee when a customer chooses Viva.com.
 
-| Field                   | Description                                                                  |
-| ----------------------- | ---------------------------------------------------------------------------- |
-| **Surcharge Name**      | The label shown to the customer (for example, "Card processing fee")         |
-| **Surcharge Percent**   | A percentage of the order total added as a fee (for example, `1.5` for 1.5%) |
-| **Surcharge Fixed**     | A fixed amount added regardless of order size                                |
-| **Surcharge Tax Class** | A tax profile to apply to the surcharge — leave blank if no tax applies      |
+**Surcharge Name:** The label shown to the customer (for example, "Card processing fee")
+
+**Surcharge Percent:** A percentage of the order total added as a fee (for example, `1.5` for 1.5%)
+
+**Surcharge Fixed:** A fixed amount added regardless of order size
+
+**Surcharge Tax Class:** A tax profile to apply to the surcharge — leave blank if no tax applies
 
 Leave both Surcharge Percent and Surcharge Fixed empty to charge no surcharge.
 
 ### GeoZone and Order Value Restrictions {#restrictions}
 
-| Field                      | Description                                                                            |
-| -------------------------- | -------------------------------------------------------------------------------------- |
-| **Geozone Restriction**    | Limit Viva.com to customers in a specific geozone — leave blank to allow all locations |
-| **Minimum Order Subtotal** | Hide Viva.com as a payment option when the cart subtotal is below this amount          |
-| **Maximum Order Subtotal** | Hide Viva.com when the cart subtotal is above this amount                              |
+![](/img/viva-restrictions.webp)
 
-### Custom HTML Snippets {#custom-html}
+**Geozone Restriction:** Limit Viva.com to customers in a specific geozone — leave blank to allow all locations
+
+**Minimum Order Subtotal:** Hide Viva.com as a payment option when the cart subtotal is below this amount
+
+**Maximum Order Subtotal:** Hide Viva.com when the cart subtotal is above this amount
+
+### Custom HTML Messages{#custom-html}
+
+![](/img/viva-config-message.webp)
 
 These optional fields let you inject custom text or HTML at different points in the payment flow.
 
-| Field                       | When it appears                                                                       |
-| --------------------------- | ------------------------------------------------------------------------------------- |
-| **Thank-You Article**       | Optional Joomla article shown on the order confirmation page after successful payment |
-| **On Selection Text**       | Displayed when the customer selects Viva.com as their payment method                  |
-| **Before Payment Text**     | Displayed just before the customer is redirected to Viva's payment page               |
-| **After Payment Text**      | Displayed on the confirmation page after a successful payment                         |
-| **On Error Text**           | Displayed when a payment attempt fails                                                |
-| **Order Cancelled Message** | Displayed when the customer cancels or navigates away                                 |
+**Thank-You Article:** Optional Joomla article shown on the order confirmation page after successful payment
+
+**On Selection Text:** Displayed when the customer selects Viva.com as their payment method
+
+**Before Payment Text:** Displayed just before the customer is redirected to Viva's payment page
+
+**After Payment Text:** Displayed on the confirmation page after a successful payment
+
+**On Error Text:** Displayed when a payment attempt fails
+
+**Order Cancelled Message:** Displayed when the customer cancels or navigates away
 
 ### Dashboard Icon {#dashboard-icon}
 
+![](/img/viva-config-icon.webp)
+
 **Show Dashboard Icon:** Add a quick-access shortcut for this plugin to the J2Commerce dashboard.
 
-**Dashboard Icon Label:** The label for the shortcut icon. Defaults to "Viva.com Payment" if left blank.
+**Icon Label:** The label for the shortcut icon. Defaults to "Viva.com Payment" if left blank.
 
 ### Debug Mode {#debug-mode}
 
