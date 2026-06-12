@@ -1,10 +1,3 @@
----
-title: "Viva.com Payment"
-sidebar_label: "Viva.com"
-sidebar_position: 94
-description: "Accept cards and digital wallets via Viva.com Smart Checkout — a hosted SAQ-A redirect, with saved cards, subscription renewals, pre-authorization, full and partial refunds, and a demo test mode using separate Viva demo credentials."
----
-
 # Viva.com Payment
 
 The Viva.com Payment plugin connects your J2Commerce store to **Viva.com** (formerly Viva Wallet), a European payment platform that supports cards, digital wallets, and local payment methods across Europe. When a customer pays, they are redirected to a secure Viva-hosted payment page to enter their card details, and then returned to your store automatically when the payment is complete.
