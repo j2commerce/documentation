@@ -65,7 +65,9 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 ### Email Notifications
 
-![](/img/gdpr-config-email.webp)
+![](/img/gdpr-config-basic.webp)
+
+**Add Menu Item:** Show or hide the GDPR Activity Log link in the J2Commerce dashboard menu.
 
 **Notify store administrators about data changes:** Send an email to the admin addresses below whenever a customer edits or deletes address data
 
@@ -73,13 +75,9 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 **Notify the customer about data changes:** Send a confirmation email to the customer when they change their own data
 
-### Activity Logging
-
 **Log customer edit and delete activities:** Record every address edit and deletion in the GDPR activity log
 
 When enabled, all changes are stored in the activity log, viewable from the J2Commerce Apps page.
-
-### IP Address Removal
 
 **Remove customer IP address from cart and order:** Strip the IP address field from new cart and order records at the time they are created
 
@@ -88,6 +86,12 @@ When enabled, all changes are stored in the activity log, viewable from the J2Co
 IP removal only applies to **new** carts and orders created after the setting is enabled. Existing records are not retroactively modified.
 
 :::
+
+**Show delete all addresses button:** Display a button on the My Profile page allowing customers to delete all their saved addresses
+
+**Debug Mode:** Write detailed log entries to `administrator/logs/app_gdpr.php`
+
+Enable Debug Mode temporarily when troubleshooting. Disable it in production to avoid filling your log directory.
 
 ### General Requirements tab
 
@@ -101,17 +105,19 @@ IP removal only applies to **new** carts and orders created after the setting is
 
 **Show terms for guest customers:** Include terms display for guest checkout
 
+![](/img/gdpr-config-general1-1.webp)
+
 **Terms display position:** Choose whether terms appear at the **Billing** step or the **Payment** step
 
 **Terms display type:** Show terms as a **Link** (informational) or a **Checkbox** (required to proceed)
 
-**Terms and conditions article:** Select the Joomla article that contains your privacy policy or GDPR terms
-
 ### Terms Label Customisation
 
-![](/img/gdpr-config-general1.webp)
+![](/img/gdpr-config-general2-1.webp)
 
 These three fields control the text displayed around the terms link at checkout. They support Joomla language key strings or plain text.
+
+**Terms and conditions article:** Select the Joomla article that contains your privacy policy or GDPR terms
 
 **Terms prefix text:** Text before the clickable link
 
@@ -120,18 +126,6 @@ These three fields control the text displayed around the terms link at checkout.
 **Terms suffix text:** Text after the clickable link
 
 **Validation error message:** Message shown when the customer does not tick the checkbox
-
-### Customer Buttons
-
-![](/img/gdpr-config-customer.webp)
-
-**Show delete all addresses button:** Display a button on the My Profile page allowing customers to delete all their saved addresses
-
-## Debug Mode
-
-**Debug Mode:** Write detailed log entries to `administrator/logs/app_gdpr.php`
-
-Enable Debug Mode temporarily when troubleshooting. Disable it in production to avoid filling your log directory.
 
 ## How It Works
 
