@@ -89,9 +89,9 @@ IP removal only applies to **new** carts and orders created after the setting is
 
 :::
 
-### General Requirements
+### General Requirements tab
 
-![](/img/gdpr-config-general.webp)
+![](/img/gdpr-config-general0.webp)
 
 **Enable GDPR tab in My Profile:** Show a GDPR data request form as a tab on the customer My Profile page
 
