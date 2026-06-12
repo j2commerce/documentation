@@ -19,15 +19,6 @@ Because the card fields are served and handled entirely by SumUp's own servers, 
 - A SumUp merchant account (test or live)
 - Your store must be accessible over HTTPS
 
-## Purchase and Download {#purchase-and-download}
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **SumUp Payment**.
-2. Add it to your cart and complete checkout.
-3. Go to **My Downloads** under your account profile and find the plugin.
-4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
-
 ## Get Your SumUp Credentials {#get-credentials}
 
 Before configuring the plugin, collect these two items from your SumUp Dashboard.
@@ -44,27 +35,38 @@ SumUp uses a single API host for both test and live. Sandbox mode is determined 
 
 Keep the SumUp Dashboard open while you configure the plugin in Joomla.
 
-## Install the Plugin {#install}
+## Purchase and Download {#purchase-and-download}
 
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **SumUp Payment**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
+## Installing the Plugin{#install}
+
+You can install this **SumUp Payment** plugin using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
 Upload the `payment_sumup.zip` file or use the Install from URL option.
 
-<!-- SCREENSHOT: System > Install > Extensions upload screen -->
+![](/img/autho-install5.webp)
 
-## Enable the Plugin {#enable}
+## Enable the Plugin&#x20;
 
-Once installed, you need to enable the plugin. There are two ways to reach it.
+Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner -> **Setup** -> **Payment Methods**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Payment Methods**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list showing SumUp disabled -->
+![](/img/autho-methods.webp)
 
-Search for **SumUp Payment**, click the **X** next to it, and it turns into a green checkmark. The plugin is now enabled and ready for setup.
+Look for **SumUp Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-<!-- SCREENSHOT: SumUp Payment showing green checkmark -->
+![](/img/sumup-enable.webp)
 
 ## Configure the Plugin {#configure}
 
@@ -72,23 +74,21 @@ Click the **SumUp Payment** title to open its settings.
 
 :::tip
 
-Click the **Toggle Inline Help** button at the top of the plugin settings screen to show a description below each field as you configure it.
+**Helpful tip:** Click the **Toggle Inline Help** button at the top of the plugin settings screen to show a description below each field as you configure it.
 
 :::
 
-<!-- SCREENSHOT: Plugin settings screen with Toggle Inline Help button highlighted -->
+![](/img/sumup-toggle.webp)
 
 ### Basic Settings tab {#basic-settings}
 
-### Display Name {#display-name}
+![](/img/sumup-display.webp)
 
 **Display Name:** The label shown to customers on the checkout page (for example, "Pay with Card"). Change this to whatever makes sense for your store.
 
-### Display Image {#display-image}
-
 **Display Image:** An optional logo or card-brand image shown next to the payment method name at checkout. Leave blank to show only the display name.
 
-### Sandbox / Test Mode {#sandbox}
+### Credentials{#sandbox}
 
 **Sandbox / Test Mode:** When turned on, the plugin uses your sandbox API key and merchant code instead of the live ones.
 
@@ -102,48 +102,55 @@ Enable this during initial setup and testing. When Sandbox mode is active, a war
 
 ### Live Credentials {#live-credentials}
 
+![](/img/sumup-config-api.png)
+
 These fields appear when **Sandbox / Test Mode** is turned off.
 
-| Field                   | Description                                                                                        |
-| ----------------------- | -------------------------------------------------------------------------------------------------- |
-| **Live Secret API Key** | Your SumUp live secret API key (starts with `sup_sk_`). Server-only — never exposed to the browser |
-| **Live Merchant Code**  | Your SumUp merchant code from the SumUp Dashboard                                                  |
+**Live Secret API Key:** Your SumUp live secret API key (starts with `sup_sk_`). Server-only — never exposed to the browser
+
+**Live Merchant Code:** Your SumUp merchant code from the SumUp Dashboard
 
 ### Sandbox Credentials {#sandbox-credentials}
 
+![](/img/sumup-config-api1.webp)
+
 These fields appear when **Sandbox / Test Mode** is turned on. They work identically to the live fields but connect to your SumUp test merchant account.
 
-| Field                      | Description                                                         |
-| -------------------------- | ------------------------------------------------------------------- |
-| **Sandbox Secret API Key** | Your SumUp test secret API key                                      |
-| **Sandbox Merchant Code**  | Your SumUp sandbox merchant code (must belong to a sandbox account) |
+**Sandbox Secret API Key:** Your SumUp test secret API key
+
+**Sandbox Merchant Code:** Your SumUp sandbox merchant code (must belong to a sandbox account)
 
 ### Allow Saved Cards {#allow-saved-cards}
 
+![](/img/sumup-config-cc.webp)
+
 **Allow Saved Cards:** When turned on, logged-in customers can save their card at checkout for faster purchases in the future. Saved cards are also used for automatic subscription renewals when the J2Commerce Subscriptions add-on is installed.
 
-:::note
+:::info
 
 Card saving is available to logged-in customers only. Guest shoppers check out without this option.
 
 :::
 
-### Template {#template}
-
-**Template:** If your theme includes a custom checkout template override for the SumUp payment form, select it here. Leave blank to use the default layout.
+**Template Style:** If your theme includes a custom checkout template override for the SumUp payment form, select it here. Leave blank to use the default layout.
 
 ### Order Statuses {#order-statuses}
 
+![](/img/sumup-config-status.webp)
+
 These settings control which J2Commerce order status is applied when specific payment events occur.
 
-| Field                              | Description                                                                                     | Default   |
-| ---------------------------------- | ----------------------------------------------------------------------------------------------- | --------- |
-| **Order Status (Payment Success)** | Status applied when SumUp confirms a successful payment                                         | Confirmed |
-| **Failed Payment Status**          | Status applied when a payment fails or expires                                                  | Failed    |
-| **Change Status on Refund**        | When turned on, automatically updates the order status after a refund is processed              | No        |
-| **Refund Order Status**            | The status to apply after a refund — only visible when Change Status on Refund is enabled       | —         |
-| **Change Status on Cancel**        | When turned on, automatically updates the order status after a checkout is cancelled            | No        |
-| **Cancel Order Status**            | The status to apply after a cancellation — only visible when Change Status on Cancel is enabled | —         |
+**Order Status (Payment Success):** Status applied when SumUp confirms a successful payment
+
+**Failed Payment Status:** Status applied when a payment fails or expires
+
+**Change Status on Refund:** When turned on, automatically updates the order status after a refund is processed
+
+- **Refund Order Status:** The status to apply after a refund — only visible when Change Status on Refund is enabled
+
+**Change Status on Cancel:** When turned on, automatically updates the order status after a checkout is cancelled
+
+- **Cancel Order Status:** The status to apply after a cancellation — only visible when Change Status on Cancel is enabled
 
 :::tip
 
@@ -155,43 +162,55 @@ If the status you want is not listed in a dropdown, create a new one first by go
 
 ### Surcharge {#surcharge}
 
+![](/img/sumup-config-surcharge.webp)
+
 Add an optional handling fee when a customer chooses SumUp.
 
-| Field                   | Description                                                                  |
-| ----------------------- | ---------------------------------------------------------------------------- |
-| **Surcharge Name**      | The label shown to the customer (for example, "Card processing fee")         |
-| **Surcharge Percent**   | A percentage of the order total added as a fee (for example, `1.5` for 1.5%) |
-| **Surcharge Fixed**     | A fixed amount added regardless of order size                                |
-| **Surcharge Tax Class** | A tax profile to apply to the surcharge — leave blank if no tax applies      |
+**Surcharge Name:** The label shown to the customer (for example, "Card processing fee")
+
+**Surcharge Percent:** A percentage of the order total added as a fee (for example, `1.5` for 1.5%)
+
+**Surcharge Fixed:** A fixed amount added regardless of order size
+
+**Surcharge Tax Class:** A tax profile to apply to the surcharge — leave blank if no tax applies
 
 Leave both Surcharge Percent and Surcharge Fixed empty to charge no surcharge.
 
 ### GeoZone and Order Value Restrictions {#restrictions}
 
-| Field                      | Description                                                                         |
-| -------------------------- | ----------------------------------------------------------------------------------- |
-| **Geozone Restriction**    | Limit SumUp to customers in a specific geozone — leave blank to allow all locations |
-| **Minimum Order Subtotal** | Hide SumUp as a payment option when the cart subtotal is below this amount          |
-| **Maximum Order Subtotal** | Hide SumUp when the cart subtotal is above this amount                              |
+![](/img/sumup-config-restrictions.webp)
 
-### Custom HTML Snippets {#custom-html}
+**Geozone Restriction:** Limit SumUp to customers in a specific geozone — leave blank to allow all locations
+
+**Minimum Order Subtotal:** Hide SumUp as a payment option when the cart subtotal is below this amount
+
+**Maximum Order Subtotal:** Hide SumUp when the cart subtotal is above this amount
+
+### Custom HTML Messages{#custom-html}
+
+![](/img/sumup-config-messages.webp)
 
 These optional fields let you inject custom text or HTML at different points in the payment flow.
 
-| Field                       | When it appears                                                                       |
-| --------------------------- | ------------------------------------------------------------------------------------- |
-| **Thank-You Article**       | Optional Joomla article shown on the order confirmation page after successful payment |
-| **On Selection Text**       | Displayed when the customer selects SumUp as their payment method                     |
-| **Before Payment Text**     | Displayed just above the card form, before the customer enters card details           |
-| **After Payment Text**      | Displayed on the confirmation page after a successful payment                         |
-| **On Error Text**           | Displayed when a payment attempt fails                                                |
-| **Order Cancelled Message** | Displayed when the customer cancels or navigates away                                 |
+**Thank-You Article:** Optional Joomla article shown on the order confirmation page after successful payment
+
+**On Selection Text:** Displayed when the customer selects SumUp as their payment method
+
+**Before Payment Text:** Displayed just above the card form, before the customer enters card details
+
+**After Payment Text:** Displayed on the confirmation page after a successful payment
+
+**On Error Text:** Displayed when a payment attempt fails
+
+**Order Cancelled Message:** Displayed when the customer cancels or navigates away
 
 ### Dashboard Icon {#dashboard-icon}
 
+![](/img/sumup-config-icon.webp)
+
 **Show Dashboard Icon:** Add a quick-access shortcut for this plugin to the J2Commerce dashboard.
 
-**Dashboard Icon Label:** The label for the shortcut icon. Defaults to "SumUp Payment" if left blank.
+**Icon Label:** The label for the shortcut icon. Defaults to "SumUp Payment" if left blank.
 
 ### Debug Mode {#debug-mode}
 
