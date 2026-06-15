@@ -126,16 +126,18 @@ You can add an optional surcharge for customers who pay by card. Leave all three
 
 ### Order Status
 
+| Field              | Description                                                                | Default     | Notes                                                                                                                                                                         |
+| ------------------ | -------------------------------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Payment Status** | Order status applied when Simplify approves the charge successfully.       | `Confirmed` | When this status is set, J2Commerce fires the full order status change pipeline — notifications, order history, invoice email, and download grants all trigger automatically. |
+| **Decline Status** | Order status applied when Simplify declines the charge or an error occurs. | `Failed`    | The order is updated through the same pipeline, so the customer receives a decline notification if you have one configured.                                                   |
+
 :::info
 
 NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
 
 :::
 
-| Field              | Description                                                                | Default     | Notes                                                                                                                                                                         |
-| ------------------ | -------------------------------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Payment Status** | Order status applied when Simplify approves the charge successfully.       | `Confirmed` | When this status is set, J2Commerce fires the full order status change pipeline — notifications, order history, invoice email, and download grants all trigger automatically. |
-| **Decline Status** | Order status applied when Simplify declines the charge or an error occurs. | `Failed`    | The order is updated through the same pipeline, so the customer receives a decline notification if you have one configured.                                                   |
+![](/img/shipstation-order-status2-1.webp)
 
 ### Geozone Restriction
 

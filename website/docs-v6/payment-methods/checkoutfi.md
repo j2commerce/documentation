@@ -132,16 +132,18 @@ Every field in the plugin settings is explained here.
 
 ### Order status
 
+| Field                   | Description                                                                      | Default       |
+| ----------------------- | -------------------------------------------------------------------------------- | ------------- |
+| **Paid Order Status**   | Status applied when payment succeeds.                                            | Confirmed (1) |
+| **Failed Order Status** | Status applied when payment fails, is cancelled, or fails security verification. | Failed (3)    |
+
 :::info
 
 NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
 
 :::
 
-| Field                   | Description                                                                      | Default       |
-| ----------------------- | -------------------------------------------------------------------------------- | ------------- |
-| **Paid Order Status**   | Status applied when payment succeeds.                                            | Confirmed (1) |
-| **Failed Order Status** | Status applied when payment fails, is cancelled, or fails security verification. | Failed (3)    |
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge (reserved for future use)
 

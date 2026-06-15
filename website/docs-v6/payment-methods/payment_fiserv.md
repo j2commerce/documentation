@@ -19,15 +19,6 @@ The plugin also supports saving cards for faster repeat checkout, authorize-befo
 - A Fiserv Commerce Hub merchant account
 - Your store must be accessible over HTTPS
 
-## Purchase and Download
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Fiserv Commerce Hub Payment**.
-2. Add it to your cart and complete checkout.
-3. Go to **My Downloads** under your account profile and find the plugin.
-4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
-
 ## Get Your Fiserv Credentials
 
 Before configuring the plugin you need four pieces of information from your Fiserv Commerce Hub account.
@@ -42,25 +33,38 @@ Before configuring the plugin you need four pieces of information from your Fise
 
 Keep these values ready — you will paste them into the plugin settings in Joomla.
 
-## Install the Plugin
+## Purchase and Download
 
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-Upload the `payment_fiserv.zip` file or use the Install from URL option.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Fiserv Commerce Hub Payment**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-<!-- SCREENSHOT: Joomla Extensions installer screen with payment_fiserv.zip selected -->
+## Install the App
 
-## Enable the Plugin
+Install using the standard Joomla installer.
 
-Once installed, you need to enable the plugin before it appears at checkout. There are two ways to reach the payment methods list.
+In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner -> **Setup** -> **Payment Methods**
+Upload the `payment_fiserv.zip` package file. The plugin installs and enables automatically.
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Payment Methods**
+![](/img/install.webp)
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list with Fiserv Commerce Hub visible -->
+## Enable the App
 
-Search for **Fiserv Commerce Hub**, click the **X**, and it will turn into a green checkmark. The plugin is now enabled and ready to configure.
+Once installed, verify the app is enabled. There are two ways to reach it.
+
+**Option A:** Click the **J2Commerce** icon at the top right corner -> **Apps**.
+
+**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**.
+
+![](/img/gift-wrap-apps.webp)
+
+Search for **Fiserv Commerce Hub**. If it shows an **X**, click it to enable it. It turns into a green checkmark when active.
+
+![](/img/fiserv-enable.webp)
 
 ## Configure the Plugin
 
@@ -68,19 +72,19 @@ Click the **Fiserv Commerce Hub** title to open its settings.
 
 :::tip
 
-Click the **Toggle Inline Help** button at the top of the settings screen to show a description below each field as you work through the configuration.
+**Helpful tip:** Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
 
 :::
 
-<!-- SCREENSHOT: Fiserv plugin settings screen with Toggle Inline Help highlighted -->
+![](/img/fiserv-toggle.webp)
 
-### Appearance
+### Basic Settings tab
+
+![](/img/fiserv-config1.webp)
 
 **Display Name:** The label shown to customers on the checkout page. The default is "Credit/Debit Card" — change this to anything that makes sense for your store.
 
 **Display Image:** An optional logo or card-brand image to show beside the payment method name on the checkout page.
-
-### Transaction Type
 
 **Transaction Type:** Controls whether funds are collected from the customer immediately or held for manual collection later.
 
@@ -95,29 +99,35 @@ Enable this during setup and testing. Disable it when you are ready to go live. 
 
 ### Live Credentials
 
+![](/img/fiserv-config-live.webp)
+
 These fields appear when **Use Sandbox / Test Mode** is turned off.
 
-<!-- SCREENSHOT: Live credentials fields — API Key, API Secret, Merchant ID, Terminal ID -->
+**API Key:** Your Fiserv Commerce Hub API Key for live transactions
 
-| Field | Description |
-|-------|-------------|
-| **API Key** | Your Fiserv Commerce Hub API Key for live transactions |
-| **API Secret** | Your Fiserv Commerce Hub API Secret for live transactions (used to sign requests) |
-| **Merchant ID** | Your Fiserv Merchant ID for live transactions |
-| **Terminal ID** | Your Fiserv Terminal ID for live transactions (usually `10000001`) |
+**API Secret:** Your Fiserv Commerce Hub API Secret for live transactions (used to sign requests)
+
+**Merchant ID:** Your Fiserv Merchant ID for live transactions
+
+**Terminal ID:** Your Fiserv Terminal ID for live transactions (usually `10000001`)
 
 ### Sandbox Credentials
 
+![](/img/fiserv-config-sandbox.webp)
+
 These fields appear when **Use Sandbox / Test Mode** is turned on. They work exactly like the live fields but connect to the Fiserv certification environment.
 
-| Field | Description |
-|-------|-------------|
-| **Sandbox API Key** | Your Fiserv certification API Key |
-| **Sandbox API Secret** | Your Fiserv certification API Secret |
-| **Sandbox Merchant ID** | Your Fiserv certification Merchant ID |
-| **Sandbox Terminal ID** | Your Fiserv certification Terminal ID (usually `10000001`) |
+**Sandbox API Key:** Your Fiserv certification API Key
+
+**Sandbox API Secret:** Your Fiserv certification API Secret
+
+**Sandbox Merchant ID:** Your Fiserv certification Merchant ID
+
+**Sandbox Terminal ID:** Your Fiserv certification Terminal ID (usually `10000001`)
 
 ### Saved Cards
+
+![](/img/fiserv-config-cc.webp)
 
 **Allow Saved Cards:** Let logged-in customers save their card for faster checkout on future orders.
 
@@ -127,37 +137,47 @@ When enabled, a checkbox appears at checkout so customers can choose to save the
 
 ### Order Statuses
 
-:::info
+![](/img/fiserv-config-status.webp)
 
-If the status you want is not listed in a dropdown, create a new one first by going to **J2Commerce** -> **Setup** -> **Order Statuses**.
+**Order Status:** Status applied when a payment is successfully captured (Sale mode) or authorized (Authorize Only mode)
+
+- **Authorized Order Status:** Status applied when a payment is authorized but not yet captured — **only shown when Transaction Type is set to Authorize Only**
+
+**Change Status on Refund:** Toggle on to automatically update the order status when a refund is processed
+
+- **Refunded Order Status:** Status to apply after a refund — only shown when Change Status on Refund is enabled
+
+**Change Status on Void:**Toggle on to automatically update the order status when a payment is voided
+
+- **Voided Order Status:** Status to apply after a void — only shown when Change Status on Void is enabled
+
+:::tip
+
+If you do not see the order status you prefer, then it needs to be created. Go to J2Commerce Setup Order Status
 
 :::
 
-<!-- SCREENSHOT: Order status dropdowns in Fiserv plugin settings -->
-
-| Setting | Description |
-|---------|-------------|
-| **Order Status** | Status applied when a payment is successfully captured (Sale mode) or authorized (Authorize Only mode) |
-| **Authorized Order Status** | Status applied when a payment is authorized but not yet captured — only shown when Transaction Type is set to Authorize Only |
-| **Change Status on Refund** | Toggle on to automatically update the order status when a refund is processed |
-| **Refunded Order Status** | Status to apply after a refund — only shown when Change Status on Refund is enabled |
-| **Change Status on Void** | Toggle on to automatically update the order status when a payment is voided |
-| **Voided Order Status** | Status to apply after a void — only shown when Change Status on Void is enabled |
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge
 
+![](/img/fiserv-config-surcharge.webp)
+
 Add an optional handling fee when customers pay with this method.
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Name** | Label shown to the customer for the fee (e.g., "Card processing fee") |
-| **Surcharge Percent** | Percentage of the order total to add as a fee (e.g., `1.5` for 1.5%) |
-| **Surcharge Fixed** | Fixed amount to add as a fee regardless of order size |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount |
+**Surcharge Name:** Label shown to the customer for the fee (e.g., "Card processing fee")
+
+**Surcharge Percent:** Percentage of the order total to add as a fee (e.g., `1.5` for 1.5%)
+
+**Surcharge Fixed:** Fixed amount to add as a fee regardless of order size
+
+**Surcharge Tax Class:** Tax profile to apply to the surcharge amount
 
 Leave both **Surcharge Percent** and **Surcharge Fixed** empty to charge no surcharge.
 
 ### GeoZone Availability
+
+![](/img/fiserv-config-geozone.webp)
 
 **Geozone Restriction:** Limit this payment method to customers in a specific geozone. Leave blank to allow all locations.
 
@@ -167,19 +187,25 @@ Leave both **Surcharge Percent** and **Surcharge Fixed** empty to charge no surc
 
 ### Custom HTML Snippets
 
+![](/img/fiserv-config-text.webp)
+
 **Thank-You Article:** An optional Joomla article to display on the order confirmation page after a successful payment.
 
 The following fields let you add custom HTML at different points in the payment flow. All are optional.
 
-| Field | When it appears |
-|-------|----------------|
-| **On Selection Text** | When the customer selects Fiserv as their payment method |
-| **Before Payment Text** | Just above the card form, before the customer enters card details |
-| **After Payment Text** | On the confirmation page after a successful payment |
-| **On Error Text** | When a payment attempt fails |
-| **Order Cancelled Message** | When the customer cancels or navigates away |
+**On Selection Text:** When the customer selects Fiserv as their payment method
+
+**Before Payment Text:** Just above the card form, before the customer enters card details
+
+**After Payment Text:** On the confirmation page after a successful payment
+
+**On Error Text:** When a payment attempt fails
+
+**Order Cancelled Message:** When the customer cancels or navigates away
 
 ### Dashboard Icon
+
+![](/img/fiserv-debug.webp)
 
 **Show Dashboard Icon:** Add a quick-access icon for this plugin to the J2Commerce dashboard.
 
@@ -257,9 +283,7 @@ Always test in sandbox mode before going live.
 6. When everything is working, disable **Use Sandbox / Test Mode** and replace the sandbox credentials with your live credentials.
 
 :::warning
-
 Remember to turn off **Use Sandbox / Test Mode** before accepting real orders. A warning banner on the J2Commerce dashboard will remind you if sandbox mode is still active.
-
 :::
 
 ## Troubleshooting

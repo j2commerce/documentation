@@ -117,12 +117,6 @@ Saved cards are stored as secure tokens in PayTrace — your server never holds 
 
 ![](/img/paytrace-config4.webp)
 
-:::info
-
-NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
-
-:::
-
 **Order Status Settings:** Control which order status is applied when payments succeed, and optionally change statuses automatically when you void or refund a transaction.
 
 - **Payment Status:** The order status set when a payment succeeds (sale or authorized capture).
@@ -134,6 +128,14 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 **Change Order Status on Refund:** Toggle on to automatically update the order status when a refund is processed.
 
 - **Refund Order Status:** The order status to apply after a successful refund. Only visible when the toggle above is on.
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge Name
 

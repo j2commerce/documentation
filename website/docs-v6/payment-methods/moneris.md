@@ -22,17 +22,6 @@ Moneris is the most widely used payment processor in Canada, handling more credi
 - Your store running over HTTPS (SSL certificate installed)
 - The Moneris Checkout plugin purchased from the [J2Commerce Extensions Store](https://www.j2commerce.com)
 
-## Installation
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
-
-1. Purchase and download the `payment_moneris.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_moneris.zip` package file.
-4. The plugin installs and enables automatically.
-
-<!-- SCREENSHOT: Joomla Extensions installer showing the payment_moneris.zip upload confirmation -->
-
 ## Where to Find Your Moneris Credentials
 
 Before configuring the plugin you need three values from Moneris. Log in to the **Moneris Merchant Resource Center** (MRC) at [moneris.com](https://www.moneris.com) (or the test MRC at [esqa.moneris.com](https://esqa.moneris.com) for test credentials).
@@ -47,37 +36,133 @@ The Checkout ID comes from the **Checkout Configurator** inside the MRC. If you 
 
 For test mode, Moneris provides a separate set of test credentials accessible through the **test MRC** at `esqa.moneris.com`. Test credentials are completely separate from live credentials.
 
-## Setup
+## Purchase and Download
 
-### Step 1: Open the Plugin Configuration
+This plugin is a separate add-on available from the **J2Commerce Extensions Store**. It does not come with the core J2Commerce 6 component.
+
+**Step 1:** Go to our [**J2Commerce**](https://www.j2commerce.com/) website **->** **Payment Plugin**
+
+**Step 2:** Locate the **Moneris** Plugin **->** click **View Details** **->** **Add to cart** **->** **Checkout**.&#x20;
+
+**Step 3:** Go to your **My Download**s under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
+
+## Installing the Plugin
+
+You can install this **Moneris** plugin using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
+
+Upload the `payment_moneris.zip` file or use the Install from URL option.
+
+![](/img/autho-install5.webp)
+
+## Enable the Plugin&#x20;
+
+Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
+
+![](/img/autho-methods.webp)
+
+Look for **Moneris**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/moneris-enable.webp)
+
+## Configuring the Plugin
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+**Helpful tip:** Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
 
 :::
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Find **Moneris** (or **Credit Card (Moneris)**) in the list and click its name to open the configuration.
+![](/img/moneris-toggle.webp)
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list with the Moneris row highlighted -->
+### Basic Settings tab
 
-### Step 2: Set Mode and Enter Your Credentials
+![](/img/moneris-config-display.webp)
 
-Fill in the following fields:
+**Display Name:** Payment method label shown to customers at checkout
 
-| Field           | What to enter                                                                                          |
-| --------------- | ------------------------------------------------------------------------------------------------------ |
-| **Mode**        | Set to **Test** while configuring. Switch to **Live** only when you are ready to accept real payments. |
-| **Store ID**    | Your Moneris Store ID                                                                                  |
-| **API Token**   | Your Moneris API Token                                                                                 |
-| **Checkout ID** | The Checkout ID from the Moneris Checkout Configurator                                                 |
+**Display Image:** Optional logo or icon shown beside the payment method name
 
-<!-- SCREENSHOT: Moneris plugin configuration showing Mode, Store ID, API Token, and Checkout ID fields -->
+![](/img/moneris-config-processing.webp)
 
-When **Mode** is **Test**, all transactions go to the Moneris QA gateway (`gatewayt.moneris.com`) using your test credentials. When it is **Live**, transactions go to the production gateway (`gateway.moneris.com`). Use your test Store ID, test API Token, and test Checkout ID while in Test mode — the test MRC at `esqa.moneris.com` provides these.
+**Processing Country:** Select the Moneris environment that matches your merchant account.
 
-### Step 3: Configure Order Statuses
+**Transaction Type:**&#x20;
+
+- **Purchase (Sale):** Settles the payment immediately.&#x20;
+
+- **Pre-Authorisation (Capture Later):** Auth Only reserves funds until you manually settle from the order admin.
+
+**E-Commerce Indicator:** The Moneris crypt\_type sent with each transaction.
+
+- SSL-enabled merchant (non-3DS)
+
+- Mail / Telephone Order - Single
+
+- Authenticated e-Commerce (3DS)
+
+- Non-authenticated e-commerce (3DS attempted)
+
+**Dynamic Descriptor:** Optional text shown on the cardholder statement (max 20 characters).
+
+### Sandbox Mode
+
+![](/img/moneris-config-sandbox.webp)
+
+When **Mode** is **Test**, all transactions go to the Moneris QA gateway (`gatewayt.moneris.com`) using your test credentials. Use your test Store ID, test API Token, and test Checkout ID while in Test mode — the test MRC at `esqa.moneris.com` provides these.
+
+**Sandbox / Test Mode:** When enabled, all transactions are sent to [try.access.moneris.com](http://try.access.moneris.com).
+
+**Test Store ID:** Your Moneris QA/test store ID.
+
+**Test API Token:** Your Moneris QA/test API token.
+
+**Test Hosted Tokenization Profile ID:** The Hosted Tokenization profile ID configured in your Merchant Resource Centre.
+
+### Live Mode
+
+![](/img/moneris-config-live.webp)
+
+When it is **Live**, transactions go to the production gateway (`gateway.moneris.com`).&#x20;
+
+**Store ID:** Your Moneris store ID (e.g. monca12345).
+
+**API Token:** Your Moneris API token from the Merchant Resource Centre.
+
+**Hosted Tokenization Profile ID:** The Hosted Tokenization profile ID configured in your Merchant Resource Centre.
+
+### Credit Cards
+
+![](/img/moneris-config-cc.webp)
+
+**Allow Saved Cards:** Let logged-in customers save their card for future purchases.
+
+**Accepted Card Types:** Select the card brand icons to display above the payment form. Only applies in Embedded Checkout mode.
+
+**Template Style:** Select the CSS framework for this plugin's customer-facing templates
+
+- Default
+
+- Bootstrap5
+
+- Uikit
+
+### Order Status
+
+**Order Status:** Set the order status after payment
+
+**Change Status on Refund:** Update the order status when a refund is processed.
+
+- **Refund Order Status:** Order status to set when a refund is processed.
+
+C**hange Status on Void:** Change the order status when a payment is voided.
+
+- **Void Order Status:** Order status to set after a payment is voided.
 
 :::info
 
@@ -85,144 +170,68 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 
 :::
 
-These two fields control which J2Commerce order status is applied after Moneris reports a result.
+![](/img/shipstation-order-status2-1.webp)
 
-| Field                       | Default   | When it is applied                              |
-| --------------------------- | --------- | ----------------------------------------------- |
-| **Payment Received Status** | Confirmed | Moneris approves the payment                    |
-| **Payment Failed Status**   | Failed    | Moneris declines the payment or an error occurs |
+### Add a Surcharge (Optional)&#x20;
 
-The defaults work for most stores. Only change them if your store uses custom order statuses or a different workflow for approved and declined payments.
-
-### Step 4: (Optional) Add a Surcharge
+![](/img/moneris-config-surcharge.webp)
 
 If your payment processing agreement permits passing a fee to customers, you can add a surcharge for Moneris payments. All three surcharge fields are optional — leave them blank to charge no fee.
 
-| Field                   | Description                                                           |
-| ----------------------- | --------------------------------------------------------------------- |
-| **Surcharge Name**      | Label shown on the order summary (for example, "Card Processing Fee") |
-| **Surcharge Percent**   | Percentage of the order total added as a fee                          |
-| **Surcharge Fixed**     | Fixed dollar amount added as a fee                                    |
-| **Surcharge Tax Class** | Tax profile applied to the surcharge amount                           |
+**Surcharge Name:** Label shown on the order summary (for example, "Card Processing Fee")
+
+**Surcharge Percent:** Percentage of the order total added as a fee
+
+**Surcharge Fixed:** Fixed dollar amount added as a fee
+
+**Surcharge Tax Class:** Tax profile applied to the surcharge amount
 
 Percentage and fixed amounts are combined: a 2% surcharge plus a $0.30 fixed fee both apply when both fields are filled in.
 
 > Before enabling a surcharge, check with your payment processor and confirm it is permitted under your merchant agreement and local regulations. In Canada, surcharging rules vary by card brand and province.
 
-### Step 5: (Optional) Restrict by Geo Zone
+### Restrict by Geo Zone (Optional)&#x20;
 
-The **Geo Zone Restriction** field limits which customers see Moneris as a payment option. Leave it blank to make Moneris available to all customers. To restrict it — for example, to Canadian customers only — select the appropriate geo zone from the list.
+![](/img/moneris-config-geozone.webp)
+
+The **Geo Zone Restriction** field limits which customers see Moneris as a payment option. Leave it blank to make Moneris available to all customers. To restrict it — for example, to Canadian customers only — select the appropriate geo zone from the list. Show this payment method only to customers whose billing address falls within the selected geo zone. Leave blank for all customers.
 
 Geo zones are configured under **J2Commerce** -> **Localization** -> **Geo Zones**.
 
-### Step 6: (Optional) Set a Thank You Article
+**Minimum Subtotal:** Leave empty or set to 0 to allow all order amounts. Set a minimum subtotal required for this payment method to be available.
 
-The **Thank You Article** field lets you display a Joomla article on the post-payment confirmation screen alongside the order summary. This is useful for order instructions, next-step information, or a welcome message. Click the article selector to browse your Joomla articles.
+**Maximum Subtotal:** Leave empty or set to -1 to allow all order amounts. Set a maximum subtotal limit for this payment method to be available.
 
-### Step 7: Review Customer Messages
+**Messages (Optional)**&#x20;
 
-These text fields control what customers read at each stage of the payment process. The defaults are reasonable — feel free to leave them as is or adjust the wording to match your store's tone.
+![](/img/moneris-config-text.webp)
 
-| Field              | When it appears                                                             | Default                                                                                  |
-| ------------------ | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| **On Selection**   | When the customer picks Moneris as their payment method in the payment list | *(empty)*                                                                                |
-| **Before Payment** | Above the Moneris hosted form on the confirm step                           | "Please complete your payment in the secure form below."                                 |
-| **After Payment**  | On the confirmation screen after a successful payment                       | "Thank you. Your payment was received."                                                  |
-| **On Cancel**      | When the customer cancels on the Moneris hosted form                        | "Your payment was cancelled. Your order has not been paid."                              |
-| **On Error**       | When the gateway returns an error or the payment cannot be processed        | "The payment could not be processed. Please try again or choose another payment method." |
+**Thank You Article**: The field lets you display a Joomla article on the post-payment confirmation screen alongside the order summary. This is useful for order instructions, next-step information, or a welcome message. Click the article selector to browse your Joomla articles.
 
-### Step 8: Configure Remaining Options
+**Review Customer Messages**
 
-| Field                        | Description                                                                                                   | Default               |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------- | --------------------- |
-| **Button Text**              | Label on the submit button at the confirm step                                                                | Place Order           |
-| **Error Notification Group** | Joomla user group whose members (with system emails enabled) receive an alert when a payment fails validation | Super Users (group 8) |
-| **Debug Logging**            | Write gateway requests and responses to the Joomla log. No card data or credentials are ever logged.          | No                    |
-| **Template**                 | Frontend display style — **Bootstrap 5** (default) or **UIkit**                                               | Bootstrap 5           |
+These text fields control what customers read at each stage of the payment process. The defaults are reason
 
-### Step 9: Save and Test
+**On Selection:** When the customer picks Moneris as their payment method in the payment list
 
-1. Click **Save** in the toolbar.
-2. Place a test order using the Moneris QA test cards (see [Test Mode and Test Cards](#test-mode-and-test-cards) below).
-3. Confirm the Moneris iframe loads at the confirm step, the test payment completes, and the order status updates correctly in **J2Commerce** -> **Orders**.
-4. When you are satisfied the flow is working, return to the plugin configuration, set **Mode** to **Live**, enter your live credentials, and click **Save** again.
+**Before Payment:** Above the Moneris hosted form on the confirm step. ie: "Please complete your payment in the secure form below."
 
-<!-- SCREENSHOT: Moneris plugin configuration with Save button in the toolbar -->
+**After Payment:** On the confirmation screen after a successful payment. ie: "Thank you. Your payment was received."
 
-## All Configuration Fields
+**On Error:** When the gateway returns an error or the payment cannot be processed. ie: "The payment could not be processed. Please try again or choose another payment method."
 
-### Gateway Credentials
+**Order Cancelled:** When the customer cancels on the Moneris hosted form. ie: "Your payment was cancelled. Your order has not been paid."
 
-| Field             | Description                                                | Default               |
-| ----------------- | ---------------------------------------------------------- | --------------------- |
-| **Display Name**  | Payment method label shown to customers at checkout        | Credit Card (Moneris) |
-| **Display Image** | Optional logo or icon shown beside the payment method name | *(empty)*             |
-| **Mode**          | Test or Live                                               | Test                  |
-| **Store ID**      | Your Moneris Store ID                                      | *(empty)*             |
-| **API Token**     | Your Moneris API Token                                     | *(empty)*             |
-| **Checkout ID**   | The Checkout ID from the Moneris Checkout Configurator     | *(empty)*             |
+### Debug
 
-### Order Status Mapping
+![](/img/moneris-config-debug.webp)
 
-| Field                       | Description                                             | Default   |
-| --------------------------- | ------------------------------------------------------- | --------- |
-| **Payment Received Status** | Status applied when Moneris approves the payment        | Confirmed |
-| **Payment Failed Status**   | Status applied when Moneris declines or an error occurs | Failed    |
+**Show Dashboard Icon:** When enabled, this plugin adds an icon tile to the J2Commerce dashboard and the J2Commerce quick icons module.
 
-### Surcharge (Optional)
+- **Icon Label:** Override the default label shown on the icon tile. Leave empty to use the plugin default.
 
-| Field                   | Description                                                    | Default   |
-| ----------------------- | -------------------------------------------------------------- | --------- |
-| **Surcharge Name**      | Label on the order summary line for the surcharge              | *(empty)* |
-| **Surcharge Percent**   | Percentage of the order subtotal plus shipping to add as a fee | *(empty)* |
-| **Surcharge Fixed**     | Fixed amount to add as a fee                                   | *(empty)* |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge                          | *(empty)* |
-
-### Restrictions
-
-| Field                    | Description                                                                                                                         | Default   |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| **Geo Zone Restriction** | Show this payment method only to customers whose billing address falls within the selected geo zone. Leave blank for all customers. | *(empty)* |
-
-### Confirmation Page
-
-| Field                 | Description                                                  | Default   |
-| --------------------- | ------------------------------------------------------------ | --------- |
-| **Thank You Article** | Joomla article shown on the post-payment confirmation screen | *(empty)* |
-
-### Customer Messages
-
-| Field              | Description                                                         | Default                                                                                  |
-| ------------------ | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| **On Selection**   | Message shown when the customer selects Moneris                     | *(empty)*                                                                                |
-| **Before Payment** | Message shown above the secure iframe on the confirm step           | "Please complete your payment in the secure form below."                                 |
-| **After Payment**  | Message shown on the confirmation screen after a successful payment | "Thank you. Your payment was received."                                                  |
-| **On Cancel**      | Message shown when the customer cancels on the Moneris hosted form  | "Your payment was cancelled. Your order has not been paid."                              |
-| **On Error**       | Message shown when the gateway returns an error                     | "The payment could not be processed. Please try again or choose another payment method." |
-
-### Button
-
-| Field           | Description                | Default     |
-| --------------- | -------------------------- | ----------- |
-| **Button Text** | Label on the submit button | Place Order |
-
-### Admin Notifications
-
-| Field                        | Description                                                                                               | Default     |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------- | ----------- |
-| **Error Notification Group** | Joomla user group whose members (with system emails enabled) receive an email when a payment error occurs | Super Users |
-
-### Diagnostics
-
-| Field             | Description                                                                                                              | Default |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------ | ------- |
-| **Debug Logging** | Write gateway communication details to the Joomla log for troubleshooting. No card data or API secrets are ever written. | No      |
-
-### Appearance
-
-| Field        | Description                                    | Default     |
-| ------------ | ---------------------------------------------- | ----------- |
-| **Template** | Frontend template style — Bootstrap 5 or UIkit | Bootstrap 5 |
+\
+**Debug Mode:** Log API requests and responses (do not enable on live sites).
 
 ## How a Customer Pays
 
@@ -239,8 +248,6 @@ Here is what your customers experience from the moment they reach the payment st
 9. If declined, J2Commerce updates the order to your **Payment Failed Status**, sends an admin error notification if configured, and shows the **On Error** message.
 
 You do not need to configure any return URLs in your Moneris Checkout profile — the plugin generates them automatically for each transaction.
-
-<!-- SCREENSHOT: Moneris hosted iframe loaded on the J2Commerce confirm step, showing the card entry fields -->
 
 ## Security
 
@@ -304,8 +311,6 @@ The Moneris iframe appears as a blank area, a loading spinner that never disappe
 5. Double-check that your **Store ID**, **API Token**, and **Checkout ID** exactly match what is shown in the Moneris Merchant Resource Center.
 6. Confirm **Mode** is set correctly: **Test** credentials only work against the Moneris QA gateway (`esqa.moneris.com`); **Live** credentials only work against the production gateway (`gateway.moneris.com`).
 7. Log in to the Moneris MRC (or test MRC) and confirm the Checkout profile tied to your Checkout ID is active and published.
-
-<!-- SCREENSHOT: Joomla System Logs screen filtered to the plg_j2commerce_payment_moneris category -->
 
 ### Payment not approved (card declined)
 
