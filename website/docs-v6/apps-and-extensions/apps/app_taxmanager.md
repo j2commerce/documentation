@@ -9,8 +9,6 @@ description: "Set up advanced tax rate rules in J2Commerce with country, state/z
 
 The Tax Manager app gives you fine-grained control over how tax is calculated in your store. Instead of relying solely on the built-in tax profiles, you define reusable **Tax Classes** — each containing one or more rate rules that match on country, state or province (zone), and postcode. You can also mark specific customer groups as completely tax-exempt, which is useful for wholesale accounts, non-profit organizations, or resellers.
 
-<!-- SCREENSHOT: Tax Manager app — Tax Classes list view showing example classes -->
-
 ## Requirements
 
 - PHP 8.3.0 or later
@@ -29,11 +27,13 @@ This app is a separate add-on available from the [J2Commerce Extensions Store](h
 
 ## Install the App
 
-1. In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
-2. Upload the `app_taxmanager.zip` file using the upload panel, or use **Install from URL**.
-3. Joomla installs and enables the plugin automatically.
+In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
 
-<!-- SCREENSHOT: System > Install > Extensions — upload panel with app_taxmanager.zip selected -->
+Upload the `app_taxmanager.zip` file using the upload panel, or use **Install from URL**.
+
+Joomla installs and enables the plugin automatically.
+
+![](/img/install.webp)
 
 ## Enable the App
 
@@ -45,7 +45,7 @@ Once installed, verify the app is enabled:
 
 Look for **Tax Manager** in the list. If the status icon shows a red **X**, click it to enable the app. It will turn into a green checkmark.
 
-<!-- SCREENSHOT: J2Commerce Apps list — Tax Manager row with green enabled checkmark -->
+![](/img/gift-wrap-apps.webp)
 
 ## Configure the App
 
@@ -57,19 +57,21 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-<!-- SCREENSHOT: Tax Manager plugin settings page — basic settings tab -->
+![](/img/tax-manager-toggle.webp)
 
 ### Basic Settings
 
-| Setting                    | Description                                                                                                                                                                                         | Default |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Tax-Exempt User Groups** | Users in any selected group will pay no tax on their orders. Leave empty to disable exemptions.                                                                                                     | None    |
-| **Ignore Postcode Suffix** | When enabled, the hyphen suffix on postcodes like `94403-1234` is stripped before matching rates, so `94403` is used for lookup. Enable this if customers may enter postcodes with a hyphen suffix. | Yes     |
-| **Debug Mode**             | Writes detailed rate-matching logs to `administrator/logs/plg_j2commerce_app_taxmanager.php`. Useful when a rate is not applying as expected. Disable in production.                                | No      |
+![](/img/tax-manager-config.webp)
 
-Click **Save** after adjusting these settings.
+**Tax-Exempt User Groups:** Users in any selected group will pay no tax on their orders. Leave empty to disable exemptions.
+
+**Ignore Postcode Suffix:** When enabled, the hyphen suffix on postcodes like `94403-1234` is stripped before matching rates, so `94403` is used for lookup. Enable this if customers may enter postcodes with a hyphen suffix.
+
+**Debug Mode:** Writes detailed rate-matching logs to `administrator/logs/plg_j2commerce_app_taxmanager.php`. Useful when a rate is not applying as expected. Disable in production.
 
 ## Managing Tax Classes
+
+![](/img/tax-manager-classes.webp)
 
 A **Tax Class** is a named container for a set of tax rate rules. You assign a Tax Class to a product the same way you would assign a standard tax profile, and the Tax Manager applies the matching rates at checkout.
 
@@ -77,45 +79,47 @@ A **Tax Class** is a named container for a set of tax rate rules. You assign a T
 
 There are two ways to reach the Tax Classes screen:
 
-**Option A:** Go to **J2Commerce** -> **Apps** -> click **Tax Manager**, then click the **Tax Classes** button in the toolbar.
+**Option A:** Go to **J2Commerce -> Apps ->** **Tax Manager ->** **Tax Classes** button in the top toolbar.
 
-**Option B:** Go to **J2Commerce** -> **Setup** and look for **Tax Classes** in the navigation menu under the Geozones section.
+**Option B:** Go to **J2Commerce** **->** **Localization ->** **Tax Classes**&#x20;
 
-<!-- SCREENSHOT: Tax Classes list view — columns: Class Name, Rate Mode, Status -->
+![](/img/tax-manager-classes1.webp)
 
-### Create a New Tax Class
+## Create a New Tax Class
 
-1. Click **New** in the toolbar.
-2. Fill in the **Tax Class Name** — for example, `US Standard Tax` or `EU VAT 20%`.
-3. Choose a **Rate Mode**:
+Click **New** in the toolbar.
 
-| Rate Mode             | What it does                                                                              |
-| --------------------- | ----------------------------------------------------------------------------------------- |
-| **Add to Core Rate**  | The rates in this class are added on top of any rate from the product's core tax profile. |
-| **Replace Core Rate** | The rates in this class completely replace the core profile rate. Only these rates apply. |
+### Details tab
 
-1. Click **Save** to create the class and stay on the edit screen, or **Save & Close** to return to the list.
+![](/img/tax-manager-classes-new.webp)
 
-<!-- SCREENSHOT: Edit Tax Class screen — Name field, Rate Mode toggle, Save button -->
+**Tax Class Name** — for example, `US Standard Tax` or `EU VAT 20%`.
+
+**Rate Mode**:
+
+- **Add to Core Rate:** The rates in this class are added on top of any rate from the product's core tax profile.
+
+- **Replace Core Rate:** The rates in this class completely replace the core profile rate. Only these rates apply.
 
 ### Add Tax Rates to a Class
+
+![](/img/tax-manager-classes-new1.png)
 
 After saving a Tax Class, the **Tax Rates** table appears at the bottom of the edit screen. Each row targets a specific combination of country, zone, and postcode.
 
 Click **Add New Tax Rate** to add a row, then fill in the fields:
 
-| Field         | Description                                                                | Example              |
-| ------------- | -------------------------------------------------------------------------- | -------------------- |
-| **Country**   | Two-letter ISO country code, or `*` for all countries.                     | `US`, `GB`, `*`      |
-| **Zone**      | State or province code, or `*` for all zones.                              | `CA`, `TX`, `*`      |
-| **Postcode**  | Exact postcode, a prefix with wildcard (`940*`), or `*` for all postcodes. | `94403`, `940*`, `*` |
-| **Rate (%)**  | The tax percentage to apply.                                               | `8.25`               |
-| **Rate Name** | A display label for this rate.                                             | `CA State Tax`       |
-| **Priority**  | Sort order when multiple rates match. Lower numbers apply first.           | `0`                  |
+**Country:** Two-letter ISO country code, or `*` for all countries. Example;`US`, `GB`, `*`
 
-Click **Save All** to save all rate rows at once.
+**Zone:** State or province code, or `*` for all zones. Example; `CA`, `TX`, `*`
 
-<!-- SCREENSHOT: Tax Rates table — rows with Country/Zone/Postcode/Rate/Name/Priority fields and Add New Rate button -->
+**Postcode:** Exact postcode, a prefix with wildcard (`940*`), or `*` for all postcodes. Example; `94403`, `940*`, `*`
+
+**Rate (%):** The tax percentage to apply. Example; `8.25`
+
+**Rate Name:** A display label for this rate. Example; `CA State Tax`
+
+**Priority:** Sort order when multiple rates match. Lower numbers apply first. Example; `0`
 
 #### Postcode Matching Tips
 
@@ -128,6 +132,8 @@ Click **Save All** to save all rate rows at once.
 
 For stores with many rates — such as US state-by-state tax tables — you can import and export rates as CSV files rather than entering them manually.
 
+![](/img/tax-manager-classes-export.png)
+
 **To export:** Open a Tax Class and click **Export CSV** in the toolbar. The file downloads with columns in this order:
 
 ```
@@ -136,18 +142,19 @@ taxrate_country, taxrate_zone, taxrate_zip, taxrate_rate, taxrate_name, taxrate_
 
 **To import:** From the Tax Classes list, click **Import** in the toolbar. Select your CSV file, choose the correct delimiter (comma by default), and click Upload. Each row in the CSV adds a new rate to the selected class.
 
-<!-- SCREENSHOT: Import CSV dialog — file picker, delimiter field, Upload button -->
-
 The required CSV columns are:
 
-| Column             | Required | Description                             |
-| ------------------ | -------- | --------------------------------------- |
-| `taxrate_country`  | Yes      | Two-letter ISO code or `*`              |
-| `taxrate_zone`     | Yes      | Zone/state code or `*`                  |
-| `taxrate_zip`      | Yes      | Postcode, prefix wildcard, or `*`       |
-| `taxrate_rate`     | Yes      | Tax percentage as a number, e.g. `8.25` |
-| `taxrate_name`     | Yes      | Display name for the rate               |
-| `taxrate_priority` | Yes      | Integer sort priority                   |
+`taxrate_country:` Two-letter ISO code or `*`
+
+`taxrate_zone:` Zone/state code or `*`
+
+`taxrate_zip:` Postcode, prefix wildcard, or `*`
+
+`taxrate_rate:` Tax percentage as a number, e.g. `8.25`
+
+`taxrate_name:` Display name for the rate
+
+`taxrate_priority:` Integer sort priority
 
 ### Duplicate a Tax Class
 
@@ -161,23 +168,23 @@ You can also select multiple classes with the checkboxes and use the **Enable** 
 
 ## Assign a Tax Class to a Product
 
+![](/img/tax-manager-product.webp)
+
 Tax Classes created in Tax Manager appear in the same dropdown as standard core tax profiles. To assign one:
 
 1. Go to **J2Commerce** -> **Catalog** -> **Products**.
 2. Click a product to edit it.
 3. Open the **J2Commerce** tab -> **Pricing** tab (or **General** tab, depending on your layout).
 4. Find the **Tax Profile** field and select your Tax Manager class from the dropdown.
-5. Click **Save**.
-
-<!-- SCREENSHOT: Product edit screen — J2Commerce tab > Pricing tab > Tax Profile dropdown showing Tax Manager class -->
 
 ## Tax-Exempt User Groups
+
+![](/img/tax-manager-tax-exempt.webp)
 
 If you need certain customers — such as wholesale buyers or charities — to pay no tax at all, use the **Tax-Exempt User Groups** setting:
 
 1. Open the Tax Manager app settings (**J2Commerce** -> **Apps** -> **Tax Manager**).
 2. Under **Tax-Exempt User Groups**, select one or more Joomla user groups.
-3. Click **Save**.
 
 Any logged-in customer who belongs to one of those groups will have their tax profile set to zero at checkout, regardless of which Tax Class or core tax profile is assigned to the product.
 
@@ -187,7 +194,7 @@ Guests (not logged in) are never treated as tax-exempt via this feature.
 
 When a customer reaches checkout, Tax Manager checks the customer's address against all rates in the assigned Tax Class:
 
-1. Tax Manager reads your store's **Tax Calculation Basis** setting (billing address or shipping address) from **J2Commerce** -> **Setup** -> **Configuration** -> **Tax** tab.
+1. Tax Manager reads your store's **Tax Calculation Basis** setting (billing address or shipping address) from **J2Commerce** -> **Setup** -> **Configuration** **->** **Product Setting**s tab **-> Tax** section.
 2. It looks up the customer's country, zone, and postcode from that address.
 3. It matches rates from the Tax Class by country (exact or `*`), then by zone (exact or `*`), then by postcode (exact, prefix wildcard, or `*`).
 4. Depending on the **Rate Mode** setting on the Tax Class, matched rates either replace or add on top of the product's core tax profile rate.
@@ -215,8 +222,6 @@ When a customer reaches checkout, Tax Manager checks the customer's address agai
 2. Go to **J2Commerce** -> **Catalog** -> **Products**, edit the product, and confirm a Tax Class is selected in the **Tax Profile** field.
 3. Open the Tax Class and check that at least one rate is configured and the class itself is enabled (green checkmark on the list).
 4. Enable **Debug Mode** in the Tax Manager settings, place a test order, and check the log at `administrator/logs/plg_j2commerce_app_taxmanager.php` to see the matching result.
-
-<!-- SCREENSHOT: Tax Classes list — enabled status column highlighted for a class -->
 
 ### Tax Class Does Not Appear in the Product Tax Profile Dropdown
 
