@@ -199,6 +199,8 @@ If the order status you want is not listed, create it first under **J2Commerce**
 
 :::
 
+![](/img/shipstation-order-status2-1.webp)
+
 ### Surcharges
 
 ![](/img/barclay-surcharge.webp)

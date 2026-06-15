@@ -12,17 +12,17 @@ The Cardsave plugin connects your J2Commerce store to the Cardsave Online Paymen
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
 :::warning Legacy Gateway — New Accounts Not Available
-
 Cardsave Online Payments was acquired by Worldpay in 2010. **New merchants cannot sign up for Cardsave.** This plugin exists only for legacy merchants who already hold active Cardsave credentials (Merchant ID, Password, and Pre-Shared Key).
 
 If you do not already have a Cardsave account, use the [Worldpay](./payment_worldpay) payment plugin instead, which supports the same Worldpay infrastructure under its current branding.
-
 :::
 
 ## Prerequisites
 
 - J2Commerce is installed and active on your Joomla site.
 - You already have an active Cardsave merchant account with a working **Merchant ID**, **Password**, and **Pre-Shared Key**. These credentials are available in your existing Cardsave merchant portal. If you do not have them, you cannot use this plugin — Cardsave no longer accepts new merchant applications.
+
+`payment_cardsave.zip`
 
 ## Purchase and Download
 
@@ -63,10 +63,10 @@ Click the **Toggle Inline Help** button in the toolbar to display a description 
 
 **Payment Mode** controls how card details are collected:
 
-| Option | Description |
-|--------|-------------|
-| **Hosted Payment Page (recommended)** | The customer is redirected to a secure Cardsave-hosted page to enter their card details. Card data never touches your server. This is the simpler, safer option and requires no additional PCI compliance measures on your end. |
-| **Direct SOAP** | A card-entry form appears on your checkout page. Card details are collected on your server and submitted to Cardsave via a SOAP request. This mode requires full PCI DSS SAQ-D compliance and is only recommended if you have a specific technical reason to avoid the redirect. |
+| Option                                | Description                                                                                                                                                                                                                                                                      |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Hosted Payment Page (recommended)** | The customer is redirected to a secure Cardsave-hosted page to enter their card details. Card data never touches your server. This is the simpler, safer option and requires no additional PCI compliance measures on your end.                                                  |
+| **Direct SOAP**                       | A card-entry form appears on your checkout page. Card details are collected on your server and submitted to Cardsave via a SOAP request. This mode requires full PCI DSS SAQ-D compliance and is only recommended if you have a specific technical reason to avoid the redirect. |
 
 Most stores should leave this set to **Hosted Payment Page (recommended)**.
 
@@ -74,11 +74,11 @@ Most stores should leave this set to **Hosted Payment Page (recommended)**.
 
 These three values come from your existing Cardsave merchant account.
 
-| Field | Description |
-|-------|-------------|
-| **Merchant ID** | Your Cardsave Merchant ID. |
-| **Merchant Password** | The password associated with your Cardsave account. |
-| **Pre-Shared Key** | The pre-shared key associated with your Cardsave account, used to sign and verify transaction hashes. |
+| Field                 | Description                                                                                           |
+| --------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Merchant ID**       | Your Cardsave Merchant ID.                                                                            |
+| **Merchant Password** | The password associated with your Cardsave account.                                                   |
+| **Pre-Shared Key**    | The pre-shared key associated with your Cardsave account, used to sign and verify transaction hashes. |
 
 All three fields are required. The plugin will not process payments if any of them are blank.
 
@@ -86,21 +86,21 @@ All three fields are required. The plugin will not process payments if any of th
 
 These settings control which Cardsave server endpoint is used. In almost all cases the defaults are correct.
 
-| Field | Default | Description |
-|-------|---------|-------------|
+| Field                        | Default                      | Description                                                                                                      |
+| ---------------------------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | **Payment Processor Domain** | `cardsaveonlinepayments.com` | The domain provided by Cardsave for your account. Only change this if Cardsave has given you a different domain. |
-| **Payment Processor Port** | `4430` | The port for the SOAP connection (Direct mode). Only change this if Cardsave has specified a different port. |
+| **Payment Processor Port**   | `4430`                       | The port for the SOAP connection (Direct mode). Only change this if Cardsave has specified a different port.     |
 
 ### Hash Method
 
 **Hash Method** controls how transaction data is signed. This must match the setting on your Cardsave merchant account.
 
-| Option | Notes |
-|--------|-------|
-| **HMAC-SHA1** (default) | Recommended. Secure keyed-hash algorithm. |
-| **HMAC-MD5** | Use only if your account is configured for this. |
-| **SHA1 (deprecated)** | Insecure. Use only if your account does not support HMAC methods. |
-| **MD5 (deprecated)** | Insecure. Use only if your account does not support HMAC methods. |
+| Option                  | Notes                                                             |
+| ----------------------- | ----------------------------------------------------------------- |
+| **HMAC-SHA1** (default) | Recommended. Secure keyed-hash algorithm.                         |
+| **HMAC-MD5**            | Use only if your account is configured for this.                  |
+| **SHA1 (deprecated)**   | Insecure. Use only if your account does not support HMAC methods. |
+| **MD5 (deprecated)**    | Insecure. Use only if your account does not support HMAC methods. |
 
 Leave this on **HMAC-SHA1** unless Cardsave has specifically told you to use a different method.
 
@@ -118,22 +118,22 @@ If the status you want is not listed in a dropdown, create it first at **J2Comme
 
 :::
 
-| Field | Default | When It Applies |
-|-------|---------|-----------------|
+| Field                       | Default       | When It Applies                                                                                   |
+| --------------------------- | ------------- | ------------------------------------------------------------------------------------------------- |
 | **Authorized Order Status** | Confirmed (1) | Payment was authorized successfully (status code 0 or a duplicate of a successful authorization). |
-| **Declined Order Status** | Failed (3) | Payment was declined or an error occurred. |
-| **Pending Order Status** | Pending (4) | 3D Secure authentication is in progress (status code 3, Direct mode only). |
+| **Declined Order Status**   | Failed (3)    | Payment was declined or an error occurred.                                                        |
+| **Pending Order Status**    | Pending (4)   | 3D Secure authentication is in progress (status code 3, Direct mode only).                        |
 
 ### Surcharge
 
 Add an optional surcharge to orders paid via Cardsave.
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Name** | Label shown to customers for the surcharge (e.g., `Card Processing Fee`). |
-| **Surcharge Percent** | Percentage of the order subtotal added as a surcharge. Leave blank for no percentage surcharge. |
-| **Surcharge Fixed** | Fixed amount added as a surcharge. Leave blank for no fixed surcharge. |
-| **Surcharge Tax Class** | Tax profile applied to the surcharge amount. |
+| Field                   | Description                                                                                     |
+| ----------------------- | ----------------------------------------------------------------------------------------------- |
+| **Surcharge Name**      | Label shown to customers for the surcharge (e.g., `Card Processing Fee`).                       |
+| **Surcharge Percent**   | Percentage of the order subtotal added as a surcharge. Leave blank for no percentage surcharge. |
+| **Surcharge Fixed**     | Fixed amount added as a surcharge. Leave blank for no fixed surcharge.                          |
+| **Surcharge Tax Class** | Tax profile applied to the surcharge amount.                                                    |
 
 You can combine a percentage and a fixed amount. Both are added together.
 
@@ -141,8 +141,8 @@ You can combine a percentage and a fixed amount. Both are added together.
 
 Use these settings to limit which orders can use Cardsave.
 
-| Field | Default | Description |
-|-------|---------|-------------|
+| Field                   | Default | Description                                                                                             |
+| ----------------------- | ------- | ------------------------------------------------------------------------------------------------------- |
 | **Minimum Order Total** | `0.000` | Hide Cardsave at checkout if the cart subtotal is below this amount. Set to `0` to disable the minimum. |
 | **Maximum Order Total** | `-1.00` | Hide Cardsave at checkout if the cart subtotal exceeds this amount. Set to `-1` to disable the maximum. |
 
@@ -158,13 +158,13 @@ Use these settings to limit which orders can use Cardsave.
 
 These text areas let you inject custom content at specific points in the payment flow. They are optional and intended for advanced use — most stores can leave them blank.
 
-| Field | When It Appears |
-|-------|-----------------|
-| **On Selection** | When the customer selects Cardsave as their payment method at checkout. |
+| Field                 | When It Appears                                                                |
+| --------------------- | ------------------------------------------------------------------------------ |
+| **On Selection**      | When the customer selects Cardsave as their payment method at checkout.        |
 | **On Before Payment** | On the page shown before the customer is redirected to Cardsave (Hosted mode). |
-| **On After Payment** | On the confirmation page after the customer returns from Cardsave. |
-| **On Error Payment** | When a payment error occurs. |
-| **On Cancel Payment** | When the customer cancels the payment on the Cardsave hosted page. |
+| **On After Payment**  | On the confirmation page after the customer returns from Cardsave.             |
+| **On Error Payment**  | When a payment error occurs.                                                   |
+| **On Cancel Payment** | When the customer cancels the payment on the Cardsave hosted page.             |
 
 ### Button Text
 
@@ -191,7 +191,7 @@ Enable debug mode only while troubleshooting a problem. Disable it in production
 - **Bootstrap 5** — recommended for most Joomla sites
 - **UIkit** — use if your template is UIkit-based (e.g., YOOtheme Pro)
 
----
+***
 
 ## How the Payment Flow Works
 
@@ -213,20 +213,18 @@ Enable debug mode only while troubleshooting a problem. Disable it in production
 5. Once complete, the order status is updated to **Authorized**, **Declined**, or **Pending** based on the result.
 
 :::warning PCI Compliance — Direct Mode
-
 Direct SOAP mode transmits raw card data through your server. This places your site in PCI DSS scope at the SAQ-D level, which requires a comprehensive annual audit. Only use Direct mode if you have a specific requirement and have confirmed your PCI compliance obligations with your acquiring bank.
 
 Most merchants should use **Hosted Payment Page** mode.
-
 :::
 
----
+***
 
 ## Subscription and Renewal Payments
 
 Cardsave does not provide a customer card vault, so automatic recurring billing is not supported. If you use subscription products with Cardsave, subscription renewals will stay in a pending state until you manually confirm payment via the Worldpay merchant portal and update the order status in J2Commerce.
 
----
+***
 
 ## Troubleshooting
 
@@ -276,7 +274,7 @@ Cardsave does not provide a customer card vault, so automatic recurring billing 
 1. Go to **System** -> **Global Configuration** -> **Server** and confirm the mail settings are correct.
 2. Check the Joomla user accounts in the selected group and ensure at least one has **Receive System Emails: Yes** in their profile.
 
----
+***
 
 ## Support
 
