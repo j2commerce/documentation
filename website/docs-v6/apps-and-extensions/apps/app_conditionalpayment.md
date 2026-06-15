@@ -1,10 +1,3 @@
----
-title: "Conditional Payment Methods"
-sidebar_label: "Conditional Payment Methods"
-sidebar_position: 15
-description: "Show or hide payment methods at checkout based on which shipping method the customer selects."
----
-
 # Conditional Payment Methods
 
 The Conditional Payment Methods app lets you tie your payment options directly to the shipping method a customer chooses. You create rules — each one says "when the customer picks one of these shipping methods, show (or hide) these payment methods" — and the checkout payment list updates automatically the moment they make their shipping selection. It is perfect for scenarios like allowing Cash on Delivery only when Local Pickup is chosen, or hiding Bank Transfer for Express Delivery orders.
@@ -34,7 +27,7 @@ In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
 
 Upload the `app_conditionalpayment.zip` package file. The plugin installs automatically.
 
-<!-- SCREENSHOT: Joomla installer showing the app_conditionalpayment.zip upload step -->
+![](/img/install.webp)
 
 ## Enable the App
 
@@ -44,9 +37,11 @@ Once installed, check that the app is active. There are two ways to reach the Ap
 
 **Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**.
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Conditional Payment Methods enabled -->
+![](/img/gift-wrap-apps.webp)
 
 Find **Conditional Payment Methods** in the list. If it shows a red X, click it to enable it. It becomes a green checkmark when the app is active.
+
+![](/img/conditional-payments-enable.webp)
 
 ## Configure the App
 
@@ -58,70 +53,78 @@ Click the **Toggle Inline Help** button in the toolbar to reveal a description b
 
 :::
 
-<!-- SCREENSHOT: Conditional Payment Methods settings page showing the Rules repeatable subform -->
+![](/img/conditional-payments-toggle.webp)
 
-### Rules
+### Basic Settings tab
+
+**Rules**
 
 Rules are the heart of this app. Each rule defines a trigger (which shipping method the customer picks) and a response (which payment methods to show or hide). You can have as many rules as you need.
 
+![](/img/conditional-payments-config.webp)
+
 Click the **Add** button to add a new rule. Each rule contains the following fields.
 
-#### Condition Type
+**Rule Type:** The event that triggers this rule. Currently the only option is **Shipping Method**, meaning the rule fires when the customer selects a specific shipping method. This field is here to support additional condition types in future versions.
 
-The event that triggers this rule. Currently the only option is **Shipping Method**, meaning the rule fires when the customer selects a specific shipping method. This field is here to support additional condition types in future versions.
+**Shipping Methods:** The shipping method (or methods) that activate this rule. Select one or more shipping methods from the list. The rule only takes effect when the customer picks one of the methods you choose here.
 
-#### Shipping Methods
+All shipping methods currently enabled in your store appear in this list. If a shipping method is missing, publish it first under **J2Commerce** -> **Setup** -> **Shipping Methods**.
 
-The shipping method (or methods) that activate this rule. Select one or more shipping methods from the list. The rule only takes effect when the customer picks one of the methods you choose here.
+**Payment Methods:** The payment method (or methods) this rule applies to. Select one or more payment methods. Combined with the **Action** setting below, this determines which payment options appear or disappear when the trigger fires.
 
-All shipping methods currently enabled in your store appear in this list. If a shipping method is missing, publish it first under **J2Commerce** -> **Shipping** -> **Shipping Methods**.
+All enabled payment plugins appear in this list. If a gateway is not listed, check **J2Commerce -> Setup -> Payment Methods** and make sure it is published.
 
-#### Payment Methods
+**Action:** What happens to the selected payment methods when the trigger shipping method is chosen.
 
-The payment method (or methods) this rule applies to. Select one or more payment methods. Combined with the **Action** setting below, this determines which payment options appear or disappear when the trigger fires.
+- **Show:** Only the selected payment methods are offered. All other payment methods are removed from the checkout. Use this to whitelist — for example, show only Cash on Delivery when Local Pickup is selected.
 
-All enabled payment plugins appear in this list. If a gateway is not listed, check **J2Commerce** -> **Payments** -> **Payment Methods** and make sure it is published.
+- **Hide:** The selected payment methods are removed. All other payment methods remain available. Use this to block specific options — for example, hide Bank Transfer when Express Delivery is selected.
 
-#### Action
-
-What happens to the selected payment methods when the trigger shipping method is chosen.
-
-| Option | What it does |
-|--------|--------------|
-| **Show** | Only the selected payment methods are offered. All other payment methods are removed from the checkout. Use this to whitelist — for example, show only Cash on Delivery when Local Pickup is selected. |
-| **Hide** | The selected payment methods are removed. All other payment methods remain available. Use this to block specific options — for example, hide Bank Transfer when Express Delivery is selected. |
-
-#### Access Level
-
-The Joomla view access level this rule applies to. The default is **Public**, which means the rule applies to all customers. You can set a more restrictive access level (for example, **Registered**) to target the rule only at logged-in users or specific user groups. This lets you create rules that apply differently depending on who is shopping.
+**Access Level:** The Joomla view access level this rule applies to. The default is **Public**, which means the rule applies to all customers. You can set a more restrictive access level (for example, **Registered**) to target the rule only at logged-in users or specific user groups. This lets you create rules that apply differently depending on who is shopping.
 
 ### Managing Multiple Rules
+
+![](/img/conditional-payments-config1.webp)
 
 - Click **Add** to create another rule after the first.
 - Drag the handle on the left of a rule row to reorder rules.
 - Click the **Remove** button (trash icon) on a rule row to delete it.
 - Rules are evaluated from top to bottom. If more than one rule can match the chosen shipping method, all matching rules are applied together.
 
-### Debug
+### Debug:&#x20;
 
 A global **Debug** toggle is available at the bottom of the settings. When turned on, the app logs rule evaluation details to help you diagnose unexpected behaviour. Turn this **off** on live production sites once you have finished testing.
-
-Click **Save** to apply your settings.
 
 ## How It Works
 
 Here is what happens from the customer's point of view during checkout.
 
-1. The customer adds products to their cart and proceeds to checkout.
-2. At the shipping step, they choose a shipping method.
-3. The app immediately evaluates all rules against the selected shipping method and the customer's Joomla access level.
-4. Any rules that match are applied — payment methods are shown or hidden according to the rule's **Action** setting.
-5. The updated payment method list is presented to the customer before they choose how to pay.
-6. If the customer changes the shipping method, the payment list re-evaluates instantly.
+The customer adds products to their cart and proceeds to checkout.
+
+At the shipping step, they choose a shipping method.
+
+The app immediately evaluates all rules against the selected shipping method and the customer's Joomla access level.
+
+Any rules that match are applied — payment methods are shown or hidden according to the rule's **Action** setting.
+
+The updated payment method list is presented to the customer before they choose how to pay.
+
+If the customer changes the shipping method, the payment list re-evaluates instantly.
 
 Rules have no effect before the customer selects a shipping method. The full, unfiltered payment list is shown until a shipping method is chosen.
 
-<!-- SCREENSHOT: Checkout page showing the payment method list updating after a shipping method is selected -->
+## Frontend View
+
+The following screenshots are examples when the settings are set for 'FedEx' as the shipping method and 'Stripe' as the payment method and to 'Show'
+
+- **When the shopper chooses the shipping method as FedEx, stripe appears**
+
+![](/img/conditional-payments-frontend1.webp)
+
+- **When the shopper chooses a different shipping method other than FedEx, Stripe doesn't appear**
+
+![](/img/conditional-payments-frontend3.webp)
 
 ## Display Conditions
 
@@ -170,7 +173,7 @@ Rules have no effect before the customer selects a shipping method. The full, un
 **Solution:**
 
 1. Open the app settings and review your Show rules.
-2. Confirm that every payment method listed in a Show rule is published and enabled under **J2Commerce** -> **Payments** -> **Payment Methods**.
+2. Confirm that every payment method listed in a Show rule is published and enabled under **J2Commerce -> Setup -> Payment Methods**.
 3. If the whitelisted method has its own geo-zone or order total restrictions, make sure the current order qualifies for it.
 4. Consider switching from a Show rule to a Hide rule so that unexpected filtering does not leave the customer with no options.
 
