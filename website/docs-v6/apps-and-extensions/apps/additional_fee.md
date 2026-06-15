@@ -122,9 +122,9 @@ In the Fees list, click **New Fee** in the toolbar.
 
 ![](/img/additonal-fee-manage-new.webp)
 
-**Fill in the fee form:**
+### Fee Details tab
 
-<!-- SCREENSHOT: Fee add/edit form with all fields visible and a sample "Handling Fee" filled in. -->
+![](/img/additonal-fee-form.webp)
 
 **Fee Name:** The label shown to customers (e.g., "Environmental Levy", "Handling Fee").
 
@@ -135,6 +135,10 @@ In the Fees list, click **New Fee** in the toolbar.
 **Amount:** The numeric value. For a percentage fee, enter `5` for 5 %.
 
 **Per Item:** When enabled, a fixed fee is multiplied by the total quantity of items in the cart. A $2 per-item fee on a cart with 3 items totals $6.
+
+### Restrictions tab
+
+![](/img/additonal-fee-form1.webp)
 
 **Min Order Qty:** Only apply this fee when the cart contains at least this many items. Leave `0` to ignore.
 
@@ -152,7 +156,9 @@ In the Fees list, click **New Fee** in the toolbar.
 
 **Category:** Restrict this fee to orders that contain a product linked to one of these Joomla content categories. Leave blank to apply regardless of category.
 
-### Editing an existing fee
+## Editing an existing fee
+
+![](/img/additonal-fee-form2.webp)
 
 Click the fee name in the list to open the edit form. Make changes and click **Save**.
 
@@ -163,8 +169,6 @@ Use the enabled toggle in the Fees list to activate or deactivate individual fee
 ### Deleting fees
 
 Check the box next to one or more fees and click **Delete** in the toolbar. Confirm the prompt. This action cannot be undone.
-
-<!-- SCREENSHOT: Fees list with two fees checked and the Delete toolbar button highlighted. -->
 
 ## Managing Fees (Product-Level)
 

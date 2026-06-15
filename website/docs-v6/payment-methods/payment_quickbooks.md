@@ -47,21 +47,29 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 **Step 3:** Go to **My Downloads** under your profile button at the top right corner and search for the plugin. Click **Available Versions -> View Files -> Download Now**
 
-## Install the Plugin
+## Installing the Plugin
 
-In the Joomla admin, go to **System -> Install -> Extensions**
+You can install this **QuickBooks Payments** plugin using the Joomla installer. The following steps help you with a successful installation.
 
-Upload the plugin ZIP file or use the Install from URL option. The plugin installs and enables automatically.
+In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
-## Enable the Plugin
+Upload the **QuickBooks Payments** ZIP file or use the Install from URL option.
 
-Once installed, you need to enable and configure the plugin. There are **two** ways to access it:
+![](/img/autho-install5.webp)
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Payments**
+## Enable the Plugin&#x20;
 
-**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Payments -> Payment Methods**
+Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
 
-Look for **QuickBooks Payments** in the list. If it appears as disabled, click the toggle to enable it.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
+
+![](/img/autho-methods.webp)
+
+Look for **QuickBooks Payments**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/quickbooks-enable.webp)
 
 ## Configure the Plugin
 
@@ -73,18 +81,23 @@ Click the **Toggle Inline Help** button in the toolbar and the plugin will show 
 
 :::
 
+![](/img/quickbooks-toggle.webp)
+
 ### Display Settings
 
-| Field             | Description                                                               | Default             |
-| ----------------- | ------------------------------------------------------------------------- | ------------------- |
-| **Display Name**  | The label shown to customers at checkout (e.g., "Credit/Debit Card")      | `Credit/Debit Card` |
-| **Display Image** | Optional image or logo to show beside the payment method name at checkout | —                   |
+![](/img/quickbooks-config1.webp)
+
+**Display Name:** The label shown to customers at checkout (e.g., "Credit/Debit Card")
+
+**Display Image:** Optional image or logo to show beside the payment method name at checkout
 
 ### Capture Mode
 
-| Field            | Description                                                                                                                                                                                                  | Default               |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------- |
-| **Capture Mode** | **Authorize + Capture (recommended):** funds are collected immediately at checkout. **Authorize Only:** a hold is placed on the customer's card; you collect the funds manually from the order admin screen. | `Authorize + Capture` |
+**Capture Mode:**&#x20;
+
+- **Authorize + Capture (recommended):** funds are collected immediately at checkout.&#x20;
+
+- **Authorize Only:** a hold is placed on the customer's card; you collect the funds manually from the order admin screen.
 
 :::info
 
@@ -92,57 +105,73 @@ Use **Authorize Only** when you ship physical goods and want to verify the order
 
 :::
 
-### Sandbox / Test Mode
+### Credentials
 
-| Field                   | Description                                                                                          | Default |
-| ----------------------- | ---------------------------------------------------------------------------------------------------- | ------- |
-| **Sandbox / Test Mode** | When enabled, all transactions are sent to `sandbox.api.intuit.com`. No real payments are processed. | No      |
+**Sandbox / Test Mode**
+
+When enabled, all transactions are sent to `sandbox.api.intuit.com`. No real payments are processed.
 
 :::tip
 
-Use sandbox mode with your Intuit sandbox credentials to verify your setup before going live. When sandbox is active, a warning banner appears on your J2Commerce dashboard.
+Use **sandbox** mode with your Intuit sandbox credentials to verify your setup before going live. When sandbox is active, a warning banner appears on your J2Commerce dashboard.
 
 :::
 
 ### Live Credentials
 
+![](/img/quickbooks-config3.webp)
+
 These fields appear when **Sandbox / Test Mode** is set to **No**.
 
-| Field                     | Description                                                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **OAuth2 Client ID**      | Your Intuit app Client ID for live transactions.                                                                                                             |
-| **OAuth2 Client Secret**  | Your Intuit app Client Secret. Keep this private.                                                                                                            |
-| **OAuth2 Refresh Token**  | The refresh token obtained when you authorized your QuickBooks company. The plugin updates this value automatically each time it refreshes the access token. |
-| **Realm ID (Company ID)** | Your QuickBooks company ID. Used to scope saved card storage to your account.                                                                                |
+**OAuth2 Client ID:** Your Intuit app Client ID for live transactions.
+
+**OAuth2 Client Secret:** Your Intuit app Client Secret. Keep this private.
+
+**OAuth2 Refresh Token:** The refresh token obtained when you authorized your QuickBooks company. The plugin updates this value automatically each time it refreshes the access token.
+
+**Realm ID (Company ID):** Your QuickBooks company ID. Used to scope saved card storage to your account.
 
 ### Sandbox Credentials
 
+![](/img/quickbooks-config2.webp)
+
 These fields appear when **Sandbox / Test Mode** is set to **Yes**.
 
-| Field                            | Description                                 |
-| -------------------------------- | ------------------------------------------- |
-| **Sandbox OAuth2 Client ID**     | Client ID from your Intuit sandbox app.     |
-| **Sandbox OAuth2 Client Secret** | Client Secret from your Intuit sandbox app. |
-| **Sandbox OAuth2 Refresh Token** | Refresh token for sandbox authorization.    |
-| **Sandbox Realm ID**             | Your sandbox company Realm ID.              |
+**Sandbox OAuth2 Client ID:** Client ID from your Intuit sandbox app.
+
+**Sandbox OAuth2 Client Secret:** Client Secret from your Intuit sandbox app.
+
+**Sandbox OAuth2 Refresh Token:** Refresh token for sandbox authorization.
+
+**Sandbox Realm ID:** Your sandbox company Realm ID.
 
 ### Saved Cards
 
-| Field                   | Description                                                                                                                                                                                                                                  | Default          |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| **Allow Saved Cards**   | Let logged-in customers save their card details for faster repeat checkout. Saved cards are stored securely in your QuickBooks Payments vault.                                                                                               | Yes              |
-| **Accepted Card Types** | Select which card brand icons appear above the checkout form (Visa, Mastercard, American Express, Discover, Diners Club, JCB). This controls the display only — actual card acceptance depends on your QuickBooks Payments account settings. | Visa, Mastercard |
+![](/img/quickbooks-config4.webp)
+
+**Allow Saved Cards:** Let logged-in customers save their card details for faster repeat checkout. Saved cards are stored securely in your QuickBooks Payments vault.
+
+**Accepted Card Types:** Select which card brand icons appear above the checkout form (Visa, Mastercard, American Express, Discover, Diners Club, JCB). This controls the display only — actual card acceptance depends on your QuickBooks Payments account settings.
+
+**Template Style:** Choose the frontend template layout for checkout forms and saved card displays. Options depend on your site's template framework.
+
+Available subtemplates: **Bootstrap 5** and **UIkit**. Leave blank to use the default layout. If your Joomla template is UIkit-based (e.g., YOOtheme Pro), select the UIkit subtemplate for consistent styling.
 
 ### Order Status Settings
 
-| Field                         | Description                                                         | Default   | Shown when                    |
-| ----------------------------- | ------------------------------------------------------------------- | --------- | ----------------------------- |
-| **Payment Successful Status** | Order status to set after a successful payment.                     | Confirmed | Always                        |
-| **Authorized Status**         | Order status to set when a card is authorized but not yet captured. | Confirmed | Authorize Only mode           |
-| **Change Status on Refund**   | Automatically update the order status when a refund is processed.   | No        | Always                        |
-| **Refund Order Status**       | Order status to apply after a refund.                               | —         | Change Status on Refund = Yes |
-| **Change Status on Cancel**   | Automatically update the order status when a payment is voided.     | No        | Always                        |
-| **Cancel Order Status**       | Order status to apply after a void.                                 | —         | Change Status on Cancel = Yes |
+![](/img/quickbooks-config5.webp)
+
+**Payment Successful Status:** Order status to set after a successful payment.
+
+**Authorized Status:** Order status to set when a card is authorized but not yet captured.
+
+**Change Status on Refund:** Automatically update the order status when a refund is processed.
+
+- **Refund Order Status:** Order status to apply after a refund.
+
+**Change Status on Cancel:** Automatically update the order status when a payment is voided.
+
+- **Cancel Order Status:** Order status to apply after a void.
 
 :::tip
 
@@ -154,46 +183,55 @@ If the status you want is not listed in a dropdown, create a new one first by go
 
 ### Surcharge Settings
 
+![](/img/quickbooks-config9.webp)
+
 You can add an optional surcharge to orders paid by this method. Leave all fields empty if you do not want to apply a surcharge.
 
-| Field                   | Description                                                                         |
-| ----------------------- | ----------------------------------------------------------------------------------- |
-| **Surcharge Name**      | Label shown to customers for the surcharge line item (e.g., "Card processing fee"). |
-| **Surcharge Percent**   | Surcharge as a percentage of the order total (e.g., `2.5` for 2.5%).                |
-| **Surcharge Fixed**     | Fixed surcharge amount added to every order (e.g., `0.30`).                         |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount.                                       |
+**Surcharge Name:** Label shown to customers for the surcharge line item (e.g., "Card processing fee").
+
+**Surcharge Percent:** Surcharge as a percentage of the order total (e.g., `2.5` for 2.5%).
+
+**Surcharge Fixed:** Fixed surcharge amount added to every order (e.g., `0.30`).
+
+**Surcharge Tax Class:** Tax profile to apply to the surcharge amount.
 
 ### Availability Restrictions
 
-| Field                   | Description                                                                                        |
-| ----------------------- | -------------------------------------------------------------------------------------------------- |
-| **Geozone Restriction** | Limit this payment method to customers in a specific geozone. Leave empty to allow all locations.  |
-| **Minimum Subtotal**    | Hide this payment method if the cart subtotal falls below this amount. Leave empty for no minimum. |
-| **Maximum Subtotal**    | Hide this payment method if the cart subtotal exceeds this amount. Leave empty for no maximum.     |
+![](/img/quickbooks-config6.webp)
+
+**Geozone Restriction:** Limit this payment method to customers in a specific geozone. Leave empty to allow all locations.
+
+**Minimum Subtotal:** Hide this payment method if the cart subtotal falls below this amount. Leave empty for no minimum.
+
+**Maximum Subtotal:** Hide this payment method if the cart subtotal exceeds this amount. Leave empty for no maximum.
 
 ### Messaging
 
-| Field                         | Description                                                                           |
-| ----------------------------- | ------------------------------------------------------------------------------------- |
-| **Thank You Message Article** | Select a Joomla article to display as a thank-you message after a successful payment. |
-| **On Selection**              | Custom HTML or text shown when the customer selects this payment method at checkout.  |
-| **On Before Payment**         | Content shown on the checkout confirmation step before the customer submits payment.  |
-| **On After Payment**          | Content shown on the order confirmation page after a successful payment.              |
-| **On Error Payment**          | Content shown when a payment error occurs.                                            |
-| **On Cancel Payment**         | Content shown if the customer cancels before completing payment.                      |
+![](/img/quickbooks-config7.webp)
+
+**Thank You Message Article:** Select a Joomla article to display as a thank-you message after a successful payment.
+
+**On Selection:** Custom HTML or text shown when the customer selects this payment method at checkout.
+
+**On Before Payment:** Content shown on the checkout confirmation step before the customer submits payment.
+
+**On After Payment:** Content shown on the order confirmation page after a successful payment.
+
+**On Error Payment:** Content shown when a payment error occurs.
+
+**On Cancel Payment:** Content shown if the customer cancels before completing payment.
 
 ### Dashboard Icon
 
-| Field                    | Description                                                                | Default | Shown when                |
-| ------------------------ | -------------------------------------------------------------------------- | ------- | ------------------------- |
-| **Show Dashboard Icon**  | Add a QuickBooks Payments shortcut icon to the J2Commerce admin dashboard. | No      | Always                    |
-| **Dashboard Icon Label** | Custom label for the dashboard icon. Defaults to "QuickBooks Payments".    | —       | Show Dashboard Icon = Yes |
+![](/img/quickbooks-config8.webp)
+
+**Show Dashboard Icon:** Add a QuickBooks Payments shortcut icon to the J2Commerce admin dashboard.
+
+- **Icon Label:** Custom label for the dashboard icon. Defaults to "QuickBooks Payments".
 
 ### Debug Mode
 
-| Field          | Description                                                                                                                                                         | Default |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Debug Mode** | Log API requests and responses to `payment_quickbooks.php` in the Joomla logs directory. Do not enable on a live site — logs may contain sensitive request details. | No      |
+**Debug Mode:** Log API requests and responses to `payment_quickbooks.php` in the Joomla logs directory. Do not enable on a live site — logs may contain sensitive request details.
 
 ## How It Works
 
