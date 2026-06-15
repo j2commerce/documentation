@@ -9,7 +9,7 @@ description: "Accept card payments through the Barclaycard ePDQ Hosted Payment P
 
 The Barclaycard ePDQ plugin lets your J2Commerce store accept credit and debit card payments through the Barclaycard ePDQ gateway. Customers are redirected to a secure Barclaycard-hosted payment page to enter their card details — your server never handles raw card numbers. After payment, Barclaycard sends a notification back to your store to confirm the order.
 
-:::caution
+:::tip
 
 Barclaycard sold the ePDQ product to Worldline in 2023. If you already hold an ePDQ PSPID, your account continues to work unchanged under Worldline branding. If you do not yet have an ePDQ account, contact Worldline directly to open a new one.
 
