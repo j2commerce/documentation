@@ -1,10 +1,3 @@
----
-title: "Global Payments"
-sidebar_label: "Global Payments"
-sidebar_position: 34
-description: "Accept credit and debit card payments in J2Commerce using the Global Payments GP API — with Hosted Fields, saved cards, subscriptions, and full order-level settle, void, and refund actions."
----
-
 # Global Payments
 
 The Global Payments plugin connects your J2Commerce store to the **Global Payments GP API** — a Unified Commerce Platform used by businesses worldwide to accept credit and debit card payments.
@@ -30,26 +23,15 @@ The plugin also supports:
 - A Global Payments merchant account (sandbox or live)
 - Your store must be accessible over HTTPS
 
-## Installation
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Purchase and download the `payment_globalpayments.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_globalpayments.zip` package file.
-4. The plugin installs and enables automatically.
-
-<!-- SCREENSHOT: System → Install → Extensions screen with the upload area highlighted -->
-
 ## Get Your Global Payments Credentials
 
 Before configuring the plugin, log in to the [Global Payments Developer Portal](https://developer.globalpay.com/) and retrieve your credentials.
 
 You need two values for each environment:
 
-| Credential | Where to find it |
-|------------|-----------------|
-| **App ID** | Under your application in the GP Developer Portal |
+| Credential  | Where to find it                                                               |
+| ----------- | ------------------------------------------------------------------------------ |
+| **App ID**  | Under your application in the GP Developer Portal                              |
 | **App Key** | Under your application in the GP Developer Portal (treat this like a password) |
 
 Global Payments provides separate credentials for **sandbox (test)** and **live** environments. Keep both sets ready — you will enter them in the plugin settings.
@@ -60,51 +42,63 @@ Start in sandbox mode while you test checkout flows. Switch to live credentials 
 
 :::
 
+## Purchase and Download
+
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) **->** **Payment Gateways**
+
+**Step 2:** Locate **Global Payment** **->** click **View Details** **->** **Add to Cart -> Checkout**
+
+**Step 3:** Go to **My Downloads** under your profile button at the top right corner and search for PayTrace. Click **Available Versions -> View Files -> Download Now**
+
+## Install the Plugin
+
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
+
+Upload the `payment_globalpayment.zip` file or use the Install from URL option.
+
+![](/img/install.webp)
+
 ## Enable the Plugin
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Find **Global Payments** in the list and click the status toggle to enable it.
-3. Click the **Global Payments** title to open the configuration screen.
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-<!-- SCREENSHOT: J2Commerce → Payments → Payment Methods list showing Global Payments enabled -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Global Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ## Configure the Plugin
 
 ### Basic Settings
 
-<!-- SCREENSHOT: Global Payments plugin configuration screen — Basic Settings section -->
+![](/img/global-display.webp)
 
-#### Display Name
+**Display Name:** The label your customers see at checkout when selecting Global Payments. The default is **Credit/Debit Card**. You can change this to anything that makes sense for your store, such as "Pay by Card" or "Secure Card Payment".
 
-The label your customers see at checkout when selecting Global Payments. The default is **Credit/Debit Card**. You can change this to anything that makes sense for your store, such as "Pay by Card" or "Secure Card Payment".
+**Display Image:** Upload a custom logo or payment badge to appear alongside the payment method name at checkout. Leave empty to show no image.
 
-#### Display Image
+![](/img/global-integration.webp)
 
-Upload a custom logo or payment badge to appear alongside the payment method name at checkout. Leave empty to show no image.
+**Integration Mode:** Choose how customers enter their card details:
 
-#### Integration Mode
+- **Hosted Fields (GP.js, recommended):** Secure card iframes appear directly on your checkout page. Customers never leave your site. Supports saved cards.
 
-Choose how customers enter their card details:
-
-| Option | Description |
-|--------|-------------|
-| **Hosted Fields (GP.js, recommended)** | Secure card iframes appear directly on your checkout page. Customers never leave your site. Supports saved cards. |
-| **Hosted Payment Pages (HPP)** | Customers are redirected to a Global Payments-hosted payment page to complete their purchase. |
+- **Hosted Payment Pages (HPP):** Customers are redirected to a Global Payments-hosted payment page to complete their purchase.
 
 Hosted Fields is recommended for the smoothest checkout experience. Use HPP if your hosting environment has restrictions that prevent iframes from loading.
 
-#### Transaction Type
+**Transaction Type:** Controls what happens to funds at the moment of checkout:
 
-Controls what happens to funds at the moment of checkout:
+- **Authorize + Capture (recommended):** Funds are reserved and collected immediately when the customer pays.
 
-| Option | Description |
-|--------|-------------|
-| **Authorize + Capture (recommended)** | Funds are reserved and collected immediately when the customer pays. |
-| **Authorize Only** | Funds are reserved but not collected. You settle (capture) manually from the order admin when you are ready to ship. |
+- **Authorize Only:** Funds are reserved but not collected. You settle (capture) manually from the order admin when you are ready to ship.
 
-### Sandbox / Test Mode
+### Credentials
 
-Toggle **Sandbox / Test Mode** to **Yes** to send all transactions to the Global Payments sandbox environment. No real money moves in sandbox mode.
+**Sandbox / Test Mode:** Toggle **Sandbox / Test Mode** to **Yes** to send all transactions to the Global Payments sandbox environment. No real money moves in sandbox mode.
 
 When sandbox mode is enabled, the plugin uses your **Sandbox App ID** and **Sandbox App Key** credentials. When it is disabled, it uses your live **App ID** and **App Key**.
 
@@ -114,53 +108,47 @@ The J2Commerce dashboard shows a warning banner while sandbox mode is active so 
 
 :::
 
-<!-- SCREENSHOT: Plugin configuration — Sandbox toggle set to Yes with sandbox credential fields visible -->
+**Live credentials** (visible when Sandbox is set to No):&#x20;
 
-### Credentials
+- **App ID:** Your live Global Payments App ID from the Developer Portal
 
-Enter your credentials in the fields that match your current mode:
+- **App Key:** Your live Global Payments App Key
 
-**Live credentials** (visible when Sandbox is set to No):
-
-| Field | Description |
-|-------|-------------|
-| **App ID** | Your live Global Payments App ID from the Developer Portal |
-| **App Key** | Your live Global Payments App Key |
-| **Statement Narrative** | Text shown on the customer's card statement. Default: `Order Payment` |
+- **Statement Narrative:** Text shown on the customer's card statement. Default: `Order Payment`
 
 **Sandbox credentials** (visible when Sandbox is set to Yes):
 
-| Field | Description |
-|-------|-------------|
-| **Sandbox App ID** | Your sandbox App ID |
-| **Sandbox App Key** | Your sandbox App Key |
-| **Sandbox Statement Narrative** | Statement text used during testing |
+- **Sandbox App ID:** Your sandbox App ID
+
+- **Sandbox App Key:** Your sandbox App Key
+
+- **Sandbox Statement Narrative:** Statement text used during testing
 
 ### Account Names (Sub-accounts)
 
+![](/img/global-transaction.webp)
+
 Global Payments routes different operations through named sub-accounts on your merchant account. In most cases the defaults work without any changes.
 
-| Field | Default | When to change |
-|-------|---------|---------------|
-| **Account Name — Transactions** | `transaction_processing` | If your GP account uses a different sub-account name for card charges |
-| **Account Name — HPP** | `transaction_processing_hpp` | Only visible in HPP mode. Change if your HPP sub-account differs |
-| **Account Name — Tokenization** | `tokenization` | Only visible in Hosted Fields mode. Change if your tokenization sub-account name differs |
+**Account Name — Transactions:** If your GP account uses a different sub-account name for card charges
+
+- **Account Name — HPP:** Only visible in HPP mode. Change if your HPP sub-account differs
+
+**Account Name — Tokenization:** Only visible in Hosted Fields mode. Change if your tokenization sub-account name differs
 
 Contact your Global Payments account manager if you are unsure which sub-account names to use.
 
 ### Card Settings (Hosted Fields mode only)
 
-#### Allow Saved Cards
+![](/img/global-cc.webp)
 
-Set to **Yes** to let logged-in customers save their card at checkout for faster future purchases. Saved cards are stored as secure tokens in the Global Payments vault — no raw card data is kept on your server.
+**Allow Saved Cards:** Set to **Yes** to let logged-in customers save their card at checkout for faster future purchases. Saved cards are stored as secure tokens in the Global Payments vault — no raw card data is kept on your server.
 
 Saved cards are also required for **subscription renewals**. If your store uses the J2Commerce Subscriptions add-on, keep this enabled.
 
-#### Accepted Card Types
+**Accepted Card Types:** Select the card brand icons to display above the payment form at checkout. This is a visual indicator for customers — it does not restrict which cards Global Payments will actually process.
 
-Select the card brand icons to display above the payment form at checkout. This is a visual indicator for customers — it does not restrict which cards Global Payments will actually process.
-
-Available card types:
+***Available card types:***
 
 - Visa
 - Mastercard
@@ -172,79 +160,88 @@ Available card types:
 - UnionPay
 - Carte Bancaire
 
-### Layout (Subtemplate)
-
-Choose between **Bootstrap 5** and **UIkit** checkout form layouts to match your Joomla template. Select the option that matches your site's CSS framework.
+**Template Layout:** Choose between **Bootstrap 5** and **UIkit** checkout form layouts to match your Joomla template. Select the option that matches your site's CSS framework.
 
 ### Order Statuses
 
+![](/img/global-status.webp)
+
 Control which order status J2Commerce sets at each stage of the payment lifecycle:
 
-| Field | Default | Description |
-|-------|---------|-------------|
-| **Payment Status** | Confirmed | Status set when payment is successfully captured |
-| **Authorized Status** | Confirmed | Status set when payment is authorized but not yet settled (Authorize Only mode only) |
-| **Failed Status** | Failed | Status set when a payment is declined or fails |
+**Order Status:** Status set when payment is successfully captured
 
-#### Status on Refund
+**Failed Status:** Status set when a payment is declined or fails
 
-Set **Change Status on Refund** to **Yes** if you want J2Commerce to automatically update the order status when you process a refund. Then choose the target status from **Refund Order Status**.
+**Authorized Status:** Status set when payment is authorized but not yet settled (Authorize Only mode only)
 
-#### Status on Cancel
+**Status on Refund:** Set **Change Status on Refund** to **Yes** if you want J2Commerce to automatically update the order status when you process a refund. Then choose the target status from **Refund Order Status**.
 
-Set **Change Status on Cancel** to **Yes** if you want J2Commerce to update the order status when a payment authorization is cancelled. Then choose the target status from **Cancel Order Status**.
+**Status on Cancel:** Set **Change Status on Cancel** to **Yes** if you want J2Commerce to update the order status when a payment authorization is cancelled. Then choose the target status from **Cancel Order Status**.
+
+:::info
+
+**NOTE:** If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge (Optional)
 
+![](/img/global-surcharge.webp)
+
 Add a payment surcharge to orders placed with this method. Leave all three fields empty if you do not charge a surcharge.
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Name** | Label shown to the customer, for example `Card Processing Fee` |
-| **Surcharge Percent** | Percentage of the order total to add as a fee (for example `1.5` for 1.5%) |
-| **Surcharge Fixed** | Fixed amount to add, for example `0.50` |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount |
+**Surcharge Name:** Label shown to the customer, for example `Card Processing Fee`
+
+**Surcharge Percent:** Percentage of the order total to add as a fee (for example `1.5` for 1.5%)
+
+**Surcharge Fixed:** Fixed amount to add, for example `0.50`
+
+**Surcharge Tax Class:** Tax profile to apply to the surcharge amount
 
 ### Availability Restrictions (Optional)
 
+![](/img/global-restriction.webp)
+
 Limit when Global Payments appears as a payment option at checkout:
 
-| Field | Description |
-|-------|-------------|
-| **Geozone Restriction** | Show this payment method only to customers in a specific geozone |
-| **Minimum Subtotal** | Hide this method if the order subtotal is below this amount |
-| **Maximum Subtotal** | Hide this method if the order subtotal is above this amount |
+**Geozone Restriction:** Show this payment method only to customers in a specific geozone
+
+**Minimum Subtotal:** Hide this method if the order subtotal is below this amount
+
+**Maximum Subtotal:** Hide this method if the order subtotal is above this amount
 
 Leave these fields empty to show Global Payments to all customers regardless of location or order size.
 
-### Thank You Article
+### Custom HTML Messages (Optional)
 
-Select a Joomla article to display on the payment confirmation page after a successful purchase. Leave empty to show the default J2Commerce confirmation message.
+![](/img/global-messages.webp)
 
-### Custom HTML Blocks (Optional)
+**Thank You Article:** Select a Joomla article to display on the payment confirmation page after a successful purchase. Leave empty to show the default J2Commerce confirmation message.
 
-Inject custom HTML at specific points in the checkout and payment flow:
+**Checkout Messages:** Inject custom HTML at specific points in the checkout and payment flow:
 
-| Field | When it appears |
-|-------|----------------|
-| **On Selection** | When the customer selects Global Payments as their payment method |
-| **On Before Payment** | Above the payment form at checkout |
-| **On After Payment** | On the confirmation page after a successful payment |
-| **On Error** | When a payment fails or is declined |
-| **On Cancel** | When the customer cancels the payment |
+**On Selection:** When the customer selects Global Payments as their payment method
 
-### Dashboard Icon (Optional)
+**On Before Payment:** Above the payment form at checkout
+
+**On After Payment:** On the confirmation page after a successful payment
+
+**On Error:** When a payment fails or is declined
+
+**On Cancel:** When the customer cancels the payment
+
+### Dashboard Icon (Optional) and Debug
+
+![](/img/global-icon.webp)
 
 Set **Show Dashboard Icon** to **Yes** to add a shortcut icon to the J2Commerce admin dashboard. Use **Dashboard Icon Label** to customize the icon text.
 
-### Debug Mode
-
-Set **Debug Mode** to **Yes** to log all Global Payments API requests and responses to the Joomla log. This is useful when troubleshooting a configuration issue.
+**Debug Mode:** Set **Debug Mode** to **Yes** to log all Global Payments API requests and responses to the Joomla log. This is useful when troubleshooting a configuration issue.
 
 :::warning
-
 Disable debug mode on live stores. Logs may contain sensitive transaction details.
-
 :::
 
 ## Going Live
@@ -256,8 +253,6 @@ When you are ready to accept real payments:
 3. Enter your **App ID** and **App Key** from the Global Payments live environment.
 4. Click **Save**.
 5. Place a test order on your store with a real card to confirm everything works.
-
-<!-- SCREENSHOT: Plugin configuration with Sandbox set to No and live credentials filled in -->
 
 ## Managing Orders
 
@@ -271,13 +266,11 @@ If you configured **Transaction Type** as **Authorize Only**, a **Settle (Captur
 
 The funds are collected from the customer's card immediately. The order status updates based on your **Payment Status** setting.
 
-<!-- SCREENSHOT: Order admin screen showing the Settle (Capture) button -->
-
 ### Cancel an Authorization
 
 If a payment has been authorized but not yet settled, you can cancel the authorization to release the reserved funds without charging the customer.
 
-1. Open the order in **J2Commerce** -> **Orders**.
+1. Open the order in **J2Commerce** **-> Sales -> Orders**.
 2. Click the **Cancel Payment** button in the payment panel and confirm when prompted.
 
 :::info
@@ -290,15 +283,13 @@ Once a payment has been settled, you cannot cancel it — use **Refund** instead
 
 You can refund a settled payment in full or partially from the order screen.
 
-1. Open the order in **J2Commerce** -> **Orders**.
+1. Open the order in **J2Commerce** **->** **Sales -> Orders**.
 2. Click the **Issue Refund** button in the payment panel.
 3. Choose **Full refund** or **Partial refund**.
 4. For a partial refund, enter the amount to refund (up to the maximum refundable amount).
 5. Click **Process Refund** to confirm.
 
 The refund is sent to the customer's original payment method. If you enabled **Change Status on Refund**, the order status updates automatically.
-
-<!-- SCREENSHOT: Refund modal showing full and partial refund options -->
 
 ## Saved Cards
 
@@ -327,7 +318,7 @@ When the J2Commerce Subscriptions add-on is installed, the Global Payments plugi
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and confirm **Global Payments** is enabled (green checkmark).
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** and confirm **Global Payments** is enabled (green checkmark).
 2. Open the plugin settings and verify that **App ID** and **App Key** are filled in for the active mode (sandbox or live).
 3. If the dashboard shows a "credentials not configured" warning, enter the missing credentials and save.
 

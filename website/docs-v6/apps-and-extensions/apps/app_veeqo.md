@@ -34,29 +34,39 @@ The **Veeqo** app is a separate add-on available from the [J2Commerce Extensions
 
 ## Install the App
 
-In the Joomla admin, go to **System** **->** **Install** **->** **Extensions**.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-Upload the plugin ZIP file or use the **Install from URL** option.
+Upload the `veeqo.zip` file or use the Install from URL option.
+
+![](/img/install.webp)
 
 ## Enable the App
 
-Once the app is installed you need to enable it. There are two ways to reach the Apps list:
+Once you have installed the app, you will need to enable it. There are **two** ways you can access the extension.
 
-**Option A:** Click the **J2Commerce** icon at the top right corner **->** **Apps**.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-**Option B:** Go to **Components** on the left sidebar **->** **J2Commerce** **->** **Apps**.
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-Find **Veeqo** in the list, click the **X** next to it, and it turns into a green checkmark. The app is now enabled and ready to configure.
+![](/img/gift-wrap-apps.webp)
+
+Look for **Veeqo**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/veeqo-enable.webp)
 
 ## Configure the App
 
-Click on the **Veeqo** title next to the green checkmark to open the settings.
+Once you click the **Veeqo** title next to the green checkmark, you are ready to start setting up the parameters.
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar to reveal a description below each field as you work through the settings.
+**Tip:** Click the **Toggle Inline Help** button on any app you install and it will show a description below each field.
 
 :::
+
+![](/img/veeqo-toggle.webp)
+
+### Basic Settings tab
 
 ### API Key
 
@@ -82,10 +92,10 @@ Select the default Veeqo delivery method for pushed orders. This identifies how 
 
 ### Auto-create Missing Products
 
-| Option | What happens |
-|--------|-------------|
-| **No** (default) | If an order line item's SKU does not exist in your Veeqo catalog, the push fails and shows you which SKUs need to be created in Veeqo first. |
-| **Yes** | Products are created in Veeqo automatically before the order is pushed, using the title, SKU, price, and weight from the order. Newly created products start with zero stock, so the Veeqo order may show as awaiting stock until you set stock levels in Veeqo. |
+| Option           | What happens                                                                                                                                                                                                                                                     |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **No** (default) | If an order line item's SKU does not exist in your Veeqo catalog, the push fails and shows you which SKUs need to be created in Veeqo first.                                                                                                                     |
+| **Yes**          | Products are created in Veeqo automatically before the order is pushed, using the title, SKU, price, and weight from the order. Newly created products start with zero stock, so the Veeqo order may show as awaiting stock until you set stock levels in Veeqo. |
 
 ### Sync Inventory Counts
 
@@ -127,12 +137,12 @@ Rate Shopping is available for US-based Veeqo accounts only. If your account is 
 
 Choose the file format for purchased shipping labels:
 
-| Format | Best for |
-|--------|---------|
-| **PDF** (default) | Standard desktop printers |
-| **PNG** | Image preview and most office printers |
-| **ZPL** | Thermal label printers (e.g., Zebra) |
-| **JPEG** | Basic image output |
+| Format            | Best for                               |
+| ----------------- | -------------------------------------- |
+| **PDF** (default) | Standard desktop printers              |
+| **PNG**           | Image preview and most office printers |
+| **ZPL**           | Thermal label printers (e.g., Zebra)   |
+| **JPEG**          | Basic image output                     |
 
 ### Default Package Weight
 
@@ -146,21 +156,21 @@ Select the unit for package weight: **lb** (pounds), **oz** (ounces), **kg** (ki
 
 These fields define the origin address used by the Rate Shopping API when calculating shipping rates. They are required if Rate Shopping is enabled.
 
-| Field | What to enter |
-|-------|--------------|
-| **Ship-From Name** | Your company or warehouse name |
-| **Ship-From Phone** | Contact phone number for the shipping origin |
+| Field                        | What to enter                                           |
+| ---------------------------- | ------------------------------------------------------- |
+| **Ship-From Name**           | Your company or warehouse name                          |
+| **Ship-From Phone**          | Contact phone number for the shipping origin            |
 | **Ship-From Street Address** | Street address of the warehouse or fulfillment location |
-| **Ship-From City** | City |
-| **Ship-From ZIP / Postcode** | ZIP or postal code |
-| **Ship-From Country Code** | Two-letter country code (e.g., **US**, **GB**) |
-| **Ship-From State / County** | State or county code (e.g., **CA**, **TX**) |
+| **Ship-From City**           | City                                                    |
+| **Ship-From ZIP / Postcode** | ZIP or postal code                                      |
+| **Ship-From Country Code**   | Two-letter country code (e.g., **US**, **GB**)          |
+| **Ship-From State / County** | State or county code (e.g., **CA**, **TX**)             |
 
 ### Debug Logging
 
 Set to **Yes** to write detailed activity logs to `administrator/logs/plg_j2commerce_app_veeqo.php`. Useful when troubleshooting failed pushes or unexpected behavior. Leave **No** for normal day-to-day use.
 
----
+***
 
 ## Box Sizes Tab
 
@@ -168,12 +178,12 @@ The **Box Sizes** tab is where you define your parcel box presets. When you fetc
 
 Click **Add Box Preset** (or the equivalent add button) to create a new row. Each row has these fields:
 
-| Field | Description |
-|-------|-------------|
-| **Name** | A friendly label for this box (e.g., "Small Mailer", "Large Box") |
-| **Length** | The box length in the unit selected below |
-| **Width** | The box width |
-| **Height** | The box height |
+| Field      | Description                                                       |
+| ---------- | ----------------------------------------------------------------- |
+| **Name**   | A friendly label for this box (e.g., "Small Mailer", "Large Box") |
+| **Length** | The box length in the unit selected below                         |
+| **Width**  | The box width                                                     |
+| **Height** | The box height                                                    |
 
 ### Dimension Unit
 
@@ -185,7 +195,7 @@ Create a preset for each standard box you use most often. Having three to five p
 
 :::
 
----
+***
 
 ## Day-to-Day Workflow: Fulfilling an Order with Veeqo
 
@@ -241,7 +251,7 @@ The tracking number and shipment status also appear on the card.
 
 Click **Refresh Tracking** at any time to pull the latest tracking status from Veeqo. Tracking information also updates automatically via the J2Commerce cron task, so the card stays current without manual refreshes on most orders.
 
----
+***
 
 ## How It Works
 
@@ -249,7 +259,7 @@ When an order's status changes in J2Commerce, the app checks whether the new sta
 
 The **Veeqo Order ID** is stored with the J2Commerce order so every future action — re-sync, rate shopping, label purchase, tracking refresh — is tied to the correct Veeqo record. The cron task polls Veeqo for shipping updates and writes tracking numbers and status changes back to J2Commerce automatically.
 
----
+***
 
 ## Tips
 
@@ -260,7 +270,7 @@ The **Veeqo Order ID** is stored with the J2Commerce order so every future actio
 - **Rate Shopping is US only.** If your warehouse is outside the US, keep Rate Shopping disabled and buy labels directly inside the Veeqo dashboard.
 - **Auto-create products is handy during setup** when your Veeqo catalog is still empty. Once your SKUs are in Veeqo, turn it off so unexpected SKUs generate an error rather than being silently created.
 
----
+***
 
 ## Troubleshooting
 
@@ -274,7 +284,7 @@ The **Veeqo Order ID** is stored with the J2Commerce order so every future actio
 2. Check the **Push on Order Status** field — confirm the status your orders move to when payment clears is listed there.
 3. Open the order, scroll to the Veeqo card, and use the **Push to Veeqo** button to push it manually.
 
----
+***
 
 ### Push Fails with "SKU not found" or Similar Error
 
@@ -286,7 +296,7 @@ The **Veeqo Order ID** is stored with the J2Commerce order so every future actio
 
 **Option B:** Log into your Veeqo account, create the missing products with matching SKUs, then push the order again from the J2Commerce order screen.
 
----
+***
 
 ### "No shipping rates returned" After Fetching Rates
 
@@ -299,7 +309,7 @@ The **Veeqo Order ID** is stored with the J2Commerce order so every future actio
 3. Check the delivery address on the order is complete and valid.
 4. If the problem persists, enable **Debug Logging**, re-try the rate fetch, then review the log file at `administrator/logs/plg_j2commerce_app_veeqo.php` for details.
 
----
+***
 
 ### Re-sync Button Shows a "Locked" Message
 
@@ -309,7 +319,7 @@ The **Veeqo Order ID** is stored with the J2Commerce order so every future actio
 
 The lock message tells you the specific reason. If you need to change the order, log into your Veeqo dashboard and edit it there directly.
 
----
+***
 
 ### Dropdowns for Warehouse / Channel / Delivery Method Are Empty
 
@@ -322,7 +332,7 @@ The lock message tells you the specific reason. If you need to change the order,
 3. Return to the plugin settings — the dropdowns will now query your Veeqo account and populate.
 4. If they are still empty after saving, click **Toggle Inline Help** and check the description under the API Key field for guidance. Also verify the key in Veeqo under **Settings** **->** **Account** **->** **Integrations** **->** **API Key**.
 
----
+***
 
 ### Tracking Number Not Updating
 
