@@ -60,8 +60,6 @@ Conekta gives each account a **Public Key** (used by the JavaScript tokenizer in
 3. Go to **Developers** -> **API Keys**.
 4. Copy the **Public Key** and **Private Key** shown in the Test section.
 
-<!-- SCREENSHOT: Conekta dashboard in Test Mode showing Developers > API Keys with Public Key and Private Key fields -->
-
 ### Live (Production) Keys
 
 1. In the Conekta dashboard, switch the toggle to **Live Mode**.
@@ -86,8 +84,6 @@ The webhook signing key is separate from the API keys. Conekta signs every webho
 2. Click **Add Webhook** to create a new one (or open an existing webhook).
 3. Find the **Signing Secret** or **Webhook Secret** field and copy the key shown there.
 
-<!-- SCREENSHOT: Conekta Webhooks page showing the Signing Secret field with a Copy button -->
-
 ## Register Your Webhook URL
 
 :::danger
@@ -104,8 +100,6 @@ The plugin automatically generates your webhook URL. Copy it into Conekta's dash
 4. Open the webhook you created when copying the signing key. Paste the URL from step 2 into the **URL** field.
 5. Enable at least these events on the webhook: `order.paid`, `charge.paid`, `order.voided`, `charge.refunded`, `charge.declined`.
 6. Save the webhook in Conekta.
-
-<!-- SCREENSHOT: Conekta Add Webhook screen with the J2Commerce webhook URL pasted and events selected -->
 
 ## Purchase and Download
 
