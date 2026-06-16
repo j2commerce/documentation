@@ -88,36 +88,6 @@ The webhook signing key is separate from the API keys. Conekta signs every webho
 
 <!-- SCREENSHOT: Conekta Webhooks page showing the Signing Secret field with a Copy button -->
 
-***
-
-## Purchase and Download
-
-1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate the **Conekta Payment** plugin.
-2. Add it to your cart and complete checkout.
-3. Under your account menu, go to **My Downloads** and download the `payment_conekta.zip` file.
-
-***
-
-## Install and Enable
-
-### Install the Plugin
-
-1. In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
-2. Upload the `payment_conekta.zip` file using the **Upload Package File** tab.
-3. The installer checks for required PHP extensions and displays a success message when complete.
-
-<!-- SCREENSHOT: Joomla Extension Install screen with Upload Package File tab active -->
-
-### Enable the Plugin
-
-1. Go to **J2Commerce** -> **Setup** -> **Payment Methods**.
-2. Find **Conekta** in the list.
-3. Click the toggle in the **Enabled** column to turn it green.
-
-<!-- SCREENSHOT: J2Commerce Payment Methods list showing Conekta with the Enabled toggle -->
-
-***
-
 ## Register Your Webhook URL
 
 :::danger
@@ -137,19 +107,39 @@ The plugin automatically generates your webhook URL. Copy it into Conekta's dash
 
 <!-- SCREENSHOT: Conekta Add Webhook screen with the J2Commerce webhook URL pasted and events selected -->
 
-***
+## Purchase and Download
 
-## Configuration Walkthrough
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate the **Conekta Payment** plugin.
+2. Add it to your cart and complete checkout.
+3. Under your account menu, go to **My Downloads** and download the `payment_conekta.zip` file.
+
+## Install the Plugin
+
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
+
+Upload the `payment_conekta.zip` package ZIP file or use the Install from URL option.
+
+![](/img/install.webp)
+
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Conekta Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+## Configuration
 
 :::tip
 
 Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
 
 :::
-
-Click the **Conekta** payment method title to open the plugin settings. Settings are organized into three tabs: **Basic Settings**, **Payment Methods**, and **Advanced**.
-
-<!-- SCREENSHOT: Conekta plugin settings showing three tabs -->
 
 ### Basic Settings Tab
 
@@ -174,21 +164,27 @@ When **Sandbox** is set to **Yes**, the plugin uses your Test keys and sends cha
 
 :::
 
-***
-
 ### Payment Methods Tab
-
-This tab controls which of the three Conekta modes appear to customers at checkout.
 
 <!-- SCREENSHOT: Payment Methods tab with Enable Card, Enable OXXO, Enable SPEI toggles -->
 
-| Field           | Description                                     | Default |
-| --------------- | ----------------------------------------------- | ------- |
-| **Enable Card** | Show the credit / debit card option at checkout | **Yes** |
-| **Enable OXXO** | Show the OXXO cash voucher option at checkout   | **Yes** |
-| **Enable SPEI** | Show the SPEI bank transfer option at checkout  | **Yes** |
+This tab controls which of the three Conekta modes appear to customers at checkout.
 
-The **Registration** item at the bottom of this tab is informational — it links to Conekta's partner registration page if you need to create or verify your merchant account.
+**Enable Credit/Debit Card:** Show the credit / debit card option at checkout
+
+- **3D Secure Mode:** Enable 3D Secure 2 (SCA) authentication. Optional: triggers when the card issuer requires it. Required: always triggers. Off: skips 3DS entirely (not recommended — Mexican CNBV mandates 3DS2 for online card transactions).
+
+  - **Optional (Recommended)**
+
+  - **Required (Always)**
+
+  - **Off (Not Recommended)**
+
+**Enable OXXO:** Show the OXXO cash voucher option at checkout
+
+**Enable SPEI Transfer:** Show the SPEI bank transfer option at checkout
+
+**Don't Have an Account?:** The **Registration** item at the bottom of this tab is informational — it links to Conekta's partner registration page if you need to create or verify your merchant account.
 
 **When to disable individual modes:**
 
@@ -196,19 +192,17 @@ The **Registration** item at the bottom of this tab is informational — it link
 - **Disable SPEI** for general consumer stores where bank-wire instructions feel unfamiliar. Keep SPEI enabled for B2B or high-ticket stores where bank transfers are standard.
 - **Disable Card** only if you want to force a cash-only or bank-transfer-only flow — this is unusual and not recommended for most stores.
 
-***
-
 ### Advanced Tab
 
-<!-- SCREENSHOT: Advanced tab showing Send Notification, Geo-Zone, Payment Article, Cancel Article, and Debug fields -->
+**Send Notification:** Send a J2Commerce order status email when payment is confirmed (by card approval or incoming webhook)
 
-| Field                 | Description                                                                                           | Default                |
-| --------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------- |
-| **Send Notification** | Send a J2Commerce order status email when payment is confirmed (by card approval or incoming webhook) | **Yes**                |
-| **Geo-Zone**          | Restrict Conekta to customers in a specific geo-zone. Leave at All Zones to show it to everyone       | All Zones              |
-| **Payment Article**   | A Joomla article to display on the confirmation page after a successful payment                       | None                   |
-| **Cancel Article**    | A Joomla article to redirect the customer to if they cancel a payment                                 | None (returns to cart) |
-| **Debug**             | Write Conekta API activity and webhook event details to the Joomla log                                | **No**                 |
+**Restrict to Geo-Zone:** Restrict Conekta to customers in a specific geo-zone. Leave at All Zones to show it to everyone
+
+**Successful Payment Article:** A Joomla article to display on the confirmation page after a successful payment
+
+**Cancel Payment Article:** A Joomla article to redirect the customer to if they cancel a payment
+
+**Debug:** Write Conekta API activity and webhook event details to the Joomla log
 
 :::tip
 
@@ -307,8 +301,6 @@ The J2Commerce 6 version includes substantial improvements over the original J2S
 3. In Conekta's dashboard, open the webhook entry and click **Send Test Event** with `order.paid`. Watch whether the order status in J2Commerce changes to Confirmed.
 4. Enable **Debug** in the plugin's Advanced tab and retry the test event. Check `administrator/logs/` for entries tagged `j2commerce.payment_conekta` — these entries show whether the webhook was received, whether the signature check passed, and what action was taken.
 5. Check your server's firewall and hosting configuration. Some shared hosting environments block incoming POST requests from external IP addresses.
-
-<!-- SCREENSHOT: Conekta dashboard Webhook entry showing Send Test Event button and delivery log -->
 
 ### Webhook signing key error in the debug log
 
