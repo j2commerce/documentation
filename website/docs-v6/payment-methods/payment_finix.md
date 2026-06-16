@@ -26,27 +26,18 @@ The plugin also supports:
 - A Finix account (sandbox or production)
 - Your store must be accessible over HTTPS
 
-## Purchase and Download
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Finix Payment**.
-2. Add it to your cart and complete checkout.
-3. Go to **My Downloads** under your account profile and find the plugin.
-4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
-
 ## Get Your Finix Credentials
 
 Before configuring the plugin, you need four pieces of information from your Finix dashboard. Finix provides separate sets of credentials for its sandbox (test) environment and its production (live) environment.
 
 ### What you need
 
-| Credential | Where to find it | What it looks like |
-|---|---|---|
+| Credential           | Where to find it                   | What it looks like          |
+| -------------------- | ---------------------------------- | --------------------------- |
 | **API Key Username** | Dashboard -> Developer -> API Keys | A string starting with `US` |
-| **API Key Password** | Dashboard -> Developer -> API Keys | A long secret string |
-| **Application ID** | Dashboard -> Apps | Starts with `AP` |
-| **Merchant ID** | Dashboard -> Merchants | Starts with `MU` |
+| **API Key Password** | Dashboard -> Developer -> API Keys | A long secret string        |
+| **Application ID**   | Dashboard -> Apps                  | Starts with `AP`            |
+| **Merchant ID**      | Dashboard -> Merchants             | Starts with `MU`            |
 
 Keep your Finix dashboard open while you configure the plugin in Joomla.
 
@@ -62,52 +53,65 @@ A webhook is a secure notification that Finix sends to your store when a payment
 4. Copy the **Webhook Signing Key** from the Finix webhook setup — this is the HMAC secret used to verify the cryptographic signature on each incoming notification.
 
 :::info
+
 The **Webhook Endpoint URL** field inside the plugin settings screen displays your store's exact webhook URL. Click **Copy** to copy it to your clipboard. Enter this URL in the Finix dashboard when registering the webhook.
+
 :::
 
 :::warning
 Webhooks cannot reach a site running on a local development machine (localhost). You must deploy your store to a publicly accessible server with a valid HTTPS URL before Finix can deliver webhook notifications.
 :::
 
+## Purchase and Download
+
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Finix Payment**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
 ## Install the Plugin
 
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
 Upload the `payment_finix.zip` file or use the Install from URL option.
 
-<!-- SCREENSHOT: System > Install > Extensions upload screen -->
+![](/img/install.webp)
 
 ## Enable the Plugin
 
-Once installed, you need to enable the plugin. There are two ways to reach it.
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner -> **Setup** -> **Payment Methods**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Payment Methods**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list showing Finix disabled -->
+![](/img/culqi.webp)
 
-Search for **Finix**, click the **X** next to it, and it turns into a green checkmark. The plugin is now enabled and ready for setup.
+To help you narrow down the list, you can do a search for **Finix Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-<!-- SCREENSHOT: Finix Payment showing green checkmark -->
+![](/img/finix-enable.webp)
 
 ## Configure the Plugin
 
-Click the **Finix** title to open its settings.
+Click the **Finix Payment** title to open its settings.
 
 :::tip
+
 Click the **Toggle Inline Help** button at the top of any plugin settings screen to show a description below each field.
+
 :::
 
-<!-- SCREENSHOT: Plugin settings screen with Toggle Inline Help button highlighted -->
+![](/img/finix-toggle1.webp)
 
 ### Appearance
+
+![](/img/finix-config-display.webp)
 
 **Display Name:** The label shown to customers on the checkout page — for example, "Credit / Debit Card". Change this to whatever makes sense for your store.
 
 **Display Image:** An optional logo or card-brand image to show next to the payment method name at checkout.
-
-### Capture Method
 
 **Capture Method:** Controls when funds are actually collected from the customer's card.
 
@@ -124,99 +128,125 @@ Enable this during setup and initial testing. When sandbox mode is active, a war
 
 These fields appear when **Use Sandbox (Test Mode)** is turned off.
 
-<!-- SCREENSHOT: Plugin configuration showing live credentials fields -->
+![](/img/finix-config-live-api.webp)
 
-| Field | Description |
-|-------|-------------|
-| **API Key Username** | Your Finix production API key username |
-| **API Key Password** | Your Finix production API key password — keep this secret |
-| **Application ID** | Your Finix production Application ID (starts with `AP`) |
-| **Merchant ID** | Your Finix production Merchant ID (starts with `MU`) |
-| **Webhook Username** | A username you create — Finix sends this with each webhook so your store can verify the request |
-| **Webhook Password** | A password you create — sent alongside the Webhook Username for verification |
-| **Webhook Signing Key** | The HMAC signing key from your Finix webhook setup — used to verify the cryptographic signature on each notification |
-| **Webhook Endpoint URL** | Displayed automatically — copy this URL and paste it into the Finix dashboard when registering your webhook |
+**API Key Username:** Your Finix production API key username
+
+**API Key Password:** Your Finix production API key password — keep this secret
+
+**Application ID:** Your Finix production Application ID (starts with `AP`)
+
+**Merchant ID:** Your Finix production Merchant ID (starts with `MU`)
+
+**Webhook Username:** A username you create — Finix sends this with each webhook so your store can verify the request
+
+**Webhook Password:** A password you create — sent alongside the Webhook Username for verification
+
+**Webhook Signing Key:** The HMAC signing key from your Finix webhook setup — used to verify the cryptographic signature on each notification
+
+**Webhook Endpoint URL:** Displayed automatically — copy this URL and paste it into the Finix dashboard when registering your webhook
 
 ### Sandbox Credentials
 
 These fields appear when **Use Sandbox (Test Mode)** is turned on. They work identically to the live fields but connect to the Finix sandbox environment.
 
-<!-- SCREENSHOT: Plugin configuration showing sandbox credentials fields -->
+![](/img/finix-config-sandbox.webp)
 
-| Field | Description |
-|-------|-------------|
-| **Sandbox API Key Username** | Your Finix sandbox API key username |
-| **Sandbox API Key Password** | Your Finix sandbox API key password |
-| **Sandbox Application ID** | Your Finix sandbox Application ID |
-| **Sandbox Merchant ID** | Your Finix sandbox Merchant ID |
-| **Sandbox Webhook Username** | Username for authenticating sandbox webhook requests |
-| **Sandbox Webhook Password** | Password for authenticating sandbox webhook requests |
-| **Sandbox Webhook Signing Key** | HMAC signing key for sandbox webhook verification |
+**Sandbox API Key Username:** Your Finix sandbox API key username
 
-### Saved Cards
+**Sandbox API Key Password:** Your Finix sandbox API key password
+
+**Sandbox Application ID:** Your Finix sandbox Application ID
+
+**Sandbox Merchant ID:** Your Finix sandbox Merchant ID
+
+**Sandbox Webhook Username:** Username for authenticating sandbox webhook requests
+
+**Sandbox Webhook Password:** Password for authenticating sandbox webhook requests
+
+**Sandbox Webhook Signing Key:** HMAC signing key for sandbox webhook verification
+
+### Saved Cards and Template Style
+
+![](/img/finix-config-cc.webp)
 
 **Allow Saved Cards:** When turned on, logged-in customers can save their card at checkout for faster purchases in the future. Saved cards are also required for automatic subscription renewals.
 
-### Template
-
-**Subtemplate:** Choose a visual style for the checkout card form. Options depend on which layout plugins you have enabled (Bootstrap 5 or UIkit). Leave blank to use the default layout.
+**Template Style:** Choose a visual style for the checkout card form. Options depend on which layout plugins you have enabled (Bootstrap 5 or UIkit). Leave blank to use the default layout.
 
 ### Order Statuses
 
-<!-- SCREENSHOT: Order status configuration fields -->
+![](/img/finix-config-status.webp)
 
 These settings control which J2Commerce order status is applied when specific payment events occur.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Order Status (Payment Success)** | Status applied when a payment is captured successfully | Confirmed |
-| **Authorized Order Status** | Status applied when a payment is authorized but not yet captured — only visible when Capture Method is set to Manual | Confirmed |
-| **Change Order Status on Refund** | When turned on, automatically updates the order status after a refund is processed | No |
-| **Refund Order Status** | The status to apply after a refund — only shown when Change Order Status on Refund is enabled | — |
-| **Change Order Status on Void** | When turned on, automatically updates the order status when an authorized payment is voided | No |
-| **Void Order Status** | The status to apply after a void — only shown when Change Order Status on Void is enabled | — |
+
+
+**Order Status (Payment Success)**
+
+Status applied when a payment is captured successfully
+
+**Order Status:** Status applied when a payment is authorized but not yet captured — only visible when Capture Method is set to Manual
+
+**Change Order Status on Refund:** When turned on, automatically updates the order status after a refund is processed
+
+- **Refund Order Status:** The status to apply after a refund — only shown when Change Order Status on Refund is enabled
+
+**Change Order Status on Void:** When turned on, automatically updates the order status when an authorized payment is voided
+
+- **Void Order Status:** The status to apply after a void — only shown when Change Order Status on Void is enabled
 
 ### Surcharge
 
+![](/img/finix-config-surcharge.webp)
+
 Add an optional handling fee when a customer chooses to pay with Finix.
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Name** | The label shown to the customer (for example, "Card processing fee") |
-| **Surcharge Percent** | A percentage of the order total added as a fee (for example, `1.5` for 1.5%) |
-| **Surcharge Fixed** | A fixed amount added regardless of order size |
-| **Surcharge Tax Class** | A tax profile to apply to the surcharge — leave blank if no tax applies |
+**Surcharge Name:** The label shown to the customer (for example, "Card processing fee")
+
+**Surcharge Percent:** A percentage of the order total added as a fee (for example, `1.5` for 1.5%)
+
+**Surcharge Fixed:** A fixed amount added regardless of order size
+
+**Surcharge Tax Class:** A tax profile to apply to the surcharge — leave blank if no tax applies
 
 Leave both **Surcharge Percent** and **Surcharge Fixed** empty to charge no surcharge.
 
 ### Geozone and Order Value Restrictions
 
-| Field | Description |
-|-------|-------------|
-| **Geozone Restriction** | Limit Finix to customers in a specific geozone — leave blank to allow all locations |
-| **Minimum Order Subtotal** | Hide Finix as a payment option when the cart subtotal is below this amount |
-| **Maximum Order Subtotal** | Hide Finix when the cart subtotal is above this amount |
+![](/img/finix-config-geozone.webp)
 
-### Custom HTML Snippets
+**Geozone Restriction:** Limit Finix to customers in a specific geozone — leave blank to allow all locations
+
+**Minimum Order Subtotal:** Hide Finix as a payment option when the cart subtotal is below this amount
+
+**Maximum Order Subtotal:** Hide Finix when the cart subtotal is above this amount
+
+### Custom HTML Messages
 
 These optional fields let you inject custom text or HTML at different points in the payment flow.
 
-| Field | When it appears |
-|-------|----------------|
-| **Thank-You Article** | Optional Joomla article shown on the order confirmation page after a successful payment |
-| **On Selection Text** | Displayed when the customer selects Finix as their payment method |
-| **Before Payment Text** | Displayed just above the card form, before the customer enters card details |
-| **After Payment Text** | Displayed on the confirmation page after a successful payment |
-| **On Error Text** | Displayed when a payment attempt fails |
-| **On Cancel Payment Text** | Displayed when the customer cancels or navigates away from the payment step |
+![](/img/finix-config-text.webp)
 
-### Dashboard Icon
+**Thank-You Article:** Optional Joomla article shown on the order confirmation page after a successful payment
+
+**On Selection Text:** Displayed when the customer selects Finix as their payment method
+
+**Before Payment Text:** Displayed just above the card form, before the customer enters card details
+
+**After Payment Text:** Displayed on the confirmation page after a successful payment
+
+**On Error Text:** Displayed when a payment attempt fails
+
+**On Cancel Payment Text:** Displayed when the customer cancels or navigates away from the payment step
+
+### Dashboard Icon and Debug
+
+![](/img/finix-config-debug.webp)
 
 **Show Dashboard Icon:** Add a quick-access shortcut for this plugin to the J2Commerce dashboard.
 
-**Dashboard Icon Label:** The label for the shortcut icon.
-
-### Debug Mode
+- **Icon Label:** The label for the shortcut icon.
 
 **Debug Mode:** Records detailed API request and response data in the Joomla log.
 
@@ -274,7 +304,9 @@ A void releases an authorized payment before it has been captured. Once a paymen
 3. The authorization is released — the customer is not charged and any hold on their card is removed.
 
 :::info
+
 The **Void Authorization** button only appears when the payment is in an authorized-but-not-captured state. If the payment has already been captured, use **Refund** instead.
+
 :::
 
 ### Issue a Refund
