@@ -1,10 +1,3 @@
----
-title: "Mercury ACH Bank Payment"
-sidebar_label: "Mercury (ACH)"
-sidebar_position: 36
-description: "Accept ACH bank transfers into your Mercury business bank account — via a Mercury-hosted invoice page (paid plan) or by displaying your account and routing details for customers to transfer manually (free plan)."
----
-
 # Mercury ACH Bank Payment
 
 The Mercury ACH Bank Payment plugin connects your J2Commerce store to your **Mercury** business bank account. Mercury is a US business banking platform — it is not a card gateway. This plugin is designed for stores that want to accept ACH bank transfers as a payment option.
@@ -236,16 +229,12 @@ Only enable this when diagnosing a specific problem. Disable it on live sites �
 4. After paying, they are returned to the store and see an order confirmation page.
 5. Their order shows a pending status. It is confirmed automatically (typically within 2 to 3 business days) when Mercury reports the invoice as paid.
 
-<!-- SCREENSHOT: Checkout payment step showing Pay Now via Mercury button -->
-
 ### Reconcile Mode
 
 1. The customer adds items to their cart and proceeds to checkout.
 2. At the payment step, they select **ACH Bank Transfer (Mercury)** and see the transfer details — account name, routing number (ABA), account number, and a unique payment reference.
 3. They note the details and initiate the transfer from their own online banking. They must include the payment reference in the transfer memo.
 4. Their order shows a pending status. It is confirmed automatically once the cron task finds a matching incoming transaction in your Mercury account.
-
-<!-- SCREENSHOT: Checkout screen showing bank transfer details with routing number and payment reference -->
 
 :::tip
 
@@ -307,8 +296,6 @@ In Reconcile mode, if a transaction matches the order amount but not the memo re
 4. Click **Confirm Payment Received**.
 
 The order status updates to the **Confirmed Order Status** set in the plugin configuration, and the transaction ID is stored on the order.
-
-<!-- SCREENSHOT: Order detail screen showing Mercury Payment panel in sidebar with Confirm Payment Received button -->
 
 ## Testing the Plugin
 
