@@ -1,10 +1,3 @@
----
-title: "Opayo (Sage Pay) Card Payments"
-sidebar_label: "Opayo (Sage Pay)"
-sidebar_position: 47
-description: "Accept credit and debit card payments in the UK and Ireland via Opayo Pi (formerly Sage Pay, now Elavon). Supports 3DS2 strong customer authentication, saved cards, deferred capture, and admin refund and void tools."
----
-
 # Opayo (Sage Pay) Card Payments
 
 Opayo — formerly known as Sage Pay and now part of Elavon — is one of the most widely trusted card payment providers in the UK and Ireland. The Opayo plugin connects your J2Commerce store to the Opayo Pi API, letting customers pay by credit or debit card without leaving your website. Card details are handled entirely within secure, Opayo-controlled fields, so your server never processes raw card numbers.
@@ -277,12 +270,6 @@ The entire checkout flow happens on your website — customers are never redirec
 7. If 3D Secure authentication is required, a verification challenge from the customer's bank appears in an inline panel on the page. The customer completes the verification step (entering a one-time code or confirming in their banking app).
 8. After the card is authorised, the customer is taken to the order confirmation page showing their order reference and a confirmation message.
 
-<!-- SCREENSHOT: Checkout page showing the Opayo card entry form with the Drop-in fields and the Place Order button -->
-
-<!-- SCREENSHOT: 3DS challenge panel embedded inline on the checkout page showing the bank verification step -->
-
-<!-- SCREENSHOT: Post-payment confirmation page showing the success message and order reference -->
-
 ## Managing Orders — Void, Capture, Abort, and Refund
 
 After a payment is processed, the order admin screen in J2Commerce displays action buttons depending on the transaction type and its current status.
@@ -292,8 +279,6 @@ To access these controls:
 1. Go to **J2Commerce** -> **Sales** -> **Orders**.
 2. Open the relevant order.
 3. Scroll to the payment section to see the available action buttons.
-
-<!-- SCREENSHOT: J2Commerce order admin screen showing the Opayo action buttons (Void, Capture, Abort, Refund) -->
 
 ### Void a Payment
 
@@ -338,8 +323,6 @@ Refunds can be issued after a payment has settled. You can refund the full amoun
 
 The refund is sent to Opayo and credited back to the customer's original payment card. Refunds typically appear on the customer's statement within 3–5 business days.
 
-<!-- SCREENSHOT: The Issue Refund dialog showing the full/partial refund toggle and amount field -->
-
 :::info
 
 You cannot refund more than the original payment amount. The maximum refundable amount is displayed in the dialog. If the **Issue Refund** button does not appear, the payment may not yet have settled — try again after the next business day, or use **Void Payment** if the same-day window is still open.
@@ -371,7 +354,7 @@ Before accepting real payments, work through this checklist.
 9. Place a small live test order using a real card to confirm the full flow works end to end, including the 3DS step if prompted.
 10. Confirm the order reaches your expected confirmed status and that the test payment appears in your Opayo reporting.
 
-:::caution
+:::info
 
 A warning banner appears on the J2Commerce dashboard while **Sandbox / Test Mode** is active. If you see this banner after going live, return to the plugin settings and confirm the mode is set to **No**.
 
