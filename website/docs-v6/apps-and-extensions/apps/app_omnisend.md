@@ -46,7 +46,7 @@ Once installed, confirm the app is enabled. There are two ways to reach it.
 
 Look for **Omnisend Integration** in the list. If the toggle shows a red X, click it to turn it into a green checkmark. The app is now active.
 
-![](/img/omnisend-app.webp)
+[//]: # (![]&#40;/img/omnisend-app.webp&#41;)
 
 ## Find Your Omnisend API Key
 
@@ -111,7 +111,7 @@ When a new order is placed, J2Commerce automatically sends a "placed order" even
 
 To find your order status IDs, go to **J2Commerce** -> **Configuration** -> **Order Statuses** and check the ID column.
 
-![](/img/omnisend-config1.webp)
+[//]: # (![]&#40;/img/omnisend-config1.webp&#41;)
 
 ---
 
