@@ -435,7 +435,7 @@ const sidebars = {
                 // Braintree Payment
                 'payment-methods/braintree',
                 // CardSave / Worldpay Legacy Gateway
-                'payment-methods/cardsave',
+                //'payment-methods/cardsave',
                 // Cardsave Payment
                 'payment-methods/payment_cardsave',
                 // Cash on Delivery Payment
