@@ -1,10 +1,3 @@
----
-title: "Finix Payment"
-sidebar_label: "Finix"
-sidebar_position: 33
-description: "Accept credit and debit card payments through Finix in J2Commerce, with an embedded card form, saved cards, subscription renewals, and full order-level capture, void, and refund actions."
----
-
 # Finix Payment
 
 The Finix Payment plugin connects your J2Commerce store to the **Finix** payment platform. Finix is a payments infrastructure provider that gives businesses direct access to card processing — including Visa, Mastercard, and other major card networks — through a secure, embedded card form.
@@ -261,10 +254,6 @@ Only enable this when diagnosing a specific problem. Disable it on live sites �
 5. The customer confirms the order. Finix processes the payment and returns the result to your store.
 6. On success, the customer sees the order confirmation page.
 
-<!-- SCREENSHOT: Finix embedded card form displayed at checkout step -->
-
-<!-- SCREENSHOT: Saved cards list shown to a returning logged-in customer at checkout -->
-
 ## Webhooks
 
 Finix sends real-time notifications to your store when payment events occur — such as a payment being processed, refunded, or voided. The plugin verifies each notification using the **Webhook Signing Key** you configured, so only genuine Finix events update your orders.
@@ -285,8 +274,6 @@ The order screen also shows a **Payment Balance** summary with the order total, 
 
 ### Capture a Payment (Manual Capture mode only)
 
-<!-- SCREENSHOT: Order screen showing Capture Payment button -->
-
 If you set **Capture Method** to **Manual (Authorize Only)**, payments are authorized (reserved) but not collected. When you are ready to charge the customer:
 
 1. Open the order in **J2Commerce** -> **Sales** -> **Orders**.
@@ -294,8 +281,6 @@ If you set **Capture Method** to **Manual (Authorize Only)**, payments are autho
 3. The funds are collected from the customer's card and the order status updates.
 
 ### Void an Authorization (Manual Capture mode only)
-
-<!-- SCREENSHOT: Order screen showing Void Authorization button -->
 
 A void releases an authorized payment before it has been captured. Once a payment has been captured, use **Refund** instead.
 
@@ -310,8 +295,6 @@ The **Void Authorization** button only appears when the payment is in an authori
 :::
 
 ### Issue a Refund
-
-<!-- SCREENSHOT: Order screen showing Refund button and refund modal -->
 
 You can refund a captured payment in full or in part.
 
@@ -330,8 +313,6 @@ If the customer has saved cards on file, an additional section appears in the or
 2. Enter the amount to charge (the suggested amount equals the outstanding balance due).
 3. Click **Charge Now** to process the charge.
 
-<!-- SCREENSHOT: Admin Charge Saved Card section in the order summary -->
-
 ## Testing Payments
 
 Always test in sandbox mode before going live.
@@ -347,8 +328,6 @@ Always test in sandbox mode before going live.
 :::warning
 Remember to turn off **Use Sandbox (Test Mode)** before accepting real orders. A warning banner on the J2Commerce dashboard will remind you if sandbox mode is still active.
 :::
-
-<!-- SCREENSHOT: J2Commerce dashboard showing "Finix payment plugin is in SANDBOX (test) mode" warning banner -->
 
 ## Troubleshooting
 
