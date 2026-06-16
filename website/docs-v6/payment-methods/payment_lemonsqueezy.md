@@ -1,10 +1,3 @@
----
-title: "Lemon Squeezy Payment"
-sidebar_label: "Lemon Squeezy"
-sidebar_position: 101
-description: "Accept one-time and subscription payments via Lemon Squeezy hosted checkout (Merchant of Record), with gateway-managed subscriptions, saved-card management, and admin cancel, pause, and refund actions."
----
-
 # Lemon Squeezy Payment
 
 Lemon Squeezy is a **Merchant of Record** — which means Lemon Squeezy is legally the seller for every transaction that goes through it. Your customers pay on a Lemon Squeezy-hosted checkout page; Lemon Squeezy collects the money, handles all sales tax and VAT, manages fraud screening, and meets PCI security compliance on your behalf. Card numbers never touch your server.
@@ -24,36 +17,6 @@ The plugin supports one-time orders and subscription products, full and partial 
 - PHP 8.3 or later
 - A Lemon Squeezy store account (free to create at [lemonsqueezy.com](https://www.lemonsqueezy.com))
 - Your site must be publicly accessible over HTTPS so Lemon Squeezy can deliver webhook notifications
-
-## Purchase and Download
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com) **->** **Payment Plugins**
-
-**Step 2:** Locate **Lemon Squeezy Payment** **->** click **View Details** **->** **Add to Cart** **->** **Checkout**
-
-**Step 3:** Go to **My Downloads** under your profile button at the top right corner. Click **Available Versions -> View Files -> Download Now**
-
-## Install the Plugin
-
-In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
-
-Click **Upload Package File** and select the `payment_lemonsqueezy.zip` file you downloaded, then click **Upload & Install**. The plugin installs automatically.
-
-<!-- screenshot: Joomla Extensions installer upload tab with payment_lemonsqueezy.zip selected -->
-
-## Enable the Plugin
-
-After installation, enable the plugin so it appears at checkout.
-
-**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Payments**
-
-**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Payments**
-
-Find **Lemon Squeezy Payment** in the list and click the red **X** to turn it into a green checkmark. The plugin is now enabled.
-
-<!-- screenshot: J2Commerce Payments list showing Lemon Squeezy Payment with its enabled/disabled toggle -->
 
 ## Connect Your Lemon Squeezy Account
 
@@ -83,6 +46,7 @@ Lemon Squeezy uses a single set of servers for both test and live modes. The key
 2. Click **+ Add endpoint**.
 3. Paste the **Webhook URL** from the plugin settings screen into the **URL** field. (You will find this URL after saving the plugin with your API key and Store ID — see the [Configure the Plugin](#configure-the-plugin) section.)
 4. Under **Events**, subscribe to all of these:
+
    - `order_created`
    - `order_refunded`
    - `subscription_created`
@@ -152,6 +116,38 @@ A single catch-all one-time product will **not** work for subscriptions. If a cu
 
 :::
 
+## Purchase and Download
+
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com) **->** **Payment Plugins**
+
+**Step 2:** Locate **Lemon Squeezy Payment** **->** click **View Details** **->** **Add to Cart** **->** **Checkout**
+
+**Step 3:** Go to **My Downloads** under your profile button at the top right corner. Click **Available Versions -> View Files -> Download Now**
+
+## Install the Plugin
+
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
+
+Upload the `payment_lemonsqueezy.zip` file or use the Install from URL option.
+
+![](/img/install.webp)
+
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Lemon Squeezy Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/lemon-enable.webp)
+
 ## Configure the Plugin
 
 Click the **Lemon Squeezy Payment** title in **J2Commerce -> Payments** to open the settings screen.
@@ -162,107 +158,129 @@ Click the **Toggle Inline Help** button in the toolbar to show a description ben
 
 :::
 
-<!-- screenshot: Lemon Squeezy plugin settings screen with Toggle Inline Help highlighted -->
+![](/img/lemon-toggle.webp)
 
----
+***
 
 ### Display Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Display Name** | The label shown to customers at checkout | `Lemon Squeezy` |
-| **Display Image** | An optional logo shown next to the payment option | None |
+![](/img/lemon-display.webp)
 
----
+**Display Name:** The label shown to customers at checkout
+
+**Display Image:** An optional logo shown next to the payment option
 
 ### Mode and Credentials
 
-| Field | Description |
-|-------|-------------|
-| **Mode** | Choose **Test** while setting up, then switch to **Live** when ready to accept real payments. Lemon Squeezy uses a single host for both modes — the key you enter determines which environment is active. |
-| **Test API Key** | Your Lemon Squeezy API key for test mode. Shown only when Mode is set to Test. |
-| **Live API Key** | Your Lemon Squeezy API key for live mode. Shown only when Mode is set to Live. |
-| **Store ID** | The numeric ID of your Lemon Squeezy store. A single API key can access multiple stores on one account, so this tells the plugin which store to use. |
-| **Webhook Signing Secret** | The signing secret you created when setting up the webhook in Lemon Squeezy (6–40 characters). Copy the exact same value from Lemon Squeezy into this field. |
-| **Webhook URL** | A read-only field that displays the URL you must register in your Lemon Squeezy webhook settings. Click **Copy** to copy it to your clipboard. |
-| **Test Connection** | After entering your API key and Store ID, click this button to verify the connection. The plugin calls the Lemon Squeezy API and reports the account name and mode on success. |
+![](/img/lemon-api.webp)
 
----
+**Mode:** Choose **Test** while setting up, then switch to **Live** when ready to accept real payments. Lemon Squeezy uses a single host for both modes — the key you enter determines which environment is active.
+
+**Test API Key:** Your Lemon Squeezy API key for test mode. Shown only when Mode is set to Test.
+
+**Live API Key:** Your Lemon Squeezy API key for live mode. Shown only when Mode is set to Live.
+
+**Store ID:** The numeric ID of your Lemon Squeezy store. A single API key can access multiple stores on one account, so this tells the plugin which store to use.
+
+**Webhook Signing Secret:** The signing secret you created when setting up the webhook in Lemon Squeezy (6–40 characters). Copy the exact same value from Lemon Squeezy into this field.
+
+**Webhook URL:** A read-only field that displays the URL you must register in your Lemon Squeezy webhook settings. Click **Copy** to copy it to your clipboard.
+
+**Test Connection:** After entering your API key and Store ID, click this button to verify the connection. The plugin calls the Lemon Squeezy API and reports the account name and mode on success.
+
+![](/img/lemon-test-connection.webp)
 
 ### Checkout Experience
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Checkout Experience** | **Redirect** sends the customer to the Lemon Squeezy-hosted checkout page in a new browser tab. **Overlay (Lemon.js)** opens the same Lemon Squeezy checkout as a popup overlay on your site without navigating away. | Redirect |
+![](/img/lemon-sync.webp)
 
----
+**Checkout Experience:**&#x20;
 
-### Pricing and Catalog
+- **Redirect** sends the customer to the Lemon Squeezy-hosted checkout page in a new browser tab.&#x20;
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Use Cart Total as Price** | When enabled, the J2Commerce order total is sent to Lemon Squeezy as the checkout price, overriding the variant's own price. Keep this enabled for one-time orders so customers pay the correct amount. | Yes |
-| **Catch-all Product Name** | The exact name of the Lemon Squeezy product or variant that handles all one-time orders (case-insensitive). This must match the name you gave the product in the Lemon Squeezy dashboard. | `Store Order` |
-| **Variant ID (optional override)** | Enter a numeric Lemon Squeezy variant ID to force all one-time checkouts through a specific variant, bypassing the name lookup entirely. Leave blank to use the Catch-all Name above. | Blank |
-| **Sync Catalog** | Clicking this panel fetches your current Lemon Squeezy product catalog and displays it as a table showing each variant, its type (one-time or subscription), and its billing interval. Any warnings about missing variants appear here. | — |
+- **Overlay (Lemon.js)** opens the same Lemon Squeezy checkout as a popup overlay on your site without navigating away.
 
----
+**Template Style:** Choose the visual style for the card form at checkout: Match this setting to the template framework your site uses.
+
+- ***(blank):*** Default layout
+
+- **bootstrap5:** Bootstrap 5-based J2Commerce templates
+
+- **uikit:** UIkit-based J2Commerce templates
+
+**Use Cart Total as Price:** When enabled, the J2Commerce order total is sent to Lemon Squeezy as the checkout price, overriding the variant's own price. Keep this enabled for one-time orders so customers pay the correct amount.
+
+**Catch-all Product Name:** The exact name of the Lemon Squeezy product or variant that handles all one-time orders (case-insensitive). This must match the name you gave the product in the Lemon Squeezy dashboard.
+
+**Variant ID (optional override):** Enter a numeric Lemon Squeezy variant ID to force all one-time checkouts through a specific variant, bypassing the name lookup entirely. Leave blank to use the Catch-all Name above.
+
+**Sync Catalog:** Clicking this panel fetches your current Lemon Squeezy product catalog and displays it as a table showing each variant, its type (one-time or subscription), and its billing interval. Any warnings about missing variants appear here.
 
 ### Order Statuses
 
+![](/img/lemon-status.webp)
+
 These settings control which J2Commerce order status is applied at each stage. If the status you need does not appear in a dropdown, create it first at **J2Commerce -> Setup -> Order Statuses**.
 
-| Field | Description |
-|-------|-------------|
-| **Order Status** | Status set after a successful payment is confirmed by webhook. Default: **Confirmed** |
-| **Refunded Order Status** | Status set after a full refund is confirmed. |
-| **Failed Order Status** | Status set when a payment fails. |
+**Order Status:** Status set after a successful payment is confirmed by webhook. Default: **Confirmed**
 
----
+**Refunded Order Status:** Status set after a full refund is confirmed.
+
+**Failed Order Status:** Status set when a payment fails.
+
+:::info
+
+**NOTE:** If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge
 
+![](/img/lemon-surcharge.webp)
+
 Add an optional extra fee for customers who pay via Lemon Squeezy. You can combine a percentage and a fixed amount — both are added together.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Surcharge Name** | Label shown to customers (for example, "Processing Fee") | Blank |
-| **Surcharge Percent** | Percentage of the order subtotal to add | Blank |
-| **Surcharge Fixed** | Fixed amount to add in your store currency | Blank |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge | None |
+**Surcharge Name:** Label shown to customers (for example, "Processing Fee")
 
----
+**Surcharge Percent:** Percentage of the order subtotal to add
+
+**Surcharge Fixed:** Fixed amount to add in your store currency
+
+**Surcharge Tax Class:** Tax profile to apply to the surcharge
 
 ### Restrictions
 
+![](/img/lemon-restrictions.webp)
+
 Control which customers see Lemon Squeezy at checkout.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Geo-Zone Restriction** | Only show Lemon Squeezy to customers in a specific geo-zone. Leave empty for all customers. | None |
-| **Minimum Subtotal** | Hide Lemon Squeezy if the cart subtotal is below this amount. Leave blank for no minimum. | Blank |
-| **Maximum Subtotal** | Hide Lemon Squeezy if the cart subtotal exceeds this amount. Leave blank for no maximum. | Blank |
+**Geo-Zone Restriction:** Only show Lemon Squeezy to customers in a specific geo-zone. Leave empty for all customers.
 
----
+**Minimum Subtotal:** Hide Lemon Squeezy if the cart subtotal is below this amount. Leave blank for no minimum.
+
+**Maximum Subtotal:** Hide Lemon Squeezy if the cart subtotal exceeds this amount. Leave blank for no maximum.
 
 ### Custom Messages and Thank-You Page
 
-| Field | When It Shows |
-|-------|--------------|
-| **Thank-You Article** | A Joomla article shown on the order confirmation page after a successful payment |
-| **On Before Payment** | Custom text or HTML shown before the customer clicks the pay button |
-| **On After Payment** | Custom text or HTML shown on the confirmation screen after a successful payment |
-| **On Error Payment** | Custom text or HTML shown when a payment error occurs |
+![](/img/lemon-messages.webp)
 
----
+**Thank-You Article:** A Joomla article shown on the order confirmation page after a successful payment
+
+**On Before Payment:** Custom text or HTML shown before the customer clicks the pay button
+
+**On After Payment:** Custom text or HTML shown on the confirmation screen after a successful payment
+
+**On Error Payment:** Custom text or HTML shown when a payment error occurs
 
 ### Debug Logging
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Logging** | Writes API requests and responses to the Joomla log directory for troubleshooting. API keys and the webhook secret are never logged. Disable this in production. | No |
+![](/img/lemon-debug.webp)
 
----
+**Debug Logging:** Writes API requests and responses to the Joomla log directory for troubleshooting. API keys and the webhook secret are never logged. Disable this in production.
+
+***
 
 ## How It Works
 
@@ -290,21 +308,19 @@ Open any Lemon Squeezy order to see:
 
 The **Actions** dropdown provides:
 
-| Action | What It Does |
-|--------|-------------|
-| **Manage** | Opens the Lemon Squeezy customer portal for this customer, where they can update their payment method or view their billing history |
-| **Cancel Subscription** | Cancels the customer's subscription. The customer keeps access until the end of the current billing period |
-| **Pause Subscription** | Pauses payment collection on the subscription. The customer's billing is suspended |
-| **Resume Subscription** | Resumes a paused subscription and restarts billing |
-| **Refund** | Issues a full or partial refund for the order directly from your admin screen |
+| Action                  | What It Does                                                                                                                        |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **Manage**              | Opens the Lemon Squeezy customer portal for this customer, where they can update their payment method or view their billing history |
+| **Cancel Subscription** | Cancels the customer's subscription. The customer keeps access until the end of the current billing period                          |
+| **Pause Subscription**  | Pauses payment collection on the subscription. The customer's billing is suspended                                                  |
+| **Resume Subscription** | Resumes a paused subscription and restarts billing                                                                                  |
+| **Refund**              | Issues a full or partial refund for the order directly from your admin screen                                                       |
 
 :::tip
 
 Each renewal order for a subscription has its own order record in J2Commerce with its own **Transaction ID** and **Actions** dropdown. You can refund or cancel directly from the latest renewal order without needing to find the original order.
 
 :::
-
-<!-- screenshot: J2Commerce order detail screen showing Lemon Squeezy Transaction ID and Actions dropdown -->
 
 ### Issuing a Refund
 
@@ -342,7 +358,7 @@ Before accepting real payments, confirm each item:
 2. Open the plugin settings and check **Geo-Zone Restriction** — if a zone is selected, only customers in that zone see the option.
 3. Check **Minimum Subtotal** and **Maximum Subtotal** — if set, orders outside that range will not show the option. Leave both blank to remove limits.
 
----
+***
 
 ### Orders are stuck in Pending and never reach Confirmed
 
@@ -355,7 +371,7 @@ Before accepting real payments, confirm each item:
 3. Make sure your site is publicly accessible over HTTPS. If your site is on a local or staging domain, Lemon Squeezy cannot reach it.
 4. Enable **Debug Logging** in the plugin settings and attempt a test order to see whether the webhook arrives and what response the plugin sends.
 
----
+***
 
 ### Subscriptions are not billing / renewal orders are not being created
 
@@ -369,7 +385,7 @@ Before accepting real payments, confirm each item:
 
 Lemon Squeezy, not J2Commerce, manages the renewal billing schedule. If a subscription variant never existed in Lemon Squeezy, Lemon Squeezy cannot bill for it.
 
----
+***
 
 ### The Sync Catalog panel shows a warning about "Store Order" not being found
 
@@ -381,7 +397,7 @@ Lemon Squeezy, not J2Commerce, manages the renewal billing schedule. If a subscr
 2. If you named it something different, update the **Catch-all Product Name** field in the plugin settings to match the name in Lemon Squeezy exactly.
 3. Alternatively, enter the variant's numeric ID in the **Variant ID (optional override)** field to bypass name matching entirely.
 
----
+***
 
 ### Test Connection fails
 
@@ -393,7 +409,7 @@ Lemon Squeezy, not J2Commerce, manages the renewal billing schedule. If a subscr
 2. Re-copy the key from the Lemon Squeezy dashboard **->** **Settings** **->** **API** and paste it fresh into the correct field.
 3. Click **Save** before clicking **Test Connection** — the button uses the key currently saved in the database.
 
----
+***
 
 ### The order shows Refunded but the original order did not change
 
@@ -401,7 +417,7 @@ Lemon Squeezy, not J2Commerce, manages the renewal billing schedule. If a subscr
 
 **Solution:** This is expected behavior. Each renewal creates its own order record. To refund a specific payment, open that payment's order and use **Actions -> Refund** on that order.
 
----
+***
 
 ## Related Topics
 
