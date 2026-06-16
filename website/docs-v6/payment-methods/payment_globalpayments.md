@@ -1,10 +1,3 @@
----
-title: "Global Payments"
-sidebar_label: "Global Payments"
-sidebar_position: 34
-description: "Accept credit and debit card payments in J2Commerce using the Global Payments GP API — with Hosted Fields, saved cards, subscriptions, and full order-level settle, void, and refund actions."
----
-
 # Global Payments
 
 The Global Payments plugin connects your J2Commerce store to the **Global Payments GP API** — a Unified Commerce Platform used by businesses worldwide to accept credit and debit card payments.
@@ -175,19 +168,15 @@ Saved cards are also required for **subscription renewals**. If your store uses 
 
 Control which order status J2Commerce sets at each stage of the payment lifecycle:
 
-| Field                 | Default   | Description                                                                          |
-| --------------------- | --------- | ------------------------------------------------------------------------------------ |
-| **Payment Status**    | Confirmed | Status set when payment is successfully captured                                     |
-| **Authorized Status** | Confirmed | Status set when payment is authorized but not yet settled (Authorize Only mode only) |
-| **Failed Status**     | Failed    | Status set when a payment is declined or fails                                       |
+**Order Status:** Status set when payment is successfully captured
 
-#### Status on Refund
+**Failed Status:** Status set when a payment is declined or fails
 
-Set **Change Status on Refund** to **Yes** if you want J2Commerce to automatically update the order status when you process a refund. Then choose the target status from **Refund Order Status**.
+**Authorized Status:** Status set when payment is authorized but not yet settled (Authorize Only mode only)
 
-#### Status on Cancel
+**Status on Refund:** Set **Change Status on Refund** to **Yes** if you want J2Commerce to automatically update the order status when you process a refund. Then choose the target status from **Refund Order Status**.
 
-Set **Change Status on Cancel** to **Yes** if you want J2Commerce to update the order status when a payment authorization is cancelled. Then choose the target status from **Cancel Order Status**.
+**Status on Cancel:** Set **Change Status on Cancel** to **Yes** if you want J2Commerce to update the order status when a payment authorization is cancelled. Then choose the target status from **Cancel Order Status**.
 
 :::info
 
@@ -199,50 +188,57 @@ Set **Change Status on Cancel** to **Yes** if you want J2Commerce to update the 
 
 ### Surcharge (Optional)
 
+![](/img/global-surcharge.webp)
+
 Add a payment surcharge to orders placed with this method. Leave all three fields empty if you do not charge a surcharge.
 
-| Field                   | Description                                                                |
-| ----------------------- | -------------------------------------------------------------------------- |
-| **Surcharge Name**      | Label shown to the customer, for example `Card Processing Fee`             |
-| **Surcharge Percent**   | Percentage of the order total to add as a fee (for example `1.5` for 1.5%) |
-| **Surcharge Fixed**     | Fixed amount to add, for example `0.50`                                    |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount                               |
+**Surcharge Name:** Label shown to the customer, for example `Card Processing Fee`
+
+**Surcharge Percent:** Percentage of the order total to add as a fee (for example `1.5` for 1.5%)
+
+**Surcharge Fixed:** Fixed amount to add, for example `0.50`
+
+**Surcharge Tax Class:** Tax profile to apply to the surcharge amount
 
 ### Availability Restrictions (Optional)
 
+![](/img/global-restriction.webp)
+
 Limit when Global Payments appears as a payment option at checkout:
 
-| Field                   | Description                                                      |
-| ----------------------- | ---------------------------------------------------------------- |
-| **Geozone Restriction** | Show this payment method only to customers in a specific geozone |
-| **Minimum Subtotal**    | Hide this method if the order subtotal is below this amount      |
-| **Maximum Subtotal**    | Hide this method if the order subtotal is above this amount      |
+**Geozone Restriction:** Show this payment method only to customers in a specific geozone
+
+**Minimum Subtotal:** Hide this method if the order subtotal is below this amount
+
+**Maximum Subtotal:** Hide this method if the order subtotal is above this amount
 
 Leave these fields empty to show Global Payments to all customers regardless of location or order size.
 
-### Thank You Article
+### Custom HTML Messages (Optional)
 
-Select a Joomla article to display on the payment confirmation page after a successful purchase. Leave empty to show the default J2Commerce confirmation message.
+![](/img/global-messages.webp)
 
-### Custom HTML Blocks (Optional)
+**Thank You Article:** Select a Joomla article to display on the payment confirmation page after a successful purchase. Leave empty to show the default J2Commerce confirmation message.
 
-Inject custom HTML at specific points in the checkout and payment flow:
+**Checkout Messages:** Inject custom HTML at specific points in the checkout and payment flow:
 
-| Field                 | When it appears                                                   |
-| --------------------- | ----------------------------------------------------------------- |
-| **On Selection**      | When the customer selects Global Payments as their payment method |
-| **On Before Payment** | Above the payment form at checkout                                |
-| **On After Payment**  | On the confirmation page after a successful payment               |
-| **On Error**          | When a payment fails or is declined                               |
-| **On Cancel**         | When the customer cancels the payment                             |
+**On Selection:** When the customer selects Global Payments as their payment method
 
-### Dashboard Icon (Optional)
+**On Before Payment:** Above the payment form at checkout
+
+**On After Payment:** On the confirmation page after a successful payment
+
+**On Error:** When a payment fails or is declined
+
+**On Cancel:** When the customer cancels the payment
+
+### Dashboard Icon (Optional) and Debug
+
+![](/img/global-icon.webp)
 
 Set **Show Dashboard Icon** to **Yes** to add a shortcut icon to the J2Commerce admin dashboard. Use **Dashboard Icon Label** to customize the icon text.
 
-### Debug Mode
-
-Set **Debug Mode** to **Yes** to log all Global Payments API requests and responses to the Joomla log. This is useful when troubleshooting a configuration issue.
+**Debug Mode:** Set **Debug Mode** to **Yes** to log all Global Payments API requests and responses to the Joomla log. This is useful when troubleshooting a configuration issue.
 
 :::warning
 Disable debug mode on live stores. Logs may contain sensitive transaction details.
@@ -258,8 +254,6 @@ When you are ready to accept real payments:
 4. Click **Save**.
 5. Place a test order on your store with a real card to confirm everything works.
 
-<!-- SCREENSHOT: Plugin configuration with Sandbox set to No and live credentials filled in -->
-
 ## Managing Orders
 
 ### Settle (Capture) a Payment
@@ -272,13 +266,11 @@ If you configured **Transaction Type** as **Authorize Only**, a **Settle (Captur
 
 The funds are collected from the customer's card immediately. The order status updates based on your **Payment Status** setting.
 
-<!-- SCREENSHOT: Order admin screen showing the Settle (Capture) button -->
-
 ### Cancel an Authorization
 
 If a payment has been authorized but not yet settled, you can cancel the authorization to release the reserved funds without charging the customer.
 
-1. Open the order in **J2Commerce** -> **Orders**.
+1. Open the order in **J2Commerce** **-> Sales -> Orders**.
 2. Click the **Cancel Payment** button in the payment panel and confirm when prompted.
 
 :::info
@@ -291,15 +283,13 @@ Once a payment has been settled, you cannot cancel it — use **Refund** instead
 
 You can refund a settled payment in full or partially from the order screen.
 
-1. Open the order in **J2Commerce** -> **Orders**.
+1. Open the order in **J2Commerce** **->** **Sales -> Orders**.
 2. Click the **Issue Refund** button in the payment panel.
 3. Choose **Full refund** or **Partial refund**.
 4. For a partial refund, enter the amount to refund (up to the maximum refundable amount).
 5. Click **Process Refund** to confirm.
 
 The refund is sent to the customer's original payment method. If you enabled **Change Status on Refund**, the order status updates automatically.
-
-<!-- SCREENSHOT: Refund modal showing full and partial refund options -->
 
 ## Saved Cards
 
@@ -328,7 +318,7 @@ When the J2Commerce Subscriptions add-on is installed, the Global Payments plugi
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and confirm **Global Payments** is enabled (green checkmark).
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** and confirm **Global Payments** is enabled (green checkmark).
 2. Open the plugin settings and verify that **App ID** and **App Key** are filled in for the active mode (sandbox or live).
 3. If the dashboard shows a "credentials not configured" warning, enter the missing credentials and save.
 
