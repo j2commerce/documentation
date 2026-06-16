@@ -1,10 +1,3 @@
----
-title: "PayTabs Payment"
-sidebar_label: "PayTabs"
-sidebar_position: 96
-description: "Accept credit and debit card payments through PayTabs — the leading payment gateway across the Middle East and North Africa — directly in J2Commerce."
----
-
 # PayTabs Payment
 
 PayTabs is a payment gateway built for merchants in the Middle East and North Africa (MENA) region. It lets your customers pay by credit or debit card — including regional cards like Mada (Saudi Arabia) and Meeza (Egypt) — without leaving your store. New card payments are handled on a secure PayTabs-hosted page, while returning customers who have saved their card can pay entirely on-site without being redirected anywhere.
@@ -247,8 +240,6 @@ When a customer reaches checkout and selects the PayTabs payment option:
 5. After entering their details on the PayTabs page, the customer is returned to your store and lands on the order confirmation page.
 6. If the customer ticks **Save this card for future purchases**, the card is stored for their account and available on their next visit.
 
-<!-- SCREENSHOT: Checkout payment step showing PayTabs option selected with saved card radio buttons and Place Order button -->
-
 :::note
 
 PayTabs handles card security on their end. Your store never receives or stores raw card numbers, which means your store qualifies for the simplest level of PCI compliance (SAQ A).
@@ -273,8 +264,6 @@ From the order screen you can issue a **full refund** (the entire order amount) 
 
 If a customer has saved cards on file and an order has not yet been paid, you can charge one of their saved cards directly from the order screen without the customer needing to log in and go through checkout again. This is useful for phone orders or subscription renewals that need manual intervention.
 
-<!-- SCREENSHOT: Admin order page showing Void, Refund, and Charge Stored Card action buttons -->
-
 ***
 
 ## Tips
@@ -295,7 +284,7 @@ If a customer has saved cards on file and an order has not yet been paid, you ca
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> open **PayTabs Payment**.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** -> open **PayTabs Payment**.
 2. Confirm the **Region** matches your PayTabs account country.
 3. Confirm all three credentials (Profile ID, Server Key, Client Key) are pasted in correctly with no leading or trailing spaces.
 4. Enable **Debug Mode**, attempt a test payment, then check the Joomla log file (go to **System** -> **System Information** -> **Directory Permissions** to find the log path).
@@ -306,7 +295,7 @@ If a customer has saved cards on file and an order has not yet been paid, you ca
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and confirm the PayTabs row shows a green enabled status.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** and confirm the PayTabs row shows a green enabled status.
 2. Check **Minimum Order Subtotal** and **Maximum Order Subtotal** — if set, verify the current cart total falls within the range.
 3. Check **Geozone Restriction** — if set, verify the customer's billing country is inside that geozone.
 
