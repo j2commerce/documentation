@@ -1,15 +1,8 @@
----
-title: "Payfast Payment"
-sidebar_label: "Payfast"
-sidebar_position: 100
-description: "Accept payments through Payfast — South Africa's most popular payment gateway. ZAR-only redirect integration with ITN webhook confirmation, tokenized subscriptions, and admin refund tools."
----
-
 # Payfast Payment
 
 The Payfast plugin connects your J2Commerce store to [Payfast](https://www.payfast.co.za), South Africa's leading online payment gateway. When a customer checks out, they are redirected to the Payfast-hosted payment page to complete their payment securely. Once Payfast confirms the payment via an Instant Transaction Notification (ITN), J2Commerce updates the order automatically.
 
-:::note
+:::info
 
 Payfast is a South Africa-based gateway that **only accepts ZAR (South African Rand)**. Your J2Commerce store currency must be set to ZAR before enabling this plugin. Orders in any other currency will be blocked at checkout.
 
@@ -33,16 +26,6 @@ Key features:
 - Your store currency set to **ZAR (South African Rand)**
 - Your store must be accessible over **HTTPS** on a publicly reachable domain
 
-## Purchase and Download
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com) and locate the **Payfast Payment** plugin.
-
-**Step 2:** Click **View Details** -> **Add to Cart** -> **Checkout**.
-
-**Step 3:** Go to **My Downloads** under your account profile, find the plugin, and click **Available Versions** -> **View Files** -> **Download Now**.
-
 ## Get Your Payfast Credentials
 
 Before configuring the plugin you need three values from your Payfast merchant dashboard.
@@ -59,27 +42,35 @@ Before configuring the plugin you need three values from your Payfast merchant d
 
 Keep the Payfast tab open while you configure the plugin in Joomla.
 
+## Purchase and Download
+
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com) and locate the **Payfast Payment** plugin.
+
+**Step 2:** Click **View Details** -> **Add to Cart** -> **Checkout**.
+
+**Step 3:** Go to **My Downloads** under your account profile, find the plugin, and click **Available Versions** -> **View Files** -> **Download Now**.
+
 ## Install the Plugin
 
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-Upload the `payment_payfast.zip` file or use the Install from URL option.
+Upload the `payment_payfast.zip` package ZIP file or use the Install from URL option.
 
-<!-- SCREENSHOT: Joomla Extensions installer screen with file upload area -->
+![](/img/install.webp)
 
 ## Enable the Plugin
 
-Once you have installed the plugin, you will need to enable it. There are two ways to access it.
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner -> **Setup** -> **Payment Methods**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Payment Methods**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list screen -->
+![](/img/culqi.webp)
 
-Look for **Payfast**, click the **X**, and it will turn into a green checkmark. The plugin is now enabled and ready for setup.
-
-<!-- SCREENSHOT: Payment Methods list showing Payfast enabled (green checkmark) -->
+To help you narrow down the list, you can do a search for **Payfast**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ## Configure the Plugin
 
@@ -93,7 +84,7 @@ Click the **Toggle Inline Help** button at the top of the settings screen to sho
 
 ### Payfast Credentials
 
-<!-- SCREENSHOT: Credentials fieldset in the Payfast plugin settings -->
+![](/img/payfast-credentials.webp)
 
 **Sandbox Mode:** Toggle between sandbox (test) mode and live mode. When enabled, all transactions go to `sandbox.payfast.co.za` — no real money is processed. Disable this when you are ready to accept real payments.
 
@@ -122,7 +113,7 @@ Payfast must be able to reach this URL over HTTPS. If your store is on localhost
 
 ### Display Settings
 
-<!-- SCREENSHOT: Display fieldset in the Payfast plugin settings -->
+![](/img/payfast-display.webp)
 
 **Display Name:** The name shown to customers at checkout, for example "Pay via Payfast". Defaults to `Payfast`.
 
@@ -132,13 +123,13 @@ Payfast must be able to reach this URL over HTTPS. If your store is on localhost
 
 ### Subscriptions / Saved Cards
 
-<!-- SCREENSHOT: Subscriptions fieldset in the Payfast plugin settings -->
+![](/img/payfast-subscriptions.webp)
 
 **Enable Tokenized Subscriptions:** When enabled, subscription products will use Payfast's tokenization feature (type 2) so that renewal charges can be processed automatically without the customer re-entering their card details. Disable this if your store does not sell subscription products.
 
 ### Restrictions
 
-<!-- SCREENSHOT: Restrictions fieldset in the Payfast plugin settings -->
+![](/img/payfast-restrictions.webp)
 
 **Geo Zone:** Limit this payment method to customers in a specific geographic zone. Leave at **-- All Zones --** to allow customers from any location.
 
@@ -148,16 +139,17 @@ Payfast must be able to reach this URL over HTTPS. If your store is on localhost
 
 ### Order Statuses
 
-<!-- SCREENSHOT: Order Statuses fieldset in the Payfast plugin settings -->
+![](/img/payfast-status.webp)
 
 These settings control which J2Commerce order status is applied at each stage of the payment lifecycle. If the status you want is not listed, create it first at **J2Commerce** -> **Setup** -> **Order Statuses**.
 
-| Field | When it applies |
-|-------|-----------------|
-| **Confirmed Payment Status** | Applied when Payfast ITN confirms `payment_status=COMPLETE` |
-| **Pending Payment Status** | Applied while waiting for ITN confirmation after redirect |
-| **Failed Payment Status** | Applied when ITN reports `payment_status=CANCELLED` or `FAILED` |
-| **Refunded Status** | Applied after a successful admin-initiated refund (leave empty to keep the current status) |
+**Confirmed Payment Status:** Applied when Payfast ITN confirms `payment_status=COMPLETE`
+
+**Pending Payment Status:** Applied while waiting for ITN confirmation after redirect
+
+**Failed Payment Status:** Applied when ITN reports `payment_status=CANCELLED` or `FAILED`
+
+**Refunded Status:** Applied after a successful admin-initiated refund (leave empty to keep the current status)
 
 ## How Checkout Works for Customers
 
@@ -183,9 +175,7 @@ Always test in sandbox mode before going live.
 4. Check that the order appears in **J2Commerce** -> **Sales** -> **Orders** with the expected status.
 
 :::warning
-
 Payfast sandbox mode **does not support refunds or card-update actions** — these require a live merchant account. Test refunds on your live account after going live.
-
 :::
 
 :::tip
@@ -205,8 +195,6 @@ When you are ready to go live:
 
 You can trigger a refund directly from the J2Commerce order detail screen — no need to log in to the Payfast dashboard.
 
-<!-- SCREENSHOT: Order detail page showing Payfast Refund button -->
-
 1. Go to **J2Commerce** -> **Sales** -> **Orders** and open the order.
 2. Click the **Refund** button in the payment section.
 3. A dialog appears with a **Refund Amount (ZAR)** field. Leave it empty for a full refund, or enter a specific amount for a partial refund.
@@ -215,7 +203,7 @@ You can trigger a refund directly from the J2Commerce order detail screen — no
 
 The refund is submitted to Payfast and the order history is updated.
 
-:::note
+:::info
 
 **Refunds require a live Payfast account.** Refund functionality is not available in sandbox mode. If you click Refund while sandbox mode is active, you will see the message "Refund unavailable in sandbox".
 
