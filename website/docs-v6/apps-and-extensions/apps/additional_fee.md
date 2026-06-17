@@ -138,7 +138,7 @@ In the Fees list, click **New Fee** in the toolbar.
 
 ### Restrictions tab
 
-![](/img/additonal-fee-form1.webp)
+![](/img/additonal-fee-config-restrictions.webp)
 
 **Min Order Qty:** Only apply this fee when the cart contains at least this many items. Leave `0` to ignore.
 
@@ -150,11 +150,15 @@ In the Fees list, click **New Fee** in the toolbar.
 
 **Geo Zone:** Restrict this fee to one or more geozones. The fee applies only when the customer's billing address falls within the selected geozone(s). Leave blank to apply to all locations.
 
-**User IDs:** Comma-separated Joomla user IDs. The fee applies only to those specific accounts. Leave blank for all users.
-
 **User Groups:** Restrict this fee to customers in specific Joomla user groups (e.g., "Wholesale", "VIP"). Leave blank for all groups.
 
+**Users:** Comma-separated Joomla user IDs. The fee applies only to those specific accounts. Leave blank for all users.
+
 **Category:** Restrict this fee to orders that contain a product linked to one of these Joomla content categories. Leave blank to apply regardless of category.
+
+**Min Category Qty:** Minimum quantity of category-matched items required. Set 0 to ignore.
+
+**Max Category Qty:** Maximum quantity of category-matched items allowed. Set 0 to ignore.
 
 ## Editing an existing fee
 
