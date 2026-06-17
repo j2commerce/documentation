@@ -31,8 +31,6 @@ Copy the key to a safe place before leaving the Omnisend screen. The key is show
 
 :::
 
-`app_omnisend.zip`
-
 ## Purchase and Download
 
 The **Omnisend Integration** is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
