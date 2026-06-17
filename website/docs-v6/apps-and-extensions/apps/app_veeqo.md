@@ -1,10 +1,3 @@
----
-title: "Veeqo"
-sidebar_label: "Veeqo"
-sidebar_position: 50
-description: "Push J2Commerce orders into Veeqo, compare live shipping rates, buy and print carrier labels, and keep tracking numbers in sync — all from your Joomla admin."
----
-
 # Veeqo
 
 Veeqo (an Amazon company) is a multi-carrier order management and shipping platform that connects to USPS, UPS, FedEx, and other carriers. This app links your J2Commerce store to your Veeqo account so you can fulfill orders without leaving your workflow. When an order reaches a status you choose, it is pushed to Veeqo automatically. From the order admin screen you can compare live shipping rates, purchase a carrier label, print or download it, and refresh tracking — all in a few clicks.
