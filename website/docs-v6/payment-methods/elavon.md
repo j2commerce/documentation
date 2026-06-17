@@ -1,10 +1,3 @@
----
-title: "Elavon Converge Payment"
-sidebar_label: "Elavon Converge"
-sidebar_position: 25
-description: "Accept credit and debit card payments through the Elavon Converge gateway for US and Canadian merchants using a secure hosted Lightbox — no card data ever touches your server."
----
-
 # Elavon Converge Payment
 
 Elavon is one of the largest payment processors in North America, serving hundreds of thousands of merchants across the United States and Canada. This plugin connects your J2Commerce store to the **Elavon Converge** gateway so customers can pay by credit or debit card at checkout.
@@ -166,9 +159,9 @@ When **Sandbox** is set to **Yes**, the live credential fields are hidden and sa
 
 **Allow Saved Cards:** When enabled, logged-in customers can save their card after checkout and use it for one-click payment on future orders. Card data is stored as a secure token by Elavon — no card numbers are stored on your server.
 
-**Template Style:** Select the CSS framework for this plugin's customer-facing templates
+**Template Style:** Choose the frontend template layout for checkout forms and saved card displays. Options depend on your site's template framework.
 
-
+Available subtemplates: **Bootstrap 5** and **UIkit**. Leave blank to use the default layout. If your Joomla template is UIkit-based (e.g., YOOtheme Pro), select the UIkit subtemplate for consistent styling.
 
 ### Order Status
 
