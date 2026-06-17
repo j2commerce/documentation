@@ -1,10 +1,3 @@
----
-title: "SumUp Payment"
-sidebar_label: "SumUp"
-sidebar_position: 93
-description: "Accept credit and debit card payments through SumUp's hosted card widget — SAQ-A compliant, with saved cards for returning customers, full and partial refunds, and sandbox test mode using a separate test merchant account."
----
-
 # SumUp Payment
 
 The SumUp Payment plugin connects your J2Commerce store to **SumUp**, a card payments platform popular with small businesses and independent retailers. It loads SumUp's secure card widget directly on your checkout page, so customers never leave your site to enter their card details.
@@ -296,7 +289,7 @@ If **Change Status on Refund** is enabled, the order status updates automaticall
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** and verify SumUp shows a green enabled indicator.
+1. Go to **J2Commerce** **-> Setup ->** **Payment Methods** and verify SumUp shows a green enabled indicator.
 2. Open the plugin settings and confirm the **Live Secret API Key** and **Live Merchant Code** (or sandbox equivalents if Sandbox mode is on) are filled in.
 3. Make sure you are using a `sup_sk_` format API key — SumUp public keys (used for browser SDKs) will not work for server-side requests.
 4. Clear the Joomla cache: **System** -> **Clear Cache** -> **Delete All**.
