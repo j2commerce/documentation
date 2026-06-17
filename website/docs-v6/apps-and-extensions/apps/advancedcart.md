@@ -88,7 +88,7 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-Go to **J2Commerce** -> **Apps** and click the **Advanced Cart Drawer** title to open its settings. The settings are organized into seven tabs.
+
 
 <!-- SCREENSHOT: Apps list screen showing Advanced Cart Drawer with settings link -->
 

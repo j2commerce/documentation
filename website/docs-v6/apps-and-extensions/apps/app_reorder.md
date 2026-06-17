@@ -97,8 +97,6 @@ When the **Enable Try Again** setting is turned on:
 2. Clicking the button reloads all items from the failed order back into the cart.
 3. The customer is redirected to the cart or checkout page to try again.
 
-<!-- SCREENSHOT: Checkout failure page showing the Try Again button -->
-
 This prevents the frustration of customers having to manually find and re-add all their products after a payment error.
 
 ## Tips
