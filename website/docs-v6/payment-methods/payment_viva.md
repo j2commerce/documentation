@@ -144,7 +144,7 @@ Viva organizes payments into **payment sources**. Each source has its own Succes
 
 ### Return URLs
 
-![](/img/viva-config-url.webp)
+![](/img/viva-config-url1.webp)
 
 After completing the payment on Viva's page, Viva redirects the customer back to your store using the **Success URL** and **Failure URL** configured on your payment source — not via the API. You must copy these URLs from the plugin settings screen and paste them into your Viva payment source. Without this step, customers will not be redirected back to your store after payment.
 
