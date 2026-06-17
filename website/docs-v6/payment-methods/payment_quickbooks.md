@@ -301,7 +301,7 @@ The plugin tracks all refunds and prevents the total refunded amount from exceed
 
 **Solution:**
 
-1. Go to **J2Commerce -> Payments -> Payment Methods** and confirm **QuickBooks Payments** shows a green enabled toggle.
+1. Go to **J2Commerce -> Setup -> Payment Methods** and confirm **QuickBooks Payments** shows a green enabled toggle.
 2. Open the plugin settings and verify that **OAuth2 Client ID**, **OAuth2 Client Secret**, and **OAuth2 Refresh Token** are all filled in for the active mode (live or sandbox). A missing credentials warning also appears on the J2Commerce dashboard.
 3. Check whether a **Geozone Restriction** or **Minimum/Maximum Subtotal** is filtering out the method for the current order.
 

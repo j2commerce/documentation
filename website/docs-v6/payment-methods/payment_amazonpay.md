@@ -1,10 +1,3 @@
----
-title: "Amazon Pay"
-sidebar_label: "Amazon Pay"
-sidebar_position: 8
-description: "Let customers pay using their Amazon account with Amazon Pay Checkout v2 — supporting Express Checkout, Payment Only mode, saved payment methods, subscriptions, and admin refunds."
----
-
 # Amazon Pay
 
 The Amazon Pay plugin lets your customers pay using their existing Amazon account — no card number entry required. Customers click the Amazon Pay button, log in to Amazon, confirm their payment method, and return to your store to complete the order. Because Amazon holds the customer's stored address and payment details, checkout is fast and familiar.
@@ -249,8 +242,6 @@ These optional text fields let you customize messages shown to customers at diff
 
 ### Express Checkout Flow
 
-<!-- SCREENSHOT: Checkout page showing the Amazon Pay button with Gold color -->
-
 When a customer selects Amazon Pay in Express Checkout mode:
 
 1. They click the **Amazon Pay** button on your checkout page.
@@ -274,13 +265,11 @@ When a customer selects Amazon Pay in Payment Only mode:
 
 After a customer pays, J2Commerce records the Amazon Pay transaction details on the order.
 
-<!-- SCREENSHOT: Order admin page showing Amazon Pay payment balance panel -->
-
 ### Capture an Authorized Payment
 
 If you set **Payment Action** to **Authorize Only**, payments are held but not captured. To collect the funds:
 
-1. Go to **J2Commerce -> Orders** and open the order.
+1. Go to **J2Commerce -> Sales -> Orders** and open the order.
 2. Look for the **Payment** section on the order page.
 3. Click **Capture** to collect the authorized amount.
 4. The order status updates to the status you configured.
@@ -289,7 +278,7 @@ If you set **Payment Action** to **Authorize Only**, payments are held but not c
 
 If payment has been authorized but not yet captured:
 
-1. Go to **J2Commerce -> Orders** and open the order.
+1. Go to **J2Commerce -> Sales -> Orders** and open the order.
 2. In the **Payment** section, click **Cancel Charge**.
 3. Confirm the action. The authorization is released and no funds are collected.
 
@@ -297,18 +286,16 @@ If payment has been authorized but not yet captured:
 
 You can refund a captured payment directly from the order admin page:
 
-1. Go to **J2Commerce -> Orders** and open the order.
+1. Go to **J2Commerce -> Sales -> Orders** and open the order.
 2. In the **Payment** section, click **Refund**.
 3. Leave the amount blank for a full refund, or enter a specific amount for a partial refund.
 4. Confirm the refund. The funds are returned to the customer's Amazon account.
-
-<!-- SCREENSHOT: Order admin payment section showing Capture, Cancel, and Refund buttons -->
 
 ### Charge a Saved Payment Method
 
 If the customer has a saved Amazon Pay agreement and **Allow Saved Payment Methods** is enabled, you can charge their agreement from the order admin page:
 
-1. Go to **J2Commerce -> Orders** and open the order.
+1. Go to **J2Commerce -> Sales -> Orders** and open the order.
 2. In the order summary, find the **Charge Saved Amazon Pay** section.
 3. Select the saved agreement from the dropdown.
 4. Enter the amount to charge (defaults to the outstanding balance).

@@ -1,10 +1,3 @@
----
-title: "Mollie Payments"
-sidebar_label: "Mollie"
-sidebar_position: 7
-description: "Accept iDEAL, Bancontact, credit cards, Klarna, Apple Pay, and more via Mollie — Europe's leading payment gateway — in your J2Commerce store."
----
-
 # Mollie Payments
 
 Mollie is a Dutch payment service provider popular across Europe that offers a single integration covering a wide range of payment methods — iDEAL, Bancontact, credit cards, SOFORT Banking, Apple Pay, Klarna Pay Later, Klarna Slice It, KBC/CBC, Belfius, EPS, Giropay, Przelewy24, Trustly, Twint, Voucher, and more. Rather than setting up separate payment gateways for each country, you activate one Mollie account and Mollie surfaces the right methods automatically based on the buyer's location and currency.
@@ -43,8 +36,6 @@ After your account is active:
 The key prefix tells you the environment — there is no separate sandbox toggle in the plugin. Enter a `test_` key to run in test mode; enter your `live_` key to accept real payments. You switch environments simply by changing the key.
 
 :::
-
-<!-- SCREENSHOT: Mollie Dashboard > Developers > API keys showing live_ and test_ keys -->
 
 ## Purchase and Download
 
@@ -151,11 +142,13 @@ Payment methods must also be activated in your Mollie Dashboard before they appe
 
 **Translate Payment Method Names** — When set to **Yes**, method names are looked up from language overrides using the `PLG_J2COMMERCE_PAYMENT_MOLLIE_METHOD_*` key prefix, letting you rename methods in your site's language. When set to **No** (default), method names come directly from Mollie.
 
-**Enable Saved Cards:** Allow customers to save their payment method for future purchases and subscriptions.
+**Enable Saved Cards:** Allow customers to save their payment method for future purchases and subscriptions. When set to **Yes** (the default), logged-in customers can save their payment method after checkout for faster future purchases. Saved cards are also used for automatic subscription renewals.
+
+Saved payment methods are displayed to the customer on their next visit so they can check out without re-entering details.
 
 ### Order Status
 
-![](/img/mollie-config-cc1.webp)
+![](/img/mollie-status.webp)
 
 **Confirmed Payment Status:** Order status to set when Mollie confirms a successful payment.
 
@@ -171,24 +164,6 @@ If the status you want is not listed in a dropdown, create a new one first by go
 
 ![](/img/shipstation-order-status2-1.webp)
 
-### Saved Cards
-
-**Enable Saved Cards** — When set to **Yes** (the default), logged-in customers can save their payment method after checkout for faster future purchases. Saved cards are also used for automatic subscription renewals.
-
-Saved payment methods are displayed to the customer on their next visit so they can check out without re-entering details.
-
----
-
-### Order Status Settings
-
-**Confirmed Payment Status** — The J2Commerce order status to apply when Mollie confirms a successful payment. Default: Confirmed.
-
-**Change Status on Refund** — When set to **Yes**, J2Commerce automatically updates the order status after a refund is processed.
-
-**Refund Order Status** — The status to apply after a successful refund. This field only appears when **Change Status on Refund** is set to **Yes**.
-
----
-
 ### Webhook URL
 
 ![](/img/mollie-config-webhook.webp)
@@ -203,32 +178,33 @@ Unlike some other payment gateways, you do not need to register the webhook URL 
 
 :::
 
-### Geo Zone
+### Geo Zone and Template Style
 
 ![](/img/mollie-config-geozone.webp)
 
-**Geo Zone** — Restrict Mollie Payments to customers in a specific geographic zone. Select a geozone you have defined in J2Commerce. Leave blank to show Mollie to all customers regardless of location.
-
 **Template Style:** Select the CSS framework for this plugin's customer-facing templates
+
+**Geo Zone** — Restrict Mollie Payments to customers in a specific geographic zone. Select a geozone you have defined in J2Commerce. Leave blank to show Mollie to all customers regardless of location.
 
 ### Order Value Restrictions
 
-![](/img/mollie-config-surcharge.webp)
+![](/img/mollie-restrictions.webp)
 
 Add an optional extra fee for customers who pay via Mollie. You can use a percentage, a fixed amount, or both together. Check your local laws before using surcharges — they are regulated in some countries.
 
----
-
 ### Surcharge
+
+![](/img/mollie-config-surcharge.webp)
 
 Add an optional extra fee for customers who pay via Mollie. Check your local laws before using surcharges — they are regulated in some countries.
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Label** | The name shown for the surcharge line item at checkout. Leave blank to use the default label "Mollie Payment Surcharge". |
-| **Surcharge (%)** | A percentage of the order subtotal added as a surcharge. |
-| **Surcharge (Fixed)** | A flat amount added to every order. |
-| **Surcharge Tax Class** | A tax profile to apply to the surcharge. Leave blank if no tax applies. |
+**Surcharge Label:** The name shown for the surcharge line item at checkout. Leave blank to use the default label "Mollie Payment Surcharge".
+
+**Surcharge (%):** A percentage of the order subtotal added as a surcharge.
+
+**Surcharge (Fixed):** A flat amount added to every order.
+
+**Surcharge Tax Class:** A tax profile to apply to the surcharge. Leave blank if no tax applies.
 
 ### Custom Messages
 
@@ -275,8 +251,6 @@ Payment methods are also shown based on the customer's location and the order cu
 
 :::
 
-<!-- SCREENSHOT: Mollie Dashboard > Settings > Payment methods with several methods activated -->
-
 ***
 
 ## How the Checkout Works
@@ -290,8 +264,6 @@ The Mollie checkout uses a redirect flow:
 5. The customer completes payment on Mollie's servers.
 6. Mollie redirects the customer back to your site. J2Commerce checks the payment status and updates the order accordingly.
 7. Separately, Mollie sends a webhook notification to your store. J2Commerce processes this notification to apply the final status in case the redirect was interrupted.
-
-<!-- SCREENSHOT: Checkout payment step showing Mollie method selector with iDEAL, credit card, and Bancontact options -->
 
 ***
 
@@ -341,8 +313,6 @@ You can issue a full or partial refund directly from the order in the J2Commerce
 J2Commerce sends the refund request to Mollie via the API. The customer receives their refund according to Mollie's processing timeline for their payment method (typically 2–5 business days for bank transfers, faster for card payments).
 
 If **Change Status on Refund** is enabled, the order status updates automatically after the refund is processed.
-
-<!-- SCREENSHOT: Order detail screen showing Payment section with Refund (Full) and Refund (Partial) buttons -->
 
 ***
 
@@ -423,7 +393,7 @@ This requires the J2Commerce **Subscription Product** app. The customer must com
 
 **Solution:** Check the **Geo Zone**, **Minimum Order Subtotal**, and **Maximum Order Subtotal** fields in the plugin settings. Leave them blank to show Mollie to all customers without restrictions.
 
----
+***
 
 ## FAQ
 

@@ -1,10 +1,3 @@
----
-title: "Barclaycard ePDQ Payment"
-sidebar_label: "Barclaycard ePDQ"
-sidebar_position: 98
-description: "Accept card payments through the Barclaycard ePDQ Hosted Payment Page. Covers credentials, SHA signing, test mode, saved cards, FlexCheckout, subscriptions, and admin capture, void, and refund tools."
----
-
 # Barclaycard ePDQ Payment
 
 The Barclaycard ePDQ plugin lets your J2Commerce store accept credit and debit card payments through the Barclaycard ePDQ gateway. Customers are redirected to a secure Barclaycard-hosted payment page to enter their card details — your server never handles raw card numbers. After payment, Barclaycard sends a notification back to your store to confirm the order.
@@ -289,8 +282,6 @@ On the same **Transaction feedback** page, enable **I would like to receive tran
 
 If you set **Integration Mode** to FlexCheckout, or if you enabled **Saved Cards**, contact Barclaycard support to activate the **Alias Gateway** (also called the Alias Manager) on your account. Without it, FlexCheckout and saved-card features will not work.
 
-<!-- SCREENSHOT: ePDQ Back Office — Transaction feedback page showing the server-to-server notification URL field -->
-
 ## How checkout works
 
 ### Standard (Hosted Payment Page)
@@ -327,8 +318,6 @@ For a refund, you can enter a specific amount to refund a partial amount, or lea
 Void is only available before a payment settles. Once Barclaycard has settled a payment (usually within one business day), you must use Refund instead.
 
 :::
-
-<!-- SCREENSHOT: J2Commerce order detail screen showing the Capture, Void, and Refund buttons from the Barclaycard plugin -->
 
 :::tip
 
