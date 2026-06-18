@@ -10,7 +10,7 @@ Key things the plugin does for you:
 - Supports a **Deferred** transaction mode, where you authorise a payment at checkout but only collect the funds when you choose to release from the order screen
 - Gives you **Void**, **Capture**, **Abort**, and **Refund** buttons directly on the J2Commerce order admin screen
 
-:::caution
+:::info
 
 Opayo Pi is available to **UK and Ireland merchants only**. Your Opayo account must be registered with a UK or Irish business. Your store must also be served over **HTTPS** — Opayo will not process payments on an unencrypted connection.
 
@@ -261,14 +261,21 @@ Only enable this when diagnosing a specific problem. Disable it on live sites �
 
 The entire checkout flow happens on your website — customers are never redirected to Opayo.
 
-1. The customer adds items to the cart and proceeds to checkout.
-2. On the payment step, **Credit/Debit Card** (or your custom display name) appears in the list of payment options.
-3. If they have previously saved a card, their saved cards are listed as radio button options. They can select a saved card or choose **Use a New Card**.
-4. When using a new card, the Opayo card entry form appears inline on the page. The card number, expiry date, and CVC are entered directly into Opayo-hosted fields — these fields look like part of your checkout but are controlled by Opayo's servers.
-5. If they choose, logged-in customers can tick **Save this card for future purchases**.
-6. The customer clicks **Place Order**.
-7. If 3D Secure authentication is required, a verification challenge from the customer's bank appears in an inline panel on the page. The customer completes the verification step (entering a one-time code or confirming in their banking app).
-8. After the card is authorised, the customer is taken to the order confirmation page showing their order reference and a confirmation message.
+The customer adds items to the cart and proceeds to checkout.
+
+On the payment step, **Credit/Debit Card** (or your custom display name) appears in the list of payment options.
+
+If they have previously saved a card, their saved cards are listed as radio button options. They can select a saved card or choose **Use a New Card**.
+
+When using a new card, the Opayo card entry form appears inline on the page. The card number, expiry date, and CVC are entered directly into Opayo-hosted fields — these fields look like part of your checkout but are controlled by Opayo's servers.
+
+If they choose, logged-in customers can tick **Save this card for future purchases**.
+
+The customer clicks **Place Order**.
+
+If 3D Secure authentication is required, a verification challenge from the customer's bank appears in an inline panel on the page. The customer completes the verification step (entering a one-time code or confirming in their banking app).
+
+After the card is authorised, the customer is taken to the order confirmation page showing their order reference and a confirmation message.
 
 ## Managing Orders — Void, Capture, Abort, and Refund
 

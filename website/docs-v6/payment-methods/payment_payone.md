@@ -285,11 +285,17 @@ Only enable this when diagnosing a specific problem. Disable it on live sites â€
 
 ### Hosted Checkout Page (redirect)
 
-1. The customer adds items to their cart and proceeds to checkout.
-2. On the payment step, a notice informs the customer that they will be redirected to a secure payment page.
-3. The customer is sent to the PAYONE-hosted payment page to enter their card details.
-4. After payment is complete (or if the customer cancels), they are returned to your store automatically.
-5. On success, the customer sees the order confirmation page.
+The customer adds items to their cart and proceeds to checkout.
+
+On the payment step, a notice informs the customer that they will be redirected to a secure payment page.
+
+![](/img/payone-frontend.webp)
+
+The customer is sent to the PAYONE-hosted payment page to enter their card details.
+
+After payment is complete (or if the customer cancels), they are returned to your store automatically.
+
+On success, the customer sees the order confirmation page.
 
 ### Hosted Tokenization Page (iframe)
 
