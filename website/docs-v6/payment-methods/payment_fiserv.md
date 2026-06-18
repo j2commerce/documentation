@@ -212,12 +212,19 @@ Only enable this when diagnosing a specific problem. Disable it on live sites �
 
 ## How Checkout Works for Customers
 
-1. The customer adds items to the cart and proceeds to checkout.
-2. On the payment step, the Fiserv card form loads directly on the page — card number, expiry date, and CVV fields appear inside secure fields supplied by Fiserv. Card data never touches your server.
-3. If the customer has saved cards on file (and **Allow Saved Cards** is enabled), they see a list of saved cards and can select one or enter a new card.
-4. If saving is allowed, a checkbox lets them save the new card for future orders.
-5. The customer clicks **Place Order**.
-6. On success, the customer sees the order confirmation page.
+The customer adds items to the cart and proceeds to checkout.
+
+![](/img/fiserv-frontend.webp)
+
+On the payment step, the Fiserv card form loads directly on the page — card number, expiry date, and CVV fields appear inside secure fields supplied by Fiserv. Card data never touches your server.
+
+If the customer has saved cards on file (and **Allow Saved Cards** is enabled), they see a list of saved cards and can select one or enter a new card.
+
+If saving is allowed, a checkbox lets them save the new card for future orders.
+
+The customer clicks **Place Order**.
+
+On success, the customer sees the order confirmation page.
 
 ## Managing Payments from the Order Screen
 
