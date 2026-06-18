@@ -1,10 +1,3 @@
----
-title: "Elavon Converge Payment"
-sidebar_label: "Elavon Converge"
-sidebar_position: 25
-description: "Accept credit and debit card payments through the Elavon Converge gateway for US and Canadian merchants using a secure hosted Lightbox — no card data ever touches your server."
----
-
 # Elavon Converge Payment
 
 Elavon is one of the largest payment processors in North America, serving hundreds of thousands of merchants across the United States and Canada. This plugin connects your J2Commerce store to the **Elavon Converge** gateway so customers can pay by credit or debit card at checkout.
@@ -82,24 +75,37 @@ If the plugin reports a "could not communicate with gateway" error immediately a
 
 ***
 
-## Installation
+## Purchase and Download
 
-The Elavon Converge plugin is not included with J2Commerce. Purchase and install it as a separate add-on.
+**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
-1. Purchase the plugin from the [J2Commerce Extensions Store](https://www.j2commerce.com) and download the zip file.
-2. In your Joomla admin, go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_elavon.zip` file using the drag-and-drop area or the **Browse for file** button.
-4. The plugin installs and enables itself automatically.
+**Step 2:** Locate the **Payment - Elavon Converge** app **->** click **View Details** **->** **Add to cart -> Checkout**.
 
-<!-- SCREENSHOT: Joomla Extensions install screen with payment_elavon.zip uploaded successfully -->
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
 
-After installation, navigate to **J2Commerce** -> **Payments** -> **Payment Methods** to confirm the plugin appears in the list. If it shows as disabled, click the toggle in the **Enabled** column to enable it.
+## Install the App
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list showing "Payment - Elavon Converge" row with the enabled toggle highlighted -->
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-***
+Upload the `payment_elavon.zip` file or use the Install from URL option.
 
-## Configuration
+![](/img/install.webp)
+
+## Enable the App
+
+Once you have installed the app, you will need to enable it. There are **two** ways you can access the extension.
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![](/img/gift-wrap-apps.webp)
+
+Look for **Payment - Elavon Converge**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/elavon-enable.webp)
+
+## Configure the App
 
 :::tip
 
@@ -107,62 +113,69 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-Open the plugin settings by clicking **Payment - Elavon Converge** in the Payment Methods list, or go to **System** -> **Manage** -> **Plugins**, search for "Elavon", and click to edit.
-
-<!-- SCREENSHOT: Elavon Converge plugin settings page showing all configuration fields -->
+![](/img/elavon-toggle.webp)
 
 ### Display Settings
 
-| Field             | Description                                                                                        | Default       |
-| ----------------- | -------------------------------------------------------------------------------------------------- | ------------- |
-| **Display Name**  | The name shown to customers at checkout, e.g. "Credit Card" or "Pay by Card".                      | `Credit Card` |
-| **Display Image** | Optional logo or card brand image shown next to the payment option. Leave empty to show text only. | *(empty)*     |
+![](/img/elavon-display.webp)
 
-### Transaction Type
+**Display Name:** The name shown to customers at checkout, e.g. "Credit Card" or "Pay by Card".
 
-| Field                | Description                                                                                                                                                                                                                                        | Default |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Transaction Type** | **Sale** charges the customer's card immediately when the order is placed. **Authorize** places a hold on the funds without capturing them — you must manually capture the payment later from your Converge terminal. Choose Sale for most stores. | `Sale`  |
+**Display Image:** Optional logo or card brand image shown next to the payment option. Leave empty to show text only.
+
+**Transaction Type:**&#x20;
+
+- **Sale** charges the customer's card immediately when the order is placed.&#x20;
+
+- **Authorize** places a hold on the funds without capturing them — you must manually capture the payment later from your Converge terminal. Choose Sale for most stores.
 
 ### Sandbox Mode
 
-| Field       | Description                                                                                                                                                                                                                                                     | Default |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Sandbox** | Toggle to **Yes** to use Elavon's demo environment for testing. The plugin will use your sandbox credentials and connect to `api.demo.convergepay.com` instead of the live host. A warning banner appears on your J2Commerce dashboard while sandbox is active. | `No`    |
+![](/img/elavon-api.webp)
+
+**Sandbox:** Toggle to **Yes** to use Elavon's demo environment for testing. The plugin will use your sandbox credentials and connect to `api.demo.convergepay.com` instead of the live host. A warning banner appears on your J2Commerce dashboard while sandbox is active.
 
 When **Sandbox** is set to **Yes**, the live credential fields are hidden and sandbox credential fields appear in their place.
 
 ### Live Credentials (shown when Sandbox is Off)
 
-| Field           | Description                                                                         |
-| --------------- | ----------------------------------------------------------------------------------- |
-| **Merchant ID** | Your Converge Merchant ID (SSL Merchant ID).                                        |
-| **User ID**     | The Converge API user ID with Hosted Payments permission.                           |
-| **PIN**         | The PIN (Vendor PIN / API PIN) for the API user. This field is masked for security. |
+**Merchant ID:** Your Converge Merchant ID (SSL Merchant ID).
+
+**User ID:** The Converge API user ID with Hosted Payments permission.
+
+**PIN:** The PIN (Vendor PIN / API PIN) for the API user. This field is masked for security.
 
 ### Sandbox Credentials (shown when Sandbox is On)
 
-| Field                   | Description                                             |
-| ----------------------- | ------------------------------------------------------- |
-| **Sandbox Merchant ID** | The demo Merchant ID from Elavon's sandbox environment. |
-| **Sandbox User ID**     | The sandbox API user ID.                                |
-| **Sandbox PIN**         | The sandbox API PIN.                                    |
+**Sandbox Merchant ID:** The demo Merchant ID from Elavon's sandbox environment.
+
+**Sandbox User ID:** The sandbox API user ID.
+
+**Sandbox PIN:** The sandbox API PIN.
 
 ### Saved Cards
 
-| Field                 | Description                                                                                                                                                                                                          | Default |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Allow Saved Cards** | When enabled, logged-in customers can save their card after checkout and use it for one-click payment on future orders. Card data is stored as a secure token by Elavon — no card numbers are stored on your server. | `Yes`   |
+![](/img/elavon-cc.webp)
+
+**Allow Saved Cards:** When enabled, logged-in customers can save their card after checkout and use it for one-click payment on future orders. Card data is stored as a secure token by Elavon — no card numbers are stored on your server.
+
+**Template Style:** Choose the frontend template layout for checkout forms and saved card displays. Options depend on your site's template framework.
+
+Available subtemplates: **Bootstrap 5** and **UIkit**. Leave blank to use the default layout. If your Joomla template is UIkit-based (e.g., YOOtheme Pro), select the UIkit subtemplate for consistent styling.
 
 ### Order Status
 
-| Field                         | Description                                                                                                             | Default                   |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| **Order Status (on payment)** | The order status applied when a payment is successfully completed. Set this to your "Confirmed" or "Processing" status. | `Confirmed` (status ID 1) |
-| **Change Status on Void**     | When enabled, voiding a transaction from the order screen also changes the order status.                                | `No`                      |
-| **Order Status (on void)**    | The status to apply when a void succeeds. Only shown when the above toggle is enabled.                                  | *(empty)*                 |
-| **Change Status on Refund**   | When enabled, issuing a refund from the order screen also changes the order status.                                     | `No`                      |
-| **Order Status (on refund)**  | The status to apply when a refund succeeds. Only shown when the above toggle is enabled.                                | *(empty)*                 |
+![](/img/elavon-status.webp)
+
+**Order Status (on payment):** The order status applied when a payment is successfully completed. Set this to your "Confirmed" or "Processing" status.
+
+**Change Status on Void:** When enabled, voiding a transaction from the order screen also changes the order status.
+
+- **Order Status (on void):** The status to apply when a void succeeds. Only shown when the above toggle is enabled.
+
+**Change Status on Refund:** When enabled, issuing a refund from the order screen also changes the order status.
+
+- **Order Status (on refund):** The status to apply when a refund succeeds. Only shown when the above toggle is enabled.
 
 :::info
 
@@ -174,53 +187,61 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 
 ### Surcharge (Optional)
 
+![](/img/elavon-surcharge.webp)
+
 If your jurisdiction permits payment surcharging, you can add an automatic surcharge for customers who pay by card.
 
-| Field                   | Description                                                                                 |
-| ----------------------- | ------------------------------------------------------------------------------------------- |
-| **Surcharge Name**      | Label shown to customers, e.g. "Credit Card Surcharge". Leave empty to disable surcharging. |
-| **Surcharge Percent**   | Percentage of the order total to add, e.g. `2.5` for 2.5%.                                  |
-| **Surcharge Fixed**     | Fixed amount to add in your store currency, e.g. `0.30`.                                    |
-| **Surcharge Tax Class** | Select a tax profile to apply tax to the surcharge, or leave as "Not Taxable".              |
+**Surcharge Name:** Label shown to customers, e.g. "Credit Card Surcharge". Leave empty to disable surcharging.
 
-:::note Surcharge fields are available but surcharge functionality requires a future J2Commerce core update to take effect. The fields are present for forward compatibility.
+**Surcharge Percent:** Percentage of the order total to add, e.g. `2.5` for 2.5%.
+
+**Surcharge Fixed:** Fixed amount to add in your store currency, e.g. `0.30`.
+
+**Surcharge Tax Class:** Select a tax profile to apply tax to the surcharge, or leave as "Not Taxable".
+
+:::info Surcharge fields are available but surcharge functionality requires a future J2Commerce core update to take effect. The fields are present for forward compatibility.
 
 :::
 
 ### Availability Restrictions (Optional)
 
+![](/img/elavon-restriction.webp)
+
 Use these fields to limit when this payment method appears at checkout.
 
-| Field                   | Description                                                                                                        | Default       |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------- |
-| **Geozone Restriction** | Show this payment option only for billing addresses in the selected geozone. Leave empty to show to all customers. | *(all zones)* |
-| **Minimum Subtotal**    | Hide this payment option if the order subtotal is below this amount. Leave empty for no minimum.                   | *(none)*      |
-| **Maximum Subtotal**    | Hide this payment option if the order subtotal exceeds this amount. Leave empty for no maximum.                    | *(none)*      |
+**Geozone Restriction:** Show this payment option only for billing addresses in the selected geozone. Leave empty to show to all customers.
+
+**Minimum Subtotal:** Hide this payment option if the order subtotal is below this amount. Leave empty for no minimum.
+
+**Maximum Subtotal:** Hide this payment option if the order subtotal exceeds this amount. Leave empty for no maximum.
 
 ### Custom Text Fields (Optional)
 
+![](/img/elavon-messages.webp)
+
 These fields accept plain text or a Joomla language key. The text is shown to customers at various points in the payment flow.
 
-| Field              | When Shown                                                         |
-| ------------------ | ------------------------------------------------------------------ |
-| **On Selection**   | When the customer selects Elavon Converge as their payment method. |
-| **Before Payment** | On the payment form before the customer clicks the pay button.     |
-| **After Payment**  | On the confirmation screen after a successful payment.             |
-| **On Error**       | When a payment fails or is declined.                               |
-| **On Cancel**      | When the customer cancels out of the payment Lightbox.             |
+**On Selection:** When the customer selects Elavon Converge as their payment method.
+
+**Before Payment:** On the payment form before the customer clicks the pay button.
+
+**After Payment:** On the confirmation screen after a successful payment.
+
+**On Error:** When a payment fails or is declined.
+
+**On Cancel:** When the customer cancels out of the payment Lightbox.
 
 ### Dashboard
 
-| Field                    | Description                                                                           | Default   |
-| ------------------------ | ------------------------------------------------------------------------------------- | --------- |
-| **Show Dashboard Icon**  | Adds a quick-link icon to the J2Commerce dashboard for fast access to these settings. | `No`      |
-| **Dashboard Icon Label** | Label for the dashboard icon. Defaults to "Payment - Elavon Converge" if left empty.  | *(empty)* |
+![](/img/elavon-icon.webp)
+
+**Show Dashboard Icon:** Adds a quick-link icon to the J2Commerce dashboard for fast access to these settings.
+
+**Icon Label:** Label for the dashboard icon. Defaults to "Payment - Elavon Converge" if left empty.
 
 ### Debug
 
-| Field     | Description                                                                                                                                                                        | Default |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Debug** | When enabled, the plugin writes detailed request and response information from Converge to Joomla's system log. Only enable this for troubleshooting — disable it on a live store. | `No`    |
+**Debug:** When enabled, the plugin writes detailed request and response information from Converge to Joomla's system log. Only enable this for troubleshooting — disable it on a live store.
 
 ***
 
@@ -237,8 +258,6 @@ Before accepting real payments, test the complete checkout flow in Elavon's demo
 
 You will see a warning banner on your J2Commerce dashboard confirming the store is in test mode.
 
-<!-- SCREENSHOT: J2Commerce dashboard showing the orange "Elavon Converge is in Sandbox mode" warning banner -->
-
 ### Obtain Test Card Numbers
 
 Elavon provides test card numbers for use with the demo environment. Contact your Elavon representative or Elavon's developer support team to obtain the current list of approved test cards. Do not use real card numbers when testing.
@@ -250,8 +269,6 @@ Elavon provides test card numbers for use with the demo environment. Contact you
 3. Click the pay button. The Elavon Checkout.js Lightbox should open.
 4. Enter a test card number provided by Elavon and complete the payment.
 5. Confirm that the order is created in **J2Commerce** -> **Sales** -> **Orders** with the correct status.
-
-<!-- SCREENSHOT: Elavon Checkout.js Lightbox overlay on the checkout page showing the card entry form -->
 
 ### Check the Result
 
@@ -274,9 +291,7 @@ Once testing is complete, switch the plugin to live mode.
 The warning banner on the dashboard will disappear, confirming the store is in live mode.
 
 
-
-
-:::caution
+:::info
 Always test thoroughly in sandbox mode before switching to live. Real card charges cannot be automatically reversed — refunds must be issued manually if a test charge accidentally goes through.
 :::
 
@@ -293,8 +308,6 @@ When **Allow Saved Cards** is set to **Yes** and a logged-in customer completes 
 - On future checkouts, the saved card appears as a selectable option — the customer can pay without re-entering their card details.
 
 Customers can view and remove their saved cards from the **My Account** -> **Payment Methods** section of your store's frontend.
-
-<!-- SCREENSHOT: J2Commerce My Account payment methods tab showing a saved Elavon card with a "Remove" button -->
 
 ### Subscription Renewals
 
@@ -314,8 +327,6 @@ You can refund a completed Elavon transaction directly from the J2Commerce order
 2. In the payment section of the order, click the **Refund** button.
 3. Enter the amount to refund. Leave the field at the full order total for a full refund, or enter a lower amount for a partial refund.
 4. Click **Confirm Refund**.
-
-<!-- SCREENSHOT: J2Commerce order screen showing the Elavon payment section with the Refund and Void buttons -->
 
 The plugin sends a `ccreturn` request to Converge using the stored transaction ID. If the refund succeeds, a note is added to the order history. If **Change Status on Refund** is enabled in the plugin settings, the order status updates automatically.
 
@@ -338,8 +349,6 @@ If a customer has a saved card on file, you can charge it directly from the admi
 3. Select the saved card from the dropdown.
 4. Click **Charge Card** and confirm.
 
-<!-- SCREENSHOT: J2Commerce admin order screen showing the "Charge Saved Card" section with a card selector dropdown -->
-
 The plugin runs the charge against Converge using the stored token and updates the order with the transaction ID and new status.
 
 ***
@@ -361,7 +370,7 @@ The plugin runs the charge against Converge using the stored token and updates t
 **Solution:**
 
 1. Open your browser's developer tools (F12) and check the **Console** tab for errors.
-2. Confirm the plugin is enabled in **J2Commerce** -> **Payments** -> **Payment Methods**.
+2. Confirm the plugin is enabled in **J2Commerce** -> **setup** -> **Payment Methods**.
 3. If you see a network error loading `Checkout.js`, check that your server can reach `api.convergepay.com` (live) or `api.demo.convergepay.com` (sandbox) over HTTPS.
 4. Check that your site is served over HTTPS — Elavon does not load Checkout.js on HTTP pages.
 

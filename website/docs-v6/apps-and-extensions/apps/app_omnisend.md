@@ -16,38 +16,6 @@ The Omnisend Integration app connects your J2Commerce store to [Omnisend](https:
 - J2Commerce 6.x
 - An active Omnisend account
 
-## Purchase and Download
-
-The **Omnisend Integration** is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-**Step 1:** Go to [www.j2commerce.com](https://www.j2commerce.com) -> **Apps**.
-
-**Step 2:** Locate the **Omnisend Integration** app, click **View Details**, then **Add to Cart** -> **Checkout**.
-
-**Step 3:** After purchase, go to **My Downloads** under your profile menu and find the app. Click **Available Versions** -> **View Files** -> **Download Now**.
-
-## Install the App
-
-1. In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
-2. Upload the `app_omnisend.zip` package file.
-3. The plugin installs and enables automatically.
-
-<!-- SCREENSHOT: Joomla Extensions installer with app_omnisend.zip selected -->
-
-## Enable the App
-
-Once installed, confirm the app is enabled. There are two ways to reach it.
-
-**Option A:** Click the **J2Commerce** icon in the top-right corner -> **Apps**.
-
-**Option B:** Go to **Components** in the left sidebar -> **J2Commerce** -> **Apps**.
-
-<!-- SCREENSHOT: J2Commerce Apps list with Omnisend Integration visible -->
-
-Look for **Omnisend Integration** in the list. If the toggle shows a red X, click it to turn it into a green checkmark. The app is now active.
-
-[//]: # (![]&#40;/img/omnisend-app.webp&#41;)
-
 ## Find Your Omnisend API Key
 
 Before configuring the app, you need an API key from Omnisend. J2Commerce uses this single key for all server-side communication with Omnisend.
@@ -63,7 +31,36 @@ Copy the key to a safe place before leaving the Omnisend screen. The key is show
 
 :::
 
-<!-- SCREENSHOT: Omnisend Store Settings API Keys screen showing a newly created key -->
+## Purchase and Download
+
+The **Omnisend Integration** is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+**Step 1:** Go to [www.j2commerce.com](https://www.j2commerce.com) -> **Apps**.
+
+**Step 2:** Locate the **Omnisend Integration** app, click **View Details**, then **Add to Cart** -> **Checkout**.
+
+**Step 3:** After purchase, go to **My Downloads** under your profile menu and find the app. Click **Available Versions** -> **View Files** -> **Download Now**.
+
+## Install the App
+
+1. In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
+2. Upload the `app_omnisend.zip` package file.
+
+![](/img/install.webp)
+
+## Enable the App
+
+Once installed, confirm the app is enabled. There are two ways to reach it.
+
+**Option A:** Click the **J2Commerce** icon in the top-right corner -> **Apps**.
+
+**Option B:** Go to **Components** in the left sidebar -> **J2Commerce** -> **Apps**.
+
+![](/img/gift-wrap-apps.webp)
+
+Look for **Omnisend Integration** in the list. If the toggle shows a red X, click it to turn it into a green checkmark. The app is now active.
+
+![](/img/omnisend-enable.webp)
 
 ## Configure the App
 
@@ -75,66 +72,63 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-<!-- SCREENSHOT: Omnisend Integration settings form open in the J2Commerce Apps area -->
-
-The settings are organized into six tabs.
-
----
+![](/img/omnisend-toggle.webp)
 
 ### API Connection
 
+![](/img/omnisend-api.webp)
+
 This is the only required setting. Nothing else works without it.
 
-| Field | Description | Notes |
-|---|---|---|
-| **API Key** | Your Omnisend API key | Paste the key from Omnisend Store Settings -> API Keys. Use the plain API key — do not prefix it with "Bearer". |
+**API Key:** Your Omnisend API key
+
+Paste the key from Omnisend Store Settings **->** API Keys. Use the plain API key — do not prefix it with "Bearer".
 
 After saving the API key, click **Omnisend Dashboard** in the toolbar and then click **Test Connection** to confirm J2Commerce can reach your Omnisend account. A success message shows your brand name and store currency.
 
-<!-- SCREENSHOT: Omnisend Dashboard showing a successful connection with brand name and currency displayed -->
-
----
-
 ### Order Events
+
+![](/img/omnisend-order.webp)
 
 Controls which order lifecycle events are sent to Omnisend. Each event can trigger automations in Omnisend's Flow Builder.
 
-| Field | Description | Default |
-|---|---|---|
-| **Enable Order Events** | Master switch for all order lifecycle events. Turn this off to stop all order event syncing. | Yes |
-| **Paid Order Status** | The J2Commerce order status that fires the "paid for order" event in Omnisend. Typically the Confirmed or Paid status. | Status 1 |
-| **Fulfilled Order Status** | The order status that fires the "order fulfilled" event. Typically the Shipped status. | Status 7 |
-| **Cancelled Order Status** | The order status that fires the "order canceled" event. Typically the Cancelled status. | Status 6 |
-| **Refunded Order Status** | The order status that fires the "order refunded" event. Leave empty to disable refund event tracking. | Empty (disabled) |
+**Enable Order Events:** Master switch for all order lifecycle events. Turn this off to stop all order event syncing.
+
+**Paid Order Status:** The J2Commerce order status that fires the "paid for order" event in Omnisend. Typically the Confirmed or Paid status.
+
+**Fulfilled Order Status:** The order status that fires the "order fulfilled" event. Typically the Shipped status.
+
+**Cancelled Order Status:** The order status that fires the "order canceled" event. Typically the Cancelled status.
+
+**Refunded Order Status:** The order status that fires the "order refunded" event. Leave empty to disable refund event tracking.
 
 When a new order is placed, J2Commerce automatically sends a "placed order" event regardless of the starting status.
 
-To find your order status IDs, go to **J2Commerce** -> **Configuration** -> **Order Statuses** and check the ID column.
+To find your order status IDs, go to **J2Commerce** -> **Setup** -> **Order Statuses** and check the ID column.
 
-[//]: # (![]&#40;/img/omnisend-config1.webp&#41;)
-
----
+***
 
 ### Cart Recovery and Segmentation
 
+![](/img/omnisend-cart.webp)
+
 Controls cart and checkout abandonment tracking, plus per-product purchase events.
 
-| Field | Description | Default |
-|---|---|---|
-| **Enable Cart and Checkout Abandonment** | Sends an "added product to cart" event when a shopper adds a product, and a "started checkout" event when the checkout page loads. Powers cart-abandonment and checkout-abandonment automations in Omnisend. Requires **Enable Site-wide Snippet** to be on. | Yes |
-| **Enable Ordered-Product Events** | Sends one "ordered product" event per line item on every completed order. Enables "bought product X" segments and cross-sell or replenishment flows. | Yes |
+**Enable Cart and Checkout Abandonment:** Sends an "added product to cart" event when a shopper adds a product, and a "started checkout" event when the checkout page loads. Powers cart-abandonment and checkout-abandonment automations in Omnisend. Requires **Enable Site-wide Snippet** to be on.
 
----
+**Enable Ordered-Product Events:** Sends one "ordered product" event per line item on every completed order. Enables "bought product X" segments and cross-sell or replenishment flows.
 
 ### On-site Tracking Snippet
 
+![](/img/omnisend-tracking.webp)
+
 Controls the Omnisend JavaScript snippet that loads on your store's frontend pages.
 
-| Field | Description | Default |
-|---|---|---|
-| **Enable Site-wide Snippet** | Injects the Omnisend JavaScript on every frontend page. Required for browse abandonment, Omnisend's on-site forms, Live View, and the "viewed product" event. Only your public brand ID is included in the page — your API key is never sent to the browser. | Yes |
-| **Tracking Snippet (paste from Omnisend)** | Optional. Paste the JavaScript from Omnisend's Connect-store flow here. Do not include the surrounding `<script>` tags — paste the JavaScript content only. When filled in, this takes precedence over the auto-built snippet. Leave empty to let J2Commerce build the snippet from your API key. | Empty |
-| **Enable "Viewed Product" Event** | Pushes a "viewed product" event to Omnisend when a shopper opens a product page. Enables product-abandonment automations and contact segmentation by browsed products. Requires **Enable Site-wide Snippet** to be on. | Yes |
+**Enable Site-wide Snippet:** Injects the Omnisend JavaScript on every frontend page. Required for browse abandonment, Omnisend's on-site forms, Live View, and the "viewed product" event. Only your public brand ID is included in the page — your API key is never sent to the browser.
+
+**Tracking Snippet (paste from Omnisend):** Optional. Paste the JavaScript from Omnisend's Connect-store flow here. Do not include the surrounding `<script>` tags — paste the JavaScript content only. When filled in, this takes precedence over the auto-built snippet. Leave empty to let J2Commerce build the snippet from your API key.
+
+**Enable "Viewed Product" Event:** Pushes a "viewed product" event to Omnisend when a shopper opens a product page. Enables product-abandonment automations and contact segmentation by browsed products. Requires **Enable Site-wide Snippet** to be on.
 
 :::info
 
@@ -142,19 +136,17 @@ If you paste a custom tracking snippet, the "viewed product" event is still appe
 
 :::
 
----
-
 ### Checkout Consent
+
+![](/img/omnisend-checkout.webp)
 
 Adds a marketing-consent checkbox to the checkout payment step so customers can opt in to your Omnisend email list when they buy.
 
-| Field | Description | Default |
-|---|---|---|
-| **Show Consent Checkbox** | Displays a checkbox on the checkout payment step. When the customer ticks it and completes the order, they are added to Omnisend as an email subscriber. | Yes |
-| **Checkbox Label** | The text shown next to the consent checkbox. Leave blank to use the built-in default: "Email me news and exclusive offers". Plain text only — HTML is not allowed. | Empty (uses default) |
-| **Sync Phone Number (SMS)** | Sends the customer's billing phone number to Omnisend alongside their email. The number is stored in Omnisend but is not marked as SMS-subscribed — SMS marketing requires its own separate consent. | No |
+**Show Consent Checkbox:** Displays a checkbox on the checkout payment step. When the customer ticks it and completes the order, they are added to Omnisend as an email subscriber.
 
-<!-- SCREENSHOT: Checkout payment step showing the Omnisend consent checkbox below the payment options -->
+**Checkbox Label:** The text shown next to the consent checkbox. Leave blank to use the built-in default: "Email me news and exclusive offers". Plain text only — HTML is not allowed.
+
+**Sync Phone Number (SMS):** Sends the customer's billing phone number to Omnisend alongside their email. The number is stored in Omnisend but is not marked as SMS-subscribed — SMS marketing requires its own separate consent.
 
 :::info
 
@@ -162,25 +154,21 @@ The consent checkbox is always unchecked by default. This is intentional for GDP
 
 :::
 
----
-
 ### Product Catalog Sync
+
+![](/img/omnisend-product.webp)
 
 Controls automatic syncing of your product catalog to Omnisend.
 
-| Field | Description | Default |
-|---|---|---|
-| **Enable Product Catalog Sync** | When on, every time you save or delete a product in J2Commerce, it is automatically synced to Omnisend's product catalog. Enables the Omnisend Product Picker in email campaigns and product-abandonment automations. | Yes |
-
----
+**Enable Product Catalog Sync:** When on, every time you save or delete a product in J2Commerce, it is automatically synced to Omnisend's product catalog. Enables the Omnisend Product Picker in email campaigns and product-abandonment automations.
 
 ### Advanced
 
-| Field | Description | Default |
-|---|---|---|
-| **Debug Logging** | Writes verbose log entries to `logs/plg_j2commerce_app_omnisend.php`. Turn this off in production. Use it only when diagnosing a problem. | No |
+![](/img/omnisend-debug.webp)
 
----
+**Debug Logging:** Writes verbose log entries to `logs/plg_j2commerce_app_omnisend.php`. Turn this off in production. Use it only when diagnosing a problem.
+
+***
 
 ## The Omnisend Dashboard
 
@@ -201,7 +189,7 @@ The sync buttons add items to J2Commerce's background queue. Delivery to Omnisen
 
 :::
 
----
+***
 
 ## How It Works
 
@@ -221,23 +209,23 @@ Here is a plain-English summary of what happens behind the scenes when the integ
 
 **A product is saved or deleted.** If **Enable Product Catalog Sync** is on, the product is automatically synced to — or removed from — Omnisend's product catalog without any manual action.
 
----
+***
 
 ## Events Sent to Omnisend
 
-| Event Name | When It Fires | What Enables It |
-|---|---|---|
-| placed order | After a new order is saved | Automatic when order events are on |
-| paid for order | When order status matches **Paid Order Status** | Configurable status mapping |
-| order fulfilled | When order status matches **Fulfilled Order Status** | Configurable status mapping |
-| order canceled | When order status matches **Cancelled Order Status** | Configurable status mapping |
-| order refunded | When order status matches **Refunded Order Status** | Configurable status mapping (disabled by default) |
-| ordered product | One per line item on each new order | Enable Ordered-Product Events |
-| added product to cart | When a shopper adds a product to the cart | Enable Cart and Checkout Abandonment + snippet on |
-| started checkout | When the checkout page loads | Enable Cart and Checkout Abandonment + snippet on |
-| viewed product | When a shopper opens a product page | Enable "Viewed Product" Event + snippet on |
+| Event Name            | When It Fires                                        | What Enables It                                   |
+| --------------------- | ---------------------------------------------------- | ------------------------------------------------- |
+| placed order          | After a new order is saved                           | Automatic when order events are on                |
+| paid for order        | When order status matches **Paid Order Status**      | Configurable status mapping                       |
+| order fulfilled       | When order status matches **Fulfilled Order Status** | Configurable status mapping                       |
+| order canceled        | When order status matches **Cancelled Order Status** | Configurable status mapping                       |
+| order refunded        | When order status matches **Refunded Order Status**  | Configurable status mapping (disabled by default) |
+| ordered product       | One per line item on each new order                  | Enable Ordered-Product Events                     |
+| added product to cart | When a shopper adds a product to the cart            | Enable Cart and Checkout Abandonment + snippet on |
+| started checkout      | When the checkout page loads                         | Enable Cart and Checkout Abandonment + snippet on |
+| viewed product        | When a shopper opens a product page                  | Enable "Viewed Product" Event + snippet on        |
 
----
+***
 
 ## Tips
 
@@ -247,7 +235,7 @@ Here is a plain-English summary of what happens behind the scenes when the integ
 - **The API key is not your Omnisend password.** The key is found under Omnisend **Store Settings** -> **API Keys**, not in your account login area.
 - **Leave Tracking Snippet empty unless Omnisend gave you one.** Most stores can let J2Commerce auto-build the snippet. Only paste a custom snippet if Omnisend gave you one during their Connect-store wizard and you want the exact launcher they issued.
 
----
+***
 
 ## Troubleshooting
 
@@ -259,7 +247,7 @@ Here is a plain-English summary of what happens behind the scenes when the integ
 
 **Check the Joomla log.** Turn on **Debug Logging** in the Advanced settings, reproduce the issue, then check `administrator/logs/plg_j2commerce_app_omnisend.php` for error messages.
 
----
+***
 
 ### Events are not firing (cart, checkout, or viewed-product events)
 
@@ -271,7 +259,7 @@ These events require the on-site JavaScript snippet to be running. Check:
 
 If you are using a caching extension or a CDN with HTML caching, the snippet injection may be cached away. Flush all caches and reload.
 
----
+***
 
 ### The consent checkbox is not appearing at checkout
 
@@ -279,7 +267,7 @@ If you are using a caching extension or a CDN with HTML caching, the snippet inj
 2. Confirm the app is enabled — the toggle in **J2Commerce** -> **Apps** should be a green checkmark.
 3. Confirm your API key is saved. The plugin skips all frontend output when no key is configured.
 
----
+***
 
 ### Cart or checkout abandonment events are not working
 
@@ -287,19 +275,19 @@ If you are using a caching extension or a CDN with HTML caching, the snippet inj
 2. Confirm **Enable Site-wide Snippet** is also set to **Yes** — cart events require the snippet to be loaded.
 3. Open Omnisend's **Live View** and add a product to the cart in a fresh browser window. The event should appear in Live View within a few seconds.
 
----
+***
 
 ### Sync All Products shows 0 products queued
 
 The product sync only covers products backed by Joomla articles (the standard J2Commerce product type). Confirm your products are published. Also check that **Enable Product Catalog Sync** is set to **Yes** before clicking **Sync All Products**.
 
----
+***
 
 ### Test Connection returns an error about an invalid API key
 
 The API key in Omnisend is a plain string — do not prepend "Bearer" or any other prefix. Copy the key exactly as shown in Omnisend under **Store Settings** -> **API Keys**. If the key was rotated or deleted in Omnisend, create a new one and update the plugin settings.
 
----
+***
 
 ## Related Topics
 
