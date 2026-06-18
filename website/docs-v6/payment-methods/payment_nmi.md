@@ -197,6 +197,8 @@ These optional text areas let you display short HTML messages to the customer at
 
 When a customer reaches the payment step at checkout they see:
 
+![](/img/nmi-frontend.webp)
+
 1. Three card-entry fields rendered by NMI's Collect.js: **Card Number**, **Expiry Date**, and **CVV**. These fields look like part of your page but the actual inputs run inside NMI-hosted iframes — your site never handles raw card data.
 2. If the customer is logged in and **Allow Saved Cards** is enabled, any previously saved cards appear above the new-card form as radio buttons. The customer can pick a saved card or choose **Use a New Card**.
 3. If entering a new card and the customer is logged in, a **Save this card for future purchases** checkbox appears (if Allow Saved Cards is enabled).
