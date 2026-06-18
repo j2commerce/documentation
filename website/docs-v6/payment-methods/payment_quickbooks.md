@@ -237,13 +237,21 @@ You can add an optional surcharge to orders paid by this method. Leave all field
 
 When a customer reaches the checkout confirmation step:
 
-1. The customer selects **Credit/Debit Card** (or your configured display name) as their payment method.
-2. If the customer is logged in and has saved cards on file, they can choose a saved card or enter a new one.
-3. The customer enters their card details — card number, expiry date, security code, and name on card — directly into the secure QuickBooks Payments hosted fields. Card data never passes through your server.
-4. The customer clicks to confirm the order. The plugin tokenizes the card via QuickBooks Payments and submits the charge.
-5. If **Capture Mode** is set to **Authorize + Capture**, the payment is collected immediately and the order moves to the configured successful payment status.
-6. If **Capture Mode** is set to **Authorize Only**, the card is placed on hold and the order is set to the configured authorized status. You capture the payment from the order admin screen when you are ready.
-7. If the customer checked **Save this card for future purchases**, the tokenized card is stored in the QuickBooks Payments vault and linked to their account for future use.
+The customer selects **Credit/Debit Card** (or your configured display name) as their payment method.
+
+![](/img/quickbooks-frontend.webp)
+
+If the customer is logged in and has saved cards on file, they can choose a saved card or enter a new one.
+
+The customer enters their card details — card number, expiry date, security code, and name on card — directly into the secure QuickBooks Payments hosted fields. Card data never passes through your server.
+
+The customer clicks to confirm the order. The plugin tokenizes the card via QuickBooks Payments and submits the charge.
+
+If **Capture Mode** is set to **Authorize + Capture**, the payment is collected immediately and the order moves to the configured successful payment status.
+
+If **Capture Mode** is set to **Authorize Only**, the card is placed on hold and the order is set to the configured authorized status. You capture the payment from the order admin screen when you are ready.
+
+If the customer checked **Save this card for future purchases**, the tokenized card is stored in the QuickBooks Payments vault and linked to their account for future use.
 
 ## Order Management
 
