@@ -286,12 +286,21 @@ If you set **Integration Mode** to FlexCheckout, or if you enabled **Saved Cards
 
 ### Standard (Hosted Payment Page)
 
-1. Customer reaches the payment step and selects **Barclaycard** as their payment method.
-2. They click **Place Order** and are redirected to the secure Barclaycard payment page.
-3. They enter their card details on Barclaycard's page — your server never sees the card number.
-4. Barclaycard processes the payment and sends a server-to-server notification to your site.
-5. Your store verifies the signature and updates the order status.
-6. The customer is redirected back to your order confirmation page.
+Customer reaches the payment step and selects **Barclaycard** as their payment method.
+
+![](/img/barclay-frontend.webp)
+
+They click **Place Order** and are redirected to the secure Barclaycard payment page.
+
+![](/img/barclay-frontend1.webp)
+
+They enter their card details on Barclaycard's page — your server never sees the card number.
+
+Barclaycard processes the payment and sends a server-to-server notification to your site.
+
+Your store verifies the signature and updates the order status.
+
+The customer is redirected back to your order confirmation page.
 
 ### FlexCheckout (on-site card form)
 
