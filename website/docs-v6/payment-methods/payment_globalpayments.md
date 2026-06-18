@@ -244,11 +244,15 @@ Set **Show Dashboard Icon** to **Yes** to add a shortcut icon to the J2Commerce 
 Disable debug mode on live stores. Logs may contain sensitive transaction details.
 :::
 
+## Frontend View
+
+![](/img/global-frontend.webp)
+
 ## Going Live
 
 When you are ready to accept real payments:
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and click **Global Payments**.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** and click **Global Payments**.
 2. Set **Sandbox / Test Mode** to **No**.
 3. Enter your **App ID** and **App Key** from the Global Payments live environment.
 4. Click **Save**.
