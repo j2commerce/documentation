@@ -255,6 +255,8 @@ Enable **Debug Mode** to write all API requests and responses to a log file (`lo
 
 When a customer reaches checkout and selects the Worldline payment option, the experience depends on the Integration Mode you have chosen.
 
+![](/img/worldline-frontend.webp)
+
 ### Hosted Checkout Mode (default)
 
 1. The checkout page shows a **Place Order** button with a brief notice that the customer will be redirected to a secure Worldline payment page.
