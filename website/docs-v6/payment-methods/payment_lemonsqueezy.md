@@ -62,7 +62,7 @@ Lemon Squeezy uses a single set of servers for both test and live modes. The key
 5. Create a **Signing Secret** (any random string, 6–40 characters). Copy it now — Lemon Squeezy only shows it at creation time.
 6. Save the webhook endpoint.
 
-:::note
+:::tip
 
 The webhook is how Lemon Squeezy confirms payment to your store. If it is missing or the signing secret does not match, orders will sit in a pending state and never reach **Confirmed**. This step is not optional.
 
@@ -110,7 +110,7 @@ For each subscription product in J2Commerce:
 
 The plugin matches the J2Commerce subscription product to the correct Lemon Squeezy variant by billing interval automatically. If no matching variant is found, the **Sync Catalog** panel in the plugin settings will show a warning.
 
-:::note
+:::info
 
 A single catch-all one-time product will **not** work for subscriptions. If a customer buys a subscription product and no matching Lemon Squeezy subscription variant exists, the checkout cannot be created and the customer will see an error. Always create a dedicated Lemon Squeezy subscription product for each subscription you sell.
 
@@ -286,13 +286,21 @@ Control which customers see Lemon Squeezy at checkout.
 
 Here is what happens when a customer pays with Lemon Squeezy:
 
-1. The customer adds items to the cart and proceeds to checkout.
-2. At the payment step, **Lemon Squeezy** (or your custom Display Name) appears as an option.
-3. The customer selects it and clicks the pay button.
-4. J2Commerce creates a checkout session at Lemon Squeezy and either redirects the customer to the Lemon Squeezy-hosted checkout page or opens it as an overlay, depending on your **Checkout Experience** setting.
-5. The customer enters their card details on Lemon Squeezy's secure page.
-6. Lemon Squeezy processes the payment, collects any applicable tax, and sends a **webhook notification** to your store.
-7. J2Commerce verifies the webhook signature, updates the order to **Confirmed** (or your configured status), and shows the customer the confirmation page.
+The customer adds items to the cart and proceeds to checkout.
+
+At the payment step, **Lemon Squeezy** (or your custom Display Name) appears as an option.
+
+![](/img/lemon-frontend.webp)
+
+The customer selects it and clicks the pay button.
+
+J2Commerce creates a checkout session at Lemon Squeezy and either redirects the customer to the Lemon Squeezy-hosted checkout page or opens it as an overlay, depending on your **Checkout Experience** setting.
+
+The customer enters their card details on Lemon Squeezy's secure page.
+
+Lemon Squeezy processes the payment, collects any applicable tax, and sends a **webhook notification** to your store.
+
+J2Commerce verifies the webhook signature, updates the order to **Confirmed** (or your configured status), and shows the customer the confirmation page.
 
 The order is finalized by the **webhook**, not by the browser redirect. This means even if the customer closes their browser after paying, the order will still be confirmed automatically once Lemon Squeezy delivers the notification.
 
