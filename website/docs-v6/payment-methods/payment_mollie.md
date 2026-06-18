@@ -257,13 +257,25 @@ Payment methods are also shown based on the customer's location and the order cu
 
 The Mollie checkout uses a redirect flow:
 
-1. The customer adds items to the cart and proceeds to checkout.
-2. At the payment step, **Mollie Payments** (or your custom display name) appears as an option.
-3. The customer selects Mollie. If you have multiple payment methods active, a method selector appears where the customer picks iDEAL, credit card, Bancontact, or another method. For iDEAL, a bank selector (issuer) also appears.
-4. After choosing a method, the customer clicks the pay button and is redirected to Mollie's secure hosted payment page.
-5. The customer completes payment on Mollie's servers.
-6. Mollie redirects the customer back to your site. J2Commerce checks the payment status and updates the order accordingly.
-7. Separately, Mollie sends a webhook notification to your store. J2Commerce processes this notification to apply the final status in case the redirect was interrupted.
+The customer adds items to the cart and proceeds to checkout.
+
+At the payment step, **Mollie Payments** (or your custom display name) appears as an option.
+
+![](/img/mollie-frontend.webp)
+
+The customer selects Mollie. If you have multiple payment methods active, a method selector appears where the customer picks iDEAL, credit card, Bancontact, or another method. For iDEAL, a bank selector (issuer) also appears.
+
+![](/img/mollie-frontend1.webp)
+
+After choosing a method, the customer clicks the pay button and is redirected to Mollie's secure hosted payment page.
+
+![](/img/mollie-frontend2-1.webp)
+
+The customer completes payment on Mollie's servers.
+
+Mollie redirects the customer back to your site. J2Commerce checks the payment status and updates the order accordingly.
+
+Separately, Mollie sends a webhook notification to your store. J2Commerce processes this notification to apply the final status in case the redirect was interrupted.
 
 ***
 
@@ -302,6 +314,8 @@ When you are ready to accept real payments:
 ***
 
 ## Refunds
+
+![](/img/mollie-order.webp)
 
 You can issue a full or partial refund directly from the order in the J2Commerce admin:
 
