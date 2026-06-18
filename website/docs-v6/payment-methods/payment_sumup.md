@@ -213,12 +213,19 @@ Only enable this when diagnosing a specific problem. Disable it on live sites �
 
 ## How Checkout Works for Customers {#how-it-works}
 
-1. The customer adds items to their cart and proceeds to checkout.
-2. On the payment step, the SumUp card widget loads directly on the page. The card number, expiry date, and security code fields appear inside SumUp's secure hosted form.
-3. If the customer is logged in and has saved cards on file (and **Allow Saved Cards** is enabled), they see a list of saved cards and can select one or choose to use a new card.
-4. If saving is allowed and the customer is using a new card, a checkbox lets them save it for future orders.
-5. The customer submits their payment. SumUp collects and processes the card charge immediately — there is no separate authorization step.
-6. On success, the customer sees the order confirmation page.
+The customer adds items to their cart and proceeds to checkout.
+
+![](/img/sumup-frontend.webp)
+
+On the payment step, the SumUp card widget loads directly on the page. The card number, expiry date, and security code fields appear inside SumUp's secure hosted form.
+
+If the customer is logged in and has saved cards on file (and **Allow Saved Cards** is enabled), they see a list of saved cards and can select one or choose to use a new card.
+
+If saving is allowed and the customer is using a new card, a checkbox lets them save it for future orders.
+
+The customer submits their payment. SumUp collects and processes the card charge immediately — there is no separate authorization step.
+
+On success, the customer sees the order confirmation page.
 
 :::info
 
