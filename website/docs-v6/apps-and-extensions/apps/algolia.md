@@ -43,16 +43,27 @@ The Admin API key can read, write, and delete all your Algolia data. Never paste
 
 ## Installation
 
-1. In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
-2. Upload the `plg_j2commerce_app_algolia.zip` file.
-3. The plugin installs and activates automatically.
-4. Go to **J2Commerce** -> **Apps** to find **Algolia** in the list and open its configuration.
+In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
 
-<!-- SCREENSHOT: J2Commerce Apps list with the Algolia plugin visible -->
+Upload the `plg_j2commerce_app_algolia.zip` file.
+
+![](/img/address-install.webp)
+
+## Enable the App
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![](/img/address-apps.webp)
+
+To help you narrow down the list, you can do a search for the **Algolia Search Integration** app, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ## Configure the Plugin
 
-1. Go to **J2Commerce** -> **Apps**.
+1. Go to **J2Commerce** **->** **Apps**.
 2. Click **Algolia** to open the configuration form.
 3. Fill in the required fields described below, then click **Save** in the toolbar.
 
