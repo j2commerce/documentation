@@ -1,10 +1,3 @@
----
-title: "GDPR Compliance"
-sidebar_label: "GDPR Compliance"
-sidebar_position: 55
-description: "Give customers control over their personal data with checkout terms, activity logging, address deletion, and GDPR data request forms."
----
-
 # GDPR Compliance
 
 The GDPR app brings data privacy compliance features to J2Commerce. It gives customers meaningful control over their personal data stored in your shop, and helps you meet obligations under GDPR and similar privacy regulations.
@@ -72,7 +65,9 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 ### Email Notifications
 
-![](/img/gdpr-config-email.webp)
+![](/img/gdpr-config-basic.webp)
+
+**Add Menu Item:** Show or hide the GDPR Activity Log link in the J2Commerce dashboard menu.
 
 **Notify store administrators about data changes:** Send an email to the admin addresses below whenever a customer edits or deletes address data
 
@@ -80,13 +75,9 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 **Notify the customer about data changes:** Send a confirmation email to the customer when they change their own data
 
-### Activity Logging
-
 **Log customer edit and delete activities:** Record every address edit and deletion in the GDPR activity log
 
 When enabled, all changes are stored in the activity log, viewable from the J2Commerce Apps page.
-
-### IP Address Removal
 
 **Remove customer IP address from cart and order:** Strip the IP address field from new cart and order records at the time they are created
 
@@ -96,9 +87,15 @@ IP removal only applies to **new** carts and orders created after the setting is
 
 :::
 
-### General Requirements
+**Show delete all addresses button:** Display a button on the My Profile page allowing customers to delete all their saved addresses
 
-![](/img/gdpr-config-general.webp)
+**Debug Mode:** Write detailed log entries to `administrator/logs/app_gdpr.php`
+
+Enable Debug Mode temporarily when troubleshooting. Disable it in production to avoid filling your log directory.
+
+### General Requirements tab
+
+![](/img/gdpr-config-general0.webp)
 
 **Enable GDPR tab in My Profile:** Show a GDPR data request form as a tab on the customer My Profile page
 
@@ -108,17 +105,19 @@ IP removal only applies to **new** carts and orders created after the setting is
 
 **Show terms for guest customers:** Include terms display for guest checkout
 
+![](/img/gdpr-config-general1-1.webp)
+
 **Terms display position:** Choose whether terms appear at the **Billing** step or the **Payment** step
 
 **Terms display type:** Show terms as a **Link** (informational) or a **Checkbox** (required to proceed)
 
-**Terms and conditions article:** Select the Joomla article that contains your privacy policy or GDPR terms
-
 ### Terms Label Customisation
 
-![](/img/gdpr-config-general1.webp)
+![](/img/gdpr-config-general2-1.webp)
 
 These three fields control the text displayed around the terms link at checkout. They support Joomla language key strings or plain text.
+
+**Terms and conditions article:** Select the Joomla article that contains your privacy policy or GDPR terms
 
 **Terms prefix text:** Text before the clickable link
 
@@ -127,18 +126,6 @@ These three fields control the text displayed around the terms link at checkout.
 **Terms suffix text:** Text after the clickable link
 
 **Validation error message:** Message shown when the customer does not tick the checkbox
-
-### Customer Buttons
-
-![](/img/gdpr-config-customer.webp)
-
-**Show delete all addresses button:** Display a button on the My Profile page allowing customers to delete all their saved addresses
-
-## Debug Mode
-
-**Debug Mode:** Write detailed log entries to `administrator/logs/app_gdpr.php`
-
-Enable Debug Mode temporarily when troubleshooting. Disable it in production to avoid filling your log directory.
 
 ## How It Works
 
@@ -149,8 +136,6 @@ When **GDPR terms and conditions** is enabled, a notice (or required checkbox) a
 - **Link display type:** The terms text and link are shown as information only. The customer can click the link to read the full article in a modal window. Checkout is not blocked.
 - **Checkbox display type:** The customer must tick the checkbox to continue. If they try to proceed without ticking it, an inline error message is shown.
 
-<!-- SCREENSHOT: Checkout payment step showing GDPR terms checkbox -->
-
 ### Customer Address Deletion
 
 When the **Show delete all addresses button** setting is enabled, a red **Delete all my addresses** button appears on the My Profile page above the address list. When a customer clicks it:
@@ -160,7 +145,7 @@ When the **Show delete all addresses button** setting is enabled, a red **Delete
 3. Admin and customer notification emails are sent (if enabled).
 4. The customer is redirected back to My Profile with a confirmation message.
 
-<!-- SCREENSHOT: My Profile page showing the delete addresses button -->
+![](/img/gdpr-frontend-delete.webp)
 
 ### GDPR Data Request Tab
 
@@ -172,6 +157,8 @@ The request is saved to the activity log and — if admin email notifications ar
 
 ### Activity Log
 
+![](/img/gdpr-log.webp)
+
 When **Log customer edit and delete activities** is enabled, the plugin records entries in a private database table. Each entry stores:
 
 - Date and time
@@ -181,11 +168,9 @@ When **Log customer edit and delete activities** is enabled, the plugin records 
 
 You can view the activity log from the J2Commerce Apps page by clicking the GDPR app name and navigating to the log view.
 
-<!-- SCREENSHOT: GDPR activity log showing address and order log tabs -->
-
 ## Setting Up Terms and Conditions
 
-### Step 1: Create a Privacy Policy Article
+### Create a Privacy Policy Article
 
 1. In the Joomla Administrator, go to **Content** -> **Articles** -> **New**.
 2. Write your GDPR privacy policy or terms and conditions.
@@ -193,7 +178,7 @@ You can view the activity log from the J2Commerce Apps page by clicking the GDPR
 
 ![](/img/gdpr-terms.webp)
 
-### Step 2: Link the Article to the Plugin
+### Link the Article to the Plugin
 
 1. Go to **J2Commerce** -> **Apps** -> **GDPR** settings.
 2. In the **Terms and conditions article** field, click the **Select** button and choose your article.
@@ -203,11 +188,21 @@ You can view the activity log from the J2Commerce Apps page by clicking the GDPR
 
 ![](/img/gdpr-terms1.webp)
 
-### Step 3: Verify at Checkout
+## Frontend Checkout View
 
 Visit your store's checkout as a test customer and confirm the terms text and link appear at the expected step.
 
-<!-- SCREENSHOT: GDPR checkout -->
+### Link View
+
+![](/img/gdpr-frontend-link.webp)
+
+### Checkbox View
+
+![](/img/gdpr-frontend-checkbox.webp)
+
+### Checkbox Error
+
+![](/img/gdpr-frontend-checkbox1.webp)
 
 ## Troubleshooting
 

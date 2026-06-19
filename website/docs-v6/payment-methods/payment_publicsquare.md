@@ -1,10 +1,3 @@
----
-title: "PublicSquare Payment"
-sidebar_label: "PublicSquare"
-sidebar_position: 50
-description: "Accept credit and debit card payments via PublicSquare — with on-site card tokenization (SAQ-A), saved cards, authorize-only mode, and full capture, void, and refund from the order screen."
----
-
 # PublicSquare Payment
 
 The PublicSquare Payment plugin connects your J2Commerce store to the **PublicSquare** card-processing platform so customers can pay by credit or debit card directly on your checkout page. Card entry fields are powered by a secure, hosted SDK — your server never handles raw card numbers, which qualifies your store for the simplest level of PCI security compliance (SAQ-A). From the J2Commerce order screen you can capture authorized payments, void them, or issue full and partial refunds without leaving your admin panel.
@@ -207,15 +200,11 @@ Only enable this when diagnosing a specific problem. Disable it on live sites �
 5. The customer clicks **Place Order**.
 6. On success, the customer sees the order confirmation page.
 
-<!-- SCREENSHOT: PublicSquare card form on the checkout page -->
-
 ## Managing Payments from the Order Screen
 
 After an order is paid, you can take follow-up actions directly from the J2Commerce order detail page.
 
 Go to **J2Commerce** -> **Sales** -> **Orders** -> click the order number to open it. The PublicSquare action buttons appear in the payment section.
-
-<!-- SCREENSHOT: PublicSquare action buttons on an order detail page -->
 
 ### Capture a Payment (Manual Capture mode only)
 

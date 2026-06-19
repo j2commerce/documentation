@@ -1,10 +1,3 @@
----
-title: "Worldline Payment"
-sidebar_label: "Worldline"
-sidebar_position: 97
-description: "Accept credit cards, e-wallets, bank transfers, and local payment methods worldwide through Worldline's secure hosted checkout — fully integrated with J2Commerce."
----
-
 # Worldline Payment
 
 Worldline is one of Europe's largest payment service providers, processing transactions in over 100 countries. It supports credit and debit cards, e-wallets, bank transfers, and many local payment methods — making it a strong choice for merchants selling internationally, particularly across Europe, Asia-Pacific, and Latin America. When a customer checks out, they are redirected to Worldline's secure hosted payment page (called MyCheckout), enter their details there, and then return to your store when done. Your store never handles raw card numbers, which keeps you at the lowest level of payment security compliance.
@@ -45,56 +38,67 @@ When you create a new API Key in the Worldline Client Portal, the secret is show
 
 :::
 
+## Purchase and Download
+
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) **->** **Payment Gateways**
+
+**Step 2:** Locate **Worldline Payment ->** click **View Details** **->** **Add to Cart -> Checkout**
+
+**Step 3:** Go to **My Downloads** under your profile button at the top right corner and search for PayTrace. Click **Available Versions -> View Files -> Download Now**
+
 ## Install the Plugin
 
-1. Go to **System** -> **Install** -> **Extensions** in the Joomla admin panel.
-2. Upload the `payment_worldline.zip` file you downloaded.
-3. The plugin installs automatically.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-<!-- SCREENSHOT: Joomla extension installer upload screen with the Worldline zip ready to upload -->
+Upload the `payment_worldline.zip` package ZIP file or use the Install from URL option.
+
+![](/img/install.webp)
 
 ## Enable the Plugin
 
-After installation, the plugin must be enabled before it appears at checkout.
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Find **Worldline Payment** in the list.
-3. Click the toggle in the **Enabled** column to turn it on (it should show green).
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-<!-- SCREENSHOT: Payment Methods list with Worldline showing a green enabled toggle -->
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Worldline Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/worldline-enable.webp)
 
 ## Configure the Plugin
 
-Click the **Worldline Payment** name to open the settings screen.
+Click the **Worldline Payment** title next to the green checkmark to open the configuration screen.
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar and a description will appear below each field as you configure it.
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
 
 :::
 
-<!-- SCREENSHOT: Worldline plugin settings screen showing all fields -->
+![](/img/worldline-toggle.webp)
 
-### Display Settings
+### Basic Settings tab
 
-| Field             | Description                                                                                        | Default   |
-| ----------------- | -------------------------------------------------------------------------------------------------- | --------- |
-| **Display Name**  | The payment option name shown to customers at checkout (for example, "Pay by Card" or "Worldline") | Worldline |
-| **Display Image** | Upload a logo or card icons to show next to the payment option                                     | —         |
+![](/img/worldline-display.webp)
 
-### Test Mode (Sandbox)
+**Display Name:** The payment option name shown to customers at checkout (for example, "Pay by Card" or "Worldline")
+
+**Display Image:** Upload a logo or card icons to show next to the payment option
+
+### Credentials
+
+![](/img/worldline-credentials.webp)
 
 Enable **Sandbox / Test Mode** to send all transactions to Worldline's test environment instead of processing real payments. Fill in your **sandbox credentials** when this is on. Set it to **No** and fill in your **live credentials** when you are ready to go live.
 
-<!-- SCREENSHOT: Sandbox toggle switch set to Yes -->
-
-:::caution
+:::info
 
 A warning banner appears on the J2Commerce dashboard whenever Sandbox Mode is active, reminding you that no real payments are being processed.
 
 :::
-
-### Credentials
 
 The credentials section changes depending on whether Sandbox Mode is on or off. Both sets of fields are shown separately so you can switch between environments without losing your settings.
 
@@ -117,23 +121,23 @@ Never share your **API Secret** or **Webhook Secret** publicly. These keys must 
 
 ### Integration Mode
 
-| Option                             | What it does                                                                                                                                                                                                                                                                    |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Hosted Checkout (redirect)**     | The customer is redirected to Worldline's secure MyCheckout hosted page to enter their payment details. This is the default and the lowest-compliance option (your store never sees card data).                                                                                 |
-| **On-site Card Form (Client SDK)** | A card form appears directly on your checkout page. Card data is encrypted in the customer's browser by the Worldline Client SDK before being sent to Worldline — your server never receives raw card numbers. This option keeps the customer on your site throughout checkout. |
+![](/img/worldline-integration.webp)
+
+- **Hosted Checkout (redirect):** The customer is redirected to Worldline's secure MyCheckout hosted page to enter their payment details. This is the default and the lowest-compliance option (your store never sees card data).
+
+  - **Hosted Checkout Variant:** This field only appears when **Integration Mode** is set to **Hosted Checkout**. A variant is a branded version of the Worldline-hosted payment page — you can create and configure variants in the Worldline Client Portal to match your store's colors and logo. Enter the variant ID number here. Leave the default value (`100`) if you have not set up a custom variant.
+
+- **On-site Card Form (Client SDK):** A card form appears directly on your checkout page. Card data is encrypted in the customer's browser by the Worldline Client SDK before being sent to Worldline — your server never receives raw card numbers. This option keeps the customer on your site throughout checkout.
 
 Most stores should use **Hosted Checkout**. The on-site card form requires an additional Worldline account configuration step (Sessions must be enabled) and provides a more seamless experience at the cost of a slightly higher compliance scope.
 
-### Hosted Checkout Variant
-
-This field only appears when **Integration Mode** is set to **Hosted Checkout**. A variant is a branded version of the Worldline-hosted payment page — you can create and configure variants in the Worldline Client Portal to match your store's colors and logo. Enter the variant ID number here. Leave the default value (`100`) if you have not set up a custom variant.
-
 ### Payment Capture
 
-| Option                         | What it does                                                                                                                                                        |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Auto Capture (recommended)** | Charges the customer immediately when the payment is authorized. This is the right choice for most stores.                                                          |
-| **Authorize Only**             | Reserves the funds on the customer's card but does not charge them yet. You then capture the payment manually from the admin order page when you are ready to ship. |
+![](/img/worldline-payment.webp)
+
+- **Auto Capture (recommended):** Charges the customer immediately when the payment is authorized. This is the right choice for most stores.
+
+- **Authorize Only:** Reserves the funds on the customer's card but does not charge them yet. You then capture the payment manually from the admin order page when you are ready to ship.
 
 ### Allow Saved Payment Methods
 
@@ -145,21 +149,33 @@ Set this to **No** if you prefer customers to always enter fresh payment details
 
 Set this to **Yes** if your store sells subscription products and you use the J2Commerce Subscription Product app. This allows Worldline to process automatic renewal payments using the customer's saved payment method.
 
-### Layout (Subtemplate)
+### Template Layout (Subtemplate)
 
-If your Joomla template is built on the UIkit framework, choose **UIkit** from the layout dropdown. Otherwise leave this on the default Bootstrap 5 layout.
+**Template Style:** Choose the visual style for the card form at checkout: Match this setting to the template framework your site uses.
+
+- ***(blank):*** Default layout
+
+- **bootstrap5:** Bootstrap 5-based J2Commerce templates
+
+- **uikit:** UIkit-based J2Commerce templates
 
 ### Order Statuses
 
-| Field                         | Description                                                                                                      | Default   |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------- | --------- |
-| **Successful Payment Status** | The order status applied when a payment is confirmed and captured                                                | Confirmed |
-| **Authorized Status**         | The order status applied when a payment is authorized but not yet captured (only visible in Authorize Only mode) | Confirmed |
-| **Change Status on Refund**   | When enabled, processing a refund automatically moves the order to a status you choose                           | No        |
-| **Refund Order Status**       | The order status to set after a successful refund (only visible when the option above is enabled)                | —         |
-| **Change Status on Cancel**   | When enabled, cancelling a payment authorization automatically moves the order to a status you choose            | No        |
-| **Cancel Order Status**       | The order status to set after a successful cancellation (only visible when the option above is enabled)          | —         |
-| **Failed Payment Status**     | The order status applied when a payment fails or is rejected                                                     | Failed    |
+![](/img/worldline-status.webp)
+
+**Order Status:** The order status applied when a payment is confirmed and captured
+
+**Authorized Status:** The order status applied when a payment is authorized but not yet captured (only visible in Authorize Only mode)
+
+**Change Status on Refund:** When enabled, processing a refund automatically moves the order to a status you choose
+
+- **Refund Order Status:** The order status to set after a successful refund (only visible when the option above is enabled)
+
+**Change Status on Cancel:** When enabled, cancelling a payment authorization automatically moves the order to a status you choose
+
+- **Cancel Order Status:** The order status to set after a successful cancellation (only visible when the option above is enabled)
+
+**Failed Payment Status:** The order status applied when a payment fails or is rejected
 
 :::tip
 
@@ -171,26 +187,31 @@ If the status you want is not listed in a dropdown, create a new one first by go
 
 ### Surcharge / Payment Fee
 
+![](/img/worldline-surcharge.webp)
+
 If Worldline charges you a processing fee and you want to pass part or all of it on to customers, fill in these fields:
 
-| Field                      | Description                                                                          |
-| -------------------------- | ------------------------------------------------------------------------------------ |
-| **Surcharge Label**        | The label shown to customers on the order total (for example, "Card processing fee") |
-| **Surcharge Percent**      | A percentage of the order total added as a fee (for example, `2` for 2%)             |
-| **Surcharge Fixed Amount** | A flat fee added to every order (for example, `0.50` for $0.50)                      |
-| **Surcharge Tax Class**    | Select a tax profile if the fee itself should be taxed                               |
+**Surcharge Label:** The label shown to customers on the order total (for example, "Card processing fee")
+
+**Surcharge Percent:** A percentage of the order total added as a fee (for example, `2` for 2%)
+
+**Surcharge Fixed Amount:** A flat fee added to every order (for example, `0.50` for $0.50)
+
+**Surcharge Tax Class:** Select a tax profile if the fee itself should be taxed
 
 Leave all fields blank if you do not want to add a surcharge.
 
 ### Availability Restrictions
 
-| Field                | Description                                                                                                                           |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| **Allowed Geo Zone** | Only show this payment method to customers whose billing address falls inside a specific geozone. Leave blank to show it to everyone. |
-| **Minimum Subtotal** | Hide this payment method if the order subtotal is below this amount. Leave blank for no minimum.                                      |
-| **Maximum Subtotal** | Hide this payment method if the order subtotal is above this amount. Leave blank for no maximum.                                      |
+![](/img/worldline-restrictions.webp)
 
-:::caution
+**Allowed Geo Zone:** Only show this payment method to customers whose billing address falls inside a specific geozone. Leave blank to show it to everyone.
+
+**Minimum Subtotal:** Hide this payment method if the order subtotal is below this amount. Leave blank for no minimum.
+
+**Maximum Subtotal:** Hide this payment method if the order subtotal is above this amount. Leave blank for no maximum.
+
+:::info
 
 If you set a **Maximum Subtotal**, leave the field blank rather than entering `0`. Entering `0` is interpreted as a zero-dollar ceiling and hides the payment method from all orders.
 
@@ -202,22 +223,27 @@ Use the **Post-Payment Article** field to select a Joomla article that appears o
 
 ### Custom Messages
 
+![](/img/worldline-messages.webp)
+
 These optional text fields let you add HTML messages at specific moments during checkout:
 
-| Field                   | When it appears                                             |
-| ----------------------- | ----------------------------------------------------------- |
-| **Text on Selection**   | When the customer selects Worldline as their payment method |
-| **Text Before Payment** | Above the Place Order button, inside the payment form area  |
-| **Text After Payment**  | On the order confirmation page after a successful payment   |
-| **Text on Error**       | When a payment attempt fails                                |
-| **Text on Cancel**      | When the customer cancels the payment                       |
+**Text on Selection:** When the customer selects Worldline as their payment method
+
+**Text Before Payment:** Above the Place Order button, inside the payment form area
+
+**Text After Payment:** On the order confirmation page after a successful payment
+
+**Text on Error:** When a payment attempt fails
+
+**Text on Cancel:** When the customer cancels the payment
 
 ### Dashboard Icon
 
-| Field                    | Description                                                                                 |
-| ------------------------ | ------------------------------------------------------------------------------------------- |
-| **Show Dashboard Icon**  | When set to Yes, a quick-access icon appears on the J2Commerce dashboard                    |
-| **Dashboard Icon Label** | The label displayed under the dashboard icon (only visible when Show Dashboard Icon is Yes) |
+![](/img/worldline-icon.webp)
+
+**Show Dashboard Icon:** When set to Yes, a quick-access icon appears on the J2Commerce dashboard
+
+**Icon Label:** The label displayed under the dashboard icon (only visible when Show Dashboard Icon is Yes)
 
 ### Debug Mode
 
@@ -237,8 +263,6 @@ When a customer reaches checkout and selects the Worldline payment option, the e
 4. After completing payment, Worldline returns the customer to your store and lands them on the order confirmation page.
 5. If **Allow Saved Payment Methods** is enabled, the customer's card is saved for future purchases after a successful transaction.
 
-<!-- SCREENSHOT: Checkout payment step showing Worldline option selected with the redirect notice and Place Order button -->
-
 ### On-site Card Form Mode
 
 1. A card form appears directly on the checkout page — the customer enters their card details without leaving your store.
@@ -246,7 +270,7 @@ When a customer reaches checkout and selects the Worldline payment option, the e
 3. If the card requires a 3D Secure challenge (an extra verification step from the customer's bank), the customer is briefly redirected to their bank's verification page and then returned automatically.
 4. After the payment is confirmed, the customer sees the order confirmation page.
 
-:::note
+:::info
 
 In both modes, your store never receives or stores raw card numbers. Worldline handles all card security on their end, which keeps your store at the lowest applicable level of PCI compliance.
 
@@ -266,7 +290,7 @@ If you chose **Authorize Only** as the capture mode, the customer's card was res
 
 If a payment has been authorized but not yet captured, you can use the **Cancel Payment** button to release the reservation back to the customer. This is the right action when you cannot fulfill the order and want to avoid charging the customer.
 
-:::caution
+:::info
 
 Cancellation is only available on authorized (uncaptured) payments. Once a payment has been captured, use **Refund** instead.
 
@@ -275,8 +299,6 @@ Cancellation is only available on authorized (uncaptured) payments. Once a payme
 ### Refund a Payment
 
 From the order screen you can issue a **full refund** (the entire order amount) or a **partial refund** (a specific amount you enter). The money is returned to the customer's original payment method. J2Commerce records the refund in the order history automatically.
-
-<!-- SCREENSHOT: Admin order page showing Capture, Cancel, and Refund action buttons -->
 
 ***
 
@@ -298,7 +320,7 @@ From the order screen you can issue a **full refund** (the entire order amount) 
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> open **Worldline Payment**.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** -> open **Worldline Payment**.
 2. Confirm the **Sandbox / Test Mode** setting matches the credentials you have entered.
 3. Check that all four credential fields (Merchant ID, API Key ID, API Secret, Webhook Secret) are filled in with no leading or trailing spaces.
 4. Enable **Debug Mode**, attempt a test payment, then open the log file at `logs/payment_worldline.php` relative to your Joomla root to read the exact API error message.
@@ -309,7 +331,7 @@ From the order screen you can issue a **full refund** (the entire order amount) 
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and confirm the Worldline row shows a green enabled status.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** and confirm the Worldline row shows a green enabled status.
 2. Check **Minimum Subtotal** and **Maximum Subtotal** — if set, verify the current cart total falls within the range. Remember that a value of `0` in Maximum Subtotal hides the method for all orders.
 3. Check **Allowed Geo Zone** — if set, verify the customer's billing country is inside that geozone.
 

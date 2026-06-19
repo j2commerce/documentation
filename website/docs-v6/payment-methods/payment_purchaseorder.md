@@ -1,10 +1,3 @@
----
-title: "Purchase Order Payment"
-sidebar_label: "Purchase Order"
-sidebar_position: 90
-description: "Accept B2B purchase orders at checkout — customers enter a PO number and place their order with no payment gateway required; you confirm payment manually when it arrives."
----
-
 # Purchase Order Payment
 
 The Purchase Order Payment plugin adds a **Purchase Order** option to your store's checkout page. It is designed for B2B stores that sell to business customers who pay on account — the customer enters their company's PO number at checkout, places the order, and you collect payment offline through your normal invoicing process.
@@ -12,7 +5,9 @@ The Purchase Order Payment plugin adds a **Purchase Order** option to your store
 No money moves through any payment gateway. The plugin simply records the PO number, creates the order with an admin-chosen status (typically Pending), and lets you confirm payment manually in the admin panel when the funds arrive.
 
 :::info
+
 This plugin has no API keys, no sandbox, no redirect, and no cron requirement. Setup takes just a few minutes.
+
 :::
 
 ## Requirements
@@ -31,39 +26,45 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 3. Go to **My Downloads** under your account profile.
 4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-## Install the Plugin
+## Installing the Plugin
 
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+You can install this **Purchase Order Payment** plugin using the Joomla installer. The following steps help you with a successful installation.
+
+In the Joomla admin, go to **System -> Install -> Extensions**&#x20;
 
 Upload the `payment_purchaseorder.zip` file or use the Install from URL option.
 
-<!-- SCREENSHOT: System > Install > Extensions upload screen -->
+![](/img/autho-install5.webp)
 
-The plugin installs and enables automatically.
+## Enable the Plugin&#x20;
 
-## Enable the Plugin
+Once you have installed the extension, you will need to enable it. There are **two** ways you can access the extension.&#x20;
 
-Once installed, navigate to the payment methods list.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner -> **Setup** -> **Payment Methods**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Payment Methods**
+![](/img/autho-methods.webp)
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list showing Purchase Order -->
+Look for **Purchase Order Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-Search for **Purchase Order**, click the **X** next to it, and it turns into a green checkmark. The plugin is now enabled and ready to configure.
+![](/img/purchase-order-enable.webp)
 
 ## Configure the Plugin
 
 Click **Purchase Order** to open the settings screen.
 
 :::tip
+
 Click the **Toggle Inline Help** button at the top of any plugin settings screen to show a description below each field.
+
 :::
 
-<!-- SCREENSHOT: Plugin settings screen with Toggle Inline Help button highlighted -->
+![](/img/purchase-toggle.webp)
 
 ### Appearance
+
+![](/img/purchase-appearance.webp)
 
 **Display Name:** The name shown to customers at checkout. Defaults to `Purchase Order`. You can change this to match your terminology — for example, "Pay by Purchase Order" or "Account / Invoice."
 
@@ -71,68 +72,91 @@ Click the **Toggle Inline Help** button at the top of any plugin settings screen
 
 ### Purchase Order Number
 
+![](/img/purchase-order-restrictions.webp)
+
 These settings control whether and how customers enter their PO number at checkout.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Show Input Field** | Show the PO number input box when the customer selects this payment method | Yes |
-| **Require PO Number** | Customer must enter a PO number before placing the order | Yes |
-| **Restrict by User Group** | When on, the PO number is required only for specific user groups — everyone else can check out without one. Only visible when Require PO Number is Yes. | No |
-| **User Group(s)** | The user groups that must supply a PO number. Only visible when both Require PO Number and Restrict by User Group are Yes. | — |
+**Show Input Field:** Show the PO number input box when the customer selects this payment method
+
+**Require PO Number:** Customer must enter a PO number before placing the order
+
+**Restrict by User Group:** When on, the PO number is required only for specific user groups — everyone else can check out without one. Only visible when Require PO Number is Yes.
+
+**User Group(s):** The user groups that must supply a PO number. Only visible when both Require PO Number and Restrict by User Group are Yes.
 
 :::info
+
 Guest customers are never counted as members of a required group. If Restrict by User Group is on, guests can always check out without entering a PO number regardless of which groups are selected.
+
 :::
-
-**Help Text:** Optional descriptive text displayed beneath the PO number field at checkout — for example, "Enter the purchase order number from your procurement system." Leave blank to show no additional text.
-
-**Button Text:** The label on the checkout submit button. Defaults to `Place Order`.
 
 ### Order Status
 
 **Confirmed Order Status:** The J2Commerce order status applied when the order is placed using this method. Set this to your "Pending" or "Awaiting Payment" status. You will change it manually to a paid status once you receive the actual payment.
 
-### Geozone and Order Value Restrictions
+:::info
 
-| Field | Description |
-|-------|-------------|
-| **Geozone Restriction** | Limit this payment method to customers in a specific geozone — leave blank to allow all locations |
-| **Minimum Order Subtotal** | Hide this option when the cart subtotal is below this amount (0 = no minimum) |
-| **Maximum Order Subtotal** | Hide this option when the cart subtotal is above this amount (-1 = no maximum) |
+**NOTE**: If the order status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
+
+### Geozone
+
+**Geozone Restriction:** Limit this payment method to customers in a specific geozone — leave blank to allow all locations
+
+### Surcharge
+
+![](/img/purchase-surcharge.webp)
+
+Add an optional handling fee when a customer chooses Purchase Order.
+
+**Surcharge Name:** The label shown to the customer — for example, "Purchase Order handling fee"
+
+**Surcharge Percent:** A percentage of the order subtotal added as a fee
+
+**Surcharge Fixed:** A fixed amount added regardless of order size
+
+**Surcharge Tax Class:** A tax profile to apply to the surcharge — leave blank if no tax applies
+
+Leave both Surcharge Percent and Surcharge Fixed empty to charge no surcharge.
+
+### Order Value Restrictions
+
+![](/img/purchase-order-min-restrictions.webp)
+
+**Minimum Order Subtotal:** Hide this option when the cart subtotal is below this amount (0 = no minimum)
+
+**Maximum Order Subtotal:** Hide this option when the cart subtotal is above this amount (-1 = no maximum)
 
 :::warning
 Leave **Maximum Order Subtotal** at `-1` for no limit. Saving a blank value is treated as zero, which hides the payment method for all orders with any items in the cart.
 :::
 
-### Surcharge
+### Custom Messages
 
-Add an optional handling fee when a customer chooses Purchase Order.
-
-| Field | Description |
-|-------|-------------|
-| **Surcharge Name** | The label shown to the customer — for example, "Purchase Order handling fee" |
-| **Surcharge Percent** | A percentage of the order subtotal added as a fee |
-| **Surcharge Fixed** | A fixed amount added regardless of order size |
-| **Surcharge Tax Class** | A tax profile to apply to the surcharge — leave blank if no tax applies |
-
-Leave both Surcharge Percent and Surcharge Fixed empty to charge no surcharge.
-
-### Thank-You Message
+![](/img/purchase-order-text.webp)
 
 **Thanks Message:** Select an optional Joomla article to display on the order confirmation page after the customer places their order. Use this to give customers instructions on what happens next — for example, "Our team will review your purchase order and send a formal invoice within one business day."
 
-### Custom Stage Messages
-
 These optional text areas let you show a message to the customer at each stage of the payment process.
 
-| Field | When it appears |
-|-------|----------------|
-| **On Selection** | When the customer selects Purchase Order at the checkout payment step |
-| **On Before Payment** | Just before the customer clicks the Place Order button |
-| **On After Payment** | On the order confirmation page after the order is placed |
-| **On Error Payment** | If an error occurs during order processing |
+**Selection Text:** When the customer selects Purchase Order at the checkout payment step
+
+**Before Payment Text:** Just before the customer clicks the Place Order button
+
+&#x20;**After Payment Text:** On the order confirmation page after the order is placed
+
+**On Error Payment Text:** If an error occurs during order processing
+
+**Button Text:** The label on the checkout submit button. Defaults to `Place Order`.
+
+**Help Text:** Optional descriptive text displayed beneath the PO number field at checkout — for example, "Enter the purchase order number from your procurement system." Leave blank to show no additional text.
 
 ### Template Layout
+
+![](/img/purchase-style.webp)
 
 **Template Layout:** The checkout layout template. Leave on the default (`bootstrap5`) unless you have a custom layout installed. The plugin includes layouts for both Bootstrap 5 and UIkit frontends.
 
@@ -142,27 +166,37 @@ These optional text areas let you show a message to the customer at each stage o
 
 ## How Checkout Works for Customers
 
-1. The customer adds items to their cart and proceeds to checkout.
-2. At the payment step, they select **Purchase Order** from the list of payment methods.
-3. If **Show Input Field** is on, a PO number field appears. If the field is required (for their user group), they must enter a value before continuing.
-4. The customer clicks **Place Order**.
-5. The order is created immediately and they see an order confirmation page. If a Thanks Message article is configured, it appears here.
-6. No redirect happens — the customer stays on your site throughout.
+The customer adds items to their cart and proceeds to checkout.
+
+At the payment step, they select **Purchase Order** from the list of payment methods.
+
+![](/img/purchase-order-frontend.webp)
+
+If **Show Input Field** is on, a PO number field appears. If the field is required (for their user group), they must enter a value before continuing.
+
+![](/img/purchase-order-frontend-po.webp)
+
+The customer clicks **Place Order**.
+
+The order is created immediately and they see an order confirmation page. If a Thanks Message article is configured, it appears here.
+
+No redirect happens — the customer stays on your site throughout.
 
 The order is placed in the status you configured in **Confirmed Order Status** and waits for you to confirm receipt of payment.
-
-<!-- SCREENSHOT: Checkout payment step showing the Purchase Order option with PO number input field -->
 
 ## Confirming Payment (Admin)
 
 When the actual payment arrives — by bank transfer, check, or whatever method your business uses — you confirm it manually in J2Commerce.
 
-1. Go to **J2Commerce** -> **Sales** -> **Orders**.
-2. Find and open the relevant order. The PO number entered by the customer is shown in the payment information panel.
-3. Change the order status to your confirmed/paid status using the **Order Status** dropdown in the order detail screen.
-4. Click **Save**.
+Go to **J2Commerce** -> **Sales** -> **Orders**.
 
-<!-- SCREENSHOT: Order detail screen showing PO number in the payment info panel and the order status dropdown -->
+Find and open the relevant order. The PO number entered by the customer is shown in the payment information panel.
+
+![](/img/purchase-order-frontend-po1.webp)
+
+Change the order status to your confirmed/paid status using the **Order Status** dropdown in the order detail screen.
+
+![](/img/purchase-order-frontend-po2.webp)
 
 The customer can also view their PO number on the order summary page in their customer account.
 

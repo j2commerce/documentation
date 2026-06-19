@@ -1,10 +1,3 @@
----
-title: "NMI Payment"
-sidebar_label: "NMI"
-sidebar_position: 35
-description: "Accept credit and debit card payments via NMI (Network Merchants) using secure hosted card fields that keep your store PCI-light."
----
-
 # NMI Payment
 
 The NMI Payment plugin lets your customers pay by credit or debit card at checkout, processed securely through NMI (Network Merchants Inc). Card fields are rendered inside NMI-hosted iframes using **Collect.js** — a technique called tokenization (the card details are turned into a single-use code so your site never stores or even sees the real card number). This keeps your store at the simplest PCI compliance level (SAQ-A) while still providing a seamless on-page checkout experience.
@@ -202,8 +195,6 @@ These optional text areas let you display short HTML messages to the customer at
 
 ## Checkout Experience
 
-<!-- SCREENSHOT: NMI Collect.js checkout card form embedded on the J2Commerce checkout page -->
-
 When a customer reaches the payment step at checkout they see:
 
 1. Three card-entry fields rendered by NMI's Collect.js: **Card Number**, **Expiry Date**, and **CVV**. These fields look like part of your page but the actual inputs run inside NMI-hosted iframes — your site never handles raw card data.
@@ -229,8 +220,6 @@ From the J2Commerce order screen, the NMI panel provides three admin actions:
 - **Capture Payment** — available when the transaction type is **Authorize Only** and the payment has been authorized but not yet captured. Click this to collect the funds.
 - **Issue Refund** — refund all or part of a settled payment. Enter the amount or select **Full refund** to return the entire amount. The maximum refundable amount is shown.
 - **Cancel / Void** — cancel an unsettled (pending) authorization. If the transaction has already settled, this button issues a refund automatically.
-
-<!-- SCREENSHOT: NMI admin payment panel on the J2Commerce order details screen showing Capture, Refund, and Void buttons -->
 
 ## Webhooks
 
@@ -275,7 +264,7 @@ Use any future expiry date and any three-digit CVV. The sandbox does not process
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and confirm the NMI plugin is enabled (green checkmark).
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** and confirm the NMI plugin is enabled (green checkmark).
 2. Check that the correct **Security Key** and **Tokenization Key** are filled in for the active environment (sandbox or live).
 3. Review **Minimum Subtotal** and **Maximum Subtotal** settings — if your cart total falls outside those limits, the method is hidden by design.
 4. Check whether a **Geozone Restriction** is configured and whether the customer's billing address matches it.

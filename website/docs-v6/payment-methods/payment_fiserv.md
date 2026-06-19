@@ -1,10 +1,3 @@
----
-title: "Fiserv Commerce Hub Payment"
-sidebar_label: "Fiserv Commerce Hub"
-sidebar_position: 27
-description: "Accept credit and debit card payments through Fiserv Commerce Hub — with hosted fields (SAQ-A), saved cards, authorize-only mode, and full capture, void, and refund from the order screen."
----
-
 # Fiserv Commerce Hub Payment
 
 The Fiserv Commerce Hub Payment plugin connects your J2Commerce store to the **Fiserv Commerce Hub** platform so customers can pay by credit or debit card at checkout. Card data is handled through secure hosted fields supplied by Fiserv — your server never touches raw card numbers, which qualifies your store for the simplest level of PCI security compliance (SAQ-A).
@@ -147,7 +140,7 @@ When enabled, a checkbox appears at checkout so customers can choose to save the
 
 - **Refunded Order Status:** Status to apply after a refund — only shown when Change Status on Refund is enabled
 
-**Change Status on Void:**Toggle on to automatically update the order status when a payment is voided
+\*\*Change Status on Void:\*\*Toggle on to automatically update the order status when a payment is voided
 
 - **Voided Order Status:** Status to apply after a void — only shown when Change Status on Void is enabled
 
@@ -226,8 +219,6 @@ Only enable this when diagnosing a specific problem. Disable it on live sites �
 5. The customer clicks **Place Order**.
 6. On success, the customer sees the order confirmation page.
 
-<!-- SCREENSHOT: Fiserv card form on the storefront checkout page -->
-
 ## Managing Payments from the Order Screen
 
 After an order is paid, you can take follow-up actions directly from the J2Commerce order detail page without leaving your admin panel.
@@ -241,8 +232,6 @@ If you set **Transaction Type** to **Authorize Only**, funds are reserved but no
 1. Open the order in **J2Commerce** -> **Sales** -> **Orders**.
 2. Click **Capture Payment** and confirm the prompt.
 3. The funds are collected from the customer's card and the order status updates automatically.
-
-<!-- SCREENSHOT: Order screen showing Capture Payment button -->
 
 ### Void an Authorization
 
@@ -268,8 +257,6 @@ You can refund a captured payment in full or in part.
 4. Click **Process Refund** to confirm.
 
 The refund is sent to the customer's original card. If **Change Status on Refund** is enabled, the order status updates automatically.
-
-<!-- SCREENSHOT: Refund dialog on the order screen showing amount field -->
 
 ## Testing Payments
 

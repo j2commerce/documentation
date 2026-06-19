@@ -232,6 +232,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app-arsdlid',
                         // Ask Question / Quote
                         'apps-and-extensions/apps/app-productquote',
+                        // Algolia Search Integration
+                        'apps-and-extensions/apps/algolia',
                         // Auto-Coupon Pop Up
                         'apps-and-extensions/apps/auto-coupon',
                         // Availability Notification
@@ -246,6 +248,10 @@ const sidebars = {
                         'apps-and-extensions/apps/app_calculatorsortbyprice',
                         // Change Password
                         'apps-and-extensions/apps/app_changepasswords',
+                        // Clover POS Integration
+                        'apps-and-extensions/apps/app_cloverpos',
+                        // Conditional Payment Methods
+                        'apps-and-extensions/apps/app_conditionalpayment',
                         // Content Fields
                         'apps-and-extensions/apps/contentfields',
                         // Currency Exchange Rates Updater
@@ -286,6 +292,8 @@ const sidebars = {
                         'apps-and-extensions/apps/minimumorder',
                         // Modal Bouncer
                         'apps-and-extensions/apps/app_modalbouncer',
+                        // Omnisend Integration
+                        'apps-and-extensions/apps/app_omnisend',
                         // Opening Hours
                         'apps-and-extensions/apps/openinghours',
                         // Order Files
@@ -296,6 +304,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app-profileorder',
                         // Payment Method Discount
                         'apps-and-extensions/apps/paymentdiscount',
+                        // Payment Method Restrictions
+                        'apps-and-extensions/apps/app-restrictpayment',
                         // PDF Invoices
                         'apps-and-extensions/apps/pdfinvoices',
                         // Points and Rewards
@@ -340,6 +350,8 @@ const sidebars = {
                         'apps-and-extensions/apps/twilio',
                         // User Group Tax Exemptions
                         'apps-and-extensions/apps/app-usertaxexemptions',
+                        // Veeqo
+                        'apps-and-extensions/apps/app_veeqo',
                         // Vendor Marketplace
                         'apps-and-extensions/apps/app-vendormarketplace',
                         // Wishlist
@@ -354,6 +366,8 @@ const sidebars = {
                         slug: '/apps-and-extensions/modules',
                     },
                     items: [
+                        // Algolia Search Module
+                        'apps-and-extensions/modules/mod_j2commerce_algoliasearch',
                         // Categories Module
                         'apps-and-extensions/modules/mod_j2commerce_categories',
                         // Currencies
@@ -410,14 +424,20 @@ const sidebars = {
                 'payment-methods/payment_adyen',
                 // Alipay Payment
                 'payment-methods/alipay',
+                // Amazon Pay
+                'payment-methods/payment_amazonpay',
                 // Authorize.Net Payment Plugin
                 'payment-methods/authorize-net',
                 // Bank Transfer Payment
                 'payment-methods/payment_banktransfer',
+                // Barclaycard ePDQ Payment
+                'payment-methods/payment_barclays',
                 // Braintree Payment
                 'payment-methods/braintree',
                 // CardSave / Worldpay Legacy Gateway
-                'payment-methods/cardsave',
+                //'payment-methods/cardsave',
+                // Cardsave Payment
+                'payment-methods/payment_cardsave',
                 // Cash on Delivery Payment
                 'payment-methods/payment_cash',
                 // CCAvenue Payment
@@ -438,44 +458,84 @@ const sidebars = {
                 'payment-methods/payment-dojo',
                 // Elavon Converge Payment
                 'payment-methods/elavon',
+                // Elavon Payment Gateway
+                'payment-methods/payment_elavon',
                 // ePDQ / Worldline Hosted Payment Page
                 'payment-methods/epdq',
                 // eWAY Rapid Payment
                 'payment-methods/ewayrapid',
+                // Finix Payment
+                'payment-methods/payment_finix',
+                // Fiserv Commerce Hub Payment
+                'payment-methods/payment_fiserv',
                 // First Data (Global Gateway e4 / IPG Connect)
                 'payment-methods/firstdata',
                 // Flo2Cash Web2Pay
                 'payment-methods/flo2cash',
                 // GestPay / Axerve (Banca Sella) Payment
                 'payment-methods/gestpay',
+                // Global Payments
+                'payment-methods/payment_globalpayments',
                 // Icepay
                 'payment-methods/icepay',
                 // Kustom Payment
                 'payment-methods/payment_kustom',
+                // Lemon Squeezy Payment
+                'payment-methods/payment_lemonsqueezy',
+                // Mercury ACH Bank Payment
+                'payment-methods/payment_mercury',
                 // Mollie Payments
                 'payment-methods/payment_mollie',
                 // Moneris Checkout
                 'payment-methods/moneris',
                 // Money Order / Check Payment
                 'payment-methods/payment_moneyorder',
+                // Moyasar Payment
+                'payment-methods/payment_moyasar',
                 // MultiSafepay
                 'payment-methods/multisafepay',
+                // NMI Payment
+                'payment-methods/payment_nmi',
                 // Opayo (Sage Pay) Card Payments
                 'payment-methods/payment_opayo',
+                // Paddle Payment Plugin
+                'payment-methods/payment_paddle',
+                // Payfast Payment
+                'payment-methods/payment_payfast',
+                // PAYONE Commerce Platform Payment
+                'payment-methods/payment_payone',
                 // PayPal Payment
                 'payment-methods/payment_paypal',
                 // PayPal Complete
                 'payment-methods/payment_paypalcomplete',
+                // PayTabs Payment
+                'payment-methods/payment_paytabs',
                 // PayTrace
                 'payment-methods/payment_paytrace',
+                // PublicSquare Payment
+                'payment-methods/payment_publicsquare',
+                // Purchase Order Payment
+                'payment-methods/payment_purchaseorder',
+                // QuickBooks Payments
+                'payment-methods/payment_quickbooks',
+                // Rapyd Payment
+                'payment-methods/payment_rapyd',
                 // Simplify Payments (Mastercard Simplify Commerce)
                 'payment-methods/simplifypayment',
                 // Square Payment
                 'payment-methods/payment_square',
                 // Stripe Payment
                 'payment-methods/payment_stripe',
+                // SumUp Payment
+                'payment-methods/payment_sumup',
+                // Viva.com Payment
+                'payment-methods/payment_viva',
+                // Worldline Payment
+                'payment-methods/payment_worldline',
                 // Worldpay Payment
                 'payment-methods/payment_worldpay',
+                // ZarinPal Payment
+                'payment-methods/zarinpal',
             ],
         },
         {

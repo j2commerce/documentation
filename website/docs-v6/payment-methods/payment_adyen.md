@@ -343,7 +343,7 @@ If the **Cancel Payment** button is not visible, the payment has already been ca
 
 ### Issue a Refund
 
-<!-- SCREENSHOT: Order screen showing Issue Refund and refund amount field -->
+![](/img/adyen-refund.webp)
 
 You can refund a captured payment in full or in part.
 
@@ -375,8 +375,6 @@ To get the **Test credit card number**, go to [Test card numbers | Adyen Docs](h
 :::warning
 Remember to turn off **Test Mode** before accepting real orders. A warning banner on the J2Commerce dashboard will remind you if Test Mode is still active.
 :::
-
-<!-- SCREENSHOT: J2Commerce dashboard showing "Adyen is in test mode" warning banner -->
 
 ## Troubleshooting
 

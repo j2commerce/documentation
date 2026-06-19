@@ -1,10 +1,3 @@
----
-title: "Donation"
-sidebar_label: "Donation"
-sidebar_position: 30
-description: "Let customers add a freeform donation amount to any product using the Donation app for J2Commerce."
----
-
 # Donation
 
 The Donation app adds a **Donation** product option type to J2Commerce. Once the app is active, you create a Donation option and assign it to any product. On the product page, customers see a currency-symbol text field where they type any amount they choose. That amount is added to the product price and carries through the cart, order confirmation, and admin order detail — no extra configuration required.
@@ -17,66 +10,81 @@ This app suits charities, non-profits, community stores, or any seller who wants
 - Joomla 6.x
 - J2Commerce 6.x
 
-## Installation
+## Purchase and Download
 
-The Donation app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
-1. Purchase and download the `app_donation.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_donation.zip` package file.
-4. The plugin installs and enables automatically.
+**Step 2:** Locate the **Donation** app **->** click **View Details** **->** **Add to cart -> Checkout**.
 
-<!-- SCREENSHOT: Joomla Extensions installer confirmation screen after uploading app_donation.zip, showing a success message. -->
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
+
+## Install the App
+
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
+
+Upload the `app_donation.zip` file or use the Install from URL option.
+
+![](/img/install.webp)
 
 ## Enable the App
 
-After installation, confirm the plugin is active:
+Once you have installed the app, you will need to enable it. There are **two** ways you can access the extension.
 
-1. Go to **J2Commerce** -> **Apps**.
-2. Find **Donation** in the list.
-3. If the status indicator shows a red X, click it to enable the plugin.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list with the Donation row visible and the status toggle set to enabled (green check). -->
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![](/img/gift-wrap-apps.webp)
+
+Look for **Donation**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/donation-enable1.webp)
 
 ## Adding a Donation Option to a Product
 
 The Donation app works through J2Commerce's standard product options system. You create an option with type **Donation** and then assign it to one or more products.
 
-### Step 1: Create a Donation option
+### Create a Donation option
 
-1. Go to **J2Commerce** -> **Catalog** -> **Options**.
-2. Click **New** in the toolbar.
-3. Fill in the form:
+Go to **J2Commerce** **-> Catalog ->** **Options**.
 
-<!-- SCREENSHOT: Options edit form with the Type field set to "Donation" and the Option Name field filled in. -->
+Click **New** in the toolbar.
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Option Name** | The label shown to customers above the input field. | `Donation Amount` |
-| **Type** | Select **Donation** from the dropdown. This option type is registered by the Donation app and only appears when the app is enabled. | `Donation` |
-| **Status** | Set to **Enabled**. | Enabled |
+![](/img/donation-options.webp)
 
-4. Click **Save & Close**.
+**Fill in the form**
 
-### Step 2: Assign the option to a product
+![](/img/donation-options-new.webp)
 
-1. Go to **J2Commerce** -> **Catalog** -> **Products** and open the product you want to accept donations for.
-2. Click the **Options** tab.
-3. Click **Add Option** and select the Donation option you just created.
+**Option Name:** The label shown to customers above the input field.
 
-<!-- SCREENSHOT: Product edit screen, Options tab, showing the Donation option in the assigned options list with the Required toggle visible. -->
+**Type:** Select **Donation** from the dropdown. This option type is registered by the Donation app and only appears when the app is enabled.
 
-| Setting | Description |
-|---------|-------------|
-| **Required** | When enabled, a red asterisk appears next to the label on the product page, signaling to customers that a donation amount is expected before adding the item to the cart. |
+**Status:** Set to **Published**.
 
-4. Click **Save** or **Save & Close**.
+### Assign the option to a product
 
-### Step 3: Verify on the product page
+![](/img/donation-product.webp)
+
+Go to **J2Commerce** **-> Catalog -> Products** and open the product you want to accept donations for.
+
+Click the **Options** tab.
+
+Click **Add Option** and select the Donation option you just created.
+
+![](/img/donation-product1.webp)
+
+**Required:** When enabled, a red asterisk appears next to the label on the product page, signaling to customers that a donation amount is expected before adding the item to the cart.
+
+![](/img/donation-product2.webp)
+
+- When the customer tries to add the product to the cart without entering a donation amount, they receive a **Donation Amount is required** message
+
+![](/img/donation-product3.webp)
+
+### Verify on the product page
 
 Visit the product on the frontend. The donation input appears below any other product options. It shows your store's active currency symbol on the left and accepts a numeric amount.
-
-<!-- SCREENSHOT: Product page showing the Donation Amount label, the currency symbol prefix (e.g., $), and the empty text input. -->
 
 ## What the Customer Sees
 
@@ -88,12 +96,15 @@ On the product page, the customer sees:
 
 When the customer enters an amount and clicks **Add to Cart**:
 
-1. J2Commerce checks that the value is a positive number. If it is not — for example, if the customer typed letters or left the field at zero — an error message appears and the item is not added to the cart.
-2. If the amount is valid, it is added to the product's unit price for that line item.
-3. The cart shows a donation line alongside any other option details, so the customer can see exactly what they contributed.
-4. The donation line carries through to the order confirmation page and the admin order detail view.
+J2Commerce checks that the value is a positive number. If it is not — for example, if the customer typed letters or left the field at zero — an error message appears and the item is not added to the cart.
 
-<!-- SCREENSHOT: Cart showing a product line with a "Donation Amount ($)" sub-line and the entered value as a price adjustment. -->
+If the amount is valid, it is added to the product's unit price for that line item.
+
+The cart shows a donation line alongside any other option details, so the customer can see exactly what they contributed.
+
+The donation line carries through to the order confirmation page and the admin order detail view.
+
+![](/img/donation-product5.webp)
 
 ## How Donated Amounts Appear in Orders
 
@@ -112,11 +123,13 @@ This entry is visible in:
 
 ## Plugin Settings
 
-To access plugin settings, go to **J2Commerce** -> **Apps**, find **Donation**, and click the plugin name to open its configuration. You can also reach the same settings via **System** -> **Manage** -> **Plugins** and searching for **Donation** (group: **J2Commerce**).
+![](/img/donation-debug.webp)
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Debug Mode** | When enabled, the plugin writes diagnostic messages to `administrator/logs/app_donation.php`. Useful for troubleshooting setup issues. Disable in production. | No |
+To access plugin settings, go to **J2Commerce** -> **Apps**, find **Donation**, and click the plugin name to open its configuration.&#x20;
+
+**Debug Mode**
+
+When enabled, the plugin writes diagnostic messages to `administrator/logs/app_donation.php`. Useful for troubleshooting setup issues. Disable in production.
 
 ## What's New in J2Commerce 6
 
