@@ -38,20 +38,35 @@ Before you install the plugin, confirm you have all of the following:
 
 ***
 
-## Installation
+## Purchase and Download
 
-1. Purchase and download the `payment_alipay.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_alipay.zip` file and click **Upload & Install**.
-4. The plugin installs and enables automatically.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) **->** **Payment Gateways**
 
-After installation, go to **J2Commerce** -> **Payments** -> **Payment Methods** to configure it.
+**Step 2:** Locate **Alipay Payment ->** click **View Details** **->** **Add to Cart -> Checkout**
 
-<!-- SCREENSHOT: Payment Methods list showing Alipay listed and enabled -->
+**Step 3:** Go to **My Downloads** under your profile button at the top right corner and search for PayTrace. Click **Available Versions -> View Files -> Download Now**
 
-***
+## Install the Plugin
 
-## Configuration
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
+
+Upload the `payment_alipay.zip` package ZIP file or use the Install from URL option.
+
+![](/img/install.webp)
+
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Alipay Payment,** click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+## Configure the Plugin
 
 :::tip
 
@@ -63,16 +78,21 @@ Open the Alipay payment method in your payment methods list and work through eac
 
 ### Alipay Credentials tab
 
-| Field                  | Description                                               | Notes                                                              |
-| ---------------------- | --------------------------------------------------------- | ------------------------------------------------------------------ |
-| **Display Name**       | The label shown to customers at checkout                  | Default: `Alipay`                                                  |
-| **Display Image**      | Logo image shown next to the payment name                 | A default Alipay logo is included; replace with your own if needed |
-| **Partner ID**         | Your live Alipay Partner ID (PID)                         | Required for live transactions                                     |
-| **MD5 Key**            | Your live Alipay MD5 security key                         | Stored encrypted; hidden in the admin form                         |
-| **Use Sandbox**        | Toggle sandbox mode on/off                                | Set to **Yes** while testing; always turn off before going live    |
-| **Sandbox Partner ID** | Partner ID for the Alipay sandbox                         | Appears only when **Use Sandbox** is enabled                       |
-| **Sandbox MD5 Key**    | MD5 key for the sandbox environment                       | Appears only when **Use Sandbox** is enabled                       |
-| **Debug Mode**         | Write all gateway interactions to the J2Commerce log file | Never enable on a live store; disable when testing is complete     |
+**Display Name:** The label shown to customers at checkout
+
+**Display Image:** Logo image shown next to the payment name
+
+**Partner ID:** Your live Alipay Partner ID (PID)
+
+**MD5 Key:** Your live Alipay MD5 security key
+
+**Use Sandbox:** Toggle sandbox mode on/off
+
+**Sandbox Partner ID:** Partner ID for the Alipay sandbox
+
+**Sandbox MD5 Key:** MD5 key for the sandbox environment
+
+**Debug Mode:** Write all gateway interactions to the J2Commerce log file
 
 <!-- SCREENSHOT: Alipay Credentials tab in payment method configuration -->
 
