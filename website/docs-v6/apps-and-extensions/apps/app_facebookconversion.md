@@ -16,6 +16,32 @@ The Meta Pixel / Facebook Conversion app connects your J2Commerce store to Meta'
 - J2Commerce 6.x
 - A Meta Business account with at least one Pixel/Dataset created
 
+## Find Your Pixel ID {#find-pixel-id}
+
+The Pixel ID is the most important piece of information you need before configuring the app. Meta renamed the Events Manager interface during 2025–2026, so here is the exact path as it appears today.
+
+**Step 1:** Sign in at [https://business.facebook.com/](https://business.facebook.com/)
+
+**Step 2:** Click the **gear icon (Settings)** in the left sidebar. This opens **Business Settings**.
+
+**Step 3:** In the left menu of Business Settings, click **Events dataset and pixel**.
+
+The direct URL is: [https://business.facebook.com/latest/settings/events\_dataset\_and\_pixel](https://business.facebook.com/latest/settings/events_dataset_and_pixel)
+
+**Step 4:** Pick the Pixel / Dataset for your store from the list.
+
+If no Pixel exists yet, click **Add -> Create a pixel**, give it a name that matches your website (for example, "My Store Pixel"), and click **Create**.
+
+**Step 5:** With the dataset selected, the numeric **Dataset / Pixel ID** appears at the top of the panel, just below the name. It is a 15- or 16-digit number. Click the **copy icon** next to it.
+
+**Step 6:** Paste that number into the **Pixel ID** field in the plugin settings (described in the next section) and click **Save**.
+
+:::info
+
+NOTE: If you manage multiple stores or clients, each store should have its own dedicated Pixel. Do not share a single Pixel across unrelated stores.
+
+:::
+
 ## Purchase and Download
 
 **Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
@@ -46,33 +72,7 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 Search for **Meta Pixel / Facebook Conversion**, click the **X**, and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-## Find Your Pixel ID {#find-pixel-id}
-
-The Pixel ID is the most important piece of information you need before configuring the app. Meta renamed the Events Manager interface during 2025–2026, so here is the exact path as it appears today.
-
-**Step 1:** Sign in at [https://business.facebook.com/](https://business.facebook.com/)
-
-**Step 2:** Click the **gear icon (Settings)** in the left sidebar. This opens **Business Settings**.
-
-**Step 3:** In the left menu of Business Settings, click **Events dataset and pixel**.
-
-The direct URL is: [https://business.facebook.com/latest/settings/events\_dataset\_and\_pixel](https://business.facebook.com/latest/settings/events_dataset_and_pixel)
-
-**Step 4:** Pick the Pixel / Dataset for your store from the list.
-
-If no Pixel exists yet, click **Add -> Create a pixel**, give it a name that matches your website (for example, "My Store Pixel"), and click **Create**.
-
-**Step 5:** With the dataset selected, the numeric **Dataset / Pixel ID** appears at the top of the panel, just below the name. It is a 15- or 16-digit number. Click the **copy icon** next to it.
-
-**Step 6:** Paste that number into the **Pixel ID** field in the plugin settings (described in the next section) and click **Save**.
-
-[//]: # (![]&#40;placeholder.webp&#41; *The Dataset/Pixel ID shown in Business Settings under Events dataset and pixel.*)
-
-:::info
-
-NOTE: If you manage multiple stores or clients, each store should have its own dedicated Pixel. Do not share a single Pixel across unrelated stores.
-
-:::
+![](/img/facebook-enable.webp)
 
 ## Configure the App {#configure-the-app}
 
@@ -84,21 +84,17 @@ Click on the **Meta Pixel / Facebook Conversion** title next to the green checkm
 
 :::
 
+![](/img/facebook-toggle.webp)
+
 ### Meta Pixel Settings tab {#meta-pixel-settings}
 
-[//]: # (![]&#40;placeholder.webp&#41; *The Meta Pixel Settings fieldset in the plugin configuration.*)
+![](/img/facebook-config-basic.webp)
 
-#### Pixel ID
+**Pixel ID:** Enter the numeric Pixel ID you copied from Meta Business Settings. Leave this blank and the plugin will not load any tracking code at all — useful if you need to temporarily disable tracking without uninstalling the app.
 
-Enter the numeric Pixel ID you copied from Meta Business Settings. Leave this blank and the plugin will not load any tracking code at all — useful if you need to temporarily disable tracking without uninstalling the app.
+- **Example:** `1234567890123456`
 
-| Recommended value | Your 15–16 digit Pixel ID |
-| ----------------- | ------------------------- |
-| Example           | `1234567890123456`        |
-
-#### Additional Pixel IDs
-
-A textarea that accepts one numeric Pixel ID per line. All IDs listed here are initialized alongside the primary Pixel.
+**Additional Pixel IDs:** A textarea that accepts one numeric Pixel ID per line. All IDs listed here are initialized alongside the primary Pixel.
 
 :::info
 
@@ -106,67 +102,55 @@ NOTE: Most stores only need one Pixel. Use this field only when a store must sen
 
 :::
 
-#### Enabled Events
+**Enabled Events:** A multi-select list of the standard Meta Pixel events the plugin can fire. All seven events are selected by default. Deselect any event you do not want fired without affecting the others. Below shows the Event and when it fires:&#x20;
 
-A multi-select list of the standard Meta Pixel events the plugin can fire. All seven events are selected by default. Deselect any event you do not want fired without affecting the others.
+- **ViewContent:** A shopper opens a product detail page
 
-| Event                | When it fires                                                      |
-| -------------------- | ------------------------------------------------------------------ |
-| **ViewContent**      | A shopper opens a product detail page                              |
-| **AddToCart**        | A shopper adds a product to the cart                               |
-| **RemoveFromCart**   | A shopper removes a product from the cart (sent as a custom event) |
-| **InitiateCheckout** | A shopper reaches the checkout page                                |
-| **AddPaymentInfo**   | A shopper submits payment details during checkout                  |
-| **Purchase**         | An order is confirmed and the thank-you page loads                 |
-| **Search**           | A shopper submits a search query using the store's search filter   |
+- **AddToCart:** A shopper adds a product to the cart
 
-#### Content ID Source
+- **RemoveFromCart:** A shopper removes a product from the cart (sent as a custom event)
 
-Tells the plugin which product identifier to include as the `content_ids` value in each Pixel event. This must match the identifier used in your Meta Commerce Catalog product feed.
+- **InitiateCheckout:** A shopper reaches the checkout page
 
-| Option                    | When to choose it                                                           |
-| ------------------------- | --------------------------------------------------------------------------- |
-| **J2Commerce Product ID** | Your catalog feed uses the internal J2Commerce numeric product ID (default) |
-| **Product SKU**           | Your catalog feed uses the product SKU field                                |
+- **AddPaymentInfo:** A shopper submits payment details during checkout
+
+- **Purchase:** An order is confirmed and the thank-you page loads
+
+- **Search:** A shopper submits a search query using the store's search filter
+
+**Content ID Source:** Tells the plugin which product identifier to include as the `content_ids` value in each Pixel event. This must match the identifier used in your Meta Commerce Catalog product feed. Below shows the opions and when to choose it.
+
+- **J2Commerce Product ID:** Your catalog feed uses the internal J2Commerce numeric product ID (default)
+
+- **Product SKU:** Your catalog feed uses the product SKU field
 
 Pick one and stick with it. Switching after your catalog is live will break the connection between ad events and catalog products.
 
-#### Content Type
+**Content Type:** Controls the `content_type` value sent with Pixel events.
 
-Controls the `content_type` value sent with Pixel events.
+- **product:** Matches events to individual variants in the catalog (recommended for stores with variable products)
 
-| Option             | Meaning                                                                                              |
-| ------------------ | ---------------------------------------------------------------------------------------------------- |
-| **product**        | Matches events to individual variants in the catalog (recommended for stores with variable products) |
-| **product\_group** | Matches events to the parent product group regardless of variant                                     |
+- **product\_group:** Matches events to the parent product group regardless of variant
 
-#### Track Category Views
-
-When set to **Yes** (the default), the plugin fires a **ViewContent** event — with `content_type` set to `product_group` — whenever a visitor lands on a product category page. It also wires a click-tracking listener onto each product card on the page so that clicking a product fires the event immediately, before the product page loads.
+**Track Category Views:** When set to **Yes** (the default), the plugin fires a **ViewContent** event — with `content_type` set to `product_group` — whenever a visitor lands on a product category page. It also wires a click-tracking listener onto each product card on the page so that clicking a product fires the event immediately, before the product page loads.
 
 Set to **No** only if you prefer to limit ViewContent tracking to individual product pages.
 
-#### Debug Mode
+**Debug Mode:** When set to **Yes**, the plugin logs each fired Pixel event to the browser's developer console and writes Conversions API call details to `logs/fbpixel-capi.php` in your Joomla installation. **Always turn this off before going live.** The log file grows quickly under real traffic and the console output is visible to anyone who inspects the page.
 
-When set to **Yes**, the plugin logs each fired Pixel event to the browser's developer console and writes Conversions API call details to `logs/fbpixel-capi.php` in your Joomla installation.
-
-**Always turn this off before going live.** The log file grows quickly under real traffic and the console output is visible to anyone who inspects the page.
+**Require Marketing Consent:** When set to **Yes**, the Pixel base code and all fbq() events are held until the visitor has accepted marketing cookies. The plugin checks the joomla\_user\_state\_consent\_marketing cookie (value 1 = accepted) and also listens for the joomla\:consent\:marketing DOM event so any GDPR / cookie-consent banner that sets the cookie or fires that event unlocks tracking. Set to No only when you do not need GDPR / EU consent gating.
 
 ***
 
 ### Conversions API (Server-Side) tab {#capi-settings}
 
+![](/img/facebook-config-api1.webp)
+
 The Conversions API (CAPI) sends the same events from your Joomla server directly to Meta, in parallel with the browser Pixel. This recovers conversions that ad blockers, iOS 14.5+ privacy restrictions, or browser extensions would otherwise silently drop. Configure the browser Pixel first and verify it is working before enabling CAPI.
 
-[//]: # (![]&#40;placeholder.webp&#41; *The Conversions API fieldset — additional fields appear after enabling.*)
+**Enable Conversions API:** Set to **Yes** to activate server-side event mirroring. The remaining CAPI fields become visible only when this is set to **Yes**.
 
-#### Enable Conversions API
-
-Set to **Yes** to activate server-side event mirroring. The remaining CAPI fields become visible only when this is set to **Yes**.
-
-#### Access Token {#find-access-token}
-
-The access token authenticates your server's requests to Meta's Graph API. Follow these steps to generate one.
+**Access Token:** The access token authenticates your server's requests to Meta's Graph API. Follow these steps to generate one.
 
 **Step 1:** In Meta Business Settings, go to **Events dataset and pixel** and open the Dataset for your store.
 
@@ -176,17 +160,13 @@ The access token authenticates your server's requests to Meta's Graph API. Follo
 
 **Step 4:** Copy the long token that appears and paste it into the **Access Token** field. Save it somewhere safe — Meta only shows it once.
 
-[//]: # (![]&#40;placeholder.webp&#41; *The Generate access token button in the Dataset Settings tab.*)
-
 :::info
 
 NOTE: The Access Token must come from the same Dataset/Pixel that your Pixel ID belongs to. Using a token from a different Pixel will cause all CAPI calls to be rejected silently.
 
 :::
 
-#### Test Event Code
-
-An optional code (for example, `TEST40533`) that routes CAPI events to the **Test Events** panel in Meta instead of production reporting. Use this during setup to confirm events arrive correctly, then clear the field before launch.
+**Test Event Code:** An optional code (for example, `TEST40533`) that routes CAPI events to the **Test Events** panel in Meta instead of production reporting. Use this during setup to confirm events arrive correctly, then clear the field before launch.
 
 **How to find your Test Event Code:**
 
@@ -196,29 +176,23 @@ An optional code (for example, `TEST40533`) that routes CAPI events to the **Tes
 4. Trigger a purchase or add-to-cart on your site and watch the Test Events panel update in real time.
 5. Once verified, delete the code from this field and save again.
 
-#### Graph API Version
+![](/img/facebook-config-api2.webp)
 
-The version of the Meta Graph API used for CAPI requests. The default is `v18.0`. Check the [Meta for Developers changelog](https://developers.facebook.com/docs/graph-api/changelog/) for the latest supported version if you need to update it.
+**Graph API Version:** The version of the Meta Graph API used for CAPI requests. The default is `v18.0`. Check the [Meta for Developers changelog](https://developers.facebook.com/docs/graph-api/changelog/) for the latest supported version if you need to update it.
 
-#### HTTP Timeout (seconds)
-
-The maximum number of seconds the server will wait for Meta's CAPI endpoint to respond before giving up. The default is `3` seconds.
+**HTTP Timeout (seconds):** The maximum number of seconds the server will wait for Meta's CAPI endpoint to respond before giving up. The default is `3` seconds.
 
 Keep this value low (2–5 seconds). CAPI requests run on the order confirmation page — a slow Meta server should not make customers feel like their order is hanging.
 
-#### Events to Mirror via CAPI
-
-A multi-select list of which browser Pixel events to also send server-side. The default selection covers the highest-value events: **Purchase**, **InitiateCheckout**, **AddToCart**, **ViewContent**, **Search**, and **AddPaymentInfo**.
+**Events to Mirror via CAPI:** A multi-select list of which browser Pixel events to also send server-side. The default selection covers the highest-value events: **Purchase**, **InitiateCheckout**, **AddToCart**, **ViewContent**, **Search**, and **AddPaymentInfo**.
 
 You can include or exclude any of the seven available events. PageView is not in the list because sending every page view via CAPI at high volume is rarely worthwhile for ad optimization.
 
-#### Send Hashed Email
+![](/img/facebook-config-api3.webp)
 
-When **Yes**, the plugin includes the visitor's email address (hashed with SHA-256) in CAPI events. Meta uses this for Advanced Matching — it improves attribution by linking server events to Meta user accounts. The email comes from the order record or the logged-in user's account.
+**Send Hashed Email:** When **Yes**, the plugin includes the visitor's email address (hashed with SHA-256) in CAPI events. Meta uses this for Advanced Matching — it improves attribution by linking server events to Meta user accounts. The email comes from the order record or the logged-in user's account.
 
-#### Send Hashed Phone
-
-When **Yes**, the plugin includes the billing phone number (SHA-256 hashed, digits only) in CAPI events. The phone number comes from the order's billing information.
+**Send Hashed Phone:** When **Yes**, the plugin includes the billing phone number (SHA-256 hashed, digits only) in CAPI events. The phone number comes from the order's billing information.
 
 ***
 
