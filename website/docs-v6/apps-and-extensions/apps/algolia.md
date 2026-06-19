@@ -67,37 +67,33 @@ To help you narrow down the list, you can do a search for the **Algolia Search I
 2. Click **Algolia** to open the configuration form.
 3. Fill in the required fields described below, then click **Save** in the toolbar.
 
-<!-- SCREENSHOT: Algolia plugin configuration form showing the Application ID and Admin API Key fields -->
-
 ### Connection Settings
 
-| Field              | Description                                                                                                                                                                                                                                                       |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Application ID** | Your Algolia Application ID (found on the API Keys page in the Algolia Dashboard).                                                                                                                                                                                |
-| **Admin API Key**  | Your Algolia Admin API Key. Stored server-side only — never exposed to the browser.                                                                                                                                                                               |
-| **Index Prefix**   | A prefix applied to all indices this plugin creates. Default: `j2c_`. A prefix of `j2c_` creates indices named `j2c_products`, `j2c_products_price_asc`, and `j2c_products_price_desc`. Use a unique prefix per environment (e.g. `staging_` for your test site). |
+**Application ID:** Your Algolia Application ID (found on the API Keys page in the Algolia Dashboard).
+
+**Admin API Key:** Your Algolia Admin API Key. Stored server-side only — never exposed to the browser.
+
+**Index Prefix:** A prefix applied to all indices this plugin creates. Default: `j2c_`. A prefix of `j2c_` creates indices named `j2c_products`, `j2c_products_price_asc`, and `j2c_products_price_desc`. Use a unique prefix per environment (e.g. `staging_` for your test site).
 
 ### Search Module Settings
 
-| Field                   | Description                                                                                                                                                                                     |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Search-Only API Key** | A read-only key (ACL: search) used by the storefront search module. Click **Generate Search-Only Key** in the action panel to create this automatically. Paste the generated key here and save. |
+**Search-Only API Key:** A read-only key (ACL: search) used by the storefront search module. Click **Generate Search-Only Key** in the action panel to create this automatically. Paste the generated key here and save.
 
 ### Index Content
 
-| Field                | Description                                                                                                                                                                                                                      |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Fields to Index**  | Select which product fields are sent to Algolia. Leave empty to index all available fields. Useful for reducing index size on large catalogues — for example, omit **Variants** if you have thousands of variant-heavy products. |
-| **Facet Attributes** | The product attributes Algolia configures as facets when you click **Push Index Settings**. These control what appears in filter panels on the search results page.                                                              |
+**Fields to Index:** Select which product fields are sent to Algolia. Leave empty to index all available fields. Useful for reducing index size on large catalogues — for example, omit **Variants** if you have thousands of variant-heavy products.
+
+**Facet Attributes:** The product attributes Algolia configures as facets when you click **Push Index Settings**. These control what appears in filter panels on the search results page.
 
 ### Performance and Features
 
-| Field                        | Description                                                                                                                                                         | Default |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Cron Batch Size**          | Maximum number of products processed per cron run. Reduce this (e.g. to 100) if your server times out during reindexing.                                            | 500     |
-| **Enable Algolia Insights**  | Enables click and conversion event tracking. Required for AI Re-Ranking, personalisation, and analytics features. The storefront module handles sending the events. | No      |
-| **Enable Algolia Recommend** | Enables Algolia Recommend models (Related Products, Frequently Bought Together). Requires a trained model in your Algolia account and Insights enabled.             | No      |
-| **Debug Mode**               | Writes detailed log entries to `administrator/logs/app_algolia.php`. Disable in production.                                                                         | No      |
+**Cron Batch Size:** Maximum number of products processed per cron run. Reduce this (e.g. to 100) if your server times out during reindexing.
+
+**Enable Algolia Insights:** Enables click and conversion event tracking. Required for AI Re-Ranking, personalisation, and analytics features. The storefront module handles sending the events.
+
+**Enable Algolia Recommend:** Enables Algolia Recommend models (Related Products, Frequently Bought Together). Requires a trained model in your Algolia account and Insights enabled.
+
+**Debug Mode:** Writes detailed log entries to `administrator/logs/app_algolia.php`. Disable in production.
 
 ## Action Panel
 
@@ -150,14 +146,17 @@ New Algolia API keys take a few seconds to activate after creation. Do not use t
 
 ## How Automatic Indexing Works
 
+Below shows the Event and what happens in Algolia
+
 Once configured, the plugin keeps your Algolia index in sync automatically:
 
-| Event                     | What happens in Algolia                                          |
-| ------------------------- | ---------------------------------------------------------------- |
-| Product saved (published) | Product record is added or updated in the index                  |
-| Product unpublished       | Product record is deleted from the index                         |
-| Product hard-deleted      | Product record is deleted from the index                         |
-| Cron run                  | Queued index jobs (from Reindex All or bulk saves) are processed |
+- **Product saved (published):** Product record is added or updated in the index
+
+- **Product unpublished:** Product record is deleted from the index
+
+- **Product hard-deleted:** Product record is deleted from the index
+
+- **Cron run:** Queued index jobs (from Reindex All or bulk saves) are processed
 
 All indexing operations are **queued and asynchronous** — Algolia processes them in the background and the record becomes searchable once the task completes. For high-priority updates (e.g. a price change on a flash sale), the record is indexed within seconds on the next cron run.
 
