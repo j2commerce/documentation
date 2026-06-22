@@ -268,10 +268,14 @@ const sidebars = {
                         'apps-and-extensions/apps/digifactu',
                         // Donation
                         'apps-and-extensions/apps/app-donation',
+                        // Easy Links
+                        'apps-and-extensions/apps/app_easylinks',
                         // Easy Reorder
                         'apps-and-extensions/apps/app_reorder',
                         // Email Cart
                         'apps-and-extensions/apps/app-emailbasket',
+                        // Order Withdrawal (EU Compliance)
+                        'apps-and-extensions/apps/orderwithdrawal',
                         // EU VAT Rules
                         'apps-and-extensions/apps/euvat',
                         // ExpertVoice Recommendations
@@ -282,6 +286,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app-gdpr',
                         // Gift Wrapping
                         'apps-and-extensions/apps/app-giftwrapping',
+                        // Google Merchant Feed
+                        'apps-and-extensions/apps/app_googlemerchantfeed',
                         // Google Tag Manager
                         'apps-and-extensions/apps/ecommercegoogletagmanager',
                         // Inventory Email Notifications
@@ -434,6 +440,7 @@ const sidebars = {
                 'payment-methods/payment_barclays',
                 // Braintree Payment
                 'payment-methods/braintree',
+                //'payment-methods/payment_braintree',
                 // CardSave / Worldpay Legacy Gateway
                 //'payment-methods/cardsave',
                 // Cardsave Payment
@@ -446,6 +453,8 @@ const sidebars = {
                 'payment-methods/payment_ceca',
                 // Checkout Finland (Paytrail)
                 'payment-methods/checkoutfi',
+                // Clover Payment
+                'payment-methods/payment_clover',
                 // Coinbase Commerce
                 'payment-methods/coinbase',
                 // Conekta Payment
@@ -478,6 +487,10 @@ const sidebars = {
                 'payment-methods/payment_globalpayments',
                 // Icepay
                 'payment-methods/icepay',
+                // Klarna Payment
+                'payment-methods/payment_klarna',
+                // Klarna Invoice (Pay Later)
+                'payment-methods/payment_klarnainvoice',
                 // Kustom Payment
                 'payment-methods/payment_kustom',
                 // Lemon Squeezy Payment
@@ -508,6 +521,8 @@ const sidebars = {
                 'payment-methods/payment_paypal',
                 // PayPal Complete
                 'payment-methods/payment_paypalcomplete',
+                // Paysafe Payment
+                'payment-methods/payment_paysafe',
                 // PayTabs Payment
                 'payment-methods/payment_paytabs',
                 // PayTrace
@@ -520,6 +535,10 @@ const sidebars = {
                 'payment-methods/payment_quickbooks',
                 // Rapyd Payment
                 'payment-methods/payment_rapyd',
+                // Redde Payment
+                'payment-methods/payment_redde',
+                // Safepay Payment
+                'payment-methods/payment_safepay',
                 // Simplify Payments (Mastercard Simplify Commerce)
                 'payment-methods/simplifypayment',
                 // Square Payment
