@@ -242,15 +242,25 @@ The **Thank You Article** field lets you display a Joomla article on the post-pa
 
 Here is what your customers experience from the moment they reach the payment step:
 
-1. The customer reaches the payment step of checkout and selects **Moneris** (or your configured display name) as their payment method.
-2. The customer proceeds to the **Confirm** step. J2Commerce loads the Moneris Hosted Tokenization iframe — a secure card-entry form served directly by Moneris appears on the page. The customer sees accepted card brand icons above the iframe if configured.
-3. If the customer has saved cards and **Allow Saved Cards** is enabled, they see their saved cards listed above the iframe and can select one without re-entering card details.
-4. The customer enters their card details inside the Moneris-hosted iframe. None of this information reaches your server.
-5. The customer clicks **Place Order**. The plugin requests a temporary tokenization from the Moneris iframe. Moneris returns a short-lived `data_key` (a vault reference) back to the page.
-6. J2Commerce submits the checkout form server-side with the `data_key`. The plugin calls the Moneris Direct XML API using your Store ID and API Token, submitting either a **purchase** or **preauth** transaction referencing the `data_key`.
-7. Moneris processes the payment and returns a receipt. The plugin checks the response code — a code below 050 is an approval.
-8. If approved, J2Commerce updates the order to your configured payment status, clears the cart, sends the confirmation email, and redirects the customer to the confirmation page.
-9. If declined, J2Commerce shows the decline message to the customer and updates the order to the failed status.
+The customer reaches the payment step of checkout and selects **Moneris** (or your configured display name) as their payment method.
+
+![](/img/moneris-frontend.webp)
+
+The customer proceeds to the **Confirm** step. J2Commerce loads the Moneris Hosted Tokenization iframe — a secure card-entry form served directly by Moneris appears on the page. The customer sees accepted card brand icons above the iframe if configured.
+
+If the customer has saved cards and **Allow Saved Cards** is enabled, they see their saved cards listed above the iframe and can select one without re-entering card details.
+
+The customer enters their card details inside the Moneris-hosted iframe. None of this information reaches your server.
+
+The customer clicks **Place Order**. The plugin requests a temporary tokenization from the Moneris iframe. Moneris returns a short-lived `data_key` (a vault reference) back to the page.
+
+J2Commerce submits the checkout form server-side with the `data_key`. The plugin calls the Moneris Direct XML API using your Store ID and API Token, submitting either a **purchase** or **preauth** transaction referencing the `data_key`.
+
+Moneris processes the payment and returns a receipt. The plugin checks the response code — a code below 050 is an approval.
+
+If approved, J2Commerce updates the order to your configured payment status, clears the cart, sends the confirmation email, and redirects the customer to the confirmation page.
+
+If declined, J2Commerce shows the decline message to the customer and updates the order to the failed status.
 
 Moneris is synchronous — there are no webhooks. The order result is determined entirely from the direct API response.
 

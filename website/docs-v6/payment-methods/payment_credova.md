@@ -27,7 +27,8 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 1. In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
 2. Upload the `payment_credova.zip` package file.
-3. The plugin installs and enables automatically.
+
+![](/img/address-install.webp)
 
 ## Enable the Plugin
 
@@ -35,6 +36,8 @@ After installation, navigate to the payment methods list:
 
 - **Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 - **Option B:** Go to **Components** -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Payment Methods**
+
+![](/img/autho-methods.webp)
 
 Find **Credova Financing** in the list, click the status toggle to enable it, then click the plugin name to open its settings.
 

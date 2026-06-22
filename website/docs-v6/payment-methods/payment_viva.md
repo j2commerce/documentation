@@ -310,13 +310,21 @@ Only enable this when diagnosing a specific problem. Disable it on live sites â€
 
 ## How Checkout Works for Customers {#how-it-works}
 
-1. The customer adds items to their cart and proceeds to checkout.
-2. On the payment step, the customer sees the Viva.com payment option with a notice that they will be redirected to a secure Viva-hosted payment page.
-3. If the customer is logged in and has saved cards on file (and **Allow Saved Cards** is enabled), they see a list of saved cards and can select one or choose to enter a new card.
-4. The customer clicks to pay. J2Commerce sends the order to Viva and receives a redirect link. The customer is sent to Viva's own hosted payment page.
-5. The customer enters their card details on Viva's secure page and submits payment.
-6. Viva processes the payment and redirects the customer back to your store using the **Success URL** configured on your payment source.
-7. J2Commerce finalizes the order, clears the cart, and shows the order confirmation page.
+The customer adds items to their cart and proceeds to checkout.
+
+![](/img/viva-frontend.webp)
+
+On the payment step, the customer sees the Viva.com payment option with a notice that they will be redirected to a secure Viva-hosted payment page.
+
+If the customer is logged in and has saved cards on file (and **Allow Saved Cards** is enabled), they see a list of saved cards and can select one or choose to enter a new card.
+
+The customer clicks to pay. J2Commerce sends the order to Viva and receives a redirect link. The customer is sent to Viva's own hosted payment page.
+
+The customer enters their card details on Viva's secure page and submits payment.
+
+Viva processes the payment and redirects the customer back to your store using the **Success URL** configured on your payment source.
+
+J2Commerce finalizes the order, clears the cart, and shows the order confirmation page.
 
 :::info
 

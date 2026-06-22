@@ -223,11 +223,17 @@ Only enable this when diagnosing a specific problem. Disable it on live sites â€
 
 ### Invoice Mode
 
-1. The customer adds items to their cart and proceeds to checkout.
-2. At the payment step, they select **ACH Bank Transfer (Mercury)** and see a prompt with a **Pay Now via Mercury** button.
-3. Clicking the button takes them to a Mercury-hosted page where they enter their bank details and authorise the payment.
-4. After paying, they are returned to the store and see an order confirmation page.
-5. Their order shows a pending status. It is confirmed automatically (typically within 2 to 3 business days) when Mercury reports the invoice as paid.
+The customer adds items to their cart and proceeds to checkout.
+
+At the payment step, they select **ACH Bank Transfer (Mercury)**
+
+![](/img/mercury-frontend.webp)
+
+Clicking the button takes them to a Mercury-hosted page where they enter their bank details and authorise the payment.
+
+After paying, they are returned to the store and see an order confirmation page.
+
+Their order shows a pending status. It is confirmed automatically (typically within 2 to 3 business days) when Mercury reports the invoice as paid.
 
 ### Reconcile Mode
 

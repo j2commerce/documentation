@@ -247,12 +247,21 @@ Only enable this when diagnosing a specific problem. Disable it on live sites �
 
 ## How Checkout Works for Customers
 
-1. The customer adds items to their cart and proceeds to checkout.
-2. On the payment step, the Finix embedded card form loads directly on the page. The card number, expiry date, and security code fields appear inside secure iframes hosted by Finix.
-3. If the customer is logged in, has saved cards on file, and **Allow Saved Cards** is enabled, they see their saved cards listed and can select one — or choose to use a new card.
-4. If the customer enters a new card and saved cards are enabled, they can choose to save it for future orders.
-5. The customer confirms the order. Finix processes the payment and returns the result to your store.
-6. On success, the customer sees the order confirmation page.
+The customer adds items to their cart and proceeds to checkout.
+
+![](/img/finix-frontend.webp)
+
+On the payment step, the Finix embedded card form loads directly on the page. The card number, expiry date, and security code fields appear inside secure iframes hosted by Finix.
+
+![](/img/finix-frontend1.webp)
+
+If the customer is logged in, has saved cards on file, and **Allow Saved Cards** is enabled, they see their saved cards listed and can select one — or choose to use a new card.
+
+If the customer enters a new card and saved cards are enabled, they can choose to save it for future orders.
+
+The customer confirms the order. Finix processes the payment and returns the result to your store.
+
+On success, the customer sees the order confirmation page.
 
 ## Webhooks
 
@@ -328,6 +337,10 @@ Always test in sandbox mode before going live.
 :::warning
 Remember to turn off **Use Sandbox (Test Mode)** before accepting real orders. A warning banner on the J2Commerce dashboard will remind you if sandbox mode is still active.
 :::
+
+## Test Credit Cards
+
+`4895142232120006` Visa, `5200828282828210` MC, `370000000000002` Amex
 
 ## Troubleshooting
 

@@ -261,12 +261,17 @@ If your store is on a local development server that cannot receive incoming conn
 
 ## How checkout works
 
-1. The customer reaches the payment step and selects **Moyasar** (or the display name you configured).
-2. The Moyasar Payment Form appears directly on your checkout page — card number, expiry, and CVV fields are hosted inside a secure Moyasar iframe. Your server never receives the raw card data.
-3. If Apple Pay or STC Pay is enabled, those options also appear in the form for eligible customers.
-4. The customer clicks **Place Order**. Moyasar processes the payment and may redirect the customer through a 3D Secure authentication step with their bank.
-5. After authentication, Moyasar sends a webhook notification to your store to confirm the outcome.
-6. The customer is redirected back to your order confirmation page.
+The customer reaches the payment step and selects **Moyasar** (or the display name you configured).
+
+The Moyasar Payment Form appears directly on your checkout page — card number, expiry, and CVV fields are hosted inside a secure Moyasar iframe. Your server never receives the raw card data.
+
+If Apple Pay or STC Pay is enabled, those options also appear in the form for eligible customers.
+
+The customer clicks **Place Order**. Moyasar processes the payment and may redirect the customer through a 3D Secure authentication step with their bank.
+
+After authentication, Moyasar sends a webhook notification to your store to confirm the outcome.
+
+The customer is redirected back to your order confirmation page.
 
 ### STC Pay checkout
 

@@ -17,27 +17,6 @@ The Clover POS Integration app links your Clover point-of-sale system to your J2
 - An active Clover merchant account
 - A Clover Developer Dashboard app with REST API permissions
 
-## Installation
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Purchase and download the `app_cloverpos.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_cloverpos.zip` package file.
-4. The plugin installs and enables automatically.
-
-## Enable the App
-
-Once installed, confirm the app is enabled:
-
-**Option A:** Go to the **J2Commerce** icon at the top right corner -> **Apps**.
-
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**.
-
-<!-- SCREENSHOT: J2Commerce Apps list showing Clover POS Integration with enabled toggle -->
-
-Locate **Clover POS Integration** in the list. If the toggle shows a red X, click it to turn it green. The app is now active.
-
 ## Before You Connect: Create a Clover Developer App
 
 The plugin connects to Clover through OAuth 2.0, so you need a Clover Developer App configured with the correct permissions and redirect URI. Complete this one-time setup in the Clover Developer Dashboard before touching the plugin settings.
@@ -62,8 +41,6 @@ Clover will reject signup with "User already exists" if the email is linked to a
 3. Give the app a name — for example, "My Store — J2Commerce Sync".
 4. Choose the appropriate region (North America, Europe, or LATAM) that matches where your merchant account is hosted.
 
-<!-- SCREENSHOT: Clover Developer Dashboard showing the Create App button -->
-
 ### Step 3: Configure app settings and permissions
 
 Once the app is created, open its settings. You need to configure two areas.
@@ -72,12 +49,12 @@ Once the app is created, open its settings. You need to configure two areas.
 
 Under **Requested Permissions**, enable at minimum:
 
-| Permission | Why it is needed |
-|------------|-----------------|
-| **Inventory Read** | Pull products, categories, and SKUs from Clover |
-| **Inventory Write** | Decrement and restock inventory after sales |
-| **Orders Read** | Read orders (required if Sync Sale to Clover POS is enabled) |
-| **Orders Write** | Push web orders into Clover POS |
+| Permission          | Why it is needed                                             |
+| ------------------- | ------------------------------------------------------------ |
+| **Inventory Read**  | Pull products, categories, and SKUs from Clover              |
+| **Inventory Write** | Decrement and restock inventory after sales                  |
+| **Orders Read**     | Read orders (required if Sync Sale to Clover POS is enabled) |
+| **Orders Write**    | Push web orders into Clover POS                              |
 
 :::info
 
@@ -104,7 +81,35 @@ From your app's dashboard:
 
 You will paste both values into the plugin settings in the next section.
 
-<!-- SCREENSHOT: Clover Developer Dashboard app settings page showing App ID and App Secret -->
+## Purchase and Download
+
+‌**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
+
+**Step 2:** Locate the **Clover POS Integration** App **->** click **View Details** **->** **Add to cart** **->** **Checkout**.&#x20;
+
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**
+
+## Install the App
+
+Go to **System** **->** **Install** **->** **Extensions**
+
+Upload the `app_cloverpos.zip ` file or use the Install from URL option.
+
+![](/img/address-install.webp)
+
+## Enable the App
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![](/img/address-apps.webp)
+
+To help you narrow down the list, you can do a search for the **Clover POS Integration** app, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/customers-bought-enable.webp)
 
 ## Configure the App
 
@@ -120,15 +125,15 @@ Click the **Toggle Inline Help** button in the toolbar to reveal a description b
 
 <!-- SCREENSHOT: Clover POS Integration plugin settings — Connection tab -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Environment** | Choose **Sandbox** for testing or a regional production environment (North America, Europe, Latin America) that matches your Clover merchant account | Sandbox |
-| **App ID** | The App ID (Client ID) from your Clover Developer Dashboard | — |
-| **App Secret** | The App Secret (Client Secret) from your Clover Developer Dashboard | — |
-| **Auth Code** | Leave blank. This field is only used if you need to manually supply a one-time authorization code outside the normal OAuth flow | — |
-| **OAuth Redirect URI** | Read-only. Copy this URL and paste it into your Clover Developer Dashboard under REST Configuration | Auto-generated |
-| **Connect to Clover** | Launches the OAuth authorization popup once App ID and App Secret are saved | — |
-| **Test Connection** | Verifies the stored token by calling the Clover API and displaying your merchant name | — |
+| Field                  | Description                                                                                                                                          | Default        |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| **Environment**        | Choose **Sandbox** for testing or a regional production environment (North America, Europe, Latin America) that matches your Clover merchant account | Sandbox        |
+| **App ID**             | The App ID (Client ID) from your Clover Developer Dashboard                                                                                          | —              |
+| **App Secret**         | The App Secret (Client Secret) from your Clover Developer Dashboard                                                                                  | —              |
+| **Auth Code**          | Leave blank. This field is only used if you need to manually supply a one-time authorization code outside the normal OAuth flow                      | —              |
+| **OAuth Redirect URI** | Read-only. Copy this URL and paste it into your Clover Developer Dashboard under REST Configuration                                                  | Auto-generated |
+| **Connect to Clover**  | Launches the OAuth authorization popup once App ID and App Secret are saved                                                                          | —              |
+| **Test Connection**    | Verifies the stored token by calling the Clover API and displaying your merchant name                                                                | —              |
 
 #### Step-by-step: Register the Redirect URI in Clover
 
@@ -167,34 +172,34 @@ The OAuth callback is deliberately routed through the Joomla administrator appli
 
 <!-- SCREENSHOT: Clover POS Integration plugin settings — Products tab -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Import Status** | Whether newly imported Clover products are created as **Published** or **Unpublished** in J2Commerce | Unpublished |
-| **Default Category** | The Joomla content category assigned to imported products that have no Clover category mapping | — |
-| **Default Tax Profile** | The J2Commerce tax profile applied to newly imported products. Leave blank to import without tax | — |
-| **Category Mapping Mode** | How Clover categories are matched to J2Commerce categories. **Tag** maps by Clover item group name; **Category** maps by the Clover category name directly | Tag |
-| **Delete Action** | What happens to a J2Commerce product when the matching Clover item is deleted: **Unpublish** (safe default), **Trash**, or **Ignore** | Unpublish |
+| Field                     | Description                                                                                                                                                | Default     |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| **Import Status**         | Whether newly imported Clover products are created as **Published** or **Unpublished** in J2Commerce                                                       | Unpublished |
+| **Default Category**      | The Joomla content category assigned to imported products that have no Clover category mapping                                                             | —           |
+| **Default Tax Profile**   | The J2Commerce tax profile applied to newly imported products. Leave blank to import without tax                                                           | —           |
+| **Category Mapping Mode** | How Clover categories are matched to J2Commerce categories. **Tag** maps by Clover item group name; **Category** maps by the Clover category name directly | Tag         |
+| **Delete Action**         | What happens to a J2Commerce product when the matching Clover item is deleted: **Unpublish** (safe default), **Trash**, or **Ignore**                      | Unpublish   |
 
 ### Pricing Tab
 
 <!-- SCREENSHOT: Clover POS Integration plugin settings — Pricing tab -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Pricing Mode** | **Direct** uses the Clover price as-is. **Markup** adds a fixed amount or percentage to the Clover price before importing | Direct |
-| **Markup Type** | Shown only when Pricing Mode is set to Markup. Choose **Percentage** or **Fixed amount** | Percentage |
-| **Markup Value** | The markup amount (percentage points or currency units) to add on top of the Clover price | 0 |
+| Field            | Description                                                                                                               | Default    |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **Pricing Mode** | **Direct** uses the Clover price as-is. **Markup** adds a fixed amount or percentage to the Clover price before importing | Direct     |
+| **Markup Type**  | Shown only when Pricing Mode is set to Markup. Choose **Percentage** or **Fixed amount**                                  | Percentage |
+| **Markup Value** | The markup amount (percentage points or currency units) to add on top of the Clover price                                 | 0          |
 
 ### Sync Tab
 
 <!-- SCREENSHOT: Clover POS Integration plugin settings — Sync tab -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Enable Webhooks** | When enabled, Clover sends real-time notifications to your store whenever inventory or products change in Clover | Yes |
-| **Sync Interval** | How often (in minutes) the scheduled cron task checks Clover for changes. Minimum is 5 minutes | 60 |
-| **Push Stock on Sale** | When a web order is paid, decrement the matching Clover inventory count. Also restocks Clover when an order is cancelled or refunded | Yes |
-| **Sync Sale to Clover POS** | When a web order is paid, push it to Clover POS as an order containing the line items, with customer details in the order note. Requires the **Orders Read/Write** permission in your Clover app | Yes |
+| Field                       | Description                                                                                                                                                                                      | Default |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| **Enable Webhooks**         | When enabled, Clover sends real-time notifications to your store whenever inventory or products change in Clover                                                                                 | Yes     |
+| **Sync Interval**           | How often (in minutes) the scheduled cron task checks Clover for changes. Minimum is 5 minutes                                                                                                   | 60      |
+| **Push Stock on Sale**      | When a web order is paid, decrement the matching Clover inventory count. Also restocks Clover when an order is cancelled or refunded                                                             | Yes     |
+| **Sync Sale to Clover POS** | When a web order is paid, push it to Clover POS as an order containing the line items, with customer details in the order note. Requires the **Orders Read/Write** permission in your Clover app | Yes     |
 
 :::info
 
@@ -206,10 +211,10 @@ The OAuth callback is deliberately routed through the Joomla administrator appli
 
 <!-- SCREENSHOT: Clover POS Integration plugin settings — Advanced tab -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Log Retention (days)** | Sync log entries older than this many days are automatically deleted by the cron task | 30 |
-| **Debug Mode** | When enabled, detailed diagnostic messages are written to the J2Commerce log file. Disable in production | No |
+| Field                    | Description                                                                                              | Default |
+| ------------------------ | -------------------------------------------------------------------------------------------------------- | ------- |
+| **Log Retention (days)** | Sync log entries older than this many days are automatically deleted by the cron task                    | 30      |
+| **Debug Mode**           | When enabled, detailed diagnostic messages are written to the J2Commerce log file. Disable in production | No      |
 
 ## Testing in Sandbox Mode
 
@@ -217,12 +222,12 @@ Before going live, it is strongly recommended to test the full integration end-t
 
 ### Sandbox environment overview
 
-| What | Sandbox value |
-|------|--------------|
-| Developer dashboard | `https://sandbox.dev.clover.com` |
-| OAuth authorization host | `https://sandbox.dev.clover.com` |
-| API host | `https://apisandbox.dev.clover.com` |
-| Plugin **Environment** setting | **Sandbox** |
+| What                           | Sandbox value                       |
+| ------------------------------ | ----------------------------------- |
+| Developer dashboard            | `https://sandbox.dev.clover.com`    |
+| OAuth authorization host       | `https://sandbox.dev.clover.com`    |
+| API host                       | `https://apisandbox.dev.clover.com` |
+| Plugin **Environment** setting | **Sandbox**                         |
 
 ### Step-by-step: Complete a sandbox test
 
@@ -271,9 +276,7 @@ Place a test order on your store for a product that was imported from the sandbo
 When everything behaves as expected, go back to the plugin settings, change **Environment** to the correct production region (**North America**, **Europe**, or **Latin America**), enter your production App ID and App Secret, save, and complete the OAuth flow again with your live merchant account.
 
 :::warning
-
 A sandbox connection and a production connection are completely separate. Switching the environment setting does not carry over the OAuth token. You must reconnect via OAuth after changing the environment.
-
 :::
 
 ### Identifying sandbox mode on the dashboard
@@ -306,13 +309,13 @@ Shows whether the plugin is connected to your Clover merchant account. When conn
 
 The toolbar at the top of the Clover Dashboard provides these actions:
 
-| Button | What it does |
-|--------|-------------|
-| **Sync Now** | Immediately pulls categories and all products from Clover and updates J2Commerce |
-| **Test Connection** | Sends a test call to the Clover API and displays your merchant name on success |
-| **Disconnect** | Removes the stored OAuth token. Products already synced are not deleted, but automatic syncing stops |
-| **Sync Log** | Opens the full sync log list view |
-| **Settings** | Opens the plugin settings form |
+| Button              | What it does                                                                                         |
+| ------------------- | ---------------------------------------------------------------------------------------------------- |
+| **Sync Now**        | Immediately pulls categories and all products from Clover and updates J2Commerce                     |
+| **Test Connection** | Sends a test call to the Clover API and displays your merchant name on success                       |
+| **Disconnect**      | Removes the stored OAuth token. Products already synced are not deleted, but automatic syncing stops |
+| **Sync Log**        | Opens the full sync log list view                                                                    |
+| **Settings**        | Opens the plugin settings form                                                                       |
 
 ## Set Up Webhooks
 
@@ -336,6 +339,7 @@ You do not need an external tunnel or ngrok — the dashboard does the polling f
 1. Go to **J2Commerce** -> **Apps** -> **Clover POS Integration** (the dashboard).
 2. Locate the **Webhook Verification** card.
 3. Copy the **Webhook URL** shown in the card. The URL has this form:
+
    ```
    https://www.yourstore.com/index.php?option=com_ajax&plugin=app_cloverpos&group=j2commerce&task=webhook&format=raw
    ```
@@ -442,11 +446,11 @@ Go to **System** -> **Scheduled Tasks** -> **New** to add a task. Two task types
 
 This task pulls every catalog item from Clover — categories, products, variants, SKUs, prices, and inventory counts — and applies the changes to J2Commerce. It reconciles anything that may have been missed by webhooks.
 
-| Setting | Recommended value |
-|---------|------------------|
-| **Task Title** | Clover — Full Catalog Sync |
-| **Frequency** | Every 60 minutes (or longer if your catalog is large) |
-| **Priority** | Normal |
+| Setting        | Recommended value                                     |
+| -------------- | ----------------------------------------------------- |
+| **Task Title** | Clover — Full Catalog Sync                            |
+| **Frequency**  | Every 60 minutes (or longer if your catalog is large) |
+| **Priority**   | Normal                                                |
 
 To create this task:
 
@@ -465,11 +469,11 @@ This task has no additional configuration fields beyond the standard scheduler o
 
 Clover OAuth access tokens expire after 30 minutes. This lightweight task proactively refreshes the token before it expires so the connection never goes stale between syncs.
 
-| Setting | Recommended value |
-|---------|------------------|
+| Setting        | Recommended value             |
+| -------------- | ----------------------------- |
 | **Task Title** | Clover — Refresh Access Token |
-| **Frequency** | Every 15–25 minutes |
-| **Priority** | High |
+| **Frequency**  | Every 15–25 minutes           |
+| **Priority**   | High                          |
 
 To create this task:
 
