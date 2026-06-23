@@ -1,10 +1,3 @@
----
-title: "Conekta Payment"
-sidebar_label: "Conekta"
-sidebar_position: 30
-description: "Accept credit cards, OXXO cash vouchers, and SPEI bank transfers in J2Commerce using Conekta — Mexico's leading payment processor."
----
-
 # Conekta Payment
 
 Conekta is Mexico's leading payment processor, owned by PayPal. It lets Mexican stores accept three payment methods from a single checkout step: credit and debit cards, OXXO cash vouchers, and SPEI interbank wire transfers.
