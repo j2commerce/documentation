@@ -127,6 +127,8 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 To help you narrow down the list, you can do a search for **Conekta Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
+![](/img/conekta-enable.webp)
+
 ## Configuration
 
 :::tip
@@ -135,22 +137,31 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
+![](/img/conekta-toggle.webp)
+
 ### Basic Settings Tab
 
-<!-- SCREENSHOT: Basic Settings tab with all fields visible including sandbox toggle, key fields, and webhook fields -->
+![](/img/conekta-config1.webp)
 
-| Field                    | Description                                                                         | Recommended Value                             |
-| ------------------------ | ----------------------------------------------------------------------------------- | --------------------------------------------- |
-| **Payment Method Name**  | Label shown to customers at checkout                                                | `Conekta`                                     |
-| **Payment Method Image** | URL or path to a logo image shown at checkout                                       | Leave blank for the default Conekta logo      |
-| **Display Image**        | Whether to show the image next to the payment method name                           | **Yes**                                       |
-| **Sandbox**              | Toggle between test mode and live mode                                              | **Yes** while testing; **No** when going live |
-| **Live Public Key**      | Your production Public Key from the Conekta live dashboard                          | Visible only when Sandbox is **No**           |
-| **Live Private Key**     | Your production Private Key                                                         | Visible only when Sandbox is **No**           |
-| **Test Public Key**      | Your sandbox Public Key from the Conekta test panel                                 | Visible only when Sandbox is **Yes**          |
-| **Test Private Key**     | Your sandbox Private Key                                                            | Visible only when Sandbox is **Yes**          |
-| **Webhook Signing Key**  | The signing secret copied from your Conekta webhook entry                           | Required for OXXO and SPEI                    |
-| **Webhook URL**          | Auto-generated URL for Conekta to call — copy this into Conekta's Webhooks settings | Read-only display field with Copy button      |
+**Payment Method Name: **Label shown to customers at checkout
+
+**Payment Method Image: **URL or path to a logo image shown at checkout
+
+**Display Image: **Whether to show the image next to the payment method name
+
+**Sandbox:**Toggle between test mode and live mode
+
+**Live Public Key: **Your production Public Key from the Conekta live dashboard
+
+**Live Private Key: **Your production Private Key
+
+**Test Public Key: **Your sandbox Public Key from the Conekta test panel
+
+**Test Private Key: **Your sandbox Private Key
+
+**Webhook Signing Key: **The signing secret copied from your Conekta webhook entry
+
+**Webhook URL: **Auto-generated URL for Conekta to call — copy this into Conekta's Webhooks settings
 
 :::info
 
@@ -160,7 +171,7 @@ When **Sandbox** is set to **Yes**, the plugin uses your Test keys and sends cha
 
 ### Payment Methods Tab
 
-<!-- SCREENSHOT: Payment Methods tab with Enable Card, Enable OXXO, Enable SPEI toggles -->
+![](/img/conekta-payment.webp)
 
 This tab controls which of the three Conekta modes appear to customers at checkout.
 
@@ -187,6 +198,8 @@ This tab controls which of the three Conekta modes appear to customers at checko
 - **Disable Card** only if you want to force a cash-only or bank-transfer-only flow — this is unusual and not recommended for most stores.
 
 ### Advanced Tab
+
+![](/img/conekta-advanced.webp)
 
 **Send Notification:** Send a J2Commerce order status email when payment is confirmed (by card approval or incoming webhook)
 
