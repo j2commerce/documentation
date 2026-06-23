@@ -283,6 +283,8 @@ The order screen also shows a **Payment Balance** summary with the order total, 
 
 ### Capture a Payment (Manual Capture mode only)
 
+![](/img/finix-frontend-manual1.webp)
+
 If you set **Capture Method** to **Manual (Authorize Only)**, payments are authorized (reserved) but not collected. When you are ready to charge the customer:
 
 1. Open the order in **J2Commerce** -> **Sales** -> **Orders**.
@@ -290,6 +292,8 @@ If you set **Capture Method** to **Manual (Authorize Only)**, payments are autho
 3. The funds are collected from the customer's card and the order status updates.
 
 ### Void an Authorization (Manual Capture mode only)
+
+![](/img/finix-frontend-manual-void.webp)
 
 A void releases an authorized payment before it has been captured. Once a payment has been captured, use **Refund** instead.
 
@@ -305,6 +309,8 @@ The **Void Authorization** button only appears when the payment is in an authori
 
 ### Issue a Refund
 
+![](/img/finix-frontend2.webp)
+
 You can refund a captured payment in full or in part.
 
 1. Open the order.
@@ -315,6 +321,8 @@ You can refund a captured payment in full or in part.
 The refund is submitted to Finix and recorded in the order history. If **Change Order Status on Refund** is enabled, the order status updates automatically.
 
 ### Charge a Saved Card from the Order Screen
+
+![](/img/finix-frontend-charge-cc.webp)
 
 If the customer has saved cards on file, an additional section appears in the order summary showing all of their Finix payment instruments. You can use this to charge a balance due — for example, after a partial payment or failed renewal:
 
