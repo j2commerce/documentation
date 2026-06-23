@@ -1,10 +1,3 @@
----
-title: "Omnisend Integration"
-sidebar_label: "Omnisend"
-sidebar_position: 42
-description: "Connect J2Commerce to Omnisend for email and SMS marketing automation, abandoned-cart recovery, and real-time order-event tracking."
----
-
 # Omnisend Integration
 
 The Omnisend Integration app connects your J2Commerce store to [Omnisend](https://www.omnisend.com/) so your email and SMS automations always have the right purchase data behind them. When a shopper adds a product to the cart, starts checkout, or completes an order, J2Commerce sends those events to Omnisend in real time. A checkout consent checkbox lets customers opt in to your marketing list at the moment they buy. A product catalog sync keeps Omnisend's Product Picker and product-abandonment flows up to date automatically.
@@ -76,7 +69,7 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 ### API Connection
 
-![](/img/omnisend-api.webp)
+![](/img/omnisend-api1.webp)
 
 This is the only required setting. Nothing else works without it.
 
@@ -174,6 +167,8 @@ Controls automatic syncing of your product catalog to Omnisend.
 
 After saving your API key, click **Omnisend Dashboard** in the toolbar from the plugin settings page to open the integration's admin view.
 
+![](/img/omnisend-dashboard.webp)
+
 From the dashboard you can:
 
 - **Test Connection** — Verifies your API key and shows your Omnisend brand name and currency.
@@ -181,7 +176,7 @@ From the dashboard you can:
 - **Sync Historic Orders** — Queues all past orders for Omnisend. Use this once when you first connect so Omnisend has purchase history for segmentation and flows.
 - **Settings** — Opens the plugin configuration form directly.
 
-<!-- SCREENSHOT: Omnisend Dashboard screen showing Connection Status card, Product Catalog Sync card, and Getting Started steps -->
+![](/img/omnisend-test1.webp)
 
 :::info
 
