@@ -1,10 +1,3 @@
----
-title: "Braintree Payment"
-sidebar_label: "Braintree"
-sidebar_position: 20
-description: "Accept credit cards, digital wallets, and subscription payments in J2Commerce using the Braintree payment gateway from PayPal."
----
-
 # Braintree Payment
 
 Braintree lets your store accept credit and debit cards using a PCI-compliant form that never sends raw card numbers to your server. Because the card data is tokenized in the customer's browser by the Braintree JavaScript SDK, your server only ever sees a short-lived payment nonce.
@@ -192,9 +185,17 @@ Status applied when a payment is captured successfully
 
 - **Void Order Status:** The status to apply after a void — only shown when Change Order Status on Void is enabled
 
+:::tip
+
+If you do not see the order status you prefer, then it needs to be created. Go to J2Commerce Setup Order Status
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
+
 ### Surcharge
 
-![](/img/finix-config-surcharge.webp)
+![](/img/braintree-config4.webp)
 
 Add an optional handling fee when a customer chooses to pay with Finix.
 
@@ -210,7 +211,7 @@ Leave both **Surcharge Percent** and **Surcharge Fixed** empty to charge no surc
 
 ### Geozone and Order Value Restrictions
 
-![](/img/finix-config-geozone.webp)
+![](/img/braintree-config5.webp)
 
 **Geozone Restriction:** Limit Finix to customers in a specific geozone — leave blank to allow all locations
 
@@ -222,7 +223,7 @@ Leave both **Surcharge Percent** and **Surcharge Fixed** empty to charge no surc
 
 These optional fields let you inject custom text or HTML at different points in the payment flow.
 
-![](/img/finix-config-text.webp)
+![](/img/braintree-config6.webp)
 
 **Thank-You Article:** Optional Joomla article shown on the order confirmation page after a successful payment
 
@@ -238,7 +239,7 @@ These optional fields let you inject custom text or HTML at different points in 
 
 ### Dashboard Icon and Debug
 
-![](/img/finix-config-debug.webp)
+![](/img/braintree-config7.webp)
 
 **Show Dashboard Icon:** Add a quick-access shortcut for this plugin to the J2Commerce dashboard.
 
@@ -246,43 +247,9 @@ These optional fields let you inject custom text or HTML at different points in 
 
 **Debug Mode:** Records detailed API request and response data in the Joomla log.
 
-Only enable this when diagnosing a specific problem. Disable it on live sites — debug logs can contain sensitive payment details. Logs are written to `administrator/logs/payment_finix.php`.
-
-### Messages
-
-These optional text fields let you add instructions or confirmation text at different points during checkout.
-
-<!-- SCREENSHOT: Messages tab with four text areas and button text field -->
-
-| Field                 | When Displayed                                            | Example Use                                                                                  |
-| --------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| **On Selection**      | When the customer picks Braintree as their payment method | "Your card details are encrypted and never stored on our servers."                           |
-| **On Before Payment** | On the payment form page, above the card input            | "Enter your card details below to complete your order securely."                             |
-| **On After Payment**  | On the confirmation page after a successful payment       | "Thank you — your payment was received and your order is confirmed."                         |
-| **On Error Payment**  | When a payment fails or is declined                       | "There was a problem processing your payment. Please check your card details and try again." |
-| **Button Text**       | The label on the Pay button                               | `Place Order` or `Pay Now`                                                                   |
-
-All fields accept plain text or a Joomla language key. Leave fields blank to show no additional message.
-
-***
-
-### Advanced Settings
-
-<!-- SCREENSHOT: Advanced tab with Debug, Order Status, Failed Status, Pending Status, Geo-Zone, Show Tax, and Tax Profile fields -->
-
-| Field              | Description                                                                                   | Default   |
-| ------------------ | --------------------------------------------------------------------------------------------- | --------- |
-| **Debug**          | Write detailed Braintree API activity to `administrator/logs/payment_braintree.php`           | No        |
-| **Order Status**   | The status applied to an order after a successful payment (e.g., authorized, settled)         | Confirmed |
-| **Failed Status**  | The status applied when Braintree returns a declined or failed transaction                    | Failed    |
-| **Pending Status** | The status applied when Braintree reports `settlement_pending` (funds not yet settled)        | Pending   |
-| **Geo-Zone**       | Restrict Braintree to customers in a specific geo-zone. Leave at "All" to show it to everyone | All       |
-| **Show Tax**       | Display the tax amount as a separate line on the payment page                                 | No        |
-| **Tax Profile**    | The tax profile to apply when **Show Tax** is enabled                                         | None      |
-
 :::tip
 
-Enable **Debug** only while troubleshooting. The log file can grow quickly in a busy store. Always disable it before going live.
+Enable **Debug** only while troubleshooting. The log file can grow quickly in a busy store. Always disable it before going live. Write detailed Braintree API activity to `administrator/logs/payment_braintree.php`
 
 :::
 
@@ -427,8 +394,6 @@ The J2Commerce 6 version of this plugin includes the following improvements over
 2. Open the plugin settings and check that the Merchant ID, Public Key, and Private Key are entered in the correct tab (**Sandbox** or **Live**) for your current mode.
 3. Enable **Debug** and check `administrator/logs/payment_braintree.php` for a gateway initialization error.
 4. Check your server's PHP info to confirm the **curl**, **openssl**, **dom**, **hash**, and **xmlwriter** extensions are loaded.
-
-<!-- SCREENSHOT: J2Commerce Payment Methods list with Braintree enabled and settings open -->
 
 ### "Invalid token" error when submitting payment
 
