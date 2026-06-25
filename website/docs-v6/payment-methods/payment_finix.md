@@ -173,8 +173,6 @@ These fields appear when **Use Sandbox (Test Mode)** is turned on. They work ide
 
 These settings control which J2Commerce order status is applied when specific payment events occur.
 
-
-
 **Order Status (Payment Success)**
 
 Status applied when a payment is captured successfully
@@ -188,6 +186,14 @@ Status applied when a payment is captured successfully
 **Change Order Status on Void:** When turned on, automatically updates the order status when an authorized payment is voided
 
 - **Void Order Status:** The status to apply after a void — only shown when Change Order Status on Void is enabled
+
+:::tip
+
+If you do not see the order status you prefer, then it needs to be created. Go to J2Commerce Setup Order Status
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge
 
