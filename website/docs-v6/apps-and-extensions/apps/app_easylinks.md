@@ -1,10 +1,3 @@
----
-title: "Easy Links"
-sidebar_label: "Easy Links"
-sidebar_position: 36
-description: "Show secure download links on the order confirmation page and in customer emails for digital products, with optional expiry date display."
----
-
 # Easy Links
 
 The Easy Links app gives customers instant access to their digital downloads the moment an order is placed. Secure download links appear directly on the order confirmation page and, optionally, inside the transaction email — so buyers never have to hunt through their account to find what they purchased.
@@ -36,7 +29,7 @@ In the Joomla admin, go to **System -> Install -> Extensions**
 
 Upload the `plg_j2commerce_app_easylinks.zip` package file or use the **Install from URL** option.
 
-<!-- SCREENSHOT: System > Install > Extensions screen with the ZIP file ready to upload -->
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
 ## Enable the App
 
@@ -48,9 +41,11 @@ There are two ways to reach the Apps screen:
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Easy Links with its toggle switch -->
+![shipping method](/img/accordions-app.webp)
 
 Find **Easy Links** in the list, click the toggle so it turns green, and the plugin is active.
+
+![](/img/easy-links-enable.webp)
 
 ## Configure the App
 
@@ -62,39 +57,27 @@ Click the **Toggle Inline Help** button in the toolbar to reveal a description b
 
 :::
 
-<!-- SCREENSHOT: Easy Links plugin settings screen showing all parameters -->
+![](/img/easy-links-toggle.webp)
 
-### Subtemplate Style
+### Basic Settings tab
 
-Controls the look of the download section on the confirmation page.
+![](/img/easy-links-config.webp)
 
-| Option | What it does |
-|--------|-------------|
-| **Auto** | Inherits the frontend framework chosen by the active menu item (Bootstrap 5 or UIkit). This is the recommended setting for most stores. |
-| **Bootstrap 5** | Always renders the Bootstrap 5 card layout regardless of menu settings. |
-| **UIkit** | Always renders the UIkit card layout. |
+**Subtemplate Style:** Controls the look of the download section on the confirmation page.
+
+- **Auto:** Inherits the frontend framework chosen by the active menu item (Bootstrap 5 or UIkit). This is the recommended setting for most stores.
+
+- **Bootstrap 5:** Always renders the Bootstrap 5 card layout regardless of menu settings.
+
+- **UIkit:** Always renders the UIkit card layout.
 
 The email layout is always plain HTML regardless of this setting, because email clients strip external stylesheets.
 
-### Show on Confirmation Page
+**Show on Confirmation Page:** When set to **Yes**, a "Your Downloads Are Ready" section appears on the order confirmation page immediately after the customer completes checkout. Set to **No** to hide it from the confirmation page entirely.
 
-When set to **Yes**, a "Your Downloads Are Ready" section appears on the order confirmation page immediately after the customer completes checkout. Set to **No** to hide it from the confirmation page entirely.
+**Show Expiry Date:** When set to **Yes**, each download link shows the date when that link expires, directly beneath the file name. This is drawn from the expiry date configured on the product file. If a file has no expiry date set, nothing is displayed even when this option is on.
 
-Default: **Yes**
-
-### Show Expiry Date
-
-When set to **Yes**, each download link shows the date when that link expires, directly beneath the file name. This is drawn from the expiry date configured on the product file.
-
-If a file has no expiry date set, nothing is displayed even when this option is on.
-
-Default: **Yes**
-
-### Show in Transaction Email
-
-When set to **Yes**, download links are added to the transaction email sent to the customer.
-
-Default: **No**
+**Show in Transaction Email:** When set to **Yes**, download links are added to the transaction email sent to the customer.
 
 :::info
 
@@ -104,30 +87,31 @@ To check: go to **J2Commerce -> Setup -> Emails** and open the relevant email te
 
 :::
 
-<!-- SCREENSHOT: Email template editor showing [HOOK:BEFORE_FOOTER] shortcode in place -->
+**Email Order Statuses:** Visible only when **Show in Transaction Email** is set to **Yes**.
 
-### Email Order Statuses
-
-Visible only when **Show in Transaction Email** is set to **Yes**.
+![](/img/easy-links-config1.webp)
 
 Choose which order statuses trigger the inclusion of download links in the email. For example, you might only want to include links when an order has a status of **Confirmed** or **Completed**.
 
 If you leave this field empty, Easy Links falls back to a sensible set of confirmed/shipped/processed/complete statuses automatically.
 
-<!-- SCREENSHOT: Email Order Statuses field with a multi-select list of available statuses -->
-
 ## How Download Links Work
 
 When a customer reaches the confirmation page after a successful payment:
 
-1. Easy Links checks whether the order's status qualifies as a completed purchase.
-2. It looks up any downloadable files attached to the products in that order.
-3. Only files whose access has been granted and whose expiry date (if any) has not yet passed are shown.
-4. Each file appears as a **Download** button the customer can click immediately.
+Easy Links checks whether the order's status qualifies as a completed purchase.
+
+It looks up any downloadable files attached to the products in that order.
+
+Only files whose access has been granted and whose expiry date (if any) has not yet passed are shown.
+
+Each file appears as a **Download** button the customer can click immediately.
 
 Links on the confirmation page go through the standard J2Commerce download handler, which enforces the per-file download limit and expiry date.
 
 Links sent in emails use a secure token bridge so the customer does not need to be logged in. The token is unique to the order and cannot be guessed. The core download handler still enforces limits and expiry dates when the link is clicked.
+
+![](/img/easy-links-checkout.webp)
 
 ## Customising the Layout
 
@@ -140,6 +124,7 @@ templates/[your-template]/html/plg_j2commerce_app_easylinks/
 ```
 
 The folder structure inside mirrors the plugin:
+
 - `confirmation/bootstrap5/default.php` — Bootstrap 5 confirmation-page layout
 - `confirmation/uikit3/default.php` — UIkit confirmation-page layout
 - `email/default.php` — Email layout (plain HTML, table-based)
@@ -165,7 +150,7 @@ Changes in the override folder take effect immediately and will not be lost when
 2. Confirm the order reached a confirmed or completed status. If payment is still pending, links will not appear.
 3. Go to **J2Commerce -> Catalog -> Products**, open the product, and check that at least one file is attached in the **Files** tab.
 
-<!-- SCREENSHOT: Product edit screen Files tab showing a downloadable file attached -->
+![](/img/easy-links-product.webp)
 
 ### Download links do not appear in the email
 
@@ -174,7 +159,7 @@ Changes in the override folder take effect immediately and will not be lost when
 **Solution:**
 
 1. Go to the Easy Links settings and confirm **Show in Transaction Email** is set to **Yes**.
-2. Go to **J2Commerce -> Setup -> Emails**, open the relevant email template, and verify it contains `[HOOK:BEFORE_FOOTER]`.
+2. Go to **J2Commerce -> Setup -> Configuration -> Emails** tab, open the relevant email template, and verify it contains `[HOOK:BEFORE_FOOTER]`.
 3. Check the **Email Order Statuses** field. If statuses are selected, make sure the order's current status is in that list.
 
 ### A download link shows "expired" or refuses to download

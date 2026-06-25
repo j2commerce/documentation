@@ -237,15 +237,25 @@ These text fields control what customers read at each stage of the payment proce
 
 Here is what your customers experience from the moment they reach the payment step:
 
-1. The customer reaches the payment step of checkout and selects **Moneris** (or your configured display name) as their payment method.
-2. The customer proceeds to the **Confirm** step. J2Commerce calls the Moneris API server-side to create a payment session ticket, then injects the Moneris hosted payment form directly into the confirm page as a secure iframe.
-3. A loading spinner appears briefly while the iframe initialises. Once ready, the Moneris-hosted card entry fields appear inside the iframe — the customer sees a clean payment form styled by Moneris.
-4. The customer enters their card details entirely within the Moneris-hosted iframe. None of this information reaches your server.
-5. The customer clicks **Place Order** (or your configured button text). The Moneris iframe submits the card details directly to Moneris.
-6. Moneris processes the payment and signals the result back to the page. Your store's JavaScript picks this up and calls J2Commerce server-side to verify the result with Moneris directly.
-7. J2Commerce calls the Moneris API a second time to fetch the authoritative payment receipt. The result is confirmed server-side — the order status is never set based on what the browser reports alone.
-8. If approved, J2Commerce updates the order to your **Payment Received Status**, clears the cart, sends the confirmation email, and redirects the customer to the confirmation page.
-9. If declined, J2Commerce updates the order to your **Payment Failed Status**, sends an admin error notification if configured, and shows the **On Error** message.
+The customer reaches the payment step of checkout and selects **Moneris** (or your configured display name) as their payment method.
+
+![](/img/moneris-frontend1.webp)
+
+The customer proceeds to the **Confirm** step. J2Commerce calls the Moneris API server-side to create a payment session ticket, then injects the Moneris hosted payment form directly into the confirm page as a secure iframe.
+
+A loading spinner appears briefly while the iframe initialises. Once ready, the Moneris-hosted card entry fields appear inside the iframe — the customer sees a clean payment form styled by Moneris.
+
+The customer enters their card details entirely within the Moneris-hosted iframe. None of this information reaches your server.
+
+The customer clicks **Place Order** (or your configured button text). The Moneris iframe submits the card details directly to Moneris.
+
+Moneris processes the payment and signals the result back to the page. Your store's JavaScript picks this up and calls J2Commerce server-side to verify the result with Moneris directly.
+
+J2Commerce calls the Moneris API a second time to fetch the authoritative payment receipt. The result is confirmed server-side — the order status is never set based on what the browser reports alone.
+
+If approved, J2Commerce updates the order to your **Payment Received Status**, clears the cart, sends the confirmation email, and redirects the customer to the confirmation page.
+
+If declined, J2Commerce updates the order to your **Payment Failed Status**, sends an admin error notification if configured, and shows the **On Error** message.
 
 You do not need to configure any return URLs in your Moneris Checkout profile — the plugin generates them automatically for each transaction.
 

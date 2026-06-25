@@ -1,10 +1,3 @@
----
-title: "Meta Pixel / Facebook Conversion"
-sidebar_label: "Meta Pixel / Facebook Conversion"
-sidebar_position: 20
-description: "Set up Meta Pixel and the Conversions API in J2Commerce to track product views, add-to-cart events, and purchases for Facebook and Instagram advertising."
----
-
 # Meta Pixel / Facebook Conversion
 
 The Meta Pixel / Facebook Conversion app connects your J2Commerce store to Meta's advertising platform. It places the Meta Pixel base code on every page and automatically fires standard ecommerce events — such as product views, add-to-cart actions, and completed purchases — so Meta can optimize your ads and measure their performance. An optional server-side Conversions API (CAPI) mirror recovers events that browsers block due to ad blockers or iOS privacy restrictions.

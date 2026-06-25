@@ -217,15 +217,13 @@ If you set a **Maximum Subtotal**, leave the field blank rather than entering `0
 
 :::
 
-### Post-Payment Article
-
-Use the **Post-Payment Article** field to select a Joomla article that appears on the confirmation page after a successful payment. This is a good place for order instructions, shipping timelines, or a personal thank-you message.
-
 ### Custom Messages
 
-![](/img/worldline-messages.webp)
-
 These optional text fields let you add HTML messages at specific moments during checkout:
+
+![](/img/worldline-messages1.webp)
+
+**Post-Payment Article:** Use the **Post-Payment Article** field to select a Joomla article that appears on the confirmation page after a successful payment. This is a good place for order instructions, shipping timelines, or a personal thank-you message.
 
 **Text on Selection:** When the customer selects Worldline as their payment method
 

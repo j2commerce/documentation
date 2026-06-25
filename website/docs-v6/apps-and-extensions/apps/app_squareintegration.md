@@ -1,10 +1,3 @@
----
-title: "Square Integration"
-sidebar_label: "Square Integration"
-sidebar_position: 30
-description: "Sync your Square POS catalog — products, inventory, pricing, categories, images, and taxes — directly into J2Commerce with this add-on app plugin."
----
-
 # Square Integration
 
 The Square Integration app connects your Square POS account to J2Commerce and pulls your entire product catalog across in one step. Products, variations, inventory counts, pricing, categories, images, modifiers, and tax settings all flow from Square into J2Commerce automatically. Once the sync is running, you can sell on your Joomla site without maintaining a separate product list — Square stays the single source of truth for your inventory.
@@ -23,7 +16,7 @@ Sync direction in version 1 is Square to J2Commerce only. Changes made in J2Comm
 - A [Square account](https://squareup.com/) (free or paid)
 - An HTTPS-enabled Joomla site (required for OAuth and webhooks)
 
-## Installation
+## Purchase and Download
 
 This app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
@@ -39,7 +32,7 @@ In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
 Upload the plugin ZIP file or use the Install from URL option.
 
-<!-- SCREENSHOT: System > Install > Extensions with the Square Integration ZIP selected -->
+![Install extensions](<../../../assets/app install1 (1) (1).webp>)
 
 ## Enable the App
 
@@ -49,9 +42,11 @@ Once installed, enable the app before configuring it. There are two ways to reac
 
 **Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**
 
-<!-- SCREENSHOT: Apps list showing Square Integration with the enable toggle -->
+![shipping method](/img/accordions-app.webp)
 
 Find **Square Integration** in the list and click the status icon to turn it from a red **X** to a green checkmark. The app is now enabled and ready to configure.
+
+![](/img/square-pos-enable.webp)
 
 ## First-Time Setup
 
@@ -71,9 +66,21 @@ The Application Secret lives on the **OAuth** page in the sidebar, not on the ma
 
 :::
 
-<!-- SCREENSHOT: Square Developer Dashboard showing the OAuth page with Application ID and Application Secret fields highlighted -->
+## Configuring the App
+
+:::tip
+
+Click the **Toggle Inline Help** button in the toolbar to reveal a description below each field as you configure it.
+
+:::
+
+![](/img/square-pos-toggle.webp)
 
 ### Step 2 — Enter Credentials in J2Commerce
+
+![](/img/square-pos-connection.webp)
+
+The Connection tab handles authentication with Square. Complete this tab before any other tab will function.
 
 1. Go to **J2Commerce** -> **Apps** -> click **Square Integration** to open its settings.
 2. Click the **Connection** tab.
@@ -82,7 +89,27 @@ The Application Secret lives on the **OAuth** page in the sidebar, not on the ma
 5. Copy the **Redirect URI** shown in J2Commerce — you need this in the next step.
 6. Click **Save**.
 
-<!-- SCREENSHOT: Connection tab showing Environment, Application ID, Application Secret, and Redirect URI fields -->
+**Environment: Sandbox** for testing, **Production** for live sales
+
+**Redirect URI:** Read-only. Copy this exact URI into the Square Developer Dashboard -> OAuth -> Redirect URL field
+
+**Square Connection:** Displays the current OAuth status. Click **Connect to Square** to authorize access via OAuth, or **Disconnect** to remove the stored tokens
+
+**Application ID:** Your app's Application ID from the Square Developer Dashboard -> OAuth section. Required for production OAuth
+
+**Application Secret:** Your app's OAuth client secret from the Square Developer Dashboard -> OAuth section. Not the same as the main Credentials page
+
+**Manual Access Token:** Sandbox/development fallback only. Paste a Square sandbox access token here to bypass the OAuth popup flow
+
+**Test Connection:** Verifies the saved credentials are valid by contacting the Square API and returning a pass or fail message
+
+**Webhook Signature Key:** Paste the signature key Square generated when you created the webhook subscription. Used to verify incoming webhook payloads
+
+:::info
+
+The recommended approach is OAuth via the **Connect to Square** button for both sandbox and production. The Manual Access Token option is provided for sandbox development only and does not support webhooks.
+
+:::
 
 ### Step 3 — Register the Redirect URI in Square
 
@@ -105,24 +132,45 @@ Production OAuth does not require this step — it only applies to sandbox.
 
 ### Step 5 — Connect to Square
 
+![](/img/square-pos-connection1.webp)
+
 1. In J2Commerce -> **Square Integration** -> **Connection** tab, click **Connect to Square**.
 2. A popup opens with the Square consent screen. Click **Allow**.
 3. The popup closes automatically and the status badge turns green, showing **Connected**.
 
-<!-- SCREENSHOT: Connection tab with green Connected status badge after successful OAuth -->
-
 ### Step 6 — Select Locations
 
-1. Switch to the **Locations** tab.
-2. The list of your Square locations loads automatically. If it does not appear, click **Save** on the Connection tab first.
-3. Select the locations you want to pull inventory from.
-4. Choose an **Inventory Aggregation** mode and click **Save**.
+![](/img/square-pos-locations.webp)
+
+Square businesses can have multiple physical or online locations. The Locations tab controls which ones feed inventory counts into J2Commerce.
+
+The list of your Square locations loads automatically. If it does not appear, click **Save** on the Connection tab first.
+
+**Sync Locations:** Multi-select list of your Square locations. Only selected locations contribute inventory to the sync
+
+**Inventory Aggregation: Sum across locations** adds up stock across all selected locations. **Primary location only** uses only the first selected location
 
 ### Step 7 — Configure Product Defaults
 
-1. Switch to the **Products** tab.
-2. Set your defaults for import status, Joomla category, J2Commerce tags, tax profile, and other options.
-3. Click **Save**.
+![](/img/square-pos-products.webp)
+
+These defaults apply to every item imported from Square. You can override individual settings per product in J2Commerce after import.
+
+**Import Status:** The published state new imports start in. Set to **Unpublished** while testing so customers do not see partially configured products
+
+**Default Content Category:** The Joomla content category where imported products are filed
+
+**Default J2Commerce Tag:** Tags applied automatically to every imported product
+
+**Default Tax Profile:** The J2Commerce tax profile applied when Square does not have a matching tax configured for an item
+
+**Category Mapping Mode: J2Commerce Tags** maps each Square category to a J2Commerce tag. **Joomla Content Categories** maps each Square category to a Joomla content category
+
+**Option Field Type:** How variant attributes such as size or color are presented to shoppers. **Dropdown**, **Radio Buttons**, or **Color Swatches**
+
+**On Square Item Deleted:** Action to take in J2Commerce when an item is deleted from Square. **Unpublish product**, **Trash product**, or **Do nothing**
+
+**Catalog page size:** How many products to fetch per page in the Catalog dashboard tab. Range 25–200. The Square API caps each request at 200
 
 ### Step 8 — Set Up Webhooks
 
@@ -139,66 +187,19 @@ Schedule automated syncs so J2Commerce regularly checks Square for changes. See 
 
 Once the import finishes, review the imported products in **J2Commerce** -> **Catalog** -> **Products** and publish any that look correct.
 
----
-
-## Configuration Reference
-
-The Square Integration settings screen has seven tabs. Click the **Toggle Inline Help** button in the toolbar to display a description beneath each setting directly on the form.
-
-### Connection Tab
-
-The Connection tab handles authentication with Square. Complete this tab before any other tab will function.
-
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Environment** | **Sandbox** for testing, **Production** for live sales | `Sandbox` |
-| **Redirect URI** | Read-only. Copy this exact URI into the Square Developer Dashboard -> OAuth -> Redirect URL field | — |
-| **Square Connection** | Displays the current OAuth status. Click **Connect to Square** to authorize access via OAuth, or **Disconnect** to remove the stored tokens | — |
-| **Application ID** | Your app's Application ID from the Square Developer Dashboard -> OAuth section. Required for production OAuth | — |
-| **Application Secret** | Your app's OAuth client secret from the Square Developer Dashboard -> OAuth section. Not the same as the main Credentials page | — |
-| **Manual Access Token** | Sandbox/development fallback only. Paste a Square sandbox access token here to bypass the OAuth popup flow | — |
-| **Test Connection** | Verifies the saved credentials are valid by contacting the Square API and returning a pass or fail message | — |
-| **Webhook Signature Key** | Paste the signature key Square generated when you created the webhook subscription. Used to verify incoming webhook payloads | — |
-
-:::info
-
-The recommended approach is OAuth via the **Connect to Square** button for both sandbox and production. The Manual Access Token option is provided for sandbox development only and does not support webhooks.
-
-:::
-
-### Locations Tab
-
-Square businesses can have multiple physical or online locations. The Locations tab controls which ones feed inventory counts into J2Commerce.
-
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Sync Locations** | Multi-select list of your Square locations. Only selected locations contribute inventory to the sync | — |
-| **Inventory Aggregation** | **Sum across locations** adds up stock across all selected locations. **Primary location only** uses only the first selected location | `Sum across locations` |
-
-### Products Tab
-
-These defaults apply to every item imported from Square. You can override individual settings per product in J2Commerce after import.
-
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Import Status** | The published state new imports start in. Set to **Unpublished** while testing so customers do not see partially configured products | `Unpublished` |
-| **Default Content Category** | The Joomla content category where imported products are filed | None |
-| **Default J2Commerce Tag** | Tags applied automatically to every imported product | None |
-| **Default Tax Profile** | The J2Commerce tax profile applied when Square does not have a matching tax configured for an item | None |
-| **Category Mapping Mode** | **J2Commerce Tags** maps each Square category to a J2Commerce tag. **Joomla Content Categories** maps each Square category to a Joomla content category | `J2Commerce Tags` |
-| **Option Field Type** | How variant attributes such as size or color are presented to shoppers. **Dropdown**, **Radio Buttons**, or **Color Swatches** | `Dropdown` |
-| **On Square Item Deleted** | Action to take in J2Commerce when an item is deleted from Square. **Unpublish product**, **Trash product**, or **Do nothing** | `Unpublish product` |
-| **Catalog page size** | How many products to fetch per page in the Catalog dashboard tab. Range 25–200. The Square API caps each request at 200 | `100` |
+***
 
 ### Pricing Tab
 
+![](/img/square-pos-pricing.webp)
+
 By default J2Commerce uses your Square prices as-is. The Pricing tab lets you add a markup for your online store.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Pricing Mode** | **Use Square prices directly** — no adjustment. **Apply markup to Square prices** — add a percentage or fixed amount on top | `Use Square prices directly` |
-| **Markup Type** | Visible only when Markup mode is selected. **Percentage** or **Fixed Amount** | `Percentage` |
-| **Markup Value** | The markup percentage or fixed dollar amount to add. Enter a whole number or decimal | `0` |
+**Pricing Mode: Use Square prices directly** — no adjustment. **Apply markup to Square prices** — add a percentage or fixed amount on top
+
+**Markup Type:** Visible only when Markup mode is selected. **Percentage** or **Fixed Amount**
+
+**Markup Value:** The markup percentage or fixed dollar amount to add. Enter a whole number or decimal
 
 :::tip
 
@@ -210,12 +211,15 @@ Markup is applied at import time. Changing the markup value after import does no
 
 The Sync tab controls how often J2Commerce checks Square for updates and whether Square can push instant changes via webhooks.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Enable Webhooks** | When **Yes**, Square sends real-time notifications when products or inventory change. Requires an HTTPS site reachable from the public internet | `Yes` |
-| **Catalog Sync Interval (minutes)** | How often the scheduled task checks Square for catalog changes. Minimum 15 minutes | `60` |
-| **Inventory Sync Interval (minutes)** | How often the scheduled task refreshes inventory counts. Minimum 5 minutes | `30` |
-| **Catalog Cache TTL (minutes)** | How long Square catalog data is cached locally before a fresh fetch is requested. Minimum 60 minutes | `1440` (24 hours) |
+![](/img/square-pos-sync.webp)
+
+**Enable Webhooks:** When **Yes**, Square sends real-time notifications when products or inventory change. Requires an HTTPS site reachable from the public internet
+
+**Catalog Sync Interval (minutes):** How often the scheduled task checks Square for catalog changes. Minimum 15 minutes
+
+**Inventory Sync Interval (minutes):** How often the scheduled task refreshes inventory counts. Minimum 5 minutes
+
+**Catalog Cache TTL (minutes):** How long Square catalog data is cached locally before a fresh fetch is requested. Minimum 60 minutes
 
 :::info
 
@@ -225,22 +229,27 @@ Webhooks provide near-instant updates. Cron jobs act as a reliable fallback and 
 
 ### Advanced Tab
 
+![](/img/square-pos-advanced.webp)
+
 The Advanced tab provides debugging controls that you should not need to touch during normal operation.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Error Threshold** | Number of consecutive sync errors before J2Commerce auto-pauses API calls. Once paused, go to the Dashboard tab and click **Resume Sync** | `10` |
-| **Log Retention (days)** | How many days of sync activity logs to keep before automatic cleanup. Minimum 7 days | `30` |
-| **Debug Mode** | When **Yes**, verbose logging is written to `administrator/logs/plg_j2commerce_app_squareintegration.php`. Disable on live sites | `No` |
-| **OAuth Debug Page** | When **Yes**, clicking Connect to Square shows a debug card instead of immediately redirecting. The card shows the authorize URL, Application ID, OAuth state, and Redirect URI. Turn back to **No** to restore the normal flow | `No` |
+**Error Threshold:** Number of consecutive sync errors before J2Commerce auto-pauses API calls. Once paused, go to the Dashboard tab and click **Resume Sync**
 
----
+**Log Retention (days):** How many days of sync activity logs to keep before automatic cleanup. Minimum 7 days
+
+**Debug Mode:** When **Yes**, verbose logging is written to `administrator/logs/plg_j2commerce_app_squareintegration.php`. Disable on live sites
+
+**OAuth Debug Page:** When **Yes**, clicking Connect to Square shows a debug card instead of immediately redirecting. The card shows the authorize URL, Application ID, OAuth state, and Redirect URI. Turn back to **No** to restore the normal flow
+
+***
 
 ## Dashboard Tabs
 
 Opening the Square Integration settings puts you directly on the Dashboard tab, which contains six inner tabs for monitoring and managing the sync.
 
 ### Overview Tab
+
+![](/img/square-pos-dashboard.webp)
 
 The Overview tab is the control center for the integration. It shows:
 
@@ -267,9 +276,9 @@ The **Quick Actions** panel on this tab lets you run one-click operations withou
 
 If API calls are auto-paused due to repeated errors, a warning banner appears at the top of this tab with the error count and a **Resume Sync** button.
 
-<!-- SCREENSHOT: Dashboard Overview tab showing connection status, sync statistics, and Quick Actions panel -->
-
 ### Catalog Tab
+
+![](/img/square-pos-catalog.webp)
 
 The Catalog tab is a browser for your raw Square catalog. Use it to preview items before importing, import selected items individually, or search and filter your catalog.
 
@@ -283,9 +292,9 @@ Actions available on this tab:
 - **Import All** — imports every item from Square that has not already been mapped
 - **Load More / Next** — page through large catalogs. The Square API returns items in batches; use pagination controls to see more results
 
-<!-- SCREENSHOT: Catalog tab showing a list of Square items with checkboxes and Import Selected button -->
-
 ### Mappings Tab
+
+![](/img/square-pos-mappings.webp)
 
 The Mappings tab shows the link records between every Square object and its corresponding J2Commerce entity. Each mapping row contains the Square object ID, entity type (product, variant, tag, coupon, tax profile, etc.), the matched J2Commerce entity, sync status, and last synced timestamp.
 
@@ -294,9 +303,9 @@ You can filter by entity type and sync status. Actions available per row:
 - **Re-sync** — fetches the latest data for that Square object and updates the J2Commerce entity
 - **Unlink** — removes the mapping record without deleting the J2Commerce entity. Use this if you want to re-import a product with fresh defaults or detach a product from Square tracking
 
-<!-- SCREENSHOT: Mappings tab showing a table of Square-J2Commerce mapping records with status filters -->
-
 ### Inventory Tab
+
+![](/img/square-pos-inventory.webp)
 
 The Inventory tab shows the current stock status for every mapped product variation. It displays each product, its location, and quantity in one of three states: **In Stock**, **Low Stock**, or **Out of Stock**.
 
@@ -304,17 +313,17 @@ A note at the top of this tab reminds you which inventory aggregation mode is ac
 
 Click **Sync Inventory** on this tab (or from the Quick Actions panel) to pull the latest counts from Square immediately.
 
-<!-- SCREENSHOT: Inventory tab showing products with their stock status badges and location columns -->
-
 ### Activity Log Tab
+
+![](/img/square-pos-activities.webp)
 
 The Activity Log tab records every sync event — imports, updates, webhook deliveries, errors, and OAuth actions. Each entry shows an action type, entity type, entity identifier, status, and timestamp.
 
 You can filter the log by status (Success, Warning, Error) or by entity type to focus on specific issues. Click **Clear Log** to delete all entries and start fresh. The log is automatically trimmed to the number of days set in the **Log Retention (days)** field on the Advanced tab.
 
-<!-- SCREENSHOT: Activity Log tab showing a table of sync events with status colour coding -->
-
 ### OAuth Tab
+
+![](/img/square-pos-oauth.webp)
 
 The OAuth tab displays the current authorization status and provides a step-by-step setup guide for the webhook subscription.
 
@@ -329,7 +338,7 @@ Information shown:
 
 This tab also contains the webhook setup instructions — see the [Webhook Setup](#webhook-setup) section below for the full walkthrough.
 
----
+***
 
 ## Webhook Setup
 
@@ -337,11 +346,11 @@ Webhooks let Square notify J2Commerce the moment something changes — instead o
 
 ### Events That J2Commerce Handles
 
-| Square Event | What Triggers It | J2Commerce Action |
-|---|---|---|
-| `catalog.version.updated` | A catalog item is created, updated, or deleted in Square | Queues a product sync for the changed item |
-| `inventory.count.updated` | Stock levels change at a location | Queues an inventory update |
-| `oauth.authorization.revoked` | A merchant revokes access in Square | Logs a warning; tokens must be refreshed manually |
+| Square Event                  | What Triggers It                                         | J2Commerce Action                                 |
+| ----------------------------- | -------------------------------------------------------- | ------------------------------------------------- |
+| `catalog.version.updated`     | A catalog item is created, updated, or deleted in Square | Queues a product sync for the changed item        |
+| `inventory.count.updated`     | Stock levels change at a location                        | Queues an inventory update                        |
+| `oauth.authorization.revoked` | A merchant revokes access in Square                      | Logs a warning; tokens must be refreshed manually |
 
 ### Step-by-Step: Register the Webhook Subscription
 
@@ -350,6 +359,7 @@ Webhooks let Square notify J2Commerce the moment something changes — instead o
 3. Copy the **Notification URL** shown on the **OAuth** tab inside J2Commerce's Square Integration settings.
 4. Paste it into the **URL** field in the Square Developer Dashboard. Give the subscription a name such as "J2Commerce Integration" and choose the latest API version.
 5. Enable the following events:
+
    - `catalog.version.updated`
    - `inventory.count.updated`
    - `oauth.authorization.revoked`
@@ -357,15 +367,13 @@ Webhooks let Square notify J2Commerce the moment something changes — instead o
 7. Return to J2Commerce -> **Square Integration** -> **Connection** tab.
 8. Paste the Signature Key into the **Webhook Signature Key** field and click **Save**.
 
-<!-- SCREENSHOT: Square Developer Dashboard Webhooks subscription page showing event checkboxes -->
-
 :::tip
 
 Register the webhook against both your sandbox app and your production app. Each app has its own **Webhook Signature Key** — store the correct key for the environment you are currently using.
 
 :::
 
----
+***
 
 ## Automated Sync with the Task Scheduler
 
@@ -373,12 +381,12 @@ The task scheduler runs catalog and inventory syncs on a schedule so J2Commerce 
 
 ### Task Commands
 
-| Command | What It Does |
-|---------|--------------|
-| `square_sync_all` | Syncs the full catalog — fetches item data from Square and updates all mapped J2Commerce products |
-| `square_sync_inventory` | Refreshes inventory counts for all mapped product variations |
-| `square_refresh_token` | Proactively renews the OAuth access token before it expires |
-| `square_webhook` | Processes incoming webhook payloads. Called internally when Square posts an event |
+| Command                 | What It Does                                                                                      |
+| ----------------------- | ------------------------------------------------------------------------------------------------- |
+| `square_sync_all`       | Syncs the full catalog — fetches item data from Square and updates all mapped J2Commerce products |
+| `square_sync_inventory` | Refreshes inventory counts for all mapped product variations                                      |
+| `square_refresh_token`  | Proactively renews the OAuth access token before it expires                                       |
+| `square_webhook`        | Processes incoming webhook payloads. Called internally when Square posts an event                 |
 
 ### Setting Up the Joomla Task Scheduler
 
@@ -395,8 +403,6 @@ Repeat the process to create a second task for inventory:
 - Command: `square_sync_inventory`
 - Interval: every 30 minutes (`*/30 * * * *`) or match the **Inventory Sync Interval** setting on the Sync tab
 
-<!-- SCREENSHOT: Joomla Scheduled Tasks new task form with J2Commerce cron command selected -->
-
 ### Server Cron Job (Recommended)
 
 Joomla's Task Scheduler needs a trigger. Add a server cron job so it fires reliably:
@@ -407,7 +413,7 @@ Joomla's Task Scheduler needs a trigger. Add a server cron job so it fires relia
 
 Replace `/path/to/your/joomla` with the actual path to your Joomla installation. The `*/5` runs the check every 5 minutes so tasks never wait more than 5 minutes to start.
 
----
+***
 
 ## How Sync Works
 
@@ -420,7 +426,7 @@ When a sync runs — either triggered by a cron job or pushed by a Square webhoo
 5. **Price calculation** — Applies markup (if configured) and writes prices to J2Commerce product records.
 6. **Square badge on product form** — Once a product is mapped, opening it in J2Commerce shows a small **Square: Synced** badge with a direct link to view the item in the Square Dashboard.
 
----
+***
 
 ## Tips
 
@@ -431,7 +437,7 @@ When a sync runs — either triggered by a cron job or pushed by a Square webhoo
 - **Monitor the Activity Log.** Keep **Log Retention (days)** at 30 or more during initial setup so you can review what imported, what was skipped, and what errored.
 - **Square modifiers become variant options.** If your Square items use modifiers such as "Gift wrap" or "Size", they map to J2Commerce variant option fields after import. Review them and choose the right **Option Field Type** (dropdown, radio buttons, or color swatches) on the Products tab.
 
----
+***
 
 ## Troubleshooting
 
@@ -449,7 +455,7 @@ When a sync runs — either triggered by a cron job or pushed by a Square webhoo
 
 The consent screen now recognizes the active seller session and renders correctly. This step is only needed for sandbox — production OAuth does not require it.
 
----
+***
 
 ### Test Connection returns "Failed"
 
@@ -457,7 +463,7 @@ The consent screen now recognizes the active seller session and renders correctl
 
 **Solution:** Return to the **Connection** tab. Re-enter the Application ID and Application Secret from the Square Developer Dashboard -> OAuth section. Click **Save**, then click **Test Connection** again. If you are using a Manual Access Token, generate a fresh one from the Square Developer Console and paste it in.
 
----
+***
 
 ### "Redirect URI mismatch" error from Square during OAuth
 
@@ -465,7 +471,7 @@ The consent screen now recognizes the active seller session and renders correctl
 
 **Solution:** Copy the Redirect URI from J2Commerce's Connection tab — including the full URL with all query parameters such as `tmpl=component`. Go to Square Developer Dashboard -> your app -> **OAuth** -> **Redirect URL**, paste the exact URI, and click **Save**. Even a single character difference causes Square to reject the request.
 
----
+***
 
 ### Imported products are not visible in the storefront
 
@@ -473,7 +479,7 @@ The consent screen now recognizes the active seller session and renders correctl
 
 **Solution:** Either change **Import Status** to **Published** before running a fresh import, or go to **J2Commerce** -> **Catalog** -> **Products**, filter by unpublished, and manually publish each imported product after reviewing it.
 
----
+***
 
 ### Inventory counts look incorrect
 
@@ -481,7 +487,7 @@ The consent screen now recognizes the active seller session and renders correctl
 
 **Solution:** Open the **Locations** tab and review **Inventory Aggregation**. **Sum across locations** adds the quantity from every selected location. **Primary location only** uses the first selected location's count. If you have stock spread across several locations and only see one location's count, switch to **Sum across locations** and save.
 
----
+***
 
 ### Webhooks are enabled but no live updates arrive
 
@@ -494,7 +500,7 @@ The consent screen now recognizes the active seller session and renders correctl
 3. Verify the **Webhook Signature Key** on the Connection tab matches the key Square generated for your subscription.
 4. As a fallback, lower **Inventory Sync Interval** on the Sync tab to 5 minutes so the cron job catches changes more frequently while you investigate.
 
----
+***
 
 ### Sync is paused and I see error banners on the J2Commerce Dashboard
 
