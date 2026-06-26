@@ -315,7 +315,7 @@ Subscription support requires the **Subscription Product** app plugin, which is 
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Klarna**.
+1. Go to **J2Commerce -> Setup -> Payment Methods** -> **Klarna**.
 2. Confirm **Sandbox Mode** matches your credential type — sandbox credentials only work in sandbox mode, and live credentials only work with sandbox mode off.
 3. Verify the **API Username**, **API Password**, and **Client Identifier** are filled in correctly.
 4. Confirm the **Region** matches the country your Klarna merchant account is registered in.
@@ -338,7 +338,7 @@ Subscription support requires the **Subscription Product** app plugin, which is 
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Klarna**.
+1. Go to **J2Commerce -> Setup ->** **Payment Methods** -> **Klarna**.
 2. Check whether **Sandbox Mode** is on or off.
 3. Fill in the corresponding credential fields — **Sandbox API Username** and **Sandbox API Password** for sandbox mode, or **API Username** and **API Password** for live mode.
 4. Click **Save**.
@@ -359,7 +359,7 @@ Subscription support requires the **Subscription Product** app plugin, which is 
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Klarna**.
+1. Go to **J2Commerce -> Setup -> Payment Methods** -> **Klarna**.
 2. Set **Sandbox Mode** to **No**.
 3. Confirm the **API Username**, **API Password**, and **Client Identifier** fields (under the live credentials section) are filled in with your live Klarna credentials.
 4. Click **Save**.
