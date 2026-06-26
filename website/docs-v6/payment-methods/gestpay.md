@@ -1,10 +1,3 @@
----
-title: "GestPay / Axerve (Banca Sella) Payment"
-sidebar_label: "GestPay (Axerve)"
-sidebar_position: 92
-description: "How to configure the GestPay / Axerve (Banca Sella) payment gateway plugin for J2Commerce. Covers Shop Login setup, the mandatory back-office response URL, test mode, order status mapping, supported currencies, and troubleshooting."
----
-
 # GestPay / Axerve (Banca Sella) Payment
 
 GestPay — now branded as **Axerve** — is the online payment gateway operated by Banca Sella, one of Italy's leading banking groups. It is widely used by Italian and European merchants and accepts cards in several major currencies.
@@ -40,15 +33,6 @@ Before installing the plugin, confirm you have:
 
 ***
 
-## Installation
-
-1. Purchase and download the `plg_j2commerce_payment_gestpay.zip` package from the [J2Commerce Extensions Store](https://www.j2commerce.com).
-2. In your Joomla admin, go to **System** -> **Install** -> **Extensions**.
-3. Upload the `.zip` package file.
-4. After installation, go to **System** -> **Plugins**, search for "GestPay", and confirm the plugin is enabled. If it is not, select it and click **Enable**.
-
-***
-
 ## CRITICAL: Configure the Response URL in GestPay Back Office
 
 This is the most important setup step. **The plugin will not finalize payments unless you do this.**
@@ -72,9 +56,40 @@ The parameter `paction=display_message` is required. If this parameter is missin
 
 If you are unsure where this setting is in your account, contact Banca Sella / Axerve support.
 
-***
+**GestPay**
 
-## Configuration
+## Purchase and download
+
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **GestPay**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
+## Install the plugin
+
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+
+Upload the `plg_j2commerce_payment_gestpay.zip` file.
+
+![](/img/install.webp)
+
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **GestPay**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/gestpay-enable.webp)
+
+## Configure the plugin
 
 :::tip
 
@@ -82,30 +97,31 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-In your Joomla admin, go to **J2Commerce** -> **Payments** -> **Payment Methods** and open the **GestPay** row to configure it.
-
-<!-- SCREENSHOT: J2Commerce -> Payments -> Payment Methods list with GestPay row highlighted -->
+![](/img/gestpay-toggle.webp)
 
 ### Basic settings
 
-| Field               | Description                                                                                                 | Recommended value                        |
-| ------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| **Display Name**    | Label shown to customers at checkout                                                                        | `Credit Card (GestPay)` or leave default |
-| **Display Image**   | Optional logo shown next to the payment name                                                                | Your GestPay/Axerve logo                 |
-| **Shop Login**      | Your `shopLogin` credential from Banca Sella. This is your merchant identifier, not a username or password. | Provided by Banca Sella                  |
-| **Use Test Server** | Switches between the sandbox (`testecomm.sella.it`) and live (`ecomm.sella.it`) environment.                | **No** for live stores                   |
+![](/img/gestpay-display1.webp)
 
-<!-- SCREENSHOT: GestPay plugin configuration panel showing Shop Login and Use Test Server fields -->
+**Display Name:** Label shown to customers at checkout
+
+**Display Image:** Optional logo shown next to the payment name
+
+**Shop Login:** Your `shopLogin` credential from Banca Sella. This is your merchant identifier, not a username or password.
+
+**Use Test Server:** Switches between the sandbox (`testecomm.sella.it`) and live (`ecomm.sella.it`) environment.
 
 ### Order status
 
+![](/img/gestpay-status.webp)
+
 These settings control which J2Commerce order status is applied for each payment outcome.
 
-| Field                        | Description                                                                                            | Default   |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------ | --------- |
-| **Confirmed Payment Status** | Applied when GestPay returns `TransactionResult = OK` (payment accepted).                              | Confirmed |
-| **Pending Payment Status**   | Applied when GestPay returns `TransactionResult = XX` (payment suspended or under review by the bank). | Pending   |
-| **Failed Payment Status**    | Applied when payment is declined, an error code is returned, or GestPay returns `KO`.                  | Failed    |
+**Confirmed Payment Status:** Applied when GestPay returns `TransactionResult = OK` (payment accepted).
+
+**Pending Payment Status:** Applied when GestPay returns `TransactionResult = XX` (payment suspended or under review by the bank).
+
+**Failed Payment Status:** Applied when payment is declined, an error code is returned, or GestPay returns `KO`.
 
 :::info
 
@@ -117,65 +133,59 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 
 ### Optional surcharge
 
+![](/img/gestpay-surcharge.webp)
+
 You can add a payment surcharge when the customer selects GestPay. Both a percentage and a fixed amount can be combined — they are added together.
 
-| Field                   | Description                                                      |
-| ----------------------- | ---------------------------------------------------------------- |
-| **Surcharge Name**      | Label shown on the order summary, e.g. `Payment fee`             |
-| **Surcharge Percent**   | Percentage of the order subtotal + shipping, e.g. `1.5` for 1.5% |
-| **Surcharge Fixed**     | Fixed amount added to every order, e.g. `0.50`                   |
-| **Surcharge Tax Class** | Tax profile applied to the surcharge amount, if applicable       |
+**Surcharge Name:** Label shown on the order summary, e.g. `Payment fee`
+
+**Surcharge Percent:** Percentage of the order subtotal + shipping, e.g. `1.5` for 1.5%
+
+**Surcharge Fixed:** Fixed amount added to every order, e.g. `0.50`
+
+**Surcharge Tax Class:** Tax profile applied to the surcharge amount, if applicable
 
 Leave all surcharge fields empty if you do not want to add a fee.
 
 ### Geo zone restriction
 
-| Field                    | Description                                                                                                                                                          |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Geo Zone Restriction** | If set, GestPay will only appear at checkout for billing addresses within the selected geo zone. Leave empty to show GestPay to all customers regardless of country. |
+![](/img/gestpay-geozone.webp)
 
-### Thank-you article
-
-| Field                 | Description                                                                                                                               |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **Thank You Article** | An optional Joomla article displayed below the payment confirmation message. Useful for post-purchase instructions or cross-sell content. |
+**Geo Zone Restriction:** If set, GestPay will only appear at checkout for billing addresses within the selected geo zone. Leave empty to show GestPay to all customers regardless of country.
 
 ### Subscription support
 
-| Field                     | Description                                                                                                                                                                                         | Default |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Support Subscriptions** | Enable only if you use a subscription app and want GestPay to appear as a payment option for subscription products. Automatic renewal payments are not supported (GestPay HPP has no stored token). | No      |
+**Support Subscriptions:** Enable only if you use a subscription app and want GestPay to appear as a payment option for subscription products. Automatic renewal payments are not supported (GestPay HPP has no stored token).
 
-### Display messages
+### Custom messages
+
+![](/img/gestpay-messages.webp)
 
 These text areas let you customize what customers see at each stage.
 
-| Field              | When it shows                                                                                       |
-| ------------------ | --------------------------------------------------------------------------------------------------- |
-| **On Selection**   | Shown in the checkout payment list when the customer selects GestPay, before they click to proceed. |
-| **Before Payment** | Shown on the order summary page, just before the button that redirects to GestPay.                  |
-| **After Payment**  | Shown on return from a successful GestPay transaction. Leave empty to use the plugin default.       |
-| **On Error**       | Shown when GestPay returns an error or the payment is declined.                                     |
+**Thank You Article:** An optional Joomla article displayed below the payment confirmation message. Useful for post-purchase instructions or cross-sell content.
 
-### Button text
+**On Selection:** Shown in the checkout payment list when the customer selects GestPay, before they click to proceed.
 
-| Field           | Description                               | Default     |
-| --------------- | ----------------------------------------- | ----------- |
-| **Button Text** | Label on the "Proceed to GestPay" button. | Place Order |
+**Before Payment:** Shown on the order summary page, just before the button that redirects to GestPay.
 
-### Admin notification
+**After Payment:** Shown on return from a successful GestPay transaction. Leave empty to use the plugin default.
 
-| Field                 | Description                                                                                                                                                              | Default            |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ |
-| **Admin Email Group** | The Joomla user group whose members receive an email when GestPay returns a payment error. Only users in this group with **Receive System Emails** enabled are notified. | Super Users (ID 8) |
+**On Error:** Shown when GestPay returns an error or the payment is declined.
 
-### Debug mode
+### Appearance
 
-| Field          | Description                                                                                                                                 | Default |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Debug Mode** | Logs SOAP requests and responses to Joomla's log system under the `plg_j2commerce_payment_gestpay` category. Card numbers are never logged. | No      |
+![](/img/gestpay-appearance.webp)
+
+**Button Text:** Label on the "Proceed to GestPay" button.
+
+**Admin Email Group:** The Joomla user group whose members receive an email when GestPay returns a payment error. Only users in this group with **Receive System Emails** enabled are notified.
+
+**Debug Mode:** Logs SOAP requests and responses to Joomla's log system under the `plg_j2commerce_payment_gestpay` category. Card numbers are never logged.
 
 Disable debug mode in production. Enable it temporarily when diagnosing issues.
+
+**Template Style:** Choose the checkout layout style — Bootstrap 5 or UIkit. Defaults to your site's active J2Commerce theme.
 
 ***
 
@@ -207,7 +217,7 @@ EUR is the primary and most common currency for Italian merchants. If you operat
 2. In the plugin settings, set **Shop Login** to your test Shop Login and switch **Use Test Server** to **Yes**.
 3. Configure the response URL in the **GestPay test back office** (a separate portal for test accounts) pointing to your Joomla site, using the same `paction=display_message` URL described above.
 4. Place a test order on your store and complete payment using GestPay's published test card numbers (provided in the Banca Sella developer documentation).
-5. Verify the order status updates correctly in **J2Commerce** -> **Orders**.
+5. Verify the order status updates correctly in **J2Commerce** **-> Sales -> Orders**.
 6. When you are satisfied, switch **Use Test Server** back to **No** and update your live GestPay back office response URL.
 
 ***
