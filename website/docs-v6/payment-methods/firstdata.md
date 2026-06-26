@@ -1,10 +1,3 @@
----
-title: "First Data (Global Gateway e4 / IPG Connect)"
-sidebar_label: "First Data"
-sidebar_position: 89
-description: "How to configure the First Data Hosted Payment Page plugin for J2Commerce. Covers both Global Gateway e4 (US) and IPG Connect (UK/EU) modes, response signature verification, order status mapping, surcharges, and troubleshooting."
----
-
 # First Data (Global Gateway e4 / IPG Connect)
 
 > **Legacy gateway — existing merchants only.** Fiserv (formerly First Data) has largely sunset the Global Gateway e4 product for new US merchants. The plugin's **US mode** is provided for merchants with active GGe4 credentials. If you are setting up a new US account, contact Fiserv about a current product such as Payeezy or Clover. The **UK/EU IPG Connect mode** remains an active gateway.
@@ -37,21 +30,6 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 ***
 
-## Installation
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Purchase and download the `plg_j2commerce_payment_firstdata.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `plg_j2commerce_payment_firstdata.zip` package file.
-4. The plugin installs and enables automatically.
-
-To configure it, go to **J2Commerce** -> **Payments** -> **Payment Methods** and click on **First Data** in the list.
-
-<!-- SCREENSHOT: J2Commerce Payments → Payment Methods list showing First Data entry -->
-
-***
-
 ## Choosing a gateway mode
 
 The most important setting is **Gateway Mode** (labelled **Payment Type** in the form). This selects which First Data protocol the plugin uses. All other credential fields then become relevant to that mode only.
@@ -63,9 +41,38 @@ The most important setting is **Gateway Mode** (labelled **Payment Type** in the
 
 The credential fields for each mode are shown and hidden automatically based on this selection. You only need to fill in the fields for your chosen mode.
 
-***
+## Purchase and download
 
-## Configuration
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **First Data**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
+## Install the plugin
+
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+
+Upload the `plg_j2commerce_payment_firstdata.zip` file.
+
+![](/img/install.webp)
+
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **First Data**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/first-data-enable.webp)
+
+## Configure the plugin
 
 :::tip
 
@@ -73,36 +80,35 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-Navigate to **J2Commerce** -> **Payments** -> **Payment Methods** -> **First Data** to configure the plugin.
-
-<!-- SCREENSHOT: First Data plugin configuration page in J2Commerce admin, showing the two gateway-mode radio buttons -->
+![](/img/first-data-toggle.webp)
 
 ### Display settings
 
-| Field             | Description                                                                    |
-| ----------------- | ------------------------------------------------------------------------------ |
-| **Display Name**  | The payment method name shown to customers at checkout. Default: "First Data". |
-| **Display Image** | Optional image (e.g. card logos) shown alongside the payment method name.      |
+![](/img/first-data-display.webp)
 
-***
+**Display Name:** The payment method name shown to customers at checkout. Default: "First Data".
+
+**Display Image:** Optional image (e.g. card logos) shown alongside the payment method name.
 
 ### US mode — Global Gateway e4 credentials
+
+![](/img/first-data-gateway.webp)
 
 These fields are only shown when **Gateway Mode** is set to **US — Global Gateway e4**.
 
 To find these values, log in to your **First Data GGe4 Merchant Portal** and open the Payment Page you have configured for your store.
 
-| Field                         | Description                                                                                                                                                      |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Page ID**                   | The Page ID assigned to your live GGe4 Payment Page.                                                                                                             |
-| **Transaction Key**           | The Transaction Key for your live GGe4 Payment Page. Used to generate the HMAC-MD5 request signature.                                                            |
-| **Sandbox Page ID**           | Page ID for the GGe4 test environment (`demo.globalgatewaye4.firstdata.com`).                                                                                    |
-| **Sandbox Transaction Key**   | Transaction Key for the GGe4 test environment.                                                                                                                   |
-| **Enable Level 3 Processing** | Activates enhanced purchasing-card data fields in the US payment form. Enable only if your merchant account is enrolled in Level 3 card processing. Default: No. |
+**Page ID:** The Page ID assigned to your live GGe4 Payment Page.
+
+**Transaction Key:** The Transaction Key for your live GGe4 Payment Page. Used to generate the HMAC-MD5 request signature.
+
+**Sandbox Page ID:** Page ID for the GGe4 test environment (`demo.globalgatewaye4.firstdata.com`).
+
+**Sandbox Transaction Key:** Transaction Key for the GGe4 test environment.
+
+**Enable Level 3 Processing:** Activates enhanced purchasing-card data fields in the US payment form. Enable only if your merchant account is enrolled in Level 3 card processing. Default: No.
 
 > **GGe4 sunset note:** Fiserv has largely discontinued GGe4 for new accounts. If you are setting up a new US merchant account, contact Fiserv about Payeezy or Clover instead. This plugin fully supports existing GGe4 accounts.
-
-***
 
 ### UK/EU mode — IPG Connect credentials
 
@@ -110,25 +116,47 @@ These fields are only shown when **Gateway Mode** is set to **UK/EU — IPG Conn
 
 To find these values, log in to your **IPG Connect back-office** and navigate to your store settings.
 
-| Field                     | Description                                                                                                                                                                                                                    | Default                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------- |
-| **Store Name**            | Your IPG Connect Store Name (provided by First Data during onboarding).                                                                                                                                                        | —                                                        |
-| **Shared Secret**         | The Shared Secret configured in your IPG Connect back-office. Used to compute the SHA-256 request and response hashes.                                                                                                         | —                                                        |
-| **Sandbox Store Name**    | Store Name for the IPG Connect test environment (`test.ipg-online.com`).                                                                                                                                                       | —                                                        |
-| **Sandbox Shared Secret** | Shared Secret for the IPG Connect test environment.                                                                                                                                                                            | —                                                        |
-| **Payment URL**           | Live IPG Connect gateway endpoint. Change only if instructed by First Data.                                                                                                                                                    | `https://www.ipg-online.com/connect/gateway/processing`  |
-| **Sandbox Payment URL**   | Test IPG Connect gateway endpoint.                                                                                                                                                                                             | `https://test.ipg-online.com/connect/gateway/processing` |
-| **Transaction Type**      | How the gateway handles the authorisation. **Sale** captures funds immediately. **Pre-Auth** places an authorisation hold for later capture.                                                                                   | Sale                                                     |
-| **Checkout Mode**         | Controls the level of detail collected on the First Data payment page. **Pay Only** — card details only. **Pay Plus** — card details plus billing address. **Full Pay** — card details, billing address, and shipping address. | Pay Only                                                 |
+**Store Name:** Your IPG Connect Store Name (provided by First Data during onboarding).
 
-***
+**Shared Secret:** The Shared Secret configured in your IPG Connect back-office. Used to compute the SHA-256 request and response hashes.
+
+**Sandbox Store Name:** Store Name for the IPG Connect test environment (`test.ipg-online.com`).
+
+**Sandbox Shared Secret:** Shared Secret for the IPG Connect test environment.
+
+**Payment URL:** Live IPG Connect gateway endpoint. Change only if instructed by First Data.
+
+**Sandbox Payment URL:** Test IPG Connect gateway endpoint.
+
+**Transaction Type:** How the gateway handles the authorisation. **Sale** captures funds immediately. **Pre-Auth** places an authorisation hold for later capture.
+
+**Checkout Mode:** Controls the level of detail collected on the First Data payment page. **Pay Only** — card details only. **Pay Plus** — card details plus billing address. **Full Pay** — card details, billing address, and shipping address.
+
+### Sandbox / test mode
+
+![](/img/first-data-api.webp)
+
+**Sandbox Mode:** Routes all transactions to the gateway test environment. Disable for live payments.
+
+When sandbox mode is enabled, the plugin automatically uses the sandbox credentials and sandbox endpoint URLs.
+
+**Page ID (Live):** Your First Data Global Gateway e4 Page ID for the live environment.
+
+**Transaction Key (Live):** Your First Data Global Gateway e4 transaction key for HMAC signing (live).
+
+**Page ID (Sandbox):** Your First Data Global Gateway e4 Page ID for the sandbox environment.
+
+**Transaction Key (Sandbox):** Your First Data Global Gateway e4 transaction key for HMAC signing (sandbox).
+
+**Enable Level 3 Processing:** Set to **Yes** to send Level 3 line-item data with the transaction (US only).
 
 ### Response signature verification
 
-| Field                            | Description                                                                                                                                                                                                                                                                        | Default |
-| -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Validate Response Hash**       | Verifies the cryptographic signature on every response posted back from First Data before updating the order. **Strongly recommended.** Disable only for debugging.                                                                                                                | Yes     |
-| **Response Key / MD5 Hash (US)** | Only shown for US mode when **Validate Response Hash** is Yes. Paste the "Response Key" value from your GGe4 Payment Page configuration in the Merchant Portal. Without this value, US relay-response verification is skipped even when the toggle is on, and a warning is logged. | —       |
+![](/img/first-data-hash.webp)
+
+**Validate Response Hash:** Verifies the cryptographic signature on every response posted back from First Data before updating the order. **Strongly recommended.** Disable only for debugging.
+
+**Response Key / MD5 Hash (US):** Only shown for US mode when **Validate Response Hash** is Yes. Paste the "Response Key" value from your GGe4 Payment Page configuration in the Merchant Portal. Without this value, US relay-response verification is skipped even when the toggle is on, and a warning is logged.
 
 #### How response verification works
 
@@ -138,27 +166,15 @@ To find these values, log in to your **IPG Connect back-office** and navigate to
 
 If verification fails in either mode, the order is set to the **Failed** status and an admin notification email is sent.
 
-<!-- SCREENSHOT: Response validation fields in the plugin configuration, highlighting the US Response Key field -->
-
-***
-
-### Sandbox / test mode
-
-| Field            | Description                                                                         | Default |
-| ---------------- | ----------------------------------------------------------------------------------- | ------- |
-| **Sandbox Mode** | Routes all transactions to the gateway test environment. Disable for live payments. | No      |
-
-When sandbox mode is enabled, the plugin automatically uses the sandbox credentials and sandbox endpoint URLs.
-
-***
-
 ### Order statuses
 
-| Field                        | Default   | Description                                                                                                                                       |
-| ---------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Confirmed Payment Status** | Confirmed | Applied when First Data returns `Transaction_Approved=YES` (US) or `status=APPROVED` (UK). The customer confirmation email is sent at this point. |
-| **Pending Payment Status**   | Pending   | Applied when the gateway returns an unrecognised status other than approved or declined.                                                          |
-| **Failed Payment Status**    | Failed    | Applied when the gateway returns `Transaction_Approved=NO` (US), `status=DECLINED` (UK), an invalid transaction type, or a signature mismatch.    |
+![](/img/first-data-status.webp)
+
+**Confirmed Payment Status:** Applied when First Data returns `Transaction_Approved=YES` (US) or `status=APPROVED` (UK). The customer confirmation email is sent at this point.
+
+**Pending Payment Status:** Applied when the gateway returns an unrecognised status other than approved or declined.
+
+**Failed Payment Status:** Applied when the gateway returns `Transaction_Approved=NO` (US), `status=DECLINED` (UK), an invalid transaction type, or a signature mismatch.
 
 :::info
 
@@ -168,52 +184,53 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 
 ![](/img/shipstation-order-status2-1.webp)
 
-***
-
 ### Surcharges
+
+![](/img/first-data-surcharge.webp)
 
 Add a payment surcharge to cover gateway processing fees.
 
-| Field                    | Description                                                                                                       |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------- |
-| **Surcharge Name**       | Label shown to customers on the order summary (e.g. "Payment processing fee").                                    |
-| **Surcharge Percentage** | Percentage of the order subtotal plus shipping to add. Enter `2` for 2%. Leave blank for no percentage surcharge. |
-| **Surcharge Fixed**      | Fixed amount to add regardless of order value. Leave blank for no fixed surcharge.                                |
-| **Surcharge Tax Class**  | Tax profile to apply to the surcharge. Leave blank if the surcharge is not taxable.                               |
+**Surcharge Name:** Label shown to customers on the order summary (e.g. "Payment processing fee").
+
+**Surcharge Percentage:** Percentage of the order subtotal plus shipping to add. Enter `2` for 2%. Leave blank for no percentage surcharge.
+
+**Surcharge Fixed:** Fixed amount to add regardless of order value. Leave blank for no fixed surcharge.
+
+**Surcharge Tax Class:** Tax profile to apply to the surcharge. Leave blank if the surcharge is not taxable.
 
 Both percentage and fixed surcharges are applied together if both are set.
 
-***
+### Geozone
+
+![](/img/first-data-zone.webp)
+
+**Geographic Restriction:** Limit this payment method to customers within a specific geo-zone. Leave blank to allow all customers.
 
 ### Checkout messaging
 
-| Field                 | Description                                                                                           |
-| --------------------- | ----------------------------------------------------------------------------------------------------- |
-| **On Selection**      | Text shown when the customer selects First Data as their payment method.                              |
-| **On Before Payment** | Text shown on the pre-payment confirmation step just before the customer is redirected to First Data. |
-| **On After Payment**  | Text shown on the thank-you page after successful payment.                                            |
-| **On Error Payment**  | Text shown when a payment error or decline occurs.                                                    |
-| **Button Text**       | Label for the "Place Order" button. Default: "Place Order".                                           |
-| **Thank-You Article** | Optionally display a Joomla article as an additional thank-you message after successful payment.      |
+![](/img/first-data-messages.webp)
 
-***
+**Thank-You Article:** Optionally display a Joomla article as an additional thank-you message after successful payment.
 
-### Admin notifications
+**On Selection:** Text shown when the customer selects First Data as their payment method.
 
-| Field                        | Description                                                                                                              | Default               |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------ | --------------------- |
-| **Admin Notification Group** | Joomla user group whose members receive an email when payment processing fails (e.g. signature mismatch, invalid order). | Super Users (group 8) |
+**On Before Payment:** Text shown on the pre-payment confirmation step just before the customer is redirected to First Data.
 
-***
+**On After Payment:** Text shown on the thank-you page after successful payment.
+
+**On Error Payment:** Text shown when a payment error or decline occurs.
 
 ### Other settings
 
-| Field                      | Description                                                                                                                                                                                          | Default     |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| **Geographic Restriction** | Limit this payment method to customers within a specific geo-zone. Leave blank to allow all customers.                                                                                               | —           |
-| **Support Subscriptions**  | Allow this payment method to be selected for subscription products. Because this is a redirect HPP integration, automatic card-on-file renewal is not supported. Renewal requires manual processing. | No          |
-| **Layout**                 | Select Bootstrap 5 or UIkit 3 to match your front-end template.                                                                                                                                      | Bootstrap 5 |
-| **Debug Mode**             | Logs transaction details to the Joomla log system (category: `plg_j2commerce_payment_firstdata`). **Disable in production.**                                                                         | No          |
+![](/img/first-data-style.webp)
+
+**Button Text:** Label for the "Place Order" button. Default: "Place Order".
+
+**Admin Notification Group:** Joomla user group whose members receive an email when payment processing fails (e.g. signature mismatch, invalid order).
+
+**Template Style:**  Select Bootstrap 5 or UIkit 3 to match your front-end template.
+
+**Debug:** Logs transaction details to the Joomla log system (category: `plg_j2commerce_payment_firstdata`). **Disable in production.**
 
 ***
 
