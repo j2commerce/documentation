@@ -5,7 +5,7 @@ sidebar_position: 40
 description: "Let EU customers exercise their statutory right to withdraw from contracts directly from their order page — fully compliant with EU Directive 2023/2673, mandatory from 19 June 2026."
 ---
 
-# Order Withdrawal (EU Compliance)
+# EU Order Withdrawal Compliance
 
 EU law gives consumers the right to withdraw from distance contracts within a statutory period — 14 days by default. Under **EU Directive 2023/2673**, which entered into force on **19 June 2026**, online stores must provide consumers with a simple, direct mechanism to exercise that right. This plugin adds a **Withdraw from Contract** button to the customer's order page in J2Commerce, records each request in a dedicated dashboard, and sends legally-required confirmation emails automatically.
 
