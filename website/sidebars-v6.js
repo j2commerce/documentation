@@ -274,7 +274,7 @@ const sidebars = {
                         'apps-and-extensions/apps/app_reorder',
                         // Email Cart
                         'apps-and-extensions/apps/app-emailbasket',
-                        // Order Withdrawal (EU Compliance)
+                        // EU Order Withdrawal Compliance
                         'apps-and-extensions/apps/orderwithdrawal',
                         // EU VAT Rules
                         'apps-and-extensions/apps/euvat',
@@ -468,7 +468,7 @@ const sidebars = {
                 // Elavon Converge Payment
                 'payment-methods/elavon',
                 // Elavon Payment Gateway
-                'payment-methods/payment_elavon',
+                //'payment-methods/payment_elavon',
                 // ePDQ / Worldline Hosted Payment Page
                 'payment-methods/epdq',
                 // eWAY Rapid Payment

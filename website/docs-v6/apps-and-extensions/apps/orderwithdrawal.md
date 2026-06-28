@@ -1,6 +1,6 @@
 ---
-title: "Order Withdrawal (EU Compliance)"
-sidebar_label: "Order Withdrawal"
+title: "EU Order Withdrawal Compliance"
+sidebar_label: "EU Order Withdrawal Compliance"
 sidebar_position: 40
 description: "Let EU customers exercise their statutory right to withdraw from contracts directly from their order page — fully compliant with EU Directive 2023/2673, mandatory from 19 June 2026."
 ---
