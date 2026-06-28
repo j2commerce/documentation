@@ -183,6 +183,8 @@ The plugin shows either the **live credentials** or the **sandbox credentials** 
 
 ### Saved Cards
 
+![](/img/payone-cc.webp)
+
 **Allow Saved Cards:** When switched on, logged-in customers can save their card token at checkout for faster purchases in the future. Saved cards can also be charged automatically for subscription renewals.
 
 :::info
@@ -193,7 +195,7 @@ The **Allow Saved Cards** setting is only available when **Integration Mode** is
 
 ### Template Style
 
-**Template:** Choose the checkout layout style for the payment form. Available options depend on your site's active J2Commerce template skin (Bootstrap 5 or UIkit). Leave blank to use the default for your template.
+**Template Style:** Choose the checkout layout style for the payment form. Available options depend on your site's active J2Commerce template skin (Bootstrap 5 or UIkit). Leave blank to use the default for your template.
 
 ### Order Statuses
 

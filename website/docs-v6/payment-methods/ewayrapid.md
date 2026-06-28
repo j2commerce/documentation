@@ -1,10 +1,3 @@
----
-title: "eWAY Rapid Payment"
-sidebar_label: "eWAY Rapid"
-sidebar_position: 30
-description: "Accept credit and debit card payments through the eWAY Rapid gateway in Australia, New Zealand, and the United Kingdom."
----
-
 # eWAY Rapid Payment
 
 eWAY Rapid is a popular payment gateway for businesses in Australia, New Zealand, and the United Kingdom. This plugin connects your J2Commerce store to the eWAY Rapid 3.1 API so customers can pay by credit or debit card at checkout.
@@ -44,90 +37,106 @@ For sandbox testing, eWAY provides a separate sandbox merchant account with its 
 
 ***
 
-## Installation
+## Purchase and download
 
-The eWAY Rapid plugin is not included with J2Commerce. Purchase and install it as a separate add-on.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase the plugin from the [J2Commerce Extensions Store](https://www.j2commerce.com) and download the zip file.
-2. In your Joomla admin, go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_ewayrapid.zip` file using the drag-and-drop area or the **Browse for file** button.
-4. The plugin installs and enables itself automatically.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **eWAY Rapid**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-<!-- SCREENSHOT: Joomla Extensions install screen with payment_ewayrapid.zip uploaded successfully -->
+## Install the plugin
 
-After installation, navigate to **J2Commerce** -> **Payments** -> **Payment Methods** to confirm the plugin appears in the list. If it shows as disabled, click the toggle in the **Enabled** column to enable it.
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
-***
+Upload the `payment_ewayrapid.zip` file.
 
-## Configuration
+![](/img/install.webp)
+
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **eWAY Rapid**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/eway-enable.webp)
+
+## Configure the plugin
+
+Click the **eWAY Rapid** title next to the green checkmark to open the configuration screen.
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
 
 :::
 
-Go to **J2Commerce** -> **Payments** -> **Payment Methods** and click **eWAY Rapid** (or the edit icon next to it) to open the settings.
-
-<!-- SCREENSHOT: J2Commerce Payment Methods list showing eWAY Rapid row -->
+![](/img/eway-toggle.webp)
 
 ### Display Settings
 
-| Field             | Description                                  | Recommended                     |
-| ----------------- | -------------------------------------------- | ------------------------------- |
-| **Display Name**  | The label shown to customers at checkout     | `Credit / Debit Card` or `eWAY` |
-| **Display Image** | Optional logo shown next to the payment name | Upload an eWAY or card logo     |
+![](/img/eway-display.webp)
+
+**Display Name:** The label shown to customers at checkout
+
+`Credit / Debit Card` or `eWAY`
+
+**Display Image:** Optional logo shown next to the payment name
+
+Upload an eWAY or card logo
 
 ### Credentials
 
-| Field            | Description                                                |
-| ---------------- | ---------------------------------------------------------- |
-| **API Key**      | Your eWAY Rapid API Key from MYeWAY (My Account > API Key) |
-| **API Password** | The API Password paired with your API Key                  |
+![](/img/eway-api.webp)
+
+**API Key:** Your eWAY Rapid API Key from MYeWAY (My Account > API Key)
+
+**API Password:** The API Password paired with your API Key
 
 Paste your credentials exactly as they appear in MYeWAY. The password field is masked for security.
 
-<!-- SCREENSHOT: eWAY Rapid settings panel showing API Key and API Password fields -->
-
 ### Sandbox Mode
 
-| Field           | Options  | Description                                                                                                                                         |
-| --------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Use Sandbox** | Yes / No | When set to **Yes**, all transactions are sent to `api.sandbox.ewaypayments.com` instead of the live gateway. Set to **No** for a production store. |
+**Use Sandbox:** When set to **Yes**, all transactions are sent to `api.sandbox.ewaypayments.com` instead of the live gateway. Set to **No** for a production store.
 
 Always enable sandbox mode first to test your setup before accepting real payments.
 
 ### Integration Method
 
-| Field                  | Options                                                    |
-| ---------------------- | ---------------------------------------------------------- |
-| **Integration Method** | Shared Page (hosted) / Transparent Redirect (on-site form) |
+![](/img/eway-integration.webp)
+
+**Integration Method:** Shared Page (hosted) / Transparent Redirect (on-site form)
 
 This is the most important choice in the plugin. See [Choosing an Integration Method](#choosing-an-integration-method) below for a full explanation. The default is **Shared Page (hosted)**.
 
-### Transaction Mode
+**Transaction Mode:**&#x20;
 
-| Field                | Options              | Description                                                                                                                                                                |
-| -------------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Transaction Mode** | Sale / Authorisation | **Sale** captures funds immediately when the customer pays. **Authorisation** places a hold on the funds and requires you to manually capture the payment later in MYeWAY. |
+- **Sale** captures funds immediately when the customer pays.&#x20;
+
+- **Authorisation** places a hold on the funds and requires you to manually capture the payment later in MYeWAY.
 
 Most stores use **Sale**. Use **Authorisation** only if you need to review orders before charging the card (for example, made-to-order goods).
 
-### Payment Button
-
-| Field                   | Description                       | Default     |
-| ----------------------- | --------------------------------- | ----------- |
-| **Payment Button Text** | Text shown on the checkout button | Place Order |
+**Payment Button Text:** Text shown on the checkout button
 
 ### Order Statuses
 
+![](/img/eway-status.webp)
+
 These settings control which J2Commerce order status is applied based on the payment result.
 
-| Field                    | Description                                                        | Default Status |
-| ------------------------ | ------------------------------------------------------------------ | -------------- |
-| **Paid Order Status**    | Applied when eWAY confirms the payment was approved                | Confirmed (1)  |
-| **Pending Order Status** | Applied when the payment is accepted but awaiting final settlement | Pending (4)    |
-| **Failed Order Status**  | Applied when eWAY declines or rejects the payment                  | Failed (3)     |
+**Paid Order Status:** Applied when eWAY confirms the payment was approved
+
+**Pending Order Status:** Applied when the payment is accepted but awaiting final settlement
+
+**Failed Order Status:** Applied when eWAY declines or rejects the payment
 
 The defaults match the standard J2Commerce order status IDs. Only change these if you have renamed or reordered your statuses.
 
@@ -141,57 +150,59 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 
 ### Surcharge (Optional)
 
+![](/img/eway-surcharge.webp)
+
 You can add a fee to orders paid with eWAY. Leave all three fields blank if you do not want to charge a surcharge.
 
-| Field                   | Description                                      | Example                             |
-| ----------------------- | ------------------------------------------------ | ----------------------------------- |
-| **Surcharge Name**      | Label shown to the customer on the order summary | `Credit Card Fee`                   |
-| **Surcharge Percent**   | Additional percentage of the order subtotal      | `1.5`                               |
-| **Surcharge Fixed**     | Flat fee added on top of any percentage          | `0.30`                              |
-| **Surcharge Tax Class** | Tax profile applied to the surcharge amount      | Select a tax profile or leave blank |
+**Surcharge Name:** Label shown to the customer on the order summary. **Example:** `Credit Card Fee`
+
+**Surcharge Percent:** Additional percentage of the order subtotal: **Example:** `1.5`
+
+**Surcharge Fixed:** Flat fee added on top of any percentage: **Example:** `0.30`
+
+**Surcharge Tax Class:** Tax profile applied to the surcharge amount. Select a tax profile or leave blank
 
 If both a percentage and a fixed amount are entered, both are applied (for example, 1.5% + $0.30).
 
 ### Availability Restrictions (Optional)
 
+![](/img/eway-restrictions.webp)
+
 Use these settings to limit when eWAY appears as a payment option.
 
-| Field                   | Description                                                                           |
-| ----------------------- | ------------------------------------------------------------------------------------- |
-| **Geozone Restriction** | Only show eWAY to customers in the selected geozone. Leave blank to show to everyone. |
-| **Min Subtotal**        | Hide eWAY if the cart subtotal is below this amount. Leave blank for no minimum.      |
-| **Max Subtotal**        | Hide eWAY if the cart subtotal is above this amount. Leave blank for no maximum.      |
+**Geozone Restriction:** Only show eWAY to customers in the selected geozone. Leave blank to show to everyone.
 
-### Thank-You Article
+**Min Subtotal:** Hide eWAY if the cart subtotal is below this amount. Leave blank for no minimum.
 
-| Field                 | Description                                                                                                                                                     |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Thank-You Article** | Select a Joomla article to display on the order confirmation page after a successful payment. Useful for instructions, voucher codes, or next-step information. |
+**Max Subtotal:** Hide eWAY if the cart subtotal is above this amount. Leave blank for no maximum.
 
-### Display Text
+### Checkout Messages
+
+![](/img/eway-messages.webp)
+
+**Thank-You Article:** Select a Joomla article to display on the order confirmation page after a successful payment. Useful for instructions, voucher codes, or next-step information.
 
 These optional text areas let you show custom messages to the customer at different points in the checkout. Leave them blank to use the plugin's default messages.
 
-| Field              | When it is shown                                               |
-| ------------------ | -------------------------------------------------------------- |
-| **On Selection**   | When the customer selects eWAY as their payment method         |
-| **Before Payment** | On the payment screen, before the card form or redirect button |
-| **After Payment**  | On the confirmation page after a successful payment            |
-| **On Error**       | Displayed alongside any payment error message                  |
-| **On Cancel**      | When the customer cancels on the eWAY hosted page              |
+**On Selection:** When the customer selects eWAY as their payment method
 
-### Dashboard Icon
+**Before Payment:** On the payment screen, before the card form or redirect button
 
-| Field                    | Description                                                    | Default |
-| ------------------------ | -------------------------------------------------------------- | ------- |
-| **Show Dashboard Icon**  | Display a shortcut icon on the J2Commerce admin dashboard      | No      |
-| **Dashboard Icon Label** | Label for the shortcut (visible only when the icon is enabled) |         |
+**After Payment:** On the confirmation page after a successful payment
 
-### Debug Logging
+**On Error:** Displayed alongside any payment error message
 
-| Field             | Description                                                           | Default |
-| ----------------- | --------------------------------------------------------------------- | ------- |
-| **Debug Logging** | Write gateway activity to the Joomla log file `payment_ewayrapid.php` | No      |
+**On Cancel:** When the customer cancels on the eWAY hosted page
+
+### Dashboard Icon & Debug
+
+![](/img/eway-icon.webp)
+
+**Show Dashboard Icon:** Display a shortcut icon on the J2Commerce admin dashboard
+
+- **Icon Label:** Label for the shortcut (visible only when the icon is enabled)
+
+**Debug Logging:** Write gateway activity to the Joomla log file `payment_ewayrapid.php`
 
 Enable debug logging only while troubleshooting. The log records request and response activity but never stores card numbers or security codes.
 
@@ -241,8 +252,6 @@ eWAY provides a sandbox environment at `api.sandbox.ewaypayments.com` that accep
 2. Generate sandbox API credentials from the sandbox MYeWAY portal (My Account > API Key).
 3. In the eWAY Rapid plugin settings, set **Use Sandbox** to **Yes** and enter your sandbox API Key and Password.
 4. Save the settings.
-
-<!-- SCREENSHOT: eWAY Rapid settings with Use Sandbox toggled to Yes -->
 
 ### Running a Test Transaction
 
@@ -297,7 +306,7 @@ If you previously used the eWAY Rapid plugin for J2Store v4, here is what has ch
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and open the eWAY Rapid settings.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** and open the eWAY Rapid settings.
 2. Confirm both the **API Key** and **API Password** fields are filled in.
 3. If you are testing, check that you have entered your **sandbox** credentials and that **Use Sandbox** is set to **Yes**.
 4. Save and retry.

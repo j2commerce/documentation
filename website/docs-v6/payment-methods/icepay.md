@@ -22,16 +22,34 @@ To verify SOAP is enabled, go to **System** -> **System Information** -> **PHP I
 
 :::
 
-## Installation
+## Purchase and download
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `payment_icepay.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_icepay.zip` package file.
-4. The plugin installs and enables automatically.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **IcePay**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-After installation, configure it at **J2Commerce** -> **Payments** -> **Payment Methods**.
+## Install the plugin
+
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+
+Upload the `plg_j2commerce_payment_icepay.zip` file.
+
+![](/img/install.webp)
+
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **IcePay**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ## Configuration
 
@@ -45,13 +63,11 @@ Find the ICEPAY plugin in the payment methods list and click its name to open se
 
 ### Credentials
 
-| Field            | Description                                                                                 |
-| ---------------- | ------------------------------------------------------------------------------------------- |
-| **Merchant ID**  | Your numeric ICEPAY Merchant ID from the ICEPAY merchant portal.                            |
-| **Secret Code**  | Your ICEPAY secret code used for request signing.                                           |
-| **Postback URL** | Read-only. Copy this URL into your ICEPAY merchant portal as the postback/notification URL. |
+**Merchant ID:** Your numeric ICEPAY Merchant ID from the ICEPAY merchant portal.
 
-<!-- SCREENSHOT: ICEPAY plugin settings page showing Merchant ID, Secret Code, and read-only Postback URL fields -->
+**Secret Code:** Your ICEPAY secret code used for request signing.
+
+**Postback URL:** Read-only. Copy this URL into your ICEPAY merchant portal as the postback/notification URL.
 
 ### Accepted Payment Methods
 
@@ -67,21 +83,21 @@ When a customer selects iDEAL at checkout, they are shown a list of Dutch banks 
 
 ### Sandbox Mode
 
-| Field                     | Description                                                         |
-| ------------------------- | ------------------------------------------------------------------- |
-| **Use Sandbox**           | Enable to use test/sandbox credentials instead of live credentials. |
-| **Merchant ID (Sandbox)** | Sandbox Merchant ID — only used when Sandbox is enabled.            |
-| **Secret Code (Sandbox)** | Sandbox secret code — only used when Sandbox is enabled.            |
+**Use Sandbox:** Enable to use test/sandbox credentials instead of live credentials.
+
+**Merchant ID (Sandbox):** Sandbox Merchant ID — only used when Sandbox is enabled.
+
+**Secret Code (Sandbox):** Sandbox secret code — only used when Sandbox is enabled.
 
 When sandbox mode is on, the sandbox credentials are used automatically. Keep your live credentials in the main fields and sandbox credentials in the sandbox fields so switching between modes is instant.
 
 ### Order Statuses
 
-| Field                        | Default   | Description                                                          |
-| ---------------------------- | --------- | -------------------------------------------------------------------- |
-| **Confirmed Payment Status** | Confirmed | Status applied when ICEPAY reports a successful payment.             |
-| **Pending Payment Status**   | Pending   | Status applied when ICEPAY reports an open/pending payment.          |
-| **Failed Payment Status**    | Failed    | Status applied when ICEPAY reports an error or the customer cancels. |
+**Confirmed Payment Status:** Status applied when ICEPAY reports a successful payment.
+
+**Pending Payment Status:** Status applied when ICEPAY reports an open/pending payment.
+
+**Failed Payment Status:** Status applied when ICEPAY reports an error or the customer cancels.
 
 :::info
 
@@ -95,12 +111,13 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 
 Add an optional payment surcharge — useful if your payment processor charges a transaction fee you wish to pass on.
 
-| Field                      | Description                                                         |
-| -------------------------- | ------------------------------------------------------------------- |
-| **Surcharge Name**         | Label shown on the order summary (e.g. "Payment fee").              |
-| **Surcharge Percent**      | Percentage of the order total added as a fee (e.g. `2.5` for 2.5%). |
-| **Surcharge Fixed Amount** | Fixed amount added as a fee regardless of order total.              |
-| **Surcharge Tax Class**    | Optional tax class applied to the surcharge.                        |
+**Surcharge Name:** Label shown on the order summary (e.g. "Payment fee").
+
+**Surcharge Percent:** Percentage of the order total added as a fee (e.g. `2.5` for 2.5%).
+
+**Surcharge Fixed Amount:** Fixed amount added as a fee regardless of order total.
+
+**Surcharge Tax Class:** Optional tax class applied to the surcharge.
 
 Both percent and fixed surcharges can be combined — they are added together.
 
@@ -108,27 +125,27 @@ Both percent and fixed surcharges can be combined — they are added together.
 
 Set a **Geo Zone** to limit this payment method to customers in specific countries or regions. Leave blank to make it available worldwide.
 
-### Article (Thank-You Message)
+### Custom Messages
 
-Select a Joomla article to display as extra content on the post-payment confirmation page. This is shown in addition to the **On After Payment** text.
+**Article (Thank-You Message):** Select a Joomla article to display as extra content on the post-payment confirmation page. This is shown in addition to the **On After Payment** text.
 
-### On-Page Text
+**On Selection Text:** Shown when the customer selects ICEPAY at checkout (above the issuer selector).
 
-| Field                      | Description                                                                     |
-| -------------------------- | ------------------------------------------------------------------------------- |
-| **On Selection Text**      | Shown when the customer selects ICEPAY at checkout (above the issuer selector). |
-| **On Before Payment Text** | Shown on the redirect page before the customer clicks the pay button.           |
-| **On After Payment Text**  | Shown after a successful payment return.                                        |
-| **On Cancel Text**         | Shown if the customer cancels the payment at ICEPAY.                            |
-| **On Error Text**          | Shown if a payment error occurs.                                                |
+**On Before Payment Text:** Shown on the redirect page before the customer clicks the pay button.
+
+**On After Payment Text:** Shown after a successful payment return.
+
+**On Cancel Text:** Shown if the customer cancels the payment at ICEPAY.
+
+**On Error Text:** Shown if a payment error occurs.
 
 ### Other Settings
 
-| Field                 | Default            | Description                                                                           |
-| --------------------- | ------------------ | ------------------------------------------------------------------------------------- |
-| **Button Text**       | Place Order        | Label on the pay button. Use a J2Commerce language key or plain text.                 |
-| **Admin Email Group** | Administrators (8) | User group notified by email when a payment postback validation fails.                |
-| **Debug Mode**        | No                 | Logs ICEPAY events to `administrator/logs/payment_icepay.php`. Disable in production. |
+**Button Text:** Label on the pay button. Use a J2Commerce language key or plain text.
+
+**Admin Email Group:** User group notified by email when a payment postback validation fails.
+
+**Debug Mode:** Logs ICEPAY events to `administrator/logs/payment_icepay.php`. Disable in production.
 
 ## Checkout Flow
 

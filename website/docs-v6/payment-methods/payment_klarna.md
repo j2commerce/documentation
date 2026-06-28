@@ -18,17 +18,6 @@ The plugin supports two checkout modes: **Klarna Payments**, which embeds a Klar
 - A Klarna merchant account (see below)
 - Your site must be publicly reachable over HTTPS for Klarna callbacks to work
 
-## Installation
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Purchase and download the `payment_klarna.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions** in your Joomla admin.
-3. Upload the `payment_klarna.zip` package file.
-4. The plugin installs and enables automatically.
-
-<!-- SCREENSHOT: Joomla Extensions Installer showing successful Klarna plugin install -->
-
 ## Set Up a Klarna Merchant Account
 
 If you already have Klarna API credentials, skip to [Configure the Plugin](#configure-the-plugin).
@@ -46,30 +35,52 @@ Klarna's available payment methods (Pay Now, Pay Later, Pay Over Time) vary by c
 
 :::
 
+## Purchase and download
+
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Klarna**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
+## Install the plugin
+
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+
+Upload the `plg_j2commerce_payment_klarna.zip` file.
+
+![](/img/install.webp)
+
 ## Enable the Plugin
 
-After installation, go to **J2Commerce** -> **Payments** -> **Payment Methods** in your Joomla admin.
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list showing Klarna plugin -->
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-Find **Klarna** in the list, click the toggle in the **Enabled** column to turn it on (it turns green), then click the plugin name to open its settings.
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Klarna**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ## Configure the Plugin
 
-<!-- SCREENSHOT: Klarna plugin settings page — full view -->
+:::tip
+
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
+
+:::
 
 ### Display Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Display Name** | The name shown to shoppers at checkout — e.g., "Pay with Klarna" | `Klarna` |
-| **Display Image** | Optional logo or badge shown next to the payment option | _(none)_ |
+**Display Name:** The name shown to shoppers at checkout — e.g., "Pay with Klarna"
+
+**Display Image:** Optional logo or badge shown next to the payment option
 
 ### Checkout Mode
 
-| Field | Description |
-|-------|-------------|
-| **Checkout Mode** | Choose **Klarna Payments (on-site widget — recommended)** to keep shoppers on your checkout page, or **Hosted Payment Page (redirect)** to send shoppers to a Klarna-hosted payment screen. |
+- **Checkout Mode:** Choose **Klarna Payments (on-site widget — recommended)** to keep shoppers on your checkout page, or **Hosted Payment Page (redirect)** to send shoppers to a Klarna-hosted payment screen.
 
 :::info
 
@@ -77,46 +88,43 @@ Find **Klarna** in the list, click the toggle in the **Enabled** column to turn 
 
 :::
 
-#### HPP Payment Methods (Hosted Payment Page only)
+- HPP Payment Methods (Hosted Payment Page only)
 
 When **Checkout Mode** is set to **Hosted Payment Page**, you can restrict which payment options appear on the Klarna page. Leave this blank to show all available options for your account.
 
-| Option | Description |
-|--------|-------------|
-| Pay Now | Immediate payment by card or bank transfer |
-| Pay Later | Single interest-free deferred payment |
-| Pay Over Time | Installment payments spread over several months |
-| Direct Debit | Bank debit payment |
-| Direct Bank Transfer | Real-time bank transfer |
+**Pay Now:** Immediate payment by card or bank transfer
+
+**Pay Later:** Single interest-free deferred payment
+
+**Pay Over Time:** Installment payments spread over several months
+
+**Direct Debit:** Bank debit payment
+
+**Direct Bank Transfer:** Real-time bank transfer
 
 ### Transaction Type
 
-| Value | Description |
-|-------|-------------|
-| **Authorize and Capture** | Charges the shopper immediately when the order is placed. Recommended for most stores. |
-| **Authorize Only** | Places a hold on the shopper's payment method but does not charge it. You capture manually from the order view when you are ready to ship. |
+- **Authorize and Capture:** Charges the shopper immediately when the order is placed. Recommended for most stores.
+
+- **Authorize Only:** Places a hold on the shopper's payment method but does not charge it. You capture manually from the order view when you are ready to ship.
 
 ### Region
 
 Select the Klarna API region that matches your merchant account. Using the wrong region will result in authentication errors.
 
-| Region | Use when |
-|--------|----------|
-| Europe (EU) | Your Klarna account is registered in a European country |
-| North America (NA) | Your Klarna account is registered in the US or Canada |
-| Oceania (OC) | Your Klarna account is registered in Australia or New Zealand |
+Europe (EU): Your Klarna account is registered in a European country
+
+North America (NA): Your Klarna account is registered in the US or Canada
+
+Oceania (OC): Your Klarna account is registered in Australia or New Zealand
 
 ### Sandbox Mode
 
 Toggle **Sandbox Mode** on while you are testing. In sandbox mode, no real payments are processed and Klarna uses its playground environment. Turn this off before going live.
 
 :::warning
-
 The **Sandbox** credentials (username, password, and client identifier) are separate from your live credentials. Fill in both sets so you can switch between environments without losing your live keys.
-
 :::
-
-<!-- SCREENSHOT: Klarna credentials fields showing sandbox vs live sections -->
 
 ### API Credentials
 
@@ -124,19 +132,19 @@ Two sets of credentials are available — fill in both. The plugin automatically
 
 **Live credentials** (shown when Sandbox Mode is Off):
 
-| Field | Description |
-|-------|-------------|
-| **API Username (UID)** | Your live Klarna API username — typically a UUID starting with a region prefix such as `PK99999_...` |
-| **API Password** | Your live Klarna API password — starts with `klarna_...` |
-| **Client Identifier** | Your live Klarna Payments JS SDK client identifier (required for on-site widget mode only) |
+**API Username (UID):** Your live Klarna API username — typically a UUID starting with a region prefix such as `PK99999_...`
+
+**API Password:** Your live Klarna API password — starts with `klarna_...`
+
+**Client Identifier:** Your live Klarna Payments JS SDK client identifier (required for on-site widget mode only)
 
 **Sandbox credentials** (shown when Sandbox Mode is On):
 
-| Field | Description |
-|-------|-------------|
-| **Sandbox API Username** | Your playground/sandbox Klarna API username |
-| **Sandbox API Password** | Your playground/sandbox Klarna API password |
-| **Sandbox Client Identifier** | Your sandbox Klarna Payments JS SDK client identifier (on-site widget mode only) |
+**Sandbox API Username:** Your playground/sandbox Klarna API username
+
+**Sandbox API Password:** Your playground/sandbox Klarna API password
+
+**Sandbox Client Identifier:** Your sandbox Klarna Payments JS SDK client identifier (on-site widget mode only)
 
 ### Callback URLs
 
@@ -154,76 +162,73 @@ Callback URLs are not available on local development environments. Use a tunneli
 
 :::
 
-<!-- SCREENSHOT: Callback URLs section showing the three URLs with Copy buttons -->
-
 ### Subscriptions and Saved Payment Methods
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Enable Subscriptions** | Allow Klarna Customer Tokens to be created for recurring subscription payments. Requires the Subscription Product app to also be installed and enabled. | No |
-| **Allow Saved Payment Methods** | Let customers save their Klarna payment method for faster future checkouts. | Yes |
+**Enable Subscriptions:** Allow Klarna Customer Tokens to be created for recurring subscription payments. Requires the Subscription Product app to also be installed and enabled.
+
+**Allow Saved Payment Methods:** Let customers save their Klarna payment method for faster future checkouts.
 
 ### Order Status Automation
 
 Control which order status J2Commerce applies at each point in the payment lifecycle.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Payment Order Status** | Status applied when payment is successfully completed and captured. | _(your configured "Confirmed" status)_ |
-| **Authorized Order Status** | Status applied when payment is authorized but not yet captured (used with **Authorize Only** mode). | _(your configured "Pending" status)_ |
-| **Update Status on Cancel** | Toggle on to automatically change the order status when an authorization is voided. | No |
-| **Cancelled Order Status** | Status to apply when an authorization is cancelled (shown when **Update Status on Cancel** is Yes). | — |
-| **Update Status on Refund** | Toggle on to automatically change the order status when a refund is processed. | No |
-| **Refunded Order Status** | Status to apply when a full refund is issued (shown when **Update Status on Refund** is Yes). | — |
-| **Partial Refund Order Status** | Status to apply when a partial refund is issued (shown when **Update Status on Refund** is Yes). | — |
+**Payment Order Status:** Status applied when payment is successfully completed and captured.
+
+**Authorized Order Status:** Status applied when payment is authorized but not yet captured (used with **Authorize Only** mode).
+
+**Update Status on Cancel:** Toggle on to automatically change the order status when an authorization is voided.
+
+**Cancelled Order Status:** Status to apply when an authorization is cancelled (shown when **Update Status on Cancel** is Yes).
+
+**Update Status on Refund:** Toggle on to automatically change the order status when a refund is processed.
+
+**Refunded Order Status:** Status to apply when a full refund is issued (shown when **Update Status on Refund** is Yes).
+
+**Partial Refund Order Status:** Status to apply when a partial refund is issued (shown when **Update Status on Refund** is Yes).
 
 ### Surcharge (Optional)
 
 If you want to pass a payment surcharge on to customers who choose Klarna, complete these fields. Leave them blank if you do not charge a surcharge.
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Name** | Label shown to the customer — e.g., "Klarna fee" |
-| **Surcharge Percent** | Percentage of the order total added as a fee — e.g., `1.5` for 1.5% |
-| **Surcharge Fixed** | Fixed amount added to every Klarna order — e.g., `0.30` |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount |
+**Surcharge Name:** Label shown to the customer — e.g., "Klarna fee"
+
+**Surcharge Percent:** Percentage of the order total added as a fee — e.g., `1.5` for 1.5%
+
+**Surcharge Fixed:** Fixed amount added to every Klarna order — e.g., `0.30`
+
+**Surcharge Tax Class:** Tax profile to apply to the surcharge amount
 
 ### Availability Restrictions (Optional)
 
-| Field | Description |
-|-------|-------------|
-| **Geozone Restriction** | Limit Klarna to customers in a specific geozone. Leave blank to offer Klarna to all locations. |
-| **Minimum Subtotal** | Klarna is only shown when the order subtotal is at or above this amount. Enter `0` for no minimum. |
-| **Maximum Subtotal** | Klarna is hidden when the order subtotal exceeds this amount. Enter `-1` for no maximum. |
+**Geozone Restriction:** Limit Klarna to customers in a specific geozone. Leave blank to offer Klarna to all locations.
+
+**Minimum Subtotal:** Klarna is only shown when the order subtotal is at or above this amount. Enter `0` for no minimum.
+
+**Maximum Subtotal:** Klarna is hidden when the order subtotal exceeds this amount. Enter `-1` for no maximum.
 
 ### Custom Messages (Optional)
 
 These text areas let you insert custom HTML or text at specific points during the checkout process.
 
-| Field | When it appears |
-|-------|-----------------|
-| **On Selection** | When the customer selects Klarna as their payment method |
-| **Before Payment** | Directly before the Klarna payment widget or redirect button renders |
-| **After Payment** | After a successful payment is completed |
-| **On Error** | When a payment error occurs |
-| **On Cancel** | When the customer cancels and returns from the Klarna page |
+**Thank-You Article:** Use the **Thank You Message** field to link a Joomla article that will be shown to the customer after a successful Klarna payment, in addition to the standard J2Commerce order confirmation.
 
-### Thank-You Article (Optional)
+**On Selection:** When the customer selects Klarna as their payment method
 
-Use the **Thank You Message** field to link a Joomla article that will be shown to the customer after a successful Klarna payment, in addition to the standard J2Commerce order confirmation.
+**Before Payment:** Directly before the Klarna payment widget or redirect button renders
+
+**After Payment:** After a successful payment is completed
+
+**On Error:** When a payment error occurs
+
+**On Cancel:** When the customer cancels and returns from the Klarna page
 
 ### Dashboard Icon (Optional)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Show Dashboard Icon** | Add a Klarna shortcut to the J2Commerce dashboard. | No |
-| **Dashboard Icon Label** | Label text for the dashboard icon (shown when **Show Dashboard Icon** is Yes). | — |
+**Show Dashboard Icon:** Add a Klarna shortcut to the J2Commerce dashboard.
 
-### Debug Logging
+- **Icon Label:** Label text for the dashboard icon (shown when **Show Dashboard Icon** is Yes).
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Logging** | Log Klarna API requests and responses to the Joomla system log. Helpful for troubleshooting — turn off in production. | No |
+**Debug Logging:** Log Klarna API requests and responses to the Joomla system log. Helpful for troubleshooting — turn off in production.
 
 Click **Save** in the toolbar when you have finished configuring the plugin.
 
@@ -310,7 +315,7 @@ Subscription support requires the **Subscription Product** app plugin, which is 
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Klarna**.
+1. Go to **J2Commerce -> Setup -> Payment Methods** -> **Klarna**.
 2. Confirm **Sandbox Mode** matches your credential type — sandbox credentials only work in sandbox mode, and live credentials only work with sandbox mode off.
 3. Verify the **API Username**, **API Password**, and **Client Identifier** are filled in correctly.
 4. Confirm the **Region** matches the country your Klarna merchant account is registered in.
@@ -333,7 +338,7 @@ Subscription support requires the **Subscription Product** app plugin, which is 
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Klarna**.
+1. Go to **J2Commerce -> Setup ->** **Payment Methods** -> **Klarna**.
 2. Check whether **Sandbox Mode** is on or off.
 3. Fill in the corresponding credential fields — **Sandbox API Username** and **Sandbox API Password** for sandbox mode, or **API Username** and **API Password** for live mode.
 4. Click **Save**.
@@ -354,7 +359,7 @@ Subscription support requires the **Subscription Product** app plugin, which is 
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Klarna**.
+1. Go to **J2Commerce -> Setup -> Payment Methods** -> **Klarna**.
 2. Set **Sandbox Mode** to **No**.
 3. Confirm the **API Username**, **API Password**, and **Client Identifier** fields (under the live credentials section) are filled in with your live Klarna credentials.
 4. Click **Save**.

@@ -1,10 +1,3 @@
----
-title: "Braintree Payment"
-sidebar_label: "Braintree"
-sidebar_position: 20
-description: "Accept credit cards, digital wallets, and subscription payments in J2Commerce using the Braintree payment gateway from PayPal."
----
-
 # Braintree Payment
 
 Braintree lets your store accept credit and debit cards using a PCI-compliant form that never sends raw card numbers to your server. Because the card data is tokenized in the customer's browser by the Braintree JavaScript SDK, your server only ever sees a short-lived payment nonce.
@@ -50,8 +43,6 @@ You need three values from Braintree: **Merchant ID**, **Public Key**, and **Pri
 4. Click **View** next to the key you want to use.
 5. Copy the three values shown: **Merchant ID**, **Public Key**, and **Private Key**.
 
-<!-- SCREENSHOT: Braintree sandbox API Keys page showing Merchant ID, Public Key, Private Key -->
-
 ### Production (Live) Credentials
 
 1. Go to [www.braintreegateway.com](https://www.braintreegateway.com) and sign in to your live Braintree Control Panel.
@@ -60,7 +51,7 @@ You need three values from Braintree: **Merchant ID**, **Public Key**, and **Pri
 4. Click **View** next to the key you want.
 5. Copy the **Merchant ID**, **Public Key**, and **Private Key** for the live environment.
 
-:::caution
+:::info
 
 Never share your **Private Key** publicly. Treat it like a password — it authorizes real charges on your account.
 
@@ -68,35 +59,38 @@ Never share your **Private Key** publicly. Treat it like a password — it autho
 
 ***
 
-## Purchase and Download
+## Purchase and download
 
-1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate the **Braintree Payment** plugin.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Braintree Payment**.
 2. Add it to your cart and complete checkout.
-3. Go to **My Downloads** under your account menu and download the `payment_braintree.zip` file.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-***
+## Install the plugin
 
-## Install and Enable
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
-### Install the Plugin
+Upload the `payment_braintree.zip` file.
 
-1. In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
-2. Upload the `payment_braintree.zip` file using the **Upload Package File** tab.
-3. The installer checks for required PHP extensions and confirms the installation is complete.
+![](/img/install.webp)
 
-<!-- SCREENSHOT: Joomla Extension Install screen with Upload Package File tab selected -->
+## Enable the Plugin
 
-### Enable the Plugin
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-1. Go to **J2Commerce** -> **Setup** -> **Payment Methods**.
-2. Find **Braintree** in the list.
-3. Click the toggle (red X) in the **Enabled** column — it turns green. The plugin is now active.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list showing Braintree with the toggle -->
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
 
-***
+![](/img/culqi.webp)
 
-## Configuration Walkthrough
+To help you narrow down the list, you can do a search for **Braintree Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/braintree-enable.webp)
+
+## Configure the plugin
 
 :::tip
 
@@ -104,21 +98,22 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-Click the **Braintree** payment method title to open the settings. Settings are organized into five tabs.
-
-<!-- SCREENSHOT: Braintree plugin settings page showing the five tabs: Basic, Live, Sandbox, Messages, Advanced -->
+![](/img/braintree-toggle.webp)
 
 ### Basic Settings
 
-<!-- SCREENSHOT: Basic tab with Display Name, Payment Image, Sandbox toggle, Payment Type, and Accepted Cards fields -->
+![](/img/braintree-config1.webp)
 
-| Field                   | Description                                                                                          | Recommended Value                                   |
-| ----------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| **Display Name**        | Label shown to customers at checkout when selecting their payment method                             | `Credit Card` or `Pay by Card`                      |
-| **Payment Image**       | URL or path to an image shown next to the payment method name                                        | Leave blank to show the accepted card icons instead |
-| **Sandbox**             | Switch between test (Sandbox) and live (Production) modes                                            | **Yes** while testing; **No** when going live       |
-| **Payment Type**        | Choose the checkout UI style — see [Hosted Fields vs Drop-in UI](#hosted-fields-vs-drop-in-ui) below | `Hosted Fields` for design-consistent stores        |
-| **Accepted Card Types** | Cards shown as accepted icons during payment method selection                                        | Select all cards your Braintree account accepts     |
+**Display Name:** The label shown to customers on the checkout page — for example, "Credit / Debit Card". Change this to whatever makes sense for your store.
+
+**Display Image:** An optional logo or card-brand image to show next to the payment method name at checkout.
+
+**Capture Method:** Controls when funds are actually collected from the customer's card.
+
+- **Authorize & Capture** — funds are collected immediately when the payment is authorized. This is the right choice for most stores.
+- **Authorize Only** — the payment is authorized (the amount is reserved on the card) but funds are not collected until you click **Capture Payment** from the order screen. This is useful when you want to confirm stock availability or review the order before charging the customer.
+
+### Live Credentials
 
 :::info
 
@@ -126,75 +121,135 @@ When **Sandbox** is set to **Yes**, the plugin reads the Sandbox credentials tab
 
 :::
 
-***
-
-### Live Credentials
+![](/img/braintree-config2-1.webp)
 
 These settings are used when **Sandbox** is set to **No**.
 
-<!-- SCREENSHOT: Live tab showing Merchant ID, Public Key, Private Key, and Merchant Account ID fields -->
+**Live Merchant ID:** Your production Merchant ID from the Braintree Control Panel
 
-| Field                        | Description                                                                                                                |
-| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| **Live Merchant ID**         | Your production Merchant ID from the Braintree Control Panel                                                               |
-| **Live Public Key**          | Your production Public Key                                                                                                 |
-| **Live Private Key**         | Your production Private Key (stored encrypted)                                                                             |
-| **Live Merchant Account ID** | Auto-populated list of merchant accounts on your live Braintree account — select which account to charge for each currency |
+**Live Public Key:** Your production Public Key
 
-The **Live Merchant Account ID** field queries the Braintree API using your live credentials and shows a table of your configured merchant accounts. If your account has only one currency, you can leave this on the default. If you process multiple currencies, see [Multi-Currency Merchant Accounts](#multi-currency-merchant-accounts) below.
+**Live Private Key:** Your production Private Key (stored encrypted)
 
-***
+**Live Merchant Account ID:** Auto-populated list of merchant accounts on your live Braintree account — select which account to charge for each currency
+
+- The **Live Merchant Account ID** field queries the Braintree API using your live credentials and shows a table of your configured merchant accounts. If your account has only one currency, you can leave this on the default. If you process multiple currencies, see [Multi-Currency Merchant Accounts](#multi-currency-merchant-accounts) below.
 
 ### Sandbox Credentials
 
+![](/img/braintree-config2.webp)
+
 These settings are used when **Sandbox** is set to **Yes**.
 
-<!-- SCREENSHOT: Sandbox tab showing Test Merchant ID, Test Public Key, Test Private Key, and Test Merchant Account ID fields -->
+**Test Merchant ID:** Your sandbox Merchant ID from sandbox.braintreegateway.com
 
-| Field                        | Description                                                                                       |
-| ---------------------------- | ------------------------------------------------------------------------------------------------- |
-| **Test Merchant ID**         | Your sandbox Merchant ID from sandbox.braintreegateway.com                                        |
-| **Test Public Key**          | Your sandbox Public Key                                                                           |
-| **Test Private Key**         | Your sandbox Private Key                                                                          |
-| **Test Merchant Account ID** | Auto-populated list of merchant accounts on your sandbox — works the same way as the live version |
+**Test Public Key:** Your sandbox Public Key
 
-***
+**Test Private Key:** Your sandbox Private Key
 
-### Messages
+**Test Merchant Account ID:** Auto-populated list of merchant accounts on your sandbox — works the same way as the live version
 
-These optional text fields let you add instructions or confirmation text at different points during checkout.
+### Payments
 
-<!-- SCREENSHOT: Messages tab with four text areas and button text field -->
+![](/img/braintree-config3-1.webp)
 
-| Field                 | When Displayed                                            | Example Use                                                                                  |
-| --------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| **On Selection**      | When the customer picks Braintree as their payment method | "Your card details are encrypted and never stored on our servers."                           |
-| **On Before Payment** | On the payment form page, above the card input            | "Enter your card details below to complete your order securely."                             |
-| **On After Payment**  | On the confirmation page after a successful payment       | "Thank you — your payment was received and your order is confirmed."                         |
-| **On Error Payment**  | When a payment fails or is declined                       | "There was a problem processing your payment. Please check your card details and try again." |
-| **Button Text**       | The label on the Pay button                               | `Place Order` or `Pay Now`                                                                   |
+**Payment Type:** Choose the checkout UI style — see [Hosted Fields vs Drop-in UI](#hosted-fields-vs-drop-in-ui) below
 
-All fields accept plain text or a Joomla language key. Leave fields blank to show no additional message.
+`Hosted Fields` for design-consistent stores
 
-***
+**Accepted Card Types:** Cards shown as accepted icons during payment method selection
 
-### Advanced Settings
+Select all cards your Braintree account accepts
 
-<!-- SCREENSHOT: Advanced tab with Debug, Order Status, Failed Status, Pending Status, Geo-Zone, Show Tax, and Tax Profile fields -->
+**Allow Saved Cards:** When turned on, logged-in customers can save their card at checkout for faster purchases in the future. Saved cards are also required for automatic subscription renewals.
 
-| Field              | Description                                                                                   | Default   |
-| ------------------ | --------------------------------------------------------------------------------------------- | --------- |
-| **Debug**          | Write detailed Braintree API activity to `administrator/logs/payment_braintree.php`           | No        |
-| **Order Status**   | The status applied to an order after a successful payment (e.g., authorized, settled)         | Confirmed |
-| **Failed Status**  | The status applied when Braintree returns a declined or failed transaction                    | Failed    |
-| **Pending Status** | The status applied when Braintree reports `settlement_pending` (funds not yet settled)        | Pending   |
-| **Geo-Zone**       | Restrict Braintree to customers in a specific geo-zone. Leave at "All" to show it to everyone | All       |
-| **Show Tax**       | Display the tax amount as a separate line on the payment page                                 | No        |
-| **Tax Profile**    | The tax profile to apply when **Show Tax** is enabled                                         | None      |
+**Template Style:** Choose a visual style for the checkout card form. Options depend on which layout plugins you have enabled (Bootstrap 5 or UIkit). Leave blank to use the default layout.
+
+### Order Statuses
+
+![](/img/braintree-config3.webp)
+
+These settings control which J2Commerce order status is applied when specific payment events occur.
+
+**Order Status (Payment Success)**
+
+Status applied when a payment is captured successfully
+
+**Order Status:** Status applied when a payment is authorized but not yet captured — only visible when Capture Method is set to Manual
+
+**Change Order Status on Refund:** When turned on, automatically updates the order status after a refund is processed
+
+- **Refund Order Status:** The status to apply after a refund — only shown when Change Order Status on Refund is enabled
+
+**Change Order Status on Void:** When turned on, automatically updates the order status when an authorized payment is voided
+
+- **Void Order Status:** The status to apply after a void — only shown when Change Order Status on Void is enabled
 
 :::tip
 
-Enable **Debug** only while troubleshooting. The log file can grow quickly in a busy store. Always disable it before going live.
+If you do not see the order status you prefer, then it needs to be created. Go to J2Commerce Setup Order Status
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
+
+### Surcharge
+
+![](/img/braintree-config4.webp)
+
+Add an optional handling fee when a customer chooses to pay with Finix.
+
+**Surcharge Name:** The label shown to the customer (for example, "Card processing fee")
+
+**Surcharge Percent:** A percentage of the order total added as a fee (for example, `1.5` for 1.5%)
+
+**Surcharge Fixed:** A fixed amount added regardless of order size
+
+**Surcharge Tax Class:** A tax profile to apply to the surcharge — leave blank if no tax applies
+
+Leave both **Surcharge Percent** and **Surcharge Fixed** empty to charge no surcharge.
+
+### Geozone and Order Value Restrictions
+
+![](/img/braintree-config5.webp)
+
+**Geozone Restriction:** Limit Finix to customers in a specific geozone — leave blank to allow all locations
+
+**Minimum Order Subtotal:** Hide Finix as a payment option when the cart subtotal is below this amount
+
+**Maximum Order Subtotal:** Hide Finix when the cart subtotal is above this amount
+
+### Custom HTML Messages
+
+These optional fields let you inject custom text or HTML at different points in the payment flow.
+
+![](/img/braintree-config6.webp)
+
+**Thank-You Article:** Optional Joomla article shown on the order confirmation page after a successful payment
+
+**On Selection Text:** Displayed when the customer selects Finix as their payment method
+
+**Before Payment Text:** Displayed just above the card form, before the customer enters card details
+
+**After Payment Text:** Displayed on the confirmation page after a successful payment
+
+**On Error Text:** Displayed when a payment attempt fails
+
+**On Cancel Payment Text:** Displayed when the customer cancels or navigates away from the payment step
+
+### Dashboard Icon and Debug
+
+![](/img/braintree-config7.webp)
+
+**Show Dashboard Icon:** Add a quick-access shortcut for this plugin to the J2Commerce dashboard.
+
+- **Icon Label:** The label for the shortcut icon.
+
+**Debug Mode:** Records detailed API request and response data in the Joomla log.
+
+:::tip
+
+Enable **Debug** only while troubleshooting. The log file can grow quickly in a busy store. Always disable it before going live. Write detailed Braintree API activity to `administrator/logs/payment_braintree.php`
 
 :::
 
@@ -339,8 +394,6 @@ The J2Commerce 6 version of this plugin includes the following improvements over
 2. Open the plugin settings and check that the Merchant ID, Public Key, and Private Key are entered in the correct tab (**Sandbox** or **Live**) for your current mode.
 3. Enable **Debug** and check `administrator/logs/payment_braintree.php` for a gateway initialization error.
 4. Check your server's PHP info to confirm the **curl**, **openssl**, **dom**, **hash**, and **xmlwriter** extensions are loaded.
-
-<!-- SCREENSHOT: J2Commerce Payment Methods list with Braintree enabled and settings open -->
 
 ### "Invalid token" error when submitting payment
 

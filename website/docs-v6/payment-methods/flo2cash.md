@@ -1,10 +1,3 @@
----
-title: "Flo2Cash Web2Pay"
-sidebar_label: "Flo2Cash"
-sidebar_position: 30
-description: "Accept credit and debit card payments through the Flo2Cash Web2Pay hosted payment page. New Zealand stores only — settles in NZD."
----
-
 # Flo2Cash Web2Pay
 
 Flo2Cash Web2Pay is a hosted payment page gateway for New Zealand merchants. When a customer places an order, J2Commerce redirects them to the secure Flo2Cash payment page to enter their card details. After the transaction, Flo2Cash returns the customer to your store and automatically posts the result back so the order status updates without any manual steps.
@@ -18,18 +11,58 @@ Flo2Cash Web2Pay is a hosted payment page gateway for New Zealand merchants. Whe
 - NZD added as a currency in J2Commerce (see [Setting up NZD](#step-1-add-nzd-currency))
 - The Flo2Cash payment plugin purchased from the [J2Commerce Extensions Store](https://www.j2commerce.com)
 
-## Installation
+## Purchase and download
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `payment_flo2cash.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_flo2cash.zip` package file.
-4. The plugin installs and enables automatically.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Flo2Cash**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-<!-- SCREENSHOT: Joomla Extensions installer showing the payment_flo2cash.zip upload step -->
+## Install the plugin
+
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+
+Upload the `payment_flo2cash.zip` file.
+
+![](/img/install.webp)
+
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Flo2Cash**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.->&#x20;
+
+![](/img/flo-2-cash-enable.webp)
 
 ## Setup Before Configuration
+
+### Add NZD Currency
+
+![](/img/flo-2-cash-currency.webp)
+
+Before configuring the plugin, make sure your store has NZD set up.
+
+Go to **J2Commerce** -> **Localization** -> **Currencies**.
+
+Check whether **New Zealand Dollar (NZD)** already exists. If it does, skip to Step 2.
+
+Click **New**, enter the currency details for NZD, and click **Save**.
+
+### Get Your Credentials from Flo2Cash
+
+Log in to the Flo2Cash merchant portal and locate your **Account ID** and **Secret Key**. Keep the browser tab open — you will need to paste these values into the plugin configuration.
+
+If you are setting up testing first, also note your **Sandbox Account ID** and **Sandbox Secret Key** from the Flo2Cash sandbox environment.
+
+## Configure the Plugin
 
 :::tip
 
@@ -37,54 +70,45 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-### Step 1: Add NZD Currency
+![](/img/flo-2-cash-toggle.webp)
 
-Before configuring the plugin, make sure your store has NZD set up.
+### Display
 
-1. Go to **J2Commerce** -> **Localization** -> **Currencies**.
-2. Check whether **New Zealand Dollar (NZD)** already exists. If it does, skip to Step 2.
-3. Click **New**, enter the currency details for NZD, and click **Save**.
+![](/img/flo-2-cash-display.webp)
 
-<!-- SCREENSHOT: J2Commerce Currencies list showing NZD enabled -->
+**Display Name:** Payment method name shown to customers during checkout
 
-### Step 2: Get Your Credentials from Flo2Cash
+**Display Image:** Optional logo or image shown beside the payment method name
 
-Log in to the Flo2Cash merchant portal and locate your **Account ID** and **Secret Key**. Keep the browser tab open — you will need to paste these values into the plugin configuration.
+### Credentials
 
-If you are setting up testing first, also note your **Sandbox Account ID** and **Sandbox Secret Key** from the Flo2Cash sandbox environment.
-
-### Step 3: Open the Plugin Configuration
-
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Find **Flo2Cash** in the list and click its name to open the configuration.
-
-<!-- SCREENSHOT: J2Commerce Payment Methods list with the Flo2Cash row highlighted -->
-
-### Step 4: Enter Your Credentials
+![](/img/flo-2-cash-api.webp)
 
 Fill in the fields in the **Basic** section:
 
-| Field                  | What to enter                                                       |
-| ---------------------- | ------------------------------------------------------------------- |
-| **Account ID**         | Your live Flo2Cash Account ID from the merchant portal              |
-| **Secret Key**         | Your live Flo2Cash Secret Key                                       |
-| **Use Sandbox**        | Set to **No** for live transactions; set to **Yes** while testing   |
-| **Sandbox Account ID** | Your Flo2Cash sandbox Account ID (visible only when Sandbox is Yes) |
-| **Sandbox Secret Key** | Your Flo2Cash sandbox Secret Key (visible only when Sandbox is Yes) |
+**Account ID:** Your live Flo2Cash Account ID from the merchant portal.&#x20;
 
-<!-- SCREENSHOT: Flo2Cash plugin config showing Account ID and Secret Key fields -->
+**Secret Key:** Your live Flo2Cash Secret Key
+
+**Use Sandbox:** Set to **No** for live transactions; set to **Yes** while testing
+
+**Sandbox Account ID:** Your Flo2Cash sandbox Account ID (visible only when Sandbox is Yes)
+
+**Sandbox Secret Key:** Your Flo2Cash sandbox Secret Key (visible only when Sandbox is Yes)
 
 When **Use Sandbox** is set to **Yes**, all transactions go to `sandbox.flo2cash.com` using your sandbox credentials. When it is set to **No**, transactions go to `secure.flo2cash.co.nz` using your live credentials.
 
-### Step 5: Review Order Status Mapping
+### Order Status
+
+![](/img/flo-2-cash-status.webp)
 
 These fields control what order status J2Commerce sets after Flo2Cash responds.
 
-| Field                       | Default       | Meaning                                           |
-| --------------------------- | ------------- | ------------------------------------------------- |
-| **Payment Received Status** | Confirmed (1) | Set when Flo2Cash reports the payment approved    |
-| **Pending Status**          | Pending (4)   | Set when the transaction outcome is not yet final |
-| **Failed Status**           | Failed (3)    | Set when Flo2Cash declines or reports a failure   |
+**Payment Received Status:** Set when Flo2Cash reports the payment approved
+
+**Pending Status:** Set when the transaction outcome is not yet final
+
+**Failed Status:** Set when Flo2Cash declines or reports a failure
 
 The defaults work well for most stores. Change them only if your store uses custom order statuses.
 
@@ -96,99 +120,61 @@ If the status you want is not listed in a dropdown, create a new one first by go
 
 ![](/img/shipstation-order-status2-1.webp)
 
-### Step 6: Save and Test
-
-1. Click **Save** in the toolbar.
-2. Place a test order with **Use Sandbox** set to **Yes** and confirm that the order status updates correctly after returning from Flo2Cash.
-3. When satisfied, return to the plugin configuration, set **Use Sandbox** to **No**, and click **Save** again.
-
-<!-- SCREENSHOT: Flo2Cash sandbox test order showing "Confirmed" status after return -->
-
-## All Configuration Fields
-
-### Gateway Credentials
-
-| Field                  | Description                                         | Default   |
-| ---------------------- | --------------------------------------------------- | --------- |
-| **Account ID**         | Live Flo2Cash Account ID from your merchant portal  | *(empty)* |
-| **Secret Key**         | Live Flo2Cash Secret Key                            | *(empty)* |
-| **Use Sandbox**        | Route transactions to the Flo2Cash sandbox server   | No        |
-| **Sandbox Account ID** | Sandbox Account ID (shown only when Sandbox is Yes) | *(empty)* |
-| **Sandbox Secret Key** | Sandbox Secret Key (shown only when Sandbox is Yes) | *(empty)* |
-
-### Order Status
-
-:::info
-
-NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
-
-:::
-
-| Field                       | Description                                             | Default   |
-| --------------------------- | ------------------------------------------------------- | --------- |
-| **Payment Received Status** | Order status applied when Flo2Cash confirms approval    | Confirmed |
-| **Pending Status**          | Order status applied when the outcome is not yet final  | Pending   |
-| **Failed Status**           | Order status applied when Flo2Cash declines the payment | Failed    |
-
 ### Surcharge
+
+![](/img/flo-2-cash-surcharge.webp)
 
 Add an optional surcharge when customers pay by Flo2Cash. You can use a percentage, a fixed amount, or both — they are added together.
 
-| Field                   | Description                                                    | Default   |
-| ----------------------- | -------------------------------------------------------------- | --------- |
-| **Surcharge Name**      | Label shown on the order summary (e.g., "Card Processing Fee") | *(empty)* |
-| **Surcharge Percent**   | Percentage of the order total to add as a fee                  | *(empty)* |
-| **Surcharge Fixed**     | Fixed dollar amount to add as a fee                            | *(empty)* |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge amount                   | *(empty)* |
+**Surcharge Name:** Label shown on the order summary (e.g., "Card Processing Fee")
+
+**Surcharge Percent:** Percentage of the order total to add as a fee
+
+**Surcharge Fixed:** Fixed dollar amount to add as a fee
+
+**Surcharge Tax Class:** Tax profile to apply to the surcharge amount
 
 ### Restrictions
 
-| Field                    | Description                                                                                        | Default   |
-| ------------------------ | -------------------------------------------------------------------------------------------------- | --------- |
-| **Geo Zone Restriction** | Limit this payment method to customers in a specific geo zone. Leave blank to show it to everyone. | *(empty)* |
+![](/img/flo-2-cash-geozone.webp)
 
-### Confirmation Page
+**Geo Zone Restriction:** Limit this payment method to customers in a specific geo zone. Leave blank to show it to everyone.
 
-| Field                 | Description                                                         | Default   |
-| --------------------- | ------------------------------------------------------------------- | --------- |
-| **Thank You Article** | A Joomla article to display on the post-payment confirmation screen | *(empty)* |
+### Custom Messages
 
-### Customer Messages
+![](/img/flo-2-cash-message.webp)
 
 These text fields control the messages customers see at different stages of checkout. You can leave them at their defaults or customise them to match your store's voice.
 
-| Field              | When it appears                                                  | Default text                                                                                 |
-| ------------------ | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| **On Selection**   | When the customer selects Flo2Cash as the payment method         | "After submitting your order, you will be redirected to Flo2Cash to complete payment..."     |
-| **Before Payment** | On the pre-payment screen just before the customer is redirected | "Please click the button below to complete payment. You will be redirected to Flo2Cash..."   |
-| **After Payment**  | On the confirmation screen after a successful return             | "Your Flo2Cash payment is being validated now. Your order status will be updated shortly..." |
-| **On Error**       | When the gateway returns an error or invalid response            | "There was an error processing your payment. Flo2Cash returned an invalid action."           |
+**Thank You Article:** A Joomla article to display on the post-payment confirmation screen
 
-### Button
+**On Selection:** When the customer selects Flo2Cash as the payment method
 
-| Field           | Description                               | Default     |
-| --------------- | ----------------------------------------- | ----------- |
-| **Button Text** | Label on the "proceed to Flo2Cash" button | Place Order |
+"After submitting your order, you will be redirected to Flo2Cash to complete payment..."
+
+**Before Payment:** On the pre-payment screen just before the customer is redirected
+
+"Please click the button below to complete payment. You will be redirected to Flo2Cash..."
+
+**After Payment:** On the confirmation screen after a successful return
+
+"Your Flo2Cash payment is being validated now. Your order status will be updated shortly..."
+
+**On Error:** When the gateway returns an error or invalid response
+
+"There was an error processing your payment. Flo2Cash returned an invalid action."
 
 ### Appearance
 
-| Field             | Description                                                 | Default     |
-| ----------------- | ----------------------------------------------------------- | ----------- |
-| **Display Name**  | Payment method name shown to customers during checkout      | Flo2Cash    |
-| **Display Image** | Optional logo or image shown beside the payment method name | *(empty)*   |
-| **Template**      | Frontend template style — Bootstrap 5 or UIkit              | Bootstrap 5 |
+![](/img/flo-2-cash-appearance.webp)
 
-### Admin Notifications
+**Button Text:** Label on the "proceed to Flo2Cash" button
 
-| Field                             | Description                                                                                                           | Default         |
-| --------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------- |
-| **Error Notification User Group** | Members of this Joomla user group (with email notifications enabled) receive an alert when a payment fails validation | Super Users (8) |
+**Template:** Frontend template style — Bootstrap 5 or UIkit
 
-### Diagnostics
+**Error Notification User Group:** Members of this Joomla user group (with email notifications enabled) receive an alert when a payment fails validation
 
-| Field             | Description                               | Default |
-| ----------------- | ----------------------------------------- | ------- |
-| **Debug Logging** | Write gateway responses to the Joomla log | No      |
+**Debug Logging:** Write gateway responses to the Joomla log
 
 ## How the Payment Flow Works
 
