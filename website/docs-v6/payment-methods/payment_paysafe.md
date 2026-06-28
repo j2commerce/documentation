@@ -40,7 +40,7 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 To help you narrow down the list, you can do a search for **Paysafe**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-![](/img/klarna-enable.webp)
+![](/img/paysafe-enable.webp)
 
 ## Configure the Plugin
 
@@ -50,9 +50,11 @@ Click the **Toggle Inline Help** button at the top of any plugin configuration p
 
 :::
 
-![](/img/klarna-toggle.webp)
+![](/img/paysafe-toggle.webp)
 
-### Display Settings
+### Display Settings tab
+
+![](/img/paysafe-display.webp)
 
 These are the core settings that control how Paysafe processes payments on your store.
 
@@ -66,6 +68,8 @@ These are the core settings that control how Paysafe processes payments on your 
 - **Authorize Only** — The card is reserved (a hold is placed) but funds are not collected yet. You must manually capture the payment from the order admin. Use this when you want to verify the order before collecting payment, such as for made-to-order products.
 
 ### Credentials
+
+![](/img/paysafe-api.webp)
 
 **Sandbox / Test Mode**
 
@@ -106,6 +110,8 @@ You can find your API keys in your Paysafe merchant portal under **Developer** -
 
 #### Saved Cards
 
+![](/img/paysafe-style.webp)
+
 **Allow Saved Cards:** Lets logged-in customers save their card as a multi-use token for faster checkout and automatic subscription renewals.
 
 When enabled, customers will see a **Save this card for future purchases** checkbox at checkout, and a **Saved Cards** selector on subsequent purchases.
@@ -114,7 +120,9 @@ When enabled, customers will see a **Save this card for future purchases** check
 
 The **Layout Template** field lets you choose a custom checkout layout if your developer has created one. Leave this on the default unless you have been given specific instructions.
 
-### Order Statuses
+### Order Statuses tab
+
+![](/img/paysafe-status.webp)
 
 These settings control which order status J2Commerce assigns at each stage of the payment lifecycle.
 
@@ -130,7 +138,17 @@ These settings control which order status J2Commerce assigns at each stage of th
 
 **Cancel Order Status:** The status to apply after a cancellation or void. Only visible when **Change Status on Cancel** is enabled.
 
-### Restrictions:&#x20;
+:::info
+
+If the order status you want is not listed, create it first under **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
+
+### Restrictions tab
+
+![](/img/paysafe-restrictions.webp)
 
 Use these settings to control which customers see Paysafe as a payment option.
 
@@ -140,7 +158,9 @@ Use these settings to control which customers see Paysafe as a payment option.
 
 **Maximum Subtotal:** Hide Paysafe when the cart subtotal exceeds this amount. Leave blank for no maximum.
 
-### Advanced
+### Advanced tab
+
+![](/img/paysafe-messages.webp)
 
 **Thank You Article:** Select a Joomla article to display on the order confirmation page after a successful payment. Leave blank to use the default confirmation page.
 
