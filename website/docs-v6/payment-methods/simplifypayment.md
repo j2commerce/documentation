@@ -1,10 +1,3 @@
----
-title: "Simplify Payments (Mastercard Simplify Commerce)"
-sidebar_label: "Simplify Payments"
-sidebar_position: 80
-description: "How to install, configure, and use the Simplify Payments gateway plugin for J2Commerce. Includes sandbox testing, live key setup, subscription notes, and migration guidance."
----
-
 # Simplify Payments (Mastercard Simplify Commerce)
 
 > **Warning:** Mastercard discontinued Simplify Commerce for new merchant enrollments in 2025. This plugin is for existing merchants with active Simplify Commerce accounts only. If you do not already have an active account, you cannot sign up for a new one. Plan a migration to Mastercard Payment Gateway Services (MPGS) or another processor as soon as possible. See [Migrating to a replacement gateway](#migrating-to-a-replacement-gateway) at the end of this guide.
@@ -29,7 +22,7 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Simply Payment**.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Simplify Payment**.
 2. Add it to your cart and complete checkout.
 3. Go to **My Downloads** under your account profile and find the plugin.
 4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
@@ -38,7 +31,7 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
-Upload the `plg_j2commerce_payment_simplypayment.zip` file.
+Upload the `plg_j2commerce_payment_simplifypayment.zip` file.
 
 ![](/img/install.webp)
 
@@ -52,7 +45,9 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 ![](/img/culqi.webp)
 
-To help you narrow down the list, you can do a search for **Simply Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+To help you narrow down the list, you can do a search for **Simplify Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/simplify-enble.webp)
 
 ## Configure the Plugin
 
@@ -62,13 +57,19 @@ Click the **Toggle Inline Help** button at the top of any plugin configuration p
 
 :::
 
+![](/img/simplify-toggle.webp)
+
 ### Display Settings
+
+![](/img/simplify-display.webp)
 
 **Display Name:** The payment option label shown to customers at checkout. **Note:** Change to something like "Credit / Debit Card" for a cleaner storefront.
 
 **Display Image:** An optional image shown alongside the payment option name. **Note:** Use the Joomla media picker to select an image from your media library.
 
 ### Credentials
+
+![](/img/simplify-api.webp)
 
 **Mode:** Toggle between **Test Mode** and **Live Mode**. **Note:** Always test thoroughly in sandbox before switching to Live
 
@@ -98,11 +99,15 @@ You can find all four keys in your Simplify Commerce merchant dashboard under **
 
 ### Accepted Card Types
 
+![](/img/simplify-cc.webp)
+
 **Accepted Card Types:** Which card brand icons are displayed next to the payment option at checkout.
 
 This field controls icon display only. Simplify Commerce itself determines which cards your account accepts — removing a brand here does not block that card from being charged.
 
 ### Surcharge
+
+![](/img/simplify-surcharge.webp)
 
 You can add an optional surcharge for customers who pay by card. Leave all three fields at their defaults if you do not want a surcharge.
 
@@ -116,11 +121,15 @@ You can add an optional surcharge for customers who pay by card. Leave all three
 
 ### Restrictions
 
+![](/img/simplify-restrictions.webp)
+
 **Minimum Subtotal:** Hide this payment option when the cart subtotal falls below this amount. **Note:** Set to `0` to show for all cart values.
 
 **Maximum Subtotal:** Hide this payment option when the cart subtotal exceeds this amount. **Note:** Set to `-1` for no upper limit.
 
 ### Order Status
+
+![](/img/simplify-status.webp)
 
 **Payment Status:** Order status applied when Simplify approves the charge successfully. **Note:** When this status is set, J2Commerce fires the full order status change pipeline — notifications, order history, invoice email, and download grants all trigger automatically.
 
@@ -136,13 +145,19 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 
 ### Geozone Restriction
 
+![](/img/simplify-geozone.webp)
+
 **Geozone Restriction:** Limit this payment option to customers in a specific geozone. **Note:** Select a geozone from the dropdown to hide Simplify Payments for customers outside that region. Leave blank to offer it worldwide.
 
 ### Subscription Products
 
+![](/img/simplify-subscriptions.webp)
+
 **Support Subscriptions:** Allow this gateway to be chosen for orders containing subscription products. **Note:** See [Subscription products](#subscription-products) below for important limitations.
 
 ### Custom HTML Messages
+
+![](/img/simplify-messages.webp)
 
 **Thank You Message Article:** An optional Joomla article displayed on the order confirmation page after a successful payment.
 
@@ -157,6 +172,8 @@ These four fields let you inject custom HTML or text into specific points of the
 **On Error Payment:** HTML shown when the payment fails.
 
 ### Advanced
+
+![](/img/simplify-advanced.webp)
 
 **Button Text:** Label on the submit button at the card entry step. **Note:** Change to "Pay Now" or similar if preferred.
 
@@ -183,10 +200,12 @@ Before accepting real payments, complete a full test checkout in sandbox mode.
 
 Use the following card numbers with any future expiry date (e.g., 12/30) and any 3-digit CVV (e.g., 123):
 
-| Card Network | Number              |
-| ------------ | ------------------- |
-| Visa         | 4111 1111 1111 1111 |
-| Mastercard   | 5506 9004 9000 0436 |
+**Test Mode — Test Cards**
+
+Use these Simplify test card numbers with any future expiration date and any 3-digit CVV:\
+\
+**Visa:**4111 1111 1111 1111\
+**Mastercard:**5506 9004 9000 0436
 
 ### Expected results
 
