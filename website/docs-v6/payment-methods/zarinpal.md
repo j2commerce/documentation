@@ -21,6 +21,8 @@ Before configuring this plugin, make sure you have:
 
 For testing, no live account is required. The ZarinPal sandbox (`sandbox.zarinpal.com`) works with any placeholder merchant ID.
 
+**ZarinPal Payment**&#x20;
+
 ## Installation
 
 1. Purchase and download the `payment_zarinpal.zip` package from the J2Commerce website.

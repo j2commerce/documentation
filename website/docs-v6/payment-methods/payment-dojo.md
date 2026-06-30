@@ -22,29 +22,44 @@ Before configuring the plugin, make sure you have:
 - Your store base currency or the customer cart currency set to **GBP**.
 - SSL (HTTPS) active on your Joomla site. Dojo will not redirect to HTTP return URLs.
 
-## Installation
+## Purchase and download
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `payment_dojo.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_dojo.zip` file.
-4. The plugin installs and enables automatically.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Dojo**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-<!-- SCREENSHOT: Joomla Extension Manager showing successful install of "Dojo Payment" -->
+## Install the plugin
 
-## Configuration
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+
+Upload the `plg_j2commerce_payment_dojo.zip` file.
+
+![](/img/install.webp)
+
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Dojo**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+## Configure the Plugin
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
 
 :::
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Find **Dojo Payment** in the list and click its name.
-
-<!-- SCREENSHOT: J2Commerce Payment Methods list with "Dojo Payment" visible -->
+### Display Settings
 
 ## Step-by-step setup
 
