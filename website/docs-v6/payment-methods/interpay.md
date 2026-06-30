@@ -1,10 +1,3 @@
----
-title: "InterPay Canada"
-sidebar_label: "InterPay"
-sidebar_position: 45
-description: "Accept credit card payments through the InterPay Canada secure session gateway. Canadian merchants only — settles in CAD."
----
-
 # InterPay Canada
 
 InterPay Canada is a card payment gateway for Canadian merchants. When a customer places an order, they enter their card details on your checkout page. J2Commerce securely forwards those details to InterPay to start a payment session, then redirects the customer to the InterPay secure verification page (which handles 3D Secure if required). When the verification is complete, InterPay sends the customer back to your store and J2Commerce confirms the result — the order status updates automatically.
@@ -18,17 +11,6 @@ InterPay Canada is a card payment gateway for Canadian merchants. When a custome
 - CAD added as a currency in J2Commerce (see [Step 1: Add CAD Currency](#step-1-add-cad-currency))
 - Your store running over HTTPS (SSL certificate installed)
 - The InterPay payment plugin purchased from the [J2Commerce Extensions Store](https://www.j2commerce.com)
-
-## Installation
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
-
-1. Purchase and download the `payment_interpay.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_interpay.zip` package file.
-4. The plugin installs and enables automatically.
-
-<!-- SCREENSHOT: Joomla Extensions installer showing the payment_interpay.zip upload step -->
 
 ## Setup Before Configuration
 
@@ -46,15 +28,50 @@ Log in to your InterPay Canada merchant account and note down your **TERMID** an
 
 If you plan to test with the sandbox first, InterPay provides a separate **Test TERMID** and **Test Password** for sandbox transactions. The sandbox TERMID defaults to `TESTTERM`; InterPay support can confirm the correct test password for your account.
 
-## Configure The Plugin
+## Purchase and download
+
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **InterPay**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
+## Install the plugin
+
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+
+Upload the `plg_j2commerce_payment_interpay.zip` file.
+
+![](/img/install.webp)
+
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **InterPay**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/interpay-enable.webp)
+
+## Configure the Plugin
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
 
 :::
 
-### Display
+![](/img/interpay-toggle.webp)
+
+### Display Settings
+
+![](/img/interpay-display.webp)
 
 **Display Name:** Payment method label shown to customers at checkout
 
@@ -78,6 +95,8 @@ When **Test Mode** is **Yes**, all transactions go to the InterPay sandbox serve
 
 ### Transaction Type
 
+![](/img/interpay-transaction.webp)
+
 The **Transaction Type** setting controls what happens to the funds when the card is verified.
 
 - **Sale:** Processes and captures the payment immediately. The customer's card is charged straight away. This is the correct setting for most stores.
@@ -97,6 +116,8 @@ When Test Mode is off, you can select which InterPay live server endpoint to use
 Leave this on **Server B** unless your InterPay account manager has specifically directed you to Server A.
 
 ### Order Status
+
+![](/img/interpay-status.webp)
 
 These three fields control which J2Commerce order status is applied depending on the payment outcome.
 
@@ -123,21 +144,9 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 3. Confirm the order status updates correctly in **J2Commerce** -> **Orders** after you return from the InterPay verification page.
 4. When you are satisfied the flow is working, return to the plugin configuration, set **Test Mode** to **No**, enter your live credentials, and click **Save** again.
 
-## All Configuration Fields
-
-### Gateway Credentials
-
-| Field                    | Description                                               | Default   |
-| ------------------------ | --------------------------------------------------------- | --------- |
-| **TERMID**               | Your InterPay Terminal ID                                 | *(empty)* |
-| **Password (PASS)**      | Your InterPay account password                            | *(empty)* |
-| **Transaction Type**     | Sale (immediate capture) or Pre-Authorization (hold only) | Sale      |
-| **Test Mode**            | Route transactions to the InterPay sandbox                | No        |
-| **Test TERMID**          | Sandbox Terminal ID (shown only when Test Mode is Yes)    | TESTTERM  |
-| **Test Password (PASS)** | Sandbox password (shown only when Test Mode is Yes)       | *(empty)* |
-| **Live Server**          | Primary (Server B) or alternate (Server A) live endpoint  | Server B  |
-
 ### Surcharge
+
+![](/img/interpay-surcharge.webp)
 
 Add an optional surcharge when customers pay by InterPay. A percentage and a fixed amount can be combined — they are added together.
 
@@ -151,31 +160,49 @@ Add an optional surcharge when customers pay by InterPay. A percentage and a fix
 
 ### Restrictions
 
+![](/img/interpay-geozone.webp)
+
 **Geo Zone Restriction:** Limit this payment method to customers in a specific geo zone. Leave blank to show it to all customers.
 
 ### Customer Messages
+
+![](/img/interpay-messages.webp)
 
 These text fields control what customers read at each stage of the payment process. You can leave them at their defaults or customise them to match your store's tone.
 
 **Thank You Article:** A Joomla article to display on the post-payment confirmation screen
 
-| Field              | When it appears                                          | Default text                                                                                                                      |
-| ------------------ | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| **On Selection**   | When the customer picks InterPay as their payment method | "Please enter your card details below. You will be redirected to the InterPay secure verification page to complete your payment." |
-| **Before Payment** | On the card entry form above the card fields             | "Your card details have been received. Click the button below to complete your payment on the InterPay secure page."              |
-| **After Payment**  | On the confirmation screen after a successful return     | "Your payment is being processed. Your order status will be updated shortly. Thank you for your order!"                           |
-| **On Cancel**      | When the customer cancels on the InterPay page           | "Your payment was cancelled. Please try again or choose a different payment method."                                              |
-| **On Error**       | When the gateway returns an error                        | "There was an error processing your payment. Please try again or contact us for assistance."                                      |
+**On Selection:** When the customer picks InterPay as their payment method
+
+"Please enter your card details below. You will be redirected to the InterPay secure verification page to complete your payment."
+
+**Before Payment:** On the card entry form above the card fields
+
+"Your card details have been received. Click the button below to complete your payment on the InterPay secure page."
+
+**After Payment:** On the confirmation screen after a successful return
+
+"Your payment is being processed. Your order status will be updated shortly. Thank you for your order!"
+
+**On Cancel:** When the customer cancels on the InterPay page
+
+"Your payment was cancelled. Please try again or choose a different payment method."
+
+**On Error:** When the gateway returns an error
+
+"There was an error processing your payment. Please try again or contact us for assistance."
 
 ### Appearance
 
-**Button Text:** Label on the button that redirects the customer to the InterPay secure page
+![](/img/interpay-advanced.webp)
 
-**Template:** Frontend template style — Bootstrap 5 or UIkit
+**Button Text:** Label on the button that redirects the customer to the InterPay secure page
 
 **Error Notification User Group:** Members of this Joomla user group (with email notifications enabled) receive an alert when a payment fails validation
 
 **Debug Logging:** Write gateway responses to the Joomla log
+
+**Template Style:** Frontend template style — Bootstrap 5 or UIkit
 
 ## How a Customer Pays
 
@@ -194,11 +221,11 @@ You do not need to configure any return URLs in your InterPay merchant account �
 
 ## Order Statuses
 
-| Payment outcome                         | Order status                                           |
-| --------------------------------------- | ------------------------------------------------------ |
-| Payment approved (Sale)                 | Confirmed (or your configured Payment Received Status) |
-| Pre-Authorization approved (funds held) | Pending (or your configured Pending Status)            |
-| Payment declined or gateway error       | Failed (or your configured Failed Status)              |
+**Payment approved (Sale):** Confirmed (or your configured Payment Received Status)
+
+**Pre-Authorization approved (funds held):** Pending (or your configured Pending Status)
+
+**Payment declined or gateway error:** Failed (or your configured Failed Status)
 
 When **Transaction Type** is set to **Pre-Authorization**, your order will stay in the **Pending** status until you manually log in to your InterPay merchant portal and capture the held funds. Once you capture them there, you can manually move the order to **Confirmed** in J2Commerce using the order status controls.
 
