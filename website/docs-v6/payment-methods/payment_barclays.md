@@ -166,7 +166,7 @@ These fields let you brand the Barclaycard payment page to match your store.
 
 ![](/img/barclay-template.webp)
 
-**Subtemplate:** Choose the checkout layout style — Bootstrap 5 or UIkit. Defaults to your site's active J2Commerce theme.
+**Template Style:** Choose the checkout layout style — Bootstrap 5 or UIkit. Defaults to your site's active J2Commerce theme.
 
 ### Order statuses
 
