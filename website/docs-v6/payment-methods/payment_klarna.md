@@ -1,10 +1,3 @@
----
-title: "Klarna Payments"
-sidebar_label: "Klarna"
-sidebar_position: 102
-description: "Accept Buy Now Pay Later, Pay Now, and other Klarna payment options in your J2Commerce store using Klarna Payments (on-site widget) or a Hosted Payment Page redirect."
----
-
 # Klarna Payments
 
 Klarna is a global payment provider that lets shoppers choose how they want to pay — pay now with a card or bank transfer, pay later in one interest-free installment, or split the cost over several months. Adding Klarna to your J2Commerce store can reduce cart abandonment and increase average order value by giving customers flexible, low-friction payment options at checkout.
@@ -64,6 +57,8 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 To help you narrow down the list, you can do a search for **Klarna**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
+![](/img/klarna-enable.webp)
+
 ## Configure the Plugin
 
 :::tip
@@ -72,13 +67,19 @@ Click the **Toggle Inline Help** button at the top of any plugin configuration p
 
 :::
 
+![](/img/klarna-toggle.webp)
+
 ### Display Settings
+
+![](/img/klarna-display.webp)
 
 **Display Name:** The name shown to shoppers at checkout — e.g., "Pay with Klarna"
 
 **Display Image:** Optional logo or badge shown next to the payment option
 
 ### Checkout Mode
+
+![](/img/klarna-transaction.webp)
 
 - **Checkout Mode:** Choose **Klarna Payments (on-site widget — recommended)** to keep shoppers on your checkout page, or **Hosted Payment Page (redirect)** to send shoppers to a Klarna-hosted payment screen.
 
@@ -128,6 +129,8 @@ The **Sandbox** credentials (username, password, and client identifier) are sepa
 
 ### API Credentials
 
+![](/img/klarna-live.webp)
+
 Two sets of credentials are available — fill in both. The plugin automatically uses whichever set matches the current **Sandbox Mode** setting.
 
 **Live credentials** (shown when Sandbox Mode is Off):
@@ -138,6 +141,8 @@ Two sets of credentials are available — fill in both. The plugin automatically
 
 **Client Identifier:** Your live Klarna Payments JS SDK client identifier (required for on-site widget mode only)
 
+![](/img/klarna-sandbox.webp)
+
 **Sandbox credentials** (shown when Sandbox Mode is On):
 
 **Sandbox API Username:** Your playground/sandbox Klarna API username
@@ -147,6 +152,8 @@ Two sets of credentials are available — fill in both. The plugin automatically
 **Sandbox Client Identifier:** Your sandbox Klarna Payments JS SDK client identifier (on-site widget mode only)
 
 ### Callback URLs
+
+![](/img/klarna-url.webp)
 
 The plugin displays read-only callback URLs that you register in your Klarna Merchant Portal so Klarna can notify your store of payment events. There are three URLs:
 
@@ -164,11 +171,15 @@ Callback URLs are not available on local development environments. Use a tunneli
 
 ### Subscriptions and Saved Payment Methods
 
+![](/img/klarna-cc.webp)
+
 **Enable Subscriptions:** Allow Klarna Customer Tokens to be created for recurring subscription payments. Requires the Subscription Product app to also be installed and enabled.
 
 **Allow Saved Payment Methods:** Let customers save their Klarna payment method for faster future checkouts.
 
 ### Order Status Automation
+
+![](/img/klarna-status.webp)
 
 Control which order status J2Commerce applies at each point in the payment lifecycle.
 
@@ -186,7 +197,17 @@ Control which order status J2Commerce applies at each point in the payment lifec
 
 **Partial Refund Order Status:** Status to apply when a partial refund is issued (shown when **Update Status on Refund** is Yes).
 
+:::info
+
+If the order status you want is not listed, create it first under **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
+
 ### Surcharge (Optional)
+
+![](/img/klarna-surcharge.webp)
 
 If you want to pass a payment surcharge on to customers who choose Klarna, complete these fields. Leave them blank if you do not charge a surcharge.
 
@@ -200,6 +221,8 @@ If you want to pass a payment surcharge on to customers who choose Klarna, compl
 
 ### Availability Restrictions (Optional)
 
+![](/img/klarna-restrictions.webp)
+
 **Geozone Restriction:** Limit Klarna to customers in a specific geozone. Leave blank to offer Klarna to all locations.
 
 **Minimum Subtotal:** Klarna is only shown when the order subtotal is at or above this amount. Enter `0` for no minimum.
@@ -207,6 +230,8 @@ If you want to pass a payment surcharge on to customers who choose Klarna, compl
 **Maximum Subtotal:** Klarna is hidden when the order subtotal exceeds this amount. Enter `-1` for no maximum.
 
 ### Custom Messages (Optional)
+
+![](/img/klarna-messages.webp)
 
 These text areas let you insert custom HTML or text at specific points during the checkout process.
 
@@ -224,6 +249,8 @@ These text areas let you insert custom HTML or text at specific points during th
 
 ### Dashboard Icon (Optional)
 
+![](/img/klarna-icon.webp)
+
 **Show Dashboard Icon:** Add a Klarna shortcut to the J2Commerce dashboard.
 
 - **Icon Label:** Label text for the dashboard icon (shown when **Show Dashboard Icon** is Yes).
@@ -236,14 +263,14 @@ Click **Save** in the toolbar when you have finished configuring the plugin.
 
 ### Klarna Payments (On-Site Widget)
 
+![](/img/klarna-frontend.webp)
+
 When a shopper selects Klarna at checkout:
 
 1. The plugin creates a Klarna payment session using your API credentials.
 2. The Klarna Payments JavaScript widget loads in the checkout page — shoppers see their available Klarna options (Pay Now, Pay Later, Pay Over Time) directly on your site.
 3. The shopper selects their preferred option and authorizes the payment within the widget.
 4. The plugin captures the authorization (or leaves it as authorized-only, depending on your **Transaction Type** setting) and places the order.
-
-<!-- SCREENSHOT: Klarna Payments widget rendered at checkout -->
 
 ### Hosted Payment Page (HPP)
 
@@ -253,8 +280,6 @@ When a shopper selects Klarna at checkout:
 2. The shopper completes their payment on Klarna's site.
 3. Klarna redirects the shopper back to your store and sends a callback to confirm the payment result.
 4. The plugin updates the order status accordingly.
-
-<!-- SCREENSHOT: Klarna Hosted Payment Page with payment method options -->
 
 ## Managing Orders
 
@@ -274,8 +299,6 @@ After a payment is captured, click **Refund** in the order view to return funds 
 
 - A **full refund** for the entire captured amount
 - A **partial refund** for a specific amount (enter the amount in the refund field)
-
-<!-- SCREENSHOT: Order view showing Klarna Capture, Void, and Refund buttons -->
 
 ### Charge a Saved Klarna Token
 

@@ -1,10 +1,3 @@
----
-title: "Rapyd Payment"
-sidebar_label: "Rapyd"
-sidebar_position: 12
-description: "Accept cards, e-wallets, bank transfers, and local payment methods across 100+ countries through Rapyd's hosted checkout page in your J2Commerce store."
----
-
 # Rapyd Payment
 
 Rapyd is a global fintech infrastructure provider that lets you accept a wide variety of payment methods — credit and debit cards, e-wallets, bank transfers, and cash-based local methods — in over 100 countries. Instead of building separate integrations for each region, you connect once to Rapyd and let their hosted checkout page surface the right options for each customer.
@@ -28,16 +21,6 @@ The plugin also supports:
 - PHP 8.3 or later
 - A Rapyd account (free to create; see below)
 - Your site must be publicly reachable over HTTPS so Rapyd can deliver webhook notifications
-
-## Purchase and Download
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com) **->** **Payment Plugins**
-
-**Step 2:** Locate the **Rapyd Payment** plugin **->** click **View Details** **->** **Add to Cart** **->** **Checkout**
-
-**Step 3:** Go to **My Downloads** under your profile button at the top right corner. Click **Available Versions -> View Files -> Download Now**
 
 ## Set Up a Rapyd Account
 
@@ -69,8 +52,6 @@ Your Access Key starts with `rak_` and your Secret Key starts with `rsk_`. Both 
 
 :::
 
-<!-- SCREENSHOT: Rapyd Client Portal > Developers > API Keys showing live and sandbox key pairs -->
-
 ### Register the Webhook URL
 
 Before configuring the plugin, you need to tell Rapyd where to send payment status notifications:
@@ -83,62 +64,66 @@ Before configuring the plugin, you need to tell Rapyd where to send payment stat
 
 Rapyd uses the registered webhook URL to verify the signature on incoming webhook calls. The plugin will reject webhook calls from URLs not registered in the Rapyd Client Portal.
 
-## Install the Plugin
+## Purchase and download
 
-Install Rapyd Payment using the standard Joomla installer.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. In the Joomla admin, go to **System** **->** **Install** **->** **Extensions**.
-2. Click **Upload Package File** and select the Rapyd Payment ZIP file you downloaded.
-3. Click **Upload & Install**. The plugin installs and enables automatically.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Rapyd Payment**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-<!-- SCREENSHOT: Joomla Extensions installer upload screen with Rapyd ZIP selected -->
+## Install the plugin
+
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+
+Upload the `plg_j2commerce_payment_rapyd.zip` file.
+
+![](/img/install.webp)
 
 ## Enable the Plugin
 
-Once installed, enable the plugin so it appears at checkout.
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Payments**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Payments**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
 
-Look for **Rapyd Payment**, click the red **X**, and it turns into a green checkmark. The plugin is now enabled and ready for configuration.
+![](/img/culqi.webp)
 
-<!-- SCREENSHOT: J2Commerce Payments list with Rapyd Payment highlighted and enabled (green checkmark) -->
+To help you narrow down the list, you can do a search for **Rapyd Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/rapyd-enable.webp)
 
 ## Configure the Plugin
 
-Click the **Rapyd Payment** title next to the green checkmark to open settings.
-
 :::tip
 
-Click the **Toggle Inline Help** button at the top of any plugin screen to reveal a description below every field.
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
 
 :::
 
-<!-- SCREENSHOT: Rapyd plugin settings page with Toggle Inline Help highlighted -->
-
-***
+![](/img/rapyd-toggle.webp)
 
 ### Display Settings
+
+![](/img/rapyd-display.webp)
 
 **Payment Option Title** — The label shown to customers at checkout. The default value is `Rapyd`. Change this to anything that makes sense for your customers, such as "Pay by Card" or "Rapyd Checkout".
 
 **Payment Image** — An optional image shown alongside the payment option at checkout. Select one from your media manager, or leave blank to show text only.
 
-***
+### Credentials
 
-### Sandbox / Test Mode
+![](/img/rapyd-api.webp)
 
 **Sandbox / Test Mode** — Toggle this switch to choose between test and live environments.
 
-| Setting          | Effect                                                                                               |
-| ---------------- | ---------------------------------------------------------------------------------------------------- |
-| **No** (default) | Live mode — real payments are processed using your Live credentials                                  |
-| **Yes**          | Sandbox mode — test transactions are sent to Rapyd's sandbox environment; no real money is processed |
+- **No**: Live mode — real payments are processed using your Live credentials
+
+- **Yes:** Sandbox mode — test transactions are sent to Rapyd's sandbox environment; no real money is processed
 
 When **Sandbox / Test Mode** is set to **Yes**, a warning banner appears at checkout reminding you (and your team) that no real payments are being processed.
-
-***
 
 ### API Credentials
 
@@ -152,72 +137,49 @@ The plugin keeps live and sandbox credentials separate so you can switch environ
 
 **Sandbox Secret Key** — Your Rapyd sandbox secret key. Shown only when **Sandbox / Test Mode** is set to **Yes**.
 
-<!-- SCREENSHOT: API credentials fields showing live and sandbox key pairs -->
-
-***
-
 ### Webhook Endpoint URL
 
 **Webhook Endpoint URL** — This read-only field displays the URL that Rapyd uses to notify your store when a payment status changes. The URL is generated automatically based on your site address.
 
 Copy this URL and register it in the **Rapyd Client Portal** under **Developers** **->** **Webhooks** (see [Register the Webhook URL](#register-the-webhook-url) above). Rapyd requires the webhook URL to be registered before it will send signed webhook calls to your store.
 
-<!-- SCREENSHOT: Webhook Endpoint URL field showing the auto-generated URL -->
-
-***
-
 ### Payment Capture
+
+![](/img/rapyd-cc.webp)
 
 **Payment Capture** — Controls when funds are actually collected from the customer's payment method.
 
-| Option                         | What happens                                                                                                                 |
-| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| **Auto Capture (recommended)** | Funds are captured immediately when the customer completes payment on the Rapyd-hosted page                                  |
-| **Authorize Only**             | Funds are reserved (a hold is placed) but not charged. You manually capture from the order screen when you are ready to ship |
+- **Auto Capture (recommended):** Funds are captured immediately when the customer completes payment on the Rapyd-hosted page
+
+- **Authorize Only:** Funds are reserved (a hold is placed) but not charged. You manually capture from the order screen when you are ready to ship
 
 Authorize Only mode is useful when you want to verify stock availability before charging the customer. The authorized payment can also be canceled (voided) from the order screen to release the hold without any charge.
 
-***
-
-### Allow Saved Payment Methods
-
 **Allow Saved Payment Methods** — When set to **Yes**, logged-in customers can save their payment method during checkout for faster future purchases. This also enables automatic subscription renewals when used with the Subscription Product app.
-
-Default: **No**
-
-***
-
-### Enable Subscriptions
 
 **Enable Subscriptions** — Set to **Yes** if you use the **Subscription Product** app and want Rapyd to process automatic recurring billing. Requires **Allow Saved Payment Methods** to also be enabled.
 
-Default: **No**
+**Template Style** — Selects the visual layout used to render the Rapyd payment section on the checkout page. J2Commerce automatically picks the correct template for your active front-end theme (Bootstrap 5 or UIkit). Leave this at the default unless you have a custom layout.
 
-***
+### Order Status
 
-### Template
-
-**Template** — Selects the visual layout used to render the Rapyd payment section on the checkout page. J2Commerce automatically picks the correct template for your active front-end theme (Bootstrap 5 or UIkit). Leave this at the default unless you have a custom layout.
-
-***
-
-### Order Status Settings
+![](/img/rapyd-status.webp)
 
 These settings control what order status J2Commerce sets at each point in the payment lifecycle.
 
-**Order Status (after successful payment)** — The status applied when a payment is captured successfully. Default: **Confirmed**.
+**Order Status (after successful payment)** — The status applied when a payment is captured successfully.
 
-**Authorized Status** — The status applied when a payment is authorized but not yet captured (only visible when **Payment Capture** is set to **Authorize Only**). Default: **Confirmed**.
+**Authorized Status** — The status applied when a payment is authorized but not yet captured (only visible when **Payment Capture** is set to **Authorize Only**).&#x20;
 
-**Change Status on Refund** — Set to **Yes** to automatically move the order to a specific status when a refund is issued. Default: **No**.
+**Change Status on Refund** — Set to **Yes** to automatically move the order to a specific status when a refund is issued.&#x20;
 
 **Refund Order Status** — The status to apply when a refund is processed (only visible when **Change Status on Refund** is **Yes**).
 
-**Change Status on Cancel** — Set to **Yes** to automatically move the order to a specific status when a payment is canceled or voided. Default: **No**.
+**Change Status on Cancel** — Set to **Yes** to automatically move the order to a specific status when a payment is canceled or voided.
 
 **Cancel Order Status** — The status to apply when a payment is canceled (only visible when **Change Status on Cancel** is **Yes**).
 
-**Failed Payment Status** — The status applied when a payment fails or expires. Default: **Failed**.
+**Failed Payment Status** — The status applied when a payment fails or expires.&#x20;
 
 :::tip
 
@@ -227,9 +189,9 @@ If the status you want is not listed in a dropdown, create a new one first by go
 
 ![](/img/shipstation-order-status2-1.webp)
 
-***
+### Surcharge (Optional)
 
-### Surcharge
+![](/img/rapyd-surcharge.webp)
 
 Add an optional extra fee for customers who pay via Rapyd. You can use a percentage, a fixed amount, or both together. Check your local laws before enabling surcharges — they are regulated in some regions.
 
@@ -241,9 +203,9 @@ Add an optional extra fee for customers who pay via Rapyd. You can use a percent
 
 **Surcharge Tax Class** — Select a tax profile to apply tax to the surcharge amount. Leave blank to add the surcharge without tax.
 
-***
-
 ### Restrictions
+
+![](/img/rapyd-restrictions.webp)
 
 **Allowed Geo Zone** — Restrict this payment method to customers in a specific geographic zone you have configured in J2Commerce. Leave at the default (all zones) to show Rapyd to all customers regardless of location.
 
@@ -251,35 +213,31 @@ Add an optional extra fee for customers who pay via Rapyd. You can use a percent
 
 **Maximum Subtotal** — The largest order subtotal for which this payment method is shown. Enter `0` (or leave blank) for no maximum.
 
-***
-
-### Post-Payment Article
-
-**Post-Payment Article** — Select a Joomla article to display on the order confirmation page after a successful payment. Useful for showing a custom thank-you message, next-step instructions, or a downloadable guide. Leave blank to use J2Commerce's default confirmation message.
-
-***
-
 ### Custom Messages
+
+![](/img/rapyd-messages.webp)
 
 These text fields let you show messages to customers at different points in the payment process. Leave any field blank to use the built-in default.
 
-| Field                   | When it shows                                                                       |
-| ----------------------- | ----------------------------------------------------------------------------------- |
-| **Text on Selection**   | After the customer selects Rapyd as their payment method at the payment step        |
-| **Text Before Payment** | On the confirmation screen before the customer clicks the pay button to go to Rapyd |
-| **Text After Payment**  | After the customer returns from Rapyd with a successful payment                     |
-| **Text on Error**       | When the payment fails or encounters an error                                       |
-| **Text on Cancel**      | When the customer cancels the payment and returns to the store                      |
+**Thank You Article** — Select a Joomla article to display on the order confirmation page after a successful payment. Useful for showing a custom thank-you message, next-step instructions, or a downloadable guide. Leave blank to use J2Commerce's default confirmation message.
 
-***
+**Text on Selection:** After the customer selects Rapyd as their payment method at the payment step
+
+**Text Before Payment:** On the confirmation screen before the customer clicks the pay button to go to Rapyd
+
+**Text After Payment:** After the customer returns from Rapyd with a successful payment
+
+**Text on Error:** When the payment fails or encounters an error
+
+**Text on Cancel:** When the customer cancels the payment and returns to the store
 
 ### Dashboard Icon
 
+![](/img/rapyd-icon.webp)
+
 **Show Dashboard Icon** — When set to **Yes**, a Rapyd shortcut icon appears on the J2Commerce admin dashboard for quick access. Default: **No**.
 
-**Dashboard Icon Label** — The label displayed below the dashboard icon. Only visible when **Show Dashboard Icon** is set to **Yes**.
-
-***
+- **Dashboard Icon Label** — The label displayed below the dashboard icon. Only visible when **Show Dashboard Icon** is set to **Yes**.
 
 ### Debug Mode
 
@@ -298,8 +256,6 @@ The Rapyd checkout uses a redirect flow:
 5. On the Rapyd page, the customer selects their preferred payment method (card, e-wallet, bank transfer, or local method depending on their country) and completes payment.
 6. Rapyd redirects the customer back to your store. J2Commerce checks the payment status and updates the order accordingly.
 7. Rapyd also sends a webhook notification to your store so the order status is updated even if the return redirect is interrupted.
-
-<!-- SCREENSHOT: Checkout payment step showing Rapyd option selected with redirect notice -->
 
 ***
 
@@ -352,8 +308,6 @@ You can issue a full or partial refund directly from the order screen in J2Comme
 4. To refund the full amount, click **Full refund**. To refund a partial amount, enter the amount in the **Refund Amount** field and click **Process Refund**.
 5. J2Commerce sends the refund request to Rapyd via the API. The customer receives their refund according to Rapyd's processing timeline (typically 5–10 business days for cards, faster for e-wallets).
 
-<!-- SCREENSHOT: Order detail screen showing Payment section with Capture Payment, Cancel Payment, and Issue Refund buttons -->
-
 ***
 
 ## Capture and Cancel (Authorize Only Mode)
@@ -363,8 +317,6 @@ If you have set **Payment Capture** to **Authorize Only**, two additional button
 **Capture Payment** — Collects the funds that were previously authorized. Use this when you are ready to ship and want to charge the customer. Once captured, the payment cannot be canceled — only refunded.
 
 **Cancel Payment** — Releases the authorization hold without charging the customer. Use this if the order cannot be fulfilled and you want to release the funds back to the customer immediately. This action cannot be undone.
-
-<!-- SCREENSHOT: Order detail screen in Authorize Only mode showing Capture and Cancel buttons -->
 
 ***
 
@@ -388,7 +340,7 @@ The customer must complete a successful initial payment to establish the saved p
 
 **Solution:**
 
-1. Go to **J2Commerce** **->** **Payments** and confirm **Rapyd Payment** shows a green checkmark.
+1. Go to **J2Commerce** **->** **Setup** and confirm **Rapyd Payment** shows a green checkmark.
 2. Open the plugin settings and verify the correct **Access Key** and **Secret Key** are entered for the active mode (live or sandbox).
 3. Check the **Minimum Subtotal** and **Maximum Subtotal** fields — if set, confirm the test order falls within range.
 4. If a **Geo Zone** is configured, verify the test customer's billing address is in that zone.
