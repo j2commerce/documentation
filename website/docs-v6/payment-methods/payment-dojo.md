@@ -1,10 +1,3 @@
----
-title: "Dojo Payment"
-sidebar_label: "Dojo"
-sidebar_position: 45
-description: "Accept card payments on your J2Commerce store via Dojo (formerly Paymentsense), the UK card acquirer and hosted checkout platform for retail, hospitality, and SMB. GBP only. PCI SAQ-A."
----
-
 # Dojo Payment
 
 Dojo (formerly Paymentsense) is a UK-based card acquirer and payment platform built for retail, hospitality, and small-to-medium businesses. This plugin connects your J2Commerce store to Dojo's hosted checkout flow — your customer is redirected to a secure page on `pay.dojo.tech` to enter their card details. Card data never passes through your server, so you qualify for the simplest PCI self-assessment questionnaire (SAQ-A).
@@ -51,6 +44,8 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 To help you narrow down the list, you can do a search for **Dojo**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
+![](/img/dojo-enable.webp)
+
 ## Configure the Plugin
 
 :::tip
@@ -59,47 +54,56 @@ Click the **Toggle Inline Help** button at the top of any plugin configuration p
 
 :::
 
+![](/img/dojo-toggle.webp)
+
 ### Display Settings
 
-## Step-by-step setup
+![](/img/dojo-display.webp)
 
-### Step 1: Enable sandbox mode for testing
+**Display Name:**  controls the label customers see at checkout. The default is "Pay with Dojo". Change it to anything that matches your store's language and tone.
 
-The plugin ships with **Sandbox Mode** turned on by default. In sandbox mode it uses your sandbox API key (from the Dojo developer portal) and routes transactions to Dojo's test environment. No real money is processed.
+**Display Image:** Optional logo shown alongside the payment method name.
 
-1. On the plugin settings page, confirm **Sandbox Mode** is set to **Yes**.
-2. Enter your **Sandbox API Key** in the field that appears.
-3. Click **Save** and place a test order to verify the flow.
+### Credentials
 
-### Step 2: Enter your live API key
+![](/img/dojo-api.webp)
 
-When you are ready to accept real payments:
+The plugin ships with **Sandbox Mode** turned on by default. In sandbox mode it uses your sandbox API key (from the Dojo developer portal) and routes transactions to Dojo's test environment. No real money is processed. When **Yes**, uses the sandbox API key and Dojo's test environment. When **No**, uses the live API key.
 
-1. Set **Sandbox Mode** to **No**.
-2. Enter your **Live API Key** in the field that appears.
-3. Click **Save**.
+### API key
+
+**Live API Key:** Your production API key from the Dojo developer portal. Only shown when Sandbox Mode is off.
+
+**Sandbox API Key:** Your test API key from the Dojo developer portal. Only shown when Sandbox Mode is on.
 
 :::warning Keep your API key private
 The API key authenticates every request your store sends to Dojo. Treat it like a password. Never share it, post it in a support ticket, or commit it to version control.
 :::
 
-### Step 3: Choose a charge mode
+### Charge mode
+
+![](/img/dojo-mode.webp)
 
 The **Charge Mode** setting controls whether funds are captured immediately or held for manual capture.
 
-| Mode                             | What happens                                                                                                               | When to use                                                                                    |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| **Sale (capture immediately)**   | Dojo captures funds as soon as the customer pays. The order is marked paid at once.                                        | Most stores — physical goods, services, digital downloads.                                     |
-| **Authorise (capture manually)** | Dojo holds the funds but does not settle them. You must log in to the Dojo terminal and manually capture within **1 day**. | Pre-orders, made-to-order items, or cases where you want to inspect the order before charging. |
+- **Sale (capture immediately):** Dojo captures funds as soon as the customer pays. The order is marked paid at once.
+
+  - **When to use:** Most stores — physical goods, services, digital downloads.
+
+- **Authorise (capture manually):** Dojo holds the funds but does not settle them. You must log in to the Dojo terminal and manually capture within **1 day**.
+
+  - **When to use:** Pre-orders, made-to-order items, or cases where you want to inspect the order before charging.
 
 See [Authorise mode](#authorise-mode) for details on what the manual capture step involves.
 
-### Step 4: Choose your order statuses
+### Order statuses
+
+![](/img/dojo-status.webp)
 
 Configure how order states map to payment outcomes:
 
 - **Paid Order Status** — applied when Dojo confirms a successful Captured payment. Default: **Confirmed**.
-- **Authorised Order Status** — applied when Dojo returns status `Authorised` (funds held, manual capture pending). Default: **Confirmed**. Tip: create a distinct status such as "Processing" or "Awaiting Capture" so you can identify orders needing manual action in the Dojo terminal.
+- **Authorised Order Status** — applied when Dojo returns status `Authorised` (funds held, manual capture pending).  Tip: create a distinct status such as "Processing" or "Awaiting Capture" so you can identify orders needing manual action in the Dojo terminal.
 - **Failed Order Status** — applied when payment fails, is cancelled, or fails verification. Default: **Failed**.
 
 :::tip
@@ -110,61 +114,21 @@ If the status you want is not listed in a dropdown, create a new one first by go
 
 ![](/img/shipstation-order-status2-1.webp)
 
-### Step 5: Set the display name (optional)
+### Surcharge
 
-The **Display Name** controls the label customers see at checkout. The default is "Pay with Dojo". Change it to anything that matches your store's language and tone.
+![](/img/dojo-surcharge.webp)
 
-### Step 6: Save and test
+You can add an optional surcharge for customers who pay by card. Leave all three fields at their defaults if you do not want a surcharge.
 
-Click **Save**. Place a test order in sandbox mode. The plugin redirects to the Dojo sandbox checkout page. Use Dojo's published test card numbers to simulate approved and declined payments.
+**Surcharge Name:** Label shown on the order summary for the surcharge line. **Example:** "Credit card processing fee". Leave blank to add no surcharge.
 
-## Configuration reference
+**Surcharge Percent:** A percentage of the order subtotal added as a surcharge. **Example:** `2.5` adds a 2.5% surcharge.
 
-### Display settings
+**Surcharge Fixed:** A fixed currency amount added as a surcharge. **Example:**  Applied in addition to the percent surcharge if both are set.
 
-| Field             | Description                                              | Default         |
-| ----------------- | -------------------------------------------------------- | --------------- |
-| **Display Name**  | The payment method label shown to customers at checkout. | "Pay with Dojo" |
-| **Display Image** | Optional logo shown alongside the payment method name.   | None            |
+**Surcharge Tax Class:** Optional tax profile applied to the surcharge amount. **Example:**  Select a tax profile from the dropdown if your jurisdiction requires tax on payment surcharges.
 
-### API credentials
-
-| Field               | Description                                                                                             | Default |
-| ------------------- | ------------------------------------------------------------------------------------------------------- | ------- |
-| **Sandbox Mode**    | When **Yes**, uses the sandbox API key and Dojo's test environment. When **No**, uses the live API key. | Yes     |
-| **Live API Key**    | Your production API key from the Dojo developer portal. Only shown when Sandbox Mode is off.            | Empty   |
-| **Sandbox API Key** | Your test API key from the Dojo developer portal. Only shown when Sandbox Mode is on.                   | Empty   |
-
-### Charge mode
-
-| Field           | Description                                                                                            | Default |
-| --------------- | ------------------------------------------------------------------------------------------------------ | ------- |
-| **Charge Mode** | **Sale**: funds captured immediately. **Authorise**: funds held, manual capture required within 1 day. | Sale    |
-
-### Order status routing
-
-:::info
-
-NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
-
-:::
-
-| Field                       | Description                                                     | Default       |
-| --------------------------- | --------------------------------------------------------------- | ------------- |
-| **Paid Order Status**       | Status when Dojo confirms a Captured payment.                   | Confirmed (1) |
-| **Authorised Order Status** | Status when Dojo returns Authorised (manual capture pending).   | Confirmed (1) |
-| **Failed Order Status**     | Status when payment fails, is cancelled, or fails verification. | Failed (3)    |
-
-### Surcharge (reserved for future use)
-
-| Field                   | Description                                              | Default |
-| ----------------------- | -------------------------------------------------------- | ------- |
-| **Surcharge Name**      | Label for the surcharge line item shown to the customer. | Empty   |
-| **Surcharge Percent**   | Percentage surcharge on the order subtotal.              | Empty   |
-| **Surcharge Fixed**     | Fixed surcharge amount in GBP.                           | Empty   |
-| **Surcharge Tax Class** | Tax profile applied to the surcharge amount.             | None    |
-
-:::note Surcharges are not yet active
+:::info Surcharges are not yet active
 
 The surcharge fields are included for forward compatibility. The J2Commerce 6 core does not yet dispatch the `onJ2CommerceCalculateFees` event that activates surcharge calculations. This affects all payment plugins in J2Commerce 6, not just Dojo. Surcharges will become functional in a future core release.
 
@@ -172,34 +136,43 @@ The surcharge fields are included for forward compatibility. The J2Commerce 6 co
 
 ### Availability restrictions
 
-| Field                   | Description                                                                                       | Default |
-| ----------------------- | ------------------------------------------------------------------------------------------------- | ------- |
-| **Minimum Subtotal**    | Hide this payment method if the order subtotal is below this amount. Leave empty for no minimum.  | Empty   |
-| **Maximum Subtotal**    | Hide this payment method if the order subtotal is above this amount. Leave empty for no maximum.  | Empty   |
-| **Geozone Restriction** | Limit this payment method to customers in a specific geozone. Leave empty to allow all countries. | None    |
+![](/img/dojo-restrictions.webp)
+
+**Minimum Subtotal:** Hide this payment method if the order subtotal is below this amount. Leave empty for no minimum.
+
+**Maximum Subtotal:** Hide this payment method if the order subtotal is above this amount. Leave empty for no maximum.
+
+**Geozone Restriction:** Limit this payment method to customers in a specific geozone. Leave empty to allow all countries.
 
 The plugin also enforces a hard currency gate: if the cart currency is not GBP, the Dojo payment option does not appear.
 
 ### Checkout messages
 
+![](/img/dojo-messages.webp)
+
 Custom text shown to the customer at different points in the payment flow. Leave empty to use the built-in defaults.
 
-| Field                 | When shown                                                         |
-| --------------------- | ------------------------------------------------------------------ |
-| **On Selection**      | When the customer selects Dojo as their payment method.            |
-| **On Before Payment** | On the pre-payment screen, just before redirect to Dojo.           |
-| **On After Payment**  | After the customer returns from Dojo following successful payment. |
-| **On Cancel Payment** | When the customer cancels at the Dojo checkout page.               |
-| **On Error Payment**  | When an error occurs during processing.                            |
+**Thank You Article:** Optional Joomla article shown on the post-payment page.
+
+**On Selection:** When the customer selects Dojo as their payment method.
+
+**On Before Payment:** On the pre-payment screen, just before redirect to Dojo.
+
+**On After Payment:** After the customer returns from Dojo following successful payment.
+
+**On Cancel Payment:** When the customer cancels at the Dojo checkout page.
+
+**On Error Payment:** When an error occurs during processing.
 
 ### Other settings
 
-| Field                       | Description                                                                                           | Default       |
-| --------------------------- | ----------------------------------------------------------------------------------------------------- | ------------- |
-| **Thank You Article**       | Optional Joomla article shown on the post-payment page.                                               | None          |
-| **Place Order Button Text** | Text on the button that submits the order and starts the redirect.                                    | "Place Order" |
-| **Show Dashboard Icon**     | Show a shortcut icon on the J2Commerce dashboard.                                                     | No            |
-| **Debug Logging**           | Write detailed payment events to the Joomla log. Errors are always logged regardless of this setting. | No            |
+![](/img/dojo-advanced.webp)
+
+**Place Order Button Text:** Text on the button that submits the order and starts the redirect.
+
+**Show Dashboard Icon:** Show a shortcut icon on the J2Commerce dashboard.
+
+**Debug Logging:** Write detailed payment events to the Joomla log. Errors are always logged regardless of this setting.
 
 ## How the payment flow works
 
@@ -218,8 +191,6 @@ Custom text shown to the customer at different points in the payment flow. Leave
    - **Amount check:** The intent amount in pence must match the order total (within 1 penny). Only when all three checks pass does the plugin update the order status.
 
 6. **Order status is updated and customer sees the result.** Captured → paid status. Authorized → authorised status. Cancelled or failed → failed status.
-
-<!-- SCREENSHOT: Dojo hosted checkout page showing card entry fields -->
 
 ### What you do NOT have to manage
 
@@ -263,7 +234,7 @@ Use these card numbers on the Dojo sandbox checkout page. Use any future expiry 
 | Mastercard (success) | `5500 0000 0000 0004` | Payment approved and captured |
 | Any card (decline)   | `4000 0000 0000 0002` | Payment declined              |
 
-:::note
+:::info
 
 Dojo periodically updates their sandbox test card numbers. Check the [Dojo developer documentation](https://developer.dojo.tech) for the current test cards if the above do not work.
 
@@ -284,7 +255,7 @@ Dojo periodically updates their sandbox test card numbers. Check the [Dojo devel
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Setup** -> **Store** and confirm your store currency is GBP.
+1. Go to **J2Commerce** -> **Setup** -> **Configuration -> Store** tab and confirm your store currency is GBP.
 2. If you use multi-currency, make sure the active currency at checkout is GBP.
 3. Check that **Minimum Subtotal** and **Maximum Subtotal** are not excluding the current order total.
 4. Check that **Geozone Restriction** (if set) includes the customer's billing country.
