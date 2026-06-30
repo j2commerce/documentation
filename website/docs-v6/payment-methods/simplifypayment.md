@@ -25,50 +25,52 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 ***
 
-## Installation
+## Purchase and download
 
-1. Purchase and download the `payment_simplifypayment.zip` package from the J2Commerce website.
-2. In your Joomla administrator, go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_simplifypayment.zip` file using the **Upload Package File** tab.
-4. Joomla installs the plugin and creates a small database table for customer profiles. You will see a success message when the installation finishes.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-<!-- Screenshot: Joomla extension installer showing a successful install of payment_simplifypayment with green success message -->
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Simply Payment**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-After installation, the plugin is enabled automatically. To verify:
+## Install the plugin
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Confirm **Simplify Payments** appears in the list with a green enabled indicator.
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
-<!-- Screenshot: J2Commerce Payment Methods list showing Simplify Payments in the enabled state -->
+Upload the `plg_j2commerce_payment_simplypayment.zip` file.
 
-***
+![](/img/install.webp)
 
-## Configuration
+## Enable the Plugin
 
-Open the plugin settings by clicking **Simplify Payments** in **J2Commerce** -> **Payments** -> **Payment Methods**.
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Simply Payment**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+## Configure the Plugin
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
 
 :::
 
-<!-- Screenshot: J2Commerce Payment Methods editor for Simplify Payments, showing the full configuration panel -->
+### Display Settings
 
-All configuration fields are on a single settings panel. The table below describes every field in the order it appears.
+**Display Name:** The payment option label shown to customers at checkout. **Note:** Change to something like "Credit / Debit Card" for a cleaner storefront.
 
-### Display
+**Display Image:** An optional image shown alongside the payment option name. **Note:** Use the Joomla media picker to select an image from your media library.
 
-| Field             | Description                                                | Default             | Notes                                                                    |
-| ----------------- | ---------------------------------------------------------- | ------------------- | ------------------------------------------------------------------------ |
-| **Display Name**  | The payment option label shown to customers at checkout.   | `Simplify Payments` | Change to something like "Credit / Debit Card" for a cleaner storefront. |
-| **Display Image** | An optional image shown alongside the payment option name. | *(none)*            | Use the Joomla media picker to select an image from your media library.  |
+### Credentials
 
-### Mode
-
-| Field    | Description                                     | Default     | Notes                                                       |
-| -------- | ----------------------------------------------- | ----------- | ----------------------------------------------------------- |
-| **Mode** | Toggle between **Test Mode** and **Live Mode**. | `Test Mode` | Always test thoroughly in sandbox before switching to Live. |
+**Mode:** Toggle between **Test Mode** and **Live Mode**. **Note:** Always test thoroughly in sandbox before switching to Live
 
 When **Test Mode** is active, a blue information banner shows the sandbox test card numbers directly in the admin panel for convenience.
 
@@ -80,17 +82,15 @@ The plugin uses two sets of API keys — sandbox keys for testing and live keys 
 
 **Test Mode keys (visible when Mode is set to Test):**
 
-| Field                   | Description                                             | Notes                                                              |
-| ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------ |
-| **Sandbox Public Key**  | Your Simplify sandbox public key (starts with `sbpb_`). | Sent to the customer browser so Simplify.js can tokenize the card. |
-| **Sandbox Private Key** | Your Simplify sandbox private key.                      | Used only on your server to authorize the charge.                  |
+**Sandbox Public Key:** Your Simplify sandbox public key (starts with `sbpb_`). **Note:** Sent to the customer browser so Simplify.js can tokenize the card.
+
+**Sandbox Private Key:** Your Simplify sandbox private key. **Note:** Used only on your server to authorize the charge.
 
 **Live Mode keys (visible when Mode is set to Live):**
 
-| Field                | Description                                          | Notes |
-| -------------------- | ---------------------------------------------------- | ----- |
-| **Live Public Key**  | Your Simplify live public key (starts with `lvpb_`). |       |
-| **Live Private Key** | Your Simplify live private key.                      |       |
+**Live Public Key:** Your Simplify live public key (starts with `lvpb_`).
+
+**Live Private Key:** Your Simplify live private key.
 
 > **Warning:** The original J2Store version of this plugin had a bug where Live mode keys were never read correctly, causing every live charge to fail with an authentication error. This bug is fixed in the J2Commerce version. If you are migrating from J2Store, re-enter your live keys after upgrading to make sure they are saved under the correct field names.
 
@@ -98,38 +98,33 @@ You can find all four keys in your Simplify Commerce merchant dashboard under **
 
 ### Accepted Card Types
 
-| Field                   | Description                                                                  | Default            | Options                                      |
-| ----------------------- | ---------------------------------------------------------------------------- | ------------------ | -------------------------------------------- |
-| **Accepted Card Types** | Which card brand icons are displayed next to the payment option at checkout. | `Visa, Mastercard` | Visa, Mastercard, Discover, American Express |
+**Accepted Card Types:** Which card brand icons are displayed next to the payment option at checkout.
 
 This field controls icon display only. Simplify Commerce itself determines which cards your account accepts — removing a brand here does not block that card from being charged.
-
-<!-- Screenshot: Accepted Card Types multi-select field with Visa and Mastercard selected, showing fancy-select tag UI -->
 
 ### Surcharge
 
 You can add an optional surcharge for customers who pay by card. Leave all three fields at their defaults if you do not want a surcharge.
 
-| Field                   | Description                                              | Default   | Notes                                                                                           |
-| ----------------------- | -------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------- |
-| **Surcharge Name**      | Label shown on the order summary for the surcharge line. | *(empty)* | Example: "Credit card processing fee". Leave blank to add no surcharge.                         |
-| **Surcharge Percent**   | A percentage of the order subtotal added as a surcharge. | `0`       | Example: `2.5` adds a 2.5% surcharge.                                                           |
-| **Surcharge Fixed**     | A fixed currency amount added as a surcharge.            | `0`       | Applied in addition to the percent surcharge if both are set.                                   |
-| **Surcharge Tax Class** | Optional tax profile applied to the surcharge amount.    | *(none)*  | Select a tax profile from the dropdown if your jurisdiction requires tax on payment surcharges. |
+**Surcharge Name:** Label shown on the order summary for the surcharge line. **Example:** "Credit card processing fee". Leave blank to add no surcharge.
 
-### Subtotal Limits
+**Surcharge Percent:** A percentage of the order subtotal added as a surcharge. **Example:** `2.5` adds a 2.5% surcharge.
 
-| Field                | Description                                                              | Default | Notes                                   |
-| -------------------- | ------------------------------------------------------------------------ | ------- | --------------------------------------- |
-| **Minimum Subtotal** | Hide this payment option when the cart subtotal falls below this amount. | `0`     | Set to `0` to show for all cart values. |
-| **Maximum Subtotal** | Hide this payment option when the cart subtotal exceeds this amount.     | `-1`    | Set to `-1` for no upper limit.         |
+**Surcharge Fixed:** A fixed currency amount added as a surcharge. **Example:**  Applied in addition to the percent surcharge if both are set.
+
+**Surcharge Tax Class:** Optional tax profile applied to the surcharge amount. **Example:**  Select a tax profile from the dropdown if your jurisdiction requires tax on payment surcharges.
+
+### Restrictions
+
+**Minimum Subtotal:** Hide this payment option when the cart subtotal falls below this amount. **Note:** Set to `0` to show for all cart values.
+
+**Maximum Subtotal:** Hide this payment option when the cart subtotal exceeds this amount. **Note:** Set to `-1` for no upper limit.
 
 ### Order Status
 
-| Field              | Description                                                                | Default     | Notes                                                                                                                                                                         |
-| ------------------ | -------------------------------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Payment Status** | Order status applied when Simplify approves the charge successfully.       | `Confirmed` | When this status is set, J2Commerce fires the full order status change pipeline — notifications, order history, invoice email, and download grants all trigger automatically. |
-| **Decline Status** | Order status applied when Simplify declines the charge or an error occurs. | `Failed`    | The order is updated through the same pipeline, so the customer receives a decline notification if you have one configured.                                                   |
+**Payment Status:** Order status applied when Simplify approves the charge successfully. **Note:** When this status is set, J2Commerce fires the full order status change pipeline — notifications, order history, invoice email, and download grants all trigger automatically.
+
+**Decline Status:** Order status applied when Simplify declines the charge or an error occurs. **Note:** The order is updated through the same pipeline, so the customer receives a decline notification if you have one configured.
 
 :::info
 
@@ -141,50 +136,35 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 
 ### Geozone Restriction
 
-| Field                   | Description                                                   | Default                         | Notes                                                                                                                              |
-| ----------------------- | ------------------------------------------------------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| **Geozone Restriction** | Limit this payment option to customers in a specific geozone. | *(none — available everywhere)* | Select a geozone from the dropdown to hide Simplify Payments for customers outside that region. Leave blank to offer it worldwide. |
+**Geozone Restriction:** Limit this payment option to customers in a specific geozone. **Note:** Select a geozone from the dropdown to hide Simplify Payments for customers outside that region. Leave blank to offer it worldwide.
 
 ### Subscription Products
 
-| Field                     | Description                                                                  | Default | Notes                                                                                |
-| ------------------------- | ---------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------ |
-| **Support Subscriptions** | Allow this gateway to be chosen for orders containing subscription products. | `Yes`   | See [Subscription products](#subscription-products) below for important limitations. |
+**Support Subscriptions:** Allow this gateway to be chosen for orders containing subscription products. **Note:** See [Subscription products](#subscription-products) below for important limitations.
 
-### Thank-You Article
+### Custom HTML Messages
 
-| Field                         | Description                                                                                     | Default  | Notes                                                                                                                 |
-| ----------------------------- | ----------------------------------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Thank You Message Article** | An optional Joomla article displayed on the order confirmation page after a successful payment. | *(none)* | Click **Select** to pick an article from your content library. Leave blank to show J2Commerce's default confirmation. |
-
-### Custom HTML Snippets
+**Thank You Message Article:** An optional Joomla article displayed on the order confirmation page after a successful payment.
 
 These four fields let you inject custom HTML or text into specific points of the checkout flow. They are optional and most stores leave them blank.
 
-| Field                 | Description                                                                                                                                                                     |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **On Selection**      | HTML shown in the payment panel when the customer selects Simplify Payments at checkout but before they enter card details. Use this for payment instructions or terms notices. |
-| **On Before Payment** | HTML shown on the card entry screen before the customer submits.                                                                                                                |
-| **On After Payment**  | HTML shown on the confirmation screen after a successful payment.                                                                                                               |
-| **On Error Payment**  | HTML shown when the payment fails.                                                                                                                                              |
+**On Selection:** HTML shown in the payment panel when the customer selects Simplify Payments at checkout but before they enter card details. Use this for payment instructions or terms notices.
 
-### Checkout Button Text
+**On Before Payment:** HTML shown on the card entry screen before the customer submits.
 
-| Field           | Description                                        | Default       | Notes                                        |
-| --------------- | -------------------------------------------------- | ------------- | -------------------------------------------- |
-| **Button Text** | Label on the submit button at the card entry step. | `Place Order` | Change to "Pay Now" or similar if preferred. |
+**On After Payment:** HTML shown on the confirmation screen after a successful payment.
 
-### Debug Logging
+**On Error Payment:** HTML shown when the payment fails.
 
-| Field             | Description                                   | Default | Notes                                                                                                                                                                                         |
-| ----------------- | --------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Debug Logging** | Write plugin activity to the Joomla log file. | `No`    | Enable this temporarily when troubleshooting. Disable in production — logs are stored at `administrator/logs/plg_j2commerce_payment_simplifypayment.log.php`. Do not leave enabled long-term. |
+### Advanced
 
-### Layout Template
+**Button Text:** Label on the submit button at the card entry step. **Note:** Change to "Pay Now" or similar if preferred.
 
-| Field           | Description                                                  | Default                           | Notes                                                                                                       |
-| --------------- | ------------------------------------------------------------ | --------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| **Subtemplate** | Which frontend framework layout to use for the payment form. | *(auto-detected from active app)* | Leave blank to use your store's default (Bootstrap 5 or UIkit). Change only if you have overridden layouts. |
+**Debug Logging:** Write plugin activity to the Joomla log file.&#x20;
+
+**Note:**  Enable this temporarily when troubleshooting. Disable in production — logs are stored at `administrator/logs/plg_j2commerce_payment_simplifypayment.log.php`. Do not leave enabled long-term.
+
+**Layout Template:** Which frontend framework layout to use for the payment form. Leave blank to use your store's default (Bootstrap 5 or UIkit). Change only if you have overridden layouts.
 
 ***
 
@@ -208,8 +188,6 @@ Use the following card numbers with any future expiry date (e.g., 12/30) and any
 | Visa         | 4111 1111 1111 1111 |
 | Mastercard   | 5506 9004 9000 0436 |
 
-<!-- Screenshot: Storefront checkout card entry form in test mode showing Simplify.js-powered fields for card number, expiry, and CVV -->
-
 ### Expected results
 
 | Action                                                                    | Expected outcome                                                                                                                  |
@@ -217,8 +195,6 @@ Use the following card numbers with any future expiry date (e.g., 12/30) and any
 | Enter a valid test card and click **Place Order**                         | Payment approved — order status changes to your configured **Payment Status** (default: Confirmed). Confirmation page loads.      |
 | Enter card number `4000 0000 0000 0002` (generic Simplify decline number) | Payment declined — order status changes to your configured **Decline Status** (default: Failed). Error message shown to customer. |
 | Leave card fields empty and click **Place Order**                         | Client-side validation fires — browser displays inline field errors without submitting the form.                                  |
-
-<!-- Screenshot: Order confirmation page after a successful test payment showing the order number and thank-you message -->
 
 > **Note:** All charges against sandbox keys are simulated — no money changes hands. Transactions appear in your Simplify Commerce sandbox dashboard for review.
 
@@ -229,15 +205,13 @@ Use the following card numbers with any future expiry date (e.g., 12/30) and any
 Once testing is complete and you are satisfied with the checkout flow:
 
 1. Log in to your Simplify Commerce merchant dashboard and note your **live public key** and **live private key**.
-2. In J2Commerce, go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Simplify Payments**.
+2. In J2Commerce, go to **J2Commerce** -> **Setup** -> **Payment Methods** -> **Simplify Payments**.
 3. Switch **Mode** to **Live Mode**. The sandbox key fields hide and the live key fields appear.
 4. Enter your **Live Public Key** and **Live Private Key**.
 5. Click **Save & Close**.
 6. Place a real test order for a small amount (e.g., $1.00) using a real card to confirm end-to-end.
 7. Verify the charge appears in your live Simplify Commerce merchant dashboard.
 8. Verify the order status in J2Commerce updates correctly and that any order confirmation emails arrive.
-
-<!-- Screenshot: Plugin settings showing Mode switcher toggled to Live Mode with Live Public Key and Live Private Key fields visible -->
 
 > **Warning:** Do not leave **Debug Logging** enabled in production. Log files can grow large and may contain details about payment requests.
 
@@ -253,7 +227,7 @@ If your store uses subscription products (via the app\_subscriptionproduct add-o
 - When a renewal cycle is due, the plugin emits a "Pending Renewal Payment" event. This means the renewal is flagged for manual review rather than charged automatically.
 - Full unattended card-on-file renewal (charging the stored card automatically on each cycle) is planned for a future release.
 
-**What this means in practice:** For subscription stores, plan to monitor pending renewal orders in **J2Commerce** -> **Orders** and manually confirm or follow up with customers on renewal cycles until the automated renewal feature is released.
+**What this means in practice:** For subscription stores, plan to monitor pending renewal orders in **J2Commerce** **-> Sales -> Orders** and manually confirm or follow up with customers on renewal cycles until the automated renewal feature is released.
 
 ***
 
@@ -285,7 +259,7 @@ If your store uses subscription products (via the app\_subscriptionproduct add-o
 
 **Cause:** This is the known live-key bug from the original J2Store version. If you migrated from J2Store, the live keys may not have been stored under the correct field names.
 
-**Solution:** Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Simplify Payments**, switch **Mode** to **Live Mode**, re-enter both the **Live Public Key** and **Live Private Key**, then save. The J2Commerce version of the plugin reads these fields correctly.
+**Solution:** Go to **J2Commerce** -> **Setup** -> **Payment Methods** -> **Simplify Payments**, switch **Mode** to **Live Mode**, re-enter both the **Live Public Key** and **Live Private Key**, then save. The J2Commerce version of the plugin reads these fields correctly.
 
 ### Declined cards — customer sees "Your card was declined"
 
@@ -344,5 +318,3 @@ Because Mastercard discontinued Simplify Commerce for new merchants in 2025 and 
 3. Run a test order through the new gateway in sandbox mode.
 4. Once satisfied, switch the new gateway to live and set it as the default payment method.
 5. Disable the Simplify Payments plugin once all pending orders have cleared.
-
-<!-- Screenshot: J2Commerce Payment Methods list showing Simplify Payments disabled and a replacement gateway enabled in its place -->

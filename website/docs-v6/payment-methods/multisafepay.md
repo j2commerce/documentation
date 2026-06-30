@@ -165,15 +165,11 @@ These text fields let you customize what customers read at each stage of the pay
 
 - "Your payment was cancelled. Your order has been saved — please try again."
 
-**Button Text:** The text on the Pay button shown before the redirect
-
-- "Place Order"
-
 ### Advanced
 
 ![](/img/multisafepay-advanced.webp)
 
-**Notification User Group:** Joomla user group whose members receive an admin email if a payment error occurs (e.g. a gateway API failure). Members must have **Receive System Emails** enabled in their profile.
+**Button Text:** The text on the Pay button shown before the redirect. **Example:** "Place Order"
 
 **Debug Logging:** When set to Yes, the plugin writes detailed gateway request/response information to the Joomla log. Enable only while troubleshooting — disable on live stores.
 
