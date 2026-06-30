@@ -1,10 +1,3 @@
----
-title: "ICEPAY"
-sidebar_label: "ICEPAY"
-sidebar_position: 40
-description: "Accept iDEAL, Bancontact, Credit Card, PayPal and more via the ICEPAY payment gateway for Benelux and beyond."
----
-
 # ICEPAY
 
 ICEPAY is a Dutch payment gateway supporting a wide range of payment methods popular in the Netherlands, Belgium, and surrounding markets — including iDEAL, Bancontact/MisterCash, Credit Card, PayPal, SOFORT/DirecteBank, Giropay, PaySafeCard, and more. This plugin integrates ICEPAY's redirect checkout flow with server-to-server postback order updates.
@@ -51,6 +44,8 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 To help you narrow down the list, you can do a search for **IcePay**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
+![](/img/icepay-enable.webp)
+
 ## Configuration
 
 :::tip
@@ -59,7 +54,15 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-Find the ICEPAY plugin in the payment methods list and click its name to open settings.
+![](/img/icepay-toggle.webp)
+
+### Display Settings
+
+![](/img/icepay-display.webp)
+
+**Display Name:** The name shown to shoppers at checkout — e.g., "Pay with Klarna"
+
+**Display Image:** Optional logo or badge shown next to the payment option
 
 ### Credentials
 
@@ -93,6 +96,8 @@ When sandbox mode is on, the sandbox credentials are used automatically. Keep yo
 
 ### Order Statuses
 
+![](/img/icepay-status.webp)
+
 **Confirmed Payment Status:** Status applied when ICEPAY reports a successful payment.
 
 **Pending Payment Status:** Status applied when ICEPAY reports an open/pending payment.
@@ -109,6 +114,8 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 
 ### Surcharge
 
+![](/img/icepay-surcharge.webp)
+
 Add an optional payment surcharge — useful if your payment processor charges a transaction fee you wish to pass on.
 
 **Surcharge Name:** Label shown on the order summary (e.g. "Payment fee").
@@ -123,9 +130,13 @@ Both percent and fixed surcharges can be combined — they are added together.
 
 ### Geo Zone Restriction
 
+![](/img/icepay-geozone.webp)
+
 Set a **Geo Zone** to limit this payment method to customers in specific countries or regions. Leave blank to make it available worldwide.
 
 ### Custom Messages
+
+![](/img/icepay-messages.webp)
 
 **Article (Thank-You Message):** Select a Joomla article to display as extra content on the post-payment confirmation page. This is shown in addition to the **On After Payment** text.
 
@@ -140,6 +151,8 @@ Set a **Geo Zone** to limit this payment method to customers in specific countri
 **On Error Text:** Shown if a payment error occurs.
 
 ### Other Settings
+
+![](/img/icepay-debug.webp)
 
 **Button Text:** Label on the pay button. Use a J2Commerce language key or plain text.
 
@@ -156,8 +169,6 @@ The ICEPAY checkout follows a two-step flow within the J2Commerce checkout:
 On the payment step, the customer sees a list of the payment methods you have enabled. For iDEAL, they also select their bank (issuer) from radio buttons. Other methods (Bancontact, Credit Card, PayPal, etc.) have no issuer sub-selection.
 
 The customer selects a method (and issuer for iDEAL), then clicks **Place Order** (or your configured button text) to proceed.
-
-<!-- SCREENSHOT: ICEPAY issuer selector showing iDEAL bank list and other payment method options -->
 
 ### Step 2 — ICEPAY Redirect
 
