@@ -1,10 +1,3 @@
----
-title: "Safepay Payment"
-sidebar_label: "Safepay"
-sidebar_position: 35
-description: "Accept credit and debit card payments in your J2Commerce store with Safepay (getsafepay) — Pakistan-first, multi-currency, with embedded card fields or a hosted payment page."
----
-
 # Safepay Payment
 
 The Safepay Payment plugin lets your J2Commerce store accept Visa and Mastercard payments through your Safepay (getsafepay) account. Safepay is a Pakistan-based gateway that charges in Pakistani Rupees (PKR) by default and also supports other currencies such as USD, GBP, and EUR.
@@ -63,7 +56,7 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 To help you narrow down the list, you can do a search for **SafePay**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-![](/img/barclay-enable.webp)
+![](/img/safepay-enable.webp)
 
 ## Configure the plugin
 
@@ -75,15 +68,19 @@ Click the **Toggle Inline Help** button at the top of any plugin configuration p
 
 :::
 
-![](/img/barclay-toggle.webp)
+![](/img/safepay-toggle.webp)
 
 ### Display Settings
+
+![](/img/safepay-display.webp)
 
 **Display Name:** The name customers see at checkout. Default is `Safepay`.
 
 **Display Image:** An optional logo or card-brand image shown next to the payment option.
 
 ### API Credentials
+
+![](/img/safepay-api.webp)
 
 **Sandbox Mode:** Set to **Yes** to test with sandbox keys and the Safepay test environment. Set to **No** for real, live payments.
 
@@ -103,6 +100,8 @@ NOTE: The plugin automatically shows the correct set of key fields based on your
 
 ### Webhook URL
 
+![](/img/safepay-webhook.webp)
+
 The **Webhook URL** field shows a unique address that lets Safepay notify your store when a payment succeeds, fails, or is refunded. This keeps your orders up to date even if a customer closes their browser mid-payment.
 
 1. Copy the URL shown in the **Webhook URL** field.
@@ -117,59 +116,93 @@ Always keep webhooks set up. Without them, an order may not be marked as paid if
 
 ### Checkout Options
 
-| Field                                | Description                                                                                                                                                                   |
-| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Allow Saved Cards**                | Set to **Yes** to let returning customers pay with a card they saved on a previous order.                                                                                     |
-| **Checkout Mode**                    | **Embedded** shows Safepay card fields directly on your checkout page (recommended). **Hosted** sends the customer to a Safepay-hosted payment page, then back to your store. |
-| **Skip 3-D Secure (authorize only)** | *Embedded mode only.* Leave this **No** for production. Only set to **Yes** if your Safepay account is not set up for 3-D Secure, or for low-risk testing.                    |
-| **Sub Template**                     | Choose a layout override if you have a custom checkout template. Leave as default for the standard look.                                                                      |
+![](/img/safepay-mode.webp)
+
+**Allow Saved Cards:** Set to **Yes** to let returning customers pay with a card they saved on a previous order.
+
+**Checkout Mode: Embedded** shows Safepay card fields directly on your checkout page (recommended). **Hosted** sends the customer to a Safepay-hosted payment page, then back to your store.
+
+**Skip 3-D Secure (authorize only):** *Embedded mode only.* Leave this **No** for production. Only set to **Yes** if your Safepay account is not set up for 3-D Secure, or for low-risk testing.
+
+**Template Style:** Choose a layout override if you have a custom checkout template. Leave as default for the standard look.
 
 :::info
 
-NOTE: **3-D Secure** is the extra verification step (such as a one-time code from the bank) that protects against fraud. Keeping it on is strongly recommended for live stores.
+**NOTE:** **3-D Secure** is the extra verification step (such as a one-time code from the bank) that protects against fraud. Keeping it on is strongly recommended for live stores.
 
 :::
 
-### Order Status After Payment
+### Order Status
 
-| Field                       | Description                                                                                       |
-| --------------------------- | ------------------------------------------------------------------------------------------------- |
-| **Order Status**            | The status an order is set to after a successful payment (for example, **Confirmed**).            |
-| **Change Status on Void**   | Set to **Yes** to automatically change the order status when a payment is voided.                 |
-| **Void Order Status**       | The status to apply when an order is voided. Shown when **Change Status on Void** is **Yes**.     |
-| **Change Status on Refund** | Set to **Yes** to automatically change the order status when a payment is refunded.               |
-| **Refund Order Status**     | The status to apply when an order is refunded. Shown when **Change Status on Refund** is **Yes**. |
+![](/img/safepay-status.webp)
+
+**Order Status:** The status an order is set to after a successful payment (for example, **Confirmed**).
+
+**Change Status on Void:** Set to **Yes** to automatically change the order status when a payment is voided.
+
+- **Void Order Status:** The status to apply when an order is voided. Shown when **Change Status on Void** is **Yes**.
+
+**Change Status on Refund:** Set to **Yes** to automatically change the order status when a payment is refunded.
+
+- **Refund Order Status:** The status to apply when an order is refunded. Shown when **Change Status on Refund** is **Yes**.
+
+:::info
+
+If the order status you want is not listed, create it first under **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge (Optional)
 
+![](/img/safepay-surcharge.webp)
+
 Use these fields if you want to add a small handling fee when a customer pays with Safepay.
 
-| Field                   | Description                                                                    |
-| ----------------------- | ------------------------------------------------------------------------------ |
-| **Surcharge Name**      | The label shown for the fee on the order (for example, `Card processing fee`). |
-| **Surcharge Percent**   | A percentage of the order total to add as a fee.                               |
-| **Surcharge Fixed**     | A fixed amount to add as a fee.                                                |
-| **Surcharge Tax Class** | The tax profile to apply to the surcharge, if it should be taxed.              |
+**Surcharge Name:** The label shown for the fee on the order (for example, `Card processing fee`).
 
-### Availability Rules (Optional)
+**Surcharge Percent:** A percentage of the order total to add as a fee.
 
-| Field                    | Description                                                                              |
-| ------------------------ | ---------------------------------------------------------------------------------------- |
-| **Geo Zone Restriction** | Limit Safepay to customers in a specific geographic zone. Leave empty to allow everyone. |
-| **Minimum Subtotal**     | Hide Safepay unless the cart total is at least this amount. Leave empty for no minimum.  |
-| **Maximum Subtotal**     | Hide Safepay when the cart total is above this amount. Leave empty for no maximum.       |
+**Surcharge Fixed:** A fixed amount to add as a fee.
 
-### Messages and Extras (Optional)
+**Surcharge Tax Class:** The tax profile to apply to the surcharge, if it should be taxed.
 
-| Field                                                                  | Description                                                                                                                  |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| **Thank You Message**                                                  | Select a Joomla article to show on the order confirmation page.                                                              |
-| **On Selection / On Before / On After / On Error / On Cancel Payment** | Optional custom messages shown to the customer at each stage of payment.                                                     |
-| **Show Dashboard Icon**                                                | Set to **Yes** to add a quick-access icon for Safepay on the J2Commerce dashboard.                                           |
-| **Dashboard Icon Label**                                               | The text shown under the dashboard icon. Shown when **Show Dashboard Icon** is **Yes**.                                      |
-| **Debug Logging**                                                      | Set to **Yes** to record all Safepay requests and responses to a log file. Use only while troubleshooting, then turn it off. |
+### Restrictions (Optional)
 
-Click **Save** to apply your settings.
+![](/img/safepay-restrictions.webp)
+
+**Geo Zone Restriction:** Limit Safepay to customers in a specific geographic zone. Leave empty to allow everyone.
+
+**Minimum Subtotal:** Hide Safepay unless the cart total is at least this amount. Leave empty for no minimum.
+
+**Maximum Subtotal:** Hide Safepay when the cart total is above this amount. Leave empty for no maximum.
+
+### Custom Checkout Messages
+
+![](/img/safepay-messages.webp)
+
+These optional text fields let you customise what customers see at each stage of the payment flow.
+
+**Thank-You Article:** Optional Joomla article to display after a successful payment
+
+**On Before Payment:** Text shown before the customer is redirected to Barclaycard
+
+**On After Payment:** Text shown on the order confirmation page after a successful payment
+
+**On Error:** Text shown when a payment error occurs
+
+**On Cancel:** Text shown when the customer cancels on the Barclaycard page
+
+### Extras (Optional)
+
+![](/img/safepay-icon.webp)
+
+**Show Dashboard Icon:** Set to **Yes** to add a quick-access icon for Safepay on the J2Commerce dashboard.
+
+- **Icon Label:** The text shown under the dashboard icon. Shown when **Show Dashboard Icon** is **Yes**.
+
+**Debug Logging:** Set to **Yes** to record all Safepay requests and responses to a log file. Use only while troubleshooting, then turn it off.
 
 ## How It Works
 
@@ -212,7 +245,7 @@ NOTE: The available actions depend on how far along the payment is. For example,
 
 **Solution:**
 
-1. Go to **J2Commerce -> Payments -> Payment Methods** and confirm **Safepay** shows a green checkmark.
+1. Go to **J2Commerce -> Setup -> Payment Methods** and confirm **Safepay** shows a green checkmark.
 2. Open the Safepay settings and check **Minimum Subtotal**, **Maximum Subtotal**, and **Geo Zone Restriction** — the cart may fall outside these limits.
 3. Confirm the customer's location matches any geo zone you set.
 
