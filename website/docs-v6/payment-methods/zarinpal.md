@@ -21,24 +21,44 @@ Before configuring this plugin, make sure you have:
 
 For testing, no live account is required. The ZarinPal sandbox (`sandbox.zarinpal.com`) works with any placeholder merchant ID.
 
-**ZarinPal Payment**&#x20;
+## Purchase and download
 
-## Installation
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `payment_zarinpal.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_zarinpal.zip` file.
-4. The plugin installs automatically.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **ZarinPal Payment** .
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-To enable it, go to **J2Commerce** -> **Payments** -> **Payment Methods**, find **ZarinPal Payment** in the list, and click the toggle to enable it.
+## Install the plugin
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list with ZarinPal Payment enabled -->
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
-## Step-by-Step Configuration
+Upload the `plg_j2commerce_payment_zarinpal.zip` file.
 
-Go to **J2Commerce** -> **Payments** -> **Payment Methods**, then click **ZarinPal Payment** to open its settings.
+![](/img/install.webp)
 
-<!-- SCREENSHOT: ZarinPal Payment settings form open in the J2Commerce admin -->
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **ZarinPal Payment** , click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+## Configure the Plugin
+
+:::tip
+
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
+
+:::
+
+### Display Settings
 
 ### Step 1: Enter Your Merchant ID
 
