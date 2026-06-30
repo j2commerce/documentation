@@ -1,10 +1,3 @@
----
-title: "Clover Payment"
-sidebar_label: "Clover"
-sidebar_position: 28
-description: "Accept credit and debit card payments on your J2Commerce store using the Clover Payment plugin, supporting on-site iframe and Hosted Checkout flows."
----
-
 # Clover Payment
 
 The Clover Payment plugin connects your J2Commerce store to [Clover Ecommerce](https://www.clover.com/), letting you accept credit and debit cards either on your site (iframe) or via a Clover-hosted payment page. It supports both immediate sale and authorize-then-capture workflows, saved cards for returning customers and subscriptions, and full order management from the J2Commerce order view.
@@ -15,42 +8,16 @@ The Clover Payment plugin connects your J2Commerce store to [Clover Ecommerce](h
 - An active Clover merchant account with Ecommerce enabled
 - Clover Ecommerce API credentials (Merchant ID, Public Key, Private Key, Webhook Secret)
 
-## Purchase and Download
-
-The Clover Payment plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com/extensions/). It is not included in the core J2Commerce package.
-
-After purchase, download the plugin zip from your account.
-
-## Install the Plugin
-
-1. Log in to your Joomla administrator.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the plugin zip file and click **Upload & Install**.
-4. Go to **System** -> **Manage** -> **Plugins**.
-5. Search for **Clover** and confirm the plugin appears in the list.
-
-<!-- SCREENSHOT: Plugin list showing Clover Payment in the Manage Plugins screen -->
-
-## Enable the Plugin
-
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Find **Clover Payment** in the list and click it to open the settings.
-3. Set **Status** to **Enabled**.
-4. Fill in your credentials (see the next two sections).
-5. Click **Save**.
-
-<!-- SCREENSHOT: Clover Payment method entry in J2Commerce Payment Methods list -->
-
 ## Get Your Clover Keys
 
 You need four values from your Clover developer dashboard. The table below tells you where to find each one.
 
-| Credential | Where to find it |
-|---|---|
+| Credential            | Where to find it                                                                                                                                   |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Merchant ID (mId)** | Your Clover Dashboard URL — it is the 13-character code after `/merchants/` (for example `18753RFVD3ZY1`). This is NOT your MID or account number. |
-| **Public Key** | Clover PAKMS (the tokenization key service). It begins with `pkp_`. Use this in the **Public Key** field. |
-| **Private / API Key** | Your Clover Ecommerce API secret key. Keep this private — never share it or expose it in a browser. |
-| **Webhook Secret** | The secret used to verify Clover webhook signatures. Copy it when you set up your webhook endpoint in the Clover Developer Dashboard. |
+| **Public Key**        | Clover PAKMS (the tokenization key service). It begins with `pkp_`. Use this in the **Public Key** field.                                          |
+| **Private / API Key** | Your Clover Ecommerce API secret key. Keep this private — never share it or expose it in a browser.                                                |
+| **Webhook Secret**    | The secret used to verify Clover webhook signatures. Copy it when you set up your webhook endpoint in the Clover Developer Dashboard.              |
 
 :::tip
 
@@ -58,29 +25,84 @@ Clover has separate credentials for sandbox (testing) and production (live). Cop
 
 :::
 
-<!-- SCREENSHOT: Clover Developer Dashboard showing the Merchant ID in the URL and API keys section -->
+## Purchase and download
+
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Clover**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
+## Install the plugin
+
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+
+Upload the `plg_j2commerce_payment_clover.zip` file.
+
+![](/img/install.webp)
+
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Clover**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/clover-enable.webp)
 
 ## Configure the Plugin
 
-Open **J2Commerce** -> **Payments** -> **Payment Methods** and click **Clover Payment**.
+Click the **Clover** title next to the green checkmark to open the configuration screen.
 
-### Connection Settings
+:::tip
+
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
+
+:::
+
+![](/img/clover-toggle.webp)
+
+### Display Settings
+
+![](/img/clover-config1.webp)
 
 These fields connect the plugin to your Clover account.
 
-| Field | Description | Default |
-|---|---|---|
-| **Display Name** | The name shoppers see at checkout, e.g. "Credit / Debit Card" | Credit / Debit Card |
-| **Display Image** | Optional logo shown next to the payment name at checkout | — |
-| **Sandbox Mode** | Set to **Yes** while testing; set to **No** to accept real payments | Yes |
-| **Merchant ID** | Your live Clover merchant mId (13 characters) | — |
-| **Public Key** | Your live PAKMS tokenization key (begins with `pkp_`) | — |
-| **Private Key** | Your live Clover API secret key | — |
-| **Webhook Secret** | Your live webhook secret from the Clover Developer Dashboard | — |
-| **Sandbox Merchant ID** | Merchant mId for sandbox testing | — |
-| **Sandbox Public Key** | PAKMS tokenization key for sandbox testing | — |
-| **Sandbox Private Key** | API secret key for sandbox testing | — |
-| **Sandbox Webhook Secret** | Webhook secret for sandbox testing | — |
+**Display Name:** The name shoppers see at checkout, e.g. "Credit / Debit Card"
+
+**Display Image:** Optional logo shown next to the payment name at checkout
+
+**Integration Mode: Iframe (on-site)** keeps shoppers on your site; **Hosted Checkout (redirect)** sends them to a Clover-hosted payment page
+
+**Payment Action: Sale (capture immediately)** charges the card at checkout; **Authorize only** reserves the funds for manual capture later
+
+### Credentials
+
+![](/img/clover-config2.webp)
+
+**Sandbox Mode:** Set to **Yes** while testing; set to **No** to accept real payments
+
+**Merchant ID:** Your live Clover merchant mId (13 characters)
+
+**Public Key:** Your live PAKMS tokenization key (begins with `pkp_`)
+
+**Private Key:** Your live Clover API secret key
+
+**Webhook Secret:** Your live webhook secret from the Clover Developer Dashboard
+
+**Sandbox Merchant ID:** Merchant mId for sandbox testing
+
+**Sandbox Public Key:** PAKMS tokenization key for sandbox testing
+
+**Sandbox Private Key:** API secret key for sandbox testing
+
+**Sandbox Webhook Secret:** Webhook secret for sandbox testing
 
 ### Webhook URL
 
@@ -92,66 +114,85 @@ If your site is on a local or development domain, the plugin will show a warning
 
 :::
 
-<!-- SCREENSHOT: Webhook URL fields in the Clover plugin settings, showing live and sandbox URLs -->
-
 ### Checkout Options
+
+![](/img/clover-config3.webp)
 
 These settings control how the payment form appears and what card features are available.
 
-| Field | Description | Default |
-|---|---|---|
-| **Integration Mode** | **Iframe (on-site)** keeps shoppers on your site; **Hosted Checkout (redirect)** sends them to a Clover-hosted payment page | Iframe (on-site) |
-| **Payment Action** | **Sale (capture immediately)** charges the card at checkout; **Authorize only** reserves the funds for manual capture later | Sale (capture immediately) |
-| **Allow Saved Cards** | Let logged-in customers save cards for faster checkout and automatic subscription renewals | No |
-| **Template** | Choose the checkout template (Bootstrap 5 or UIkit, depending on your site theme) | — |
+**Allow Saved Cards:** Let logged-in customers save cards for faster checkout and automatic subscription renewals
 
-### Order Status After Payment
+**Template Style:** Choose the checkout template (Bootstrap 5 or UIkit, depending on your site theme)
+
+### Order Status
+
+![](/img/clover-config4.webp)
 
 These settings determine which order status is applied after each payment event.
 
-| Field | Description |
-|---|---|
-| **Payment Status** | Status applied after a successful Sale payment (e.g. Confirmed) |
-| **Authorized Status** | Status applied when a payment is Authorized but not yet captured. Visible only when **Payment Action** is set to **Authorize only** |
-| **Change Status on Refund** | Enable to automatically change the order status when a refund is processed |
-| **Refund Order Status** | The status to apply after a refund (shown only when the option above is enabled) |
-| **Change Status on Void** | Enable to automatically change the order status when an authorization is voided |
-| **Void Order Status** | The status to apply after a void (shown only when the option above is enabled) |
+**Payment Status:** Status applied after a successful Sale payment (e.g. Confirmed)
+
+**Authorized Status:** Status applied when a payment is Authorized but not yet captured. Visible only when **Payment Action** is set to **Authorize only**
+
+**Change Status on Refund:** Enable to automatically change the order status when a refund is processed
+
+- **Refund Order Status:** The status to apply after a refund (shown only when the option above is enabled)
+
+**Change Status on Void:** Enable to automatically change the order status when an authorization is voided
+
+- **Void Order Status:** The status to apply after a void (shown only when the option above is enabled)
 
 ### Surcharge (Optional)
 
+![](/img/clover-config5.webp)
+
 Add a surcharge to cover payment processing costs. Leave all fields at zero if you do not want to charge a surcharge.
 
-| Field | Description |
-|---|---|
-| **Surcharge Name** | Label shown to shoppers for the surcharge line item |
-| **Surcharge Percent** | Percentage of the order total added as a surcharge (e.g. `2.5` for 2.5%) |
-| **Surcharge Fixed Amount** | Flat amount added per order regardless of total |
-| **Surcharge Tax Class** | Tax class applied to the surcharge amount |
+**Surcharge Name:** Label shown to shoppers for the surcharge line item
 
-### Availability Rules (Optional)
+**Surcharge Percent:** Percentage of the order total added as a surcharge (e.g. `2.5` for 2.5%)
+
+**Surcharge Fixed Amount:** Flat amount added per order regardless of total
+
+**Surcharge Tax Class:** Tax class applied to the surcharge amount
+
+### Restrictions (Optional)
+
+![](/img/clover-config8.webp)
 
 Restrict when Clover Payment appears at checkout.
 
-| Field | Description |
-|---|---|
-| **Geo Zone Restriction** | Limit the payment method to customers in a specific geo zone |
-| **Minimum Subtotal** | Hide Clover Payment when the cart total is below this amount (leave at 0 for no minimum) |
-| **Maximum Subtotal** | Hide Clover Payment when the cart total exceeds this amount (leave at 0 for no maximum) |
+**Geo Zone Restriction:** Limit the payment method to customers in a specific geo zone
 
-### Messages and Extras (Optional)
+**Minimum Subtotal:** Hide Clover Payment when the cart total is below this amount (leave at 0 for no minimum)
 
-| Field | Description |
-|---|---|
-| **Thank You Message** | Select a Joomla article to display as the confirmation message after payment |
-| **On Selection** | Message displayed when the shopper selects Clover Payment at checkout |
-| **Before Payment** | Message displayed just before the payment form |
-| **After Payment** | Message displayed after a successful payment |
-| **On Error** | Message displayed when a payment error occurs |
-| **On Cancel** | Message displayed when a shopper cancels |
-| **Show Dashboard Icon** | Display a shortcut icon on the J2Commerce dashboard |
-| **Dashboard Icon Label** | Custom label for the dashboard icon |
-| **Debug Logging** | Log detailed request and response data for troubleshooting. Turn off after debugging |
+**Maximum Subtotal:** Hide Clover Payment when the cart total exceeds this amount (leave at 0 for no maximum)
+
+### Custom Checkout Messages
+
+![](/img/clover-config6.webp)
+
+**Thank You Message:** Select a Joomla article to display as the confirmation message after payment
+
+**On Selection:** Message displayed when the shopper selects Clover Payment at checkout
+
+**Before Payment:** Message displayed just before the payment form
+
+**After Payment:** Message displayed after a successful payment
+
+**On Error:** Message displayed when a payment error occurs
+
+**Order Cancel:** Message displayed when a shopper cancels
+
+### Extra Settings
+
+![](/img/clover-config7.webp)
+
+**Show Dashboard Icon:** Display a shortcut icon on the J2Commerce dashboard
+
+- **Icon Label:** Custom label for the dashboard icon
+
+**Debug Logging:** Log detailed request and response data for troubleshooting. Turn off after debugging
 
 ## How It Works
 
@@ -180,8 +221,6 @@ The available actions depend on where the payment is in its lifecycle. An author
 
 :::
 
-<!-- SCREENSHOT: Clover payment action buttons on the J2Commerce order view -->
-
 ## Tips
 
 - **Test in sandbox first** — Set **Sandbox Mode** to **Yes**, enter your sandbox credentials, and place a test order before going live.
@@ -198,7 +237,7 @@ The available actions depend on where the payment is in its lifecycle. An author
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and confirm **Clover Payment** shows a green checkmark.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** and confirm **Clover Payment** shows a green checkmark.
 2. Open the Clover settings and check **Minimum Subtotal**, **Maximum Subtotal**, and **Geo Zone Restriction** — the cart may fall outside these limits.
 3. Confirm the customer's location matches any geo zone you have set.
 
