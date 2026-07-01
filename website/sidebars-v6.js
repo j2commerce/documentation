@@ -33,6 +33,7 @@ const sidebars = {
             items: [
                 'migration-tools/com_j2commercemigrator',
                 'migration-tools/plg_j2commercemigrator_j2commerce4',
+                'migration-tools/virtuemart3',
                 'migration-tools/woocommerce',
             ],
         },
@@ -268,6 +269,8 @@ const sidebars = {
                         'apps-and-extensions/apps/digifactu',
                         // Donation
                         'apps-and-extensions/apps/app-donation',
+                        // Dropbox
+                        'apps-and-extensions/apps/app_dropbox',
                         // Easy Links
                         'apps-and-extensions/apps/app_easylinks',
                         // Easy Reorder
@@ -282,6 +285,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app-expertvoice',
                         // Meta Pixel / Facebook Conversion
                         'apps-and-extensions/apps/app_facebookconversion',
+                        // Findbar
+                        'apps-and-extensions/apps/app_findbar',
                         // GDPR Compliance
                         'apps-and-extensions/apps/app-gdpr',
                         // Gift Wrapping
@@ -290,10 +295,14 @@ const sidebars = {
                         'apps-and-extensions/apps/app_googlemerchantfeed',
                         // Google Tag Manager
                         'apps-and-extensions/apps/ecommercegoogletagmanager',
+                        // Heureka Product Feed
+                        'apps-and-extensions/apps/app_heurekaproductfeed',
                         // Inventory Email Notifications
                         'apps-and-extensions/apps/stocknotification',
                         // Klaviyo Integration
                         'apps-and-extensions/apps/klaviyo',
+                        // Markdown for AI Agents
+                        'apps-and-extensions/apps/app_markdown',
                         // Minimum Order Restriction
                         'apps-and-extensions/apps/minimumorder',
                         // Modal Bouncer
@@ -324,6 +333,8 @@ const sidebars = {
                         'apps-and-extensions/apps/printnode',
                         // Product Compare
                         'apps-and-extensions/apps/productcompare',
+                        // Product Navbar
+                        'apps-and-extensions/apps/app_productnavbar',
                         // Product Reviews
                         'apps-and-extensions/apps/app-reviews',
                         // Product Shipping Restrictions
@@ -352,14 +363,18 @@ const sidebars = {
                         'apps-and-extensions/apps/subscriptionmultiplequantity',
                         // Tax Manager
                         'apps-and-extensions/apps/app_taxmanager',
+                        // TrackingMore Integration
+                        'apps-and-extensions/apps/app_trackingmore',
                         // Twilio SMS Notifications
                         'apps-and-extensions/apps/twilio',
                         // User Group Tax Exemptions
                         'apps-and-extensions/apps/app-usertaxexemptions',
                         // Veeqo
                         'apps-and-extensions/apps/app_veeqo',
-                        // Vendor Marketplace
-                        'apps-and-extensions/apps/app-vendormarketplace',
+                        // Vendor Management
+                        'apps-and-extensions/apps/app_vendormanagement',
+                        // Video Display
+                        'apps-and-extensions/apps/app_videodisplay',
                         // Wishlist
                         'apps-and-extensions/apps/app-wishlist',
                     ],
@@ -428,6 +443,8 @@ const sidebars = {
                 'payment-methods/2checkout',
                 // Adyen Payment
                 'payment-methods/payment_adyen',
+                // Affirm
+                'payment-methods/payment_affirm',
                 // Alipay Payment
                 'payment-methods/alipay',
                 // Amazon Pay
@@ -463,6 +480,8 @@ const sidebars = {
                 'payment-methods/payment_credova',
                 // Culqi Payment Gateway
                 'payment-methods/culqi',
+                // Dib Easy
+                'payment-methods/payment_dibeasy',
                 // Dojo Payment
                 'payment-methods/payment-dojo',
                 // Elavon Converge Payment
@@ -509,12 +528,24 @@ const sidebars = {
                 'payment-methods/multisafepay',
                 // NMI Payment
                 'payment-methods/payment_nmi',
+                // Nochex
+                'payment-methods/payment_nochex',
                 // Opayo (Sage Pay) Card Payments
                 'payment-methods/payment_opayo',
+                // Paybox
+                'payment-methods/payment_paybox',
+                // Paygate
+                'payment-methods/payment_paygate',
+                // Paynl
+                'payment-methods/payment_paynl',
                 // Paddle Payment Plugin
                 'payment-methods/payment_paddle',
+                // Payeezy
+                'payment-methods/payeezy',
                 // Payfast Payment
                 'payment-methods/payment_payfast',
+                // PayMate
+                'payment-methods/paymate',
                 // PAYONE Commerce Platform Payment
                 'payment-methods/payment_payone',
                 // PayPal Payment
@@ -541,14 +572,22 @@ const sidebars = {
                 'payment-methods/payment_safepay',
                 // Simplify Payments (Mastercard Simplify Commerce)
                 'payment-methods/simplifypayment',
+                // Skrill
+                'payment-methods/skrill',
                 // Square Payment
                 'payment-methods/payment_square',
                 // Stripe Payment
                 'payment-methods/payment_stripe',
                 // SumUp Payment
                 'payment-methods/payment_sumup',
+                // Tranzila
+                'payment-methods/tranzila',
+                // USAePay
+                'payment-methods/payment_usaepay',
                 // Viva.com Payment
                 'payment-methods/payment_viva',
+                // Voguepay
+                'payment-methods/voguepay',
                 // Worldline Payment
                 'payment-methods/payment_worldline',
                 // Worldpay Payment
@@ -569,6 +608,8 @@ const sidebars = {
                 'shipping-methods/shipping_atoship',
                 // Category Based Shipping
                 'shipping-methods/categories',
+                // Doordash
+                'shipping-methods/shipping_doordash',
                 // EasyShip Multi-Carrier Shipping
                 'shipping-methods/shipping_easyship',
                 // FedEx Shipping
@@ -579,6 +620,8 @@ const sidebars = {
                 'shipping-methods/shipping-pickup',
                 // Purolator Shipping
                 'shipping-methods/purolator',
+                // Shippo
+                'shipping-methods/shipping_shippo',
                 // Standard Shipping
                 'shipping-methods/shipping-standard',
                 // Unishippers LTL Freight
