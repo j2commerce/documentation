@@ -166,7 +166,7 @@ These fields let you brand the Barclaycard payment page to match your store.
 
 ![](/img/barclay-template.webp)
 
-**Subtemplate:** Choose the checkout layout style — Bootstrap 5 or UIkit. Defaults to your site's active J2Commerce theme.
+**Template Style:** Choose the checkout layout style — Bootstrap 5 or UIkit. Defaults to your site's active J2Commerce theme.
 
 ### Order statuses
 
@@ -224,6 +224,8 @@ Add an optional payment surcharge to cover your Barclaycard transaction fees. Le
 
 These optional text fields let you customise what customers see at each stage of the payment flow.
 
+**Thank-You Article:** Optional Joomla article to display after a successful payment
+
 **On Before Payment:** Text shown before the customer is redirected to Barclaycard
 
 **On After Payment:** Text shown on the order confirmation page after a successful payment
@@ -231,8 +233,6 @@ These optional text fields let you customise what customers see at each stage of
 **On Error:** Text shown when a payment error occurs
 
 **On Cancel:** Text shown when the customer cancels on the Barclaycard page
-
-**Thank-You Article:** Optional Joomla article to display after a successful payment
 
 ### Dashboard icon
 
