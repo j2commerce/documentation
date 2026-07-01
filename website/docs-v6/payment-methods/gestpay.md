@@ -153,10 +153,6 @@ Leave all surcharge fields empty if you do not want to add a fee.
 
 **Geo Zone Restriction:** If set, GestPay will only appear at checkout for billing addresses within the selected geo zone. Leave empty to show GestPay to all customers regardless of country.
 
-### Subscription support
-
-**Support Subscriptions:** Enable only if you use a subscription app and want GestPay to appear as a payment option for subscription products. Automatic renewal payments are not supported (GestPay HPP has no stored token).
-
 ### Custom messages
 
 ![](/img/gestpay-messages.webp)

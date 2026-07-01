@@ -51,6 +51,8 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 To help you narrow down the list, you can do a search for **MultiSafepay**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
+![](/img/multisafepay-enable.webp)
+
 ## Configure the Plugin
 
 :::tip
@@ -59,13 +61,21 @@ Click the **Toggle Inline Help** button at the top of any plugin configuration p
 
 :::
 
+![](/img/multisafepay-toggle.webp)
+
 ### Display
+
+![](/img/multisafepay-display.webp)
 
 - **Display Name** — the label customers see at checkout (default: "MultiSafepay"). You can change this to "Online Payments", "iDEAL and more", or any name that suits your store.
 - **Display Image** — upload a logo or payment method icon to show alongside the name at checkout.
 - **Description Prefix:** A short label prepended to the order description sent to MultiSafepay (e.g. "Order#")
 
+![](/img/multisafepay-prefix.webp)
+
 ### Credentials
+
+![](/img/multisafepay-api.webp)
 
 When sandbox mode is active, all checkouts redirect to `testapi.multisafepay.com` instead of the live gateway. Use the test card numbers and test iDEAL bank listed in the [MultiSafepay test documentation](https://docs.multisafepay.com/docs/testing) to simulate different payment outcomes.
 
@@ -80,6 +90,8 @@ In the **Basic** configuration tab, fill in the following required fields:
 **Sandbox API Key:** Your test API key (only visible when Use Sandbox is Yes)
 
 ### Order Status
+
+![](/img/multisafepay-status.webp)
 
 MultiSafepay sends your store a status for every payment. The plugin maps those statuses to your J2Commerce order statuses:
 
@@ -101,6 +113,8 @@ If the status you want is not listed in a dropdown, create a new one first by go
 
 ### Surcharge (Optional)
 
+![](/img/multisafepay-surcharge.webp)
+
 Add an optional payment surcharge to cover gateway fees. Leave all fields empty if you do not want a surcharge.
 
 **Surcharge Name:** Label shown to customers for the surcharge line (e.g. "Payment fee")
@@ -115,7 +129,11 @@ Both a percentage and a fixed amount can be active at the same time — they are
 
 ### Restrictions
 
+![](/img/multisafepay-geozone.webp)
+
 **Geozone Restriction:** Limit this payment method to customers in a specific geozone. Leave blank to show to all customers.
+
+![](/img/multisafepay-restrictions.webp)
 
 **Minimum Subtotal:** Leave empty or set to 0 to allow all order amounts. Set a minimum subtotal required for this payment method to be available.
 
@@ -123,22 +141,35 @@ Both a percentage and a fixed amount can be active at the same time — they are
 
 ### Customer-Facing Messages
 
+![](/img/multisafepay-messages.webp)
+
 These text fields let you customize what customers read at each stage of the payment flow. The defaults are suitable for most stores.
 
 **Thank-You Article:** Select a Joomla article to display on the order confirmation page after a successful payment
 
-| Field              | When shown                                                                    | Default text                                                                |
-| ------------------ | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| **On Selection**   | When the customer selects MultiSafepay at checkout (before clicking Pay)      | —                                                                           |
-| **Before Payment** | On the redirect button page, just before the customer is sent to MultiSafepay | "You will be redirected to MultiSafepay to complete your payment."          |
-| **After Payment**  | When the customer returns from MultiSafepay after a successful payment        | "Thank you for your order. Your payment has been received."                 |
-| **On Error**       | When a gateway or configuration error occurs                                  | "An error occurred. Please try again."                                      |
-| **On Cancel**      | When the customer clicks Cancel on the MultiSafepay payment page              | "Your payment was cancelled. Your order has been saved — please try again." |
-| **Button Text**    | The text on the Pay button shown before the redirect                          | Place Order                                                                 |
+**On Selection:** When the customer selects MultiSafepay at checkout (before clicking Pay)
+
+**Before Payment:** On the redirect button page, just before the customer is sent to MultiSafepay
+
+- "You will be redirected to MultiSafepay to complete your payment."
+
+**After Payment:** When the customer returns from MultiSafepay after a successful payment
+
+- "Thank you for your order. Your payment has been received."
+
+**On Error:** When a gateway or configuration error occurs
+
+- "An error occurred. Please try again."
+
+**On Cancel:** When the customer clicks Cancel on the MultiSafepay payment page
+
+- "Your payment was cancelled. Your order has been saved — please try again."
 
 ### Advanced
 
-**Notification User Group:** Joomla user group whose members receive an admin email if a payment error occurs (e.g. a gateway API failure). Members must have **Receive System Emails** enabled in their profile.
+![](/img/multisafepay-advanced.webp)
+
+**Button Text:** The text on the Pay button shown before the redirect. **Example:** "Place Order"
 
 **Debug Logging:** When set to Yes, the plugin writes detailed gateway request/response information to the Joomla log. Enable only while troubleshooting — disable on live stores.
 

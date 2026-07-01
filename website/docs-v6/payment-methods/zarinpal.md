@@ -1,10 +1,3 @@
----
-title: "ZarinPal Payment"
-sidebar_label: "ZarinPal"
-sidebar_position: 50
-description: "Accept payments from Iranian shoppers using ZarinPal, the leading Iranian payment gateway, in your J2Commerce store."
----
-
 # ZarinPal Payment
 
 ZarinPal is Iran's most widely used online payment gateway, processing card payments for millions of Iranian shoppers. When a customer chooses ZarinPal at checkout, they are redirected to the ZarinPal secure payment page, complete their transaction there, and are then returned to your store with a confirmed result.
@@ -21,35 +14,70 @@ Before configuring this plugin, make sure you have:
 
 For testing, no live account is required. The ZarinPal sandbox (`sandbox.zarinpal.com`) works with any placeholder merchant ID.
 
-## Installation
+## Purchase and download
 
-1. Purchase and download the `payment_zarinpal.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_zarinpal.zip` file.
-4. The plugin installs automatically.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-To enable it, go to **J2Commerce** -> **Payments** -> **Payment Methods**, find **ZarinPal Payment** in the list, and click the toggle to enable it.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **ZarinPal Payment** .
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list with ZarinPal Payment enabled -->
+## Install the plugin
 
-## Step-by-Step Configuration
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
-Go to **J2Commerce** -> **Payments** -> **Payment Methods**, then click **ZarinPal Payment** to open its settings.
+Upload the `plg_j2commerce_payment_zarinpal.zip` file.
 
-<!-- SCREENSHOT: ZarinPal Payment settings form open in the J2Commerce admin -->
+![](/img/install.webp)
 
-### Step 1: Enter Your Merchant ID
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **ZarinPal Payment** , click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/zarinpal-enable.webp)
+
+## Configure the Plugin
+
+:::tip
+
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
+
+:::
+
+![](/img/zarinpal-toggle.webp)
+
+### Display Settings
+
+![](/img/zarinpal-display.webp)
+
+**Display Name:** Text shown to the customer at checkout (default: "ZarinPal")
+
+**Display Image:** Logo or icon shown next to the payment option
+
+### Credentials
 
 Find the **Merchant ID** field and paste your UUID from the ZarinPal merchant dashboard.
 
 The field only appears when **Sandbox Mode** is set to **No**. When Sandbox Mode is **Yes**, the **Sandbox Merchant ID** field appears in its place — you can leave that field empty or enter any placeholder value for testing.
 
-| Field                   | Description                                       |
-| ----------------------- | ------------------------------------------------- |
-| **Merchant ID**         | Your live ZarinPal UUID (shown when Sandbox = No) |
-| **Sandbox Merchant ID** | Your test UUID (shown when Sandbox = Yes)         |
+**Merchant ID:** Your live ZarinPal UUID (shown when Sandbox = No)
 
-### Step 2: Set Amount Currency — Rial vs Toman
+**Sandbox Merchant ID:** Your test UUID (shown when Sandbox = Yes)
+
+Set **Sandbox Mode** to **Yes** while testing, and to **No** for a live store.
+
+When Sandbox Mode is on, the plugin points to `sandbox.zarinpal.com` instead of the live gateway. No real charges are made. The sandbox redirects to a test payment page where you can simulate a successful or failed transaction.
+
+### Currency — Rial vs Toman
 
 This is the most important setting to get right. ZarinPal's API accepts amounts in either **IRR** (Iranian Rial) or **IRT** (Iranian Toman), and your store currency must match this selection.
 
@@ -62,24 +90,29 @@ The key fact: **1 Toman = 10 Rials**. Iran informally uses Toman for most prices
 
 Set this to match the unit your store uses for product prices. If your products are priced in Toman (e.g., a product costs 50,000 Toman), choose **IRT**. If prices are in Rial, choose **IRR**.
 
-<!-- SCREENSHOT: Amount Currency dropdown showing IRR and IRT options -->
+### Access Token (for Refunds)
 
-### Step 3: Enable or Disable Sandbox Mode
-
-Set **Sandbox Mode** to **Yes** while testing, and to **No** for a live store.
-
-When Sandbox Mode is on, the plugin points to `sandbox.zarinpal.com` instead of the live gateway. No real charges are made. The sandbox redirects to a test payment page where you can simulate a successful or failed transaction.
-
-### Step 4: Enter Access Token (for Refunds)
+![](/img/zarinpal-token.webp)
 
 The **Access Token** field is optional and only needed if you plan to process refunds through the ZarinPal GraphQL API. Leave it empty if you do not need refunds — they can always be issued manually through the ZarinPal merchant portal instead.
 
-### Step 5: Configure Order Statuses
+**Terminal ID:** Required for refunds. Your ZarinPal terminal identifier from the ZarinPal panel. Used with the Access Token to look up the payment session before a refund is issued. Leave empty if refunds are not needed.
 
-| Field                         | Default   | Description                                                            |
-| ----------------------------- | --------- | ---------------------------------------------------------------------- |
-| **Successful Payment Status** | Confirmed | Order status applied when payment verification returns code 100 or 101 |
-| **Failed Order Status**       | Failed    | Order status applied when the customer cancels or verification fails   |
+### Template Style
+
+![](/img/zarinpal-style.webp)
+
+**Template Style:** Choose the frontend template layout for checkout forms and saved card displays. Options depend on your site's template framework.
+
+Available subtemplates: **Bootstrap 5** and **UIkit**. Leave blank to use the default layout. If your Joomla template is UIkit-based (e.g., YOOtheme Pro), select the UIkit subtemplate for consistent styling.
+
+### Order Status
+
+![](/img/zarinpal-status.webp)
+
+**Successful Payment Status:** Order status applied when payment verification returns code 100 or 101
+
+**Failed Order Status:** Order status applied when the customer cancels or verification fails
 
 You can change these to any status in your J2Commerce order status list.
 
@@ -91,32 +124,51 @@ If the status you want is not listed in a dropdown, create a new one first by go
 
 ![](/img/shipstation-order-status2-1.webp)
 
-### Step 6: Optional Surcharge
+### Surcharge (Optional)
+
+![](/img/zarinpal-surcharge.webp)
 
 If ZarinPal processing costs need to be passed to the customer, fill in the surcharge fields:
 
-| Field                   | Description                                                    |
-| ----------------------- | -------------------------------------------------------------- |
-| **Surcharge Name**      | Label shown in the cart, e.g. "Payment fee"                    |
-| **Surcharge (%)**       | Percentage of the order total                                  |
-| **Surcharge (fixed)**   | Fixed amount added to the order                                |
-| **Surcharge Tax Class** | Tax profile to apply to the surcharge (leave empty for no tax) |
+**Surcharge Name:** Label shown in the cart, e.g. "Payment fee"
 
-### Step 7: Optional Settings
+**Surcharge (%):** Percentage of the order total
 
-| Field                   | Description                                                  |
-| ----------------------- | ------------------------------------------------------------ |
-| **Display Name**        | Text shown to the customer at checkout (default: "ZarinPal") |
-| **Display Image**       | Logo or icon shown next to the payment option                |
-| **Geozone Restriction** | Limit this payment method to specific countries/regions      |
-| **Minimum Subtotal**    | Hide this method if cart is below a minimum value            |
-| **Maximum Subtotal**    | Hide this method if cart exceeds a maximum value             |
-| **Thank-You Article**   | A Joomla article to display after successful payment         |
-| **On Selection**        | Text shown when the customer selects this payment method     |
-| **On After Payment**    | Text shown on the success screen after payment               |
-| **On Error Payment**    | Text shown when a gateway error occurs                       |
-| **On Cancel Payment**   | Text shown when the customer cancels payment                 |
-| **Debug Mode**          | Log all API requests and responses — disable in production   |
+**Surcharge (fixed):** Fixed amount added to the order
+
+**Surcharge Tax Class:** Tax profile to apply to the surcharge (leave empty for no tax)
+
+### Restrictions
+
+![](/img/zarinpal-restrictions.webp)
+
+**Geozone Restriction:** Limit this payment method to specific countries/regions
+
+**Minimum Subtotal:** Hide this method if cart is below a minimum value
+
+**Maximum Subtotal:** Hide this method if cart exceeds a maximum value
+
+### Custom Checkout Messages
+
+![](/img/zarinpal-messages.webp)
+
+**Thank-You Article:** A Joomla article to display after successful payment
+
+**On Selection:** Text shown when the customer selects this payment method
+
+**On After Payment:** Text shown on the success screen after payment
+
+**On Error Payment:** Text shown when a gateway error occurs
+
+**On Cancel Payment:** Text shown when the customer cancels payment
+
+### Other Settings
+
+**Show Dashboard Icon:** When enabled, this plugin adds an icon tile to the J2Commerce dashboard and the J2Commerce quick icons module.
+
+- **Icon Label:** Override the default label shown on the icon tile. Leave empty to use the plugin default.
+
+**Debug Mode:** Log all API requests and responses — disable in production
 
 Click **Save** when done.
 
@@ -133,8 +185,6 @@ From a shopper's perspective, paying with ZarinPal looks like this:
 7. The shopper sees the order success screen with their ZarinPal **Reference ID**.
 
 If the shopper clicks **Cancel** on the ZarinPal page, or if verification fails, the order is marked with the failed status you configured and the shopper sees an error message.
-
-<!-- SCREENSHOT: ZarinPal payment redirect page showing the secure payment form -->
 
 ## Testing with the Sandbox
 
