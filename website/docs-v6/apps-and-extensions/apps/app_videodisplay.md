@@ -41,11 +41,11 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-![](/img/videodisplay-apps-list.webp)
+[//]: # (![]&#40;/img/videodisplay-apps-list.webp&#41;)
 
 Look for **Video Display**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-![](/img/videodisplay-enable.webp)
+[//]: # (![]&#40;/img/videodisplay-enable.webp&#41;)
 
 ## Configure the App
 
@@ -57,11 +57,11 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-![](/img/videodisplay-toggle-help.webp)
+[//]: # (![]&#40;/img/videodisplay-toggle-help.webp&#41;)
 
 ### Basic Settings tab
 
-![](/img/videodisplay-config1.webp)
+[//]: # (![]&#40;/img/videodisplay-config1.webp&#41;)
 
 #### Display Position
 
@@ -137,7 +137,7 @@ The following settings appear only for the mode you have selected.
 
 ### Navbar tab
 
-![](/img/videodisplay-config-navbar.webp)
+[//]: # (![]&#40;/img/videodisplay-config-navbar.webp&#41;)
 
 These settings control whether a link to the video block is added to the Product Navbar (requires the **Product Navbar** app to be installed and enabled).
 
@@ -151,7 +151,7 @@ These settings control whether a link to the video block is added to the Product
 
 ### Style tab
 
-![](/img/videodisplay-config-style.webp)
+[//]: # (![]&#40;/img/videodisplay-config-style.webp&#41;)
 
 **Subtemplate** — Choose the visual style for the video block. The default is **app_bootstrap5**, which uses standard Bootstrap 5 markup. If you have the UIkit app installed, select **app_uikit** for UIkit-flavoured markup.
 
@@ -176,11 +176,11 @@ There are **three** ways you can access the products.
 
 **Option C:** Go to **Content -> Categories ->** Find the **category** and then click inside the **published** / article section
 
-![](/img/videodisplay-products-list.webp)
+[//]: # (![]&#40;/img/videodisplay-products-list.webp&#41;)
 
 Click on a **product** to edit it **-> J2Commerce** tab **->** **Apps** tab. Click to expand the **Video Display** section.
 
-![](/img/videodisplay-apps-tab.webp)
+[//]: # (![]&#40;/img/videodisplay-apps-tab.webp&#41;)
 
 ### Video Display section fields
 
@@ -216,7 +216,7 @@ Only `https://` URLs and site-relative paths (starting with `/` or `images/`) ar
 
 You can add up to 50 videos per product. Use the drag handle to reorder rows. Click the trash icon to remove a row.
 
-![](/img/videodisplay-videos-rows.webp)
+[//]: # (![]&#40;/img/videodisplay-videos-rows.webp&#41;)
 
 Click **Save** or **Save & Close** when you are done.
 
@@ -224,7 +224,7 @@ Click **Save** or **Save & Close** when you are done.
 
 When a shopper visits the product page, the video block appears at the configured position. Each video shows as a poster thumbnail with a play button overlay. Clicking the thumbnail opens the video in a full-screen lightbox (powered by Fancybox). Grid and Scroller modes show poster thumbnails; Alternating mode shows the poster beside the supporting text.
 
-![](/img/videodisplay-frontend.webp)
+[//]: # (![]&#40;/img/videodisplay-frontend.webp&#41;)
 
 ## How It Works
 

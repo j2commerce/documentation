@@ -36,11 +36,11 @@ Once installed, confirm the plugin is enabled:
 
 **Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**
 
-![](/img/markdown-app.webp)
+[//]: # (![]&#40;/img/markdown-app.webp&#41;)
 
 Look for **Markdown for AI Agents**, click the **X** and it will turn into a green checkmark. The app is now enabled.
 
-![](/img/markdown-enable1.webp)
+[//]: # (![]&#40;/img/markdown-enable1.webp&#41;)
 
 ## Configure the App
 
@@ -52,7 +52,7 @@ Click the **Toggle Inline Help** button in the toolbar to reveal a description b
 
 :::
 
-![](/img/markdown-config1.webp)
+[//]: # (![]&#40;/img/markdown-config1.webp&#41;)
 
 ### Basic Settings tab
 
