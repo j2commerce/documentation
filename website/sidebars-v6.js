@@ -481,7 +481,7 @@ const sidebars = {
                 // Culqi Payment Gateway
                 'payment-methods/culqi',
                 // Dib Easy
-                'payment-methods/payment_dibeasy',
+                'payment-methods/payment_dibseasy',
                 // Dojo Payment
                 'payment-methods/payment-dojo',
                 // Elavon Converge Payment
