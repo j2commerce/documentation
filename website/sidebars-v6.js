@@ -365,6 +365,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app_taxmanager',
                         // TrackingMore Integration
                         'apps-and-extensions/apps/app_trackingmore',
+                        // Trustpilot Integration
+                        'apps-and-extensions/apps/app_trustpilot',
                         // Twilio SMS Notifications
                         'apps-and-extensions/apps/twilio',
                         // User Group Tax Exemptions

@@ -40,6 +40,7 @@ const sidebars = {
                 'core-concepts/custom-templates',
                 'core-concepts/ajax-product-list-grid',
                 'core-concepts/tax-helper',
+                'core-concepts/using-checkout-features-in-extensions',
             ],
         },
         {
