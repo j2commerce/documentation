@@ -1,10 +1,3 @@
----
-title: "Paybox Payment"
-sidebar_label: "Paybox"
-sidebar_position: 100
-description: "Accept payments via Paybox (Verifone Paybox System) — a hosted-redirect gateway popular in France and Europe. Card data never touches your store. Orders are confirmed server-to-server with RSA signature verification."
----
-
 # Paybox Payment
 
 The Paybox plugin connects your J2Commerce store to [Paybox (Verifone Paybox System)](https://www.paybox.com), a trusted hosted payment gateway widely used by French and European merchants. When a customer checks out, they are redirected to the Paybox-hosted payment page to enter their card details securely. Once Paybox confirms the payment with a signed server-to-server callback, J2Commerce updates the order automatically.
@@ -14,7 +7,7 @@ Because card entry happens entirely on Paybox's servers, your store never handle
 Key features:
 
 - Redirect to Paybox-hosted payment page — card details never touch your server
-- Server-to-server RSA-signed callback (PBX_REPONDRE_A) — the authoritative payment confirmation
+- Server-to-server RSA-signed callback (PBX\_REPONDRE\_A) — the authoritative payment confirmation
 - HMAC-SHA512 request signing — every outbound payment request is cryptographically verified by Paybox
 - Multi-currency support with automatic conversion to the correct ISO 4217 numeric currency code
 - Sandbox mode with the Paybox pre-production gateway for safe testing
@@ -31,67 +24,72 @@ Key features:
 - A Paybox merchant account with live or pre-production credentials
 - Your store must be accessible over **HTTPS** on a publicly reachable domain for payment confirmation to work
 
-## Purchase and Download
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com) and locate the **Paybox Payment** plugin.
-
-**Step 2:** Click **View Details** -> **Add to Cart** -> **Checkout**.
-
-**Step 3:** Go to **My Downloads** under your account profile, find the plugin, and click **Available Versions** -> **View Files** -> **Download Now**.
-
 ## Get Your Paybox Credentials
 
 Before you can configure the plugin you need five values from your Paybox merchant account.
 
 Contact your Paybox account manager or log in to the Paybox back office to retrieve:
 
-| Credential | What it is |
-|------------|------------|
-| **Site Number (PBX_SITE)** | Your unique site number assigned by Paybox |
-| **Rank Number (PBX_RANG)** | Your payment rank number, usually a two-digit value |
-| **Identifier (PBX_IDENTIFIANT)** | Your merchant identifier |
-| **HMAC Secret Key** | A hexadecimal string used to sign outbound payment requests — find it in the Paybox back office under security settings |
-| **Paybox RSA Public Key** | A PEM-format public key used to verify the signed server callback — available from Paybox technical documentation |
-
-Keep this information to hand while you configure the plugin. The HMAC secret key and RSA public key must match exactly what Paybox has on file for your account. Do not share either value.
-
-## Install the Plugin
-
-In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
-
-Upload the `payment_paybox.zip` file or use the Install from URL option.
-
-<!-- SCREENSHOT: Joomla Extensions installer screen with file upload area highlighted -->
-
-## Enable the Plugin
-
-After installation you need to enable the plugin so it appears at checkout.
-
-**Option A:** Go to the **J2Commerce** icon at the top right -> **Setup** -> **Payment Methods**.
-
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Payment Methods**.
-
-<!-- SCREENSHOT: J2Commerce Payment Methods list screen -->
-
-Look for **Paybox**, click the **X** icon, and it turns into a green checkmark. The plugin is now enabled.
-
-<!-- SCREENSHOT: Payment Methods list showing Paybox enabled with a green checkmark -->
-
-## Configure the Plugin
-
-Click the **Paybox** title to open the settings screen.
+| Credential                        | What it is                                                                                                              |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **Site Number (PBX\_SITE)**       | Your unique site number assigned by Paybox                                                                              |
+| **Rank Number (PBX\_RANG)**       | Your payment rank number, usually a two-digit value                                                                     |
+| **Identifier (PBX\_IDENTIFIANT)** | Your merchant identifier                                                                                                |
+| **HMAC Secret Key**               | A hexadecimal string used to sign outbound payment requests — find it in the Paybox back office under security settings |
+| **Paybox RSA Public Key**         | A PEM-format public key used to verify the signed server callback — available from Paybox technical documentation       |
 
 :::tip
 
-Click **Toggle Inline Help** at the top of the settings screen to show a description below each field.
+Keep this information to hand while you configure the plugin. The HMAC secret key and RSA public key must match exactly what Paybox has on file for your account. Do not share either value.
 
 :::
 
-### Display
+## Purchase and download
 
-<!-- SCREENSHOT: Display fieldset in the Paybox plugin settings -->
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Paybox**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
+## Install the plugin
+
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+
+Upload the `plg_j2commerce_payment_paybox.zip` file.
+
+![](/img/install.webp)
+
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Paybox**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/paybox_enable.webp)
+
+## Configure the plugin
+
+Click the **Paybox** title next to the green checkmark to open the configuration screen.
+
+:::tip
+
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
+
+:::
+
+![](/img/paybox_toggle.webp)
+
+### Display Settings tab
+
+![](/img/paybox_display.webp)
 
 **Display Name:** The payment method name shown to customers at checkout. Defaults to `Paybox`. You can change this to something like "Pay by Credit Card (Paybox)" if you prefer.
 
@@ -99,25 +97,25 @@ Click **Toggle Inline Help** at the top of the settings screen to show a descrip
 
 **Template:** Choose the checkout layout template. Select **Bootstrap 5** for standard Joomla templates or **UIkit** for UIkit-based templates such as YOOtheme Pro.
 
-### Paybox Credentials
+### Paybox Credentials tab
 
-<!-- SCREENSHOT: Paybox Credentials fieldset showing the credential fields -->
+![](/img/paybox_credentials.webp)
 
 **Sandbox Mode:** When set to **Yes**, all transactions go to the Paybox pre-production gateway (`preprod-tpeweb.paybox.com`) — no real money is processed. Set to **No** when you are ready to accept real payments.
 
-**Site Number (PBX_SITE):** Enter the site number (PBX_SITE) provided by Paybox.
+**Site Number (PBX\_SITE):** Enter the site number (PBX\_SITE) provided by Paybox.
 
-**Rank Number (PBX_RANG):** Enter the rank number (PBX_RANG) provided by Paybox.
+**Rank Number (PBX\_RANG):** Enter the rank number (PBX\_RANG) provided by Paybox.
 
-**Identifier (PBX_IDENTIFIANT):** Enter the merchant identifier provided by Paybox.
+**Identifier (PBX\_IDENTIFIANT):** Enter the merchant identifier provided by Paybox.
 
 **Secret Key (HMAC):** Paste the hexadecimal HMAC secret key from your Paybox back office. This key is used to sign every outbound payment request with HMAC-SHA512. Never share or log this value.
 
 **Paybox Public Key:** Paste the Paybox RSA public key in PEM format (the block beginning with `-----BEGIN PUBLIC KEY-----`). The plugin uses this key to verify the RSA signature on every server-to-server payment confirmation callback. Without a valid key here, the plugin cannot confirm payments.
 
-### Gateway Options
+### Gateway Options tab
 
-<!-- SCREENSHOT: Gateway Options fieldset in the Paybox plugin settings -->
+![](/img/paybox_gateway.webp)
 
 **Show Other Currencies:** When set to **Yes**, the Paybox payment page displays currency information for other currencies alongside the order total. This is informational only and does not change the charged amount.
 
@@ -127,21 +125,27 @@ Click **Toggle Inline Help** at the top of the settings screen to show a descrip
 
 **Notify URL Override:** Leave this blank on a normally hosted store. Set it only when your store is behind a reverse proxy, a load balancer, or a tunnel during local development, and the auto-detected URL is not publicly reachable by Paybox. Enter the full public HTTPS URL that Paybox should use for the payment confirmation callback. See the section on [testing locally](#testing-on-localhost-with-ngrok) for guidance.
 
-### Order Statuses
+### Order Status tab
 
-<!-- SCREENSHOT: Order Statuses fieldset in the Paybox plugin settings -->
+![](/img/paybox_status.webp)
 
-These settings control which J2Commerce order status is applied at each stage of the payment lifecycle. If the status you want does not appear in the list, create it first at **J2Commerce** -> **Setup** -> **Order Statuses**.
+**Confirmed Payment Status:** Applied when Paybox confirms a successful payment (Erreur=00000)
 
-| Field | When it applies |
-|-------|-----------------|
-| **Confirmed Payment Status** | Applied when Paybox confirms a successful payment (Erreur=00000) |
-| **Pending Payment Status** | Applied immediately when the customer is redirected to Paybox, while waiting for the confirmation callback |
-| **Failed Payment Status** | Applied when Paybox reports a failed or cancelled payment |
+**Pending Payment Status:** Applied immediately when the customer is redirected to Paybox, while waiting for the confirmation callback
+
+**Failed Payment Status:** Applied when Paybox reports a failed or cancelled payment
+
+:::info
+
+If the order status you want is not listed, create it first under **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Restrictions
 
-<!-- SCREENSHOT: Restrictions fieldset in the Paybox plugin settings -->
+![](/img/paybox_restrictions.webp)
 
 **Geo Zone:** Limit this payment method to customers whose billing address falls within a specific geographic zone. Leave empty to allow customers from any location.
 
@@ -151,13 +155,15 @@ These settings control which J2Commerce order status is applied at each stage of
 
 ### Display Messages
 
-<!-- SCREENSHOT: Display Messages fieldset in the Paybox plugin settings -->
+![](/img/paybox_messages.webp)
 
 **Text Before Payment:** Optional text displayed to the customer on the order summary page, just before they are redirected to Paybox. Use this to set expectations, for example: "You will now be redirected to Paybox to complete your payment securely."
 
 **Text After Payment:** Optional text displayed to the customer after they return from Paybox. This replaces the default pending message on the order confirmation page.
 
 ### Advanced
+
+![](/img/paybox_advanced.webp)
 
 **Debug Logging:** When enabled, the plugin writes request details and callback data to the Joomla log (category `plg_j2commerce_payment_paybox`). The HMAC secret key and RSA public key are never written to the log. Disable this on a live store once everything is working correctly.
 
@@ -176,7 +182,7 @@ Here is what a customer experiences when they select Paybox at checkout:
 
 The customer will see a "Your payment is being processed" message if they arrive at the confirmation page before the callback has been received and processed. Once the callback arrives and is verified, the order status updates automatically.
 
-:::note
+:::tip
 
 The server-to-server callback is the **authoritative** payment confirmation. The customer's browser return to your store is for display purposes only and does not confirm the payment. This means the order is always finalized by the callback, not by what happens in the browser after the customer returns.
 
@@ -211,35 +217,6 @@ Use [ngrok](https://ngrok.com) to expose your local store over a public HTTPS tu
 4. Save the settings and run a test checkout.
 
 Remember to update **Notify URL Override** each time you restart ngrok, as the public URL changes with each session.
-
-## Configuration Field Reference
-
-The table below lists every configuration field, what it controls, and a recommended value.
-
-| Field | What it does | Recommended value |
-|-------|-------------|-------------------|
-| **Display Name** | Payment method name shown at checkout | `Paybox` or your preferred label |
-| **Display Image** | Logo shown at checkout | Optional — Paybox logo |
-| **Template** | Checkout layout style | `Bootstrap 5` (or `UIkit` if your template uses UIkit) |
-| **Sandbox Mode** | Switches between pre-production and live gateway | `No` on live; `Yes` for testing |
-| **Site Number (PBX_SITE)** | Your Paybox site number | As provided by Paybox |
-| **Rank Number (PBX_RANG)** | Your Paybox rank number | As provided by Paybox |
-| **Identifier (PBX_IDENTIFIANT)** | Your merchant identifier | As provided by Paybox |
-| **Secret Key (HMAC)** | Hex HMAC key for signing payment requests | As provided by Paybox back office |
-| **Paybox Public Key** | RSA public key for verifying callbacks | PEM block from Paybox documentation |
-| **Show Other Currencies** | Show extra currency info on the Paybox page | `No` (unless requested by your account manager) |
-| **Payment Page Language** | Language of the Paybox-hosted payment page | Match your store's primary language |
-| **Verify Callback Signature** | Verify RSA signature on payment callbacks | `Yes` — always keep enabled in production |
-| **Notify URL Override** | Override the callback URL Paybox uses | Empty (set only for local dev / reverse proxy) |
-| **Confirmed Payment Status** | Order status after successful payment | e.g. "Confirmed" |
-| **Pending Payment Status** | Order status while awaiting callback | e.g. "Pending" |
-| **Failed Payment Status** | Order status after failed or cancelled payment | e.g. "Failed" |
-| **Geo Zone** | Limit to specific billing locations | Empty to allow all |
-| **Minimum Subtotal** | Minimum order value to show Paybox | Empty for no minimum |
-| **Maximum Subtotal** | Maximum order value to show Paybox | Empty for no maximum |
-| **Text Before Payment** | Message shown before redirect | e.g. "You will be redirected to Paybox." |
-| **Text After Payment** | Message shown after customer returns | Optional — leave empty to use the default |
-| **Debug Logging** | Writes request data to the Joomla log | `No` on production; `Yes` during setup |
 
 ## What Is New Compared to the J2Store Version
 
@@ -315,9 +292,9 @@ If you are upgrading from the J2Store version of the Paybox plugin, here is what
 
 **Solution:**
 
-The plugin converts the order total to the gateway amount using J2Commerce's `CurrencyHelper::gatewayAmount()` (which respects the `currency_value` exchange rate stored on the order), then multiplies by 100 to obtain integer cents for Paybox. If the amount looks incorrect, check the exchange rates configured in **J2Commerce** -> **Setup** -> **Currencies**.
+The plugin converts the order total to the gateway amount using J2Commerce's `CurrencyHelper::gatewayAmount()` (which respects the `currency_value` exchange rate stored on the order), then multiplies by 100 to obtain integer cents for Paybox. If the amount looks incorrect, check the exchange rates configured in **J2Commerce** **->** **Setup ->** **Configuration** **-> Currencies**.
 
-:::note
+:::info
 
 This plugin does not support refunds, saved cards, or subscription billing. Paybox is a redirect-only payment method — the customer pays on the Paybox page and returns to your store. For any post-payment actions such as refunds, use the Paybox merchant back office directly.
 
