@@ -1,10 +1,3 @@
----
-title: "Affirm (Pay Over Time)"
-sidebar_label: "Affirm"
-sidebar_position: 106
-description: "Let customers split purchases into monthly payments with Affirm buy-now-pay-later financing, with promotional 'as low as' widgets and full order-view payment management."
----
-
 # Affirm (Pay Over Time)
 
 Affirm is a buy-now-pay-later financing platform that lets your customers split a purchase into monthly payments — without a credit card. At checkout, shoppers click **Pay with Affirm**, complete a quick financing application inside a secure Affirm pop-up, and return to your store with their order confirmed. The whole process takes about a minute and requires no card vault on your end.
@@ -18,18 +11,6 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 - An approved Affirm merchant account — apply at [affirm.com](https://www.affirm.com/) or contact Affirm directly
 - Sandbox and live API keys (Public Key and Private Key) from your Affirm merchant dashboard
 - Affirm is available for **United States (USD)**, **Canada (CAD)**, and **United Kingdom (GBP)** only
-
-## Installation
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Purchase and download the `payment_affirm.zip` file from your **My Downloads** page on the J2Commerce website.
-2. In your Joomla admin, go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_affirm.zip` package file and click **Upload & Install**.
-
-<!-- SCREENSHOT: Joomla Extensions Installer showing successful Affirm plugin install -->
-
-The plugin installs and enables automatically.
 
 ## Set Up an Affirm Merchant Account
 
@@ -48,36 +29,73 @@ Affirm provides a separate set of sandbox (test) API keys. You can test the full
 
 :::
 
+## Purchase and download
+
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Affirm**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
+## Install the plugin
+
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+
+Upload the `plg_j2commerce_payment_affirm.zip` file.
+
+![](/img/install.webp)
+
 ## Enable the Plugin
 
-After installation, navigate to the payment methods list:
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-- **Option A:** Click the **J2Commerce** icon in the top-right corner -> **Setup** -> **Payment Methods**
-- **Option B:** Go to **Components** -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Payment Methods**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list showing Affirm plugin -->
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
 
-Find **Affirm** in the list. Click the toggle in the **Enabled** column to turn it on, then click the plugin name to open its settings.
+![](/img/culqi.webp)
 
-## Configure the Plugin
+To help you narrow down the list, you can do a search for **Affirm**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-<!-- SCREENSHOT: Affirm plugin settings page — full view showing all tabs -->
+![](/img/affirm-enable.webp)
 
-### Display Settings
+## Configure the plugin
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Display Name** | The payment method label shown to shoppers at checkout — e.g., "Pay Over Time with Affirm" | `Affirm` |
-| **Display Image** | Optional badge or logo shown alongside the payment option at checkout | _(Affirm logo)_ |
+Click the **Affirm** title next to the green checkmark to open the configuration screen.
+
+:::tip
+
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
+
+:::
+
+![](/img/affirm-toggle.webp)
+
+## Display tab
+
+![](/img/affirm-display.webp)
+
+**Display Name:** The payment method label shown to shoppers at checkout — e.g., "Pay Over Time with Affirm"
+
+**Display Image:** Optional badge or logo shown alongside the payment option at checkout
+
+**Template Style:** Choose the checkout template style — **Bootstrap 5** or **UIkit** — to match your site's frontend framework
+
+Match this to your active Joomla template: most templates use Bootstrap 5. Use UIkit if your template is UIkit-based (e.g., YOOtheme Pro).
+
+**Debug Logging:** Log Affirm API requests and responses to the Joomla system log. Useful for troubleshooting — turn off in production.
+
+## API Credential tab
+
+![](/img/affirm-api.webp)
 
 ### Sandbox Mode
 
 Toggle **Sandbox Mode** to **Yes** while you are testing. In sandbox mode, no real loans are issued and you can use Affirm's test credentials to simulate the full checkout flow. Turn this off before going live.
 
 :::warning
-
 A yellow warning banner appears on your J2Commerce dashboard whenever Sandbox Mode is on. If you see that banner on your live store, go to the Affirm plugin settings and turn Sandbox Mode off.
-
 :::
 
 ### API Credentials
@@ -86,47 +104,67 @@ Two credential sets are available — fill in both so you can switch between san
 
 **Sandbox credentials** (shown when Sandbox Mode is On):
 
-| Field | Description |
-|-------|-------------|
-| **Sandbox Public Key** | Your Affirm sandbox public API key |
-| **Sandbox Private Key** | Your Affirm sandbox private API key — keep this secret |
+**Sandbox Public Key:** Your Affirm sandbox public API key
+
+**Sandbox Private Key:** Your Affirm sandbox private API key — keep this secret
 
 **Live credentials** (shown when Sandbox Mode is Off):
 
-| Field | Description |
-|-------|-------------|
-| **Live Public Key** | Your Affirm live public API key |
-| **Live Private Key** | Your Affirm live private API key — keep this secret |
+**Live Public Key:** Your Affirm live public API key
 
-<!-- SCREENSHOT: Affirm API Credentials section showing sandbox and live key fields -->
+**Live Private Key:** Your Affirm live private API key — keep this secret
 
-### Payment Action
+## Checkout Settings tab
 
-| Option | What It Does |
-|--------|-------------|
-| **Authorize and Capture** | Charges the customer's Affirm loan immediately when the order is placed. Recommended for most stores. |
-| **Authorize Only** | Places a hold on the financing but does not charge the customer until you manually capture from the order view. Useful when you ship later and want to confirm the item is in stock first. |
+![](/img/affirm-checkout.webp)
 
-### Country and Locale
+**Payment Action:**
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Country** | Select the country that matches your Affirm merchant account — United States (USD), Canada (CAD), or United Kingdom (GBP) | `United States (USD)` |
-| **Locale** | Language displayed inside the Affirm checkout window | `en_US` |
+- **Authorize and Capture:** Charges the customer's Affirm loan immediately when the order is placed. Recommended for most stores.
+
+- **Authorize Only:** Places a hold on the financing but does not charge the customer until you manually capture from the order view. Useful when you ship later and want to confirm the item is in stock first.
+
+**Auto-Update Fulfillment:** Automatically send the shipping carrier and tracking number to Affirm when a tracking number is saved on the order.
+
+**Country:** Select the country that matches your Affirm merchant account — United States (USD), Canada (CAD), or United Kingdom (GBP)
+
+**Locale:** Language displayed inside the Affirm checkout window
 
 Available locale options: `en_US`, `en_CA`, `fr_CA`, `en_GB`. Make sure the locale matches the country setting.
 
-### Order Status Automation
+### Restrictions
+
+**Geozone:** Limit Affirm to customers in a specific geozone. Leave blank to offer it to all locations.
+
+**Minimum Order Amount:** Affirm is hidden when the cart subtotal is below this amount. Leave blank for no minimum.
+
+**Maximum Order Amount:** Affirm is hidden when the cart subtotal exceeds this amount. Leave blank for no maximum.
+
+### Surcharge (Optional)
+
+If you want to pass a financing fee on to customers who choose Affirm, complete these fields. Leave them set to **None** if you do not charge a surcharge.
+
+**Surcharge Type:** None, Percentage (%), or Fixed Amount
+
+**Surcharge Value:** The percentage or fixed dollar amount to add
+
+**Surcharge Tax Profile:** Tax profile applied to the surcharge amount
+
+## Order Status tab
+
+![](/img/affirm-status.webp)
 
 These settings control which order status J2Commerce applies at each step of the payment lifecycle.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Captured Order Status** | Status applied when a payment is authorized and captured | _(Confirmed)_ |
-| **Authorized Order Status** | Status applied when a payment is authorized but not yet captured — used with Authorize Only | _(Pending)_ |
-| **Cancelled Order Status** | Status applied when an authorization is voided | _(Cancelled)_ |
-| **Update Status on Refund** | Automatically change the order status when a refund is issued | Yes |
-| **Refunded Order Status** | Status to apply when a refund is issued — shown when Update Status on Refund is Yes | _(Refunded)_ |
+**Captured Order Status:** Status applied when a payment is authorized and captured
+
+**Authorized Order Status:** Status applied when a payment is authorized but not yet captured — used with Authorize Only
+
+**Cancelled Order Status:** Status applied when an authorization is voided
+
+**Update Status on Refund:** Automatically change the order status when a refund is issued
+
+- **Refunded Order Status:** Status to apply when a refund is issued — shown when Update Status on Refund is Yes
 
 :::info
 
@@ -134,73 +172,57 @@ If the status you want is not in a dropdown, create it first at **J2Commerce** -
 
 :::
 
-### Availability Restrictions (Optional)
+## Promotional Message tab
 
-| Field | Description |
-|-------|-------------|
-| **Geozone** | Limit Affirm to customers in a specific geozone. Leave blank to offer it to all locations. |
-| **Minimum Order Amount** | Affirm is hidden when the cart subtotal is below this amount. Leave blank for no minimum. |
-| **Maximum Order Amount** | Affirm is hidden when the cart subtotal exceeds this amount. Leave blank for no maximum. |
+![](/img/affirm-messages.webp)
 
-### Surcharge (Optional)
+**Promotional Messaging (Optional):** Affirm's "as low as $X/mo" widgets can appear on product detail pages, category listing pages, and at checkout — helping shoppers see financing options before they even add a product to the cart.
 
-If you want to pass a financing fee on to customers who choose Affirm, complete these fields. Leave them set to **None** if you do not charge a surcharge.
+**Show on Product Pages:** Display the financing widget on individual product detail pages
 
-| Field | Description |
-|-------|-------------|
-| **Surcharge Type** | None, Percentage (%), or Fixed Amount |
-| **Surcharge Value** | The percentage or fixed dollar amount to add |
-| **Surcharge Tax Profile** | Tax profile applied to the surcharge amount |
+**Product Page Position:** Where on the product page the widget appears —&#x20;
 
-### Promotional Messaging (Optional)
+- After Product Title
 
-Affirm's "as low as $X/mo" widgets can appear on product detail pages, category listing pages, and at checkout — helping shoppers see financing options before they even add a product to the cart.
+- Before Product Stock
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Show on Product Pages** | Display the financing widget on individual product detail pages | No |
-| **Product Page Position** | Where on the product page the widget appears — After Product Title, Before/After Product Price, Before/After Add to Cart Button | After Product Price |
-| **Show on Category Pages** | Display the widget on product listing and category pages | No |
-| **Show at Checkout** | Display the widget next to the Affirm payment option in the checkout payment row | No |
-| **Minimum Price** | Hide the widget when the product price is below this amount | `50` |
-| **Maximum Price** | Hide the widget when the product price is above this amount | `30000` |
-| **Promo ID** | Optional Affirm data-promo-id for a specific financing program or messaging template. Leave blank for the default. | _(blank)_ |
-| **Widget Type** | How the Affirm logo appears in the widget — **Text** or **Symbol** | Text |
-| **Widget Color** | Color scheme of the Affirm widget text and logo — **Black** or **White** | Black |
-| **Show Learn More Link** | Show a clickable "Learn more" link that opens the Affirm pre-qualification modal | Yes |
+- Before/After Product Price
 
-<!-- SCREENSHOT: Affirm promotional widget on a product page showing "as low as $X/mo" -->
+- Before/After Add to Cart Button
 
-### Layout (Subtemplate)
+**Show on Category Pages:** Display the widget on product listing and category pages
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Layout** | Choose the checkout template style — **Bootstrap 5** or **UIkit** — to match your site's frontend framework | `bootstrap5` |
+**Show at Checkout:** Display the widget next to the Affirm payment option in the checkout payment row
 
-Match this to your active Joomla template: most templates use Bootstrap 5. Use UIkit if your template is UIkit-based (e.g., YOOtheme Pro).
+**Minimum Price:** Hide the widget when the product price is below this amount
+
+**Maximum Price:** Hide the widget when the product price is above this amount
+
+**Promo ID:** Optional Affirm data-promo-id for a specific financing program or messaging template. Leave blank for the default.
+
+**Widget Type:** How the Affirm logo appears in the widget — **Text** or **Symbol**
+
+**Widget Color:** Color scheme of the Affirm widget text and logo — **Black** or **White**
+
+**Show Learn More Link:** Show a clickable "Learn more" link that opens the Affirm pre-qualification modal
+
+## Custom Message tab
+
+![](/img/affirm-messages1.webp)
 
 ### Custom Messages (Optional)
 
 These optional text fields let you insert custom content at specific points in the checkout flow.
 
-| Field | When It Appears |
-|-------|-----------------|
-| **Pre-Payment Message** | Shown above the Pay with Affirm button at checkout |
-| **Post-Payment Message** | Shown after a successful payment is confirmed |
-| **Cancelled Payment Message** | Shown when the shopper closes the Affirm window without completing financing |
-| **Error Payment Message** | Shown when the payment cannot be completed |
+**Pre-Payment Message:** Shown above the Pay with Affirm button at checkout
 
-### Thank-You Article (Optional)
+**Post-Payment Message:** Shown after a successful payment is confirmed
 
-Select a Joomla article to display on the order confirmation page after a successful Affirm payment, in addition to the standard J2Commerce order confirmation.
+**Cancelled Payment Message:** Shown when the shopper closes the Affirm window without completing financing
 
-### Debug Logging
+**Error Payment Message:** Shown when the payment cannot be completed
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Logging** | Log Affirm API requests and responses to the Joomla system log. Useful for troubleshooting — turn off in production. | No |
-
-Click **Save** in the toolbar when you have finished configuring the plugin.
+**Thank-You Article:** Select a Joomla article to display on the order confirmation page after a successful Affirm payment, in addition to the standard J2Commerce order confirmation.
 
 ## How Checkout Works
 
@@ -213,8 +235,6 @@ When a shopper selects Affirm at checkout:
 5. The plugin finalizes the order immediately on the shopper's return — no waiting for emails or webhooks.
 6. The shopper sees the order confirmation page with their order details.
 
-<!-- SCREENSHOT: Affirm checkout modal showing monthly payment options -->
-
 :::info
 
 Affirm handles the entire financing application on its own secure servers. Your store never sees card numbers or sensitive financial data. There are no stored cards and no subscriptions — each Affirm financing decision is a one-time loan tied to a single order.
@@ -224,8 +244,6 @@ Affirm handles the entire financing application on its own secure servers. Your 
 ## Managing Orders
 
 Once an Affirm payment is placed, the J2Commerce order view shows payment action buttons in the payment row. Each button appears only when the corresponding action is valid for the current loan state.
-
-<!-- SCREENSHOT: J2Commerce order view showing Affirm payment buttons — Capture, Void, Refund, Update Fulfillment -->
 
 ### Capture an Authorized Payment
 
@@ -248,10 +266,9 @@ The dialog shows the maximum refundable amount so you always know the upper limi
 
 Click **Update Fulfillment** to send shipping details to Affirm after you have shipped the order. A dialog asks for:
 
-| Field | Description |
-|-------|-------------|
-| **Shipping Carrier** | The carrier name — e.g., USPS, UPS, FedEx |
-| **Tracking Number** | The shipment tracking number |
+**Shipping Carrier:** The carrier name — e.g., USPS, UPS, FedEx
+
+**Tracking Number:** The shipment tracking number
 
 These details appear on Affirm's settlement reports and help Affirm correlate payments with fulfilled shipments. This action does not change the loan amount or order status. It is available as long as the loan is active.
 
@@ -287,7 +304,7 @@ Before switching to live transactions, confirm the following:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Affirm**.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** -> **Affirm**.
 2. Confirm **Sandbox Mode** matches the keys you have entered — sandbox keys only work in sandbox mode.
 3. Verify the **Sandbox Public Key** and **Sandbox Private Key** (or live equivalents) are filled in.
 4. Confirm **Country** is set to United States, Canada, or United Kingdom and the store currency matches.
@@ -311,7 +328,7 @@ Before switching to live transactions, confirm the following:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Affirm**.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** -> **Affirm**.
 2. Check whether **Sandbox Mode** is on or off.
 3. Fill in the matching credential fields for the active mode.
 4. Click **Save**.
@@ -322,7 +339,7 @@ Before switching to live transactions, confirm the following:
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Affirm**.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** -> **Affirm**.
 2. Set **Sandbox Mode** to **No**.
 3. Confirm the **Live Public Key** and **Live Private Key** are entered.
 4. Click **Save**.
