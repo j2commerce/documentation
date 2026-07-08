@@ -172,6 +172,8 @@ If the status you want is not in a dropdown, create it first at **J2Commerce** -
 
 :::
 
+![](/img/shipstation-order-status2-1.webp)
+
 ## Promotional Message tab
 
 ![](/img/affirm-messages.webp)
