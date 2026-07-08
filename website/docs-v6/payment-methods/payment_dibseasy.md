@@ -126,8 +126,6 @@ These credentials are used when **Use Test Environment** is set to **Yes**.
 
 **Auto Capture:** When set to **Yes**, the plugin automatically captures (charges) the payment as soon as the customer returns from Nets and the payment is confirmed. When set to **No**, the payment is authorized only — money is reserved on the customer's card but not collected until you manually trigger capture.
 
-**Confirmed Order Status:** The J2Commerce order status to apply when Nets confirms a successful payment.
-
 Most stores should leave **Auto Capture** set to **Yes**. Set it to **No** only if your fulfilment process requires you to authorize now and charge later — for example, if you ship made-to-order products and want to capture payment at dispatch time.
 
 :::info
@@ -135,6 +133,16 @@ Most stores should leave **Auto Capture** set to **Yes**. Set it to **No** only 
 Manual capture is handled at the order level. When auto-capture is off, the order will sit in an authorized state until you capture it using the controls in the order detail screen.
 
 :::
+
+**Confirmed Order Status:** The J2Commerce order status to apply when Nets confirms a successful payment.
+
+:::info
+
+If the order status you want is not listed, create it first under **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge
 

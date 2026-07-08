@@ -9,7 +9,7 @@ description: "Accept UK payments through Nochex — a hosted redirect gateway wi
 
 The Nochex plugin connects your J2Commerce store to [Nochex](https://www.nochex.com), a UK-based hosted payment gateway. When a customer reaches the payment step, they are redirected to the secure Nochex payment page to enter their card details. After the payment is processed, Nochex sends an Automated Payment Confirmation (APC) directly to your store's server. J2Commerce verifies that APC with Nochex and only marks the order as paid once the verification passes and the amount matches.
 
-:::note
+:::info
 
 Nochex is a UK-based gateway primarily designed for **GBP (British Pounds)**. Make sure your store currency and pricing are appropriate before enabling this plugin for live transactions.
 
@@ -41,6 +41,14 @@ Key features:
 - J2Commerce 6.x
 - A Nochex merchant account (register at [nochex.com](https://www.nochex.com))
 - Your store must be accessible over **HTTPS** on a publicly reachable domain (localhost cannot receive APC callbacks from Nochex)
+
+## Get Your Nochex Merchant ID
+
+Before you can configure the plugin, you need your Nochex Merchant ID. This is the email address (or account alias) you used when you registered your Nochex account.
+
+1. Log in to your Nochex account at [https://www.nochex.com](https://www.nochex.com).
+2. Go to your **Account Settings** or **Profile** to confirm your registered email address — this is your Merchant ID.
+3. Note it down. You will paste it into the plugin settings.
 
 ## Purchase and Download
 
@@ -76,13 +84,7 @@ Once installed, make sure the method is enabled. There are **two** ways to reach
 
 Find **Nochex**, click the **X** next to it, and it will turn into a green checkmark. The method is now enabled and ready for setup.
 
-## Get Your Nochex Merchant ID
-
-Before you can configure the plugin, you need your Nochex Merchant ID. This is the email address (or account alias) you used when you registered your Nochex account.
-
-1. Log in to your Nochex account at [https://www.nochex.com](https://www.nochex.com).
-2. Go to your **Account Settings** or **Profile** to confirm your registered email address — this is your Merchant ID.
-3. Note it down. You will paste it into the plugin settings.
+##
 
 ## Configure the Payment Method
 
@@ -98,59 +100,55 @@ Click the **Toggle Inline Help** button in the toolbar and the plugin will show 
 
 ### Credentials Tab
 
-| Setting | Description |
-|---------|-------------|
-| **Sandbox Mode** | Set to **Yes** while testing. In this mode, payments are processed as sandbox transactions and no real money moves. Set to **No** when you are ready to accept real payments. |
-| **Merchant ID** | Your live Nochex merchant email address. Shown only when **Sandbox Mode** is **No**. |
-| **Sandbox Merchant ID** | Your sandbox Nochex merchant email address for testing. Shown only when **Sandbox Mode** is **Yes**. |
-| **APC Callback URL** | Read-only. This is the URL Nochex will POST payment confirmations to. Copy this value and paste it into your Nochex account APC settings. |
-| **Debug Mode** | Set to **Yes** to log APC requests and responses to the Joomla log file. Turn on only when troubleshooting — disable on live stores. |
+| Setting                 | Description                                                                                                                                                                   |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Sandbox Mode**        | Set to **Yes** while testing. In this mode, payments are processed as sandbox transactions and no real money moves. Set to **No** when you are ready to accept real payments. |
+| **Merchant ID**         | Your live Nochex merchant email address. Shown only when **Sandbox Mode** is **No**.                                                                                          |
+| **Sandbox Merchant ID** | Your sandbox Nochex merchant email address for testing. Shown only when **Sandbox Mode** is **Yes**.                                                                          |
+| **APC Callback URL**    | Read-only. This is the URL Nochex will POST payment confirmations to. Copy this value and paste it into your Nochex account APC settings.                                     |
+| **Debug Mode**          | Set to **Yes** to log APC requests and responses to the Joomla log file. Turn on only when troubleshooting — disable on live stores.                                          |
 
 :::important
-
 The **APC Callback URL** must be entered into your Nochex account before you go live. Without it, Nochex cannot confirm payments and orders will stay in a pending state. See [Register the Callback URL](#register-the-callback-url) below.
-
 :::
 
 <!-- SCREENSHOT: Nochex plugin Credentials tab showing all fields including the read-only APC Callback URL -->
 
 ### Display Tab
 
-| Setting | Description |
-|---------|-------------|
-| **Display Name** | The name shown to shoppers at checkout (for example, "Credit / Debit Card" or "Nochex"). |
-| **Display Image** | An optional logo shown next to the method at checkout. Upload via the Joomla Media Manager. |
-| **Show Dashboard Icon** | Set to **Yes** to show a shortcut icon on the J2Commerce dashboard. |
-| **Template** | The checkout layout style. Leave this on **Bootstrap5** unless your store template uses **UIkit**. |
-| **Pay Button Text** | Override the default "Pay Now" button label shown on the pre-redirect step. Leave blank to use the default. |
-| **Send Item Details** | Set to **Yes** to send a line-item XML collection to Nochex so your product names, quantities, and amounts appear on their payment page. |
+| Setting                 | Description                                                                                                                              |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Display Name**        | The name shown to shoppers at checkout (for example, "Credit / Debit Card" or "Nochex").                                                 |
+| **Display Image**       | An optional logo shown next to the method at checkout. Upload via the Joomla Media Manager.                                              |
+| **Show Dashboard Icon** | Set to **Yes** to show a shortcut icon on the J2Commerce dashboard.                                                                      |
+| **Template**            | The checkout layout style. Leave this on **Bootstrap5** unless your store template uses **UIkit**.                                       |
+| **Pay Button Text**     | Override the default "Pay Now" button label shown on the pre-redirect step. Leave blank to use the default.                              |
+| **Send Item Details**   | Set to **Yes** to send a line-item XML collection to Nochex so your product names, quantities, and amounts appear on their payment page. |
 
 :::warning
-
 Leave **Template** set to a value (the default is **Bootstrap5**). If it is left blank, the pre-redirect form will not display correctly at checkout.
-
 :::
 
 <!-- SCREENSHOT: Nochex plugin Display tab -->
 
 ### Restrictions Tab
 
-| Setting | Description |
-|---------|-------------|
-| **Geozone** | Limit Nochex to shoppers within a specific geozone. Leave blank to offer it to everyone. |
-| **Minimum Order Total** | Hide this method when the order total is below this amount. Leave blank for no minimum. |
-| **Maximum Order Total** | Hide this method when the order total exceeds this amount. Leave blank for no maximum. |
+| Setting                 | Description                                                                              |
+| ----------------------- | ---------------------------------------------------------------------------------------- |
+| **Geozone**             | Limit Nochex to shoppers within a specific geozone. Leave blank to offer it to everyone. |
+| **Minimum Order Total** | Hide this method when the order total is below this amount. Leave blank for no minimum.  |
+| **Maximum Order Total** | Hide this method when the order total exceeds this amount. Leave blank for no maximum.   |
 
 ### Order Statuses Tab
 
 These settings control which J2Commerce order status is applied at each stage of the payment.
 
-| Setting | Description | Suggested Status |
-|---------|-------------|-----------------|
-| **Confirmed Payment Status** | Applied when the Nochex APC confirms the payment as AUTHORISED. | Confirmed |
-| **Pending Payment Status** | Applied immediately after the shopper is redirected to Nochex, before payment is confirmed. | Pending |
-| **Failed Payment Status** | Applied when the APC verification fails or Nochex returns a non-authorised response. | Failed |
-| **Refunded Status** | Applied manually when you mark an order as refunded in J2Commerce after processing the refund in the Nochex dashboard. | Refunded |
+| Setting                      | Description                                                                                                            | Suggested Status |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| **Confirmed Payment Status** | Applied when the Nochex APC confirms the payment as AUTHORISED.                                                        | Confirmed        |
+| **Pending Payment Status**   | Applied immediately after the shopper is redirected to Nochex, before payment is confirmed.                            | Pending          |
+| **Failed Payment Status**    | Applied when the APC verification fails or Nochex returns a non-authorised response.                                   | Failed           |
+| **Refunded Status**          | Applied manually when you mark an order as refunded in J2Commerce after processing the refund in the Nochex dashboard. | Refunded         |
 
 Click **Save** to apply your changes.
 
@@ -233,9 +231,7 @@ Before accepting real payments, test the complete checkout flow in sandbox mode.
 **Step 8:** Once testing is complete, switch **Sandbox Mode** back to **No** and save.
 
 :::warning
-
 Always complete at least one successful test in **Sandbox Mode** before switching to live payments.
-
 :::
 
 <!-- SCREENSHOT: A completed test order in J2Commerce showing the Confirmed status -->
