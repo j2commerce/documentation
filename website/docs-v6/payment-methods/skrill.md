@@ -1,10 +1,3 @@
----
-title: "Skrill"
-sidebar_label: "Skrill"
-sidebar_position: 50
-description: "Set up Skrill Quick Checkout in J2Commerce 6. Customers pay on Skrill's hosted page — no card data touches your server. Includes setup walkthrough, config reference, payment flow, and troubleshooting."
----
-
 # Skrill
 
 Skrill Quick Checkout lets customers pay on Skrill's hosted page at pay.skrill.com. Your store never sees card numbers — customers enter their payment details directly on Skrill's site. Once payment is complete, Skrill sends a signed server-to-server callback that confirms the order automatically.
@@ -19,35 +12,79 @@ This makes Skrill a good fit for stores that want a simple, globally-recognised 
 - A publicly reachable HTTPS store URL so Skrill can deliver the status callback
 
 :::info Add-on Extension
+
 Skrill is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
+
 :::
 
-## Installation
+## Purchase and download
 
-1. Purchase and download the `payment_skrill.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_skrill.zip` package file.
-4. The plugin installs and enables automatically.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-To configure it, go to **J2Commerce** -> **Payments** -> **Payment Methods** and click **Skrill**.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Skrill**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-<!-- SCREENSHOT: J2Commerce admin Payments > Payment Methods list with Skrill visible -->
+## Install the plugin
 
----
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
-## Setup
+Upload the `plg_j2commerce_payment_skrill.zip` file.
 
-### Step 1: Enter your merchant email and secret word
+![](/img/install.webp)
 
-1. Open the **Skrill** plugin settings at **J2Commerce** -> **Payments** -> **Payment Methods** -> **Skrill**.
-2. Make sure **Sandbox Mode** is set to **No** for a live store (or **Yes** during testing — see [Sandbox Testing](#sandbox-testing) below).
-3. Enter your **Merchant Email** — the email address registered with your Skrill merchant account.
-4. Enter your **Merchant ID** — the numeric ID from your Skrill dashboard.
-5. Enter your **Secret Word** — you will set this in Skrill in the next step.
+## Enable the Plugin
 
-<!-- SCREENSHOT: Skrill plugin credentials tab showing Merchant Email, Merchant ID, and Secret Word fields -->
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-### Step 2: Set the secret word in your Skrill account
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Skrill**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/skrill_enable.webp)
+
+## Configure the plugin
+
+Click the **Skrill** title next to the green checkmark to open the configuration screen.
+
+:::tip
+
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
+
+:::
+
+![](/img/skrill_toggle.webp)
+
+### Credentials tab
+
+![](/img/skrill_credential.webp)
+
+**Sandbox Mode:** Enable for testing with a Skrill test account
+
+**Merchant ID:** Your numeric Skrill Merchant ID
+
+**Merchant Email:** Email registered with your Skrill account
+
+**Secret Word:** Shared secret for MD5 callback signing
+
+**Sandbox Merchant ID:** Merchant ID for your sandbox test account
+
+**Sandbox Merchant Email:** Email for your sandbox test account
+
+**Sandbox Secret Word:** Secret word for your sandbox test account
+
+**Status URL:** Read-only. Auto-generated URL to paste into Skrill's merchant settings
+
+**Status URL Override:** Override the auto-detected URL. Use this for ngrok/reverse-proxy setups
+
+**Debug Logging:** Log Skrill activity to `logs/payment_skrill.php`
+
+### Get the secret word in your Skrill account
 
 The secret word is a password you choose. You set the same value in both J2Commerce and your Skrill account. Skrill uses it to sign the status callback, and J2Commerce uses it to verify that the callback is genuine.
 
@@ -61,7 +98,7 @@ The secret word is a password you choose. You set the same value in both J2Comme
 The secret word in J2Commerce and in your Skrill account must be identical, including uppercase and lowercase letters. A mismatch causes every callback to fail with a signature error, and orders will stay in their initial status after payment.
 :::
 
-### Step 3: Copy the status URL into your Skrill account
+### Get the status URL into your Skrill account
 
 The status URL is the address Skrill calls after each payment to confirm the result. J2Commerce generates this URL automatically.
 
@@ -71,30 +108,81 @@ The status URL is the address Skrill calls after each payment to confirm the res
 4. Paste the URL into the **Status URL** field.
 5. Save your Skrill settings.
 
-<!-- SCREENSHOT: Status URL field in J2Commerce with the auto-generated URL and Copy button highlighted -->
+:::info Localhost will not work
 
-:::note Localhost will not work
 Skrill's servers cannot reach `localhost` or `127.0.0.1`. During development, use a tunnelling tool such as [ngrok](https://ngrok.com/) to expose your local site with a public HTTPS URL. Paste the ngrok URL into the **Status URL Override** field (see the [configuration table](#configuration-reference) below) rather than changing your Skrill dashboard each time.
+
 :::
 
-### Step 4: Set order statuses
+### Display tab
+
+![](/img/skrill_display.webp)
+
+**Display Name:** Name shown at checkout
+
+**Display Image:** Payment logo shown at checkout
+
+![](/img/skrill_advanced.webp)
+
+**Show Dashboard Icon:** Show a quick-access icon on the J2Commerce dashboard
+
+**Template:** Layout template: Bootstrap 5 or UIkit
+
+**Recipient Description:** Short text shown on the Skrill page next to your name (max 30 chars)
+
+**Return Button Text:** Text for the "back to store" button on Skrill's confirmation page
+
+**Logo URL:** HTTPS URL of your logo shown on Skrill's payment page
+
+### Message tab
+
+![](/img/skrill_messages.webp)
+
+**Pre-Payment Message:** Optional HTML message shown before the redirect button
+
+**Post-Payment Message:** Optional HTML message shown after the customer returns from Skrill
+
+**Cancel Message:** Optional HTML message shown when the customer cancels on Skrill
+
+### Restriction tab
+
+![](/img/skrill_restriction.webp)
+
+**Geo Zone:** Restrict Skrill to customers in a specific geographic zone. Leave at 0 for all customers
+
+**Minimum Subtotal:** Hide Skrill for orders below this amount. Enter 0 for no minimum
+
+**Maximum Subtotal:** Hide Skrill for orders above this amount. Enter 0 for no maximum
+
+### Order Status tab
+
+![](/img/skrill_status.webp)
 
 Order statuses tell J2Commerce what to do with an order when Skrill reports each payment outcome. If you skip the **Confirmed Payment Status**, paid orders will pass signature verification but remain in their initial status — they will never advance automatically.
 
-1. Click the **Order Statuses** tab in the plugin settings.
-2. Set **Confirmed Payment Status** to the status you want when payment succeeds (for example, "Confirmed").
-3. Set **Pending Payment Status** for orders Skrill has not yet settled.
-4. Set **Failed Payment Status** for cancelled, failed, or chargeback events.
-5. Optionally set **Refunded Status** for when you mark an order as refunded from the admin.
-6. Click **Save**.
+**Confirmed Payment Status:** Skrill sends `status=2` (payment processed). **Required.**
 
-<!-- SCREENSHOT: Order Statuses tab with all four status dropdowns filled in -->
+**Pending Payment Status:** Skrill sends `status=0` (payment pending)
+
+**Failed Payment Status:** Skrill sends `status=-1` (cancelled), `-2` (failed), or `-3` (chargeback)
+
+**Refunded Status:** Admin clicks **Mark as Refunded** in the order view
 
 :::danger Dashboard warning
+
 If **Confirmed Payment Status** is left empty, a red warning banner appears on the J2Commerce dashboard. Paid orders validate correctly but stay on their original status until you configure this setting.
+
 :::
 
----
+:::info
+
+If the order status you want is not listed, create it first under **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
+
+***
 
 ## How a Payment Works
 
@@ -126,64 +214,6 @@ sequenceDiagram
 
 The order status change (and any confirmation email) happens when the **status callback** arrives — not when the browser returns. There is typically a delay of a few seconds between the two.
 
----
-
-## Configuration Reference
-
-### Credentials tab
-
-| Field | Description | Recommended value |
-|-------|-------------|-------------------|
-| **Sandbox Mode** | Enable for testing with a Skrill test account | No (live); Yes (testing) |
-| **Merchant ID** | Your numeric Skrill Merchant ID | From your Skrill dashboard |
-| **Merchant Email** | Email registered with your Skrill account | Your Skrill account email |
-| **Secret Word** | Shared secret for MD5 callback signing | Set the same value in Skrill |
-| **Sandbox Merchant ID** | Merchant ID for your sandbox test account | Only required when Sandbox = Yes |
-| **Sandbox Merchant Email** | Email for your sandbox test account | Only required when Sandbox = Yes |
-| **Sandbox Secret Word** | Secret word for your sandbox test account | Only required when Sandbox = Yes |
-| **Status URL** | Read-only. Auto-generated URL to paste into Skrill's merchant settings | Copy and paste into Skrill |
-| **Status URL Override** | Override the auto-detected URL. Use this for ngrok/reverse-proxy setups | Leave empty on standard hosting |
-| **Debug Logging** | Log Skrill activity to `logs/payment_skrill.php` | No (production); Yes (troubleshooting) |
-
-### Display tab
-
-| Field | Description | Recommended value |
-|-------|-------------|-------------------|
-| **Display Name** | Name shown at checkout | "Skrill" or "Pay with Skrill" |
-| **Display Image** | Payment logo shown at checkout | Upload via Media Manager |
-| **Show Dashboard Icon** | Show a quick-access icon on the J2Commerce dashboard | Optional |
-| **Template** | Layout template: Bootstrap 5 or UIkit | Match your site's framework |
-| **Recipient Description** | Short text shown on the Skrill page next to your name (max 30 chars) | Your store name |
-| **Return Button Text** | Text for the "back to store" button on Skrill's confirmation page | "Return to store" |
-| **Logo URL** | HTTPS URL of your logo shown on Skrill's payment page | Your logo URL (optional) |
-
-### Messages tab
-
-| Field | Description |
-|-------|-------------|
-| **Pre-Payment Message** | Optional HTML message shown before the redirect button |
-| **Post-Payment Message** | Optional HTML message shown after the customer returns from Skrill |
-| **Cancel Message** | Optional HTML message shown when the customer cancels on Skrill |
-
-### Restrictions tab
-
-| Field | Description |
-|-------|-------------|
-| **Geo Zone** | Restrict Skrill to customers in a specific geographic zone. Leave at 0 for all customers |
-| **Minimum Subtotal** | Hide Skrill for orders below this amount. Enter 0 for no minimum |
-| **Maximum Subtotal** | Hide Skrill for orders above this amount. Enter 0 for no maximum |
-
-### Order Statuses tab
-
-| Field | When it applies |
-|-------|----------------|
-| **Confirmed Payment Status** | Skrill sends `status=2` (payment processed). **Required.** |
-| **Pending Payment Status** | Skrill sends `status=0` (payment pending) |
-| **Failed Payment Status** | Skrill sends `status=-1` (cancelled), `-2` (failed), or `-3` (chargeback) |
-| **Refunded Status** | Admin clicks **Mark as Refunded** in the order view |
-
----
-
 ## Sandbox Testing
 
 Skrill provides a separate test environment with a dedicated test merchant account.
@@ -191,13 +221,14 @@ Skrill provides a separate test environment with a dedicated test merchant accou
 1. Set **Sandbox Mode** to **Yes** in the plugin.
 2. Fill in the **Sandbox Merchant ID**, **Sandbox Merchant Email**, and **Sandbox Secret Word** fields — these come from your Skrill test account, not your live account.
 3. Because Skrill's status callbacks require a public URL, you need to use a tunnel:
+
    - Install [ngrok](https://ngrok.com/) and run `ngrok http 443` (or your local port).
    - Copy the `https://...ngrok.io` URL ngrok gives you.
    - Add your full status URL using that ngrok host in the **Status URL Override** field: `https://your-tunnel.ngrok.io/index.php?option=com_ajax&group=j2commerce&plugin=payment_skrill&format=raw&task=status`
 4. Place a test order and complete payment on Skrill's sandbox. The callback should arrive within a few seconds and advance the order status.
 5. When finished, set **Sandbox Mode** back to **No** and clear the **Status URL Override** field.
 
----
+***
 
 ## Limitations
 
@@ -211,24 +242,24 @@ Skrill Quick Checkout has some important limitations to be aware of before choos
 
 **Multi-currency is supported.** Skrill accepts over 40 currencies. J2Commerce sends the order's display-currency amount and currency code, so customers are charged in your store's selected currency rather than a base currency conversion.
 
----
+***
 
 ## What's New vs the J2Store Version
 
 If you previously used the Skrill plugin with J2Store, here is what changed in J2Commerce 6.
 
-| Area | J2Store | J2Commerce 6 |
-|------|---------|--------------|
-| Architecture | FOF 2 framework | Native Joomla 6 MVC, fully namespaced |
-| Callback security | MD5 check only | MD5 signature + receiver email check + amount tolerance check |
-| Multi-currency | Base currency only | Full `CurrencyHelper::gatewayAmount()` — correct amount in display currency |
-| Order events | Direct database writes | `OrderModel::updateOrderStatus()` — triggers emails and action-log entries |
-| Dashboard health | None | Red banners for missing credentials and missing confirmed status |
-| Debug logging | None | Optional Joomla log (`logs/payment_skrill.php`) |
-| Sandbox | Shared credentials | Separate sandbox credentials tab |
-| Refund UX | Silent status change | Confirmation dialog with explicit note to refund in Skrill dashboard |
+| Area              | J2Store                | J2Commerce 6                                                                |
+| ----------------- | ---------------------- | --------------------------------------------------------------------------- |
+| Architecture      | FOF 2 framework        | Native Joomla 6 MVC, fully namespaced                                       |
+| Callback security | MD5 check only         | MD5 signature + receiver email check + amount tolerance check               |
+| Multi-currency    | Base currency only     | Full `CurrencyHelper::gatewayAmount()` — correct amount in display currency |
+| Order events      | Direct database writes | `OrderModel::updateOrderStatus()` — triggers emails and action-log entries  |
+| Dashboard health  | None                   | Red banners for missing credentials and missing confirmed status            |
+| Debug logging     | None                   | Optional Joomla log (`logs/payment_skrill.php`)                             |
+| Sandbox           | Shared credentials     | Separate sandbox credentials tab                                            |
+| Refund UX         | Silent status change   | Confirmation dialog with explicit note to refund in Skrill dashboard        |
 
----
+***
 
 ## Troubleshooting
 
@@ -267,9 +298,9 @@ This is expected behaviour. The browser return happens immediately after the cus
 
 ### Sandbox mode left on in production
 
-A yellow warning banner on the J2Commerce dashboard reads "Skrill is in SANDBOX mode. No real transactions will be processed." Go to **J2Commerce** -> **Payments** -> **Payment Methods** -> **Skrill**, set **Sandbox Mode** to **No**, and save.
+A yellow warning banner on the J2Commerce dashboard reads "Skrill is in SANDBOX mode. No real transactions will be processed." Go to **J2Commerce** -> **Setup** -> **Payment Methods** -> **Skrill**, set **Sandbox Mode** to **No**, and save.
 
----
+***
 
 ## Related Topics
 
