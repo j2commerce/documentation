@@ -1,10 +1,3 @@
----
-title: "Additional Fees"
-sidebar_label: "Additional Fees"
-sidebar_position: 5
-description: "Add configurable handling fees, surcharges, environmental levies, or optional add-ons to the J2Commerce checkout using the Additional Fees app."
----
-
 # Additional Fees
 
 The Additional Fees app lets you add one or more configurable charges to the checkout process — handling fees, environmental levies, surcharges, gratuities, and more. Each fee can be scoped to the entire order or to specific products, restricted to certain geozones, user groups, or Joomla content categories, and displayed as a customer-selectable option or applied silently. Fees support fixed amounts, percentages, and a per-item multiplier, and can carry tax through J2Commerce's standard tax engine.
@@ -182,7 +175,7 @@ When **Apply Fees Per** is set to **Product** in the plugin settings, fees are a
 2. Click the **Apps** tab.
 3. Expand the **Additional Fees** accordion.
 
-<!-- SCREENSHOT: Product edit screen, Apps tab, with the Additional Fees accordion expanded showing the enable toggle and fee multi-select. -->
+
 
 1. Set **Enable Product-Level Fees** to **Yes**.
 2. In the **Applicable Fees** field, select all fees that should apply to this product. The dropdown shows all enabled fees from the central Fees list.
@@ -205,8 +198,6 @@ When **Auto Apply Fees** is set to **No**, the checkout step presents a checklis
 - The customer checks the fees they want to add.
 - Unchecked fees are not applied.
 - The step validates silently; no mandatory selection is required.
-
-<!-- SCREENSHOT: Checkout step showing three fees listed as checkboxes, with fee names and amounts. -->
 
 ### Step positions explained
 
