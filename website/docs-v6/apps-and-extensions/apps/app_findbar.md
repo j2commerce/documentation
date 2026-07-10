@@ -25,34 +25,31 @@ Together they help shoppers **find more**, so you **sell more** — and they rev
 
 **Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
-**Step 2:** Locate **Findbar** **->** click **View Details** **->** **Add to cart -> Checkout**.
+**Step 2:** Locate the **Findbar** app **->** click **View Details** **->** **Add to cart -> Checkout**.
 
 **Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
 
-## Install Findbar
+## Install the App
 
-Findbar is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-You can install Findbar using the standard Joomla installer:
+Upload the `app_findbar.zip` file or use the Install from URL option.
 
-1. In the Joomla admin, go to **System -> Install -> Extensions**.
-2. Upload the ZIP file you downloaded, or use the **Install from URL** option.
+![](/img/install.webp)
 
-<!-- SCREENSHOT: System -> Install -> Extensions upload screen -->
+## Enable the App
 
-The download installs both pieces in one step — the **Findbar Complete Search** module and the **Findbar Insights** plugin.
-
-## Enable the Insights Plugin
-
-Once installed, you need to turn on the **Findbar Insights** plugin. There are **two** ways to reach it:
+Once you have installed the app, you will need to enable it. There are **two** ways you can access the extension.
 
 **Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Findbar Insights -->
+![](/img/gift-wrap-apps.webp)
 
-Look for **Findbar Insights**, click the **X**, and it will turn into a green checkmark. The plugin is now enabled.
+Look for **Findbar** , click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/findbar_enable.webp)
 
 ## Add the Search Box to Your Site
 
@@ -94,60 +91,89 @@ Hover over any setting's label to read a short description of what it does.
 
 :::
 
+:::tip
+
+Click the **Toggle Inline Help** button on any app you install to see a description below each field directly in the admin panel.
+
+:::
+
+![](/img/findbar_toggle.webp)
+
 ### Basic tab
 
 These settings control how the search behaves and how results are presented.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Result Layout** | The visual style of the result list: **Simple List**, **Card Grid**, **Two-Column with Type Rail**, or **Compact Suggestions**. | `Simple List` |
-| **Display Mode** | Where results appear: **Dropdown** (under the box), **Modal** (a popup), **Top Offcanvas** (a slide-down launcher), or **Redirect to Search Page** (sends shoppers straight to the full results page). | `Dropdown` |
-| **Content Types** | Limit the search to specific types (for example, products only). Leave empty to search everything in the index. | `All` |
-| **Product Search Fields** | Which product fields are given the most weight in ranking — **Title**, **SKU**, **UPC / Barcode**, **Description**. | Title |
-| **Minimum Characters** | How many characters a shopper types before the search runs. | `3` |
-| **Debounce (ms)** | The short pause after typing before results load. Higher values reduce server load. | `250` |
-| **Maximum Results** | The most results to show per search. | `8` |
-| **Paginate Results** | Show results one page at a time with **Previous / Next** controls inside the panel. | `Yes` |
-| **Results Per Page** | How many results per page when pagination is on. | `5` |
-| **Results Navigation** | How shoppers reach the full list: **Ajax (Inline Pager)** pages inside the panel, or **View All Results** shows a direct link to the search results page. | `Ajax` |
-| **Word Match** | How the search term matches text: **Exact**, **Begins With**, or **Contains**. | `Begins With` |
-| **Placeholder Text** | The greyed-out hint inside the empty search box. Leave blank to use the default. | `Search…` |
+**Result Layout:** The visual style of the result list: **Simple List**, **Card Grid**, **Two-Column with Type Rail**, or **Compact Suggestions**.
+
+**Display Mode:** Where results appear: **Dropdown** (under the box), **Modal** (a popup), **Top Offcanvas** (a slide-down launcher), or **Redirect to Search Page** (sends shoppers straight to the full results page).
+
+**Content Types:** Limit the search to specific types (for example, products only). Leave empty to search everything in the index.
+
+**Product Search Fields:** Which product fields are given the most weight in ranking — **Title**, **SKU**, **UPC / Barcode**, **Description**.
+
+**Minimum Characters:** How many characters a shopper types before the search runs.
+
+**Debounce (ms):** The short pause after typing before results load. Higher values reduce server load.
+
+**Maximum Results:** The most results to show per search.
+
+**Paginate Results:** Show results one page at a time with **Previous / Next** controls inside the panel.
+
+**Results Per Page:** How many results per page when pagination is on.
+
+**Results Navigation:** How shoppers reach the full list: **Ajax (Inline Pager)** pages inside the panel, or **View All Results** shows a direct link to the search results page.
+
+**Word Match:** How the search term matches text: **Exact**, **Begins With**, or **Contains**.
+
+**Placeholder Text:** The greyed-out hint inside the empty search box. Leave blank to use the default.
 
 ### Display tab
 
 These settings control what each result shows.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Framework** | The CSS framework template to match your site theme. **Auto** inherits it from the active menu item. | `Auto` |
-| **Show Type Badge** | Show a small label telling shoppers whether a result is a product, article, category, and so on. | `Yes` |
-| **Show Image** | Show a thumbnail next to each result. | `Yes` |
-| **Crop Images** | Crop thumbnails to a consistent shape. | `Yes` |
-| **Image Width (px)** | The width of the result thumbnail in pixels. | `64` |
-| **Aspect Ratio** | The thumbnail shape, such as `1:1` or `16:9`. | `1:1` |
-| **Show Price** | Show the price on product results only. | `No` |
-| **Show Availability** | Show **In Stock** / **Out of Stock** on product results only. | `No` |
-| **Show Description** | Show a short snippet of each result's description. | `No` |
-| **Description Length** | The maximum number of characters in the description snippet. | `120` |
-| **Show Date** | Show the result's date. | `No` |
-| **Show URL** | Show the result's web address. | `No` |
-| **Highlight Matched Terms** | Visually highlight the words the shopper searched for. | `Yes` |
-| **Open Results in New Tab** | Open a clicked result in a new browser tab. | `No` |
+**Framework:** The CSS framework template to match your site theme. **Auto** inherits it from the active menu item.
+
+**Show Type Badge:** Show a small label telling shoppers whether a result is a product, article, category, and so on.
+
+**Show Image:** Show a thumbnail next to each result.
+
+**Crop Images:** Crop thumbnails to a consistent shape.
+
+**Image Width (px):** The width of the result thumbnail in pixels.
+
+**Aspect Ratio:** The thumbnail shape, such as `1:1` or `16:9`.
+
+**Show Price:** Show the price on product results only.
+
+**Show Availability:** Show **In Stock** / **Out of Stock** on product results only.
+
+**Show Description:** Show a short snippet of each result's description.
+
+**Description Length:** The maximum number of characters in the description snippet.
+
+**Show Date:** Show the result's date.
+
+**Show URL:** Show the result's web address.
+
+**Highlight Matched Terms:** Visually highlight the words the shopper searched for.
+
+**Open Results in New Tab:** Open a clicked result in a new browser tab.
 
 ### Behavior tab
 
 These settings fine-tune ordering and the popup/launcher button.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Sort Order** | How results are ordered: **Relevance**, **Date**, **Title**, or **Price**. | `Relevance` |
-| **Sort Direction** | **Ascending** or **Descending**. | `Descending` |
-| **Show Autosuggest** | Add a query-suggestions block to the two-column layout. | `No` |
-| **Empty Search Content** | Optional content (for example, popular links) shown when a shopper clicks the empty box. | empty |
-| **Modal Trigger Label** | The text on the button that opens the popup. Used with **Modal** and **Top Offcanvas** display modes. | `Search` |
-| **Modal Trigger Icon Class** | The Font Awesome icon for the popup button, for example `fa-solid fa-magnifying-glass`. | `fa-solid fa-magnifying-glass` |
+**Sort Order:** How results are ordered: **Relevance**, **Date**, **Title**, or **Price**.
 
-Click **Save** when you are done.
+**Sort Direction: Ascending** or **Descending**.
+
+**Show Autosuggest:** Add a query-suggestions block to the two-column layout.
+
+**Empty Search Content:** Optional content (for example, popular links) shown when a shopper clicks the empty box.
+
+**Modal Trigger Label:** The text on the button that opens the popup. Used with **Modal** and **Top Offcanvas** display modes.
+
+**Modal Trigger Icon Class:** The Font Awesome icon for the popup button, for example `fa-solid fa-magnifying-glass`.
 
 ## Set Up the Search Results Page
 
@@ -164,7 +190,7 @@ That's it — the page is created and published automatically.
 
 :::info
 
-NOTE: Prefer to do it by hand? Go to **Menus -> [your J2Commerce menu] -> New**, choose the **J2Commerce -> Search Results** menu item type, and save it as a published item.
+NOTE: Prefer to do it by hand? Go to **Menus -> \[your J2Commerce menu] -> New**, choose the **J2Commerce -> Search Results** menu item type, and save it as a published item.
 
 :::
 
@@ -174,14 +200,14 @@ Once shoppers start searching, the **Findbar Insights** plugin records every que
 
 Go to **J2Commerce -> Analytics** and choose a date range. Findbar adds these cards:
 
-| Card | What it tells you |
-|------|-------------------|
-| **Total Searches** | The number of searches in the period, with the percentage change versus the previous period. |
-| **Zero-Result Searches** | Searches that returned nothing — your most important signal for missing products. |
-| **Avg Results Per Search** | The average number of results shoppers see per search. |
-| **Top Search Terms** | The 10 most popular searches that returned results. |
-| **Top Zero-Result Terms** | The 10 most popular searches that returned nothing — an exact to-do list of products or synonyms to add. |
-| **Search Volume Over Time** | A daily line chart of search activity across the selected range. |
+| Card                        | What it tells you                                                                                        |
+| --------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Total Searches**          | The number of searches in the period, with the percentage change versus the previous period.             |
+| **Zero-Result Searches**    | Searches that returned nothing — your most important signal for missing products.                        |
+| **Avg Results Per Search**  | The average number of results shoppers see per search.                                                   |
+| **Top Search Terms**        | The 10 most popular searches that returned results.                                                      |
+| **Top Zero-Result Terms**   | The 10 most popular searches that returned nothing — an exact to-do list of products or synonyms to add. |
+| **Search Volume Over Time** | A daily line chart of search activity across the selected range.                                         |
 
 You can turn any card on or off in the plugin settings (**J2Commerce -> Apps -> Findbar Insights**).
 
