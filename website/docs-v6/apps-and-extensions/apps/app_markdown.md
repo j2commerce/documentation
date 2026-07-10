@@ -1,10 +1,3 @@
----
-title: "Markdown for AI Agents"
-sidebar_label: "Markdown for AI Agents"
-sidebar_position: 28
-description: "Give every product page a clean, lightweight Markdown twin that AI assistants can read accurately without your store's menus, sidebars, and scripts."
----
-
 # Markdown for AI Agents
 
 Every product page on your store comes with a full HTML version — navigation, images, scripts, sidebars, the whole thing. That is great for human shoppers, but noisy for an AI tool trying to read the actual facts about a product. The Markdown for AI Agents app creates a clean, plain-text Markdown copy of each product page containing only what matters: the name, price, availability, SKU, description, options, images, and structured data.
@@ -21,49 +14,59 @@ No special configuration is required. A product's Markdown version is reached by
 
 ## Purchase and Download
 
-This app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) **->** **Apps**
 
-1. Purchase and download the `app_markdown.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_markdown.zip` file.
-4. The plugin installs and enables automatically.
+**Step 2:** Locate **Markdown for AI Agents** **->** click **View Details** **->** **Add to Cart** **->** **Checkout**
+
+**Step 3:** Go to your **My Downloads** section under your profile button at the top right corner and search for the app. Click **Available Versions** **->** **View Files** **->** **Download Now** to save the ZIP file to your computer.
+
+## Install the App
+
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
+
+Upload the plugin `app_markdown.zip` file or use the Install from URL option.
+
+![](/img/install.webp)
 
 ## Enable the App
 
-Once installed, confirm the plugin is enabled:
+The plugin installs and enables itself automatically. No separate enable step is needed. However, it's important to know where to go to enable or disable it in the future .
 
-**Option A:** Click the **J2Commerce** icon at the top right corner -> **Apps**
+There are **two** ways to reach the Apps list.
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-[//]: # (![]&#40;/img/markdown-app.webp&#41;)
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-Look for **Markdown for AI Agents**, click the **X** and it will turn into a green checkmark. The app is now enabled.
+![](/img/gift-wrap-apps.webp)
 
-[//]: # (![]&#40;/img/markdown-enable1.webp&#41;)
+To help you narrow down the list, you can do a search for **Markdown for AI Agents**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/markdown_enable.webp)
 
 ## Configure the App
 
-Click the **Markdown for AI Agents** title next to the green checkmark to open the settings screen.
+Click the **Markdown for AI Agents** title (next to the green checkmark) to open the settings screen.
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar to reveal a description beneath each field as you configure it.
+Click the **Toggle Inline Help** button on any app you install to see a description below each field directly in the admin panel.
 
 :::
 
-[//]: # (![]&#40;/img/markdown-config1.webp&#41;)
+![](/img/markdown_toggle.webp)
 
 ### Basic Settings tab
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Inject Discovery Link** | Adds a hidden `<link>` tag to every product's regular HTML page so AI browsing tools can automatically find the Markdown URL without you having to share it. Leave this on unless you want to keep the Markdown endpoint private. | Yes |
-| **Append JSON-LD Block** | Appends the product's structured data (Schema.org) as a fenced code block at the bottom of the Markdown output. This gives AI tools a precise, machine-readable summary of price, currency, and availability. Off by default — the regular HTML product page already carries the Product schema for search engines, so the Markdown stays clean for human and AI reading. | No |
-| **Product Sections** | Controls which optional content sections appear in the Markdown output. Select any combination of: **Long Description**, **Specifications**, **Variants Table**, **Image URLs**. All four are included by default. | All four selected |
-| **Cache Duration (minutes)** | How long browsers and CDN caches may serve a cached Markdown copy to guest visitors before requesting a fresh one. Set to `0` to always return a freshly generated copy. Logged-in users always receive fresh content regardless of this value. | `60` |
+![](/img/markdown_basic.webp)
 
-Click **Save** or **Save & Close** when you are done.
+**Inject Discovery Link:** Adds a hidden `<link>` tag to every product's regular HTML page so AI browsing tools can automatically find the Markdown URL without you having to share it. Leave this on unless you want to keep the Markdown endpoint private.
+
+**Append JSON-LD Block:** Appends the product's structured data (Schema.org) as a fenced code block at the bottom of the Markdown output. This gives AI tools a precise, machine-readable summary of price, currency, and availability. Off by default — the regular HTML product page already carries the Product schema for search engines, so the Markdown stays clean for human and AI reading.
+
+**Product Sections:** Controls which optional content sections appear in the Markdown output. Select any combination of: **Long Description**, **Specifications**, **Variants Table**, **Image URLs**. All four are included by default.
+
+**Cache Duration (minutes):** How long browsers and CDN caches may serve a cached Markdown copy to guest visitors before requesting a fresh one. Set to `0` to always return a freshly generated copy. Logged-in users always receive fresh content regardless of this value.
 
 ## Viewing the Markdown Version of a Product {#viewing-markdown}
 
@@ -79,7 +82,7 @@ This works on every site, with or without SEF URLs, and is the simplest form to 
 
 **Method 2 — AI auto-discovery:** When **Inject Discovery Link** is enabled, the app adds a hidden `<link rel="alternate" type="text/markdown">` tag to the HTML of each product page. The tag points at the product's `?format=markdown` address, and most AI browsing tools detect it and follow it automatically. You do not need to do anything extra for this to work — the AI finds the Markdown on its own.
 
-:::note
+:::info
 
 There is also a direct-access URL that reaches the Markdown endpoint without any routing or SEF URLs at all:
 
