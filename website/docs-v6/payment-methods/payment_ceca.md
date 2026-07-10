@@ -54,7 +54,7 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 ### Basic Settings
 
-![](/img/ceca-config-1.webp)
+![](/img/ceca-callback-display.webp)
 
 **Display Name:** The label shown to customers at checkout (e.g., "Bank Transfer", "Wire Transfer", or "Direct Bank Payment").
 
@@ -112,7 +112,7 @@ Keep your **Encryption Key** confidential. It is used to sign every transaction 
 
 ### Gateway URLs
 
-![](/img/ceca-config-4.webp)
+![](/img/ceca-url.webp)
 
 The plugin uses Cecabank's standard endpoint URLs by default. You can override them if Cecabank provides a custom URL for your merchant account.
 
@@ -121,8 +121,6 @@ The plugin uses Cecabank's standard endpoint URLs by default. You can override t
 **Sandbox Gateway URL:** `http://tpv.ceca.es:8000/cgi-bin/tpv`
 
 - Leave these fields blank to use the defaults.
-
-### Signature Algorithm
 
 **Signature Algorithm:** Hash algorithm used to sign outbound requests and verify incoming callbacks. **SHA2 (SHA-256) is required** for all new merchants. SHA1 is provided only for legacy merchants who have not yet migrated — Cecabank deprecated SHA1 in 2018.
 
