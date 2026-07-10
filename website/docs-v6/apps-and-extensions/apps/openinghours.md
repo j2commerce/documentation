@@ -27,54 +27,53 @@ The Opening Hours app solves this. It lets you define a from/to window for each 
 
 ## Purchase and Download
 
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) **->** **Apps**.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) **->** **Apps**
 
-**Step 2:** Locate the **Opening Hours** app **->** click **View Details** **->** **Add to cart -> Checkout**.
+**Step 2:** Locate **Opening Hours** **->** click **View Details** **->** **Add to Cart** **->** **Checkout**
 
-**Step 3:** Go to **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**.
+**Step 3:** Go to your **My Downloads** section under your profile button at the top right corner and search for the app. Click **Available Versions** **->** **View Files** **->** **Download Now** to save the ZIP file to your computer.
 
 ## Install the App
 
-You install the **Opening Hours** app using the Joomla installer, the same as any other Joomla extension.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-1. In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
-2. Upload the `app_openinghours.zip` package file, or use the **Install from URL** option.
+Upload the plugin`app_openinghours.zip` file or use the Install from URL option.
 
-<!-- SCREENSHOT: Joomla extension install screen with app_openinghours.zip highlighted in the upload area -->
-
-The app installs and enables automatically.
+![](/img/install.webp)
 
 ## Enable the App
 
-There are two ways to reach the app's settings.
+The plugin installs and enables itself automatically. No separate enable step is needed. However, it's important to know where to go to enable or disable it in the future.
 
-**Option A:** Click the **J2Commerce** icon at the top right corner **->** **Apps**.
+There are **two** ways to reach the Apps list.
 
-**Option B:** Go to **Components** on the left sidebar **->** **J2Commerce** **->** **Apps**.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps screen showing the Opening Hours app card -->
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-Look for **Opening Hours**. If it shows a red X, click it — it turns into a green checkmark once enabled.
+![](/img/gift-wrap-apps.webp)
 
-<!-- SCREENSHOT: Apps screen showing the Opening Hours app toggled to enabled (green checkmark) -->
+To help you narrow down the list, you can do a search for **Opening Hours**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-Click the **Opening Hours** title next to the checkmark to open the configuration panel.
+![](/img/opening_hours_enable.webp)
 
 ## Configure the App
 
+Click the **Opening Hours** title (next to the green checkmark) to open the settings screen.
+
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+Click the **Toggle Inline Help** button on any app you install to see a description below each field directly in the admin panel.
 
 :::
 
-<!-- SCREENSHOT: The Opening Hours configuration screen with all fields visible -->
+![](/img/opening_hours_toggle.webp)
 
 ### Closed Store Message
 
 The **Closed Store Message** field controls what customers read when they are blocked from ordering.
 
-<!-- SCREENSHOT: The Closed Store Message textarea showing an example message with %s placeholders visible -->
+![](/img/opening_hours_message1.webp)
 
 You can write this message as plain text:
 
@@ -92,11 +91,11 @@ You can also enter a Joomla language constant here if your site is multilingual 
 
 This is the core of the app. The **Available Store Times** table shows one row for each day of the week, with a **From** and a **To** time field.
 
-<!-- SCREENSHOT: The Available Store Times table with all seven days visible, showing sample times filled in for Monday through Friday and blank fields for Saturday and Sunday -->
+![](/img/opening_hours_hours.webp)
 
-| Day      | From field | To field  | Result                                       |
-| -------- | ---------- | --------- | --------------------------------------------- |
-| Monday   | `09:00`    | `17:00`   | Orders accepted 9 AM to 5 PM only              |
+| Day      | From field | To field  | Result                                   |
+| -------- | ---------- | --------- | ---------------------------------------- |
+| Monday   | `09:00`    | `17:00`   | Orders accepted 9 AM to 5 PM only        |
 | Saturday | *(blank)*  | *(blank)* | No restriction — orders accepted all day |
 
 **How the fields work:**
@@ -111,14 +110,11 @@ This is the core of the app. The **Available Store Times** table shows one row f
 
 The **Debug Mode** toggle writes decision logs to your Joomla log directory every time the app checks the current time against your configured hours.
 
-| Setting        | Value        | Effect                                                                     |
-| -------------- | ------------ | ---------------------------------------------------------------------------- |
-| **Debug Mode** | No (default) | No log file written. Recommended for live stores.                            |
-| **Debug Mode** | Yes          | Writes `plg_j2commerce_app_openinghours.php` to your Joomla logs folder. |
+**Debug Mode:** No log file written. Recommended for live stores.
+
+**Debug Mode:** Writes `plg_j2commerce_app_openinghours.php` to your Joomla logs folder.
 
 Turn Debug Mode on temporarily while you test your configuration, then turn it off before the store goes live — the log file grows with every checkout attempt.
-
-<!-- SCREENSHOT: The Debug Mode toggle set to No -->
 
 After adjusting any setting, click **Save** in the toolbar.
 
@@ -138,11 +134,7 @@ The app enforces this check at three points in the shopping flow, all using the 
 
 **Arriving at the checkout page.** If a customer clicks through to checkout while the store is closed, they are sent back to their shopping cart with the closed-store message displayed as a warning. They never see the checkout form.
 
-<!-- SCREENSHOT: The shopping cart page showing the Closed Store Message displayed as a warning notice at the top of the page -->
-
-**Requesting a shipping estimate.** When a customer enters their postcode to get a shipping estimate and the store is outside its open hours, the estimate form shows the error message inline instead of returning shipping options.
-
-<!-- SCREENSHOT: The checkout page at the shipping estimate step showing the Closed Store Message displayed beneath the postcode field -->
+![](/img/opening_hours_checkout.webp)
 
 **Confirming the order.** If a customer reaches the final confirmation step while the store is closed — for example, they started checkout during open hours and the store closed before they clicked **Confirm** — the order is not created and the error message is shown instead.
 
@@ -157,10 +149,10 @@ The app compares the current server time against your configured hours using the
 To check or change your Joomla timezone:
 
 1. Go to **System** -> **Global Configuration**.
-2. Click the **Site** tab.
-3. Find the **Server Time Zone** field and confirm it matches your store's operating timezone.
+2. Click the **Server** tab.
+3. Find the **Website Time Zone** field and confirm it matches your store's operating timezone.
 
-<!-- SCREENSHOT: Joomla Global Configuration Site tab with the Server Time Zone field highlighted -->
+![](/img/opening_hours_global.webp)
 
 If your store is based in London and your Joomla timezone is set to UTC, orders placed at 1 PM London time (BST, which is UTC+1) will appear to the app as 12:00 PM UTC. Make sure the timezone matches where your staff actually work.
 
@@ -190,8 +182,8 @@ If your store is based in London and your Joomla timezone is set to UTC, orders 
 
 **Solution:**
 
-1. Go to **System** -> **Global Configuration** -> **Site** tab.
-2. Check the **Server Time Zone** value.
+1. Go to **System** -> **Global Configuration** -> **Server** tab.
+2. Check the **Website Time Zone** value.
 3. Correct it to match your store's local timezone (for example, `Europe/London` or `America/New_York`).
 4. Click **Save & Close**.
 
