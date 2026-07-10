@@ -109,9 +109,9 @@ Click the **Toggle Inline Help** button at the top of any plugin configuration p
 
 ![](/img/rapyd-display.webp)
 
-**Payment Option Title** — The label shown to customers at checkout. The default value is `Rapyd`. Change this to anything that makes sense for your customers, such as "Pay by Card" or "Rapyd Checkout".
+**Display Name:** The label shown to customers at checkout. The default value is `Rapyd`. Change this to anything that makes sense for your customers, such as "Pay by Card" or "Rapyd Checkout".
 
-**Payment Image** — An optional image shown alongside the payment option at checkout. Select one from your media manager, or leave blank to show text only.
+**Display Image** — An optional image shown alongside the payment option at checkout. Select one from your media manager, or leave blank to show text only.
 
 ### Credentials
 

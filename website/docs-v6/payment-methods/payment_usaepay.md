@@ -1,10 +1,3 @@
----
-title: "USAePay"
-sidebar_label: "USAePay"
-sidebar_position: 50
-description: "Accept credit card payments on-site through the USAePay payment gateway. Full setup guide for J2Commerce store owners."
----
-
 # USAePay
 
 USAePay is a US-based payment gateway that processes credit and debit cards directly on your store. Customers enter their card details in a form on your checkout page — they never leave your site. The card data is sent from your server to the USAePay gateway over an encrypted connection.
@@ -15,105 +8,122 @@ USAePay is a US-based payment gateway that processes credit and debit cards dire
 - A **Source Key** generated in the USAePay merchant console under **Settings** -> **Source Keys**
 - Optionally, a **Hash PIN** (also called a PIN Key) from the same Source Keys section — adds an extra layer of request signing
 
-## Installation
+## Purchase and download
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `payment_usaepay.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `payment_usaepay.zip` package file.
-4. The plugin installs and enables automatically.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **USAePay**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-## Step-by-Step Setup
+## Install the plugin
 
-### Step 1: Open the Plugin Settings
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Find **USA E-Pay** in the list and click its name to open settings.
+Upload the `plg_j2commerce_payment_usaepay.zip` file.
 
-<!-- SCREENSHOT: Payment Methods list with USA E-Pay row highlighted -->
+![](/img/install.webp)
 
-### Step 2: Enter Your API Credentials
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **USAePay**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/barclay-enable.webp)
+
+## Configure the plugin
+
+Click the **USAePay** title next to the green checkmark to open the configuration screen.
+
+:::tip
+
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
+
+:::
+
+![](/img/barclay-toggle.webp)
+
+### Display Settings
+
+![](/img/usaepay_display.webp)
+
+**Display Name:** The label shown to customers at checkout, such as "Credit Card" or "Secure Card Payment."
+
+**Display Image:** A logo shown next to the payment method name. Upload your preferred image via the Joomla Media Manager.
+
+### API Credentials
+
+![](/img/usaepay_credential.webp)
 
 In the **API Key** field, paste your live Source Key from the USAePay console.
 
 If your Source Key has a Hash PIN configured, paste it in the **PIN / Hash PIN** field. If you did not set a PIN on the Source Key, leave this blank.
 
-<!-- SCREENSHOT: Plugin settings showing API Key and PIN fields -->
+**API Key:** Your live USAePay Source Key. Found in USAePay merchant console under **Settings** -> **Source Keys**.
 
-| Field | Description |
-|-------|-------------|
-| **API Key** | Your live USAePay Source Key. Found in USAePay merchant console under **Settings** -> **Source Keys**. |
-| **PIN / Hash PIN** | Optional. The PIN associated with your Source Key. Adds transaction-level hash verification. |
+**PIN / Hash PIN:** Optional. The PIN associated with your Source Key. Adds transaction-level hash verification.
 
-### Step 3: Configure Sandbox Mode for Testing
+### Configure Sandbox Mode for Testing
 
 Enable **Sandbox Mode** before running test transactions. When sandbox is on, two additional fields appear:
 
-| Field | Description |
-|-------|-------------|
-| **Test API Key** | Your sandbox Source Key from the USAePay sandbox console. |
-| **Test PIN / Hash PIN** | Your sandbox PIN, if any. |
+**Test API Key:** Your sandbox Source Key from the USAePay sandbox console.
+
+**Test PIN / Hash PIN:** Your sandbox PIN, if any.
 
 The sandbox gateway is at `sandbox.usaepay.com`. Test transactions process against that host automatically — you do not need to change any URL.
 
 Turn sandbox off when you are ready to go live.
 
-### Step 4: Choose a Transaction Type
+### Transaction Type
+
+![](/img/usaepay_cc.webp)
 
 The **Transaction Type** setting controls what happens when a card is submitted at checkout.
 
-| Option | What it does |
-|--------|-------------|
-| **Sale (Authorize and Capture)** | Charges the card immediately. Money is captured right away. This is the default and the most common choice. |
-| **Auth Only (Authorize)** | Places a hold on the funds without capturing. You must manually capture the payment later from the USAePay merchant console. Use this if you need to verify stock before charging. |
+**Sale (Authorize and Capture):** Charges the card immediately. Money is captured right away. This is the default and the most common choice.
 
-### Step 5: Select Accepted Card Types
+**Auth Only (Authorize):** Places a hold on the funds without capturing. You must manually capture the payment later from the USAePay merchant console. Use this if you need to verify stock before charging.
+
+### Select Accepted Card Types
 
 The **Accepted Card Types** field controls which card brand icons are shown on the checkout form. Select from Visa, Mastercard, American Express, and Discover. Leaving this empty hides all card icons but does not prevent any card from being submitted — USAePay itself determines which cards your account accepts.
 
-<!-- SCREENSHOT: Checkout form with card brand icons displayed -->
+### Restrictions (Optional)
 
-### Step 6: Set Display Options
+![](/img/usaepay_restrictions.webp)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Display Name** | The label shown to customers at checkout, such as "Credit Card" or "Secure Card Payment." | `Credit Card` |
-| **Display Image** | A logo shown next to the payment method name. Upload your preferred image via the Joomla Media Manager. | None |
+**Geozone Restriction:** Limits this payment method to customers in a specific geozone. Leave at "All" to show it everywhere.
 
-### Step 7: Configure Geographic and Order Restrictions (Optional)
+**Min Subtotal:** Hide this method when the cart total is below this amount.
 
-| Field | Description |
-|-------|-------------|
-| **Geozone Restriction** | Limits this payment method to customers in a specific geozone. Leave at "All" to show it everywhere. |
-| **Min Subtotal** | Hide this method when the cart total is below this amount. |
-| **Max Subtotal** | Hide this method when the cart total is above this amount. Leave blank for no upper limit. |
+**Max Subtotal:** Hide this method when the cart total is above this amount. Leave blank for no upper limit.
 
-### Step 8: Customize Customer Messages
+### Customer Messages
 
-| Field | Description |
-|-------|-------------|
-| **Before Payment Message** | Text displayed above the card form before the customer submits. Useful for notes about accepted cards or security. |
-| **After Payment Message** | Text shown on the confirmation screen after a successful payment. |
-| **Error Payment Message** | Text shown when a payment fails. If left blank, a default error message is used. |
+![](/img/usaepay_messages.webp)
 
-### Step 9: Set a Thank-You Article (Optional)
+**Before Payment Message:** Text displayed above the card form before the customer submits. Useful for notes about accepted cards or security.
 
-The **Thank You Message** field links to a Joomla article. If set, the article content is displayed below the after-payment message on the confirmation screen. Use this for order instructions, download links, or anything else you want to show after a successful purchase.
+**After Payment Message:** Text shown on the confirmation screen after a successful payment.
 
-### Step 10: Enable Debug Logging
+**Error Payment Message:** Text shown when a payment fails. If left blank, a default error message is used.
 
-Turn **Debug** on during initial testing to write gateway request and response data to the Joomla log. Logs appear under **System** -> **System Information** -> **Joomla Logs**, in the `plg_j2commerce_payment_usaepay` category.
+**Thank You Message:** The field links to a Joomla article. If set, the article content is displayed below the after-payment message on the confirmation screen. Use this for order instructions, download links, or anything else you want to show after a successful purchase.
+
+**Debug Logging:** Turn **Debug** on during initial testing to write gateway request and response data to the Joomla log. Logs appear under **System** -> **System Information** -> **Joomla Logs**, in the `plg_j2commerce_payment_usaepay` category.
 
 Turn debug off on a live store. Debug logs include masked card numbers but should not be left active in production.
 
-### Step 11: Save and Test
-
-Click **Save** in the toolbar. Then switch to **Sandbox Mode**, place a test order, and verify the order reaches a Confirmed status.
-
-<!-- SCREENSHOT: Successfully confirmed test order in J2Commerce orders list -->
-
----
+***
 
 ## How Checkout Looks to Your Customers
 
@@ -126,9 +136,7 @@ When a customer reaches the payment step at checkout and selects USAePay, they s
 
 After they click **Place Order**, a spinner appears while the card is sent to USAePay. On success, they land on the order confirmation page. On decline, an error message is shown and they can re-enter their card without losing their cart.
 
-<!-- SCREENSHOT: Checkout page showing the USAePay card form with all four fields -->
-
----
+***
 
 ## Testing in Sandbox Mode
 
@@ -140,7 +148,7 @@ After they click **Place Order**, a spinner appears while the card is sent to US
 6. Check the USAePay sandbox merchant console to confirm the transaction record.
 7. When testing is complete, set **Sandbox Mode** back to **No** before accepting real payments.
 
----
+***
 
 ## PCI Compliance Note
 
@@ -148,13 +156,13 @@ Because this plugin collects card details in a form on your server and posts the
 
 If you want a lighter PCI footprint, consider a payment method that uses hosted fields or redirects, such as PayPal or Stripe.
 
----
+***
 
 ## Multi-Currency
 
 J2Commerce stores your orders in your base currency and tracks the exchange rate at the time of order. When charging through USAePay, the plugin automatically converts the order total to the correct charged amount using `CurrencyHelper::gatewayAmount()`. The currency is sent to USAePay as its ISO 4217 numeric code (for example, `840` for USD, `826` for GBP). This means multi-currency stores charge the correct converted amount — not the base-currency raw total.
 
----
+***
 
 ## Troubleshooting
 
@@ -164,7 +172,7 @@ J2Commerce stores your orders in your base currency and tracks the exchange rate
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods** and confirm USAePay shows as enabled.
+1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** and confirm USAePay shows as enabled.
 2. Open the plugin settings and check that the **API Key** field is not empty. An admin notice warns you if the key is missing.
 3. If you have a Geozone Restriction set, confirm the customer's address matches that zone.
 4. Check the **Min Subtotal** and **Max Subtotal** values to ensure the cart total is within range.
@@ -196,7 +204,7 @@ J2Commerce stores your orders in your base currency and tracks the exchange rate
 **Solution:**
 
 1. Enable **Debug** and retry a test transaction. Look for entries in the Joomla log starting with `USAePay: failed to update order status`.
-2. Confirm that the `J2COMMERCE_CONFIRMED` order status exists in **J2Commerce** -> **Orders** -> **Order Statuses**.
+2. Confirm that the `J2COMMERCE_CONFIRMED` order status exists in **J2Commerce** -> **Setup** -> **Order Statuses**.
 3. If the transaction went through but the status did not update, you can manually change the order status from the order detail screen.
 
 ### Auth Only transactions are not settling
@@ -205,18 +213,18 @@ J2Commerce stores your orders in your base currency and tracks the exchange rate
 
 **Solution:** Log in to the USAePay merchant console and capture (settle) the authorized transaction before the hold expires. Switch **Transaction Type** to **Sale** if you want automatic capture on every order.
 
----
+***
 
 ## What's New in J2Commerce vs the Old J2Store Version
 
 If you previously used a USAePay plugin with J2Store, here is what changed in J2Commerce 6:
 
-| Area | J2Store version | J2Commerce 6 |
-|------|----------------|--------------|
-| Framework | FOF 2 (non-namespaced) | Native Joomla 6 MVC with full PHP 8.3 namespaces |
-| JavaScript | jQuery-dependent form handling | Vanilla ES6+ with no jQuery dependency |
-| Frontend templates | Single template | Bootstrap 5 and UIkit layouts, selectable per site |
-| Multi-currency charging | Used raw order total (could undercharge in multi-currency stores) | Uses `CurrencyHelper::gatewayAmount()` — always charges the correct converted amount |
-| Order status updates | Direct database write | Goes through `OrderModel::updateOrderStatus()`, which fires events and sends customer notifications |
-| Debug logging | Basic error_log output | Structured Joomla log entries with masked card numbers, category `plg_j2commerce_payment_usaepay` |
-| PHP compatibility | PHP 7.x era | PHP 8.3+ with strict types, constructor promotion, and nullsafe operators |
+| Area                    | J2Store version                                                   | J2Commerce 6                                                                                        |
+| ----------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Framework               | FOF 2 (non-namespaced)                                            | Native Joomla 6 MVC with full PHP 8.3 namespaces                                                    |
+| JavaScript              | jQuery-dependent form handling                                    | Vanilla ES6+ with no jQuery dependency                                                              |
+| Frontend templates      | Single template                                                   | Bootstrap 5 and UIkit layouts, selectable per site                                                  |
+| Multi-currency charging | Used raw order total (could undercharge in multi-currency stores) | Uses `CurrencyHelper::gatewayAmount()` — always charges the correct converted amount                |
+| Order status updates    | Direct database write                                             | Goes through `OrderModel::updateOrderStatus()`, which fires events and sends customer notifications |
+| Debug logging           | Basic error\_log output                                           | Structured Joomla log entries with masked card numbers, category `plg_j2commerce_payment_usaepay`   |
+| PHP compatibility       | PHP 7.x era                                                       | PHP 8.3+ with strict types, constructor promotion, and nullsafe operators                           |

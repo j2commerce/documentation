@@ -1,10 +1,3 @@
----
-title: "PayGate Payment"
-sidebar_label: "PayGate"
-sidebar_position: 101
-description: "Accept payments through PayGate (PayWeb3) — South Africa's leading hosted-redirect payment gateway with multi-currency support, server-side verification, and geo zone restrictions."
----
-
 # PayGate Payment
 
 The PayGate plugin connects your J2Commerce store to [PayGate](https://www.paygate.co.za), one of South Africa's leading online payment gateways. When a customer checks out, they are redirected to a PayGate-hosted payment page where they enter their card details securely. Once payment is complete, PayGate returns the customer to your store, and J2Commerce verifies the result with an authoritative server-to-server query before finalizing the order.
@@ -36,6 +29,23 @@ There is no built-in refund button for PayGate in J2Commerce. Refunds must be pr
 - A PayGate merchant account with **PayWeb3** enabled
 - Your store must be accessible over **HTTPS**
 
+## Get Your PayGate Credentials
+
+Before configuring the plugin you need two values from the PayGate Back Office.
+
+1. Log in to the PayGate Back Office at [https://bo.paygate.co.za](https://bo.paygate.co.za).
+2. Navigate to **Configuration** -> **PayWeb3 Settings**.
+3. Note down your:
+
+   - **PayGate ID** — your unique merchant identifier (numeric)
+   - **Encryption Key** — your secret key used to sign and verify requests. This value is sometimes called the "secret key" in PayGate documentation.
+
+Keep the Back Office tab open while you configure the plugin in Joomla.
+
+:::warning
+Never share your Encryption Key. Treat it as you would a password. If you suspect it has been compromised, regenerate it in the PayGate Back Office immediately.
+:::
+
 ## Purchase and Download
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
@@ -46,33 +56,13 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 **Step 3:** Go to **My Downloads** under your account profile, find the plugin, click **Available Versions** -> **View Files** -> **Download Now**.
 
-## Get Your PayGate Credentials
-
-Before configuring the plugin you need two values from the PayGate Back Office.
-
-1. Log in to the PayGate Back Office at [https://bo.paygate.co.za](https://bo.paygate.co.za).
-2. Navigate to **Configuration** -> **PayWeb3 Settings**.
-3. Note down your:
-   - **PayGate ID** — your unique merchant identifier (numeric)
-   - **Encryption Key** — your secret key used to sign and verify requests. This value is sometimes called the "secret key" in PayGate documentation.
-
-Keep the Back Office tab open while you configure the plugin in Joomla.
-
-:::warning
-
-Never share your Encryption Key. Treat it as you would a password. If you suspect it has been compromised, regenerate it in the PayGate Back Office immediately.
-
-:::
-
 ## Install the Plugin
 
 In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
 Upload the `payment_paygate.zip` file downloaded from the J2Commerce website.
 
-<!-- SCREENSHOT: Joomla Extensions installer screen with file upload area -->
-
-Joomla installs the plugin automatically.
+![](/img/install.webp)
 
 ## Enable the Plugin
 
@@ -82,11 +72,11 @@ After installation, enable the plugin to make it available as a payment method.
 
 **Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Dashboard** -> **Setup** -> **Payment Methods**.
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list screen -->
+![](/img/culqi.webp)
 
 Find **PayGate** in the list, click the status toggle (red X), and it turns into a green checkmark. The plugin is now active.
 
-<!-- SCREENSHOT: Payment Methods list showing PayGate enabled (green checkmark) -->
+![](/img/paygate_enable.webp)
 
 ## Configure the Plugin
 
@@ -98,78 +88,93 @@ Click the **Toggle Inline Help** button at the top of the settings screen to dis
 
 :::
 
-### Credentials
+![](/img/paygate_toggle.webp)
 
-<!-- SCREENSHOT: Credentials fieldset in the PayGate plugin settings -->
+### Credentials tab
 
-| Field | Description | Recommended Value |
-|-------|-------------|-------------------|
-| **Test Mode** | When enabled, transactions go to PayGate's test environment. No real payments are processed. | **Yes** during setup and testing; **No** for live |
-| **PayGate ID** | Your live PayGate merchant ID from the Back Office. Only shown when Test Mode is off. | Your live PayGate ID |
-| **Encryption Key** | Your live encryption (secret) key from PayWeb3 settings. Only shown when Test Mode is off. | Your live encryption key |
-| **Test PayGate ID** | PayGate's public sandbox PayGate ID. The default `10011072130` works for all sandbox testing. | Leave as default |
-| **Test Encryption Key** | PayGate's public sandbox encryption key. The default `secret` works for all sandbox testing. | Leave as default |
-| **Locale** | Language code for the PayGate hosted payment page. | `en-za` (South African English) |
-| **Debug Logging** | Writes gateway request and response details to the Joomla log. Disable on production once everything is working. | **No** on production |
+![](/img/paygate_credentials.webp)
 
-### Display
+**Test Mode:** When enabled, transactions go to PayGate's test environment. No real payments are processed.
 
-<!-- SCREENSHOT: Display fieldset in the PayGate plugin settings -->
+**PayGate ID:** Your live PayGate merchant ID from the Back Office. Only shown when Test Mode is off.
 
-| Field | Description |
-|-------|-------------|
-| **Display Name** | The payment method name shown to customers at checkout. Defaults to `PayGate`. |
-| **Display Image** | Optional logo shown beside the payment method name at checkout. |
-| **Show Dashboard Quick Icon** | When enabled, adds a PayGate shortcut icon to the J2Commerce dashboard. |
-| **Button Text** | Label of the button that sends the customer to the PayGate hosted page. Defaults to `Pay Now`. |
-| **Layout Template** | Frontend template set for checkout. Choose **bootstrap5** for standard Joomla templates or **uikit** for UIkit-based templates such as YOOtheme Pro. |
+**Encryption Key:** Your live encryption (secret) key from PayWeb3 settings. Only shown when Test Mode is off.
+
+**Test PayGate ID:** PayGate's public sandbox PayGate ID. The default `10011072130` works for all sandbox testing.
+
+**Test Encryption Key:** PayGate's public sandbox encryption key. The default `secret` works for all sandbox testing.
+
+**Locale:** Language code for the PayGate hosted payment page.
+
+**Debug Logging:** Writes gateway request and response details to the Joomla log. Disable on production once everything is working.
+
+### Display tab
+
+![](/img/paygate_display.webp)
+
+**Display Name:** The payment method name shown to customers at checkout. Defaults to `PayGate`.
+
+**Display Image:** Optional logo shown beside the payment method name at checkout.
+
+**Show Dashboard Quick Icon:** When enabled, adds a PayGate shortcut icon to the J2Commerce dashboard.
+
+**Button Text:** Label of the button that sends the customer to the PayGate hosted page. Defaults to `Pay Now`.
+
+**Layout Template:** Frontend template set for checkout. Choose **bootstrap5** for standard Joomla templates or **uikit** for UIkit-based templates such as YOOtheme Pro.
 
 ### Messages
 
+![](/img/paygate_messages.webp)
+
 These optional text fields let you display custom messages to customers at each stage of the payment process. All fields accept plain text or a J2Commerce language key.
 
-<!-- SCREENSHOT: Messages fieldset in the PayGate plugin settings -->
+**On-Selection Text:** Shown when the customer selects PayGate at checkout
 
-| Field | When it appears |
-|-------|-----------------|
-| **On-Selection Text** | Shown when the customer selects PayGate at checkout |
-| **Before-Payment Text** | Shown just before the customer is redirected to PayGate |
-| **After-Payment Text** | Shown after a successful payment return |
-| **Error Text** | Shown when a payment is declined |
-| **Cancellation Text** | Shown when the customer cancels on the PayGate page |
-| **Thank-You Article** | Optional Joomla article displayed after a successful payment |
+**Before-Payment Text:** Shown just before the customer is redirected to PayGate
+
+**After-Payment Text:** Shown after a successful payment return
+
+**Error Text:** Shown when a payment is declined
+
+**Cancellation Text:** Shown when the customer cancels on the PayGate page
+
+**Thank-You Article:** Optional Joomla article displayed after a successful payment
 
 ### Restrictions
 
+![](/img/paygate_restrictions.webp)
+
 Use these settings to control when PayGate appears at checkout.
 
-<!-- SCREENSHOT: Restrictions fieldset in the PayGate plugin settings -->
+**Geo Zone:** Limit this payment method to customers whose billing address falls within a specific geo zone. Leave blank to accept all zones.
 
-| Field | Description |
-|-------|-------------|
-| **Geo Zone** | Limit this payment method to customers whose billing address falls within a specific geo zone. Leave blank to accept all zones. |
-| **Minimum Subtotal** | Hide PayGate when the order subtotal is below this amount. Leave empty for no minimum. |
-| **Maximum Subtotal** | Hide PayGate when the order subtotal is above this amount. Leave empty for no maximum. |
+**Minimum Subtotal:** Hide PayGate when the order subtotal is below this amount. Leave empty for no minimum.
+
+**Maximum Subtotal:** Hide PayGate when the order subtotal is above this amount. Leave empty for no maximum.
 
 ### Order Statuses
 
+![](/img/paygate_status.webp)
+
 These settings map PayGate payment results to J2Commerce order statuses.
 
-<!-- SCREENSHOT: Order Statuses fieldset in the PayGate plugin settings -->
+**Confirmed Status:** Applied when PayGate approves the payment (status code 1 = Approved)
 
-If the status you want is not listed, create it first at **J2Commerce** -> **Setup** -> **Order Statuses**.
+**Pending Status:** Applied while a payment is pending (for future use)
 
-| Field | When it applies |
-|-------|-----------------|
-| **Confirmed Status** | Applied when PayGate approves the payment (status code 1 = Approved) |
-| **Pending Status** | Applied while a payment is pending (for future use) |
-| **Failed Status** | Applied when a payment is declined (code 2), cancelled (code 3), or user-cancelled (code 4) |
+**Failed Status:** Applied when a payment is declined (code 2), cancelled (code 3), or user-cancelled (code 4)
+
+:::info
+
+If the order status you want is not listed, create it first under **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ## How Checkout Works for Customers
 
 Here is the step-by-step experience when a customer pays with PayGate.
-
-<!-- SCREENSHOT: Checkout payment selection screen showing PayGate option -->
 
 1. The customer adds items to the cart and proceeds to checkout.
 2. On the payment step, they select **PayGate** (shown with the display name and optional logo you configured).
@@ -181,8 +186,6 @@ Here is the step-by-step experience when a customer pays with PayGate.
 8. After payment, PayGate returns the customer to your store.
 9. J2Commerce validates the return checksum, then performs a **server-side authoritative query** to confirm the transaction status directly with PayGate before finalizing the order.
 10. If approved, the order status changes to your configured **Confirmed Status** and the customer sees the **After-Payment Text** and optional **Thank-You Article**.
-
-<!-- SCREENSHOT: Order confirmation page with PayGate after-payment message -->
 
 The entire card capture process happens on PayGate's servers. Your store never sees or stores card data.
 
@@ -196,8 +199,6 @@ Always test in sandbox mode before going live.
 
 **Step 3:** Place a test order on your store and complete the checkout. You will be redirected to the PayGate sandbox hosted page at `secure.paygate.co.za`.
 
-<!-- SCREENSHOT: PayGate sandbox payment page -->
-
 **Step 4:** On the sandbox page, use the test card details provided by PayGate. Typical test cards for PayGate PayWeb3 sandbox testing are available from the PayGate Back Office or your PayGate account manager — PayGate does not publish a single universal sandbox test card number in their public documentation.
 
 **Step 5:** After completing the test payment, confirm:
@@ -209,9 +210,7 @@ Always test in sandbox mode before going live.
 **Step 6:** Enable **Debug Logging** during testing and review entries at **System** -> **Logs** if a transaction does not finalize as expected.
 
 :::warning
-
 The sandbox dashboard shows a warning banner in the J2Commerce admin when Test Mode is enabled. Do not go live until you remove this warning by switching to **Test Mode: No** and entering your live credentials.
-
 :::
 
 ## Going Live
@@ -236,21 +235,21 @@ PayGate does not currently expose a refund API in this plugin. To refund a custo
 
 If you are migrating from J2Store to J2Commerce, here is what changed in the PayGate plugin.
 
-| Area | J2Store behavior | J2Commerce 6 behavior |
-|------|-----------------|----------------------|
-| **Framework** | FOF 2 (non-namespaced) | Native Joomla 6 MVC, PSR-4 namespaced |
-| **TLS / SSL** | SSL peer verification was disabled in the old cURL transport | TLS peer verification is always enabled — the Joomla HTTP layer enforces it |
-| **Server-side verification** | `query.trans` called after browser return | Preserved and strengthened: double checksum validation (browser return + query response) plus amount cross-check |
-| **Locale default** | `en` | Corrected to `en-za` (PayGate's documented default for South Africa) |
-| **Template system** | Single hardcoded Bootstrap layout | Selectable `bootstrap5` or `uikit` layout via the **Layout Template** field |
-| **Order status mapping** | Hardcoded J2Store status IDs | Configurable via **Confirmed / Pending / Failed Status** dropdowns |
-| **Geo zone restriction** | Supported | Preserved — uses the J2Commerce `Geozone` field type |
-| **Subtotal restrictions** | Supported | Preserved — minimum and maximum subtotal fields |
-| **Dashboard warnings** | None | Sandbox-mode warning and missing-credentials alert appear on the J2Commerce dashboard |
-| **Direct-access PHP entry files** | `success.php`, `notify.php`, `view.php` etc. were directly accessible | Removed — all routing goes through the J2Commerce checkout controller (security improvement) |
-| **Debug logging** | Custom file-based log | Standard Joomla `Log::add()` — viewable at **System** -> **Logs** |
-| **Multi-currency** | Supported (currency per order) | Preserved — `CurrencyHelper::gatewayAmount()` converts the order total to the display currency before sending to PayGate |
-| **Admin email on failure** | Emailed super-users when validation failed | Preserved — J2Commerce super-user query replaces the hardcoded J2Store group ID |
+| Area                              | J2Store behavior                                                      | J2Commerce 6 behavior                                                                                                    |
+| --------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **Framework**                     | FOF 2 (non-namespaced)                                                | Native Joomla 6 MVC, PSR-4 namespaced                                                                                    |
+| **TLS / SSL**                     | SSL peer verification was disabled in the old cURL transport          | TLS peer verification is always enabled — the Joomla HTTP layer enforces it                                              |
+| **Server-side verification**      | `query.trans` called after browser return                             | Preserved and strengthened: double checksum validation (browser return + query response) plus amount cross-check         |
+| **Locale default**                | `en`                                                                  | Corrected to `en-za` (PayGate's documented default for South Africa)                                                     |
+| **Template system**               | Single hardcoded Bootstrap layout                                     | Selectable `bootstrap5` or `uikit` layout via the **Layout Template** field                                              |
+| **Order status mapping**          | Hardcoded J2Store status IDs                                          | Configurable via **Confirmed / Pending / Failed Status** dropdowns                                                       |
+| **Geo zone restriction**          | Supported                                                             | Preserved — uses the J2Commerce `Geozone` field type                                                                     |
+| **Subtotal restrictions**         | Supported                                                             | Preserved — minimum and maximum subtotal fields                                                                          |
+| **Dashboard warnings**            | None                                                                  | Sandbox-mode warning and missing-credentials alert appear on the J2Commerce dashboard                                    |
+| **Direct-access PHP entry files** | `success.php`, `notify.php`, `view.php` etc. were directly accessible | Removed — all routing goes through the J2Commerce checkout controller (security improvement)                             |
+| **Debug logging**                 | Custom file-based log                                                 | Standard Joomla `Log::add()` — viewable at **System** -> **Logs**                                                        |
+| **Multi-currency**                | Supported (currency per order)                                        | Preserved — `CurrencyHelper::gatewayAmount()` converts the order total to the display currency before sending to PayGate |
+| **Admin email on failure**        | Emailed super-users when validation failed                            | Preserved — J2Commerce super-user query replaces the hardcoded J2Store group ID                                          |
 
 ## Troubleshooting
 
@@ -302,7 +301,7 @@ If you are migrating from J2Store to J2Commerce, here is what changed in the Pay
 
 **Cause:** J2Commerce detected a checksum mismatch or an amount discrepancy during order finalization and notified admin users by email.
 
-**Solution:** This is a legitimate security alert. Do not finalize the order manually until you have investigated. Check the Joomla log for the reference number and compare it against the PayGate Back Office transaction list. If the transaction is genuine, contact PayGate support with the PAY_REQUEST_ID shown in the email body.
+**Solution:** This is a legitimate security alert. Do not finalize the order manually until you have investigated. Check the Joomla log for the reference number and compare it against the PayGate Back Office transaction list. If the transaction is genuine, contact PayGate support with the PAY\_REQUEST\_ID shown in the email body.
 
 ### Debug log is empty
 

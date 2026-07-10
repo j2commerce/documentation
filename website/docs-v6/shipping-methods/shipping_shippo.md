@@ -1,10 +1,3 @@
----
-title: "Shippo Shipping"
-sidebar_label: "Shippo"
-sidebar_position: 56
-description: "Live multi-carrier shipping rates at checkout plus label purchase, voiding, and shipment tracking via the Shippo API."
----
-
 # Shippo Shipping
 
 The Shippo Shipping plugin connects your J2Commerce store to [Shippo](https://goshippo.com/), a multi-carrier shipping platform that works with USPS, UPS, FedEx, DHL Express, Canada Post, and dozens of other carriers through a single account. At checkout, customers see real-time rates pulled directly from your connected carrier accounts. After an order is placed, you can buy and print a shipping label without leaving the J2Commerce order view, void a label if plans change, and refresh tracking status on demand — or let the cron task update everything automatically.
@@ -18,53 +11,57 @@ The Shippo Shipping plugin connects your J2Commerce store to [Shippo](https://go
 - At least one carrier account connected in your Shippo Dashboard (USPS, UPS, FedEx, etc.)
 - A Shippo API token (test or live)
 
-## Purchase and Download
+## Purchase and Download the Plugin
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+‌**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extension
 
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) **->** **Extensions**.
+**Step 2:** Locate the **Shippo** Extension -> click **View Details** **-> Add to cart -> Checkout**.&#x20;
 
-**Step 2:** Locate **Shippo Shipping** **->** click **View Details** **->** **Add to Cart** **->** **Checkout**.
-
-**Step 3:** Go to **My Downloads** under your profile at the top-right corner, search for the plugin, click **Available Versions** **->** **View Files** **->** **Download Now**.
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**
 
 ## Install the Plugin
 
-In the Joomla administrator, go to **System** **->** **Install** **->** **Extensions**.
+Go to **System** -> **Install** -> **Extensions**.
 
-Upload the plugin ZIP file or use the **Install from URL** option.
+Upload the `shipping_shippo.zip` package file
+
+![](/img/ato-install.webp)
 
 ## Enable the Plugin
 
-Once installed, find and enable the plugin. There are two ways to reach the shipping methods list:
+There are **two** ways you can access the Plugin.&#x20;
 
-**Option A:** Click the **J2Commerce** icon at the top right corner **->** **Shipping**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Shipping Methods**
 
-**Option B:** Go to **Components** **->** **J2Commerce** **->** **Shipping**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
 
-Look for **Shippo**, click the red **X**, and it turns into a green checkmark. The plugin is now enabled and ready to configure.
+![](/img/atoship-app.webp)
+
+&#x20;Look for **Shippo**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/shippo_enable.webp)
 
 ## Configure the Plugin
 
-Click the **Shippo** title next to the green checkmark to open the settings screen.
+Once you click on the **Shippo** Title next to the green checkmark, you are ready to start setting up the parameters.
 
 :::tip
 
-Click **Toggle Inline Help** in the toolbar to display a description below every field as you configure it.
+**Helpful Tip:** Click on the **Toggle Inline Help** button on any app/plugin you install and it will show a description below each section. See image below
 
 :::
 
-The settings are grouped into seven tabs. Work through them top to bottom the first time you set up the plugin.
-
----
+![](/img/shippo_toggle.webp)
 
 ### API Credentials
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Test Mode** | When enabled, the plugin uses your test API token and processes test shipments only. Turn this off when you are ready to go live. | Yes |
-| **Live API Token** | Your Shippo live API key. Shown only when Test Mode is off. Starts with `shippo_live_`. | — |
-| **Test API Token** | Your Shippo test API key. Shown only when Test Mode is on. Starts with `shippo_test_`. | — |
+![](/img/shippo_credentials.webp)
+
+**Test Mode:** When enabled, the plugin uses your test API token and processes test shipments only. Turn this off when you are ready to go live.
+
+**Live API Token:** Your Shippo live API key. Shown only when Test Mode is off. Starts with `shippo_live_`.
+
+**Test API Token:** Your Shippo test API key. Shown only when Test Mode is on. Starts with `shippo_test_`.
 
 #### Getting your Shippo API token
 
@@ -73,24 +70,31 @@ The settings are grouped into seven tabs. Work through them top to bottom the fi
 3. Under **API Keys**, copy the key that matches the mode you need — the live key starts with `shippo_live_` and the test key starts with `shippo_test_`.
 4. Paste the key into the matching field in the plugin settings and click **Save**.
 
----
-
 ### Origin Address
+
+![](/img/shippo_address.webp)
 
 These fields define where your packages ship from. This address appears on all outbound labels.
 
-| Field | Description |
-|-------|-------------|
-| **Address Source** | Choose **Use Store Address** to pull the address you already set in J2Commerce configuration, or **Add New Address** to enter a different pickup location. |
-| **Sender Name** | Name printed on outbound labels. |
-| **Company** | Optional company name for the sender address. |
-| **Street Address** | Pickup or shipper street address. |
-| **City** | Origin city. |
-| **State / Province** | Origin state or province. |
-| **Postal Code** | Origin ZIP or postal code. |
-| **Country** | Origin country. |
-| **Phone** | Sender phone number. Some carriers require this. |
-| **Email** | Sender email address. |
+**Address Source:** Choose **Use Store Address** to pull the address you already set in J2Commerce configuration, or **Add New Address** to enter a different pickup location.
+
+**Sender Name:** Name printed on outbound labels.
+
+**Company:** Optional company name for the sender address.
+
+**Street Address:** Pickup or shipper street address.
+
+**City:** Origin city.
+
+**State / Province:** Origin state or province.
+
+**Postal Code:** Origin ZIP or postal code.
+
+**Country:** Origin country.
+
+**Phone:** Sender phone number. Some carriers require this.
+
+**Email:** Sender email address.
 
 :::info
 
@@ -98,35 +102,39 @@ If you choose **Use Store Address**, the plugin reads your store address directl
 
 :::
 
----
-
 ### Carriers and Services
+
+![](/img/shippo_carriers.webp)
 
 This tab controls which carriers and services appear at checkout.
 
-| Field | Description |
-|-------|-------------|
-| **Allowed Carriers** | Select the carriers you want to show rates for. Leave all options selected to display every carrier connected to your Shippo account. |
-| **Test Destination ZIP** | ZIP or postal code used when running Service Discovery (see below). |
-| **Test Destination Country** | Country used when running Service Discovery. |
-| **Service Discovery** | Click **Discover Services** to fetch the full list of services available from your connected carrier accounts. Check the services you want to offer at checkout, then save. |
+**Allowed Carriers:** Select the carriers you want to show rates for. Leave all options selected to display every carrier connected to your Shippo account.
+
+**Test Destination ZIP:** ZIP or postal code used when running Service Discovery (see below).
+
+**Test Destination Country:** Country used when running Service Discovery.
+
+**Service Discovery:** Click **Discover Services** to fetch the full list of services available from your connected carrier accounts. Check the services you want to offer at checkout, then save.
 
 **How Service Discovery works:** When you click **Discover Services**, the plugin asks Shippo for every service level across all your connected carrier accounts. You check the ones you want, save the plugin, and those are the only services shown to customers at checkout. If you leave nothing checked, all available services are shown.
 
----
-
 ### Package Defaults
+
+![](/img/shippo_package.webp)
 
 These values are used when a product does not have weight or dimensions set. The plugin sums the weight of all items in the cart and uses the largest single dimension for length, width, and height.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Weight Unit** | Unit for package weight. Must match the weight unit set on your products. | — |
-| **Default Weight** | Weight applied per item when a product has no weight set. | 1.0 |
-| **Dimension Unit** | Unit for package dimensions. | — |
-| **Default Length** | Box length when product dimensions are not set. | 10 |
-| **Default Width** | Box width when product dimensions are not set. | 10 |
-| **Default Height** | Box height when product dimensions are not set. | 10 |
+**Weight Unit:** Unit for package weight. Must match the weight unit set on your products.
+
+**Default Weight:** Weight applied per item when a product has no weight set.
+
+**Dimension Unit:** Unit for package dimensions.
+
+**Default Length:** Box length when product dimensions are not set.
+
+**Default Width:** Box width when product dimensions are not set.
+
+**Default Height:** Box height when product dimensions are not set.
 
 :::tip
 
@@ -134,45 +142,51 @@ Set your product weights in J2Commerce **->** **Catalog** **->** **Products** fo
 
 :::
 
----
-
 ### Rate Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Handling Fee** | A fixed or percentage amount added to every carrier rate before it is shown to the customer. Enter `0` to skip. | 0 |
-| **Handling Fee Type** | **Flat Amount** adds the same dollar amount to every rate. **Percentage** adds a percentage of the carrier rate. | Flat Amount |
-| **Show Estimated Days** | When enabled, the estimated transit time (for example, "3 business days") is appended to the rate name at checkout. | Yes |
-| **Tax Profile** | Select a tax profile to apply sales tax on shipping. Leave on **No Tax** for tax-free shipping. | No Tax |
-| **Geo Zone** | Restrict Shippo rates to a specific geo zone. Leave on **All Zones** to show rates worldwide. | All Zones |
-| **Minimum Order Subtotal** | Only show rates when the cart subtotal is at or above this amount. Leave blank for no minimum. | — |
-| **Maximum Order Subtotal** | Only show rates when the cart subtotal is at or below this amount. Leave blank for no maximum. | — |
+![](/img/shippo_rate.webp)
 
----
+**Handling Fee:** A fixed or percentage amount added to every carrier rate before it is shown to the customer. Enter `0` to skip.
+
+**Handling Fee Type: Flat Amount** adds the same dollar amount to every rate. **Percentage** adds a percentage of the carrier rate.
+
+**Show Estimated Days:** When enabled, the estimated transit time (for example, "3 business days") is appended to the rate name at checkout.
+
+**Tax Profile:** Select a tax profile to apply sales tax on shipping. Leave on **No Tax** for tax-free shipping.
+
+**Geo Zone:** Restrict Shippo rates to a specific geo zone. Leave on **All Zones** to show rates worldwide.
+
+**Minimum Order Subtotal:** Only show rates when the cart subtotal is at or above this amount. Leave blank for no minimum.
+
+**Maximum Order Subtotal:** Only show rates when the cart subtotal is at or below this amount. Leave blank for no maximum.
 
 ### Fulfillment
 
+![](/img/shippo_fulfillment.webp)
+
 These settings control label creation, tracking, and automatic order status changes.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Label Format** | File format for generated labels. Choose **PDF** for standard printers, **PDF 4x6** for thermal label printers (4-inch × 6-inch), **PNG** for image labels, or **ZPL II** for Zebra and compatible thermal printers. | PDF |
-| **Order Status on Label Created** | The order is automatically moved to this status when you purchase a label. Choose **Keep Current Status** to leave the status unchanged. | Keep Current Status |
-| **Order Status on Delivery** | The order is automatically moved to this status when tracking confirms delivery. Choose **Keep Current Status** to leave the status unchanged. | Keep Current Status |
-| **Notify Customer on Delivery** | When enabled, J2Commerce fires the delivery notification email when tracking status changes to delivered. | No |
-| **Webhook Token** | A security token you create yourself. Append `&token=[your-value]` to the webhook URL you register in Shippo. Requests without the matching token are rejected. Leave blank to accept all webhook requests (not recommended). | — |
-| **Webhook HMAC Secret** | Enterprise feature only. Leave blank unless Shippo support has set up HMAC webhook signing for your account (takes approximately 10 business days). Use the **Webhook Token** field for standard security instead. | — |
-| **Tracking Poll Limit** | Maximum number of pending labels checked per cron run. Increase if you have high order volume. | 50 |
+**Label Format:** File format for generated labels. Choose **PDF** for standard printers, **PDF 4x6** for thermal label printers (4-inch × 6-inch), **PNG** for image labels, or **ZPL II** for Zebra and compatible thermal printers.
 
----
+**Order Status on Label Created:** The order is automatically moved to this status when you purchase a label. Choose **Keep Current Status** to leave the status unchanged.
+
+**Order Status on Delivery:** The order is automatically moved to this status when tracking confirms delivery. Choose **Keep Current Status** to leave the status unchanged.
+
+**Notify Customer on Delivery:** When enabled, J2Commerce fires the delivery notification email when tracking status changes to delivered.
+
+**Webhook Token:** A security token you create yourself. Append `&token=[your-value]` to the webhook URL you register in Shippo. Requests without the matching token are rejected. Leave blank to accept all webhook requests (not recommended).
+
+**Webhook HMAC Secret:** Enterprise feature only. Leave blank unless Shippo support has set up HMAC webhook signing for your account (takes approximately 10 business days). Use the **Webhook Token** field for standard security instead.
+
+**Tracking Poll Limit:** Maximum number of pending labels checked per cron run. Increase if you have high order volume.
 
 ### Debug
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Logging** | When enabled, all API calls and errors are written to a `shipping_shippo.php` log file. Turn this off in production — it generates a large log and may expose API details. | No |
+![](/img/shippo_debug.webp)
 
----
+**Debug Logging:** When enabled, all API calls and errors are written to a `shipping_shippo.php` log file. Turn this off in production — it generates a large log and may expose API details.
+
+***
 
 ## How It Works
 
@@ -194,13 +208,13 @@ These settings control label creation, tracking, and automatic order status chan
 
 9. **If you need to cancel a label**, click **Void** next to the label in the order panel. Voided labels are marked in the panel so you have a clear record.
 
----
+***
 
 ## Display Conditions
 
 Shippo rates appear at checkout only when all of the following are true:
 
-- The plugin is enabled in **J2Commerce** **->** **Shipping**.
+- The plugin is enabled in **J2Commerce** **-> Setup -> Shipping Method**.
 - A valid API token (test or live) is saved.
 - An origin address with at least a postal code is configured, or your J2Commerce store address is complete.
 - The cart contains at least one shippable product.
@@ -208,7 +222,7 @@ Shippo rates appear at checkout only when all of the following are true:
 - The customer's destination falls within the configured **Geo Zone** (or **All Zones** is selected).
 - The cart subtotal meets the **Minimum Order Subtotal** (if set) and does not exceed the **Maximum Order Subtotal** (if set).
 
----
+***
 
 ## Tips
 
@@ -224,7 +238,7 @@ Shippo rates appear at checkout only when all of the following are true:
 
 - **The label modal lets you re-quote.** If you want to check the price before committing, open **Create Label**, change the weight or dimensions, click **Update Rates**, and review the live rates before confirming.
 
----
+***
 
 ## Troubleshooting
 
@@ -234,13 +248,13 @@ Shippo rates appear at checkout only when all of the following are true:
 
 **Solution:**
 
-1. Go to **J2Commerce** **->** **Shipping**, click **Shippo** to open the settings.
+1. Go to **J2Commerce** **-> Setup -> Shipping Method**, click **Shippo** to open the settings.
 2. Confirm **Test Mode** is set correctly and the matching API token (test or live) is filled in.
 3. Check the **Origin Address** tab — at minimum, a postal code and country must be set (or **Use Store Address** must point to a complete store address).
 4. Open the **Carriers and Services** tab. If you have run **Service Discovery**, confirm at least one service is checked. If the list is empty, check your Shippo Dashboard to ensure at least one carrier account is active.
 5. Enable **Debug Logging** temporarily, clear the Joomla cache, and attempt a checkout. Review the log at **System** **->** **Logs** for any API error messages, then disable debug logging again.
 
----
+***
 
 ### "Invalid API token" error or no rates returned after entering a token
 
@@ -252,7 +266,7 @@ Shippo rates appear at checkout only when all of the following are true:
 2. Log in to your [Shippo Dashboard](https://apps.goshippo.com/) **->** **API** and copy the full token again, including the `shippo_test_` or `shippo_live_` prefix.
 3. Paste the token into the correct field, click **Save**, and test checkout again.
 
----
+***
 
 ### Labels will not generate from the order view
 
@@ -264,7 +278,7 @@ Shippo rates appear at checkout only when all of the following are true:
 2. Check the **Origin Address** settings — all fields must be complete for label creation.
 3. If you see an error in the label modal, enable **Debug Logging**, try again, and check the log for details.
 
----
+***
 
 ### Tracking status is not updating
 
@@ -276,7 +290,7 @@ Shippo rates appear at checkout only when all of the following are true:
 2. Click **Refresh Tracking** directly on the order to trigger an immediate update for that order.
 3. Allow some time after label purchase — carriers can take several hours to register a tracking number in their system.
 
----
+***
 
 ### Webhook delivery status events are not arriving
 

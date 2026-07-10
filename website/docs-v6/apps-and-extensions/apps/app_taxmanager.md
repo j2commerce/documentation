@@ -1,10 +1,3 @@
----
-title: "Tax Manager"
-sidebar_label: "Tax Manager"
-sidebar_position: 91
-description: "Set up advanced tax rate rules in J2Commerce with country, state/zone, and postcode matching — plus user group tax exemptions."
----
-
 # Tax Manager
 
 The Tax Manager app gives you fine-grained control over how tax is calculated in your store. Instead of relying solely on the built-in tax profiles, you define reusable **Tax Classes** — each containing one or more rate rules that match on country, state or province (zone), and postcode. You can also mark specific customer groups as completely tax-exempt, which is useful for wholesale accounts, non-profit organizations, or resellers.
@@ -199,8 +192,6 @@ When a customer reaches checkout, Tax Manager checks the customer's address agai
 3. It matches rates from the Tax Class by country (exact or `*`), then by zone (exact or `*`), then by postcode (exact, prefix wildcard, or `*`).
 4. Depending on the **Rate Mode** setting on the Tax Class, matched rates either replace or add on top of the product's core tax profile rate.
 5. Duplicate rates (same name and percentage) are automatically de-duplicated.
-
-<!-- SCREENSHOT: Checkout order summary showing Tax Manager rate applied in tax line -->
 
 ## Tips
 

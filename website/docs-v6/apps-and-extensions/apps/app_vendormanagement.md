@@ -1,10 +1,3 @@
----
-title: "Vendor Management"
-sidebar_label: "Vendor Management"
-sidebar_position: 80
-description: "Run a dealer or wholesaler program from your J2Commerce store — application forms, tiered discounts, automatic tier upgrades, and a vendor dashboard."
----
-
 # Vendor Management
 
 The Vendor Management app turns your J2Commerce store into a full dealer or wholesaler portal. Approved vendors receive automatic tier-based discounts at checkout, can track their own sales statistics on a personal dashboard, and are notified by email at every stage of the application process. As a store owner you review applications in the admin, assign discount tiers, and let the system handle upgrades automatically based on purchase volume or time.
@@ -17,8 +10,6 @@ The Vendor Management app turns your J2Commerce store into a full dealer or whol
 
 ## Purchase and Download
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
 **Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
 **Step 2:** Locate the **Vendor Management** app **->** click **View Details** **->** **Add to cart -> Checkout**.
@@ -27,27 +18,25 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 ## Install the App
 
-You can install this app using the Joomla installer. The following steps help you with a successful installation.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-In the Joomla admin, go to **System** -> **Install** -> **Extensions**
+Upload the `app_vendormanagement.zip` file or use the Install from URL option.
 
-Upload the plugin ZIP file or use the **Install from URL** option.
-
-<!-- SCREENSHOT: System -> Install -> Extensions upload page -->
+![](/img/install.webp)
 
 ## Enable the App
 
-Once installed, you need to enable it. There are two ways to reach the app list.
+Once you have installed the app, you will need to enable it. There are **two** ways you can access the extension.
 
 **Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Vendor Management disabled -->
+![](/img/gift-wrap-apps.webp)
 
-Locate **Vendor Management**, click the **X**, and it turns into a green checkmark. The app is now enabled and ready to configure.
+Look for **Vendor Management**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-<!-- SCREENSHOT: Vendor Management row showing green enabled checkmark -->
+![](/img/vendor_enable.webp)
 
 ## Configure the App
 
@@ -59,62 +48,79 @@ Click the **Toggle Inline Help** button in the toolbar to see a description belo
 
 :::
 
+![](/img/vendor_toggle.webp)
+
 ### Basic Settings tab
 
-<!-- SCREENSHOT: Vendor Management Basic Settings tab -->
+![](/img/vendor_basic.webp)
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Admin Notification Email** | Email address that receives new application notifications. Leave empty to use the site admin email. | Site admin email |
-| **Business Types** | Enter one business type per line. These options appear in the application form dropdown (e.g., Retailer, Wholesaler, Distributor). | Four preset types |
-| **Display Quick Icon** | Show a quick-access icon on the Joomla home dashboard. Requires the J2Commerce Quick Icons module. | No |
-| **Quick Icon Title** | Label shown on the quick icon. Displays the pending application count automatically. | Vendor Applications |
-| **Debug Mode** | Write detailed debug logs to `administrator/logs/app_vendormanagement.php`. Disable this in production. | No |
+**Admin Notification Email:** Email address that receives new application notifications. Leave empty to use the site admin email.
+
+**Business Types:** Enter one business type per line. These options appear in the application form dropdown (e.g., Retailer, Wholesaler, Distributor).
+
+**Display Quick Icon:** Show a quick-access icon on the Joomla home dashboard. Requires the J2Commerce Quick Icons module.
+
+**Quick Icon Title:** Label shown on the quick icon. Displays the pending application count automatically.
+
+**Debug Mode:** Write detailed debug logs to `administrator/logs/app_vendormanagement.php`. Disable this in production.
 
 ### Login Callout tab
 
-When **Show Login Callout** is enabled, guests who visit the vendor application page see a prompt inviting them to log in or learn more about the program before they can submit a form.
+![](/img/vendor_page.webp)
 
-| Setting | Description |
-|---------|-------------|
-| **Show Login Callout** | Display a login prompt to guests visiting the application page. |
-| **Apply Menu Item** | The menu item linked from the "Apply" button in the callout (shown to guests). |
-| **Program Info Menu Item** | The menu item linked from a "Learn More" button in the callout. |
+When **Show Vendor Box on Login** is enabled, guests who visit the vendor application page see a prompt inviting them to log in or learn more about the program before they can submit a form.
+
+**Vendor Application:** Select the menu item linking to the vendor application form. The link only appears if a menu item is selected.
+
+**Vendor Program:** Select the menu item linking to the vendor program information page. The link only appears if a menu item is selected.
 
 ### Form Display tab
 
-| Setting | Description |
-|---------|-------------|
-| **Form Fieldsets** | Define named groups that visually organize fields on the application form. Each group has a **Name** and an optional **Icon Class** (e.g., `fa-solid fa-building`). |
-| **Show Terms & Conditions** | Display a required checkbox before the submit button. Applicants must agree before they can submit. |
-| **Terms & Conditions Article** | Select or create a Joomla article that opens in a modal when applicants click the terms link. |
-| **Subtemplate** | Choose the frontend template style — **bootstrap5** (default) or **uikit**. |
+![](/img/vendor_form.webp)
+
+**Form Fieldsets:** Define named groups that visually organize fields on the application form. Each group has a **Name** and an optional **Icon Class** (e.g., `fa-solid fa-building`).
+
+**Show Terms & Conditions:** Display a required checkbox before the submit button. Applicants must agree before they can submit.
+
+**Terms & Conditions Article:** Select or create a Joomla article that opens in a modal when applicants click the terms link.
+
+**Template Layout:** Choose the frontend template style — **bootstrap5** (default) or **uikit**.
 
 ## Set Up Discount Tiers
 
 Tiers define the discount levels available in your vendor program. The app ships with Bronze, Silver, Gold, and Platinum as default examples — edit or replace them to fit your program.
 
-Go to **J2Commerce** -> **Vendor Applications** -> click **Vendor Tiers** in the toolbar.
+Go to **J2Commerce** **-> Catalog ->** **Vendor Applications** -> click **Vendor Tiers** in the toolbar.
 
-<!-- SCREENSHOT: Vendor Tiers list showing default Bronze/Silver/Gold/Platinum tiers -->
+![](/img/vendor_application.webp)
 
 ### Create a New Tier
 
+![](/img/vendor_new.webp)
+
 Click **New** in the toolbar.
 
-<!-- SCREENSHOT: New Vendor Tier form -->
+![](/img/vendor_new1.webp)
 
-| Field | Description |
-|-------|-------------|
-| **Tier Name** | A unique, recognizable name (e.g., Bronze, Silver, Gold). |
-| **Description** | Internal notes visible only to administrators. |
-| **Discount %** | The percentage taken off all products for vendors assigned to this tier (0–100). |
-| **Upgrade Type** | **Volume** — tier advances when the vendor's year-to-date sales reach a threshold. **Time** — tier expires after a set number of days. |
-| **Volume Threshold** | (Volume upgrade only) Year-to-date sales amount required to move to the next tier automatically. |
-| **Time Period (Days)** | (Time upgrade only) Number of days before this tier expires. |
-| **Joomla User Group** | Joomla user group assigned to vendors when they are approved at this tier. Use this to control access to content or pricing. |
-| **Show in Application Form** | Whether this tier appears as a selectable option in the frontend application form. |
-| **Status** | Published (active) or Unpublished (hidden from vendors and the application form). |
+**Tier Name:** A unique, recognizable name (e.g., Bronze, Silver, Gold).
+
+**Description:** Internal notes visible only to administrators.
+
+**Discount %:** The percentage taken off all products for vendors assigned to this tier (0–100).
+
+**Upgrade Type: Volume** — tier advances when the vendor's year-to-date sales reach a threshold. **Time** — tier expires after a set number of days.
+
+**Volume Threshold:** (Volume upgrade only) Year-to-date sales amount required to move to the next tier automatically.
+
+**Time Period (Days):** (Time upgrade only) Number of days before this tier expires.
+
+**Joomla User Group:**Joomla user group assigned to vendors when they are approved at this tier. Use this to control access to content or pricing.
+
+**Show in Application Form**
+
+Whether this tier appears as a selectable option in the frontend application form.
+
+**Status:** Published (active) or Unpublished (hidden from vendors and the application form).
 
 Click **Save** when finished.
 
@@ -128,9 +134,9 @@ Tier ordering controls automatic upgrade direction — the system promotes vendo
 
 The application form is built from J2Commerce Custom Fields that you assign to the **Vendor Application Form** display area. You can control which fields appear, their order, and whether each one is required.
 
-Go to **J2Commerce** -> **Vendor Applications**, then click **Application Form** in the toolbar.
+Go to **J2Commerce -> Catalog -> Vendor Applications**, then click **Application Form** in the toolbar.
 
-<!-- SCREENSHOT: Vendor Application Form Fields management screen -->
+![](/img/vendor_form1.webp)
 
 ### Add the Recommended Fields
 
@@ -145,23 +151,21 @@ Click **Add Recommended Fields** to automatically create and enable the standard
 
 ### Create Custom Fields
 
-Need a field type not in the list? Go to **J2Commerce** -> **Custom Fields** and create a new field. Set its **Display Area** to **Vendor Application Form** so it appears in the Field Management screen.
+Need a field type not in the list? Go to **J2Commerce -> Setup -> Checkout Fields** and create a **New** field. Set its **Display Settings** to **Vendor Application Form** so it appears in the Field Management screen.
 
 The plugin also adds a **File Upload** custom field type, useful for collecting documents such as a business license.
 
-<!-- SCREENSHOT: Custom Fields list showing a field with Vendor Application Form area enabled -->
+![](/img/vendor_display.webp)
 
 ## Add a Vendor Application Page to the Menu
 
 Vendors reach the application form through a dedicated menu item.
 
-1. Go to **Menus** -> **[your menu]** -> click **New**.
-2. Under **Menu Item Type**, choose **J2Commerce** -> **Vendor Application**.
+1. Go to **Menus** -> **\[your menu]** -> click **New**.
+2. Under **Menu Item Type**, choose **J2Commerce -> Catalog -> Vendor Application**.
 3. In the **Page Display** tab, set the heading, intro text (describe your dealer program), and outro text.
 4. In the **Form Display** tab, choose whether to show the tier selection dropdown and the benefits comparison table.
 5. Click **Save**.
-
-<!-- SCREENSHOT: Menu item type selection showing J2Commerce -> Vendor Application -->
 
 :::tip
 
@@ -173,15 +177,11 @@ Use the **Intro Text** field to explain program benefits, minimum order requirem
 
 When someone submits the application form, you receive an email notification (at the address set in Basic Settings) and the application appears in the admin list.
 
-Go to **J2Commerce** -> **Vendor Applications**.
-
-<!-- SCREENSHOT: Vendor Applications list showing pending applications -->
+Go to **J2Commerce -> Catalog -> Vendor Application**.
 
 The list shows each application's company name, contact, requested tier, status (Pending / Approved / Rejected), submission date, and review date.
 
-### Filter Applications
-
-Use the search bar and status dropdown to filter by status or tier. Click a column heading to sort.
+**Filter Applications:** Use the search bar and status dropdown to filter by status or tier. Click a column heading to sort.
 
 ### Approve an Application
 
@@ -191,9 +191,8 @@ Use the search bar and status dropdown to filter by status or tier. Click a colu
 4. Check **Notify Vendor** if you want to send the applicant an approval email.
 5. Click **Approve**.
 
-<!-- SCREENSHOT: Application detail screen showing Review Actions section -->
-
 When approved:
+
 - The vendor's Joomla user account is added to the user group defined on the assigned tier.
 - A vendor stats record is created to track their purchases.
 - The tier discount applies automatically at checkout from that point on.
@@ -234,8 +233,6 @@ Every time an approved vendor places an order, the plugin:
 
 Approved vendors see a **Vendor Dashboard** tab on their My Account / My Profile page in the J2Commerce frontend. The tab is visible only to users with an approved application.
 
-<!-- SCREENSHOT: Vendor Dashboard tab in the My Profile page -->
-
 The dashboard shows:
 
 - **Current Tier** — name, discount percentage, member since date, and expiry date for time-based tiers.
@@ -250,26 +247,26 @@ If the vendor is on the highest available tier, a congratulatory message replace
 
 The plugin sends HTML email notifications at three points in the application lifecycle:
 
-| Email | When sent | Recipients |
-|-------|-----------|------------|
-| **Application Received** | Immediately after a vendor submits the form | Applicant + admin notification address |
-| **Application Approved** | When an administrator approves and checks Notify Vendor | Applicant |
-| **Application Rejected** | When an administrator rejects and checks Notify Vendor | Applicant |
+| Email                    | When sent                                               | Recipients                             |
+| ------------------------ | ------------------------------------------------------- | -------------------------------------- |
+| **Application Received** | Immediately after a vendor submits the form             | Applicant + admin notification address |
+| **Application Approved** | When an administrator approves and checks Notify Vendor | Applicant                              |
+| **Application Rejected** | When an administrator rejects and checks Notify Vendor  | Applicant                              |
 
-You can customize the email subjects, body content, and recipients through the J2Commerce **Email Templates** screen (**J2Commerce** -> **Setup** -> **Email Templates**). Look for the **Vendor Management** email type. The following tags are available in templates:
+You can customize the email subjects, body content, and recipients through the J2Commerce **Email Templates** screen (**J2Commerce -> Design -> Email Templates**). Look for the **Vendor Management** email type. The following tags are available in templates:
 
-| Tag | Content |
-|-----|---------|
-| `[APPLICATION_ID]` | Unique application identifier |
-| `[USER_NAME]` | Applicant contact name |
-| `[COMPANY_NAME]` | Applicant company name |
-| `[TIER_NAME]` | Assigned tier name |
-| `[DISCOUNT_PERCENT]` | Tier discount percentage |
+| Tag                  | Content                                 |
+| -------------------- | --------------------------------------- |
+| `[APPLICATION_ID]`   | Unique application identifier           |
+| `[USER_NAME]`        | Applicant contact name                  |
+| `[COMPANY_NAME]`     | Applicant company name                  |
+| `[TIER_NAME]`        | Assigned tier name                      |
+| `[DISCOUNT_PERCENT]` | Tier discount percentage                |
 | `[REJECTION_REASON]` | Reason the application was not approved |
-| `[APPLICATION_URL]` | Admin link to view the application |
-| `[LOGIN_URL]` | Frontend login page URL |
-| `[SUPPORT_EMAIL]` | Store support email address |
-| `[SITE_NAME]` | Website name |
+| `[APPLICATION_URL]`  | Admin link to view the application      |
+| `[LOGIN_URL]`        | Frontend login page URL                 |
+| `[SUPPORT_EMAIL]`    | Store support email address             |
+| `[SITE_NAME]`        | Website name                            |
 
 ## Tips
 
@@ -287,7 +284,7 @@ You can customize the email subjects, body content, and recipients through the J
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Vendor Applications**.
+1. Go to **J2Commerce -> Catalog -> Vendor Application**.
 2. Find the vendor's application and confirm its status is **Approved**.
 3. Check that the assigned tier is published: **Vendor Tiers** -> verify the tier shows a green checkmark.
 4. If the tier is time-based, confirm it has not expired by opening the vendor's application detail and checking the tier start and end dates.
@@ -296,7 +293,7 @@ You can customize the email subjects, body content, and recipients through the J
 
 **Cause:** The logged-in user already has a pending application on file.
 
-**Solution:** This is expected behavior. The form prevents duplicate submissions. To reset an application, go to **J2Commerce** -> **Vendor Applications**, open the application, and set its status to **Rejected** or delete it if it was a test submission.
+**Solution:** This is expected behavior. The form prevents duplicate submissions. To reset an application, go to **J2Commerce -> Catalog -> Vendor Application**, open the application, and set its status to **Rejected** or delete it if it was a test submission.
 
 ### Vendor Dashboard tab does not appear in My Profile
 
@@ -324,6 +321,6 @@ You can customize the email subjects, body content, and recipients through the J
 
 **Solution:**
 
-1. Go to **J2Commerce** -> **Setup** -> **Email Templates** and check for a **Vendor Management** email type entry. If none exists, the plugin uses built-in fallback templates.
+1. Go to **J2Commerce** **-> Design -> Email Templates** and check for a **Vendor Management** email type entry. If none exists, the plugin uses built-in fallback templates.
 2. Verify the **Admin Notification Email** field in the plugin's Basic Settings contains a valid email address, or leave it empty to use the site default from **System** -> **Global Configuration** -> **Mail Settings**.
 3. Enable **Debug Mode** in the plugin settings and check `administrator/logs/app_vendormanagement.php` for any send errors.

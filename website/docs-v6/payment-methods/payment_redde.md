@@ -1,10 +1,3 @@
----
-title: "Redde Payment"
-sidebar_label: "Redde"
-sidebar_position: 104
-description: "Accept credit and debit card payments in your J2Commerce store with Redde (powered by Maverick Payments) — on-site card fields or a hosted payment page, saved cards, 3-D Secure, and refunds from the order screen."
----
-
 # Redde Payment
 
 The Redde Payment plugin lets your J2Commerce store accept Visa, Mastercard, and other major credit and debit cards through your Redde account (Redde is powered by the **Maverick Payments** gateway). Customers can pay without ever leaving your checkout, and you manage captures, refunds, and voids directly from the J2Commerce order screen.
@@ -18,32 +11,6 @@ You can collect card details right on your checkout page (**Direct** mode) or se
 - J2Commerce 6.x
 - A Redde / Maverick Payments merchant account
 - Your store must be reachable over HTTPS (required for card payments and for the gateway to send webhook notifications)
-
-## Purchase and Download
-
-**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Payment Methods**
-
-**Step 2:** Locate the **Redde** payment plugin **->** click **View Details** **->** **Add to cart -> Checkout**.
-
-**Step 3:** Go to **My Downloads** under your profile button at the top right corner and search for the plugin. Click **Available Versions -> View Files -> Download Now**
-
-## Install the Plugin
-
-You can install the **Redde** plugin using the Joomla installer. The following steps help you with a successful installation.
-
-In the Joomla admin, go to **System -> Install -> Extensions**
-
-Upload the plugin ZIP file or use the **Install from URL** option.
-
-## Enable the Plugin
-
-Once installed, you need to enable the plugin. There are **two** ways to reach it.
-
-**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Payments**
-
-**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Payments**
-
-Look for **Redde**, click the **X**, and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ## Get Your Redde Credentials
 
@@ -61,24 +28,60 @@ The **Terminal ID**, **DBA ID**, and **merchant ID** are different values. Be su
 
 :::
 
-## Configure the Plugin
+## Purchase and download
 
-Click the **Redde** title next to the green checkmark to open the settings.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Redde**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
+## Install the plugin
+
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
+
+Upload the `plg_j2commerce_payment_redde.zip` file.
+
+![](/img/install.webp)
+
+## Enable the Plugin
+
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
+
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Redde**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/redde_enable.webp)
+
+## Configure the plugin
+
+Click the **Redde** title next to the green checkmark to open the configuration screen.
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar and the plugin will show a description below each field as you configure it.
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
 
 :::
 
-### Display Name and Image
+![](/img/redde_toggle.webp)
 
-- **Display Name** — the label customers see at checkout (default: *Credit/Debit Card*).
-- **Display Image** — an optional logo shown next to the payment option.
+### Display Settings
 
-### Environment
+![](/img/redde_display.webp)
 
-- **Environment** — choose **Sandbox (Testing)** while you set things up, then switch to **Live (Production)** to take real payments. The plugin shows the matching credential fields depending on which environment you pick.
+**Display Name** — the label customers see at checkout (default: *Credit/Debit Card*).
+
+**Display Image** — an optional logo shown next to the payment option.
+
+### API Credentials
+
+**Mode** — choose **Sandbox (Testing)** while you set things up, then switch to **Live (Production)** to take real payments. The plugin shows the matching credential fields depending on which environment you pick.
 
 :::info
 
@@ -88,17 +91,23 @@ In Sandbox mode no real money is taken, and the plugin displays a reminder that 
 
 ### Credentials
 
+![](/img/redde_credentials.webp)
+
 Enter the tokens you collected from your Redde Dashboard:
 
-- **Gateway API Token**
-- **Terminal ID** (required)
-- **DBA ID**
-- **Dashboard API Token**
-- **Webhook Signature Secret**
+**Gateway API Token:** Bearer access token for the sandbox gateway host ([sandbox-gateway.maverickpayments.com](http://sandbox-gateway.maverickpayments.com)). Find it in your Redde Dashboard under Developers.
+
+**Terminal ID** (required): The Redde/Maverick terminal ID (system terminal id) sent on every gateway transaction. Find it in your Dashboard under Terminals.
+
+**DBA ID:** The DBA (merchant) ID used for vaulted cards and recurring payments. Find it in your Dashboard under Merchant.
+
+**Dashboard API Token:** Bearer access token for the sandbox dashboard host ([sandbox-dashboard.maverickpayments.com](http://sandbox-dashboard.maverickpayments.com)), used for the customer vault and recurring payments.
+
+**Webhook Signature Secret:** The SHA-512 signing secret configured for your webhook endpoint in the Redde Dashboard. Used to verify incoming webhook notifications.
 
 ### Webhook URL
 
-- **Webhook URL** — the plugin displays the address you must paste into your Redde Dashboard webhook settings. This lets Redde notify your store when a payment is confirmed. Click **Copy** to copy it.
+**Webhook URL** — the plugin displays the address you must paste into your Redde Dashboard webhook settings. This lets Redde notify your store when a payment is confirmed. Click **Copy** to copy it.
 
 :::info
 
@@ -108,50 +117,101 @@ If the Webhook URL shows a local address (such as `localhost`), the gateway cann
 
 ### Integration Method
 
+![](/img/redde_methods.webp)
+
 - **Integration Method** — choose how card details are collected:
+
   - **Direct (On-site Card Fields)** — customers type their card on your checkout page. This enables the **Saved Cards** and **3-D Secure** options below.
   - **Hosted Form (Redirect)** — customers are sent to a secure Redde-hosted page to pay, then returned to your store.
 
 ### Payment Action
 
 - **Payment Action** — choose what happens when a customer pays:
+
   - **Authorize and Capture (Sale)** — charges the card immediately.
   - **Authorize Only** — places a hold on the card; you **Capture** it later from the order screen.
 
 ### Card Features (Direct mode only)
 
-- **Allow Saved Cards** — let logged-in customers securely save a card for faster checkout next time.
-- **Enable 3-D Secure** — turn on 3-D Secure 2 authentication for extra fraud protection. Your Redde terminal must have 3-D Secure enabled for this to work.
+![](/img/redde_cards.webp)
 
-### Order Status Mapping
+**Allow Saved Cards** — let logged-in customers securely save a card for faster checkout next time.
 
-- **Order Status** — the status applied after a successful payment.
-- **Authorized Order Status** — (shown when Payment Action is *Authorize Only*) the status applied when a payment is authorized but not yet captured.
-- **Change Status on Refund / Refunded Order Status** — optionally move the order to a chosen status when you issue a refund.
-- **Change Status on Void / Voided Order Status** — optionally move the order to a chosen status when you void a payment.
+**Enable 3-D Secure** — turn on 3-D Secure 2 authentication for extra fraud protection. Your Redde terminal must have 3-D Secure enabled for this to work.
+
+**Template Style:** Choose the checkout layout style — Bootstrap 5 or UIkit. Defaults to your site's active J2Commerce theme.
+
+### Order Status
+
+![](/img/redde_status.webp)
+
+**Order Status** — the status applied after a successful payment.
+
+**Authorized Order Status** — (shown when Payment Action is *Authorize Only*) the status applied when a payment is authorized but not yet captured.
+
+**Change Status on Refund / Refunded Order Status** — optionally move the order to a chosen status when you issue a refund.
+
+**Change Status on Void / Voided Order Status** — optionally move the order to a chosen status when you void a payment.
+
+:::info
+
+If the order status you want is not listed, create it first under **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge (optional)
 
+![](/img/redde_surcharge.webp)
+
 Add a fee for paying by card:
 
-- **Surcharge Name** — the label shown on the order.
-- **Surcharge Percent** — a percentage of the order total.
-- **Surcharge Fixed** — a flat amount.
-- **Surcharge Tax Class** — the tax profile applied to the surcharge.
+**Surcharge Name** — the label shown on the order.
 
-### Availability Rules (optional)
+**Surcharge Percent** — a percentage of the order total.
+
+**Surcharge Fixed** — a flat amount.
+
+**Surcharge Tax Class** — the tax profile applied to the surcharge.
+
+### Restriction (optional)
+
+![](/img/redde_restriction.webp)
 
 Control when Redde is offered at checkout:
 
-- **Geozone Restriction** — show Redde only to customers in a chosen geographic zone.
-- **Minimum / Maximum Subtotal** — show Redde only when the cart total falls within a range.
+**Geozone Restriction** — show Redde only to customers in a chosen geographic zone.
 
-### Other Settings
+**Minimum Order Subtotal:** Hide this payment method for orders below this amount. Enter `-1` to disable the limit.
 
-- **Thank You Message** — an optional article shown to the customer after a successful payment.
-- **Debug Logging** — log gateway requests and responses (with sensitive data masked) to the Joomla log to help troubleshoot. **Turn this off in production.**
+**Maximum Order Subtotal:** Hide this payment method for orders above this amount. Enter `-1` to disable the limit.
 
-When you are done, click **Save & Close**.
+### Checkout Messages
+
+![](/img/redde_messages.webp)
+
+These optional text fields let you customise what customers see at each stage of the payment flow.
+
+**Thank-You Article:** Optional Joomla article to display after a successful payment
+
+**On Before Payment:** Text shown before the customer is redirected to Barclaycard
+
+**On After Payment:** Text shown on the order confirmation page after a successful payment
+
+**On Error:** Text shown when a payment error occurs
+
+**On Cancel:** Text shown when the customer cancels on the Barclaycard page
+
+### Advanced Settings
+
+![](/img/redde_advanced.webp)
+
+**Show Dashboard Icon:** Adds a shortcut icon for this plugin to the J2Commerce dashboard
+
+**Icon Label:** Custom label for the dashboard icon
+
+**Debug Logging** — log gateway requests and responses (with sensitive data masked) to the Joomla log to help troubleshoot. **Turn this off in production.**
 
 ## How It Works
 
@@ -172,7 +232,7 @@ Redde processes in US Dollars. If your store sells in another currency, J2Commer
 
 ## Managing Payments from the Order
 
-Open any Redde order in **J2Commerce -> Orders** and use the buttons in the order view:
+Open any Redde order in **J2Commerce -> Sales -> Orders** and use the buttons in the order view:
 
 - **Capture** — collect a payment that was placed on hold using **Authorize Only**.
 - **Void** — cancel a payment before it settles. This cannot be undone.
@@ -198,7 +258,7 @@ When **Allow Saved Cards** is enabled (Direct mode), logged-in customers can tic
 
 **Solution:**
 
-1. Go to **J2Commerce -> Payments** and confirm **Redde** shows a green checkmark (enabled).
+1. Go to **J2Commerce -> Setup -> Payments** and confirm **Redde** shows a green checkmark (enabled).
 2. Check the **Geozone Restriction** and **Minimum / Maximum Subtotal** settings — the current cart may fall outside them.
 3. Confirm the customer's address falls inside the selected geozone.
 
@@ -208,7 +268,7 @@ When **Allow Saved Cards** is enabled (Direct mode), logged-in customers can tic
 
 **Solution:**
 
-1. Open the plugin settings and confirm you are on the correct **Environment** (Sandbox vs Live).
+1. Open the plugin settings and confirm you are on the correct **Environment/Mode** (Sandbox vs Live).
 2. Paste the matching **Gateway API Token** from your Redde Dashboard and save.
 
 ### Payments Are Declined or Fail
@@ -218,7 +278,7 @@ When **Allow Saved Cards** is enabled (Direct mode), logged-in customers can tic
 **Solution:**
 
 1. Confirm the **Terminal ID** is entered exactly as shown in your Dashboard (required on every transaction).
-2. Make sure the **Environment** matches your credentials (Sandbox tokens only work in Sandbox).
+2. Make sure the **Environment/Mode** matches your credentials (Sandbox tokens only work in Sandbox).
 3. Ask the customer to verify their card details or try a different card.
 4. Turn on **Debug Logging** temporarily and review the Joomla log for the gateway's response.
 

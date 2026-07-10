@@ -1,10 +1,3 @@
----
-title: "Trustpilot Integration"
-sidebar_label: "Trustpilot"
-sidebar_position: 95
-description: "Send Trustpilot review invitations after orders complete, sync your product catalog, and display TrustBox widgets and product star ratings on your J2Commerce store."
----
-
 # Trustpilot Integration
 
 The Trustpilot Integration app connects your J2Commerce store to your [Trustpilot](https://www.trustpilot.com/) Business account. After a customer's order reaches a status you choose, the app automatically invites them to leave a review — for your store (a service review) and, if you like, for the products they bought. It can also sync your product catalog to Trustpilot, show your live TrustScore and star rating on your storefront through TrustBox widgets, and display real Trustpilot product reviews right on your product pages.
@@ -42,6 +35,8 @@ Upload the plugin ZIP file, or use the **Install from URL** option.
 
 The Trustpilot module (`mod_j2commerce_trustpilot`) is included in the same package and installs at the same time.
 
+![](/img/install.webp)
+
 ## Enable the App
 
 Once installed, you need to enable the app. There are **two** ways to reach it.
@@ -50,7 +45,11 @@ Once installed, you need to enable the app. There are **two** ways to reach it.
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
+![](/img/gift-wrap-apps.webp)
+
 Look for **Trustpilot**, click the **X**, and it turns into a green checkmark. The app is now enabled and ready for setup.
+
+![](/img/trustpilot_enable.webp)
 
 ## Configure the App
 
@@ -62,19 +61,25 @@ Click the **Toggle Inline Help** button in the toolbar and the app shows a descr
 
 :::
 
+![](/img/trustpilot_toggle.webp)
+
 The settings are split into tabs. Start with **API Credentials**, then enable only the features you need.
 
 ### API Credentials tab
 
+![](/img/trustpilot_basic1.webp)
+
 This tab connects the app to your Trustpilot Business account. Everything else depends on it.
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **API Key** | Your Trustpilot API key. Also used for public read requests (score and reviews). | `abcd1234...` |
-| **API Secret** | Your Trustpilot API secret, used to sign in for sending invitations and syncing the catalog. | `wxyz5678...` |
-| **Business Unit ID** | Your Trustpilot Business Unit ID (found in your Trustpilot Business account). | `46bf...a1` |
-| **Business User ID** | Required for sending invitations (the `x-business-user-id` value). Must be an Admin or Manager user. | `5a7...` |
-| **Business Domain** | Your store domain as registered on Trustpilot. | `example.com` |
+**API Key:** Your Trustpilot API key. Also used for public read requests (score and reviews).
+
+**API Secret:** Your Trustpilot API secret, used to sign in for sending invitations and syncing the catalog.
+
+**Business Unit ID:** Your Trustpilot Business Unit ID (found in your Trustpilot Business account).
+
+**Business User ID:** Required for sending invitations (the `x-business-user-id` value). Must be an Admin or Manager user.
+
+**Business Domain:** Your store domain as registered on Trustpilot.
 
 :::tip
 
@@ -84,53 +89,65 @@ Don't know your Business Unit ID or Business User ID? Enter your **API Key** and
 
 After entering your credentials, use the **Test Connection** button. A green success message confirms the app can reach your Trustpilot account.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Show Dashboard Messages** | Show your TrustScore in the J2Commerce dashboard message carousel. | Yes |
-| **Show Quick Icon** | Show the Trustpilot score icon on the J2Commerce dashboard. | Yes |
-| **Show Dashboard Stats Tab** | Add a Trustpilot stats tab to the J2Commerce dashboard. | Yes |
-| **Score Cache TTL (hours)** | How long to keep the cached TrustScore before refreshing (5–1440). | 60 |
-| **Debug Logging** | Write detailed logs for troubleshooting. Leave off unless asked by support. | No |
+![](/img/trustpilot_basic2.webp)
+
+**Show Dashboard Messages:** Show your TrustScore in the J2Commerce dashboard message carousel.
+
+**Show Quick Icon:** Show the Trustpilot score icon on the J2Commerce dashboard.
+
+**Show Dashboard Stats Tab:** Add a Trustpilot stats tab to the J2Commerce dashboard.
+
+**Score Cache TTL (hours):** How long to keep the cached TrustScore before refreshing (5–1440).
+
+**Debug Logging:** Write detailed logs for troubleshooting. Leave off unless asked by support.
 
 ### Invitations tab
 
+![](/img/trustpilot_invitation.webp)
+
 This tab controls the review invitations sent to customers after they order.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Enable Invitations** | Turn automatic review invitations on or off. | No |
-| **Invitation Mode** | **Trustpilot sends email** (Trustpilot emails the customer) or **J2Commerce sends email** (your store emails the customer a review link). | Trustpilot sends email |
-| **Trigger Order Status** | The order status(es) that trigger an invitation, e.g. **Shipped** or **Completed**. | Confirmed |
-| **Delay (hours)** | How long to wait after the trigger status before the invitation is sent (0–8760). | 24 |
-| **Locale Override** | Leave blank to use the customer's language from the order, or force one language such as `en_US`. | (blank) |
+**Enable Invitations:** Turn automatic review invitations on or off.
 
-**When Invitation Mode is "Trustpilot sends email":**
+**Invitation Mode: Trustpilot sends email** (Trustpilot emails the customer) or **J2Commerce sends email** (your store emails the customer a review link).
 
-| Setting | Description |
-|---------|-------------|
-| **Service Template ID** | The Trustpilot email template for store (service) reviews. Templates load from your connected account. |
-| **Include Product Reviews** | Also ask customers to review the products they bought. |
-| **Product Template ID** | The Trustpilot email template for product reviews (shown when product reviews are included). |
-| **Product Identifier** | Whether products are identified by **SKU** or **Product ID** in the invitation. |
+**Trigger Order Status:** The order status(es) that trigger an invitation, e.g. **Shipped** or **Completed**.
 
-**When Invitation Mode is "J2Commerce sends email":**
+**Delay (hours):** How long to wait after the trigger status before the invitation is sent (0–8760).
 
-| Setting | Description |
-|---------|-------------|
-| **Redirect After Review** | A URL customers return to after leaving a review. |
-| **J2C Email Subject** | The subject line for the invitation email your store sends. |
-| **J2C Email Body** | The email content. You can use the placeholders `{NAME}`, `{STORE}`, and `{LINK}`. |
+**Locale Override:** Leave blank to use the customer's language from the order, or force one language such as `en_US`.
+
+- **When Invitation Mode is "Trustpilot sends email":**
+
+**Service Template ID:** The Trustpilot email template for store (service) reviews. Templates load from your connected account.
+
+**Include Product Reviews:** Also ask customers to review the products they bought.
+
+**Product Template ID:** The Trustpilot email template for product reviews (shown when product reviews are included).
+
+**Product Identifier:** Whether products are identified by **SKU** or **Product ID** in the invitation.
+
+- **When Invitation Mode is "J2Commerce sends email":**
+
+**Redirect After Review:** A URL customers return to after leaving a review.
+
+**J2C Email Subject:** The subject line for the invitation email your store sends.
+
+**J2C Email Body:** The email content. You can use the placeholders `{NAME}`, `{STORE}`, and `{LINK}`.
 
 ### Product Catalog Sync tab
 
+![](/img/trustpilot_product.webp)
+
 Uploading your catalog to Trustpilot lets Trustpilot match reviews to specific products by SKU.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Enable Catalog Sync** | Turn catalog syncing on or off. | No |
-| **Brand Name** | An optional brand name included with each product in the upload. | (blank) |
-| **Products Per Batch** | How many products to upload at a time (10–200). | 50 |
-| **Cron URL** | Add this URL to a server cron job to process the sync (and invitation) queue automatically. | (auto-generated) |
+**Enable Catalog Sync:** Turn catalog syncing on or off.
+
+**Brand Name:** An optional brand name included with each product in the upload.
+
+**Products Per Batch:** How many products to upload at a time (10–200).
+
+**Cron URL:** Add this URL to a server cron job to process the sync (and invitation) queue automatically.
 
 :::info
 
@@ -140,33 +157,43 @@ The **Cron URL** lets your server process the queue on a schedule without anyone
 
 ### TrustBox Widgets tab
 
+![](/img/trustpilot_widgets.webp)
+
 TrustBox widgets are the Trustpilot star/score boxes rendered by Trustpilot. This tab injects the widget code into your storefront automatically.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Enable TrustBox Widgets** | Load the Trustpilot widget script on your storefront pages. | No |
-| **Widget Locale** | The language for the widget, e.g. `en-US`. | `en-US` |
-| **TrustBox Template ID** | The widget template ID from your Trustpilot account. | (a default review widget) |
-| **Widget Injection Position** | **Footer** places the widget automatically in the page footer. **Manual** lets you place the widget markup yourself (for example, via the Trustpilot module). | Footer |
+**Enable TrustBox Widgets:** Load the Trustpilot widget script on your storefront pages.
+
+**Widget Locale:** The language for the widget, e.g. `en-US`.
+
+**TrustBox Template ID:** The widget template ID from your Trustpilot account.
+
+**Widget Injection Position: Footer** places the widget automatically in the page footer. **Manual** lets you place the widget markup yourself (for example, via the Trustpilot module).
 
 ### Product Reviews tab
 
+![](/img/trustpilot_reviews.webp)
+
 This tab shows real Trustpilot **product** reviews on your product pages.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Enable Product Reviews** | Fetch and display Trustpilot product reviews on the storefront. | No |
-| **Stars Position (Product Page)** | Where the compact star summary appears on a product detail page (after the title, near the price, or by the Add to Cart button). | None |
-| **Show Full Reviews Section** | Add the full reviews block at the bottom of each product page. | Yes |
-| **Stars Position (Category Lists)** | Where the star summary appears in category/product-list views. | None |
-| **Reviews Per Page** | How many reviews to fetch and display (1–100). | 10 |
-| **Review Cache Duration (hours)** | How long to cache review data before refreshing (1–720). | 24 |
-| **Show Rating Breakdown** | Show the 5-to-1 star distribution chart in the reviews section. | Yes |
-| **Display Empty Reviews** | Show the stars/reviews area even when a product has no reviews yet. | No |
-| **Template Style** | The frontend template style (Bootstrap 5 or UIkit). **Auto** matches your active menu item. | Auto |
-| **Star Color** | The color of the filled star glyphs. | `#fc9231` |
+**Enable Product Reviews:** Fetch and display Trustpilot product reviews on the storefront.
 
-Click **Save** or **Save & Close** when you are done.
+**Stars Position (Product Page):** Where the compact star summary appears on a product detail page (after the title, near the price, or by the Add to Cart button).
+
+**Show Full Reviews Section:** Add the full reviews block at the bottom of each product page.
+
+**Stars Position (Category Lists):** Where the star summary appears in category/product-list views.
+
+**Reviews Per Page:** How many reviews to fetch and display (1–100).
+
+**Review Cache Duration (hours):** How long to cache review data before refreshing (1–720).
+
+**Show Rating Breakdown:** Show the 5-to-1 star distribution chart in the reviews section.
+
+**Display Empty Reviews:** Show the stars/reviews area even when a product has no reviews yet.
+
+**Template Style:** The frontend template style (Bootstrap 5 or UIkit). **Auto** matches your active menu item.
+
+**Star Color:** The color of the filled star glyphs.
 
 ## The Trustpilot Module
 
@@ -187,17 +214,23 @@ The module relies on the Trustpilot app plugin for your Business Unit ID and cac
 
 ### Module Options
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Display Mode** | **Badge** (your TrustScore), **Product Stars**, **Carousel** (recent reviews), or **Custom Template**. | Badge |
-| **Template ID** | A specific TrustBox template ID (only needed for **Custom** mode). | (blank) |
-| **Widget Locale** | The widget language, e.g. `en-US`, `de-DE`, `fr-FR`. | `en-US` |
-| **Widget Height** | CSS height such as `150px`. Leave blank for the template default. | (blank) |
-| **Widget Width** | CSS width such as `100%` or `400px`. | `100%` |
-| **Theme** | **Light** or **Dark** to match your site. | Light |
-| **Filter by Star Rating** | Show only reviews with the selected ratings (applies to review-list and carousel modes). Leave empty to show all. | All |
-| **Show Cached Score Fallback** | Show a simple review-count link if the Trustpilot script hasn't loaded. Requires a cached score from the app. | No |
-| **Template Style** | Bootstrap 5, UIkit, or **Auto** to match the active menu item. | Auto |
+**Display Mode: Badge** (your TrustScore), **Product Stars**, **Carousel** (recent reviews), or **Custom Template**.
+
+**Template ID:** A specific TrustBox template ID (only needed for **Custom** mode).
+
+**Widget Locale:** The widget language, e.g. `en-US`, `de-DE`, `fr-FR`.
+
+**Widget Height:** CSS height such as `150px`. Leave blank for the template default.
+
+**Widget Width:** CSS width such as `100%` or `400px`.
+
+**Theme: Light** or **Dark** to match your site.
+
+**Filter by Star Rating:** Show only reviews with the selected ratings (applies to review-list and carousel modes). Leave empty to show all.
+
+**Show Cached Score Fallback:** Show a simple review-count link if the Trustpilot script hasn't loaded. Requires a cached score from the app.
+
+**Template Style:** Bootstrap 5, UIkit, or **Auto** to match the active menu item.
 
 ## How It Works
 

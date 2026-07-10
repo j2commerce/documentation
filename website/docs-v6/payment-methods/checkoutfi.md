@@ -1,10 +1,3 @@
----
-title: "Checkout Finland (Paytrail)"
-sidebar_label: "Checkout Finland"
-sidebar_position: 30
-description: "Accept payments from every major Finnish bank, Visa/Mastercard, MobilePay, Apple Pay, and BNPL methods through a single Paytrail merchant account on your J2Commerce store."
----
-
 # Checkout Finland (Paytrail)
 
 Checkout Finland (Paytrail) is the leading payment aggregator for Finnish online stores. A single merchant account gives your customers access to every major Finnish bank transfer method, Visa and Mastercard, MobilePay, Apple Pay, Pivo, and buy-now-pay-later options — all through a gateway-hosted payment picker that Paytrail maintains and keeps up to date. Your store never touches card numbers.
@@ -39,41 +32,73 @@ Before configuring the plugin, make sure you have:
 - Your store's base currency or the customer's cart currency set to **EUR**.
 - SSL (HTTPS) active on your Joomla site. Paytrail will not post callbacks to HTTP URLs in production.
 
-## Installation
+## Purchase and download
 
-Purchase and download the `payment_checkoutfi.zip` package from the J2Commerce website, then install it in Joomla.
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Go to **System** -> **Install** -> **Extensions**.
-2. Upload the `payment_checkoutfi.zip` file.
-3. The plugin installs and enables automatically.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Checkout Finland (Paytrail)**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-> *Screenshot: Joomla Extension Manager showing a successful install of "Checkout Finland (Paytrail) Payment"*
+## Install the plugin
 
-## Opening the plugin settings
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
-After installation, navigate to the plugin configuration through J2Commerce:
+Upload the `payment_checkoutfi.zip` file.
 
-1. Go to **J2Commerce** -> **Payments** -> **Payment Methods**.
-2. Find **Checkout Finland (Paytrail)** in the list and click its name.
+![](/img/install.webp)
 
-> *Screenshot: J2Commerce Payment Methods list with "Checkout Finland (Paytrail)" visible*
+## Enable the Plugin
 
-## Step-by-step setup
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-### Step 1: Enable sandbox mode for testing
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
+
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
+
+![](/img/culqi.webp)
+
+To help you narrow down the list, you can do a search for **Checkout Finland (Paytrail)**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/barclay-enable.webp)
+
+## Configure the plugin
+
+Click the **Checkout Finland (Paytrail)** title next to the green checkmark to open the configuration screen.
+
+:::tip
+
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
+
+:::
+
+![](/img/barclay-toggle.webp)
+
+### Display Settings
+
+![](/img/checkoutfi_display.webp)
+
+**Display Name:** The field controls what customers see as the payment method label during checkout. The default value is "Pay with Checkout Finland (Paytrail)". You can change this to anything you like — "Finnish Bank Payment", "Maksa verkkopankilla", or whatever suits your store.
+
+**Display Image:** Optional logo to show at checkout alongside the payment method name
+
+### API Credentials
+
+![](/img/checkoutfi_sandbox1.webp)
 
 The plugin ships with **Sandbox Mode** turned on by default. This is intentional — Paytrail's published test credentials are already pre-filled for you, so you can test the full payment flow immediately without a live merchant account.
+
+### Test credentials
 
 1. On the plugin settings page, confirm **Sandbox Mode** is set to **Yes**.
 2. The **Sandbox Merchant ID** field should already show `375917`.
 3. The **Sandbox Security Key** field should already show `SAIPPUAKAUPPIAS`.
 4. Click **Save** and place a test order on your store.
 
-> *Screenshot: Plugin settings page showing Sandbox Mode toggle set to Yes, with sandbox credentials pre-filled*
-
 See the [Sandbox testing](#sandbox-testing) section below for test card numbers and bank simulation.
 
-### Step 2: Enter your live credentials
+### Live credentials
 
 Once you are ready to go live:
 
@@ -82,64 +107,20 @@ Once you are ready to go live:
 3. In the **Security Key** field, paste your live Security Key. This value is case-sensitive — copy it directly from the Extranet.
 4. Leave the **Sandbox Merchant ID** and **Sandbox Security Key** fields unchanged (they are only used when sandbox mode is on).
 
-> *Screenshot: Plugin settings page with Sandbox Mode set to No and the Merchant ID and Security Key fields filled in*
-
 :::warning Keep your Security Key private
 The Security Key is used to sign every request sent to Paytrail and to verify every callback. Treat it like a password. Never share it, post it in a support ticket, or commit it to version control.
 :::
 
-### Step 3: Choose your order statuses
+### order statuses
+
+![](/img/checkoutfi_status.webp)
 
 - **Paid Order Status** — the status applied to the order when Paytrail confirms successful payment. Default: **Confirmed** (status ID 1).
 - **Failed Order Status** — the status applied when payment fails, is cancelled, or fails HMAC verification. Default: **Failed** (status ID 3).
 
-You can choose any order status you have defined in **J2Commerce** -> **Setup** -> **Order Statuses**.
-
-### Step 4: Set the display name (optional)
-
-The **Display Name** field controls what customers see as the payment method label during checkout. The default value is "Pay with Checkout Finland (Paytrail)". You can change this to anything you like — "Finnish Bank Payment", "Maksa verkkopankilla", or whatever suits your store.
-
-### Step 5: Save and test
-
-Click **Save**. Then place a test order using the sandbox credentials. See [Sandbox testing](#sandbox-testing) for full instructions.
-
-## Configuration reference
-
-:::tip
-
-Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
-
-:::
-
-Every field in the plugin settings is explained here.
-
-### Display settings
-
-| Field             | Description                                                  | Default                                |
-| ----------------- | ------------------------------------------------------------ | -------------------------------------- |
-| **Display Name**  | The payment method label shown to customers at checkout.     | "Pay with Checkout Finland (Paytrail)" |
-| **Display Image** | Optional logo image shown alongside the payment method name. | None                                   |
-
-### Credentials
-
-| Field                    | Description                                                                                                          | Default           |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| **Sandbox Mode**         | When **Yes**, uses the sandbox credentials and Paytrail's test environment. When **No**, uses your live credentials. | Yes               |
-| **Merchant ID**          | Your live Paytrail Merchant ID. Issued after signing a merchant contract.                                            | Empty             |
-| **Security Key**         | Your live Paytrail Security Key. Used for HMAC signing of requests and callbacks.                                    | Empty             |
-| **Sandbox Merchant ID**  | Merchant ID used in sandbox mode. Pre-filled with Paytrail's public test value.                                      | `375917`          |
-| **Sandbox Security Key** | Security Key used in sandbox mode. Pre-filled with Paytrail's public test value.                                     | `SAIPPUAKAUPPIAS` |
-
-### Order status
-
-| Field                   | Description                                                                      | Default       |
-| ----------------------- | -------------------------------------------------------------------------------- | ------------- |
-| **Paid Order Status**   | Status applied when payment succeeds.                                            | Confirmed (1) |
-| **Failed Order Status** | Status applied when payment fails, is cancelled, or fails security verification. | Failed (3)    |
-
 :::info
 
-NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+If the order status you want is not listed, create it first under **J2Commerce** -> **Setup** -> **Order Statuses**.
 
 :::
 
@@ -147,14 +128,17 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 
 ### Surcharge (reserved for future use)
 
-| Field                   | Description                                                            | Default |
-| ----------------------- | ---------------------------------------------------------------------- | ------- |
-| **Surcharge Name**      | Label shown on the cart for the payment surcharge line item.           | Empty   |
-| **Surcharge Percent**   | Surcharge as a percentage of the order subtotal (e.g. `2.5` for 2.5%). | Empty   |
-| **Surcharge Fixed**     | Fixed surcharge amount in EUR (e.g. `0.50`).                           | Empty   |
-| **Surcharge Tax Class** | Tax profile applied to the surcharge.                                  | None    |
+![](/img/checkoutfi_surcharge.webp)
 
-:::note Surcharges are not yet active
+**Surcharge Name:** Label shown on the cart for the payment surcharge line item.
+
+**Surcharge Percent:** Surcharge as a percentage of the order subtotal (e.g. `2.5` for 2.5%).
+
+**Surcharge Fixed:** Fixed surcharge amount in EUR (e.g. `0.50`).
+
+**Surcharge Tax Class:** Tax profile applied to the surcharge.
+
+:::info Surcharges are not yet active
 
 The surcharge fields are present for forward compatibility. The J2Commerce 6 core does not yet dispatch the `onJ2CommerceCalculateFees` event that activates surcharge calculations. This affects all payment plugins in J2Commerce 6, not just Checkout Finland. Surcharges will become functional in a future core release.
 
@@ -162,33 +146,41 @@ The surcharge fields are present for forward compatibility. The J2Commerce 6 cor
 
 ### Availability restrictions
 
-| Field                   | Description                                                                                            | Default |
-| ----------------------- | ------------------------------------------------------------------------------------------------------ | ------- |
-| **Minimum Subtotal**    | Hide this payment method if the order subtotal is below this amount (EUR). Leave empty for no minimum. | Empty   |
-| **Maximum Subtotal**    | Hide this payment method if the order subtotal is above this amount (EUR). Leave empty for no maximum. | Empty   |
-| **Geozone Restriction** | Limit this payment method to customers in a specific geozone. Leave empty to allow all countries.      | None    |
+![](/img/checkoutfi_subtotal.webp)
+
+**Minimum Subtotal:** Hide this payment method if the order subtotal is below this amount (EUR). Leave empty for no minimum.
+
+**Maximum Subtotal:** Hide this payment method if the order subtotal is above this amount (EUR). Leave empty for no maximum.
+
+**Geozone Restriction:** Limit this payment method to customers in a specific geozone. Leave empty to allow all countries.
 
 The plugin also enforces a hard currency gate: if the cart currency is anything other than EUR, this payment option does not appear to the customer at all.
 
 ### Checkout messages
 
+![](/img/checkoutfi_messages.webp)
+
 These are short text snippets shown to the customer at various points in the checkout flow. You can leave them empty to use the built-in default messages, or enter your own text — in Finnish, Swedish, or any other language.
 
-| Field                 | Description                                                                                      |
-| --------------------- | ------------------------------------------------------------------------------------------------ |
-| **On Selection**      | Text shown when the customer selects this payment method in the cart.                            |
-| **On Before Payment** | Text shown on the pre-payment confirmation screen, just before the customer is sent to Paytrail. |
-| **On After Payment**  | Text shown after successful payment return.                                                      |
-| **On Cancel Payment** | Text shown when the customer cancels at the Paytrail payment picker.                             |
-| **On Error Payment**  | Text shown if an error occurs during payment processing.                                         |
+**Thank You Article:** Optional Joomla article displayed on the post-payment thank-you page.
+
+**On Selection:** Text shown when the customer selects this payment method in the cart.
+
+**On Before Payment:** Text shown on the pre-payment confirmation screen, just before the customer is sent to Paytrail.
+
+**On After Payment:** Text shown after successful payment return.
+
+**On Cancel Payment:** Text shown when the customer cancels at the Paytrail payment picker.
+
+**On Error Payment:** Text shown if an error occurs during payment processing.
 
 ### Other settings
 
-| Field                       | Description                                                                                                                                      | Default       |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
-| **Thank You Article**       | Optional Joomla article displayed on the post-payment thank-you page.                                                                            | None          |
-| **Place Order Button Text** | Text on the button that submits the order and redirects to Paytrail.                                                                             | "Place Order" |
-| **Debug Logging**           | When **Yes**, writes detailed payment lifecycle events to the Joomla log file. Errors and warnings are always logged regardless of this setting. | No            |
+![](/img/checkoutfi_icon.webp)
+
+**Place Order Button Text:** Text on the button that submits the order and redirects to Paytrail.
+
+**Debug Logging:** When **Yes**, writes detailed payment lifecycle events to the Joomla log file. Errors and warnings are always logged regardless of this setting.
 
 ## How the payment flow works
 
@@ -209,8 +201,6 @@ Here is what happens from the customer's perspective and behind the scenes:
    - **Reference check:** The order reference in the callback must match the order in your database. Only after all three checks pass is the order marked as paid.
 
 6. **Customer is redirected back to your store.** They see the thank-you message and any article you configured.
-
-> *Screenshot: Paytrail-hosted payment picker showing Finnish bank logos and card payment option*
 
 ### What you do NOT have to manage
 
@@ -253,8 +243,6 @@ After a test transaction, you can check that callback verification is working co
 2. Place a test order and complete payment.
 3. Open `administrator/logs/plg_j2commerce_payment_checkoutfi.php` in a text editor or via your hosting control panel.
 4. Look for a line containing `HMAC validation succeeded`. If you see this, the callback passed all three security checks and the order was marked paid.
-
-> *Screenshot: Log file in administrator/logs showing HMAC validation success entry alongside the transaction ID*
 
 ## What's new in J2Commerce 6
 

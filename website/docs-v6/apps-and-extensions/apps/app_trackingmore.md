@@ -1,10 +1,3 @@
----
-title: "TrackingMore Integration"
-sidebar_label: "TrackingMore"
-sidebar_position: 94
-description: "Automates multi-carrier shipment tracking by registering tracking numbers with TrackingMore and receiving real-time webhook updates to keep J2Commerce order statuses and customer notifications current."
----
-
 # TrackingMore Integration
 
 The TrackingMore app connects J2Commerce to [TrackingMore](https://www.trackingmore.com/), a multi-carrier parcel tracking platform that supports over 1,200 carriers worldwide. When you add a tracking number to a J2Commerce order, the app automatically registers the shipment with TrackingMore and detects the carrier. From that point on, TrackingMore sends real-time updates back to your store whenever the parcel status changes — moving the order to the right status and, optionally, emailing the customer — all without any manual action.
@@ -32,9 +25,9 @@ Install the downloaded ZIP file through the Joomla installer.
 
 In the Joomla admin, go to **System -> Install -> Extensions**
 
-Upload the plugin ZIP file or use the **Install from URL** option.
+Upload the plugin `app_trackingmore.zip` ZIP file or use the **Install from URL** option.
 
-<!-- SCREENSHOT: System > Install > Extensions upload panel with app_trackingmore.zip selected -->
+![](/img/install.webp)
 
 ## Enable the App
 
@@ -44,9 +37,11 @@ Once the app is installed, you need to enable it. There are **two** ways to reac
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list highlighting the TrackingMore row -->
+![](/img/gift-wrap-apps.webp)
 
 Find **TrackingMore** in the list, click the **X**, and it turns into a green checkmark. The app is now enabled and ready to configure.
+
+![](/img/trackingmore_enable.webp)
 
 ## Configure the App
 
@@ -58,13 +53,13 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-<!-- SCREENSHOT: TrackingMore configuration screen with Toggle Inline Help highlighted -->
+![](/img/trackingmore_toggle.webp)
 
 ### Basic Settings tab
 
-#### API Key
+![](/img/trackingmore_api.webp)
 
-Paste your TrackingMore API key here. You can find it in the TrackingMore admin portal under **Developer -> API Management**. The key is a password-style field and is never shown once saved.
+**API Key:** Paste your TrackingMore API key here. You can find it in the TrackingMore admin portal under **Developer -> API Management**. The key is a password-style field and is never shown once saved.
 
 :::info
 
@@ -72,15 +67,11 @@ Without a valid API key, tracking numbers will not be registered with TrackingMo
 
 :::
 
-#### Webhook Secret
-
-Paste the webhook signing secret from TrackingMore. J2Commerce uses this value to verify that incoming webhook requests genuinely come from TrackingMore and have not been tampered with.
+**Webhook Secret:** Paste the webhook signing secret from TrackingMore. J2Commerce uses this value to verify that incoming webhook requests genuinely come from TrackingMore and have not been tampered with.
 
 You will create (or find) this secret in the TrackingMore portal when you set up the webhook — see [Setting Up the Webhook in TrackingMore](#setting-up-the-webhook-in-trackingmore) below.
 
-#### Webhook URL
-
-This is a read-only field that displays the URL TrackingMore must call to send status updates to your store. Copy this URL exactly as shown and paste it into TrackingMore's webhook configuration.
+**Webhook URL:** This is a read-only field that displays the URL TrackingMore must call to send status updates to your store. Copy this URL exactly as shown and paste it into TrackingMore's webhook configuration.
 
 The URL follows this structure:
 
@@ -88,47 +79,49 @@ The URL follows this structure:
 https://your-site.com/index.php?option=com_ajax&group=j2commerce&plugin=app_trackingmore&format=raw
 ```
 
-#### Default Language
+![](/img/trackingmore_language.webp)
 
-A two-letter language code (for example, `en`, `de`, `fr`, `es`) sent to TrackingMore when registering a tracking number. TrackingMore uses this code to return checkpoint messages in the requested language. Default is `en`.
+**Default Language:** A two-letter language code (for example, `en`, `de`, `fr`, `es`) sent to TrackingMore when registering a tracking number. TrackingMore uses this code to return checkpoint messages in the requested language. Default is `en`.
 
 When a customer places an order and J2Commerce knows the customer's language, that language is used automatically and this setting acts as a fallback.
 
-#### Map Geocoding Contact Email
-
-A real email address sent to the OpenStreetMap Nominatim geocoding service, which is used to plot shipment checkpoints on the tracking map. OpenStreetMap's usage policy requires a genuine contact email — a placeholder address is rejected and the map will not render.
+**Map Geocoding Contact Email:** A real email address sent to the OpenStreetMap Nominatim geocoding service, which is used to plot shipment checkpoints on the tracking map. OpenStreetMap's usage policy requires a genuine contact email — a placeholder address is rejected and the map will not render.
 
 If left blank, the app uses your site's outgoing email address from the Joomla global configuration. You do not need to enter anything here if that address is a real, monitored inbox.
 
-#### Notify Customer on Status Change
+**Notify Customer on Status Change:** When set to **Yes** (the default), J2Commerce sends the customer an order status email each time TrackingMore reports a new delivery status via webhook. Set to **No** to update order statuses silently without sending customer emails.
 
-When set to **Yes** (the default), J2Commerce sends the customer an order status email each time TrackingMore reports a new delivery status via webhook. Set to **No** to update order statuses silently without sending customer emails.
+### Order Status Mapping
 
-### Status Mapping
+![](/img/trackingmore_status.webp)
 
 The nine fields below control which J2Commerce order status is applied when TrackingMore reports each delivery state. For every field, you can pick any order status from the dropdown or choose **— No Change —** to leave the J2Commerce order status untouched for that particular TrackingMore state.
 
-| Field | TrackingMore State | Meaning |
-|-------|--------------------|---------|
-| **Status: Pending** | `pending` | Label created; parcel not yet scanned by the carrier |
-| **Status: Info Received** | `inforeceived` | Label created; carrier has the shipment data but not yet picked up the parcel |
-| **Status: In Transit** | `transit` | Parcel is actively moving through the carrier network |
-| **Status: Out for Delivery** | `pickup` | Parcel is on the delivery vehicle |
-| **Status: Delivered** | `delivered` | Parcel delivered to the recipient |
-| **Status: Undelivered** | `undelivered` | Delivery was attempted but failed |
-| **Status: Exception** | `exception` | Parcel is lost, damaged, returned, or held at customs |
-| **Status: Expired** | `expired` | No carrier scan activity for 30 or more days |
-| **Status: Not Found** | `notfound` | No tracking data found at the carrier yet |
+**Status: Pending:** Label created; parcel not yet scanned by the carrier
 
-:::note
+**Status: Info Received:** Label created; carrier has the shipment data but not yet picked up the parcel
+
+**Status: In Transit:** Parcel is actively moving through the carrier network
+
+**Status: Out for Delivery:** Parcel is on the delivery vehicle
+
+**Status: Delivered:** Parcel delivered to the recipient
+
+**Status: Undelivered:** Delivery was attempted but failed
+
+**Status: Exception:** Parcel is lost, damaged, returned, or held at customs
+
+**Status: Expired:** No carrier scan activity for 30 or more days
+
+**Status: Not Found:** No tracking data found at the carrier yet
+
+:::info
 
 The **Info Received** and **In Transit** fields come pre-mapped to a "Shipped" order status in J2Commerce, and the **Delivered** field is pre-mapped to a "Delivered" order status. You may remap any of these to match your own order status workflow.
 
 :::
 
-### Debug Logging
-
-When set to **Yes**, the app writes detailed information about API calls and webhook processing to the J2Commerce log file (`j2commerce.trackingmore`). Keep this disabled on production stores, as it generates high log volume.
+**Debug Logging:** When set to **Yes**, the app writes detailed information about API calls and webhook processing to the J2Commerce log file (`j2commerce.trackingmore`). Keep this disabled on production stores, as it generates high log volume.
 
 To view logs, go to **System -> Logs** in Joomla and look for entries tagged `j2commerce.trackingmore`.
 
@@ -144,8 +137,6 @@ After saving the app configuration, you need to register your store's webhook UR
 6. Return to the J2Commerce TrackingMore app settings and paste that secret into the **Webhook Secret** field.
 7. Click **Save** in J2Commerce.
 
-<!-- SCREENSHOT: TrackingMore portal webhook creation screen with the J2Commerce URL pasted in -->
-
 :::info
 
 TrackingMore must be able to reach your site's URL from the internet. If your store is on a local development server, webhooks will not work without a public tunnel.
@@ -156,14 +147,14 @@ TrackingMore must be able to reach your site's URL from the internet. If your st
 
 The app operates in two directions: outbound (your store pushes tracking numbers to TrackingMore) and inbound (TrackingMore pushes status updates back).
 
-**Outbound — when a tracking number is saved:**
+- **Outbound — when a tracking number is saved:**
 
 1. You enter a tracking number on a J2Commerce order (via **J2Commerce -> Sales -> Orders -> Edit Order -> Tracking**).
 2. J2Commerce fires an event. The TrackingMore app catches it and calls the TrackingMore API to detect the carrier automatically from the tracking number format.
 3. The app registers the tracking number with TrackingMore, including the order ID and any available customer language preference.
 4. TrackingMore begins polling the carrier for status updates.
 
-**Inbound — when TrackingMore sends a webhook:**
+- **Inbound — when TrackingMore sends a webhook:**
 
 1. The carrier reports a new scan event to TrackingMore.
 2. TrackingMore sends a signed webhook to your store's Webhook URL.
@@ -182,8 +173,6 @@ Once at least one webhook has been received for a tracking number, a **Shipment 
 - A "Signed by" note if the recipient's name was captured at delivery
 - A chronological list of all checkpoint events, each with date, location, and carrier message
 - A **Track on carrier site** button that links to the carrier's own tracking page
-
-<!-- SCREENSHOT: Admin order view showing the Shipment Tracking card with checkpoint timeline -->
 
 If multiple tracking numbers are associated with the same order, a separate card is shown for each.
 

@@ -1,10 +1,3 @@
----
-title: "Nets Easy / DIBS Easy Payments"
-sidebar_label: "Nets Easy (DIBS Easy)"
-sidebar_position: 25
-description: "Accept Nordic and EU card payments plus local payment methods in J2Commerce using the Nets Easy (DIBS Easy) hosted checkout."
----
-
 # Nets Easy / DIBS Easy Payments
 
 Nets Easy — formerly marketed as DIBS Easy — is a hosted-payment-page gateway from Nets Group, widely used across the Nordic countries and the broader EU. Customers are redirected to a secure Nets-hosted page to complete payment, so no card data ever touches your server. The gateway supports Visa, Mastercard, American Express, Dankort (Denmark), MobilePay, Vipps, Swish, and other local methods depending on your Nets agreement.
@@ -38,107 +31,100 @@ After logging in to the Nets Easy portal:
 
 For the **test environment**, the Nets Easy portal provides separate test credentials on the same Integrations screen. Copy both the test Secret Key and the test Merchant Number.
 
-<!-- SCREENSHOT: Nets Easy portal > Company > Integrations tab showing Secret key and Merchant number fields -->
-
 :::tip
 
 Keep your Secret Keys confidential. Anyone with a valid Secret Key can create payment sessions on your account. Never paste them into plain text files or share them over email.
 
 :::
 
-## Purchase and Download
+## Purchase and download
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com) **->** **Payment Plugins**.
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Dibs Easy**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
-**Step 2:** Locate the **DIBS Easy** plugin **->** click **View Details** **->** **Add to Cart** **->** **Checkout**.
+## Install the plugin
 
-**Step 3:** Go to **My Downloads** under your profile button at the top right corner. Click **Available Versions** **->** **View Files** **->** **Download Now**.
+In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
-## Install the Plugin
+Upload the `plg_j2commerce_payment_dibseasy.zip` file.
 
-In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
-
-Upload the `plg_j2commerce_payment_dibseasy.zip` file or use the Install from URL option. The plugin installs and enables itself automatically.
-
-<!-- SCREENSHOT: Joomla Extension Manager upload screen -->
+![](/img/install.webp)
 
 ## Enable the Plugin
 
-The plugin enables itself on install. To find it later or to toggle it:
+Once you have installed the App, you will need to enable it. There are **two** ways you can access the App.&#x20;
 
-**Option A:** Click the **J2Commerce** icon at the top right corner **->** **Apps**.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-**Option B:** Go to **Components** on the left sidebar **->** **J2Commerce** **->** **Apps**.
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard** **-> Setup** **-> Payment Methods**
 
-Search for **DIBS Easy**, then click the toggle to enable or disable it.
+![](/img/culqi.webp)
 
-<!-- SCREENSHOT: J2Commerce Apps list with DIBS Easy visible and enabled (green toggle) -->
+To help you narrow down the list, you can do a search for **Dibs Easy**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-## Configure the Plugin
+![](/img/dibs_enable.webp)
 
-Click the **DIBS Easy** name in the Apps list to open the settings screen.
+## Configure the plugin
+
+Click the **Dibs Easy** title next to the green checkmark to open the configuration screen.
 
 :::tip
 
-Click **Toggle Inline Help** at the top of the screen to show a short description below every field.
+Click the **Toggle Inline Help** button at the top of any plugin configuration page to show a short description beneath each field.
 
 :::
 
-<!-- SCREENSHOT: DIBS Easy plugin settings screen, full view -->
-
----
+![](/img/dibs_toggle.webp)
 
 ### Display Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Display Name** | The label shown to customers at checkout for this payment method. | `DIBS Easy` |
-| **Payment Image** | An optional logo or image shown next to the payment option at checkout. Upload from your media library, or leave blank to show text only. | _(blank)_ |
+![](/img/dibs_display.webp)
 
----
+**Display Name:** The label shown to customers at checkout for this payment method.
 
-### Test Environment
+**Payment Image:** An optional logo or image shown next to the payment option at checkout. Upload from your media library, or leave blank to show text only.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Use Test Environment** | When set to **Yes**, the plugin connects to `test.api.dibspayment.eu` and uses your test credentials. Set to **No** for live payments. | No |
+### API Credentials
+
+![](/img/dibs_credentials.webp)
+
+**Use Test Environment:** When set to **Yes**, the plugin connects to `test.api.dibspayment.eu` and uses your test credentials. Set to **No** for live payments.
 
 Switch this to **Yes** whenever you are testing. Switch it back to **No** before going live.
-
----
 
 ### Live Credentials
 
 These credentials are used when **Use Test Environment** is set to **No**.
 
-| Field | Description | Where to find |
-|-------|-------------|---------------|
-| **Secret Key** | Your Nets Easy live Secret Key. | Nets Easy portal **->** Company **->** Integrations |
-| **Merchant Number** | Your Nets Easy live Merchant Number. This field is optional for some integrations but recommended. | Same page as the Secret Key |
+**Secret Key:** Your Nets Easy live Secret Key.
 
-<!-- SCREENSHOT: DIBS Easy settings with Secret Key and Merchant Number fields highlighted -->
+- **Where to find:** Nets Easy portal **->** Company **->** Integrations
 
----
+**Merchant Number:** Your Nets Easy live Merchant Number. This field is optional for some integrations but recommended.
+
+- **Where to find:** Same page as the Secret Key
 
 ### Test Credentials
 
 These credentials are used when **Use Test Environment** is set to **Yes**.
 
-| Field | Description | Where to find |
-|-------|-------------|---------------|
-| **Test Secret Key** | Your Nets Easy test Secret Key. | Nets Easy portal **->** Company **->** Integrations (test section) |
-| **Test Merchant Number** | Your Nets Easy test Merchant Number (optional). | Same page as the Test Secret Key |
+**Test Secret Key:** Your Nets Easy test Secret Key.
 
----
+- **Where to find:** Nets Easy portal **->** Company **->** Integrations (test section)
+
+**Test Merchant Number:** Your Nets Easy test Merchant Number (optional).
+
+- **Where to find:** Same page as the Test Secret Key
 
 ### Capture Settings
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Auto Capture** | When set to **Yes**, the plugin automatically captures (charges) the payment as soon as the customer returns from Nets and the payment is confirmed. When set to **No**, the payment is authorized only — money is reserved on the customer's card but not collected until you manually trigger capture. | Yes |
-| **Confirmed Order Status** | The J2Commerce order status to apply when Nets confirms a successful payment. | Confirmed |
+![](/img/dibs_status.webp)
+
+**Auto Capture:** When set to **Yes**, the plugin automatically captures (charges) the payment as soon as the customer returns from Nets and the payment is confirmed. When set to **No**, the payment is authorized only — money is reserved on the customer's card but not collected until you manually trigger capture.
 
 Most stores should leave **Auto Capture** set to **Yes**. Set it to **No** only if your fulfilment process requires you to authorize now and charge later — for example, if you ship made-to-order products and want to capture payment at dispatch time.
 
@@ -148,84 +134,79 @@ Manual capture is handled at the order level. When auto-capture is off, the orde
 
 :::
 
----
+**Confirmed Order Status:** The J2Commerce order status to apply when Nets confirms a successful payment.
+
+:::info
+
+If the order status you want is not listed, create it first under **J2Commerce** -> **Setup** -> **Order Statuses**.
+
+:::
+
+![](/img/shipstation-order-status2-1.webp)
 
 ### Surcharge
 
+![](/img/dibs_surcharge.webp)
+
 Add an optional extra fee when customers choose DIBS Easy as their payment method. Leave all three fields blank to add no surcharge.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Surcharge Label** | Name shown for the surcharge line item at checkout. | _(blank)_ |
-| **Surcharge (%)** | A percentage of the order subtotal added as a surcharge. For example, enter `2` to add a 2% fee. | _(blank)_ |
-| **Surcharge (Fixed)** | A flat amount added to every order. Enter the amount in your store's base currency. | _(blank)_ |
-| **Surcharge Tax Class** | A tax profile to apply to the surcharge amount. Leave blank if no tax applies to the surcharge. | _(blank)_ |
+**Surcharge Label:** Name shown for the surcharge line item at checkout.
 
-:::caution
+**Surcharge (%):** A percentage of the order subtotal added as a surcharge. For example, enter `2` to add a 2% fee.
+
+**Surcharge (Fixed):** A flat amount added to every order. Enter the amount in your store's base currency.
+
+**Surcharge Tax Class:** A tax profile to apply to the surcharge amount. Leave blank if no tax applies to the surcharge.
+
+:::info
 
 Surcharges on card payments are regulated or prohibited in some countries — notably within the EU and EEA under the Payment Services Directive. Check local law before enabling a surcharge.
 
 :::
 
----
-
 ### Geo Zone and Order Restrictions
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Geo Zone** | Restrict DIBS Easy to customers in a specific geographic zone. Select a geozone defined in J2Commerce (**J2Commerce** **->** **Localization** **->** **Geo Zones**). Leave blank to show the payment method to all customers. | _(blank)_ |
-| **Minimum Order Subtotal** | Hide DIBS Easy if the order subtotal is below this amount. Leave blank for no minimum. | _(blank)_ |
-| **Maximum Order Subtotal** | Hide DIBS Easy if the order subtotal is above this amount. Leave blank for no maximum. | _(blank)_ |
+![](/img/dibs_restrictions.webp)
 
----
+**Geo Zone:** Restrict DIBS Easy to customers in a specific geographic zone. Select a geozone defined in J2Commerce (**J2Commerce** **->** **Localization** **->** **Geo Zones**). Leave blank to show the payment method to all customers.
 
-### Thank You Article
+**Minimum Order Subtotal:** Hide DIBS Easy if the order subtotal is below this amount. Leave blank for no minimum.
 
-| Field | Description |
-|-------|-------------|
-| **Thank You Article** | Select a Joomla article to display on the order confirmation page after a successful payment. Leave blank to show J2Commerce's default confirmation message. |
+**Maximum Order Subtotal:** Hide DIBS Easy if the order subtotal is above this amount. Leave blank for no maximum.
 
----
+### Custom Messages
 
-### Pay Button Text and Custom Messages
+![](/img/dibs_messages.webp)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Pay Button Text** | The label on the button that sends the customer to the Nets Easy hosted payment page. | Place Order |
-| **Text on Method Selection** | A message shown to the customer immediately after they select DIBS Easy at the payment step. | _(blank)_ |
-| **Text Before Payment** | A message shown on the pre-payment confirmation screen, before the customer clicks the pay button. | _(blank)_ |
-| **Text After Successful Payment** | A message shown after the customer returns from Nets with a successful payment. | _(blank)_ |
-| **Text on Payment Error** | A message shown when the payment fails or encounters an error. | _(blank)_ |
-| **Text on Payment Cancellation** | A message shown when the customer cancels the payment and returns to your store. | _(blank)_ |
+**Thank You Article:** Select a Joomla article to display on the order confirmation page after a successful payment. Leave blank to show J2Commerce's default confirmation message.
+
+**Pay Button Text:** The label on the button that sends the customer to the Nets Easy hosted payment page.
+
+**Text on Method Selection:** A message shown to the customer immediately after they select DIBS Easy at the payment step.
+
+**Text Before Payment:** A message shown on the pre-payment confirmation screen, before the customer clicks the pay button.
+
+**Text After Successful Payment:** A message shown after the customer returns from Nets with a successful payment.
+
+**Text on Payment Error:** A message shown when the payment fails or encounters an error.
+
+**Text on Payment Cancellation:**A message shown when the customer cancels the payment and returns to your store.
 
 Leave any message field blank to show the built-in default text.
 
----
+### Additional Add-ons
 
-### Dashboard Icon
+![](/img/dibs_icon.webp)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Show Dashboard Icon** | When set to **Yes**, a shortcut icon appears on the J2Commerce dashboard for quick access to this plugin's settings. | No |
-| **Dashboard Icon Label** | The label shown under the dashboard icon. Only visible when **Show Dashboard Icon** is enabled. | _(blank)_ |
+**Show Dashboard Icon:** When set to **Yes**, a shortcut icon appears on the J2Commerce dashboard for quick access to this plugin's settings.
 
----
+- **Icon Label:** The label shown under the dashboard icon. Only visible when **Show Dashboard Icon** is enabled.
 
-### Template Style
+**Template Style:** Select the CSS framework for this plugin's customer-facing templates (Bootstrap 5 or UIkit 3). Match this to your site's active template.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Template Style** | Select the CSS framework for this plugin's customer-facing templates (Bootstrap 5 or UIkit 3). Match this to your site's active template. | _(blank — uses default)_ |
+**Debug Mode:** When set to **Yes**, the plugin writes Nets Easy API requests and responses to `administrator/logs/payment_dibseasy.php`. Enable only while troubleshooting; set back to **No** in production.
 
----
-
-### Debug Mode
-
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Debug Mode** | When set to **Yes**, the plugin writes Nets Easy API requests and responses to `administrator/logs/payment_dibseasy.php`. Enable only while troubleshooting; set back to **No** in production. | No |
-
----
+***
 
 ## How a Purchase Works
 
@@ -241,11 +222,7 @@ Here is what the customer experiences from start to finish:
 8. After payment, Nets redirects the customer back to your store.
 9. J2Commerce verifies the payment with Nets, captures the charge (if Auto Capture is on), updates the order status, and shows the order confirmation page.
 
-<!-- SCREENSHOT: DIBS Easy payment option shown at the checkout payment step -->
-
-<!-- SCREENSHOT: Nets Easy hosted payment page (example card entry form) -->
-
----
+***
 
 ## Sandbox Testing
 
@@ -256,21 +233,20 @@ Use the test environment to verify the complete payment flow without processing 
 3. Save the settings.
 4. Place a test order on your storefront.
 5. On the Nets Easy test payment page, use the test card numbers provided by Nets:
+
    - Visa: `4925000000000004` (any future expiry, any CVV)
    - Mastercard: `5413000000000000`
    - Dankort: `5019994000000004`
-6. After a successful test payment, confirm the order status updated correctly in **J2Commerce** **->** **Orders**.
+6. After a successful test payment, confirm the order status updated correctly in **J2Commerce** **->** **Sales -> Orders**.
 7. Enable **Debug Mode** and check `administrator/logs/payment_dibseasy.php` to review the full API exchange.
 
-<!-- SCREENSHOT: Test order on the frontend with Use Test Environment enabled, showing Nets test card page -->
-
-:::caution
+:::info
 
 Webhook notifications from Nets cannot be delivered to a site running on `localhost` or behind a private network. If you are developing locally, webhooks will be skipped and order confirmation will rely solely on the customer return URL. Use a public URL (or an ngrok tunnel) to test the full webhook flow.
 
 :::
 
----
+***
 
 ## Going Live
 
@@ -291,7 +267,7 @@ When you are ready to accept real payments:
 - [ ] At least one real payment confirmed end-to-end
 - [ ] Your site is publicly accessible over HTTPS
 
----
+***
 
 ## Refunds
 
@@ -304,9 +280,7 @@ You can issue full or partial refunds directly from the J2Commerce admin:
 
 J2Commerce sends the refund request to Nets Easy via the API. The customer receives their refund on the original payment method within a few business days, depending on their bank.
 
-<!-- SCREENSHOT: J2Commerce order detail screen showing the Payment section with Refund buttons -->
-
----
+***
 
 ## What Changed from J2Store
 
@@ -320,7 +294,7 @@ If you used the DIBS Easy plugin in J2Store 4, the J2Commerce 6 version includes
 - **Authenticated webhooks** — the webhook handler verifies the incoming payment ID against the Nets API before finalizing the order.
 - **Escaped output** — all data shown in templates is properly escaped before output. Gateway error details are logged server-side rather than displayed to customers.
 
----
+***
 
 ## Troubleshooting
 
@@ -350,7 +324,7 @@ If you used the DIBS Easy plugin in J2Store 4, the J2Commerce 6 version includes
 
 **Solution:**
 
-1. Go to **J2Commerce** **->** **Setup** **->** **Currencies** and confirm the active currency has the correct number of **Decimal Places** (2 for EUR/DKK/NOK/SEK, etc.).
+1. Go to **J2Commerce** **->** **Setup** **-> Configuration -> Store tab -> Currencies** and confirm the active currency has the correct number of **Decimal Places** (2 for EUR/DKK/NOK/SEK, etc.).
 2. If you use multi-currency, confirm the **Currency Value** (exchange rate) for each active currency is current.
 3. Check the Debug log — the request sent to Nets includes the `amount` field in minor units. Compare it against the expected value for your test order.
 
@@ -369,9 +343,9 @@ If you used the DIBS Easy plugin in J2Store 4, the J2Commerce 6 version includes
 1. Ensure your site URL is publicly reachable over HTTPS — Nets skips webhooks on localhost.
 2. Check that no firewall, CDN WAF, or Joomla security plugin is blocking POST requests to `index.php?option=com_ajax&...`.
 3. Enable **Debug Mode** and place a new test order. Look for webhook-related log entries. If the webhook arrives but fails, the error message will appear in the log.
-4. You can also manually update the order status from **J2Commerce** **->** **Orders** while you investigate.
+4. You can also manually update the order status from **J2Commerce** **->** **Sales -> Orders** while you investigate.
 
----
+***
 
 ## Related Topics
 

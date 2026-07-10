@@ -1,10 +1,3 @@
----
-title: "DoorDash Same-Day Delivery"
-sidebar_label: "DoorDash"
-sidebar_position: 65
-description: "Offer live DoorDash same-day delivery quotes at checkout, then dispatch, track, cancel, and refund deliveries directly from the J2Commerce order view."
----
-
 # DoorDash Same-Day Delivery
 
 The DoorDash Delivery plugin connects your J2Commerce store to [DoorDash Drive](https://developer.doordash.com/en-US/docs/drive/overview/), DoorDash's on-demand local delivery API. When a customer reaches the shipping step at checkout, the plugin calls the DoorDash Drive API in real time and shows a live delivery fee with an estimated arrival time. After the order is paid, a Dasher is automatically dispatched to pick up the order from your store and deliver it to the customer — no phone calls, no manual coordination.
@@ -19,16 +12,6 @@ This plugin is ideal for local retailers, restaurants, boutiques, florists, and 
 - A [DoorDash Developer account](https://developer.doordash.com/) with a Drive API application
 - Three credentials from your DoorDash Developer Portal: **Developer ID**, **Key ID**, and **Signing Secret**
 
-## Purchase and Download
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) **->** **Extensions**.
-
-**Step 2:** Locate **DoorDash Same-Day Delivery** **->** click **View Details** **->** **Add to Cart** **->** **Checkout**.
-
-**Step 3:** Go to **My Downloads** under your profile at the top-right corner, search for the plugin, click **Available Versions** **->** **View Files** **->** **Download Now**.
-
 ## Getting Your DoorDash Credentials
 
 Before you can configure the plugin, you need API credentials from the DoorDash Developer Portal.
@@ -36,6 +19,7 @@ Before you can configure the plugin, you need API credentials from the DoorDash 
 1. Sign in to your [DoorDash Developer Portal](https://developer.doordash.com/).
 2. Create or open a **Drive API** application.
 3. In your application settings, locate the **Credentials** section. You will find three values:
+
    - **Developer ID** — a UUID that identifies your developer account
    - **Key ID** — a UUID that identifies this specific API key
    - **Signing Secret** — a base64url-encoded value used to sign API requests (keep this private)
@@ -43,68 +27,95 @@ Before you can configure the plugin, you need API credentials from the DoorDash 
 
 DoorDash provides separate sandbox credentials and production credentials. Use sandbox credentials while testing so no real deliveries or charges occur.
 
+## Purchase and Download the Plugin
+
+‌**Step 1:** Go to our [J2Commerce website](https://www.j2commerce.com/) > Extension
+
+**Step 2:** Locate the **DoorDash** Extension -> click **View Details** **-> Add to cart -> Checkout**.&#x20;
+
+**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download**
+
 ## Install the Plugin
 
-In the Joomla administrator, go to **System** **->** **Install** **->** **Extensions**.
+Go to **System** -> **Install** -> **Extensions**.
 
-Upload the plugin ZIP file or use the **Install from URL** option.
+Upload the `shipping_doordash.zip` package file
+
+![](/img/ato-install.webp)
 
 ## Enable the Plugin
 
-Once installed, find and enable the plugin. There are two ways to reach the shipping methods list:
+There are **two** ways you can access the Plugin.&#x20;
 
-**Option A:** Click the **J2Commerce** icon at the top right corner **->** **Shipping**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Shipping Methods**
 
-**Option B:** Go to **Components** **->** **J2Commerce** **->** **Shipping**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Shipping Methods**
 
-Look for **DoorDash Drive**, click the red **X**, and it turns into a green checkmark. The plugin is now enabled and ready to configure.
+![](/img/atoship-app.webp)
+
+&#x20;Look for **DoorDash**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/doordash_enable.webp)
 
 ## Configure the Plugin
 
-Click the **DoorDash Drive** title next to the green checkmark to open the settings screen.
+Once you click on the **DoorDash** Title next to the green checkmark, you are ready to start setting up the parameters.
 
 :::tip
 
-Click **Toggle Inline Help** in the toolbar to display a description below every field as you configure it.
+**Helpful Tip:** Click on the **Toggle Inline Help** button on any app/plugin you install and it will show a description below each section. See image below
 
 :::
 
-The settings are grouped into six tabs. Work through them from top to bottom the first time you set up the plugin.
+![](/img/doordash_trigger.webp)
 
----
+### API Credentials tab
 
-### API Credentials
+![](/img/doordash_credentials.webp)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Sandbox Mode** | When enabled, the plugin uses your sandbox credentials (shown below). No real Dasher is dispatched and no real fee is charged. Turn this off only when you are ready to go live. | Yes |
-| **Developer ID (Sandbox)** | Your DoorDash Drive sandbox Developer ID (UUID). Shown only when Sandbox Mode is on. | — |
-| **Key ID (Sandbox)** | Your DoorDash Drive sandbox Key ID (UUID). Shown only when Sandbox Mode is on. | — |
-| **Signing Secret (Sandbox)** | Your DoorDash sandbox Signing Secret (base64url-encoded). Keep this private. Shown only when Sandbox Mode is on. | — |
-| **Developer ID (Production)** | Your DoorDash Drive production Developer ID. Shown only when Sandbox Mode is off. | — |
-| **Key ID (Production)** | Your DoorDash Drive production Key ID. Shown only when Sandbox Mode is off. | — |
-| **Signing Secret (Production)** | Your DoorDash production Signing Secret. Keep this private. Shown only when Sandbox Mode is off. | — |
-| **Checkout Icon** | Logo shown next to the DoorDash option at checkout. Defaults to the bundled DoorDash logo. | *(bundled logo)* |
-| **Debug Logging** | When enabled, all DoorDash API calls and responses are written to a log file. Turn this off in production — it generates large logs. | No |
+**Sandbox Mode:** When enabled, the plugin uses your sandbox credentials (shown below). No real Dasher is dispatched and no real fee is charged. Turn this off only when you are ready to go live.
 
----
+**Developer ID (Sandbox):** Your DoorDash Drive sandbox Developer ID (UUID). Shown only when Sandbox Mode is on.
 
-### Store Pickup Address
+**Key ID (Sandbox):** Your DoorDash Drive sandbox Key ID (UUID). Shown only when Sandbox Mode is on.
+
+**Signing Secret (Sandbox):** Your DoorDash sandbox Signing Secret (base64url-encoded). Keep this private. Shown only when Sandbox Mode is on.
+
+**Developer ID (Production):** Your DoorDash Drive production Developer ID. Shown only when Sandbox Mode is off.
+
+**Key ID (Production):** Your DoorDash Drive production Key ID. Shown only when Sandbox Mode is off.
+
+**Signing Secret (Production):** Your DoorDash production Signing Secret. Keep this private. Shown only when Sandbox Mode is off.
+
+**Checkout Icon:** Logo shown next to the DoorDash option at checkout. Defaults to the bundled DoorDash logo.
+
+**Debug Logging:** When enabled, all DoorDash API calls and responses are written to a log file. Turn this off in production — it generates large logs.
+
+### Store Pickup Address tab
+
+![](/img/doordash_pickup.webp)
 
 These fields tell DoorDash where your Dasher should pick up the order.
 
-| Field | Description |
-|-------|-------------|
-| **Address Source** | Choose **Use Store Address** to pull the address already configured in J2Commerce, or **Add New Address** to enter a different pickup location (for example, a warehouse separate from your billing address). |
-| **Business Name** | Your store name as shown to the Dasher at pickup. |
-| **Street Address** | Pickup street address (for example, `123 Main St`). |
-| **City** | Pickup city. |
-| **State / Province** | Pickup state or province. The list is filtered by the country selected below. |
-| **ZIP / Postal Code** | Pickup ZIP or postal code. |
-| **Country** | Pickup country. |
-| **Store Phone** | Phone number the Dasher may call at pickup (E.164 format recommended, for example `+16505551234`). |
-| **External Business ID** | Optional. If you have a pre-onboarded DoorDash business, enter its `external_business_id` here. This field and **External Store ID** must be filled in together — DoorDash rejects one without the other. Leave both blank to use the pickup address above. |
-| **External Store ID** | Optional. The `external_store_id` of your pre-onboarded DoorDash store. Requires **External Business ID** to also be set. |
+**Address Source:** Choose **Use Store Address** to pull the address already configured in J2Commerce, or **Add New Address** to enter a different pickup location (for example, a warehouse separate from your billing address).
+
+**Business Name:** Your store name as shown to the Dasher at pickup.
+
+**Street Address:** Pickup street address (for example, `123 Main St`).
+
+**City:** Pickup city.
+
+**State / Province:** Pickup state or province. The list is filtered by the country selected below.
+
+**ZIP / Postal Code:** Pickup ZIP or postal code.
+
+**Country:** Pickup country.
+
+**Store Phone:** Phone number the Dasher may call at pickup (E.164 format recommended, for example `+16505551234`).
+
+**External Business ID:** Optional. If you have a pre-onboarded DoorDash business, enter its `external_business_id` here. This field and **External Store ID** must be filled in together — DoorDash rejects one without the other. Leave both blank to use the pickup address above.
+
+**External Store ID:** Optional. The `external_store_id` of your pre-onboarded DoorDash store. Requires **External Business ID** to also be set.
 
 :::info
 
@@ -112,46 +123,49 @@ If you choose **Use Store Address**, the plugin reads your address from J2Commer
 
 :::
 
-:::caution
+:::info
 
 **External Business ID and External Store ID must be set together.** Filling in one without the other causes DoorDash to reject every quote and dispatch request with a validation error. Either fill in both or leave both blank.
 
 :::
 
----
+### Checkout Options tab
 
-### Checkout Options
+![](/img/doordash_checkout.webp)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Handling Fee** | A fixed or percentage amount added to the DoorDash delivery fee before it is shown to the customer. Enter `0` to pass the fee through unchanged. | 0 |
-| **Handling Fee Type** | **Flat** adds a fixed dollar amount to every delivery fee. **Percent** adds a percentage of the delivery fee. | Flat |
-| **Tax Class** | Apply a J2Commerce tax profile to the delivery fee. Leave at **None** to use the tax amount DoorDash returns instead. | None |
-| **Geozone** | Only offer DoorDash delivery to customers whose address falls within the selected geozone. Leave as **All Zones** to show the option everywhere. | All Zones |
-| **Contactless Dropoff** | Request that the Dasher leave the package at the door without requiring a signature or handoff. | No |
+**Handling Fee:** A fixed or percentage amount added to the DoorDash delivery fee before it is shown to the customer. Enter `0` to pass the fee through unchanged.
 
----
+**Handling Fee Type: Flat** adds a fixed dollar amount to every delivery fee. **Percent** adds a percentage of the delivery fee.
 
-### Fulfillment Options
+**Tax Class:** Apply a J2Commerce tax profile to the delivery fee. Leave at **None** to use the tax amount DoorDash returns instead.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Auto-Dispatch Dasher** | When enabled, a Dasher is automatically dispatched as soon as the order is paid. Turn this off to dispatch every delivery manually from the order view. | Yes |
-| **Auto-Dispatch Trigger** | Visible only when **Auto-Dispatch Dasher** is on. Leave as **None** to dispatch immediately after payment. Or choose a specific order status (for example, **Confirmed**) to delay dispatch until the order reaches that status — useful if you want to verify the order before a Dasher arrives. | None |
-| **Default Tip (USD)** | A tip amount (in dollars) added to every dispatch, for example `5.00` for a $5 tip. You can adjust this per order from the order view before the Dasher picks up. | 0 |
-| **Notify Store Owner** | When enabled, an email is sent to the store owner address when a Dasher is dispatched. | Yes |
-| **Store Owner Email** | The email address for dispatch notifications. If left blank, the plugin uses the Joomla global From Email address. | — |
+**Geozone:** Only offer DoorDash delivery to customers whose address falls within the selected geozone. Leave as **All Zones** to show the option everywhere.
 
----
+**Contactless Dropoff:** Request that the Dasher leave the package at the door without requiring a signature or handoff.
 
-### Webhook Settings
+### Fulfillment Options tab
+
+![](/img/doordash_fullfilment.webp)
+
+**Auto-Dispatch Dasher:** When enabled, a Dasher is automatically dispatched as soon as the order is paid. Turn this off to dispatch every delivery manually from the order view.
+
+**Auto-Dispatch Trigger:** Visible only when **Auto-Dispatch Dasher** is on. Leave as **None** to dispatch immediately after payment. Or choose a specific order status (for example, **Confirmed**) to delay dispatch until the order reaches that status — useful if you want to verify the order before a Dasher arrives.
+
+**Default Tip (USD):** A tip amount (in dollars) added to every dispatch, for example `5.00` for a $5 tip. You can adjust this per order from the order view before the Dasher picks up.
+
+**Notify Store Owner:** When enabled, an email is sent to the store owner address when a Dasher is dispatched.
+
+**Store Owner Email:** The email address for dispatch notifications. If left blank, the plugin uses the Joomla global From Email address.
+
+### Webhook Settings tab
+
+![](/img/doordash_webhook.webp)
 
 DoorDash sends real-time delivery status updates (Dasher confirmed, picked up, delivered, cancelled) to a webhook URL on your site. Setting up the webhook keeps your order statuses in sync automatically without you needing to click **Refresh Status** on every order.
 
-| Field | Description |
-|-------|-------------|
-| **Webhook Username** | A username of your choice. DoorDash sends this in a Basic-Auth header on every webhook request. Must match what you configure in the DoorDash Developer Portal. |
-| **Webhook Password** | A password of your choice (use something strong). Must match the DoorDash Developer Portal setting. |
+**Webhook Username:** A username of your choice. DoorDash sends this in a Basic-Auth header on every webhook request. Must match what you configure in the DoorDash Developer Portal.
+
+**Webhook Password:**A password of your choice (use something strong). Must match the DoorDash Developer Portal setting.
 
 **Your webhook URL** follows this pattern:
 
@@ -161,28 +175,32 @@ https://[your-site]/index.php?option=com_ajax&plugin=shipping_doordash&group=j2c
 
 Replace `[your-site]` with your store's domain. Copy this URL and paste it into the **Webhook Settings** section of your DoorDash Drive application in the DoorDash Developer Portal. Configure the **Basic Auth** username and password in the portal to match what you entered above.
 
----
+### Order Status tab
 
-### Order Status Mapping
+![](/img/doordash_status.webp)
 
 These settings control which J2Commerce order status is applied automatically when DoorDash reports a delivery milestone. Leave a field at **None** to skip that milestone.
 
-| Field | When it applies |
-|-------|----------------|
-| **Status: Delivery Created** | When the delivery is first created in DoorDash (before a Dasher is confirmed). |
-| **Status: Delivery Accepted** | When DoorDash confirms a Dasher has accepted the delivery. |
-| **Status: En Route** | When the Dasher is confirmed as arriving at the dropoff address. |
-| **Status: Picked Up** | When the Dasher picks up the order from your store. |
-| **Status: Delivered** | When the order is successfully delivered to the customer. |
-| **Status: Cancelled** | When the delivery is cancelled. |
+**Status: Delivery Created:** When the delivery is first created in DoorDash (before a Dasher is confirmed).
 
----
+**Status: Delivery Accepted:** When DoorDash confirms a Dasher has accepted the delivery.
+
+**Status: En Route:** When the Dasher is confirmed as arriving at the dropoff address.
+
+**Status: Picked Up:** When the Dasher picks up the order from your store.
+
+**Status: Delivered:** When the order is successfully delivered to the customer.
+
+**Status: Cancelled:** When the delivery is cancelled.
+
+***
 
 ## Sandbox vs. Production Testing
 
 With **Sandbox Mode** turned on, the plugin calls DoorDash's sandbox environment. The delivery fee returned is simulated, no real Dasher is dispatched, and no charge appears on your DoorDash account.
 
 Use sandbox mode to:
+
 - Verify that rates appear at checkout
 - Test the dispatch, cancel, and refresh actions in the order view
 - Test that webhooks arrive at your endpoint
@@ -195,7 +213,7 @@ Use the **Debug Logging** toggle during testing to see exactly what the plugin s
 
 :::
 
----
+***
 
 ## How It Works
 
@@ -215,57 +233,37 @@ Use the **Debug Logging** toggle during testing to see exactly what the plugin s
 
 8. **You can monitor and manage the delivery from the order view.** A **DoorDash Delivery** panel appears at the bottom of every order that used DoorDash at checkout. From this panel you can dispatch manually, refresh the current status, view the Dasher's name and estimated arrival, track the delivery on a map, edit the tip or dropoff instructions, cancel, request a refund, redeliver, and rate the Dasher.
 
----
+***
 
 ## Managing a Delivery from the Order View
 
 Open any DoorDash order in **J2Commerce** **->** **Sales** **->** **Orders** and scroll to the **DoorDash Delivery** panel at the bottom of the page.
 
-<!-- SCREENSHOT: DoorDash Delivery panel in the J2Commerce order view, showing delivery status, Dasher name, ETA, and action buttons -->
+**Dispatching a Dasher:** If **Auto-Dispatch** is turned off — or if you want to re-dispatch after a cancellation — click **Dispatch Dasher**. A confirmation dialog shows the delivery fee that will be billed to your DoorDash account. Click **Proceed** to confirm.
 
-### Dispatching a Dasher
+**Refreshing Delivery Status:** Click **Refresh Status** to pull the latest delivery information from DoorDash immediately, without waiting for a webhook event.
 
-If **Auto-Dispatch** is turned off — or if you want to re-dispatch after a cancellation — click **Dispatch Dasher**. A confirmation dialog shows the delivery fee that will be billed to your DoorDash account. Click **Proceed** to confirm.
+**Tracking the Delivery:** Click **Track Delivery** to open the DoorDash tracking page in a new tab. The customer-facing tracking link shows real-time Dasher location.
 
-### Refreshing Delivery Status
+**Editing a Delivery:** Click **Edit Delivery** to adjust the tip amount, add dropoff instructions (for example, "Leave at back door"), or toggle contactless delivery — but only while the Dasher has not yet picked up the order.
 
-Click **Refresh Status** to pull the latest delivery information from DoorDash immediately, without waiting for a webhook event.
+**Cancelling a Delivery:** Click **Cancel Delivery** and confirm the prompt. If a Dasher has already been assigned, DoorDash may not allow the cancellation (a notice will appear). In that case, use **Request Refund** or **Redeliver** instead.
 
-### Tracking the Delivery
-
-Click **Track Delivery** to open the DoorDash tracking page in a new tab. The customer-facing tracking link shows real-time Dasher location.
-
-### Editing a Delivery
-
-Click **Edit Delivery** to adjust the tip amount, add dropoff instructions (for example, "Leave at back door"), or toggle contactless delivery — but only while the Dasher has not yet picked up the order.
-
-### Cancelling a Delivery
-
-Click **Cancel Delivery** and confirm the prompt. If a Dasher has already been assigned, DoorDash may not allow the cancellation (a notice will appear). In that case, use **Request Refund** or **Redeliver** instead.
-
-:::caution
+:::info
 
 A cancellation fee may apply if a Dasher has already been assigned to the delivery when you cancel.
 
 :::
 
-### Requesting a Refund
+**Requesting a Refund:** Click **Request Refund** and choose the reason that best describes the issue (for example, "Never delivered" or "Delivered late"). DoorDash reviews the request and decides whether to grant it. This is a DoorDash-side refund of the delivery fee — it does not automatically refund the customer's product payment in J2Commerce.
 
-Click **Request Refund** and choose the reason that best describes the issue (for example, "Never delivered" or "Delivered late"). DoorDash reviews the request and decides whether to grant it. This is a DoorDash-side refund of the delivery fee — it does not automatically refund the customer's product payment in J2Commerce.
+**Redelivering an Order:** If a delivery was cancelled or completed but the item needs to be sent again, click **Redeliver**. This dispatches a brand-new Dasher for the same order and bills your DoorDash account for a new delivery fee.
 
-### Redelivering an Order
+**Rating the Dasher:** After a delivery is completed, click **Rate Dasher** to leave a thumbs up or thumbs down rating with an optional reason and comment.
 
-If a delivery was cancelled or completed but the item needs to be sent again, click **Redeliver**. This dispatches a brand-new Dasher for the same order and bills your DoorDash account for a new delivery fee.
+**Viewing Dasher History:** Click **Dasher History** to see all Dashers who were assigned to the delivery, including any who were reassigned before pickup.
 
-### Rating the Dasher
-
-After a delivery is completed, click **Rate Dasher** to leave a thumbs up or thumbs down rating with an optional reason and comment.
-
-### Viewing Dasher History
-
-Click **Dasher History** to see all Dashers who were assigned to the delivery, including any who were reassigned before pickup.
-
----
+***
 
 ## Troubleshooting
 
@@ -275,13 +273,13 @@ Click **Dasher History** to see all Dashers who were assigned to the delivery, i
 
 **Solution:**
 
-1. Go to **J2Commerce** **->** **Shipping**, click **DoorDash Drive** to open the settings.
+1. Go to **J2Commerce** **-> Setup ->** **Shipping Methods**, click **DoorDash Drive** to open the settings.
 2. Confirm **Sandbox Mode** is set correctly and the matching credentials (sandbox or production) are filled in. All three fields — Developer ID, Key ID, and Signing Secret — must be present.
 3. Check the **Store Pickup Address** tab — the plugin requires at minimum a street address and ZIP/postal code (or a complete J2Commerce store address if you selected **Use Store Address**).
 4. Enable **Debug Logging** temporarily, clear the Joomla cache, and attempt a checkout. Review the log at **System** **->** **Logs** for any API error messages, then disable debug logging again.
 5. If the error is "not serviceable", the customer's address is outside DoorDash's delivery range. No rate will appear — this is expected behavior.
 
----
+***
 
 ### "Invalid credentials" or 401 error in the debug log
 
@@ -293,7 +291,7 @@ Click **Dasher History** to see all Dashers who were assigned to the delivery, i
 2. Confirm that **Sandbox Mode** matches the environment your credentials belong to.
 3. Save the plugin settings and test again.
 
----
+***
 
 ### "External Business ID and External Store ID" error (400)
 
@@ -303,7 +301,7 @@ Click **Dasher History** to see all Dashers who were assigned to the delivery, i
 
 Either fill in both **External Business ID** and **External Store ID**, or clear both fields to use the pickup address instead.
 
----
+***
 
 ### Dispatch fails with "already dispatched" message
 
@@ -313,7 +311,7 @@ Either fill in both **External Business ID** and **External Store ID**, or clear
 
 Check the **DoorDash Delivery** panel in the order view. If the delivery is active, use **Track Delivery** or **Refresh Status** to see the current state. If you need to cancel and redispatch, cancel the current delivery first, then click **Dispatch Dasher** again.
 
----
+***
 
 ### Order status is not updating when the delivery progresses
 
