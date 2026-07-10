@@ -239,15 +239,6 @@ To ensure accurate conversions, keep your EUR exchange rate up to date. The [Cur
 
 **Solution:** Go to **J2Commerce** -> **Localization** -> **Currencies**, find EUR, and update the exchange rate. Consider using the Currency Updater app to keep rates current automatically.
 
-### Admin error emails are not being received
-
-**Cause:** The **Notification User Group** is set to a group whose members do not have system emails enabled, or the group is empty.
-
-**Solution:**
-
-1. Go to **J2Commerce** -> **Setup** -> **Payment Methods** -> **MultiSafepay** -> **Notification User Group** and confirm the correct group is selected.
-2. Go to **User Manager** (**System** -> **Manage** -> **Users**), find the users in that group, and verify each user has **Receive System Emails** set to **Yes** in their profile.
-
 ## What Is New in J2Commerce 6
 
 The J2Commerce 6 version of this plugin is a complete rebuild from the original J2Store v4 integration. If you are migrating from J2Store, the key improvements are:
