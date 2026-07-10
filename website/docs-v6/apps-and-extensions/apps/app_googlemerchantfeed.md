@@ -1,10 +1,3 @@
----
-title: "Google Merchant Feed"
-sidebar_label: "Google Merchant Feed"
-sidebar_position: 26
-description: "Generate a Google Merchant Center product feed from your J2Commerce store to list products on Google Shopping and surface them in Google Search."
----
-
 # Google Merchant Feed
 
 The Google Merchant Feed app generates a live product feed in the format Google Merchant Center expects. Once you register the feed URL in Merchant Center, Google fetches your products on a regular schedule and makes them eligible to appear in Google Shopping results, Google Search product panels, and Performance Max campaigns.
@@ -17,104 +10,91 @@ The feed is built from your J2Commerce catalog in real time. Every published pro
 - Joomla! 6.x
 - J2Commerce 6.x
 
-## Installation
+## Purchase and Download
 
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) **->** **Apps**
 
-1. Purchase and download the `app_googlemerchantfeed.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the `app_googlemerchantfeed.zip` file.
-4. The plugin installs and enables automatically.
+**Step 2:** Locate **Google Merchant Feed** **->** click **View Details** **->** **Add to Cart** **->** **Checkout**
+
+**Step 3:** Go to your **My Downloads** section under your profile button at the top right corner and search for the app. Click **Available Versions** **->** **View Files** **->** **Download Now** to save the ZIP file to your computer.
+
+## Install the App
+
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
+
+Upload the plugin `app_googlemerchantfeed.zip` file or use the Install from URL option.
+
+![](/img/install.webp)
 
 ## Enable the App
 
-Once installed, confirm the plugin is enabled:
+The plugin installs and enables itself automatically. No separate enable step is needed. However, it's important to know where to go to enable or disable it in the future .
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner -> **Apps**
+There are **two** ways to reach the Apps list.
 
-**Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-Look for **Google Merchant Feed**, click the **X** and it will turn into a green checkmark. The app is now enabled.
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![](/img/gift-wrap-apps.webp)
+
+To help you narrow down the list, you can do a search for **Google Merchant Feed**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/google-merchant_enable.webp)
 
 ## Configure the App
 
-Click the **Google Merchant Feed** title next to the green checkmark to open the settings screen.
+Click the **Google Merchant Feed** title (next to the green checkmark) to open the settings screen.
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar to reveal a description beneath each field as you configure it.
+Click the **Toggle Inline Help** button on any app you install to see a description below each field directly in the admin panel.
 
 :::
 
+![](/img/google-merchant_toggle.webp)
+
 ### Basic Settings tab
 
-<!-- SCREENSHOT: Plugin settings screen showing the Basic tab with Feed URL, Store Title, Default Condition, and other fields visible -->
+![](/img/google-merchant_basic.webp)
 
-#### Feed URL
-
-The **Feed URL** field displays the unique link that Google uses to fetch your product data. This is a read-only field — copy it using the **Copy** button next to the URL.
+**Feed URL:** The field displays the unique link that Google uses to fetch your product data. This is a read-only field — copy it using the **Copy** button next to the URL.
 
 You will paste this URL into Google Merchant Center when setting up your data source (see [Register the Feed in Google Merchant Center](#register-the-feed) below).
 
-#### Feed Title Override
+**Feed Title Override:** Overrides the title that appears inside the feed XML. Leave blank to use the store name from J2Commerce settings.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Feed Title Override** | Overrides the title that appears inside the feed XML. Leave blank to use the store name from J2Commerce settings. | *(blank — uses store name)* |
+**Default Condition:** The product condition reported in the feed for every product that does not have its own condition set.
 
-#### Default Condition
+- New
 
-| Field | Description | Default | Options |
-|-------|-------------|---------|---------|
-| **Default Condition** | The product condition reported in the feed for every product that does not have its own condition set. | `New` | New, Refurbished, Used |
+- Refurbished
+
+- Used
 
 Most stores sell new products, so **New** is the right default. If your store sells pre-owned or restored goods, change this to match.
 
-#### Default Google Category
-
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Default Google Category** | The fallback Google product taxonomy category applied to any product or category that does not have its own category selected. Start typing to search the taxonomy — the field autocompletes against Google's official product category list and saves the numeric category ID. | *(none)* |
+**Default Google Category:** The fallback Google product taxonomy category applied to any product or category that does not have its own category selected. Start typing to search the taxonomy — the field autocompletes against Google's official product category list and saves the numeric category ID.
 
 Google requires a category for Shopping ads. Setting a sensible default here means your products are always categorised, even if you have not set categories on individual items.
 
 See [Category Resolution Order](#category-resolution-order) below for details on how product-level and category-level overrides work.
 
-#### Taxonomy Cache TTL (hours)
+**Taxonomy Cache TTL (hours):** How long the plugin stores a local copy of Google's product taxonomy before refreshing it. Google updates the taxonomy periodically; one week (168 hours) is a sensible refresh interval.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Taxonomy Cache TTL (hours)** | How long the plugin stores a local copy of Google's product taxonomy before refreshing it. Google updates the taxonomy periodically; one week (168 hours) is a sensible refresh interval. | `168` |
+**Excluded Products:** A product selector where you can pick individual products to leave out of the feed entirely. Use this for internal test products, gift cards, or anything you do not want listed on Google.
 
-#### Excluded Products
-
-| Field | Description |
-|-------|-------------|
-| **Excluded Products** | A product selector where you can pick individual products to leave out of the feed entirely. Use this for internal test products, gift cards, or anything you do not want listed on Google. |
-
-#### Include Unpublished
-
-| Field | Description | Default | Options |
-|-------|-------------|---------|---------|
-| **Include Unpublished** | Controls whether products that are unpublished in Joomla are included in the generated feed. | **No** | Yes, No |
+**Include Unpublished:** Controls whether products that are unpublished in Joomla are included in the generated feed.
 
 Leave this set to **No** in almost all cases. Set to **Yes** only if you need to preview feed entries for products that are not yet live on your site.
 
-#### Feed Cache (minutes)
+**Feed Cache (minutes):** How long the generated feed XML is cached on the server. Google typically fetches feeds once a day, so caching for 60 minutes is a good balance between performance and freshness. Set to `0` to disable caching and always generate the feed fresh on every request.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Feed Cache (minutes)** | How long the generated feed XML is cached on the server. Google typically fetches feeds once a day, so caching for 60 minutes is a good balance between performance and freshness. Set to `0` to disable caching and always generate the feed fresh on every request. | `60` |
-
-#### Feed Access Token
-
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Feed Access Token** | An optional secret token that restricts who can access the feed URL. When you enter a token here, the feed URL will only respond correctly when `&token=YOUR_TOKEN` is appended to it. Leave blank to allow anyone with the URL to fetch the feed. | *(blank — public access)* |
+**Feed Access Token:** An optional secret token that restricts who can access the feed URL. When you enter a token here, the feed URL will only respond correctly when `&token=YOUR_TOKEN` is appended to it. Leave blank to allow anyone with the URL to fetch the feed.
 
 If you set a token, the Feed URL field at the top of the screen updates to show the full URL including the token parameter. Copy that updated URL and use it in Google Merchant Center.
 
-:::note
+:::tip
 
 Google Merchant Center will send the token on every scheduled fetch, so the feed remains private from casual browsers while still working correctly for Google.
 
@@ -122,18 +102,19 @@ Google Merchant Center will send the token on every scheduled fetch, so the feed
 
 ### Shipping Defaults tab
 
-<!-- SCREENSHOT: Shipping Defaults tab showing the repeatable shipping rows with Country, Service, Currency, and Price columns -->
+![](/img/google-merchant_shipping.webp)
 
 The **Shipping Defaults** tab lets you declare flat-rate shipping costs that Google includes in your product listings. Google uses this information to show estimated shipping costs on Shopping ads and in free listings.
 
 Click **Add Item** to create a shipping rule. Each rule has four fields:
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| **Country** | The destination country for this shipping rule. Select from the countries enabled in your store. | `US` |
-| **Service Name** | A label describing the shipping method shown to Google (and optionally in search results). | `Standard` |
-| **Currency** | The currency for this shipping price. Select from the currencies published in your store. | `USD` |
-| **Shipping Price** | The flat shipping cost for this rule, as a decimal number. Enter `0` for free shipping. | `4.99` |
+**Country:** The destination country for this shipping rule. Select from the countries enabled in your store. **Example:** `US`
+
+**Service Name:** A label describing the shipping method shown to Google (and optionally in search results). **Example:** `US`
+
+**Currency:** The currency for this shipping price. Select from the currencies published in your store. **Example:** `USD`
+
+**Shipping Price:** The flat shipping cost for this rule, as a decimal number. Enter `0` for free shipping. **Example:** `4.99`
 
 You can add one rule per country, or multiple rules for the same country with different service names (for example, Standard and Express).
 
@@ -145,8 +126,6 @@ If shipping cost varies by product weight or order total, set up your shipping r
 
 ## Register the Feed in Google Merchant Center {#register-the-feed}
 
-<!-- SCREENSHOT: Google Merchant Center Data sources screen showing the Add data source button -->
-
 After configuring the plugin, you need to tell Google Merchant Center where to find your feed:
 
 1. Copy the **Feed URL** from the top of the plugin settings screen (use the **Copy** button).
@@ -157,7 +136,7 @@ After configuring the plugin, you need to tell Google Merchant Center where to f
 6. Set a fetch frequency (daily is recommended).
 7. Save the data source. Google will fetch the feed on its next scheduled run.
 
-:::note
+:::info
 
 Google must be able to reach your feed URL from the public internet. A URL on a local development server (such as `localhost` or a private IP address) will not work for a live fetch. During development, you can download the feed XML manually by visiting the URL in your browser and uploading the file to Merchant Center as a manual upload.
 
@@ -175,13 +154,12 @@ The plugin uses a three-level hierarchy to assign a Google product category to e
 
 ### Setting a Category Override on a Product
 
+![](/img/google-merchant_app.webp)
+
 1. Go to **J2Commerce** -> **Catalog** -> **Products**.
 2. Open the product you want to edit.
 3. Click the **J2Commerce** tab, then the **Apps** tab.
 4. Locate the **Google Product Category** field and start typing to search and select a category.
-5. Click **Save** or **Save & Close**.
-
-<!-- SCREENSHOT: Product edit screen showing the Apps tab with the Google Product Category field -->
 
 ### Setting a Category Override on a Content Category
 
@@ -189,9 +167,6 @@ The plugin uses a three-level hierarchy to assign a Google product category to e
 2. Open the category you want to edit.
 3. Click the **J2Commerce** tab (or the tab where J2Commerce fields appear).
 4. Locate the **Google Product Category** field and select a category.
-5. Click **Save & Close**.
-
-<!-- SCREENSHOT: Category edit screen showing the J2Commerce tab with the Google Product Category field -->
 
 ## How It Works
 
