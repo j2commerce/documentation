@@ -65,6 +65,8 @@ Click the **Toggle Inline Help** button at the top of any plugin configuration p
 
 ### Credentials
 
+![](/img/zarinpal-api.webp)
+
 Find the **Merchant ID** field and paste your UUID from the ZarinPal merchant dashboard.
 
 The field only appears when **Sandbox Mode** is set to **No**. When Sandbox Mode is **Yes**, the **Sandbox Merchant ID** field appears in its place — you can leave that field empty or enter any placeholder value for testing.
@@ -78,6 +80,8 @@ Set **Sandbox Mode** to **Yes** while testing, and to **No** for a live store.
 When Sandbox Mode is on, the plugin points to `sandbox.zarinpal.com` instead of the live gateway. No real charges are made. The sandbox redirects to a test payment page where you can simulate a successful or failed transaction.
 
 ### Currency — Rial vs Toman
+
+![](/img/zarinpal-currency.webp)
 
 This is the most important setting to get right. ZarinPal's API accepts amounts in either **IRR** (Iranian Rial) or **IRT** (Iranian Toman), and your store currency must match this selection.
 
