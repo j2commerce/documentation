@@ -26,7 +26,7 @@ Paddle shows the tax breakdown to the customer at checkout — but the final tax
 
 The Paddle plugin is sold separately from J2Commerce. Purchase it from the [J2Commerce website](https://www.j2commerce.com/extensions/) and download the installer ZIP file.
 
-<!-- SCREENSHOT: J2Commerce extension store showing the Paddle plugin listing -->
+{/* SCREENSHOT: J2Commerce extension store showing the Paddle plugin listing */}
 
 ## Installation
 
@@ -35,7 +35,7 @@ The Paddle plugin is sold separately from J2Commerce. Purchase it from the [J2Co
 3. Drag the Paddle plugin ZIP file into the upload area or use **Browse for file** to locate it.
 4. Click **Upload & Install**.
 
-<!-- SCREENSHOT: Joomla extension installer with Paddle ZIP file ready to upload -->
+{/* SCREENSHOT: Joomla extension installer with Paddle ZIP file ready to upload */}
 
 ## Enable the Plugin
 
@@ -53,7 +53,7 @@ After installation, the plugin must be enabled before it appears at checkout.
 2. Find **Paddle** in the list and click to open it.
 3. Set **Status** to **Enabled** and save.
 
-<!-- SCREENSHOT: J2Commerce Payment Methods screen with Paddle listed -->
+{/* SCREENSHOT: J2Commerce Payment Methods screen with Paddle listed */}
 
 ## Configure the Plugin
 
@@ -121,7 +121,7 @@ Add a processing fee if your Paddle pricing needs to cover gateway costs.
 | **Show Dashboard Icon** | Display a shortcut icon in the J2Commerce admin dashboard | No |
 | **Debug Logging** | Log API calls to the Joomla log file — disable on production | No |
 
-<!-- SCREENSHOT: Paddle plugin configuration screen open in Joomla admin -->
+{/* SCREENSHOT: Paddle plugin configuration screen open in Joomla admin */}
 
 ## How Checkout Works
 
@@ -135,7 +135,7 @@ Because Paddle runs its own hosted checkout overlay, you are automatically SAQ-A
 
 If the customer closes the overlay without paying, they can return to checkout and try again.
 
-<!-- SCREENSHOT: Paddle checkout overlay appearing on the store's checkout page -->
+{/* SCREENSHOT: Paddle checkout overlay appearing on the store's checkout page */}
 
 ## Webhook Setup
 
@@ -170,7 +170,7 @@ If your site runs on localhost, the Webhook URL field shows a warning instead of
 7. Paddle will display a **Webhook Secret** (also called an endpoint secret key, starting with `pdl_ntfset_…`). Copy this value.
 8. Paste it into the **Live Webhook Secret** (or **Sandbox Webhook Secret**) field in the plugin settings and save.
 
-<!-- SCREENSHOT: Paddle dashboard Notifications screen showing a new destination being created -->
+{/* SCREENSHOT: Paddle dashboard Notifications screen showing a new destination being created */}
 
 :::warning Keep your webhook secret private
 The webhook secret is used to verify that notifications genuinely come from Paddle. Never share it publicly or commit it to version control.
@@ -209,7 +209,7 @@ From any order's detail screen in **J2Commerce** -> **Orders**, you can manage t
 
 These actions communicate directly with Paddle's API. The customer will not be billed again after a cancellation.
 
-<!-- SCREENSHOT: Order detail screen showing Paddle subscription action buttons -->
+{/* SCREENSHOT: Order detail screen showing Paddle subscription action buttons */}
 
 ## Refunds and Voids
 
@@ -229,7 +229,7 @@ Do not mark the order as refunded manually — wait for the webhook confirmation
 
 If a transaction was created but not yet completed, you can cancel it using the **Cancel Transaction** button on the order detail screen. This voids the pending transaction and applies the **Void Order Status**.
 
-<!-- SCREENSHOT: Order detail screen showing Refund and Cancel Transaction buttons -->
+{/* SCREENSHOT: Order detail screen showing Refund and Cancel Transaction buttons */}
 
 ## Troubleshooting
 
