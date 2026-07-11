@@ -31,7 +31,7 @@ In the Joomla admin, go to **System -> Install -> Extensions**
 
 Upload the plugin ZIP file or use the Install from URL option.
 
-![Install extensions](/img/aftersalespecial-install1.webp)
+[//]: # (![Install extensions]&#40;/img/aftersalespecial-install1.webp&#41;)
 
 ## Enable the App
 
