@@ -121,7 +121,7 @@ When **Sandbox** is set to **Yes**, the plugin reads the Sandbox credentials tab
 
 :::
 
-![](/img/braintree-config2-1.webp)
+![](/img/braintree-api.webp)
 
 These settings are used when **Sandbox** is set to **No**.
 

@@ -66,23 +66,7 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 ### Credentials
 
-**Merchant ID:** Your numeric ICEPAY Merchant ID from the ICEPAY merchant portal.
-
-**Secret Code:** Your ICEPAY secret code used for request signing.
-
-**Postback URL:** Read-only. Copy this URL into your ICEPAY merchant portal as the postback/notification URL.
-
-### Accepted Payment Methods
-
-After entering your Merchant ID and Secret Code and saving the plugin, reload the edit page. The **Accepted Payment Methods** field will populate with the methods available on your ICEPAY account.
-
-Select the methods you want to offer at checkout. If nothing is selected, all methods returned by ICEPAY are shown to customers.
-
-:::tip iDEAL Bank Selection
-
-When a customer selects iDEAL at checkout, they are shown a list of Dutch banks (issuers) to choose from before being redirected to ICEPAY. This selection step is built into the checkout flow.
-
-:::
+![](/img/icepay-api.webp)
 
 ### Sandbox Mode
 
@@ -93,6 +77,24 @@ When a customer selects iDEAL at checkout, they are shown a list of Dutch banks 
 **Secret Code (Sandbox):** Sandbox secret code — only used when Sandbox is enabled.
 
 When sandbox mode is on, the sandbox credentials are used automatically. Keep your live credentials in the main fields and sandbox credentials in the sandbox fields so switching between modes is instant.
+
+**Postback URL:** Read-only. Copy this URL into your ICEPAY merchant portal as the postback/notification URL.
+
+![](/img/icepay-payback.webp)
+
+### Accepted Payment Methods
+
+![](/img/icepay-cc.webp)
+
+After entering your Merchant ID and Secret Code and saving the plugin, reload the edit page. The **Accepted Payment Methods** field will populate with the methods available on your ICEPAY account.
+
+Select the methods you want to offer at checkout. If nothing is selected, all methods returned by ICEPAY are shown to customers.
+
+:::tip iDEAL Bank Selection
+
+When a customer selects iDEAL at checkout, they are shown a list of Dutch banks (issuers) to choose from before being redirected to ICEPAY. This selection step is built into the checkout flow.
+
+:::
 
 ### Order Statuses
 

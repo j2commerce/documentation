@@ -1,10 +1,3 @@
----
-title: "Partial Payments"
-sidebar_label: "Partial Payments"
-sidebar_position: 10
-description: "Collect a deposit at checkout and schedule the remaining balance for later, with flexible payment plans, automated reminder emails, and a customer Pay Now page."
----
-
 # Partial Payments
 
 The Partial Payments app lets you collect a deposit when a customer places an order and then receive the remaining balance on a schedule you control. Customers pay a percentage or fixed-amount deposit at checkout and return to their account to pay each installment when it comes due. Automated emails handle the reminders so you do not need to chase customers manually.
@@ -20,51 +13,53 @@ This app is ideal for stores selling high-ticket items, custom-made goods, servi
 
 ## Purchase and Download
 
-The **Partial Payments** app is a premium add-on available from the J2Commerce extensions store.
+**Step 1:** Go to the [J2Commerce website](https://www.j2commerce.com/) **->** **Apps**
 
-**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **-> Apps**
+**Step 2:** Locate **Partial Payments** **->** click **View Details** **->** **Add to Cart** **->** **Checkout**
 
-**Step 2:** Locate the **Partial Payments** App -> click **View Details -> Add to cart -> Checkout**.
-
-**Step 3:** Go to **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**.
+**Step 3:** Go to your **My Downloads** section under your profile button at the top right corner and search for the app. Click **Available Versions** **->** **View Files** **->** **Download Now** to save the ZIP file to your computer.
 
 ## Install the App
 
-In the Joomla Administrator, go to **System -> Install -> Extensions**.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-Upload the `app_partialpayment.zip` file or use the Install from URL option.
+Upload the plugin `app_partialpayment.zip` file or use the Install from URL option.
 
-<!-- SCREENSHOT: System -> Install -> Extensions upload screen -->
-
-On a successful install you will see a green "Partial Payment plugin installed successfully" message. The installer also creates the database tables it needs and adds a **Scheduled** order status automatically.
+![](/img/install.webp)
 
 ## Enable the App
 
-Once you have installed the App, you need to enable it. There are **two** ways to reach it.
+The plugin installs and enables itself automatically. No separate enable step is needed. However, it's important to know where to go to enable or disable it in the future .
+
+There are **two** ways to reach the Apps list.
 
 **Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Partial Payments -->
+![](/img/gift-wrap-apps.webp)
 
-Look for **Partial Payments**, click the **X**, and it turns into a green checkmark. It is now enabled and ready for setup.
+To help you narrow down the list, you can do a search for **Partial Payments**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/partial-payment_enable.webp)
 
 ## Configure the App
 
-Click the **Partial Payments** title next to the green checkmark to open the settings.
+Click the **Partial Payments** title (next to the green checkmark) to open the settings screen.
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+Click the **Toggle Inline Help** button on any app you install to see a description below each field directly in the admin panel.
 
 :::
+
+![](/img/partial-payment_toggle.webp)
 
 The settings are split across six tabs: **General Settings**, **Checkout**, **Schedule Settings**, **Escalation Settings**, **Mail Settings**, and **Automatic Charge (Saved Card)**.
 
 ### General Settings tab
 
-<!-- SCREENSHOT: Partial Payments General Settings tab -->
+![](/img/partial-payment_basic.webp)
 
 **Cron URL:** A read-only URL you copy into your server cron or the Joomla Scheduler. Run it at least once a day so scheduled installments activate on time and reminder emails go out. See [Cron Setup](#cron-setup) below.
 
@@ -120,7 +115,7 @@ The settings are split across six tabs: **General Settings**, **Checkout**, **Sc
 
 ### Checkout tab
 
-<!-- SCREENSHOT: Partial Payments Checkout tab -->
+![](/img/partial-payment_checkout.webp)
 
 **Allowed Payment Methods:** Restrict deposit payments to specific gateways. Leave empty to allow all active payment methods. Only gateways selected here appear for partial payment orders at checkout.
 
@@ -139,13 +134,15 @@ The settings are split across six tabs: **General Settings**, **Checkout**, **Sc
 
 ### Schedule Settings tab
 
+![](/img/partial-payment_schedule.webp)
+
 **Maximum Installment Horizon (Days):** The longest a payment plan may run, measured in days from the deposit date. Set `0` to remove the limit. The default is `365`. This prevents a plan from scheduling a payment far into the future accidentally.
 
 ### Escalation Settings tab
 
-These settings control what happens when a customer misses an installment due date.
+![](/img/partial-payment_escalation.webp)
 
-<!-- SCREENSHOT: Partial Payments Escalation Settings tab -->
+These settings control what happens when a customer misses an installment due date.
 
 **Escalate After (Days):** How many days past the due date before escalation triggers. Set `0` to turn escalation off entirely.
 
@@ -160,7 +157,7 @@ These settings control what happens when a customer misses an installment due da
 
 ### Mail Settings tab
 
-<!-- SCREENSHOT: Partial Payments Mail Settings tab -->
+![](/img/partial-payment_mail.webp)
 
 **Send Email When Order Is Ready for Payment:** Emails the customer when a scheduled installment becomes due. Default **Yes**.
 
@@ -186,11 +183,13 @@ Automatic charging requires a compatible payment gateway that supports saved car
 
 A payment plan defines how the balance is collected after the deposit — for example "deposit today, then three equal monthly payments." You can assign plans storewide in General Settings or per product.
 
-To manage plans, open the **Partial Payments** settings in **J2Commerce -> Apps**, then click the **Manage Plans** button in the toolbar.
+To manage plans, open the **Partial Payments** settings in **J2Commerce -> Apps**, then click the **Manage Plans** button in the toolbar **-> New**.
 
-<!-- SCREENSHOT: Partial Payments plugin showing the Manage Plans toolbar button -->
+![](/img/partial-payment_manage.webp)
 
-Click **Create New Plan** and fill in the **Plan Details** tab:
+### Plan Details tab
+
+![](/img/partial-payment_plan.webp)
 
 **Plan Name:** A short, customer-facing label (e.g., "3 Monthly Payments"). This appears on the product page and cart.
 
@@ -212,9 +211,11 @@ Then open the **Options** tab to set display preferences:
 - **Default Title** — shows a generic "Payment Plan" label
 - **Plan Title** — shows the actual plan name
 
-Then open the **Schedule** tab to build the installment timeline.
+### Schedule tab
 
-<!-- SCREENSHOT: Plan edit screen showing the schedule editor and live preview panel -->
+Then open the Schedule tab to build the installment timeline.
+
+![](/img/partial-payment_schedule1.webp)
 
 1. Click **Add Installment** to add a row.
 2. Enter the **Payment amount** for that installment. Use a trailing `%` (e.g. `33.33%`) for a percentage of the order total, or a plain number for a fixed amount in your store currency.
@@ -229,6 +230,16 @@ Use the **Duplicate** and **Reset Schedule to Defaults** toolbar buttons when bu
 
 :::
 
+### Options tab
+
+![](/img/partial-payment_options.webp)
+
+**Title Display:** Controls the title shown for this plan on the product-page payment selector and the cart line item. Default Title shows a generic Payment Plan label; Plan Title shows the name of this plan.
+
+**Display Style:** Choose how payment options are displayed to customers on the product page.
+
+**Display Description:** Show the plan description in the product-page payment selector.
+
 ## Enabling Partial Payment on a Product
 
 Each product can use the storewide defaults or set its own deposit terms. There are **three** ways to reach a product.
@@ -241,7 +252,7 @@ Each product can use the storewide defaults or set its own deposit terms. There 
 
 Open the product, click the **J2Commerce** tab, then the **Apps** tab, and find the **Partial Payment** section.
 
-<!-- SCREENSHOT: Product edit showing J2Commerce tab -> Apps tab -> Partial Payment section -->
+![](/img/partial-payment_app.webp)
 
 **Enable Partial Payment:** Set this product's availability.
 
@@ -287,8 +298,6 @@ When a payment plan is offered, a plan selector also appears so the customer can
 
 When partial payment is **required**, the deposit label shows without a toggle and the customer proceeds directly with the deposit.
 
-<!-- SCREENSHOT: Product page showing the Pay in Full / Pay Deposit toggle and plan selector -->
-
 ### Cart
 
 Line items using partial payment show a **Deposit** badge next to the product name. The order totals area adds two extra rows:
@@ -296,17 +305,17 @@ Line items using partial payment show a **Deposit** badge next to the product na
 - **Full Subtotal** — the complete price before the deposit arrangement
 - **Future Payments** — the balance still owed after today's deposit
 
-<!-- SCREENSHOT: Cart showing the Deposit badge and Full Subtotal / Future Payments rows -->
-
 ### Checkout
 
 If you have set **Allowed Payment Methods** in the Checkout tab, only those gateways appear. The total shown in the sidecart follows your **Payment Display** setting — either the full order total or only the deposit due today.
+
+![](/img/partial-payment_checkout1.webp)
 
 ### Customer Profile — Pay Now and Schedule
 
 After the deposit order is placed, the customer can view the remaining payment schedule in their account under **My Profile -> Orders**. When an installment becomes due, a **Pay Now** alert appears on the order with a direct link to complete the payment. A **Payment Schedule** view lists all installments, their amounts, and their due dates.
 
-<!-- SCREENSHOT: Customer profile order showing the Pay Now alert and payment schedule -->
+![](/img/partial-payment_orders.webp)
 
 ## Cron Setup
 
@@ -326,44 +335,42 @@ Copy the **Cron URL** from the General Settings tab and add it to your server's 
 2. Set the schedule to once daily (for example `0 6 * * *` for 6:00 AM daily).
 3. In the command field use: `curl -s "PASTE_YOUR_CRON_URL_HERE" > /dev/null 2>&1`
 
-<!-- SCREENSHOT: cPanel Cron Jobs page with the partial payment Cron URL pasted in -->
-
 ## Email Templates and Merge Tags
 
 The app sends several types of email. Each has a built-in default body, and you can override the subject and body using the Email Templates manager (use the **Push Email Templates** buttons in the Mail Settings tab to seed the defaults).
 
-| Email type | When it sends |
-|------------|---------------|
-| Installment Due | When a scheduled installment becomes ready for payment |
-| Overdue Reminder | On each day listed in **Notify Payment Pending on (Days)** after the due date |
-| Deposit Received | Immediately after a deposit payment is confirmed |
-| Admin Overdue Alert | When an overdue installment escalates with action **Notify Admin** |
-| Installment Confirmed | After a later installment payment is received |
-| Plan Complete | When the final installment is paid and the plan is finished |
-| Payment Failed | When an automatic charge attempt fails |
-| Schedule Created | When the deposit is placed and the installment schedule is set up |
+| Email type            | When it sends                                                                 |
+| --------------------- | ----------------------------------------------------------------------------- |
+| Installment Due       | When a scheduled installment becomes ready for payment                        |
+| Overdue Reminder      | On each day listed in **Notify Payment Pending on (Days)** after the due date |
+| Deposit Received      | Immediately after a deposit payment is confirmed                              |
+| Admin Overdue Alert   | When an overdue installment escalates with action **Notify Admin**            |
+| Installment Confirmed | After a later installment payment is received                                 |
+| Plan Complete         | When the final installment is paid and the plan is finished                   |
+| Payment Failed        | When an automatic charge attempt fails                                        |
+| Schedule Created      | When the deposit is placed and the installment schedule is set up             |
 
 ### Merge Tags
 
 Use these tags in any custom email subject or body. They are replaced with real values when the email sends. Always include the square brackets exactly as shown.
 
-| Merge tag | What it inserts |
-|-----------|-----------------|
-| `[CUSTOMER_NAME]` | The customer's name or email address |
-| `[PARTIAL_PAYMENT_ORDER_ITEM_NAME]` | The product name from the order |
-| `[INVOICE_URL]` | A link to the customer's order invoice |
-| `[PAY_NOW_URL]` | A direct link the customer uses to pay an outstanding installment |
-| `[PARTIAL_PAYMENT_DATE]` | The scheduled payment due date |
-| `[PARTIAL_PAYMENT_DAYS_PASSED]` | Days elapsed since the due date (for overdue reminders) |
-| `[PAID_PARTIAL_AMOUNT]` | The deposit already paid |
-| `[PARTIAL_PAYMENT_FULL_AMOUNT]` | The full order total |
-| `[BALANCE_PARTIAL_AMOUNT]` | The outstanding balance still owed |
-| `[INSTALLMENT_INDEX]` | This installment's number in the sequence |
-| `[INSTALLMENT_TOTAL]` | The total number of installments in the plan |
+| Merge tag                           | What it inserts                                                   |
+| ----------------------------------- | ----------------------------------------------------------------- |
+| `[CUSTOMER_NAME]`                   | The customer's name or email address                              |
+| `[PARTIAL_PAYMENT_ORDER_ITEM_NAME]` | The product name from the order                                   |
+| `[INVOICE_URL]`                     | A link to the customer's order invoice                            |
+| `[PAY_NOW_URL]`                     | A direct link the customer uses to pay an outstanding installment |
+| `[PARTIAL_PAYMENT_DATE]`            | The scheduled payment due date                                    |
+| `[PARTIAL_PAYMENT_DAYS_PASSED]`     | Days elapsed since the due date (for overdue reminders)           |
+| `[PAID_PARTIAL_AMOUNT]`             | The deposit already paid                                          |
+| `[PARTIAL_PAYMENT_FULL_AMOUNT]`     | The full order total                                              |
+| `[BALANCE_PARTIAL_AMOUNT]`          | The outstanding balance still owed                                |
+| `[INSTALLMENT_INDEX]`               | This installment's number in the sequence                         |
+| `[INSTALLMENT_TOTAL]`               | The total number of installments in the plan                      |
 
 ## Coupon Restrictions
 
-You can control how individual coupons interact with partial payment orders. When editing a coupon in **J2Commerce -> Marketing -> Coupons**, look for the **Partial Payment** tab.
+You can control how individual coupons interact with partial payment orders. When editing a coupon in **J2Commerce -> Sales -> Coupons**, look for the **Partial Payment** tab.
 
 **Coupon Restriction:**
 

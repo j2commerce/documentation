@@ -79,19 +79,33 @@ Click the **Toggle Inline Help** button at the top of any plugin configuration p
 
 ### Credentials
 
+![](/img/interpay-api.webp)
+
 Fill in the following fields in the **Basic** tab:
 
-**TERMID:** Your live InterPay Terminal ID
-
-**Password (PASS):** Your live InterPay password
-
 **Test Mode:** Set to **Yes** while testing; set to **No** for live transactions
+
+**Live TERMID:** Your live InterPay Terminal ID
+
+**Live Password (PASS):** Your live InterPay password
 
 **Test TERMID:** Your InterPay sandbox Terminal ID (visible only when Test Mode is Yes)
 
 **Test Password (PASS):** Your InterPay sandbox password (visible only when Test Mode is Yes)
 
 When **Test Mode** is **Yes**, all transactions go to the InterPay sandbox server (`gateway.InterPayCanada.com`) using your test credentials. When it is **No**, transactions go to the live server using your live credentials.
+
+### Choose a Live Server
+
+![](/img/interpay-server.webp)
+
+When Test Mode is off, you can select which InterPay live server endpoint to use.
+
+**Server B (Primary):** `svrb.InterPayCanada.com` — use this unless InterPay support tells you otherwise
+
+**Server A:** `svra.InterPayCanada.com` — alternate endpoint
+
+Leave this on **Server B** unless your InterPay account manager has specifically directed you to Server A.
 
 ### Transaction Type
 
@@ -104,16 +118,6 @@ The **Transaction Type** setting controls what happens to the funds when the car
 - **Pre-Authorization:** Holds (reserves) the funds on the customer's card without actually capturing the money. The order moves to your **Pending Status** and the funds remain on hold until you manually capture them in the InterPay portal. Use Pre-Authorization only if your workflow requires approving orders before charging the customer.
 
 The default is **Sale**. If you select **Pre-Authorization**, remember that held funds will expire if you do not capture them within the timeframe your gateway agreement allows.
-
-### Choose a Live Server
-
-When Test Mode is off, you can select which InterPay live server endpoint to use.
-
-**Server B (Primary):** `svrb.InterPayCanada.com` — use this unless InterPay support tells you otherwise
-
-**Server A:** `svra.InterPayCanada.com` — alternate endpoint
-
-Leave this on **Server B** unless your InterPay account manager has specifically directed you to Server A.
 
 ### Order Status
 
