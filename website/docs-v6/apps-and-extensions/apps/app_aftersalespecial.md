@@ -41,11 +41,11 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-![Apps list](/img/aftersalespecial-app.webp)
+[//]: # (![Apps list]&#40;/img/aftersalespecial-app.webp&#41;)
 
 Look for **After-Sale Special**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-![Enable the app](/img/aftersalespecial-enable1.webp)
+[//]: # (![Enable the app]&#40;/img/aftersalespecial-enable1.webp&#41;)
 
 ## Configure the App
 
@@ -57,11 +57,11 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-![Toggle Inline Help](/img/aftersalespecial-toggle.webp)
+[//]: # (![Toggle Inline Help]&#40;/img/aftersalespecial-toggle.webp&#41;)
 
 ### Basic Settings tab
 
-![Settings screen](/img/aftersalespecial-config1.webp)
+[//]: # (![Settings screen]&#40;/img/aftersalespecial-config1.webp&#41;)
 
 ### Framework
 
@@ -142,13 +142,13 @@ A **Promotion** defines *who* qualifies for an upsell and *how many* offers they
 
 **Option B:** From the **Plugin Manager** entry for **After-Sale Special**, click **Manage Promotions** in the toolbar
 
-![Promotions list](/img/aftersalespecial-promotions-list.webp)
+[//]: # (![Promotions list]&#40;/img/aftersalespecial-promotions-list.webp&#41;)
 
 Click **New** to create a promotion.
 
 ### Promotion Details tab
 
-![Promotion details](/img/aftersalespecial-promotion-details.webp)
+[//]: # (![Promotion details]&#40;/img/aftersalespecial-promotion-details.webp&#41;)
 
 | Field | Description |
 |-------|-------------|
@@ -166,7 +166,7 @@ NOTE: A new promotion has no offers yet. Save it first — the **Manage Offers**
 
 ### Targeting Rules tab
 
-![Targeting rules](/img/aftersalespecial-targeting-rules.webp)
+[//]: # (![Targeting rules]&#40;/img/aftersalespecial-targeting-rules.webp&#41;)
 
 Click **Add Rule** to add one or more targeting conditions. A shopper's order must match **every** rule you add before the promotion is offered to them. Leave this empty to match every order.
 
@@ -187,13 +187,13 @@ Once you have added rules, save the promotion. The **Manage Offers** and **View 
 
 From an already-saved promotion, click **Manage Offers** in the toolbar, or from the promotions list open the promotion and click **Manage Offers**.
 
-![Offers list](/img/aftersalespecial-offers-list.webp)
+[//]: # (![Offers list]&#40;/img/aftersalespecial-offers-list.webp&#41;)
 
 Click **New** to add an offer.
 
 ### Offer Details tab
 
-![Offer details](/img/aftersalespecial-offer-details.webp)
+[//]: # (![Offer details]&#40;/img/aftersalespecial-offer-details.webp&#41;)
 
 | Field | Description |
 |-------|-------------|
@@ -215,7 +215,7 @@ NOTE: If the selected product has more than one purchasable variant, After-Sale 
 
 ### Offer Display tab
 
-![Offer display](/img/aftersalespecial-offer-display.webp)
+[//]: # (![Offer display]&#40;/img/aftersalespecial-offer-display.webp&#41;)
 
 | Field | Description |
 |-------|-------------|
@@ -233,7 +233,7 @@ The offer **Heading** field (at the top of the form) supports the `{price}` and 
 
 Once a promotion has offers, click **View Flow** in the promotion edit toolbar to see and rearrange the whole customer journey visually.
 
-![Offer Flow canvas](/img/aftersalespecial-flow-canvas.webp)
+[//]: # (![Offer Flow canvas]&#40;/img/aftersalespecial-flow-canvas.webp&#41;)
 
 The canvas shows a **Trigger** card summarizing your targeting rules, followed by a card for each offer in order, ending in an **Order Complete** card. From here you can:
 
