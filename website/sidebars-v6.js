@@ -98,6 +98,7 @@ const sidebars = {
             },
             items: [
                 'sales/orders',
+                'sales/order-transaction-ledger',
                 'sales/customers',
                 'sales/coupons',
                 'sales/vouchers',
@@ -215,6 +216,8 @@ const sidebars = {
                         slug: '/apps-and-extensions/apps',
                     },
                     items: [
+                        // ActiveCampaign Integration
+                        'apps-and-extensions/apps/app_activecampaign',
                         // Add to User Group
                         'apps-and-extensions/apps/usergroup',
                         // Additional Fees
@@ -229,6 +232,10 @@ const sidebars = {
                         'apps-and-extensions/apps/advancedcart',
                         // Advanced Tax Rates (there is a duplicate)
                         'apps-and-extensions/apps/taxrate',
+                        // After-Sale Special
+                        'apps-and-extensions/apps/app_aftersalespecial',
+                        // After-Sale Surveys
+                        'apps-and-extensions/apps/app_aftersalesurveys',
                         // Akeeba Release System Download ID (there is a duplicate)
                         'apps-and-extensions/apps/app-arsdlid',
                         // Ask Question / Quote
@@ -379,6 +386,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app_videodisplay',
                         // Wishlist
                         'apps-and-extensions/apps/app-wishlist',
+                        // YOOtheme
+                        'apps-and-extensions/apps/yootheme',
                     ],
                 },
                 {
@@ -566,6 +575,8 @@ const sidebars = {
                 'payment-methods/payment_purchaseorder',
                 // QuickBooks Payments
                 'payment-methods/payment_quickbooks',
+                // QuickPay Payments
+                'payment-methods/payment_quickpay',
                 // Rapyd Payment
                 'payment-methods/payment_rapyd',
                 // Redde Payment
