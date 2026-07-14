@@ -1,10 +1,3 @@
----
-title: "Additional Terms"
-sidebar_label: "Additional Terms"
-sidebar_position: 10
-description: "Add a second terms-and-conditions acknowledgement at checkout — as a required checkbox or a soft disclosure link — for cancellation policies, GDPR addendums, age verification, and more."
----
-
 # Additional Terms
 
 J2Commerce includes a built-in primary terms and conditions acknowledgement at checkout. The **Additional Terms** app adds a second, independent agreement on top of that — useful when a single catch-all T\&C is not enough.
@@ -17,28 +10,39 @@ Common use cases: a 14-day cancellation policy, a returns policy that differs fr
 - Joomla! 6.x
 - J2Commerce 6.x
 
-## Installation
+## Purchase and Download
 
-This app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+The **Additional Terms for J2Commerce** is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-1. Purchase and download the `plg_j2commerce_app_additionalterms.zip` package from the J2Commerce website.
-2. Go to **System** -> **Install** -> **Extensions**.
-3. Upload the ZIP file using the **Upload Package File** tab.
-4. The plugin installs automatically. You will see a confirmation message when it completes.
+**Step 1:** Go to [www.j2commerce.com](https://www.j2commerce.com) -> **Apps**.
 
-<!-- SCREENSHOT: Joomla Extensions installer with the Additional Terms zip uploaded and the success confirmation message visible -->
+**Step 2:** Locate the **Additional Terms for J2Commerce** app, click **View Details**, then **Add to Cart** -> **Checkout**.
+
+**Step 3:** After purchase, go to **My Downloads** under your profile menu and find the app. Click **Available Versions** -> **View Files** -> **Download Now**.
+
+## Install the App
+
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
+
+Upload the plugin `plg_j2commerce_app_additionalterms.zip` file or use the Install from URL option.
+
+![](/img/install.webp)
 
 ## Enable the App
 
-After installation, the plugin is not yet active. Enable it through the J2Commerce Apps screen:
+The plugin installs and enables itself automatically. No separate enable step is needed. However, it's important to know where to go to enable or disable it in the future .
 
-1. In the Joomla admin sidebar, go to **Components** -> **J2Commerce** -> **Apps**.
-2. Locate **Additional Terms for J2Commerce** in the list.
-3. Click the toggle (it shows as a red X when disabled). It turns green when enabled.
+There are **two** ways to reach the Apps list.
 
-Alternatively, go to **System** -> **Manage** -> **Plugins**, search for `Additional Terms`, and click **Enable**.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps screen with the Additional Terms row highlighted and the toggle in the enabled (green) state -->
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+
+![](/img/gift-wrap-apps.webp)
+
+To help you narrow down the list, you can do a search for **Additional Terms for J2Commerce**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/terms_enable.webp)
 
 ## Before You Configure: Create the Terms Article
 
@@ -52,51 +56,67 @@ The plugin pulls the full text of your additional terms from a standard Joomla a
 
 The article can belong to any category. It does not need to appear in a menu — the plugin loads it directly by ID and displays the body in a Bootstrap modal at checkout.
 
-<!-- SCREENSHOT: Joomla Articles list showing a cancellation policy article with its ID visible in the ID column -->
+## Configure the App
 
-## Configure the Plugin
+Click the **Additional Terms for J2Commerce** title (next to the green checkmark) to open the settings screen.
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+Click the **Toggle Inline Help** button on any app you install to see a description below each field directly in the admin panel.
 
 :::
 
-Go to **Components** -> **J2Commerce** -> **Apps**, click the name **Additional Terms for J2Commerce**, then click **Options** (or open the plugin directly via **System** -> **Manage** -> **Plugins** -> **Additional Terms**).
+![](/img/terms_toggle.webp)
 
-<!-- SCREENSHOT: Additional Terms plugin configuration screen showing the Basic tab with all fields visible -->
+### General tab
 
-### Basic Settings
+![](/img/terms_general.webp)
 
-| Field                     | Description                                                                                                                                            | Default                                                        |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
-| **Show Additional Terms** | Master on/off switch. When set to **No**, the entire feature is disabled and nothing appears at checkout.                                              | Yes                                                            |
-| **Display Type**          | How the terms are shown. See the next section for guidance on which mode to choose.                                                                    | Link only (display)                                            |
-| **Terms Article**         | The Joomla article that contains your additional policy text. Click **Select** to pick the article by title, or type the article ID directly.          | —                                                              |
-| **Label Prefix**          | Text shown before the clickable link label. For example: `I agree to the`                                                                              | I agree to the                                                 |
-| **Label**                 | The clickable text customers see. This text opens the modal when clicked.                                                                              | additional terms and conditions                                |
-| **Label Suffix**          | Optional text shown after the label. Leave blank if the prefix reads as a complete sentence on its own.                                                | *(empty)*                                                      |
-| **Warning Message**       | The error message shown when a customer tries to complete checkout without ticking the box. Only visible when **Display Type** is set to **Checkbox**. | Please accept the additional terms and conditions to continue. |
+**Checkout Position:** Where in the checkout this additional-terms block is shown to the shopper.
 
-### Advanced Settings
+**Template:** Choose the CSS framework used to render this step's checkbox/link markup (Bootstrap 5 or UIkit), or leave on Automatic to match the current menu item's checkout template.
 
-| Field          | Description                                                                                                                                                           | Default |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Debug Mode** | Writes validation decisions to the Joomla log file at `administrator/logs/plg_j2commerce_app_additionalterms.php`. Useful when testing. Disable this in a live store. | No      |
+**Geozone Match Address:** Which checkout address is used to resolve the customer's geozone when a terms item below is restricted to a specific geozone.
 
-## Choosing a Display Type
+**Debug Mode:** Writes validation decisions to the Joomla log file at `administrator/logs/plg_j2commerce_app_additionalterms.php`. Useful when testing. Disable this in a live store.
 
-### Link only (display)
+### Additional Term tab
 
-The terms appear as a hyperlink inline at the confirm step of checkout. When the customer clicks the link, a Bootstrap modal opens showing the full article body. The customer is **not required** to do anything — this is a passive legal disclosure.
+Here is where you can add as many additional terms as you need and designate each one to a different geozone so the terms appear depending on each customer's location.
+
+![](/img/terms_additional.webp)
+
+**Terms Items:** Master on/off switch. When set to **No**, the entire feature is disabled and nothing appears at checkout.
+
+**Display Type:** How the terms are shown. See the next section for guidance on which mode to choose.
+
+- **Link only (display):** The terms appear as a hyperlink inline at the confirm step of checkout. When the customer clicks the link, a Bootstrap modal opens showing the full article body. The customer is **not required** to do anything — this is a passive legal disclosure.
+
+:::tip
 
 Use this mode when you want to make your cancellation policy or returns terms visible without creating friction, or when your legal counsel says awareness is sufficient without active consent.
 
-### Checkbox (required to checkout)
+:::
 
-A checkbox appears just above the confirm button. The label is a clickable link that opens the modal. The customer **must tick the box** before checkout proceeds. If they try to submit without ticking, a red error message appears above the form and the order is blocked.
+- **Checkbox (required to checkout):** A checkbox appears just above the confirm button. The label is a clickable link that opens the modal. The customer **must tick the box** before checkout proceeds. If they try to submit without ticking, a red error message appears above the form and the order is blocked.
+
+:::tip
 
 Use this mode when active consent is required — for example, an age-verification gate ("I confirm I am 18 or older"), a GDPR processing agreement, or a policy with significant financial implications such as a no-refund clause.
+
+:::
+
+**Terms Article:** The Joomla article that contains your additional policy text. Click **Select** to pick the article by title, or type the article ID directly.
+
+**Geozone:** Restrict this item to customers whose resolved address falls in this geozone. Leave on All to show it regardless of the customer's address.
+
+**Label Prefix:** Text shown before the clickable link label. For example: `I agree to the`
+
+**Label:** The clickable text customers see. This text opens the modal when clicked.
+
+**Label Suffix:** Optional text shown after the label. Leave blank if the prefix reads as a complete sentence on its own.
+
+**Warning Message:** The error message shown when a customer tries to complete checkout without ticking the box. Only visible when **Display Type** is set to **Checkbox**.
 
 ## Customising the Wording
 
@@ -136,10 +156,6 @@ The prefix and suffix fields accept plain text. If you type a language key (for 
 The terms block renders just above the order confirmation form at the final checkout step. In **Link mode**, it appears as a single paragraph with a hyperlink. In **Checkbox mode**, it appears as a checkbox with a labelled link beside it.
 
 When the customer clicks the link (in either mode), a scrollable Bootstrap modal opens containing the full article body. The modal has a **Close** button and an X in the corner.
-
-<!-- SCREENSHOT: Checkout confirm step showing the Additional Terms block in checkbox mode — checkbox, label text, and the red error message below it -->
-
-<!-- SCREENSHOT: The Bootstrap modal open showing a sample cancellation policy article body -->
 
 ## Difference from J2Commerce's Built-in Primary Terms
 
