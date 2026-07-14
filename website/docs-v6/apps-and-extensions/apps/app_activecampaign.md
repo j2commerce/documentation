@@ -1,10 +1,3 @@
----
-title: "ActiveCampaign Integration"
-sidebar_label: "ActiveCampaign"
-sidebar_position: 99
-description: "Connect your J2Commerce store to ActiveCampaign for email and SMS marketing automation, abandoned-cart recovery, product catalog sync, and order-event tracking."
----
-
 # ActiveCampaign Integration
 
 The ActiveCampaign Integration app connects your J2Commerce store to [ActiveCampaign](https://www.activecampaign.com/) so your email and SMS automations always have real purchase data behind them. Every time a customer places an order, their status changes, or a cart sits abandoned, J2Commerce pushes that activity to ActiveCampaign in real time. A checkout consent checkbox lets shoppers opt in to your marketing list the moment they buy, and a product catalog sync keeps ActiveCampaign's Product Picker and segmentation tools up to date automatically.
@@ -43,108 +36,117 @@ The **ActiveCampaign Integration** is a separate add-on available from the [J2Co
 
 ## Install the App
 
-1. In the Joomla admin, go to **System** -> **Install** -> **Extensions**.
-2. Upload the `app_activecampaign.zip` package file.
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
-<!-- SCREENSHOT: System -> Install -> Extensions screen with the ActiveCampaign zip uploaded -->
+Upload the plugin ZIP file or use the Install from URL option.
+
+![](/img/install.webp)
 
 ## Enable the App
 
-Once installed, confirm the app is enabled. There are two ways to reach it.
+The plugin installs and enables itself automatically. No separate enable step is needed. However, it's important to know where to go to enable or disable it in the future .
 
-**Option A:** Click the **J2Commerce** icon in the top-right corner -> **Apps**.
+There are **two** ways to reach the Apps list.
 
-**Option B:** Go to **Components** in the left sidebar -> **J2Commerce** -> **Apps**.
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
-<!-- SCREENSHOT: J2Commerce Apps list showing the ActiveCampaign Integration row -->
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-Look for **ActiveCampaign Integration** in the list. If the toggle shows a red X, click it to turn it into a green checkmark. The app is now active.
+![](/img/gift-wrap-apps.webp)
 
-<!-- SCREENSHOT: ActiveCampaign Integration row with the green enabled checkmark -->
+To help you narrow down the list, you can do a search for **ExpertVoice Recommendations**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+
+![](/img/active_enable.webp)
 
 ## Configure the App
 
-Open the app settings by going to **J2Commerce** -> **Apps**, then clicking the **ActiveCampaign Integration** name.
+Click the **ExpertVoice Recommendations** title (next to the green checkmark) to open the settings screen.
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+Click the **Toggle Inline Help** button on any app you install to see a description below each field directly in the admin panel.
 
 :::
 
-<!-- SCREENSHOT: Plugin edit screen with the Toggle Inline Help button highlighted -->
+![](/img/active_toggle.webp)
 
 ### API Connection
 
-<!-- SCREENSHOT: API Connection fieldset with API URL, API Key, and Store Logo URL fields -->
+![](/img/active_api.webp)
 
 This is the only required section. Nothing else works without it.
 
-| Field | Description |
-|-------|-------------|
-| **API URL** | Your ActiveCampaign account API URL, for example `https://youraccount.api-us1.com`. Found under **Store Settings** -> **API** alongside the API key. |
-| **API Key** | Your ActiveCampaign API key. Use the plain key only — never a Bearer token. |
-| **Store Logo URL** | Optional. A URL to your store logo, shown on the ActiveCampaign store connection and in ecommerce emails. Defaults to your site favicon. Only applies when the connection is first created. |
+**API URL:** Your ActiveCampaign account API URL, for example `https://youraccount.api-us1.com`. Found under **Store Settings** -> **API** alongside the API key.
+
+**API Key:** Your ActiveCampaign API key. Use the plain key only — never a Bearer token.
+
+**Store Logo URL:** Optional. A URL to your store logo, shown on the ActiveCampaign store connection and in ecommerce emails. Defaults to your site favicon. Only applies when the connection is first created.
 
 After saving the API URL and Key, click **ActiveCampaign Dashboard** in the toolbar and then click **Test Connection** to confirm J2Commerce can reach your ActiveCampaign account. A success message shows how many contacts already exist in your account.
 
 ### Order Events
 
-<!-- SCREENSHOT: Order Events fieldset with the status dropdowns -->
+![](/img/active_order.webp)
 
 Controls which order lifecycle events are sent to ActiveCampaign as Deep Data orders, and which J2Commerce order status triggers each one.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Enable Order Events** | Master switch for all order lifecycle events. Turn this off to stop all order event syncing. | Yes |
-| **Order Sync Source** | Tells ActiveCampaign whether orders are being pushed live (**Real-time**) or backfilled (**Historical**). The **Sync Historic Orders** dashboard action always sends Historical regardless of this setting. | Real-time |
-| **Paid Order Status** | The order status that triggers the "paid for order" event. Typically your Confirmed / Paid status. | — |
-| **Fulfilled Order Status** | The order status that triggers the "order fulfilled" event. Typically your Shipped status. | — |
-| **Cancelled Order Status** | The order status that triggers the "order cancelled" event. | — |
-| **Refunded Order Status** | The order status that triggers the "order refunded" event. Leave empty to disable refund event tracking. | Empty (disabled) |
+**Enable Order Events:** Master switch for all order lifecycle events. Turn this off to stop all order event syncing.
+
+**Order Sync Source:** Tells ActiveCampaign whether orders are being pushed live (**Real-time**) or backfilled (**Historical**). The **Sync Historic Orders** dashboard action always sends Historical regardless of this setting.
+
+**Paid Order Status:** The order status that triggers the "paid for order" event. Typically your Confirmed / Paid status.
+
+**Fulfilled Order Status:** The order status that triggers the "order fulfilled" event. Typically your Shipped status.
+
+**Cancelled Order Status:** The order status that triggers the "order cancelled" event.
+
+**Refunded Order Status:** The order status that triggers the "order refunded" event. Leave empty to disable refund event tracking.
 
 A "placed order" Deep Data sync happens automatically for every new order, regardless of these status mappings.
 
 :::info
 
-To find your order status IDs, go to **J2Commerce** -> **Setup** -> **Order Statuses** and check the ID column.
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
 
 :::
 
+![](/img/shipstation-order-status2-1.webp)
+
 ### Segmentation
 
-<!-- SCREENSHOT: Segmentation fieldset with the List and Automation dropdowns -->
+![](/img/active_segmentation.webp)
 
 Controls which ActiveCampaign list, tags, and automation your synced contacts receive.
 
-| Field | Description |
-|-------|-------------|
-| **ActiveCampaign List** | The list to subscribe synced contacts to. This dropdown loads live from your account once the API URL and Key are saved. Choose **No List Subscription** to skip list subscription entirely. |
-| **Subscribe Contacts** | When a contact is subscribed to the list above: **Only with consent**, **Always**, or **Never** (the contact is still synced, just not added to the list). |
-| **Contact Tags** | Comma-separated tag names applied to every synced contact, for example `j2commerce-customer, vip`. Tags are created automatically in ActiveCampaign if they don't already exist. |
-| **ActiveCampaign Automation** | The automation to enroll synced contacts into. Loads live once your credentials are saved. Choose **No Automation** to skip enrollment. |
-| **Sync Order Data to Custom Fields** | When enabled, the customer's last order total and last order date are written to ActiveCampaign contact custom fields (created automatically if missing), enabling richer segmentation. |
+**ActiveCampaign List:** The list to subscribe synced contacts to. This dropdown loads live from your account once the API URL and Key are saved. Choose **No List Subscription** to skip list subscription entirely.
+
+**Subscribe Contacts:** When a contact is subscribed to the list above: **Only with consent**, **Always**, or **Never** (the contact is still synced, just not added to the list).
+
+**Contact Tags:** Comma-separated tag names applied to every synced contact, for example `j2commerce-customer, vip`. Tags are created automatically in ActiveCampaign if they don't already exist.
+
+**ActiveCampaign Automation:** The automation to enroll synced contacts into. Loads live once your credentials are saved. Choose **No Automation** to skip enrollment.
+
+**Sync Order Data to Custom Fields:** When enabled, the customer's last order total and last order date are written to ActiveCampaign contact custom fields (created automatically if missing), enabling richer segmentation.
 
 ### Abandoned Cart
 
-<!-- SCREENSHOT: Abandoned Cart fieldset with the Enable toggle and timeout dropdown -->
+![](/img/active_cart.webp)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Enable Abandoned Cart Recovery** | When enabled, carts left inactive past the timeout below are synced to ActiveCampaign as abandoned Deep Data orders, powering cart-abandonment automations. Currently supports **logged-in shoppers only** — guest carts are not yet synced. | No |
-| **Abandonment Timeout** | How long a cart must sit inactive before it's considered abandoned: **1 hour**, **6 hours**, **10 hours**, or **24 hours**. Only shown when Abandoned Cart Recovery is enabled. | 1 hour |
+**Enable Abandoned Cart Recovery:** When enabled, carts left inactive past the timeout below are synced to ActiveCampaign as abandoned Deep Data orders, powering cart-abandonment automations. Currently supports **logged-in shoppers only** — guest carts are not yet synced.
+
+**Abandonment Timeout:** How long a cart must sit inactive before it's considered abandoned: **1 hour**, **6 hours**, **10 hours**, or **24 hours**. Only shown when Abandoned Cart Recovery is enabled.
 
 ### Checkout Consent
 
-<!-- SCREENSHOT: Checkout Consent fieldset -->
+![](/img/active_checkout.webp)
+
+**Show Consent Checkbox:** Displays a checkbox on the checkout shipping/payment step. Checking it subscribes the customer to your ActiveCampaign list.
+
+**Checkbox Label:** The text shown next to the checkbox. Leave blank to use the built-in default: "Email me news and exclusive offers." Plain text only — HTML is not allowed.
+
+**Sync Phone Number (SMS):** Sends the customer's billing phone number to ActiveCampaign as an SMS contact identifier. The number is **not** marked as SMS-subscribed — SMS marketing still requires its own separate consent. This simply lets ActiveCampaign hold the number for transactional or separately-consented messages.
 
 Adds a marketing-consent checkbox to the checkout shipping/payment step so customers can opt in to your ActiveCampaign email list when they buy.
-
-| Field | Description |
-|-------|-------------|
-| **Show Consent Checkbox** | Displays a checkbox on the checkout shipping/payment step. Checking it subscribes the customer to your ActiveCampaign list. |
-| **Checkbox Label** | The text shown next to the checkbox. Leave blank to use the built-in default: "Email me news and exclusive offers." Plain text only — HTML is not allowed. |
-| **Sync Phone Number (SMS)** | Sends the customer's billing phone number to ActiveCampaign as an SMS contact identifier. The number is **not** marked as SMS-subscribed — SMS marketing still requires its own separate consent. This simply lets ActiveCampaign hold the number for transactional or separately-consented messages. |
 
 :::info
 
@@ -154,19 +156,23 @@ The consent checkbox is always unchecked by default. This is intentional for GDP
 
 ### Site Tracking
 
-<!-- SCREENSHOT: Site Tracking fieldset with the snippet textarea -->
+![](/img/active_tracking.webp)
 
 Controls the ActiveCampaign JavaScript that runs on your storefront, plus the separate `trackcmp.net` event-tracking integration.
 
-| Field | Description |
-|-------|-------------|
-| **Enable Site-wide Snippet** | Injects the ActiveCampaign site-tracking snippet (pasted below) on every page of your site. Logged-in shoppers are automatically identified to ActiveCampaign by email once the snippet is present. |
-| **Tracking Snippet (paste from ActiveCampaign)** | Paste **only** the JavaScript from the site-tracking snippet ActiveCampaign gives you under **Settings** -> **Tracking**. Do **not** include the surrounding `<script>` tags — the plugin adds those for you. It is injected just before the closing `</body>` tag. There is no auto-built fallback, so this field is required for site tracking to work. |
-| **Enable Order Event Tracking** | When enabled, order lifecycle events (placed, paid, fulfilled, cancelled, refunded) are *also* sent as ActiveCampaign site-tracking events via `trackcmp.net`, in addition to the Deep Data order sync in Order Events above. Requires the two fields below. |
-| **Tracking Account ID** | The `actid` value from your ActiveCampaign site-tracking snippet. |
-| **Event Key** | The Event Tracking key from ActiveCampaign **Settings** -> **Tracking** -> **Event Tracking**. This is separate from your API key and is never logged. |
-| **Enable "Viewed Product" Event** | Reserved for a future release. Requires Enable Site-wide Snippet to be on. |
-| **Enable Cart & Checkout Abandonment** | Reserved for a future release. Currently, use **Enable Abandoned Cart Recovery** above for cart-abandonment sync. |
+**Enable Site-wide Snippet:** Injects the ActiveCampaign site-tracking snippet (pasted below) on every page of your site. Logged-in shoppers are automatically identified to ActiveCampaign by email once the snippet is present.
+
+**Tracking Snippet (paste from ActiveCampaign):** Paste **only** the JavaScript from the site-tracking snippet ActiveCampaign gives you under **Settings** -> **Tracking**. Do **not** include the surrounding `<script>` tags — the plugin adds those for you. It is injected just before the closing `</body>` tag. There is no auto-built fallback, so this field is required for site tracking to work.
+
+**Enable Order Event Tracking:** When enabled, order lifecycle events (placed, paid, fulfilled, cancelled, refunded) are *also* sent as ActiveCampaign site-tracking events via `trackcmp.net`, in addition to the Deep Data order sync in Order Events above. Requires the two fields below.
+
+**Tracking Account ID:** The `actid` value from your ActiveCampaign site-tracking snippet.
+
+**Event Key:** The Event Tracking key from ActiveCampaign **Settings** -> **Tracking** -> **Event Tracking**. This is separate from your API key and is never logged.
+
+**Enable "Viewed Product" Event:** Reserved for a future release. Requires Enable Site-wide Snippet to be on.
+
+**Enable Cart & Checkout Abandonment:** Reserved for a future release. Currently, use **Enable Abandoned Cart Recovery** above for cart-abandonment sync.
 
 :::info
 
@@ -176,25 +182,19 @@ The **Enable "Viewed Product" Event** and **Enable Cart & Checkout Abandonment**
 
 ### Product Catalog Sync
 
-<!-- SCREENSHOT: Product Catalog Sync fieldset -->
+![](/img/active_product.webp)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Enable Product Catalog Sync** | When on, every product save or delete is automatically synced to ActiveCampaign's product catalog. Enables the ActiveCampaign Product Picker in campaigns and product-abandonment automations. Requires the on-site snippet for browse-abandonment flows. | Yes |
+**Enable Product Catalog Sync:** When on, every product save or delete is automatically synced to ActiveCampaign's product catalog. Enables the ActiveCampaign Product Picker in campaigns and product-abandonment automations. Requires the on-site snippet for browse-abandonment flows.
 
 ### Advanced
 
-<!-- SCREENSHOT: Advanced fieldset with the Debug Logging toggle -->
+![](/img/active_advanced.webp)
 
-| Field | Description |
-|-------|-------------|
-| **Debug Logging** | Writes verbose log entries to the Joomla log file. Turn this off in production — use it only when diagnosing a problem. |
+**Debug Logging:** Writes verbose log entries to the Joomla log file. Turn this off in production — use it only when diagnosing a problem.
 
 ## The ActiveCampaign Dashboard
 
 After saving your API URL and Key, click **ActiveCampaign Dashboard** in the toolbar from the plugin settings page to open the integration's admin view.
-
-<!-- SCREENSHOT: ActiveCampaign Dashboard with Connection Status, Product Catalog Sync, and Historic Order Sync cards -->
 
 From the dashboard you can:
 
@@ -202,8 +202,6 @@ From the dashboard you can:
 - **Sync All Products** — Queues every enabled product for a full catalog sync to ActiveCampaign. Use this once when you first connect, or after enabling catalog sync on an existing store.
 - **Sync Historic Orders** — Queues all past orders for ActiveCampaign. Use this once when you first connect so ActiveCampaign has purchase history for segmentation.
 - **Settings** — Opens the plugin configuration form directly.
-
-<!-- SCREENSHOT: Test Connection success message showing contact count -->
 
 :::info
 
@@ -235,15 +233,15 @@ Here is a plain-English summary of what happens behind the scenes when the integ
 
 ## Events Sent to ActiveCampaign
 
-| Event | When It Fires | What Enables It |
-|-------|----------------|------------------|
-| Placed order (Deep Data) | After a new order is saved | Automatic when Order Events is on |
-| Paid for order | Order status matches **Paid Order Status** | Configurable status mapping |
-| Order fulfilled | Order status matches **Fulfilled Order Status** | Configurable status mapping |
-| Order cancelled | Order status matches **Cancelled Order Status** | Configurable status mapping |
-| Order refunded | Order status matches **Refunded Order Status** | Configurable status mapping (disabled by default) |
-| Abandoned cart (Deep Data) | Cart inactive past the abandonment timeout | Enable Abandoned Cart Recovery (logged-in shoppers only) |
-| Contact registered/synced | Customer registers or places an order | Automatic |
+| Event                      | When It Fires                                   | What Enables It                                          |
+| -------------------------- | ----------------------------------------------- | -------------------------------------------------------- |
+| Placed order (Deep Data)   | After a new order is saved                      | Automatic when Order Events is on                        |
+| Paid for order             | Order status matches **Paid Order Status**      | Configurable status mapping                              |
+| Order fulfilled            | Order status matches **Fulfilled Order Status** | Configurable status mapping                              |
+| Order cancelled            | Order status matches **Cancelled Order Status** | Configurable status mapping                              |
+| Order refunded             | Order status matches **Refunded Order Status**  | Configurable status mapping (disabled by default)        |
+| Abandoned cart (Deep Data) | Cart inactive past the abandonment timeout      | Enable Abandoned Cart Recovery (logged-in shoppers only) |
+| Contact registered/synced  | Customer registers or places an order           | Automatic                                                |
 
 ## Tips
 
