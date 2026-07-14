@@ -25,67 +25,55 @@ The After-Sale Special app lets you show customers a one-click upsell offer imme
 
 ## Install the App
 
-You can install this **After-Sale Special** App using the Joomla installer. The following steps help you with a successful installation.
-
-In the Joomla admin, go to **System -> Install -> Extensions**
+In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
 
 Upload the plugin ZIP file or use the Install from URL option.
 
-[//]: # (![Install extensions]&#40;/img/aftersalespecial-install1.webp&#41;)
+![](/img/install.webp)
 
 ## Enable the App
 
-Once you have installed the App, you will need to enable it. There are **two** ways you can access the extension.
+The plugin installs and enables itself automatically. No separate enable step is needed. However, it's important to know where to go to enable or disable it in the future .
+
+There are **two** ways to reach the Apps list.
 
 **Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-[//]: # (![Apps list]&#40;/img/aftersalespecial-app.webp&#41;)
+![](/img/gift-wrap-apps.webp)
 
-Look for **After-Sale Special**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+To help you narrow down the list, you can do a search for **After-Sale Special**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-[//]: # (![Enable the app]&#40;/img/aftersalespecial-enable1.webp&#41;)
+![](/img/after-sale-enable.webp)
 
 ## Configure the App
 
-Once you click on the **After-Sale Special** Title next to the green checkmark, you are ready to start setting up the parameters.
+Click the **After-Sale Special** title (next to the green checkmark) to open the settings screen.
 
 :::tip
 
-Click the **Toggle Inline Help** button in the toolbar and the app will show a description below each field as you configure it.
+Click the **Toggle Inline Help** button on any app you install to see a description below each field directly in the admin panel.
 
 :::
 
-[//]: # (![Toggle Inline Help]&#40;/img/aftersalespecial-toggle.webp&#41;)
+![](/img/after-sale-toggle.webp)
 
 ### Basic Settings tab
 
-[//]: # (![Settings screen]&#40;/img/aftersalespecial-config1.webp&#41;)
+![](/img/after-sale-general.webp)
 
-### Framework
+**Framework:** Select which CSS framework renders the after-sale offer page shown to the customer. Defaults to **Bootstrap 5**. Choose **UIkit** instead if your site template is built on UIkit 3.
 
-Select which CSS framework renders the after-sale offer page shown to the customer. Defaults to **Bootstrap 5**.
+**Flow Time Budget (seconds):** Controls how long the shopper has to finish the offer flow before it expires. Once the time budget passes, any remaining offers are skipped and the customer is sent to the order confirmation page.
 
-Choose **UIkit** instead if your site template is built on UIkit 3.
+**Offer Flow Card Width:** Sets the width, in pixels, of each step card in the **Offer Flow** visual builder canvas (used only in the admin — it has no effect on the storefront). Accepts a value between 240 and 720; the default is 352.
 
-### Flow Time Budget (seconds)
-
-Controls how long the shopper has to finish the offer flow before it expires. Once the time budget passes, any remaining offers are skipped and the customer is sent to the order confirmation page.
-
-### Offer Flow Card Width
-
-Sets the width, in pixels, of each step card in the **Offer Flow** visual builder canvas (used only in the admin — it has no effect on the storefront). Accepts a value between 240 and 720; the default is 352.
-
-### Show Dashboard Quick Icon
-
-Adds an After-Sale Specials quick icon to the J2Commerce dashboard, badged with the number of currently active promotions.
+**Show Dashboard Quick Icon:** Adds an After-Sale Specials quick icon to the J2Commerce dashboard, badged with the number of currently active promotions.
 
 Leave this **On** if you want a fast at-a-glance reminder of how many promotions are live.
 
-### Order Update Email
-
-Controls how the order confirmation email interacts with the offer flow.
+**Order Update Email:** Controls how the order confirmation email interacts with the offer flow.
 
 - **Amend** — the normal confirmation email sends right away, then a separate update email goes out if the customer accepts an offer.
 - **Defer** — the confirmation email is held until the offer flow finishes (accepted, declined, or expired), so the customer gets one email that already reflects any accepted upsell.
@@ -96,67 +84,51 @@ NOTE: In **Defer** mode, if the customer abandons the offer page without decidin
 
 :::
 
-### Charge Mode
-
-Decides what happens when a customer accepts an offer.
+**Charge Mode:** Decides what happens when a customer accepts an offer.
 
 - **Auto** — charges the customer's saved payment method automatically when one exists. For orders paid with an offline method, it falls back to the **Offline Payment Amendment** setting below.
 - **Token Only** — only shows offers when a chargeable saved payment method is available on the order. If there is nothing to charge, the offer is suppressed rather than shown.
 
-### Eligible Order Statuses
+**Eligible Order Statuses:** Only orders that land in one of the selected statuses right after payment are considered for an after-sale offer. By default this is **Confirmed** and **Processed**.
 
-Only orders that land in one of the selected statuses right after payment are considered for an after-sale offer. By default this is **Confirmed** and **Processed**.
+**Recalculate Tax on Delta:** When enabled, tax is computed on the accepted offer's amount using the order's stored shipping address and the upsold product's tax profile, so the extra charge is taxed correctly for that customer's location.
 
-### Recalculate Tax on Delta
-
-When enabled, tax is computed on the accepted offer's amount using the order's stored shipping address and the upsold product's tax profile, so the extra charge is taxed correctly for that customer's location.
-
-### Shipping Fallback
-
-Controls what happens for an offer that would normally add shipping (i.e., **Waive Shipping on Upsell Items** is off for that offer) when a live shipping rate cannot be re-quoted after checkout.
+**Shipping Fallback:** Controls what happens for an offer that would normally add shipping (i.e., **Waive Shipping on Upsell Items** is off for that offer) when a live shipping rate cannot be re-quoted after checkout.
 
 - **Use a flat amount** — adds a fixed shipping charge you set below.
 - **Waive shipping** — the item ships free even though the offer wasn't configured to waive shipping.
 - **Do not show the offer** — the offer is hidden from that customer rather than risk an inaccurate shipping charge. This is the default.
 
-### Flat Shipping Amount
+**Flat Shipping Amount:** Only appears when **Shipping Fallback** is set to **Use a flat amount**. Enter the shipping charge, in your store's base currency, to add to an accepted offer when a live rate can't be re-quoted.
 
-Only appears when **Shipping Fallback** is set to **Use a flat amount**. Enter the shipping charge, in your store's base currency, to add to an accepted offer when a live rate can't be re-quoted.
-
-### Offline Payment Amendment
-
-For orders placed with an offline payment method (bank transfer, money order, cash), this decides whether the customer can still accept an after-sale offer.
+**Offline Payment Amendment:** For orders placed with an offline payment method (bank transfer, money order, cash), this decides whether the customer can still accept an after-sale offer.
 
 - **Disabled** — offers requiring a charge are not shown to customers who paid offline.
 - **Amend and Invoice** — the offer is added to the order and the extra balance is recorded for you to collect manually; nothing is auto-charged since there is no card on file.
 
-### Remove Data on Uninstall
-
-When enabled, uninstalling this app also permanently deletes its promotions, offers, and conversion history tables. Leave this **Off** if you might reinstall the app later and want to keep your promotion data.
+**Remove Data on Uninstall:** When enabled, uninstalling this app also permanently deletes its promotions, offers, and conversion history tables. Leave this **Off** if you might reinstall the app later and want to keep your promotion data.
 
 ## Creating a Promotion
 
+Go to the **J2Commerce** icon at the top right corner **-> Apps -> After-Sale Special**, click **Manage Promotions** in the toolbar **-> New**
+
+![](/img/after-sale-manage.webp)
+
 A **Promotion** defines *who* qualifies for an upsell and *how many* offers they can be shown. Each promotion can hold one or more **Offers** — the actual discounted products shown to the shopper.
-
-**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps -> After-Sale Special**
-
-**Option B:** From the **Plugin Manager** entry for **After-Sale Special**, click **Manage Promotions** in the toolbar
-
-[//]: # (![Promotions list]&#40;/img/aftersalespecial-promotions-list.webp&#41;)
-
-Click **New** to create a promotion.
 
 ### Promotion Details tab
 
-[//]: # (![Promotion details]&#40;/img/aftersalespecial-promotion-details.webp&#41;)
+![](/img/after-sale-promotion.webp)
 
-| Field | Description |
-|-------|-------------|
-| **Title** | The name shown for this promotion in the promotions list and admin toolbars. |
-| **Priority** | Higher priority promotions are evaluated first. |
-| **Stacking Mode** | **Exclusive** stops evaluating further promotions after the first one matches. **Stack** keeps queuing offers from every matching promotion. |
-| **Max Offers per Order** | Caps the number of offer pages shown for one order. |
-| **Start Publishing / Finish Publishing** | Leave empty to evaluate the promotion immediately with no end date, or set dates to control when it becomes (and stops being) active. |
+**Title:** The name shown for this promotion in the promotions list and admin toolbars.
+
+**Priority:** Higher priority promotions are evaluated first.
+
+**Stacking Mode: Exclusive** stops evaluating further promotions after the first one matches. **Stack** keeps queuing offers from every matching promotion.
+
+**Max Offers per Order:** Caps the number of offer pages shown for one order.
+
+**Start Publishing / Finish Publishing:** Leave empty to evaluate the promotion immediately with no end date, or set dates to control when it becomes (and stops being) active.
 
 :::info
 
@@ -166,46 +138,61 @@ NOTE: A new promotion has no offers yet. Save it first — the **Manage Offers**
 
 ### Targeting Rules tab
 
-[//]: # (![Targeting rules]&#40;/img/aftersalespecial-targeting-rules.webp&#41;)
+![](/img/after-sale-rules2.webp)
 
 Click **Add Rule** to add one or more targeting conditions. A shopper's order must match **every** rule you add before the promotion is offered to them. Leave this empty to match every order.
 
-| Rule | What it checks |
-|------|-----------------|
-| **Cart Contains Product** | The order includes any (or all) of the specific products you select. |
-| **Cart Contains Category** | The order includes a product from one of the categories you select. |
-| **Order Total** | The order subtotal falls within a minimum and/or maximum amount you set. |
-| **Customer Group** | The customer belongs to one of the user groups you select. |
-| **First Order Only** | This is the customer's very first order in your store. |
-| **Geo Zone** | The customer's shipping or billing address (your choice) falls within one of the geo zones you select. |
-| **Language** | The customer is browsing in one of the site languages you select. |
-| **Payment Type** | The order has a stored payment credential available (needed for offers you want to charge automatically). |
+- **Cart Contains Product:** The order includes any (or all) of the specific products you select.
+
+- **Cart Contains Category:** The order includes a product from one of the categories you select.
+
+- **Order Total:** The order subtotal falls within a minimum and/or maximum amount you set.
+
+- **Customer Group:** The customer belongs to one of the user groups you select.
+
+- **First Order Only:** This is the customer's very first order in your store.
+
+- **Geo Zone:** The customer's shipping or billing address (your choice) falls within one of the geo zones you select.
+
+- **Language:** The customer is browsing in one of the site languages you select.
+
+- **Payment Type:** The order has a stored payment credential available (needed for offers you want to charge automatically).
 
 Once you have added rules, save the promotion. The **Manage Offers** and **View Flow** buttons appear in the toolbar so you can start adding offers.
 
+![](/img/after-sale-flow.webp)
+
 ## Adding Offers to a Promotion
 
-From an already-saved promotion, click **Manage Offers** in the toolbar, or from the promotions list open the promotion and click **Manage Offers**.
+**Step 1:** From an already-saved promotion, click **Manage Offers** in the toolbar, or from the promotions list open the promotion and click **Manage Offers**.
 
-[//]: # (![Offers list]&#40;/img/aftersalespecial-offers-list.webp&#41;)
+![](/img/after-sale-flow1.webp)
+
+Step 2: Click&#x20;
 
 Click **New** to add an offer.
 
 ### Offer Details tab
 
-[//]: # (![Offer details]&#40;/img/aftersalespecial-offer-details.webp&#41;)
+![](/img/after-sale-offer.webp)
 
-| Field | Description |
-|-------|-------------|
-| **Promotion** | The promotion this offer belongs to. |
-| **Product** | The product upsold on the after-sale offer page. Selected using the standard product picker. |
-| **Resolved Variant** | Read-only. Automatically resolved from the selected product's default purchasable variant when you save the offer, so stock and pricing are always unambiguous. |
-| **Discount Value** | The amount taken off the item, interpreted according to Discount Type. |
-| **Discount Type** | **Percentage** discounts a percent of the item price. **Flat Amount** subtracts a fixed amount per unit. |
-| **Max Quantity** | The highest quantity of this upsell a shopper may add from the offer page. |
-| **Waive Shipping on Upsell Items** | When enabled, the item is added with no shipping charge — the simplest and most reliable option for a frictionless upsell. |
-| **Out-of-Stock Behavior** | **Hide the offer** removes it from the queue entirely when the variant has no stock. **Show, disabled** still shows the offer but the shopper cannot add it. |
-| **On-Decline Offer** | When the shopper declines this offer, route them to this offer instead of the next one in order (as long as it's still available and hasn't already been shown). Leave as **— None —** for the normal queue order. |
+**Promotion:** The promotion this offer belongs to.
+
+**Product:** The product upsold on the after-sale offer page. Selected using the standard product picker.
+
+**Resolved Variant:** Read-only. Automatically resolved from the selected product's default purchasable variant when you save the offer, so stock and pricing are always unambiguous.
+
+**Discount Value:** The amount taken off the item, interpreted according to Discount Type.
+
+**Discount Type: Percentage** discounts a percent of the item price. **Flat Amount** subtracts a fixed amount per unit.
+
+**Max Quantity:** The highest quantity of this upsell a shopper may add from the offer page.
+
+**Waive Shipping on Upsell Items:** When enabled, the item is added with no shipping charge — the simplest and most reliable option for a frictionless upsell.
+
+**Out-of-Stock Behavior: Hide the offer** removes it from the queue entirely when the variant has no stock. **Show, disabled** still shows the offer but the shopper cannot add it.
+
+**On-Decline Offer:** When the shopper declines this offer, route them to this offer instead of the next one in order (as long as it's still available and hasn't already been shown). Leave as **— None —** for the normal queue order.
 
 :::info
 
@@ -215,13 +202,11 @@ NOTE: If the selected product has more than one purchasable variant, After-Sale 
 
 ### Offer Display tab
 
-[//]: # (![Offer display]&#40;/img/aftersalespecial-offer-display.webp&#41;)
+**Description:** Optional supporting copy shown below the heading on the offer page.
 
-| Field | Description |
-|-------|-------------|
-| **Description** | Optional supporting copy shown below the heading on the offer page. |
-| **Image URL** | Optional override for the product image shown on the offer page. |
-| **Countdown (seconds)** | Optional display-only urgency timer on the offer page. Leave empty to disable. |
+**Image URL:** Optional override for the product image shown on the offer page.
+
+**Countdown (seconds):** Optional display-only urgency timer on the offer page. Leave empty to disable.
 
 :::tip
 
@@ -232,8 +217,6 @@ The offer **Heading** field (at the top of the form) supports the `{price}` and 
 ## Using the Offer Flow Builder
 
 Once a promotion has offers, click **View Flow** in the promotion edit toolbar to see and rearrange the whole customer journey visually.
-
-[//]: # (![Offer Flow canvas]&#40;/img/aftersalespecial-flow-canvas.webp&#41;)
 
 The canvas shows a **Trigger** card summarizing your targeting rules, followed by a card for each offer in order, ending in an **Order Complete** card. From here you can:
 
