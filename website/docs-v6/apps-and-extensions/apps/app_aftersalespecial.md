@@ -1,10 +1,3 @@
----
-title: "After-Sale Special"
-sidebar_label: "After-Sale Special"
-sidebar_position: 1
-description: "Show one-click post-purchase upsell offers right after checkout, with rule-based targeting and automatic charging to the customer's saved payment method."
----
-
 # After-Sale Special
 
 The After-Sale Special app lets you show customers a one-click upsell offer immediately after they pay — before they ever reach the order confirmation page. You decide who qualifies using targeting rules (cart contents, order total, customer group, first order, location, language, or payment type), and which discounted products to offer them. If the shopper accepts, the item is added to the order they just placed and their saved card is charged automatically — no re-entering payment details required.
@@ -168,9 +161,7 @@ Once you have added rules, save the promotion. The **Manage Offers** and **View 
 
 ![](/img/after-sale-flow1.webp)
 
-Step 2: Click&#x20;
-
-Click **New** to add an offer.
+**Step 2:** Click **New** to add an offer.
 
 ### Offer Details tab
 
@@ -202,6 +193,8 @@ NOTE: If the selected product has more than one purchasable variant, After-Sale 
 
 ### Offer Display tab
 
+![](/img/after-sale-offer1.webp)
+
 **Description:** Optional supporting copy shown below the heading on the offer page.
 
 **Image URL:** Optional override for the product image shown on the offer page.
@@ -216,9 +209,15 @@ The offer **Heading** field (at the top of the form) supports the `{price}` and 
 
 ## Using the Offer Flow Builder
 
+![](/img/after-sale-manage1.webp)
+
 Once a promotion has offers, click **View Flow** in the promotion edit toolbar to see and rearrange the whole customer journey visually.
 
-The canvas shows a **Trigger** card summarizing your targeting rules, followed by a card for each offer in order, ending in an **Order Complete** card. From here you can:
+The canvas shows a **Trigger** card summarizing your targeting rules, followed by a card for each offer in order, ending in an **Order Complete** card.&#x20;
+
+![](/img/after-sale-trigger1.webp)
+
+From here you can:
 
 - Click any step to open its settings in the side panel and save changes without leaving the canvas.
 - Use the **+** button between steps to add a new offer at that point in the sequence.
