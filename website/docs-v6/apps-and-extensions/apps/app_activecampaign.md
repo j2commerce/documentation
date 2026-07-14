@@ -54,13 +54,13 @@ There are **two** ways to reach the Apps list.
 
 ![](/img/gift-wrap-apps.webp)
 
-To help you narrow down the list, you can do a search for **ExpertVoice Recommendations**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
+To help you narrow down the list, you can do a search for **ActiveCampaign Integration**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
 ![](/img/active_enable.webp)
 
 ## Configure the App
 
-Click the **ExpertVoice Recommendations** title (next to the green checkmark) to open the settings screen.
+Click the **ActiveCampaign Integration** title (next to the green checkmark) to open the settings screen.
 
 :::tip
 
