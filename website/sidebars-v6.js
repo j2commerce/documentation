@@ -224,10 +224,14 @@ const sidebars = {
                         'apps-and-extensions/apps/additional_fee',
                         // Additional Terms
                         'apps-and-extensions/apps/additionalterms',
+                        // Additional Terms (App)
+                        'apps-and-extensions/apps/app_additionalterms',
                         // Address Autocomplete
                         'apps-and-extensions/apps/app-addressautocomplete',
                         // Already Purchased Badge
                         'apps-and-extensions/apps/app_alreadypurchased',
+                        // Advance Notify
+                        'apps-and-extensions/apps/advancenotify',
                         // Advanced Cart Drawer
                         'apps-and-extensions/apps/advancedcart',
                         // Advanced Tax Rates (there is a duplicate)
@@ -250,6 +254,8 @@ const sidebars = {
                         'apps-and-extensions/apps/avalaratax',
                         // BaseLinker Integration
                         'apps-and-extensions/apps/app-baselinker',
+                        // Brevo Integration
+                        'apps-and-extensions/apps/app_brevo',
                         // Bulk Discounts
                         'apps-and-extensions/apps/app-bulkdiscount',
                         // Calculator - Sort by Price
@@ -262,6 +268,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app_conditionalpayment',
                         // Content Fields
                         'apps-and-extensions/apps/contentfields',
+                        // Cookiebot
+                        'apps-and-extensions/apps/app_cookiebot',
                         // Currency Exchange Rates Updater
                         'apps-and-extensions/apps/app_currencyupdater',
                         // Custom Accordions
@@ -298,6 +306,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app-gdpr',
                         // Gift Wrapping
                         'apps-and-extensions/apps/app-giftwrapping',
+                        // Google Analytics
+                        'apps-and-extensions/apps/app_googleanalytics',
                         // Google Merchant Feed
                         'apps-and-extensions/apps/app_googlemerchantfeed',
                         // Google Tag Manager
@@ -438,6 +448,8 @@ const sidebars = {
                         'apps-and-extensions/plugins/plg_finder_j2commerce',
                         // Web Services - J2Commerce
                         'apps-and-extensions/plugins/plg_webservices_j2commerce',
+                        // YOOtheme - J2Commerce
+                        'apps-and-extensions/plugins/yootheme_j2commerce',
                     ],
                 },
             ],
@@ -456,6 +468,8 @@ const sidebars = {
                 'payment-methods/payment_adyen',
                 // Affirm
                 'payment-methods/payment_affirm',
+                // Airwallex Payment
+                'payment-methods/payment_airwallex',
                 // Alipay Payment
                 'payment-methods/alipay',
                 // Amazon Pay
@@ -593,6 +607,8 @@ const sidebars = {
                 'payment-methods/payment_stripe',
                 // SumUp Payment
                 'payment-methods/payment_sumup',
+                // Swish Payment
+                'payment-methods/payment_swish',
                 // Tranzila
                 'payment-methods/tranzila',
                 // USAePay
