@@ -5,322 +5,400 @@ sidebar_position: 1
 description: "Sell recurring subscription and membership products in J2Commerce — configure billing intervals, trial periods, automatic renewals, dunning, and customer self-service."
 ---
 
-# Subscription Product
+# Subscriptions and Memberships for J2Commerce — Turn One-Time Buyers Into a Paycheck That Shows Up Every Month
 
-The Subscription Product app turns any J2Commerce product into a recurring billing item — charged daily, weekly, monthly, or yearly — with optional trial periods, sign-up fees, renewal discounts, and automatic dunning when a payment fails. Customers manage their active subscriptions from their account, and admins get a dedicated Subscriptions area with full history and status controls.
+> You built a store to sell things once. But the businesses that actually sleep well at night sell things *again and again* — automatically, without a single follow-up email, without anyone lifting a finger. Subscriptions and Memberships is what makes that possible inside J2Commerce.
 
-## Requirements
+---
 
-- PHP 8.3.0 +
-- Joomla! 6.x
-- J2Commerce 6.x
+## Quick Scan: Features & Benefits
 
-## Purchase and Download
+| # | Feature | What you actually get |
+|---|---------|----------------------|
+| 1 | Two subscription product types | **Simple Subscription** for a single recurring plan, **Variable Subscription** for multiple plans (monthly, quarterly, annual) on one product page — customer picks the plan, you set the price per plan. |
+| 2 | Flexible billing frequency | Bill every 1st through 6th period — day, week, month, or year. "Every 3 months" and "Every 2 weeks" are both one dropdown away. |
+| 3 | Fixed-length or never-expiring subscriptions | Set a subscription to run for a specific number of billing cycles, or enter `0` and it renews forever until the customer or you cancel it. |
+| 4 | Free trial periods | Offer a trial in days, weeks, months, or years before the first real charge hits. |
+| 5 | Sign-up fees | Charge a one-time fee at the start of a subscription — separate from the recurring price. Choose whether it applies only on the first purchase or every time the customer buys again. |
+| 6 | Renewal discounts that stick | Apply a global renewal discount, and let a customer's original coupon discount automatically carry forward into every future renewal. |
+| 7 | Automatic Joomla user group management | Add a subscriber to a user group the moment their subscription goes active, and remove them the moment it expires or cancels — built for gated content, member pricing, or private downloads. |
+| 8 | Disable Cancel per product | Lock a subscription so the customer can't cancel it themselves from their account — for contracts or commitments you manage manually. |
+| 9 | Restrict payment methods to subscription-capable gateways | When a subscription is in the cart, only show payment methods that actually support recurring billing — no more failed charges from a one-time payment plugin. |
+| 10 | Smart renewal retries (dunning) | A failed renewal doesn't cancel the subscription immediately — it retries on a schedule you control, with a configurable final action. |
+| 11 | Self-service card updates | Let subscribers update their saved card from their account — or send them a secure one-time link that works even if they're not logged in. |
+| 12 | My Subscriptions customer dashboard | A dedicated tab on the customer's account page listing every subscription, its status, next renewal date, billing schedule, and one-click cancel, renew, and card-update actions. |
+| 13 | Early renewal ("Renew Now") | Let a customer pull their next charge forward and renew early instead of waiting for the scheduled date. |
+| 14 | 15 ready-to-go lifecycle emails | Welcome, trial ending, trial-to-paid, renewal reminder, renewal succeeded, renewal failed, renewal retry, card expiring, card updated, paused, cancelled, expired, expiring soon, and more — all pre-written. |
+| 15 | Two email design options, two editors | Choose Classic, Minimal, or Modern visual styling, and import templates into the standard Joomla editor or the drag-and-drop visual editor — your content is preserved either way. |
+| 16 | Full admin Subscriptions area | A dedicated admin screen listing every subscription with search, status filters, and CSV export — with or without related order data. |
+| 17 | Subscription detail & history | Every subscription has its own detail page: billing schedule, related orders, additional fees, payment info, and a full audit history of every status change and email sent. |
+| 18 | Manual invoice renewals | Let renewals paid by bank transfer, cash, or money order activate the subscription as soon as you mark the order paid — no card required. |
+| 19 | Display controls for price, cart, and checkout | Control whether and where the billing duration and sign-up fee show next to the product price, and whether recurring totals, discounts, and next-renewal dates show in the cart. |
+| 20 | Built-in testing tools | A safe testing harness lets you simulate a synthetic subscription and trigger a renewal on demand — no live card, no waiting for cron. |
 
-**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
+---
 
-**Step 2:** Locate the **Subscription Products** App **->** click **View Details** **->** **Add to cart -> Checkout**.
+## Feature Inventory
 
-**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
+| Metric | Count |
+|--------|-------|
+| Total features documented | 20 |
+| Subscription product types | 2 (Simple Subscription, Variable Subscription) |
+| Plugin configuration fieldsets | 5 (Basic, Email Settings, Display Settings, Renewal Settings, Testing Tools) |
+| Lifecycle email templates | 15 |
+| Email design/editor combinations | 6 (3 designs × 2 editor types) |
+| Real-world use cases mapped | 3 |
+| Language packs | 21 |
 
-## Install the App
+---
 
-In the Joomla Administrator, go to **System** **->** **Install** **->** **Extensions**.
+## 1. The Problem (Establish the Pain)
 
-Upload the plugin ZIP file or use the Install from URL option.
+You sell a great product. Someone buys it once, loves it, and then... you never hear from them again unless they happen to remember to come back.
 
-![](/img/install.webp)
+Meanwhile, every subscription-based business you admire — the meal kit, the software tool, the coffee club — isn't chasing a new customer every single day. They set up the billing once and the revenue keeps arriving whether they're at their desk or asleep. You're doing the hard part (making something people want) without getting the easy part (getting paid for it automatically, over and over).
+
+And the products practically beg for it. Consumables that run out. Memberships that gate access to something valuable. Services billed monthly. Software, courses, communities. Any of these sold as a "one and done" purchase is money left on the table — and a customer relationship that ends the moment the transaction does.
+
+---
+
+## 2. The Problem Gets Worse (Twist the Knife)
+
+Here's what one-time selling actually costs you: unpredictable revenue. You can't forecast next month because every sale starts from zero. You can't plan inventory, staffing, or marketing spend around a number that resets to nothing on the first of every month.
+
+And if you try to bolt recurring billing on yourself — a spreadsheet, a manual reminder email, a "please come back and re-order" campaign — you've just created a part-time job that a computer should be doing for free. Every manual renewal is a chance for a customer to forget, get busy, or just quietly churn without you noticing until the revenue is already gone.
+
+Worse: even if you find a subscription app that handles the billing, most of them stop there. A card gets declined and the subscription just... cancels. No retry, no second attempt, no chance to catch a customer whose bank simply asked them to re-verify a purchase. You lose a paying customer over a payment hiccup that a basic retry would have caught. That's not a subscription business — that's a subscription business with a leaky bucket.
+
+---
+
+## 3. The Solution (J2Commerce Delivers)
+
+Subscriptions and Memberships turns any J2Commerce product into a recurring revenue line — with the retry logic, customer self-service, and lifecycle communication that separates "we technically support subscriptions" from "customers actually stay subscribed."
+
+### Two Product Types, One Familiar Product Editor
+
+Set up a **Simple Subscription** for a single recurring plan — one price, one billing frequency, done. Or set up a **Variable Subscription** when you want to offer plan choices (Monthly, Quarterly, Annual) on a single product page, each with its own subscription price, billing length, and even its own sign-up fee. Both product types live right inside the same product editor you already use for every other J2Commerce product — no separate "subscription module" to learn.
+
+**Real talk:** The store that offers "Monthly" and "Save 20% Annual" side by side on one product page converts more annual plans than the store that makes the customer hunt for the option.
+
+### Trials, Sign-Up Fees, and Renewal Discounts That Actually Stick
+
+Offer a free trial measured in days, weeks, months, or years before the first real charge. Add a one-time sign-up fee, and decide whether it charges only on a customer's first purchase or every time they buy — useful for setup-fee businesses where a lapsed subscriber has to pay to rejoin. And when a renewal discount coupon applies at first purchase, turn on **Keep renewal discount** and that same discount automatically carries into every future renewal — no re-entering a code, no support ticket asking why the second charge was full price.
+
+**Real talk:** A trial that converts to a full-price subscription with zero friction is worth more than a discount code that expires the moment the first invoice goes out.
+
+### Never Chase a Failed Card Again — Smart Retries and Dunning
+
+When a renewal payment fails, the subscription doesn't just die. It enters a configurable retry schedule — you decide how many attempts, how far apart, and in what unit (hours, days, weeks, or months). If every retry is exhausted, you choose what happens next: mark the subscription **Card Expired**, automatically **pause** it, or **cancel** it outright. That's the difference between losing a customer to a temporary bank hiccup and giving them a real chance to fix their card before you give up on them.
+
+**Real talk:** Most subscription churn isn't a customer who wants to leave. It's a card that expired last Tuesday and nobody noticed until the retry schedule caught it.
+
+### Card Updates Without a Support Ticket
+
+Subscribers can update their saved payment method right from their account — no new order, no re-entering their whole subscription. And when a customer isn't logged in (or can't remember their password), you can generate a secure, time-limited one-time link and copy it or email it directly to them. The link expires automatically after its configured lifetime or after first use, so it's safe to send.
+
+**Real talk:** "Click this link to update your card" is a five-second fix. "Please log in, find your account, click three menus deep" is how you lose a renewal to abandonment.
+
+### The My Subscriptions Dashboard — Self-Service That Reduces Your Support Load
+
+Every customer gets a **My Subscriptions** tab on their account page listing every active, trial, paused, or expired subscription — status badge, next renewal date, billing schedule, and line items, all in one collapsible card. From there they can cancel (unless you've locked it with **Disable Cancel**), renew an expired subscription if you've turned that option on, pull an active subscription's next charge forward early with **Renew Now**, and update their payment method — all without emailing you.
+
+**Real talk:** Every subscription management action a customer can do themselves is a support ticket you never have to answer.
+
+### 15 Lifecycle Emails, Ready on Day One
+
+New subscription, trial ending, trial converting to paid, upcoming renewal, successful renewal, failed renewal, renewal retry, card expiring, card updated, paused, cancelled, expired, expiring soon — the entire subscription lifecycle is already written. Choose **Classic**, **Minimal**, or **Modern** visual styling, and import the templates into the standard Joomla HTML editor or the drag-and-drop visual editor with one click. Your content carries over either way, so switching editors later never means starting from scratch.
+
+**Real talk:** A customer who gets a "your trial ends in 3 days" email converts to paid at a completely different rate than a customer who gets silently charged and wonders what happened.
+
+### The Admin Subscriptions Command Center
+
+A dedicated Subscriptions area gives you search, status filtering, and CSV export (with or without full order data) across every subscription on your store. Click into any subscription and you get its full billing schedule, related orders, additional fees, payment information, and a complete history log of every status change, email sent, and manual note added — so when a customer calls asking "what happened to my renewal," the answer is already on the screen.
+
+**Real talk:** You should never have to dig through raw order records to answer "did this customer's card get charged."
+
+---
+
+## Real-World Use Cases
+
+### Use Case 1: Coffee & Consumables Subscription Box
+
+A specialty coffee roaster sells a "Monthly Bag" Variable Subscription with three plan options — Monthly, Every 6 Weeks, and Quarterly — so customers can match delivery frequency to how fast they actually drink coffee. New subscribers get a 2-week free trial bag at a reduced price before the full recurring charge begins. When a card declines on renewal day, the retry schedule tries three more times over the following week before marking the subscription Card Expired — giving distracted customers a real second chance instead of losing them on the first bounce.
+
+### Use Case 2: Gated Membership Community
+
+A creator sells a monthly membership that unlocks a private members-only section of the site. The **Add To User Groups** setting automatically drops new subscribers into the "Members" Joomla user group the instant their subscription goes active — no manual account work. If a subscription lapses or gets cancelled, **Remove From User Groups** pulls access back out automatically. The **Disable Cancel** option isn't used here — members can cancel any time from their My Subscriptions dashboard, which keeps support tickets low and trust high.
+
+### Use Case 3: B2B Recurring Service Contracts
+
+A service company bills clients quarterly for an ongoing maintenance contract, invoiced and paid by bank transfer rather than a stored card. With **Enable Manual Invoice Renewals** turned on, the renewal order is created automatically on schedule and the subscription activates itself as soon as the office marks that renewal order as paid with the confirmed status for their bank-transfer payment method — no card retries needed, because there's no card. The admin Subscriptions area gives the accounts team a single screen to see which quarterly contracts are due, paid, or overdue.
+
+---
+
+## Why J2Commerce? (The Value Proposition)
+
+### The SaaS Trap
+
+Most recurring-billing platforms charge you a percentage of every subscription payment just for the privilege of collecting it — a subscription tax on top of your subscription revenue. J2Commerce charges nothing per transaction. Your billing engine runs on your own server, on your own J2Commerce license, and every dollar a subscriber pays goes where it's supposed to go: to you.
+
+### The Plugin Graveyard
+
+Plenty of Joomla ecommerce extensions claim "subscription support" and mean a single recurring charge with no retry logic, no dunning, no customer self-service, and no lifecycle emails beyond a receipt. When the card fails once, the subscription just dies — silently, with nobody notified. Subscriptions and Memberships is built for the current J2Commerce 6 architecture with active development behind it, not a feature that was bolted on once and abandoned.
+
+### The J2Commerce Difference
+
+Native Joomla 6 architecture running on your own infrastructure. A retry-and-dunning engine that gives failed payments a real second chance instead of an instant cancellation. Self-service tools — card updates, cancellations, early renewals — that keep customers out of your inbox. Fifteen lifecycle emails already written so you're never explaining a surprise charge after the fact.
+
+---
+
+## Installation
+
+Subscriptions and Memberships for J2Commerce is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+**Step 1:** Go to [www.j2commerce.com](https://www.j2commerce.com) -> **Apps**.
+
+**Step 2:** Locate **Subscriptions and Memberships**, click **View Details**, then **Add to Cart** -> **Checkout**.
+
+**Step 3:** After purchase, go to **My Downloads** under your profile menu and find the app. Click **Available Versions** -> **View Files** -> **Download Now**.
+
+**Step 4:** In the Joomla admin, go to **System** -> **Install** -> **Extensions** and upload the `app_subscriptionproduct.zip` package file.
+
+<!-- SCREENSHOT: System -> Install -> Extensions screen with the app_subscriptionproduct.zip package selected for upload -->
 
 ## Enable the App
 
-Once you have installed the App, you will need to enable it. There are **two** ways you can access the extension.
+Once installed, confirm the app is enabled.
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+**Option A:** Click the **J2Commerce** icon in the top-right corner -> **Apps**.
 
-**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+**Option B:** Go to **Components** in the left sidebar -> **J2Commerce** -> **Apps**.
 
-![](/img/gift-wrap-apps.webp)
+<!-- SCREENSHOT: J2Commerce Apps list highlighting the Subscription Products row with its enable toggle -->
 
-Search for **Subscription Products**, click the **X**, and it will turn into a green checkmark. It is now enabled and ready for setup.
+Look for **Subscription Products** in the list. If the toggle shows a red X, click it to turn it into a green checkmark. Click the app's name to open its configuration.
 
-## Configure the App
+---
 
-Click the **Subscription Products** title next to the green checkmark to open the plugin configuration. The settings are organized into four tabs.
+## Configuration Settings
 
-:::tip
+Open **J2Commerce** -> **Apps** -> **Subscription Products** to reach these settings.
 
-Click the **Toggle Inline Help** button on any app to show a description below each field directly in the screen.
+### Basic
 
-:::
+<!-- SCREENSHOT: Basic settings fieldset of the Subscription Products configuration form -->
 
-### Basic Settings
-
-**Enable Cron Log** Writes a log file while the automatic renewal job runs. Leave this **Yes** during setup so you can confirm renewals are firing correctly. You can disable it in production to reduce disk writes.
-
-**Cron URL** A read-only display of the URL you need to give your server's cron scheduler. Copy this URL and paste it into your hosting control panel's cron job configuration. The renewal job must run at least once per day for renewals and expirations to process on time. You can change the security key for this URL in **J2Commerce -> Setup -> Configuration**.
-
-**Accepted Payment Methods** Choose which payment gateways are available to customers buying subscription products. Leave empty to allow any payment method that supports recurring billing. Only gateways that save a billing token (such as Stripe) can process automatic renewals — cash, bank transfer, and other offline methods do not work with automatic renewals.
-
-**Allow Card Update** When enabled, customers always see an option to update their saved card in the account area, even if no renewal failure has occurred. Useful if you want proactive card management for customers on older cards.
-
-**Debug Mode** Writes detailed diagnostic output to `administrator/logs/app_subscriptionproduct.php`. Always disable this in production.
+| Field | Description | Default |
+|-------|-------------|---------|
+| **Enable Cron Log** | Writes a log file every time the subscription cron runs. | Yes |
+| **Cron URL** | A ready-made URL — `index.php?option=com_j2commerce&task=cron.execute&command=appsubscriptionproduct&cron_secret=...` — for external schedulers to hit on a timer. Click **Change key** to rotate the secret from J2Commerce's Configuration screen. | — |
+| **Queue Scan Interval (Minutes)** | How often the subscription sweep runs when driven by J2Commerce's **Process Queue** scheduled task instead of the Cron URL. Requires a Process Queue task in **System** -> **Scheduled Tasks** with Queue Type set to **subscription_renewal**. | `60` |
+| **Accepted Payment Methods** | Which payment methods can be used for subscription products. Only gateways that declare recurring-billing support appear in this list. Leave empty to allow all subscription-capable methods. | Empty (all allowed) |
+| **Restrict Payment Methods for Subscriptions** | When a subscription is in the cart, show only subscription-compatible payment methods at checkout and hide the rest. | Yes |
+| **Allow Card Update** | Always show the card-update option for supported payment gateways, including the guest one-time link. | No |
+| **Update Card Link Expiration** | How long a guest card-update link stays valid before it expires. | 48 hours |
+| **Debug Logging** | Writes verbose debug logs to `administrator/logs/app_subscriptionproduct.php`. Disable in production. | No |
 
 ### Email Settings
 
-**Send Welcome Email on New Subscription** Sends a welcome message to the customer as soon as their subscription is created. Disable this only if you are migrating from J2Store v4 and want to suppress unexpected welcome emails for existing subscribers.
+<!-- SCREENSHOT: Email Settings fieldset showing the welcome-email toggle and the Add Email Templates buttons -->
 
-**Notify Before Expiry (days)** Sends an expiry warning email the specified number of days before a subscription ends. Enter multiple values separated by commas to send multiple reminders — for example, `7,3` sends one email seven days before and another three days before. Leave empty to skip expiry warnings.
-
-**Bcc to** Sends a blind copy of every customer subscription email to these addresses. Separate multiple addresses with a comma. Useful for keeping a record of all subscription lifecycle emails.
-
-**Trial Ending Notification (days before)** Number of days before the trial ends to send a "your trial is ending soon" email. Set to `0` to disable trial-ending notifications.
-
-**Email Notifications Before Renewal** Toggle this on to send the customer a heads-up email before their next automatic renewal date.
-
-**Notify Before Renewal (days)** Works in tandem with the toggle above. Enter the number of days before renewal to send the notification — for example, `3,1` sends a reminder three days out and again the day before. Effective for reducing involuntary churn.
-
-**Email Notification Before First Renewal (from Trial)** Separately controls whether customers on a trial get a special notice before their first paid renewal. This is distinct from the general renewal notification so you can write a more targeted message ("Your trial is about to convert to a paid subscription").
-
-**Notify Before First Renewal from Trial (days)** Days before end-of-trial to send that first-renewal notice. Same comma-separated format as the standard renewal notice.
-
-**Send Completed Order Email on Renewal** When a renewal succeeds, J2Commerce creates a new order. This toggle controls whether the standard order-completed email is also sent for that renewal order. Customers typically appreciate receiving a receipt for each billing cycle.
-
-**Use Legacy Email Templates as Fallback** When enabled, the plugin falls back to its built-in PHP email templates if no customized template exists in the database email hub. Enable this only if you have not yet set up custom email templates for subscription events.
+| Field | Description | Default |
+|-------|-------------|---------|
+| **Send New Subscription Email** | Sends a welcome email when a new subscription is created. | Yes |
+| **Notify Before Expiration** | Days before expiry to email the customer. Comma-separated, e.g. `3,2` sends emails 3 and 2 days before. | — |
+| **BCC To** | Blind-copy address(es) for all subscription emails. Comma-separated for multiple. | — |
+| **Trial Ending Notification** | Days before a trial ends to send a trial-ending-soon email. Set to `0` to disable. | `3` |
+| **Send Completed Renewal Email** | Sends the standard order-completed email for each successful renewal, same as any regular order. Turn off to suppress it for renewals only — the subscription's own renewal-succeeded email is unaffected either way. | Yes |
+| **Email Renewal Notifications** | Sends a reminder before the auto-renewal date. | No |
+| **Email Before Renewal** | Days before renewal to send the reminder (comma-separated). Only shown when the setting above is on. | — |
+| **Email Notification Before First Renewal (From Trial)** | Sends a reminder before a trial's first paid renewal. | No |
+| **Before First Renewal From Trial** | Days before that first renewal to send it (comma-separated). Only shown when the setting above is on. | — |
+| **Add Email Templates** | Two buttons: **Import Joomla Editor Version** and **Import Visual Editor Version**. Adds any missing subscription email templates using the Classic, Minimal, or Modern design and the chosen editor type. Existing content is preserved when re-importing. | — |
 
 ### Display Settings
 
-**Template** Selects the frontend template used to render subscription content on product pages, the cart, and the customer account area. **Auto** inherits the template from the active menu item (Bootstrap 5 or UIkit depending on your site setup).
+<!-- SCREENSHOT: Display Settings fieldset showing the duration and sign-up fee position options -->
 
-**Show My Subscriptions Tab** When enabled, a **My Subscriptions** tab appears on the customer's **My Profile** page, giving them a self-service panel to view and manage their active subscriptions. Disable only if you want to restrict customer access to subscription management.
-
-**Show Duration** Displays the billing cycle label next to the product price — for example, "Every month" or "/month". Recommended for clarity on product pages and listing pages.
-
-**Duration Position** Controls where the billing-cycle label appears relative to the price. **Below price** keeps it in its own block beneath the price. **Before price** and **After price** inject it inline alongside the price.
-
-**Duration Text** Sets the phrasing used to describe the billing cycle. **Every** produces "Every month". **/** produces "/month". **Per** produces "Per month". With a frequency of 2 or more, the number is included — "Every 2 months".
-
-**Show Single Value** When the billing frequency is exactly 1, controls whether the digit is shown. **No** (default) displays "Every month". **Yes** displays "Every 1 month". Most stores prefer the cleaner display without the digit.
-
-**Show Sign-Up Fee** Displays the one-time sign-up fee next to the product price so customers see the full upfront cost before adding to cart.
-
-**Sign-Up Fee Position** Same three options as Duration Position — **Below price**, **Before price**, or **After price**.
-
-**Show Recurring Total** Shows a "Recurring Total" line in the cart and checkout summarizing the subscription amount the customer will be charged on each renewal. Strongly recommended so customers understand what they are signing up for.
-
-**Show Non-Recurring Total** Shows a separate "Non-Recurring Total" line in the cart for any one-time charges (sign-up fee, one-time products mixed in the same cart). Useful when a cart contains both subscription and regular products.
-
-**Show Recurring Amount** Shows the per-item recurring amount in the cart line for subscription products.
-
-**Show Recurring Discount** If a coupon or renewal discount applies to the recurring amount, displays the discounted price in the cart.
-
-**Show Next Renewal Date** Displays the calculated first renewal date in the cart and checkout so customers know exactly when they will next be charged.
-
-**Renewal Date Format** PHP date format string used to display the next renewal date. Leave empty to inherit the global Date Format from **J2Commerce -> Setup -> Configuration**. For example, `F j, Y` produces "May 1, 2026".
-
-**Show Renew Button** Adds a manual **Renew** button to the front-end subscription listing in the customer account. Enable if you want to let customers initiate an early renewal themselves.
+| Field | Description | Default |
+|-------|-------------|---------|
+| **Template** | Frontend rendering template — Bootstrap 5, UIkit, or **Auto** to inherit from the active menu item. | Auto |
+| **Show My Subscriptions Tab** | Shows a Subscriptions tab on the My Profile page so customers can manage their subscriptions. | Yes |
+| **Show Duration** | Shows the billing duration text next to the product price. | Yes |
+| **Duration Position** | Where the duration text appears relative to the price — Below, Before, or After. | Below price |
+| **Duration Text** | Phrasing style — "Every 2 weeks", "/2 weeks", or "Per 2 weeks". | Every |
+| **Show Single Value** | When the billing cycle is exactly one period, shows the digit ("Every 1 week") instead of dropping it ("Every week"). | No |
+| **Show Sign-Up Fee** | Shows the sign-up fee next to the product price. | Yes |
+| **Sign-Up Fee Position** | Below, Before, or After the price. | Below price |
+| **Show Recurring Total** | Shows the recurring total row in the cart and checkout. | Yes |
+| **Show Non-Recurring Total** | Shows the non-recurring total row in the cart. | Yes |
+| **Show Recurring Amount** | Shows the recurring amount in the cart. | Yes |
+| **Show Recurring Discount** | Shows the recurring discount in the cart. | Yes |
+| **Show Next Renewal Date** | Shows the next renewal date in the cart. | Yes |
+| **Renewal Date Format** | PHP date format for the renewal date shown in the cart. Leave empty to inherit the global Date Format from J2Commerce Configuration. | `Y-m-d` |
+| **Show Renew Button** | Shows a Renew button on the front-end subscription listing for expired/cancelled subscriptions. | No |
+| **Show Early Renew Button** | Shows a Renew Now button on active subscriptions so the customer can pull the next charge forward. | No |
 
 ### Renewal Settings
 
-**Renewal Discount (%)** Apply a global percentage discount to all subscription renewal payments across every product. For example, entering `10` gives every customer 10% off their second and subsequent billings. This applies store-wide; use per-product settings for product-specific discounts.
+<!-- SCREENSHOT: Renewal Settings fieldset showing max retries and the retry-exhausted action dropdown -->
 
-**Max Renewal Retries** How many times the system will automatically retry a failed renewal payment before marking the subscription as **Card Expired** and stopping retries. Default is 5 attempts.
+| Field | Description | Default |
+|-------|-------------|---------|
+| **Renewal Discount (%)** | Global renewal discount percentage applied to all subscription products. | — |
+| **Max Renewal Retries** | Maximum retry attempts before the subscription is marked according to the **Action When Retries Are Exhausted** setting. | `3` |
+| **Renewal Retry Interval** | Number of units between retry attempts. | `1` |
+| **Renewal Retry Period** | Time unit for the retry interval — Hours, Days, Weeks, or Months. | Day(s) |
+| **Action When Retries Are Exhausted** | What happens once retries run out: **Mark Card Expired** (default), **Pause Subscription**, or **Cancel Subscription**. | Mark Card Expired |
+| **Enable Manual Invoice Renewals** | Lets renewals paid by an offline method (bank transfer, cash, money order) activate as soon as you mark the renewal order with that payment method's confirmed status, instead of following the retry-and-exhaust schedule. | No |
 
-**Renewal Retry Interval** The number of time units to wait between retry attempts. Combine this with the Renewal Retry Period — for example, **1** + **Day(s)** retries once per day.
+### Testing Tools (optional)
 
-**Renewal Retry Period** The time unit for the retry interval: Hours, Days, Weeks, or Months.
+An additional **Testing Tools** fieldset lets you turn on a safe testing harness — pick a payment plugin to test against, select or create a synthetic subscription, and trigger an immediate renewal without waiting for cron and without a live card. It writes its own debug log so you can see exactly what happened at each step. Leave this off on a live production store.
 
-:::info
+---
 
-The retry settings work together to implement dunning — automatically re-attempting failed payments on a schedule before giving up. A common setting is to retry every 3 days, up to 5 times, giving a customer 15 days to resolve a card issue before the subscription is suspended.
+## Setting Up a Subscription Product
 
-:::
+### A Simple Subscription
 
-## Setting Up a Subscription Product {#configure-products}
+1. Go to **J2Commerce** -> **Catalog** -> **Products** and create or edit a product.
+2. Set the **Product Type** to **Simple Subscription**.
+3. On the subscription tab, fill in:
+   - **Subscription Price** — the recurring charge.
+   - **Sign-Up Fee** — optional one-time charge, plus whether it applies on every purchase or only the first.
+   - **Billing Frequency** and **Billing Period** — e.g. "Every" + "Month" for monthly billing.
+   - **Subscription Length** — number of billing periods, or `0` for a subscription that never expires.
+   - **Trial Length** and **Trial Period** — optional free trial before the first real charge.
+   - **Add To User Groups** / **Remove From User Groups** — Joomla groups to add on activation or remove on expiry/cancellation.
+   - **Keep renewal discount** — carries a first-purchase coupon discount into every renewal.
+   - **Disable Cancel** — prevents the customer from cancelling this subscription themselves.
+4. Click **Save & Close**.
 
-After enabling the plugin, you can turn any product into a subscription product by changing its product type.
+<!-- SCREENSHOT: Product edit screen showing the Simple Subscription pricing and billing-frequency fields -->
 
-### Step 1: Open the Product
+### A Variable Subscription
 
-There are **three** ways to reach products.
+1. Set the **Product Type** to **Variable Subscription** instead.
+2. Add a variant for each plan you want to offer (Monthly, Quarterly, Annual, and so on).
+3. Each variant gets its own **Subscription Price**, **Subscription Length**, **Sign-Up Fee**, user-group settings, and renewal-discount carryover — set independently per plan.
+4. Customers choose their plan on the product page before adding it to the cart.
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Products**
+<!-- SCREENSHOT: Variable Subscription variant editor showing per-plan subscription price and length fields -->
 
-**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Catalog -> Products**
+---
 
-**Option C:** Go to **Content -> Categories ->** find the category, then click inside the published articles section
+## How Customers Manage Their Subscriptions
 
-Click on the product you want to make a subscription.
+Once **Show My Subscriptions Tab** is on, every logged-in customer sees a **My Subscriptions** section on their account page.
 
-### Step 2: Change the Product Type
+<!-- SCREENSHOT: My Subscriptions tab on the customer account page showing a subscription card with status badge and next renewal date -->
 
-In the product edit screen, go to the **J2Commerce** tab **-> General** tab. Change **Product Type** to **Simple Subscription** (for a single fixed subscription) or **Variable Subscription** (for subscriptions with size, color, or other variants where each variant can have its own billing settings).
+From there, a customer can:
 
-### Step 3: Configure Subscription Pricing
+- **View details** — next renewal date, status, billing schedule, and order history for that subscription.
+- **Cancel** — available on active or in-trial subscriptions, unless the product has **Disable Cancel** turned on.
+- **Renew** — available on expired or cancelled subscriptions when **Show Renew Button** is enabled.
+- **Renew Now** — pulls an active subscription's next charge forward, when **Show Early Renew Button** is enabled.
+- **Update Payment Information** — pick a different saved card for gateways that support it, or follow the card-update flow for gateways that require a fresh checkout.
 
-Scroll down (or look for the **Subscription** section within the J2Commerce tab) to find the subscription-specific fields.
+Guests or customers who can't log in can also use a one-time card-update link that you generate and copy or email to them from the admin subscription detail screen.
 
-**Subscription Price** The recurring price charged on each billing cycle. This is separate from the product's regular price field and is what the customer pays every period after any trial ends.
+---
 
-**Sign-Up Fee** A one-time fee charged at the very first purchase, on top of the first period's subscription price. Leave empty for no sign-up fee.
+## How Renewals, Retries, and Dunning Work
 
-**Add Sign-Up Fee on Each Purchase** When enabled, the sign-up fee is charged every time a customer purchases this product — even if they already have an active or expired subscription to the same product. Leave this off for the standard "one-time fee per customer" behavior.
+Subscriptions are processed by a background sweep, driven by either the **Cron URL** hit from an external scheduler or a **Process Queue** scheduled task (Queue Type: `subscription_renewal`) running inside Joomla's own task scheduler. Set up at least one of these so subscriptions actually renew and expire on time — without it, nothing happens automatically.
 
-### Step 4: Set the Billing Interval
+On each run, the sweep:
 
-**Billing Frequency** How often the customer is billed: Every, Every 2nd, Every 3rd, up to Every 6th.
+1. Moves **Future** subscriptions to **Active** on their start date, refreshing user-group membership.
+2. Moves **Active** subscriptions to **Expired** once their billing periods are used up.
+3. Moves **Cancelled** subscriptions to **Expired** once their paid-through date passes.
+4. Sends any due notification emails — expiry warnings, renewal reminders, trial-ending, first-renewal-from-trial.
+5. Charges due renewals against the saved payment method.
 
-**Billing Period** The unit: Days, Weeks, Months, or Years.
+If a renewal charge fails, the subscription does **not** cancel immediately. It retries according to **Max Renewal Retries** and **Renewal Retry Interval**/**Renewal Retry Period**. Once retries are exhausted, the subscription is marked **Card Expired**, paused, or cancelled, based on **Action When Retries Are Exhausted**.
 
-Combine these two fields to describe the billing cycle. For example, **Every** + **Month** bills once a month. **Every 3rd** + **Month** bills once per quarter.
+Renewals paid through an offline payment method (bank transfer, cash, money order) skip the card-retry logic entirely when **Enable Manual Invoice Renewals** is on — the subscription activates as soon as you mark that renewal order with the method's confirmed status.
 
-**Subscription Length** The total number of billing periods the subscription runs. Enter `0` for a subscription that never expires and renews indefinitely. Enter `12` with a monthly period for a one-year subscription that automatically stops after 12 payments.
+---
 
-### Step 5: Configure a Trial Period (Optional)
+## Subscription Emails
 
-**Trial Length** The number of trial periods. Leave as `0` for no trial.
+Fifteen lifecycle emails cover the full subscription journey: welcome, trial ending, trial converting to paid, renewal reminder, renewal succeeded, renewal failed, renewal retry, card expiring, card updated, paused, cancelled, expired, and expiring soon.
 
-**Trial Period** The unit for the trial: Days, Weeks, Months, or Years. Select **No Trial** to remove the trial.
+<!-- SCREENSHOT: Add Email Templates section showing the Import Joomla Editor Version and Import Visual Editor Version buttons -->
 
-For example, **Trial Length** `7` + **Trial Period** **Days** gives new subscribers a free 7-day trial before their first payment.
+Click **Add Email Templates** in the Email Settings tab, then choose:
 
-:::tip
+- **Import Joomla Editor Version** — loads the templates using the standard Joomla HTML editor.
+- **Import Visual Editor Version** — loads the templates using the drag-and-drop visual editor.
 
-During a trial, no payment is collected (unless the payment gateway requires a $0 authorization). The subscription status shows as **In Trial** until the trial ends.
+Pick one — importing both sends customers two copies of every subscription email. Each template is available in **Classic**, **Minimal**, and **Modern** designs, and can be edited afterward from J2Commerce's Email Templates screen like any other store email.
 
-:::
+---
 
-### Step 6: User Group Management (Optional)
+## Managing Subscriptions in the Admin Area
 
-**Add To User Groups** When this subscription becomes active, J2Commerce automatically adds the subscriber to the selected Joomla user groups. This is the standard way to grant access to members-only content or restricted areas on your site.
+Go to **J2Commerce** -> **Subscriptions** to reach the admin Subscriptions area.
 
-**Remove From User Groups** When this subscription expires or is cancelled, J2Commerce removes the subscriber from these groups. Combine the two fields to implement a complete membership access system — grant on subscribe, revoke on cancel.
+<!-- SCREENSHOT: Admin Subscriptions list showing search, status filter, and the export buttons -->
 
-### Step 7: Renewal Discount and Cancel Settings
+From the list you can:
 
-**Keep Renewal Discount** If a customer used a coupon code at first purchase, enabling this applies that same discount to all subsequent automatic renewals. Useful for first-month-free or introductory offer coupons that you want to honor for the life of the subscription.
+- **Search** by customer email, name, or product name.
+- **Filter by status** — New, Active, Future, In Trial, Payment Failed, Card Expired, On Hold, Cancelled, Expired.
+- **Export Subscriptions** or **Export Subscriptions with Orders** to CSV.
 
-**Disable Cancel** When enabled, customers cannot cancel this subscription from their account area — only an administrator can cancel it. Use with care and only when contractually appropriate.
+Click into any subscription to see its full detail page: billing schedule, related and renewal orders, additional fees, payment information, and a complete history log of every status change, email sent, and note added. From here you can also change status manually, edit the billing schedule or renewal amount, add fees, and generate or email a card-update link.
 
-## How It Works {#how-it-works}
+---
 
-1. A customer adds a subscription product to their cart. At checkout, only payment methods that support recurring billing (such as Stripe) are available. The customer completes checkout and the payment gateway saves a billing token.
+## Tips
 
-2. J2Commerce creates the initial order and, once payment is confirmed, creates a subscription record linked to the customer. The subscription status moves to **Active** (or **In Trial** if a trial was configured). If user groups are configured, the customer is added to those groups immediately.
+- **Set up the cron or scheduled task before going live.** Without one of them running, subscriptions never move from Future to Active, never expire, and renewal emails never send.
+- **Turn on Restrict Payment Methods for Subscriptions** if your store also sells one-time products through non-recurring gateways — it keeps customers from picking a payment method that can't actually be charged again later.
+- **Import Visual Editor templates unless you have a reason not to.** It's the friendlier editing experience, and content carries over cleanly if you switch later.
+- **Give retries room to work.** A one-attempt retry schedule barely differs from no retry at all — three attempts spread a few days apart catches far more temporary card issues.
 
-3. On the subscription's renewal date, the Joomla scheduled task (or the cron URL) triggers the renewal process. J2Commerce creates a new child order and charges the saved payment token without any customer action.
+---
 
-4. If the renewal payment succeeds, the customer receives a renewal confirmation email (and an order receipt if that option is enabled). The next renewal date is advanced by one billing period.
+## Troubleshooting
 
-5. If a renewal payment fails, J2Commerce marks the subscription as **Payment Failed** and schedules a retry according to the Max Renewal Retries and retry interval settings. The customer receives a payment failure notification. After the maximum retries are exhausted, the subscription moves to **Card Expired**.
+### Subscriptions never renew or expire on their own
 
-6. Customers can view all their subscriptions from **My Profile -> My Subscriptions**. From there they can see billing history, the next renewal date, and (unless Disable Cancel is on) cancel the subscription themselves. Administrators can manage all subscriptions from **J2Commerce -> Subscriptions**, override the status, view full history, and trigger manual renewals.
-
-## Customer-Facing View {#frontend-view}
-
-On the **product page**, customers see:
-
-- The subscription price with the billing cycle label next to it (for example, "$19.99 / month" or "$19.99 — Every month").
-- The sign-up fee displayed separately if configured.
-- A notice that the product is a subscription and login is required to purchase.
-
-In the **cart and checkout**:
-
-- A Subscription section showing the recurring amount, any recurring discount, and the calculated date of the first renewal.
-- Non-recurring charges (sign-up fee, any one-time products) listed separately.
-- Only subscription-compatible payment methods appear in the payment step.
-
-In the **customer account** (**My Profile -> My Subscriptions**):
-
-- A list of all active, trial, expired, and cancelled subscriptions.
-- Per-subscription detail page showing billing history, current status, next renewal date, and payment method.
-- A **Cancel** button (unless disabled at the product level).
-- A card update option if **Allow Card Update** is enabled in the app configuration.
-
-## Display Conditions {#display-conditions}
-
-Subscription pricing and controls appear on the product page when:
-
-- The **Subscription Products** app is enabled in **J2Commerce -> Apps**.
-- The product type is set to **Simple Subscription** or **Variable Subscription**.
-- The customer is logged in (guests cannot purchase subscriptions).
-
-The **My Subscriptions** tab appears on the customer profile when:
-
-- **Show My Subscriptions Tab** is set to **Yes** in the app configuration.
-- The customer has at least one subscription on their account.
-
-Automatic renewals run when:
-
-- The Joomla scheduled task plugin is enabled **and** the Joomla task scheduler is configured, **or** the Cron URL is being called by a server cron job at least once per day.
-
-## Tips {#tips}
-
-- **Use a payment gateway that supports recurring billing.** Stripe is the most commonly used gateway with this app. Cash on delivery, bank transfer, and PayPal Standard do not support automatic renewals — customers would need to manually renew each period.
-
-- **Set up the automatic renewal job before going live.** Either enable the Joomla scheduled task plugin (**System -> Plugins -> Scheduled Tasks**) and configure a system cron to call the Joomla task runner, or use the Cron URL displayed in the app settings. Without this, subscriptions will never renew automatically.
-
-- **Test with a short period first.** Configure a test subscription with a 1-day billing period and a $0.01 price to verify the full renewal cycle works — checkout, renewal email, new order creation — before deploying monthly plans to real customers.
-
-- **Configure dunning emails before launch.** The renewal failure notification and retry schedule protect your revenue. Set Max Renewal Retries to 3–5 and retry every 3 days, and enable the renewal retry email so customers are prompted to update their card.
-
-- **Use trial periods for "first month free" promotions.** Set Trial Length to `1` and Trial Period to **Month** for a 30-day free trial. The subscription status shows **In Trial** during this window and no payment is collected until the trial ends.
-
-- **User groups are the cleanest way to gate content.** Add subscribers to a Joomla "Subscribers" user group on activation, and remove them from it on cancellation. Then restrict your members-only articles or menu items to that group — access opens and closes automatically.
-
-- **Send expiry warnings for fixed-length subscriptions.** If you sell a 12-month plan, set **Notify Before Expiry** to `30,7,1` so customers get three nudges to renew before access lapses.
-
-## Troubleshooting {#troubleshooting}
-
-### Subscription option is not visible on the product page {#sub-not-visible}
-
-**Cause:** The app is disabled, or the product type has not been changed to a subscription type.
+**Cause:** Neither the Cron URL nor a Process Queue scheduled task is running.
 
 **Solution:**
 
-1. Go to **J2Commerce -> Apps** and verify **Subscription Products** shows a green checkmark.
-2. Edit the product and go to **J2Commerce -> General tab**. Check that **Product Type** is set to **Simple Subscription** or **Variable Subscription**.
-3. Confirm the product is published.
-4. Clear cache: **Home Dashboard -> Cache -> Delete All**.
+1. Go to **J2Commerce** -> **Apps** -> **Subscription Products** -> **Basic** and copy the **Cron URL**.
+2. Either configure your server's scheduler (cron, Task Scheduler, or your host's cron-job tool) to hit that URL at least once a day, **or**
+3. Go to **System** -> **Scheduled Tasks**, add a **Process Queue** task, and set its Queue Type to **subscription_renewal**.
+4. Confirm **Enable Cron Log** is on, then check the log after the next scheduled run.
 
-### Renewals are not running automatically {#renewals-not-running}
+### "No subscription payment plugin available" at checkout
 
-**Cause:** The Joomla scheduled task runner is not configured, or the cron job calling the Cron URL is not set up.
+**Cause:** No enabled payment method has declared support for recurring billing, or **Accepted Payment Methods** has been restricted to methods that aren't enabled.
 
-**Solution:**
+**Solution:** Go to **J2Commerce** -> **Payments** -> **Payment Methods** and confirm at least one subscription-capable gateway is enabled. Then check **Accepted Payment Methods** in the Subscription Products settings — leave it empty to allow every subscription-capable method automatically.
 
-1. Go to **System -> Plugins** and search for **Scheduled Tasks**. Verify the plugin is enabled.
-2. Go to **System -> Scheduled Tasks** and check whether the subscription renewal task exists and is enabled.
-3. If you are using the Cron URL instead, open the app settings (**J2Commerce -> Apps -> Subscription Products**) and copy the **Cron URL**. Paste it into your hosting control panel's cron scheduler to run at least once per day.
-4. Enable **Enable Cron Log** in the app settings and check the log after the next scheduled run to confirm the cron executed.
+### A customer's card-update link says it's expired or invalid
 
-### Renewal payment fails repeatedly {#renewal-payment-fails}
+**Cause:** Guest card-update links expire after the configured **Update Card Link Expiration** window, or after first use.
 
-**Cause:** The customer's saved payment token has expired or been invalidated.
+**Solution:** Generate a new link from the subscription's admin detail page and send it again. If the customer needs a permanent solution, ask them to log in and use **Update Payment Information** from their My Subscriptions tab instead.
 
-**Solution:**
+### Emails aren't being sent for subscription events
 
-1. Go to **J2Commerce -> Subscriptions**, find the affected subscription, and check the subscription history for the failure reason.
-2. If **Allow Card Update** is enabled, the customer can update their card from **My Profile -> My Subscriptions**. Direct them to do so.
-3. An administrator can manually re-enable the renewal retry process from the subscription detail page in the admin area after the customer updates their card.
-4. If the payment gateway plugin has been removed or is disabled, the renewal will log "no payment plugin handled the renewal event". Ensure the payment gateway plugin is still installed and enabled.
+**Cause:** The subscription email templates were never imported, or the specific notification toggle is turned off.
 
-### Customer cannot cancel from My Account {#cannot-cancel}
+**Solution:** Go to **Email Settings** and click **Add Email Templates** to import any missing templates. Then confirm the specific toggle for that email (for example, **Email Renewal Notifications** or **Trial Ending Notification**) is switched on.
 
-**Cause:** The customer is not logged in, the **My Subscriptions** tab is hidden, or **Disable Cancel** is enabled on the product.
+---
 
-**Solution:**
+## Related Topics
 
-1. Ensure the customer is logged in — subscriptions require a Joomla account.
-2. Go to **J2Commerce -> Apps -> Subscription Products -> Display Settings** and verify **Show My Subscriptions Tab** is set to **Yes**.
-3. Edit the product and check the subscription settings for **Disable Cancel**. If set to **Yes**, customers cannot self-cancel and an administrator must cancel on their behalf from **J2Commerce -> Subscriptions**.
-
-### No email is sent when a subscription is created or renewed {#no-emails}
-
-**Cause:** Joomla's outgoing email is not configured, or the subscription email settings are not enabled.
-
-**Solution:**
-
-1. Go to **System -> Global Configuration -> Server** tab and verify the mail settings. Send a test email to confirm Joomla can send mail.
-2. Go to **J2Commerce -> Apps -> Subscription Products -> Email Settings** and verify **Send Welcome Email on New Subscription** is enabled for new-subscription emails, or **Send Completed Order Email on Renewal** is enabled for renewal receipts.
-3. Check that the customer's email address is correct on their Joomla user account.
-4. If using custom email templates from the J2Commerce email hub, verify the subscription email templates are published.
+- [Apps Overview](../index.md)
+- [Managing Products](../../catalog/managing-products.md)
+- [Advanced Pricing](../../catalog/advanced-pricing.md)
