@@ -320,6 +320,8 @@ const sidebars = {
                         'apps-and-extensions/apps/klaviyo',
                         // Markdown for AI Agents
                         'apps-and-extensions/apps/app_markdown',
+                        // Marketplace
+                        'apps-and-extensions/apps/app_marketplace',
                         // Minimum Order Restriction
                         'apps-and-extensions/apps/minimumorder',
                         // Modal Bouncer
@@ -414,6 +416,8 @@ const sidebars = {
                         'apps-and-extensions/modules/mod_j2commerce_categories',
                         // Currencies
                         'apps-and-extensions/modules/mod_j2commerce_currency',
+                        // Gift Cards
+                        'apps-and-extensions/modules/mod_j2commerce_giftcards',
                         // Products Module
                         'apps-and-extensions/modules/mod_j2commerce_products',
                         // Wishlist Module
@@ -627,6 +631,18 @@ const sidebars = {
         },
         {
             type: 'category',
+            label: 'Payout Methods',
+            link: {
+                type: 'generated-index',
+                slug: '/payout-methods', // Custom slug removes /category prefix
+            },
+            items: [
+                // Mercury
+                'payout-methods/payout_mercury',
+            ],
+        },
+        {
+            type: 'category',
             label: 'Shipping Methods',
             link: {
                 type: 'generated-index',
@@ -637,6 +653,8 @@ const sidebars = {
                 'shipping-methods/shipping_atoship',
                 // Category Based Shipping
                 'shipping-methods/categories',
+                // DHL Express
+                'shipping-methods/shipping_dhlexpress',
                 // Doordash
                 'shipping-methods/shipping_doordash',
                 // EasyShip Multi-Carrier Shipping
@@ -653,6 +671,8 @@ const sidebars = {
                 'shipping-methods/shipping_shippo',
                 // Standard Shipping
                 'shipping-methods/shipping-standard',
+                // Table Rate
+                'shipping-methods/shipping_tablerate',
                 // Unishippers LTL Freight
                 'shipping-methods/shipping_unishippers',
                 // UPS Global Checkout
