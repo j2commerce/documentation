@@ -162,7 +162,7 @@ These endpoints support the full set of CRUD operations: **GET** (list all), **G
 | `/v1/j2commerce/customers`       | Customer records -- manage customer accounts.                 |
 | `/v1/j2commerce/inventory`       | Stock levels -- view and update product inventory.            |
 | `/v1/j2commerce/coupons`         | Discount coupons -- create and manage coupon codes.           |
-| `/v1/j2commerce/vouchers`        | Gift vouchers -- create and manage gift certificates.         |
+| `/v1/j2commerce/vouchers`        | Gift vouchers -- create and manage gift certificates. See also the nested `[id]/adjust` and `mine` routes below. |
 | `/v1/j2commerce/manufacturers`   | Brand and manufacturer data.                                  |
 | `/v1/j2commerce/currencies`      | Currency settings and exchange rates.                         |
 | `/v1/j2commerce/countries`       | Country list for addressing.                                  |
@@ -179,6 +179,8 @@ These endpoints return data related to a specific parent record. Replace `[id]` 
 
 | Endpoint                                  | Method    | Description                                                        |
 | ----------------------------------------- | --------- | ------------------------------------------------------------------ |
+| `/v1/j2commerce/vouchers/[id]/adjust`     | POST      | Applies a manual credit, debit, or correction to a voucher's balance. Requires the calling user to have edit permission on J2Commerce. |
+| `/v1/j2commerce/vouchers/mine`            | GET       | Returns the authenticated user's own gift card vouchers, with masked codes and calculated remaining balances. No parent ID needed. |
 | `/v1/j2commerce/orders/[id]/items`        | GET       | Line items (products) within a specific order.                     |
 | `/v1/j2commerce/orders/[id]/history`      | GET, POST | Status change history for an order. POST adds a new history entry. |
 | `/v1/j2commerce/products/[id]/variants`   | GET       | Product variants (sizes, colors, etc.) for a specific product.     |
