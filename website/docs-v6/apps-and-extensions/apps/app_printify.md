@@ -32,7 +32,7 @@ In the Joomla admin, go to **System -> Install -> Extensions**
 
 Upload the `app_printify.zip` file or use the Install from URL option.
 
-![Install extensions](/img/printify-install1.webp)
+[//]: # (![Install extensions]&#40;/img/printify-install1.webp&#41;)
 
 ## Enable the App
 
@@ -42,11 +42,11 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-![](/img/printify-apps-list.webp)
+[//]: # (![]&#40;/img/printify-apps-list.webp&#41;)
 
 Look for **Printify Print-on-Demand**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-![](/img/printify-enable1.webp)
+[//]: # (![]&#40;/img/printify-enable1.webp&#41;)
 
 ## Configure the App
 
@@ -58,11 +58,11 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-![](/img/printify-toggle-help.webp)
+[//]: # (![]&#40;/img/printify-toggle-help.webp&#41;)
 
 ### Connection tab
 
-![](/img/printify-config-connection.webp)
+[//]: # (![]&#40;/img/printify-config-connection.webp&#41;)
 
 | Setting | Description | Default |
 |---------|-------------|---------|
@@ -78,7 +78,7 @@ You must **Save** the page after pasting your token before the **Printify Shop**
 
 ### Product Import tab
 
-![](/img/printify-config-import.webp)
+[//]: # (![]&#40;/img/printify-config-import.webp&#41;)
 
 **Import defaults** — control how newly imported products are set up in J2Commerce:
 
@@ -99,7 +99,7 @@ You must **Save** the page after pasting your token before the **Printify Shop**
 
 ### Pricing tab
 
-![](/img/printify-config-pricing.webp)
+[//]: # (![]&#40;/img/printify-config-pricing.webp&#41;)
 
 Printify charges you a base cost per item at the time an order is fulfilled. You set a markup so your store keeps a margin.
 
@@ -112,7 +112,7 @@ Printify charges you a base cost per item at the time an order is fulfilled. You
 
 ### Order Fulfillment tab
 
-![](/img/printify-config-fulfillment.webp)
+[//]: # (![]&#40;/img/printify-config-fulfillment.webp&#41;)
 
 | Setting | Description | Default |
 |---------|-------------|---------|
@@ -123,7 +123,7 @@ Printify charges you a base cost per item at the time an order is fulfilled. You
 
 ### Shipping tab
 
-![](/img/printify-config-shipping.webp)
+[//]: # (![]&#40;/img/printify-config-shipping.webp&#41;)
 
 | Setting | Description | Default |
 |---------|-------------|---------|
@@ -139,7 +139,7 @@ Printify charges you a base cost per item at the time an order is fulfilled. You
 
 ### Advanced tab
 
-![](/img/printify-config-advanced.webp)
+[//]: # (![]&#40;/img/printify-config-advanced.webp&#41;)
 
 | Setting | Description | Default |
 |---------|-------------|---------|
@@ -157,7 +157,7 @@ You need a Personal Access Token from Printify before the connection will work.
 4. Click **Generate new token**, give it a name like "J2Commerce," and click **Create**.
 5. Copy the token immediately — Printify only shows it once.
 
-![](/img/printify-token.webp)
+[//]: # (![]&#40;/img/printify-token.webp&#41;)
 
 Treat this token like a password. Anyone who has it can fully control your Printify shop through the API.
 
@@ -169,7 +169,7 @@ Treat this token like a password. Anyone who has it can fully control your Print
 4. Click **Save** in the toolbar to store the token, then reopen the settings — the **Printify Shop** dropdown will now list every shop on your account.
 5. Select your shop and click **Save** again.
 
-![](/img/printify-connection-test.webp)
+[//]: # (![]&#40;/img/printify-connection-test.webp&#41;)
 
 Most accounts only have one shop, so the choice is obvious. If you manage several Printify shops, double-check you've picked the right one — orders and products only ever sync with the shop selected here.
 
@@ -180,7 +180,7 @@ Products are designed and published in your Printify shop first (using Printify'
 1. Go to **J2Commerce -> Apps -> Printify Print-on-Demand** to open the app dashboard, then click the **My Products** quick link (or go to **J2Commerce -> Apps -> Printify -> pluginview=products** from the dashboard's quick links).
 2. Click **Load My Products** to fetch the product list from your Printify shop.
 
-![](/img/printify-my-products.webp)
+[//]: # (![]&#40;/img/printify-my-products.webp&#41;)
 
 3. Each product appears as a card showing its image, title, and number of variants (sizes/colors), along with a badge that reads **Not Imported** or **Imported**.
 4. Use the **Search your Printify products...** box to filter by name, or use the **Previous/Next** buttons to page through your shop.
@@ -204,7 +204,7 @@ If you change a product in Printify later — adding a color, updating the base 
 
 **From the product edit screen:** open **J2Commerce -> Products**, edit the product, and look for the Printify sync badge shown on the **J2Commerce** tab. It shows the current sync status, the last-synced date and time, and an **Edit Printify** link that opens the product directly in your Printify shop editor.
 
-![](/img/printify-sync-badge.webp)
+[//]: # (![]&#40;/img/printify-sync-badge.webp&#41;)
 
 Syncing updates base costs on existing variants (your manual price overrides are kept), adds any new enabled variants, and removes variants you've disabled in Printify. It does not touch variants you've manually hidden in J2Commerce.
 
@@ -214,7 +214,7 @@ The **Order Sync** screen lists every J2Commerce order that contains a Printify 
 
 1. Go to **J2Commerce -> Apps -> Printify Print-on-Demand**, then open the **Orders** quick link.
 
-![](/img/printify-order-sync.webp)
+[//]: # (![]&#40;/img/printify-order-sync.webp&#41;)
 
 2. Use the search box and the **J2Commerce Status**, **Printify Status**, and **Tracking** filters to narrow the list, and click any column heading to sort.
 3. **Order** links straight to the J2Commerce order detail screen.
@@ -243,7 +243,7 @@ The **Order Sync** screen lists every J2Commerce order that contains a Printify 
 
 Every J2Commerce order that contains a Printify product shows a **Printify Fulfillment** panel on its order detail screen, with the same actions available from the Order Sync screen: **Submit to Printify**, **Send to Production**, **Cancel Printify Order**, and **Refresh Status**. The panel also displays the Printify order ID, submission date, tracking number and carrier (once shipped), and a shipping cost breakdown when available.
 
-![](/img/printify-order-panel.webp)
+[//]: # (![]&#40;/img/printify-order-panel.webp&#41;)
 
 ## How It Works{#how-it-works}
 

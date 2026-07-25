@@ -35,7 +35,7 @@ In the Joomla admin, go to **System -> Install -> Extensions**.
 
 Upload the plugin ZIP file or use the Install from URL option.
 
-![](/img/tablerate-install.webp)
+[//]: # (![]&#40;/img/tablerate-install.webp&#41;)
 
 :::info
 If J2Commerce is not already installed, the installer will stop and show an error message. Install J2Commerce first, then re-run the installation.
@@ -49,11 +49,11 @@ Once installed, you need to enable the shipping method. There are **two** ways y
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Shipping -> Shipping Methods**
 
-![](/img/tablerate-methods-list.webp)
+[//]: # (![]&#40;/img/tablerate-methods-list.webp&#41;)
 
 Look for **Table Rate Shipping**, click the **X**, and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-![](/img/tablerate-enable.webp)
+[//]: # (![]&#40;/img/tablerate-enable.webp&#41;)
 
 ## Configure the Shipping Method
 
@@ -63,11 +63,11 @@ Once you click on the **Table Rate Shipping** title next to the green checkmark,
 Click the **Toggle Inline Help** button in the toolbar and the plugin will show a description below each field as you configure it.
 :::
 
-![](/img/tablerate-toggle-help.webp)
+[//]: # (![]&#40;/img/tablerate-toggle-help.webp&#41;)
 
 ### Basic Settings tab
 
-![](/img/tablerate-config-basic.webp)
+[//]: # (![]&#40;/img/tablerate-config-basic.webp&#41;)
 
 | Field | Description | Default | Options |
 |-------|-------------|---------|---------|
@@ -84,7 +84,7 @@ Table Rate Shipping works with two other panels below Basic Settings: **Shipping
 
 Shipping Groups (also called shipping classes) are optional labels you attach to products — for example "Standard," "Oversized," or "Fragile." You can then write rules that apply only to items in a particular group.
 
-![](/img/tablerate-shipclass-tab.webp)
+[//]: # (![]&#40;/img/tablerate-shipclass-tab.webp&#41;)
 
 1. Click **+ Add Ship Group**.
 2. Enter a **Shipping Group Name**, for example `Oversized`.
@@ -97,7 +97,7 @@ If you don't need group-based pricing, you can skip this tab entirely — table-
 
 Each row in this table is a separate shipping method your customers can choose at checkout (for example "Standard Delivery" or "Express Delivery"). Click **+ Add Shipping Method** to create one.
 
-![](/img/tablerate-methods-table.webp)
+[//]: # (![]&#40;/img/tablerate-methods-table.webp&#41;)
 
 | Column | Description |
 |--------|-------------|
@@ -124,7 +124,7 @@ Each row in this table is a separate shipping method your customers can choose a
 
 Under each shipping method row is a **Conditions** sub-table. This is where you build the actual rate tiers — for example "0–1 kg = $5" and "1–5 kg = $10." Click **+ Add Rule** to add a tier.
 
-![](/img/tablerate-rules-table.webp)
+[//]: # (![]&#40;/img/tablerate-rules-table.webp&#41;)
 
 | Column | Description |
 |--------|-------------|
@@ -162,7 +162,7 @@ There are **three** ways you can access the products.
 
 Open the product **-> J2Commerce tab -> Apps tab -> Table Rate Shipping** section **->** select one or more **Shipping Group** values.
 
-![](/img/tablerate-product-shipgroup.webp)
+[//]: # (![]&#40;/img/tablerate-product-shipgroup.webp&#41;)
 
 A product can belong to more than one shipping group at once.
 
