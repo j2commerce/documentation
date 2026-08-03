@@ -230,6 +230,12 @@ Assign the **Fieldset** to the appropriate category and click the **checkmark** 
 
 ![](/img/marketplace_fields2.webp)
 
+### Adding Additional Fields
+
+You can add more fields that already exist in Checkout Fields or create a new field without leaving the application fields page. Click on the View Custom Fields tab
+
+![](/img/marketplace_checkout-fields5.webp)
+
 ## Frontend View&#x20;
 
 The **Marketplace Application** Menu tab shows up on the frontend
