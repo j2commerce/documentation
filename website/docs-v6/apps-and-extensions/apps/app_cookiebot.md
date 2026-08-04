@@ -1,10 +1,3 @@
----
-title: "Cookiebot"
-sidebar_label: "Cookiebot"
-sidebar_position: 100
-description: "Add a Cookiebot GDPR/CCPA cookie consent banner to your J2Commerce store and automatically gate your GA4, Google Tag Manager, and Meta Pixel tracking behind visitor consent."
----
-
 # Cookiebot
 
 The Cookiebot app adds a [Cookiebot](https://www.cookiebot.com/) cookie consent banner to every page of your J2Commerce store. Visitors see the banner before any non-essential cookies are set, and their choice is recorded the way privacy laws such as GDPR and CCPA require. The app also automatically connects that consent decision to your other J2Commerce tracking apps -- GA4, Google Tag Manager, and Meta Pixel -- so those plugins only start tracking after a visitor accepts marketing cookies.
@@ -15,6 +8,21 @@ The Cookiebot app adds a [Cookiebot](https://www.cookiebot.com/) cookie consent 
 - Joomla 6.x
 - J2Commerce 6.x, installed and enabled
 - A [Cookiebot](https://www.cookiebot.com/) account with a domain group created for your store's website (a free plan is available for smaller sites)
+
+## Get Your Cookiebot Domain Group ID
+
+Before configuring the plugin, you need the Domain Group ID (CBID) for your website from your Cookiebot account.
+
+1. Sign in to your account at [manage.cookiebot.com](https://manage.cookiebot.com/).
+2. If you have not already added your store's website, create a new domain group for it and follow Cookiebot's setup steps to verify the domain.
+3. Open the domain group for your store and go to **Your scripts**.
+4. Copy the **Domain Group ID** shown there -- it looks like `00000000-0000-0000-0000-000000000000`.
+
+:::tip
+
+After you create a domain group, Cookiebot automatically scans your site to find cookies and categorize them. This scan can take a little while to complete. The banner will still appear right away once the plugin is configured, but full automatic cookie blocking is most accurate once the scan finishes.
+
+:::
 
 ## Purchase and Download
 
@@ -32,7 +40,7 @@ The **Cookiebot** app is a separate add-on available from the [J2Commerce Extens
 2. Upload the `app_cookiebot.zip` package file.
 3. The plugin installs and enables automatically.
 
-<!-- SCREENSHOT: Joomla Extensions installer with app_cookiebot.zip selected -->
+![](/img/install.webp)
 
 :::info
 
@@ -48,26 +56,11 @@ Once installed, confirm the app is enabled. There are two ways to reach it.
 
 **Option B:** Go to **Components** in the left sidebar -> **J2Commerce** -> **Apps**.
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Cookiebot in the list -->
+![](/img/gift-wrap-apps.webp)
 
 Look for **Cookiebot** in the list. If the toggle shows a red X, click it to turn it into a green checkmark. The app is now active.
 
-## Get Your Cookiebot Domain Group ID
-
-Before configuring the plugin, you need the Domain Group ID (CBID) for your website from your Cookiebot account.
-
-1. Sign in to your account at [manage.cookiebot.com](https://manage.cookiebot.com/).
-2. If you have not already added your store's website, create a new domain group for it and follow Cookiebot's setup steps to verify the domain.
-3. Open the domain group for your store and go to **Your scripts**.
-4. Copy the **Domain Group ID** shown there -- it looks like `00000000-0000-0000-0000-000000000000`.
-
-<!-- SCREENSHOT: Cookiebot "Your scripts" page showing the Domain Group ID -->
-
-:::tip
-
-After you create a domain group, Cookiebot automatically scans your site to find cookies and categorize them. This scan can take a little while to complete. The banner will still appear right away once the plugin is configured, but full automatic cookie blocking is most accurate once the scan finishes.
-
-:::
+![](/img/cookiebot_enable.webp)
 
 ## Configure the App
 
@@ -79,11 +72,11 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-<!-- SCREENSHOT: Cookiebot plugin settings page with Toggle Inline Help button visible in the toolbar -->
+![](/img/cookiebot_toggle.webp)
 
 ### Cookiebot Settings
 
-<!-- SCREENSHOT: Cookiebot Settings fieldset showing Domain Group ID, Blocking Mode, Language Override, and Debug Logging fields -->
+![](/img/cookiebot_plugin.webp)
 
 **Cookiebot Domain Group ID:** Paste the Domain Group ID (CBID) you copied from your Cookiebot account. This field is required -- the banner will not load on your site without it.
 
@@ -91,19 +84,17 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 **Blocking Mode:** Controls how Cookiebot blocks cookies before a visitor responds to the banner.
 
-| Option | Description |
-|--------|-------------|
-| **Automatic** (default) | Cookiebot detects and blocks cookie-setting scripts on your site automatically, based on its scan. No extra setup is needed on your templates. Recommended for most stores. |
-| **Manual** | You must mark each cookie-setting script yourself with special Cookiebot markup in your site's templates. Choose this only if you already manage manual cookie blocking elsewhere on your site, or if Cookiebot support has instructed you to use it. Manual mode does not depend on Cookiebot's automated scan being complete. |
+- **Automatic**: Cookiebot detects and blocks cookie-setting scripts on your site automatically, based on its scan. No extra setup is needed on your templates. Recommended for most stores.
+
+- **Manual:** You must mark each cookie-setting script yourself with special Cookiebot markup in your site's templates. Choose this only if you already manage manual cookie blocking elsewhere on your site, or if Cookiebot support has instructed you to use it. Manual mode does not depend on Cookiebot's automated scan being complete.
 
 **Language Override:** An optional two-letter language code (ISO 639-1, for example `EN`) that forces the banner to always display in that language. Leave this field blank to let Cookiebot automatically detect and match each visitor's browser language.
 
 **Debug Logging:** When set to **Yes**, the app writes its consent-gating decisions to a log file named `app_cookiebot.php` in your Joomla logs folder. Use this only while troubleshooting -- turn it back to **No** before going live, since it adds extra writes on every page load.
 
-| Option | Description |
-|--------|-------------|
-| **No** (default) | No extra logging. Use in production. |
-| **Yes** | Writes detailed log entries to `app_cookiebot.php` in your Joomla logs folder. Enable only while diagnosing a problem. |
+- **No**: No extra logging. Use in production.
+
+- **Yes:** Writes detailed log entries to `app_cookiebot.php` in your Joomla logs folder. Enable only while diagnosing a problem.
 
 ## How It Works
 
