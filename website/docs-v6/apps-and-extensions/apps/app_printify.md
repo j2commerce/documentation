@@ -1,10 +1,3 @@
----
-title: "Printify Print-on-Demand"
-sidebar_label: "Printify Print-on-Demand"
-sidebar_position: 10
-description: "Connect your Printify account to J2Commerce to import print-on-demand products from your Printify shop, price them with a markup, and automate order fulfillment and shipping rates."
----
-
 # Printify Print-on-Demand
 
 The Printify Print-on-Demand app connects your J2Commerce store to [Printify](https://printify.com), one of the largest print-on-demand networks. Design and list products in your Printify shop as usual, then pull them straight into J2Commerce with one click. When a customer buys one, the app automatically sends the order to Printify for production and fulfillment — no inventory, no packing boxes, no shipping labels for you to print.
@@ -17,6 +10,8 @@ The Printify Print-on-Demand app connects your J2Commerce store to [Printify](ht
 - A free Printify account with at least one shop, plus a Personal Access Token from that account
 
 ## Purchase and Download
+
+The **Printify Print-on-Demand** is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
 **Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
 
@@ -32,7 +27,7 @@ In the Joomla admin, go to **System -> Install -> Extensions**
 
 Upload the `app_printify.zip` file or use the Install from URL option.
 
-[//]: # (![Install extensions]&#40;/img/printify-install1.webp&#41;)
+![](/img/install.webp)
 
 ## Enable the App
 
@@ -42,11 +37,11 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-[//]: # (![]&#40;/img/printify-apps-list.webp&#41;)
+![](/img/gift-wrap-apps.webp)
 
 Look for **Printify Print-on-Demand**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-[//]: # (![]&#40;/img/printify-enable1.webp&#41;)
+![](/img/printify_enable.webp)
 
 ## Configure the App
 
@@ -58,94 +53,103 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-[//]: # (![]&#40;/img/printify-toggle-help.webp&#41;)
+![](/img/printify_toggle.webp)
 
 ### Connection tab
 
-[//]: # (![]&#40;/img/printify-config-connection.webp&#41;)
+![](/img/printify_connection.webp)
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Printify API Token** | Your Personal Access Token from your Printify dashboard (**Settings -> Connections -> API**). Required before anything else on this page works. | — |
-| **Test Connection** | Click to verify your API token and shop connection. Shows a confirmation message with your shop name and plan, or an error if something's wrong. | — |
-| **Printify Shop** | Select the Printify shop to connect to this J2Commerce store. This dropdown fills in once you have entered and saved a valid **Printify API Token**. | — |
+**Printify API Token:** Your Personal Access Token from your Printify dashboard (**Settings -> Connections -> API**). Required before anything else on this page works.
 
-:::info
+**Test Connection:** Click to verify your API token and shop connection. Shows a confirmation message with your shop name and plan, or an error if something's wrong.
 
-You must **Save** the page after pasting your token before the **Printify Shop** dropdown will show your shops. Click **Test Connection** first to confirm the token itself is valid — this button works without saving.
+**Printify Shop:** Select the Printify shop to connect to this J2Commerce store. This dropdown fills in once you have entered and saved a valid **Printify API Token**.
 
-:::
+- Click **Test Connection**. You should see a message such as "Connected to Printify shop: My Shop Name (standard plan)."
+
+- Click **Save** in the toolbar to store the token, then reopen the settings — the **Printify Shop** dropdown will now list every shop on your account.
+
+- Select your shop and click **Save** again.
+
+Most accounts only have one shop, so the choice is obvious. If you manage several Printify shops, double-check you've picked the right one — orders and products only ever sync with the shop selected here.
 
 ### Product Import tab
 
-[//]: # (![]&#40;/img/printify-config-import.webp&#41;)
+![](/img/printify_product.webp)
 
 **Import defaults** — control how newly imported products are set up in J2Commerce:
 
-| Setting | Description | Default | Options |
-|---------|-------------|---------|---------|
-| **Default Import Status** | The enabled state applied to newly imported Printify products. | Unpublished | Published, Unpublished |
-| **Default Article Category** | The Joomla content category assigned to the article created for each imported product. **Required** — importing fails without it. | — | Any Joomla content category |
-| **Default J2Commerce Tags** | One or more existing J2Commerce tags to assign to imported products. Products must carry a tag to appear in tag-based storefront listings. You cannot create new tags from this field — create them first. | — | Any existing tag(s) |
-| **Default Tax Profile** | The J2Commerce tax profile applied to imported products. | None | Any configured tax profile |
+**Default Import Status:** The enabled state applied to newly imported Printify products.&#x20;
 
-**Product assignment** — how imported products connect to the rest of your catalog:
+**Default Article Category:** The Joomla content category assigned to the article created for each imported product. **Required** — importing fails without it.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Option Field Type** | How Size/Color-style product options are displayed on the frontend. Choices are Dropdown (select), Radio Buttons, Color Swatches, or Checkboxes. | Dropdown (select) |
-| **Use Print Provider as Manufacturer** | Automatically assigns the Printify print provider (e.g., Printify Choice, Monster Digital) as the product's Manufacturer/Brand. Creates the manufacturer record automatically if it doesn't already exist. | No |
-| **Set Printify as Vendor** | Automatically assigns "Printify" as the vendor on imported products, creating the vendor record (linked to your admin account) if needed. | No |
+**Default J2Commerce Tags:** One or more existing J2Commerce tags to assign to imported products. Products must carry a tag to appear in tag-based storefront listings. You cannot create new tags from this field — create them first.
+
+**Default Tax Profile:** The J2Commerce tax profile applied to imported products.
+
+**\*\*\*Product assignment** — how imported products connect to the rest of your catalog:
+
+**Option Field Type:** How Size/Color-style product options are displayed on the frontend. Choices are Dropdown (select), Radio Buttons, Color Swatches, or Checkboxes.
+
+**Use Print Provider as Manufacturer:** Automatically assigns the Printify print provider (e.g., Printify Choice, Monster Digital) as the product's Manufacturer/Brand. Creates the manufacturer record automatically if it doesn't already exist.
+
+**Set Printify as Vendor:** Automatically assigns "Printify" as the vendor on imported products, creating the vendor record (linked to your admin account) if needed.
 
 ### Pricing tab
 
-[//]: # (![]&#40;/img/printify-config-pricing.webp&#41;)
+![](/img/printify_pricing.webp)
 
 Printify charges you a base cost per item at the time an order is fulfilled. You set a markup so your store keeps a margin.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Markup Type** | How the retail price is calculated from Printify's base cost — **Percentage** or **Fixed Amount**. | Percentage |
-| **Markup Value** | The markup amount. For Percentage, `50` adds 50% on top of the base cost. For Fixed Amount, the value is added directly in your store currency. | `50` |
+**Markup Type:** How the retail price is calculated from Printify's base cost — **Percentage** or **Fixed Amount**.
+
+**Markup Value:** The markup amount. For Percentage, `50` adds 50% on top of the base cost. For Fixed Amount, the value is added directly in your store currency.
 
 **How the math works:** for a $12.50 base cost, a 50% markup produces an $18.75 retail price. A $10.00 fixed markup on the same base cost produces $22.50. You can always edit the price on any individual variant after import.
 
 ### Order Fulfillment tab
 
-[//]: # (![]&#40;/img/printify-config-fulfillment.webp&#41;)
+![](/img/printify_order.webp)
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Auto-Submit Orders** | Automatically submits orders containing Printify products to Printify once the order reaches the status configured below. | Yes |
-| **Trigger on Order Status** | The J2Commerce order status that triggers automatic submission to Printify. | Confirmed (status 1) |
-| **Auto Send to Production** | After the order is created at Printify, sends it straight to the print facility. If disabled, you must send it manually from the Order Sync screen. | Yes |
-| **Printify Shipping Notifications** | Lets Printify email shipping confirmations directly to your customers. Disable this if J2Commerce already sends your own shipping emails, to avoid duplicate notifications. | No |
+**Auto-Submit Orders:** Automatically submits orders containing Printify products to Printify once the order reaches the status configured below.
+
+**Trigger on Order Status:** The J2Commerce order status that triggers automatic submission to Printify.
+
+**Auto Send to Production:** After the order is created at Printify, sends it straight to the print facility. If disabled, you must send it manually from the Order Sync screen.
+
+**Printify Shipping Notifications:** Lets Printify email shipping confirmations directly to your customers. Disable this if J2Commerce already sends your own shipping emails, to avoid duplicate notifications.
 
 ### Shipping tab
 
-[//]: # (![]&#40;/img/printify-config-shipping.webp&#41;)
+![](/img/printify_shipping.webp)
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Show Printify Shipping Rates** | Displays Printify's shipping options at checkout for carts that contain Printify products. | Yes |
-| **Shipping Handling Fee** | A flat amount added on top of every Printify shipping rate — useful for packaging costs or margin. | `0.00` |
-| **Shipping Label Prefix** | Optional text added to the start of every Printify shipping method name at checkout, e.g. entering `POD: ` shows "POD: Standard Shipping." | — |
-| **Enable Economy Shipping** | Shows a slower, cheaper Economy rate from Printify alongside Standard, Priority, and Express. | No |
-| **Shipping Rate Cache (minutes)** | How long Printify shipping rates are cached before refreshing, to reduce API calls during checkout. Minimum 60, in steps of 60. | `360` |
-| **Shipping Tax Class** | The tax class applied to Printify shipping rates at checkout. Currently only **None (no tax)** is available. | None (no tax) |
-| **Mixed Cart Strategy** | How shipping is presented when a cart mixes Printify and non-Printify items. **Separate** lists all rates independently. **Sum Cheapest** adds the cheapest Printify rate on top of each of your native shipping rates. | Separate |
-| **Fallback Shipping Rate** | A flat rate shown at checkout if the Printify API is unreachable. Set to `0` to block checkout for Printify-only carts when the API is down instead of guessing a rate. | `0.00` |
-| **Fallback Rate Name** | The label shown at checkout for the fallback rate above. | `Shipping` |
+**Show Printify Shipping Rates:** Displays Printify's shipping options at checkout for carts that contain Printify products.
+
+**Shipping Handling Fee:** A flat amount added on top of every Printify shipping rate — useful for packaging costs or margin.
+
+**Shipping Label Prefix:** Optional text added to the start of every Printify shipping method name at checkout, e.g. entering `POD: ` shows "POD: Standard Shipping."
+
+**Enable Economy Shipping:** Shows a slower, cheaper Economy rate from Printify alongside Standard, Priority, and Express.
+
+**Shipping Rate Cache (minutes):** How long Printify shipping rates are cached before refreshing, to reduce API calls during checkout. Minimum 60, in steps of 60.
+
+**Shipping Tax Class:** The tax class applied to Printify shipping rates at checkout. Currently only **None (no tax)** is available.
+
+**Mixed Cart Strategy:** How shipping is presented when a cart mixes Printify and non-Printify items. **Separate** lists all rates independently. **Sum Cheapest** adds the cheapest Printify rate on top of each of your native shipping rates.
+
+**Fallback Shipping Rate:** A flat rate shown at checkout if the Printify API is unreachable. Set to `0` to block checkout for Printify-only carts when the API is down instead of guessing a rate.
+
+**Fallback Rate Name:** The label shown at checkout for the fallback rate above.
 
 ### Advanced tab
 
-[//]: # (![]&#40;/img/printify-config-advanced.webp&#41;)
+![](/img/printify_advanced.webp)
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Error Threshold** | The number of consecutive API failures before the app automatically pauses all Printify API calls (a circuit breaker, so one bad outage doesn't flood your error log or hammer Printify's API). | `10` |
-| **Catalog Cache (minutes)** | How long product catalog data pulled from Printify is cached before refreshing. Minimum 60, in steps of 60. | `1440` (24 hours) |
-| **Debug Logging** | Writes detailed API request/response information to a log file for troubleshooting. Only enable this while diagnosing a problem. | No |
+**Error Threshold:** The number of consecutive API failures before the app automatically pauses all Printify API calls (a circuit breaker, so one bad outage doesn't flood your error log or hammer Printify's API).
+
+**Catalog Cache (minutes):** How long product catalog data pulled from Printify is cached before refreshing. Minimum 60, in steps of 60.
+
+**Debug Logging:** Writes detailed API request/response information to a log file for troubleshooting. Only enable this while diagnosing a problem.
 
 ## Getting Your Printify API Token
 
@@ -157,19 +161,19 @@ You need a Personal Access Token from Printify before the connection will work.
 4. Click **Generate new token**, give it a name like "J2Commerce," and click **Create**.
 5. Copy the token immediately — Printify only shows it once.
 
-[//]: # (![]&#40;/img/printify-token.webp&#41;)
-
 Treat this token like a password. Anyone who has it can fully control your Printify shop through the API.
 
 ## Connecting Your Shop
 
-1. Go to **J2Commerce -> Apps** and open **Printify Print-on-Demand**.
-2. On the **Connection** tab, paste your token into **Printify API Token**.
-3. Click **Test Connection**. You should see a message such as "Connected to Printify shop: My Shop Name (standard plan)."
-4. Click **Save** in the toolbar to store the token, then reopen the settings — the **Printify Shop** dropdown will now list every shop on your account.
-5. Select your shop and click **Save** again.
+Go to **J2Commerce -> Apps** and open **Printify Print-on-Demand**.
 
-[//]: # (![]&#40;/img/printify-connection-test.webp&#41;)
+On the **Connection** tab, paste your token into **Printify API Token**.
+
+Click **Test Connection**. You should see a message such as "Connected to Printify shop: My Shop Name (standard plan)."
+
+Click **Save** in the toolbar to store the token, then reopen the settings — the **Printify Shop** dropdown will now list every shop on your account.
+
+Select your shop and click **Save** again.
 
 Most accounts only have one shop, so the choice is obvious. If you manage several Printify shops, double-check you've picked the right one — orders and products only ever sync with the shop selected here.
 
@@ -177,14 +181,23 @@ Most accounts only have one shop, so the choice is obvious. If you manage severa
 
 Products are designed and published in your Printify shop first (using Printify's own product editor), then pulled into J2Commerce with one click from the **My Products** screen.
 
-1. Go to **J2Commerce -> Apps -> Printify Print-on-Demand** to open the app dashboard, then click the **My Products** quick link (or go to **J2Commerce -> Apps -> Printify -> pluginview=products** from the dashboard's quick links).
-2. Click **Load My Products** to fetch the product list from your Printify shop.
+- Go to **J2Commerce -> Apps -> Printify Print-on-Demand** to open the app **dashboard**
 
-[//]: # (![]&#40;/img/printify-my-products.webp&#41;)
+![](/img/printify_dashboard.webp)
 
-3. Each product appears as a card showing its image, title, and number of variants (sizes/colors), along with a badge that reads **Not Imported** or **Imported**.
-4. Use the **Search your Printify products...** box to filter by name, or use the **Previous/Next** buttons to page through your shop.
-5. Click **Import** on any product that shows **Not Imported**. The button shows a spinner while the import runs.
+- Scroll to the **Quick Links** section, click the **My Products** quick link (or go to **J2Commerce -> Apps -> Printify -> pluginview=products** from the dashboard's quick links).
+
+![](/img/printify_dashboard-my-products.webp)
+
+- Click **Load My Products** to fetch the product list from your Printify shop.
+
+![](/img/printify_dashboard-my-products1.webp)
+
+- Each product appears as a card showing its image, title, and number of variants (sizes/colors), along with a badge that reads **Not Imported** or **Imported**.
+
+- Use the **Search your Printify products...** box to filter by name, or use the **Previous/Next** buttons to page through your shop.
+
+- Click **Import** on any product that shows **Not Imported**. The button shows a spinner while the import runs.
 
 When the import completes, the app:
 
@@ -202,9 +215,7 @@ If you change a product in Printify later — adding a color, updating the base 
 
 **From the My Products screen:** click the sync icon (circular arrows) on an already-imported product's card.
 
-**From the product edit screen:** open **J2Commerce -> Products**, edit the product, and look for the Printify sync badge shown on the **J2Commerce** tab. It shows the current sync status, the last-synced date and time, and an **Edit Printify** link that opens the product directly in your Printify shop editor.
-
-[//]: # (![]&#40;/img/printify-sync-badge.webp&#41;)
+**From the product edit screen:** open **J2Commerce -> Catalog -> Products**, edit the product, and look for the Printify sync badge shown on the **J2Commerce** tab **-> Apps** tab. It shows the current sync status, the last-synced date and time, and an **Edit Printify** link that opens the product directly in your Printify shop editor.
 
 Syncing updates base costs on existing variants (your manual price overrides are kept), adds any new enabled variants, and removes variants you've disabled in Printify. It does not touch variants you've manually hidden in J2Commerce.
 
@@ -212,25 +223,26 @@ Syncing updates base costs on existing variants (your manual price overrides are
 
 The **Order Sync** screen lists every J2Commerce order that contains a Printify product, along with its Printify fulfillment status.
 
-1. Go to **J2Commerce -> Apps -> Printify Print-on-Demand**, then open the **Orders** quick link.
+- Go to **J2Commerce -> Apps -> Printify Print-on-Demand**, then open the **Dashboard**  **-> Printify Order** quick link.
 
-[//]: # (![]&#40;/img/printify-order-sync.webp&#41;)
+![](/img/printify_order1.webp)
 
-2. Use the search box and the **J2Commerce Status**, **Printify Status**, and **Tracking** filters to narrow the list, and click any column heading to sort.
-3. **Order** links straight to the J2Commerce order detail screen.
+- Use the search box and the **J2Commerce Status**, **Printify Status**, and **Tracking** filters to narrow the list, and click any column heading to sort.
+
+- **Order** links straight to the J2Commerce order detail screen.
 
 **Printify order status values:**
 
-| Status | Meaning |
-|--------|---------|
-| **Pending** | Order not yet submitted to Printify. |
-| **On Hold** | Submitted, awaiting further action. |
-| **Submitted** | Order created at Printify. |
-| **Sending to Production** | Being handed off for manufacturing. |
-| **In Production** | Being manufactured by the print provider. |
-| **Shipped** | Tracking information is available. |
-| **Delivered** | Confirmed as delivered. |
-| **Canceled** | Canceled at Printify. |
+| Status                    | Meaning                                   |
+| ------------------------- | ----------------------------------------- |
+| **Pending**               | Order not yet submitted to Printify.      |
+| **On Hold**               | Submitted, awaiting further action.       |
+| **Submitted**             | Order created at Printify.                |
+| **Sending to Production** | Being handed off for manufacturing.       |
+| **In Production**         | Being manufactured by the print provider. |
+| **Shipped**               | Tracking information is available.        |
+| **Delivered**             | Confirmed as delivered.                   |
+| **Canceled**              | Canceled at Printify.                     |
 
 **Row actions:**
 
@@ -242,8 +254,6 @@ The **Order Sync** screen lists every J2Commerce order that contains a Printify 
 ## Fulfilling an Individual Order
 
 Every J2Commerce order that contains a Printify product shows a **Printify Fulfillment** panel on its order detail screen, with the same actions available from the Order Sync screen: **Submit to Printify**, **Send to Production**, **Cancel Printify Order**, and **Refresh Status**. The panel also displays the Printify order ID, submission date, tracking number and carrier (once shipped), and a shipping cost breakdown when available.
-
-[//]: # (![]&#40;/img/printify-order-panel.webp&#41;)
 
 ## How It Works{#how-it-works}
 
