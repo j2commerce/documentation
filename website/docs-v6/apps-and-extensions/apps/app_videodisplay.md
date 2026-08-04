@@ -1,10 +1,3 @@
----
-title: "Video Display"
-sidebar_label: "Video Display"
-sidebar_position: 96
-description: "Attach YouTube, Vimeo, and HTML5 videos to any product and display them in a responsive grid, swipeable carousel, or side-by-side alternating layout on the product page."
----
-
 # Video Display
 
 The Video Display app lets you attach videos directly to your J2Commerce products and show them in a polished, responsive block on the product detail page. You can embed YouTube, Vimeo, or self-hosted MP4 videos — the provider is detected automatically from the URL so there is nothing to configure per video. Choose from three layout styles (Grid, Scroller, or Alternating), control exactly where on the page the video block appears, and add a one-click caption bar to your product navbar so shoppers can jump straight to the videos without scrolling.
@@ -41,11 +34,11 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-[//]: # (![]&#40;/img/videodisplay-apps-list.webp&#41;)
+![](/img/gift-wrap-apps.webp)
 
 Look for **Video Display**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-[//]: # (![]&#40;/img/videodisplay-enable.webp&#41;)
+![](/img/video_enable.webp)
 
 ## Configure the App
 
@@ -57,59 +50,57 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-[//]: # (![]&#40;/img/videodisplay-toggle-help.webp&#41;)
+![](/img/video_toggle.webp)
 
 ### Basic Settings tab
 
-[//]: # (![]&#40;/img/videodisplay-config1.webp&#41;)
+![](/img/video_basic1.webp)
 
-#### Display Position
+**Display Position:** Controls where on the product page the video block appears. Six positions are available:
 
-Controls where on the product page the video block appears. Six positions are available:
+- **End of Tab Content (default):** Below the product description tab content
 
-| Option | Where the block appears |
-|--------|------------------------|
-| **End of Tab Content (default)** | Below the product description tab content |
-| **Bottom of Product Page** | Below all other content, just before the page footer |
-| **Before Cross-Sells** | Above the cross-sell / related products section |
-| **After Cross-Sells** | Below the cross-sell / related products section |
-| **Below Product Image Gallery** | Directly below the main product image gallery |
-| **After Tab (accordion layout)** | After the last product tab when using accordion mode |
+- **Bottom of Product Page:** Below all other content, just before the page footer
 
-#### Display Mode
+- **Before Cross-Sells:** Above the cross-sell / related products section
 
-Chooses how the videos are laid out. The same mode applies to all products by default; individual products can override it in their Apps tab.
+- **After Cross-Sells:** Below the cross-sell / related products section
 
-| Option | What shoppers see |
-|--------|------------------|
-| **Grid** | Videos arranged in a responsive Bootstrap row with a configurable number of columns |
-| **Scroller** | A swipeable carousel (Swiper.js) with optional arrows, dots, autoplay, and loop |
-| **Alternating (zigzag)** | Each video paired with text, alternating left-right down the page |
+- **Below Product Image Gallery:** Directly below the main product image gallery *(**Example*** *shown in the Frontend View section below)*
 
-#### Show Section Title
+- **After Tab (accordion layout):** After the last product tab when using accordion mode
 
-Toggle whether a heading appears above the video block. Default: **Yes**.
+**Display Mode:** Chooses how the videos are laid out. The same mode applies to all products by default; individual products can override it in their Apps tab.
 
-#### Section Title
+- **Grid:** Videos arranged in a responsive Bootstrap row with a configurable number of columns
 
-The heading text shown above the videos when **Show Section Title** is enabled. Leave blank to use the built-in default "Product Videos".
+- **Scroller:** A swipeable carousel (Swiper.js) with optional arrows, dots, autoplay, and loop
 
----
+- **Alternating (zigzag):** Each video paired with text, alternating left-right down the page
+
+**Show Section Title:** Toggle whether a heading appears above the video block. Default: **Yes**.
+
+**Section Title:** The heading text shown above the videos when **Show Section Title** is enabled. Leave blank to use the built-in default "Product Videos".
+
+***
 
 The following settings appear only for the mode you have selected.
 
 #### Grid mode
 
-**Columns** — Number of video columns in the grid (1 to 6). Default: **3**. On small screens the grid collapses automatically to fewer columns.
+![](/img/video_product_grid.webp)
+
+**Columns** — Number of video columns in the grid (1 to 6). Default: **3**. On small screens the grid collapses automatically to fewer columns. *(**Example*** *shown in the Frontend View section below)*
 
 #### Scroller mode
 
+![](/img/video_product_scroller.webp)
+
 **Scroller Style** — Visual treatment of the carousel.
 
-| Option | Behaviour |
-|--------|-----------|
-| **Spotlight (centered)** | The active slide is centered and wider than its neighbours, giving a "hero" feel |
-| **Normal** | Slides are equal-width and advance one at a time (or multiple, matching the Columns setting) |
+- **Spotlight (centered):** The active slide is centered and wider than its neighbours, giving a "hero" feel
+
+- **Normal:** Slides are equal-width and advance one at a time (or multiple, matching the Columns setting)
 
 **Autoplay** — Whether the carousel advances automatically. Default: **No**.
 
@@ -125,19 +116,21 @@ The following settings appear only for the mode you have selected.
 
 #### Alternating mode
 
+![](/img/video_product_alternating.webp)
+
 **Video Column Width** — How much of the row width the video half occupies.
 
-| Option | Video width |
-|--------|-------------|
-| **Narrow (4/12 video)** | Video takes one-third; text takes two-thirds |
-| **Equal (6/12 video)** | Video and text share equal halves (default) |
-| **Wide (8/12 video)** | Video takes two-thirds; text takes one-third |
+**Narrow (4/12 video):** Video takes one-third; text takes two-thirds
 
----
+**Equal (6/12 video):** Video and text share equal halves (default)
+
+**Wide (8/12 video):** Video takes two-thirds; text takes one-third
+
+***
 
 ### Navbar tab
 
-[//]: # (![]&#40;/img/videodisplay-config-navbar.webp&#41;)
+![](/img/video_navbar.webp)
 
 These settings control whether a link to the video block is added to the Product Navbar (requires the **Product Navbar** app to be installed and enabled).
 
@@ -147,13 +140,13 @@ These settings control whether a link to the video block is added to the Product
 
 **Navbar Sort Order** — Numeric position of the link in the navbar relative to other items (0–999). Default: **40**. Lower numbers appear earlier.
 
----
+***
 
 ### Style tab
 
-[//]: # (![]&#40;/img/videodisplay-config-style.webp&#41;)
+![](/img/video_style.webp)
 
-**Subtemplate** — Choose the visual style for the video block. The default is **app_bootstrap5**, which uses standard Bootstrap 5 markup. If you have the UIkit app installed, select **app_uikit** for UIkit-flavoured markup.
+**Subtemplate** — Choose the visual style for the video block. The default is **app\_bootstrap5**, which uses standard Bootstrap 5 markup. If you have the UIkit app installed, select **app\_uikit** for UIkit-flavoured markup.
 
 **Custom CSS** — Optional CSS rules applied directly to the video block container (`#j2commerce-videodisplay`). Do not include `<style>` tags — paste raw CSS only, for example:
 
@@ -166,21 +159,15 @@ background: #f8f8f8;
 
 After enabling the plugin, each product can have its own list of videos. The per-product settings also let you override the display mode set in the plugin for that individual product.
 
-### Edit a Product
-
-There are **three** ways you can access the products.
+There are **two** ways you can access the products.
 
 **Option A:** Go to the **J2Commerce** icon at the top right corner **-> Catalog -> Products**
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Products**
 
-**Option C:** Go to **Content -> Categories ->** Find the **category** and then click inside the **published** / article section
-
-[//]: # (![]&#40;/img/videodisplay-products-list.webp&#41;)
-
 Click on a **product** to edit it **-> J2Commerce** tab **->** **Apps** tab. Click to expand the **Video Display** section.
 
-[//]: # (![]&#40;/img/videodisplay-apps-tab.webp&#41;)
+![](/img/video_product.webp)
 
 ### Video Display section fields
 
@@ -188,18 +175,20 @@ Click on a **product** to edit it **-> J2Commerce** tab **->** **Apps** tab. Cli
 
 **Display Mode** — Override the global display mode for this product only.
 
-| Option | Effect |
-|--------|--------|
-| **Use Plugin Default** | Uses whichever mode is set in the plugin configuration |
-| **Grid** | Forces Grid layout for this product |
-| **Scroller** | Forces Scroller layout for this product |
-| **Alternating (zigzag)** | Forces Alternating layout for this product |
+- **Use Plugin Default:** Uses whichever mode is set in the plugin configuration
+
+- **Grid:** Forces Grid layout for this product
+
+- **Scroller:** Forces Scroller layout for this product
+
+- **Alternating (zigzag):** Forces Alternating layout for this product
 
 ### Adding videos
 
 Click **Add item** inside the **Videos** repeater to add a video row. Each row has the following fields:
 
 **Video URL** — Paste a YouTube, Vimeo, or direct MP4/WebM/OGG URL. Examples:
+
 - `https://www.youtube.com/watch?v=...`
 - `https://vimeo.com/...`
 - `https://example.com/videos/product-demo.mp4`
@@ -216,15 +205,15 @@ Only `https://` URLs and site-relative paths (starting with `/` or `images/`) ar
 
 You can add up to 50 videos per product. Use the drag handle to reorder rows. Click the trash icon to remove a row.
 
-[//]: # (![]&#40;/img/videodisplay-videos-rows.webp&#41;)
-
 Click **Save** or **Save & Close** when you are done.
 
-### Frontend view
+## Frontend View
 
 When a shopper visits the product page, the video block appears at the configured position. Each video shows as a poster thumbnail with a play button overlay. Clicking the thumbnail opens the video in a full-screen lightbox (powered by Fancybox). Grid and Scroller modes show poster thumbnails; Alternating mode shows the poster beside the supporting text.
 
-[//]: # (![]&#40;/img/videodisplay-frontend.webp&#41;)
+The example below has the **Display Position** set for **Below Product Image Gallery** and the **Column** is set for **1**.
+
+![](/img/video_product_images-1.webp)
 
 ## How It Works
 
