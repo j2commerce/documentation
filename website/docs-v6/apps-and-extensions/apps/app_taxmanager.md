@@ -170,6 +170,75 @@ Tax Classes created in Tax Manager appear in the same dropdown as standard core 
 3. Open the **J2Commerce** tab -> **Pricing** tab (or **General** tab, depending on your layout).
 4. Find the **Tax Profile** field and select your Tax Manager class from the dropdown.
 
+## Variant-Level Tax Profiles
+
+Some products need a different tax rate on certain options — for example, VAT on larger sizes, or a luxury tax on a premium finish. **Variant-Level Tax Profiles** let you override the tax profile for a single variant instead of changing the whole product.
+
+### Turn On Variant-Level Tax Profiles
+
+This feature is controlled by a setting in the Tax Manager app configuration. It is turned **on by default**.
+
+1. Go to **J2Commerce** -> **Apps** -> **Tax Manager**.
+2. Find the **Variant-Level Tax Profiles** setting.
+3. Set it to **Yes** to show a tax profile selector on every variant, or **No** to hide it.
+
+<!-- SCREENSHOT: Tax Manager app settings screen showing the Variant-Level Tax Profiles toggle -->
+
+### Set a Tax Profile Override on a Variant
+
+1. Go to **J2Commerce** -> **Catalog** -> **Products**.
+2. Click a product to edit it, then open the variant you want to change.
+3. Look for the **Tax** section on the variant row.
+4. Open the **Tax profile** dropdown and choose a tax profile or Tax Class.
+5. Click **Save** on the product.
+
+<!-- SCREENSHOT: variant editor row showing the Tax section with the Tax profile dropdown -->
+
+| Option | What it does |
+|---|---|
+| **— Use product default —** | The variant follows the product's own tax profile. This is the starting value for every variant. |
+| **A tax profile or Tax Class name** | The variant uses this tax profile instead of the product's tax profile. |
+
+Most variants should stay on **— Use product default —**. Only choose a specific profile for the variants that truly need a different rate.
+
+### How Inheritance Works
+
+When a variant is left on **— Use product default —**, it simply follows whatever tax profile is assigned to the product. If you change the product's tax profile later, every variant still on default follows the change automatically.
+
+Only a variant with an explicit override stays on its own selected profile, independent of the product.
+
+### When the Override Actually Applies
+
+The variant's overridden tax profile is used starting **from the cart onward** — the cart page, checkout, and the final order all use it.
+
+The price shown on the product page, before the customer adds the item to the cart, always uses the **product's** tax profile instead. This is expected behavior — do not be surprised if the product page and the cart show a slightly different tax amount for the same item.
+
+### Turning the Feature Off
+
+If you set **Variant-Level Tax Profiles** to **No**, the **Tax profile** selector disappears from the variant editor and every variant uses the product's tax profile again, as if no overrides existed.
+
+Your saved overrides are **not deleted** — they are only ignored while the feature is off. Set **Variant-Level Tax Profiles** back to **Yes** and every variant's saved override is restored exactly as you left it.
+
+### A Deleted or Disabled Tax Profile on a Variant
+
+If a variant is set to a tax profile or Tax Class that is later disabled or deleted, the **Tax profile** dropdown still shows that selection, labeled as unavailable, so the value is not silently lost.
+
+<!-- SCREENSHOT: variant Tax profile dropdown showing an unavailable tax profile option -->
+
+The variant keeps that saved selection until you manually change it to something else. While it remains unavailable, the order falls back to the product's own tax profile for that variant.
+
+### Worked Example
+
+A t-shirt product has a base **Tax Profile** of **Standard VAT (20%)**. The store owner wants the larger size to carry a higher **Luxury Goods VAT (25%)** rate, so only the **Large** variant gets an override.
+
+| Variant | Tax profile field | Rate applied from the cart onward |
+|---|---|---|
+| Small | — Use product default — | 20% (Standard VAT) |
+| Medium | — Use product default — | 20% (Standard VAT) |
+| Large | Luxury Goods VAT | 25% (Luxury Goods VAT) |
+
+Small and Medium stay on the default and always match the product's tax profile. Large has its own override and charges 25% once it reaches the cart, even though the product page shows the standard 20% VAT price before it is added to the cart.
+
 ## Tax-Exempt User Groups
 
 ![](/img/tax-manager-tax-exempt.webp)
@@ -200,6 +269,7 @@ When a customer reaches checkout, Tax Manager checks the customer's address agai
 - **Test with Debug Mode on** — enable Debug Mode temporarily and place a test order. Open `administrator/logs/plg_j2commerce_app_taxmanager.php` to see exactly which rates matched and why.
 - **Export before bulk edits** — download a CSV backup of a Tax Class before making large changes, so you can re-import if something goes wrong.
 - **Combine with tax-exempt groups** — you can use Tax Classes for your standard rates and tax-exempt groups for wholesale customers, both managed from one place.
+- **Leave variants on default unless needed** — only override the **Tax profile** field on the specific variants that truly need a different rate. This keeps your tax setup easy to audit later.
 
 ## Troubleshooting
 
@@ -246,3 +316,13 @@ When a customer reaches checkout, Tax Manager checks the customer's address agai
 2. Verify the correct user group is selected under **Tax-Exempt User Groups** and click **Save**.
 3. Confirm the customer is logged in to their account before reaching checkout. Guests are not eligible for group-based exemptions.
 4. Go to **System** -> **Manage** -> **Users**, open the customer's account, and check that their user group matches one of the selected exempt groups.
+
+### The Tax on the Product Page Does Not Match the Tax in the Cart
+
+**Cause:** The product page always shows the price using the product's own tax profile. If a variant has a tax profile override, the cart and checkout apply that override instead once the item is added to the cart — this is expected behavior, not an error.
+
+**Solution:**
+
+1. Go to **J2Commerce** -> **Catalog** -> **Products**, edit the product, and check the **Tax profile** field on each variant.
+2. If a variant shows a specific tax profile instead of **— Use product default —**, that variant is intentionally set to charge a different rate from the cart onward.
+3. To make the variant match the product page again, set its **Tax profile** field back to **— Use product default —** and save.
