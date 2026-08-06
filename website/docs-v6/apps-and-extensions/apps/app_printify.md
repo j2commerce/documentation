@@ -151,6 +151,12 @@ This is deliberate — a zero-total order takes the free-order path through chec
 
 **Trigger on Order Status:** The J2Commerce order status that triggers automatic submission to Printify.
 
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
+
 **Auto Send to Production:** When enabled, after the order is created at Printify it is immediately sent to production. Leave this off to review orders at Printify first and send them yourself from the Printify Orders screen.
 
 **Printify Shipping Notifications:** Lets Printify email shipping confirmations directly to your customers. Disable this if J2Commerce already sends your own shipping emails, to avoid duplicate notifications.

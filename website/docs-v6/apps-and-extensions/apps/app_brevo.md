@@ -20,9 +20,9 @@ The Brevo Integration app connects your J2Commerce store to [Brevo](https://www.
 
 Brevo uses **two different keys**, and this app needs both. It is easy to mix them up, so it helps to know what each one does before you start.
 
-| Key | Where it comes from | What it does |
-|-----|--------------------|--------------|
-| **API Key** | SMTP & API -> API Keys | A secret key that authenticates every server-side call to Brevo (syncing orders, contacts, and products). Starts with `xkeysib-`. Keep it private. |
+| Key                                    | Where it comes from    | What it does                                                                                                                                                  |
+| -------------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **API Key**                            | SMTP & API -> API Keys | A secret key that authenticates every server-side call to Brevo (syncing orders, contacts, and products). Starts with `xkeysib-`. Keep it private.            |
 | **Marketing Automation (Tracker) Key** | Automation -> Settings | A separate, non-secret key used by the on-page Brevo Tracker to record cart and checkout activity. It is safe for this one to appear in your website's pages. |
 
 :::info
@@ -112,12 +112,12 @@ The settings are grouped into tabs. The two most important are **API Connection*
 
 <!-- SCREENSHOT: Brevo Integration API Connection tab -->
 
-| Field | Description |
-|-------|-------------|
-| **API Key** | Paste the API Key you copied from **SMTP & API -> API Keys** (starts with `xkeysib-`). Required for order, contact, and product syncing. |
-| **Marketing Automation (Tracker) Key** | Paste the key you copied from **Automation -> Settings**. Required for cart and checkout abandonment tracking. |
-| **Store ID** | Optional. A short identifier for this store, attached to every order sent to Brevo. Leave blank if you run only one store on this Brevo account. |
-| **Opt-in List** | The Brevo contact list that customers are added to when they tick the marketing-consent checkbox at checkout. |
+| Field                                  | Description                                                                                                                                      |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **API Key**                            | Paste the API Key you copied from **SMTP & API -> API Keys** (starts with `xkeysib-`). Required for order, contact, and product syncing.         |
+| **Marketing Automation (Tracker) Key** | Paste the key you copied from **Automation -> Settings**. Required for cart and checkout abandonment tracking.                                   |
+| **Store ID**                           | Optional. A short identifier for this store, attached to every order sent to Brevo. Leave blank if you run only one store on this Brevo account. |
+| **Opt-in List**                        | The Brevo contact list that customers are added to when they tick the marketing-consent checkbox at checkout.                                    |
 
 :::info
 
@@ -131,45 +131,51 @@ Control which order milestones are pushed to Brevo. Each status field uses your 
 
 <!-- SCREENSHOT: Brevo Integration Order Events tab -->
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Enable Order Sync** | Master switch for order syncing. When on, a new order is sent to Brevo when placed, and again on each milestone below. | Yes |
-| **Paid Order Status** | The status that reports an order as paid to Brevo. Usually your Confirmed / Paid status. | Confirmed |
-| **Fulfilled Order Status** | The status that reports an order as fulfilled. Usually your Shipped status. | Shipped |
-| **Cancelled Order Status** | The status that reports an order as cancelled. | Cancelled |
-| **Refunded Order Status** | The status that reports an order as refunded. Leave empty to skip refund tracking. | (none) |
+| Field                      | Description                                                                                                            | Default   |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------- | --------- |
+| **Enable Order Sync**      | Master switch for order syncing. When on, a new order is sent to Brevo when placed, and again on each milestone below. | Yes       |
+| **Paid Order Status**      | The status that reports an order as paid to Brevo. Usually your Confirmed / Paid status.                               | Confirmed |
+| **Fulfilled Order Status** | The status that reports an order as fulfilled. Usually your Shipped status.                                            | Shipped   |
+| **Cancelled Order Status** | The status that reports an order as cancelled.                                                                         | Cancelled |
+| **Refunded Order Status**  | The status that reports an order as refunded. Leave empty to skip refund tracking.                                     | (none)    |
+
+:::info
+
+NOTE: If the status you want isn't listed in the dropdown menu, you can create a new one by going to **J2Commerce -> Setup -> Order Statuses**
+
+:::
 
 ### Cart Recovery & Tracking tab
 
 These options power abandoned-cart and abandoned-checkout automations. They rely on the Marketing Automation (Tracker) Key from the API Connection tab.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Enable Brevo Tracker Snippet** | Loads the Brevo Tracker on every page. Required for cart/checkout abandonment and contact identification. Only the Tracker Key is placed in the page — the secret API Key is never exposed. | Yes |
-| **Enable Cart & Checkout Abandonment** | Sends a `cart_updated` event when a product is added to the cart and a `started_checkout` event when a shopper reaches checkout. Requires the Tracker snippet above. | Yes |
+| Field                                  | Description                                                                                                                                                                                 | Default |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Enable Brevo Tracker Snippet**       | Loads the Brevo Tracker on every page. Required for cart/checkout abandonment and contact identification. Only the Tracker Key is placed in the page — the secret API Key is never exposed. | Yes     |
+| **Enable Cart & Checkout Abandonment** | Sends a `cart_updated` event when a product is added to the cart and a `started_checkout` event when a shopper reaches checkout. Requires the Tracker snippet above.                        | Yes     |
 
 ### Checkout Consent tab
 
 Add a marketing opt-in checkbox to your checkout so customers can join your list as they buy.
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Show Consent Checkbox** | Displays a marketing-consent checkbox on the checkout step. Ticking it adds the customer to your configured Opt-in List. | Yes |
-| **Checkbox Label** | The wording next to the checkbox. Leave blank to use the default ("Email me news and exclusive offers"). Plain text only. | (default) |
-| **Sync Phone Number (SMS)** | Sends the customer's billing phone number to Brevo as the SMS contact attribute, so Brevo can hold it for SMS messaging. | No |
+| Field                       | Description                                                                                                               | Default   |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------- |
+| **Show Consent Checkbox**   | Displays a marketing-consent checkbox on the checkout step. Ticking it adds the customer to your configured Opt-in List.  | Yes       |
+| **Checkbox Label**          | The wording next to the checkbox. Leave blank to use the default ("Email me news and exclusive offers"). Plain text only. | (default) |
+| **Sync Phone Number (SMS)** | Sends the customer's billing phone number to Brevo as the SMS contact attribute, so Brevo can hold it for SMS messaging.  | No        |
 
 ### Product Catalog Sync tab
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Enable Product Catalog Sync** | Automatically syncs products to the Brevo eCommerce catalog whenever they are saved or deleted. Requires the Brevo eCommerce app to be activated (see the dashboard). | Yes |
+| Field                           | Description                                                                                                                                                           | Default |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Enable Product Catalog Sync** | Automatically syncs products to the Brevo eCommerce catalog whenever they are saved or deleted. Requires the Brevo eCommerce app to be activated (see the dashboard). | Yes     |
 
 ### Advanced tab
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Webhook Bearer Token** | Secures the plugin's webhook endpoint. Brevo webhooks are not signed, so the app protects the endpoint with a token you create. See [Set Up the Webhook](#set-up-the-webhook-optional) below. | (none) |
-| **Debug Logging** | Writes verbose logs to the Joomla log file for troubleshooting. Turn off in production. | No |
+| Field                    | Description                                                                                                                                                                                   | Default |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Webhook Bearer Token** | Secures the plugin's webhook endpoint. Brevo webhooks are not signed, so the app protects the endpoint with a token you create. See [Set Up the Webhook](#set-up-the-webhook-optional) below. | (none)  |
+| **Debug Logging**        | Writes verbose logs to the Joomla log file for troubleshooting. Turn off in production.                                                                                                       | No      |
 
 Click **Save** when you have entered your keys and chosen your options.
 
