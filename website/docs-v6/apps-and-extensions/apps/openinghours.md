@@ -1,10 +1,3 @@
----
-title: "Opening Hours"
-sidebar_label: "Opening Hours"
-sidebar_position: 25
-description: "Restrict customer orders to your store's operating hours. Configure a from/to window for each day of the week and show a custom message to shoppers who try to order outside those hours."
----
-
 # Opening Hours
 
 Some businesses can only accept orders during specific hours of the day. A bakery that stops taking online orders at noon so the kitchen can prepare for the afternoon rush, a flower shop that closes at 6 PM, or a food truck that only takes pre-orders between 8 AM and 10 AM are all real situations where round-the-clock checkout hurts operations more than it helps.
@@ -137,8 +130,6 @@ The app enforces this check at three points in the shopping flow, all using the 
 ![](/img/opening_hours_checkout.webp)
 
 **Confirming the order.** If a customer reaches the final confirmation step while the store is closed — for example, they started checkout during open hours and the store closed before they clicked **Confirm** — the order is not created and the error message is shown instead.
-
-<!-- SCREENSHOT: The checkout confirmation page showing the Closed Store Message preventing the order from being placed -->
 
 The customer must wait until the store reopens and start checkout again.
 
