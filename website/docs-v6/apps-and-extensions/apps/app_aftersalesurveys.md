@@ -174,19 +174,23 @@ The Rules list shows how many surveys and questions currently use each rule in i
 1. From the Surveys list, click **Manage Questions** under a survey's title (or click **Manage Questions** in the toolbar while editing an existing survey).
 2. Click **New Question**.
 
-<!-- SCREENSHOT: New Question form showing Question, Question Type, and Answer Options fields -->
+**Question:** The question text shown to the customer (required).
 
-| Field                                       | Description                                                                                                                                                                   |
-| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Question**                                | The question text shown to the customer (required).                                                                                                                           |
-| **Help Text**                               | Optional supporting text shown under the question.                                                                                                                            |
-| **Question Type**                           | See the table below.                                                                                                                                                          |
-| **Scale Minimum / Scale Maximum**           | Only shown for **Rating Scale** questions. Defaults to 1–5.                                                                                                                   |
-| **Max Length**                              | Only shown for **Short Text** and **Long Text** questions. Leave blank to use the built-in defaults (191 characters for Short Text, 2000 for Long Text).                      |
-| **Minimum Selections / Maximum Selections** | Only shown for **Multiple Choice** questions. Leave at `0` for no limit.                                                                                                      |
-| **Required**                                | Whether the customer must answer (rather than click **Skip**) before continuing.                                                                                              |
-| **Rule**                                    | Optionally attach a [rule](#build-a-rule-to-target-specific-orders) so this individual question is only included for matching orders. Leave as **None** to always include it. |
-| **Status**                                  | Enable or disable the question.                                                                                                                                               |
+**Help Text:** Optional supporting text shown under the question.
+
+**Question Type:** See the table below.
+
+**Scale Minimum / Scale Maximum:** Only shown for **Rating Scale** questions. Defaults to 1–5.
+
+**Max Length:** Only shown for **Short Text** and **Long Text** questions. Leave blank to use the built-in defaults (191 characters for Short Text, 2000 for Long Text).
+
+**Minimum Selections / Maximum Selections:** Only shown for **Multiple Choice** questions. Leave at `0` for no limit.
+
+**Required:** Whether the customer must answer (rather than click **Skip**) before continuing.
+
+**Rule:** Optionally attach a [rule](#build-a-rule-to-target-specific-orders) so this individual question is only included for matching orders. Leave as **None** to always include it.
+
+**Status:** Enable or disable the question.
 
 Question types:
 

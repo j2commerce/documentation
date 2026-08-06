@@ -1,10 +1,3 @@
----
-title: "Airwallex Payment"
-sidebar_label: "Airwallex"
-sidebar_position: 96
-description: "Accept cards and 160+ local payment methods worldwide with Airwallex's secure on-site Drop-in card form, saved-card checkout, and Capture/Void/Refund order controls."
----
-
 # Airwallex Payment
 
 The Airwallex Payment plugin connects your J2Commerce store to **Airwallex**, a global payment platform that accepts credit and debit cards plus 160+ local payment methods across dozens of countries. Card details are collected through a secure on-site card form (the Airwallex Drop-in element) so the numbers never touch your server — this qualifies your store for the simplest PCI self-assessment level (SAQ-A). The plugin supports both immediate charges and authorize-only holds, lets logged-in customers save a card for faster checkout next time, and gives you Capture, Void, and Refund buttons right on the order screen.
@@ -16,15 +9,6 @@ The Airwallex Payment plugin connects your J2Commerce store to **Airwallex**, a 
 - PHP 8.3 or later
 - An Airwallex merchant account
 - Your store must be accessible over HTTPS
-
-## Purchase and Download
-
-This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
-
-1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Airwallex Payment**.
-2. Add it to your cart and complete checkout.
-3. Go to **My Downloads** under your account profile and find the plugin.
-4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
 
 ## Get Your Airwallex Credentials
 
@@ -50,13 +34,22 @@ Before configuring the plugin you need three pieces of information from your Air
 
 Keep this browser tab open while you configure the plugin in Joomla.
 
+## Purchase and Download
+
+This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
+
+1. Go to the [J2Commerce website](https://www.j2commerce.com) and locate **Airwallex Payment**.
+2. Add it to your cart and complete checkout.
+3. Go to **My Downloads** under your account profile and find the plugin.
+4. Click **Available Versions** -> **View Files** -> **Download Now** to download the ZIP file.
+
 ## Install the Plugin
 
 In the Joomla Administrator, go to **System** -> **Install** -> **Extensions**.
 
 Upload the `payment_airwallex.zip` ZIP file or use the Install from URL option.
 
-<!-- SCREENSHOT: Extensions install screen with payment_airwallex.zip selected -->
+![](/img/install.webp)
 
 ## Enable the Plugin
 
@@ -66,11 +59,11 @@ Once you have installed the plugin, you will need to enable it. There are **two*
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Dashboard -> Setup -> Payment Methods**
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list -->
+![](/img/culqi.webp)
 
 To help you narrow down the list, you can do a search for **Airwallex Payment**, click the **X**, and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-<!-- SCREENSHOT: Airwallex Payment row toggled to enabled -->
+![](/img/airwallex_enable.webp)
 
 ## Configure the Plugin
 
@@ -82,17 +75,19 @@ Click the **Toggle Inline Help** button at the top of any plugin settings screen
 
 :::
 
-<!-- SCREENSHOT: Toggle Inline Help button on the plugin edit screen -->
+![](/img/airwallex_toggle.webp)
 
 ### Appearance
 
-<!-- SCREENSHOT: Display Name and Display Image fields -->
+![](/img/airwallex_display.webp)
 
 **Display Name:** Label shown to customers on the checkout page (default: "Airwallex")
 
 **Display Image:** Optional logo or card-brand image to show beside the payment method name
 
 ### Transaction Type
+
+![](/img/airwallex_api.webp)
 
 **Transaction Type:** Controls whether payment is collected immediately or held for manual capture
 
@@ -106,23 +101,7 @@ Click the **Toggle Inline Help** button at the top of any plugin settings screen
 
 Enable this during setup and testing. Disable it when you are ready to go live.
 
-### Live Credentials
-
-These fields appear when **Use Sandbox** is turned off.
-
-<!-- SCREENSHOT: Live Client ID, API Key, Webhook Secret fields -->
-
-**Client ID:** Your Airwallex Client ID from **Developer** -> **API keys**
-
-**API Key:** Your Airwallex API Key from **Developer** -> **API keys**
-
-**Webhook Secret:** Required for webhook verification. Found on the notification URL under **Developer** -> **Webhooks**
-
-### Sandbox Credentials
-
 These fields appear when **Use Sandbox** is turned on. They work identically to the live fields but connect to the Airwallex sandbox environment.
-
-<!-- SCREENSHOT: Sandbox Client ID, Sandbox API Key, Sandbox Webhook Secret fields -->
 
 **Sandbox Client ID:** Your sandbox Client ID from the sandbox web app
 
@@ -130,9 +109,19 @@ These fields appear when **Use Sandbox** is turned on. They work identically to 
 
 **Sandbox Webhook Secret:** Your sandbox webhook notification secret
 
+### Live Credentials
+
+These fields appear when **Use Sandbox** is turned off.
+
+**Client ID:** Your Airwallex Client ID from **Developer** -> **API keys**
+
+**API Key:** Your Airwallex API Key from **Developer** -> **API keys**
+
+**Webhook Secret:** Required for webhook verification. Found on the notification URL under **Developer** -> **Webhooks**
+
 ### Saved Cards & Checkout Template
 
-<!-- SCREENSHOT: Allow Saved Cards toggle and Checkout Template selector -->
+![](/img/airwallex_card.webp)
 
 **Allow Saved Cards:** Let logged-in customers save their card for faster checkout next time (default: enabled)
 
@@ -142,7 +131,7 @@ When enabled, customers see a "Save this card for future purchases" checkbox at 
 
 ### Order Statuses
 
-<!-- SCREENSHOT: Order Status, Authorized Order Status, and Void/Refund status fields -->
+![](/img/airwallex_order.webp)
 
 **Order Status:** Order status set when a payment completes successfully
 
@@ -164,9 +153,9 @@ NOTE: If the status you want isn't listed in the dropdown menu, you can create a
 
 ### Surcharge
 
-Add an optional handling fee when customers choose Airwallex.
+![](/img/airwallex_surcharge.webp)
 
-<!-- SCREENSHOT: Surcharge Name, Percent, Fixed, and Tax Class fields -->
+Add an optional handling fee when customers choose Airwallex.
 
 **Surcharge Name:** Label shown to the customer for the fee (e.g., "Card processing fee")
 
@@ -180,6 +169,8 @@ Leave both percent and fixed fields empty to charge no surcharge.
 
 ### GeoZone Availability Restrictions
 
+![](/img/airwallex_restrictions.webp)
+
 **Geozone Restriction:** Limit this payment method to customers in a specific geozone — leave blank to allow all locations
 
 **Minimum Order Subtotal:** Hide Airwallex as a payment option when the cart subtotal is below this amount
@@ -188,7 +179,7 @@ Leave both percent and fixed fields empty to charge no surcharge.
 
 ### Custom HTML Snippets
 
-<!-- SCREENSHOT: Thank-You Article and custom text fields -->
+![](/img/airwallex_messages.webp)
 
 **Thank-You Article:** Optional Joomla article to display on the order confirmation page after a successful payment
 
@@ -206,7 +197,7 @@ The following optional fields let you inject custom text at different points in 
 
 ### Dashboard Icon
 
-<!-- SCREENSHOT: Show Dashboard Icon toggle and label field -->
+![](/img/airwallex_icon.webp)
 
 **Show Dashboard Icon:** Add a quick-access icon for this plugin to the J2Commerce dashboard
 
@@ -243,14 +234,14 @@ Replace `your-site.com` with your actual domain.
 
 Supported webhook events:
 
-| Event | What happens |
-| --- | --- |
-| `payment_intent.succeeded` | Order status updated to Order Status (or advanced to it if the customer left the page before checkout finished) |
-| `refund.succeeded` | Refund finalized on the order |
-| `refund.failed` | Recorded in the debug log for review — no automatic order change |
-| `payment_attempt.authorization_failed` | Recorded in the debug log for review — no automatic order change |
-| `payment_attempt.authentication_failed` | Recorded in the debug log for review — no automatic order change |
-| `payment_dispute.*` | Recorded in the debug log for review — no automatic order change |
+| Event                                   | What happens                                                                                                    |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `payment_intent.succeeded`              | Order status updated to Order Status (or advanced to it if the customer left the page before checkout finished) |
+| `refund.succeeded`                      | Refund finalized on the order                                                                                   |
+| `refund.failed`                         | Recorded in the debug log for review — no automatic order change                                                |
+| `payment_attempt.authorization_failed`  | Recorded in the debug log for review — no automatic order change                                                |
+| `payment_attempt.authentication_failed` | Recorded in the debug log for review — no automatic order change                                                |
+| `payment_dispute.*`                     | Recorded in the debug log for review — no automatic order change                                                |
 
 ## Managing Payments from the Order Screen
 
@@ -260,8 +251,6 @@ Go to **J2Commerce -> Sales -> Orders ->** click the order number to open it. Th
 
 ### Capture a Payment (Authorize Only mode only)
 
-<!-- SCREENSHOT: Capture button on the order payment card -->
-
 If you set **Transaction Type** to **Authorize Only**, payments are held but not collected. When you are ready to capture the funds:
 
 1. Open the order in **J2Commerce -> Sales -> Orders**.
@@ -269,8 +258,6 @@ If you set **Transaction Type** to **Authorize Only**, payments are held but not
 3. The funds are collected from the customer's card and the order status updates automatically.
 
 ### Void a Payment
-
-<!-- SCREENSHOT: Void button on the order payment card -->
 
 A void cancels an authorized payment before it has been captured. Once a payment has been captured, use the **Refund** button instead.
 
@@ -296,8 +283,6 @@ You can refund a **captured** payment in full or in part.
 The refund is sent to the customer's original card. Refunds may take a short time to finalize on the Airwallex side — the plugin records the final result when the `refund.succeeded` webhook arrives. If **Order Status on Refund** is enabled, the order status updates automatically.
 
 ### Charge a Stored Card
-
-<!-- SCREENSHOT: Charge Stored Card panel on the order screen -->
 
 If the customer who placed the order has a saved card on file, a **Charge Stored Card** panel appears on the order screen. This lets you manually collect payment on that order using one of their saved cards — useful for phone orders or split payments.
 
@@ -330,21 +315,23 @@ Always test in sandbox mode before going live.
 1. Enable **Use Sandbox** in the plugin settings and enter your sandbox Client ID, API Key, and Webhook Secret.
 2. Place a test order on your storefront using an Airwallex test card:
 
-| Card Number | Behavior |
-| --- | --- |
-| `4035501000000008` | Successful payment |
-| `4012000300000013` | Bank verification (3D Secure) fails |
-| `5307837360544518` (with an order total of `80.51`) | Declined — insufficient funds |
+| Card Number                                         | Behavior                            |
+| --------------------------------------------------- | ----------------------------------- |
+| `4035501000000008`                                  | Successful payment                  |
+| `4012000300000013`                                  | Bank verification (3D Secure) fails |
+| `5307837360544518` (with an order total of `80.51`) | Declined — insufficient funds       |
 
 Use any future expiry date and any 3-digit CVV with these test cards.
 
-3. Check that the order appears in **J2Commerce -> Sales -> Orders** with the correct status.
-4. Test a refund from the order screen to confirm it processes without errors.
-5. Check your Joomla log (**System** -> **Logs**) for any errors — enable **Debug Mode** temporarily if needed.
-6. When everything is working, disable **Use Sandbox** and replace the sandbox credentials with your live credentials.
+1. Check that the order appears in **J2Commerce -> Sales -> Orders** with the correct status.
+2. Test a refund from the order screen to confirm it processes without errors.
+3. Check your Joomla log (**System** -> **Logs**) for any errors — enable **Debug Mode** temporarily if needed.
+4. When everything is working, disable **Use Sandbox** and replace the sandbox credentials with your live credentials.
 
 :::warning
+
 Remember to turn off **Use Sandbox** before accepting real orders.
+
 :::
 
 ## Troubleshooting

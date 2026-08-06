@@ -9,8 +9,10 @@ description: "Accept Alipay cross-border payments in J2Commerce using the legacy
 
 This plugin lets customers pay with Alipay at checkout. It connects to Alipay's cross-border payment gateway (`create_forex_trade` MAPI product) using MD5-signed requests and supports both a live mode and a sandbox environment for testing.
 
-:::warning Legacy bridge — not for new merchants
+:::warning[Legacy bridge — not for new merchants]
+
 Alipay retired the MAPI/MD5 `create_forex_trade` product for **new** merchant signups in 2024. If you do not already hold an active Alipay International merchant account with a Partner ID and MD5 key, you cannot use this plugin. New stores should contact Alipay about **Alipay Plus** (OpenAPI v3/RSA2), which uses a different integration. This plugin is maintained for existing merchants who are still on the legacy MD5 protocol.
+
 :::
 
 This plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
@@ -142,7 +144,7 @@ Understanding the two-step confirmation process helps you diagnose issues and co
 6. **The server-side notify fires.** J2Commerce verifies the MD5 signature, checks that the amount and currency match the order on file, records the notification to prevent duplicate processing, and then updates the order status to **Confirmed** (or your configured **After Payment Status**).
 7. **The order confirmation email is sent** and the customer sees the **After Payment text** on the return page.
 
-:::tip Server-to-server notify is required
+:::tip[Server-to-server notify is required]
 
 If your store's notify URL is blocked by a firewall or your hosting does not allow incoming connections on standard HTTP ports, orders will remain in a pending state even after the customer pays. The browser redirect alone does not finalize the order.
 
@@ -164,7 +166,7 @@ Use sandbox mode to verify your configuration without processing real payments.
 
 <!-- SCREENSHOT: Plugin configuration with Use Sandbox enabled showing sandbox fields -->
 
-:::caution Turn off Debug Mode in production
+:::caution[Turn off Debug Mode in production]
 
 Debug Mode writes the full gateway payload to the log file, which may include order totals and transaction IDs. It should never be left on in a live store.
 

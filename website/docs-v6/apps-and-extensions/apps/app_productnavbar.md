@@ -1,10 +1,3 @@
----
-title: "Product Navbar"
-sidebar_label: "Product Navbar"
-sidebar_position: 95
-description: "Add a sticky in-page navigation bar to your product pages so shoppers can jump between descriptions, specifications, and custom content sections without endless scrolling."
----
-
 # Product Navbar
 
 The Product Navbar app adds a sticky navigation bar to your J2Commerce product detail pages. As customers scroll through a long product page, the bar stays fixed to the top (or bottom) of the screen and provides instant links to every major section — the product description, specifications, filters, a linked Joomla article, and any custom content sections you define per-product. An optional **Add to Cart** button in the bar lets shoppers add the item at any point while reading.
@@ -34,9 +27,7 @@ Install the downloaded ZIP file through the standard Joomla installer.
 1. In your Joomla admin, go to **System** -> **Install** -> **Extensions**.
 2. Click **Upload Package File** and select the `app_productnavbar.zip` file you downloaded, then click **Upload & Install**.
 
-<!-- SCREENSHOT: System > Install > Extensions screen with Upload Package File tab active -->
-
-Joomla confirms a successful installation with a green notice. The plugin is now installed.
+![](/img/install.webp)
 
 ## Enable the App
 
@@ -46,9 +37,11 @@ After installation you must enable the plugin. There are two ways to reach the A
 
 **Option B:** Go to **Components** on the left sidebar -> **J2Commerce** -> **Apps**.
 
-<!-- SCREENSHOT: J2Commerce Apps list showing Product Navbar with a red X (disabled) -->
+![](/img/gift-wrap-apps.webp)
 
 Find **Product Navbar** in the list and click the red **X** next to it. It turns into a green checkmark — the app is now enabled.
+
+![](/img/navbar_enable.webp)
 
 ## Configure the App
 
@@ -60,37 +53,47 @@ Click the **Toggle Inline Help** button in the toolbar to reveal a description b
 
 :::
 
-<!-- SCREENSHOT: Product Navbar configuration screen with Toggle Inline Help highlighted in toolbar -->
+![](/img/navbar_toggle.webp)
 
 ### Basic Settings tab
 
-<!-- SCREENSHOT: Basic Settings tab with all fields visible -->
+![](/img/navbar_basic.webp)
 
-| Field | Description | Default | Options |
-|-------|-------------|---------|---------|
-| **Navigation bar position** | Whether the bar sticks to the top or bottom of the viewport as the customer scrolls. | Stick to top | Stick to top, Stick to bottom |
-| **Scroll offset (px)** | Extra vertical gap (in pixels) between the section heading and the top of the viewport when a link is clicked. Use this when a fixed site header covers the destination. | 0 | 0 – 500 |
-| **Scroll behavior** | How the page animates when a nav link is clicked. **Smooth** glides to the section; **Instant** jumps immediately. | Smooth | Smooth, Instant |
-| **Minimum links to show bar** | The bar only renders when at least this many navigation links are available. Prevents an almost-empty bar from appearing on simple products. | 2 | 1 – 10 |
-| **Include Description link** | Adds a **Description** link to the bar when the product has a short or long description and J2Commerce is set to show it. | Yes | Yes, No |
-| **Include Specifications link** | Adds a **Specifications** link to the bar when J2Commerce is configured to display product specifications. | Yes | Yes, No |
-| **Include Filters link** | Adds a **Filters** link to the bar when J2Commerce is configured to display product filters and the product has filters assigned. | Yes | Yes, No |
-| **Show Add to Cart button** | Displays an **Add to Cart** button inside the navigation bar so shoppers can add the product to their cart at any point on the page. | No | Yes, No |
+**Navigation bar position:** Whether the bar sticks to the top or bottom of the viewport as the customer scrolls.
+
+**Scroll offset (px):** Extra vertical gap (in pixels) between the section heading and the top of the viewport when a link is clicked. Use this when a fixed site header covers the destination.
+
+**Scroll behavior:** How the page animates when a nav link is clicked. **Smooth** glides to the section; **Instant** jumps immediately.
+
+**Minimum links to show bar:** The bar only renders when at least this many navigation links are available. Prevents an almost-empty bar from appearing on simple products.
+
+**Include Description link:** Adds a **Description** link to the bar when the product has a short or long description and J2Commerce is set to show it.
+
+**Include Specifications link:** Adds a **Specifications** link to the bar when J2Commerce is configured to display product specifications.
+
+**Include Filters link:** Adds a **Filters** link to the bar when J2Commerce is configured to display product filters and the product has filters assigned.
+
+**Show Add to Cart button:** Displays an **Add to Cart** button inside the navigation bar so shoppers can add the product to their cart at any point on the page.
 
 ### Style tab
 
-<!-- SCREENSHOT: Style tab showing color pickers and subtemplate selector -->
+![](/img/navbar_style.webp)
 
-| Field | Description | Default |
-|-------|-------------|---------|
-| **Template framework** | The CSS framework your Joomla template uses. **Bootstrap 5** works with Cassiopeia and most modern templates. **UIkit** works with Helix and YOOtheme. | Bootstrap 5 |
-| **Enable container** | Wraps the navigation bar contents in a centered Bootstrap/UIkit container so the links align with your page width. Useful when the bar spans the full browser width while stuck. | No |
-| **Sticky bar background color** | Sets the background color of the navigation bar using a hex color picker. Leave blank to inherit the color from your template CSS. | *(none)* |
-| **Sticky bar text color** | Sets the text color inside the navigation bar. Leave blank to inherit from your template. | *(none)* |
-| **Sticky bar link color** | Sets the color of the navigation links. Leave blank to inherit from your template. | *(none)* |
-| **Add to Cart button class** | Extra CSS class names added to the **Add to Cart** button inside the navbar — for example, `btn-secondary` to change the button style. | *(none)* |
-| **Prepare custom content** | Runs the per-product article and inline content sections through Joomla content plugins before display. Enable this when your content uses shortcodes like `{loadposition}` or third-party plugin syntax. Leave disabled for plain HTML — it avoids unnecessary processing. | No |
-| **Additional CSS** | Extra CSS rules applied directly to the `#productNav` element. Useful for fine-tuning position, `z-index`, or padding without touching your template CSS file. Example: `top: 70px; z-index: 1020;` | *(none)* |
+**Template framework:** The CSS framework your Joomla template uses. **Bootstrap 5** works with Cassiopeia and most modern templates. **UIkit** works with Helix and YOOtheme.
+
+**Enable container:** Wraps the navigation bar contents in a centered Bootstrap/UIkit container so the links align with your page width. Useful when the bar spans the full browser width while stuck.
+
+**Sticky bar background color:** Sets the background color of the navigation bar using a hex color picker. Leave blank to inherit the color from your template CSS.
+
+**Sticky bar text color:** Sets the text color inside the navigation bar. Leave blank to inherit from your template.
+
+**Sticky bar link color:** Sets the color of the navigation links. Leave blank to inherit from your template.
+
+**Add to Cart button class:** Extra CSS class names added to the **Add to Cart** button inside the navbar — for example, `btn-secondary` to change the button style.
+
+**Prepare custom content:** Runs the per-product article and inline content sections through Joomla content plugins before display. Enable this when your content uses shortcodes like `{loadposition}` or third-party plugin syntax. Leave disabled for plain HTML — it avoids unnecessary processing.
+
+**Additional CSS:** Extra CSS rules applied directly to the `#productNav` element. Useful for fine-tuning position, `z-index`, or padding without touching your template CSS file. Example: `top: 70px; z-index: 1020;`
 
 Click **Save** in the toolbar when you have finished configuring the app.
 
@@ -106,36 +109,29 @@ There are three ways to reach the product edit screen.
 
 **Option B:** Go to **Components** -> **J2Commerce** -> **Products**.
 
-**Option C:** Go to **Content** -> **Categories** -> find the category -> click the article/product.
-
-<!-- SCREENSHOT: J2Commerce Products list with a product selected for editing -->
-
 Open the product, then click the **J2Commerce** tab -> **Apps** tab -> expand the **Product Navbar** section.
 
-<!-- SCREENSHOT: Product edit screen > J2Commerce tab > Apps tab > Product Navbar section expanded -->
+![](/img/navbar_product.webp)
 
-### Product-Level Settings
+**Disable Navigation Bar:** Set to **Yes** to hide the navbar on this product only. The app remains active for all other products.
 
-| Field | Description |
-|-------|-------------|
-| **Disable Navigation Bar** | Set to **Yes** to hide the navbar on this product only. The app remains active for all other products. |
-| **Article Content Block** | Select a published Joomla article. Its title becomes a navigation link and its content appears as a section below the product detail. Useful for reusable content such as return policies, allergen disclosures, or shipping information shared across multiple products. |
-| **Custom Content Sections** | A repeatable list of content blocks. Each block adds a navigation link and a content section below the product. |
+**Article Content Block:** Select a published Joomla article. Its title becomes a navigation link and its content appears as a section below the product detail. Useful for reusable content such as return policies, allergen disclosures, or shipping information shared across multiple products.
+
+**Custom Content Sections:** A repeatable list of content blocks. Each block adds a navigation link and a content section below the product.
 
 ### Adding Custom Content Sections
 
 Click **Add item** in the **Custom Content Sections** area to create a new section row.
 
-<!-- SCREENSHOT: Custom Content Sections repeatable field with one row expanded showing Title, Icon, Enabled, and Content fields -->
-
 Each row has four fields:
 
-| Field | Description |
-|-------|-------------|
-| **Section Title** | The text that appears as the navigation link label and as the section heading below the product. |
-| **Section Icon Class** | An optional Font Awesome icon class displayed before the title in the bar — for example, `fa-solid fa-star`. Leave blank for no icon. |
-| **Enabled** | Toggle a section on or off without deleting it. Disabled sections do not generate a nav link or render content. |
-| **Section Content** | A WYSIWYG editor for the section body. Supports full HTML. |
+**Section Title:** The text that appears as the navigation link label and as the section heading below the product.
+
+**Section Icon Class:** An optional Font Awesome icon class displayed before the title in the bar — for example, `fa-solid fa-star`. Leave blank for no icon.
+
+**Enabled:** Toggle a section on or off without deleting it. Disabled sections do not generate a nav link or render content.
+
+**Section Content:** A WYSIWYG editor for the section body. Supports full HTML.
 
 Add as many rows as you need. Rows appear in the order they are listed; drag the reorder handle to rearrange them.
 
