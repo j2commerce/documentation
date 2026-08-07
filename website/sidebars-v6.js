@@ -107,7 +107,7 @@ const sidebars = {
         },
         {
             type: 'category',
-            label: 'Localisation',
+            label: 'Localization',
             link: {
                 type: 'doc',
                 id: 'localization/index',
