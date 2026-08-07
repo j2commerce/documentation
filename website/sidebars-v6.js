@@ -362,7 +362,7 @@ const sidebars = {
                         // Product Shipping Restrictions
                         'apps-and-extensions/apps/app-restrictbyshipping',
                         // Product Tools
-                        'apps-and-extensions/apps/app-producttools',
+                        'apps-and-extensions/apps/app_producttools',
                         // Quantity Discounts
                         'apps-and-extensions/apps/qtydiscount',
                         // Quantity Dropdown
