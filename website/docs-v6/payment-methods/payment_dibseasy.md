@@ -349,7 +349,6 @@ If you used the DIBS Easy plugin in J2Store 4, the J2Commerce 6 version includes
 
 ## Related Topics
 
-- [Payment Methods overview](../payment-methods/index.md)
 - [Geo Zones](../localization/geozones.md)
 - [Currencies](../localization/currencies.md)
 - [Order management](../sales/orders.md)

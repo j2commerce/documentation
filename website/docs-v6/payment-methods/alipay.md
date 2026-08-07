@@ -235,7 +235,5 @@ If you previously used this plugin with J2Store, here is what improved in the J2
 
 ## Related Topics
 
-- [Payment Methods Overview](../setup/payment-methods.md)
 - [Geozones](../localization/geozones.md)
-- [Order Statuses](../localization/order-statuses.md)
-- [Troubleshooting Payments](../troubleshooting/payments.md)
+- [Order Statuses](../setup/order-statuses.md)

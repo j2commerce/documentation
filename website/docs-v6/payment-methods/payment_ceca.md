@@ -314,7 +314,6 @@ CECA operates exclusively in **Euro (EUR)**. The plugin checks your store config
 
 ## Related Topics
 
-- [Payment Methods Overview](index.md)
-- [Order Statuses](../setup/orderstatuses.md)
+- [Order Statuses](../setup/order-statuses.md)
 - [Geozones](../localization/geozones.md)
 - [Tax Profiles](../localization/tax-profiles.md)

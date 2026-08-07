@@ -308,5 +308,5 @@ Dojo periodically updates their sandbox test card numbers. Check the [Dojo devel
 ## Related topics
 
 - [Geozones](../localization/geozones.md) — restrict payment methods by country or region
-- [Order Statuses](../setup/orderstatuses.md) — create and configure the statuses used for paid, authorised, and failed orders
+- [Order Statuses](../setup/order-statuses.md) — create and configure the statuses used for paid, authorised, and failed orders
 - [Design: Shipping and Payment Overrides](../design/layout-overrides/shipping-payment-overrides.md) — customise the pre-payment redirect template

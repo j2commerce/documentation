@@ -239,7 +239,4 @@ Always verify against your Paymate merchant portal before concluding a payment d
 
 ## Related Topics
 
-- [Payment Methods Overview](../index.md)
-- [Order Statuses](../../setup/order-statuses.md)
-- [Currencies and Exchange Rates](../../setup/currencies.md)
-- [Geo Zones](../../setup/geozones.md)
+- [Order Statuses](../setup/order-statuses.md)

@@ -187,8 +187,8 @@ This plugin subscribes to `onJ2CommerceGetDiscountedPrice` and zeroes `$item->ta
 
 ## Related Topics
 
-- [Tax Profiles](../../localisation/tax-profiles.md)
-- [Tax Rates](../../localisation/tax-rates.md)
-- [How Tax is Calculated](../../taxation/how-tax-is-calculated.md)
+- [Tax Profiles](../../localization/tax-profiles.md)
+- [Tax Rates](../../localization/tax-rates.md)
+- [How Tax is Calculated](../../taxation/tax-calculation.md)
 - [Advanced Tax Rates App](./app-taxrate.md)
 - [Add to User Group App](./usergroup.md)

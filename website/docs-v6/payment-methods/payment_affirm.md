@@ -365,7 +365,6 @@ Before switching to live transactions, confirm the following:
 
 ## Related Topics
 
-- [Payment Methods Overview](../setup/payment-methods.md)
 - [Order Management](../sales/orders.md)
-- [Geozones](../setup/geozones.md)
+- [Geozones](../localization/geozones.md)
 - [Order Statuses](../setup/order-statuses.md)

@@ -432,7 +432,6 @@ This plugin was fully rewritten for J2Commerce 6. If you used the J2Store v4 ver
 
 ## Related Topics
 
-- [Payment Methods Overview](../payment-methods/index.md)
-- [Order Statuses](../setup/orderstatuses.md)
+- [Order Statuses](../setup/order-statuses.md)
 - [Geozones](../localization/geozones.md)
 - [Tax Profiles](../localization/tax-profiles.md)

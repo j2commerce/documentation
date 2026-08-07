@@ -259,6 +259,5 @@ Disable debug mode in production to avoid filling disk space with log entries.
 
 ## Related Topics
 
-- [Payment Methods Overview](./index.md)
-- [Geozones](../localisation/geozones.md)
-- [Order Statuses](../localisation/order-statuses.md)
+- [Geozones](../localization/geozones.md)
+- [Order Statuses](../setup/order-statuses.md)

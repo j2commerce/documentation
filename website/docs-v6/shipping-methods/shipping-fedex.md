@@ -319,6 +319,6 @@ Not all services are available for every origin-destination combination. FedEx r
 ## Related Topics
 
 - [Shipping Methods Overview](shipping-standard.md)
-- [Geo Zones](../localisation/geozones.md)
-- [Tax Profiles](../localisation/tax-profiles.md)
-- [Weights](../localisation/weights.md)
+- [Geo Zones](../localization/geozones.md)
+- [Tax Profiles](../localization/tax-profiles.md)
+- [Weights](../localization/weights.md)

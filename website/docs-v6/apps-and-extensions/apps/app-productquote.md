@@ -297,6 +297,4 @@ Disable debug mode on production sites to avoid large log files.
 
 ## Related Topics
 
-- [Custom Address Fields](../../setup/orderstatuses.md)
-- [Store Configuration](../../setup/orderstatuses.md)
 - [Email Templates](../../design/email-templates.md)
