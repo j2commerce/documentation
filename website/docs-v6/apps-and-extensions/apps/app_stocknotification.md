@@ -134,7 +134,7 @@ Out-of-stock and low-stock emails go to your store's configured admin address(es
 
 Go to **J2Commerce -> Setup -> Configuration -> Store Settings** and confirm the **Store Name** and **Admin Email(s)** fields are filled in.
 
-[//]: # (![Store settings](/img/inventory-command-store-settings.webp))
+[//]: # (![Store settings](/img/inventory-command-store-settings.webp&#41;)
 
 :::warning
 
@@ -279,7 +279,7 @@ The estimated-date tags only render when **Show Estimated Out-of-Stock Date** is
 1. Go to **J2Commerce -> Catalog -> Products** and open the product.
 2. Go to the **Inventory** tab and set **Manage Stock** to **Yes** for the variant.
 
-   [//]: # (![Manage stock toggle](/img/inventory-command-manage-stock.webp))
+[//]: # (![Manage stock toggle](/img/inventory-command-manage-stock.webp))
 
 3. Confirm the product is enabled and its linked article is published.
 
