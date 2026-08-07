@@ -33,6 +33,7 @@ const sidebars = {
             items: [
                 'migration-tools/com_j2commercemigrator',
                 'migration-tools/plg_j2commercemigrator_j2commerce4',
+                'migration-tools/shopware6',
                 'migration-tools/virtuemart3',
                 'migration-tools/woocommerce',
             ],
@@ -262,6 +263,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app_calculatorsortbyprice',
                         // Change Password
                         'apps-and-extensions/apps/app_changepasswords',
+                        // Checkout Shield
+                        'apps-and-extensions/apps/app_checkoutshield',
                         // Clover POS Integration
                         'apps-and-extensions/apps/app_cloverpos',
                         // Conditional Payment Methods
@@ -314,8 +317,8 @@ const sidebars = {
                         'apps-and-extensions/apps/ecommercegoogletagmanager',
                         // Heureka Product Feed
                         'apps-and-extensions/apps/app_heurekaproductfeed',
-                        // Inventory Email Notifications
-                        'apps-and-extensions/apps/stocknotification',
+                        // Inventory Command
+                        'apps-and-extensions/apps/app_stocknotification',
                         // Klaviyo Integration
                         'apps-and-extensions/apps/klaviyo',
                         // Markdown for AI Agents
@@ -358,6 +361,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app-reviews',
                         // Product Shipping Restrictions
                         'apps-and-extensions/apps/app-restrictbyshipping',
+                        // Product Tools
+                        'apps-and-extensions/apps/app-producttools',
                         // Quantity Discounts
                         'apps-and-extensions/apps/qtydiscount',
                         // Quantity Dropdown
