@@ -245,6 +245,4 @@ If you previously used VoguePay with J2Store v4, here is what changed in J2Comme
 
 ## Related Topics
 
-- [Payment Methods Overview](../payment-methods/index.md)
-- [Geo Zones](../setup/index.md)
-- [Order Statuses](../sales/index.md)
+- [Order Statuses](../setup/order-statuses.md)

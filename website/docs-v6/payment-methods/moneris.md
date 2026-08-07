@@ -374,7 +374,6 @@ Alternatively, Joomla log files are written to the logs directory configured in 
 
 ## Related Topics
 
-- [Payment Methods Overview](./index.md)
-- [Order Statuses](../sales/order-statuses.md)
-- [Geo Zones](../localization/geo-zones.md)
+- [Order Statuses](../setup/order-statuses.md)
+- [Geo Zones](../localization/geozones.md)
 - [Currencies](../localization/currencies.md)

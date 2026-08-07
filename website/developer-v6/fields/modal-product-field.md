@@ -153,4 +153,3 @@ $productId = (int) $this->params->get('featured_product_id', 0);
 ## Related
 
 - [Modal\\ProductMultiSelect Field](./modal-product-multiselect-field.md) — Multiple product picker variant
-- [Products View](../features/products/index.md) — The list view that powers the modal

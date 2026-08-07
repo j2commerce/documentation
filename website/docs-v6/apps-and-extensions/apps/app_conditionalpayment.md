@@ -200,5 +200,3 @@ The following screenshots are examples when the settings are set for 'FedEx' as 
 ## Related Topics
 
 - [Payment Method Restrictions](./app-restrictpayment.md)
-- [Payment Methods](../../payment-methods/index.md)
-- [Shipping Methods](../../shipping-methods/index.md)

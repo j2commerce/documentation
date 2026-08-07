@@ -255,6 +255,5 @@ The log records each charge request (with the card number masked to the last 4 d
 
 ## Related Topics
 
-- [Payment Methods Overview](../payment-methods/index.md)
-- [Geozones](../setup/geozones.md)
-- [Order Statuses](../sales/order-statuses.md)
+- [Geozones](../localization/geozones.md)
+- [Order Statuses](../setup/order-statuses.md)

@@ -422,8 +422,7 @@ The customer must complete a successful initial payment to establish the saved p
 
 ## Related Topics
 
-- [Payment Methods overview](../payment-methods/index.md)
-- [Geozones](../localisation/geozones.md)
-- [Currencies](../localisation/currencies.md)
-- [Subscription Product app](../apps-and-extensions/apps/app_subscriptionproduct.md)
+- [Geozones](../localization/geozones.md)
+- [Currencies](../localization/currencies.md)
+- [Subscription Product app](../apps-and-extensions/subscriptions/app_subscriptionproduct.md)
 - [Order management](../sales/orders.md)

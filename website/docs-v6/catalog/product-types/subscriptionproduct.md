@@ -348,6 +348,4 @@ From here you can:
 
 ## Related Topics
 
-- [Payment Methods](../../payment-methods/index.md)
-- [Customer Accounts](../../customers/index.md)
-- [Cron Tasks](../../configuration/cron-tasks.md)
+- [Cron Tasks](../../setup/configuration/cron-tasks.md)

@@ -444,8 +444,7 @@ If a saved card requires additional bank verification (Strong Customer Authentic
 
 ## Related Topics
 
-- [Payment Methods overview](../payment-methods/index.md)
 - [Geozones](../localization/geozones.md)
 - [Currencies](../localization/currencies.md)
-- [Subscription Product app](../apps-and-extensions/apps/app_subscriptionproduct.md)
+- [Subscription Product app](../apps-and-extensions/subscriptions/app_subscriptionproduct.md)
 - [Order management](../sales/orders.md)

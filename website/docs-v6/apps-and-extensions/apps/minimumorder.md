@@ -234,4 +234,3 @@ Each entry includes the reason the checkout was blocked. Review this file if a r
 
 - [Apps and Extensions Overview](../index.md)
 - [Quantity Pricing](quantityprice.md)
-- [Bulk Discount](app_bulkdiscount.md)

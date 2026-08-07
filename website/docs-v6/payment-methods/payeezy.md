@@ -310,7 +310,5 @@ Verify that you have entered all three sandbox credentials (API Key, API Secret,
 
 ## Related Topics
 
-- [Payment Methods Overview](../payment-methods/index.md)
-- [Order Statuses](../orders/order-statuses.md)
-- [Geozones](../configuration/geozones.md)
-- [Taxes](../taxes/index.md)
+- [Order Statuses](../setup/order-statuses.md)
+- [Geozones](../localization/geozones.md)

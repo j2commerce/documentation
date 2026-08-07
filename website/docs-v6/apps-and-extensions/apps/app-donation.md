@@ -177,6 +177,5 @@ If you previously used the Donation app for J2Store, here is what changed in the
 
 ## Related Topics
 
-- [Product Options](../../catalog/products/simple-product.md)
-- [Additional Fees](extrafee.md)
+- [Product Options](../../catalog/product-types/simple_product.md)
 - [Apps Overview](../../apps-and-extensions/index.md)

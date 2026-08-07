@@ -281,6 +281,5 @@ Always complete at least one successful test in **Sandbox Mode** before switchin
 
 ## Related Topics
 
-- [Payment Methods Overview](./index.md)
-- [Geozones](../setup/geozones.md)
-- [Order Statuses](../sales/order-statuses.md)
+- [Geozones](../localization/geozones.md)
+- [Order Statuses](../setup/order-statuses.md)

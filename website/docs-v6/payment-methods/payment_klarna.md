@@ -389,7 +389,6 @@ Subscription support requires the **Subscription Product** app plugin, which is 
 
 ## Related Topics
 
-- [Payment Methods Overview](../setup/payment-methods.md)
 - [Order Management](../sales/orders.md)
-- [Subscription Product App](../apps-and-extensions/apps/subscription-product.md)
-- [Geozones](../setup/geozones.md)
+- [Subscription Product App](../apps-and-extensions/subscriptions/app_subscriptionproduct.md)
+- [Geozones](../localization/geozones.md)

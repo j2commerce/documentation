@@ -362,6 +362,5 @@ The order view also shows a **Payment Balance** card summarizing:
 ## Related Topics
 
 - [Klarna Payments](./payment_klarna.md)
-- [Payment Methods Overview](../setup/payment-methods.md)
 - [Order Management](../sales/orders.md)
-- [Geozones](../setup/geozones.md)
+- [Geozones](../localization/geozones.md)
