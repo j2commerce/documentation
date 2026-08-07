@@ -148,7 +148,7 @@ Inventory Command only tracks and alerts on variants that have **Manage Stock** 
 
 Open **J2Commerce -> Catalog -> Products**, edit a product, and go to its **Inventory** tab. For each variant, set the **Manage Stock** toggle to **Yes**.
 
-[//]: # (![Manage stock toggle](/img/inventory-command-manage-stock.webp))
+[//]: # (![Manage stock toggle](/img/inventory-command-manage-stock.webp&#41;)
 
 A variant with **Manage Stock** off is invisible to Inventory Command — it will not appear on the Inventory list, the dashboard, or trigger any alert, no matter how low its stock quantity is.
 
@@ -156,7 +156,7 @@ A variant with **Manage Stock** off is invisible to Inventory Command — it wil
 
 Go to **J2Commerce -> Setup -> Inventory Command** to open the dashboard. It gives you a store-wide health check for every managed variant.
 
-[//]: # (![Inventory Command dashboard](/img/inventory-command-dashboard.webp))
+[//]: # (![Inventory Command dashboard](/img/inventory-command-dashboard.webp&#41;)
 
 - **Date filter bar** — pick a custom From/To range, or use the **Last 7 Days / Last 30 Days / Last 90 Days** preset buttons, then click **Refresh**. This scopes the sales-velocity chart and the top-sellers chart.
 - **Inventory health badge** — a single Healthy / Needs Attention / Critical badge, weighted more heavily toward out-of-stock variants than low-stock ones.
@@ -176,7 +176,7 @@ NOTE: If neither **Enable Out-of-Stock Notifications** nor **Enable Low-Stock No
 
 Go to **J2Commerce -> Setup -> Inventory Command -> Inventory** (or click **Inventory** in the toolbar from the dashboard) to see every stock-managed variant in one sortable, filterable table.
 
-[//]: # (![Inventory list](/img/inventory-command-inventory-list.webp))
+[//]: # (![Inventory list](/img/inventory-command-inventory-list.webp&#41;)
 
 **Columns:** Status, Product, Variant, SKU, Category, In Stock (with an "on hold" note when applicable), Low-Stock Level, Estimated OOS (out-of-stock date and days remaining), and Stock Value (quantity x price).
 
@@ -279,7 +279,7 @@ The estimated-date tags only render when **Show Estimated Out-of-Stock Date** is
 1. Go to **J2Commerce -> Catalog -> Products** and open the product.
 2. Go to the **Inventory** tab and set **Manage Stock** to **Yes** for the variant.
 
-[//]: # (![Manage stock toggle](/img/inventory-command-manage-stock.webp))
+[//]: # (![Manage stock toggle](/img/inventory-command-manage-stock.webp&#41;)
 
 3. Confirm the product is enabled and its linked article is published.
 
