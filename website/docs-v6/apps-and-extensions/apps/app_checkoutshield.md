@@ -338,5 +338,5 @@ Confirm two things: (1) you've entered a valid API key (for AbuseIPDB/IPQualityS
 ## Related Topics
 
 - [Analytics Dashboard](../../getting-started/dashboard.md)
-- [Order Statuses](../../setup/orderstatuses.md)
+- [Order Statuses](../../setup/order-statuses.md)
 - [Email Templates](../../design/email-templates.md)

@@ -1,10 +1,3 @@
----
-title: "QuickPay Payments"
-sidebar_label: "QuickPay"
-sidebar_position: 30
-description: "Accept Dankort, Visa, Mastercard, MobilePay, Swish, Vipps, Klarna, and other Nordic and European payment methods in J2Commerce through the QuickPay gateway."
----
-
 # QuickPay Payments
 
 QuickPay is a Danish payment service provider used widely across Denmark and the broader Nordic region. A single QuickPay account gives you Dankort (Denmark's national debit card), Visa, Mastercard, MobilePay, Vipps, Swish, Klarna, iDEAL, SOFORT, Trustly, Apple Pay, Google Pay, and a range of other regional methods without integrating each one separately.
@@ -42,8 +35,6 @@ All of your plugin credentials come from the **QuickPay Manager** (your account 
 4. Go to **Settings** -> **Integration** to find your **Private Key** — used to verify that callback notifications really came from QuickPay.
 5. If you plan to build a classic HTML Payment Window form instead of the default Payment Link flow, also note the **Agreement ID** and **Payment Window Key** from the same Integration page.
 
-<!-- SCREENSHOT: QuickPay Manager Settings -> Integration page showing Merchant ID, API keys, and Private Key -->
-
 :::tip
 
 Most stores only need the **Merchant ID**, **API User Key**, and **Private Key**. The **Payment Window Key** and **Agreement ID** are only required if you build a custom classic HTML payment form — the plugin's default Payment Link flow does not need them.
@@ -66,7 +57,7 @@ In the Joomla Administrator, go to **System** **->** **Install** **->** **Extens
 
 Upload the `plg_j2commerce_payment_quickpay.zip` ZIP file or use the Install from URL option.
 
-<!-- SCREENSHOT: Joomla Extensions install screen with the plugin zip selected -->
+![](/img/install.webp)
 
 ## Enable the Plugin
 
@@ -74,11 +65,11 @@ The plugin installs and enables itself automatically. No separate enable step is
 
 There are **two** ways to reach the Payments list.
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Payments -> Payment Methods**
+**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Setup -> Payment Methods**
 
-**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Payments -> Payment Methods**
+**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Setup -> Payment Methods**
 
-<!-- SCREENSHOT: J2Commerce Payment Methods list with QuickPay row highlighted -->
+![](/img/culqi.webp)
 
 To help you narrow down the list, you can do a search for **QuickPay**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
@@ -92,11 +83,11 @@ Click the **Toggle Inline Help** button at the top of any plugin screen to revea
 
 :::
 
-<!-- SCREENSHOT: QuickPay plugin settings screen with Toggle Inline Help button visible -->
+![](/img/quickpay_toggle.webp)
 
 ### Display Settings
 
-<!-- SCREENSHOT: Payment Option Title and Payment Image fields -->
+![](/img/quickpay_display.webp)
 
 **Payment Option Title** — The label shown to customers at checkout. Leave blank to use the default name "QuickPay."
 
@@ -104,7 +95,7 @@ Click the **Toggle Inline Help** button at the top of any plugin screen to revea
 
 ### Account Credentials
 
-<!-- SCREENSHOT: Merchant ID, API User Key, Payment Window Key, Agreement ID, Private Key fields -->
+![](/img/quickpay_credentials.webp)
 
 **Merchant ID** — Your QuickPay account/merchant number, shown in the QuickPay Manager.
 
@@ -124,53 +115,51 @@ There is no test/live toggle in this plugin. Whether transactions are real depen
 
 ### Auto-Capture
 
-<!-- SCREENSHOT: Auto-Capture switcher field -->
+![](/img/quickpay_cc.webp)
 
 **Auto-Capture** (default: **No**) — Controls whether an authorized payment is charged immediately or held for manual review:
 
-| Setting | Behavior |
-|---------|----------|
+| Setting          | Behavior                                                                                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **No** (default) | QuickPay authorizes the payment but does not take the money. You capture it manually from the order view once you are ready to fulfill the order. |
-| **Yes** | QuickPay captures the payment automatically right after authorization, just like a normal one-step card charge. |
+| **Yes**          | QuickPay captures the payment automatically right after authorization, just like a normal one-step card charge.                                   |
 
 See [Capturing Payments](#capturing-payments) below for how manual capture works.
 
 ### Payment Methods
 
-<!-- SCREENSHOT: Enabled Payment Methods multi-select field -->
-
 **Enabled Payment Methods** — Select which QuickPay payment methods to offer at checkout. Leave this field empty to allow all methods that are enabled on your QuickPay account.
 
-| Method | Notes |
-|--------|-------|
-| **Credit Card** | Generic card option (Visa/Mastercard/etc. grouped) |
-| **Dankort** | Denmark's national debit card |
-| **Visa** | International |
-| **Visa Electron** | Debit variant |
-| **Mastercard** | International |
-| **Mastercard Debit** | Debit variant |
-| **Maestro** | International debit |
-| **American Express** | International |
-| **Diners Club** | International |
-| **JCB** | Primarily Japan/Asia |
-| **MobilePay** | Popular Danish/Nordic mobile wallet |
-| **MobilePay Subscriptions** | MobilePay's recurring-payment variant |
-| **Vipps** | Norwegian mobile wallet |
-| **Vipps via QuickPay** | Alternate Vipps integration path |
-| **Swish** | Swedish mobile payment method |
-| **PayPal** | Requires PayPal activation in QuickPay |
-| **Klarna** | Buy now, pay later / installments |
-| **iDEAL** | Netherlands bank transfer |
-| **SOFORT Banking** | Austria, Belgium, Germany, Switzerland |
-| **Trustly** | Bank payments across the Nordics and Europe |
-| **ViaBill** | Danish buy now, pay later |
-| **Resurs Bank** | Nordic consumer financing |
-| **ANYDAY Split** | Installment payments |
-| **Unzer Pay Later Invoice** | DACH invoice-based payment |
-| **Paysafecard** | Prepaid voucher, popular across Europe |
-| **Forbrugsforeningen af 1886** | Danish consumer association payment card |
-| **Apple Pay** | Requires HTTPS and a compatible device |
-| **Google Pay** | Requires HTTPS |
+| Method                         | Notes                                              |
+| ------------------------------ | -------------------------------------------------- |
+| **Credit Card**                | Generic card option (Visa/Mastercard/etc. grouped) |
+| **Dankort**                    | Denmark's national debit card                      |
+| **Visa**                       | International                                      |
+| **Visa Electron**              | Debit variant                                      |
+| **Mastercard**                 | International                                      |
+| **Mastercard Debit**           | Debit variant                                      |
+| **Maestro**                    | International debit                                |
+| **American Express**           | International                                      |
+| **Diners Club**                | International                                      |
+| **JCB**                        | Primarily Japan/Asia                               |
+| **MobilePay**                  | Popular Danish/Nordic mobile wallet                |
+| **MobilePay Subscriptions**    | MobilePay's recurring-payment variant              |
+| **Vipps**                      | Norwegian mobile wallet                            |
+| **Vipps via QuickPay**         | Alternate Vipps integration path                   |
+| **Swish**                      | Swedish mobile payment method                      |
+| **PayPal**                     | Requires PayPal activation in QuickPay             |
+| **Klarna**                     | Buy now, pay later / installments                  |
+| **iDEAL**                      | Netherlands bank transfer                          |
+| **SOFORT Banking**             | Austria, Belgium, Germany, Switzerland             |
+| **Trustly**                    | Bank payments across the Nordics and Europe        |
+| **ViaBill**                    | Danish buy now, pay later                          |
+| **Resurs Bank**                | Nordic consumer financing                          |
+| **ANYDAY Split**               | Installment payments                               |
+| **Unzer Pay Later Invoice**    | DACH invoice-based payment                         |
+| **Paysafecard**                | Prepaid voucher, popular across Europe             |
+| **Forbrugsforeningen af 1886** | Danish consumer association payment card           |
+| **Apple Pay**                  | Requires HTTPS and a compatible device             |
+| **Google Pay**                 | Requires HTTPS                                     |
 
 :::info
 
@@ -186,13 +175,15 @@ QuickPay can only process currencies that your active acquirer supports. Check *
 
 :::
 
+![](/img/quickpay_cards.webp)
+
 **Enable Saved Cards** (default: **Yes**) — Allow customers to save a card for future non-scheduled purchases. Saved cards are also used for automatic subscription renewals. See [Saved Cards and Subscription Renewals](#saved-cards-and-subscription-renewals) below.
 
 **Enable Subscriptions** (default: **Yes**) — Allow this payment method to be used for recurring subscription products via the QuickPay Subscriptions API. Requires the J2Commerce **Subscription Product** app.
 
 ### Order Status
 
-<!-- SCREENSHOT: Confirmed Payment Status and refund/cancel status fields -->
+![](/img/quickpay_order.webp)
 
 **Confirmed Payment Status** — Order status to set when QuickPay confirms a captured payment.
 
@@ -212,7 +203,7 @@ If the status you want is not listed in a dropdown, create a new one first by go
 
 ### Callback URL
 
-<!-- SCREENSHOT: QuickPay Callback URL field with Copy URL button -->
+![](/img/quickpay_url.webp)
 
 **Callback URL** — This read-only field displays the URL QuickPay uses to notify your store when a payment, subscription, or card status changes. The URL is generated automatically and sent automatically with every payment/subscription/card request — no manual dashboard registration is required.
 
@@ -228,15 +219,17 @@ QuickPay cannot deliver callbacks to a local development server or private addre
 
 ### Template Style and Geo Zone
 
-<!-- SCREENSHOT: Template Style and Geo Zone fields -->
+![](/img/quickpay_style.webp)
 
 **Template Style** — Select the CSS framework for this plugin's customer-facing templates (defaults to Bootstrap 5).
+
+![](/img/quickpay_geozone.webp)
 
 **Geo Zone** — Restrict QuickPay to customers in a specific geographic zone. Select a geozone you have defined in J2Commerce. Leave blank to show QuickPay to all customers regardless of location.
 
 ### Surcharge
 
-<!-- SCREENSHOT: Surcharge Label, Percent, Fixed, and Tax Class fields -->
+![](/img/quickpay_surcharge.webp)
 
 Add an optional extra fee for customers who pay via QuickPay. Check your local laws before using surcharges — they are regulated in some countries.
 
@@ -250,7 +243,7 @@ Add an optional extra fee for customers who pay via QuickPay. Check your local l
 
 ### Order Value Restrictions
 
-<!-- SCREENSHOT: Minimum and Maximum Order Subtotal fields -->
+![](/img/quickpay_min.webp)
 
 **Minimum Order Subtotal** — Hide QuickPay when the order subtotal is below this amount. Leave blank for no minimum.
 
@@ -258,7 +251,7 @@ Add an optional extra fee for customers who pay via QuickPay. Check your local l
 
 ### Custom Messages
 
-<!-- SCREENSHOT: the five checkout message textareas -->
+![](/img/quickpay_messages.webp)
 
 These text fields let you set messages shown to customers at different points in the payment process. Leave any field blank to use the built-in default message.
 
@@ -274,9 +267,9 @@ These text fields let you set messages shown to customers at different points in
 
 ### Thank You Article and Pay Button
 
-<!-- SCREENSHOT: Thank You Article and Pay Button Label fields -->
-
 **Thank You Article** — Select a Joomla article to display as a thank-you message after payment. Leave blank to use J2Commerce's default confirmation message.
+
+![](/img/quickpay_icon.webp)
 
 **Pay Button Label** — The label on the button that redirects the customer to QuickPay. Default: **Pay Now**.
 
@@ -296,11 +289,7 @@ At the payment step, **QuickPay** (or your custom display name) appears as an op
 
 If a returning, logged-in customer has a saved payment method, they see it listed first with an option to use a new method instead. Otherwise, if multiple payment methods are configured, a method selector lets them pick Dankort, Visa, MobilePay, or another available method.
 
-<!-- SCREENSHOT: Frontend checkout showing QuickPay method selection and saved cards -->
-
 The customer clicks the pay button (labeled **Pay Now** by default) and is redirected to QuickPay's secure hosted payment window to complete payment.
-
-<!-- SCREENSHOT: QuickPay hosted payment window -->
 
 QuickPay redirects the customer back to your site once payment is complete or canceled. The browser return alone does not finalize the order — it simply shows a pending/processing message.
 
@@ -320,12 +309,10 @@ When **Auto-Capture** is set to **No** (the default), QuickPay only authorizes t
 
 To capture a payment manually:
 
-1. Go to **J2Commerce** -> **Orders** and open the order.
+1. Go to **J2Commerce -> Sales ->** **Orders** and open the order.
 2. Look for the **Payment** section on the order detail screen.
 3. Click **Capture** to charge the authorized amount.
 4. Confirm the capture.
-
-<!-- SCREENSHOT: Order view Payment section showing the Capture button -->
 
 Once captured, the order status updates to the **Confirmed Payment Status** configured in the plugin settings. A captured payment can no longer be canceled — use [Refunds](#refunds) instead.
 
@@ -356,11 +343,9 @@ When you are ready to accept real payments:
 
 ## Refunds
 
-<!-- SCREENSHOT: Order view Payment section showing Refund (Full) and Refund (Partial) buttons -->
-
 You can issue a full or partial refund directly from the order in the J2Commerce admin:
 
-1. Go to **J2Commerce** -> **Orders** and open the order.
+1. Go to **J2Commerce -> Sales -> Orders** and open the order.
 2. Look for the **Payment** section on the order detail screen.
 3. Click **Refund (Full)** to return the entire captured amount, or **Refund (Partial)** to enter a specific amount up to the maximum refundable amount shown.
 4. Confirm the refund.
@@ -459,8 +444,7 @@ If a saved card requires additional bank verification (Strong Customer Authentic
 
 ## Related Topics
 
-- [Payment Methods overview](../payment-methods/index.md)
 - [Geozones](../localization/geozones.md)
 - [Currencies](../localization/currencies.md)
-- [Subscription Product app](../apps-and-extensions/apps/app_subscriptionproduct.md)
+- [Subscription Product app](../apps-and-extensions/subscriptions/app_subscriptionproduct.md)
 - [Order management](../sales/orders.md)

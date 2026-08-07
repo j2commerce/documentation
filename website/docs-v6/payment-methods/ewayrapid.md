@@ -353,7 +353,6 @@ The payment method is hidden when one or more of the following conditions apply:
 
 ## Related Topics
 
-- [Payment Methods Overview](../payment-methods/index.md)
-- [Order Statuses](../../setup/orderstatuses.md)
-- [Geozones](../../localisation/geozones.md)
-- [Tax Profiles](../../localisation/tax-profiles.md)
+- [Order Statuses](../setup/order-statuses.md)
+- [Geozones](../localization/geozones.md)
+- [Tax Profiles](../localization/tax-profiles.md)

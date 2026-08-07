@@ -182,4 +182,3 @@ Each entry records the number of payment methods before and after filtering, alo
 ## Related Topics
 
 - [Restrict by Shipping](./app-restrictbyshipping.md)
-- [Payment Methods](../../payment-methods/index.md)

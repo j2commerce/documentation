@@ -304,7 +304,6 @@ A yellow warning banner on the J2Commerce dashboard reads "Skrill is in SANDBOX 
 
 ## Related Topics
 
-- [Payment Methods Overview](../setup/payment-methods.md)
-- [Order Statuses](../sales/order-statuses.md)
-- [Geo Zones](../setup/geo-zones.md)
-- [Multi-Currency](../setup/currencies.md)
+- [Order Statuses](../setup/order-statuses.md)
+- [Geo Zones](../localization/geozones.md)
+- [Multi-Currency](../localization/currencies.md)
