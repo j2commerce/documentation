@@ -425,6 +425,32 @@ final class PaymentMygateway extends CMSPlugin implements SubscriberInterface
 }
 ```
 
+> **Set the status id only — never `order_state`.**
+>
+> `order_state` is a deprecated denormalised copy of the status name. Core neither reads nor
+> writes it, so anything a plugin puts there is invisible to the storefront, the admin order
+> list and the API, all of which resolve the status through `order_state_id` joined to
+> `#__j2commerce_orderstatuses`. The assignment does not error — `DatabaseDriver` skips object
+> properties that are not real table columns — it simply does nothing.
+>
+> **Prefer `OrderModel::updateOrderStatus()` over assigning `order_state_id` directly.**
+> Setting the property and calling `store()` moves the number and nothing else. The model
+> method also fires the status-change event third-party plugins listen for, appends the order
+> history row, and grants downloads on the statuses configured for it. It additionally applies
+> a compare-and-swap on the previous status, so a webhook redelivery arriving alongside an
+> admin save cannot run those side effects twice:
+>
+> ```php
+> Factory::getApplication()
+>     ->bootComponent('com_j2commerce')
+>     ->getMVCFactory()
+>     ->createModel('Order', 'Administrator', ['ignore_request' => true])
+>     ->updateOrderStatus((int) $orderTable->j2commerce_order_id, $newStatusId);
+> ```
+>
+> Assign `order_state_id` directly only where no transition semantics are wanted — for
+> example when building a brand-new order row that has never had a status.
+
 ---
 
 ## Plugin File Structure
@@ -1692,6 +1718,7 @@ Enable the `debug` parameter in the plugin configuration. Check `administrator/l
 **Order not updating after payment**
 
 - Ensure `$orderTable->store()` is called after setting `transaction_id`, `order_state_id`, etc.
+- Setting `order_state` instead of `order_state_id` silently does nothing — the column is deprecated and unread. Use `order_state_id`, and prefer `OrderModel::updateOrderStatus()` so the status-change event fires and order history is written.
 - Check that the `OrderHistoryHelper::add()` call receives a non-empty `orderId`.
 
 **AJAX task returning 403**
