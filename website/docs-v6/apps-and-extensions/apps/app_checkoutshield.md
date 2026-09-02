@@ -56,6 +56,55 @@ To install:
 3. Click the plugin name to open its settings — this is where every option in this guide lives.
 4. The dashboard lives in a different place: **J2Commerce** -> **Analytics** -> **Checkout Shield**.
 
+## Setup Wizard (the Fastest Way to Get Started)
+
+You do not have to work through every fieldset by hand. A **Setup Wizard** button sits in the toolbar of every Checkout Shield admin page — the dashboard, Attempts Log, Blocked IPs, Allowlist — and on the plugin's own settings screen. Click it to open a guided, three-step flow instead of hunting through settings yourself.
+
+<!-- SCREENSHOT: Checkout Shield toolbar with the Setup Wizard button visible next to Lockdown -->
+
+### Step 1: Choose what matters to you
+
+Pick one or more of these scenario cards — they are not mutually exclusive, so select every one that fits your store:
+
+| Card | What it turns on |
+|------|-------------------|
+| **Stop fake orders and card-testing** | Fraudsters push stolen cards through checkout in bulk, so you get junk orders and pay a fee on every one. We catch the pattern and shut it down. |
+| **Block automated bots** | Scripts place orders faster than any human can. We watch for the tell-tale signs and turn them away. |
+| **Add a human check for risky checkouts** | When something looks off, we ask that shopper to pass a quick verification. Real customers breeze through; bots cannot. |
+| **Watch first, do not block anyone yet** (recommended) | See exactly what would be caught for a week before you turn on blocking. The safest start, with no risk of turning away a real customer. |
+| **Alert me the moment an attack starts** | Get an email, and an optional chat message, the instant a wave of suspicious orders begins. |
+| **Only accept orders from certain countries** | If you only ship to a few countries, turn away orders from everywhere else, a common source of fraud. |
+| **I am running a flash sale or product drop** | Big sales attract scalper bots that grab everything to resell. We tighten the limits so real fans get a fair shot. |
+| **Maximum protection (I will fine-tune later)** | Turn on every layer at its recommended strength. The strongest setting, where occasionally a real shopper gets a quick verification. |
+
+<!-- SCREENSHOT: Setup Wizard step 1 showing the scenario cards with the "Watch first" card marked Recommended -->
+
+### Step 2: A few follow-up questions
+
+Depending on which cards you picked, the wizard asks only the questions it needs — for example:
+
+- **When we catch a suspicious order, what should we do?** — Block it automatically, or just watch and email you first (recommended for your first week).
+- **Which verification should risky shoppers pass?** — the built-in check (nothing to set up) or another captcha plugin already installed on your site.
+- **Which email address should we send alerts to?**
+- **How often would you like a summary?** — Once a day, every hour, or none.
+- **Paste a Slack, Discord or Telegram webhook for urgent alerts** (optional).
+- **Paste your free MaxMind license key so we can look up a shopper's country** (only if you picked the countries card) — you choose the actual country list afterward, under **Geolocation** in the plugin settings.
+- Optional API keys for **AbuseIPDB**, **Project Honey Pot**, and **IPQualityScore** (only if you picked the countries card) — each is free to sign up for and safe to leave blank.
+
+If you re-run the wizard later, any key field you already saved shows a note that it will keep the saved value unless you paste a new one.
+
+<!-- SCREENSHOT: Setup Wizard step 2 showing the "watch and email me first" follow-up question -->
+
+### Step 3: Review and apply
+
+The wizard shows you exactly what it is about to change — grouped as "What we'll do" in plain language and "Your settings" as the actual field values — before anything is saved. Click **Apply** to save every selected scenario's settings in one step.
+
+If you pick a card that would normally switch on enforcement (like **Block automated bots**) but also answer "just watch and email me first" in step 2, the wizard honors your answer and leaves blocking off — your explicit answer always wins over a card's default.
+
+<!-- SCREENSHOT: Setup Wizard step 3 review screen showing the "What we'll do" summary before Apply -->
+
+Every change the wizard makes is recorded the same way a manual settings save would be, so you can always see what changed and when.
+
 ## The Monitor-First Rollout (Read This Before Anything Else)
 
 This is the single most important thing to understand about Checkout Shield: **it ships in Monitor mode, and you should leave it there for about a week before switching to Enforce.**
@@ -113,15 +162,73 @@ Six numbers give you the headline picture for the store:
 
 ### Charts
 
-Three tabs sit below the KPI band, powered by Chart.js:
+Below the KPI band sit two chart panels, powered by Chart.js. The wide panel on the left carries two tabs:
 
-- **Attack timeline** — attempts vs. blocked, day by day, over your selected date range.
-- **Decline ratio trend** — your payment decline percentage over the same range, so you can see spikes at a glance.
-- **Top signals** — which detection signals (honeypot, velocity, card-testing pattern, and so on) are firing most often.
+- **Attack Timeline** — attempts vs. blocked, day by day, over your selected date range.
+- **Revenue by Risk** — how much order value sits in each risk band over the same range. This is the one to check when you are deciding whether to tighten a threshold: it shows you what you would have turned away, in money, not just in attempt counts.
+
+The narrower panel on the right carries:
+
+- **Top Signals** — which detection signals (honeypot, velocity, card-testing pattern, and so on) are firing most often.
+- **Risk Bands** — the spread of minFraud risk scores across your traffic. This tab only appears once minFraud is connected and confirmed.
 
 Use the date-range buttons (**1 day / 7 days / 30 days / 90 days**) or the calendar pickers above the KPI band to change the window; the KPIs and charts refresh without reloading the page.
 
-<!-- SCREENSHOT: Checkout Shield dashboard chart tabs, showing the "Attack timeline" tab active with a visible spike -->
+<!-- SCREENSHOT: Checkout Shield dashboard chart tabs, showing the "Attack Timeline" tab active with a visible spike -->
+
+### Scoring Thresholds card
+
+The scores that decide when a shopper is challenged and when they are blocked are editable straight from the dashboard, without opening plugin settings. Five dials sit in the **Scoring Thresholds** card:
+
+| Dial | Range | Default | What it does |
+|------|-------|---------|--------------|
+| **Challenge score** | 0-100 | 40 | The score at which a shopper is asked to pass a captcha. |
+| **Block score** | 1-100 | 70 | The score at which the attempt is refused outright. The floor is 1, not 0 — a threshold of 0 would block every shopper. |
+| **minFraud challenge score** | 0-99 | 25 | The minFraud risk score that triggers a challenge. **0 disables this rule** and the dial reads *Disabled* rather than showing a number. |
+| **minFraud block score** | 0-99 | 0 | The minFraud risk score that blocks outright. Ships **disabled** — turn it on deliberately once you have watched your own score distribution on the **Risk Bands** chart. |
+| **minFraud timeout** | 1-30s | 8s | How long to wait for a minFraud answer before giving up and scoring locally. |
+
+Drag a dial, use the arrow buttons underneath it, or focus a dial and use the keyboard: left and right arrows move by one, **Page Up** and **Page Down** by ten, **Home** and **End** jump to the limits.
+
+**Save Thresholds** writes the change and clears the plugin's parameter cache, so the new values take effect on the very next checkout attempt — you do not need to re-save the plugin. **Reset Defaults** returns all five dials to the values in the table above.
+
+<!-- SCREENSHOT: Scoring Thresholds card with the five dials, one mid-drag -->
+
+### Connector Status card
+
+Checkout Shield can lean on up to eight outside services, and this card tells you at a glance which of them are actually working:
+
+| Connector | What it is |
+|-----------|------------|
+| **MaxMind minFraud** | Paid risk scoring. See [MaxMind minFraud Scoring](#maxmind-minfraud-scoring-optional). |
+| **AbuseIPDB** | Community IP abuse reputation. |
+| **IPQualityScore** | Commercial IP and email reputation. |
+| **Project Honey Pot** | http:BL reputation lookup. |
+| **StopForumSpam** | Free abuse list. |
+| **Tor exit list** | Known Tor exit nodes. |
+| **Disposable email list** | Throwaway email domains. |
+| **Captcha** | The Joomla captcha plugin selected as your challenge provider. |
+
+Each tile shows one of four states:
+
+| State | Meaning |
+|-------|---------|
+| **Connected** | The service answered correctly. |
+| **Failed** | Credentials are present but the service rejected them or could not be reached. |
+| **No API Key** | The service is switched on but has no credentials entered. |
+| **Testing** | The check is running right now. |
+
+The card checks itself once a day and shows **Last checked** underneath. **Re-Check All** forces a fresh run immediately, past that daily cache — use it right after entering a new API key.
+
+<!-- SCREENSHOT: Connector Status card showing a mix of Connected, No API Key, and Failed tiles -->
+
+### Attack Origins card
+
+A world map of where your flagged checkout attempts came from over the **last 30 days**, shaded by volume, with the attempt count and the blocked share per country.
+
+The country is recorded on each attempt as it happens, so this card only has data for attempts logged after Checkout Shield started recording it — an older log will look emptier than your traffic really was. If no flagged attempt in the window carried a known country, the card draws the map greyed out and tells you so rather than showing an empty box. Country resolution needs the GeoLite2 database; see [Geolocation](#geolocation-optional).
+
+<!-- SCREENSHOT: Attack Origins card with several countries shaded and a tooltip showing the attempt count -->
 
 ### The Attempts Log
 
@@ -165,6 +272,84 @@ You can allowlist by:
 Add entries with **Add Entry…**, remove them with **Delete**. At minimum, allowlist your own admin office/home IP address — the dashboard will warn you if it is not on the list while enforcement is active.
 
 <!-- SCREENSHOT: Allowlist editor "Add Entry" form open, showing the Type dropdown with IP/CIDR/Email/Email domain options -->
+
+### The Suspect Orders Review
+
+Go to **Checkout Shield** -> **Suspect Orders** to see, in one screen, every order Checkout Shield flagged — no digging through your general Orders list required.
+
+Each row shows the order number, customer, total, order status, risk band, and the specific reasons the order was flagged (with a **minFraud** tag when MaxMind's own score, see [MaxMind minFraud Scoring](#maxmind-minfraud-scoring-optional) below, contributed). Filter by order number, email, or IP address, or sort by any column including the minFraud score.
+
+Select rows and use the toolbar to **Block IP Address**, **Allowlist IP Address**, **Block Email Address**, **Allowlist Email Address**, or **Change Order Status** on the underlying orders in bulk.
+
+:::info
+Bulk-changing order status here suppresses the store's normal order emails, but connected apps (SMS, marketing automation, user groups) may still contact these customers, and a status that unlocks downloads will still grant them. Double-check before you bulk-change status on suspect orders.
+:::
+
+<!-- SCREENSHOT: Suspect Orders list showing the Reasons column and the bulk-action toolbar -->
+
+### Identity Rules (optional)
+
+Go to **Checkout Shield** -> **Identity Rules** to stop a checkout based on **who the shopper says they are**, rather than where they are connecting from. This catches a fraudster who changes IP address or network but keeps reusing the same throwaway name or email pattern — something a Blocked IPs entry can never do, because it only ever keys on an address.
+
+Identity rules are **off by default**. A starter set of rules ships already installed but dormant — review them on this screen, then turn on **Enable identity rules** under the **Rules** fieldset in plugin settings to start evaluating them on every scored checkout step. Turning the toggle back off leaves your rules in place; it just stops them from matching.
+
+Click **New Rule** to add one. Each rule has:
+
+| Field | What it does |
+|-------|---------------|
+| **Applies to** | **Name**, **Email**, or **Company**. A name rule is checked against the shopper's first name, last name, and full name together. |
+| **Match** | **Exact**, **Contains**, **Regex** (an advanced pattern), or **Email domain** (bare domain only, e.g. `example.com` — applies to the Email kind only). |
+| **Pattern** | The text or pattern to match against. |
+| **Action** | **Monitor** (log only, uses the **Score** field below), **Challenge** (show a captcha), or **Block** (stop the checkout step outright). |
+| **Score** | Points added to the risk total — only used when Action is set to Monitor. |
+| **Note** | Your own reminder of why you added the rule. |
+
+:::info
+**Challenge** needs a working Joomla captcha plugin. If none is available while enforcement is on, a challenged shopper falls back to your **When No Captcha Is Available** setting (under **Rules** -> **Challenge** in plugin settings) — by default they are logged as "Not enforced" and let through, so a checkout can never be permanently locked by a missing captcha. Set that option to **Block the request**, or set the specific rules you want strictly enforced to the **Block** action instead, once you know your captcha is working.
+:::
+
+<!-- SCREENSHOT: Identity Rules list with the New Rule inline form open, showing the Applies to / Match / Pattern / Action fields -->
+
+## MaxMind minFraud Scoring (optional)
+
+MaxMind — the same company behind the free geolocation database above — also sells **minFraud**, a paid, per-request fraud-scoring service that checks a transaction against signals no on-site plugin can see on its own, such as billing and device history seen across the wider internet. It is **off by default** and billed per request by MaxMind, separately from your GeoLite2 geolocation key.
+
+Configure it under **Connectors** -> **MaxMind minFraud** in plugin settings. It uses the same **MaxMind Account ID** and **MaxMind License Key** entered under **Connectors** -> **Geolocation**.
+
+Before the two minFraud modes become available you have to prove the credentials work. On the **General** tab, the **minFraud Connection** field carries a **Check MinFraud** button that tests your account ID and licence key against MaxMind directly. Until that check succeeds, the two minFraud options in the **Mode** list stay unavailable — so a typo in a licence key cannot leave you believing minFraud is scoring when it never was.
+
+The **Mode** setting itself lives on the **General** tab, not under the minFraud section, because it decides which system is in charge of your whole checkout:
+
+| Mode | Who decides | When to use it |
+|------|-------------|----------------|
+| **Checkout Shield** | This plugin decides on its own, from the signals it collects at checkout. | The default, and correct until you have minFraud connected and have watched its scores for a while. |
+| **Checkout Shield Supported By MinFraud** | This plugin decides, with MaxMind's risk score added to its own — a second opinion that can push a borderline shopper over the line. | The usual choice once minFraud is working. Your own signals stay in charge; minFraud only sharpens the edges. |
+| **MinFraud Supported By Checkout Shield** | minFraud decides while it is answering, and this plugin's own scoring takes over whenever minFraud cannot be reached. | When you want to lean on MaxMind's data as the primary judgment. An outage never leaves checkout unprotected. |
+
+The last two require a confirmed minFraud connection.
+
+Everything else sits under **Connectors** -> **MaxMind minFraud**:
+
+| Setting | What it does | Default |
+|---------|---------------|---------|
+| **minFraud Scoring** | Master switch. When on, a minFraud request is sent at the order-confirmation step only. | Off |
+| **minFraud Service** | Which minFraud service tier to call. Only **Score** is active in this release; Insights and Factors are reserved for a future update. | Score |
+| **minFraud Weight** | The maximum points added to the risk score when minFraud's own score is at its highest; it scales proportionally below that. | 25 |
+| **minFraud Challenge Score** | The minFraud score at or above which a shopper is challenged (only used when minFraud is deciding). Set to 0 to never challenge on the minFraud score alone. | 25 |
+| **minFraud Block Score** | An optional hard gate — when minFraud's score reaches this value the request is blocked outright, regardless of the weighted total. Set to 0 to disable and rely on the weight only. | 0 (disabled) |
+| **minFraud Timeout (Seconds)** | How long to wait for MaxMind before giving up. This time is added to the shopper's own submission, so a high value costs completed orders if the service is slow. | 8 |
+| **Report Chargebacks to MaxMind** | When an order tied to a minFraud request is later charged back, refunded, or canceled, report that outcome back to MaxMind to improve future scoring. | Off |
+| **Send customer identity to minFraud** | Include billing name, company, and email in the minFraud request — the biggest accuracy inputs minFraud has. Without it, the score describes the IP address rather than the actual transaction. Check that your privacy policy covers sharing this with MaxMind before enabling. | Off |
+| **Send the email address unhashed** | By default the email is sent as an MD5 hash, which minFraud still matches against its reputation data. Turning this on sends the plain address for slightly stronger matching. | Off |
+| **Order Risk Badges** | Show a risk badge on the order view and the admin orders list for any order with a recorded shield or minFraud score. | On |
+
+<!-- SCREENSHOT: MaxMind minFraud fieldset showing the Mode dropdown and the minFraud Weight/Block Score fields -->
+
+The dashboard shows a **MaxMind minFraud Account** card with your remaining funds, remaining queries, and when it was last checked, so you can see a low-balance warning before scoring quietly stops.
+
+### Marketplace Payout Guard (marketplace stores only)
+
+If you run a J2Commerce marketplace with vendor payouts, turn on **Marketplace Payout Guard** (under the MaxMind minFraud fieldset) to automatically hold a vendor's payout whenever its commission is tied to a blocked-band order, or to an order whose minFraud score reaches your **Marketplace Hold Score** (default 75). This does nothing on a store without a marketplace/vendor plugin installed.
 
 ## Lockdown Mode
 
@@ -227,9 +412,11 @@ Checkout Shield registers two email types under **Design** -> **Email Templates*
 
 These signals are **optional and mostly disabled by default** — Checkout Shield works fine without them, and turning them on trades a small amount of setup effort for extra detection accuracy against known-bad infrastructure.
 
+Every outside service Checkout Shield can talk to lives under one **Connectors** tab in plugin settings, split into three sections: **IP & Email Reputation**, **Geolocation**, and **MaxMind minFraud**. Once you have entered credentials, the [Connector Status card](#connector-status-card) on the dashboard is the fastest way to confirm each one is actually working.
+
 ### Reputation providers
 
-Configure these under the **IP & Email Reputation** fieldset. Two free bulk lists work locally with no API key and are already **on by default**:
+Configure these under **Connectors** -> **IP & Email Reputation**. Two free bulk lists work locally with no API key and are already **on by default**:
 
 | Provider | Needs a key? | Default | What it does |
 |----------|--------------|---------|---------------|
@@ -242,7 +429,7 @@ Configure these under the **IP & Email Reputation** fieldset. Two free bulk list
 
 The two locally-synced bulk lists (StopForumSpam and Tor) and the disposable-domain list all depend on the **daily sync task** — see [Scheduled Tasks](#scheduled-tasks-required) below. Until that task runs at least once, those lists are empty and contribute nothing.
 
-To turn on the key-based providers: open plugin settings, flip **IP Reputation Lookups** to on, then paste in the API key(s) you signed up for on the provider's website. All lookups only happen at the payment step and are cached for 24 hours by default, so there is no ongoing per-request cost.
+To turn on the key-based providers: open plugin settings, go to **Connectors** -> **IP & Email Reputation**, flip **IP Reputation Lookups** to on, then paste in the API key(s) you signed up for on the provider's website. Check the result on the dashboard's **Connector Status** card — press **Re-Check All** so it does not wait for its daily refresh. All lookups only happen at the payment step and are cached for 24 hours by default, so there is no ongoing per-request cost.
 
 :::info
 Reputation lookups require the **full IP storage** privacy mode. If you switch [IP Storage](#gdpr-and-privacy) to Hashed, reputation checks are automatically disabled — the providers need a real IP address to look up.
@@ -255,9 +442,11 @@ Reputation lookups require the **full IP storage** privacy mode. If you switch [
 Geolocation is **off by default**. To turn it on:
 
 1. Sign up for a free MaxMind GeoLite2 account and generate a license key.
-2. Under the **Geolocation** fieldset, flip **Geolocation** to on and paste in your **MaxMind License Key**.
+2. Under **Connectors** -> **Geolocation**, flip **Geolocation** to on and paste in your **MaxMind Account ID** and **MaxMind License Key**.
 3. Schedule the weekly **Refresh GeoIP Database** task (below) — the dashboard shows the database status so you know when it's ready.
 4. Choose your **Country List Mode** (allow only listed countries, or act against listed countries), pick the countries, and set the **Geolocation Action** (Add to score / Challenge / Block).
+
+Geolocation is also what puts countries on the [Attack Origins card](#attack-origins-card). Without it that card stays empty, because attempts are logged with no country to plot.
 
 The database downloads and refreshes on a server-fixed path automatically once the task is scheduled — there's nothing to manage manually after the first setup.
 
