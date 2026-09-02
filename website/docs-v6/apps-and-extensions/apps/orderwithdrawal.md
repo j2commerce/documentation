@@ -308,5 +308,5 @@ If your store previously used the J2Store version of this plugin, here is what c
 ## Related Topics
 
 - [Apps and Extensions](../index.md)
-- [EU VAT](./euvat.md)
+- [EU VAT](./app_euvat.md)
 - [Orders](../../sales/index.md)
