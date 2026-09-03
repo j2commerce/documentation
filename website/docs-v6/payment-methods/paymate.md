@@ -4,7 +4,7 @@ Paymate is an Australian hosted payment gateway that redirects shoppers to a sec
 
 Supported currencies: **AUD, EUR, NZD, GBP, USD.**
 
-:::info Add-on required
+:::info[Add-on required]
 
 Paymate is a separate add-on, not included with the core J2Commerce package. Purchase and download it from the [J2Commerce Extensions Store](https://www.j2commerce.com).
 
@@ -121,7 +121,7 @@ On the **Order Statuses** tab, choose the J2Commerce order status that should be
 
 **Payment Failed Status:** Paymate returns `responseCode=PD` or another declined code.
 
-:::tip Important: payment confirmation and reconciliation
+:::tip[Important: payment confirmation and reconciliation]
 
 Paymate ExpressPayment is a legacy hosted-redirect gateway that **does not send a signed server-to-server confirmation** after payment. The result arrives only through the browser redirect, as URL parameters. This is a property of the Paymate gateway protocol, not a J2Commerce defect.
 
@@ -239,4 +239,7 @@ Always verify against your Paymate merchant portal before concluding a payment d
 
 ## Related Topics
 
-- [Order Statuses](../setup/order-statuses.md)
+- [Payment Methods Overview](../index.md)
+- [Order Statuses](../../setup/order-statuses.md)
+- [Currencies and Exchange Rates](../../setup/currencies.md)
+- [Geo Zones](../../setup/geozones.md)

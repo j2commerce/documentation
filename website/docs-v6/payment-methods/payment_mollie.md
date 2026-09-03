@@ -427,7 +427,8 @@ This requires the J2Commerce **Subscription Product** app. The customer must com
 
 ## Related Topics
 
+- [Payment Methods overview](../payment-methods/index.md)
 - [Geozones](../localization/geozones.md)
 - [Currencies](../localization/currencies.md)
-- [Subscription Product app](../apps-and-extensions/subscriptions/app_subscriptionproduct.md)
+- [Subscription Product app](../apps-and-extensions/apps/app_subscriptionproduct.md)
 - [Order management](../sales/orders.md)

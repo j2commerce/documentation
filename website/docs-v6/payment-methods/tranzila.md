@@ -4,7 +4,7 @@ Tranzila is an Israeli payment gateway that lets shoppers pay by credit or debit
 
 The plugin supports six currencies (ILS, USD, GBP, HKD, JPY, EUR) and an optional installment payment mode that splits the charge into equal monthly payments based on the order total.
 
-:::info Add-on required
+:::info[Add-on required]
 
 The Tranzila plugin is a separate add-on, not included in the core J2Commerce package. Purchase and download it from the [J2Commerce Extensions Store](https://www.j2commerce.com) before following these steps.
 
@@ -85,7 +85,7 @@ Click the **Toggle Inline Help** button at the top of any plugin configuration p
 
 **Token Password:** Your live TranzilaPW password. Visible only when Test Mode is off.
 
-:::tip Keep Test Mode on while you verify
+:::tip[Keep Test Mode on while you verify]
 
 During setup, leave **Test Mode** enabled, enter your sandbox credentials, and place a test order to confirm the end-to-end flow. Once you are satisfied, switch Test Mode off and enter your live credentials.
 
@@ -124,7 +124,7 @@ When **Installment Payment** is selected, the **Installment Tiers** table appear
 
 If the order total does not match any tier, the installment dropdown is not shown and the full amount is charged in a single payment.
 
-:::info Minimum installment count
+:::info[Minimum installment count]
 
 Installments below 3 are treated as a full single payment by Tranzila. The installment dropdown only appears when the tier allows 3 or more.
 
@@ -255,5 +255,6 @@ The log records each charge request (with the card number masked to the last 4 d
 
 ## Related Topics
 
-- [Geozones](../localization/geozones.md)
-- [Order Statuses](../setup/order-statuses.md)
+- [Payment Methods Overview](../payment-methods/index.md)
+- [Geozones](../setup/geozones.md)
+- [Order Statuses](../sales/order-statuses.md)

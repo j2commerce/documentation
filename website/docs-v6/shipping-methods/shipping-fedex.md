@@ -44,7 +44,9 @@ After saving, FedEx displays your project credentials:
 Copy both values. You will paste them into the plugin settings in the next section.
 
 :::warning
+
 Keep your Client Secret safe. Treat it like a password — do not share it publicly or commit it to version control.
+
 :::
 
 ### Step 4: Find Your FedEx Account Number
@@ -319,6 +321,6 @@ Not all services are available for every origin-destination combination. FedEx r
 ## Related Topics
 
 - [Shipping Methods Overview](shipping-standard.md)
-- [Geo Zones](../localization/geozones.md)
-- [Tax Profiles](../localization/tax-profiles.md)
-- [Weights](../localization/weights.md)
+- [Geo Zones](../localisation/geozones.md)
+- [Tax Profiles](../localisation/tax-profiles.md)
+- [Weights](../localisation/weights.md)

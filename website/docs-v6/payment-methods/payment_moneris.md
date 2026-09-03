@@ -379,5 +379,6 @@ Alternatively, look for `payment_moneris.php` in your Joomla logs directory (con
 
 ## Related Topics
 
-- [Order Statuses](../setup/order-statuses.md)
-- [Geo Zones](../localization/geozones.md)
+- [Payment Methods Overview](./index.md)
+- [Order Statuses](../sales/order-statuses.md)
+- [Geo Zones](../localization/geo-zones.md)

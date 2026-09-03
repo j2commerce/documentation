@@ -254,6 +254,7 @@ The J2Commerce 6 version of this plugin is a complete rebuild from the original 
 
 ## Related Topics
 
+- [Payment Methods overview](../setup/payment-methods.md)
 - [Currencies and Exchange Rates](../localization/currencies.md)
-- [Geozones](../localization/geozones.md)
-- [Order Statuses](../setup/order-statuses.md)
+- [Geozones](../setup/geozones.md)
+- [Order Statuses](../sales/order-statuses.md)

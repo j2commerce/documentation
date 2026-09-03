@@ -124,7 +124,9 @@ Oceania (OC): Your Klarna account is registered in Australia or New Zealand
 Toggle **Sandbox Mode** on while you are testing. In sandbox mode, no real payments are processed and Klarna uses its playground environment. Turn this off before going live.
 
 :::warning
+
 The **Sandbox** credentials (username, password, and client identifier) are separate from your live credentials. Fill in both sets so you can switch between environments without losing your live keys.
+
 :::
 
 ### API Credentials
@@ -389,6 +391,7 @@ Subscription support requires the **Subscription Product** app plugin, which is 
 
 ## Related Topics
 
+- [Payment Methods Overview](../setup/payment-methods.md)
 - [Order Management](../sales/orders.md)
-- [Subscription Product App](../apps-and-extensions/subscriptions/app_subscriptionproduct.md)
-- [Geozones](../localization/geozones.md)
+- [Subscription Product App](../apps-and-extensions/apps/subscription-product.md)
+- [Geozones](../setup/geozones.md)

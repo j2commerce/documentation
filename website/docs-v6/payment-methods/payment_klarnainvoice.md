@@ -108,7 +108,9 @@ Select the Klarna API region that matches your merchant account. Using the wrong
 Toggle **Sandbox Mode** on while you are testing. In sandbox mode no real payments are processed and Klarna uses its playground environment. Turn this off before going live.
 
 :::warning
+
 The **Sandbox** API credentials are separate from your live credentials. Fill in both sets so you can switch environments without losing your production keys.
+
 :::
 
 Two credential sets are available — fill in both. The plugin automatically uses whichever set matches the current **Sandbox Mode** setting.
@@ -362,5 +364,6 @@ The order view also shows a **Payment Balance** card summarizing:
 ## Related Topics
 
 - [Klarna Payments](./payment_klarna.md)
+- [Payment Methods Overview](../setup/payment-methods.md)
 - [Order Management](../sales/orders.md)
-- [Geozones](../localization/geozones.md)
+- [Geozones](../setup/geozones.md)

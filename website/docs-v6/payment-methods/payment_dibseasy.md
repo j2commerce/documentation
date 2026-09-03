@@ -190,7 +190,7 @@ Surcharges on card payments are regulated or prohibited in some countries — no
 
 **Text on Payment Error:** A message shown when the payment fails or encounters an error.
 
-**Text on Payment Cancellation:**A message shown when the customer cancels the payment and returns to your store.
+\*\*Text on Payment Cancellation:\*\*A message shown when the customer cancels the payment and returns to your store.
 
 Leave any message field blank to show the built-in default text.
 
@@ -349,6 +349,7 @@ If you used the DIBS Easy plugin in J2Store 4, the J2Commerce 6 version includes
 
 ## Related Topics
 
+- [Payment Methods overview](../payment-methods/index.md)
 - [Geo Zones](../localization/geozones.md)
 - [Currencies](../localization/currencies.md)
 - [Order management](../sales/orders.md)

@@ -15,7 +15,8 @@ This plugin is a separate add-on available from the [J2Commerce Extensions Store
 
 ## Important Notice — Coinbase Commerce Sunset (November 2024)
 
-:::warning Existing merchants only
+:::warning[Existing merchants only]
+
 Coinbase announced in late 2024 that the hosted Commerce checkout is **no longer available to new merchants**. If you created a Coinbase Commerce account before the sunset date, your account and API access remain fully functional — this plugin continues to work for you without any changes required.
 
 **If you are setting up a new store**, Coinbase Commerce is not an option for you. Consider these alternatives that are still open for new sign-ups:
@@ -23,6 +24,7 @@ Coinbase announced in late 2024 that the hosted Commerce checkout is **no longer
 - **NOWPayments** — multi-coin processor with hosted and API modes
 - **BTCPay Server** — self-hosted, open-source, no fees
 - **OpenNode** — Lightning Network–focused Bitcoin processor
+
 :::
 
 ***
@@ -432,6 +434,7 @@ This plugin was fully rewritten for J2Commerce 6. If you used the J2Store v4 ver
 
 ## Related Topics
 
-- [Order Statuses](../setup/order-statuses.md)
+- [Payment Methods Overview](../payment-methods/index.md)
+- [Order Statuses](../setup/orderstatuses.md)
 - [Geozones](../localization/geozones.md)
 - [Tax Profiles](../localization/tax-profiles.md)

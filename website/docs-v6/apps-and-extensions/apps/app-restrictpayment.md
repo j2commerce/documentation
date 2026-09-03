@@ -77,7 +77,7 @@ The per-product restriction is the most targeted control available. When a cart 
 3. Under **Payment Restrictions**, find the **Allowed payment methods** field.
 4. Select the payment methods you want to allow for this product. To apply no restriction, select **All payment methods**.
 
-:::info Multiple products in the cart
+:::info[Multiple products in the cart]
 
 When a customer adds more than one product to the cart, the plugin merges all per-product allowed lists together. For example, if Product A allows only Bank Transfer and Product B allows Bank Transfer and Cash on Delivery, both methods remain available because both appear in at least one product's list.
 
@@ -99,8 +99,10 @@ A method must pass all three layers to appear at checkout. The final list is sho
 
 ![](/img/payment-method-restriction-checkout.webp)
 
-:::warning All methods removed
+:::warning[All methods removed]
+
 If your rules are too restrictive — for example, a product allows only Bank Transfer but you have also added Bank Transfer to the Always Remove list — the customer will see no payment methods at checkout and will be unable to complete the order. Test your configuration after making changes.
+
 :::
 
 ## Use Cases
@@ -182,3 +184,4 @@ Each entry records the number of payment methods before and after filtering, alo
 ## Related Topics
 
 - [Restrict by Shipping](./app-restrictbyshipping.md)
+- [Payment Methods](../../payment-methods/index.md)

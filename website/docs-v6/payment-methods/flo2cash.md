@@ -253,5 +253,6 @@ If you previously used Flo2Cash with J2Store, the J2Commerce 6 version brings se
 ## Related Topics
 
 - [Currencies and Exchange Rates](../localization/currencies.md)
-- [Geo Zones](../localization/geozones.md)
-- [Order Statuses](../setup/order-statuses.md)
+- [Geo Zones](../taxation/geozones.md)
+- [Order Statuses](../sales/order-statuses.md)
+- [Payment Methods Overview](../payment-methods/index.md)

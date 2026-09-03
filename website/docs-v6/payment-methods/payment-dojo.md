@@ -76,8 +76,10 @@ The plugin ships with **Sandbox Mode** turned on by default. In sandbox mode it 
 
 **Sandbox API Key:** Your test API key from the Dojo developer portal. Only shown when Sandbox Mode is on.
 
-:::warning Keep your API key private
+:::warning[Keep your API key private]
+
 The API key authenticates every request your store sends to Dojo. Treat it like a password. Never share it, post it in a support ticket, or commit it to version control.
+
 :::
 
 ### Charge mode
@@ -128,7 +130,7 @@ You can add an optional surcharge for customers who pay by card. Leave all three
 
 **Surcharge Tax Class:** Optional tax profile applied to the surcharge amount. **Example:**  Select a tax profile from the dropdown if your jurisdiction requires tax on payment surcharges.
 
-:::info Surcharges are not yet active
+:::info[Surcharges are not yet active]
 
 The surcharge fields are included for forward compatibility. The J2Commerce 6 core does not yet dispatch the `onJ2CommerceCalculateFees` event that activates surcharge calculations. This affects all payment plugins in J2Commerce 6, not just Dojo. Surcharges will become functional in a future core release.
 
@@ -208,8 +210,10 @@ When **Charge Mode** is set to **Authorise**, Dojo holds the customer's funds bu
 2. Find the transaction by the payment intent ID (visible in the J2Commerce order details under Transaction ID).
 3. Capture the payment. Dojo will then settle the funds.
 
-:::warning Authorise mode: 1-day capture window
+:::warning[Authorise mode: 1-day capture window]
+
 If you do not manually capture an authorised payment within 1 day, Dojo automatically voids the hold and releases the funds back to the customer. The order in J2Commerce will remain in the "Authorised" status — you must manually update it to a cancelled or failed status.
+
 :::
 
 ### Recommended setup for Authorise mode
@@ -308,5 +312,5 @@ Dojo periodically updates their sandbox test card numbers. Check the [Dojo devel
 ## Related topics
 
 - [Geozones](../localization/geozones.md) — restrict payment methods by country or region
-- [Order Statuses](../setup/order-statuses.md) — create and configure the statuses used for paid, authorised, and failed orders
+- [Order Statuses](../setup/orderstatuses.md) — create and configure the statuses used for paid, authorised, and failed orders
 - [Design: Shipping and Payment Overrides](../design/layout-overrides/shipping-payment-overrides.md) — customise the pre-payment redirect template

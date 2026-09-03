@@ -125,7 +125,9 @@ The **APC Callback URL** must be entered into your Nochex account before you go 
 **Send Item Details:** Set to **Yes** to send a line-item XML collection to Nochex so your product names, quantities, and amounts appear on their payment page.
 
 :::warning
+
 Leave **Template** set to a value (the default is **Bootstrap5**). If it is left blank, the pre-redirect form will not display correctly at checkout.
+
 :::
 
 ### Restrictions Tab
@@ -223,7 +225,9 @@ Before accepting real payments, test the complete checkout flow in sandbox mode.
 **Step 8:** Once testing is complete, switch **Sandbox Mode** back to **No** and save.
 
 :::warning
+
 Always complete at least one successful test in **Sandbox Mode** before switching to live payments.
+
 :::
 
 ## Tips
@@ -281,5 +285,6 @@ Always complete at least one successful test in **Sandbox Mode** before switchin
 
 ## Related Topics
 
-- [Geozones](../localization/geozones.md)
-- [Order Statuses](../setup/order-statuses.md)
+- [Payment Methods Overview](./index.md)
+- [Geozones](../setup/geozones.md)
+- [Order Statuses](../sales/order-statuses.md)

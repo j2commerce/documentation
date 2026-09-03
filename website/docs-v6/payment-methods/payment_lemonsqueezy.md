@@ -429,6 +429,7 @@ Lemon Squeezy, not J2Commerce, manages the renewal billing schedule. If a subscr
 
 ## Related Topics
 
-- [Geozones](../localization/geozones.md)
-- [Currencies](../localization/currencies.md)
+- [Payment Methods overview](../payment-methods/index.md)
+- [Geozones](../localisation/geozones.md)
+- [Currencies](../localisation/currencies.md)
 - [Order management](../sales/orders.md)

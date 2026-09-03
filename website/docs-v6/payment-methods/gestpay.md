@@ -301,6 +301,7 @@ If you previously used the GestPay plugin for J2Store v4, here is what is new in
 
 ## Related topics
 
-- [Geo Zones](../localization/geozones.md)
-- [Order Statuses](../setup/order-statuses.md)
-- [Currencies](../localization/currencies.md)
+- [Payment Methods overview](../setup/orderstatuses.md)
+- [Geo Zones](../localisation/geozones.md)
+- [Order Statuses](../localisation/order-statuses.md)
+- [Currencies](../localisation/currencies.md)

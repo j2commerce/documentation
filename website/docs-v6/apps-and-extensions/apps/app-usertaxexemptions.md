@@ -57,21 +57,25 @@ Go to **System** -> **Manage** -> **Plugins**, search for **User Group Tax Exemp
 
 ### Settings Reference
 
-| Setting | Description | Default |
-|---------|-------------|---------|
+| Setting                      | Description                                                                                                                            | Default         |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
 | **Tax Exempt User Group(s)** | One or more Joomla user groups whose members receive tax exemption at checkout. Use the search box to find groups and click to select. | (none selected) |
-| **Debug Mode** | Log every tax-exemption decision to the Joomla log directory. Disable on production sites. | No |
+| **Debug Mode**               | Log every tax-exemption decision to the Joomla log directory. Disable on production sites.                                             | No              |
 
 ### Select the Exempt User Groups
 
 The **Tax Exempt User Group(s)** field shows every user group defined on your Joomla site. Click a group name to select it. You can select more than one group — each selected group appears as a tag in the field. Use the search box to filter by name if you have many groups.
 
-:::note User groups vs. access levels
+:::note[User groups vs. access levels]
+
 This plugin works with **Joomla user groups** (the group a user account belongs to), not view access levels. If you need to grant tax exemption to a specific customer segment, create a dedicated Joomla user group such as "Tax Exempt Customers" and assign eligible customers to it. Go to **System** -> **Manage** -> **Groups** to create and manage groups.
+
 :::
 
-:::note Guests are never auto-exempted
+:::note[Guests are never auto-exempted]
+
 Visitors who are not logged in are never granted tax exemption, even if the **Public** group (group ID 1) is selected. Exemption requires an active logged-in session.
+
 :::
 
 <!-- SCREENSHOT: Plugin configuration screen showing the Tax Exempt User Group(s) field with a group selected -->
@@ -114,8 +118,10 @@ Follow these steps from start to finish when onboarding a new tax-exempt custome
 
 The next time that customer logs in and proceeds to checkout, tax rows will not appear in their cart or order totals.
 
-:::tip Automate group assignment after purchase
+:::tip[Automate group assignment after purchase]
+
 If you sell tax-exempt access as part of a membership tier, combine this plugin with the **Add to User Group** app (`app_usergroup`). Configure that app to move a customer into the tax-exempt group when their membership order reaches the Confirmed status — no manual admin step required.
+
 :::
 
 ## Debug Mode
@@ -187,8 +193,8 @@ This plugin subscribes to `onJ2CommerceGetDiscountedPrice` and zeroes `$item->ta
 
 ## Related Topics
 
-- [Tax Profiles](../../localization/tax-profiles.md)
-- [Tax Rates](../../localization/tax-rates.md)
-- [How Tax is Calculated](../../taxation/tax-calculation.md)
+- [Tax Profiles](../../localisation/tax-profiles.md)
+- [Tax Rates](../../localisation/tax-rates.md)
+- [How Tax is Calculated](../../taxation/how-tax-is-calculated.md)
 - [Advanced Tax Rates App](./app-taxrate.md)
 - [Add to User Group App](./usergroup.md)

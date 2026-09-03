@@ -95,7 +95,9 @@ Match this to your active Joomla template: most templates use Bootstrap 5. Use U
 Toggle **Sandbox Mode** to **Yes** while you are testing. In sandbox mode, no real loans are issued and you can use Affirm's test credentials to simulate the full checkout flow. Turn this off before going live.
 
 :::warning
+
 A yellow warning banner appears on your J2Commerce dashboard whenever Sandbox Mode is on. If you see that banner on your live store, go to the Affirm plugin settings and turn Sandbox Mode off.
+
 :::
 
 ### API Credentials
@@ -365,6 +367,7 @@ Before switching to live transactions, confirm the following:
 
 ## Related Topics
 
+- [Payment Methods Overview](../setup/payment-methods.md)
 - [Order Management](../sales/orders.md)
-- [Geozones](../localization/geozones.md)
+- [Geozones](../setup/geozones.md)
 - [Order Statuses](../setup/order-statuses.md)

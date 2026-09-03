@@ -4,7 +4,7 @@ eWAY Rapid is a popular payment gateway for businesses in Australia, New Zealand
 
 You can choose between a fully hosted payment page (recommended for simplicity and lowest PCI scope) or an on-site card form that submits directly to eWAY. Both modes use the same API credentials and support sandbox testing before you go live.
 
-:::info Add-on required
+:::info[Add-on required]
 
 The eWAY Rapid plugin is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
 
@@ -279,8 +279,10 @@ When you are satisfied with sandbox testing, switch to the live gateway:
 4. Save the settings.
 5. Place a real test order with a small amount to confirm end-to-end.
 
-:::warning Before going live
+:::warning[Before going live]
+
 Double-check that **Use Sandbox** is **No** and that you have entered your **live** credentials (not the sandbox ones). Sandbox and live credentials are different — entering sandbox credentials with the sandbox toggle off will cause authentication errors on every transaction.
+
 :::
 
 ***
@@ -353,6 +355,7 @@ The payment method is hidden when one or more of the following conditions apply:
 
 ## Related Topics
 
-- [Order Statuses](../setup/order-statuses.md)
-- [Geozones](../localization/geozones.md)
-- [Tax Profiles](../localization/tax-profiles.md)
+- [Payment Methods Overview](../payment-methods/index.md)
+- [Order Statuses](../../setup/orderstatuses.md)
+- [Geozones](../../localisation/geozones.md)
+- [Tax Profiles](../../localisation/tax-profiles.md)

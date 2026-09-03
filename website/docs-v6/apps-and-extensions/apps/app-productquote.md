@@ -2,54 +2,48 @@
 title: "Ask Question / Quote"
 sidebar_label: "Ask Question / Quote"
 sidebar_position: 80
-description: "Let customers ask a question or request a price quote for any product, then track, filter, and reply to every request from a dedicated admin dashboard and submissions manager."
+description: "Let customers send an enquiry or request a price quote for any product, with configurable popup or accordion form, reCAPTCHA protection, and flexible email delivery."
 ---
 
 # Ask Question / Quote
 
-The Ask Question / Quote app adds an enquiry button to your product pages so customers can ask a question or request a custom price quote without going through checkout. The form can appear as a popup or as an inline accordion, and every request that comes in is stored in your admin so you can track it, filter it, and mark it as replied — no digging through your inbox required.
+The **Ask Question / Quote** app adds an enquiry form to your product pages so customers can ask a question or request a custom price quote without going through the checkout. The form can appear as a Bootstrap 5 popup modal or as an inline accordion that expands on the page. Submitted enquiries are emailed to the store admin, the customer, or both.
 
-## Requirements
+You control which products show the form, where the trigger button appears, what fields the form collects, and how the email is formatted — all without touching any template files.
 
-- with PHP 8.3.0 +
-- Joomla! 6.x
-- J2Commerce 6.x
+## Prerequisites
+
+- J2Commerce installed and active on your Joomla 6 site
+- An admin email address configured in J2Commerce (**J2Commerce -> Setup -> Configuration -> Store Profile**)
+- Joomla mail settings working (**System -> Global Configuration -> Server -> Mail Settings**)
 
 ## Purchase and Download
 
-**Step 1:** Go to our [**J2Commerce** website](https://www.j2commerce.com/) **->** **Apps**
+The **Ask Question / Quote** app is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce 6 component.
 
-**Step 2:** Locate the **Ask Question / Quote** App **->** click **View Details** **->** **Add to cart -> Checkout**.
-
-**Step 3:** Go to your **My Downloads** under your profile button at the top right corner and search for the app. Click **Available Versions -> View Files -> Download Now**
+1. Go to the [J2Commerce website](https://www.j2commerce.com/) -> **Apps**.
+2. Locate the **Ask Question / Quote** app -> click **View Details** -> **Add to cart** -> **Checkout**.
+3. Go to **My Downloads** under your profile menu and search for the app. Click **Available Versions** -> **View Files** -> **Download**.
 
 ## Install the App
 
-You can install this **Ask Question / Quote** App using the Joomla installer. The following steps help you with a successful installation.
+1. In the Joomla admin, go to **System -> Install -> Extensions**.
+2. Upload the `app_productquote.zip` file or use the **Install from URL** option.
+3. The plugin installs and enables automatically.
 
-In the Joomla admin, go to **System -> Install -> Extensions**
-
-Upload the plugin ZIP file or use the Install from URL option.
-
-![](/img/productquote-install1.webp)
+<!-- SCREENSHOT: Joomla Extensions installer with app_productquote.zip selected -->
 
 ## Enable the App
 
-Once you have installed the App, you will need to enable it. There are **two** ways you can access the extension.
+After installation, confirm the plugin is enabled:
 
-**Option A:** Go to the **J2Commerce** icon at the top right corner **-> Apps**
+1. Go to **System -> Manage -> Extensions**.
+2. Search for **Ask Question / Quote**.
+3. If the status icon is grey, click it to enable the plugin.
 
-**Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
+<!-- SCREENSHOT: Extensions manager showing Ask Question / Quote with green enabled status -->
 
-![](/img/productquote-apps.webp)
-
-Look for **Ask Question / Quote**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
-
-![](/img/productquote-enable1.webp)
-
-## Configure the App
-
-Once you click on the **Ask Question / Quote** Title next to the green checkmark, you are ready to start setting up the parameters.
+## Configuration
 
 :::tip
 
@@ -57,251 +51,252 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-![](/img/productquote-toggle.webp)
+1. Go to **J2Commerce -> Apps**.
+2. Find **Ask Question / Quote** and click its name to open the settings panel.
 
-### Basic Settings tab{#basic-settings}
+<!-- SCREENSHOT: J2Commerce Apps screen with Ask Question / Quote listed -->
 
-![](/img/productquote-config1.webp)
+***
 
-| Setting | Description | Default |
-| --- | --- | --- |
-| **Enable For All Products** | When set to **Yes**, the Ask Quote button appears on every product regardless of per-product settings. When **No**, you turn it on per product (see [Per-Product Settings](#per-product-settings)). | No |
-| **Hide Add To Cart** | Hides the **Add to Cart** button on every product. Handy for a quote-only store. | No |
-| **Hide Cart On Zero Price** | Hides the **Add to Cart** button automatically for any product with a price of zero. | No |
-| **Form Style** | **Popup** opens the form in a modal overlay. **Accordion** expands the form inline on the page. | Popup |
-| **Popup Size** | Only shown when **Form Style** is **Popup**. Choose **Small**, **Normal**, or **Large**. Normal uses your template's default width. | Normal |
-| **Button Position** | Where the trigger appears: **Before Add to Cart**, **After Add to Cart**, or **Before Price**. | Before Add to Cart |
-| **Show In** | **Product View Only**, **Category View Only**, or **Both Views**. | Product View Only |
-| **Display As** | Render the trigger as a styled **Button** or a plain text **Link**. | Button |
-| **Button Width** | Only shown when **Display As** is **Button**. **Inline** keeps its natural width; **Full Width** stretches it across the column, so it can stand in for the Add to Cart button. | Inline |
-| **Button Text** | The text on the trigger. Leave blank to use the default, "Ask Quote". | Ask Quote |
-| **Subtemplate** | Choose **Auto** to match your site's active template family, or force **Bootstrap 5** / **UIkit**. | Auto |
-| **Require Terms** | When **Yes**, a mandatory checkbox is added and the customer must accept it before submitting. | No |
-| **Captcha** | Choose an enabled Joomla captcha plugin to protect the quote form from spam. Leave **Disabled** if you have none set up. | Disabled |
-| **Empty Cart On Send** | When **Yes**, the customer's cart is cleared and they are redirected to the home page after a successful submission. | No |
-| **Debug Mode** | Enables detailed logging to the Joomla log file and browser console. Leave **No** on a live site. | No |
+## Basic Settings
 
-:::info
+### Enable for All Products
 
-The **Captcha** field lists whatever Joomla captcha plugins you already have enabled site-wide (for example reCAPTCHA). Install and enable a captcha plugin under **System -> Manage -> Plugins** first, then select it here.
+| Setting                                      | Description                                                                                                                                                                                                 |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Enable Ask Quote button for all products** | When set to **Yes**, the form trigger appears on every product regardless of per-product settings. When set to **No**, you enable the form per product (see [Per-Product Settings](#per-product-settings)). |
+| **Hide Add to Cart button globally**         | Hides the **Add to Cart** button on all products. Useful for quote-only stores.                                                                                                                             |
+| **Hide Cart button for zero-price products** | Automatically hides the **Add to Cart** button for any product with a price of zero.                                                                                                                        |
+
+### Display Settings
+
+| Setting                      | Description                                                                                                                  |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **Form display style**       | **Popup** — the form opens in a Bootstrap 5 modal overlay. **Accordion** — the form expands inline below the trigger button. |
+| **Display position**         | Where the trigger button appears: **Before Add to Cart**, **After Add to Cart**, or **Before Price**.                        |
+| **Display button / link in** | Choose whether the button appears on **Product view only**, **Category view only**, or **Both views**.                       |
+| **Display as**               | Render the trigger as a styled **Button** or a plain text **Link**.                                                          |
+| **Button / link text**       | The text shown on the trigger. Default: "Ask Quote".                                                                         |
+
+### Terms and Conditions
+
+Set **Require terms and conditions acceptance** to **Yes** to add a mandatory checkbox to the form. The customer must tick it before the form can be submitted.
+
+### reCAPTCHA
+
+To protect the form from spam, enable Google reCAPTCHA v2:
+
+1. Go to [Google reCAPTCHA Admin](https://www.google.com/recaptcha/admin) and register your site for **reCAPTCHA v2 (Checkbox)**.
+2. Copy the **Site key** into the **reCAPTCHA Site key** field.
+3. Copy the **Secret key** into the **reCAPTCHA Secret key** field.
+4. Set **Enable reCAPTCHA** to **Yes**.
+5. Choose a **reCAPTCHA Theme** (**Light** or **Dark**) to match your template.
+
+<!-- SCREENSHOT: Basic Settings tab showing the reCAPTCHA fields filled in -->
+
+***
+
+## Email Configuration
+
+The email tab controls what is sent when a customer submits an enquiry.
+
+| Setting                           | Description                                                                                                                                               |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Send email to**                 | **Admin and customer** — sends a copy to both. **Admin only** — sends only to the store admin. **Customer only** — sends only to the submitting customer. |
+| **Include field labels in email** | When **Yes**, the email body includes the field label before each value — e.g., "First Name: John".                                                       |
+| **Email subject**                 | The subject line. Use the short codes listed below.                                                                                                       |
+| **Email body**                    | The email body. Supports HTML and short codes.                                                                                                            |
+
+### Email Short Codes
+
+Use these placeholders in the **Email subject** and **Email body** fields. They are replaced with real values when each email is sent.
+
+| Short code        | Replaced with                                     |
+| ----------------- | ------------------------------------------------- |
+| `[SITENAME]`      | Your Joomla site name                             |
+| `[FIRST_NAME]`    | Customer first name                               |
+| `[LAST_NAME]`     | Customer last name                                |
+| `[EMAIL]`         | Customer email address                            |
+| `[PHONE_1]`       | Customer primary phone                            |
+| `[PHONE_2]`       | Customer secondary phone                          |
+| `[COMPANY]`       | Customer company name                             |
+| `[TAX_NUMBER]`    | Customer tax / VAT number                         |
+| `[ADDRESS_1]`     | Address line 1                                    |
+| `[ADDRESS_2]`     | Address line 2                                    |
+| `[CITY]`          | City                                              |
+| `[ZIP]`           | Postcode / ZIP                                    |
+| `[COUNTRY_NAME]`  | Country name (resolved from selection)            |
+| `[ZONE_NAME]`     | State / zone name (resolved from selection)       |
+| `[PRODUCT_NAME]`  | Product name (with a clickable link)              |
+| `[PRODUCT_SKU]`   | Product SKU                                       |
+| `[PRODUCT_PRICE]` | Product price, formatted with your store currency |
+
+For custom address fields, use the field's column name as the short code — for example, `[my_field]`.
+
+:::tip
+
+Use `[PRODUCT_NAME]` in the subject line so both you and the customer can instantly see which product the enquiry is about — for example: `New quote request: [PRODUCT_NAME] from [SITENAME]`.
 
 :::
 
-### Email Settings tab{#email-settings}
+***
 
-![](/img/productquote-config2.webp)
+## Layout (Form Builder)
 
-| Setting | Description | Default |
-| --- | --- | --- |
-| **Send To** | **Admin And Customer**, **Admin Only**, or **Customer Only** — who receives the notification email. | Admin And Customer |
-| **Submissions Per Hour** | How many quote requests one visitor may send in an hour. This is light friction only, because it counts per browser session. Set to **0** to remove it. | 5 |
-| **Hourly Send Limit** | The most quote requests your whole store will send in any one hour, counted from what has actually been sent. No visitor can reset this one, so it is the setting that protects your sending reputation. Raise it if a busy store hits it; set to **0** to remove it. | 100 |
-| **Additional Admin Notification Emails** | Every J2Commerce admin address already receives the admin notification automatically, so they do not need listing here. Use this field for anyone else who should be notified — a sales manager, for example — but is not a store admin. Separate multiple addresses with commas. | *(empty)* |
+The **Layout** tab lets you control which fields appear in the enquiry form and in what order.
 
-:::info
+The **Form layout** textarea accepts field short codes that map directly to customer address fields. Each short code you place in the layout becomes a rendered form field. If the layout is left empty, all core fields are displayed.
 
-The quote form is public, so anyone can submit it. **Submissions Per Hour** only slows down a person clicking Send repeatedly in one browser — it does not stop an automated script, which can start a fresh session at any time. The two settings that actually protect your store are **Hourly Send Limit** above and a **Captcha** on the Basic Settings tab. Turn on a captcha before you go live.
+**Core field short codes:**
 
-:::
+```
+[first_name] [last_name] [email] [phone_1] [phone_2]
+[company] [tax_number] [address_1] [address_2]
+[city] [zip] [country_id] [zone_id]
+```
 
-**Email Content:** two buttons add the bundled customer and admin quote-request templates under the **Ask Question / Quote** email type — **Joomla Editor Version** or **Visual Editor Version**. Existing templates keep their content and are simply converted to the flavor you pick.
+For custom address fields created in **J2Commerce -> Localisation -> Custom Fields**, use the field's column name as the short code.
 
-**Email Templates:** a toolbar button opens the Email Templates manager filtered to this app's templates, where you write the actual subject and body.
+**Example layout showing only the most common fields:**
 
-:::info
+```
+[first_name] [last_name] [email] [phone_1] [company]
+```
 
-This app does not have its own subject/body fields. All email content — subject line, body, and which [short codes](#email-short-codes) are used — is written in **J2Commerce -> Setup -> Email Templates**, under the **Ask Question / Quote** email type. Click one of the **Email Content** buttons first if you have not created these templates yet, then use the **Email Templates** button to edit them.
+<!-- SCREENSHOT: Layout tab showing the Form layout textarea with short codes entered -->
 
-:::
+***
 
-### Form Fields tab{#form-fields}
+## Per-Product Settings
 
-![](/img/productquote-config3.webp)
-
-**Manage Form Fields** opens the **J2Commerce -> Custom Fields** manager, where you choose which fields appear on the quote request form. Create or edit a custom field there and enable its **Product Quote Form** toggle to add it to the quote form.
-
-**Fieldsets** groups those fields into named sections on the form. Click **Add Custom Fieldset** to create a fieldset:
-
-| Field | Description |
-| --- | --- |
-| **Fieldset Name** | Required. The heading shown above this group of fields on the form. |
-| **Fieldset Icon** | Optional. An icon class, for example `fa-solid fa-user`. |
-
-Once you have at least one fieldset, open the **Form Builder** screen (from the dashboard's **Form** menu) to assign each custom field to a fieldset, mark it required, and drag fields into the order you want them to appear.
-
-![](/img/productquote-form-builder.webp)
-
-## Admin Dashboard{#admin-dashboard}
-
-Go to **J2Commerce -> Apps -> Ask Question / Quote** (click the app name), or open the **Quote Requests** item under the J2Commerce menu, to see the dashboard. It covers whatever date range you pick — use the **Last 1 Day / 7 Days / 30 Days / 90 Days** presets or set your own dates and click **Refresh**.
-
-![](/img/productquote-dashboard1.webp)
-
-Four cards summarize the selected period:
-
-- **Total Requests** — how many quote requests came in, with the change from the prior period.
-- **Requests Today**
-- **Unique Products Quoted**
-- **Reply Rate** — the percentage of requests you have marked **Replied**, with the change shown in percentage points.
-
-Two chart panels sit below the cards:
-
-- **Submissions Per Day** and **Current Status** (which plots **Received**, **Replied**, and **Send Failed** requests per day) share a tabbed panel.
-- **Most Popular Times** — a bar chart of requests by hour of day — sits in its own panel.
-
-Three cards round out the dashboard: **Hottest Products** (most-quoted products), **Recent Requests** (click a name to open the submission), and **Top Requester Countries**.
-
-## Submissions Manager{#submissions-manager}
-
-Open **Submissions** from the dashboard's **Form** menu to see every quote request that has come in.
-
-![](/img/productquote-submissions1.webp)
-
-The list is searchable (by name, email, company, or product), filterable by status, product, and date range, and every column header sorts the list. Columns shown: **ID**, **Customer**, **Created**, **Email**, **Company**, **Product**, **Status**.
-
-Click a customer's name or the **Created** date to open the full submission, including any custom fields that do not have their own column.
-
-![](/img/productquote-submission-detail.webp)
-
-**Status** has three states:
-
-| Status | What it means |
-| --- | --- |
-| **Received** | The request has arrived and is waiting on you. |
-| **Replied** | You set this by hand once you have answered the customer. |
-| **Send Failed** | The notification email could not be delivered. This is reported automatically — you never choose it. |
-
-Change a single row's status directly in the list with the dropdown and **Apply** button. To change several at once, tick their checkboxes and click **Batch** in the toolbar. To permanently remove old submissions, tick them and click **Trash** in the toolbar — this cannot be undone.
-
-## Per-Product Settings{#per-product-settings}
-
-When **Enable For All Products** is set to **No**, turn the quote form on per product instead:
+When **Enable Ask Quote button for all products** is set to **No**, you control the quote form per product:
 
 1. Go to **J2Commerce -> Catalog -> Products** and open a product.
-2. Go to the **J2Commerce** tab **-> Apps** tab **-> Ask Question / Quote** section.
+2. Click the **Ask Question / Quote** tab in the product edit form.
 3. Configure the fields:
 
-| Field | Description |
-| --- | --- |
-| **Enable Quote Request** | Shows the Ask Quote form trigger on this specific product. |
-| **Hide Add To Cart** | Hides the Add to Cart button on this product's page. |
-| **Hide Price** | Hides the price display on this product's page. |
+| Field                                            | Description                                                                  |
+| ------------------------------------------------ | ---------------------------------------------------------------------------- |
+| **Enable Ask Question / Quote for this product** | Set to **Yes** to show the enquiry form trigger on this product's page.      |
+| **Hide Add to Cart for this product**            | Set to **Yes** to hide the Add to Cart button specifically for this product. |
+| **Hide price for this product**                  | Set to **Yes** to hide the price display for this product.                   |
 
-![](/img/productquote-product-apps-tab.webp)
+1. Click **Save** or **Save & Close**.
 
-Click **Save** or **Save & Close**.
+<!-- SCREENSHOT: Product edit form showing the Ask Question / Quote tab with enable set to Yes -->
 
 :::info
 
-Per-product settings work alongside the global settings. **Hide Add To Cart** and **Hide Cart On Zero Price** in the app's own Basic Settings tab still apply even when the per-product toggle is off.
+Per-product settings work alongside the global plugin settings. The **Hide Add to Cart button globally** and **Hide Cart button for zero-price products** options in the plugin settings take effect even when the per-product toggle is off.
 
 :::
 
-## Email Short Codes{#email-short-codes}
+***
 
-Use these short codes in your templates under **J2Commerce -> Setup -> Email Templates -> Ask Question / Quote**. They are replaced with real values when each email is sent.
+## How the Form Works
 
-| Short code | Replaced with |
-| --- | --- |
-| `[FIRST_NAME]` | Customer first name |
-| `[LAST_NAME]` | Customer last name |
-| `[EMAIL]` | Customer email address |
-| `[PHONE_1]` | Customer primary phone |
-| `[PHONE_2]` | Customer secondary phone |
-| `[COMPANY]` | Customer company name |
-| `[TAX_NUMBER]` | Customer tax / VAT number |
-| `[ADDRESS_1]` | Address line 1 |
-| `[ADDRESS_2]` | Address line 2 |
-| `[CITY]` | City |
-| `[ZIP]` | Zip / postal code |
-| `[COUNTRY_NAME]` | Country name |
-| `[ZONE_NAME]` | State / zone name |
-| `[PRODUCT_NAME]` | Product name |
-| `[PRODUCT_SKU]` | Product SKU |
-| `[PRODUCT_PRICE]` | Product price, formatted with your store currency |
-| `[PRODUCT_URL]` | A link to the product page |
-| `[QUOTE_FIELDS]` | A table of every field the customer filled in on the form |
-| `[SITENAME]` | Your Joomla site name |
+### Popup (Modal) Mode
 
-For a custom field you added to the quote form, use that field's own column name as the short code.
+When display style is set to **Popup**:
 
-## How It Works{#how-it-works}
+1. A button or link appears on the product page at the configured position.
+2. The customer clicks the trigger — a Bootstrap 5 modal appears with the enquiry form.
+3. The customer fills in the fields and clicks **Send**.
+4. The form submits via AJAX — no page reload occurs.
+5. On success, the modal closes and a confirmation message is shown.
+6. On validation error, field-level error messages appear inline without closing the form.
 
-1. J2Commerce checks whether the Ask Quote button should appear — global setting or per-product toggle, plus the **Show In** and **Button Position** settings.
-2. The customer clicks the trigger. Depending on **Form Style**, a popup opens or the accordion expands inline.
-3. The customer fills in the fields defined on the [Form Fields](#form-fields) tab, accepts the terms if required, and completes the captcha if one is configured.
-4. The form submits without reloading the page.
-5. The request is saved and appears in the [Submissions Manager](#submissions-manager) with a status of **Received**.
-6. Notification emails go out per the **Send To** setting, using the templates you authored in the Email Templates manager. If a send fails, the submission's status changes to **Send Failed** automatically.
-7. On success, the customer sees a confirmation message. On a validation error, field-level messages appear without closing the form.
+### Accordion Mode
 
-## Tips{#tips}
+When display style is set to **Accordion**:
 
-- **Quote-only store** — set **Enable For All Products** to **Yes**, **Hide Add To Cart** to **Yes**, and leave the price visible so shoppers know the starting point before asking for a quote.
-- **Replace the price with a call to action** — pair **Button Position: Before Price** with the per-product **Hide Price** toggle on items where you would rather not show a public price.
-- **Turn on a captcha before you go live** — it is the single most effective thing you can do to keep automated submissions off a public form. Pick any enabled Joomla captcha plugin on the **Basic Settings** tab.
-- **Set the Hourly Send Limit to suit your volume** — it is a safety net for your mail reputation, not a day-to-day limit. Pick a number comfortably above your busiest real hour.
-- **Watch Send Failed, not just Received** — a growing pile of **Send Failed** submissions on the dashboard's Current Status chart usually means a mail server problem, not a form problem.
-- **Write your templates before you go live** — use the **Email Content** buttons to seed the bundled templates, then edit them in the Email Templates manager so both you and your customers get a properly branded email.
+1. A button or link appears on the product page.
+2. The customer clicks the trigger — the form expands inline below the button.
+3. Submission and error handling work the same as popup mode.
+4. A **Close** button at the bottom collapses the form.
 
-## Troubleshooting{#troubleshooting}
+***
 
-### The trigger button does not appear on a product page{#trigger-button-missing}
+## Debug Mode
 
-**Cause:** The app is enabled globally but the product's own **Enable Quote Request** toggle is off, or **Show In** does not match the page you are viewing.
+Set **Debug mode** to **Yes** in the plugin settings to enable detailed logging:
 
-**Solution:**
+- PHP-side events (CSRF checks, email sends, reCAPTCHA results) are written to `administrator/logs/app_productquote.php`.
+- Browser-side events (form submissions, AJAX responses, zone loads) are written to the browser console under the `[J2C ProductQuote]` prefix.
 
-1. Go to **J2Commerce -> Apps -> Ask Question / Quote** and check **Enable For All Products**. If it is **No**, open the product and turn on **Enable Quote Request** under the **Apps** tab.
-2. Check **Show In** — if it is **Product View Only**, the button will not appear on category pages, and vice versa.
-3. Confirm **Button Position** matches how your template renders the product page; some templates do not fire every position event.
+Disable debug mode on production sites to avoid large log files.
 
-### Customers see "Quote requests are not available right now"{#not-available}
+<!-- SCREENSHOT: Plugin settings showing Debug mode set to Yes -->
 
-**Cause:** One of three things — the product is not eligible for quotes, the visitor has hit **Submissions Per Hour**, or the store has hit its **Hourly Send Limit**. The message is deliberately the same for all three so the form cannot be used to probe your catalog.
+***
+
+## Tips
+
+- If your store is for quotes only, set **Enable Ask Quote button for all products** to **Yes**, set **Hide Add to Cart button globally** to **Yes**, and leave the price visible so customers know the starting point before requesting a quote.
+- Use the **Before Price** display position together with **Hide price for this product** (per-product) on items where you prefer not to show a public price — the form becomes the primary call to action.
+- The `[COUNTRY_NAME]` and `[ZONE_NAME]` short codes resolve country and zone IDs to readable names automatically — you do not need to handle this in your email template.
+- When **Include field labels in email** is **Yes**, empty fields are omitted from the email body, so there are no blank lines for fields the customer skipped.
+- reCAPTCHA is loaded only on pages where the quote form renders — it does not add script overhead to the rest of your site.
+
+***
+
+## Troubleshooting
+
+### The trigger button does not appear on a product page
+
+**Cause:** The plugin is enabled globally but the product's per-product **Enable Ask Question / Quote** toggle is off, or the display layout type does not match the current view.
 
 **Solution:**
 
-1. Check the product first: open it, go to the **Apps** tab, and confirm **Enable Quote Request** is **Yes** — or that **Enable For All Products** is **Yes** in the app settings.
-2. Confirm the product itself is published and visible to the visitor. An unpublished product, or one in a category the visitor's group cannot see, will always decline.
-3. If the product is fine, go to **J2Commerce -> Apps -> Ask Question / Quote -> Email Settings** and raise **Submissions Per Hour** or **Hourly Send Limit**.
-4. If your store is legitimately busy and keeps hitting the ceiling, raise **Hourly Send Limit** rather than removing it.
+1. Go to the plugin settings (**J2Commerce -> Apps -> Ask Question / Quote**) and check **Enable Ask Quote button for all products**. If it is **No**, open the product and enable the form on the **Ask Question / Quote** tab.
+2. Check **Display button / link in** — if it is set to **Product view only**, the button will not appear on category listing pages, and vice versa.
+3. Check **Display position** matches how the product template is structured. Some templates do not fire all position events.
 
-### A submission shows "Send Failed"{#send-failed}
+### No enquiry email is received
 
-**Cause:** Joomla could not deliver the notification email for that request.
-
-**Solution:**
-
-1. Go to **System -> Global Configuration -> Server -> Mail Settings** and click **Send Test Mail**.
-2. Enable **Debug Mode** in the app's Basic Settings and submit a test enquiry, then check the Joomla system log for the failure detail.
-3. Once mail is working again, existing **Send Failed** rows will not resend automatically — reply to the customer directly and mark the submission **Replied**.
-
-### No enquiry email is received at all{#no-email-received}
-
-**Cause:** Mail is not configured, or the emails are landing in spam.
+**Cause:** The admin email is not configured, or Joomla cannot send mail.
 
 **Solution:**
 
-1. Go to **System -> Global Configuration -> Server -> Mail Settings** and confirm mail is set up correctly.
-2. Check the submission in the **Submissions Manager** — if its status is **Send Failed**, see the previous section.
-3. Check your spam folder; enquiry emails can be filtered by aggressive spam rules.
-4. If you added a **Additional Admin Notification Emails** address, double check it is spelled correctly and comma-separated.
+1. Go to **J2Commerce -> Setup -> Configuration** and confirm a valid email address is set in **Admin Email**.
+2. Go to **System -> Global Configuration -> Server -> Mail Settings** and click **Send Test Mail**.
+3. Enable **Debug Mode** in the plugin settings and submit a test enquiry. Check `administrator/logs/app_productquote.php` for error details.
+4. Check your spam folder — enquiry emails may be filtered.
 
-### Captcha does not appear on the form{#captcha-missing}
+### The form submits but shows "A network error occurred"
 
-**Cause:** No captcha plugin is selected, or the selected plugin is not enabled.
-
-**Solution:**
-
-1. Go to **System -> Manage -> Plugins** and confirm a captcha plugin (for example reCAPTCHA) is installed and enabled, with its own site key/secret configured.
-2. Go to **J2Commerce -> Apps -> Ask Question / Quote -> Basic Settings** and select it under **Captcha**.
-
-### The dashboard shows a storage warning{#storage-missing}
-
-**Cause:** The app's submission storage table is missing — usually a site that had the plugin installed before an update added the dashboard and submissions manager.
+**Cause:** A JavaScript error prevented the AJAX request from completing, or the server returned a non-JSON response.
 
 **Solution:**
 
-1. Reinstall or update the **Ask Question / Quote** app from the ZIP file so its install/update SQL can run.
-2. Reload the dashboard.
+1. Enable **Debug Mode** and open the browser console (F12).
+2. Submit the form and look for `[J2C ProductQuote]` log entries showing the response.
+3. If the response is not JSON, a server-side PHP error is likely — check the Joomla error log at **System -> System Information -> PHP Error Log**.
+
+### reCAPTCHA challenge does not appear
+
+**Cause:** The **reCAPTCHA Site key** field is empty, or the domain is not authorised in the Google reCAPTCHA admin.
+
+**Solution:**
+
+1. Open the plugin settings and confirm the **reCAPTCHA Site key** is filled in.
+2. Log in to [Google reCAPTCHA Admin](https://www.google.com/recaptcha/admin), select your site, and verify your domain is listed under **Domains**. Add it if missing.
+3. Confirm the key type is **reCAPTCHA v2 (Checkbox)** — v3 keys are not compatible.
+
+### Zone dropdown does not populate after selecting a country
+
+**Cause:** The selected country has no zones configured in J2Commerce, or a JavaScript error occurred during the AJAX request.
+
+**Solution:**
+
+1. Go to **J2Commerce -> Localisation -> Zones** and confirm zones exist for that country.
+2. Enable **Debug Mode** and check the browser console for `[J2C ProductQuote]` zone-load entries.
+3. If zones exist but still do not load, confirm the J2Commerce frontend component is accessible (the zone lookup uses the `com_j2commerce` component route).
+
+***
+
+## Related Topics
+
+- [Custom Address Fields](../../setup/orderstatuses.md)
+- [Store Configuration](../../setup/orderstatuses.md)
+- [Email Templates](../../design/email-templates.md)

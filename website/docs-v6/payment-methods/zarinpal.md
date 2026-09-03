@@ -263,5 +263,6 @@ ZarinPal refunds require an **Access Token** (from your ZarinPal developer panel
 
 ## Related Topics
 
+- [Payment Methods Overview](index.md)
 - [Geozones](../localization/geozones.md)
-- [Order Statuses](../setup/order-statuses.md)
+- [Order Statuses](../localization/order-statuses.md)

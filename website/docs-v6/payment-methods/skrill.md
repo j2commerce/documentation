@@ -11,7 +11,7 @@ This makes Skrill a good fit for stores that want a simple, globally-recognised 
 - Your Skrill **secret word** (set in your Skrill merchant settings — see Step 2 below)
 - A publicly reachable HTTPS store URL so Skrill can deliver the status callback
 
-:::info Add-on Extension
+:::info[Add-on Extension]
 
 Skrill is a separate add-on available from the [J2Commerce Extensions Store](https://www.j2commerce.com). It is not included with the core J2Commerce component.
 
@@ -94,8 +94,10 @@ The secret word is a password you choose. You set the same value in both J2Comme
 4. Enter the same secret word you typed in J2Commerce.
 5. Save your Skrill settings.
 
-:::warning Must match exactly
+:::warning[Must match exactly]
+
 The secret word in J2Commerce and in your Skrill account must be identical, including uppercase and lowercase letters. A mismatch causes every callback to fail with a signature error, and orders will stay in their initial status after payment.
+
 :::
 
 ### Get the status URL into your Skrill account
@@ -108,7 +110,7 @@ The status URL is the address Skrill calls after each payment to confirm the res
 4. Paste the URL into the **Status URL** field.
 5. Save your Skrill settings.
 
-:::info Localhost will not work
+:::info[Localhost will not work]
 
 Skrill's servers cannot reach `localhost` or `127.0.0.1`. During development, use a tunnelling tool such as [ngrok](https://ngrok.com/) to expose your local site with a public HTTPS URL. Paste the ngrok URL into the **Status URL Override** field (see the [configuration table](#configuration-reference) below) rather than changing your Skrill dashboard each time.
 
@@ -168,7 +170,7 @@ Order statuses tell J2Commerce what to do with an order when Skrill reports each
 
 **Refunded Status:** Admin clicks **Mark as Refunded** in the order view
 
-:::danger Dashboard warning
+:::danger[Dashboard warning]
 
 If **Confirmed Payment Status** is left empty, a red warning banner appears on the J2Commerce dashboard. Paid orders validate correctly but stay on their original status until you configure this setting.
 
@@ -304,6 +306,7 @@ A yellow warning banner on the J2Commerce dashboard reads "Skrill is in SANDBOX 
 
 ## Related Topics
 
-- [Order Statuses](../setup/order-statuses.md)
-- [Geo Zones](../localization/geozones.md)
-- [Multi-Currency](../localization/currencies.md)
+- [Payment Methods Overview](../setup/payment-methods.md)
+- [Order Statuses](../sales/order-statuses.md)
+- [Geo Zones](../setup/geo-zones.md)
+- [Multi-Currency](../setup/currencies.md)

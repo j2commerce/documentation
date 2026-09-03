@@ -293,6 +293,7 @@ CCAvenue requires your redirect URL to use HTTPS. Ensure your store has a valid 
 
 ## Related Topics
 
-- [Order Statuses](../setup/order-statuses.md)
+- [Payment Methods Overview](../payment-methods/index.md)
+- [Order Statuses](../setup/orderstatuses.md)
 - [Geozones](../localization/geozones.md)
 - [Tax Profiles](../localization/tax-profiles.md)

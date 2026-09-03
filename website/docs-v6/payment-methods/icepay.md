@@ -9,7 +9,7 @@ ICEPAY is a Dutch payment gateway supporting a wide range of payment methods pop
 - PHP **SOAP** extension enabled on your server (required by the ICEPAY SDK)
 - PHP 8.1 or later
 
-:::info Joomla SOAP Check
+:::info[Joomla SOAP Check]
 
 To verify SOAP is enabled, go to **System** -> **System Information** -> **PHP Information** and search for `soap`. If you see `SOAP` with status `enabled`, you are ready to proceed.
 
@@ -90,7 +90,7 @@ After entering your Merchant ID and Secret Code and saving the plugin, reload th
 
 Select the methods you want to offer at checkout. If nothing is selected, all methods returned by ICEPAY are shown to customers.
 
-:::tip iDEAL Bank Selection
+:::tip[iDEAL Bank Selection]
 
 When a customer selects iDEAL at checkout, they are shown a list of Dutch banks (issuers) to choose from before being redirected to ICEPAY. This selection step is built into the checkout flow.
 
@@ -195,8 +195,10 @@ The URL format is:
 https://yoursite.com/index.php?option=com_j2commerce&task=checkout.confirmPayment&orderpayment_type=payment_icepay&paction=process
 ```
 
-:::warning Do Not Modify the Postback URL
+:::warning[Do Not Modify the Postback URL]
+
 The postback URL must be used exactly as shown. Routing the URL through a URL rewriter or adding extra parameters will break the SHA1 signature validation.
+
 :::
 
 ## ICEPAY Status Codes
@@ -259,5 +261,6 @@ Disable debug mode in production to avoid filling disk space with log entries.
 
 ## Related Topics
 
-- [Geozones](../localization/geozones.md)
-- [Order Statuses](../setup/order-statuses.md)
+- [Payment Methods Overview](./index.md)
+- [Geozones](../localisation/geozones.md)
+- [Order Statuses](../localisation/order-statuses.md)

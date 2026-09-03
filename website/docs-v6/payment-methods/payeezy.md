@@ -2,7 +2,7 @@
 
 Payeezy is a **direct card payment gateway** operated by First Data (now Fiserv). With this plugin, customers enter their card details directly on your checkout page — no redirect to a third-party hosted page occurs. The card number and CVV travel from the customer's browser to your server and then on to the Payeezy API.
 
-:::danger PCI DSS Scope — SAQ-D Required
+:::danger[PCI DSS Scope — SAQ-D Required]
 
 Because raw card numbers pass through your web server, this integration is classified as **SAQ-D** under PCI DSS. This is the most demanding PCI self-assessment questionnaire. Before using this plugin on a live store, ensure your hosting environment and business practices meet PCI SAQ-D requirements or work with your acquiring bank to understand your obligations.
 
@@ -31,7 +31,7 @@ You need three credentials from the Payeezy developer portal. Separate sets are 
    - **Merchant Token** — identifies your merchant account on the gateway
 4. Keep separate credentials for your sandbox and live environments.
 
-:::tip Sandbox Credentials
+:::tip[Sandbox Credentials]
 
 The Payeezy developer portal provides sandbox credentials that work against the certification environment at `api-cert.payeezy.com`. These allow you to run test transactions without real charges. Never use live credentials in a development or staging environment.
 
@@ -115,7 +115,7 @@ The plugin shows either sandbox or live credential fields depending on the **San
 
 **Sandbox Merchant Token:** Your Payeezy sandbox merchant token
 
-:::tip Keep Credentials Secure
+:::tip[Keep Credentials Secure]
 
 API Key, API Secret, and Merchant Token are stored encrypted in the Joomla database. Do not store them in config files, version control, or environment files accessible from the web root.
 
@@ -193,8 +193,10 @@ These optional fields let you add custom HTML or plain text at key points in the
 
 **Debug Mode:** Log API requests and gateway responses to `payment_payeezy.php` in the Joomla log directory
 
-:::warning Do not enable Debug Mode on a live site
+:::warning[Do not enable Debug Mode on a live site]
+
 Debug logs contain transaction metadata such as transaction IDs, amounts, and gateway responses. While the plugin never logs card numbers or CVV, debug logging should only be used in a development or staging environment.
+
 :::
 
 ## Checkout Flow
@@ -310,5 +312,7 @@ Verify that you have entered all three sandbox credentials (API Key, API Secret,
 
 ## Related Topics
 
-- [Order Statuses](../setup/order-statuses.md)
-- [Geozones](../localization/geozones.md)
+- [Payment Methods Overview](../payment-methods/index.md)
+- [Order Statuses](../orders/order-statuses.md)
+- [Geozones](../configuration/geozones.md)
+- [Taxes](../taxes/index.md)
