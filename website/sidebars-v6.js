@@ -297,8 +297,8 @@ const sidebars = {
                         'apps-and-extensions/apps/app-emailbasket',
                         // EU Order Withdrawal Compliance
                         'apps-and-extensions/apps/orderwithdrawal',
-                        // EU VAT Rules
-                        'apps-and-extensions/apps/euvat',
+                        // EU VAT
+                        'apps-and-extensions/apps/app_euvat',
                         // ExpertVoice Recommendations
                         'apps-and-extensions/apps/app-expertvoice',
                         // Meta Pixel / Facebook Conversion

@@ -272,7 +272,17 @@ Full CRUD for order records.
 
 #### Detail Fields (additional)
 
-`order_state`, `order_subtotal`, `order_tax`, `order_shipping`, `order_shipping_tax`, `order_discount`, `order_surcharge`, `order_fees`, `order_credit`, `order_refund`, `transaction_id`, `transaction_status`, `currency_value`, `customer_note`, `customer_language`, `is_shippable`, `invoice_prefix`, `invoice_number`, `modified_on`
+A single-order response returns every list field above **plus** the following:
+
+`order_state` *(deprecated — see below)*, `order_subtotal`, `order_tax`, `order_shipping`, `order_shipping_tax`, `order_discount`, `order_surcharge`, `order_fees`, `order_credit`, `order_refund`, `transaction_id`, `transaction_status`, `currency_value`, `customer_note`, `customer_language`, `is_shippable`, `invoice_prefix`, `invoice_number`, `modified_on`
+
+> **Deprecated: `order_state`**
+>
+> `order_state` is a legacy denormalised copy of the order status, kept in the response only so existing integrations continue to parse. It holds a language key (for example `J2COMMERCE_CONFIRMED`), not a display string.
+>
+> It is now served from the joined status name, so it always equals `orderstatus_name` and can no longer disagree with `order_state_id`. Before this change the stored column was not kept in step with the authoritative status, so it could be blank or name a different status than the order actually held.
+>
+> Read **`order_state_id`** (numeric and stable — use it for logic) or **`orderstatus_name`** (the status name) instead. The same deprecation applies anywhere else `order_state` is returned, including the order-fulfilment endpoints.
 
 #### Example: Fetch Orders by Date Range
 

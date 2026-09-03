@@ -588,6 +588,28 @@ Added several columns for renewal order support, campaign tracking, and Joomla 6
 | `modified_on` | `datetime NOT NULL` (no default) | `datetime NOT NULL DEFAULT CURRENT_TIMESTAMP` |
 | `modified_by` | `int(11) NOT NULL` | `int unsigned NOT NULL DEFAULT '0'` |
 
+**Deprecated columns:**
+
+| Column | Type | Status |
+|--------|------|--------|
+| `order_state` | `varchar(255)` | Retained for compatibility. Core no longer reads or writes it. |
+
+`order_state` is a denormalised copy of the status name. The authoritative status is
+`order_state_id`, joined to `#__j2commerce_orderstatuses.orderstatus_name`:
+
+```sql
+SELECT o.j2commerce_order_id, s.orderstatus_name
+FROM #__j2commerce_orders AS o
+LEFT JOIN #__j2commerce_orderstatuses AS s
+    ON s.j2commerce_orderstatus_id = o.order_state_id
+```
+
+The column stays in the schema so third-party code that still selects it keeps running, but
+its value is frozen at whatever core last wrote. Rows created or transitioned by current core
+leave it empty or stale. Read the joined name instead; do not write the column. Assignments to
+an `order_state` property on an order object are harmless — `DatabaseDriver::insertObject()`
+and `updateObject()` skip properties that are not real table columns — but they have no effect.
+
 ---
 
 ### `#__j2commerce_orderstatuses`
