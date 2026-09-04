@@ -49,7 +49,7 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 Look for **EU VAT Rules**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-![](/img/euvat-enable.webp)
+[//]: # (![]&#40;/img/euvat-enable.webp&#41;)
 
 ## Configure the App
 
@@ -61,11 +61,11 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-![](/img/euvat-toggle.webp)
+[//]: # (![]&#40;/img/euvat-toggle.webp&#41;)
 
 ### Basic Settings tab
 
-![](/img/euvat-config1.webp)
+[//]: # (![]&#40;/img/euvat-config1.webp&#41;)
 
 ### Disable Non-EU Customer Tax
 
@@ -106,7 +106,7 @@ Choose which service checks VAT numbers:
 
 Default: **VIES (EU Commission)**
 
-![](/img/euvat-validation-service.webp)
+[//]: # (![]&#40;/img/euvat-validation-service.webp&#41;)
 
 #### VIES vs Vatlayer{#vies-vs-vatlayer}
 
@@ -135,7 +135,7 @@ Default: **No**
 
 Click **Check Connection** to have the server contact your selected validation service right now and report whether it can be reached. The check uses whatever is currently typed into the form — including an unsaved Vatlayer access key — so you can confirm a new key works before you click **Save**.
 
-![](/img/euvat-connection-check.webp)
+[//]: # (![]&#40;/img/euvat-connection-check.webp&#41;)
 
 A green badge next to the button confirms the service answered; a red badge explains what went wrong (for example, the request could not leave the server, the service returned an error status, or — for Vatlayer — the access key is missing or was rejected).
 
@@ -151,7 +151,7 @@ Before the app can zero any tax, a few things need to be in place:
 
 Every billing and shipping address form in J2Commerce already includes a **Tax Number** field and a **Company** field — there is nothing to build or add. Customers who want the reverse-charge rate simply fill in their business's VAT registration number and company name on the address step of checkout.
 
-![](/img/euvat-checkout-field.webp)
+[//]: # (![]&#40;/img/euvat-checkout-field.webp&#41;)
 
 ## Valid vs. Invalid VAT Numbers
 
