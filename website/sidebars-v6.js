@@ -197,6 +197,7 @@ const sidebars = {
                 'setup/custom-fields',
                 'setup/uikit3-custom-fields',
                 'setup/order-statuses',
+                'setup/page-caching',
                 'setup/shipping-troubleshooter',
                 'setup/queue-hub',
             ],
@@ -253,6 +254,10 @@ const sidebars = {
                         'apps-and-extensions/apps/outofstockemail',
                         // Avalara AvaTax
                         'apps-and-extensions/apps/avalaratax',
+                        // Avalara VAT
+                        'apps-and-extensions/apps/app_avalaravat',
+                        // B2B Router
+                        'apps-and-extensions/apps/app_b2brouter',
                         // BaseLinker Integration
                         'apps-and-extensions/apps/app-baselinker',
                         // Brevo Integration
@@ -317,10 +322,18 @@ const sidebars = {
                         'apps-and-extensions/apps/ecommercegoogletagmanager',
                         // Heureka Product Feed
                         'apps-and-extensions/apps/app_heurekaproductfeed',
+                        // Image Display
+                        'apps-and-extensions/apps/app_imagedisplay',
+                        // Image Popup
+                        'apps-and-extensions/apps/app_imagepopup',
                         // Inventory Command
                         'apps-and-extensions/apps/app_stocknotification',
                         // Klaviyo Integration
                         'apps-and-extensions/apps/klaviyo',
+                        // Mail Chimp
+                        'apps-and-extensions/apps/app_mailchimp',
+                        // MailerLite Integration
+                        'apps-and-extensions/apps/app_mailerlite',
                         // Markdown for AI Agents
                         'apps-and-extensions/apps/app_markdown',
                         // Marketplace
@@ -355,6 +368,8 @@ const sidebars = {
                         'apps-and-extensions/apps/printnode',
                         // Product Compare
                         'apps-and-extensions/apps/productcompare',
+                        // Product Linked Inventory
+                        'apps-and-extensions/apps/app_productlinkedinventory',
                         // Product Navbar
                         'apps-and-extensions/apps/app_productnavbar',
                         // Product Reviews
@@ -455,6 +470,8 @@ const sidebars = {
                         'apps-and-extensions/plugins/plg_task_j2commerce',
                         // Smart Search Plugin for J2Commerce
                         'apps-and-extensions/plugins/plg_finder_j2commerce',
+                        // Turnstile
+                        'apps-and-extensions/plugins/turnstile',
                         // Web Services - J2Commerce
                         'apps-and-extensions/plugins/plg_webservices_j2commerce',
                         // YOOtheme - J2Commerce
@@ -550,6 +567,8 @@ const sidebars = {
                 'payment-methods/payment_lemonsqueezy',
                 // Mercury ACH Bank Payment
                 'payment-methods/payment_mercury',
+                // Midtrans
+                'payment-methods/payment_midtrans',
                 // Mollie Payments
                 'payment-methods/payment_mollie',
                 // Moneris Checkout
@@ -656,6 +675,8 @@ const sidebars = {
             items: [
                 // AtoShip Multi-Carrier Shipping
                 'shipping-methods/shipping_atoship',
+                // Boxnow
+                'shipping-methods/shipping_boxnow',
                 // Category Based Shipping
                 'shipping-methods/categories',
                 // DHL Express
@@ -685,7 +706,7 @@ const sidebars = {
                 // UPS Shipping
                 'shipping-methods/ups-shipping',
                 // USPS Advanced Shipping
-                'shipping-methods/uspsadvanced',
+                'shipping-methods/shipping_uspsadvanced',
             ],
         },
         {
