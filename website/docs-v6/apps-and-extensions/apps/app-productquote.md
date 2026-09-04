@@ -31,7 +31,7 @@ In the Joomla admin, go to **System -> Install -> Extensions**
 
 Upload the plugin ZIP file or use the Install from URL option.
 
-![](/img/productquote-install1.webp)
+[//]: # (![]&#40;/img/productquote-install1.webp&#41;)
 
 ## Enable the App
 
@@ -41,11 +41,11 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-![](/img/productquote-apps.webp)
+[//]: # (![]&#40;/img/productquote-apps.webp&#41;)
 
 Look for **Ask Question / Quote**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-![](/img/productquote-enable1.webp)
+[//]: # (![]&#40;/img/productquote-enable1.webp&#41;)
 
 ## Configure the App
 
@@ -57,11 +57,11 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-![](/img/productquote-toggle.webp)
+[//]: # (![]&#40;/img/productquote-toggle.webp&#41;)
 
 ### Basic Settings tab{#basic-settings}
 
-![](/img/productquote-config1.webp)
+[//]: # (![]&#40;/img/productquote-config1.webp&#41;)
 
 | Setting | Description | Default |
 | --- | --- | --- |
@@ -89,7 +89,7 @@ The **Captcha** field lists whatever Joomla captcha plugins you already have ena
 
 ### Email Settings tab{#email-settings}
 
-![](/img/productquote-config2.webp)
+[//]: # (![]&#40;/img/productquote-config2.webp&#41;)
 
 | Setting | Description | Default |
 | --- | --- | --- |
@@ -116,7 +116,7 @@ This app does not have its own subject/body fields. All email content — subjec
 
 ### Form Fields tab{#form-fields}
 
-![](/img/productquote-config3.webp)
+[//]: # (![]&#40;/img/productquote-config3.webp&#41;)
 
 **Manage Form Fields** opens the **J2Commerce -> Custom Fields** manager, where you choose which fields appear on the quote request form. Create or edit a custom field there and enable its **Product Quote Form** toggle to add it to the quote form.
 
@@ -129,13 +129,13 @@ This app does not have its own subject/body fields. All email content — subjec
 
 Once you have at least one fieldset, open the **Form Builder** screen (from the dashboard's **Form** menu) to assign each custom field to a fieldset, mark it required, and drag fields into the order you want them to appear.
 
-![](/img/productquote-form-builder.webp)
+[//]: # (![]&#40;/img/productquote-form-builder.webp&#41;)
 
 ## Admin Dashboard{#admin-dashboard}
 
 Go to **J2Commerce -> Apps -> Ask Question / Quote** (click the app name), or open the **Quote Requests** item under the J2Commerce menu, to see the dashboard. It covers whatever date range you pick — use the **Last 1 Day / 7 Days / 30 Days / 90 Days** presets or set your own dates and click **Refresh**.
 
-![](/img/productquote-dashboard1.webp)
+[//]: # (![]&#40;/img/productquote-dashboard1.webp&#41;)
 
 Four cards summarize the selected period:
 
@@ -155,13 +155,13 @@ Three cards round out the dashboard: **Hottest Products** (most-quoted products)
 
 Open **Submissions** from the dashboard's **Form** menu to see every quote request that has come in.
 
-![](/img/productquote-submissions1.webp)
+[//]: # (![]&#40;/img/productquote-submissions1.webp&#41;)
 
 The list is searchable (by name, email, company, or product), filterable by status, product, and date range, and every column header sorts the list. Columns shown: **ID**, **Customer**, **Created**, **Email**, **Company**, **Product**, **Status**.
 
 Click a customer's name or the **Created** date to open the full submission, including any custom fields that do not have their own column.
 
-![](/img/productquote-submission-detail.webp)
+[//]: # (![]&#40;/img/productquote-submission-detail.webp&#41;)
 
 **Status** has three states:
 
@@ -187,7 +187,7 @@ When **Enable For All Products** is set to **No**, turn the quote form on per pr
 | **Hide Add To Cart** | Hides the Add to Cart button on this product's page. |
 | **Hide Price** | Hides the price display on this product's page. |
 
-![](/img/productquote-product-apps-tab.webp)
+[//]: # (![]&#40;/img/productquote-product-apps-tab.webp&#41;)
 
 Click **Save** or **Save & Close**.
 

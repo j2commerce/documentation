@@ -41,11 +41,11 @@ Once you have installed the App, you will need to enable it. There are **two** w
 
 **Option B:** Go to **Components** on the left sidebar **-> J2Commerce -> Apps**
 
-![The J2Commerce Apps list with the Image Display row highlighted](/img/imagedisplay-apps-list.webp)
+[//]: # (![The J2Commerce Apps list with the Image Display row highlighted]&#40;/img/imagedisplay-apps-list.webp&#41;)
 
 Look for **Image Display**, click the **X,** and it will turn into a green checkmark. It is now enabled and ready for setup.
 
-![The Image Display row showing a green checkmark after being enabled](/img/imagedisplay-enable.webp)
+[//]: # (![The Image Display row showing a green checkmark after being enabled]&#40;/img/imagedisplay-enable.webp&#41;)
 
 ## Configure the App
 
@@ -57,11 +57,11 @@ Click the **Toggle Inline Help** button in the toolbar and the app will show a d
 
 :::
 
-![The Toggle Inline Help button in the plugin edit screen toolbar](/img/imagedisplay-toggle-help.webp)
+[//]: # (![The Toggle Inline Help button in the plugin edit screen toolbar]&#40;/img/imagedisplay-toggle-help.webp&#41;)
 
 ### Basic Settings tab
 
-![The Basic Settings tab showing the Thumbnail Layout field and its related options](/img/imagedisplay-config-basic.webp)
+[//]: # (![The Basic Settings tab showing the Thumbnail Layout field and its related options]&#40;/img/imagedisplay-config-basic.webp&#41;)
 
 **Thumbnail Layout** — Choose how product thumbnails are arranged. **Horizontal scroller (default)** keeps the built-in strip and changes nothing else. Default: **Horizontal scroller (default)**.
 
@@ -75,7 +75,7 @@ The following settings appear only for the layout you have selected, except for 
 
 #### Grid layout settings
 
-![The grid-specific fields shown after selecting the Grid below the main image layout](/img/imagedisplay-config-grid.webp)
+[//]: # (![The grid-specific fields shown after selecting the Grid below the main image layout]&#40;/img/imagedisplay-config-grid.webp&#41;)
 
 **Thumbnails per Row** — How many thumbnails sit side by side on desktop. Thumbnails are stored at 100 pixels, so fewer than three per row will look soft. Default: **4**. Options: 3, 4, 5, 6, 7, 8.
 
@@ -93,7 +93,7 @@ The following settings appear only for the layout you have selected, except for 
 
 #### Vertical strip settings
 
-![The vertical-specific fields shown after selecting the Vertical strip on the left layout](/img/imagedisplay-config-vertical.webp)
+[//]: # (![The vertical-specific fields shown after selecting the Vertical strip on the left layout]&#40;/img/imagedisplay-config-vertical.webp&#41;)
 
 **Vertical Strip Width** — Width of the thumbnail column beside the main image, in pixels. Default: **96px**. Options: 64px, 80px, 96px, 112px, 128px, 160px.
 
@@ -133,13 +133,13 @@ There are **three** ways you can access the products.
 
 **Option C:** Go to **Content -> Categories ->** Find the **category** and then click inside the **published**/article section
 
-![The J2Commerce product list screen](/img/imagedisplay-products-list.webp)
+[//]: # (![The J2Commerce product list screen]&#40;/img/imagedisplay-products-list.webp&#41;)
 
 Click on a **product** to edit it **-> J2Commerce** tab **->** **Apps** tab.
 
 Click to expand the **Image Display** section.
 
-![The Image Display section expanded on the product's Apps tab, showing the override fields](/img/imagedisplay-apps-tab.webp)
+[//]: # (![The Image Display section expanded on the product's Apps tab, showing the override fields]&#40;/img/imagedisplay-apps-tab.webp&#41;)
 
 ### Product override fields{#step-2-product-override-fields}
 
@@ -162,9 +162,9 @@ Click **Save** or **Save & Close** when you are done.
 
 When a shopper visits a product with 2 or more images, the thumbnail strip renders using whichever layout is in effect for that product — the grid, the vertical strip, or (if nothing was changed) the same horizontal scroller shoppers already know.
 
-![A product page showing the grid thumbnail layout below the main image](/img/imagedisplay-frontend-grid.webp)
+[//]: # (![A product page showing the grid thumbnail layout below the main image]&#40;/img/imagedisplay-frontend-grid.webp&#41;)
 
-![A product page showing the vertical thumbnail strip beside the main image](/img/imagedisplay-frontend-vertical.webp)
+[//]: # (![A product page showing the vertical thumbnail strip beside the main image]&#40;/img/imagedisplay-frontend-vertical.webp&#41;)
 
 ## How It Works{#how-it-works}
 
@@ -266,7 +266,7 @@ When a customer views a product page:
 
 1. Clear the Joomla cache: **Home Dashboard -> Cache -> Delete All**.
 
-   ![The Joomla Delete Cache screen](/img/delete-cache.webp)
+[//]: # (   ![The Joomla Delete Cache screen]&#40;/img/delete-cache.webp&#41;)
 
 2. Reload the product page and select the variant or option again.
 
