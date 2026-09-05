@@ -2,12 +2,12 @@
 title: "Custom Field Types"
 sidebar_label: "Field Types"
 sidebar_position: 1
-description: "Complete reference for all 43 J2Commerce custom Joomla form field types available to third-party developers."
+description: "Complete reference for all 44 J2Commerce custom Joomla form field types available to third-party developers."
 ---
 
 # Custom Field Types
 
-J2Commerce provides 43 custom Joomla form field types that extend Joomla's form system. These fields handle everything from entity lookups and product pricing to image uploading and SEF router configuration. Third-party plugins, modules, and extensions can use any of these fields in their XML forms.
+J2Commerce provides 44 custom Joomla form field types that extend Joomla's form system. These fields handle everything from entity lookups and product pricing to image uploading and SEF router configuration. Third-party plugins, modules, and extensions can use any of these fields in their XML forms.
 
 ## Using J2Commerce Fields
 
@@ -52,6 +52,7 @@ Dropdown fields populated from J2Commerce database tables. All extend `ListField
 | [`GeoZone`](./geozone-field.md) | `GeoZoneField` | `#__j2commerce_geozones` | `j2commerce_geozone_id` (int) |
 | [`Currencies`](./currencies-field.md) | `CurrenciesField` | `#__j2commerce_currencies` | `currency_code` (string) |
 | [`OrderStatus`](./orderstatus-field.md) | `OrderStatusField` | `#__j2commerce_orderstatuses` | `j2commerce_orderstatus_id` (int) |
+| [`Orderstatustype`](./orderstatustype-field.md) | `OrderstatustypeField` | `#__j2commerce_orderstatuses` | `orderstatus_type` (string) |
 | [`Taxprofile`](./taxprofile-field.md) | `TaxprofileField` | `#__j2commerce_taxprofiles` | `j2commerce_taxprofile_id` (int) |
 | [`TaxRate`](./taxrate-field.md) | `TaxRateField` | `#__j2commerce_taxrates` | `j2commerce_taxrate_id` (int) |
 | [`Manufacturers`](./manufacturers-field.md) | `ManufacturersField` | `#__j2commerce_manufacturers` | `j2commerce_manufacturer_id` (int) |
