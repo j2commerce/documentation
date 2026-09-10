@@ -85,6 +85,20 @@ NOTE: This rule only affects EU cross-border customers. It has no effect on the 
 
 :::
 
+### Show VAT ID Step at Checkout
+
+Set this to **Yes** to add a dedicated step to checkout where the customer confirms or enters their VAT ID number, instead of relying only on the **Tax Number** field on the address form. Registered customers who already have a VAT number on file can verify it or enter a different one for this order; guests simply enter a number. See [VAT ID Checkout Step](#vat-id-checkout-step) below for full details.
+
+Default: **No**
+
+### Checkout Step Position
+
+Choose where the VAT ID step appears in the checkout flow: **After billing address**, **After shipping address**, **Before payment**, or **Before order confirmation**.
+
+This field only appears when **Show VAT ID Step at Checkout** is **Yes**.
+
+Default: **After billing address**
+
 ### Display Invalid VAT Message
 
 Set this to **Yes** to show a warning banner on the checkout confirmation step when a VAT number is rejected.
@@ -153,6 +167,25 @@ Every billing and shipping address form in J2Commerce already includes a **Tax N
 
 [//]: # (![]&#40;/img/euvat-checkout-field.webp&#41;)
 
+## VAT ID Checkout Step{#vat-id-checkout-step}
+
+Turning on **Show VAT ID Step at Checkout** adds a second, more visible place for customers to handle their VAT ID, alongside the address-form field described above. It is off by default — the address-form **Tax Number** field works exactly as before whether or not this step is enabled.
+
+[//]: # (![]&#40;/img/euvat-checkout-step.webp&#41;)
+
+What a customer sees depends on who they are:
+
+- **A registered customer with a VAT number already saved on their billing address** sees two options: **Use my saved VAT number** (shown alongside the number on file) or **Enter a different VAT number**. Choosing **Use my saved VAT number** re-checks that number against your validation service right then, so a number that has since been deregistered is caught before checkout completes rather than only at order time.
+- **A registered customer with no VAT number on file yet, and any guest,** simply sees a **VAT Number** and **Company Name** field to fill in.
+
+When a customer enters a new or different number, registered customers also see a checkbox: **Also update my saved address with this VAT number and company name**. It is unchecked by default. Leaving it unchecked keeps the new number scoped to this order only, exactly like typing a one-off number on the address form; checking it writes the number and company name back onto the customer's saved billing address for future orders. This checkbox only appears when there is an actual saved address to update — it is never shown to guests.
+
+:::info
+
+NOTE: The VAT ID entered through this step is what the app validates and, when confirmed, uses to zero tax on the order — it takes priority over whatever is on the address form for that checkout session. The address-form field is unaffected unless the customer explicitly checks **Also update my saved address**.
+
+:::
+
 ## Valid vs. Invalid VAT Numbers
 
 - **Valid number, business customer, cross-border EU sale:** tax is zeroed on the order (reverse charge applies).
@@ -179,6 +212,24 @@ Each time tax is calculated during checkout, the app works through these checks 
 
 - On every billing and shipping address form at checkout — they are built into J2Commerce and do not need to be added.
 
+**The VAT ID checkout step appears when:**
+
+- **Show VAT ID Step at Checkout** is set to **Yes** — it is off by default.
+
+**The "Use my saved VAT number" option appears when:**
+
+- The customer is logged in, **and**
+- Their billing address already has a VAT number saved.
+
+Guests, and registered customers with no saved VAT number, see a plain entry field instead.
+
+**The "Also update my saved address" checkbox appears when:**
+
+- The customer is logged in and has a resolvable saved billing address, **and**
+- They are entering a new or different VAT number (not verifying their saved one).
+
+It never appears for guests, since a guest checkout address is not a saved address to update.
+
 **Tax is zeroed on an order when:**
 
 - The customer's destination country is an EU member state different from your store's home country, and their VAT number validates successfully, and (if **Apply VAT on Digital Products** is enabled) they have a company name on file — **or**
@@ -202,6 +253,7 @@ NOTE: United Kingdom addresses (other than Northern Ireland) are treated as non-
 - **Turn on Display Invalid VAT Message temporarily while testing** so you can see exactly when the app rejects a number, then decide whether to leave the banner on for shoppers.
 - **Leave Debug Logging off in production** — only turn it on while diagnosing a specific issue, then turn it back off.
 - **Double-check Apply VAT on Digital Products** if you sell a mix of physical and digital goods — it is designed to protect you from under-charging VAT to private EU individuals on digital products, so leave it on unless you are certain none of your EU customers are non-business buyers of digital goods.
+- **Turn on Show VAT ID Step at Checkout for a clearer confirmation moment** if returning B2B customers place repeat orders — it lets them confirm a saved VAT number with one click instead of retyping it, while still letting them switch to a different number when needed.
 
 ## Troubleshooting{#troubleshooting}
 
@@ -281,6 +333,26 @@ NOTE: A number that cannot be confirmed never blocks checkout — only a number 
 1. Go to **J2Commerce** **->** **Apps** **->** **EU VAT Rules**.
 2. Set **Display Invalid VAT Message** to **Yes** and click **Save**.
 3. The banner appears on the checkout confirmation step when a VAT number is rejected — not on the address step itself.
+
+### The VAT ID Step Does Not Appear at Checkout{#vat-id-step-missing}
+
+**Cause:** **Show VAT ID Step at Checkout** is set to **No**, which is the default.
+
+**Solution:**
+
+1. Go to **J2Commerce** **->** **Apps** **->** **EU VAT Rules**.
+2. Set **Show VAT ID Step at Checkout** to **Yes**, optionally choose a **Checkout Step Position**, and click **Save**.
+3. The address-form **Tax Number** field keeps working either way — enabling the step adds an additional, clearer place to confirm or enter a VAT number, it does not replace the field.
+
+### A Customer Never Sees "Use My Saved VAT Number"{#saved-vat-option-missing}
+
+**Cause:** The option only appears for a logged-in customer whose billing address already has a VAT number saved. Guests and first-time business customers always see a plain entry field instead.
+
+**Solution:**
+
+1. Confirm the customer is logged in, not checking out as a guest.
+2. Confirm their billing address already has a value in the **Tax Number** field — check under **Components** **->** **J2Commerce** **->** **Customers**, open the customer, and review their saved addresses.
+3. If neither is true, this is expected behavior — the customer will see the plain entry field and can still complete the order with a VAT number.
 
 ### I Enabled Debug Logging But the Log File Does Not Appear{#debug-log-missing}
 
